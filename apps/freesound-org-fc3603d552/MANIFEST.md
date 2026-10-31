@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_freesound.org_media_images_logo
 
 | | |
 | --- | --- |
-| Signed bundle | `137f6700a7201772e997fa9623f81b636b94d5165f741626459206ef678f104d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_freesound.org_media_images_logo
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/search/text` | searchText | Search sounds |
-| GET | `/sounds/{soundId}` | getSoundById | Details of a sound |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/search/text` | searchText | `query`, `filter`, `sort`, `group_by_pack`, `page`, `page_size` | Sound[] | yes | Search sounds |
+| GET | `/sounds/{soundId}` | getSoundById | `soundId`* | Sound | yes | Details of a sound |

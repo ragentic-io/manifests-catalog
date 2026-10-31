@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn_mist_com_wp-content_uploads
 
 | | |
 | --- | --- |
-| Signed bundle | `dcd32386ab638091f0d00f06a0472d0a4b015b15b62e82e9c51a06f188aa920b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,780 +34,782 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn_mist_com_wp-content_uploads
 
 230 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/const/alarm_defs` | getAlarmDefinitions | getAlarmDefinitions |
-| GET | `/api/v1/const/ap_channels` | getApChannels | getApChannels |
-| GET | `/api/v1/const/ap_led_status` | getApLedDefinition | getApLedDefinition |
-| GET | `/api/v1/const/applications` | getApplications | getApplications |
-| GET | `/api/v1/const/call_events` | getCallEventsDefinitions | getCallEventsDefinitions |
-| GET | `/api/v1/const/client_events` | getClientEventsDefinitions | getClientEventsDefinitions |
-| GET | `/api/v1/const/countries` | getCountryCodes | getCountryCodes |
-| GET | `/api/v1/const/default_gateway_config` | getGetawayDefaultConfig | getGetawayDefaultConfig |
-| GET | `/api/v1/const/device_events` | getDeviceEventsDefinitions | getDeviceEventsDefinitions |
-| GET | `/api/v1/const/device_models` | getDeviceModels | getDeviceModels |
-| GET | `/api/v1/const/insight_metrics` | getSiteAvailableInsightMetrics | getSiteAvailableInsightMetrics |
-| GET | `/api/v1/const/languages` | getSiteLanguages | getSiteLanguages |
-| GET | `/api/v1/const/mxedge_events` | getMxEdgeEventsDefinitions | getMxEdgeEventsDefinitions |
-| GET | `/api/v1/const/mxedge_models` | getMxEdgeModels | getMxEdgeModels |
-| GET | `/api/v1/const/system_events` | getSystemEventsDefinitions | getSystemEventsDefinitions |
-| GET | `/api/v1/const/traffic_types` | getTrafficTypes | getTrafficTypes |
-| GET | `/api/v1/installer/orgs/{org_id}/alarmtemplates` | getInstallerAlarmTemplates | getInstallerAlarmTemplates |
-| GET | `/api/v1/installer/orgs/{org_id}/deviceprofiles` | getInstallerDeviceProfiles_WIP_ | getInstallerDeviceProfiles_WIP_ |
-| GET | `/api/v1/installer/orgs/{org_id}/devices` | getInstallerListOfRenctlyClaimedDevices | getInstallerListOfRenctlyClaimedDevices |
-| POST | `/api/v1/installer/orgs/{org_id}/devices` | claimInstallerDevices | claimInstallerDevices |
-| DELETE | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}` | unassignInstallerRecentlyClaimedDevice | unassignInstallerRecentlyClaimedDevice |
-| PUT | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}` | provisionInstallerDevices | provisionInstallerDevices |
-| POST | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/locate` | startInstallerLocateDevice | startInstallerLocateDevice |
-| POST | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/unlocate` | stopInstallerLocateDevice | stopInstallerLocateDevice |
-| DELETE | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/{image_name}` | deleteInstallerDeviceImage | deleteInstallerDeviceImage |
-| POST | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/{image_name}` | addInstallerDeviceImage | addInstallerDeviceImage |
-| GET | `/api/v1/installer/orgs/{org_id}/rftemplates` | getInstallerRfTemplatesNames | getInstallerRfTemplatesNames |
-| GET | `/api/v1/installer/orgs/{org_id}/secpolicies` | getInstallerSecPolicies | getInstallerSecPolicies |
-| GET | `/api/v1/installer/orgs/{org_id}/sitegroups` | getInstallerSiteGroups | getInstallerSiteGroups |
-| GET | `/api/v1/installer/orgs/{org_id}/sites` | getInstallerSites | getInstallerSites |
-| PUT | `/api/v1/installer/orgs/{org_id}/sites/{site_name}` | createOrUpdateInstallerSites | createOrUpdateInstallerSites |
-| GET | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps` | getInstallerMaps | getInstallerMaps |
-| POST | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/import` | importInstallerMap | importInstallerMap |
-| DELETE | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/{map_id}` | deleteInstallerMap | deleteInstallerMap |
-| POST | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/{map_id}` | createInstallerMap | createInstallerMap |
-| PUT | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/{map_id}` | updateInstallerMap | updateInstallerMap |
-| GET | `/api/v1/installer/sites/{site_name}/optimize` | optimizeInstallerRrm | optimizeInstallerRrm |
-| POST | `/api/v1/invite/verify/{token}` | verifyAdminInvite | verifyAdminInvite |
-| POST | `/api/v1/login` | login | login |
-| POST | `/api/v1/login/lookup` | lookup | lookup |
-| DELETE | `/api/v1/login/oauth/{provider}` | unlinkOAuth2Provider | unlinkOAuth2Provider |
-| GET | `/api/v1/login/oauth/{provider}` | getOAuth2AuthorizationUrlForLogin | getOAuth2AuthorizationUrlForLogin |
-| POST | `/api/v1/login/oauth/{provider}` | loginOAuth2 | loginOAuth2 |
-| POST | `/api/v1/login/two_factor` | twoFactor | twoFactor |
-| POST | `/api/v1/logout` | logout | logout |
-| POST | `/api/v1/mobile/verify/{secret}` | activateSdkInvite | activateSdkInvite |
-| POST | `/api/v1/msps` | createMsp | createMsp |
-| DELETE | `/api/v1/msps/{msp_id}` | deleteMsp | deleteMsp |
-| GET | `/api/v1/msps/{msp_id}` | getMspDetails | getMspDetails |
-| PUT | `/api/v1/msps/{msp_id}` | updateMsp | updateMsp |
-| GET | `/api/v1/msps/{msp_id}/admins` | getMspAdmins | getMspAdmins |
-| DELETE | `/api/v1/msps/{msp_id}/admins/{admin_id}` | revokeMspAdmin | revokeMspAdmin |
-| GET | `/api/v1/msps/{msp_id}/admins/{admin_id}` | getMspAdmin | getMspAdmin |
-| PUT | `/api/v1/msps/{msp_id}/admins/{admin_id}` | updateMspAdmin | updateMspAdmin |
-| POST | `/api/v1/msps/{msp_id}/claim` | claimMspLicence | claimMspLicence |
-| GET | `/api/v1/msps/{msp_id}/insights/{metric}` | getMspSle | getMspSle |
-| GET | `/api/v1/msps/{msp_id}/inventory/{device_mac}` | getMspInventoryByMac | getMspInventoryByMac |
-| POST | `/api/v1/msps/{msp_id}/invites` | inviteMspAdmin | inviteMspAdmin |
-| DELETE | `/api/v1/msps/{msp_id}/invites/{invite_id}` | uninviteMspAdmin | uninviteMspAdmin |
-| PUT | `/api/v1/msps/{msp_id}/invites/{invite_id}` | updateMspAdminInvite | updateMspAdminInvite |
-| GET | `/api/v1/msps/{msp_id}/licenses` | getMspLicenses | getMspLicenses |
-| PUT | `/api/v1/msps/{msp_id}/licenses` | moveOrDeleteMspLicenseToAnotherOrg | moveOrDeleteMspLicenseToAnotherOrg |
-| DELETE | `/api/v1/msps/{msp_id}/logo` | deleteMspLogo | deleteMspLogo |
-| POST | `/api/v1/msps/{msp_id}/logo` | postMspLogo | postMspLogo |
-| GET | `/api/v1/msps/{msp_id}/logs` | getMspLogs | getMspLogs |
-| GET | `/api/v1/msps/{msp_id}/logs/count` | countMspLogs | countMspLogs |
-| GET | `/api/v1/msps/{msp_id}/orggroups` | getMspOrgGroups | getMspOrgGroups |
-| POST | `/api/v1/msps/{msp_id}/orggroups` | createMspOrgGroup | createMspOrgGroup |
-| DELETE | `/api/v1/msps/{msp_id}/orggroups/{orggroup_id}` | deleteMspOrgGroup | deleteMspOrgGroup |
-| GET | `/api/v1/msps/{msp_id}/orggroups/{orggroup_id}` | getMspOrgGroup | getMspOrgGroup |
-| PUT | `/api/v1/msps/{msp_id}/orggroups/{orggroup_id}` | updateMspOrgGroup | updateMspOrgGroup |
-| GET | `/api/v1/msps/{msp_id}/orgs` | getMspOrgs | getMspOrgs |
-| POST | `/api/v1/msps/{msp_id}/orgs` | createMspOrg | createMspOrg |
-| PUT | `/api/v1/msps/{msp_id}/orgs` | manageMspOrgs | manageMspOrgs |
-| GET | `/api/v1/msps/{msp_id}/orgs/search` | searchMspOrgs | searchMspOrgs |
-| GET | `/api/v1/msps/{msp_id}/orgs/{org_id}` | getMspOrg | getMspOrg |
-| GET | `/api/v1/msps/{msp_id}/search` | searchMspOrgGroup | searchMspOrgGroup |
-| GET | `/api/v1/msps/{msp_id}/ssoroles` | getMspSsoRoles | getMspSsoRoles |
-| POST | `/api/v1/msps/{msp_id}/ssoroles` | createMspSsoRole | createMspSsoRole |
-| DELETE | `/api/v1/msps/{msp_id}/ssoroles/{ssorole_id}` | deleteMspSsoRole | deleteMspSsoRole |
-| PUT | `/api/v1/msps/{msp_id}/ssoroles/{ssorole_id}` | updateMspSsoRole | updateMspSsoRole |
-| GET | `/api/v1/msps/{msp_id}/ssos` | getMspSso | getMspSso |
-| POST | `/api/v1/msps/{msp_id}/ssos` | createMspSso | createMspSso |
-| DELETE | `/api/v1/msps/{msp_id}/ssos/{sso_id}` | deleteMspSso | deleteMspSso |
-| PUT | `/api/v1/msps/{msp_id}/ssos/{sso_id}` | updateMspSso | updateMspSso |
-| GET | `/api/v1/msps/{msp_id}/ssos/{sso_id}/failures` | getMspSsoLatestFailures | getMspSsoLatestFailures |
-| GET | `/api/v1/msps/{msp_id}/ssos/{sso_id}/metadata` | getMspSsoSamlMetadata | getMspSsoSamlMetadata |
-| GET | `/api/v1/msps/{msp_id}/ssos/{sso_id}/metadata.xml` | downloadMspSsoSamlMetadata | downloadMspSsoSamlMetadata |
-| GET | `/api/v1/msps/{msp_id}/stats/licenses` | getMspOrgLicenses | getMspOrgLicenses |
-| GET | `/api/v1/msps/{msp_id}/stats/orgs` | getMspOrgStats | getMspOrgStats |
-| GET | `/api/v1/msps/{msp_id}/tickets` | getMspTickets | getMspTickets |
-| GET | `/api/v1/msps/{msp_id}/tickets/count` | countMspTickets | countMspTickets |
-| POST | `/api/v1/orgs` | createOrg | createOrg |
-| DELETE | `/api/v1/orgs/{org_id}` | deleteOrg | deleteOrg |
-| GET | `/api/v1/orgs/{org_id}` | getOrgInfo | getOrg |
-| PUT | `/api/v1/orgs/{org_id}` | updateOrg | updateOrg |
-| GET | `/api/v1/orgs/{org_id}/128routers/register_cmd` | getOrg128TRegistrationCommands | getOrg128TRegistrationCommands |
-| GET | `/api/v1/orgs/{org_id}/admins` | getOrgAdmins | getOrgAdmins |
-| DELETE | `/api/v1/orgs/{org_id}/admins/{admin_id}` | revokeOrgAdmin | revokeOrgAdmin |
-| PUT | `/api/v1/orgs/{org_id}/admins/{admin_id}` | updateOrgAdmin | updateOrgAdmin |
-| POST | `/api/v1/orgs/{org_id}/alarms/ack` | multiAckOrgAlarms | multiAckOrgAlarms |
-| POST | `/api/v1/orgs/{org_id}/alarms/ack_all` | ackOrgAllAlarms | ackOrgAllAlarms |
-| GET | `/api/v1/orgs/{org_id}/alarms/count` | countOrgAlarms | countOrgAlarms |
-| GET | `/api/v1/orgs/{org_id}/alarms/search` | searchOrgAlarms | searchOrgAlarms |
-| POST | `/api/v1/orgs/{org_id}/alarms/unack` | multiUnackOrgAlarms | multiUnackOrgAlarms |
-| POST | `/api/v1/orgs/{org_id}/alarms/unack_all` | unackOrgAllArlarms | unackOrgAllArlarms |
-| POST | `/api/v1/orgs/{org_id}/alarms/{alarm_id}/ack` | ackOrgAlarm | ackOrgAlarm |
-| GET | `/api/v1/orgs/{org_id}/alarmtemplates` | getOrgAlarmTemplates | getOrgAlarmTemplates |
-| POST | `/api/v1/orgs/{org_id}/alarmtemplates` | createOrgAlarmTemplate | createOrgAlarmTemplate |
-| POST | `/api/v1/orgs/{org_id}/alarmtemplates/suppress` | suppressOrgAlarm | suppressOrgAlarm |
-| DELETE | `/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}` | deleteOrgAlarmTemplate | deleteOrgAlarmTemplate |
-| GET | `/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}` | getOrgAlarmTemplate | getOrgAlarmTemplate |
-| PUT | `/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}` | updateOrgAlarmTemplate | updateOrgAlarmTemplate |
-| GET | `/api/v1/orgs/{org_id}/apitokens` | getOrgApiTokens | getOrgApiTokens |
-| POST | `/api/v1/orgs/{org_id}/apitokens` | createOrgApiToken | createOrgApiToken |
-| DELETE | `/api/v1/orgs/{org_id}/apitokens/{apitoken_id}` | deleteOrgApiToken | deleteOrgApiToken |
-| GET | `/api/v1/orgs/{org_id}/apitokens/{apitoken_id}` | getOrgApiToken | getOrgApiToken |
-| PUT | `/api/v1/orgs/{org_id}/apitokens/{apitoken_id}` | updateOrgApiToken | updateOrgApiToken |
-| GET | `/api/v1/orgs/{org_id}/aptemplates` | getOrgAptemplates | getOrgAptemplates |
-| POST | `/api/v1/orgs/{org_id}/aptemplates` | createOrgAptemplate | createOrgAptemplate |
-| DELETE | `/api/v1/orgs/{org_id}/aptemplates/{aptemplate_id}` | deleteOrgAptemplate | deleteOrgAptemplate |
-| GET | `/api/v1/orgs/{org_id}/aptemplates/{aptemplate_id}` | getOrgAptemplate | getOrgAptemplate |
-| PUT | `/api/v1/orgs/{org_id}/aptemplates/{aptemplate_id}` | updateOrgAptemplate | updateOrgAptemplate |
-| GET | `/api/v1/orgs/{org_id}/assetfilters` | getOrgAssetFilters | getOrgAssetFilters |
-| POST | `/api/v1/orgs/{org_id}/assetfilters` | createOrgAssetFilters | createOrgAssetFilters |
-| DELETE | `/api/v1/orgs/{org_id}/assetfilters/{assetfilter_id}` | deleteOrgAssetFilter | deleteOrgAssetFilter |
-| GET | `/api/v1/orgs/{org_id}/assetfilters/{assetfilter_id}` | getOrgAssetFilter | getOrgAssetFilter |
-| PUT | `/api/v1/orgs/{org_id}/assetfilters/{assetfilter_id}` | updateOrgAssetFilters | updateOrgAssetFilters |
-| GET | `/api/v1/orgs/{org_id}/assets` | getOrgAssets | getOrgAssets |
-| POST | `/api/v1/orgs/{org_id}/assets` | createOrgAsset | createOrgAsset |
-| POST | `/api/v1/orgs/{org_id}/assets/import` | importOrgAssets | importOrgAssets |
-| DELETE | `/api/v1/orgs/{org_id}/assets/{asset_id}` | deleteOrgAsset | deleteOrgAsset |
-| GET | `/api/v1/orgs/{org_id}/assets/{asset_id}` | getOrgAsset | getOrgAsset |
-| PUT | `/api/v1/orgs/{org_id}/assets/{asset_id}` | updateOrgAsset | updateOrgAsset |
-| GET | `/api/v1/orgs/{org_id}/call/events/count` | countOrgCallEvents | countOrgCallEvents |
-| GET | `/api/v1/orgs/{org_id}/call/events/search` | searchOrgCallEvents | searchOrgCallEvents |
-| GET | `/api/v1/orgs/{org_id}/cert` | getOrgCertificates | getOrgCertificates |
-| POST | `/api/v1/orgs/{org_id}/cert/regenerate` | clearOrgCertificates | clearOrgCertificates |
-| POST | `/api/v1/orgs/{org_id}/claim` | claimOrgLicense | claimOrgLicense |
-| GET | `/api/v1/orgs/{org_id}/clients/count` | countOrgClientsWireless | countOrgClientsWireless |
-| GET | `/api/v1/orgs/{org_id}/clients/events/search` | searchOrgClientsEvents | searchOrgClientsEvents |
-| GET | `/api/v1/orgs/{org_id}/clients/search` | searchOrgClientsWireless | searchOrgClientsWireless |
-| GET | `/api/v1/orgs/{org_id}/clients/sessions/count` | countOrgWirelessClientsSessions | getMxEdgeModels |
-| GET | `/api/v1/orgs/{org_id}/clients/sessions/search` | searchOrgClientWirelessSessions | searchOrgClientWirelessSessions |
-| POST | `/api/v1/orgs/{org_id}/clone` | cloneOrg | cloneOrg |
-| GET | `/api/v1/orgs/{org_id}/crl` | getOrgCrlFile | getOrgCrlFile |
-| POST | `/api/v1/orgs/{org_id}/crl/truncate` | truncateOrgCrlFile | truncateOrgCrlFile |
-| GET | `/api/v1/orgs/{org_id}/deviceprofiles` | getOrgDeviceProfiles | getOrgDeviceProfiles |
-| POST | `/api/v1/orgs/{org_id}/deviceprofiles` | createOrgDeviceProfiles | createOrgDeviceProfiles |
-| DELETE | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}` | deleteOrgDeviceProfile | deleteOrgDeviceProfile |
-| GET | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}` | getOrgDeviceProfile | getOrgDeviceProfile |
-| PUT | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}` | updateOrgDeviceProfile | updateOrgDeviceProfiles |
-| POST | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}/assign` | assignOrgDeviceProfileToDevices | assignOrgDeviceProfileToDevices |
-| POST | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}/unassign` | unassignOrgDeviceProfilesFromDevices | unassignOrgDeviceProfilesFromDevices |
-| GET | `/api/v1/orgs/{org_id}/devices` | getOrgDevices | getOrgDevices |
-| GET | `/api/v1/orgs/{org_id}/devices/count` | countOrgDevices | countOrgDevices |
-| GET | `/api/v1/orgs/{org_id}/devices/events/count` | countOrgDevicesEvents | countOrgDevicesEvents |
-| GET | `/api/v1/orgs/{org_id}/devices/events/search` | searchOrgDevicesEvents | searchOrgDevicesEvents |
-| GET | `/api/v1/orgs/{org_id}/devices/last_config/count` | countOrgDeviceLastConfigs | countOrgDeviceLastConfigs |
-| GET | `/api/v1/orgs/{org_id}/devices/last_config/search` | searchOrgDeviceLastConfigs | searchOrgDeviceLastConfigs |
-| GET | `/api/v1/orgs/{org_id}/devices/radio_macs` | getOrgApsMacs | getOrgApsMacs |
-| GET | `/api/v1/orgs/{org_id}/devices/search` | searchOrgDevices | searchOrgDevices |
-| GET | `/api/v1/orgs/{org_id}/devices/upgrade` | getOrgMultiSitesDevicesUpgrades | getOrgMultiSitesDevicesUpgrades |
-| POST | `/api/v1/orgs/{org_id}/devices/upgrade` | upgradeOrgMultiSitesDevices | upgradeOrgMultiSitesDevices |
-| GET | `/api/v1/orgs/{org_id}/devices/upgrade/{upgrade_id}` | getOrgMultiSitesUpgrade | getOrgMultiSitesUpgrade |
-| GET | `/api/v1/orgs/{org_id}/evpn_topologies` | getOrgEvpnTopologies | getOrgEvpnTopologies |
-| POST | `/api/v1/orgs/{org_id}/evpn_topologies` | createOrgEvpnTopology | createOrgEvpnTopology |
-| DELETE | `/api/v1/orgs/{org_id}/evpn_topologies/{evpn_topology_id}` | deleteOrgEvpnTopology | deleteOrgEvpnTopology |
-| GET | `/api/v1/orgs/{org_id}/evpn_topologies/{evpn_topology_id}` | getOrgEvpnTolopogy | getOrgEvpnTolopogy |
-| PUT | `/api/v1/orgs/{org_id}/evpn_topologies/{evpn_topology_id}` | updateOrgEvpnTopology | updateOrgEvpnTopology |
-| GET | `/api/v1/orgs/{org_id}/gatewaytemplates` | getOrgGatewayTemplates | getOrgGatewayTemplates |
-| POST | `/api/v1/orgs/{org_id}/gatewaytemplates` | createOrgGatewayTemplate | createOrgGatewayTemplate |
-| DELETE | `/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}` | deleteOrgGatewayTemplate | deleteOrgGatewayTemplate |
-| GET | `/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}` | getOrgGatewayTemplate | getOrgGatewayTemplate |
-| PUT | `/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}` | updateOrgGatewayTemplate | updateOrgGatewayTemplate |
-| GET | `/api/v1/orgs/{org_id}/guests` | getOrgGuestAuthorizations | getOrgGuestAuthorizations |
-| GET | `/api/v1/orgs/{org_id}/guests/count` | countOrgGuestAuthorizations | countOrgGuestAuthorizations |
-| GET | `/api/v1/orgs/{org_id}/guests/search` | searchOrgGuestAuthorization | searchOrgGuestAuthorization |
-| DELETE | `/api/v1/orgs/{org_id}/guests/{guest_mac}` | deleteOrgGuestAuthorization | deleteOrgGuestAuthorization |
-| GET | `/api/v1/orgs/{org_id}/guests/{guest_mac}` | getOrgGuestAuthorization | getOrgGuestAuthorization |
-| PUT | `/api/v1/orgs/{org_id}/guests/{guest_mac}` | updateOrgGuestAuthorization | updateOrgGuestAuthorization |
-| GET | `/api/v1/orgs/{org_id}/insights/sites-sle` | getOrgSitesSle | getOrgSitesSle |
-| GET | `/api/v1/orgs/{org_id}/insights/{metric}` | getOrgSle | getOrgSle |
-| GET | `/api/v1/orgs/{org_id}/inventory` | getOrgInventory | getOrgInventory |
-| POST | `/api/v1/orgs/{org_id}/inventory` | addOrgInventory | addOrgInventory |
-| PUT | `/api/v1/orgs/{org_id}/inventory` | updateOrgInventoryAssignment | updateOrgInventoryAssignment |
-| POST | `/api/v1/orgs/{org_id}/inventory/reevaluate_auto_assignment` | reevaluateOrgAutoAssignment | reevaluateOrgAutoAssignment |
-| POST | `/api/v1/orgs/{org_id}/inventory/replace` | replaceOrgDevices | replaceOrgDevices |
-| POST | `/api/v1/orgs/{org_id}/invites` | inviteOrgAdmin | inviteOrgAdmin |
-| DELETE | `/api/v1/orgs/{org_id}/invites/{invite_id}` | uninviteOrgAdmin | uninviteOrgAdmin |
-| PUT | `/api/v1/orgs/{org_id}/invites/{invite_id}` | updateOrgAdminInvite | updateOrgAdminInvite |
-| GET | `/api/v1/orgs/{org_id}/jsi/devices` | getOrgJsiDevices | getOrgJsiDevices |
-| GET | `/api/v1/orgs/{org_id}/jsi/devices/outbound_ssh_cmd` | adoptOrgJsiDevice | adoptOrgJsiDevice |
-| POST | `/api/v1/orgs/{org_id}/jsi/devices/{device_mac}/shell` | createOrgJsiDeviceShellSession | createOrgJsiDeviceShellSession |
-| POST | `/api/v1/orgs/{org_id}/jsi/devices/{device_mac}/upgrade` | upgradeOrgJsiDevice | upgradeOrgJsiDevice |
-| GET | `/api/v1/orgs/{org_id}/jsi/inventory` | getOrgJsiPastPurchases | getOrgJsiPastPurchases |
-| GET | `/api/v1/orgs/{org_id}/junos/register_cmd` | getOrgJunosDevicesRegistrationCommands | getOrgJunosDevicesRegistrationCommands |
-| GET | `/api/v1/orgs/{org_id}/licenses` | getOrgLicencesSummary | getOrgLicencesSummary |
-| PUT | `/api/v1/orgs/{org_id}/licenses` | moveOrDeleteOrgLicenseToAnotherOrg | moveOrDeleteOrgLicenseToAnotherOrg |
-| GET | `/api/v1/orgs/{org_id}/licenses/usages` | getOrgLicencesBySite | getOrgLicencesBySite |
-| GET | `/api/v1/orgs/{org_id}/logs` | getOrgLogs | getOrgLogs |
-| GET | `/api/v1/orgs/{org_id}/logs/count` | countOrgLogsByDistinctAttributes | countOrgLogsByDistinctAttributes |
-| POST | `/api/v1/orgs/{org_id}/maps/import` | importOrgMaps | importOrgMaps |
-| GET | `/api/v1/orgs/{org_id}/mxclusters` | getOrgMxEdgeClusters | getOrgMxEdgeClusters |
-| POST | `/api/v1/orgs/{org_id}/mxclusters` | createOrgMxEdgeCluster | createOrgMxEdgeCluster |
-| DELETE | `/api/v1/orgs/{org_id}/mxclusters/{mxcluster_id}` | deleteOrgMxEdgeCluster | deleteOrgMxEdgeCluster |
-| GET | `/api/v1/orgs/{org_id}/mxclusters/{mxcluster_id}` | getOrgMxEdgeCluster | getOrgMxEdgeCluster |
-| PUT | `/api/v1/orgs/{org_id}/mxclusters/{mxcluster_id}` | updateOrgMxEdgeCluster | updateOrgMxEdgeCluster |
-| GET | `/api/v1/orgs/{org_id}/mxedges` | getOrgMxEdges | getOrgMxEdges |
-| POST | `/api/v1/orgs/{org_id}/mxedges` | createOrgMxEdge | createOrgMxEdge |
-| POST | `/api/v1/orgs/{org_id}/mxedges/assign` | assignOrgMxEdgeToSite | assignOrgMxEdgeToSite |
-| POST | `/api/v1/orgs/{org_id}/mxedges/claim` | claimOrgMxEdge | claimOrgMxEdge |
-| POST | `/api/v1/orgs/{org_id}/mxedges/unassign` | unassignOrgMxEdgeFromSite | unassignOrgMxEdgeFromSite |
-| GET | `/api/v1/orgs/{org_id}/mxedges/upgrade` | getOrgMxEdgeUpgrades | getOrgMxEdgeUpgrades |
-| POST | `/api/v1/orgs/{org_id}/mxedges/upgrade` | upgradeOrgMxEdges | upgradeOrgMxEdges |
-| GET | `/api/v1/orgs/{org_id}/mxedges/upgrade/{upgrade_id}` | getOrgMxEdgeUpgrade | getOrgMxEdgeUpgrade |
-| GET | `/api/v1/orgs/{org_id}/mxedges/version` | getOrgMxEdgeUpgradeInfo | getOrgMxEdgeUpgradeInfo |
-| DELETE | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}` | deleteOrgMxEdge | deleteOrgMxEdge |
-| GET | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}` | getOrgMxEdge | getOrgMxEdge |
-| PUT | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}` | updateOrgMxEdge | updateOrgMxEdge |
-| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/restart` | restartOrgMxEdge | restartOrgMxEdge |
-| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/tunterm/bounce_port` | bounceOrgMxEdgeDataPorts | bounceOrgMxEdgeDataPorts |
-| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/{name}/{action}` | controlOrgMxEdgeServices | controlOrgMxEdgeServices |
-| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/support` | uploadOrgMxEdgeSupportFiles | uploadOrgMxEdgeSupportFiles |
-| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/unregister` | unregisterOrgMxEdge | unregisterOrgMxEdge |
-| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/upgrade` | upgradeOrgMxEdge | upgradeOrgMxEdge |
-| GET | `/api/v1/orgs/{org_id}/mxtunnels` | getOrgMxTunnels | getOrgMxTunnels |
-| POST | `/api/v1/orgs/{org_id}/mxtunnels` | createOrgMxTunnel | createOrgMxTunnel |
-| DELETE | `/api/v1/orgs/{org_id}/mxtunnels/{mxtunnel_id}` | deleteOrgMxTunnel | deleteOrgMxTunnel |
-| GET | `/api/v1/orgs/{org_id}/mxtunnels/{mxtunnel_id}` | getOrgMxTunnel | getOrgMxTunnel |
-| PUT | `/api/v1/orgs/{org_id}/mxtunnels/{mxtunnel_id}` | updateOrgMxTunnel | updateOrgMxTunnel |
-| GET | `/api/v1/orgs/{org_id}/nacrules` | getOrgNacRules | getOrgNacRules |
-| POST | `/api/v1/orgs/{org_id}/nacrules` | createOrgNacRule | createOrgNacRule |
-| DELETE | `/api/v1/orgs/{org_id}/nacrules/{nacrule_id}` | deleteOrgNacRule | deleteOrgNacRule |
-| GET | `/api/v1/orgs/{org_id}/nacrules/{nacrule_id}` | getOrgNacRule | getOrgNacRule |
-| PUT | `/api/v1/orgs/{org_id}/nacrules/{nacrule_id}` | updateOrgNacRule | updateOrgNacRule |
-| GET | `/api/v1/orgs/{org_id}/nactags` | getOrgNacTags | getOrgNacTags |
-| POST | `/api/v1/orgs/{org_id}/nactags` | createOrgNacTag | createOrgNacTag |
-| DELETE | `/api/v1/orgs/{org_id}/nactags/{nactag_id}` | DeleteOrgNacTag | DeleteOrgNacTag |
-| GET | `/api/v1/orgs/{org_id}/nactags/{nactag_id}` | getOrgNacTag | getOrgNacTag |
-| PUT | `/api/v1/orgs/{org_id}/nactags/{nactag_id}` | updateOrgNacTag | updateOrgNacTag |
-| GET | `/api/v1/orgs/{org_id}/networks` | getOrgNetworks | getOrgNetworks |
-| POST | `/api/v1/orgs/{org_id}/networks` | createOrgNetwork | createOrgNetwork |
-| DELETE | `/api/v1/orgs/{org_id}/networks/{network_id}` | deleteOrgNetwork | deleteOrgNetwork |
-| GET | `/api/v1/orgs/{org_id}/networks/{network_id}` | getOrgNetwork | getOrgNetwork |
-| PUT | `/api/v1/orgs/{org_id}/networks/{network_id}` | updateOrgNetwork | updateOrgNetwork |
-| GET | `/api/v1/orgs/{org_id}/networktemplates` | getOrgNetworkTemplates | getOrgNetworkTemplates |
-| POST | `/api/v1/orgs/{org_id}/networktemplates` | createOrgNetworkTemplate | createOrgNetworkTemplate |
-| DELETE | `/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}` | deleteOrgNetworkTemplate | deleteOrgNetworkTemplate |
-| GET | `/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}` | getOrgNetworkTemplate | getOrgNetworkTemplate |
-| PUT | `/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}` | updateOrgNetworkTemplates | updateOrgNetworkTemplates |
-| GET | `/api/v1/orgs/{org_id}/ocdevices/outbound_ssh_cmd` | getOrgJuniperDevicesCommand | getOrgJuniperDevicesCommand |
-| GET | `/api/v1/orgs/{org_id}/otherdevices` | getOrgOtherDevices | getOrgOtherDevices |
-| PUT | `/api/v1/orgs/{org_id}/otherdevices` | updateOrgOtherDevices | updateOrgOtherDevices |
-| DELETE | `/api/v1/orgs/{org_id}/otherdevices/{device_mac}` | deleteOrgOtherDevice | deleteOrgOtherDevice |
-| GET | `/api/v1/orgs/{org_id}/otherdevices/{device_mac}` | getOrgOtherDevice | getOrgOtherDevice |
-| PUT | `/api/v1/orgs/{org_id}/otherdevices/{device_mac}` | updateOrgOtherDevice | updateOrgOtherDevice |
-| GET | `/api/v1/orgs/{org_id}/pma/dashboards` | getOrgPmaDashboards | getOrgPmaDashboards |
-| GET | `/api/v1/orgs/{org_id}/pskportals` | getOrgPskPortals | getOrgPskPortals |
-| POST | `/api/v1/orgs/{org_id}/pskportals` | createOrgPskPortal | createOrgPskPortal |
-| DELETE | `/api/v1/orgs/{org_id}/pskportals/{pskportal_id}` | deleteOrgPskPortal | deleteOrgPskPortal |
-| GET | `/api/v1/orgs/{org_id}/pskportals/{pskportal_id}` | getOrgPskPortal | getOrgPskPortal |
-| PUT | `/api/v1/orgs/{org_id}/pskportals/{pskportal_id}` | updateOrgPskPortal | updateOrgPskPortal |
-| GET | `/api/v1/orgs/{org_id}/psks` | getOrgPsks | getOrgPsks |
-| POST | `/api/v1/orgs/{org_id}/psks` | createOrgPsk | createOrgPsk |
-| PUT | `/api/v1/orgs/{org_id}/psks` | updateOrgMultiPsks | updateOrgMultiPsks |
-| POST | `/api/v1/orgs/{org_id}/psks/import` | importOrgPsks | importOrgPsks |
-| DELETE | `/api/v1/orgs/{org_id}/psks/{psk_id}` | deleteOrgPsk | deleteOrgPsk |
-| GET | `/api/v1/orgs/{org_id}/psks/{psk_id}` | getOrgPsk | getOrgPsk |
-| PUT | `/api/v1/orgs/{org_id}/psks/{psk_id}` | updateOrgPsk | updateOrgPsk |
-| POST | `/api/v1/orgs/{org_id}/psks/{psk_id}/delete_old_passphrase` | deleteOrgPskOldPassphrase | deleteOrgPskOldPassphrase |
-| GET | `/api/v1/orgs/{org_id}/rftemplates` | getOrgRfTemplates | getOrgRfTemplates |
-| POST | `/api/v1/orgs/{org_id}/rftemplates` | createOrgRfTemplate | createOrgRfTemplate |
-| DELETE | `/api/v1/orgs/{org_id}/rftemplates/{rftemplate_id}` | deleteOrgRfTemplate | deleteOrgRfTemplate |
-| GET | `/api/v1/orgs/{org_id}/rftemplates/{rftemplate_id}` | getOrgRfTemplate | getOrgRfTemplate |
-| PUT | `/api/v1/orgs/{org_id}/rftemplates/{rftemplate_id}` | updateOrgRfTemplate | updateOrgRfTemplate |
-| PUT | `/api/v1/orgs/{org_id}/sdkclients/{sdkclient_id}` | updateSdkClient | updateSdkClient |
-| GET | `/api/v1/orgs/{org_id}/sdkinvites` | getSdkInvites | getSdkInvites |
-| POST | `/api/v1/orgs/{org_id}/sdkinvites` | createSdkInvite | createSdkInvite |
-| DELETE | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}` | revokeSdkInvite | revokeSdkInvite |
-| GET | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}` | getSdkInvite | getSdkInvite |
-| PUT | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}` | updateSdkInvite | updateSdkInvite |
-| POST | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}/email` | sendSdkInviteEmail | sendSdkInviteEmail |
-| GET | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}/qrcode` | getSdkInviteQrCode | getSdkInviteQrCode |
-| POST | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}/sms` | sendSdkInviteSms | sendSdkInviteSms |
-| GET | `/api/v1/orgs/{org_id}/sdktemplates` | getSdkTemplates | getSdkTemplates |
-| POST | `/api/v1/orgs/{org_id}/sdktemplates` | createSdkTemplate | createSdkTemplate |
-| DELETE | `/api/v1/orgs/{org_id}/sdktemplates/{sdktemplate_id}` | deleteSdkTemplate | deleteSdkTemplate |
-| GET | `/api/v1/orgs/{org_id}/sdktemplates/{sdktemplate_id}` | getSdkTemplate | getSdkTemplate |
-| PUT | `/api/v1/orgs/{org_id}/sdktemplates/{sdktemplate_id}` | updateSdkTemplate | updateSdkTemplate |
-| GET | `/api/v1/orgs/{org_id}/secpolicies` | getOrgSecPolicies | getOrgSecPolicies |
-| POST | `/api/v1/orgs/{org_id}/secpolicies` | createOrgSecPolicies | createOrgSecPolicies |
-| DELETE | `/api/v1/orgs/{org_id}/secpolicies/{secpolicy_id}` | deleteOrgSecPolicy | deleteOrgSecPolicy |
-| GET | `/api/v1/orgs/{org_id}/secpolicies/{secpolicy_id}` | getOrgSecPolicy | getOrgSecPolicy |
-| PUT | `/api/v1/orgs/{org_id}/secpolicies/{secpolicy_id}` | updateOrgSecPolicies | updateOrgSecPolicies |
-| GET | `/api/v1/orgs/{org_id}/servicepolicies` | getOrgServicePolicies | getOrgServicePolicies |
-| POST | `/api/v1/orgs/{org_id}/servicepolicies` | createOrgServicePolicy | createOrgServicePolicy |
-| DELETE | `/api/v1/orgs/{org_id}/servicepolicies/{servicepolicy_id}` | deleteOrgServicePolicy | deleteOrgServicePolicy |
-| GET | `/api/v1/orgs/{org_id}/servicepolicies/{servicepolicy_id}` | getOrgServicePolicy | getOrgServicePolicy |
-| PUT | `/api/v1/orgs/{org_id}/servicepolicies/{servicepolicy_id}` | updateOrgServicePolicy | updateOrgServicePolicy |
-| GET | `/api/v1/orgs/{org_id}/services` | getOrgServices | getOrgServices |
-| POST | `/api/v1/orgs/{org_id}/services` | createOrgService | createOrgService |
-| DELETE | `/api/v1/orgs/{org_id}/services/{service_id}` | deleteOrgService | deleteOrgService |
-| GET | `/api/v1/orgs/{org_id}/services/{service_id}` | getOrgService | getOrgService |
-| PUT | `/api/v1/orgs/{org_id}/services/{service_id}` | updateOrgService | updateOrgService |
-| GET | `/api/v1/orgs/{org_id}/setting` | getOrgSettings | getOrgSettings |
-| PUT | `/api/v1/orgs/{org_id}/setting` | updateOrgSettings | updateOrgSettings |
-| DELETE | `/api/v1/orgs/{org_id}/setting/blacklist` | deleteOrgClientsBlocklist | deleteOrgClientsBlocklist |
-| POST | `/api/v1/orgs/{org_id}/setting/blacklist` | createOrgClientsBlocklist | createOrgClientsBlocklist |
-| POST | `/api/v1/orgs/{org_id}/setting/cradlepoint/setup` | setupOrgCradlepointConnectionToMist | setupOrgCradlepointConnectionToMist |
-| POST | `/api/v1/orgs/{org_id}/setting/cradlepoint/sync` | syncOrgCradlepointRouters | syncOrgCradlepointRouters |
-| POST | `/api/v1/orgs/{org_id}/setting/juniper/link_accounts` | linkOrgToJuniperJuniperAccount | linkOrgToJuniperJuniperAccount |
-| DELETE | `/api/v1/orgs/{org_id}/setting/juniper/linked_account` | unlinkOrgFromJuniperCustomerId | unlinkOrgFromJuniperCustomerId |
-| POST | `/api/v1/orgs/{org_id}/setting/pcap_bucket/setup` | setOrgCustomBucket | setOrgCustomBucket |
-| POST | `/api/v1/orgs/{org_id}/setting/pcap_bucket/verify` | verifyOrgCustomBucket | verifyOrgCustomBucket |
-| POST | `/api/v1/orgs/{org_id}/setting/zscaler/setup` | setupOrgZscalerCredential | setupOrgZscalerCredential |
-| DELETE | `/api/v1/orgs/{org_id}/setting/{app_name}/link` | deleteOrgOauthAppAuthorization_deprecated | deleteOrgOauthAppAuthorization |
-| GET | `/api/v1/orgs/{org_id}/setting/{app_name}/link` | getOrgOauthAppLinkedStatus_deprecated | getOrgOauthAppLinkedStatusAndUrl_deprecated |
-| DELETE | `/api/v1/orgs/{org_id}/setting/{app_name}/link_accounts` | deleteOrgOauthAppAuthorization | deleteOrgOauthAppAuthorization |
-| GET | `/api/v1/orgs/{org_id}/setting/{app_name}/link_accounts` | getOrgOauthAppLinkedStatus | getOrgOauthAppLinkedStatusAndUrl |
-| GET | `/api/v1/orgs/{org_id}/sitegroups` | getOrgSiteGroups | getOrgSiteGroups |
-| POST | `/api/v1/orgs/{org_id}/sitegroups` | createOrgSiteGroup | createOrgSiteGroup |
-| DELETE | `/api/v1/orgs/{org_id}/sitegroups/{sitegroup_id}` | deleteOrgSiteGroup | deleteOrgSiteGroup |
-| GET | `/api/v1/orgs/{org_id}/sitegroups/{sitegroup_id}` | getOrgSiteGroup | getOrgSiteGroup |
-| PUT | `/api/v1/orgs/{org_id}/sitegroups/{sitegroup_id}` | updateOrgSiteGroup | updateOrgSiteGroup |
-| GET | `/api/v1/orgs/{org_id}/sites` | getOrgSites | getOrgSites |
-| POST | `/api/v1/orgs/{org_id}/sites` | createOrgSite | createOrgSite |
-| GET | `/api/v1/orgs/{org_id}/sites/count` | countOrgSites | countOrgSites |
-| GET | `/api/v1/orgs/{org_id}/sites/search` | searchOrgSites | searchOrgSites |
-| POST | `/api/v1/orgs/{org_id}/sites/{site_name}/maps/import` | importOrgMapToSite | importOrgMapToSite |
-| GET | `/api/v1/orgs/{org_id}/sitetemplates` | getOrgSiteTemplates | getOrgSiteTemplates |
-| POST | `/api/v1/orgs/{org_id}/sitetemplates` | createOrgSiteTemplates | createOrgSiteTemplates |
-| DELETE | `/api/v1/orgs/{org_id}/sitetemplates/{sitetemplate_id}` | deleteOrgSiteTemplate | deleteOrgSiteTemplate |
-| GET | `/api/v1/orgs/{org_id}/sitetemplates/{sitetemplate_id}` | getOrgSiteTemplate | getOrgSiteTemplate |
-| PUT | `/api/v1/orgs/{org_id}/sitetemplates/{sitetemplate_id}` | updateOrgSiteTemplate | updateOrgSiteTemplate |
-| GET | `/api/v1/orgs/{org_id}/ssoroles` | getOrgSsoRoles | getOrgSsoRoles |
-| POST | `/api/v1/orgs/{org_id}/ssoroles` | createOrgSsoRole | createOrgSsoRole |
-| DELETE | `/api/v1/orgs/{org_id}/ssoroles/{ssorole_id}` | deleteOrgSsoRole | deleteOrgSsoRole |
-| GET | `/api/v1/orgs/{org_id}/ssoroles/{ssorole_id}` | getOrgSsoRole | getOrgSsoRole |
-| PUT | `/api/v1/orgs/{org_id}/ssoroles/{ssorole_id}` | updateOrgSsoRole | updateOrgSsoRole |
-| GET | `/api/v1/orgs/{org_id}/ssos` | getOrgSsos | getOrgSsos |
-| POST | `/api/v1/orgs/{org_id}/ssos` | createOrgSso | createOrgSso |
-| DELETE | `/api/v1/orgs/{org_id}/ssos/{sso_id}` | deleteOrgSso | deleteOrgSso |
-| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}` | getOrgSso | getOrgSso |
-| PUT | `/api/v1/orgs/{org_id}/ssos/{sso_id}` | updateOrgSso | updateOrgSso |
-| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}/failures` | getOrgSsoLatestFailures | getOrgSsoLatestFailures |
-| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}/metadata` | getOrgSsoSamlMetadata | getOrgSsoSamlMetadata |
-| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}/metadata.xml` | downloadOrgSsoSamlMetadata | downloadOrgSsoSamlMetadata |
-| GET | `/api/v1/orgs/{org_id}/ssr/upgrade` | getOrgSsrUpgrades | getOrgSsrUpgrades |
-| POST | `/api/v1/orgs/{org_id}/ssr/upgrade` | upgradeOrgSsrs | upgradeOrgSsrs |
-| POST | `/api/v1/orgs/{org_id}/ssr/upgrade/{upgrade_id}/cancel` | cancelOrgSsrUpgrade | cancelOrgSsrUpgrade |
-| GET | `/api/v1/orgs/{org_id}/ssr/versions` | getOrgSsrUpgradeInfo | getOrgSsrUpgradeInfo |
-| GET | `/api/v1/orgs/{org_id}/stats` | getOrgStats | getOrgStats |
-| GET | `/api/v1/orgs/{org_id}/stats/assets` | getOrgAssetsStats | getOrgAssetsStats |
-| GET | `/api/v1/orgs/{org_id}/stats/assets/count` | countOrgAssetsByDistanceField | countOrgAssetsByDistanceField |
-| GET | `/api/v1/orgs/{org_id}/stats/assets/search` | searchOrgAssets | searchOrgAssets |
-| GET | `/api/v1/orgs/{org_id}/stats/bgp_peers/count` | countOrgBgpStats | countOrgBgpStats |
-| GET | `/api/v1/orgs/{org_id}/stats/bgp_peers/search` | searchOrgBgpStats | searchOrgBgpStats |
-| GET | `/api/v1/orgs/{org_id}/stats/devices` | getOrgDevicesStats | getOrgDevicesStats |
-| GET | `/api/v1/orgs/{org_id}/stats/mxedges` | getOrgMxEdgesStats | getOrgMxEdgesStats |
-| GET | `/api/v1/orgs/{org_id}/stats/mxedges/{mxedge_id}` | getOrgMxEdgeStats | getOrgMxEdgeStats |
-| GET | `/api/v1/orgs/{org_id}/stats/otherdevices/{device_mac}` | getOrgOtherDeviceStats | getOrgOtherDeviceStats |
-| GET | `/api/v1/orgs/{org_id}/stats/ports/search` | searchOrgSwOrGwPorts | searchOrgSwOrGwPorts |
-| GET | `/api/v1/orgs/{org_id}/stats/switch_ports/count` | countOrgByDisctinctAttributesOfSwitchPorts | countOrgByDisctinctAttributesOfSwitchPorts |
-| GET | `/api/v1/orgs/{org_id}/stats/tunnels/count` | countOrgTunnelsStats | countOrgTunnelsStats |
-| GET | `/api/v1/orgs/{org_id}/stats/tunnels/search` | searchOrgTunnelsStats | searchOrgTunnelsStats |
-| GET | `/api/v1/orgs/{org_id}/stats/vpn_peers/count` | countOrgPeerPathStats | countOrgPeerPathStats |
-| GET | `/api/v1/orgs/{org_id}/stats/vpn_peers/search` | searchOrgPeerPathStats | searchOrgPeerPathStats |
-| DELETE | `/api/v1/orgs/{org_id}/subscriptions` | unsubscribeOrgAlarmsReports | unsubscribeOrgAlarmsReports |
-| POST | `/api/v1/orgs/{org_id}/subscriptions` | subscribeOrgAlarmsReports | subscribeOrgAlarmsReports |
-| GET | `/api/v1/orgs/{org_id}/templates` | getOrgTemplates | getOrgTemplates |
-| POST | `/api/v1/orgs/{org_id}/templates` | createOrgTemplate | createOrgTemplate |
-| DELETE | `/api/v1/orgs/{org_id}/templates/{template_id}` | deleteOrgTemplate | deleteOrgTemplate |
-| GET | `/api/v1/orgs/{org_id}/templates/{template_id}` | getOrgTemplate | getOrgTemplate |
-| PUT | `/api/v1/orgs/{org_id}/templates/{template_id}` | updateOrgTemplate | updateOrgTemplate |
-| POST | `/api/v1/orgs/{org_id}/templates/{template_id}/clone` | cloneOrgTemplate | cloneOrgTemplate |
-| GET | `/api/v1/orgs/{org_id}/tickets` | getOrgTickets | getOrgTickets |
-| POST | `/api/v1/orgs/{org_id}/tickets` | createOrgTicket | createOrgTicket |
-| GET | `/api/v1/orgs/{org_id}/tickets/count` | countOrgTickets | countOrgTickets |
-| GET | `/api/v1/orgs/{org_id}/tickets/{ticket_id}` | getOrgTicket | getOrgTicket |
-| PUT | `/api/v1/orgs/{org_id}/tickets/{ticket_id}` | updateOrgTicket | updateOrgTicket |
-| POST | `/api/v1/orgs/{org_id}/tickets/{ticket_id}/comments` | addOrgTicketComment | addOrgTicketComment |
-| GET | `/api/v1/orgs/{org_id}/troubleshoot` | troubleshootOrgClient | troubleshootOrgClient |
-| GET | `/api/v1/orgs/{org_id}/vpns` | getOrgsVpns | getOrgsVpns |
-| POST | `/api/v1/orgs/{org_id}/vpns` | createOrgVpns | createOrgVpns |
-| DELETE | `/api/v1/orgs/{org_id}/vpns/{vpn_id}` | deleteOrgVpn | deleteOrgVpn |
-| GET | `/api/v1/orgs/{org_id}/vpns/{vpn_id}` | getOrgVpn | getOrgVpn |
-| PUT | `/api/v1/orgs/{org_id}/vpns/{vpn_id}` | updateOrgVpn | updateOrgVpn |
-| GET | `/api/v1/orgs/{org_id}/webhooks` | getOrgWebhooks | getOrgWebhooks |
-| POST | `/api/v1/orgs/{org_id}/webhooks` | createOrgWebhook | createOrgWebhook |
-| DELETE | `/api/v1/orgs/{org_id}/webhooks/{webhook_id}` | deleteOrgWebhook | deleteOrgWebhook |
-| GET | `/api/v1/orgs/{org_id}/webhooks/{webhook_id}` | getOrgWebhook | getOrgWebhook |
-| PUT | `/api/v1/orgs/{org_id}/webhooks/{webhook_id}` | updateOrgWebhook | updateOrgWebhook |
-| GET | `/api/v1/orgs/{org_id}/wired_clients/count` | countOrgClientsWired | countOrgClientsWired |
-| GET | `/api/v1/orgs/{org_id}/wired_clients/search` | searchOrgClientsWired | searchOrgClientsWired |
-| GET | `/api/v1/orgs/{org_id}/wlans` | getOrgWlans | getOrgWlans |
-| POST | `/api/v1/orgs/{org_id}/wlans` | createOrgWlan | createOrgWlan |
-| GET | `/api/v1/orgs/{org_id}/wlans/derived` | getOrgWlanDerived | getOrgWlanDerived |
-| DELETE | `/api/v1/orgs/{org_id}/wlans/{wlan_id}` | deleteOrgWlan | deleteOrgWlan |
-| GET | `/api/v1/orgs/{org_id}/wlans/{wlan_id}` | getOrgWLAN | getOrgWLAN |
-| PUT | `/api/v1/orgs/{org_id}/wlans/{wlan_id}` | updateOrgWlan | updateOrgWlan |
-| DELETE | `/api/v1/orgs/{org_id}/wlans/{wlan_id}/portal_image` | deleteOrgWlanPortalImage | deleteOrgWlanPortalImage |
-| POST | `/api/v1/orgs/{org_id}/wlans/{wlan_id}/portal_image` | uploadOrgWlanPortalImage | uploadOrgWlanPortalImage |
-| PUT | `/api/v1/orgs/{org_id}/wlans/{wlan_id}/portal_template` | updateOrgWlanPortalTemplate | updateOrgWlanPortalTemplate |
-| GET | `/api/v1/orgs/{org_id}/wxrules` | getOrgWxRules | getOrgWxRules |
-| POST | `/api/v1/orgs/{org_id}/wxrules` | createOrgWxRule | createOrgWxRule |
-| GET | `/api/v1/orgs/{org_id}/wxrules/derived` | getOrgWxRulesDerived | getOrgWxRulesDerived |
-| DELETE | `/api/v1/orgs/{org_id}/wxrules/{wxrules_id}` | deleteOrgWxRule | deleteOrgWxRule |
-| GET | `/api/v1/orgs/{org_id}/wxrules/{wxrules_id}` | getOrgWxRule | getOrgWxRule |
-| PUT | `/api/v1/orgs/{org_id}/wxrules/{wxrules_id}` | updateOrgWxRule | updateOrgWxRule |
-| GET | `/api/v1/orgs/{org_id}/wxtags` | getOrgWxTags | getOrgWxTags |
-| POST | `/api/v1/orgs/{org_id}/wxtags` | createOrgWxTag | createOrgWxTag |
-| GET | `/api/v1/orgs/{org_id}/wxtags/apps` | getOrgApplicationList | getOrgApplicationList |
-| DELETE | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}` | deleteOrgWxTag | deleteOrgWxTag |
-| GET | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}` | getOrgWxTag | getOrgWxTag |
-| PUT | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}` | updateOrgWxTag | updateOrgWxTag |
-| GET | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}/clients` | getOrgCurrentMatchingClientsOfAWxTag | getOrgCurrentMatchingClientsOfAWxTag |
-| GET | `/api/v1/orgs/{org_id}/wxtunnels` | getOrgWxTunnels | getOrgWxTunnels |
-| POST | `/api/v1/orgs/{org_id}/wxtunnels` | createOrgWxTunnel | createOrgWxTunnel |
-| DELETE | `/api/v1/orgs/{org_id}/wxtunnels/{wxtunnel_id}` | deleteOrgWxTunnel | deleteOrgWxTunnel |
-| GET | `/api/v1/orgs/{org_id}/wxtunnels/{wxtunnel_id}` | getOrgWxTunnel | getOrgWxTunnel |
-| PUT | `/api/v1/orgs/{org_id}/wxtunnels/{wxtunnel_id}` | updateOrgWxTunnel | updateOrgWxTunnel |
-| POST | `/api/v1/recover` | recoverPassword | recoverPassword |
-| POST | `/api/v1/recover/verify/{token}` | verifyRecoverPasssword | verifyRecoverPasssword |
-| POST | `/api/v1/register` | registerNewAdmin | registerNewAdmin |
-| POST | `/api/v1/register/verify/{token}` | verifyRegistration | verifyRegistration |
-| DELETE | `/api/v1/self` | deleteSelf | deleteSelf |
-| GET | `/api/v1/self` | getSelf | getSelf |
-| PUT | `/api/v1/self` | updateSelf | updateSelf |
-| GET | `/api/v1/self/apitokens` | getApiTokens | getApiTokens |
-| POST | `/api/v1/self/apitokens` | createApiToken | createApiToken |
-| DELETE | `/api/v1/self/apitokens/{apitoken_id}` | deleteApiToken | deleteApiToken |
-| GET | `/api/v1/self/logs` | getSelfAuditLogs | getSelfAuditLogs |
-| GET | `/api/v1/self/oauth/{provider}` | getOAuth2UrlForLinking | getOAuth2UrlForLinking |
-| POST | `/api/v1/self/oauth/{provider}` | linkOAuth2MistAccount | linkOAuth2MistAccount |
-| GET | `/api/v1/self/subscriptions` | getAlarmSubscriptions | getAlarmSubscriptions |
-| GET | `/api/v1/self/two_factor/token` | generateQrCodeForVerification | generateQrCodeForVerification |
-| POST | `/api/v1/self/two_factor/verify` | verifyTwoFactor | verifyTwoFactor |
-| POST | `/api/v1/self/update` | updateSelfEmail | updateSelfEmail |
-| GET | `/api/v1/self/update/verify/{token}` | verifySelfEmail | verifySelfEmail |
-| DELETE | `/api/v1/sites/{site_id}` | deleteSite | deleteSite |
-| GET | `/api/v1/sites/{site_id}` | getSiteInfo | getSiteInfo |
-| PUT | `/api/v1/sites/{site_id}` | updateSiteInfo | updateSiteInfo |
-| POST | `/api/v1/sites/{site_id}/alarms/ack` | multiAckSiteAlarms | multiAckSiteAlarms |
-| POST | `/api/v1/sites/{site_id}/alarms/ack_all` | ackSiteAllAlarms | ackSiteAllAlarms |
-| GET | `/api/v1/sites/{site_id}/alarms/count` | countSiteAlarms | countSiteAlarms |
-| GET | `/api/v1/sites/{site_id}/alarms/search` | searchSiteAlarms | searchSiteAlarms |
-| POST | `/api/v1/sites/{site_id}/alarms/unack` | multiUnackSiteAlarms | multiUnackSiteAlarms |
-| POST | `/api/v1/sites/{site_id}/alarms/unack_all` | unackSiteAllArlarms | unackSiteAllArlarms |
-| POST | `/api/v1/sites/{site_id}/alarms/{alarm_id}/ack` | ackSiteAlarm | ackSiteAlarm |
-| POST | `/api/v1/sites/{site_id}/alarms/{alarm_id}/unack` | unackSiteAlarm | unackSiteAlarm |
-| GET | `/api/v1/sites/{site_id}/anomaly/client/{client_mac}/{metric}` | getSiteAnomalyEventsForClient | getSiteAnomalyEventsForClient |
-| GET | `/api/v1/sites/{site_id}/anomaly/device/{device_mac}/{metric}` | getSiteAnomalyEventsforDevice | getSiteAnomalyEventsforDevice |
-| GET | `/api/v1/sites/{site_id}/anomaly/{metric}` | getSiteAnomalyEvents | getSiteAnomalyEvents |
-| GET | `/api/v1/sites/{site_id}/apps` | getSiteApps | getSiteApps |
-| GET | `/api/v1/sites/{site_id}/assetfilters` | getSiteAssetFilters | getSiteAssetFilters |
-| POST | `/api/v1/sites/{site_id}/assetfilters` | createSiteAssetFilters | createSiteAssetFilters |
-| DELETE | `/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}` | deleteSiteAssetFilter | deleteSiteAssetFilter |
-| GET | `/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}` | getSiteAssetFilter | getSiteAssetFilter |
-| PUT | `/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}` | updateSiteAssetFilter | updateSiteAssetFilter |
-| GET | `/api/v1/sites/{site_id}/assets` | getSiteAssets | getSiteAssets |
-| POST | `/api/v1/sites/{site_id}/assets` | createSiteAsset | createSiteAsset |
-| POST | `/api/v1/sites/{site_id}/assets/import` | importSiteAssets | importSiteAssets |
-| DELETE | `/api/v1/sites/{site_id}/assets/{asset_id}` | deleteSiteAsset | deleteSiteAsset |
-| GET | `/api/v1/sites/{site_id}/assets/{asset_id}` | getSiteAsset | getSiteAsset |
-| PUT | `/api/v1/sites/{site_id}/assets/{asset_id}` | updateSiteAsset | updateSiteAsset |
-| GET | `/api/v1/sites/{site_id}/beacons` | getSiteBeacons | getSiteBeacons |
-| POST | `/api/v1/sites/{site_id}/beacons` | createSiteBeacon | createSiteBeacon |
-| DELETE | `/api/v1/sites/{site_id}/beacons/{beacon_id}` | deleteSiteBeacons | deleteSiteBeacons |
-| GET | `/api/v1/sites/{site_id}/beacons/{beacon_id}` | getSiteBeacon | getSiteBeacon |
-| PUT | `/api/v1/sites/{site_id}/beacons/{beacon_id}` | updateSiteBeacons | updateSiteBeacons |
-| GET | `/api/v1/sites/{site_id}/call/events/count` | countSiteCallEvents | countSiteCallEvents |
-| GET | `/api/v1/sites/{site_id}/call/events/search` | searchSiteCallEvents | searchSiteCallEvents |
-| GET | `/api/v1/sites/{site_id}/clients/count` | countSiteByDistinctAttributesOfClients | countSiteByDistinctAttributesOfClients |
-| POST | `/api/v1/sites/{site_id}/clients/disconnect` | disconnectSiteMultipleClients | disconnectSiteMultipleClients |
-| GET | `/api/v1/sites/{site_id}/clients/events/count` | countSiteByDistinctAttributesOfClientsEvents | countSiteByDistinctAttributesOfClientsEvents |
-| GET | `/api/v1/sites/{site_id}/clients/events/search` | searchSiteClientsEvents | searchSiteClientsEvents |
-| GET | `/api/v1/sites/{site_id}/clients/search` | searchSiteClientsWireless | searchSiteClientsWireless |
-| GET | `/api/v1/sites/{site_id}/clients/sessions/count` | countSiteByDistinctAttributesOfClientSessions | countSiteByDistinctAttributesOfClientSessions |
-| GET | `/api/v1/sites/{site_id}/clients/sessions/search` | searchSiteClientWirelessSessions | searchSiteClientWirelessSessions |
-| POST | `/api/v1/sites/{site_id}/clients/unauthorize` | unauthorizeSiteMultipleClients | unauthorizeSiteMultipleClients |
-| POST | `/api/v1/sites/{site_id}/clients/{client_mac}/disconnect` | disconnectSiteClient | disconnectSiteClient |
-| GET | `/api/v1/sites/{site_id}/clients/{client_mac}/events` | getSiteEventsForClient | getSiteEventsForClient |
-| POST | `/api/v1/sites/{site_id}/clients/{client_mac}/unauthorize` | unauthorizeSiteClient | unauthorizeSiteClient |
-| GET | `/api/v1/sites/{site_id}/devices` | getSiteDevices | getSiteDevices |
-| POST | `/api/v1/sites/{site_id}/devices` | createSiteDevice | createSiteDevice |
-| GET | `/api/v1/sites/{site_id}/devices/ap_channels` | getSiteDeviceRadioChannels | getSiteDeviceRadioChannels |
-| GET | `/api/v1/sites/{site_id}/devices/config_history/count` | countSiteDeviceConfigHistory | countSiteDeviceConfigHistory |
-| GET | `/api/v1/sites/{site_id}/devices/config_history/search` | searchSiteDeviceConfigHistory | searchSiteDeviceConfigHistory |
-| GET | `/api/v1/sites/{site_id}/devices/count` | countSiteDevices | countSiteDevices |
-| GET | `/api/v1/sites/{site_id}/devices/events/count` | countSiteDeviceEvents | countSiteDeviceEvents |
-| GET | `/api/v1/sites/{site_id}/devices/events/search` | searchSiteDevicesEvents | searchSiteDevicesEvents |
-| GET | `/api/v1/sites/{site_id}/devices/export` | exportSiteDevices | exportSiteDevices |
-| POST | `/api/v1/sites/{site_id}/devices/import` | importSiteDevices | importSiteDevices |
-| GET | `/api/v1/sites/{site_id}/devices/last_config/count` | countSiteDeviceLastConfig | countSiteDeviceLastConfig |
-| GET | `/api/v1/sites/{site_id}/devices/last_config/search` | searchSiteDeviceLastConfigs | searchSiteDeviceLastConfigs |
-| POST | `/api/v1/sites/{site_id}/devices/reprovision` | reprovisionSiteAllAps | reprovisionSiteAllAps |
-| POST | `/api/v1/sites/{site_id}/devices/reset_radio_config` | resetSiteAllApsToUseRrm | resetSiteAllApsToUseRrm |
-| POST | `/api/v1/sites/{site_id}/devices/restart` | multiRestartSiteDevices | multiRestartSiteDevices |
-| GET | `/api/v1/sites/{site_id}/devices/search` | searchSiteDevices | searchSiteDevices |
-| GET | `/api/v1/sites/{site_id}/devices/upgrade` | getSiteDevicesUpgrade | getSiteDevicesUpgrade |
-| POST | `/api/v1/sites/{site_id}/devices/upgrade` | multiUpgradeSiteDevices | multiUpgradeSiteDevices |
-| GET | `/api/v1/sites/{site_id}/devices/upgrade/{upgrade_id}` | getSiteUpgrade | getSiteUpgrade |
-| POST | `/api/v1/sites/{site_id}/devices/upgrade/{upgrade_id}/cancel` | cancelSiteDeviceUpgrade | cancelSiteDeviceUpgrade |
-| GET | `/api/v1/sites/{site_id}/devices/versions` | getSiteAvailableDeviceVersions | getSiteAvailableDeviceVersions |
-| POST | `/api/v1/sites/{site_id}/devices/zerioze` | zeroizeSiteFipsAllAps | zeroizeSiteFipsAllAps |
-| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}` | deleteSiteDevice | deleteSiteDevice |
-| GET | `/api/v1/sites/{site_id}/devices/{device_id}` | getSiteDevice | getSiteDevice |
-| PUT | `/api/v1/sites/{site_id}/devices/{device_id}` | updateSiteDevice | updateSiteDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/arp` | arpFromDevice | arpFromDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/bounce_port` | portsBounceFromSwitch | portsBounceFromSwitch |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/cable_test` | cableTestFromSwitch | cableTestFromSwitch |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/check_radius_server` | startSiteSwitchRadiusSyntheticTest | triggerSiteSwitchRadiusSyntheticTest |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_arp` | clearSiteSsrArpCache | clearSiteSsrArpCache |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_bgp` | clearSiteSsrBgpRoutes | clearSiteSsrBgpRoutes |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_bpdu_error` | clearBpduErrosFromPortsOnSwitch | clearBpduErrosFromPortsOnSwitch |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_macs` | clearAllLearnedMacsFromPortOnSwitch | clearAllLearnedMacsFromPortOnSwitch |
-| GET | `/api/v1/sites/{site_id}/devices/{device_id}/config_cmd` | getSiteDeviceConfigCmd | getSiteDeviceConfigCmd |
-| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/ha` | deleteSiteDeviceHaCluster | deleteSiteDeviceHaCluster |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/ha` | createSiteDeviceHaCluster | createSiteDeviceHaCluster |
-| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/ha` | swapSiteDeviceHaClusterNode | swapSiteDeviceHaClusterNode |
-| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/image{image_number}` | deleteSiteDeviceImage | deleteSiteDeviceImage |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/image{image_number}` | addSiteDeviceImage | addSiteDeviceImage |
-| GET | `/api/v1/sites/{site_id}/devices/{device_id}/iot` | getSiteDeviceIotPort | getSiteDeviceIotPort |
-| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/iot` | setSiteDeviceIotPort | setSiteDeviceIotPort |
-| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/local_port_config` | deleteSiteLocalSwitchPortConfig | deleteSiteLocalSwitchPortConfig |
-| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/local_port_config` | updateSiteLocalSwitchPortConfig | updateSiteLocalSwitchPortConfig |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/locate` | startSiteLocateDevice | startSiteLocateDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/ping` | pingFromDevice | pingFromDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/poll_stats` | pollSiteSwitchStats | pollSiteSwitchStats |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/release_dhcp` | releaseSiteSsrDhcpLease | releaseSiteSsrDhcpLease |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/request_ztp_password` | getSiteDeviceZtpPassword | getSiteDeviceZtpPassword |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/resolve_dns` | testSiteSsrDnsResolution | testSiteSsrDnsResolution |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/restart` | restartSiteDevice | restartSiteDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/service_ping` | servicePingFromSsr | servicePingFromSsr |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/show_route` | getSiteSsrAndSrxRoutes | getSiteSsrAndSrxRoutes |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/show_session` | getSiteSsrAndSrxSessions | getSiteSsrAndSrxSessions |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/snapshot` | createSiteDeviceSnapshot | createSiteDeviceSnapshot |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/support` | uploadSiteDeviceSupportFile | uploadSiteDeviceSupportFile |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/synthetic_test` | StartSiteDeviceSyntheticTest | triggerSiteDeviceSyntheticTest |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/traceroute` | tracerouteFromDevice | tracerouteFromDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/unlocate` | stopSiteLocateDevice | stopSiteLocateDevice |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/upgrade` | upgradeSiteDevice | upgradeSiteDevice |
-| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | deleteSiteVirtualChassis | deleteSiteVirtualChassis |
-| GET | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | getSiteVirtualChassis | getSiteVirtualChassis |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | createSiteVirtualChassis | createSiteVirtualChassis |
-| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | updateSiteVirtualChassisMember | updateSiteVirtualChassisMember |
-| POST | `/api/v1/sites/{site_id}/devices/{device_id}/vc/vc_port` | setSiteVcPort | setSiteVcPort |
-| GET | `/api/v1/sites/{site_id}/events/fast_roam` | getSiteRoamingEvents | getSiteRoamingEvents |
-| GET | `/api/v1/sites/{site_id}/events/interference` | getSiteInterferenceEvents | getSiteInterferenceEvents |
-| GET | `/api/v1/sites/{site_id}/events/system/count` | countSiteSystemEvents | countSiteSystemEvents |
-| GET | `/api/v1/sites/{site_id}/events/system/search` | searchSiteSystemEvents | searchSiteSystemEvents |
-| GET | `/api/v1/sites/{site_id}/evpn_topologies` | getSiteEvpnTopologies | getSiteEvpnTopologies |
-| POST | `/api/v1/sites/{site_id}/evpn_topologies` | createSiteEvpnTopology | createSiteEvpnTopology |
-| DELETE | `/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}` | deleteSiteEvpnTopology | deleteSiteEvpnTopology |
-| GET | `/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}` | getSiteEvpnTolopogy | getSiteEvpnTolopogy |
-| PUT | `/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}` | updateSiteEvpnTopology | updateSiteEvpnTopology |
-| GET | `/api/v1/sites/{site_id}/guests` | getSiteAllGuestAuthorizations | getSiteAllGuestAuthorizations |
-| GET | `/api/v1/sites/{site_id}/guests/count` | countSiteGuestAuthorizations | countSiteGuestAuthorizations |
-| GET | `/api/v1/sites/{site_id}/guests/search` | searchSiteGuestAuthorization | searchSiteGuestAuthorization |
-| DELETE | `/api/v1/sites/{site_id}/guests/{guest_mac}` | deleteSiteGuestAuthorization | deleteSiteGuestAuthorization |
-| GET | `/api/v1/sites/{site_id}/guests/{guest_mac}` | getSiteGuestAuthorization | getSiteGuestAuthorization |
-| PUT | `/api/v1/sites/{site_id}/guests/{guest_mac}` | updateSiteGuestAuthorization | updateSiteGuestAuthorization |
-| GET | `/api/v1/sites/{site_id}/insights/client/{client_mac}/{metric}` | getSiteInsightMetricsForClient | getSiteInsightMetricsForClient |
-| GET | `/api/v1/sites/{site_id}/insights/device/{device_mac}/{metric}` | getSiteInsightMetricsForDevice | getSiteInsightMetricsForDevice |
-| GET | `/api/v1/sites/{site_id}/insights/rogues` | getSiteRogueAPs | getSiteRogueAPs |
-| GET | `/api/v1/sites/{site_id}/insights/rogues/clients` | getSiteRogueClients | getSiteRogueClients |
-| GET | `/api/v1/sites/{site_id}/insights/{metric}` | getSiteInsightMetrics | getSiteInsightMetrics |
-| GET | `/api/v1/sites/{site_id}/licenses/usages` | getSiteLicenseUsage | getSiteLicenseUsage |
-| GET | `/api/v1/sites/{site_id}/location/coverage` | getSiteBeamCoverageOverview | getSiteBeamCoverageOverview |
-| GET | `/api/v1/sites/{site_id}/location/ml/current` | getSiteMachineLearningCurrentStat | getSiteMachineLearningCurrentStat |
-| GET | `/api/v1/sites/{site_id}/location/ml/defaults` | getSiteDefaultPlfForModels | getSiteDefaultPlfForModels |
-| DELETE | `/api/v1/sites/{site_id}/location/ml/device/{device_id}` | clearSiteMlOverwriteForDevice | clearSiteMlOverwriteForDevice |
-| PUT | `/api/v1/sites/{site_id}/location/ml/device/{device_id}` | overwriteSiteMlForDevice | overwriteSiteMlForDevice |
-| DELETE | `/api/v1/sites/{site_id}/location/ml/map/{map_id}` | clearSiteMlOverwriteForMap | clearSiteMlOverwriteForMap |
-| PUT | `/api/v1/sites/{site_id}/location/ml/map/{map_id}` | overwriteSiteMlForMap | overwriteSiteMlForMap |
-| POST | `/api/v1/sites/{site_id}/location/ml/reset/map/{map_id}` | resetSiteMlStatsByMap | resetSiteMlStatsByMap |
-| GET | `/api/v1/sites/{site_id}/location/ml/updates` | getSiteMachineLearningEvents | getSiteMachineLearningEvents |
-| GET | `/api/v1/sites/{site_id}/maps` | getSiteMaps | getSiteMaps |
-| POST | `/api/v1/sites/{site_id}/maps` | createSiteMap | createSiteMap |
-| POST | `/api/v1/sites/{site_id}/maps/import` | importSiteMaps | importSiteMaps |
-| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}` | deleteSiteMap | deleteSiteMap |
-| GET | `/api/v1/sites/{site_id}/maps/{map_id}` | getSiteMap | getSiteMap |
-| PUT | `/api/v1/sites/{site_id}/maps/{map_id}` | updateSiteMap | updateSiteMap |
-| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}/auto_orient` | deleteSiteApAutoOrientation | deleteSiteApAutoOrientation |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/auto_orient` | startSiteApAutoOrientation | startSiteApAutoOrientation |
-| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}/auto_placement` | deleteSiteApAutoplacement | deleteSiteApAutoplacement |
-| GET | `/api/v1/sites/{site_id}/maps/{map_id}/auto_placement` | getSiteApAutoPlacement | getSiteApAutoplacement |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/auto_placement` | runSiteApAutoplacement | runSiteApAutoplacement |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/clear_auto_orient` | clearSiteApAutoOrient | clearSiteApAutoOrient |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/clear_autoplacement` | clearSiteApAutoplacement | clearSiteApAutoplacement |
-| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}/image` | deleteSiteMapImage | deleteSiteMapImage |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/image` | addSiteMapImage | addSiteMapImage |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/replace` | replaceSiteMapImage | replaceSiteMapImage |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/revert_auto_orient` | revertSiteApAutoOrient | revertSiteApAutoOrient |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/revert_autoplacement` | revertSiteApAutoplacement | revertSiteApAutoplacement |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/set_map` | bulkAssignSiteApsToMap | bulkAssignSiteApsToMap |
-| POST | `/api/v1/sites/{site_id}/maps/{map_id}/wayfinding/import` | importSiteWayfindings | importSiteWayfindings |
-| GET | `/api/v1/sites/{site_id}/mxedges` | getSiteMxEdges | getSiteMxEdges |
-| POST | `/api/v1/sites/{site_id}/mxedges` | createSiteMxEdge | createSiteMxEdge |
-| DELETE | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}` | deleteSiteMxEdge | deleteSiteMxEdge |
-| GET | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}` | getSiteMxEdge | getSiteMxEdge |
-| PUT | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}` | updateSiteMxEdge | updateSiteMxEdge |
-| POST | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}/support` | uploadSiteMxEdgeSupportFiles | uploadSiteMxEdgeSupportFiles |
-| POST | `/api/v1/sites/{site_id}/mxtunnels/{mxtunnel_id}/preempt_aps` | preemptSitesMxTunnel | preemptSitesMxTunnel |
-| GET | `/api/v1/sites/{site_id}/otherdevices` | getSiteOtherDevices | getSiteOtherDevices |
-| GET | `/api/v1/sites/{site_id}/pcaps` | getSitePacketCaptures | getSitePacketCaptures |
-| DELETE | `/api/v1/sites/{site_id}/pcaps/capture` | stopSitePacketCapture | stopSitePacketCapture |
-| GET | `/api/v1/sites/{site_id}/pcaps/capture` | getSiteCapturingStatus | getSiteCapturingStatus |
-| POST | `/api/v1/sites/{site_id}/pcaps/capture` | startSitePacketCapture | startSitePacketCapture |
-| GET | `/api/v1/sites/{site_id}/psks` | getSitePsks | getSitePsks |
-| POST | `/api/v1/sites/{site_id}/psks` | createSitePsk | createSitePsk |
-| PUT | `/api/v1/sites/{site_id}/psks` | updateSitePsks | updateSitePsks |
-| POST | `/api/v1/sites/{site_id}/psks/import` | importSitePsks | importSitePsks |
-| DELETE | `/api/v1/sites/{site_id}/psks/{psk_id}` | deleteSitePsk | deleteSitePsk |
-| GET | `/api/v1/sites/{site_id}/psks/{psk_id}` | getSitePsk | getSitePsk |
-| PUT | `/api/v1/sites/{site_id}/psks/{psk_id}` | updateSitePsk | updateSitePsk |
-| GET | `/api/v1/sites/{site_id}/rfdiags` | getSiteSiteRfdiagRecording | getSiteSiteRfdiagRecording |
-| POST | `/api/v1/sites/{site_id}/rfdiags` | startSiteRecording | startSiteRecording |
-| DELETE | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}` | deleteSiteRfdiagRecording | deleteSiteRfdiagRecording |
-| GET | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}` | getSiteRfdiagRecording | getSiteRfdiagRecording |
-| PUT | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}` | updateSiteRfdiagRecording | updateSiteRfdiagRecording |
-| GET | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}/download` | downloadSiteRfdiagRecording | downloadSiteRfdiagRecording |
-| POST | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}/stop` | stopSiteRfdiagRecording | stopSiteRfdiagRecording |
-| GET | `/api/v1/sites/{site_id}/rogues/events/count` | countSiteRogueEvents | countSiteRogueEvents |
-| GET | `/api/v1/sites/{site_id}/rogues/events/search` | searchSiteRogueEvents | searchSiteRogueEvents |
-| GET | `/api/v1/sites/{site_id}/rogues/{rogue_bssid}` | getSiteRogueAP | getSiteRogueAP |
-| POST | `/api/v1/sites/{site_id}/rogues/{rogue_bssid}/deauth_clients` | deauthSiteClientsConnectedToARogue | deauthSiteClientsConnectedToARogue |
-| GET | `/api/v1/sites/{site_id}/rrm/current` | getSiteCurrentChannelPlanning | getSiteCurrentChannelPlanning |
-| GET | `/api/v1/sites/{site_id}/rrm/current/devices/{device_id}/band/{band}` | getSiteCurrentRrmConsiderationsForAnApOnASpecificBand | getSiteCurrentRrmConsiderationsForAnApOnASpecificBand |
-| GET | `/api/v1/sites/{site_id}/rrm/events` | getSiteRrmEvents | getSiteRrmEvents |
-| POST | `/api/v1/sites/{site_id}/rrm/optimize` | optimizeSiteRrm | optimizeSiteRrm |
-| GET | `/api/v1/sites/{site_id}/rssizones` | getSiteRssiZones | getSiteRssiZones |
-| POST | `/api/v1/sites/{site_id}/rssizones` | createSiteRssiZone | createSiteRssiZone |
-| DELETE | `/api/v1/sites/{site_id}/rssizones/{rssizone_id}` | deleteSiteRssiZone | deleteSiteRssiZone |
-| GET | `/api/v1/sites/{site_id}/rssizones/{rssizone_id}` | getSiteRssiZone | getSiteRssiZone |
-| PUT | `/api/v1/sites/{site_id}/rssizones/{rssizone_id}` | updateSiteRssiZone | updateSiteRssiZone |
-| GET | `/api/v1/sites/{site_id}/setting` | getSiteSetting | getSiteSetting |
-| PUT | `/api/v1/sites/{site_id}/setting` | updateSiteSettings | updateSiteSettings |
-| DELETE | `/api/v1/sites/{site_id}/setting/blacklist` | deleteSiteClientsBlocklist | deleteSiteClientsBlocklist |
-| POST | `/api/v1/sites/{site_id}/setting/blacklist` | createSiteClientsBlocklist | createSiteClientsBlocklist |
-| DELETE | `/api/v1/sites/{site_id}/setting/watched_station` | deleteSiteWatchedStations | deleteSiteWatchedStations |
-| POST | `/api/v1/sites/{site_id}/setting/watched_station` | createSiteWatchedStations | createSiteWatchedStations |
-| DELETE | `/api/v1/sites/{site_id}/setting/whitelist` | deleteSiteClientsAllowlist | deleteSiteClientsAllowlist |
-| POST | `/api/v1/sites/{site_id}/setting/whitelist` | createSiteClientsAllowlist | createSiteClientsAllowlist |
-| GET | `/api/v1/sites/{site_id}/skyatp/events/count` | countSiteByDistringAttributesOfSkyatpEvents | countSiteByDistringAttributesOfSkyatpEvents |
-| GET | `/api/v1/sites/{site_id}/skyatp/events/search` | searchSiteSkyatpEvents | searchSiteSkyatpEvents |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/classifier/{classifier}/summary` | getSiteSleClassifierDetails | getSiteSleClassifierDetails |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/classifiers` | getSiteSleMetricClassifiers | getSiteSleMetricClassifiers |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/histogram` | getSiteSleHistogram | getSiteSleHistogram |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impact-summary` | getSiteSleImpactSummary | getSiteSleImpactSummary |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-applications` | getSiteSleImpactedApplications | getSiteSleImpactedApplications |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-aps` | getSiteSleImpactedAps | getSiteSleImpactedAps |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-chassis` | getSiteSleImpactedChassis | getSiteSleImpactedChassis |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-clients` | getSiteSleImpactedWiredClients | getSiteSleImpactedWiredClients |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-gateways` | getSiteSleImpactedGateways | getSiteSleImpactedGateways |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-interfaces` | getSiteSleImpactedInterfaces | getSiteSleImpactedInterfaces |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-switches` | getSiteSleImpactedSwitches | getSiteSleImpactedSwitches |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-users` | getSiteSleImpactedWirelessClients | getSiteSleImpactedWirelessClients |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/summary` | getSiteSleSummary | getSiteSleSummary |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/threshold` | getSiteSleThreshold | getSiteSleThreshold |
-| POST | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/threshold` | replaceSiteSleThreshold | replaceSiteSleThreshold |
-| PUT | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/threshold` | updateSiteSleThreshold | updateSiteSleThreshold |
-| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metrics` | getSiteSlesMetrics | getSiteSlesMetrics |
-| GET | `/api/v1/sites/{site_id}/ssr/upgrade/{upgrade_id}` | getSiteSsrUpgrade | getSiteSsrUpgrade |
-| POST | `/api/v1/sites/{site_id}/ssr/{device_id}/upgrade` | upgradeSiteSsr | upgradeSiteSsr |
-| GET | `/api/v1/sites/{site_id}/stats` | getSiteStats | getSiteStats |
-| GET | `/api/v1/sites/{site_id}/stats/apps/count` | countSiteApps | countSiteApps |
-| GET | `/api/v1/sites/{site_id}/stats/assets` | getSiteAssetsStats | getSiteAssetsStats |
-| GET | `/api/v1/sites/{site_id}/stats/assets/asset_id` | getSiteAssetStats | getSiteAssetStats |
-| GET | `/api/v1/sites/{site_id}/stats/assets/count` | countSiteAssets | countSiteAssets |
-| GET | `/api/v1/sites/{site_id}/stats/assets/search` | searchSiteAssets | searchSiteAssets |
-| GET | `/api/v1/sites/{site_id}/stats/beacons` | getSiteBeaconsStats | getSiteBeaconsStats |
-| GET | `/api/v1/sites/{site_id}/stats/bgp_peers/count` | countSiteBgpStats | countSiteBgpStats |
-| GET | `/api/v1/sites/{site_id}/stats/bgp_peers/search` | searchSiteBgpStats | searchSiteBgpStats |
-| GET | `/api/v1/sites/{site_id}/stats/calls/count` | countSiteCalls | countSiteCalls |
-| GET | `/api/v1/sites/{site_id}/stats/calls/search` | searchSiteCalls | searchSiteCalls |
-| GET | `/api/v1/sites/{site_id}/stats/clients` | getSiteClientsStats | getSiteClientsStats |
-| GET | `/api/v1/sites/{site_id}/stats/clients/{client_mac}` | getSiteClientStats | getSiteClientStats |
-| GET | `/api/v1/sites/{site_id}/stats/devices` | getSiteDevicesStats | getSiteDevicesStats |
-| GET | `/api/v1/sites/{site_id}/stats/devices/{device_id}` | getSiteDeviceStats | getSiteDeviceStats |
-| GET | `/api/v1/sites/{site_id}/stats/devices/{device_id}/clients` | getSiteAllClientsStatsByDevice | getSiteAllClientsStatsByDevice |
-| GET | `/api/v1/sites/{site_id}/stats/discovered_assets` | getSiteDiscoveredAssets | getSiteDiscoveredAssets |
-| GET | `/api/v1/sites/{site_id}/stats/discovered_switch_metrics/search` | searchSiteDiscoveredSwitchesMetrics | searchSiteDiscoveredSwitchesMetrics |
-| GET | `/api/v1/sites/{site_id}/stats/discovered_switches/count` | countSiteDiscoveredSwitches | countSiteDiscoveredSwitches |
-| GET | `/api/v1/sites/{site_id}/stats/discovered_switches/metrics` | getSiteDiscoveredSwitchesMetrics | getSiteDiscoveredSwitchesMetrics |
-| GET | `/api/v1/sites/{site_id}/stats/discovered_switches/search` | searchSiteDiscoveredSwitches | searchSiteDiscoveredSwitches |
-| GET | `/api/v1/sites/{site_id}/stats/filtered_assets` | getSiteAssetsOfInterest | getSiteAssetsOfInterest |
-| GET | `/api/v1/sites/{site_id}/stats/gateways/metrics` | getSiteGatewayMetrics | getSiteGatewayMetrics |
-| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/clients` | getSiteClientsStatsByMap | getSiteClientsStatsByMap |
-| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/discovered_assets` | getSiteDiscoveredAssetByMap | getSiteDiscoveredAssetByMap |
-| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/sdkclients` | getSiteSdkStatsByMap | getSiteSdkStatsByMap |
-| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/unconnected_clients` | getSiteUnconnectedClientStats | getSiteUnconnectedClientStats |
-| GET | `/api/v1/sites/{site_id}/stats/mxedges` | getSiteMxEdgesStats | getSiteMxEdgesStats |
-| GET | `/api/v1/sites/{site_id}/stats/mxedges/{mxedge_id}` | getSiteMxEdgeStats | getSiteMxEdgeStats |
-| GET | `/api/v1/sites/{site_id}/stats/ports/count` | countSiteByDisctinctAttributesOPorts | countSiteByDisctinctAttributesOfSwitchPorts |
-| GET | `/api/v1/sites/{site_id}/stats/ports/search` | searchSiteSwOrGwPorts | searchSiteSwOrGwPorts |
-| GET | `/api/v1/sites/{site_id}/stats/sdkclients/{sdkclient_id}` | getSiteSdkStats | getSiteSdkStats |
-| GET | `/api/v1/sites/{site_id}/stats/switch_ports/count` | countSiteByDisctinctAttributesOfSwitchPorts | countSiteByDisctinctAttributesOfSwitchPorts |
-| GET | `/api/v1/sites/{site_id}/stats/switch_ports/search` | searchSiteSwitchPorts | searchSiteSwitchPorts |
-| GET | `/api/v1/sites/{site_id}/stats/switches/metrics` | getSiteAdoptedSwitchesComplianceMetrics | getSiteAdoptedSwitchesComplianceMetrics |
-| GET | `/api/v1/sites/{site_id}/stats/wxrules` | getSiteWxRulesUsage | getSiteWxRulesUsage |
-| GET | `/api/v1/sites/{site_id}/stats/zones` | getSiteZonesStats | getSiteZonesStats |
-| GET | `/api/v1/sites/{site_id}/stats/{zone_type}/{zone_id}` | getSiteZoneStats | getSiteZoneStats |
-| DELETE | `/api/v1/sites/{site_id}/subscriptions` | UnsubscribeSite | UnsubscribeSite |
-| POST | `/api/v1/sites/{site_id}/subscriptions` | SubscribeSite | SubscribeSite |
-| GET | `/api/v1/sites/{site_id}/synthetic_test` | getSiteSyntheticTestStatus | getSiteSyntheticTestStatus |
-| POST | `/api/v1/sites/{site_id}/synthetic_test` | triggerSiteSyntheticTest | triggerSiteSyntheticTest |
-| GET | `/api/v1/sites/{site_id}/uisettings` | getSiteCurdSettings | getSiteCurdSettings |
-| POST | `/api/v1/sites/{site_id}/uisettings` | createSiteCurdSettings | createSiteCurdSettings |
-| GET | `/api/v1/sites/{site_id}/uisettings/derived` | getSiteDerivedCurdSetting | getSiteDerivedCurdSetting |
-| DELETE | `/api/v1/sites/{site_id}/uisettings/{uisetting_id}` | deleteSiteCurdSetting | deleteSiteCurdSetting |
-| GET | `/api/v1/sites/{site_id}/uisettings/{uisetting_id}` | getSiteCurdSetting | getSiteCurdSetting |
-| POST | `/api/v1/sites/{site_id}/uisettings/{uisetting_id}` | updateSiteCurdSetting | updateSiteCurdSetting |
-| GET | `/api/v1/sites/{site_id}/vbeacons` | getSiteVBeacons | getSiteVBeacons |
-| POST | `/api/v1/sites/{site_id}/vbeacons` | createSiteVBeacon | createSiteVBeacon |
-| DELETE | `/api/v1/sites/{site_id}/vbeacons/{vbeacon_id}` | deleteSiteVBeacon | deleteSiteVBeacon |
-| GET | `/api/v1/sites/{site_id}/vbeacons/{vbeacon_id}` | getSiteVBeacon | getSiteVBeacon |
-| PUT | `/api/v1/sites/{site_id}/vbeacons/{vbeacon_id}` | updateSiteVBeacon | updateSiteVBeacon |
-| GET | `/api/v1/sites/{site_id}/webhooks` | getSiteWebhooks | getSiteWebhooks |
-| POST | `/api/v1/sites/{site_id}/webhooks` | createSiteWebhook | createSiteWebhook |
-| DELETE | `/api/v1/sites/{site_id}/webhooks/{webhook_id}` | deleteSiteWebhook | deleteSiteWebhook |
-| GET | `/api/v1/sites/{site_id}/webhooks/{webhook_id}` | getSiteWebhook | getSiteWebhook |
-| PUT | `/api/v1/sites/{site_id}/webhooks/{webhook_id}` | updateSiteWebhook | updateSiteWebhook |
-| POST | `/api/v1/sites/{site_id}/webhooks/{webhook_id}/ping` | pingSiteWebhook | pingSiteWebhook |
-| GET | `/api/v1/sites/{site_id}/wired_clients/count` | countSiteClientsWired | countSiteClientsWired |
-| GET | `/api/v1/sites/{site_id}/wired_clients/search` | searchSiteClientsWired | searchSiteClientsWired |
-| GET | `/api/v1/sites/{site_id}/wlans` | getSiteWlans | getSiteWlans |
-| POST | `/api/v1/sites/{site_id}/wlans` | createSiteWlan | createSiteWlan |
-| GET | `/api/v1/sites/{site_id}/wlans/derived` | getSiteWlanDerived | getSiteWlanDerived |
-| DELETE | `/api/v1/sites/{site_id}/wlans/{wlan_id}` | deleteSiteWlan | deleteSiteWlan |
-| GET | `/api/v1/sites/{site_id}/wlans/{wlan_id}` | getSiteWlan | getSiteWlan |
-| PUT | `/api/v1/sites/{site_id}/wlans/{wlan_id}` | updateSiteWlan | updateSiteWlan |
-| POST | `/api/v1/sites/{site_id}/wlans/{wlan_id}/portal_image` | uploadSiteWlanPortalImage | uploadSiteWlanPortalImage |
-| PUT | `/api/v1/sites/{site_id}/wlans/{wlan_id}/portal_template` | updateSiteWlanPortalTemplate | updateSiteWlanPortalTemplate |
-| GET | `/api/v1/sites/{site_id}/wxrules` | getSiteWxRules | getSiteWxRules |
-| POST | `/api/v1/sites/{site_id}/wxrules` | createSiteWxRule | createSiteWxRule |
-| GET | `/api/v1/sites/{site_id}/wxrules/derived` | getSiteWxRulesDerived | getSiteWxRulesDerived |
-| DELETE | `/api/v1/sites/{site_id}/wxrules/{wxrules_id}` | deleteSiteWxRule | deleteSiteWxRule |
-| GET | `/api/v1/sites/{site_id}/wxrules/{wxrules_id}` | getSiteWxRule | getSiteWxRule |
-| PUT | `/api/v1/sites/{site_id}/wxrules/{wxrules_id}` | updateSiteWxRule | updateSiteWxRule |
-| GET | `/api/v1/sites/{site_id}/wxtags` | getSiteWxTags | getSiteWxTags |
-| POST | `/api/v1/sites/{site_id}/wxtags` | createSiteWxTag | createSiteWxTag |
-| GET | `/api/v1/sites/{site_id}/wxtags/apps` | getSiteApplicationList | getSiteApplicationList |
-| DELETE | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}` | deleteSiteWxTag | deleteSiteWxTag |
-| GET | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}` | getSiteWxTag | getSiteWxTag |
-| PUT | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}` | updateSiteWxTag | updateSiteWxTag |
-| GET | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}/clients` | getSiteCurrentMatchingClientsOfAWxTag | getSiteCurrentMatchingClientsOfAWxTag |
-| GET | `/api/v1/sites/{site_id}/wxtunnels` | getSiteWxTunnels | getSiteWxTunnels |
-| POST | `/api/v1/sites/{site_id}/wxtunnels` | createSiteWxTunnel | createSiteWxTunnel |
-| DELETE | `/api/v1/sites/{site_id}/wxtunnels/{wxtunnel_id}` | deleteSiteWxTunnel | deleteSiteWxTunnel |
-| GET | `/api/v1/sites/{site_id}/wxtunnels/{wxtunnel_id}` | getSiteWxTunnel | getSiteWxTunnel |
-| PUT | `/api/v1/sites/{site_id}/wxtunnels/{wxtunnel_id}` | updateSiteWxTunnel | updateSiteWxTunnel |
-| GET | `/api/v1/sites/{site_id}/zones` | getSiteZones | getSiteZones |
-| POST | `/api/v1/sites/{site_id}/zones` | createSiteZone | createSiteZone |
-| DELETE | `/api/v1/sites/{site_id}/zones/{zone_id}` | deleteSiteZone | deleteSiteZone |
-| GET | `/api/v1/sites/{site_id}/zones/{zone_id}` | getSiteZone | getSiteZone |
-| PUT | `/api/v1/sites/{site_id}/zones/{zone_id}` | updateSiteZone | updateSiteZone |
-| GET | `/api/v1/sites/{site_id}/{zone_type}/count` | countSiteZoneSessions | countSiteZoneSessions |
-| GET | `/api/v1/sites/{site_id}/{zone_type}/visits/search` | searchSiteZoneSessions | searchSiteZoneSessions |
-| GET | `/api/v1/utils/test_telstra` | testSiteWlanTelstraSetup | testSiteWlanTelstraSetup |
-| POST | `/api/v1/utils/test_twilio` | testSiteWlanTwilioSetup | testSiteWlanTwilioSetup |
-| POST | `/webhook_example/_alarm_` | alarms | alarms |
-| POST | `/webhook_example/_asset_raw_` | assetRaw | assetRaw |
-| POST | `/webhook_example/_audit_` | audits | audits |
-| POST | `/webhook_example/_client_join_` | clientJoin | clientJoin |
-| POST | `/webhook_example/_client_sessions_` | clientSessions | clientSessions |
-| POST | `/webhook_example/_device_events_` | deviceEvents | deviceEvents |
-| POST | `/webhook_example/_device_updowns_` | deviceUpDown | deviceUpDown |
-| POST | `/webhook_example/_discovered_raw_rssi_` | discovered-raw-rssi | discovered-raw-rssi |
-| POST | `/webhook_example/_location_` | location | location |
-| POST | `/webhook_example/_occupancy_alerts_` | occupancyAlerts | occupancyAlerts |
-| POST | `/webhook_example/_ping_` | ping | ping |
-| POST | `/webhook_example/_sdkclient_scan_data` | sdkclientScanData | sdkclientScanData |
-| POST | `/webhook_example/_zone_` | zone | zone |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/const/alarm_defs` | getAlarmDefinitions | — | object[] | yes | getAlarmDefinitions |
+| GET | `/api/v1/const/ap_channels` | getApChannels | `country_code` | object | yes | getApChannels |
+| GET | `/api/v1/const/ap_led_status` | getApLedDefinition | — | object[] | yes | getApLedDefinition |
+| GET | `/api/v1/const/applications` | getApplications | — | object[] | yes | getApplications |
+| GET | `/api/v1/const/call_events` | getCallEventsDefinitions | — | object[] | yes | getCallEventsDefinitions |
+| GET | `/api/v1/const/client_events` | getClientEventsDefinitions | — | object[] | yes | getClientEventsDefinitions |
+| GET | `/api/v1/const/countries` | getCountryCodes | — | object[] | yes | getCountryCodes |
+| GET | `/api/v1/const/default_gateway_config` | getGetawayDefaultConfig | `model`, `ha` | object | yes | getGetawayDefaultConfig |
+| GET | `/api/v1/const/device_events` | getDeviceEventsDefinitions | — | object[] | yes | getDeviceEventsDefinitions |
+| GET | `/api/v1/const/device_models` | getDeviceModels | — | const_device_ap\|const_device_switch\|const_device_gateway\|const_device_unknown[] | yes | getDeviceModels |
+| GET | `/api/v1/const/insight_metrics` | getSiteAvailableInsightMetrics | — | object | yes | getSiteAvailableInsightMetrics |
+| GET | `/api/v1/const/languages` | getSiteLanguages | — | object[] | yes | getSiteLanguages |
+| GET | `/api/v1/const/mxedge_events` | getMxEdgeEventsDefinitions | — | object[] | yes | getMxEdgeEventsDefinitions |
+| GET | `/api/v1/const/mxedge_models` | getMxEdgeModels | — | object[] | yes | getMxEdgeModels |
+| GET | `/api/v1/const/system_events` | getSystemEventsDefinitions | — | object[] | yes | getSystemEventsDefinitions |
+| GET | `/api/v1/const/traffic_types` | getTrafficTypes | — | object[] | yes | getTrafficTypes |
+| GET | `/api/v1/installer/orgs/{org_id}/alarmtemplates` | getInstallerAlarmTemplates | `org_id`* | object[] | yes | getInstallerAlarmTemplates |
+| GET | `/api/v1/installer/orgs/{org_id}/deviceprofiles` | getInstallerDeviceProfiles_WIP_ | `org_id`* | object[] | yes | getInstallerDeviceProfiles_WIP_ |
+| GET | `/api/v1/installer/orgs/{org_id}/devices` | getInstallerListOfRenctlyClaimedDevices | `org_id`* | object[] | yes | getInstallerListOfRenctlyClaimedDevices |
+| POST | `/api/v1/installer/orgs/{org_id}/devices` | claimInstallerDevices | `org_id`*, body: Model_array_string | object |  | claimInstallerDevices |
+| PUT | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}` | provisionInstallerDevices | `org_id`*, `device_mac`*, body: Installer_devices | object |  | provisionInstallerDevices |
+| DELETE | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}` | unassignInstallerRecentlyClaimedDevice | `org_id`*, `device_mac`* | object |  | unassignInstallerRecentlyClaimedDevice |
+| POST | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/locate` | startInstallerLocateDevice | `org_id`*, `device_mac`*, body: object | object |  | startInstallerLocateDevice |
+| POST | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/unlocate` | stopInstallerLocateDevice | `org_id`*, `device_mac`* | object |  | stopInstallerLocateDevice |
+| POST | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/{image_name}` | addInstallerDeviceImage | `org_id`*, `image_name`*, `device_mac`*, body: image_upload | object |  | addInstallerDeviceImage |
+| DELETE | `/api/v1/installer/orgs/{org_id}/devices/{device_mac}/{image_name}` | deleteInstallerDeviceImage | `org_id`*, `image_name`*, `device_mac`* | object |  | deleteInstallerDeviceImage |
+| GET | `/api/v1/installer/orgs/{org_id}/rftemplates` | getInstallerRfTemplatesNames | `org_id`* | object[] | yes | getInstallerRfTemplatesNames |
+| GET | `/api/v1/installer/orgs/{org_id}/secpolicies` | getInstallerSecPolicies | `org_id`* | object[] | yes | getInstallerSecPolicies |
+| GET | `/api/v1/installer/orgs/{org_id}/sitegroups` | getInstallerSiteGroups | `org_id`* | object[] | yes | getInstallerSiteGroups |
+| GET | `/api/v1/installer/orgs/{org_id}/sites` | getInstallerSites | `org_id`* | object[] | yes | getInstallerSites |
+| PUT | `/api/v1/installer/orgs/{org_id}/sites/{site_name}` | createOrUpdateInstallerSites | `org_id`*, `site_name`*, body: site | object |  | createOrUpdateInstallerSites |
+| GET | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps` | getInstallerMaps | `org_id`*, `site_name`* | map[] | yes | getInstallerMaps |
+| POST | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/import` | importInstallerMap | `org_id`*, `site_name`*, body: object | object |  | importInstallerMap |
+| PUT | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/{map_id}` | updateInstallerMap | `org_id`*, `site_name`*, `map_id`*, body: map | map |  | updateInstallerMap |
+| POST | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/{map_id}` | createInstallerMap | `org_id`*, `site_name`*, `map_id`*, body: map | map |  | createInstallerMap |
+| DELETE | `/api/v1/installer/orgs/{org_id}/sites/{site_name}/maps/{map_id}` | deleteInstallerMap | `org_id`*, `site_name`*, `map_id`* | object |  | deleteInstallerMap |
+| GET | `/api/v1/installer/sites/{site_name}/optimize` | optimizeInstallerRrm | `site_name`* | object | yes | optimizeInstallerRrm |
+| POST | `/api/v1/invite/verify/{token}` | verifyAdminInvite | `token`* | object |  | verifyAdminInvite |
+| POST | `/api/v1/login` | login | body: object | object |  | login |
+| POST | `/api/v1/login/lookup` | lookup | body: Model_object_email | object |  | lookup |
+| GET | `/api/v1/login/oauth/{provider}` | getOAuth2AuthorizationUrlForLogin | `provider`*, `forward` | object | yes | getOAuth2AuthorizationUrlForLogin |
+| POST | `/api/v1/login/oauth/{provider}` | loginOAuth2 | `provider`*, body: object | object |  | loginOAuth2 |
+| DELETE | `/api/v1/login/oauth/{provider}` | unlinkOAuth2Provider | `provider`* | object |  | unlinkOAuth2Provider |
+| POST | `/api/v1/login/two_factor` | twoFactor | body: object | object |  | twoFactor |
+| POST | `/api/v1/logout` | logout | — | object |  | logout |
+| POST | `/api/v1/mobile/verify/{secret}` | activateSdkInvite | `secret`*, body: Model_object_device_id | object |  | activateSdkInvite |
+| POST | `/api/v1/msps` | createMsp | body: Msp | Msp |  | createMsp |
+| GET | `/api/v1/msps/{msp_id}` | getMspDetails | `msp_id`* | Msp | yes | getMspDetails |
+| PUT | `/api/v1/msps/{msp_id}` | updateMsp | `msp_id`*, body: Msp | Msp |  | updateMsp |
+| DELETE | `/api/v1/msps/{msp_id}` | deleteMsp | `msp_id`* | object |  | deleteMsp |
+| GET | `/api/v1/msps/{msp_id}/admins` | getMspAdmins | `msp_id`* | admin[] | yes | getMspAdmins |
+| GET | `/api/v1/msps/{msp_id}/admins/{admin_id}` | getMspAdmin | `msp_id`*, `admin_id`* | admin | yes | getMspAdmin |
+| PUT | `/api/v1/msps/{msp_id}/admins/{admin_id}` | updateMspAdmin | `msp_id`*, `admin_id`*, body: admin | admin |  | updateMspAdmin |
+| DELETE | `/api/v1/msps/{msp_id}/admins/{admin_id}` | revokeMspAdmin | `msp_id`*, `admin_id`* | object |  | revokeMspAdmin |
+| POST | `/api/v1/msps/{msp_id}/claim` | claimMspLicence | `msp_id`*, body: object | object |  | claimMspLicence |
+| GET | `/api/v1/msps/{msp_id}/insights/{metric}` | getMspSle | `msp_id`*, `metric`*, `sle`, `duration`, `interval`, `start`, `end` | object | yes | getMspSle |
+| GET | `/api/v1/msps/{msp_id}/inventory/{device_mac}` | getMspInventoryByMac | `msp_id`*, `device_mac`* | object | yes | getMspInventoryByMac |
+| POST | `/api/v1/msps/{msp_id}/invites` | inviteMspAdmin | `msp_id`*, body: admin | admin |  | inviteMspAdmin |
+| PUT | `/api/v1/msps/{msp_id}/invites/{invite_id}` | updateMspAdminInvite | `msp_id`*, `invite_id`*, body: admin | admin |  | updateMspAdminInvite |
+| DELETE | `/api/v1/msps/{msp_id}/invites/{invite_id}` | uninviteMspAdmin | `msp_id`*, `invite_id`* | object |  | uninviteMspAdmin |
+| GET | `/api/v1/msps/{msp_id}/licenses` | getMspLicenses | `msp_id`* | license | yes | getMspLicenses |
+| PUT | `/api/v1/msps/{msp_id}/licenses` | moveOrDeleteMspLicenseToAnotherOrg | `msp_id`*, body: object | object |  | moveOrDeleteMspLicenseToAnotherOrg |
+| POST | `/api/v1/msps/{msp_id}/logo` | postMspLogo | `msp_id`*, body: object | object |  | postMspLogo |
+| DELETE | `/api/v1/msps/{msp_id}/logo` | deleteMspLogo | `msp_id`* | object |  | deleteMspLogo |
+| GET | `/api/v1/msps/{msp_id}/logs` | getMspLogs | `msp_id`*, `org_id`, `admin_name`, `message` | object | yes | getMspLogs |
+| GET | `/api/v1/msps/{msp_id}/logs/count` | countMspLogs | `msp_id`*, `distinct` | object | yes | countMspLogs |
+| GET | `/api/v1/msps/{msp_id}/orggroups` | getMspOrgGroups | `msp_id`* | orggroup[] | yes | getMspOrgGroups |
+| POST | `/api/v1/msps/{msp_id}/orggroups` | createMspOrgGroup | `msp_id`*, body: orggroup | orggroup |  | createMspOrgGroup |
+| GET | `/api/v1/msps/{msp_id}/orggroups/{orggroup_id}` | getMspOrgGroup | `msp_id`*, `orggroup_id`* | orggroup | yes | getMspOrgGroup |
+| PUT | `/api/v1/msps/{msp_id}/orggroups/{orggroup_id}` | updateMspOrgGroup | `msp_id`*, `orggroup_id`*, body: orggroup | orggroup |  | updateMspOrgGroup |
+| DELETE | `/api/v1/msps/{msp_id}/orggroups/{orggroup_id}` | deleteMspOrgGroup | `msp_id`*, `orggroup_id`* | object |  | deleteMspOrgGroup |
+| GET | `/api/v1/msps/{msp_id}/orgs` | getMspOrgs | `msp_id`* | org[] | yes | getMspOrgs |
+| PUT | `/api/v1/msps/{msp_id}/orgs` | manageMspOrgs | `msp_id`*, body: object | object |  | manageMspOrgs |
+| POST | `/api/v1/msps/{msp_id}/orgs` | createMspOrg | `msp_id`*, body: org | org |  | createMspOrg |
+| GET | `/api/v1/msps/{msp_id}/orgs/search` | searchMspOrgs | `msp_id`*, `name`, `org_id`, `sub_insufficient`, `trial_enabled`, `usage_types`, `limit` | object | yes | searchMspOrgs |
+| GET | `/api/v1/msps/{msp_id}/orgs/{org_id}` | getMspOrg | `msp_id`*, `org_id`* | org | yes | getMspOrg |
+| GET | `/api/v1/msps/{msp_id}/search` | searchMspOrgGroup | `msp_id`*, `type`*, `q`, `limit`, `start`, `end`, `duration` | object | yes | searchMspOrgGroup |
+| GET | `/api/v1/msps/{msp_id}/ssoroles` | getMspSsoRoles | `msp_id`* | ssorole[] | yes | getMspSsoRoles |
+| POST | `/api/v1/msps/{msp_id}/ssoroles` | createMspSsoRole | `msp_id`*, body: ssorole | ssorole |  | createMspSsoRole |
+| PUT | `/api/v1/msps/{msp_id}/ssoroles/{ssorole_id}` | updateMspSsoRole | `msp_id`*, `ssorole_id`*, body: ssorole | ssorole |  | updateMspSsoRole |
+| DELETE | `/api/v1/msps/{msp_id}/ssoroles/{ssorole_id}` | deleteMspSsoRole | `msp_id`*, `ssorole_id`* | object |  | deleteMspSsoRole |
+| GET | `/api/v1/msps/{msp_id}/ssos` | getMspSso | `msp_id`* | sso[] | yes | getMspSso |
+| POST | `/api/v1/msps/{msp_id}/ssos` | createMspSso | `msp_id`*, body: sso | sso |  | createMspSso |
+| PUT | `/api/v1/msps/{msp_id}/ssos/{sso_id}` | updateMspSso | `msp_id`*, `sso_id`*, body: sso | sso |  | updateMspSso |
+| DELETE | `/api/v1/msps/{msp_id}/ssos/{sso_id}` | deleteMspSso | `msp_id`*, `sso_id`* | object |  | deleteMspSso |
+| GET | `/api/v1/msps/{msp_id}/ssos/{sso_id}/failures` | getMspSsoLatestFailures | `msp_id`*, `sso_id`* | object | yes | getMspSsoLatestFailures |
+| GET | `/api/v1/msps/{msp_id}/ssos/{sso_id}/metadata` | getMspSsoSamlMetadata | `msp_id`*, `sso_id`* | object | yes | getMspSsoSamlMetadata |
+| GET | `/api/v1/msps/{msp_id}/ssos/{sso_id}/metadata.xml` | downloadMspSsoSamlMetadata | `msp_id`*, `sso_id`* | string:binary | yes | downloadMspSsoSamlMetadata |
+| GET | `/api/v1/msps/{msp_id}/stats/licenses` | getMspOrgLicenses | `msp_id`* | license | yes | getMspOrgLicenses |
+| GET | `/api/v1/msps/{msp_id}/stats/orgs` | getMspOrgStats | `msp_id`*, `page`, `limit` | stats_org[] | yes | getMspOrgStats |
+| GET | `/api/v1/msps/{msp_id}/tickets` | getMspTickets | `msp_id`*, `start`, `end`, `duration` | ticket[] | yes | getMspTickets |
+| GET | `/api/v1/msps/{msp_id}/tickets/count` | countMspTickets | `msp_id`*, `distinct` | object | yes | countMspTickets |
+| POST | `/api/v1/orgs` | createOrg | body: org | org |  | createOrg |
+| GET | `/api/v1/orgs/{org_id}` | getOrgInfo | `org_id`* | org_info | yes | getOrg |
+| PUT | `/api/v1/orgs/{org_id}` | updateOrg | `org_id`*, body: org | org |  | updateOrg |
+| DELETE | `/api/v1/orgs/{org_id}` | deleteOrg | `org_id`* | object |  | deleteOrg |
+| GET | `/api/v1/orgs/{org_id}/128routers/register_cmd` | getOrg128TRegistrationCommands | `org_id`* | object | yes | getOrg128TRegistrationCommands |
+| GET | `/api/v1/orgs/{org_id}/admins` | getOrgAdmins | `org_id`* | admin[] | yes | getOrgAdmins |
+| PUT | `/api/v1/orgs/{org_id}/admins/{admin_id}` | updateOrgAdmin | `org_id`*, `admin_id`*, body: admin | admin |  | updateOrgAdmin |
+| DELETE | `/api/v1/orgs/{org_id}/admins/{admin_id}` | revokeOrgAdmin | `org_id`*, `admin_id`* | object |  | revokeOrgAdmin |
+| POST | `/api/v1/orgs/{org_id}/alarms/ack` | multiAckOrgAlarms | `org_id`*, body: object | object |  | multiAckOrgAlarms |
+| POST | `/api/v1/orgs/{org_id}/alarms/ack_all` | ackOrgAllAlarms | `org_id`*, body: note | object |  | ackOrgAllAlarms |
+| GET | `/api/v1/orgs/{org_id}/alarms/count` | countOrgAlarms | `org_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgAlarms |
+| GET | `/api/v1/orgs/{org_id}/alarms/search` | searchOrgAlarms | `org_id`*, `site_id`, `type`, `start`, `end`, `duration`, `limit` | object | yes | searchOrgAlarms |
+| POST | `/api/v1/orgs/{org_id}/alarms/unack` | multiUnackOrgAlarms | `org_id`*, body: object | object |  | multiUnackOrgAlarms |
+| POST | `/api/v1/orgs/{org_id}/alarms/unack_all` | unackOrgAllArlarms | `org_id`*, body: note | object |  | unackOrgAllArlarms |
+| POST | `/api/v1/orgs/{org_id}/alarms/{alarm_id}/ack` | ackOrgAlarm | `org_id`*, `alarm_id`*, body: note | object |  | ackOrgAlarm |
+| GET | `/api/v1/orgs/{org_id}/alarmtemplates` | getOrgAlarmTemplates | `org_id`* | alarmtemplate[] | yes | getOrgAlarmTemplates |
+| POST | `/api/v1/orgs/{org_id}/alarmtemplates` | createOrgAlarmTemplate | `org_id`*, body: alarmtemplate | alarmtemplate |  | createOrgAlarmTemplate |
+| POST | `/api/v1/orgs/{org_id}/alarmtemplates/suppress` | suppressOrgAlarm | `org_id`*, body: object | object |  | suppressOrgAlarm |
+| GET | `/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}` | getOrgAlarmTemplate | `org_id`*, `alarmtemplate_id`* | alarmtemplate | yes | getOrgAlarmTemplate |
+| PUT | `/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}` | updateOrgAlarmTemplate | `org_id`*, `alarmtemplate_id`*, body: alarmtemplate | alarmtemplate |  | updateOrgAlarmTemplate |
+| DELETE | `/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}` | deleteOrgAlarmTemplate | `org_id`*, `alarmtemplate_id`* | object |  | deleteOrgAlarmTemplate |
+| GET | `/api/v1/orgs/{org_id}/apitokens` | getOrgApiTokens | `org_id`* | apitoken[] | yes | getOrgApiTokens |
+| POST | `/api/v1/orgs/{org_id}/apitokens` | createOrgApiToken | `org_id`*, body: object | apitoken |  | createOrgApiToken |
+| GET | `/api/v1/orgs/{org_id}/apitokens/{apitoken_id}` | getOrgApiToken | `org_id`*, `apitoken_id`* | apitoken | yes | getOrgApiToken |
+| PUT | `/api/v1/orgs/{org_id}/apitokens/{apitoken_id}` | updateOrgApiToken | `org_id`*, `apitoken_id`*, body: apitoken | apitoken |  | updateOrgApiToken |
+| DELETE | `/api/v1/orgs/{org_id}/apitokens/{apitoken_id}` | deleteOrgApiToken | `org_id`*, `apitoken_id`* | object |  | deleteOrgApiToken |
+| GET | `/api/v1/orgs/{org_id}/aptemplates` | getOrgAptemplates | `org_id`* | aptemplate[] | yes | getOrgAptemplates |
+| POST | `/api/v1/orgs/{org_id}/aptemplates` | createOrgAptemplate | `org_id`*, body: aptemplate | aptemplate |  | createOrgAptemplate |
+| GET | `/api/v1/orgs/{org_id}/aptemplates/{aptemplate_id}` | getOrgAptemplate | `org_id`*, `aptemplate_id`* | aptemplate | yes | getOrgAptemplate |
+| PUT | `/api/v1/orgs/{org_id}/aptemplates/{aptemplate_id}` | updateOrgAptemplate | `org_id`*, `aptemplate_id`*, body: aptemplate | aptemplate |  | updateOrgAptemplate |
+| DELETE | `/api/v1/orgs/{org_id}/aptemplates/{aptemplate_id}` | deleteOrgAptemplate | `org_id`*, `aptemplate_id`* | object |  | deleteOrgAptemplate |
+| GET | `/api/v1/orgs/{org_id}/assetfilters` | getOrgAssetFilters | `org_id`* | asset_filter[] | yes | getOrgAssetFilters |
+| POST | `/api/v1/orgs/{org_id}/assetfilters` | createOrgAssetFilters | `org_id`*, body: asset_filter | asset_filter |  | createOrgAssetFilters |
+| GET | `/api/v1/orgs/{org_id}/assetfilters/{assetfilter_id}` | getOrgAssetFilter | `org_id`*, `assetfilter_id`* | asset_filter | yes | getOrgAssetFilter |
+| PUT | `/api/v1/orgs/{org_id}/assetfilters/{assetfilter_id}` | updateOrgAssetFilters | `org_id`*, `assetfilter_id`*, body: asset_filter | asset_filter |  | updateOrgAssetFilters |
+| DELETE | `/api/v1/orgs/{org_id}/assetfilters/{assetfilter_id}` | deleteOrgAssetFilter | `org_id`*, `assetfilter_id`* | object |  | deleteOrgAssetFilter |
+| GET | `/api/v1/orgs/{org_id}/assets` | getOrgAssets | `org_id`* | asset[] | yes | getOrgAssets |
+| POST | `/api/v1/orgs/{org_id}/assets` | createOrgAsset | `org_id`*, body: asset | asset |  | createOrgAsset |
+| POST | `/api/v1/orgs/{org_id}/assets/import` | importOrgAssets | `org_id`*, body: object[] | object |  | importOrgAssets |
+| GET | `/api/v1/orgs/{org_id}/assets/{asset_id}` | getOrgAsset | `org_id`*, `asset_id`* | asset | yes | getOrgAsset |
+| PUT | `/api/v1/orgs/{org_id}/assets/{asset_id}` | updateOrgAsset | `org_id`*, `asset_id`*, body: asset | asset |  | updateOrgAsset |
+| DELETE | `/api/v1/orgs/{org_id}/assets/{asset_id}` | deleteOrgAsset | `org_id`*, `asset_id`* | object |  | deleteOrgAsset |
+| GET | `/api/v1/orgs/{org_id}/call/events/count` | countOrgCallEvents | `org_id`*, `distinct` | object | yes | countOrgCallEvents |
+| GET | `/api/v1/orgs/{org_id}/call/events/search` | searchOrgCallEvents | `org_id`*, `type`, `ap`, `mac`, `app` | object | yes | searchOrgCallEvents |
+| GET | `/api/v1/orgs/{org_id}/cert` | getOrgCertificates | `org_id`* | object | yes | getOrgCertificates |
+| POST | `/api/v1/orgs/{org_id}/cert/regenerate` | clearOrgCertificates | `org_id`* | object |  | clearOrgCertificates |
+| POST | `/api/v1/orgs/{org_id}/claim` | claimOrgLicense | `org_id`*, body: object | object |  | claimOrgLicense |
+| GET | `/api/v1/orgs/{org_id}/clients/count` | countOrgClientsWireless | `org_id`*, `distinct`, `mac`, `hostname`, `device`, `os`, `model`, `ap`, `vlan`, `ssid`, `ip address`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgClientsWireless |
+| GET | `/api/v1/orgs/{org_id}/clients/events/search` | searchOrgClientsEvents | `org_id`*, `type`, `reason_code`, `ssid`, `ap`, `proto`, `band`, `wlan_id`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgClientsEvents |
+| GET | `/api/v1/orgs/{org_id}/clients/search` | searchOrgClientsWireless | `org_id`*, `site_id`, `mac`, `ip address`, `hostname`, `device`, `os`, `model`, `ap`, `psk_id`, `psk_name`, `vlan`, `ssid`, `text`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgClientsWireless |
+| GET | `/api/v1/orgs/{org_id}/clients/sessions/count` | countOrgWirelessClientsSessions | `org_id`*, `distinct`*, `ap`, `band`, `client_family`, `client_manufacture`, `client_model`, `client_os`, `ssid`, `wlan_id`, `page`, `limit`, `start`, `end`, `duration` | object | yes | getMxEdgeModels |
+| GET | `/api/v1/orgs/{org_id}/clients/sessions/search` | searchOrgClientWirelessSessions | `org_id`*, `ap`, `band`, `client_family`, `client_manufacture`, `client_model`, `client_username`, `client_os`, `ssid`, `wlan_id`, `psk_id`, `psk_name`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgClientWirelessSessions |
+| POST | `/api/v1/orgs/{org_id}/clone` | cloneOrg | `org_id`*, body: object | org |  | cloneOrg |
+| GET | `/api/v1/orgs/{org_id}/crl` | getOrgCrlFile | `org_id`* | string:binary | yes | getOrgCrlFile |
+| POST | `/api/v1/orgs/{org_id}/crl/truncate` | truncateOrgCrlFile | `org_id`*, body: object | object |  | truncateOrgCrlFile |
+| GET | `/api/v1/orgs/{org_id}/deviceprofiles` | getOrgDeviceProfiles | `org_id`*, `type`, `limit`, `page` | deviceprofile[] | yes | getOrgDeviceProfiles |
+| POST | `/api/v1/orgs/{org_id}/deviceprofiles` | createOrgDeviceProfiles | `org_id`*, body: deviceprofile | deviceprofile |  | createOrgDeviceProfiles |
+| GET | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}` | getOrgDeviceProfile | `org_id`*, `deviceprofile_id`* | deviceprofile | yes | getOrgDeviceProfile |
+| PUT | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}` | updateOrgDeviceProfile | `org_id`*, `deviceprofile_id`*, body: deviceprofile | deviceprofile |  | updateOrgDeviceProfiles |
+| DELETE | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}` | deleteOrgDeviceProfile | `org_id`*, `deviceprofile_id`* | object |  | deleteOrgDeviceProfile |
+| POST | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}/assign` | assignOrgDeviceProfileToDevices | `org_id`*, `deviceprofile_id`*, body: Model_object_macs_array_string | object |  | assignOrgDeviceProfileToDevices |
+| POST | `/api/v1/orgs/{org_id}/deviceprofiles/{deviceprofile_id}/unassign` | unassignOrgDeviceProfilesFromDevices | `org_id`*, `deviceprofile_id`*, body: Model_object_macs_array_string | object |  | unassignOrgDeviceProfilesFromDevices |
+| GET | `/api/v1/orgs/{org_id}/devices` | getOrgDevices | `org_id`* | object | yes | getOrgDevices |
+| GET | `/api/v1/orgs/{org_id}/devices/count` | countOrgDevices | `org_id`*, `distinct`*, `hostname`, `site_id`, `model`, `mac`, `version`, `ip address`, `mxtunnel_status`, `mxedge_id`, `lldp_system_name`, `lldp_system_desc`, `lldp_port_id`, `lldp_mgmt_addr`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgDevices |
+| GET | `/api/v1/orgs/{org_id}/devices/events/count` | countOrgDevicesEvents | `org_id`*, `distinct`*, `site_id`, `ap`, `apfw`, `model`, `text`, `timestamp`, `type`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgDevicesEvents |
+| GET | `/api/v1/orgs/{org_id}/devices/events/search` | searchOrgDevicesEvents | `org_id`*, `mac`, `model`, `text`, `timestamp`, `type`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgDevicesEvents |
+| GET | `/api/v1/orgs/{org_id}/devices/last_config/count` | countOrgDeviceLastConfigs | `org_id`*, `device_type`, `distinct`, `start`, `end`, `limit` | object | yes | countOrgDeviceLastConfigs |
+| GET | `/api/v1/orgs/{org_id}/devices/last_config/search` | searchOrgDeviceLastConfigs | `org_id`*, `device_type`, `mac`, `name`, `version`, `start`, `end`, `limit`, `duration` | object | yes | searchOrgDeviceLastConfigs |
+| GET | `/api/v1/orgs/{org_id}/devices/radio_macs` | getOrgApsMacs | `org_id`* | object[] | yes | getOrgApsMacs |
+| GET | `/api/v1/orgs/{org_id}/devices/search` | searchOrgDevices | `org_id`*, `hostname`, `site_id`, `model`, `mac`, `version`, `power_constrained`, `ip address`, `mxtunnel_status`, `mxedge_id`, `lldp_system_name`, `lldp_system_desc`, `lldp_port_id`, `lldp_mgmt_addr`, `band_24_bandwith`, `band_5_bandwith`, `band_6_bandwith`, `band_24_channel`, `band_5_channel`, `band_6_channel`, `eth0_port_speed`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgDevices |
+| GET | `/api/v1/orgs/{org_id}/devices/upgrade` | getOrgMultiSitesDevicesUpgrades | `org_id`* | object[] | yes | getOrgMultiSitesDevicesUpgrades |
+| POST | `/api/v1/orgs/{org_id}/devices/upgrade` | upgradeOrgMultiSitesDevices | `org_id`*, body: device_upgrade | object |  | upgradeOrgMultiSitesDevices |
+| GET | `/api/v1/orgs/{org_id}/devices/upgrade/{upgrade_id}` | getOrgMultiSitesUpgrade | `org_id`*, `upgrade_id`* | org_device_upgrade_response | yes | getOrgMultiSitesUpgrade |
+| GET | `/api/v1/orgs/{org_id}/evpn_topologies` | getOrgEvpnTopologies | `org_id`* | junos_evpn_topology | yes | getOrgEvpnTopologies |
+| POST | `/api/v1/orgs/{org_id}/evpn_topologies` | createOrgEvpnTopology | `org_id`*, body: junos_evpn_topology | junos_evpn_topology |  | createOrgEvpnTopology |
+| GET | `/api/v1/orgs/{org_id}/evpn_topologies/{evpn_topology_id}` | getOrgEvpnTolopogy | `org_id`*, `evpn_topology_id`* | — | yes | getOrgEvpnTolopogy |
+| PUT | `/api/v1/orgs/{org_id}/evpn_topologies/{evpn_topology_id}` | updateOrgEvpnTopology | `org_id`*, `evpn_topology_id`*, body: junos_evpn_topology | junos_evpn_topology |  | updateOrgEvpnTopology |
+| DELETE | `/api/v1/orgs/{org_id}/evpn_topologies/{evpn_topology_id}` | deleteOrgEvpnTopology | `org_id`*, `evpn_topology_id`* | object |  | deleteOrgEvpnTopology |
+| GET | `/api/v1/orgs/{org_id}/gatewaytemplates` | getOrgGatewayTemplates | `org_id`* | gatewaytemplate[] | yes | getOrgGatewayTemplates |
+| POST | `/api/v1/orgs/{org_id}/gatewaytemplates` | createOrgGatewayTemplate | `org_id`*, body: gatewaytemplate | gatewaytemplate |  | createOrgGatewayTemplate |
+| GET | `/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}` | getOrgGatewayTemplate | `org_id`*, `gatewaytemplate_id`* | gatewaytemplate | yes | getOrgGatewayTemplate |
+| PUT | `/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}` | updateOrgGatewayTemplate | `org_id`*, `gatewaytemplate_id`*, body: gatewaytemplate | gatewaytemplate |  | updateOrgGatewayTemplate |
+| DELETE | `/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}` | deleteOrgGatewayTemplate | `org_id`*, `gatewaytemplate_id`* | object |  | deleteOrgGatewayTemplate |
+| GET | `/api/v1/orgs/{org_id}/guests` | getOrgGuestAuthorizations | `org_id`* | guest[] | yes | getOrgGuestAuthorizations |
+| GET | `/api/v1/orgs/{org_id}/guests/count` | countOrgGuestAuthorizations | `org_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgGuestAuthorizations |
+| GET | `/api/v1/orgs/{org_id}/guests/search` | searchOrgGuestAuthorization | `org_id`*, `wlan_id`, `auth_method`, `ssid`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgGuestAuthorization |
+| GET | `/api/v1/orgs/{org_id}/guests/{guest_mac}` | getOrgGuestAuthorization | `org_id`*, `guest_mac`* | guest | yes | getOrgGuestAuthorization |
+| PUT | `/api/v1/orgs/{org_id}/guests/{guest_mac}` | updateOrgGuestAuthorization | `org_id`*, `guest_mac`*, body: guest | guest |  | updateOrgGuestAuthorization |
+| DELETE | `/api/v1/orgs/{org_id}/guests/{guest_mac}` | deleteOrgGuestAuthorization | `org_id`*, `guest_mac`* | object |  | deleteOrgGuestAuthorization |
+| GET | `/api/v1/orgs/{org_id}/insights/sites-sle` | getOrgSitesSle | `org_id`*, `sle`, `start`, `end`, `limit`, `page`, `duration`, `interval` | OrgSiteSleWifiResponse\|OrgSiteSleWiredResponse\|OrgSiteSleWanResponse | yes | getOrgSitesSle |
+| GET | `/api/v1/orgs/{org_id}/insights/{metric}` | getOrgSle | `org_id`*, `metric`*, `sle`, `duration`, `interval`, `start`, `end` | object | yes | getOrgSle |
+| GET | `/api/v1/orgs/{org_id}/inventory` | getOrgInventory | `org_id`*, `serial`, `model`, `type`, `mac`, `site_id`, `vc_mac`, `vc`, `unassigned`, `limit`, `page` | inventory[] | yes | getOrgInventory |
+| PUT | `/api/v1/orgs/{org_id}/inventory` | updateOrgInventoryAssignment | `org_id`*, body: object | object |  | updateOrgInventoryAssignment |
+| POST | `/api/v1/orgs/{org_id}/inventory` | addOrgInventory | `org_id`*, body: string[] | response_inventory |  | addOrgInventory |
+| POST | `/api/v1/orgs/{org_id}/inventory/reevaluate_auto_assignment` | reevaluateOrgAutoAssignment | `org_id`*, body: object | object |  | reevaluateOrgAutoAssignment |
+| POST | `/api/v1/orgs/{org_id}/inventory/replace` | replaceOrgDevices | `org_id`*, body: object | object |  | replaceOrgDevices |
+| POST | `/api/v1/orgs/{org_id}/invites` | inviteOrgAdmin | `org_id`*, body: admin | object |  | inviteOrgAdmin |
+| PUT | `/api/v1/orgs/{org_id}/invites/{invite_id}` | updateOrgAdminInvite | `org_id`*, `invite_id`*, body: admin | object |  | updateOrgAdminInvite |
+| DELETE | `/api/v1/orgs/{org_id}/invites/{invite_id}` | uninviteOrgAdmin | `org_id`*, `invite_id`* | object |  | uninviteOrgAdmin |
+| GET | `/api/v1/orgs/{org_id}/jsi/devices` | getOrgJsiDevices | `org_id`*, `limit`, `page`, `model`, `serial`, `mac` | object[] | yes | getOrgJsiDevices |
+| GET | `/api/v1/orgs/{org_id}/jsi/devices/outbound_ssh_cmd` | adoptOrgJsiDevice | `org_id`* | object | yes | adoptOrgJsiDevice |
+| POST | `/api/v1/orgs/{org_id}/jsi/devices/{device_mac}/shell` | createOrgJsiDeviceShellSession | `org_id`*, `device_mac`* | object |  | createOrgJsiDeviceShellSession |
+| POST | `/api/v1/orgs/{org_id}/jsi/devices/{device_mac}/upgrade` | upgradeOrgJsiDevice | `org_id`*, `device_mac`*, body: object | object |  | upgradeOrgJsiDevice |
+| GET | `/api/v1/orgs/{org_id}/jsi/inventory` | getOrgJsiPastPurchases | `org_id`*, `limit`, `page`, `model`, `serial` | object[] | yes | getOrgJsiPastPurchases |
+| GET | `/api/v1/orgs/{org_id}/junos/register_cmd` | getOrgJunosDevicesRegistrationCommands | `org_id`* | object | yes | getOrgJunosDevicesRegistrationCommands |
+| GET | `/api/v1/orgs/{org_id}/licenses` | getOrgLicencesSummary | `org_id`* | license | yes | getOrgLicencesSummary |
+| PUT | `/api/v1/orgs/{org_id}/licenses` | moveOrDeleteOrgLicenseToAnotherOrg | `org_id`*, body: object | object |  | moveOrDeleteOrgLicenseToAnotherOrg |
+| GET | `/api/v1/orgs/{org_id}/licenses/usages` | getOrgLicencesBySite | `org_id`* | object[] | yes | getOrgLicencesBySite |
+| GET | `/api/v1/orgs/{org_id}/logs` | getOrgLogs | `org_id`*, `site_id`, `admin_name`, `message`, `start`, `end`, `limit`, `page`, `duration` | object | yes | getOrgLogs |
+| GET | `/api/v1/orgs/{org_id}/logs/count` | countOrgLogsByDistinctAttributes | `org_id`*, `distinct`*, `admin_id`, `admin_name`, `site_id`, `message`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgLogsByDistinctAttributes |
+| POST | `/api/v1/orgs/{org_id}/maps/import` | importOrgMaps | `org_id`*, body: object | object |  | importOrgMaps |
+| GET | `/api/v1/orgs/{org_id}/mxclusters` | getOrgMxEdgeClusters | `org_id`* | mxcluster[] | yes | getOrgMxEdgeClusters |
+| POST | `/api/v1/orgs/{org_id}/mxclusters` | createOrgMxEdgeCluster | `org_id`*, body: mxcluster | mxcluster |  | createOrgMxEdgeCluster |
+| GET | `/api/v1/orgs/{org_id}/mxclusters/{mxcluster_id}` | getOrgMxEdgeCluster | `org_id`*, `mxcluster_id`* | mxcluster | yes | getOrgMxEdgeCluster |
+| PUT | `/api/v1/orgs/{org_id}/mxclusters/{mxcluster_id}` | updateOrgMxEdgeCluster | `org_id`*, `mxcluster_id`*, body: mxcluster | mxcluster |  | updateOrgMxEdgeCluster |
+| DELETE | `/api/v1/orgs/{org_id}/mxclusters/{mxcluster_id}` | deleteOrgMxEdgeCluster | `org_id`*, `mxcluster_id`* | object |  | deleteOrgMxEdgeCluster |
+| GET | `/api/v1/orgs/{org_id}/mxedges` | getOrgMxEdges | `org_id`*, `for_sites`, `limit`, `page` | mxedge[] | yes | getOrgMxEdges |
+| POST | `/api/v1/orgs/{org_id}/mxedges` | createOrgMxEdge | `org_id`*, body: mxedge | mxedge |  | createOrgMxEdge |
+| POST | `/api/v1/orgs/{org_id}/mxedges/assign` | assignOrgMxEdgeToSite | `org_id`*, body: object | object |  | assignOrgMxEdgeToSite |
+| POST | `/api/v1/orgs/{org_id}/mxedges/claim` | claimOrgMxEdge | `org_id`*, body: object | object |  | claimOrgMxEdge |
+| POST | `/api/v1/orgs/{org_id}/mxedges/unassign` | unassignOrgMxEdgeFromSite | `org_id`*, body: object | object |  | unassignOrgMxEdgeFromSite |
+| GET | `/api/v1/orgs/{org_id}/mxedges/upgrade` | getOrgMxEdgeUpgrades | `org_id`* | mxedge_upgrade_response[] | yes | getOrgMxEdgeUpgrades |
+| POST | `/api/v1/orgs/{org_id}/mxedges/upgrade` | upgradeOrgMxEdges | `org_id`*, body: object | object |  | upgradeOrgMxEdges |
+| GET | `/api/v1/orgs/{org_id}/mxedges/upgrade/{upgrade_id}` | getOrgMxEdgeUpgrade | `org_id`*, `upgrade_id`* | mxedge_upgrade_response | yes | getOrgMxEdgeUpgrade |
+| GET | `/api/v1/orgs/{org_id}/mxedges/version` | getOrgMxEdgeUpgradeInfo | `org_id`*, `channel` | object[] | yes | getOrgMxEdgeUpgradeInfo |
+| GET | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}` | getOrgMxEdge | `org_id`*, `mxedge_id`* | mxedge | yes | getOrgMxEdge |
+| PUT | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}` | updateOrgMxEdge | `org_id`*, `mxedge_id`*, body: mxedge | mxedge |  | updateOrgMxEdge |
+| DELETE | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}` | deleteOrgMxEdge | `org_id`*, `mxedge_id`* | object |  | deleteOrgMxEdge |
+| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/restart` | restartOrgMxEdge | `org_id`*, `mxedge_id`* | object |  | restartOrgMxEdge |
+| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/tunterm/bounce_port` | bounceOrgMxEdgeDataPorts | `org_id`*, `mxedge_id`*, body: object | object |  | bounceOrgMxEdgeDataPorts |
+| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/{name}/{action}` | controlOrgMxEdgeServices | `org_id`*, `mxedge_id`*, `name`*, `action`* | object |  | controlOrgMxEdgeServices |
+| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/support` | uploadOrgMxEdgeSupportFiles | `org_id`*, `mxedge_id`* | object |  | uploadOrgMxEdgeSupportFiles |
+| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/unregister` | unregisterOrgMxEdge | `org_id`*, `mxedge_id`* | object |  | unregisterOrgMxEdge |
+| POST | `/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/upgrade` | upgradeOrgMxEdge | `org_id`*, `mxedge_id`*, body: object | object |  | upgradeOrgMxEdge |
+| GET | `/api/v1/orgs/{org_id}/mxtunnels` | getOrgMxTunnels | `org_id`* | mxtunnel[] | yes | getOrgMxTunnels |
+| POST | `/api/v1/orgs/{org_id}/mxtunnels` | createOrgMxTunnel | `org_id`*, body: mxtunnel | mxtunnel |  | createOrgMxTunnel |
+| GET | `/api/v1/orgs/{org_id}/mxtunnels/{mxtunnel_id}` | getOrgMxTunnel | `org_id`*, `mxtunnel_id`* | mxtunnel | yes | getOrgMxTunnel |
+| PUT | `/api/v1/orgs/{org_id}/mxtunnels/{mxtunnel_id}` | updateOrgMxTunnel | `org_id`*, `mxtunnel_id`*, body: mxtunnel | mxtunnel |  | updateOrgMxTunnel |
+| DELETE | `/api/v1/orgs/{org_id}/mxtunnels/{mxtunnel_id}` | deleteOrgMxTunnel | `org_id`*, `mxtunnel_id`* | object |  | deleteOrgMxTunnel |
+| GET | `/api/v1/orgs/{org_id}/nacrules` | getOrgNacRules | `org_id`* | nac_rule[] | yes | getOrgNacRules |
+| POST | `/api/v1/orgs/{org_id}/nacrules` | createOrgNacRule | `org_id`*, body: nac_rule | nac_rule |  | createOrgNacRule |
+| GET | `/api/v1/orgs/{org_id}/nacrules/{nacrule_id}` | getOrgNacRule | `org_id`*, `nacrule_id`* | nac_rule | yes | getOrgNacRule |
+| PUT | `/api/v1/orgs/{org_id}/nacrules/{nacrule_id}` | updateOrgNacRule | `org_id`*, `nacrule_id`*, body: nac_rule | nac_rule |  | updateOrgNacRule |
+| DELETE | `/api/v1/orgs/{org_id}/nacrules/{nacrule_id}` | deleteOrgNacRule | `org_id`*, `nacrule_id`* | object |  | deleteOrgNacRule |
+| GET | `/api/v1/orgs/{org_id}/nactags` | getOrgNacTags | `org_id`* | nac_tag[] | yes | getOrgNacTags |
+| POST | `/api/v1/orgs/{org_id}/nactags` | createOrgNacTag | `org_id`*, body: nac_tag | nac_tag |  | createOrgNacTag |
+| GET | `/api/v1/orgs/{org_id}/nactags/{nactag_id}` | getOrgNacTag | `org_id`*, `nactag_id`* | nac_tag | yes | getOrgNacTag |
+| PUT | `/api/v1/orgs/{org_id}/nactags/{nactag_id}` | updateOrgNacTag | `org_id`*, `nactag_id`*, body: nac_tag | nac_tag |  | updateOrgNacTag |
+| DELETE | `/api/v1/orgs/{org_id}/nactags/{nactag_id}` | DeleteOrgNacTag | `org_id`*, `nactag_id`* | object |  | DeleteOrgNacTag |
+| GET | `/api/v1/orgs/{org_id}/networks` | getOrgNetworks | `org_id`* | network[] | yes | getOrgNetworks |
+| POST | `/api/v1/orgs/{org_id}/networks` | createOrgNetwork | `org_id`*, body: network | network |  | createOrgNetwork |
+| GET | `/api/v1/orgs/{org_id}/networks/{network_id}` | getOrgNetwork | `org_id`*, `network_id`* | network | yes | getOrgNetwork |
+| PUT | `/api/v1/orgs/{org_id}/networks/{network_id}` | updateOrgNetwork | `org_id`*, `network_id`*, body: network | network |  | updateOrgNetwork |
+| DELETE | `/api/v1/orgs/{org_id}/networks/{network_id}` | deleteOrgNetwork | `org_id`*, `network_id`* | object |  | deleteOrgNetwork |
+| GET | `/api/v1/orgs/{org_id}/networktemplates` | getOrgNetworkTemplates | `org_id`* | networktemplate[] | yes | getOrgNetworkTemplates |
+| POST | `/api/v1/orgs/{org_id}/networktemplates` | createOrgNetworkTemplate | `org_id`*, body: networktemplate | networktemplate |  | createOrgNetworkTemplate |
+| GET | `/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}` | getOrgNetworkTemplate | `org_id`*, `networktemplate_id`* | networktemplate | yes | getOrgNetworkTemplate |
+| PUT | `/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}` | updateOrgNetworkTemplates | `org_id`*, `networktemplate_id`*, body: networktemplate | networktemplate |  | updateOrgNetworkTemplates |
+| DELETE | `/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}` | deleteOrgNetworkTemplate | `org_id`*, `networktemplate_id`* | object |  | deleteOrgNetworkTemplate |
+| GET | `/api/v1/orgs/{org_id}/ocdevices/outbound_ssh_cmd` | getOrgJuniperDevicesCommand | `org_id`*, `site_id` | object | yes | getOrgJuniperDevicesCommand |
+| GET | `/api/v1/orgs/{org_id}/otherdevices` | getOrgOtherDevices | `org_id`*, `vendor`, `mac`, `serial`, `model`, `name`, `page`, `limit` | device_other[] | yes | getOrgOtherDevices |
+| PUT | `/api/v1/orgs/{org_id}/otherdevices` | updateOrgOtherDevices | `org_id`*, body: object | object |  | updateOrgOtherDevices |
+| GET | `/api/v1/orgs/{org_id}/otherdevices/{device_mac}` | getOrgOtherDevice | `org_id`*, `device_mac`* | device_other | yes | getOrgOtherDevice |
+| PUT | `/api/v1/orgs/{org_id}/otherdevices/{device_mac}` | updateOrgOtherDevice | `org_id`*, `device_mac`*, body: object | — |  | updateOrgOtherDevice |
+| DELETE | `/api/v1/orgs/{org_id}/otherdevices/{device_mac}` | deleteOrgOtherDevice | `org_id`*, `device_mac`* | object |  | deleteOrgOtherDevice |
+| GET | `/api/v1/orgs/{org_id}/pma/dashboards` | getOrgPmaDashboards | `org_id`* | object[] | yes | getOrgPmaDashboards |
+| GET | `/api/v1/orgs/{org_id}/pskportals` | getOrgPskPortals | `org_id`* | psk_portal[] | yes | getOrgPskPortals |
+| POST | `/api/v1/orgs/{org_id}/pskportals` | createOrgPskPortal | `org_id`*, body: psk_portal | psk_portal |  | createOrgPskPortal |
+| GET | `/api/v1/orgs/{org_id}/pskportals/{pskportal_id}` | getOrgPskPortal | `org_id`*, `pskportal_id`* | psk_portal | yes | getOrgPskPortal |
+| PUT | `/api/v1/orgs/{org_id}/pskportals/{pskportal_id}` | updateOrgPskPortal | `org_id`*, `pskportal_id`*, body: psk_portal | psk_portal |  | updateOrgPskPortal |
+| DELETE | `/api/v1/orgs/{org_id}/pskportals/{pskportal_id}` | deleteOrgPskPortal | `org_id`*, `pskportal_id`* | object |  | deleteOrgPskPortal |
+| GET | `/api/v1/orgs/{org_id}/psks` | getOrgPsks | `org_id`*, `name`, `ssid`, `role`, `page`, `limit` | psk[] | yes | getOrgPsks |
+| PUT | `/api/v1/orgs/{org_id}/psks` | updateOrgMultiPsks | `org_id`*, body: psk[] | psk[] |  | updateOrgMultiPsks |
+| POST | `/api/v1/orgs/{org_id}/psks` | createOrgPsk | `org_id`*, `upsert`, body: psk | psk |  | createOrgPsk |
+| POST | `/api/v1/orgs/{org_id}/psks/import` | importOrgPsks | `org_id`*, body: psk[] | psk[] |  | importOrgPsks |
+| GET | `/api/v1/orgs/{org_id}/psks/{psk_id}` | getOrgPsk | `org_id`*, `psk_id`* | psk | yes | getOrgPsk |
+| PUT | `/api/v1/orgs/{org_id}/psks/{psk_id}` | updateOrgPsk | `org_id`*, `psk_id`*, body: psk | psk |  | updateOrgPsk |
+| DELETE | `/api/v1/orgs/{org_id}/psks/{psk_id}` | deleteOrgPsk | `org_id`*, `psk_id`* | object |  | deleteOrgPsk |
+| POST | `/api/v1/orgs/{org_id}/psks/{psk_id}/delete_old_passphrase` | deleteOrgPskOldPassphrase | `org_id`*, `psk_id`*, body: object | psk |  | deleteOrgPskOldPassphrase |
+| GET | `/api/v1/orgs/{org_id}/rftemplates` | getOrgRfTemplates | `org_id`* | rftemplate[] | yes | getOrgRfTemplates |
+| POST | `/api/v1/orgs/{org_id}/rftemplates` | createOrgRfTemplate | `org_id`*, body: rftemplate | rftemplate |  | createOrgRfTemplate |
+| GET | `/api/v1/orgs/{org_id}/rftemplates/{rftemplate_id}` | getOrgRfTemplate | `org_id`*, `rftemplate_id`* | rftemplate | yes | getOrgRfTemplate |
+| PUT | `/api/v1/orgs/{org_id}/rftemplates/{rftemplate_id}` | updateOrgRfTemplate | `org_id`*, `rftemplate_id`*, body: rftemplate | rftemplate |  | updateOrgRfTemplate |
+| DELETE | `/api/v1/orgs/{org_id}/rftemplates/{rftemplate_id}` | deleteOrgRfTemplate | `org_id`*, `rftemplate_id`* | object |  | deleteOrgRfTemplate |
+| PUT | `/api/v1/orgs/{org_id}/sdkclients/{sdkclient_id}` | updateSdkClient | `org_id`*, `sdkclient_id`*, body: object | object |  | updateSdkClient |
+| GET | `/api/v1/orgs/{org_id}/sdkinvites` | getSdkInvites | `org_id`* | sdkinvite[] | yes | getSdkInvites |
+| POST | `/api/v1/orgs/{org_id}/sdkinvites` | createSdkInvite | `org_id`*, body: sdkinvite | sdkinvite |  | createSdkInvite |
+| GET | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}` | getSdkInvite | `org_id`*, `sdkinvite_id`* | sdkinvite | yes | getSdkInvite |
+| PUT | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}` | updateSdkInvite | `org_id`*, `sdkinvite_id`*, body: sdkinvite | sdkinvite |  | updateSdkInvite |
+| DELETE | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}` | revokeSdkInvite | `org_id`*, `sdkinvite_id`* | object |  | revokeSdkInvite |
+| POST | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}/email` | sendSdkInviteEmail | `org_id`*, `sdkinvite_id`*, body: Model_object_email | object |  | sendSdkInviteEmail |
+| GET | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}/qrcode` | getSdkInviteQrCode | `org_id`*, `sdkinvite_id`* | string:binary | yes | getSdkInviteQrCode |
+| POST | `/api/v1/orgs/{org_id}/sdkinvites/{sdkinvite_id}/sms` | sendSdkInviteSms | `org_id`*, `sdkinvite_id`*, body: object | object |  | sendSdkInviteSms |
+| GET | `/api/v1/orgs/{org_id}/sdktemplates` | getSdkTemplates | `org_id`* | sdktemplate[] | yes | getSdkTemplates |
+| POST | `/api/v1/orgs/{org_id}/sdktemplates` | createSdkTemplate | `org_id`*, body: sdktemplate | sdktemplate |  | createSdkTemplate |
+| GET | `/api/v1/orgs/{org_id}/sdktemplates/{sdktemplate_id}` | getSdkTemplate | `org_id`*, `sdktemplate_id`* | sdktemplate | yes | getSdkTemplate |
+| PUT | `/api/v1/orgs/{org_id}/sdktemplates/{sdktemplate_id}` | updateSdkTemplate | `org_id`*, `sdktemplate_id`*, body: sdktemplate | sdktemplate |  | updateSdkTemplate |
+| DELETE | `/api/v1/orgs/{org_id}/sdktemplates/{sdktemplate_id}` | deleteSdkTemplate | `org_id`*, `sdktemplate_id`* | object |  | deleteSdkTemplate |
+| GET | `/api/v1/orgs/{org_id}/secpolicies` | getOrgSecPolicies | `org_id`* | secpolicy[] | yes | getOrgSecPolicies |
+| POST | `/api/v1/orgs/{org_id}/secpolicies` | createOrgSecPolicies | `org_id`*, body: secpolicy | secpolicy |  | createOrgSecPolicies |
+| GET | `/api/v1/orgs/{org_id}/secpolicies/{secpolicy_id}` | getOrgSecPolicy | `org_id`*, `secpolicy_id`* | secpolicy | yes | getOrgSecPolicy |
+| PUT | `/api/v1/orgs/{org_id}/secpolicies/{secpolicy_id}` | updateOrgSecPolicies | `org_id`*, `secpolicy_id`*, body: secpolicy | secpolicy |  | updateOrgSecPolicies |
+| DELETE | `/api/v1/orgs/{org_id}/secpolicies/{secpolicy_id}` | deleteOrgSecPolicy | `org_id`*, `secpolicy_id`* | object |  | deleteOrgSecPolicy |
+| GET | `/api/v1/orgs/{org_id}/servicepolicies` | getOrgServicePolicies | `org_id`* | service_policy[] | yes | getOrgServicePolicies |
+| POST | `/api/v1/orgs/{org_id}/servicepolicies` | createOrgServicePolicy | `org_id`*, body: service_policy | service_policy |  | createOrgServicePolicy |
+| GET | `/api/v1/orgs/{org_id}/servicepolicies/{servicepolicy_id}` | getOrgServicePolicy | `org_id`*, `servicepolicy_id`* | service_policy | yes | getOrgServicePolicy |
+| PUT | `/api/v1/orgs/{org_id}/servicepolicies/{servicepolicy_id}` | updateOrgServicePolicy | `org_id`*, `servicepolicy_id`*, body: service_policy | service_policy |  | updateOrgServicePolicy |
+| DELETE | `/api/v1/orgs/{org_id}/servicepolicies/{servicepolicy_id}` | deleteOrgServicePolicy | `org_id`*, `servicepolicy_id`* | object |  | deleteOrgServicePolicy |
+| GET | `/api/v1/orgs/{org_id}/services` | getOrgServices | `org_id`* | service[] | yes | getOrgServices |
+| POST | `/api/v1/orgs/{org_id}/services` | createOrgService | `org_id`*, body: service | service |  | createOrgService |
+| GET | `/api/v1/orgs/{org_id}/services/{service_id}` | getOrgService | `org_id`*, `service_id`* | service | yes | getOrgService |
+| PUT | `/api/v1/orgs/{org_id}/services/{service_id}` | updateOrgService | `org_id`*, `service_id`*, body: service | service |  | updateOrgService |
+| DELETE | `/api/v1/orgs/{org_id}/services/{service_id}` | deleteOrgService | `org_id`*, `service_id`* | object |  | deleteOrgService |
+| GET | `/api/v1/orgs/{org_id}/setting` | getOrgSettings | `org_id`* | org_setting | yes | getOrgSettings |
+| PUT | `/api/v1/orgs/{org_id}/setting` | updateOrgSettings | `org_id`*, body: org_setting | org_setting |  | updateOrgSettings |
+| POST | `/api/v1/orgs/{org_id}/setting/blacklist` | createOrgClientsBlocklist | `org_id`*, body: Model_object_macs_array_string | object |  | createOrgClientsBlocklist |
+| DELETE | `/api/v1/orgs/{org_id}/setting/blacklist` | deleteOrgClientsBlocklist | `org_id`* | object |  | deleteOrgClientsBlocklist |
+| POST | `/api/v1/orgs/{org_id}/setting/cradlepoint/setup` | setupOrgCradlepointConnectionToMist | `org_id`*, body: object | object |  | setupOrgCradlepointConnectionToMist |
+| POST | `/api/v1/orgs/{org_id}/setting/cradlepoint/sync` | syncOrgCradlepointRouters | `org_id`* | object |  | syncOrgCradlepointRouters |
+| POST | `/api/v1/orgs/{org_id}/setting/juniper/link_accounts` | linkOrgToJuniperJuniperAccount | `org_id`*, body: object | object |  | linkOrgToJuniperJuniperAccount |
+| DELETE | `/api/v1/orgs/{org_id}/setting/juniper/linked_account` | unlinkOrgFromJuniperCustomerId | `org_id`*, body: object | object |  | unlinkOrgFromJuniperCustomerId |
+| POST | `/api/v1/orgs/{org_id}/setting/pcap_bucket/setup` | setOrgCustomBucket | `org_id`*, body: object | object |  | setOrgCustomBucket |
+| POST | `/api/v1/orgs/{org_id}/setting/pcap_bucket/verify` | verifyOrgCustomBucket | `org_id`*, body: object | object |  | verifyOrgCustomBucket |
+| POST | `/api/v1/orgs/{org_id}/setting/zscaler/setup` | setupOrgZscalerCredential | `org_id`*, body: object | object |  | setupOrgZscalerCredential |
+| GET | `/api/v1/orgs/{org_id}/setting/{app_name}/link` | getOrgOauthAppLinkedStatus_deprecated | `org_id`*, `app_name`*, `forward` | oauth_app_status | yes | getOrgOauthAppLinkedStatusAndUrl_deprecated |
+| DELETE | `/api/v1/orgs/{org_id}/setting/{app_name}/link` | deleteOrgOauthAppAuthorization_deprecated | `org_id`*, `app_name`* | — |  | deleteOrgOauthAppAuthorization |
+| GET | `/api/v1/orgs/{org_id}/setting/{app_name}/link_accounts` | getOrgOauthAppLinkedStatus | `org_id`*, `app_name`*, `forward` | oauth_app_status | yes | getOrgOauthAppLinkedStatusAndUrl |
+| DELETE | `/api/v1/orgs/{org_id}/setting/{app_name}/link_accounts` | deleteOrgOauthAppAuthorization | `org_id`*, `app_name`*, body: object | — |  | deleteOrgOauthAppAuthorization |
+| GET | `/api/v1/orgs/{org_id}/sitegroups` | getOrgSiteGroups | `org_id`* | sitegroup[] | yes | getOrgSiteGroups |
+| POST | `/api/v1/orgs/{org_id}/sitegroups` | createOrgSiteGroup | `org_id`*, body: sitegroup | sitegroup |  | createOrgSiteGroup |
+| GET | `/api/v1/orgs/{org_id}/sitegroups/{sitegroup_id}` | getOrgSiteGroup | `org_id`*, `sitegroup_id`* | sitegroup | yes | getOrgSiteGroup |
+| PUT | `/api/v1/orgs/{org_id}/sitegroups/{sitegroup_id}` | updateOrgSiteGroup | `org_id`*, `sitegroup_id`*, body: object | sitegroup |  | updateOrgSiteGroup |
+| DELETE | `/api/v1/orgs/{org_id}/sitegroups/{sitegroup_id}` | deleteOrgSiteGroup | `org_id`*, `sitegroup_id`* | object |  | deleteOrgSiteGroup |
+| GET | `/api/v1/orgs/{org_id}/sites` | getOrgSites | `org_id`*, `limit`, `page` | site[] | yes | getOrgSites |
+| POST | `/api/v1/orgs/{org_id}/sites` | createOrgSite | `org_id`*, body: site | site |  | createOrgSite |
+| GET | `/api/v1/orgs/{org_id}/sites/count` | countOrgSites | `org_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgSites |
+| GET | `/api/v1/orgs/{org_id}/sites/search` | searchOrgSites | `org_id`*, `analytic_enabled`, `app_waking`, `asset_enabled`, `auto_upgrade_enabled`, `auto_upgrade_version`, `country_code`, `honeypot_enabled`, `id`, `locate_unconnected`, `mesh_enabled`, `name`, `rogue_enabled`, `remote_syslog_enabled`, `rtsa_enabled`, `vna_enabled`, `wifi_enabled`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgSites |
+| POST | `/api/v1/orgs/{org_id}/sites/{site_name}/maps/import` | importOrgMapToSite | `org_id`*, `site_name`*, body: object | object |  | importOrgMapToSite |
+| GET | `/api/v1/orgs/{org_id}/sitetemplates` | getOrgSiteTemplates | `org_id`* | sitetemplate[] | yes | getOrgSiteTemplates |
+| POST | `/api/v1/orgs/{org_id}/sitetemplates` | createOrgSiteTemplates | `org_id`*, body: sitetemplate | sitetemplate |  | createOrgSiteTemplates |
+| GET | `/api/v1/orgs/{org_id}/sitetemplates/{sitetemplate_id}` | getOrgSiteTemplate | `org_id`*, `sitetemplate_id`* | sitetemplate | yes | getOrgSiteTemplate |
+| PUT | `/api/v1/orgs/{org_id}/sitetemplates/{sitetemplate_id}` | updateOrgSiteTemplate | `org_id`*, `sitetemplate_id`*, body: sitetemplate | sitetemplate |  | updateOrgSiteTemplate |
+| DELETE | `/api/v1/orgs/{org_id}/sitetemplates/{sitetemplate_id}` | deleteOrgSiteTemplate | `org_id`*, `sitetemplate_id`* | object |  | deleteOrgSiteTemplate |
+| GET | `/api/v1/orgs/{org_id}/ssoroles` | getOrgSsoRoles | `org_id`* | ssorole[] | yes | getOrgSsoRoles |
+| POST | `/api/v1/orgs/{org_id}/ssoroles` | createOrgSsoRole | `org_id`*, body: ssorole | ssorole |  | createOrgSsoRole |
+| GET | `/api/v1/orgs/{org_id}/ssoroles/{ssorole_id}` | getOrgSsoRole | `org_id`*, `ssorole_id`* | ssorole | yes | getOrgSsoRole |
+| PUT | `/api/v1/orgs/{org_id}/ssoroles/{ssorole_id}` | updateOrgSsoRole | `org_id`*, `ssorole_id`*, body: ssorole | ssorole |  | updateOrgSsoRole |
+| DELETE | `/api/v1/orgs/{org_id}/ssoroles/{ssorole_id}` | deleteOrgSsoRole | `org_id`*, `ssorole_id`* | object |  | deleteOrgSsoRole |
+| GET | `/api/v1/orgs/{org_id}/ssos` | getOrgSsos | `org_id`* | sso[] | yes | getOrgSsos |
+| POST | `/api/v1/orgs/{org_id}/ssos` | createOrgSso | `org_id`*, body: sso | sso |  | createOrgSso |
+| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}` | getOrgSso | `org_id`*, `sso_id`* | sso | yes | getOrgSso |
+| PUT | `/api/v1/orgs/{org_id}/ssos/{sso_id}` | updateOrgSso | `org_id`*, `sso_id`*, body: sso | sso |  | updateOrgSso |
+| DELETE | `/api/v1/orgs/{org_id}/ssos/{sso_id}` | deleteOrgSso | `org_id`*, `sso_id`* | object |  | deleteOrgSso |
+| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}/failures` | getOrgSsoLatestFailures | `org_id`*, `sso_id`*, `page`, `limit`, `start`, `end`, `duration` | object | yes | getOrgSsoLatestFailures |
+| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}/metadata` | getOrgSsoSamlMetadata | `org_id`*, `sso_id`* | object | yes | getOrgSsoSamlMetadata |
+| GET | `/api/v1/orgs/{org_id}/ssos/{sso_id}/metadata.xml` | downloadOrgSsoSamlMetadata | `org_id`*, `sso_id`* | string:binary | yes | downloadOrgSsoSamlMetadata |
+| GET | `/api/v1/orgs/{org_id}/ssr/upgrade` | getOrgSsrUpgrades | `org_id`* | ssr_upgrade_response[] | yes | getOrgSsrUpgrades |
+| POST | `/api/v1/orgs/{org_id}/ssr/upgrade` | upgradeOrgSsrs | `org_id`*, body: object | ssr_upgrade_response |  | upgradeOrgSsrs |
+| POST | `/api/v1/orgs/{org_id}/ssr/upgrade/{upgrade_id}/cancel` | cancelOrgSsrUpgrade | `org_id`*, `upgrade_id`*, body: object | object |  | cancelOrgSsrUpgrade |
+| GET | `/api/v1/orgs/{org_id}/ssr/versions` | getOrgSsrUpgradeInfo | `org_id`*, `channel` | object[] | yes | getOrgSsrUpgradeInfo |
+| GET | `/api/v1/orgs/{org_id}/stats` | getOrgStats | `org_id`*, `page`, `limit`, `start`, `end`, `duration` | stats_org | yes | getOrgStats |
+| GET | `/api/v1/orgs/{org_id}/stats/assets` | getOrgAssetsStats | `org_id`*, `page`, `limit`, `start`, `end`, `duration` | stats_asset[] | yes | getOrgAssetsStats |
+| GET | `/api/v1/orgs/{org_id}/stats/assets/count` | countOrgAssetsByDistanceField | `org_id`*, `distinct` | object | yes | countOrgAssetsByDistanceField |
+| GET | `/api/v1/orgs/{org_id}/stats/assets/search` | searchOrgAssets | `org_id`*, `site_id`, `mac`, `device_name`, `name`, `map_id`, `ibeacon_uuid`, `ibeacon_major`, `ibeacon_minor`, `eddystone_uid_namespace`, `eddystone_uid_instance`, `eddystone_url`, `ap_mac`, `beam`, `rssi`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgAssets |
+| GET | `/api/v1/orgs/{org_id}/stats/bgp_peers/count` | countOrgBgpStats | `org_id`* | object | yes | countOrgBgpStats |
+| GET | `/api/v1/orgs/{org_id}/stats/bgp_peers/search` | searchOrgBgpStats | `org_id`* | object | yes | searchOrgBgpStats |
+| GET | `/api/v1/orgs/{org_id}/stats/devices` | getOrgDevicesStats | `org_id`*, `page`, `limit`, `start`, `end`, `duration`, `type`, `status`, `site_id`, `mac`, `evpntopo_id`, `evpn_unused` | stats_device_ap\|stats_device_switch\|stats_device_gateway[] | yes | getOrgDevicesStats |
+| GET | `/api/v1/orgs/{org_id}/stats/mxedges` | getOrgMxEdgesStats | `org_id`*, `page`, `limit`, `start`, `end`, `duration`, `for_site` | stats_mxedge[] | yes | getOrgMxEdgesStats |
+| GET | `/api/v1/orgs/{org_id}/stats/mxedges/{mxedge_id}` | getOrgMxEdgeStats | `org_id`*, `mxedge_id`* | stats_mxedge | yes | getOrgMxEdgeStats |
+| GET | `/api/v1/orgs/{org_id}/stats/otherdevices/{device_mac}` | getOrgOtherDeviceStats | `org_id`*, `device_mac`* | stats_device_other | yes | getOrgOtherDeviceStats |
+| GET | `/api/v1/orgs/{org_id}/stats/ports/search` | searchOrgSwOrGwPorts | `org_id`*, `full_duplex`, `mac`, `neighbor_mac`, `neighbor_port_desc`, `neighbor_system_name`, `poe_disabled`, `poe_mode`, `poe_on`, `port_id`, `port_mac`, `power_draw`, `tx_pkts`, `rx_pkts`, `rx_bytes`, `tx_bps`, `rx_bps`, `tx_errors`, `rx_errors`, `tx_mcast_pkts`, `tx_bcast_pkts`, `rx_mcast_pkts`, `rx_bcast_pkts`, `speed`, `mac_limit`, `mac_count`, `up`, `stp_state`, `stp_role`, `auth_state`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgSwOrGwPorts |
+| GET | `/api/v1/orgs/{org_id}/stats/switch_ports/count` | countOrgByDisctinctAttributesOfSwitchPorts | `org_id`*, `distinct`, `full_duplex`, `mac`, `neighbor_mac`, `neighbor_port_desc`, `neighbor_system_name`, `poe_disabled`, `poe_mode`, `poe_on`, `port_id`, `port_mac`, `power_draw`, `tx_pkts`, `rx_pkts`, `rx_bytes`, `tx_bps`, `rx_bps`, `tx_mcast_pkts`, `tx_bcast_pkts`, `rx_mcast_pkts`, `rx_bcast_pkts`, `speed`, `stp_state`, `stp_role`, `auth_state`, `up`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgByDisctinctAttributesOfSwitchPorts |
+| GET | `/api/v1/orgs/{org_id}/stats/tunnels/count` | countOrgTunnelsStats | `org_id`*, `distinct`, `type` | object | yes | countOrgTunnelsStats |
+| GET | `/api/v1/orgs/{org_id}/stats/tunnels/search` | searchOrgTunnelsStats | `org_id`*, `mxcluster_id`, `site_id`, `wxtunnel_id`, `ap`, `mac`, `node`, `peer_ip`, `peer_host`, `ip`, `tunnel_name`, `protocol`, `auth_algo`, `encrypt_algo`, `ike_version`, `up`, `type`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgTunnelsStats |
+| GET | `/api/v1/orgs/{org_id}/stats/vpn_peers/count` | countOrgPeerPathStats | `org_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgPeerPathStats |
+| GET | `/api/v1/orgs/{org_id}/stats/vpn_peers/search` | searchOrgPeerPathStats | `org_id`*, `start`, `end`, `duration`, `limit` | object | yes | searchOrgPeerPathStats |
+| POST | `/api/v1/orgs/{org_id}/subscriptions` | subscribeOrgAlarmsReports | `org_id`* | object |  | subscribeOrgAlarmsReports |
+| DELETE | `/api/v1/orgs/{org_id}/subscriptions` | unsubscribeOrgAlarmsReports | `org_id`* | object |  | unsubscribeOrgAlarmsReports |
+| GET | `/api/v1/orgs/{org_id}/templates` | getOrgTemplates | `org_id`* | template[] | yes | getOrgTemplates |
+| POST | `/api/v1/orgs/{org_id}/templates` | createOrgTemplate | `org_id`*, body: template | template |  | createOrgTemplate |
+| GET | `/api/v1/orgs/{org_id}/templates/{template_id}` | getOrgTemplate | `org_id`*, `template_id`* | template | yes | getOrgTemplate |
+| PUT | `/api/v1/orgs/{org_id}/templates/{template_id}` | updateOrgTemplate | `org_id`*, `template_id`*, body: template | template |  | updateOrgTemplate |
+| DELETE | `/api/v1/orgs/{org_id}/templates/{template_id}` | deleteOrgTemplate | `org_id`*, `template_id`* | object |  | deleteOrgTemplate |
+| POST | `/api/v1/orgs/{org_id}/templates/{template_id}/clone` | cloneOrgTemplate | `org_id`*, `template_id`*, body: object | template |  | cloneOrgTemplate |
+| GET | `/api/v1/orgs/{org_id}/tickets` | getOrgTickets | `org_id`*, `start`, `end`, `duration` | ticket[] | yes | getOrgTickets |
+| POST | `/api/v1/orgs/{org_id}/tickets` | createOrgTicket | `org_id`*, body: ticket | ticket |  | createOrgTicket |
+| GET | `/api/v1/orgs/{org_id}/tickets/count` | countOrgTickets | `org_id`*, `distinct` | object | yes | countOrgTickets |
+| GET | `/api/v1/orgs/{org_id}/tickets/{ticket_id}` | getOrgTicket | `org_id`*, `ticket_id`* | ticket | yes | getOrgTicket |
+| PUT | `/api/v1/orgs/{org_id}/tickets/{ticket_id}` | updateOrgTicket | `org_id`*, `ticket_id`*, body: ticket | ticket |  | updateOrgTicket |
+| POST | `/api/v1/orgs/{org_id}/tickets/{ticket_id}/comments` | addOrgTicketComment | `org_id`*, `ticket_id`*, body: object | ticket |  | addOrgTicketComment |
+| GET | `/api/v1/orgs/{org_id}/troubleshoot` | troubleshootOrgClient | `org_id`*, `mac`, `site_id`, `start`, `end`, `type` | object | yes | troubleshootOrgClient |
+| GET | `/api/v1/orgs/{org_id}/vpns` | getOrgsVpns | `org_id`* | vpn[] | yes | getOrgsVpns |
+| POST | `/api/v1/orgs/{org_id}/vpns` | createOrgVpns | `org_id`*, body: vpn | vpn |  | createOrgVpns |
+| GET | `/api/v1/orgs/{org_id}/vpns/{vpn_id}` | getOrgVpn | `org_id`*, `vpn_id`* | vpn | yes | getOrgVpn |
+| PUT | `/api/v1/orgs/{org_id}/vpns/{vpn_id}` | updateOrgVpn | `org_id`*, `vpn_id`*, body: vpn | vpn |  | updateOrgVpn |
+| DELETE | `/api/v1/orgs/{org_id}/vpns/{vpn_id}` | deleteOrgVpn | `org_id`*, `vpn_id`* | object |  | deleteOrgVpn |
+| GET | `/api/v1/orgs/{org_id}/webhooks` | getOrgWebhooks | `org_id`* | webhook[] | yes | getOrgWebhooks |
+| POST | `/api/v1/orgs/{org_id}/webhooks` | createOrgWebhook | `org_id`*, body: webhook | webhook |  | createOrgWebhook |
+| GET | `/api/v1/orgs/{org_id}/webhooks/{webhook_id}` | getOrgWebhook | `org_id`*, `webhook_id`* | webhook | yes | getOrgWebhook |
+| PUT | `/api/v1/orgs/{org_id}/webhooks/{webhook_id}` | updateOrgWebhook | `org_id`*, `webhook_id`*, body: webhook | webhook |  | updateOrgWebhook |
+| DELETE | `/api/v1/orgs/{org_id}/webhooks/{webhook_id}` | deleteOrgWebhook | `org_id`*, `webhook_id`* | object |  | deleteOrgWebhook |
+| GET | `/api/v1/orgs/{org_id}/wired_clients/count` | countOrgClientsWired | `org_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countOrgClientsWired |
+| GET | `/api/v1/orgs/{org_id}/wired_clients/search` | searchOrgClientsWired | `org_id`*, `site_id`, `device_mac`, `mac`, `port_id`, `vlan`, `ip`, `manufacture`, `text`, `limit`, `start`, `end`, `duration` | object | yes | searchOrgClientsWired |
+| GET | `/api/v1/orgs/{org_id}/wlans` | getOrgWlans | `org_id`* | wlan[] | yes | getOrgWlans |
+| POST | `/api/v1/orgs/{org_id}/wlans` | createOrgWlan | `org_id`*, body: wlan | wlan |  | createOrgWlan |
+| GET | `/api/v1/orgs/{org_id}/wlans/derived` | getOrgWlanDerived | `org_id`*, `resolve` | wlan | yes | getOrgWlanDerived |
+| GET | `/api/v1/orgs/{org_id}/wlans/{wlan_id}` | getOrgWLAN | `org_id`*, `wlan_id`* | wlan[] | yes | getOrgWLAN |
+| PUT | `/api/v1/orgs/{org_id}/wlans/{wlan_id}` | updateOrgWlan | `org_id`*, `wlan_id`*, body: wlan | wlan |  | updateOrgWlan |
+| DELETE | `/api/v1/orgs/{org_id}/wlans/{wlan_id}` | deleteOrgWlan | `org_id`*, `wlan_id`* | object |  | deleteOrgWlan |
+| POST | `/api/v1/orgs/{org_id}/wlans/{wlan_id}/portal_image` | uploadOrgWlanPortalImage | `org_id`*, `wlan_id`*, body: image_upload | object |  | uploadOrgWlanPortalImage |
+| DELETE | `/api/v1/orgs/{org_id}/wlans/{wlan_id}/portal_image` | deleteOrgWlanPortalImage | `org_id`*, `wlan_id`* | object |  | deleteOrgWlanPortalImage |
+| PUT | `/api/v1/orgs/{org_id}/wlans/{wlan_id}/portal_template` | updateOrgWlanPortalTemplate | `org_id`*, `wlan_id`*, body: wlan_portal_template | portal_template |  | updateOrgWlanPortalTemplate |
+| GET | `/api/v1/orgs/{org_id}/wxrules` | getOrgWxRules | `org_id`* | wxlan_rule[] | yes | getOrgWxRules |
+| POST | `/api/v1/orgs/{org_id}/wxrules` | createOrgWxRule | `org_id`*, body: wxlan_rule | wxlan_rule |  | createOrgWxRule |
+| GET | `/api/v1/orgs/{org_id}/wxrules/derived` | getOrgWxRulesDerived | `org_id`* | wxlan_rule[] | yes | getOrgWxRulesDerived |
+| GET | `/api/v1/orgs/{org_id}/wxrules/{wxrules_id}` | getOrgWxRule | `org_id`*, `wxrules_id`* | wxlan_rule | yes | getOrgWxRule |
+| PUT | `/api/v1/orgs/{org_id}/wxrules/{wxrules_id}` | updateOrgWxRule | `org_id`*, `wxrules_id`*, body: wxlan_rule | wxlan_rule |  | updateOrgWxRule |
+| DELETE | `/api/v1/orgs/{org_id}/wxrules/{wxrules_id}` | deleteOrgWxRule | `org_id`*, `wxrules_id`* | object |  | deleteOrgWxRule |
+| GET | `/api/v1/orgs/{org_id}/wxtags` | getOrgWxTags | `org_id`* | wxlan_tag[] | yes | getOrgWxTags |
+| POST | `/api/v1/orgs/{org_id}/wxtags` | createOrgWxTag | `org_id`*, body: wxlan_tag | wxlan_tag |  | createOrgWxTag |
+| GET | `/api/v1/orgs/{org_id}/wxtags/apps` | getOrgApplicationList | `org_id`* | object[] | yes | getOrgApplicationList |
+| GET | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}` | getOrgWxTag | `org_id`*, `wxtag_id`* | wxlan_tag | yes | getOrgWxTag |
+| PUT | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}` | updateOrgWxTag | `org_id`*, `wxtag_id`*, body: wxlan_tag | wxlan_tag |  | updateOrgWxTag |
+| DELETE | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}` | deleteOrgWxTag | `org_id`*, `wxtag_id`* | object |  | deleteOrgWxTag |
+| GET | `/api/v1/orgs/{org_id}/wxtags/{wxtag_id}/clients` | getOrgCurrentMatchingClientsOfAWxTag | `org_id`*, `wxtag_id`* | object[] | yes | getOrgCurrentMatchingClientsOfAWxTag |
+| GET | `/api/v1/orgs/{org_id}/wxtunnels` | getOrgWxTunnels | `org_id`* | wxlan_tunnel[] | yes | getOrgWxTunnels |
+| POST | `/api/v1/orgs/{org_id}/wxtunnels` | createOrgWxTunnel | `org_id`*, body: wxlan_tunnel | wxlan_tunnel |  | createOrgWxTunnel |
+| GET | `/api/v1/orgs/{org_id}/wxtunnels/{wxtunnel_id}` | getOrgWxTunnel | `org_id`*, `wxtunnel_id`* | wxlan_tunnel | yes | getOrgWxTunnel |
+| PUT | `/api/v1/orgs/{org_id}/wxtunnels/{wxtunnel_id}` | updateOrgWxTunnel | `org_id`*, `wxtunnel_id`*, body: wxlan_tunnel | wxlan_tunnel |  | updateOrgWxTunnel |
+| DELETE | `/api/v1/orgs/{org_id}/wxtunnels/{wxtunnel_id}` | deleteOrgWxTunnel | `org_id`*, `wxtunnel_id`* | object |  | deleteOrgWxTunnel |
+| POST | `/api/v1/recover` | recoverPassword | body: object | object |  | recoverPassword |
+| POST | `/api/v1/recover/verify/{token}` | verifyRecoverPasssword | `token`* | object |  | verifyRecoverPasssword |
+| POST | `/api/v1/register` | registerNewAdmin | body: object | object |  | registerNewAdmin |
+| POST | `/api/v1/register/verify/{token}` | verifyRegistration | `token`* | object |  | verifyRegistration |
+| GET | `/api/v1/self` | getSelf | — | admin | yes | getSelf |
+| PUT | `/api/v1/self` | updateSelf | body: admin | admin |  | updateSelf |
+| DELETE | `/api/v1/self` | deleteSelf | — | object |  | deleteSelf |
+| GET | `/api/v1/self/apitokens` | getApiTokens | — | apitoken[] | yes | getApiTokens |
+| POST | `/api/v1/self/apitokens` | createApiToken | body: object | apitoken |  | createApiToken |
+| DELETE | `/api/v1/self/apitokens/{apitoken_id}` | deleteApiToken | `apitoken_id`* | object |  | deleteApiToken |
+| GET | `/api/v1/self/logs` | getSelfAuditLogs | `page`, `limit`, `start`, `end`, `duration` | object | yes | getSelfAuditLogs |
+| GET | `/api/v1/self/oauth/{provider}` | getOAuth2UrlForLinking | `provider`*, `forward` | object | yes | getOAuth2UrlForLinking |
+| POST | `/api/v1/self/oauth/{provider}` | linkOAuth2MistAccount | `provider`*, body: object | object |  | linkOAuth2MistAccount |
+| GET | `/api/v1/self/subscriptions` | getAlarmSubscriptions | — | object[] | yes | getAlarmSubscriptions |
+| GET | `/api/v1/self/two_factor/token` | generateQrCodeForVerification | `by` | object | yes | generateQrCodeForVerification |
+| POST | `/api/v1/self/two_factor/verify` | verifyTwoFactor | body: object | object |  | verifyTwoFactor |
+| POST | `/api/v1/self/update` | updateSelfEmail | body: Model_object_email | object |  | updateSelfEmail |
+| GET | `/api/v1/self/update/verify/{token}` | verifySelfEmail | `token`* | object | yes | verifySelfEmail |
+| GET | `/api/v1/sites/{site_id}` | getSiteInfo | `site_id`* | site | yes | getSiteInfo |
+| PUT | `/api/v1/sites/{site_id}` | updateSiteInfo | `site_id`*, body: site | site |  | updateSiteInfo |
+| DELETE | `/api/v1/sites/{site_id}` | deleteSite | `site_id`* | object |  | deleteSite |
+| POST | `/api/v1/sites/{site_id}/alarms/ack` | multiAckSiteAlarms | `site_id`*, body: object | object |  | multiAckSiteAlarms |
+| POST | `/api/v1/sites/{site_id}/alarms/ack_all` | ackSiteAllAlarms | `site_id`*, body: note | object |  | ackSiteAllAlarms |
+| GET | `/api/v1/sites/{site_id}/alarms/count` | countSiteAlarms | `site_id`*, `distinct`, `ack_admin_name`, `acked`, `type`, `severity`, `group`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteAlarms |
+| GET | `/api/v1/sites/{site_id}/alarms/search` | searchSiteAlarms | `site_id`*, `type`, `ack_admin_name`, `acked`, `severity`, `group`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteAlarms |
+| POST | `/api/v1/sites/{site_id}/alarms/unack` | multiUnackSiteAlarms | `site_id`*, body: object | object |  | multiUnackSiteAlarms |
+| POST | `/api/v1/sites/{site_id}/alarms/unack_all` | unackSiteAllArlarms | `site_id`*, body: note | object |  | unackSiteAllArlarms |
+| POST | `/api/v1/sites/{site_id}/alarms/{alarm_id}/ack` | ackSiteAlarm | `site_id`*, `alarm_id`*, body: note | object |  | ackSiteAlarm |
+| POST | `/api/v1/sites/{site_id}/alarms/{alarm_id}/unack` | unackSiteAlarm | `site_id`*, `alarm_id`*, body: note | object |  | unackSiteAlarm |
+| GET | `/api/v1/sites/{site_id}/anomaly/client/{client_mac}/{metric}` | getSiteAnomalyEventsForClient | `site_id`*, `client_mac`*, `metric`* | object | yes | getSiteAnomalyEventsForClient |
+| GET | `/api/v1/sites/{site_id}/anomaly/device/{device_mac}/{metric}` | getSiteAnomalyEventsforDevice | `site_id`*, `metric`*, `device_mac`* | object | yes | getSiteAnomalyEventsforDevice |
+| GET | `/api/v1/sites/{site_id}/anomaly/{metric}` | getSiteAnomalyEvents | `site_id`*, `metric`* | object | yes | getSiteAnomalyEvents |
+| GET | `/api/v1/sites/{site_id}/apps` | getSiteApps | `site_id`* | object[] | yes | getSiteApps |
+| GET | `/api/v1/sites/{site_id}/assetfilters` | getSiteAssetFilters | `site_id`* | asset_filter[] | yes | getSiteAssetFilters |
+| POST | `/api/v1/sites/{site_id}/assetfilters` | createSiteAssetFilters | `site_id`*, body: asset_filter | asset_filter |  | createSiteAssetFilters |
+| GET | `/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}` | getSiteAssetFilter | `site_id`*, `assetfilter_id`* | asset_filter | yes | getSiteAssetFilter |
+| PUT | `/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}` | updateSiteAssetFilter | `site_id`*, `assetfilter_id`*, body: asset_filter | asset_filter |  | updateSiteAssetFilter |
+| DELETE | `/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}` | deleteSiteAssetFilter | `site_id`*, `assetfilter_id`* | object |  | deleteSiteAssetFilter |
+| GET | `/api/v1/sites/{site_id}/assets` | getSiteAssets | `site_id`* | asset[] | yes | getSiteAssets |
+| POST | `/api/v1/sites/{site_id}/assets` | createSiteAsset | `site_id`*, body: asset | asset |  | createSiteAsset |
+| POST | `/api/v1/sites/{site_id}/assets/import` | importSiteAssets | `site_id`*, `upsert`, body: object[] | object |  | importSiteAssets |
+| GET | `/api/v1/sites/{site_id}/assets/{asset_id}` | getSiteAsset | `site_id`*, `asset_id`* | asset | yes | getSiteAsset |
+| PUT | `/api/v1/sites/{site_id}/assets/{asset_id}` | updateSiteAsset | `site_id`*, `asset_id`*, body: asset | asset |  | updateSiteAsset |
+| DELETE | `/api/v1/sites/{site_id}/assets/{asset_id}` | deleteSiteAsset | `site_id`*, `asset_id`* | object |  | deleteSiteAsset |
+| GET | `/api/v1/sites/{site_id}/beacons` | getSiteBeacons | `site_id`* | beacon[] | yes | getSiteBeacons |
+| POST | `/api/v1/sites/{site_id}/beacons` | createSiteBeacon | `site_id`*, body: beacon | beacon |  | createSiteBeacon |
+| GET | `/api/v1/sites/{site_id}/beacons/{beacon_id}` | getSiteBeacon | `site_id`*, `beacon_id`* | beacon | yes | getSiteBeacon |
+| PUT | `/api/v1/sites/{site_id}/beacons/{beacon_id}` | updateSiteBeacons | `site_id`*, `beacon_id`*, body: beacon | beacon |  | updateSiteBeacons |
+| DELETE | `/api/v1/sites/{site_id}/beacons/{beacon_id}` | deleteSiteBeacons | `site_id`*, `beacon_id`* | object |  | deleteSiteBeacons |
+| GET | `/api/v1/sites/{site_id}/call/events/count` | countSiteCallEvents | `site_id`*, `distinct` | object | yes | countSiteCallEvents |
+| GET | `/api/v1/sites/{site_id}/call/events/search` | searchSiteCallEvents | `site_id`*, `type`, `ap`, `mac`, `app` | object | yes | searchSiteCallEvents |
+| GET | `/api/v1/sites/{site_id}/clients/count` | countSiteByDistinctAttributesOfClients | `site_id`*, `distinct`*, `ssid`, `ap`, `ip address`, `vlan`, `hostname`, `os`, `model`, `device`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteByDistinctAttributesOfClients |
+| POST | `/api/v1/sites/{site_id}/clients/disconnect` | disconnectSiteMultipleClients | `site_id`*, body: string[] | object |  | disconnectSiteMultipleClients |
+| GET | `/api/v1/sites/{site_id}/clients/events/count` | countSiteByDistinctAttributesOfClientsEvents | `site_id`*, `distinct`, `type`, `reason_code`, `ssid`, `ap`, `proto`, `band`, `wlan_id`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteByDistinctAttributesOfClientsEvents |
+| GET | `/api/v1/sites/{site_id}/clients/events/search` | searchSiteClientsEvents | `site_id`*, `type`, `reason_code`, `ssid`, `ap`, `proto`, `band`, `wlan_id`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteClientsEvents |
+| GET | `/api/v1/sites/{site_id}/clients/search` | searchSiteClientsWireless | `site_id`*, `mac`, `ip address`, `hostname`, `device`, `os`, `model`, `ap`, `ssid`, `text`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteClientsWireless |
+| GET | `/api/v1/sites/{site_id}/clients/sessions/count` | countSiteByDistinctAttributesOfClientSessions | `site_id`*, `distinct`, `ap`, `band`, `client_family`, `client_manufacture`, `client_model`, `client_os`, `ssid`, `wlan_id`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteByDistinctAttributesOfClientSessions |
+| GET | `/api/v1/sites/{site_id}/clients/sessions/search` | searchSiteClientWirelessSessions | `site_id`*, `ap`, `band`, `client_family`, `client_manufacture`, `client_model`, `client_username`, `client_os`, `ssid`, `wlan_id`, `psk_id`, `psk_name`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteClientWirelessSessions |
+| POST | `/api/v1/sites/{site_id}/clients/unauthorize` | unauthorizeSiteMultipleClients | `site_id`*, body: string[] | object |  | unauthorizeSiteMultipleClients |
+| POST | `/api/v1/sites/{site_id}/clients/{client_mac}/disconnect` | disconnectSiteClient | `site_id`*, `client_mac`* | object |  | disconnectSiteClient |
+| GET | `/api/v1/sites/{site_id}/clients/{client_mac}/events` | getSiteEventsForClient | `site_id`*, `client_mac`*, `type`, `proto`, `band`, `channel`, `wlan_id`, `ssid`, `start`, `end`, `page`, `limit`, `duration` | object | yes | getSiteEventsForClient |
+| POST | `/api/v1/sites/{site_id}/clients/{client_mac}/unauthorize` | unauthorizeSiteClient | `site_id`*, `client_mac`* | object |  | unauthorizeSiteClient |
+| GET | `/api/v1/sites/{site_id}/devices` | getSiteDevices | `site_id`*, `type`, `name`, `page`, `limit` | device_ap\|device_switch\|device_gateway[] | yes | getSiteDevices |
+| POST | `/api/v1/sites/{site_id}/devices` | createSiteDevice | `site_id`*, body: device_ap\|device_switch\|device_gateway | device_ap\|device_switch\|device_gateway |  | createSiteDevice |
+| GET | `/api/v1/sites/{site_id}/devices/ap_channels` | getSiteDeviceRadioChannels | `site_id`*, `country_code` | object | yes | getSiteDeviceRadioChannels |
+| GET | `/api/v1/sites/{site_id}/devices/config_history/count` | countSiteDeviceConfigHistory | `site_id`*, `distinct`, `mac`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteDeviceConfigHistory |
+| GET | `/api/v1/sites/{site_id}/devices/config_history/search` | searchSiteDeviceConfigHistory | `site_id`*, `device_type`, `mac`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteDeviceConfigHistory |
+| GET | `/api/v1/sites/{site_id}/devices/count` | countSiteDevices | `site_id`*, `distinct`, `hostname`, `model`, `mac`, `version`, `mxtunnel_status`, `mxedge_id`, `lldp_system_name`, `lldp_system_desc`, `lldp_port_id`, `lldp_mgmt_addr`, `map_id`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteDevices |
+| GET | `/api/v1/sites/{site_id}/devices/events/count` | countSiteDeviceEvents | `site_id`*, `distinct`, `model`, `type`, `type_code`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteDeviceEvents |
+| GET | `/api/v1/sites/{site_id}/devices/events/search` | searchSiteDevicesEvents | `site_id`*, `device_type`, `mac`, `model`, `text`, `timestamp`, `type`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteDevicesEvents |
+| GET | `/api/v1/sites/{site_id}/devices/export` | exportSiteDevices | `site_id`* | string:binary | yes | exportSiteDevices |
+| POST | `/api/v1/sites/{site_id}/devices/import` | importSiteDevices | `site_id`*, body: device_ap[] | device_ap\|device_switch\|device_gateway[] |  | importSiteDevices |
+| GET | `/api/v1/sites/{site_id}/devices/last_config/count` | countSiteDeviceLastConfig | `site_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteDeviceLastConfig |
+| GET | `/api/v1/sites/{site_id}/devices/last_config/search` | searchSiteDeviceLastConfigs | `site_id`*, `device_type`, `mac`, `version`, `name`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteDeviceLastConfigs |
+| POST | `/api/v1/sites/{site_id}/devices/reprovision` | reprovisionSiteAllAps | `site_id`* | object |  | reprovisionSiteAllAps |
+| POST | `/api/v1/sites/{site_id}/devices/reset_radio_config` | resetSiteAllApsToUseRrm | `site_id`*, body: object | object |  | resetSiteAllApsToUseRrm |
+| POST | `/api/v1/sites/{site_id}/devices/restart` | multiRestartSiteDevices | `site_id`*, body: object | object |  | multiRestartSiteDevices |
+| GET | `/api/v1/sites/{site_id}/devices/search` | searchSiteDevices | `site_id`*, `hostname`, `type`, `model`, `mac`, `version`, `power_constrained`, `ip address`, `mxtunnel_status`, `mxedge_id`, `lldp_system_name`, `lldp_system_desc`, `lldp_port_id`, `lldp_mgmt_addr`, `band_24_channel`, `band_5_channel`, `band_6_channel`, `eth0_port_speed`, `sort`, `desc-sort`, `stats`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteDevices |
+| GET | `/api/v1/sites/{site_id}/devices/upgrade` | getSiteDevicesUpgrade | `site_id`*, `status` | device_upgrade_response[] | yes | getSiteDevicesUpgrade |
+| POST | `/api/v1/sites/{site_id}/devices/upgrade` | multiUpgradeSiteDevices | `site_id`*, body: device_upgrade | device_upgrade_response |  | multiUpgradeSiteDevices |
+| GET | `/api/v1/sites/{site_id}/devices/upgrade/{upgrade_id}` | getSiteUpgrade | `site_id`*, `upgrade_id`* | device_upgrade_response | yes | getSiteUpgrade |
+| POST | `/api/v1/sites/{site_id}/devices/upgrade/{upgrade_id}/cancel` | cancelSiteDeviceUpgrade | `site_id`*, `upgrade_id`* | object |  | cancelSiteDeviceUpgrade |
+| GET | `/api/v1/sites/{site_id}/devices/versions` | getSiteAvailableDeviceVersions | `site_id`*, `type` | object[] | yes | getSiteAvailableDeviceVersions |
+| POST | `/api/v1/sites/{site_id}/devices/zerioze` | zeroizeSiteFipsAllAps | `site_id`*, body: object | object |  | zeroizeSiteFipsAllAps |
+| GET | `/api/v1/sites/{site_id}/devices/{device_id}` | getSiteDevice | `site_id`*, `device_id`* | device_ap\|device_switch\|device_gateway | yes | getSiteDevice |
+| PUT | `/api/v1/sites/{site_id}/devices/{device_id}` | updateSiteDevice | `site_id`*, `device_id`*, body: device_ap\|device_switch\|device_gateway | device_ap\|device_switch\|device_gateway |  | updateSiteDevice |
+| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}` | deleteSiteDevice | `site_id`*, `device_id`* | object |  | deleteSiteDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/arp` | arpFromDevice | `site_id`*, `device_id`* | object |  | arpFromDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/bounce_port` | portsBounceFromSwitch | `site_id`*, `device_id`*, body: object | object |  | portsBounceFromSwitch |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/cable_test` | cableTestFromSwitch | `site_id`*, `device_id`*, body: object | object |  | cableTestFromSwitch |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/check_radius_server` | startSiteSwitchRadiusSyntheticTest | `site_id`*, `device_id`*, body: object | object |  | triggerSiteSwitchRadiusSyntheticTest |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_arp` | clearSiteSsrArpCache | `site_id`*, `device_id`*, body: object | object |  | clearSiteSsrArpCache |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_bgp` | clearSiteSsrBgpRoutes | `site_id`*, `device_id`*, body: object | object |  | clearSiteSsrBgpRoutes |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_bpdu_error` | clearBpduErrosFromPortsOnSwitch | `site_id`*, `device_id`*, body: object | object |  | clearBpduErrosFromPortsOnSwitch |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/clear_macs` | clearAllLearnedMacsFromPortOnSwitch | `site_id`*, `device_id`*, body: object | object |  | clearAllLearnedMacsFromPortOnSwitch |
+| GET | `/api/v1/sites/{site_id}/devices/{device_id}/config_cmd` | getSiteDeviceConfigCmd | `site_id`*, `device_id`*, `sort` | object | yes | getSiteDeviceConfigCmd |
+| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/ha` | swapSiteDeviceHaClusterNode | `site_id`*, `device_id`*, body: object | object |  | swapSiteDeviceHaClusterNode |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/ha` | createSiteDeviceHaCluster | `site_id`*, `device_id`*, body: object | object |  | createSiteDeviceHaCluster |
+| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/ha` | deleteSiteDeviceHaCluster | `site_id`*, `device_id`* | object |  | deleteSiteDeviceHaCluster |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/image{image_number}` | addSiteDeviceImage | `site_id`*, `device_id`*, `image_number`*, body: image_upload | object |  | addSiteDeviceImage |
+| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/image{image_number}` | deleteSiteDeviceImage | `site_id`*, `device_id`*, `image_number`* | object |  | deleteSiteDeviceImage |
+| GET | `/api/v1/sites/{site_id}/devices/{device_id}/iot` | getSiteDeviceIotPort | `site_id`*, `device_id`* | object | yes | getSiteDeviceIotPort |
+| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/iot` | setSiteDeviceIotPort | `site_id`*, `device_id`*, body: object | object |  | setSiteDeviceIotPort |
+| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/local_port_config` | updateSiteLocalSwitchPortConfig | `site_id`*, `device_id`*, body: junos_port_config | object |  | updateSiteLocalSwitchPortConfig |
+| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/local_port_config` | deleteSiteLocalSwitchPortConfig | `site_id`*, `device_id`* | object |  | deleteSiteLocalSwitchPortConfig |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/locate` | startSiteLocateDevice | `site_id`*, `device_id`* | object |  | startSiteLocateDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/ping` | pingFromDevice | `site_id`*, `device_id`*, body: object | object |  | pingFromDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/poll_stats` | pollSiteSwitchStats | `site_id`*, `device_id`* | object |  | pollSiteSwitchStats |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/release_dhcp` | releaseSiteSsrDhcpLease | `site_id`*, `device_id`*, body: object | object |  | releaseSiteSsrDhcpLease |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/request_ztp_password` | getSiteDeviceZtpPassword | `site_id`*, `device_id`* | object |  | getSiteDeviceZtpPassword |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/resolve_dns` | testSiteSsrDnsResolution | `site_id`*, `device_id`* | object |  | testSiteSsrDnsResolution |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/restart` | restartSiteDevice | `site_id`*, `device_id`*, body: object | object |  | restartSiteDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/service_ping` | servicePingFromSsr | `site_id`*, `device_id`*, body: object | object |  | servicePingFromSsr |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/show_route` | getSiteSsrAndSrxRoutes | `site_id`*, `device_id`*, body: object | object |  | getSiteSsrAndSrxRoutes |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/show_session` | getSiteSsrAndSrxSessions | `site_id`*, `device_id`*, body: object | object |  | getSiteSsrAndSrxSessions |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/snapshot` | createSiteDeviceSnapshot | `site_id`*, `device_id`* | object |  | createSiteDeviceSnapshot |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/support` | uploadSiteDeviceSupportFile | `site_id`*, `device_id`*, body: object | object |  | uploadSiteDeviceSupportFile |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/synthetic_test` | StartSiteDeviceSyntheticTest | `site_id`*, `device_id`*, body: object | — |  | triggerSiteDeviceSyntheticTest |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/traceroute` | tracerouteFromDevice | `site_id`*, `device_id`*, body: object | object |  | tracerouteFromDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/unlocate` | stopSiteLocateDevice | `site_id`*, `device_id`* | object |  | stopSiteLocateDevice |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/upgrade` | upgradeSiteDevice | `site_id`*, `device_id`*, body: object | object |  | upgradeSiteDevice |
+| GET | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | getSiteVirtualChassis | `site_id`*, `device_id`* | object | yes | getSiteVirtualChassis |
+| PUT | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | updateSiteVirtualChassisMember | `site_id`*, `device_id`*, body: device_switch_vc | object |  | updateSiteVirtualChassisMember |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | createSiteVirtualChassis | `site_id`*, `device_id`*, body: device_switch_vc | object |  | createSiteVirtualChassis |
+| DELETE | `/api/v1/sites/{site_id}/devices/{device_id}/vc` | deleteSiteVirtualChassis | `site_id`*, `device_id`* | object |  | deleteSiteVirtualChassis |
+| POST | `/api/v1/sites/{site_id}/devices/{device_id}/vc/vc_port` | setSiteVcPort | `site_id`*, `device_id`*, body: object | object |  | setSiteVcPort |
+| GET | `/api/v1/sites/{site_id}/events/fast_roam` | getSiteRoamingEvents | `site_id`*, `type`, `page`, `limit`, `start`, `end`, `duration` | object | yes | getSiteRoamingEvents |
+| GET | `/api/v1/sites/{site_id}/events/interference` | getSiteInterferenceEvents | `site_id`*, `page`, `limit`, `start`, `end`, `duration` | object | yes | getSiteInterferenceEvents |
+| GET | `/api/v1/sites/{site_id}/events/system/count` | countSiteSystemEvents | `site_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteSystemEvents |
+| GET | `/api/v1/sites/{site_id}/events/system/search` | searchSiteSystemEvents | `site_id`*, `type`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteSystemEvents |
+| GET | `/api/v1/sites/{site_id}/evpn_topologies` | getSiteEvpnTopologies | `site_id`* | junos_evpn_topology | yes | getSiteEvpnTopologies |
+| POST | `/api/v1/sites/{site_id}/evpn_topologies` | createSiteEvpnTopology | `site_id`*, body: junos_evpn_topology | junos_evpn_topology |  | createSiteEvpnTopology |
+| GET | `/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}` | getSiteEvpnTolopogy | `site_id`*, `evpn_topology_id`* | — | yes | getSiteEvpnTolopogy |
+| PUT | `/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}` | updateSiteEvpnTopology | `site_id`*, `evpn_topology_id`*, body: junos_evpn_topology | junos_evpn_topology |  | updateSiteEvpnTopology |
+| DELETE | `/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}` | deleteSiteEvpnTopology | `site_id`*, `evpn_topology_id`* | object |  | deleteSiteEvpnTopology |
+| GET | `/api/v1/sites/{site_id}/guests` | getSiteAllGuestAuthorizations | `site_id`*, `wlan_id` | guest[] | yes | getSiteAllGuestAuthorizations |
+| GET | `/api/v1/sites/{site_id}/guests/count` | countSiteGuestAuthorizations | `site_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteGuestAuthorizations |
+| GET | `/api/v1/sites/{site_id}/guests/search` | searchSiteGuestAuthorization | `site_id`*, `wlan_id`, `auth_method`, `ssid`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteGuestAuthorization |
+| GET | `/api/v1/sites/{site_id}/guests/{guest_mac}` | getSiteGuestAuthorization | `site_id`*, `guest_mac`* | guest | yes | getSiteGuestAuthorization |
+| PUT | `/api/v1/sites/{site_id}/guests/{guest_mac}` | updateSiteGuestAuthorization | `site_id`*, `guest_mac`*, body: guest | guest |  | updateSiteGuestAuthorization |
+| DELETE | `/api/v1/sites/{site_id}/guests/{guest_mac}` | deleteSiteGuestAuthorization | `site_id`*, `guest_mac`* | object |  | deleteSiteGuestAuthorization |
+| GET | `/api/v1/sites/{site_id}/insights/client/{client_mac}/{metric}` | getSiteInsightMetricsForClient | `site_id`*, `client_mac`*, `metric`*, `page`, `limit`, `start`, `end`, `duration`, `interval` | object | yes | getSiteInsightMetricsForClient |
+| GET | `/api/v1/sites/{site_id}/insights/device/{device_mac}/{metric}` | getSiteInsightMetricsForDevice | `site_id`*, `metric`*, `device_mac`*, `page`, `limit`, `start`, `end`, `duration`, `interval` | object | yes | getSiteInsightMetricsForDevice |
+| GET | `/api/v1/sites/{site_id}/insights/rogues` | getSiteRogueAPs | `site_id`*, `type`, `limit`, `start`, `end`, `duration`, `interval` | object | yes | getSiteRogueAPs |
+| GET | `/api/v1/sites/{site_id}/insights/rogues/clients` | getSiteRogueClients | `site_id`*, `limit`, `start`, `end`, `duration`, `interval` | object | yes | getSiteRogueClients |
+| GET | `/api/v1/sites/{site_id}/insights/{metric}` | getSiteInsightMetrics | `site_id`*, `metric`*, `page`, `limit`, `start`, `end`, `duration`, `interval` | object | yes | getSiteInsightMetrics |
+| GET | `/api/v1/sites/{site_id}/licenses/usages` | getSiteLicenseUsage | `site_id`* | object | yes | getSiteLicenseUsage |
+| GET | `/api/v1/sites/{site_id}/location/coverage` | getSiteBeamCoverageOverview | `site_id`*, `map_id`, `type`, `duration`, `resolution`, `client_type`, `start`, `end` | object | yes | getSiteBeamCoverageOverview |
+| GET | `/api/v1/sites/{site_id}/location/ml/current` | getSiteMachineLearningCurrentStat | `site_id`*, `map_id` | object[] | yes | getSiteMachineLearningCurrentStat |
+| GET | `/api/v1/sites/{site_id}/location/ml/defaults` | getSiteDefaultPlfForModels | `site_id`* | object[] | yes | getSiteDefaultPlfForModels |
+| PUT | `/api/v1/sites/{site_id}/location/ml/device/{device_id}` | overwriteSiteMlForDevice | `site_id`*, `device_id`*, body: Model_ml | object[] |  | overwriteSiteMlForDevice |
+| DELETE | `/api/v1/sites/{site_id}/location/ml/device/{device_id}` | clearSiteMlOverwriteForDevice | `site_id`*, `device_id`* | object |  | clearSiteMlOverwriteForDevice |
+| PUT | `/api/v1/sites/{site_id}/location/ml/map/{map_id}` | overwriteSiteMlForMap | `site_id`*, `map_id`*, body: Model_ml | object[] |  | overwriteSiteMlForMap |
+| DELETE | `/api/v1/sites/{site_id}/location/ml/map/{map_id}` | clearSiteMlOverwriteForMap | `site_id`*, `map_id`* | object |  | clearSiteMlOverwriteForMap |
+| POST | `/api/v1/sites/{site_id}/location/ml/reset/map/{map_id}` | resetSiteMlStatsByMap | `site_id`*, `map_id`* | object |  | resetSiteMlStatsByMap |
+| GET | `/api/v1/sites/{site_id}/location/ml/updates` | getSiteMachineLearningEvents | `site_id`*, `device_id`, `map_ip`, `client_type`, `duration`, `start`, `end`, `interval` | object | yes | getSiteMachineLearningEvents |
+| GET | `/api/v1/sites/{site_id}/maps` | getSiteMaps | `site_id`* | map[] | yes | getSiteMaps |
+| POST | `/api/v1/sites/{site_id}/maps` | createSiteMap | `site_id`*, body: map | map |  | createSiteMap |
+| POST | `/api/v1/sites/{site_id}/maps/import` | importSiteMaps | `site_id`*, body: object | object |  | importSiteMaps |
+| GET | `/api/v1/sites/{site_id}/maps/{map_id}` | getSiteMap | `site_id`*, `map_id`* | map | yes | getSiteMap |
+| PUT | `/api/v1/sites/{site_id}/maps/{map_id}` | updateSiteMap | `site_id`*, `map_id`*, body: map | map |  | updateSiteMap |
+| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}` | deleteSiteMap | `site_id`*, `map_id`* | object |  | deleteSiteMap |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/auto_orient` | startSiteApAutoOrientation | `map_id`*, `site_id`* | object |  | startSiteApAutoOrientation |
+| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}/auto_orient` | deleteSiteApAutoOrientation | `map_id`*, `site_id`* | object |  | deleteSiteApAutoOrientation |
+| GET | `/api/v1/sites/{site_id}/maps/{map_id}/auto_placement` | getSiteApAutoPlacement | `site_id`*, `map_id`* | object | yes | getSiteApAutoplacement |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/auto_placement` | runSiteApAutoplacement | `site_id`*, `map_id`*, body: object | — |  | runSiteApAutoplacement |
+| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}/auto_placement` | deleteSiteApAutoplacement | `site_id`*, `map_id`* | — |  | deleteSiteApAutoplacement |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/clear_auto_orient` | clearSiteApAutoOrient | `site_id`*, `map_id`*, body: object | object |  | clearSiteApAutoOrient |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/clear_autoplacement` | clearSiteApAutoplacement | `site_id`*, `map_id`*, body: object | object |  | clearSiteApAutoplacement |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/image` | addSiteMapImage | `site_id`*, `map_id`*, body: image_upload | object |  | addSiteMapImage |
+| DELETE | `/api/v1/sites/{site_id}/maps/{map_id}/image` | deleteSiteMapImage | `site_id`*, `map_id`* | object |  | deleteSiteMapImage |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/replace` | replaceSiteMapImage | `site_id`*, `map_id`*, body: object | object |  | replaceSiteMapImage |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/revert_auto_orient` | revertSiteApAutoOrient | `site_id`*, `map_id`*, body: object | object |  | revertSiteApAutoOrient |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/revert_autoplacement` | revertSiteApAutoplacement | `site_id`*, `map_id`*, body: object | object |  | revertSiteApAutoplacement |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/set_map` | bulkAssignSiteApsToMap | `site_id`*, `map_id`*, body: object | object |  | bulkAssignSiteApsToMap |
+| POST | `/api/v1/sites/{site_id}/maps/{map_id}/wayfinding/import` | importSiteWayfindings | `site_id`*, `map_id`*, body: object | object |  | importSiteWayfindings |
+| GET | `/api/v1/sites/{site_id}/mxedges` | getSiteMxEdges | `site_id`* | mxedge[] | yes | getSiteMxEdges |
+| POST | `/api/v1/sites/{site_id}/mxedges` | createSiteMxEdge | `site_id`*, body: mxedge | mxedge |  | createSiteMxEdge |
+| GET | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}` | getSiteMxEdge | `site_id`*, `mxedge_id`* | — | yes | getSiteMxEdge |
+| PUT | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}` | updateSiteMxEdge | `site_id`*, `mxedge_id`*, body: mxedge | mxedge |  | updateSiteMxEdge |
+| DELETE | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}` | deleteSiteMxEdge | `site_id`*, `mxedge_id`* | object |  | deleteSiteMxEdge |
+| POST | `/api/v1/sites/{site_id}/mxedges/{mxedge_id}/support` | uploadSiteMxEdgeSupportFiles | `site_id`*, `mxedge_id`* | object |  | uploadSiteMxEdgeSupportFiles |
+| POST | `/api/v1/sites/{site_id}/mxtunnels/{mxtunnel_id}/preempt_aps` | preemptSitesMxTunnel | `site_id`*, `mxtunnel_id`* | object |  | preemptSitesMxTunnel |
+| GET | `/api/v1/sites/{site_id}/otherdevices` | getSiteOtherDevices | `site_id`*, `vendor`, `mac`, `serial`, `model`, `name`, `page`, `limit` | device_other[] | yes | getSiteOtherDevices |
+| GET | `/api/v1/sites/{site_id}/pcaps` | getSitePacketCaptures | `site_id`*, `page`, `limit`, `start`, `end`, `duration`, `client_mac` | object | yes | getSitePacketCaptures |
+| GET | `/api/v1/sites/{site_id}/pcaps/capture` | getSiteCapturingStatus | `site_id`* | object | yes | getSiteCapturingStatus |
+| POST | `/api/v1/sites/{site_id}/pcaps/capture` | startSitePacketCapture | `site_id`*, body: capture | object |  | startSitePacketCapture |
+| DELETE | `/api/v1/sites/{site_id}/pcaps/capture` | stopSitePacketCapture | `site_id`* | object |  | stopSitePacketCapture |
+| GET | `/api/v1/sites/{site_id}/psks` | getSitePsks | `site_id`*, `ssid`, `role`, `name`, `page`, `limit` | psk[] | yes | getSitePsks |
+| PUT | `/api/v1/sites/{site_id}/psks` | updateSitePsks | `site_id`*, body: psk[] | psk[] |  | updateSitePsks |
+| POST | `/api/v1/sites/{site_id}/psks` | createSitePsk | `site_id`*, body: psk | psk |  | createSitePsk |
+| POST | `/api/v1/sites/{site_id}/psks/import` | importSitePsks | `site_id`*, body: psk[] | psk[] |  | importSitePsks |
+| GET | `/api/v1/sites/{site_id}/psks/{psk_id}` | getSitePsk | `site_id`*, `psk_id`* | psk | yes | getSitePsk |
+| PUT | `/api/v1/sites/{site_id}/psks/{psk_id}` | updateSitePsk | `site_id`*, `psk_id`*, body: psk | psk |  | updateSitePsk |
+| DELETE | `/api/v1/sites/{site_id}/psks/{psk_id}` | deleteSitePsk | `site_id`*, `psk_id`* | object |  | deleteSitePsk |
+| GET | `/api/v1/sites/{site_id}/rfdiags` | getSiteSiteRfdiagRecording | `site_id`*, `page`, `limit`, `start`, `end`, `duration` | rfdiag.response[] | yes | getSiteSiteRfdiagRecording |
+| POST | `/api/v1/sites/{site_id}/rfdiags` | startSiteRecording | `site_id`*, body: rfdiag | rfdiag.response |  | startSiteRecording |
+| GET | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}` | getSiteRfdiagRecording | `site_id`*, `rfdiag_id`* | rfdiag.response | yes | getSiteRfdiagRecording |
+| PUT | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}` | updateSiteRfdiagRecording | `site_id`*, `rfdiag_id`*, body: rfdiag | rfdiag.response |  | updateSiteRfdiagRecording |
+| DELETE | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}` | deleteSiteRfdiagRecording | `site_id`*, `rfdiag_id`* | object |  | deleteSiteRfdiagRecording |
+| GET | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}/download` | downloadSiteRfdiagRecording | `site_id`*, `rfdiag_id`* | string:binary | yes | downloadSiteRfdiagRecording |
+| POST | `/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}/stop` | stopSiteRfdiagRecording | `site_id`*, `rfdiag_id`* | object |  | stopSiteRfdiagRecording |
+| GET | `/api/v1/sites/{site_id}/rogues/events/count` | countSiteRogueEvents | `site_id`*, `distinct`, `type`, `ssid`, `bssid`, `ap_mac`, `channel`, `seen_on_lan`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteRogueEvents |
+| GET | `/api/v1/sites/{site_id}/rogues/events/search` | searchSiteRogueEvents | `site_id`*, `type`, `ssid`, `bssid`, `ap_mac`, `channel`, `seen_on_lan`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteRogueEvents |
+| GET | `/api/v1/sites/{site_id}/rogues/{rogue_bssid}` | getSiteRogueAP | `site_id`*, `rogue_bssid`* | object | yes | getSiteRogueAP |
+| POST | `/api/v1/sites/{site_id}/rogues/{rogue_bssid}/deauth_clients` | deauthSiteClientsConnectedToARogue | `site_id`*, `rogue_bssid`* | object |  | deauthSiteClientsConnectedToARogue |
+| GET | `/api/v1/sites/{site_id}/rrm/current` | getSiteCurrentChannelPlanning | `site_id`* | rrm | yes | getSiteCurrentChannelPlanning |
+| GET | `/api/v1/sites/{site_id}/rrm/current/devices/{device_id}/band/{band}` | getSiteCurrentRrmConsiderationsForAnApOnASpecificBand | `site_id`*, `device_id`*, `band`* | object | yes | getSiteCurrentRrmConsiderationsForAnApOnASpecificBand |
+| GET | `/api/v1/sites/{site_id}/rrm/events` | getSiteRrmEvents | `site_id`*, `band`*, `page`, `limit`, `start`, `end`, `duration` | object | yes | getSiteRrmEvents |
+| POST | `/api/v1/sites/{site_id}/rrm/optimize` | optimizeSiteRrm | `site_id`*, body: object | object |  | optimizeSiteRrm |
+| GET | `/api/v1/sites/{site_id}/rssizones` | getSiteRssiZones | `site_id`* | rssizone[] | yes | getSiteRssiZones |
+| POST | `/api/v1/sites/{site_id}/rssizones` | createSiteRssiZone | `site_id`*, body: rssizone | rssizone |  | createSiteRssiZone |
+| GET | `/api/v1/sites/{site_id}/rssizones/{rssizone_id}` | getSiteRssiZone | `site_id`*, `rssizone_id`* | rssizone[] | yes | getSiteRssiZone |
+| PUT | `/api/v1/sites/{site_id}/rssizones/{rssizone_id}` | updateSiteRssiZone | `site_id`*, `rssizone_id`*, body: rssizone | rssizone |  | updateSiteRssiZone |
+| DELETE | `/api/v1/sites/{site_id}/rssizones/{rssizone_id}` | deleteSiteRssiZone | `site_id`*, `rssizone_id`* | object |  | deleteSiteRssiZone |
+| GET | `/api/v1/sites/{site_id}/setting` | getSiteSetting | `site_id`* | site_setting | yes | getSiteSetting |
+| PUT | `/api/v1/sites/{site_id}/setting` | updateSiteSettings | `site_id`*, body: site_setting | site_setting |  | updateSiteSettings |
+| POST | `/api/v1/sites/{site_id}/setting/blacklist` | createSiteClientsBlocklist | `site_id`*, body: Model_object_macs_array_string | object |  | createSiteClientsBlocklist |
+| DELETE | `/api/v1/sites/{site_id}/setting/blacklist` | deleteSiteClientsBlocklist | `site_id`* | object |  | deleteSiteClientsBlocklist |
+| POST | `/api/v1/sites/{site_id}/setting/watched_station` | createSiteWatchedStations | `site_id`*, body: Model_object_macs_array_string | object |  | createSiteWatchedStations |
+| DELETE | `/api/v1/sites/{site_id}/setting/watched_station` | deleteSiteWatchedStations | `site_id`* | object |  | deleteSiteWatchedStations |
+| POST | `/api/v1/sites/{site_id}/setting/whitelist` | createSiteClientsAllowlist | `site_id`*, body: Model_object_macs_array_string | object |  | createSiteClientsAllowlist |
+| DELETE | `/api/v1/sites/{site_id}/setting/whitelist` | deleteSiteClientsAllowlist | `site_id`* | object |  | deleteSiteClientsAllowlist |
+| GET | `/api/v1/sites/{site_id}/skyatp/events/count` | countSiteByDistringAttributesOfSkyatpEvents | `site_id`*, `distinct`, `type`, `mac`, `device_mac`, `threat_level`, `ip address`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteByDistringAttributesOfSkyatpEvents |
+| GET | `/api/v1/sites/{site_id}/skyatp/events/search` | searchSiteSkyatpEvents | `site_id`*, `type`, `mac`, `device_mac`, `threat_level`, `ip address`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteSkyatpEvents |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/classifier/{classifier}/summary` | getSiteSleClassifierDetails | `site_id`*, `scope`*, `scope_id`*, `metric`*, `classifier`*, `start`, `end`, `duration` | sle_classifier_summary | yes | getSiteSleClassifierDetails |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/classifiers` | getSiteSleMetricClassifiers | `site_id`*, `scope`*, `scope_id`*, `metric`* | string[] | yes | getSiteSleMetricClassifiers |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/histogram` | getSiteSleHistogram | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration` | sle_histogram | yes | getSiteSleHistogram |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impact-summary` | getSiteSleImpactSummary | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `fields`, `classifier` | sle_impact_summary | yes | getSiteSleImpactSummary |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-applications` | getSiteSleImpactedApplications | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_applications | yes | getSiteSleImpactedApplications |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-aps` | getSiteSleImpactedAps | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_aps | yes | getSiteSleImpactedAps |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-chassis` | getSiteSleImpactedChassis | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_chassis | yes | getSiteSleImpactedChassis |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-clients` | getSiteSleImpactedWiredClients | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_clients | yes | getSiteSleImpactedWiredClients |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-gateways` | getSiteSleImpactedGateways | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_gateways | yes | getSiteSleImpactedGateways |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-interfaces` | getSiteSleImpactedInterfaces | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_interfaces | yes | getSiteSleImpactedInterfaces |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-switches` | getSiteSleImpactedSwitches | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_switches | yes | getSiteSleImpactedSwitches |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/impacted-users` | getSiteSleImpactedWirelessClients | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration`, `classifier` | sle_impacted_users | yes | getSiteSleImpactedWirelessClients |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/summary` | getSiteSleSummary | `site_id`*, `scope`*, `scope_id`*, `metric`*, `start`, `end`, `duration` | sle_summary | yes | getSiteSleSummary |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/threshold` | getSiteSleThreshold | `site_id`*, `scope`*, `scope_id`*, `metric`* | sle_threshold | yes | getSiteSleThreshold |
+| PUT | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/threshold` | updateSiteSleThreshold | `site_id`*, `scope`*, `scope_id`*, `metric`*, body: sle_threshold | sle_threshold |  | updateSiteSleThreshold |
+| POST | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metric/{metric}/threshold` | replaceSiteSleThreshold | `site_id`*, `scope`*, `scope_id`*, `metric`*, body: sle_threshold | sle_threshold |  | replaceSiteSleThreshold |
+| GET | `/api/v1/sites/{site_id}/sle/{scope}/{scope_id}/metrics` | getSiteSlesMetrics | `site_id`*, `scope`*, `scope_id`* | object | yes | getSiteSlesMetrics |
+| GET | `/api/v1/sites/{site_id}/ssr/upgrade/{upgrade_id}` | getSiteSsrUpgrade | `site_id`*, `upgrade_id`* | object | yes | getSiteSsrUpgrade |
+| POST | `/api/v1/sites/{site_id}/ssr/{device_id}/upgrade` | upgradeSiteSsr | `site_id`*, `device_id`*, body: object | ssr_upgrade_response |  | upgradeSiteSsr |
+| GET | `/api/v1/sites/{site_id}/stats` | getSiteStats | `site_id`* | stats_site | yes | getSiteStats |
+| GET | `/api/v1/sites/{site_id}/stats/apps/count` | countSiteApps | `site_id`*, `distinct`, `device_mac`, `app`, `wired` | object | yes | countSiteApps |
+| GET | `/api/v1/sites/{site_id}/stats/assets` | getSiteAssetsStats | `site_id`*, `page`, `limit`, `start`, `end`, `duration` | stats_asset[] | yes | getSiteAssetsStats |
+| GET | `/api/v1/sites/{site_id}/stats/assets/asset_id` | getSiteAssetStats | `site_id`*, `start`, `end`, `duration` | stats_asset | yes | getSiteAssetStats |
+| GET | `/api/v1/sites/{site_id}/stats/assets/count` | countSiteAssets | `site_id`*, `distinct` | object | yes | countSiteAssets |
+| GET | `/api/v1/sites/{site_id}/stats/assets/search` | searchSiteAssets | `site_id`*, `mac`, `map_id`, `ibeacon_uuid`, `ibeacon_major`, `ibeacon_minor`, `eddystone_uid_namespace`, `eddystone_uid_instance`, `eddystone_url`, `device_name`, `by`, `name`, `ap_mac`, `beam`, `rssi`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteAssets |
+| GET | `/api/v1/sites/{site_id}/stats/beacons` | getSiteBeaconsStats | `site_id`*, `page`, `limit`, `start`, `end`, `duration` | stats_beacon[] | yes | getSiteBeaconsStats |
+| GET | `/api/v1/sites/{site_id}/stats/bgp_peers/count` | countSiteBgpStats | `site_id`*, `state`, `distinct` | object | yes | countSiteBgpStats |
+| GET | `/api/v1/sites/{site_id}/stats/bgp_peers/search` | searchSiteBgpStats | `site_id`* | object | yes | searchSiteBgpStats |
+| GET | `/api/v1/sites/{site_id}/stats/calls/count` | countSiteCalls | `site_id`*, `distrinct`, `app`, `start`, `end` | object | yes | countSiteCalls |
+| GET | `/api/v1/sites/{site_id}/stats/calls/search` | searchSiteCalls | `site_id`*, `mac`, `app`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteCalls |
+| GET | `/api/v1/sites/{site_id}/stats/clients` | getSiteClientsStats | `site_id`*, `wired` | stats_client_detail\|stats_client_wired[] | yes | getSiteClientsStats |
+| GET | `/api/v1/sites/{site_id}/stats/clients/{client_mac}` | getSiteClientStats | `site_id`*, `client_mac`*, `wired` | stats_client_detail\|stats_client_wired | yes | getSiteClientStats |
+| GET | `/api/v1/sites/{site_id}/stats/devices` | getSiteDevicesStats | `site_id`*, `page`, `limit`, `start`, `end`, `duration`, `type`, `status` | stats_device_ap\|stats_device_switch\|stats_device_gateway[] | yes | getSiteDevicesStats |
+| GET | `/api/v1/sites/{site_id}/stats/devices/{device_id}` | getSiteDeviceStats | `site_id`*, `device_id`* | stats_device_ap\|stats_device_switch\|stats_device_gateway | yes | getSiteDeviceStats |
+| GET | `/api/v1/sites/{site_id}/stats/devices/{device_id}/clients` | getSiteAllClientsStatsByDevice | `site_id`*, `device_id`* | stats_client[] | yes | getSiteAllClientsStatsByDevice |
+| GET | `/api/v1/sites/{site_id}/stats/discovered_assets` | getSiteDiscoveredAssets | `site_id`*, `page`, `limit`, `start`, `end`, `duration` | asset[] | yes | getSiteDiscoveredAssets |
+| GET | `/api/v1/sites/{site_id}/stats/discovered_switch_metrics/search` | searchSiteDiscoveredSwitchesMetrics | `site_id`*, `scope`, `type`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteDiscoveredSwitchesMetrics |
+| GET | `/api/v1/sites/{site_id}/stats/discovered_switches/count` | countSiteDiscoveredSwitches | `site_id`*, `distinct`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteDiscoveredSwitches |
+| GET | `/api/v1/sites/{site_id}/stats/discovered_switches/metrics` | getSiteDiscoveredSwitchesMetrics | `site_id`*, `threshold`, `system_name` | object | yes | getSiteDiscoveredSwitchesMetrics |
+| GET | `/api/v1/sites/{site_id}/stats/discovered_switches/search` | searchSiteDiscoveredSwitches | `site_id`*, `adopted`, `system_name`, `hostname`, `vendor`, `model`, `version`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteDiscoveredSwitches |
+| GET | `/api/v1/sites/{site_id}/stats/filtered_assets` | getSiteAssetsOfInterest | `site_id`*, `duration`, `start`, `end`, `page`, `limit` | AssetOfInterest[] | yes | getSiteAssetsOfInterest |
+| GET | `/api/v1/sites/{site_id}/stats/gateways/metrics` | getSiteGatewayMetrics | `site_id`* | object | yes | getSiteGatewayMetrics |
+| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/clients` | getSiteClientsStatsByMap | `site_id`*, `map_id`*, `page`, `limit`, `start`, `end`, `duration` | stats_client[] | yes | getSiteClientsStatsByMap |
+| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/discovered_assets` | getSiteDiscoveredAssetByMap | `site_id`*, `map_id`* | stats_asset[] | yes | getSiteDiscoveredAssetByMap |
+| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/sdkclients` | getSiteSdkStatsByMap | `site_id`*, `map_id`* | stats_sdkclient[] | yes | getSiteSdkStatsByMap |
+| GET | `/api/v1/sites/{site_id}/stats/maps/{map_id}/unconnected_clients` | getSiteUnconnectedClientStats | `site_id`*, `map_id`* | stats_unconnected_clients[] | yes | getSiteUnconnectedClientStats |
+| GET | `/api/v1/sites/{site_id}/stats/mxedges` | getSiteMxEdgesStats | `site_id`* | stats_mxedge[] | yes | getSiteMxEdgesStats |
+| GET | `/api/v1/sites/{site_id}/stats/mxedges/{mxedge_id}` | getSiteMxEdgeStats | `site_id`*, `mxedge_id`* | stats_mxedge | yes | getSiteMxEdgeStats |
+| GET | `/api/v1/sites/{site_id}/stats/ports/count` | countSiteByDisctinctAttributesOPorts | `site_id`*, `distinct`, `full_duplex`, `mac`, `neighbor_mac`, `neighbor_port_desc`, `neighbor_system_name`, `poe_disabled`, `poe_mode`, `poe_on`, `port_id`, `port_mac`, `power_draw`, `tx_pkts`, `rx_pkts`, `rx_bytes`, `tx_bps`, `rx_bps`, `tx_mcast_pkts`, `tx_bcast_pkts`, `rx_mcast_pkts`, `rx_bcast_pkts`, `speed`, `stp_state`, `stp_role`, `auth_state`, `up`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteByDisctinctAttributesOfSwitchPorts |
+| GET | `/api/v1/sites/{site_id}/stats/ports/search` | searchSiteSwOrGwPorts | `site_id`*, `full_duplex`, `mac`, `neighbor_mac`, `neighbor_port_desc`, `neighbor_system_name`, `poe_disabled`, `poe_mode`, `poe_on`, `port_id`, `port_mac`, `power_draw`, `tx_pkts`, `rx_pkts`, `rx_bytes`, `tx_bps`, `rx_bps`, `tx_errors`, `rx_errors`, `tx_mcast_pkts`, `tx_bcast_pkts`, `rx_mcast_pkts`, `rx_bcast_pkts`, `speed`, `mac_limit`, `mac_count`, `up`, `stp_state`, `stp_role`, `xcvr_part_number`, `auth_state`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteSwOrGwPorts |
+| GET | `/api/v1/sites/{site_id}/stats/sdkclients/{sdkclient_id}` | getSiteSdkStats | `site_id`*, `sdkclient_id`* | stats_sdkclient_details | yes | getSiteSdkStats |
+| GET | `/api/v1/sites/{site_id}/stats/switch_ports/count` | countSiteByDisctinctAttributesOfSwitchPorts | `site_id`*, `distinct`, `full_duplex`, `mac`, `neighbor_mac`, `neighbor_port_desc`, `neighbor_system_name`, `poe_disabled`, `poe_mode`, `poe_on`, `port_id`, `port_mac`, `power_draw`, `tx_pkts`, `rx_pkts`, `rx_bytes`, `tx_bps`, `rx_bps`, `tx_mcast_pkts`, `tx_bcast_pkts`, `rx_mcast_pkts`, `rx_bcast_pkts`, `speed`, `stp_state`, `stp_role`, `auth_state`, `up`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteByDisctinctAttributesOfSwitchPorts |
+| GET | `/api/v1/sites/{site_id}/stats/switch_ports/search` | searchSiteSwitchPorts | `site_id`*, `full_duplex`, `mac`, `neighbor_mac`, `neighbor_port_desc`, `neighbor_system_name`, `poe_disabled`, `poe_mode`, `poe_on`, `port_id`, `port_mac`, `power_draw`, `tx_pkts`, `rx_pkts`, `rx_bytes`, `tx_bps`, `rx_bps`, `tx_mcast_pkts`, `tx_bcast_pkts`, `rx_mcast_pkts`, `rx_bcast_pkts`, `speed`, `stp_state`, `stp_role`, `auth_state`, `up`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteSwitchPorts |
+| GET | `/api/v1/sites/{site_id}/stats/switches/metrics` | getSiteAdoptedSwitchesComplianceMetrics | `site_id`* | object | yes | getSiteAdoptedSwitchesComplianceMetrics |
+| GET | `/api/v1/sites/{site_id}/stats/wxrules` | getSiteWxRulesUsage | `site_id`* | stats_wxrule[] | yes | getSiteWxRulesUsage |
+| GET | `/api/v1/sites/{site_id}/stats/zones` | getSiteZonesStats | `site_id`*, `map_id` | stats_zone[] | yes | getSiteZonesStats |
+| GET | `/api/v1/sites/{site_id}/stats/{zone_type}/{zone_id}` | getSiteZoneStats | `site_id`*, `zone_type`*, `zone_id`* | stats_zone_details | yes | getSiteZoneStats |
+| POST | `/api/v1/sites/{site_id}/subscriptions` | SubscribeSite | `site_id`* | object |  | SubscribeSite |
+| DELETE | `/api/v1/sites/{site_id}/subscriptions` | UnsubscribeSite | `site_id`* | object |  | UnsubscribeSite |
+| GET | `/api/v1/sites/{site_id}/synthetic_test` | getSiteSyntheticTestStatus | `site_id`* | object | yes | getSiteSyntheticTestStatus |
+| POST | `/api/v1/sites/{site_id}/synthetic_test` | triggerSiteSyntheticTest | `site_id`*, body: object | object |  | triggerSiteSyntheticTest |
+| GET | `/api/v1/sites/{site_id}/uisettings` | getSiteCurdSettings | `site_id`* | curd_ui_settings[] | yes | getSiteCurdSettings |
+| POST | `/api/v1/sites/{site_id}/uisettings` | createSiteCurdSettings | `site_id`*, body: curd_ui_settings | curd_ui_settings |  | createSiteCurdSettings |
+| GET | `/api/v1/sites/{site_id}/uisettings/derived` | getSiteDerivedCurdSetting | `site_id`* | curd_ui_settings | yes | getSiteDerivedCurdSetting |
+| GET | `/api/v1/sites/{site_id}/uisettings/{uisetting_id}` | getSiteCurdSetting | `site_id`*, `uisetting_id`* | curd_ui_settings | yes | getSiteCurdSetting |
+| POST | `/api/v1/sites/{site_id}/uisettings/{uisetting_id}` | updateSiteCurdSetting | `site_id`*, `uisetting_id`*, body: curd_ui_settings | curd_ui_settings |  | updateSiteCurdSetting |
+| DELETE | `/api/v1/sites/{site_id}/uisettings/{uisetting_id}` | deleteSiteCurdSetting | `site_id`*, `uisetting_id`* | object |  | deleteSiteCurdSetting |
+| GET | `/api/v1/sites/{site_id}/vbeacons` | getSiteVBeacons | `site_id`* | vbeacon[] | yes | getSiteVBeacons |
+| POST | `/api/v1/sites/{site_id}/vbeacons` | createSiteVBeacon | `site_id`*, body: vbeacon | vbeacon |  | createSiteVBeacon |
+| GET | `/api/v1/sites/{site_id}/vbeacons/{vbeacon_id}` | getSiteVBeacon | `site_id`*, `vbeacon_id`* | vbeacon | yes | getSiteVBeacon |
+| PUT | `/api/v1/sites/{site_id}/vbeacons/{vbeacon_id}` | updateSiteVBeacon | `site_id`*, `vbeacon_id`*, body: vbeacon | vbeacon |  | updateSiteVBeacon |
+| DELETE | `/api/v1/sites/{site_id}/vbeacons/{vbeacon_id}` | deleteSiteVBeacon | `site_id`*, `vbeacon_id`* | object |  | deleteSiteVBeacon |
+| GET | `/api/v1/sites/{site_id}/webhooks` | getSiteWebhooks | `site_id`* | webhook[] | yes | getSiteWebhooks |
+| POST | `/api/v1/sites/{site_id}/webhooks` | createSiteWebhook | `site_id`*, body: webhook | webhook |  | createSiteWebhook |
+| GET | `/api/v1/sites/{site_id}/webhooks/{webhook_id}` | getSiteWebhook | `site_id`*, `webhook_id`* | webhook | yes | getSiteWebhook |
+| PUT | `/api/v1/sites/{site_id}/webhooks/{webhook_id}` | updateSiteWebhook | `site_id`*, `webhook_id`*, body: webhook | webhook |  | updateSiteWebhook |
+| DELETE | `/api/v1/sites/{site_id}/webhooks/{webhook_id}` | deleteSiteWebhook | `site_id`*, `webhook_id`* | object |  | deleteSiteWebhook |
+| POST | `/api/v1/sites/{site_id}/webhooks/{webhook_id}/ping` | pingSiteWebhook | `site_id`*, `webhook_id`* | object |  | pingSiteWebhook |
+| GET | `/api/v1/sites/{site_id}/wired_clients/count` | countSiteClientsWired | `site_id`*, `distinct`, `mac`, `device_mac`, `port_id`, `vlan`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteClientsWired |
+| GET | `/api/v1/sites/{site_id}/wired_clients/search` | searchSiteClientsWired | `site_id`*, `device_mac`, `mac`, `port_id`, `vlan`, `ip address`, `manufacture`, `text`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteClientsWired |
+| GET | `/api/v1/sites/{site_id}/wlans` | getSiteWlans | `site_id`* | wlan[] | yes | getSiteWlans |
+| POST | `/api/v1/sites/{site_id}/wlans` | createSiteWlan | `site_id`*, body: wlan | wlan |  | createSiteWlan |
+| GET | `/api/v1/sites/{site_id}/wlans/derived` | getSiteWlanDerived | `site_id`*, `resolve` | wlan[] | yes | getSiteWlanDerived |
+| GET | `/api/v1/sites/{site_id}/wlans/{wlan_id}` | getSiteWlan | `site_id`*, `wlan_id`* | wlan | yes | getSiteWlan |
+| PUT | `/api/v1/sites/{site_id}/wlans/{wlan_id}` | updateSiteWlan | `site_id`*, `wlan_id`*, body: wlan | wlan |  | updateSiteWlan |
+| DELETE | `/api/v1/sites/{site_id}/wlans/{wlan_id}` | deleteSiteWlan | `site_id`*, `wlan_id`* | object |  | deleteSiteWlan |
+| POST | `/api/v1/sites/{site_id}/wlans/{wlan_id}/portal_image` | uploadSiteWlanPortalImage | `site_id`*, `wlan_id`*, body: image_upload | object |  | uploadSiteWlanPortalImage |
+| PUT | `/api/v1/sites/{site_id}/wlans/{wlan_id}/portal_template` | updateSiteWlanPortalTemplate | `site_id`*, `wlan_id`*, body: wlan_portal_template | portal_template |  | updateSiteWlanPortalTemplate |
+| GET | `/api/v1/sites/{site_id}/wxrules` | getSiteWxRules | `site_id`* | wxlan_rule[] | yes | getSiteWxRules |
+| POST | `/api/v1/sites/{site_id}/wxrules` | createSiteWxRule | `site_id`*, body: wxlan_rule | wxlan_rule |  | createSiteWxRule |
+| GET | `/api/v1/sites/{site_id}/wxrules/derived` | getSiteWxRulesDerived | `site_id`* | wxlan_rule[] | yes | getSiteWxRulesDerived |
+| GET | `/api/v1/sites/{site_id}/wxrules/{wxrules_id}` | getSiteWxRule | `site_id`*, `wxrules_id`* | wxlan_rule | yes | getSiteWxRule |
+| PUT | `/api/v1/sites/{site_id}/wxrules/{wxrules_id}` | updateSiteWxRule | `site_id`*, `wxrules_id`*, body: wxlan_rule | wxlan_rule |  | updateSiteWxRule |
+| DELETE | `/api/v1/sites/{site_id}/wxrules/{wxrules_id}` | deleteSiteWxRule | `site_id`*, `wxrules_id`* | object |  | deleteSiteWxRule |
+| GET | `/api/v1/sites/{site_id}/wxtags` | getSiteWxTags | `site_id`* | wxlan_tag[] | yes | getSiteWxTags |
+| POST | `/api/v1/sites/{site_id}/wxtags` | createSiteWxTag | `site_id`*, body: wxlan_tag | wxlan_tag |  | createSiteWxTag |
+| GET | `/api/v1/sites/{site_id}/wxtags/apps` | getSiteApplicationList | `site_id`* | object[] | yes | getSiteApplicationList |
+| GET | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}` | getSiteWxTag | `site_id`*, `wxtag_id`* | wxlan_tag | yes | getSiteWxTag |
+| PUT | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}` | updateSiteWxTag | `site_id`*, `wxtag_id`*, body: wxlan_tag | wxlan_tag |  | updateSiteWxTag |
+| DELETE | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}` | deleteSiteWxTag | `site_id`*, `wxtag_id`* | object |  | deleteSiteWxTag |
+| GET | `/api/v1/sites/{site_id}/wxtags/{wxtag_id}/clients` | getSiteCurrentMatchingClientsOfAWxTag | `site_id`*, `wxtag_id`* | object[] | yes | getSiteCurrentMatchingClientsOfAWxTag |
+| GET | `/api/v1/sites/{site_id}/wxtunnels` | getSiteWxTunnels | `site_id`* | wxlan_tunnel[] | yes | getSiteWxTunnels |
+| POST | `/api/v1/sites/{site_id}/wxtunnels` | createSiteWxTunnel | `site_id`*, body: wxlan_tunnel | wxlan_tunnel |  | createSiteWxTunnel |
+| GET | `/api/v1/sites/{site_id}/wxtunnels/{wxtunnel_id}` | getSiteWxTunnel | `site_id`*, `wxtunnel_id`* | wxlan_tunnel | yes | getSiteWxTunnel |
+| PUT | `/api/v1/sites/{site_id}/wxtunnels/{wxtunnel_id}` | updateSiteWxTunnel | `site_id`*, `wxtunnel_id`*, body: wxlan_tunnel | wxlan_tunnel |  | updateSiteWxTunnel |
+| DELETE | `/api/v1/sites/{site_id}/wxtunnels/{wxtunnel_id}` | deleteSiteWxTunnel | `site_id`*, `wxtunnel_id`* | object |  | deleteSiteWxTunnel |
+| GET | `/api/v1/sites/{site_id}/zones` | getSiteZones | `site_id`* | zone[] | yes | getSiteZones |
+| POST | `/api/v1/sites/{site_id}/zones` | createSiteZone | `site_id`*, body: zone | zone |  | createSiteZone |
+| GET | `/api/v1/sites/{site_id}/zones/{zone_id}` | getSiteZone | `site_id`*, `zone_id`* | zone | yes | getSiteZone |
+| PUT | `/api/v1/sites/{site_id}/zones/{zone_id}` | updateSiteZone | `site_id`*, `zone_id`*, body: zone | zone |  | updateSiteZone |
+| DELETE | `/api/v1/sites/{site_id}/zones/{zone_id}` | deleteSiteZone | `site_id`*, `zone_id`* | object |  | deleteSiteZone |
+| GET | `/api/v1/sites/{site_id}/{zone_type}/count` | countSiteZoneSessions | `site_id`*, `zone_type`*, `distinct`, `user_type`, `user`, `scope_id`, `scope`, `page`, `limit`, `start`, `end`, `duration` | object | yes | countSiteZoneSessions |
+| GET | `/api/v1/sites/{site_id}/{zone_type}/visits/search` | searchSiteZoneSessions | `site_id`*, `zone_type`*, `user_type`, `user`, `scope_id`, `scope`, `page`, `limit`, `start`, `end`, `duration` | object | yes | searchSiteZoneSessions |
+| GET | `/api/v1/utils/test_telstra` | testSiteWlanTelstraSetup | body: object | object | yes | testSiteWlanTelstraSetup |
+| POST | `/api/v1/utils/test_twilio` | testSiteWlanTwilioSetup | body: object | object |  | testSiteWlanTwilioSetup |
+| POST | `/webhook_example/_alarm_` | alarms | body: webhook_alarms | object |  | alarms |
+| POST | `/webhook_example/_asset_raw_` | assetRaw | body: webhook_asset_raw | object |  | assetRaw |
+| POST | `/webhook_example/_audit_` | audits | body: webhook_audits | object |  | audits |
+| POST | `/webhook_example/_client_join_` | clientJoin | body: webhook_client_join | object |  | clientJoin |
+| POST | `/webhook_example/_client_sessions_` | clientSessions | body: webhook_client_sessions | object |  | clientSessions |
+| POST | `/webhook_example/_device_events_` | deviceEvents | body: webhook_device_events | object |  | deviceEvents |
+| POST | `/webhook_example/_device_updowns_` | deviceUpDown | body: webhook_device_updowns | object |  | deviceUpDown |
+| POST | `/webhook_example/_discovered_raw_rssi_` | discovered-raw-rssi | body: webhook_discovered_raw_rssi | object |  | discovered-raw-rssi |
+| POST | `/webhook_example/_location_` | location | body: webhook_location | object |  | location |
+| POST | `/webhook_example/_occupancy_alerts_` | occupancyAlerts | body: webhook_occupancy_alerts | object |  | occupancyAlerts |
+| POST | `/webhook_example/_ping_` | ping | body: webhook_ping | object |  | ping |
+| POST | `/webhook_example/_sdkclient_scan_data` | sdkclientScanData | body: webhook_sdkclient-scan-data | object |  | sdkclientScanData |
+| POST | `/webhook_example/_zone_` | zone | body: webhook_zone | object |  | zone |

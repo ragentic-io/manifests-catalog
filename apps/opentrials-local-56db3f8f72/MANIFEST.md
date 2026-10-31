@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `104d7195f0f67837bcc1c2bc967fbcc6da8cb878f0685c3214f9decf3929de5a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,22 +34,24 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 40 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/conditions/{id}` | getCondition | — |
-| GET | `/document_categories` | listDocumentCategories | — |
-| GET | `/documents` | listDocuments | — |
-| GET | `/documents/{id}` | getDocument | — |
-| GET | `/fda_applications` | listFDAApplications | — |
-| GET | `/fda_applications/{id}` | getFDAApplication | — |
-| GET | `/interventions/{id}` | getIntervention | — |
-| GET | `/organisations/{id}` | getOrganisation | — |
-| GET | `/persons/{id}` | getPerson | — |
-| GET | `/publications/{id}` | getPublication | — |
-| GET | `/search` | searchTrials | — |
-| GET | `/search/autocomplete/{in}` | autocomplete | — |
-| GET | `/search/fda_documents` | searchFDADocuments | — |
-| GET | `/sources` | list | — |
-| GET | `/trials/{id}` | getTrial | — |
-| GET | `/trials/{id}/records` | getRecords | — |
-| GET | `/trials/{trialId}/records/{id}` | getRecord | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/conditions/{id}` | getCondition | `id`* | Condition | yes | — |
+| GET | `/document_categories` | listDocumentCategories | — | DocumentCategoryList | yes | — |
+| GET | `/documents` | listDocuments | `page`, `per_page` | DocumentList | yes | — |
+| GET | `/documents/{id}` | getDocument | `id`* | Document | yes | — |
+| GET | `/fda_applications` | listFDAApplications | `page`, `per_page` | FDAApplicationList | yes | — |
+| GET | `/fda_applications/{id}` | getFDAApplication | `id`* | FDAApplication | yes | — |
+| GET | `/interventions/{id}` | getIntervention | `id`* | Intervention | yes | — |
+| GET | `/organisations/{id}` | getOrganisation | `id`* | Organisation | yes | — |
+| GET | `/persons/{id}` | getPerson | `id`* | Person | yes | — |
+| GET | `/publications/{id}` | getPublication | `id`* | Publication | yes | — |
+| GET | `/search` | searchTrials | `q`, `page`, `per_page` | TrialSearchResults | yes | — |
+| GET | `/search/autocomplete/{in}` | autocomplete | `in`*, `q`, `page`, `per_page` | AutocompleteResults | yes | — |
+| GET | `/search/fda_documents` | searchFDADocuments | `q`, `text`, `page`, `per_page` | FDADocumentSearchResults | yes | — |
+| GET | `/sources` | list | — | SourceList | yes | — |
+| GET | `/trials/{id}` | getTrial | `id`* | Trial | yes | — |
+| GET | `/trials/{id}/records` | getRecords | `id`* | RecordList | yes | — |
+| GET | `/trials/{trialId}/records/{id}` | getRecord | `trialId`*, `id`* | Record | yes | — |

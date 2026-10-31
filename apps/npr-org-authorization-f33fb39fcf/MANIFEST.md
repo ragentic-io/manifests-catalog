@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NPR_profile_image.j
 
 | | |
 | --- | --- |
-| Signed bundle | `d01edda956c1ca92567828febeec77cfc866a7a06f8fda5194fcb40ae26500e0` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NPR_profile_image.j
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v2/device` | generateDeviceCode | Initiate an OAuth2 login flow for limited input devices |
-| POST | `/v2/token` | createToken | Create a new OAuth2 access token |
-| POST | `/v2/token/revoke` | revokeToken | Revoke an existing OAuth2 access token |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v2/device` | generateDeviceCode | `client_id`*, `client_secret`*, `scope` | DeviceCodeData |  | Initiate an OAuth2 login flow for limited input devices |
+| POST | `/v2/token` | createToken | `grant_type`*, `client_id`*, `client_secret`*, `code`, `redirect_uri`, `username`, `password`, `service`, `refresh_token`, `scope`, `token_type_hint` | AccessTokenData |  | Create a new OAuth2 access token |
+| POST | `/v2/token/revoke` | revokeToken | `Authorization`*, `token`*, `token_type_hint` | object |  | Revoke an existing OAuth2 access token |

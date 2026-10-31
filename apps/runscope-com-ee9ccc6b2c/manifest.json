@@ -22,12 +22,12 @@
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/buckets/{bucketKey}"
+        "to": "operation:get:/buckets/{bucketKey}"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
-        "to": "operation:get:/buckets/{bucketKey}"
+        "to": "operation:delete:/buckets/{bucketKey}"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
@@ -52,17 +52,17 @@
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/buckets/{bucketKey}/messages"
-      },
-      {
-        "from": "runscope-com-ee9ccc6b2c",
-        "kind": "EXPOSES",
         "to": "operation:get:/buckets/{bucketKey}/messages"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
         "to": "operation:post:/buckets/{bucketKey}/messages"
+      },
+      {
+        "from": "runscope-com-ee9ccc6b2c",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/buckets/{bucketKey}/messages"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
@@ -82,17 +82,17 @@
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/buckets/{bucketKey}/tests/{testId}"
-      },
-      {
-        "from": "runscope-com-ee9ccc6b2c",
-        "kind": "EXPOSES",
         "to": "operation:get:/buckets/{bucketKey}/tests/{testId}"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
         "to": "operation:put:/buckets/{bucketKey}/tests/{testId}"
+      },
+      {
+        "from": "runscope-com-ee9ccc6b2c",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/buckets/{bucketKey}/tests/{testId}"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
@@ -127,12 +127,12 @@
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}"
+        "to": "operation:put:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
-        "to": "operation:put:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}"
+        "to": "operation:delete:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}"
       },
       {
         "from": "runscope-com-ee9ccc6b2c",
@@ -148,6 +148,146 @@
         "from": "runscope-com-ee9ccc6b2c",
         "kind": "EXPOSES",
         "to": "operation:get:/teams/{teamId}/people"
+      },
+      {
+        "from": "operation:post:/buckets",
+        "kind": "ACCEPTS",
+        "to": "schema:NewBucket"
+      },
+      {
+        "from": "operation:post:/buckets",
+        "kind": "RETURNS",
+        "to": "schema:Bucket"
+      },
+      {
+        "from": "operation:get:/buckets/{bucketKey}",
+        "kind": "RETURNS",
+        "to": "schema:Bucket"
+      },
+      {
+        "from": "operation:post:/buckets/{bucketKey}/environments",
+        "kind": "ACCEPTS",
+        "to": "schema:Environment"
+      },
+      {
+        "from": "operation:put:/buckets/{bucketKey}/environments/{environmentId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Environment"
+      },
+      {
+        "from": "operation:post:/buckets/{bucketKey}/messages",
+        "kind": "ACCEPTS",
+        "to": "schema:NewMessage"
+      },
+      {
+        "from": "operation:post:/buckets/{bucketKey}/tests",
+        "kind": "ACCEPTS",
+        "to": "schema:Test"
+      },
+      {
+        "from": "operation:get:/buckets/{bucketKey}/tests/{testId}",
+        "kind": "RETURNS",
+        "to": "schema:TestDetail"
+      },
+      {
+        "from": "operation:put:/buckets/{bucketKey}/tests/{testId}",
+        "kind": "RETURNS",
+        "to": "schema:TestDetail"
+      },
+      {
+        "from": "operation:post:/buckets/{bucketKey}/tests/{testId}/environments",
+        "kind": "ACCEPTS",
+        "to": "schema:Environment"
+      },
+      {
+        "from": "operation:put:/buckets/{bucketKey}/tests/{testId}/environments/{environmentId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Environment"
+      },
+      {
+        "from": "operation:get:/buckets/{bucketKey}/tests/{testId}/metrics",
+        "kind": "RETURNS",
+        "to": "schema:Metrics"
+      },
+      {
+        "from": "operation:post:/buckets/{bucketKey}/tests/{testId}/steps",
+        "kind": "ACCEPTS",
+        "to": "schema:TestStep"
+      },
+      {
+        "from": "operation:put:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
+        "kind": "ACCEPTS",
+        "to": "schema:TestStep"
+      },
+      {
+        "from": "operation:get:/teams/{teamId}/agents",
+        "kind": "RETURNS",
+        "to": "schema:Agent"
+      },
+      {
+        "from": "operation:get:/teams/{teamId}/people",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:Team"
+      },
+      {
+        "from": "schema:Bucket",
+        "kind": "REFERENCES",
+        "to": "schema:Team"
+      },
+      {
+        "from": "schema:Environment",
+        "kind": "REFERENCES",
+        "to": "schema:Agent"
+      },
+      {
+        "from": "schema:Environment",
+        "kind": "REFERENCES",
+        "to": "schema:Integration"
+      },
+      {
+        "from": "schema:StandardError",
+        "kind": "REFERENCES",
+        "to": "schema:Error400"
+      },
+      {
+        "from": "schema:StandardError",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:TestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Environment"
+      },
+      {
+        "from": "schema:TestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Schedule"
+      },
+      {
+        "from": "schema:TestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Test"
+      },
+      {
+        "from": "schema:TestStepRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Assertion"
+      },
+      {
+        "from": "schema:TestStepRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TestStep"
+      },
+      {
+        "from": "schema:TestStepRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Variable"
       }
     ],
     "nodes": [
@@ -157,12 +297,24 @@
       },
       {
         "deprecated": false,
+        "description": "Information about the authorized account.",
         "id": "operation:get:/account",
         "kind": "operation",
         "method": "get",
         "name": "get /account",
         "path": "/account",
         "pointer": "#/paths/~1account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -171,7 +323,10 @@
             ]
           }
         ],
-        "summary": "Account Resource"
+        "summary": "Account Resource",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
@@ -181,6 +336,17 @@
         "name": "get /buckets",
         "path": "/buckets",
         "pointer": "#/paths/~1buckets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -194,7 +360,10 @@
             ]
           }
         ],
-        "summary": "Returns a list of buckets."
+        "summary": "Returns a list of buckets.",
+        "tags": [
+          "Buckets"
+        ]
       },
       {
         "deprecated": false,
@@ -204,6 +373,24 @@
         "name": "post /buckets",
         "path": "/buckets",
         "pointer": "#/paths/~1buckets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewBucket"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bucket"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -212,25 +399,10 @@
             ]
           }
         ],
-        "summary": "Create a new bucket"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/buckets/{bucketKey}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /buckets/{bucketKey}",
-        "path": "/buckets/{bucketKey}",
-        "pointer": "#/paths/~1buckets~1{bucketKey}/delete",
-        "security": [
-          {
-            "runscope_auth": [
-              "api:read",
-              "bucket:write"
-            ]
-          }
-        ],
-        "summary": "Delete a single bucket resource."
+        "summary": "Create a new bucket",
+        "tags": [
+          "Buckets"
+        ]
       },
       {
         "deprecated": false,
@@ -238,8 +410,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}",
         "pointer": "#/paths/~1buckets~1{bucketKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bucket"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -247,7 +439,50 @@
             ]
           }
         ],
-        "summary": "Returns a single bucket resource."
+        "summary": "Returns a single bucket resource.",
+        "tags": [
+          "Buckets"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/buckets/{bucketKey}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /buckets/{bucketKey}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/buckets/{bucketKey}",
+        "pointer": "#/paths/~1buckets~1{bucketKey}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "runscope_auth": [
+              "api:read",
+              "bucket:write"
+            ]
+          }
+        ],
+        "summary": "Delete a single bucket resource.",
+        "tags": [
+          "Buckets"
+        ]
       },
       {
         "deprecated": false,
@@ -255,8 +490,23 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/environments",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/environments",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1environments/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -265,7 +515,10 @@
             ]
           }
         ],
-        "summary": "Returns list of shared environments for a specified bucket."
+        "summary": "Returns list of shared environments for a specified bucket.",
+        "tags": [
+          "Shared Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -273,8 +526,30 @@
         "kind": "operation",
         "method": "post",
         "name": "post /buckets/{bucketKey}/environments",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/environments",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1environments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Environment"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -283,7 +558,10 @@
             ]
           }
         ],
-        "summary": "Create new shared environment."
+        "summary": "Create new shared environment.",
+        "tags": [
+          "Shared Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -291,8 +569,37 @@
         "kind": "operation",
         "method": "put",
         "name": "put /buckets/{bucketKey}/environments/{environmentId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test environment",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/environments/{environmentId}",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1environments~1{environmentId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Environment"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -301,7 +608,10 @@
             ]
           }
         ],
-        "summary": "Update the details of a shared environment."
+        "summary": "Update the details of a shared environment.",
+        "tags": [
+          "Shared Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -309,8 +619,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/errors",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maxiumum number of messages to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Only return messages after the given Unix timestamp",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Only return messages before the given Unix timestamp",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/buckets/{bucketKey}/errors",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1errors/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -318,25 +668,10 @@
             ]
           }
         ],
-        "summary": "Retrieve a list of error messages in a bucket"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/buckets/{bucketKey}/messages",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /buckets/{bucketKey}/messages",
-        "path": "/buckets/{bucketKey}/messages",
-        "pointer": "#/paths/~1buckets~1{bucketKey}~1messages/delete",
-        "security": [
-          {
-            "runscope_auth": [
-              "api:read",
-              "message:write"
-            ]
-          }
-        ],
-        "summary": "Clear a bucket (remove all messages)."
+        "summary": "Retrieve a list of error messages in a bucket",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
@@ -344,8 +679,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/messages",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maxiumum number of messages to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Only return messages after the given Unix timestamp",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Only return messages before the given Unix timestamp",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/buckets/{bucketKey}/messages",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1messages/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -353,7 +728,10 @@
             ]
           }
         ],
-        "summary": "Retrieve a list of messages in a bucket"
+        "summary": "Retrieve a list of messages in a bucket",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
@@ -361,8 +739,35 @@
         "kind": "operation",
         "method": "post",
         "name": "post /buckets/{bucketKey}/messages",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/messages",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1messages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewMessage"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -371,7 +776,50 @@
             ]
           }
         ],
-        "summary": "Create a message"
+        "summary": "Create a message",
+        "tags": [
+          "Messages"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/buckets/{bucketKey}/messages",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /buckets/{bucketKey}/messages",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/buckets/{bucketKey}/messages",
+        "pointer": "#/paths/~1buckets~1{bucketKey}~1messages/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "runscope_auth": [
+              "api:read",
+              "message:write"
+            ]
+          }
+        ],
+        "summary": "Clear a bucket (remove all messages).",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
@@ -379,8 +827,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/messages/{messageId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier for this message",
+            "in": "path",
+            "name": "messageId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/messages/{messageId}",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1messages~1{messageId}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -388,7 +862,10 @@
             ]
           }
         ],
-        "summary": "Retrieve the details for a single message."
+        "summary": "Retrieve the details for a single message.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
@@ -396,8 +873,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/tests",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -406,7 +899,10 @@
             ]
           }
         ],
-        "summary": "Returns a list of tests."
+        "summary": "Returns a list of tests.",
+        "tags": [
+          "Tests"
+        ]
       },
       {
         "deprecated": false,
@@ -414,8 +910,31 @@
         "kind": "operation",
         "method": "post",
         "name": "post /buckets/{bucketKey}/tests",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Test"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -424,25 +943,10 @@
             ]
           }
         ],
-        "summary": "Create a test."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/buckets/{bucketKey}/tests/{testId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /buckets/{bucketKey}/tests/{testId}",
-        "path": "/buckets/{bucketKey}/tests/{testId}",
-        "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}/delete",
-        "security": [
-          {
-            "runscope_auth": [
-              "api:read",
-              "test:write"
-            ]
-          }
-        ],
-        "summary": "Delete a test, including all steps, schedules, test-specific environments and results."
+        "summary": "Create a test.",
+        "tags": [
+          "Tests"
+        ]
       },
       {
         "deprecated": false,
@@ -450,8 +954,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/tests/{testId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestDetail"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -460,7 +991,10 @@
             ]
           }
         ],
-        "summary": "Retrieve the details of a given test by ID."
+        "summary": "Retrieve the details of a given test by ID.",
+        "tags": [
+          "Tests"
+        ]
       },
       {
         "deprecated": false,
@@ -468,8 +1002,35 @@
         "kind": "operation",
         "method": "put",
         "name": "put /buckets/{bucketKey}/tests/{testId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}/put",
+        "responses": [
+          {
+            "status": "201",
+            "type": "TestDetail"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -478,7 +1039,53 @@
             ]
           }
         ],
-        "summary": "Modify a test's name, description, default environment and its steps. To modify other individual properties of a test, make requests to the steps, environments, and schedules subresources of the test."
+        "summary": "Modify a test's name, description, default environment and its steps. To modify other individual properties of a test, make requests to the steps, environments, and schedules subresources of the test.",
+        "tags": [
+          "Tests"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/buckets/{bucketKey}/tests/{testId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /buckets/{bucketKey}/tests/{testId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/buckets/{bucketKey}/tests/{testId}",
+        "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "runscope_auth": [
+              "api:read",
+              "test:write"
+            ]
+          }
+        ],
+        "summary": "Delete a test, including all steps, schedules, test-specific environments and results.",
+        "tags": [
+          "Tests"
+        ]
       },
       {
         "deprecated": false,
@@ -486,8 +1093,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/tests/{testId}/environments",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/environments",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1environments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -496,7 +1126,10 @@
             ]
           }
         ],
-        "summary": "Return details of the test's environments (only those that belong to the specified test)"
+        "summary": "Return details of the test's environments (only those that belong to the specified test)",
+        "tags": [
+          "Test Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -504,8 +1137,37 @@
         "kind": "operation",
         "method": "post",
         "name": "post /buckets/{bucketKey}/tests/{testId}/environments",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/environments",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1environments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Environment"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -514,7 +1176,10 @@
             ]
           }
         ],
-        "summary": "Create new test environment."
+        "summary": "Create new test environment.",
+        "tags": [
+          "Test Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -522,8 +1187,44 @@
         "kind": "operation",
         "method": "put",
         "name": "put /buckets/{bucketKey}/tests/{testId}/environments/{environmentId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test environment",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/environments/{environmentId}",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1environments~1{environmentId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Environment"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -532,7 +1233,10 @@
             ]
           }
         ],
-        "summary": "Update the details of a test environment."
+        "summary": "Update the details of a test environment.",
+        "tags": [
+          "Test Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -540,8 +1244,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/tests/{testId}/metrics",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/metrics",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1metrics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Metrics"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -550,7 +1277,10 @@
             ]
           }
         ],
-        "summary": "Return details of the test metrics for the specified timeframe."
+        "summary": "Return details of the test metrics for the specified timeframe.",
+        "tags": [
+          "Tests"
+        ]
       },
       {
         "deprecated": false,
@@ -558,8 +1288,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get /buckets/{bucketKey}/tests/{testId}/steps",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/steps",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1steps/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -568,7 +1320,10 @@
             ]
           }
         ],
-        "summary": "List test steps for a test."
+        "summary": "List test steps for a test.",
+        "tags": [
+          "Test Steps"
+        ]
       },
       {
         "deprecated": false,
@@ -576,8 +1331,41 @@
         "kind": "operation",
         "method": "post",
         "name": "post /buckets/{bucketKey}/tests/{testId}/steps",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/steps",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1steps/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestStep"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "StandardError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -586,25 +1374,10 @@
             ]
           }
         ],
-        "summary": "Add new test step."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
-        "path": "/buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
-        "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1steps~1{stepId}/delete",
-        "security": [
-          {
-            "runscope_auth": [
-              "api:read",
-              "test:write"
-            ]
-          }
-        ],
-        "summary": "Delete a step from a test."
+        "summary": "Add new test step.",
+        "tags": [
+          "Test Steps"
+        ]
       },
       {
         "deprecated": false,
@@ -612,8 +1385,48 @@
         "kind": "operation",
         "method": "put",
         "name": "put /buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test step",
+            "in": "path",
+            "name": "stepId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
         "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1steps~1{stepId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestStep"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "StandardError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "runscope_auth": [
@@ -622,16 +1435,90 @@
             ]
           }
         ],
-        "summary": "Update the details of a single test step."
+        "summary": "Update the details of a single test step.",
+        "tags": [
+          "Test Steps"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
+        "parameters": [
+          {
+            "description": "Unique identifier for a bucket",
+            "in": "path",
+            "name": "bucketKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test",
+            "in": "path",
+            "name": "testId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier for a test step",
+            "in": "path",
+            "name": "stepId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/buckets/{bucketKey}/tests/{testId}/steps/{stepId}",
+        "pointer": "#/paths/~1buckets~1{bucketKey}~1tests~1{testId}~1steps~1{stepId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "runscope_auth": [
+              "api:read",
+              "test:write"
+            ]
+          }
+        ],
+        "summary": "Delete a step from a test.",
+        "tags": [
+          "Test Steps"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List currently connected agents associated with a given team.",
         "id": "operation:get:/teams/{teamId}/agents",
         "kind": "operation",
         "method": "get",
         "name": "get /teams/{teamId}/agents",
+        "parameters": [
+          {
+            "description": "Unique identifier for team",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/agents",
         "pointer": "#/paths/~1teams~1{teamId}~1agents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Agent[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -640,16 +1527,40 @@
             ]
           }
         ],
-        "summary": "Team agents list"
+        "summary": "Team agents list",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of integrations configured for the team.",
         "id": "operation:get:/teams/{teamId}/integrations",
         "kind": "operation",
         "method": "get",
         "name": "get /teams/{teamId}/integrations",
+        "parameters": [
+          {
+            "description": "Unique identifier for team",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/integrations",
         "pointer": "#/paths/~1teams~1{teamId}~1integrations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -658,16 +1569,40 @@
             ]
           }
         ],
-        "summary": "Team integrations list"
+        "summary": "Team integrations list",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List people and integrations associated with a given team.",
         "id": "operation:get:/teams/{teamId}/people",
         "kind": "operation",
         "method": "get",
         "name": "get /teams/{teamId}/people",
+        "parameters": [
+          {
+            "description": "Unique identifier for team",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/people",
         "pointer": "#/paths/~1teams~1{teamId}~1people/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "runscope_auth": [
@@ -677,107 +1612,130 @@
             ]
           }
         ],
-        "summary": "Teams Resource"
+        "summary": "Teams Resource",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:Agent",
         "kind": "schema",
-        "name": "Agent"
+        "name": "Agent",
+        "type": "object"
       },
       {
         "id": "schema:Assertion",
         "kind": "schema",
-        "name": "Assertion"
+        "name": "Assertion",
+        "type": "object"
       },
       {
         "id": "schema:Bucket",
         "kind": "schema",
-        "name": "Bucket"
+        "name": "Bucket",
+        "type": "object"
       },
       {
         "id": "schema:Environment",
         "kind": "schema",
-        "name": "Environment"
+        "name": "Environment",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Error400",
         "kind": "schema",
-        "name": "Error400"
+        "name": "Error400",
+        "type": "object"
       },
       {
         "id": "schema:Integration",
         "kind": "schema",
-        "name": "Integration"
+        "name": "Integration",
+        "type": "object"
       },
       {
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
         "id": "schema:Metrics",
         "kind": "schema",
-        "name": "Metrics"
+        "name": "Metrics",
+        "type": "object"
       },
       {
         "id": "schema:NewBucket",
         "kind": "schema",
-        "name": "NewBucket"
+        "name": "NewBucket",
+        "type": "object"
       },
       {
         "id": "schema:NewMessage",
         "kind": "schema",
-        "name": "NewMessage"
+        "name": "NewMessage",
+        "type": "object"
       },
       {
         "id": "schema:Schedule",
         "kind": "schema",
-        "name": "Schedule"
+        "name": "Schedule",
+        "type": "object"
       },
       {
         "id": "schema:StandardError",
         "kind": "schema",
-        "name": "StandardError"
+        "name": "StandardError",
+        "type": "object"
       },
       {
         "id": "schema:Team",
         "kind": "schema",
-        "name": "Team"
+        "name": "Team",
+        "type": "object"
       },
       {
         "id": "schema:Test",
         "kind": "schema",
-        "name": "Test"
+        "name": "Test",
+        "type": "object"
       },
       {
         "id": "schema:TestDetail",
         "kind": "schema",
-        "name": "TestDetail"
+        "name": "TestDetail",
+        "type": "object|Test"
       },
       {
         "id": "schema:TestStep",
         "kind": "schema",
-        "name": "TestStep"
+        "name": "TestStep",
+        "type": "object"
       },
       {
         "id": "schema:TestStepRequest",
         "kind": "schema",
-        "name": "TestStepRequest"
+        "name": "TestStepRequest",
+        "type": "object|TestStep"
       },
       {
         "id": "schema:Variable",
         "kind": "schema",
-        "name": "Variable"
+        "name": "Variable",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `58623de6a37d84c2a55aef7c236a588f28389656c1ec0efcf00559ce79d2f6ae` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,167 +34,169 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 43 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/addon/pvt/giftlist/get/{listId}` | GetGiftList | Get Gift List |
-| GET | `/api/addon/pvt/review/GetProductRate/{productId}` | ReviewRateProduct | Get Product Review Rate by Product ID |
-| POST | `/api/catalog/pvt/attachment` | post /api/catalog/pvt/attachment | Create attachment |
-| DELETE | `/api/catalog/pvt/attachment/{attachmentid}` | delete /api/catalog/pvt/attachment/{attachmentid} | Delete attachment |
-| GET | `/api/catalog/pvt/attachment/{attachmentid}` | get /api/catalog/pvt/attachment/{attachmentid} | Get attachment |
-| PUT | `/api/catalog/pvt/attachment/{attachmentid}` | put /api/catalog/pvt/attachment/{attachmentid} | Update attachment |
-| GET | `/api/catalog/pvt/attachments` | get /api/catalog/pvt/attachments | Get all attachments |
-| POST | `/api/catalog/pvt/brand` | post /api/catalog/pvt/brand | Create Brand |
-| DELETE | `/api/catalog/pvt/brand/{brandId}` | delete /api/catalog/pvt/brand/{brandId} | Delete Brand |
-| GET | `/api/catalog/pvt/brand/{brandId}` | get /api/catalog/pvt/brand/{brandId} | Get Brand and context |
-| PUT | `/api/catalog/pvt/brand/{brandId}` | put /api/catalog/pvt/brand/{brandId} | Update Brand |
-| POST | `/api/catalog/pvt/category` | post /api/catalog/pvt/category | Create Category |
-| GET | `/api/catalog/pvt/category/{categoryId}` | get /api/catalog/pvt/category/{categoryId} | Get Category by ID |
-| PUT | `/api/catalog/pvt/category/{categoryId}` | put /api/catalog/pvt/category/{categoryId} | Update Category |
-| POST | `/api/catalog/pvt/collection` | post /api/catalog/pvt/collection | Create Collection |
-| POST | `/api/catalog/pvt/collection/` | POST-CreateCollection | Create Collection |
-| GET | `/api/catalog/pvt/collection/inactive` | GET-AllInactiveCollections | Get All Inactive Collections |
-| GET | `/api/catalog/pvt/collection/stockkeepingunit/importfileexample` | GET-Importfileexample | Import Collection file example |
-| DELETE | `/api/catalog/pvt/collection/{collectionId}` | delete /api/catalog/pvt/collection/{collectionId} | Delete Collection |
-| GET | `/api/catalog/pvt/collection/{collectionId}` | get /api/catalog/pvt/collection/{collectionId} | Get Collection |
-| PUT | `/api/catalog/pvt/collection/{collectionId}` | put /api/catalog/pvt/collection/{collectionId} | Update Collection |
-| POST | `/api/catalog/pvt/collection/{collectionId}/position` | post /api/catalog/pvt/collection/{collectionId}/position | Reposition SKU on the Subcollection |
-| GET | `/api/catalog/pvt/collection/{collectionId}/products` | GET-Productsfromacollection | Get products from a collection |
-| POST | `/api/catalog/pvt/collection/{collectionId}/stockkeepingunit/importexclude` | POST-Removeproductsbyimportfile | Remove products from Collection by imported file |
-| POST | `/api/catalog/pvt/collection/{collectionId}/stockkeepingunit/importinsert` | POST-Addproductsbyimportfile | Add products to Collection by imported file |
-| GET | `/api/catalog/pvt/collection/{collectionId}/subcollection` | get /api/catalog/pvt/collection/{collectionId}/subcollection | Get Subcollection by Collection ID |
-| POST | `/api/catalog/pvt/product` | post /api/catalog/pvt/product | Create Product with Category and Brand |
-| GET | `/api/catalog/pvt/product/{productId}` | GetProductbyid | Get Product by ID |
-| PUT | `/api/catalog/pvt/product/{productId}` | put /api/catalog/pvt/product/{productId} | Update Product |
-| GET | `/api/catalog/pvt/product/{productId}/salespolicy` | get /api/catalog/pvt/product/{productId}/salespolicy | Get Trade Policies by Product ID |
-| DELETE | `/api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId}` | delete /api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId} | Remove Product from Trade Policy |
-| POST | `/api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId}` | post /api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId} | Associate Product with Trade Policy |
-| GET | `/api/catalog/pvt/product/{productId}/similarcategory/` | get /api/catalog/pvt/product/{productId}/similarcategory/ | Get Similar Categories |
-| DELETE | `/api/catalog/pvt/product/{productId}/similarcategory/{categoryId}` | delete /api/catalog/pvt/product/{productId}/similarcategory/{categoryId} | Delete Similar Category |
-| POST | `/api/catalog/pvt/product/{productId}/similarcategory/{categoryId}` | post /api/catalog/pvt/product/{productId}/similarcategory/{categoryId} | Add Similar Category |
-| DELETE | `/api/catalog/pvt/product/{productId}/specification` | DeleteAllProductSpecifications | Delete all Product Specifications by Product ID |
-| GET | `/api/catalog/pvt/product/{productId}/specification` | GetProductSpecificationbyProductID | Get Product Specification and its information by Product ID |
-| POST | `/api/catalog/pvt/product/{productId}/specification` | post /api/catalog/pvt/product/{productId}/specification | Associate Product Specification |
-| DELETE | `/api/catalog/pvt/product/{productId}/specification/{specificationId}` | DeleteaProductSpecification | Delete a specific Product Specification |
-| PUT | `/api/catalog/pvt/product/{productId}/specificationvalue` | put /api/catalog/pvt/product/{productId}/specificationvalue | Associate product specification using specification name and group name |
-| DELETE | `/api/catalog/pvt/skuattachment` | delete /api/catalog/pvt/skuattachment | Dissociate attachments and SKUs |
-| POST | `/api/catalog/pvt/skuattachment` | post /api/catalog/pvt/skuattachment | Associate SKU Attachment |
-| DELETE | `/api/catalog/pvt/skuattachment/{skuAttachmentAssociationId}` | delete /api/catalog/pvt/skuattachment/{skuAttachmentAssociationId} | Delete SKU Attachment by Attachment Association ID |
-| POST | `/api/catalog/pvt/skucomplement` | CreateSKUComplement | Create SKU Complement |
-| DELETE | `/api/catalog/pvt/skucomplement/{skuComplementId}` | DeleteSKUComplementbySKUComplementID | Delete SKU Complement by SKU Complement ID |
-| GET | `/api/catalog/pvt/skucomplement/{skuComplementId}` | GetSKUComplementbySKUComplementID | Get SKU Complement by SKU Complement ID |
-| POST | `/api/catalog/pvt/skuservice` | post /api/catalog/pvt/skuservice | Associate SKU Service |
-| DELETE | `/api/catalog/pvt/skuservice/{skuServiceId}` | delete /api/catalog/pvt/skuservice/{skuServiceId} | Dissociate SKU Service |
-| GET | `/api/catalog/pvt/skuservice/{skuServiceId}` | get /api/catalog/pvt/skuservice/{skuServiceId} | Get SKU Service |
-| PUT | `/api/catalog/pvt/skuservice/{skuServiceId}` | put /api/catalog/pvt/skuservice/{skuServiceId} | Update SKU Service |
-| POST | `/api/catalog/pvt/skuservicetype` | post /api/catalog/pvt/skuservicetype | Create SKU Service Type |
-| DELETE | `/api/catalog/pvt/skuservicetype/{skuServiceTypeId}` | delete /api/catalog/pvt/skuservicetype/{skuServiceTypeId} | Delete SKU Service Type |
-| GET | `/api/catalog/pvt/skuservicetype/{skuServiceTypeId}` | get /api/catalog/pvt/skuservicetype/{skuServiceTypeId} | Get SKU Service Type |
-| PUT | `/api/catalog/pvt/skuservicetype/{skuServiceTypeId}` | put /api/catalog/pvt/skuservicetype/{skuServiceTypeId} | Update SKU Service Type |
-| DELETE | `/api/catalog/pvt/skuservicetypeattachment` | delete /api/catalog/pvt/skuservicetypeattachment | Dissociate Attachment by Attachment ID or SKU Service Type ID |
-| POST | `/api/catalog/pvt/skuservicetypeattachment` | post /api/catalog/pvt/skuservicetypeattachment | Associate SKU Service Attachment |
-| DELETE | `/api/catalog/pvt/skuservicetypeattachment/{skuServiceTypeAttachmentId}` | delete /api/catalog/pvt/skuservicetypeattachment/{skuServiceTypeAttachmentId} | Dissociate Attachment from SKU Service Type |
-| POST | `/api/catalog/pvt/skuservicevalue` | post /api/catalog/pvt/skuservicevalue | Create SKU Service Value |
-| DELETE | `/api/catalog/pvt/skuservicevalue/{skuServiceValueId}` | delete /api/catalog/pvt/skuservicevalue/{skuServiceValueId} | Delete SKU Service Value |
-| GET | `/api/catalog/pvt/skuservicevalue/{skuServiceValueId}` | get /api/catalog/pvt/skuservicevalue/{skuServiceValueId} | Get SKU Service Value |
-| PUT | `/api/catalog/pvt/skuservicevalue/{skuServiceValueId}` | put /api/catalog/pvt/skuservicevalue/{skuServiceValueId} | Update SKU Service Value |
-| POST | `/api/catalog/pvt/specification` | post /api/catalog/pvt/specification | Create Specification |
-| DELETE | `/api/catalog/pvt/specification/nonstructured` | delete /api/catalog/pvt/specification/nonstructured | Delete Non Structured Specification by SKU ID |
-| GET | `/api/catalog/pvt/specification/nonstructured` | get /api/catalog/pvt/specification/nonstructured | Get Non Structured Specification by SKU ID |
-| DELETE | `/api/catalog/pvt/specification/nonstructured/{Id}` | delete /api/catalog/pvt/specification/nonstructured/{Id} | Delete Non Structured Specification |
-| GET | `/api/catalog/pvt/specification/nonstructured/{Id}` | get /api/catalog/pvt/specification/nonstructured/{Id} | Get Non Structured Specification by ID |
-| GET | `/api/catalog/pvt/specification/{specificationId}` | get /api/catalog/pvt/specification/{specificationId} | Get Specification |
-| PUT | `/api/catalog/pvt/specification/{specificationId}` | put /api/catalog/pvt/specification/{specificationId} | Update Specification |
-| POST | `/api/catalog/pvt/specificationgroup` | SpecificationGroupInsert2 | Create Specification Group |
-| PUT | `/api/catalog/pvt/specificationgroup/{groupId}` | put /api/catalog/pvt/specificationgroup/{groupId} | Update Specification Group |
-| POST | `/api/catalog/pvt/specificationvalue` | post /api/catalog/pvt/specificationvalue | Create Specification Value |
-| GET | `/api/catalog/pvt/specificationvalue/{specificationValueId}` | get /api/catalog/pvt/specificationvalue/{specificationValueId} | Get Specification Value |
-| PUT | `/api/catalog/pvt/specificationvalue/{specificationValueId}` | put /api/catalog/pvt/specificationvalue/{specificationValueId} | Update Specification Value |
-| GET | `/api/catalog/pvt/stockkeepingunit` | get /api/catalog/pvt/stockkeepingunit | Get SKU by RefId |
-| POST | `/api/catalog/pvt/stockkeepingunit` | post /api/catalog/pvt/stockkeepingunit | Create SKU |
-| PUT | `/api/catalog/pvt/stockkeepingunit/copy/{skuIdfrom}/{skuIdto}/file/` | put /api/catalog/pvt/stockkeepingunit/copy/{skuIdfrom}/{skuIdto}/file/ | Copy Files from an SKU to another SKU |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/disassociate/{skuId}/file/{skuFileId}` | delete /api/catalog/pvt/stockkeepingunit/disassociate/{skuId}/file/{skuFileId} | Disassociate SKU File |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}` | Sku | Get SKU |
-| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}` | put /api/catalog/pvt/stockkeepingunit/{skuId} | Update SKU |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/attachment` | get /api/catalog/pvt/stockkeepingunit/{skuId}/attachment | Get SKU Attachments by SKU ID |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/complement` | GetSKUComplementbySKUID | Get SKU Complement by SKU ID |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/complement/{complementTypeId}` | GetSKUComplementsbyComplementTypeID | Get SKU Complements by Complement Type ID |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/ean | Delete all SKU EAN values |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean` | get /api/catalog/pvt/stockkeepingunit/{skuId}/ean | Get EAN by SKU ID |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean}` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean} | Delete SKU EAN |
-| POST | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean}` | post /api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean} | Create SKU EAN |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/file` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/file | Delete All SKU Files |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/file` | get /api/catalog/pvt/stockkeepingunit/{skuId}/file | Get SKU Files |
-| POST | `/api/catalog/pvt/stockkeepingunit/{skuId}/file` | post /api/catalog/pvt/stockkeepingunit/{skuId}/file | Create SKU File |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId}` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId} | Delete SKU Image File |
-| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId}` | put /api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId} | Update SKU File |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/specification | Delete all SKU Specifications |
-| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | get /api/catalog/pvt/stockkeepingunit/{skuId}/specification | Get SKU Specifications |
-| POST | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | post /api/catalog/pvt/stockkeepingunit/{skuId}/specification | Associate SKU Specification |
-| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | put /api/catalog/pvt/stockkeepingunit/{skuId}/specification | Update SKU Specification |
-| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification/{specificationId}` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/specification/{specificationId} | Delete SKU Specification |
-| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}/specificationvalue` | put /api/catalog/pvt/stockkeepingunit/{skuId}/specificationvalue | Associate SKU specification using specification name and group name |
-| DELETE | `/api/catalog/pvt/stockkeepingunitkit` | delete /api/catalog/pvt/stockkeepingunitkit | Delete SKU Kit by SKU ID or Parent SKU ID |
-| GET | `/api/catalog/pvt/stockkeepingunitkit` | get /api/catalog/pvt/stockkeepingunitkit | Get SKU Kit by SKU ID or Parent SKU ID |
-| POST | `/api/catalog/pvt/stockkeepingunitkit` | post /api/catalog/pvt/stockkeepingunitkit | Create SKU Kit |
-| DELETE | `/api/catalog/pvt/stockkeepingunitkit/{kitId}` | delete /api/catalog/pvt/stockkeepingunitkit/{kitId} | Delete SKU Kit by KitId |
-| GET | `/api/catalog/pvt/stockkeepingunitkit/{kitId}` | get /api/catalog/pvt/stockkeepingunitkit/{kitId} | Get SKU Kit |
-| POST | `/api/catalog/pvt/subcollection` | post /api/catalog/pvt/subcollection | Create Subcollection |
-| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}` | delete /api/catalog/pvt/subcollection/{subCollectionId} | Delete Subcollection |
-| GET | `/api/catalog/pvt/subcollection/{subCollectionId}` | get /api/catalog/pvt/subcollection/{subCollectionId} | Get Subcollection |
-| PUT | `/api/catalog/pvt/subcollection/{subCollectionId}` | put /api/catalog/pvt/subcollection/{subCollectionId} | Update Subcollection |
-| POST | `/api/catalog/pvt/subcollection/{subCollectionId}/brand` | post /api/catalog/pvt/subcollection/{subCollectionId}/brand | Associate Brand to Subcollection |
-| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}/brand/{brandId}` | delete /api/catalog/pvt/subcollection/{subCollectionId}/brand/{brandId} | Delete Brand from Subcollection |
-| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}/brand/{categoryId}` | delete /api/catalog/pvt/subcollection/{subCollectionId}/brand/{categoryId} | Delete Category from Subcollection |
-| POST | `/api/catalog/pvt/subcollection/{subCollectionId}/category` | post /api/catalog/pvt/subcollection/{subCollectionId}/category | Associate Category to Subcollection |
-| POST | `/api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit` | post /api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit | Add SKU to Subcollection |
-| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit/{skuId}` | delete /api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit/{skuId} | Delete SKU from Subcollection |
-| POST | `/api/catalog/pvt/supplier` | post /api/catalog/pvt/supplier | Create Supplier |
-| DELETE | `/api/catalog/pvt/supplier/{supplierId}` | delete /api/catalog/pvt/supplier/{supplierId} | Delete Supplier |
-| PUT | `/api/catalog/pvt/supplier/{supplierId}` | put /api/catalog/pvt/supplier/{supplierId} | Update Supplier |
-| GET | `/api/catalog_system/pub/category/tree/{categoryLevels}` | CategoryTree | Get Category Tree |
-| GET | `/api/catalog_system/pub/products/variations/{productId}` | ProductVariations | Get Product's SKUs by Product ID |
-| GET | `/api/catalog_system/pub/saleschannel/{salesChannelId}` | SalesChannelbyId | Get Sales Channel by ID |
-| POST | `/api/catalog_system/pub/sku/stockkeepingunitidsbyrefids` | SkuIdlistbyRefIdlist | Retrieve SKU ID list by Reference ID list |
-| GET | `/api/catalog_system/pub/specification/field/listByCategoryId/{categoryId}` | SpecificationsByCategoryId | Get Specifications By Category ID |
-| GET | `/api/catalog_system/pub/specification/field/listTreeByCategoryId/{categoryId}` | SpecificationsTreeByCategoryId | Get Specifications Tree By Category ID |
-| GET | `/api/catalog_system/pub/specification/fieldGet/{fieldId}` | SpecificationsField | Get Specification Field |
-| GET | `/api/catalog_system/pub/specification/fieldvalue/{fieldId}` | SpecificationsValuesByFieldId | Get Specification Values By Field ID |
-| GET | `/api/catalog_system/pub/specification/groupGet/{groupId}` | SpecificationsGroupGet | Get Specification Group |
-| GET | `/api/catalog_system/pvt/brand/list` | BrandList | Get Brand List |
-| GET | `/api/catalog_system/pvt/brand/pagedlist` | BrandListPerPage | Get Brand List Per Page |
-| GET | `/api/catalog_system/pvt/brand/{brandId}` | Brand | Get Brand |
-| GET | `/api/catalog_system/pvt/collection/search` | GET-AllCollections | Get All Collections |
-| GET | `/api/catalog_system/pvt/collection/search/{searchTerms}` | GET-Collectionsbyseachterms | Get Collections by search terms |
-| GET | `/api/catalog_system/pvt/commercialcondition/list` | GetAllCommercialConditions | Get all commercial conditions |
-| GET | `/api/catalog_system/pvt/commercialcondition/{commercialConditionId}` | GetCommercialConditions | Get commercial condition |
-| GET | `/api/catalog_system/pvt/products/GetIndexedInfo/{productId}` | IndexedInfo | Get Product Indexed Information |
-| GET | `/api/catalog_system/pvt/products/GetProductAndSkuIds` | ProductAndSkuIds | Get Product and SKU IDs |
-| GET | `/api/catalog_system/pvt/products/productget/{productId}` | ProductandTradePolicy | Get Product and its general context |
-| GET | `/api/catalog_system/pvt/products/productgetbyrefid/{refId}` | ProductbyRefId | Get Product by RefId |
-| GET | `/api/catalog_system/pvt/products/{productId}/specification` | GetProductSpecification | Get Product Specification by Product ID |
-| POST | `/api/catalog_system/pvt/products/{productId}/specification` | UpdateProductSpecification | Update Product Specification by Product ID |
-| GET | `/api/catalog_system/pvt/saleschannel/list` | SalesChannelList | Get Sales Channel List |
-| POST | `/api/catalog_system/pvt/seller` | CreateSeller | Create Seller |
-| PUT | `/api/catalog_system/pvt/seller` | UpdateSeller | Update Seller |
-| GET | `/api/catalog_system/pvt/seller/list` | SellerList | Get Seller List |
-| GET | `/api/catalog_system/pvt/seller/{sellerId}` | GetSellerbyId | Get Seller by ID |
-| GET | `/api/catalog_system/pvt/sellers/{sellerId}` | GetSellersbyId | Get Seller by ID |
-| POST | `/api/catalog_system/pvt/sku/associateattachments` | AssociateattachmentstoSKU | Associate attachments to an SKU |
-| GET | `/api/catalog_system/pvt/sku/complements/{parentSkuId}/{type}` | GetSKUcomplementsbytype | Get SKU complements by type |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitByProductId/{productId}` | SkulistbyProductId | Get SKU list by Product ID |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitbyalternateId/{alternateId}` | SkubyAlternateId | Get SKU by Alternate ID |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitbyean/{ean}` | SkubyEAN | Get SKU by EAN |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitbyid/{skuId}` | SkuContext | Get SKU and context |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitidbyrefid/{refId}` | SkuIdbyRefId | Get SKU ID by Reference ID |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitids` | ListallSKUIDs | List all SKU IDs |
-| GET | `/api/catalog_system/pvt/sku/stockkeepingunitidsbysaleschannel` | get /api/catalog_system/pvt/sku/stockkeepingunitidsbysaleschannel | List all SKUs of a Trade Policy |
-| POST | `/api/catalog_system/pvt/skuseller/changenotification/{sellerId}/{sellerSkuId}` | post /api/catalog_system/pvt/skuseller/changenotification/{sellerId}/{sellerSkuId} | Change Notification with Seller ID and Seller SKU ID |
-| POST | `/api/catalog_system/pvt/skuseller/changenotification/{skuId}` | ChangeNotification | Change Notification with SKU ID |
-| POST | `/api/catalog_system/pvt/skuseller/remove/{sellerId}/{sellerSkuId}` | DeleteSKUsellerassociation | Remove a seller's SKU binding |
-| GET | `/api/catalog_system/pvt/skuseller/{sellerId}/{sellerSkuId}` | GetSKUseller | Get details of a seller's SKU |
-| POST | `/api/catalog_system/pvt/specification/field` | SpecificationsInsertField | Create Specification Field |
-| PUT | `/api/catalog_system/pvt/specification/field` | SpecificationsInsertFieldUpdate | Update Specification Field |
-| POST | `/api/catalog_system/pvt/specification/fieldValue` | SpecificationsInsertFieldValue | Create Specification Field Value |
-| PUT | `/api/catalog_system/pvt/specification/fieldValue` | SpecificationsUpdateFieldValue | Update Specification Field Value |
-| GET | `/api/catalog_system/pvt/specification/fieldValue/{fieldValueId}` | SpecificationsGetFieldValue | Get Specification Field Value |
-| GET | `/api/catalog_system/pvt/specification/groupbycategory/{categoryId}` | SpecificationsGroupListbyCategory | List Specification Group by Category |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/addon/pvt/giftlist/get/{listId}` | GetGiftList | `Content-Type`*, `Accept`*, `listId`* | object | yes | Get Gift List |
+| GET | `/api/addon/pvt/review/GetProductRate/{productId}` | ReviewRateProduct | `Content-Type`*, `Accept`*, `productId`* | number | yes | Get Product Review Rate by Product ID |
+| POST | `/api/catalog/pvt/attachment` | post /api/catalog/pvt/attachment | `Content-Type`*, `Accept`*, body: AttachmentRequest | AttachmentResponse |  | Create attachment |
+| GET | `/api/catalog/pvt/attachment/{attachmentid}` | get /api/catalog/pvt/attachment/{attachmentid} | `attachmentid`*, `Content-Type`*, `Accept`* | AttachmentResponse | yes | Get attachment |
+| PUT | `/api/catalog/pvt/attachment/{attachmentid}` | put /api/catalog/pvt/attachment/{attachmentid} | `attachmentid`*, `Content-Type`*, `Accept`*, body: AttachmentRequest | AttachmentResponse |  | Update attachment |
+| DELETE | `/api/catalog/pvt/attachment/{attachmentid}` | delete /api/catalog/pvt/attachment/{attachmentid} | `attachmentid`*, `Content-Type`*, `Accept`* | — |  | Delete attachment |
+| GET | `/api/catalog/pvt/attachments` | get /api/catalog/pvt/attachments | `Content-Type`*, `Accept`* | object | yes | Get all attachments |
+| POST | `/api/catalog/pvt/brand` | post /api/catalog/pvt/brand | `Content-Type`*, `Accept`*, body: BrandCreateUpdate | BrandCreateUpdate |  | Create Brand |
+| GET | `/api/catalog/pvt/brand/{brandId}` | get /api/catalog/pvt/brand/{brandId} | `Content-Type`*, `Accept`*, `brandId`* | BrandCreateUpdate | yes | Get Brand and context |
+| PUT | `/api/catalog/pvt/brand/{brandId}` | put /api/catalog/pvt/brand/{brandId} | `brandId`*, `Content-Type`*, `Accept`*, body: BrandCreateUpdate | BrandCreateUpdate |  | Update Brand |
+| DELETE | `/api/catalog/pvt/brand/{brandId}` | delete /api/catalog/pvt/brand/{brandId} | `brandId`*, `Content-Type`*, `Accept`* | — |  | Delete Brand |
+| POST | `/api/catalog/pvt/category` | post /api/catalog/pvt/category | `Content-Type`*, `Accept`*, body: CreateCategoryRequest | Category |  | Create Category |
+| GET | `/api/catalog/pvt/category/{categoryId}` | get /api/catalog/pvt/category/{categoryId} | `Content-Type`*, `Accept`*, `categoryId`* | Category | yes | Get Category by ID |
+| PUT | `/api/catalog/pvt/category/{categoryId}` | put /api/catalog/pvt/category/{categoryId} | `Content-Type`*, `Accept`*, `categoryId`*, body: object | Category |  | Update Category |
+| POST | `/api/catalog/pvt/collection` | post /api/catalog/pvt/collection | `Content-Type`*, `Accept`*, body: object | object |  | Create Collection |
+| POST | `/api/catalog/pvt/collection/` | POST-CreateCollection | `Content-Type`*, `Accept`*, body*: object | — |  | Create Collection |
+| GET | `/api/catalog/pvt/collection/inactive` | GET-AllInactiveCollections | `Content-Type`*, `Accept`* | — | yes | Get All Inactive Collections |
+| GET | `/api/catalog/pvt/collection/stockkeepingunit/importfileexample` | GET-Importfileexample | `Content-Type`*, `Accept`* | — | yes | Import Collection file example |
+| GET | `/api/catalog/pvt/collection/{collectionId}` | get /api/catalog/pvt/collection/{collectionId} | `Content-Type`*, `Accept`*, `collectionId`* | object | yes | Get Collection |
+| PUT | `/api/catalog/pvt/collection/{collectionId}` | put /api/catalog/pvt/collection/{collectionId} | `Content-Type`*, `Accept`*, `collectionId`*, body: object | object |  | Update Collection |
+| DELETE | `/api/catalog/pvt/collection/{collectionId}` | delete /api/catalog/pvt/collection/{collectionId} | `Content-Type`*, `Accept`*, `collectionId`* | — |  | Delete Collection |
+| POST | `/api/catalog/pvt/collection/{collectionId}/position` | post /api/catalog/pvt/collection/{collectionId}/position | `Content-Type`*, `Accept`*, `collectionId`*, body: object | — |  | Reposition SKU on the Subcollection |
+| GET | `/api/catalog/pvt/collection/{collectionId}/products` | GET-Productsfromacollection | `Content-Type`*, `Accept`*, `collectionId`*, `page`, `pageSize`, `Filter`, `Active`, `Visible`, `CategoryId`, `BrandId`, `SupplierId`, `SalesChannelId`, `ReleaseFrom`, `ReleaseTo`, `SpecificationProduct`, `SpecificationFieldId` | — | yes | Get products from a collection |
+| POST | `/api/catalog/pvt/collection/{collectionId}/stockkeepingunit/importexclude` | POST-Removeproductsbyimportfile | `Content-Type`*, `Accept`*, `collectionId`*, body: object | — |  | Remove products from Collection by imported file |
+| POST | `/api/catalog/pvt/collection/{collectionId}/stockkeepingunit/importinsert` | POST-Addproductsbyimportfile | `Content-Type`*, `Accept`*, `collectionId`*, body: object | — |  | Add products to Collection by imported file |
+| GET | `/api/catalog/pvt/collection/{collectionId}/subcollection` | get /api/catalog/pvt/collection/{collectionId}/subcollection | `Content-Type`*, `Accept`*, `collectionId`* | object[] | yes | Get Subcollection by Collection ID |
+| POST | `/api/catalog/pvt/product` | post /api/catalog/pvt/product | `Content-Type`*, `Accept`*, body: object | object |  | Create Product with Category and Brand |
+| GET | `/api/catalog/pvt/product/{productId}` | GetProductbyid | `Content-Type`*, `Accept`*, `productId`* | object | yes | Get Product by ID |
+| PUT | `/api/catalog/pvt/product/{productId}` | put /api/catalog/pvt/product/{productId} | `Content-Type`*, `Accept`*, `productId`*, body: object | object |  | Update Product |
+| GET | `/api/catalog/pvt/product/{productId}/salespolicy` | get /api/catalog/pvt/product/{productId}/salespolicy | `Content-Type`*, `Accept`*, `productId`* | object[] | yes | Get Trade Policies by Product ID |
+| POST | `/api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId}` | post /api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId} | `Content-Type`*, `Accept`*, `productId`*, `tradepolicyId`* | — |  | Associate Product with Trade Policy |
+| DELETE | `/api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId}` | delete /api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId} | `Content-Type`*, `Accept`*, `productId`*, `tradepolicyId`* | — |  | Remove Product from Trade Policy |
+| GET | `/api/catalog/pvt/product/{productId}/similarcategory/` | get /api/catalog/pvt/product/{productId}/similarcategory/ | `Content-Type`*, `Accept`*, `productId`* | object[] | yes | Get Similar Categories |
+| POST | `/api/catalog/pvt/product/{productId}/similarcategory/{categoryId}` | post /api/catalog/pvt/product/{productId}/similarcategory/{categoryId} | `Content-Type`*, `Accept`*, `productId`*, `categoryId`* | object |  | Add Similar Category |
+| DELETE | `/api/catalog/pvt/product/{productId}/similarcategory/{categoryId}` | delete /api/catalog/pvt/product/{productId}/similarcategory/{categoryId} | `Content-Type`*, `Accept`*, `productId`*, `categoryId`* | — |  | Delete Similar Category |
+| GET | `/api/catalog/pvt/product/{productId}/specification` | GetProductSpecificationbyProductID | `Content-Type`*, `Accept`*, `productId`* | object[] | yes | Get Product Specification and its information by Product ID |
+| POST | `/api/catalog/pvt/product/{productId}/specification` | post /api/catalog/pvt/product/{productId}/specification | `Content-Type`*, `Accept`*, `productId`*, body: object | object |  | Associate Product Specification |
+| DELETE | `/api/catalog/pvt/product/{productId}/specification` | DeleteAllProductSpecifications | `Content-Type`*, `Accept`*, `productId`* | — |  | Delete all Product Specifications by Product ID |
+| DELETE | `/api/catalog/pvt/product/{productId}/specification/{specificationId}` | DeleteaProductSpecification | `Content-Type`*, `Accept`*, `productId`*, `specificationId`* | — |  | Delete a specific Product Specification |
+| PUT | `/api/catalog/pvt/product/{productId}/specificationvalue` | put /api/catalog/pvt/product/{productId}/specificationvalue | `Content-Type`*, `Accept`*, `productId`*, body: object | object[] |  | Associate product specification using specification name and group name |
+| POST | `/api/catalog/pvt/skuattachment` | post /api/catalog/pvt/skuattachment | `Content-Type`*, `Accept`*, body: object | object |  | Associate SKU Attachment |
+| DELETE | `/api/catalog/pvt/skuattachment` | delete /api/catalog/pvt/skuattachment | `Content-Type`*, `Accept`*, `skuId`, `attachmentId` | — |  | Dissociate attachments and SKUs |
+| DELETE | `/api/catalog/pvt/skuattachment/{skuAttachmentAssociationId}` | delete /api/catalog/pvt/skuattachment/{skuAttachmentAssociationId} | `Content-Type`*, `Accept`*, `skuAttachmentAssociationId`* | — |  | Delete SKU Attachment by Attachment Association ID |
+| POST | `/api/catalog/pvt/skucomplement` | CreateSKUComplement | `Content-Type`*, `Accept`*, body: object | SkuComplement |  | Create SKU Complement |
+| GET | `/api/catalog/pvt/skucomplement/{skuComplementId}` | GetSKUComplementbySKUComplementID | `Content-Type`*, `Accept`*, `skuComplementId`* | SkuComplement | yes | Get SKU Complement by SKU Complement ID |
+| DELETE | `/api/catalog/pvt/skucomplement/{skuComplementId}` | DeleteSKUComplementbySKUComplementID | `Content-Type`*, `Accept`*, `skuComplementId`* | — |  | Delete SKU Complement by SKU Complement ID |
+| POST | `/api/catalog/pvt/skuservice` | post /api/catalog/pvt/skuservice | `Content-Type`*, `Accept`*, body: object | SKUService |  | Associate SKU Service |
+| GET | `/api/catalog/pvt/skuservice/{skuServiceId}` | get /api/catalog/pvt/skuservice/{skuServiceId} | `Content-Type`*, `Accept`*, `skuServiceId`* | SKUService | yes | Get SKU Service |
+| PUT | `/api/catalog/pvt/skuservice/{skuServiceId}` | put /api/catalog/pvt/skuservice/{skuServiceId} | `Content-Type`*, `Accept`*, `skuServiceId`*, body: object | SKUService |  | Update SKU Service |
+| DELETE | `/api/catalog/pvt/skuservice/{skuServiceId}` | delete /api/catalog/pvt/skuservice/{skuServiceId} | `Content-Type`*, `Accept`*, `skuServiceId`* | — |  | Dissociate SKU Service |
+| POST | `/api/catalog/pvt/skuservicetype` | post /api/catalog/pvt/skuservicetype | `Content-Type`*, `Accept`*, body: SKUServiceTypeRequest | SKUServiceTypeResponse |  | Create SKU Service Type |
+| GET | `/api/catalog/pvt/skuservicetype/{skuServiceTypeId}` | get /api/catalog/pvt/skuservicetype/{skuServiceTypeId} | `Content-Type`*, `Accept`*, `skuServiceTypeId`* | SKUServiceTypeResponse | yes | Get SKU Service Type |
+| PUT | `/api/catalog/pvt/skuservicetype/{skuServiceTypeId}` | put /api/catalog/pvt/skuservicetype/{skuServiceTypeId} | `Content-Type`*, `Accept`*, `skuServiceTypeId`*, body: SKUServiceTypeRequest | SKUServiceTypeResponse |  | Update SKU Service Type |
+| DELETE | `/api/catalog/pvt/skuservicetype/{skuServiceTypeId}` | delete /api/catalog/pvt/skuservicetype/{skuServiceTypeId} | `Content-Type`*, `Accept`*, `skuServiceTypeId`* | — |  | Delete SKU Service Type |
+| POST | `/api/catalog/pvt/skuservicetypeattachment` | post /api/catalog/pvt/skuservicetypeattachment | `Content-Type`*, `Accept`*, body: object | object |  | Associate SKU Service Attachment |
+| DELETE | `/api/catalog/pvt/skuservicetypeattachment` | delete /api/catalog/pvt/skuservicetypeattachment | `Content-Type`*, `Accept`*, `attachmentId`, `skuServiceTypeId` | — |  | Dissociate Attachment by Attachment ID or SKU Service Type ID |
+| DELETE | `/api/catalog/pvt/skuservicetypeattachment/{skuServiceTypeAttachmentId}` | delete /api/catalog/pvt/skuservicetypeattachment/{skuServiceTypeAttachmentId} | `Content-Type`*, `Accept`*, `skuServiceTypeAttachmentId`* | — |  | Dissociate Attachment from SKU Service Type |
+| POST | `/api/catalog/pvt/skuservicevalue` | post /api/catalog/pvt/skuservicevalue | `Content-Type`*, `Accept`*, body: SKUServiceValueRequest | SKUServiceValueResponse |  | Create SKU Service Value |
+| GET | `/api/catalog/pvt/skuservicevalue/{skuServiceValueId}` | get /api/catalog/pvt/skuservicevalue/{skuServiceValueId} | `Content-Type`*, `Accept`*, `skuServiceValueId`* | SKUServiceValueResponse | yes | Get SKU Service Value |
+| PUT | `/api/catalog/pvt/skuservicevalue/{skuServiceValueId}` | put /api/catalog/pvt/skuservicevalue/{skuServiceValueId} | `Content-Type`*, `Accept`*, `skuServiceValueId`*, body: SKUServiceValueRequest | SKUServiceValueResponse |  | Update SKU Service Value |
+| DELETE | `/api/catalog/pvt/skuservicevalue/{skuServiceValueId}` | delete /api/catalog/pvt/skuservicevalue/{skuServiceValueId} | `Content-Type`*, `Accept`*, `skuServiceValueId`* | — |  | Delete SKU Service Value |
+| POST | `/api/catalog/pvt/specification` | post /api/catalog/pvt/specification | `Content-Type`*, `Accept`*, body: object | object |  | Create Specification |
+| GET | `/api/catalog/pvt/specification/nonstructured` | get /api/catalog/pvt/specification/nonstructured | `Content-Type`*, `Accept`*, `skuId`* | object[] | yes | Get Non Structured Specification by SKU ID |
+| DELETE | `/api/catalog/pvt/specification/nonstructured` | delete /api/catalog/pvt/specification/nonstructured | `Content-Type`*, `Accept`*, `skuId`* | — |  | Delete Non Structured Specification by SKU ID |
+| GET | `/api/catalog/pvt/specification/nonstructured/{Id}` | get /api/catalog/pvt/specification/nonstructured/{Id} | `Content-Type`*, `Accept`*, `Id`* | object[] | yes | Get Non Structured Specification by ID |
+| DELETE | `/api/catalog/pvt/specification/nonstructured/{Id}` | delete /api/catalog/pvt/specification/nonstructured/{Id} | `Content-Type`*, `Accept`*, `Id`* | — |  | Delete Non Structured Specification |
+| GET | `/api/catalog/pvt/specification/{specificationId}` | get /api/catalog/pvt/specification/{specificationId} | `Content-Type`*, `Accept`*, `specificationId`* | object | yes | Get Specification |
+| PUT | `/api/catalog/pvt/specification/{specificationId}` | put /api/catalog/pvt/specification/{specificationId} | `Content-Type`*, `Accept`*, `specificationId`*, body: object | object |  | Update Specification |
+| POST | `/api/catalog/pvt/specificationgroup` | SpecificationGroupInsert2 | `Content-Type`*, `Accept`*, body*: SpecificationGroupInsertRequest | object |  | Create Specification Group |
+| PUT | `/api/catalog/pvt/specificationgroup/{groupId}` | put /api/catalog/pvt/specificationgroup/{groupId} | `Content-Type`*, `Accept`*, `groupId`*, body: object | object |  | Update Specification Group |
+| POST | `/api/catalog/pvt/specificationvalue` | post /api/catalog/pvt/specificationvalue | `Content-Type`*, `Accept`*, body: object | object |  | Create Specification Value |
+| GET | `/api/catalog/pvt/specificationvalue/{specificationValueId}` | get /api/catalog/pvt/specificationvalue/{specificationValueId} | `Content-Type`*, `Accept`*, `specificationValueId`* | object | yes | Get Specification Value |
+| PUT | `/api/catalog/pvt/specificationvalue/{specificationValueId}` | put /api/catalog/pvt/specificationvalue/{specificationValueId} | `Content-Type`*, `Accept`*, `specificationValueId`*, body: object | object |  | Update Specification Value |
+| GET | `/api/catalog/pvt/stockkeepingunit` | get /api/catalog/pvt/stockkeepingunit | `Content-Type`*, `Accept`*, `refId`* | object | yes | Get SKU by RefId |
+| POST | `/api/catalog/pvt/stockkeepingunit` | post /api/catalog/pvt/stockkeepingunit | `Content-Type`*, `Accept`*, body: object | object |  | Create SKU |
+| PUT | `/api/catalog/pvt/stockkeepingunit/copy/{skuIdfrom}/{skuIdto}/file/` | put /api/catalog/pvt/stockkeepingunit/copy/{skuIdfrom}/{skuIdto}/file/ | `Content-Type`*, `Accept`*, `skuIdfrom`*, `skuIdto`* | object[] |  | Copy Files from an SKU to another SKU |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/disassociate/{skuId}/file/{skuFileId}` | delete /api/catalog/pvt/stockkeepingunit/disassociate/{skuId}/file/{skuFileId} | `Content-Type`*, `Accept`*, `skuId`*, `skuFileId`* | — |  | Disassociate SKU File |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}` | Sku | `Content-Type`*, `Accept`*, `skuId`* | object | yes | Get SKU |
+| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}` | put /api/catalog/pvt/stockkeepingunit/{skuId} | `Content-Type`*, `Accept`*, `skuId`*, body: object | object |  | Update SKU |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/attachment` | get /api/catalog/pvt/stockkeepingunit/{skuId}/attachment | `Content-Type`*, `Accept`*, `skuId`* | object[] | yes | Get SKU Attachments by SKU ID |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/complement` | GetSKUComplementbySKUID | `Content-Type`*, `Accept`*, `skuId`* | SkuComplement | yes | Get SKU Complement by SKU ID |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/complement/{complementTypeId}` | GetSKUComplementsbyComplementTypeID | `Content-Type`*, `Accept`*, `skuId`*, `complementTypeId`* | SkuComplement | yes | Get SKU Complements by Complement Type ID |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean` | get /api/catalog/pvt/stockkeepingunit/{skuId}/ean | `Content-Type`*, `Accept`*, `skuId`* | string[] | yes | Get EAN by SKU ID |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/ean | `Content-Type`*, `Accept`*, `skuId`* | — |  | Delete all SKU EAN values |
+| POST | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean}` | post /api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean} | `Content-Type`*, `Accept`*, `skuId`*, `ean`* | — |  | Create SKU EAN |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean}` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean} | `Content-Type`*, `Accept`*, `skuId`*, `ean`* | — |  | Delete SKU EAN |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/file` | get /api/catalog/pvt/stockkeepingunit/{skuId}/file | `Content-Type`*, `Accept`*, `skuId`* | object[] | yes | Get SKU Files |
+| POST | `/api/catalog/pvt/stockkeepingunit/{skuId}/file` | post /api/catalog/pvt/stockkeepingunit/{skuId}/file | `Content-Type`*, `Accept`*, `skuId`*, body: SKUFileURL | object |  | Create SKU File |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/file` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/file | `Content-Type`*, `Accept`*, `skuId`* | — |  | Delete All SKU Files |
+| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId}` | put /api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId} | `Content-Type`*, `Accept`*, `skuId`*, `skuFileId`*, body: SKUFileURL | object |  | Update SKU File |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId}` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/file/{skuFileId} | `Content-Type`*, `Accept`*, `skuId`*, `skuFileId`* | — |  | Delete SKU Image File |
+| GET | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | get /api/catalog/pvt/stockkeepingunit/{skuId}/specification | `Content-Type`*, `Accept`*, `skuId`* | SKUSpecificationResponse[] | yes | Get SKU Specifications |
+| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | put /api/catalog/pvt/stockkeepingunit/{skuId}/specification | `Content-Type`*, `Accept`*, `skuId`*, body: object | SKUSpecificationResponse[] |  | Update SKU Specification |
+| POST | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | post /api/catalog/pvt/stockkeepingunit/{skuId}/specification | `Content-Type`*, `Accept`*, `skuId`*, body: object | SKUSpecificationResponse |  | Associate SKU Specification |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/specification | `Content-Type`*, `Accept`*, `skuId`* | — |  | Delete all SKU Specifications |
+| DELETE | `/api/catalog/pvt/stockkeepingunit/{skuId}/specification/{specificationId}` | delete /api/catalog/pvt/stockkeepingunit/{skuId}/specification/{specificationId} | `Content-Type`*, `Accept`*, `skuId`*, `specificationId`* | — |  | Delete SKU Specification |
+| PUT | `/api/catalog/pvt/stockkeepingunit/{skuId}/specificationvalue` | put /api/catalog/pvt/stockkeepingunit/{skuId}/specificationvalue | `Content-Type`*, `Accept`*, `skuId`*, body: object | object[] |  | Associate SKU specification using specification name and group name |
+| GET | `/api/catalog/pvt/stockkeepingunitkit` | get /api/catalog/pvt/stockkeepingunitkit | `Content-Type`*, `Accept`*, `skuId`, `parentSkuId` | SkuKit | yes | Get SKU Kit by SKU ID or Parent SKU ID |
+| POST | `/api/catalog/pvt/stockkeepingunitkit` | post /api/catalog/pvt/stockkeepingunitkit | `Content-Type`*, `Accept`*, body: object | SkuKit |  | Create SKU Kit |
+| DELETE | `/api/catalog/pvt/stockkeepingunitkit` | delete /api/catalog/pvt/stockkeepingunitkit | `Content-Type`*, `Accept`*, `skuId`, `parentSkuId` | — |  | Delete SKU Kit by SKU ID or Parent SKU ID |
+| GET | `/api/catalog/pvt/stockkeepingunitkit/{kitId}` | get /api/catalog/pvt/stockkeepingunitkit/{kitId} | `Content-Type`*, `Accept`*, `kitId`* | SkuKit | yes | Get SKU Kit |
+| DELETE | `/api/catalog/pvt/stockkeepingunitkit/{kitId}` | delete /api/catalog/pvt/stockkeepingunitkit/{kitId} | `Content-Type`*, `Accept`*, `kitId`* | — |  | Delete SKU Kit by KitId |
+| POST | `/api/catalog/pvt/subcollection` | post /api/catalog/pvt/subcollection | `Content-Type`*, `Accept`*, body: object | object |  | Create Subcollection |
+| GET | `/api/catalog/pvt/subcollection/{subCollectionId}` | get /api/catalog/pvt/subcollection/{subCollectionId} | `Content-Type`*, `Accept`*, `subCollectionId`* | object | yes | Get Subcollection |
+| PUT | `/api/catalog/pvt/subcollection/{subCollectionId}` | put /api/catalog/pvt/subcollection/{subCollectionId} | `Content-Type`*, `Accept`*, `subCollectionId`*, body: object | object |  | Update Subcollection |
+| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}` | delete /api/catalog/pvt/subcollection/{subCollectionId} | `Content-Type`*, `Accept`*, `subCollectionId`* | — |  | Delete Subcollection |
+| POST | `/api/catalog/pvt/subcollection/{subCollectionId}/brand` | post /api/catalog/pvt/subcollection/{subCollectionId}/brand | `Content-Type`*, `Accept`*, `subCollectionId`*, body: object | object |  | Associate Brand to Subcollection |
+| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}/brand/{brandId}` | delete /api/catalog/pvt/subcollection/{subCollectionId}/brand/{brandId} | `Content-Type`*, `Accept`*, `subCollectionId`*, `brandId`* | — |  | Delete Brand from Subcollection |
+| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}/brand/{categoryId}` | delete /api/catalog/pvt/subcollection/{subCollectionId}/brand/{categoryId} | `Content-Type`*, `Accept`*, `subCollectionId`*, `categoryId`* | — |  | Delete Category from Subcollection |
+| POST | `/api/catalog/pvt/subcollection/{subCollectionId}/category` | post /api/catalog/pvt/subcollection/{subCollectionId}/category | `Content-Type`*, `Accept`*, `subCollectionId`*, body: object | object |  | Associate Category to Subcollection |
+| POST | `/api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit` | post /api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit | `Content-Type`*, `Accept`*, `subCollectionId`*, body: object | object |  | Add SKU to Subcollection |
+| DELETE | `/api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit/{skuId}` | delete /api/catalog/pvt/subcollection/{subCollectionId}/stockkeepingunit/{skuId} | `Content-Type`*, `Accept`*, `subCollectionId`*, `skuId`* | — |  | Delete SKU from Subcollection |
+| POST | `/api/catalog/pvt/supplier` | post /api/catalog/pvt/supplier | `Content-Type`*, `Accept`*, body: SupplierRequest | SupplierResponse |  | Create Supplier |
+| PUT | `/api/catalog/pvt/supplier/{supplierId}` | put /api/catalog/pvt/supplier/{supplierId} | `Content-Type`*, `Accept`*, `supplierId`*, body: SupplierRequest | SupplierResponse |  | Update Supplier |
+| DELETE | `/api/catalog/pvt/supplier/{supplierId}` | delete /api/catalog/pvt/supplier/{supplierId} | `Content-Type`*, `Accept`*, `supplierId`* | — |  | Delete Supplier |
+| GET | `/api/catalog_system/pub/category/tree/{categoryLevels}` | CategoryTree | `Content-Type`*, `Accept`*, `categoryLevels`* | GetCategoryTree[] | yes | Get Category Tree |
+| GET | `/api/catalog_system/pub/products/variations/{productId}` | ProductVariations | `Content-Type`*, `Accept`*, `productId`* | object | yes | Get Product's SKUs by Product ID |
+| GET | `/api/catalog_system/pub/saleschannel/{salesChannelId}` | SalesChannelbyId | `Content-Type`*, `Accept`*, `salesChannelId`* | object | yes | Get Sales Channel by ID |
+| POST | `/api/catalog_system/pub/sku/stockkeepingunitidsbyrefids` | SkuIdlistbyRefIdlist | `Content-Type`*, `Accept`*, body: string[] | object |  | Retrieve SKU ID list by Reference ID list |
+| GET | `/api/catalog_system/pub/specification/field/listByCategoryId/{categoryId}` | SpecificationsByCategoryId | `Content-Type`*, `Accept`*, `categoryId`* | CategorySpecification | yes | Get Specifications By Category ID |
+| GET | `/api/catalog_system/pub/specification/field/listTreeByCategoryId/{categoryId}` | SpecificationsTreeByCategoryId | `Content-Type`*, `Accept`*, `categoryId`* | CategorySpecification | yes | Get Specifications Tree By Category ID |
+| GET | `/api/catalog_system/pub/specification/fieldGet/{fieldId}` | SpecificationsField | `Content-Type`*, `Accept`*, `fieldId`* | object | yes | Get Specification Field |
+| GET | `/api/catalog_system/pub/specification/fieldvalue/{fieldId}` | SpecificationsValuesByFieldId | `Content-Type`*, `Accept`*, `fieldId`* | GetSpecFieldValue[] | yes | Get Specification Values By Field ID |
+| GET | `/api/catalog_system/pub/specification/groupGet/{groupId}` | SpecificationsGroupGet | `Content-Type`*, `Accept`*, `groupId`* | SpecificationsGroup | yes | Get Specification Group |
+| GET | `/api/catalog_system/pvt/brand/list` | BrandList | `Content-Type`*, `Accept`* | BrandGet[] | yes | Get Brand List |
+| GET | `/api/catalog_system/pvt/brand/pagedlist` | BrandListPerPage | `Content-Type`*, `Accept`*, `pageSize`*, `page`* | object | yes | Get Brand List Per Page |
+| GET | `/api/catalog_system/pvt/brand/{brandId}` | Brand | `Content-Type`*, `Accept`*, `brandId`* | BrandGet | yes | Get Brand |
+| GET | `/api/catalog_system/pvt/collection/search` | GET-AllCollections | `Content-Type`*, `Accept`*, `page`*, `pageSize`*, `orderByAsc`* | — | yes | Get All Collections |
+| GET | `/api/catalog_system/pvt/collection/search/{searchTerms}` | GET-Collectionsbyseachterms | `Content-Type`*, `Accept`*, `searchTerms`*, `page`, `pageSize`, `orderByAsc` | — | yes | Get Collections by search terms |
+| GET | `/api/catalog_system/pvt/commercialcondition/list` | GetAllCommercialConditions | `Content-Type`*, `Accept`* | object[] | yes | Get all commercial conditions |
+| GET | `/api/catalog_system/pvt/commercialcondition/{commercialConditionId}` | GetCommercialConditions | `Content-Type`*, `Accept`*, `commercialConditionId`* | object | yes | Get commercial condition |
+| GET | `/api/catalog_system/pvt/products/GetIndexedInfo/{productId}` | IndexedInfo | `Content-Type`*, `Accept`*, `productId`* | — | yes | Get Product Indexed Information |
+| GET | `/api/catalog_system/pvt/products/GetProductAndSkuIds` | ProductAndSkuIds | `categoryId`, `_from`, `_to`, `Content-Type`*, `Accept`* | object | yes | Get Product and SKU IDs |
+| GET | `/api/catalog_system/pvt/products/productget/{productId}` | ProductandTradePolicy | `Content-Type`*, `Accept`*, `productId`* | object | yes | Get Product and its general context |
+| GET | `/api/catalog_system/pvt/products/productgetbyrefid/{refId}` | ProductbyRefId | `Content-Type`*, `Accept`*, `refId`* | object | yes | Get Product by RefId |
+| GET | `/api/catalog_system/pvt/products/{productId}/specification` | GetProductSpecification | `Content-Type`*, `Accept`*, `productId`* | GetorUpdateProductSpecification[] | yes | Get Product Specification by Product ID |
+| POST | `/api/catalog_system/pvt/products/{productId}/specification` | UpdateProductSpecification | `Content-Type`*, `Accept`*, `productId`*, body*: GetorUpdateProductSpecification[] | — |  | Update Product Specification by Product ID |
+| GET | `/api/catalog_system/pvt/saleschannel/list` | SalesChannelList | `Content-Type`*, `Accept`* | object[] | yes | Get Sales Channel List |
+| PUT | `/api/catalog_system/pvt/seller` | UpdateSeller | `Content-Type`*, `Accept`*, body*: UpdateSellerRequest | object |  | Update Seller |
+| POST | `/api/catalog_system/pvt/seller` | CreateSeller | `Content-Type`*, `Accept`*, body*: CreateSellerRequest | object |  | Create Seller |
+| GET | `/api/catalog_system/pvt/seller/list` | SellerList | `Content-Type`*, `Accept`*, `sc`, `sellerType`, `isBetterScope` | object | yes | Get Seller List |
+| GET | `/api/catalog_system/pvt/seller/{sellerId}` | GetSellerbyId | `Content-Type`*, `Accept`*, `sellerId`* | object | yes | Get Seller by ID |
+| GET | `/api/catalog_system/pvt/sellers/{sellerId}` | GetSellersbyId | `Content-Type`*, `Accept`*, `sellerId`* | object | yes | Get Seller by ID |
+| POST | `/api/catalog_system/pvt/sku/associateattachments` | AssociateattachmentstoSKU | `Content-Type`*, `Accept`*, body*: object | — |  | Associate attachments to an SKU |
+| GET | `/api/catalog_system/pvt/sku/complements/{parentSkuId}/{type}` | GetSKUcomplementsbytype | `Content-Type`*, `Accept`*, `parentSkuId`*, `type`* | object | yes | Get SKU complements by type |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitByProductId/{productId}` | SkulistbyProductId | `Content-Type`*, `Accept`*, `productId`* | SkulistbyProductId[] | yes | Get SKU list by Product ID |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitbyalternateId/{alternateId}` | SkubyAlternateId | `Content-Type`*, `Accept`*, `alternateId`* | GetSKUAltID | yes | Get SKU by Alternate ID |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitbyean/{ean}` | SkubyEAN | `Content-Type`*, `Accept`*, `ean`* | GetSKUAltID | yes | Get SKU by EAN |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitbyid/{skuId}` | SkuContext | `Content-Type`*, `Accept`*, `skuId`*, `sc` | GetSKUandContext | yes | Get SKU and context |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitidbyrefid/{refId}` | SkuIdbyRefId | `Content-Type`*, `Accept`*, `refId`* | string | yes | Get SKU ID by Reference ID |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitids` | ListallSKUIDs | `page`*, `pagesize`*, `Content-Type`*, `Accept`* | integer:int32[] | yes | List all SKU IDs |
+| GET | `/api/catalog_system/pvt/sku/stockkeepingunitidsbysaleschannel` | get /api/catalog_system/pvt/sku/stockkeepingunitidsbysaleschannel | `Content-Type`*, `Accept`*, `sc`*, `page`, `pageSize`, `onlyAssigned` | integer[] | yes | List all SKUs of a Trade Policy |
+| POST | `/api/catalog_system/pvt/skuseller/changenotification/{sellerId}/{sellerSkuId}` | post /api/catalog_system/pvt/skuseller/changenotification/{sellerId}/{sellerSkuId} | `Content-Type`*, `Accept`*, `sellerId`*, `sellerSkuId`* | — |  | Change Notification with Seller ID and Seller SKU ID |
+| POST | `/api/catalog_system/pvt/skuseller/changenotification/{skuId}` | ChangeNotification | `Content-Type`*, `Accept`*, `skuId`* | — |  | Change Notification with SKU ID |
+| POST | `/api/catalog_system/pvt/skuseller/remove/{sellerId}/{sellerSkuId}` | DeleteSKUsellerassociation | `Content-Type`*, `Accept`*, `sellerId`*, `sellerSkuId`* | — |  | Remove a seller's SKU binding |
+| GET | `/api/catalog_system/pvt/skuseller/{sellerId}/{sellerSkuId}` | GetSKUseller | `Content-Type`*, `Accept`*, `sellerId`*, `sellerSkuId`* | object | yes | Get details of a seller's SKU |
+| PUT | `/api/catalog_system/pvt/specification/field` | SpecificationsInsertFieldUpdate | `Content-Type`*, `Accept`*, body*: SpecificationsInsertFieldUpdateRequest | integer |  | Update Specification Field |
+| POST | `/api/catalog_system/pvt/specification/field` | SpecificationsInsertField | `Content-Type`*, `Accept`*, body*: SpecificationsInsertFieldRequest | integer |  | Create Specification Field |
+| PUT | `/api/catalog_system/pvt/specification/fieldValue` | SpecificationsUpdateFieldValue | `Content-Type`*, `Accept`*, body*: SpecificationsUpdateFieldValueRequest | string |  | Update Specification Field Value |
+| POST | `/api/catalog_system/pvt/specification/fieldValue` | SpecificationsInsertFieldValue | `Content-Type`*, `Accept`*, body*: SpecificationsInsertFieldValueRequest | object |  | Create Specification Field Value |
+| GET | `/api/catalog_system/pvt/specification/fieldValue/{fieldValueId}` | SpecificationsGetFieldValue | `Content-Type`*, `Accept`*, `fieldValueId`* | object | yes | Get Specification Field Value |
+| GET | `/api/catalog_system/pvt/specification/groupbycategory/{categoryId}` | SpecificationsGroupListbyCategory | `Content-Type`*, `Accept`*, `categoryId`* | SpecificationsGroup[] | yes | List Specification Group by Category |

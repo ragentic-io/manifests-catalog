@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_elmah_io_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `606fd429f2fa346156dab0755b4bda80d4df07428a5d0f5ccbfcc49a29973b6c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_elmah_io_profile_im
 
 17 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v3/deployments` | Deployments_GetAll | Fetch a list of deployments. |
-| POST | `/v3/deployments` | Deployments_Create | Create a new deployment. |
-| DELETE | `/v3/deployments/{id}` | Deployments_Delete | Delete a deployment by its ID. |
-| GET | `/v3/deployments/{id}` | Deployments_Get | Fetch a deployment by its ID. |
-| POST | `/v3/heartbeats/{logId}/{id}` | Heartbeats_Create | Create a new heartbeat. |
-| GET | `/v3/logs` | Logs_GetAll | Fetch a list of logs. |
-| POST | `/v3/logs` | Logs_Create | Create a new log. |
-| GET | `/v3/logs/{id}` | Logs_Get | Fetch a log by its ID. |
-| GET | `/v3/logs/{id}/_diagnose` | Logs_Diagnose | Help diagnose logging problems. |
-| POST | `/v3/logs/{id}/_disable` | Logs_Disable | Disable a log by its ID. |
-| POST | `/v3/logs/{id}/_enable` | Logs_Enable | Enable a log by its ID. |
-| DELETE | `/v3/messages/{logId}` | Messages_DeleteAll | Deletes a list of messages by logid and query. |
-| GET | `/v3/messages/{logId}` | Messages_GetAll | Fetch messages from a log. |
-| POST | `/v3/messages/{logId}` | Messages_Create | Create a new message. |
-| POST | `/v3/messages/{logId}/_bulk` | Messages_CreateBulk | Create one or more new messages. |
-| POST | `/v3/messages/{logId}/_fix` | Messages_FixAll | Mark a list of messages as fixed by logid and query. |
-| DELETE | `/v3/messages/{logId}/{id}` | Messages_Delete | Delete a message by its ID. |
-| GET | `/v3/messages/{logId}/{id}` | Messages_Get | Fetch a message by its ID. |
-| POST | `/v3/messages/{logId}/{id}/_fix` | Messages_Fix | Fix a message by its ID. |
-| POST | `/v3/messages/{logId}/{id}/_hide` | Messages_Hide | Hide a message by its ID. |
-| POST | `/v3/sourcemaps/{logId}` | SourceMaps_CreateOrUpdate | Create or update a translation between a minified JavaScript path to the minified JavaScript and source map files. |
-| GET | `/v3/uptimechecks` | UptimeChecks_GetAll | Fetch a list of uptime checks. Currently in closed beta. Get in contact to get access to this endpoint. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v3/deployments` | Deployments_GetAll | — | Deployment[] | yes | Fetch a list of deployments. |
+| POST | `/v3/deployments` | Deployments_Create | body: CreateDeployment | CreateDeploymentResult |  | Create a new deployment. |
+| GET | `/v3/deployments/{id}` | Deployments_Get | `id`* | Deployment | yes | Fetch a deployment by its ID. |
+| DELETE | `/v3/deployments/{id}` | Deployments_Delete | `id`* | — |  | Delete a deployment by its ID. |
+| POST | `/v3/heartbeats/{logId}/{id}` | Heartbeats_Create | `id`*, `logId`*, body: CreateHeartbeat | — |  | Create a new heartbeat. |
+| GET | `/v3/logs` | Logs_GetAll | — | Log[] | yes | Fetch a list of logs. |
+| POST | `/v3/logs` | Logs_Create | body: CreateLog | CreateLogResult |  | Create a new log. |
+| GET | `/v3/logs/{id}` | Logs_Get | `id`* | Log | yes | Fetch a log by its ID. |
+| GET | `/v3/logs/{id}/_diagnose` | Logs_Diagnose | `id`* | string[] | yes | Help diagnose logging problems. |
+| POST | `/v3/logs/{id}/_disable` | Logs_Disable | `id`* | — |  | Disable a log by its ID. |
+| POST | `/v3/logs/{id}/_enable` | Logs_Enable | `id`* | — |  | Enable a log by its ID. |
+| GET | `/v3/messages/{logId}` | Messages_GetAll | `logId`*, `pageIndex`, `pageSize`, `query`, `from`, `to`, `includeHeaders` | MessagesResult | yes | Fetch messages from a log. |
+| POST | `/v3/messages/{logId}` | Messages_Create | `logId`*, body: CreateMessage | CreateMessageResult |  | Create a new message. |
+| DELETE | `/v3/messages/{logId}` | Messages_DeleteAll | `logId`*, body: Search | — |  | Deletes a list of messages by logid and query. |
+| POST | `/v3/messages/{logId}/_bulk` | Messages_CreateBulk | `logId`*, body: CreateMessage[] | CreateBulkMessageResult[] |  | Create one or more new messages. |
+| POST | `/v3/messages/{logId}/_fix` | Messages_FixAll | `logId`*, body: Search | — |  | Mark a list of messages as fixed by logid and query. |
+| GET | `/v3/messages/{logId}/{id}` | Messages_Get | `id`*, `logId`* | Message | yes | Fetch a message by its ID. |
+| DELETE | `/v3/messages/{logId}/{id}` | Messages_Delete | `id`*, `logId`* | — |  | Delete a message by its ID. |
+| POST | `/v3/messages/{logId}/{id}/_fix` | Messages_Fix | `id`*, `logId`*, `markAllAsFixed` | — |  | Fix a message by its ID. |
+| POST | `/v3/messages/{logId}/{id}/_hide` | Messages_Hide | `id`*, `logId`* | — |  | Hide a message by its ID. |
+| POST | `/v3/sourcemaps/{logId}` | SourceMaps_CreateOrUpdate | `logId`*, body*: object | — |  | Create or update a translation between a minified JavaScript path to the minified JavaScript and source map files. |
+| GET | `/v3/uptimechecks` | UptimeChecks_GetAll | — | UptimeCheck[] | yes | Fetch a list of uptime checks. Currently in closed beta. Get in contact to get access to this endpoint. |

@@ -13,6 +13,21 @@
         "from": "exude-api-herokuapp-com-dc28fe10a9",
         "kind": "EXPOSES",
         "to": "operation:post:/exude/{type}/file"
+      },
+      {
+        "from": "operation:post:/exude/{type}/data",
+        "kind": "ACCEPTS",
+        "to": "schema:ExudeBean"
+      },
+      {
+        "from": "operation:post:/exude/{type}/data",
+        "kind": "RETURNS",
+        "to": "schema:ExudeResponseBean"
+      },
+      {
+        "from": "operation:post:/exude/{type}/file",
+        "kind": "RETURNS",
+        "to": "schema:ExudeResponseBean"
       }
     ],
     "nodes": [
@@ -26,10 +41,36 @@
         "kind": "operation",
         "method": "post",
         "name": "filterStoppings",
+        "parameters": [
+          {
+            "description": "provide the type of filtering required stopping/swear",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/exude/{type}/data",
         "pointer": "#/paths/~1exude~1{type}~1data/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "ExudeBean"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExudeResponseBean"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Filter the stopping words from the provided input data or links"
+        "summary": "Filter the stopping words from the provided input data or links",
+        "tags": [
+          "exude"
+        ]
       },
       {
         "deprecated": false,
@@ -37,20 +78,48 @@
         "kind": "operation",
         "method": "post",
         "name": "filterFileDataStoppings",
+        "parameters": [
+          {
+            "description": "provide the type of filtering required stopping/swear",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/exude/{type}/file",
         "pointer": "#/paths/~1exude~1{type}~1file/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExudeResponseBean"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Filter the stopping words from the provided input file"
+        "summary": "Filter the stopping words from the provided input file",
+        "tags": [
+          "exude"
+        ]
       },
       {
         "id": "schema:ExudeBean",
         "kind": "schema",
-        "name": "ExudeBean"
+        "name": "ExudeBean",
+        "type": "object"
       },
       {
         "id": "schema:ExudeResponseBean",
         "kind": "schema",
-        "name": "ExudeResponseBean"
+        "name": "ExudeResponseBean",
+        "type": "object"
       }
     ]
   },

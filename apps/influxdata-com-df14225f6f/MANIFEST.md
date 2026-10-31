@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.influxdata.com_wp-content_u
 
 | | |
 | --- | --- |
-| Signed bundle | `e58699c274e00ac45701d4f83e5be0ccf3cd339745aac02cb7a3b49ff8fd7bea` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,202 +34,204 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.influxdata.com_wp-content_u
 
 242 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | GetRoutes | List all top level routes |
-| GET | `/authorizations` | GetAuthorizations | List all authorizations |
-| POST | `/authorizations` | PostAuthorizations | Create an authorization |
-| DELETE | `/authorizations/{authID}` | DeleteAuthorizationsID | Delete an authorization |
-| GET | `/authorizations/{authID}` | GetAuthorizationsID | Retrieve an authorization |
-| PATCH | `/authorizations/{authID}` | PatchAuthorizationsID | Update an authorization to be active or inactive |
-| GET | `/buckets` | GetBuckets | List all buckets |
-| POST | `/buckets` | PostBuckets | Create a bucket |
-| DELETE | `/buckets/{bucketID}` | DeleteBucketsID | Delete a bucket |
-| GET | `/buckets/{bucketID}` | GetBucketsID | Retrieve a bucket |
-| PATCH | `/buckets/{bucketID}` | PatchBucketsID | Update a bucket |
-| GET | `/buckets/{bucketID}/labels` | GetBucketsIDLabels | List all labels for a bucket |
-| POST | `/buckets/{bucketID}/labels` | PostBucketsIDLabels | Add a label to a bucket |
-| DELETE | `/buckets/{bucketID}/labels/{labelID}` | DeleteBucketsIDLabelsID | Delete a label from a bucket |
-| GET | `/buckets/{bucketID}/members` | GetBucketsIDMembers | List all users with member privileges for a bucket |
-| POST | `/buckets/{bucketID}/members` | PostBucketsIDMembers | Add a member to a bucket |
-| DELETE | `/buckets/{bucketID}/members/{userID}` | DeleteBucketsIDMembersID | Remove a member from a bucket |
-| GET | `/buckets/{bucketID}/owners` | GetBucketsIDOwners | List all owners of a bucket |
-| POST | `/buckets/{bucketID}/owners` | PostBucketsIDOwners | Add an owner to a bucket |
-| DELETE | `/buckets/{bucketID}/owners/{userID}` | DeleteBucketsIDOwnersID | Remove an owner from a bucket |
-| GET | `/checks` | GetChecks | List all checks |
-| POST | `/checks` | CreateCheck | Add new check |
-| DELETE | `/checks/{checkID}` | DeleteChecksID | Delete a check |
-| GET | `/checks/{checkID}` | GetChecksID | Retrieve a check |
-| PATCH | `/checks/{checkID}` | PatchChecksID | Update a check |
-| PUT | `/checks/{checkID}` | PutChecksID | Update a check |
-| GET | `/checks/{checkID}/labels` | GetChecksIDLabels | List all labels for a check |
-| POST | `/checks/{checkID}/labels` | PostChecksIDLabels | Add a label to a check |
-| DELETE | `/checks/{checkID}/labels/{labelID}` | DeleteChecksIDLabelsID | Delete label from a check |
-| GET | `/checks/{checkID}/query` | GetChecksIDQuery | Retrieve a check query |
-| GET | `/dashboards` | GetDashboards | List all dashboards |
-| POST | `/dashboards` | PostDashboards | Create a dashboard |
-| DELETE | `/dashboards/{dashboardID}` | DeleteDashboardsID | Delete a dashboard |
-| GET | `/dashboards/{dashboardID}` | GetDashboardsID | Retrieve a Dashboard |
-| PATCH | `/dashboards/{dashboardID}` | PatchDashboardsID | Update a dashboard |
-| POST | `/dashboards/{dashboardID}/cells` | PostDashboardsIDCells | Create a dashboard cell |
-| PUT | `/dashboards/{dashboardID}/cells` | PutDashboardsIDCells | Replace cells in a dashboard |
-| DELETE | `/dashboards/{dashboardID}/cells/{cellID}` | DeleteDashboardsIDCellsID | Delete a dashboard cell |
-| PATCH | `/dashboards/{dashboardID}/cells/{cellID}` | PatchDashboardsIDCellsID | Update the non-positional information related to a cell |
-| GET | `/dashboards/{dashboardID}/cells/{cellID}/view` | GetDashboardsIDCellsIDView | Retrieve the view for a cell |
-| PATCH | `/dashboards/{dashboardID}/cells/{cellID}/view` | PatchDashboardsIDCellsIDView | Update the view for a cell |
-| GET | `/dashboards/{dashboardID}/labels` | GetDashboardsIDLabels | List all labels for a dashboard |
-| POST | `/dashboards/{dashboardID}/labels` | PostDashboardsIDLabels | Add a label to a dashboard |
-| DELETE | `/dashboards/{dashboardID}/labels/{labelID}` | DeleteDashboardsIDLabelsID | Delete a label from a dashboard |
-| GET | `/dashboards/{dashboardID}/members` | GetDashboardsIDMembers | List all dashboard members |
-| POST | `/dashboards/{dashboardID}/members` | PostDashboardsIDMembers | Add a member to a dashboard |
-| DELETE | `/dashboards/{dashboardID}/members/{userID}` | DeleteDashboardsIDMembersID | Remove a member from a dashboard |
-| GET | `/dashboards/{dashboardID}/owners` | GetDashboardsIDOwners | List all dashboard owners |
-| POST | `/dashboards/{dashboardID}/owners` | PostDashboardsIDOwners | Add an owner to a dashboard |
-| DELETE | `/dashboards/{dashboardID}/owners/{userID}` | DeleteDashboardsIDOwnersID | Remove an owner from a dashboard |
-| GET | `/dbrps` | GetDBRPs | List all database retention policy mappings |
-| POST | `/dbrps` | PostDBRP | Add a database retention policy mapping |
-| DELETE | `/dbrps/{dbrpID}` | DeleteDBRPID | Delete a database retention policy |
-| GET | `/dbrps/{dbrpID}` | GetDBRPsID | Retrieve a database retention policy mapping |
-| PATCH | `/dbrps/{dbrpID}` | PatchDBRPID | Update a database retention policy mapping |
-| POST | `/delete` | PostDelete | Delete time series data from InfluxDB |
-| GET | `/documents/templates` | GetDocumentsTemplates | List all templates |
-| POST | `/documents/templates` | PostDocumentsTemplates | Create a template |
-| DELETE | `/documents/templates/{templateID}` | DeleteDocumentsTemplatesID | Delete a template |
-| GET | `/documents/templates/{templateID}` | GetDocumentsTemplatesID | Retrieve a template |
-| PUT | `/documents/templates/{templateID}` | PutDocumentsTemplatesID | Update a template |
-| GET | `/documents/templates/{templateID}/labels` | GetDocumentsTemplatesIDLabels | List all labels for a template |
-| POST | `/documents/templates/{templateID}/labels` | PostDocumentsTemplatesIDLabels | Add a label to a template |
-| DELETE | `/documents/templates/{templateID}/labels/{labelID}` | DeleteDocumentsTemplatesIDLabelsID | Delete a label from a template |
-| GET | `/flags` | GetFlags | Return the feature flags for the currently authenticated user |
-| GET | `/health` | GetHealth | Get the health of an instance |
-| GET | `/labels` | GetLabels | List all labels |
-| POST | `/labels` | PostLabels | Create a label |
-| DELETE | `/labels/{labelID}` | DeleteLabelsID | Delete a label |
-| GET | `/labels/{labelID}` | GetLabelsID | Retrieve a label |
-| PATCH | `/labels/{labelID}` | PatchLabelsID | Update a label |
-| GET | `/me` | GetMe | Retrieve the currently authenticated user |
-| PUT | `/me/password` | PutMePassword | Update a password |
-| GET | `/notificationEndpoints` | GetNotificationEndpoints | List all notification endpoints |
-| POST | `/notificationEndpoints` | CreateNotificationEndpoint | Add a notification endpoint |
-| DELETE | `/notificationEndpoints/{endpointID}` | DeleteNotificationEndpointsID | Delete a notification endpoint |
-| GET | `/notificationEndpoints/{endpointID}` | GetNotificationEndpointsID | Retrieve a notification endpoint |
-| PATCH | `/notificationEndpoints/{endpointID}` | PatchNotificationEndpointsID | Update a notification endpoint |
-| PUT | `/notificationEndpoints/{endpointID}` | PutNotificationEndpointsID | Update a notification endpoint |
-| GET | `/notificationEndpoints/{endpointID}/labels` | GetNotificationEndpointsIDLabels | List all labels for a notification endpoint |
-| POST | `/notificationEndpoints/{endpointID}/labels` | PostNotificationEndpointIDLabels | Add a label to a notification endpoint |
-| DELETE | `/notificationEndpoints/{endpointID}/labels/{labelID}` | DeleteNotificationEndpointsIDLabelsID | Delete a label from a notification endpoint |
-| GET | `/notificationRules` | GetNotificationRules | List all notification rules |
-| POST | `/notificationRules` | CreateNotificationRule | Add a notification rule |
-| DELETE | `/notificationRules/{ruleID}` | DeleteNotificationRulesID | Delete a notification rule |
-| GET | `/notificationRules/{ruleID}` | GetNotificationRulesID | Retrieve a notification rule |
-| PATCH | `/notificationRules/{ruleID}` | PatchNotificationRulesID | Update a notification rule |
-| PUT | `/notificationRules/{ruleID}` | PutNotificationRulesID | Update a notification rule |
-| GET | `/notificationRules/{ruleID}/labels` | GetNotificationRulesIDLabels | List all labels for a notification rule |
-| POST | `/notificationRules/{ruleID}/labels` | PostNotificationRuleIDLabels | Add a label to a notification rule |
-| DELETE | `/notificationRules/{ruleID}/labels/{labelID}` | DeleteNotificationRulesIDLabelsID | Delete label from a notification rule |
-| GET | `/notificationRules/{ruleID}/query` | GetNotificationRulesIDQuery | Retrieve a notification rule query |
-| GET | `/orgs` | GetOrgs | List all organizations |
-| POST | `/orgs` | PostOrgs | Create an organization |
-| DELETE | `/orgs/{orgID}` | DeleteOrgsID | Delete an organization |
-| GET | `/orgs/{orgID}` | GetOrgsID | Retrieve an organization |
-| PATCH | `/orgs/{orgID}` | PatchOrgsID | Update an organization |
-| GET | `/orgs/{orgID}/members` | GetOrgsIDMembers | List all members of an organization |
-| POST | `/orgs/{orgID}/members` | PostOrgsIDMembers | Add a member to an organization |
-| DELETE | `/orgs/{orgID}/members/{userID}` | DeleteOrgsIDMembersID | Remove a member from an organization |
-| GET | `/orgs/{orgID}/owners` | GetOrgsIDOwners | List all owners of an organization |
-| POST | `/orgs/{orgID}/owners` | PostOrgsIDOwners | Add an owner to an organization |
-| DELETE | `/orgs/{orgID}/owners/{userID}` | DeleteOrgsIDOwnersID | Remove an owner from an organization |
-| GET | `/orgs/{orgID}/secrets` | GetOrgsIDSecrets | List all secret keys for an organization |
-| PATCH | `/orgs/{orgID}/secrets` | PatchOrgsIDSecrets | Update secrets in an organization |
-| POST | `/orgs/{orgID}/secrets/delete` | PostOrgsIDSecrets | Delete secrets from an organization |
-| POST | `/query` | PostQuery | Query InfluxDB |
-| POST | `/query/analyze` | PostQueryAnalyze | Analyze an InfluxQL or Flux query |
-| POST | `/query/ast` | PostQueryAst | Generate an Abstract Syntax Tree (AST) from a query |
-| GET | `/query/suggestions` | GetQuerySuggestions | Retrieve query suggestions |
-| GET | `/query/suggestions/{name}` | GetQuerySuggestionsName | Retrieve query suggestions for a branching suggestion |
-| GET | `/ready` | GetReady | Get the readiness of an instance at startup |
-| GET | `/scrapers` | GetScrapers | List all scraper targets |
-| POST | `/scrapers` | PostScrapers | Create a scraper target |
-| DELETE | `/scrapers/{scraperTargetID}` | DeleteScrapersID | Delete a scraper target |
-| GET | `/scrapers/{scraperTargetID}` | GetScrapersID | Retrieve a scraper target |
-| PATCH | `/scrapers/{scraperTargetID}` | PatchScrapersID | Update a scraper target |
-| GET | `/scrapers/{scraperTargetID}/labels` | GetScrapersIDLabels | List all labels for a scraper target |
-| POST | `/scrapers/{scraperTargetID}/labels` | PostScrapersIDLabels | Add a label to a scraper target |
-| DELETE | `/scrapers/{scraperTargetID}/labels/{labelID}` | DeleteScrapersIDLabelsID | Delete a label from a scraper target |
-| GET | `/scrapers/{scraperTargetID}/members` | GetScrapersIDMembers | List all users with member privileges for a scraper target |
-| POST | `/scrapers/{scraperTargetID}/members` | PostScrapersIDMembers | Add a member to a scraper target |
-| DELETE | `/scrapers/{scraperTargetID}/members/{userID}` | DeleteScrapersIDMembersID | Remove a member from a scraper target |
-| GET | `/scrapers/{scraperTargetID}/owners` | GetScrapersIDOwners | List all owners of a scraper target |
-| POST | `/scrapers/{scraperTargetID}/owners` | PostScrapersIDOwners | Add an owner to a scraper target |
-| DELETE | `/scrapers/{scraperTargetID}/owners/{userID}` | DeleteScrapersIDOwnersID | Remove an owner from a scraper target |
-| GET | `/setup` | GetSetup | Check if database has default user, org, bucket |
-| POST | `/setup` | PostSetup | Set up initial user, org and bucket |
-| POST | `/signin` | PostSignin | Exchange basic auth credentials for session |
-| POST | `/signout` | PostSignout | Expire the current session |
-| GET | `/sources` | GetSources | List all sources |
-| POST | `/sources` | PostSources | Create a source |
-| DELETE | `/sources/{sourceID}` | DeleteSourcesID | Delete a source |
-| GET | `/sources/{sourceID}` | GetSourcesID | Retrieve a source |
-| PATCH | `/sources/{sourceID}` | PatchSourcesID | Update a Source |
-| GET | `/sources/{sourceID}/buckets` | GetSourcesIDBuckets | Get buckets in a source |
-| GET | `/sources/{sourceID}/health` | GetSourcesIDHealth | Get the health of a source |
-| GET | `/stacks` | ListStacks | List all installed InfluxDB templates |
-| POST | `/stacks` | CreateStack | Create a new stack |
-| DELETE | `/stacks/{stack_id}` | DeleteStack | Delete a stack and associated resources |
-| GET | `/stacks/{stack_id}` | ReadStack | Retrieve a stack |
-| PATCH | `/stacks/{stack_id}` | UpdateStack | Update an InfluxDB Stack |
-| POST | `/stacks/{stack_id}/uninstall` | UninstallStack | Uninstall an InfluxDB Stack |
-| GET | `/tasks` | GetTasks | List all tasks |
-| POST | `/tasks` | PostTasks | Create a new task |
-| DELETE | `/tasks/{taskID}` | DeleteTasksID | Delete a task |
-| GET | `/tasks/{taskID}` | GetTasksID | Retrieve a task |
-| PATCH | `/tasks/{taskID}` | PatchTasksID | Update a task |
-| GET | `/tasks/{taskID}/labels` | GetTasksIDLabels | List all labels for a task |
-| POST | `/tasks/{taskID}/labels` | PostTasksIDLabels | Add a label to a task |
-| DELETE | `/tasks/{taskID}/labels/{labelID}` | DeleteTasksIDLabelsID | Delete a label from a task |
-| GET | `/tasks/{taskID}/logs` | GetTasksIDLogs | Retrieve all logs for a task |
-| GET | `/tasks/{taskID}/members` | GetTasksIDMembers | List all task members |
-| POST | `/tasks/{taskID}/members` | PostTasksIDMembers | Add a member to a task |
-| DELETE | `/tasks/{taskID}/members/{userID}` | DeleteTasksIDMembersID | Remove a member from a task |
-| GET | `/tasks/{taskID}/owners` | GetTasksIDOwners | List all owners of a task |
-| POST | `/tasks/{taskID}/owners` | PostTasksIDOwners | Add an owner to a task |
-| DELETE | `/tasks/{taskID}/owners/{userID}` | DeleteTasksIDOwnersID | Remove an owner from a task |
-| GET | `/tasks/{taskID}/runs` | GetTasksIDRuns | List runs for a task |
-| POST | `/tasks/{taskID}/runs` | PostTasksIDRuns | Manually start a task run, overriding the current schedule |
-| DELETE | `/tasks/{taskID}/runs/{runID}` | DeleteTasksIDRunsID | Cancel a running task |
-| GET | `/tasks/{taskID}/runs/{runID}` | GetTasksIDRunsID | Retrieve a single run for a task |
-| GET | `/tasks/{taskID}/runs/{runID}/logs` | GetTasksIDRunsIDLogs | Retrieve all logs for a run |
-| POST | `/tasks/{taskID}/runs/{runID}/retry` | PostTasksIDRunsIDRetry | Retry a task run |
-| GET | `/telegraf/plugins` | GetTelegrafPlugins | List all Telegraf plugins |
-| GET | `/telegrafs` | GetTelegrafs | List all Telegraf configurations |
-| POST | `/telegrafs` | PostTelegrafs | Create a Telegraf configuration |
-| DELETE | `/telegrafs/{telegrafID}` | DeleteTelegrafsID | Delete a Telegraf configuration |
-| GET | `/telegrafs/{telegrafID}` | GetTelegrafsID | Retrieve a Telegraf configuration |
-| PUT | `/telegrafs/{telegrafID}` | PutTelegrafsID | Update a Telegraf configuration |
-| GET | `/telegrafs/{telegrafID}/labels` | GetTelegrafsIDLabels | List all labels for a Telegraf config |
-| POST | `/telegrafs/{telegrafID}/labels` | PostTelegrafsIDLabels | Add a label to a Telegraf config |
-| DELETE | `/telegrafs/{telegrafID}/labels/{labelID}` | DeleteTelegrafsIDLabelsID | Delete a label from a Telegraf config |
-| GET | `/telegrafs/{telegrafID}/members` | GetTelegrafsIDMembers | List all users with member privileges for a Telegraf config |
-| POST | `/telegrafs/{telegrafID}/members` | PostTelegrafsIDMembers | Add a member to a Telegraf config |
-| DELETE | `/telegrafs/{telegrafID}/members/{userID}` | DeleteTelegrafsIDMembersID | Remove a member from a Telegraf config |
-| GET | `/telegrafs/{telegrafID}/owners` | GetTelegrafsIDOwners | List all owners of a Telegraf configuration |
-| POST | `/telegrafs/{telegrafID}/owners` | PostTelegrafsIDOwners | Add an owner to a Telegraf configuration |
-| DELETE | `/telegrafs/{telegrafID}/owners/{userID}` | DeleteTelegrafsIDOwnersID | Remove an owner from a Telegraf config |
-| POST | `/templates/apply` | ApplyTemplate | Apply or dry-run an InfluxDB Template |
-| POST | `/templates/export` | ExportTemplate | Export a new Influx Template |
-| GET | `/users` | GetUsers | List all users |
-| POST | `/users` | PostUsers | Create a user |
-| DELETE | `/users/{userID}` | DeleteUsersID | Delete a user |
-| GET | `/users/{userID}` | GetUsersID | Retrieve a user |
-| PATCH | `/users/{userID}` | PatchUsersID | Update a user |
-| POST | `/users/{userID}/password` | PostUsersIDPassword | Update a password |
-| GET | `/variables` | GetVariables | List all variables |
-| POST | `/variables` | PostVariables | Create a variable |
-| DELETE | `/variables/{variableID}` | DeleteVariablesID | Delete a variable |
-| GET | `/variables/{variableID}` | GetVariablesID | Retrieve a variable |
-| PATCH | `/variables/{variableID}` | PatchVariablesID | Update a variable |
-| PUT | `/variables/{variableID}` | PutVariablesID | Replace a variable |
-| GET | `/variables/{variableID}/labels` | GetVariablesIDLabels | List all labels for a variable |
-| POST | `/variables/{variableID}/labels` | PostVariablesIDLabels | Add a label to a variable |
-| DELETE | `/variables/{variableID}/labels/{labelID}` | DeleteVariablesIDLabelsID | Delete a label from a variable |
-| POST | `/write` | PostWrite | Write time series data into InfluxDB |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | GetRoutes | `Zap-Trace-Span` | — | yes | List all top level routes |
+| GET | `/authorizations` | GetAuthorizations | `Zap-Trace-Span`, `userID`, `user`, `orgID`, `org` | Authorizations | yes | List all authorizations |
+| POST | `/authorizations` | PostAuthorizations | `Zap-Trace-Span`, body*: AuthorizationPostRequest | Authorization |  | Create an authorization |
+| GET | `/authorizations/{authID}` | GetAuthorizationsID | `Zap-Trace-Span`, `authID`* | Authorization | yes | Retrieve an authorization |
+| DELETE | `/authorizations/{authID}` | DeleteAuthorizationsID | `Zap-Trace-Span`, `authID`* | — |  | Delete an authorization |
+| PATCH | `/authorizations/{authID}` | PatchAuthorizationsID | `Zap-Trace-Span`, `authID`*, body*: AuthorizationUpdateRequest | Authorization |  | Update an authorization to be active or inactive |
+| GET | `/buckets` | GetBuckets | `Zap-Trace-Span`, `offset`, `limit`, `after`, `org`, `orgID`, `name`, `id` | Buckets | yes | List all buckets |
+| POST | `/buckets` | PostBuckets | `Zap-Trace-Span`, body*: PostBucketRequest | Bucket |  | Create a bucket |
+| GET | `/buckets/{bucketID}` | GetBucketsID | `Zap-Trace-Span`, `bucketID`* | Bucket | yes | Retrieve a bucket |
+| DELETE | `/buckets/{bucketID}` | DeleteBucketsID | `Zap-Trace-Span`, `bucketID`* | — |  | Delete a bucket |
+| PATCH | `/buckets/{bucketID}` | PatchBucketsID | `Zap-Trace-Span`, `bucketID`*, body*: PatchBucketRequest | Bucket |  | Update a bucket |
+| GET | `/buckets/{bucketID}/labels` | GetBucketsIDLabels | `Zap-Trace-Span`, `bucketID`* | LabelsResponse | yes | List all labels for a bucket |
+| POST | `/buckets/{bucketID}/labels` | PostBucketsIDLabels | `Zap-Trace-Span`, `bucketID`*, body*: LabelMapping | LabelResponse |  | Add a label to a bucket |
+| DELETE | `/buckets/{bucketID}/labels/{labelID}` | DeleteBucketsIDLabelsID | `Zap-Trace-Span`, `bucketID`*, `labelID`* | — |  | Delete a label from a bucket |
+| GET | `/buckets/{bucketID}/members` | GetBucketsIDMembers | `Zap-Trace-Span`, `bucketID`* | ResourceMembers | yes | List all users with member privileges for a bucket |
+| POST | `/buckets/{bucketID}/members` | PostBucketsIDMembers | `Zap-Trace-Span`, `bucketID`*, body*: AddResourceMemberRequestBody | ResourceMember |  | Add a member to a bucket |
+| DELETE | `/buckets/{bucketID}/members/{userID}` | DeleteBucketsIDMembersID | `Zap-Trace-Span`, `userID`*, `bucketID`* | — |  | Remove a member from a bucket |
+| GET | `/buckets/{bucketID}/owners` | GetBucketsIDOwners | `Zap-Trace-Span`, `bucketID`* | ResourceOwners | yes | List all owners of a bucket |
+| POST | `/buckets/{bucketID}/owners` | PostBucketsIDOwners | `Zap-Trace-Span`, `bucketID`*, body*: AddResourceMemberRequestBody | ResourceOwner |  | Add an owner to a bucket |
+| DELETE | `/buckets/{bucketID}/owners/{userID}` | DeleteBucketsIDOwnersID | `Zap-Trace-Span`, `userID`*, `bucketID`* | — |  | Remove an owner from a bucket |
+| GET | `/checks` | GetChecks | `Zap-Trace-Span`, `offset`, `limit`, `orgID`* | Checks | yes | List all checks |
+| POST | `/checks` | CreateCheck | body*: PostCheck | Check |  | Add new check |
+| GET | `/checks/{checkID}` | GetChecksID | `Zap-Trace-Span`, `checkID`* | Check | yes | Retrieve a check |
+| PUT | `/checks/{checkID}` | PutChecksID | `Zap-Trace-Span`, `checkID`*, body*: Check | Check |  | Update a check |
+| DELETE | `/checks/{checkID}` | DeleteChecksID | `Zap-Trace-Span`, `checkID`* | — |  | Delete a check |
+| PATCH | `/checks/{checkID}` | PatchChecksID | `Zap-Trace-Span`, `checkID`*, body*: CheckPatch | Check |  | Update a check |
+| GET | `/checks/{checkID}/labels` | GetChecksIDLabels | `Zap-Trace-Span`, `checkID`* | LabelsResponse | yes | List all labels for a check |
+| POST | `/checks/{checkID}/labels` | PostChecksIDLabels | `Zap-Trace-Span`, `checkID`*, body*: LabelMapping | LabelResponse |  | Add a label to a check |
+| DELETE | `/checks/{checkID}/labels/{labelID}` | DeleteChecksIDLabelsID | `Zap-Trace-Span`, `checkID`*, `labelID`* | — |  | Delete label from a check |
+| GET | `/checks/{checkID}/query` | GetChecksIDQuery | `Zap-Trace-Span`, `checkID`* | FluxResponse | yes | Retrieve a check query |
+| GET | `/dashboards` | GetDashboards | `Zap-Trace-Span`, `offset`, `limit`, `descending`, `owner`, `sortBy`, `id`, `orgID`, `org` | Dashboards | yes | List all dashboards |
+| POST | `/dashboards` | PostDashboards | `Zap-Trace-Span`, body*: CreateDashboardRequest | Dashboard\|DashboardWithViewProperties |  | Create a dashboard |
+| GET | `/dashboards/{dashboardID}` | GetDashboardsID | `Zap-Trace-Span`, `dashboardID`*, `include` | Dashboard\|DashboardWithViewProperties | yes | Retrieve a Dashboard |
+| DELETE | `/dashboards/{dashboardID}` | DeleteDashboardsID | `Zap-Trace-Span`, `dashboardID`* | — |  | Delete a dashboard |
+| PATCH | `/dashboards/{dashboardID}` | PatchDashboardsID | `Zap-Trace-Span`, `dashboardID`*, body*: object | Dashboard |  | Update a dashboard |
+| PUT | `/dashboards/{dashboardID}/cells` | PutDashboardsIDCells | `Zap-Trace-Span`, `dashboardID`*, body*: Cells | Dashboard |  | Replace cells in a dashboard |
+| POST | `/dashboards/{dashboardID}/cells` | PostDashboardsIDCells | `Zap-Trace-Span`, `dashboardID`*, body*: CreateCell | Cell |  | Create a dashboard cell |
+| DELETE | `/dashboards/{dashboardID}/cells/{cellID}` | DeleteDashboardsIDCellsID | `Zap-Trace-Span`, `dashboardID`*, `cellID`* | — |  | Delete a dashboard cell |
+| PATCH | `/dashboards/{dashboardID}/cells/{cellID}` | PatchDashboardsIDCellsID | `Zap-Trace-Span`, `dashboardID`*, `cellID`*, body*: CellUpdate | Cell |  | Update the non-positional information related to a cell |
+| GET | `/dashboards/{dashboardID}/cells/{cellID}/view` | GetDashboardsIDCellsIDView | `Zap-Trace-Span`, `dashboardID`*, `cellID`* | View | yes | Retrieve the view for a cell |
+| PATCH | `/dashboards/{dashboardID}/cells/{cellID}/view` | PatchDashboardsIDCellsIDView | `Zap-Trace-Span`, `dashboardID`*, `cellID`*, body*: View | View |  | Update the view for a cell |
+| GET | `/dashboards/{dashboardID}/labels` | GetDashboardsIDLabels | `Zap-Trace-Span`, `dashboardID`* | LabelsResponse | yes | List all labels for a dashboard |
+| POST | `/dashboards/{dashboardID}/labels` | PostDashboardsIDLabels | `Zap-Trace-Span`, `dashboardID`*, body*: LabelMapping | LabelResponse |  | Add a label to a dashboard |
+| DELETE | `/dashboards/{dashboardID}/labels/{labelID}` | DeleteDashboardsIDLabelsID | `Zap-Trace-Span`, `dashboardID`*, `labelID`* | — |  | Delete a label from a dashboard |
+| GET | `/dashboards/{dashboardID}/members` | GetDashboardsIDMembers | `Zap-Trace-Span`, `dashboardID`* | ResourceMembers | yes | List all dashboard members |
+| POST | `/dashboards/{dashboardID}/members` | PostDashboardsIDMembers | `Zap-Trace-Span`, `dashboardID`*, body*: AddResourceMemberRequestBody | ResourceMember |  | Add a member to a dashboard |
+| DELETE | `/dashboards/{dashboardID}/members/{userID}` | DeleteDashboardsIDMembersID | `Zap-Trace-Span`, `userID`*, `dashboardID`* | — |  | Remove a member from a dashboard |
+| GET | `/dashboards/{dashboardID}/owners` | GetDashboardsIDOwners | `Zap-Trace-Span`, `dashboardID`* | ResourceOwners | yes | List all dashboard owners |
+| POST | `/dashboards/{dashboardID}/owners` | PostDashboardsIDOwners | `Zap-Trace-Span`, `dashboardID`*, body*: AddResourceMemberRequestBody | ResourceOwner |  | Add an owner to a dashboard |
+| DELETE | `/dashboards/{dashboardID}/owners/{userID}` | DeleteDashboardsIDOwnersID | `Zap-Trace-Span`, `userID`*, `dashboardID`* | — |  | Remove an owner from a dashboard |
+| GET | `/dbrps` | GetDBRPs | `Zap-Trace-Span`, `orgID`*, `id`, `bucketID`, `default`, `db`, `rp` | DBRPs | yes | List all database retention policy mappings |
+| POST | `/dbrps` | PostDBRP | `Zap-Trace-Span`, body*: DBRP | DBRP |  | Add a database retention policy mapping |
+| GET | `/dbrps/{dbrpID}` | GetDBRPsID | `Zap-Trace-Span`, `orgID`*, `dbrpID`* | DBRP | yes | Retrieve a database retention policy mapping |
+| DELETE | `/dbrps/{dbrpID}` | DeleteDBRPID | `Zap-Trace-Span`, `orgID`*, `dbrpID`* | — |  | Delete a database retention policy |
+| PATCH | `/dbrps/{dbrpID}` | PatchDBRPID | `Zap-Trace-Span`, `orgID`*, `dbrpID`*, body*: DBRPUpdate | DBRP |  | Update a database retention policy mapping |
+| POST | `/delete` | PostDelete | `Zap-Trace-Span`, `org`, `bucket`, `orgID`, `bucketID`, body*: DeletePredicateRequest | — |  | Delete time series data from InfluxDB |
+| GET | `/documents/templates` | GetDocumentsTemplates | `Zap-Trace-Span`, `org`, `orgID` | Documents | yes | List all templates |
+| POST | `/documents/templates` | PostDocumentsTemplates | `Zap-Trace-Span`, body*: DocumentCreate | Document |  | Create a template |
+| GET | `/documents/templates/{templateID}` | GetDocumentsTemplatesID | `Zap-Trace-Span`, `templateID`* | Document | yes | Retrieve a template |
+| PUT | `/documents/templates/{templateID}` | PutDocumentsTemplatesID | `Zap-Trace-Span`, `templateID`*, body*: DocumentUpdate | Document |  | Update a template |
+| DELETE | `/documents/templates/{templateID}` | DeleteDocumentsTemplatesID | `Zap-Trace-Span`, `templateID`* | — |  | Delete a template |
+| GET | `/documents/templates/{templateID}/labels` | GetDocumentsTemplatesIDLabels | `Zap-Trace-Span`, `templateID`* | LabelsResponse | yes | List all labels for a template |
+| POST | `/documents/templates/{templateID}/labels` | PostDocumentsTemplatesIDLabels | `Zap-Trace-Span`, `templateID`*, body*: LabelMapping | LabelResponse |  | Add a label to a template |
+| DELETE | `/documents/templates/{templateID}/labels/{labelID}` | DeleteDocumentsTemplatesIDLabelsID | `Zap-Trace-Span`, `templateID`*, `labelID`* | — |  | Delete a label from a template |
+| GET | `/flags` | GetFlags | `Zap-Trace-Span` | Flags | yes | Return the feature flags for the currently authenticated user |
+| GET | `/health` | GetHealth | `Zap-Trace-Span` | HealthCheck | yes | Get the health of an instance |
+| GET | `/labels` | GetLabels | `Zap-Trace-Span`, `orgID` | LabelsResponse | yes | List all labels |
+| POST | `/labels` | PostLabels | body*: LabelCreateRequest | LabelResponse |  | Create a label |
+| GET | `/labels/{labelID}` | GetLabelsID | `Zap-Trace-Span`, `labelID`* | LabelResponse | yes | Retrieve a label |
+| DELETE | `/labels/{labelID}` | DeleteLabelsID | `Zap-Trace-Span`, `labelID`* | — |  | Delete a label |
+| PATCH | `/labels/{labelID}` | PatchLabelsID | `Zap-Trace-Span`, `labelID`*, body*: LabelUpdate | LabelResponse |  | Update a label |
+| GET | `/me` | GetMe | `Zap-Trace-Span` | UserResponse | yes | Retrieve the currently authenticated user |
+| PUT | `/me/password` | PutMePassword | `Zap-Trace-Span`, body*: PasswordResetBody | — |  | Update a password |
+| GET | `/notificationEndpoints` | GetNotificationEndpoints | `Zap-Trace-Span`, `offset`, `limit`, `orgID`* | NotificationEndpoints | yes | List all notification endpoints |
+| POST | `/notificationEndpoints` | CreateNotificationEndpoint | body*: PostNotificationEndpoint | NotificationEndpoint |  | Add a notification endpoint |
+| GET | `/notificationEndpoints/{endpointID}` | GetNotificationEndpointsID | `Zap-Trace-Span`, `endpointID`* | NotificationEndpoint | yes | Retrieve a notification endpoint |
+| PUT | `/notificationEndpoints/{endpointID}` | PutNotificationEndpointsID | `Zap-Trace-Span`, `endpointID`*, body*: NotificationEndpoint | NotificationEndpoint |  | Update a notification endpoint |
+| DELETE | `/notificationEndpoints/{endpointID}` | DeleteNotificationEndpointsID | `Zap-Trace-Span`, `endpointID`* | — |  | Delete a notification endpoint |
+| PATCH | `/notificationEndpoints/{endpointID}` | PatchNotificationEndpointsID | `Zap-Trace-Span`, `endpointID`*, body*: NotificationEndpointUpdate | NotificationEndpoint |  | Update a notification endpoint |
+| GET | `/notificationEndpoints/{endpointID}/labels` | GetNotificationEndpointsIDLabels | `Zap-Trace-Span`, `endpointID`* | LabelsResponse | yes | List all labels for a notification endpoint |
+| POST | `/notificationEndpoints/{endpointID}/labels` | PostNotificationEndpointIDLabels | `Zap-Trace-Span`, `endpointID`*, body*: LabelMapping | LabelResponse |  | Add a label to a notification endpoint |
+| DELETE | `/notificationEndpoints/{endpointID}/labels/{labelID}` | DeleteNotificationEndpointsIDLabelsID | `Zap-Trace-Span`, `endpointID`*, `labelID`* | — |  | Delete a label from a notification endpoint |
+| GET | `/notificationRules` | GetNotificationRules | `Zap-Trace-Span`, `offset`, `limit`, `orgID`*, `checkID`, `tag` | NotificationRules | yes | List all notification rules |
+| POST | `/notificationRules` | CreateNotificationRule | body*: PostNotificationRule | NotificationRule |  | Add a notification rule |
+| GET | `/notificationRules/{ruleID}` | GetNotificationRulesID | `Zap-Trace-Span`, `ruleID`* | NotificationRule | yes | Retrieve a notification rule |
+| PUT | `/notificationRules/{ruleID}` | PutNotificationRulesID | `Zap-Trace-Span`, `ruleID`*, body*: NotificationRule | NotificationRule |  | Update a notification rule |
+| DELETE | `/notificationRules/{ruleID}` | DeleteNotificationRulesID | `Zap-Trace-Span`, `ruleID`* | — |  | Delete a notification rule |
+| PATCH | `/notificationRules/{ruleID}` | PatchNotificationRulesID | `Zap-Trace-Span`, `ruleID`*, body*: NotificationRuleUpdate | NotificationRule |  | Update a notification rule |
+| GET | `/notificationRules/{ruleID}/labels` | GetNotificationRulesIDLabels | `Zap-Trace-Span`, `ruleID`* | LabelsResponse | yes | List all labels for a notification rule |
+| POST | `/notificationRules/{ruleID}/labels` | PostNotificationRuleIDLabels | `Zap-Trace-Span`, `ruleID`*, body*: LabelMapping | LabelResponse |  | Add a label to a notification rule |
+| DELETE | `/notificationRules/{ruleID}/labels/{labelID}` | DeleteNotificationRulesIDLabelsID | `Zap-Trace-Span`, `ruleID`*, `labelID`* | — |  | Delete label from a notification rule |
+| GET | `/notificationRules/{ruleID}/query` | GetNotificationRulesIDQuery | `Zap-Trace-Span`, `ruleID`* | FluxResponse | yes | Retrieve a notification rule query |
+| GET | `/orgs` | GetOrgs | `Zap-Trace-Span`, `offset`, `limit`, `descending`, `org`, `orgID`, `userID` | Organizations | yes | List all organizations |
+| POST | `/orgs` | PostOrgs | `Zap-Trace-Span`, body*: PostOrganizationRequest | Organization |  | Create an organization |
+| GET | `/orgs/{orgID}` | GetOrgsID | `Zap-Trace-Span`, `orgID`* | Organization | yes | Retrieve an organization |
+| DELETE | `/orgs/{orgID}` | DeleteOrgsID | `Zap-Trace-Span`, `orgID`* | — |  | Delete an organization |
+| PATCH | `/orgs/{orgID}` | PatchOrgsID | `Zap-Trace-Span`, `orgID`*, body*: PatchOrganizationRequest | Organization |  | Update an organization |
+| GET | `/orgs/{orgID}/members` | GetOrgsIDMembers | `Zap-Trace-Span`, `orgID`* | ResourceMembers | yes | List all members of an organization |
+| POST | `/orgs/{orgID}/members` | PostOrgsIDMembers | `Zap-Trace-Span`, `orgID`*, body*: AddResourceMemberRequestBody | ResourceMember |  | Add a member to an organization |
+| DELETE | `/orgs/{orgID}/members/{userID}` | DeleteOrgsIDMembersID | `Zap-Trace-Span`, `userID`*, `orgID`* | — |  | Remove a member from an organization |
+| GET | `/orgs/{orgID}/owners` | GetOrgsIDOwners | `Zap-Trace-Span`, `orgID`* | ResourceOwners | yes | List all owners of an organization |
+| POST | `/orgs/{orgID}/owners` | PostOrgsIDOwners | `Zap-Trace-Span`, `orgID`*, body*: AddResourceMemberRequestBody | ResourceOwner |  | Add an owner to an organization |
+| DELETE | `/orgs/{orgID}/owners/{userID}` | DeleteOrgsIDOwnersID | `Zap-Trace-Span`, `userID`*, `orgID`* | — |  | Remove an owner from an organization |
+| GET | `/orgs/{orgID}/secrets` | GetOrgsIDSecrets | `Zap-Trace-Span`, `orgID`* | SecretKeysResponse | yes | List all secret keys for an organization |
+| PATCH | `/orgs/{orgID}/secrets` | PatchOrgsIDSecrets | `Zap-Trace-Span`, `orgID`*, body*: Secrets | — |  | Update secrets in an organization |
+| POST | `/orgs/{orgID}/secrets/delete` | PostOrgsIDSecrets | `Zap-Trace-Span`, `orgID`*, body*: SecretKeys | — |  | Delete secrets from an organization |
+| POST | `/query` | PostQuery | `Zap-Trace-Span`, `Accept-Encoding`, `Content-Type`, `org`, `orgID`, body: Query\|InfluxQLQuery | string:binary |  | Query InfluxDB |
+| POST | `/query/analyze` | PostQueryAnalyze | `Zap-Trace-Span`, `Content-Type`, body: Query | AnalyzeQueryResponse |  | Analyze an InfluxQL or Flux query |
+| POST | `/query/ast` | PostQueryAst | `Zap-Trace-Span`, `Content-Type`, body: LanguageRequest | ASTResponse |  | Generate an Abstract Syntax Tree (AST) from a query |
+| GET | `/query/suggestions` | GetQuerySuggestions | `Zap-Trace-Span` | FluxSuggestions | yes | Retrieve query suggestions |
+| GET | `/query/suggestions/{name}` | GetQuerySuggestionsName | `Zap-Trace-Span`, `name`* | FluxSuggestion | yes | Retrieve query suggestions for a branching suggestion |
+| GET | `/ready` | GetReady | `Zap-Trace-Span` | Ready | yes | Get the readiness of an instance at startup |
+| GET | `/scrapers` | GetScrapers | `Zap-Trace-Span`, `name`, `id`, `orgID`, `org` | ScraperTargetResponses | yes | List all scraper targets |
+| POST | `/scrapers` | PostScrapers | `Zap-Trace-Span`, body*: ScraperTargetRequest | ScraperTargetResponse |  | Create a scraper target |
+| GET | `/scrapers/{scraperTargetID}` | GetScrapersID | `Zap-Trace-Span`, `scraperTargetID`* | ScraperTargetResponse | yes | Retrieve a scraper target |
+| DELETE | `/scrapers/{scraperTargetID}` | DeleteScrapersID | `Zap-Trace-Span`, `scraperTargetID`* | — |  | Delete a scraper target |
+| PATCH | `/scrapers/{scraperTargetID}` | PatchScrapersID | `Zap-Trace-Span`, `scraperTargetID`*, body*: ScraperTargetRequest | ScraperTargetResponse |  | Update a scraper target |
+| GET | `/scrapers/{scraperTargetID}/labels` | GetScrapersIDLabels | `Zap-Trace-Span`, `scraperTargetID`* | LabelsResponse | yes | List all labels for a scraper target |
+| POST | `/scrapers/{scraperTargetID}/labels` | PostScrapersIDLabels | `Zap-Trace-Span`, `scraperTargetID`*, body*: LabelMapping | LabelResponse |  | Add a label to a scraper target |
+| DELETE | `/scrapers/{scraperTargetID}/labels/{labelID}` | DeleteScrapersIDLabelsID | `Zap-Trace-Span`, `scraperTargetID`*, `labelID`* | — |  | Delete a label from a scraper target |
+| GET | `/scrapers/{scraperTargetID}/members` | GetScrapersIDMembers | `Zap-Trace-Span`, `scraperTargetID`* | ResourceMembers | yes | List all users with member privileges for a scraper target |
+| POST | `/scrapers/{scraperTargetID}/members` | PostScrapersIDMembers | `Zap-Trace-Span`, `scraperTargetID`*, body*: AddResourceMemberRequestBody | ResourceMember |  | Add a member to a scraper target |
+| DELETE | `/scrapers/{scraperTargetID}/members/{userID}` | DeleteScrapersIDMembersID | `Zap-Trace-Span`, `userID`*, `scraperTargetID`* | — |  | Remove a member from a scraper target |
+| GET | `/scrapers/{scraperTargetID}/owners` | GetScrapersIDOwners | `Zap-Trace-Span`, `scraperTargetID`* | ResourceOwners | yes | List all owners of a scraper target |
+| POST | `/scrapers/{scraperTargetID}/owners` | PostScrapersIDOwners | `Zap-Trace-Span`, `scraperTargetID`*, body*: AddResourceMemberRequestBody | ResourceOwner |  | Add an owner to a scraper target |
+| DELETE | `/scrapers/{scraperTargetID}/owners/{userID}` | DeleteScrapersIDOwnersID | `Zap-Trace-Span`, `userID`*, `scraperTargetID`* | — |  | Remove an owner from a scraper target |
+| GET | `/setup` | GetSetup | `Zap-Trace-Span` | IsOnboarding | yes | Check if database has default user, org, bucket |
+| POST | `/setup` | PostSetup | `Zap-Trace-Span`, body*: OnboardingRequest | OnboardingResponse |  | Set up initial user, org and bucket |
+| POST | `/signin` | PostSignin | `Zap-Trace-Span` | — |  | Exchange basic auth credentials for session |
+| POST | `/signout` | PostSignout | `Zap-Trace-Span` | — |  | Expire the current session |
+| GET | `/sources` | GetSources | `Zap-Trace-Span`, `org` | Sources | yes | List all sources |
+| POST | `/sources` | PostSources | `Zap-Trace-Span`, body*: Source | Source |  | Create a source |
+| GET | `/sources/{sourceID}` | GetSourcesID | `Zap-Trace-Span`, `sourceID`* | Source | yes | Retrieve a source |
+| DELETE | `/sources/{sourceID}` | DeleteSourcesID | `Zap-Trace-Span`, `sourceID`* | — |  | Delete a source |
+| PATCH | `/sources/{sourceID}` | PatchSourcesID | `Zap-Trace-Span`, `sourceID`*, body*: Source | Source |  | Update a Source |
+| GET | `/sources/{sourceID}/buckets` | GetSourcesIDBuckets | `Zap-Trace-Span`, `sourceID`*, `org` | Buckets | yes | Get buckets in a source |
+| GET | `/sources/{sourceID}/health` | GetSourcesIDHealth | `Zap-Trace-Span`, `sourceID`* | HealthCheck | yes | Get the health of a source |
+| GET | `/stacks` | ListStacks | `orgID`*, `name`, `stackID` | object | yes | List all installed InfluxDB templates |
+| POST | `/stacks` | CreateStack | body*: object | Stack |  | Create a new stack |
+| GET | `/stacks/{stack_id}` | ReadStack | `stack_id`* | Stack | yes | Retrieve a stack |
+| DELETE | `/stacks/{stack_id}` | DeleteStack | `stack_id`*, `orgID`* | — |  | Delete a stack and associated resources |
+| PATCH | `/stacks/{stack_id}` | UpdateStack | `stack_id`*, body*: object | Stack |  | Update an InfluxDB Stack |
+| POST | `/stacks/{stack_id}/uninstall` | UninstallStack | `stack_id`* | Stack |  | Uninstall an InfluxDB Stack |
+| GET | `/tasks` | GetTasks | `Zap-Trace-Span`, `name`, `after`, `user`, `org`, `orgID`, `status`, `limit` | Tasks | yes | List all tasks |
+| POST | `/tasks` | PostTasks | `Zap-Trace-Span`, body*: TaskCreateRequest | Task |  | Create a new task |
+| GET | `/tasks/{taskID}` | GetTasksID | `Zap-Trace-Span`, `taskID`* | Task | yes | Retrieve a task |
+| DELETE | `/tasks/{taskID}` | DeleteTasksID | `Zap-Trace-Span`, `taskID`* | — |  | Delete a task |
+| PATCH | `/tasks/{taskID}` | PatchTasksID | `Zap-Trace-Span`, `taskID`*, body*: TaskUpdateRequest | Task |  | Update a task |
+| GET | `/tasks/{taskID}/labels` | GetTasksIDLabels | `Zap-Trace-Span`, `taskID`* | LabelsResponse | yes | List all labels for a task |
+| POST | `/tasks/{taskID}/labels` | PostTasksIDLabels | `Zap-Trace-Span`, `taskID`*, body*: LabelMapping | LabelResponse |  | Add a label to a task |
+| DELETE | `/tasks/{taskID}/labels/{labelID}` | DeleteTasksIDLabelsID | `Zap-Trace-Span`, `taskID`*, `labelID`* | — |  | Delete a label from a task |
+| GET | `/tasks/{taskID}/logs` | GetTasksIDLogs | `Zap-Trace-Span`, `taskID`* | Logs | yes | Retrieve all logs for a task |
+| GET | `/tasks/{taskID}/members` | GetTasksIDMembers | `Zap-Trace-Span`, `taskID`* | ResourceMembers | yes | List all task members |
+| POST | `/tasks/{taskID}/members` | PostTasksIDMembers | `Zap-Trace-Span`, `taskID`*, body*: AddResourceMemberRequestBody | ResourceMember |  | Add a member to a task |
+| DELETE | `/tasks/{taskID}/members/{userID}` | DeleteTasksIDMembersID | `Zap-Trace-Span`, `userID`*, `taskID`* | — |  | Remove a member from a task |
+| GET | `/tasks/{taskID}/owners` | GetTasksIDOwners | `Zap-Trace-Span`, `taskID`* | ResourceOwners | yes | List all owners of a task |
+| POST | `/tasks/{taskID}/owners` | PostTasksIDOwners | `Zap-Trace-Span`, `taskID`*, body*: AddResourceMemberRequestBody | ResourceOwner |  | Add an owner to a task |
+| DELETE | `/tasks/{taskID}/owners/{userID}` | DeleteTasksIDOwnersID | `Zap-Trace-Span`, `userID`*, `taskID`* | — |  | Remove an owner from a task |
+| GET | `/tasks/{taskID}/runs` | GetTasksIDRuns | `Zap-Trace-Span`, `taskID`*, `after`, `limit`, `afterTime`, `beforeTime` | Runs | yes | List runs for a task |
+| POST | `/tasks/{taskID}/runs` | PostTasksIDRuns | `Zap-Trace-Span`, `taskID`*, body: RunManually | Run |  | Manually start a task run, overriding the current schedule |
+| GET | `/tasks/{taskID}/runs/{runID}` | GetTasksIDRunsID | `Zap-Trace-Span`, `taskID`*, `runID`* | Run | yes | Retrieve a single run for a task |
+| DELETE | `/tasks/{taskID}/runs/{runID}` | DeleteTasksIDRunsID | `Zap-Trace-Span`, `taskID`*, `runID`* | — |  | Cancel a running task |
+| GET | `/tasks/{taskID}/runs/{runID}/logs` | GetTasksIDRunsIDLogs | `Zap-Trace-Span`, `taskID`*, `runID`* | Logs | yes | Retrieve all logs for a run |
+| POST | `/tasks/{taskID}/runs/{runID}/retry` | PostTasksIDRunsIDRetry | `Zap-Trace-Span`, `taskID`*, `runID`*, body: object | Run |  | Retry a task run |
+| GET | `/telegraf/plugins` | GetTelegrafPlugins | `Zap-Trace-Span`, `type` | TelegrafPlugins | yes | List all Telegraf plugins |
+| GET | `/telegrafs` | GetTelegrafs | `Zap-Trace-Span`, `orgID` | Telegrafs | yes | List all Telegraf configurations |
+| POST | `/telegrafs` | PostTelegrafs | `Zap-Trace-Span`, body*: TelegrafRequest | Telegraf |  | Create a Telegraf configuration |
+| GET | `/telegrafs/{telegrafID}` | GetTelegrafsID | `Zap-Trace-Span`, `telegrafID`*, `Accept` | Telegraf | yes | Retrieve a Telegraf configuration |
+| PUT | `/telegrafs/{telegrafID}` | PutTelegrafsID | `Zap-Trace-Span`, `telegrafID`*, body*: TelegrafRequest | Telegraf |  | Update a Telegraf configuration |
+| DELETE | `/telegrafs/{telegrafID}` | DeleteTelegrafsID | `Zap-Trace-Span`, `telegrafID`* | — |  | Delete a Telegraf configuration |
+| GET | `/telegrafs/{telegrafID}/labels` | GetTelegrafsIDLabels | `Zap-Trace-Span`, `telegrafID`* | LabelsResponse | yes | List all labels for a Telegraf config |
+| POST | `/telegrafs/{telegrafID}/labels` | PostTelegrafsIDLabels | `Zap-Trace-Span`, `telegrafID`*, body*: LabelMapping | LabelResponse |  | Add a label to a Telegraf config |
+| DELETE | `/telegrafs/{telegrafID}/labels/{labelID}` | DeleteTelegrafsIDLabelsID | `Zap-Trace-Span`, `telegrafID`*, `labelID`* | — |  | Delete a label from a Telegraf config |
+| GET | `/telegrafs/{telegrafID}/members` | GetTelegrafsIDMembers | `Zap-Trace-Span`, `telegrafID`* | ResourceMembers | yes | List all users with member privileges for a Telegraf config |
+| POST | `/telegrafs/{telegrafID}/members` | PostTelegrafsIDMembers | `Zap-Trace-Span`, `telegrafID`*, body*: AddResourceMemberRequestBody | ResourceMember |  | Add a member to a Telegraf config |
+| DELETE | `/telegrafs/{telegrafID}/members/{userID}` | DeleteTelegrafsIDMembersID | `Zap-Trace-Span`, `userID`*, `telegrafID`* | — |  | Remove a member from a Telegraf config |
+| GET | `/telegrafs/{telegrafID}/owners` | GetTelegrafsIDOwners | `Zap-Trace-Span`, `telegrafID`* | ResourceOwners | yes | List all owners of a Telegraf configuration |
+| POST | `/telegrafs/{telegrafID}/owners` | PostTelegrafsIDOwners | `Zap-Trace-Span`, `telegrafID`*, body*: AddResourceMemberRequestBody | ResourceOwner |  | Add an owner to a Telegraf configuration |
+| DELETE | `/telegrafs/{telegrafID}/owners/{userID}` | DeleteTelegrafsIDOwnersID | `Zap-Trace-Span`, `userID`*, `telegrafID`* | — |  | Remove an owner from a Telegraf config |
+| POST | `/templates/apply` | ApplyTemplate | body*: TemplateApply | TemplateSummary |  | Apply or dry-run an InfluxDB Template |
+| POST | `/templates/export` | ExportTemplate | body: TemplateExportByID\|TemplateExportByName | Template |  | Export a new Influx Template |
+| GET | `/users` | GetUsers | `Zap-Trace-Span`, `offset`, `limit`, `after`, `name`, `id` | Users | yes | List all users |
+| POST | `/users` | PostUsers | `Zap-Trace-Span`, body*: User | UserResponse |  | Create a user |
+| GET | `/users/{userID}` | GetUsersID | `Zap-Trace-Span`, `userID`* | UserResponse | yes | Retrieve a user |
+| DELETE | `/users/{userID}` | DeleteUsersID | `Zap-Trace-Span`, `userID`* | — |  | Delete a user |
+| PATCH | `/users/{userID}` | PatchUsersID | `Zap-Trace-Span`, `userID`*, body*: User | UserResponse |  | Update a user |
+| POST | `/users/{userID}/password` | PostUsersIDPassword | `Zap-Trace-Span`, `userID`*, body*: PasswordResetBody | — |  | Update a password |
+| GET | `/variables` | GetVariables | `Zap-Trace-Span`, `org`, `orgID` | Variables | yes | List all variables |
+| POST | `/variables` | PostVariables | `Zap-Trace-Span`, body*: Variable | Variable |  | Create a variable |
+| GET | `/variables/{variableID}` | GetVariablesID | `Zap-Trace-Span`, `variableID`* | Variable | yes | Retrieve a variable |
+| PUT | `/variables/{variableID}` | PutVariablesID | `Zap-Trace-Span`, `variableID`*, body*: Variable | Variable |  | Replace a variable |
+| DELETE | `/variables/{variableID}` | DeleteVariablesID | `Zap-Trace-Span`, `variableID`* | — |  | Delete a variable |
+| PATCH | `/variables/{variableID}` | PatchVariablesID | `Zap-Trace-Span`, `variableID`*, body*: Variable | Variable |  | Update a variable |
+| GET | `/variables/{variableID}/labels` | GetVariablesIDLabels | `Zap-Trace-Span`, `variableID`* | LabelsResponse | yes | List all labels for a variable |
+| POST | `/variables/{variableID}/labels` | PostVariablesIDLabels | `Zap-Trace-Span`, `variableID`*, body*: LabelMapping | LabelResponse |  | Add a label to a variable |
+| DELETE | `/variables/{variableID}/labels/{labelID}` | DeleteVariablesIDLabelsID | `Zap-Trace-Span`, `variableID`*, `labelID`* | — |  | Delete a label from a variable |
+| POST | `/write` | PostWrite | `Zap-Trace-Span`, `Content-Encoding`, `Content-Type`, `Content-Length`, `Accept`, `org`*, `orgID`, `bucket`*, `precision`, body*: string:byte | — |  | Write time series data into InfluxDB |

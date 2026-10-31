@@ -158,6 +158,536 @@
         "from": "hhs-gov-840dd3bfca",
         "kind": "EXPOSES",
         "to": "operation:get:/resources/userMediaLists/{id}.json"
+      },
+      {
+        "from": "operation:get:/resources.json",
+        "kind": "RETURNS",
+        "to": "schema:ResourceWrapped"
+      },
+      {
+        "from": "operation:get:/resources/campaigns.json",
+        "kind": "RETURNS",
+        "to": "schema:CampaignWrapped"
+      },
+      {
+        "from": "operation:get:/resources/campaigns/{id}.json",
+        "kind": "RETURNS",
+        "to": "schema:CampaignWrapped"
+      },
+      {
+        "from": "operation:get:/resources/campaigns/{id}/media.json",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/campaigns/{id}/syndicate.{format}",
+        "kind": "RETURNS",
+        "to": "schema:SyndicateMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/languages.json",
+        "kind": "RETURNS",
+        "to": "schema:LanguageWrapped"
+      },
+      {
+        "from": "operation:get:/resources/languages/{id}.json",
+        "kind": "RETURNS",
+        "to": "schema:LanguageWrapped"
+      },
+      {
+        "from": "operation:get:/resources/media.json",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/media/featured.json",
+        "kind": "RETURNS",
+        "to": "schema:MediaItem"
+      },
+      {
+        "from": "operation:get:/resources/media/mostPopularMedia.{format}",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/media/searchResults.json",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/media/{id}.json",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/media/{id}/relatedMedia.{format}",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/media/{id}/syndicate.{format}",
+        "kind": "RETURNS",
+        "to": "schema:SyndicateMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/mediaTypes.{format}",
+        "kind": "RETURNS",
+        "to": "schema:MediaTypeHolderWrapped"
+      },
+      {
+        "from": "operation:get:/resources/sources.json",
+        "kind": "RETURNS",
+        "to": "schema:SourceWrapped"
+      },
+      {
+        "from": "operation:get:/resources/sources/{id}.json",
+        "kind": "RETURNS",
+        "to": "schema:SourceWrapped"
+      },
+      {
+        "from": "operation:get:/resources/sources/{id}/syndicate.{format}",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/tags.{format}",
+        "kind": "RETURNS",
+        "to": "schema:TagMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/tags/tagLanguages.{format}",
+        "kind": "RETURNS",
+        "to": "schema:TagLanguageMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/tags/tagTypes.{format}",
+        "kind": "RETURNS",
+        "to": "schema:TagTypeMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/tags/{id}.{format}",
+        "kind": "RETURNS",
+        "to": "schema:TagMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/tags/{id}/media.{format}",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "operation:get:/resources/tags/{id}/related.{format}",
+        "kind": "RETURNS",
+        "to": "schema:TagMarshallerWrapped"
+      },
+      {
+        "from": "operation:get:/resources/userMediaLists/{id}.json",
+        "kind": "RETURNS",
+        "to": "schema:MediaItemWrapped"
+      },
+      {
+        "from": "schema:AlternateImageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:AlternateImage"
+      },
+      {
+        "from": "schema:AlternateImageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Campaign",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:CampaignWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:CampaignWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:CollectionWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:CollectionWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:ExtendedAttributeWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:ExtendedAttributeWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Html",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:Html",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:Html",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Html",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:HtmlWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Html"
+      },
+      {
+        "from": "schema:HtmlWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:ImageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Image"
+      },
+      {
+        "from": "schema:ImageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Infographic",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:Infographic",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:Infographic",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Infographic",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:InfographicWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Infographic"
+      },
+      {
+        "from": "schema:InfographicWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:LanguageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:LanguageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:MediaItem",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:MediaItem",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:MediaItem",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:MediaItem",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:MediaItemWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:MediaItem"
+      },
+      {
+        "from": "schema:MediaItemWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:MediaTypeHolderWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:MediaTypeHolder"
+      },
+      {
+        "from": "schema:MediaTypeHolderWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:MessageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:MessageWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Meta",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Meta",
+        "kind": "REFERENCES",
+        "to": "schema:Pagination"
+      },
+      {
+        "from": "schema:MetaWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:PDF",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:PDF",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:PDF",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:PDF",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:PDFWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:PDFWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:PDF"
+      },
+      {
+        "from": "schema:PaginationWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:PaginationWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Pagination"
+      },
+      {
+        "from": "schema:SourceWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:SourceWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:SyndicateMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:SyndicateMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:SyndicateMarshaller"
+      },
+      {
+        "from": "schema:TagLanguageMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:TagLanguageMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:TagLanguageMarshaller"
+      },
+      {
+        "from": "schema:TagMarshaller",
+        "kind": "REFERENCES",
+        "to": "schema:TagLanguageMarshaller"
+      },
+      {
+        "from": "schema:TagMarshaller",
+        "kind": "REFERENCES",
+        "to": "schema:TagTypeMarshaller"
+      },
+      {
+        "from": "schema:TagMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:TagMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:TagMarshaller"
+      },
+      {
+        "from": "schema:TagTypeMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:TagTypeMarshallerWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:TagTypeMarshaller"
+      },
+      {
+        "from": "schema:Tweet",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:Tweet",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:Tweet",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Tweet",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:Tweet",
+        "kind": "REFERENCES",
+        "to": "schema:TwitterAccount"
+      },
+      {
+        "from": "schema:TweetWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:TweetWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Tweet"
+      },
+      {
+        "from": "schema:Video",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:Video",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedAttribute"
+      },
+      {
+        "from": "schema:Video",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Video",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:VideoWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:VideoWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Video"
+      },
+      {
+        "from": "schema:YoutubeMetadataWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:YoutubeMetadataWrapped",
+        "kind": "REFERENCES",
+        "to": "schema:YoutubeMetadata"
       }
     ],
     "nodes": [
@@ -167,91 +697,726 @@
       },
       {
         "deprecated": false,
+        "description": "Global search",
         "id": "operation:get:/resources.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources.json",
+        "parameters": [
+          {
+            "description": "The search query supplied by the user",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources.json",
         "pointer": "#/paths/~1resources.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Resources by search query"
+        "summary": "Get Resources by search query",
+        "tags": [
+          "resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Media Listings for a specific campaign",
         "id": "operation:get:/resources/campaigns.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/campaigns.json",
+        "parameters": [
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The offset of the records set to return for pagination",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "* Set of fields to sort the records by.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/campaigns.json",
         "pointer": "#/paths/~1resources~1campaigns.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CampaignWrapped"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Campaigns"
+        "summary": "Get Campaigns",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about a specific campaign",
         "id": "operation:get:/resources/campaigns/{id}.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/campaigns/{id}.json",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/campaigns/{id}.json",
         "pointer": "#/paths/~1resources~1campaigns~1{id}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CampaignWrapped"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Campaign by ID"
+        "summary": "Get Campaign by ID",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Campaign Listings",
         "id": "operation:get:/resources/campaigns/{id}/media.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/campaigns/{id}/media.json",
+        "parameters": [
+          {
+            "description": "The id of the campaign to find media items for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The offset of the records set to return for pagination",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/resources/campaigns/{id}/media.json",
         "pointer": "#/paths/~1resources~1campaigns~1{id}~1media.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems by Campaign ID"
+        "summary": "Get MediaItems by Campaign ID",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "MediaItem",
         "id": "operation:get:/resources/campaigns/{id}/syndicate.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/campaigns/{id}/syndicate.{format}",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Method used to render an html request.",
+            "in": "query",
+            "name": "displayMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/campaigns/{id}/syndicate.{format}",
         "pointer": "#/paths/~1resources~1campaigns~1{id}~1syndicate.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SyndicateMarshallerWrapped"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems for Campaign"
+        "summary": "Get MediaItems for Campaign",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Language Listings",
         "id": "operation:get:/resources/languages.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/languages.json",
+        "parameters": [
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/languages.json",
         "pointer": "#/paths/~1resources~1languages.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LanguageWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Languages"
+        "summary": "Get Languages",
+        "tags": [
+          "languages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about a specific language",
         "id": "operation:get:/resources/languages/{id}.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/languages/{id}.json",
+        "parameters": [
+          {
+            "description": "The id of the language to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/languages/{id}.json",
         "pointer": "#/paths/~1resources~1languages~1{id}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LanguageWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Language by ID"
+        "summary": "Get Language by ID",
+        "tags": [
+          "languages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Media Items Listings",
         "id": "operation:get:/resources/media.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media.json",
+        "parameters": [
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The offset of the records set to return for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "* Set of fields to sort the records by.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "* The ascending or descending order.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items belonging to the specified media type[s].",
+            "in": "query",
+            "name": "mediaTypes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items containing the provided name, case insensitive.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict filtering to media items in a specific collection.",
+            "in": "query",
+            "name": "collectionId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Find all media items containing the partial name, case insensitive.",
+            "in": "query",
+            "name": "nameContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items containing the provided partial description, case insensitive.",
+            "in": "query",
+            "name": "descriptionContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items which have the provided sourceUrl, case insensitive.",
+            "in": "query",
+            "name": "sourceUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items which contain the provided partial sourceUrl, case insensitive.",
+            "in": "query",
+            "name": "sourceUrlContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items which have the provided customThumbnailUrl, case insensitive.",
+            "in": "query",
+            "name": "customThumbnailUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items which contain the provided partial customThumbnailUrl, case insensitive.",
+            "in": "query",
+            "name": "customThumbnailUrlContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items authored on the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "dateContentAuthored",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items updated on the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "dateContentUpdated",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items published on the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "dateContentPublished",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items reviewed on the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "dateContentReviewed",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items syndicated on the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "dateSyndicationCaptured",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items updated through the syndication system on the provided day, (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "dateSyndicationUpdated",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items authored since the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentAuthoredSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items authored before the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentAuthoredBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items authored between the provided start and end days (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "contentAuthoredInRange",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items updated since the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentUpdatedSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items updated before the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentUpdatedBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items updated between the provided start and end days (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "contentUpdatedInRange",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items updated since the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentPublishedSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items published before the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentPublishedBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items published between the provided start and end days (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "contentPublishedInRange",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items reviewed since the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentReviewedSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items reviewed before the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "contentReviewedBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items reviewed between the provided start and end days (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "contentReviewedInRange",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items authored since the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "syndicationCapturedSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items authored before the provided day (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "syndicationCapturedBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items authored between the provided start and end days (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "syndicationCapturedInRange",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items updated since the provided day, (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "syndicationUpdatedSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items updated before the provided day, (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "syndicationUpdatedBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items updated between the provided start and end days, (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "syndicationUpdatedInRange",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items visible since the provided day, (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "syndicationVisibleSinceDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items visible before the provided day, (RFC 3339, time ignored).",
+            "in": "query",
+            "name": "syndicationVisibleBeforeDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items visible between the provided start and end days, (RFC 3339, comma separated, time ignored).",
+            "in": "query",
+            "name": "syndicationVisibleInRange",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Find all media items written in the language specified by Id.",
+            "in": "query",
+            "name": "languageId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Find all media items written in the language specified by name, case insensitive.",
+            "in": "query",
+            "name": "languageName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items written in the language specified by 639-2 isoCode , case insensitive.",
+            "in": "query",
+            "name": "languageIsoCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items which match the provided hash, case insensitive.",
+            "in": "query",
+            "name": "hash",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items which match the provided partial hash, case insensitive.",
+            "in": "query",
+            "name": "hashContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items that belong to the source specified by Id.",
+            "in": "query",
+            "name": "sourceId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Find all media items that belong to the source specified by name, case insensitive.",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items that belong to the source specified by partial name, case insensitive.",
+            "in": "query",
+            "name": "sourceNameContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items that belong to the source specified by acronym, case insensitive.",
+            "in": "query",
+            "name": "sourceAcronym",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items that belong to the source specified by partial acronym, case insensitive.",
+            "in": "query",
+            "name": "sourceAcronymContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find only media items tagged with the specified tag Ids.",
+            "in": "query",
+            "name": "tagIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find only media from within the supplied list of Ids.",
+            "in": "query",
+            "name": "restrictToSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find all media items containing the createdBy value.",
+            "in": "query",
+            "name": "createdBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/media.json",
         "pointer": "#/paths/~1resources~1media.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems"
+        "summary": "Get MediaItems",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
@@ -259,392 +1424,1412 @@
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/featured.json",
+        "parameters": [
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/resources/media/featured.json",
         "pointer": "#/paths/~1resources~1media~1featured.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItem[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the list of featured content in the syndication system"
+        "summary": "Get the list of featured content in the syndication system",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the media with the highest ratings.",
         "id": "operation:get:/resources/media/mostPopularMedia.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/mostPopularMedia.{format}",
+        "parameters": [
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The offset of the records set to return for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/media/mostPopularMedia.{format}",
         "pointer": "#/paths/~1resources~1media~1mostPopularMedia.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems by popularity"
+        "summary": "Get MediaItems by popularity",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Full search",
         "id": "operation:get:/resources/media/searchResults.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/searchResults.json",
+        "parameters": [
+          {
+            "description": "The search query supplied by the user",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The offset of the records set to return for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/resources/media/searchResults.json",
         "pointer": "#/paths/~1resources~1media~1searchResults.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems by search query"
+        "summary": "Get MediaItems by search query",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about a specific media item",
         "id": "operation:get:/resources/media/{id}.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}.json",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/media/{id}.json",
         "pointer": "#/paths/~1resources~1media~1{id}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItem by ID"
+        "summary": "Get MediaItem by ID",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The actual media content (html, image, etc...)",
         "id": "operation:get:/resources/media/{id}/content",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/content",
+        "parameters": [
+          {
+            "description": "The id of the media to show content for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The method that called this method",
+            "in": "query",
+            "name": "calledByBuild",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/resources/media/{id}/content",
         "pointer": "#/paths/~1resources~1media~1{id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get content for MediaItem"
+        "summary": "Get content for MediaItem",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the javascript or iframe embed code for this item (to embed it on a web page).",
         "id": "operation:get:/resources/media/{id}/embed.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/embed.json",
+        "parameters": [
+          {
+            "description": "The id of the media to get embed code for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Currently supports 'iframe', defaults to 'javascript'.",
+            "in": "query",
+            "name": "flavor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The width of the generated iframe.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The height of the generated iframe.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The name of the iframe element",
+            "in": "query",
+            "name": "iframeName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Should a reference to the JQuery Library be omitted?",
+            "in": "query",
+            "name": "excludeJquery",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Should the div to insert content into be omitted?",
+            "in": "query",
+            "name": "excludeDiv",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Should the div to insert content into have a specific name?",
+            "in": "query",
+            "name": "divId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Method used to render an html request.",
+            "in": "query",
+            "name": "displayMethod",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/media/{id}/embed.json",
         "pointer": "#/paths/~1resources~1media~1{id}~1embed.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get embed code for MediaItem"
+        "summary": "Get embed code for MediaItem",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the jpg preview of the content item where applicable.",
         "id": "operation:get:/resources/media/{id}/preview.jpg",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/preview.jpg",
+        "parameters": [
+          {
+            "description": "The id of the media to get a preview for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/media/{id}/preview.jpg",
         "pointer": "#/paths/~1resources~1media~1{id}~1preview.jpg/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Tag by ID"
+        "summary": "Get Tag by ID",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the media related to the current media item.",
         "id": "operation:get:/resources/media/{id}/relatedMedia.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/relatedMedia.{format}",
+        "parameters": [
+          {
+            "description": "The id of the media item to get related media for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/media/{id}/relatedMedia.{format}",
         "pointer": "#/paths/~1resources~1media~1{id}~1relatedMedia.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get related MediaItems by ID"
+        "summary": "Get related MediaItems by ID",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get syndicated content.",
         "id": "operation:get:/resources/media/{id}/syndicate.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/syndicate.{format}",
+        "parameters": [
+          {
+            "description": "The id of the media to show embed code for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": "syndicate",
+            "description": "The css class to target for extraction.",
+            "in": "query",
+            "name": "cssClass",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Remove in-line styles from content.",
+            "in": "query",
+            "name": "stripStyles",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Remove script tags from content.",
+            "in": "query",
+            "name": "stripScripts",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Remove image tags from content.",
+            "in": "query",
+            "name": "stripImages",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Remove break tags from content.",
+            "in": "query",
+            "name": "stripBreaks",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Remove class attributes from content (except 'syndicate').",
+            "in": "query",
+            "name": "stripClasses",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Set font size (in points) of p, div, and span tags.",
+            "in": "query",
+            "name": "font-size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Accepts valid CSS float options, such as 'left' or 'right'.",
+            "in": "query",
+            "name": "imageFloat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Accepts 4 CSV values representing pixel sizes of margin similar to CSS.",
+            "in": "query",
+            "name": "imageMargin",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "If content is a video, the embeded video will auto play when loaded.",
+            "in": "query",
+            "name": "autoplay",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "If content is a video, related items will be shown at the end of playback.",
+            "in": "query",
+            "name": "rel",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/media/{id}/syndicate.{format}",
         "pointer": "#/paths/~1resources~1media~1{id}~1syndicate.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SyndicateMarshallerWrapped"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get syndicated content for MediaItem"
+        "summary": "Get syndicated content for MediaItem",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the jpg thumbnail of the content item where applicable.",
         "id": "operation:get:/resources/media/{id}/thumbnail.jpg",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/thumbnail.jpg",
+        "parameters": [
+          {
+            "description": "The id of the media to get a thumbnail for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/media/{id}/thumbnail.jpg",
         "pointer": "#/paths/~1resources~1media~1{id}~1thumbnail.jpg/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get JPG thumbnail for MediaItem"
+        "summary": "Get JPG thumbnail for MediaItem",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Youtube meta-data for a video item.",
         "id": "operation:get:/resources/media/{id}/youtubeMetaData.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/media/{id}/youtubeMetaData.json",
+        "parameters": [
+          {
+            "description": "The id of the video to show meta data for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/media/{id}/youtubeMetaData.json",
         "pointer": "#/paths/~1resources~1media~1{id}~1youtubeMetaData.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Youtube metadata for MediaItem"
+        "summary": "Get Youtube metadata for MediaItem",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about media types",
         "id": "operation:get:/resources/mediaTypes.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/mediaTypes.{format}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/mediaTypes.{format}",
         "pointer": "#/paths/~1resources~1mediaTypes.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaTypeHolderWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaTypes"
+        "summary": "Get MediaTypes",
+        "tags": [
+          "mediaTypes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Source Listings",
         "id": "operation:get:/resources/sources.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/sources.json",
+        "parameters": [
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/sources.json",
         "pointer": "#/paths/~1resources~1sources.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SourceWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Sources"
+        "summary": "Get Sources",
+        "tags": [
+          "sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about a specific source.",
         "id": "operation:get:/resources/sources/{id}.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/sources/{id}.json",
+        "parameters": [
+          {
+            "description": "The id of the source to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/resources/sources/{id}.json",
         "pointer": "#/paths/~1resources~1sources~1{id}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SourceWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Source by ID"
+        "summary": "Get Source by ID",
+        "tags": [
+          "sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "MediaItem",
         "id": "operation:get:/resources/sources/{id}/syndicate.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/sources/{id}/syndicate.{format}",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Method used to render an html request.",
+            "in": "query",
+            "name": "displayMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/sources/{id}/syndicate.{format}",
         "pointer": "#/paths/~1resources~1sources~1{id}~1syndicate.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems for Source"
+        "summary": "Get MediaItems for Source",
+        "tags": [
+          "sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of Tags",
         "id": "operation:get:/resources/tags.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags.{format}",
+        "parameters": [
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return tags[s] matching the supplied name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return tags which contain the supplied partial name.",
+            "in": "query",
+            "name": "nameContains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return tags associated with the supplied media id.",
+            "in": "query",
+            "name": "mediaId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Return tags belonging to the supplied tag type id.",
+            "in": "query",
+            "name": "typeId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Return tags belonging to the supplied tag type name.",
+            "in": "query",
+            "name": "typeName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags.{format}",
         "pointer": "#/paths/~1resources~1tags.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagMarshallerWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Tags"
+        "summary": "Get Tags",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of Tag Languages",
         "id": "operation:get:/resources/tags/tagLanguages.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags/tagLanguages.{format}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags/tagLanguages.{format}",
         "pointer": "#/paths/~1resources~1tags~1tagLanguages.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagLanguageMarshallerWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get TagLanguages"
+        "summary": "Get TagLanguages",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of Types",
         "id": "operation:get:/resources/tags/tagTypes.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags/tagTypes.{format}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags/tagTypes.{format}",
         "pointer": "#/paths/~1resources~1tags~1tagTypes.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagTypeMarshallerWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems for Tag"
+        "summary": "Get MediaItems for Tag",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about a specific tag",
         "id": "operation:get:/resources/tags/{id}.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags/{id}.{format}",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags/{id}.{format}",
         "pointer": "#/paths/~1resources~1tags~1{id}.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagMarshallerWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Tag by ID"
+        "summary": "Get Tag by ID",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "MediaItem",
         "id": "operation:get:/resources/tags/{id}/media.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags/{id}/media.{format}",
+        "parameters": [
+          {
+            "description": "The id of the tag to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags/{id}/media.{format}",
         "pointer": "#/paths/~1resources~1tags~1{id}~1media.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems for Tag"
+        "summary": "Get MediaItems for Tag",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about related tags to a specific tag",
         "id": "operation:get:/resources/tags/{id}/related.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags/{id}/related.{format}",
+        "parameters": [
+          {
+            "description": "The id of the tag to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The name of the property to which sorting will be applied",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of records to return",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return records starting at the offset index.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags/{id}/related.{format}",
         "pointer": "#/paths/~1resources~1tags~1{id}~1related.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagMarshallerWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get related Tags by ID"
+        "summary": "Get related Tags by ID",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "MediaItem",
         "id": "operation:get:/resources/tags/{id}/syndicate.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/tags/{id}/syndicate.{format}",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Method used to render an html request.",
+            "in": "query",
+            "name": "displayMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/tags/{id}/syndicate.{format}",
         "pointer": "#/paths/~1resources~1tags~1{id}~1syndicate.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get MediaItems for Tag"
+        "summary": "Get MediaItems for Tag",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a specific user media list.",
         "id": "operation:get:/resources/userMediaLists/{id}.json",
         "kind": "operation",
         "method": "get",
         "name": "get /resources/userMediaLists/{id}.json",
+        "parameters": [
+          {
+            "description": "The id of the record to look up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Method used to render an html request.",
+            "in": "query",
+            "name": "displayMethod",
+            "required": false,
+            "type": "string:int64"
+          }
+        ],
         "path": "/resources/userMediaLists/{id}.json",
         "pointer": "#/paths/~1resources~1userMediaLists~1{id}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaItemWrapped[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get UserMediaList by ID"
+        "summary": "Get UserMediaList by ID",
+        "tags": [
+          "userMediaLists"
+        ]
       },
       {
         "id": "schema:AlternateImage",
         "kind": "schema",
-        "name": "AlternateImage"
+        "name": "AlternateImage",
+        "type": "object"
       },
       {
         "id": "schema:AlternateImageWrapped",
         "kind": "schema",
-        "name": "AlternateImageWrapped"
+        "name": "AlternateImageWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Campaign",
         "kind": "schema",
-        "name": "Campaign"
+        "name": "Campaign",
+        "type": "object"
       },
       {
         "id": "schema:CampaignWrapped",
         "kind": "schema",
-        "name": "CampaignWrapped"
+        "name": "CampaignWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Collection",
         "kind": "schema",
-        "name": "Collection"
+        "name": "Collection",
+        "type": "object"
       },
       {
         "id": "schema:CollectionWrapped",
         "kind": "schema",
-        "name": "CollectionWrapped"
+        "name": "CollectionWrapped",
+        "type": "object"
       },
       {
         "id": "schema:ExtendedAttribute",
         "kind": "schema",
-        "name": "ExtendedAttribute"
+        "name": "ExtendedAttribute",
+        "type": "object"
       },
       {
         "id": "schema:ExtendedAttributeWrapped",
         "kind": "schema",
-        "name": "ExtendedAttributeWrapped"
+        "name": "ExtendedAttributeWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Html",
         "kind": "schema",
-        "name": "Html"
+        "name": "Html",
+        "type": "object"
       },
       {
         "id": "schema:HtmlWrapped",
         "kind": "schema",
-        "name": "HtmlWrapped"
+        "name": "HtmlWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Image",
         "kind": "schema",
-        "name": "Image"
+        "name": "Image",
+        "type": "object"
       },
       {
         "id": "schema:ImageWrapped",
         "kind": "schema",
-        "name": "ImageWrapped"
+        "name": "ImageWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Infographic",
         "kind": "schema",
-        "name": "Infographic"
+        "name": "Infographic",
+        "type": "object"
       },
       {
         "id": "schema:InfographicWrapped",
         "kind": "schema",
-        "name": "InfographicWrapped"
+        "name": "InfographicWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Language",
         "kind": "schema",
-        "name": "Language"
+        "name": "Language",
+        "type": "object"
       },
       {
         "id": "schema:LanguageWrapped",
         "kind": "schema",
-        "name": "LanguageWrapped"
+        "name": "LanguageWrapped",
+        "type": "object"
       },
       {
         "id": "schema:MediaItem",
         "kind": "schema",
-        "name": "MediaItem"
+        "name": "MediaItem",
+        "type": "object"
       },
       {
         "id": "schema:MediaItemWrapped",
         "kind": "schema",
-        "name": "MediaItemWrapped"
+        "name": "MediaItemWrapped",
+        "type": "object"
       },
       {
         "id": "schema:MediaTypeHolder",
         "kind": "schema",
-        "name": "MediaTypeHolder"
+        "name": "MediaTypeHolder",
+        "type": "object"
       },
       {
         "id": "schema:MediaTypeHolderWrapped",
         "kind": "schema",
-        "name": "MediaTypeHolderWrapped"
+        "name": "MediaTypeHolderWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:MessageWrapped",
         "kind": "schema",
-        "name": "MessageWrapped"
+        "name": "MessageWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
         "id": "schema:MetaWrapped",
         "kind": "schema",
-        "name": "MetaWrapped"
+        "name": "MetaWrapped",
+        "type": "object"
       },
       {
         "id": "schema:PDF",
         "kind": "schema",
-        "name": "PDF"
+        "name": "PDF",
+        "type": "object"
       },
       {
         "id": "schema:PDFWrapped",
         "kind": "schema",
-        "name": "PDFWrapped"
+        "name": "PDFWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Pagination",
         "kind": "schema",
-        "name": "Pagination"
+        "name": "Pagination",
+        "type": "object"
       },
       {
         "id": "schema:PaginationWrapped",
         "kind": "schema",
-        "name": "PaginationWrapped"
+        "name": "PaginationWrapped",
+        "type": "object"
       },
       {
         "id": "schema:ResourceWrapped",
@@ -654,62 +2839,74 @@
       {
         "id": "schema:Source",
         "kind": "schema",
-        "name": "Source"
+        "name": "Source",
+        "type": "object"
       },
       {
         "id": "schema:SourceWrapped",
         "kind": "schema",
-        "name": "SourceWrapped"
+        "name": "SourceWrapped",
+        "type": "object"
       },
       {
         "id": "schema:SyndicateMarshaller",
         "kind": "schema",
-        "name": "SyndicateMarshaller"
+        "name": "SyndicateMarshaller",
+        "type": "object"
       },
       {
         "id": "schema:SyndicateMarshallerWrapped",
         "kind": "schema",
-        "name": "SyndicateMarshallerWrapped"
+        "name": "SyndicateMarshallerWrapped",
+        "type": "object"
       },
       {
         "id": "schema:TagLanguageMarshaller",
         "kind": "schema",
-        "name": "TagLanguageMarshaller"
+        "name": "TagLanguageMarshaller",
+        "type": "object"
       },
       {
         "id": "schema:TagLanguageMarshallerWrapped",
         "kind": "schema",
-        "name": "TagLanguageMarshallerWrapped"
+        "name": "TagLanguageMarshallerWrapped",
+        "type": "object"
       },
       {
         "id": "schema:TagMarshaller",
         "kind": "schema",
-        "name": "TagMarshaller"
+        "name": "TagMarshaller",
+        "type": "object"
       },
       {
         "id": "schema:TagMarshallerWrapped",
         "kind": "schema",
-        "name": "TagMarshallerWrapped"
+        "name": "TagMarshallerWrapped",
+        "type": "object"
       },
       {
         "id": "schema:TagTypeMarshaller",
         "kind": "schema",
-        "name": "TagTypeMarshaller"
+        "name": "TagTypeMarshaller",
+        "type": "object"
       },
       {
         "id": "schema:TagTypeMarshallerWrapped",
         "kind": "schema",
-        "name": "TagTypeMarshallerWrapped"
+        "name": "TagTypeMarshallerWrapped",
+        "type": "object"
       },
       {
         "id": "schema:Tweet",
         "kind": "schema",
-        "name": "Tweet"
+        "name": "Tweet",
+        "type": "object"
       },
       {
         "id": "schema:TweetWrapped",
         "kind": "schema",
-        "name": "TweetWrapped"
+        "name": "TweetWrapped",
+        "type": "object"
       },
       {
         "id": "schema:TwitterAccount",
@@ -719,22 +2916,26 @@
       {
         "id": "schema:Video",
         "kind": "schema",
-        "name": "Video"
+        "name": "Video",
+        "type": "object"
       },
       {
         "id": "schema:VideoWrapped",
         "kind": "schema",
-        "name": "VideoWrapped"
+        "name": "VideoWrapped",
+        "type": "object"
       },
       {
         "id": "schema:YoutubeMetadata",
         "kind": "schema",
-        "name": "YoutubeMetadata"
+        "name": "YoutubeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:YoutubeMetadataWrapped",
         "kind": "schema",
-        "name": "YoutubeMetadataWrapped"
+        "name": "YoutubeMetadataWrapped",
+        "type": "object"
       },
       {
         "id": "schema:test",

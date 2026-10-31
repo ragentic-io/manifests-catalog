@@ -68,6 +68,376 @@
         "from": "ebi-ac-uk-fa28fcb75b",
         "kind": "EXPOSES",
         "to": "operation:get:/targets"
+      },
+      {
+        "from": "operation:get:/activities",
+        "kind": "RETURNS",
+        "to": "schema:Activities"
+      },
+      {
+        "from": "operation:get:/assays",
+        "kind": "RETURNS",
+        "to": "schema:Assays"
+      },
+      {
+        "from": "operation:get:/drugs",
+        "kind": "RETURNS",
+        "to": "schema:Drugs"
+      },
+      {
+        "from": "operation:get:/efo",
+        "kind": "RETURNS",
+        "to": "schema:EFOEntities"
+      },
+      {
+        "from": "operation:get:/hpo",
+        "kind": "RETURNS",
+        "to": "schema:HpoEntities"
+      },
+      {
+        "from": "operation:get:/intact",
+        "kind": "RETURNS",
+        "to": "schema:IntactInteractions"
+      },
+      {
+        "from": "operation:get:/molecules",
+        "kind": "RETURNS",
+        "to": "schema:Molecules"
+      },
+      {
+        "from": "operation:get:/proteins",
+        "kind": "RETURNS",
+        "to": "schema:Proteins"
+      },
+      {
+        "from": "operation:get:/pubchem/bioassays",
+        "kind": "RETURNS",
+        "to": "schema:Bioassays"
+      },
+      {
+        "from": "operation:get:/pubchem/bioassays/sids",
+        "kind": "RETURNS",
+        "to": "schema:Bioassays"
+      },
+      {
+        "from": "operation:get:/pubchem/compounds",
+        "kind": "RETURNS",
+        "to": "schema:PubchemCompounds"
+      },
+      {
+        "from": "operation:get:/pubchem/substances",
+        "kind": "RETURNS",
+        "to": "schema:PubchemSubstances"
+      },
+      {
+        "from": "operation:get:/targets",
+        "kind": "RETURNS",
+        "to": "schema:Targets"
+      },
+      {
+        "from": "schema:Activities",
+        "kind": "REFERENCES",
+        "to": "schema:Activity"
+      },
+      {
+        "from": "schema:Activities",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:Assays",
+        "kind": "REFERENCES",
+        "to": "schema:Assay"
+      },
+      {
+        "from": "schema:Assays",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:BioAssay",
+        "kind": "REFERENCES",
+        "to": "schema:AssayOrganism"
+      },
+      {
+        "from": "schema:BioAssay",
+        "kind": "REFERENCES",
+        "to": "schema:TargetInfo"
+      },
+      {
+        "from": "schema:BioAssay",
+        "kind": "REFERENCES",
+        "to": "schema:TargetType"
+      },
+      {
+        "from": "schema:BioAssayMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:BioAssay"
+      },
+      {
+        "from": "schema:BioAssayMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:SidRelatedData"
+      },
+      {
+        "from": "schema:Bioassays",
+        "kind": "REFERENCES",
+        "to": "schema:BioAssayMetaData"
+      },
+      {
+        "from": "schema:Bioassays",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Ensembl"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Go"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Interpro"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Kegg"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Omim"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:OpenTargets"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Orphanet"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:PDBe"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Pfam"
+      },
+      {
+        "from": "schema:CrossReferences",
+        "kind": "REFERENCES",
+        "to": "schema:Reactome"
+      },
+      {
+        "from": "schema:CrossbarDrug",
+        "kind": "REFERENCES",
+        "to": "schema:Pathway"
+      },
+      {
+        "from": "schema:CrossbarDrug",
+        "kind": "REFERENCES",
+        "to": "schema:Target"
+      },
+      {
+        "from": "schema:CrossbarFeature",
+        "kind": "REFERENCES",
+        "to": "schema:FeaturePosition"
+      },
+      {
+        "from": "schema:CrossbarMolecule",
+        "kind": "REFERENCES",
+        "to": "schema:Xref"
+      },
+      {
+        "from": "schema:CrossbarProteinVariation",
+        "kind": "REFERENCES",
+        "to": "schema:FeaturePosition"
+      },
+      {
+        "from": "schema:CrossbarProteinVariation",
+        "kind": "REFERENCES",
+        "to": "schema:VariationAssociation"
+      },
+      {
+        "from": "schema:CrossbarProteinVariation",
+        "kind": "REFERENCES",
+        "to": "schema:VariationEvidence"
+      },
+      {
+        "from": "schema:CrossbarProteinVariation",
+        "kind": "REFERENCES",
+        "to": "schema:VariationXref"
+      },
+      {
+        "from": "schema:Drugs",
+        "kind": "REFERENCES",
+        "to": "schema:CrossbarDrug"
+      },
+      {
+        "from": "schema:Drugs",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:EFOEntities",
+        "kind": "REFERENCES",
+        "to": "schema:EFO"
+      },
+      {
+        "from": "schema:EFOEntities",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:Features",
+        "kind": "REFERENCES",
+        "to": "schema:CrossbarFeature"
+      },
+      {
+        "from": "schema:Go",
+        "kind": "REFERENCES",
+        "to": "schema:GoEvidence"
+      },
+      {
+        "from": "schema:HPOEntity",
+        "kind": "REFERENCES",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "schema:HpoEntities",
+        "kind": "REFERENCES",
+        "to": "schema:HPOEntity"
+      },
+      {
+        "from": "schema:HpoEntities",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:Intact",
+        "kind": "REFERENCES",
+        "to": "schema:Interactor"
+      },
+      {
+        "from": "schema:IntactInteractions",
+        "kind": "REFERENCES",
+        "to": "schema:Intact"
+      },
+      {
+        "from": "schema:IntactInteractions",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:Interpro",
+        "kind": "REFERENCES",
+        "to": "schema:Fragment"
+      },
+      {
+        "from": "schema:Interpro",
+        "kind": "REFERENCES",
+        "to": "schema:HitPosition"
+      },
+      {
+        "from": "schema:Molecules",
+        "kind": "REFERENCES",
+        "to": "schema:CrossbarMolecule"
+      },
+      {
+        "from": "schema:Molecules",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:Protein",
+        "kind": "REFERENCES",
+        "to": "schema:CrossReferences"
+      },
+      {
+        "from": "schema:Protein",
+        "kind": "REFERENCES",
+        "to": "schema:CrossbarProteinVariation"
+      },
+      {
+        "from": "schema:Protein",
+        "kind": "REFERENCES",
+        "to": "schema:Features"
+      },
+      {
+        "from": "schema:Protein",
+        "kind": "REFERENCES",
+        "to": "schema:ProteinInteraction"
+      },
+      {
+        "from": "schema:Proteins",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:Proteins",
+        "kind": "REFERENCES",
+        "to": "schema:Protein"
+      },
+      {
+        "from": "schema:PubchemCompounds",
+        "kind": "REFERENCES",
+        "to": "schema:CrossbarPCCompound"
+      },
+      {
+        "from": "schema:PubchemCompounds",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:PubchemSubstances",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:PubchemSubstances",
+        "kind": "REFERENCES",
+        "to": "schema:Substance"
+      },
+      {
+        "from": "schema:SidRelatedData",
+        "kind": "REFERENCES",
+        "to": "schema:AssayData"
+      },
+      {
+        "from": "schema:Targets",
+        "kind": "REFERENCES",
+        "to": "schema:CrossbarTarget"
+      },
+      {
+        "from": "schema:Targets",
+        "kind": "REFERENCES",
+        "to": "schema:PageMeta"
+      },
+      {
+        "from": "schema:VariationAssociation",
+        "kind": "REFERENCES",
+        "to": "schema:VariationEvidence"
+      },
+      {
+        "from": "schema:VariationAssociation",
+        "kind": "REFERENCES",
+        "to": "schema:VariationXref"
+      },
+      {
+        "from": "schema:VariationEvidence",
+        "kind": "REFERENCES",
+        "to": "schema:VariationEvidenceSource"
       }
     ],
     "nodes": [
@@ -81,10 +451,75 @@
         "kind": "operation",
         "method": "get",
         "name": "getActivitiesUsingGET",
+        "parameters": [
+          {
+            "description": "assayChemblId",
+            "in": "query",
+            "name": "assayChemblId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "moleculeChemblId",
+            "in": "query",
+            "name": "moleculeChemblId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "pchemblValue",
+            "in": "query",
+            "name": "pchemblValue",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "targetChemblId",
+            "in": "query",
+            "name": "targetChemblId",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/activities",
         "pointer": "#/paths/~1activities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Activities"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get ChEMBL activities"
+        "summary": "Get ChEMBL activities",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -92,10 +527,75 @@
         "kind": "operation",
         "method": "get",
         "name": "getAssaysUsingGET",
+        "parameters": [
+          {
+            "description": "assayChemblId",
+            "in": "query",
+            "name": "assayChemblId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "assayOrg",
+            "in": "query",
+            "name": "assayOrg",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "assayType",
+            "in": "query",
+            "name": "assayType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "targetChemblId",
+            "in": "query",
+            "name": "targetChemblId",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/assays",
         "pointer": "#/paths/~1assays/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assays"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get ChEMBL assays"
+        "summary": "Get ChEMBL assays",
+        "tags": [
+          "Assays"
+        ]
       },
       {
         "deprecated": false,
@@ -103,10 +603,82 @@
         "kind": "operation",
         "method": "get",
         "name": "getDrugsUsingGET",
+        "parameters": [
+          {
+            "description": "accession",
+            "in": "query",
+            "name": "accession",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "chemblId",
+            "in": "query",
+            "name": "chemblId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "identifier",
+            "in": "query",
+            "name": "identifier",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "pubchemCid",
+            "in": "query",
+            "name": "pubchemCid",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/drugs",
         "pointer": "#/paths/~1drugs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Drugs"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "drugs collected from Drugbank"
+        "summary": "drugs collected from Drugbank",
+        "tags": [
+          "Drugs"
+        ]
       },
       {
         "deprecated": false,
@@ -114,10 +686,89 @@
         "kind": "operation",
         "method": "get",
         "name": "getEFOUsingGET",
+        "parameters": [
+          {
+            "description": "doid",
+            "in": "query",
+            "name": "doid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "label",
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "mesh",
+            "in": "query",
+            "name": "mesh",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "oboId",
+            "in": "query",
+            "name": "oboId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "omimId",
+            "in": "query",
+            "name": "omimId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "synonym",
+            "in": "query",
+            "name": "synonym",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/efo",
         "pointer": "#/paths/~1efo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EFOEntities"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get EFO diseases data"
+        "summary": "Get EFO diseases data",
+        "tags": [
+          "EFO disease terms"
+        ]
       },
       {
         "deprecated": false,
@@ -125,10 +776,68 @@
         "kind": "operation",
         "method": "get",
         "name": "getHpoUsingGET",
+        "parameters": [
+          {
+            "description": "genesymbol",
+            "in": "query",
+            "name": "genesymbol",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "hpotermname",
+            "in": "query",
+            "name": "hpotermname",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "synonym",
+            "in": "query",
+            "name": "synonym",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/hpo",
         "pointer": "#/paths/~1hpo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HpoEntities"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get HPO phenotypes data"
+        "summary": "Get HPO phenotypes data",
+        "tags": [
+          "HPO"
+        ]
       },
       {
         "deprecated": false,
@@ -136,10 +845,68 @@
         "kind": "operation",
         "method": "get",
         "name": "getIntactUsingGET",
+        "parameters": [
+          {
+            "description": "accession",
+            "in": "query",
+            "name": "accession",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "confidence",
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "gene",
+            "in": "query",
+            "name": "gene",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/intact",
         "pointer": "#/paths/~1intact/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntactInteractions"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Molecular Interactions collected from IntAct"
+        "summary": "Molecular Interactions collected from IntAct",
+        "tags": [
+          "Intact"
+        ]
       },
       {
         "deprecated": false,
@@ -147,10 +914,68 @@
         "kind": "operation",
         "method": "get",
         "name": "getMoleculesUsingGET",
+        "parameters": [
+          {
+            "description": "canonicalSmiles",
+            "in": "query",
+            "name": "canonicalSmiles",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "inchiKey",
+            "in": "query",
+            "name": "inchiKey",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "moleculeChemblId",
+            "in": "query",
+            "name": "moleculeChemblId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/molecules",
         "pointer": "#/paths/~1molecules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Molecules"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get ChEMBL molecules"
+        "summary": "Get ChEMBL molecules",
+        "tags": [
+          "Molecules"
+        ]
       },
       {
         "deprecated": false,
@@ -158,10 +983,124 @@
         "kind": "operation",
         "method": "get",
         "name": "getProteinsUsingGET",
+        "parameters": [
+          {
+            "description": "accession",
+            "in": "query",
+            "name": "accession",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "ec",
+            "in": "query",
+            "name": "ec",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "fullName",
+            "in": "query",
+            "name": "fullName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "gene",
+            "in": "query",
+            "name": "gene",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "go",
+            "in": "query",
+            "name": "go",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "interpro",
+            "in": "query",
+            "name": "interpro",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "omim",
+            "in": "query",
+            "name": "omim",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "orphanet",
+            "in": "query",
+            "name": "orphanet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "pfam",
+            "in": "query",
+            "name": "pfam",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "reactome",
+            "in": "query",
+            "name": "reactome",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "taxId",
+            "in": "query",
+            "name": "taxId",
+            "required": false,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/proteins",
         "pointer": "#/paths/~1proteins/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Proteins"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Proteins collected from Uniprot for selective tax ids  HUMAN(9606), MOUSE(10090), RAT(10116), BOVINE(9913), ESCHERICHIA_COLI(83333), SUS_SCROFA(9823), MYCOBACTERIUM_TUBERCULOSIS(83332), ORYCTOLAGUS_CUNICULUS(9986), SACCHAROMYCES_CEREVISIAE(559292), CVHSA(694009) & SARS2(2697049)"
+        "summary": "Proteins collected from Uniprot for selective tax ids  HUMAN(9606), MOUSE(10090), RAT(10116), BOVINE(9913), ESCHERICHIA_COLI(83333), SUS_SCROFA(9823), MYCOBACTERIUM_TUBERCULOSIS(83332), ORYCTOLAGUS_CUNICULUS(9986), SACCHAROMYCES_CEREVISIAE(559292), CVHSA(694009) & SARS2(2697049)",
+        "tags": [
+          "Proteins"
+        ]
       },
       {
         "deprecated": false,
@@ -169,10 +1108,68 @@
         "kind": "operation",
         "method": "get",
         "name": "getBioassaysUsingGET",
+        "parameters": [
+          {
+            "description": "accession",
+            "in": "query",
+            "name": "accession",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "assayPubchemId",
+            "in": "query",
+            "name": "assayPubchemId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "ncbiProteinId",
+            "in": "query",
+            "name": "ncbiProteinId",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/pubchem/bioassays",
         "pointer": "#/paths/~1pubchem~1bioassays/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bioassays"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get pubchem bioassays"
+        "summary": "Get pubchem bioassays",
+        "tags": [
+          "PubChem Biossays"
+        ]
       },
       {
         "deprecated": false,
@@ -180,10 +1177,61 @@
         "kind": "operation",
         "method": "get",
         "name": "getBioassaysUsingGET_1",
+        "parameters": [
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "outcome",
+            "in": "query",
+            "name": "outcome",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "sids",
+            "in": "query",
+            "name": "sids",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/pubchem/bioassays/sids",
         "pointer": "#/paths/~1pubchem~1bioassays~1sids/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bioassays"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get pubchem bioassays associated to particular substance ids (sid) & outcome"
+        "summary": "Get pubchem bioassays associated to particular substance ids (sid) & outcome",
+        "tags": [
+          "PubChem Bioassay Sids"
+        ]
       },
       {
         "deprecated": false,
@@ -191,10 +1239,68 @@
         "kind": "operation",
         "method": "get",
         "name": "getCompoundsUsingGET",
+        "parameters": [
+          {
+            "description": "canonicalSmiles",
+            "in": "query",
+            "name": "canonicalSmiles",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "cid",
+            "in": "query",
+            "name": "cid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "inchiKey",
+            "in": "query",
+            "name": "inchiKey",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/pubchem/compounds",
         "pointer": "#/paths/~1pubchem~1compounds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PubchemCompounds"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get pubchem compounds"
+        "summary": "Get pubchem compounds",
+        "tags": [
+          "PubChem Compounds"
+        ]
       },
       {
         "deprecated": false,
@@ -202,10 +1308,61 @@
         "kind": "operation",
         "method": "get",
         "name": "getSubstancesUsingGET",
+        "parameters": [
+          {
+            "description": "cid",
+            "in": "query",
+            "name": "cid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "sid",
+            "in": "query",
+            "name": "sid",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/pubchem/substances",
         "pointer": "#/paths/~1pubchem~1substances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PubchemSubstances"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get pubchem substances"
+        "summary": "Get pubchem substances",
+        "tags": [
+          "PubChem Substances"
+        ]
       },
       {
         "deprecated": false,
@@ -213,305 +1370,415 @@
         "kind": "operation",
         "method": "get",
         "name": "getTargetsUsingGET",
+        "parameters": [
+          {
+            "description": "accession",
+            "in": "query",
+            "name": "accession",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "targetIds",
+            "in": "query",
+            "name": "targetIds",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/targets",
         "pointer": "#/paths/~1targets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Targets"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get ChEMBL targets"
+        "summary": "Get ChEMBL targets",
+        "tags": [
+          "Targets"
+        ]
       },
       {
         "id": "schema:Activities",
         "kind": "schema",
-        "name": "Activities"
+        "name": "Activities",
+        "type": "object"
       },
       {
         "id": "schema:Activity",
         "kind": "schema",
-        "name": "Activity"
+        "name": "Activity",
+        "type": "object"
       },
       {
         "id": "schema:Assay",
         "kind": "schema",
-        "name": "Assay"
+        "name": "Assay",
+        "type": "object"
       },
       {
         "id": "schema:AssayData",
         "kind": "schema",
-        "name": "AssayData"
+        "name": "AssayData",
+        "type": "object"
       },
       {
         "id": "schema:AssayOrganism",
         "kind": "schema",
-        "name": "AssayOrganism"
+        "name": "AssayOrganism",
+        "type": "object"
       },
       {
         "id": "schema:Assays",
         "kind": "schema",
-        "name": "Assays"
+        "name": "Assays",
+        "type": "object"
       },
       {
         "id": "schema:BioAssay",
         "kind": "schema",
-        "name": "BioAssay"
+        "name": "BioAssay",
+        "type": "object"
       },
       {
         "id": "schema:BioAssayMetaData",
         "kind": "schema",
-        "name": "BioAssayMetaData"
+        "name": "BioAssayMetaData",
+        "type": "object"
       },
       {
         "id": "schema:Bioassays",
         "kind": "schema",
-        "name": "Bioassays"
+        "name": "Bioassays",
+        "type": "object"
       },
       {
         "id": "schema:CrossReferences",
         "kind": "schema",
-        "name": "CrossReferences"
+        "name": "CrossReferences",
+        "type": "object"
       },
       {
         "id": "schema:CrossbarDrug",
         "kind": "schema",
-        "name": "CrossbarDrug"
+        "name": "CrossbarDrug",
+        "type": "object"
       },
       {
         "id": "schema:CrossbarFeature",
         "kind": "schema",
-        "name": "CrossbarFeature"
+        "name": "CrossbarFeature",
+        "type": "object"
       },
       {
         "id": "schema:CrossbarMolecule",
         "kind": "schema",
-        "name": "CrossbarMolecule"
+        "name": "CrossbarMolecule",
+        "type": "object"
       },
       {
         "id": "schema:CrossbarPCCompound",
         "kind": "schema",
-        "name": "CrossbarPCCompound"
+        "name": "CrossbarPCCompound",
+        "type": "object"
       },
       {
         "id": "schema:CrossbarProteinVariation",
         "kind": "schema",
-        "name": "CrossbarProteinVariation"
+        "name": "CrossbarProteinVariation",
+        "type": "object"
       },
       {
         "id": "schema:CrossbarTarget",
         "kind": "schema",
-        "name": "CrossbarTarget"
+        "name": "CrossbarTarget",
+        "type": "object"
       },
       {
         "id": "schema:Drugs",
         "kind": "schema",
-        "name": "Drugs"
+        "name": "Drugs",
+        "type": "object"
       },
       {
         "id": "schema:EFO",
         "kind": "schema",
-        "name": "EFO"
+        "name": "EFO",
+        "type": "object"
       },
       {
         "id": "schema:EFOEntities",
         "kind": "schema",
-        "name": "EFOEntities"
+        "name": "EFOEntities",
+        "type": "object"
       },
       {
         "id": "schema:Ensembl",
         "kind": "schema",
-        "name": "Ensembl"
+        "name": "Ensembl",
+        "type": "object"
       },
       {
         "id": "schema:FeaturePosition",
         "kind": "schema",
-        "name": "FeaturePosition"
+        "name": "FeaturePosition",
+        "type": "object"
       },
       {
         "id": "schema:Features",
         "kind": "schema",
-        "name": "Features"
+        "name": "Features",
+        "type": "object"
       },
       {
         "id": "schema:Fragment",
         "kind": "schema",
-        "name": "Fragment"
+        "name": "Fragment",
+        "type": "object"
       },
       {
         "id": "schema:Gene",
         "kind": "schema",
-        "name": "Gene"
+        "name": "Gene",
+        "type": "object"
       },
       {
         "id": "schema:Go",
         "kind": "schema",
-        "name": "Go"
+        "name": "Go",
+        "type": "object"
       },
       {
         "id": "schema:GoEvidence",
         "kind": "schema",
-        "name": "GoEvidence"
+        "name": "GoEvidence",
+        "type": "object"
       },
       {
         "id": "schema:HPOEntity",
         "kind": "schema",
-        "name": "HPOEntity"
+        "name": "HPOEntity",
+        "type": "object"
       },
       {
         "id": "schema:HitPosition",
         "kind": "schema",
-        "name": "HitPosition"
+        "name": "HitPosition",
+        "type": "object"
       },
       {
         "id": "schema:HpoEntities",
         "kind": "schema",
-        "name": "HpoEntities"
+        "name": "HpoEntities",
+        "type": "object"
       },
       {
         "id": "schema:Intact",
         "kind": "schema",
-        "name": "Intact"
+        "name": "Intact",
+        "type": "object"
       },
       {
         "id": "schema:IntactInteractions",
         "kind": "schema",
-        "name": "IntactInteractions"
+        "name": "IntactInteractions",
+        "type": "object"
       },
       {
         "id": "schema:Interactor",
         "kind": "schema",
-        "name": "Interactor"
+        "name": "Interactor",
+        "type": "object"
       },
       {
         "id": "schema:Interpro",
         "kind": "schema",
-        "name": "Interpro"
+        "name": "Interpro",
+        "type": "object"
       },
       {
         "id": "schema:Kegg",
         "kind": "schema",
-        "name": "Kegg"
+        "name": "Kegg",
+        "type": "object"
       },
       {
         "id": "schema:Molecules",
         "kind": "schema",
-        "name": "Molecules"
+        "name": "Molecules",
+        "type": "object"
       },
       {
         "id": "schema:Omim",
         "kind": "schema",
-        "name": "Omim"
+        "name": "Omim",
+        "type": "object"
       },
       {
         "id": "schema:OpenTargets",
         "kind": "schema",
-        "name": "OpenTargets"
+        "name": "OpenTargets",
+        "type": "object"
       },
       {
         "id": "schema:Orphanet",
         "kind": "schema",
-        "name": "Orphanet"
+        "name": "Orphanet",
+        "type": "object"
       },
       {
         "id": "schema:PDBe",
         "kind": "schema",
-        "name": "PDBe"
+        "name": "PDBe",
+        "type": "object"
       },
       {
         "id": "schema:PageMeta",
         "kind": "schema",
-        "name": "PageMeta"
+        "name": "PageMeta",
+        "type": "object"
       },
       {
         "id": "schema:Pathway",
         "kind": "schema",
-        "name": "Pathway"
+        "name": "Pathway",
+        "type": "object"
       },
       {
         "id": "schema:Pfam",
         "kind": "schema",
-        "name": "Pfam"
+        "name": "Pfam",
+        "type": "object"
       },
       {
         "id": "schema:Protein",
         "kind": "schema",
-        "name": "Protein"
+        "name": "Protein",
+        "type": "object"
       },
       {
         "id": "schema:ProteinInteraction",
         "kind": "schema",
-        "name": "ProteinInteraction"
+        "name": "ProteinInteraction",
+        "type": "object"
       },
       {
         "id": "schema:Proteins",
         "kind": "schema",
-        "name": "Proteins"
+        "name": "Proteins",
+        "type": "object"
       },
       {
         "id": "schema:PubchemCompounds",
         "kind": "schema",
-        "name": "PubchemCompounds"
+        "name": "PubchemCompounds",
+        "type": "object"
       },
       {
         "id": "schema:PubchemSubstances",
         "kind": "schema",
-        "name": "PubchemSubstances"
+        "name": "PubchemSubstances",
+        "type": "object"
       },
       {
         "id": "schema:Reactome",
         "kind": "schema",
-        "name": "Reactome"
+        "name": "Reactome",
+        "type": "object"
       },
       {
         "id": "schema:SidRelatedData",
         "kind": "schema",
-        "name": "SidRelatedData"
+        "name": "SidRelatedData",
+        "type": "object"
       },
       {
         "id": "schema:Substance",
         "kind": "schema",
-        "name": "Substance"
+        "name": "Substance",
+        "type": "object"
       },
       {
         "id": "schema:Target",
         "kind": "schema",
-        "name": "Target"
+        "name": "Target",
+        "type": "object"
       },
       {
         "id": "schema:TargetInfo",
         "kind": "schema",
-        "name": "TargetInfo"
+        "name": "TargetInfo",
+        "type": "object"
       },
       {
         "id": "schema:TargetType",
         "kind": "schema",
-        "name": "TargetType"
+        "name": "TargetType",
+        "type": "object"
       },
       {
         "id": "schema:Targets",
         "kind": "schema",
-        "name": "Targets"
+        "name": "Targets",
+        "type": "object"
       },
       {
         "id": "schema:VariationAssociation",
         "kind": "schema",
-        "name": "VariationAssociation"
+        "name": "VariationAssociation",
+        "type": "object"
       },
       {
         "id": "schema:VariationEvidence",
         "kind": "schema",
-        "name": "VariationEvidence"
+        "name": "VariationEvidence",
+        "type": "object"
       },
       {
         "id": "schema:VariationEvidenceSource",
         "kind": "schema",
-        "name": "VariationEvidenceSource"
+        "name": "VariationEvidenceSource",
+        "type": "object"
       },
       {
         "id": "schema:VariationXref",
         "kind": "schema",
-        "name": "VariationXref"
+        "name": "VariationXref",
+        "type": "object"
       },
       {
         "id": "schema:Xref",
         "kind": "schema",
-        "name": "Xref"
+        "name": "Xref",
+        "type": "object"
       }
     ]
   },

@@ -52,12 +52,62 @@
       },
       {
         "deprecated": false,
+        "description": "Calculates the donation amount (to CarbonFund 501\\(c\\)3) needed to offset a physical shipment.",
         "id": "operation:get:/api/v1/donations/carbon_calculate",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/donations/carbon_calculate",
+        "parameters": [
+          {
+            "description": "The origin zip code (US only) of the shipment.",
+            "in": "query",
+            "name": "origin_address",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The destination zip code (US only) of the shipment.",
+            "in": "query",
+            "name": "destination_address",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The total distance (in miles) of the shipment.",
+            "in": "query",
+            "name": "distance_mi",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The total weight (in pounds) of the shipment.",
+            "in": "query",
+            "name": "weight_lb",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "The primary transportation method of the shipment.",
+            "enum": [
+              "air",
+              "truck",
+              "rail",
+              "sea"
+            ],
+            "in": "query",
+            "name": "transportation_method",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/donations/carbon_calculate",
         "pointer": "#/paths/~1api~1v1~1donations~1carbon_calculate/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []
@@ -67,12 +117,28 @@
       },
       {
         "deprecated": false,
+        "description": "Measures your carbon offset impact in relatable terms.",
         "id": "operation:get:/api/v1/donations/carbon_stats",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/donations/carbon_stats",
+        "parameters": [
+          {
+            "description": "The id of a donation to the CarbonFund nonprofit.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/api/v1/donations/carbon_stats",
         "pointer": "#/paths/~1api~1v1~1donations~1carbon_stats/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []
@@ -82,12 +148,56 @@
       },
       {
         "deprecated": false,
+        "description": "Creates a donation to any nonprofit.",
         "id": "operation:post:/api/v1/donations/create",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/donations/create",
+        "parameters": [
+          {
+            "description": "The amount of the donation in cents.",
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of a nonprofit from the CHANGE network.",
+            "in": "query",
+            "name": "nonprofit_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Source of the donation funds.",
+            "enum": [
+              "merchant",
+              "customer"
+            ],
+            "in": "query",
+            "name": "funding_source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The customer's zip code.",
+            "in": "query",
+            "name": "zip_code",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/donations/create",
         "pointer": "#/paths/~1api~1v1~1donations~1create/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_auth": []
@@ -97,12 +207,39 @@
       },
       {
         "deprecated": false,
+        "description": "Calculates the donation amount (to CarbonFund 501\\(c\\)3) needed to offset a cryptocurrency transaction.",
         "id": "operation:get:/api/v1/donations/crypto_calculate",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/donations/crypto_calculate",
+        "parameters": [
+          {
+            "description": "The number of transactions to offset.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The currency of the transaction.",
+            "enum": [
+              "eth",
+              "btc"
+            ],
+            "in": "query",
+            "name": "currency",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/donations/crypto_calculate",
         "pointer": "#/paths/~1api~1v1~1donations~1crypto_calculate/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []
@@ -112,12 +249,28 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list of donations you've previously made.",
         "id": "operation:get:/api/v1/donations/index",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/donations/index",
+        "parameters": [
+          {
+            "description": "Which page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/api/v1/donations/index",
         "pointer": "#/paths/~1api~1v1~1donations~1index/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []
@@ -127,12 +280,28 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a donation you've previously made.",
         "id": "operation:get:/api/v1/donations/show",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/donations/show",
+        "parameters": [
+          {
+            "description": "The id of a donation.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/donations/show",
         "pointer": "#/paths/~1api~1v1~1donations~1show/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []
@@ -142,12 +311,35 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list of nonprofits whose names match the provided name.",
         "id": "operation:get:/api/v1/nonprofits/list",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/nonprofits/list",
+        "parameters": [
+          {
+            "description": "A string to search.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/api/v1/nonprofits/list",
         "pointer": "#/paths/~1api~1v1~1nonprofits~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []
@@ -157,12 +349,28 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves information for a nonprofit.",
         "id": "operation:get:/api/v1/nonprofits/show",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/nonprofits/show",
+        "parameters": [
+          {
+            "description": "The id of a nonprofit from the CHANGE network.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/nonprofits/show",
         "pointer": "#/paths/~1api~1v1~1nonprofits~1show/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_auth": []

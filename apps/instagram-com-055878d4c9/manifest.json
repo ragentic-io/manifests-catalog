@@ -62,17 +62,17 @@
       {
         "from": "instagram-com-055878d4c9",
         "kind": "EXPOSES",
-        "to": "operation:delete:/media/{media-id}/likes"
-      },
-      {
-        "from": "instagram-com-055878d4c9",
-        "kind": "EXPOSES",
         "to": "operation:get:/media/{media-id}/likes"
       },
       {
         "from": "instagram-com-055878d4c9",
         "kind": "EXPOSES",
         "to": "operation:post:/media/{media-id}/likes"
+      },
+      {
+        "from": "instagram-com-055878d4c9",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/media/{media-id}/likes"
       },
       {
         "from": "instagram-com-055878d4c9",
@@ -138,6 +138,386 @@
         "from": "instagram-com-055878d4c9",
         "kind": "EXPOSES",
         "to": "operation:post:/users/{user-id}/relationship"
+      },
+      {
+        "from": "operation:get:/geographies/{geo-id}/media/recent",
+        "kind": "RETURNS",
+        "to": "schema:MediaListResponse"
+      },
+      {
+        "from": "operation:get:/locations/search",
+        "kind": "RETURNS",
+        "to": "schema:LocationSearchResponse"
+      },
+      {
+        "from": "operation:get:/locations/{location-id}",
+        "kind": "RETURNS",
+        "to": "schema:LocationInfoResponse"
+      },
+      {
+        "from": "operation:get:/locations/{location-id}/media/recent",
+        "kind": "RETURNS",
+        "to": "schema:MediaListResponse"
+      },
+      {
+        "from": "operation:get:/media/popular",
+        "kind": "RETURNS",
+        "to": "schema:MediaSearchResponse"
+      },
+      {
+        "from": "operation:get:/media/search",
+        "kind": "RETURNS",
+        "to": "schema:MediaSearchResponse"
+      },
+      {
+        "from": "operation:get:/media/shortcode/{shortcode}",
+        "kind": "RETURNS",
+        "to": "schema:MediaEntryResponse"
+      },
+      {
+        "from": "operation:get:/media/{media-id}",
+        "kind": "RETURNS",
+        "to": "schema:MediaEntryResponse"
+      },
+      {
+        "from": "operation:get:/media/{media-id}/comments",
+        "kind": "RETURNS",
+        "to": "schema:CommentsResponse"
+      },
+      {
+        "from": "operation:post:/media/{media-id}/comments",
+        "kind": "RETURNS",
+        "to": "schema:StatusResponse"
+      },
+      {
+        "from": "operation:delete:/media/{media-id}/comments/{comment-id}",
+        "kind": "RETURNS",
+        "to": "schema:StatusResponse"
+      },
+      {
+        "from": "operation:get:/media/{media-id}/likes",
+        "kind": "RETURNS",
+        "to": "schema:UsersInfoResponse"
+      },
+      {
+        "from": "operation:post:/media/{media-id}/likes",
+        "kind": "RETURNS",
+        "to": "schema:StatusResponse"
+      },
+      {
+        "from": "operation:delete:/media/{media-id}/likes",
+        "kind": "RETURNS",
+        "to": "schema:StatusResponse"
+      },
+      {
+        "from": "operation:get:/tags/search",
+        "kind": "RETURNS",
+        "to": "schema:TagSearchResponse"
+      },
+      {
+        "from": "operation:get:/tags/{tag-name}",
+        "kind": "RETURNS",
+        "to": "schema:TagInfoResponse"
+      },
+      {
+        "from": "operation:get:/tags/{tag-name}/media/recent",
+        "kind": "RETURNS",
+        "to": "schema:TagMediaListResponse"
+      },
+      {
+        "from": "operation:get:/users/search",
+        "kind": "RETURNS",
+        "to": "schema:UsersInfoResponse"
+      },
+      {
+        "from": "operation:get:/users/self/feed",
+        "kind": "RETURNS",
+        "to": "schema:MediaListResponse"
+      },
+      {
+        "from": "operation:get:/users/self/media/liked",
+        "kind": "RETURNS",
+        "to": "schema:MediaListResponse"
+      },
+      {
+        "from": "operation:get:/users/self/requested-by",
+        "kind": "RETURNS",
+        "to": "schema:UsersInfoResponse"
+      },
+      {
+        "from": "operation:get:/users/{user-id}",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/users/{user-id}/followed-by",
+        "kind": "RETURNS",
+        "to": "schema:UsersPagingResponse"
+      },
+      {
+        "from": "operation:get:/users/{user-id}/follows",
+        "kind": "RETURNS",
+        "to": "schema:UsersPagingResponse"
+      },
+      {
+        "from": "operation:get:/users/{user-id}/media/recent",
+        "kind": "RETURNS",
+        "to": "schema:MediaListResponse"
+      },
+      {
+        "from": "operation:get:/users/{user-id}/relationship",
+        "kind": "RETURNS",
+        "to": "schema:RelationshipResponse"
+      },
+      {
+        "from": "operation:post:/users/{user-id}/relationship",
+        "kind": "RETURNS",
+        "to": "schema:RelationshipPostResponse"
+      },
+      {
+        "from": "schema:CaptionData",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:CommentEntry",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:CommentsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CommentEntry"
+      },
+      {
+        "from": "schema:CommentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CommentEntry"
+      },
+      {
+        "from": "schema:CommentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:ImagesData",
+        "kind": "REFERENCES",
+        "to": "schema:ImageInfo"
+      },
+      {
+        "from": "schema:LikesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:LocationInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LocationInfo"
+      },
+      {
+        "from": "schema:LocationInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:LocationSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LocationInfo"
+      },
+      {
+        "from": "schema:LocationSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:CaptionData"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:CommentsCollection"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:ImagesData"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:LikesCollection"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:LocationInfo"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:UserInPhoto"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:MediaEntry",
+        "kind": "REFERENCES",
+        "to": "schema:VideosData"
+      },
+      {
+        "from": "schema:MediaEntryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MediaEntry"
+      },
+      {
+        "from": "schema:MediaEntryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:MediaListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:IdPaginationInfo"
+      },
+      {
+        "from": "schema:MediaListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MediaEntry"
+      },
+      {
+        "from": "schema:MediaListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:MediaSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MediaEntry"
+      },
+      {
+        "from": "schema:MediaSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:RelationshipPostResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:RelationshipPostResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RelationshipStatus"
+      },
+      {
+        "from": "schema:RelationshipResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:RelationshipResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RelationshipInfo"
+      },
+      {
+        "from": "schema:StatusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:TagInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:TagInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TagInfo"
+      },
+      {
+        "from": "schema:TagMediaListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MediaEntry"
+      },
+      {
+        "from": "schema:TagMediaListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:TagMediaListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TagPaginationInfo"
+      },
+      {
+        "from": "schema:TagSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:TagSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TagInfo"
+      },
+      {
+        "from": "schema:UserInPhoto",
+        "kind": "REFERENCES",
+        "to": "schema:Position"
+      },
+      {
+        "from": "schema:UserInPhoto",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:UserInfo",
+        "kind": "REFERENCES",
+        "to": "schema:UserCounts"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserInfo"
+      },
+      {
+        "from": "schema:UsersInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:UsersInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:UsersPagingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CursorPaginationInfo"
+      },
+      {
+        "from": "schema:UsersPagingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:UsersPagingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserShortInfo"
+      },
+      {
+        "from": "schema:VideosData",
+        "kind": "REFERENCES",
+        "to": "schema:ImageInfo"
       }
     ],
     "nodes": [
@@ -147,12 +527,43 @@
       },
       {
         "deprecated": true,
+        "description": "Get recent media from a geography subscription that you created.",
         "id": "operation:get:/geographies/{geo-id}/media/recent",
         "kind": "operation",
         "method": "get",
         "name": "get /geographies/{geo-id}/media/recent",
+        "parameters": [
+          {
+            "description": "The geography ID.",
+            "in": "path",
+            "name": "geo-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Max number of media to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return media before this `min_id`.",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geographies/{geo-id}/media/recent",
         "pointer": "#/paths/~1geographies~1{geo-id}~1media~1recent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -163,7 +574,10 @@
             ]
           }
         ],
-        "summary": "Get recent media from a custom geo-id."
+        "summary": "Get recent media from a custom geo-id.",
+        "tags": [
+          "geographies"
+        ]
       },
       {
         "deprecated": false,
@@ -171,8 +585,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get /locations/search",
+        "parameters": [
+          {
+            "description": "Default is 1000m (distance=1000), max distance is 5000.",
+            "in": "query",
+            "name": "distance",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Returns a location mapped off of a Facebook places id.",
+            "in": "query",
+            "name": "facebook_places_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns a location mapped off of a foursquare v1 api location id.",
+            "in": "query",
+            "name": "foursquare_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude of the center search coordinate.",
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude of the center search coordinate.",
+            "in": "query",
+            "name": "lng",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Returns a location mapped off of a foursquare v2 api location id.",
+            "in": "query",
+            "name": "foursquare_v2_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/locations/search",
         "pointer": "#/paths/~1locations~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LocationSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -183,7 +648,10 @@
             ]
           }
         ],
-        "summary": "Search for a location by geographic coordinate."
+        "summary": "Search for a location by geographic coordinate.",
+        "tags": [
+          "locations"
+        ]
       },
       {
         "deprecated": false,
@@ -191,8 +659,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /locations/{location-id}",
+        "parameters": [
+          {
+            "description": "The location ID.",
+            "in": "path",
+            "name": "location-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/locations/{location-id}",
         "pointer": "#/paths/~1locations~1{location-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LocationInfoResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -203,7 +687,10 @@
             ]
           }
         ],
-        "summary": "Get information about a location."
+        "summary": "Get information about a location.",
+        "tags": [
+          "locations"
+        ]
       },
       {
         "deprecated": false,
@@ -211,8 +698,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get /locations/{location-id}/media/recent",
+        "parameters": [
+          {
+            "description": "The location ID.",
+            "in": "path",
+            "name": "location-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Return media after this UNIX timestamp.",
+            "in": "query",
+            "name": "min_timestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Return media before this UNIX timestamp.",
+            "in": "query",
+            "name": "max_timestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Return media before this `min_id`.",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return media after this `max_id`.",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/locations/{location-id}/media/recent",
         "pointer": "#/paths/~1locations~1{location-id}~1media~1recent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -223,16 +754,27 @@
             ]
           }
         ],
-        "summary": "Get a list of recent media objects from a given location."
+        "summary": "Get a list of recent media objects from a given location.",
+        "tags": [
+          "locations"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Get a list of what media is most popular at the moment.",
         "id": "operation:get:/media/popular",
         "kind": "operation",
         "method": "get",
         "name": "get /media/popular",
         "path": "/media/popular",
         "pointer": "#/paths/~1media~1popular/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -243,7 +785,10 @@
             ]
           }
         ],
-        "summary": "Get a list of currently popular media."
+        "summary": "Get a list of currently popular media.",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
@@ -251,8 +796,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get /media/search",
+        "parameters": [
+          {
+            "description": "Latitude of the center search coordinate.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude of the center search coordinate.",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "A unix timestamp.",
+            "in": "query",
+            "name": "min_timestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A unix timestamp.",
+            "in": "query",
+            "name": "max_timestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Default is 1km (distance=1000), max distance is 5km.",
+            "in": "query",
+            "name": "distance",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/media/search",
         "pointer": "#/paths/~1media~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -263,16 +852,36 @@
             ]
           }
         ],
-        "summary": "Search for media in a given area."
+        "summary": "Search for media in a given area.",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the same response as `GET /media/{media-id}`.",
         "id": "operation:get:/media/shortcode/{shortcode}",
         "kind": "operation",
         "method": "get",
         "name": "get /media/shortcode/{shortcode}",
+        "parameters": [
+          {
+            "description": "The short code of the media resource.",
+            "in": "path",
+            "name": "shortcode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/shortcode/{shortcode}",
         "pointer": "#/paths/~1media~1shortcode~1{shortcode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaEntryResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -284,7 +893,10 @@
             ]
           }
         ],
-        "summary": "Get information about a media object."
+        "summary": "Get information about a media object.",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
@@ -292,8 +904,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /media/{media-id}",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/{media-id}",
         "pointer": "#/paths/~1media~1{media-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaEntryResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -305,7 +933,10 @@
             ]
           }
         ],
-        "summary": "Get information about a media object."
+        "summary": "Get information about a media object.",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
@@ -313,8 +944,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /media/{media-id}/comments",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/{media-id}/comments",
         "pointer": "#/paths/~1media~1{media-id}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CommentsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -326,16 +973,43 @@
             ]
           }
         ],
-        "summary": "Get a list of recent comments on a media object."
+        "summary": "Get a list of recent comments on a media object.",
+        "tags": [
+          "comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a comment on a media object with the following rules: * The total length of the comment cannot exceed 300 characters.",
         "id": "operation:post:/media/{media-id}/comments",
         "kind": "operation",
         "method": "post",
         "name": "post /media/{media-id}/comments",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Text to post as a comment on the media object as specified in `media-id`.",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/{media-id}/comments",
         "pointer": "#/paths/~1media~1{media-id}~1comments/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatusResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -346,16 +1020,43 @@
             ]
           }
         ],
-        "summary": "Create a comment on a media object."
+        "summary": "Create a comment on a media object.",
+        "tags": [
+          "comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a comment either on the authenticated user's media object or authored by the authenticated user.",
         "id": "operation:delete:/media/{media-id}/comments/{comment-id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /media/{media-id}/comments/{comment-id}",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the comment entry.",
+            "in": "path",
+            "name": "comment-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/{media-id}/comments/{comment-id}",
         "pointer": "#/paths/~1media~1{media-id}~1comments~1{comment-id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatusResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -366,27 +1067,10 @@
             ]
           }
         ],
-        "summary": "Remove a comment."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/media/{media-id}/likes",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /media/{media-id}/likes",
-        "path": "/media/{media-id}/likes",
-        "pointer": "#/paths/~1media~1{media-id}~1likes/delete",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "instagram_auth": [
-              "likes"
-            ]
-          }
-        ],
-        "summary": "Remove a like on this media by the current user."
+        "summary": "Remove a comment.",
+        "tags": [
+          "comments"
+        ]
       },
       {
         "deprecated": false,
@@ -394,8 +1078,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /media/{media-id}/likes",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/{media-id}/likes",
         "pointer": "#/paths/~1media~1{media-id}~1likes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UsersInfoResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -407,16 +1107,36 @@
             ]
           }
         ],
-        "summary": "Get a list of users who have liked this media."
+        "summary": "Get a list of users who have liked this media.",
+        "tags": [
+          "likes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set a like on this media by the currently authenticated user.",
         "id": "operation:post:/media/{media-id}/likes",
         "kind": "operation",
         "method": "post",
         "name": "post /media/{media-id}/likes",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/media/{media-id}/likes",
         "pointer": "#/paths/~1media~1{media-id}~1likes/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatusResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -427,7 +1147,50 @@
             ]
           }
         ],
-        "summary": "Set a like on this media by the current user."
+        "summary": "Set a like on this media by the current user.",
+        "tags": [
+          "likes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Remove a like on this media by the currently authenticated user.",
+        "id": "operation:delete:/media/{media-id}/likes",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /media/{media-id}/likes",
+        "parameters": [
+          {
+            "description": "The ID of the media resource.",
+            "in": "path",
+            "name": "media-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/media/{media-id}/likes",
+        "pointer": "#/paths/~1media~1{media-id}~1likes/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatusResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "instagram_auth": [
+              "likes"
+            ]
+          }
+        ],
+        "summary": "Remove a like on this media by the current user.",
+        "tags": [
+          "likes"
+        ]
       },
       {
         "deprecated": false,
@@ -435,8 +1198,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /tags/search",
+        "parameters": [
+          {
+            "description": "A valid tag name without a leading \\#.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tags/search",
         "pointer": "#/paths/~1tags~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -447,7 +1226,10 @@
             ]
           }
         ],
-        "summary": "Search for tags by name."
+        "summary": "Search for tags by name.",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
@@ -455,8 +1237,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /tags/{tag-name}",
+        "parameters": [
+          {
+            "description": "The tag name.",
+            "in": "path",
+            "name": "tag-name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tags/{tag-name}",
         "pointer": "#/paths/~1tags~1{tag-name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagInfoResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -467,7 +1265,10 @@
             ]
           }
         ],
-        "summary": "Get information about a tag object."
+        "summary": "Get information about a tag object.",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
@@ -475,8 +1276,45 @@
         "kind": "operation",
         "method": "get",
         "name": "get /tags/{tag-name}/media/recent",
+        "parameters": [
+          {
+            "description": "The tag name.",
+            "in": "path",
+            "name": "tag-name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Count of tagged media to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return media before this `min_tag_id`.",
+            "in": "query",
+            "name": "min_tag_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return media after this `max_tag_id`.",
+            "in": "query",
+            "name": "max_tag_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tags/{tag-name}/media/recent",
         "pointer": "#/paths/~1tags~1{tag-name}~1media~1recent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagMediaListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -487,7 +1325,10 @@
             ]
           }
         ],
-        "summary": "Get a list of recently tagged media."
+        "summary": "Get a list of recently tagged media.",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
@@ -495,8 +1336,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/search",
+        "parameters": [
+          {
+            "description": "A query string.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of users to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/search",
         "pointer": "#/paths/~1users~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UsersInfoResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -507,7 +1371,10 @@
             ]
           }
         ],
-        "summary": "Search for a user by name."
+        "summary": "Search for a user by name.",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": true,
@@ -515,8 +1382,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/self/feed",
+        "parameters": [
+          {
+            "description": "Count of media to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return media later than this `min_id`.",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return media earlier than this `max_id`.",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/self/feed",
         "pointer": "#/paths/~1users~1self~1feed/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -527,7 +1424,10 @@
             ]
           }
         ],
-        "summary": "See the authenticated user's feed."
+        "summary": "See the authenticated user's feed.",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -535,8 +1435,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/self/media/liked",
+        "parameters": [
+          {
+            "description": "Count of media to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return media liked before this id.",
+            "in": "query",
+            "name": "max_like_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/self/media/liked",
         "pointer": "#/paths/~1users~1self~1media~1liked/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -547,7 +1470,10 @@
             ]
           }
         ],
-        "summary": "See the list of media liked by the authenticated user."
+        "summary": "See the list of media liked by the authenticated user.",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -557,6 +1483,13 @@
         "name": "get /users/self/requested-by",
         "path": "/users/self/requested-by",
         "pointer": "#/paths/~1users~1self~1requested-by/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UsersInfoResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -567,7 +1500,10 @@
             ]
           }
         ],
-        "summary": "List the users who have requested this user's permission to follow."
+        "summary": "List the users who have requested this user's permission to follow.",
+        "tags": [
+          "relationships"
+        ]
       },
       {
         "deprecated": false,
@@ -575,8 +1511,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{user-id}",
+        "parameters": [
+          {
+            "description": "The ID of a user to get information about, or **self** to retrieve information about authenticated user.",
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user-id}",
         "pointer": "#/paths/~1users~1{user-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -588,7 +1543,10 @@
             ]
           }
         ],
-        "summary": "Get basic information about a user."
+        "summary": "Get basic information about a user.",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -596,8 +1554,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{user-id}/followed-by",
+        "parameters": [
+          {
+            "description": "The ID of a user, or **self** to retrieve information about authenticated user.",
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user-id}/followed-by",
         "pointer": "#/paths/~1users~1{user-id}~1followed-by/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UsersPagingResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -608,7 +1582,10 @@
             ]
           }
         ],
-        "summary": "Get the list of users this user is followed by."
+        "summary": "Get the list of users this user is followed by.",
+        "tags": [
+          "relationships"
+        ]
       },
       {
         "deprecated": false,
@@ -616,8 +1593,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{user-id}/follows",
+        "parameters": [
+          {
+            "description": "The ID of a user, or **self** to retrieve information about authenticated user.",
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user-id}/follows",
         "pointer": "#/paths/~1users~1{user-id}~1follows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UsersPagingResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -628,7 +1621,10 @@
             ]
           }
         ],
-        "summary": "Get the list of users this user follows."
+        "summary": "Get the list of users this user follows.",
+        "tags": [
+          "relationships"
+        ]
       },
       {
         "deprecated": false,
@@ -636,8 +1632,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{user-id}/media/recent",
+        "parameters": [
+          {
+            "description": "The ID of a user to get recent media of, or **self** to retrieve media of authenticated user.",
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Count of media to return.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return media before this UNIX timestamp.",
+            "in": "query",
+            "name": "max_timestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Return media after this UNIX timestamp.",
+            "in": "query",
+            "name": "min_timestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Return media later than this `min_id`.",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return media earlier than this `max_id`.",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user-id}/media/recent",
         "pointer": "#/paths/~1users~1{user-id}~1media~1recent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MediaListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -649,7 +1696,10 @@
             ]
           }
         ],
-        "summary": "Get the most recent media published by a user."
+        "summary": "Get the most recent media published by a user.",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -657,8 +1707,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{user-id}/relationship",
+        "parameters": [
+          {
+            "description": "The ID of a user to get information about.",
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user-id}/relationship",
         "pointer": "#/paths/~1users~1{user-id}~1relationship/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RelationshipResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -669,7 +1735,10 @@
             ]
           }
         ],
-        "summary": "Get information about a relationship to another user."
+        "summary": "Get information about a relationship to another user.",
+        "tags": [
+          "relationships"
+        ]
       },
       {
         "deprecated": false,
@@ -677,8 +1746,39 @@
         "kind": "operation",
         "method": "post",
         "name": "post /users/{user-id}/relationship",
+        "parameters": [
+          {
+            "description": "The ID of the target user.",
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of action to apply for relationship with the user.",
+            "enum": [
+              "follow",
+              "unfollow",
+              "block",
+              "unblock",
+              "approve",
+              "ignore"
+            ],
+            "in": "query",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user-id}/relationship",
         "pointer": "#/paths/~1users~1{user-id}~1relationship/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RelationshipPostResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -689,187 +1789,226 @@
             ]
           }
         ],
-        "summary": "Modify the relationship between the current user and the target user."
+        "summary": "Modify the relationship between the current user and the target user.",
+        "tags": [
+          "relationships"
+        ]
       },
       {
         "id": "schema:CaptionData",
         "kind": "schema",
-        "name": "CaptionData"
+        "name": "CaptionData",
+        "type": "object"
       },
       {
         "id": "schema:CommentEntry",
         "kind": "schema",
-        "name": "CommentEntry"
+        "name": "CommentEntry",
+        "type": "object"
       },
       {
         "id": "schema:CommentsCollection",
         "kind": "schema",
-        "name": "CommentsCollection"
+        "name": "CommentsCollection",
+        "type": "object"
       },
       {
         "id": "schema:CommentsResponse",
         "kind": "schema",
-        "name": "CommentsResponse"
+        "name": "CommentsResponse",
+        "type": "object"
       },
       {
         "id": "schema:CursorPaginationInfo",
         "kind": "schema",
-        "name": "CursorPaginationInfo"
+        "name": "CursorPaginationInfo",
+        "type": "object"
       },
       {
         "id": "schema:IdPaginationInfo",
         "kind": "schema",
-        "name": "IdPaginationInfo"
+        "name": "IdPaginationInfo",
+        "type": "object"
       },
       {
         "id": "schema:ImageInfo",
         "kind": "schema",
-        "name": "ImageInfo"
+        "name": "ImageInfo",
+        "type": "object"
       },
       {
         "id": "schema:ImagesData",
         "kind": "schema",
-        "name": "ImagesData"
+        "name": "ImagesData",
+        "type": "object"
       },
       {
         "id": "schema:LikesCollection",
         "kind": "schema",
-        "name": "LikesCollection"
+        "name": "LikesCollection",
+        "type": "object"
       },
       {
         "id": "schema:LocationInfo",
         "kind": "schema",
-        "name": "LocationInfo"
+        "name": "LocationInfo",
+        "type": "object"
       },
       {
         "id": "schema:LocationInfoResponse",
         "kind": "schema",
-        "name": "LocationInfoResponse"
+        "name": "LocationInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:LocationSearchResponse",
         "kind": "schema",
-        "name": "LocationSearchResponse"
+        "name": "LocationSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:MediaEntry",
         "kind": "schema",
-        "name": "MediaEntry"
+        "name": "MediaEntry",
+        "type": "object"
       },
       {
         "id": "schema:MediaEntryResponse",
         "kind": "schema",
-        "name": "MediaEntryResponse"
+        "name": "MediaEntryResponse",
+        "type": "object"
       },
       {
         "id": "schema:MediaListResponse",
         "kind": "schema",
-        "name": "MediaListResponse"
+        "name": "MediaListResponse",
+        "type": "object"
       },
       {
         "id": "schema:MediaSearchResponse",
         "kind": "schema",
-        "name": "MediaSearchResponse"
+        "name": "MediaSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:MetaData",
         "kind": "schema",
-        "name": "MetaData"
+        "name": "MetaData",
+        "type": "object"
       },
       {
         "id": "schema:Position",
         "kind": "schema",
-        "name": "Position"
+        "name": "Position",
+        "type": "object"
       },
       {
         "id": "schema:RelationshipInfo",
         "kind": "schema",
-        "name": "RelationshipInfo"
+        "name": "RelationshipInfo",
+        "type": "object"
       },
       {
         "id": "schema:RelationshipPostResponse",
         "kind": "schema",
-        "name": "RelationshipPostResponse"
+        "name": "RelationshipPostResponse",
+        "type": "object"
       },
       {
         "id": "schema:RelationshipResponse",
         "kind": "schema",
-        "name": "RelationshipResponse"
+        "name": "RelationshipResponse",
+        "type": "object"
       },
       {
         "id": "schema:RelationshipStatus",
         "kind": "schema",
-        "name": "RelationshipStatus"
+        "name": "RelationshipStatus",
+        "type": "object"
       },
       {
         "id": "schema:StatusResponse",
         "kind": "schema",
-        "name": "StatusResponse"
+        "name": "StatusResponse",
+        "type": "object"
       },
       {
         "id": "schema:TagInfo",
         "kind": "schema",
-        "name": "TagInfo"
+        "name": "TagInfo",
+        "type": "object"
       },
       {
         "id": "schema:TagInfoResponse",
         "kind": "schema",
-        "name": "TagInfoResponse"
+        "name": "TagInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:TagMediaListResponse",
         "kind": "schema",
-        "name": "TagMediaListResponse"
+        "name": "TagMediaListResponse",
+        "type": "object"
       },
       {
         "id": "schema:TagPaginationInfo",
         "kind": "schema",
-        "name": "TagPaginationInfo"
+        "name": "TagPaginationInfo",
+        "type": "object"
       },
       {
         "id": "schema:TagSearchResponse",
         "kind": "schema",
-        "name": "TagSearchResponse"
+        "name": "TagSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:UserCounts",
         "kind": "schema",
-        "name": "UserCounts"
+        "name": "UserCounts",
+        "type": "object"
       },
       {
         "id": "schema:UserInPhoto",
         "kind": "schema",
-        "name": "UserInPhoto"
+        "name": "UserInPhoto",
+        "type": "object"
       },
       {
         "id": "schema:UserInfo",
         "kind": "schema",
-        "name": "UserInfo"
+        "name": "UserInfo",
+        "type": "object"
       },
       {
         "id": "schema:UserResponse",
         "kind": "schema",
-        "name": "UserResponse"
+        "name": "UserResponse",
+        "type": "object"
       },
       {
         "id": "schema:UserShortInfo",
         "kind": "schema",
-        "name": "UserShortInfo"
+        "name": "UserShortInfo",
+        "type": "object"
       },
       {
         "id": "schema:UsersInfoResponse",
         "kind": "schema",
-        "name": "UsersInfoResponse"
+        "name": "UsersInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:UsersPagingResponse",
         "kind": "schema",
-        "name": "UsersPagingResponse"
+        "name": "UsersPagingResponse",
+        "type": "object"
       },
       {
         "id": "schema:VideosData",
         "kind": "schema",
-        "name": "VideosData"
+        "name": "VideosData",
+        "type": "object"
       }
     ]
   },

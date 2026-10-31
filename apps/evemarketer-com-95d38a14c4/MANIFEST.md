@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_EVEMarketer_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `54e2431b8944267e81a0811e11aee5a310fd2f08956a3f9005278f74c8706288` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_EVEMarketer_profile
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/marketstat` | get /marketstat | XML Marketstat |
-| POST | `/marketstat` | post /marketstat | XML Marketstat |
-| GET | `/marketstat/json` | get /marketstat/json | JSON Marketstat |
-| POST | `/marketstat/json` | post /marketstat/json | JSON Marketstat |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/marketstat` | get /marketstat | `typeid`*, `regionlimit`, `usesystem` | ExecAPI | yes | XML Marketstat |
+| POST | `/marketstat` | post /marketstat | `typeid`*, `regionlimit`, `usesystem` | ExecAPI |  | XML Marketstat |
+| GET | `/marketstat/json` | get /marketstat/json | `typeid`*, `regionlimit`, `usesystem` | Type[] | yes | JSON Marketstat |
+| POST | `/marketstat/json` | post /marketstat/json | `typeid`*, `regionlimit`, `usesystem` | Type[] |  | JSON Marketstat |

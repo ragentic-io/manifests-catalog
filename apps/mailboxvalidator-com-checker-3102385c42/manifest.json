@@ -17,12 +17,47 @@
       },
       {
         "deprecated": false,
+        "description": "The Free Email Checker API does validation on a single email address and returns if it is from a free email provider in either JSON or XML format.",
         "id": "operation:get:/v1/email/free",
         "kind": "operation",
         "method": "get",
         "name": "get /v1/email/free",
+        "parameters": [
+          {
+            "description": "Return the result in json (default) or xml format.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The email address to check if is from a free email provider.",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/email/free",
         "pointer": "#/paths/~1v1~1email~1free/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       }

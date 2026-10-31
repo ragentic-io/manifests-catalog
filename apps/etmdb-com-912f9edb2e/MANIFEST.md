@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_etmdb_profile_image
 
 | | |
 | --- | --- |
-| Signed bundle | `e349abd8568a6567c1c51d474f5a10a528fa42cb52ef2d8e37c6906f4dec74ec` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,32 +32,34 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_etmdb_profile_image
 
 ## Operations (27)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/cinema-detail/search/{cinema_name}` | cinema-detail_search_read | Return cinema details search result |
-| GET | `/api/v1/cinema-schedule/search/{movie_title}` | cinema-schedule_search_read | Return cinema schedule search result |
-| GET | `/api/v1/cinema-schedule/searchall/{param}` | cinema-schedule_searchall_read | Return cinema schedule search result |
-| GET | `/api/v1/cinema-shedule-showtime/search/{movie_title}` | cinema-shedule-showtime_search_read | Return cinema schedule and showtime search result |
-| GET | `/api/v1/cinema-shedule-showtime/searchall/{param}` | cinema-shedule-showtime_searchall_read | Return cinema schedule and showtime search result |
-| GET | `/api/v1/cinema/search/{id}` | cinema_search_read | Return cinema search result |
-| GET | `/api/v1/company-credits/search/{movie_title}` | company-credits_search_read | Return company credits search result |
-| GET | `/api/v1/company-credits/searchall/{param}` | company-credits_searchall_read | Return company credits search result |
-| GET | `/api/v1/company/search/{company_name}` | company_search_read | Return company search result |
-| GET | `/api/v1/filmography-type/search/{filmography_description}` | filmography-type_search_read | Return filmography type search result |
-| GET | `/api/v1/filmography/search/{movie_title}` | filmography_search_read | Return filmography search result |
-| GET | `/api/v1/filmography/searchall/{param}` | filmography_searchall_read | Return filmography search result |
-| GET | `/api/v1/genre-type/search/{genre_description}` | genre-type_search_read | Return genre type search result |
-| GET | `/api/v1/genre/search/{movie_title}` | genre_search_read | Return movie genre search result |
-| GET | `/api/v1/genre/searchall/{movie_genre_type}` | genre_searchall_read | Return movie genre search result |
-| GET | `/api/v1/job/search/{job_title}` | job_search_read | Return job details search result |
-| GET | `/api/v1/job/searchall/{company_name}` | job_searchall_read | Return job details search result |
-| GET | `/api/v1/media/search/{movie_title}` | media_search_read | Return movie media search result |
-| GET | `/api/v1/media/searchall/{user}` | media_searchall_read | Return cast media search result |
-| GET | `/api/v1/movie-cast/search/{movie_title}` | movie-cast_search_read | Return movie cast search result |
-| GET | `/api/v1/movie-cast/searchall/{param}` | movie-cast_searchall_read | Return movie cast search result |
-| GET | `/api/v1/movie/search/{movie_title}` | movie_search_read | Return movie search result |
-| GET | `/api/v1/news/search/{title}` | news_search_read | Return news or article search result |
-| GET | `/api/v1/people/search/{user}` | people_search_read | Return cast search result |
-| GET | `/api/v1/showtime/searchall/{param}` | showtime_searchall_read | Return showtime search result |
-| GET | `/api/v1/watchlist/search/{movie_title}` | watchlist_search_read | Return watchlist search result |
-| GET | `/api/v1/watchlist/searchall/{param}` | watchlist_searchall_read | Return watchlist search result |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/cinema-detail/search/{cinema_name}` | cinema-detail_search_read | `cinema_name`* | — | yes | Return cinema details search result |
+| GET | `/api/v1/cinema-schedule/search/{movie_title}` | cinema-schedule_search_read | `movie_title`* | — | yes | Return cinema schedule search result |
+| GET | `/api/v1/cinema-schedule/searchall/{param}` | cinema-schedule_searchall_read | `param`* | — | yes | Return cinema schedule search result |
+| GET | `/api/v1/cinema-shedule-showtime/search/{movie_title}` | cinema-shedule-showtime_search_read | `movie_title`* | — | yes | Return cinema schedule and showtime search result |
+| GET | `/api/v1/cinema-shedule-showtime/searchall/{param}` | cinema-shedule-showtime_searchall_read | `param`* | — | yes | Return cinema schedule and showtime search result |
+| GET | `/api/v1/cinema/search/{id}` | cinema_search_read | `id`* | — | yes | Return cinema search result |
+| GET | `/api/v1/company-credits/search/{movie_title}` | company-credits_search_read | `movie_title`* | — | yes | Return company credits search result |
+| GET | `/api/v1/company-credits/searchall/{param}` | company-credits_searchall_read | `param`* | — | yes | Return company credits search result |
+| GET | `/api/v1/company/search/{company_name}` | company_search_read | `company_name`* | — | yes | Return company search result |
+| GET | `/api/v1/filmography-type/search/{filmography_description}` | filmography-type_search_read | `filmography_description`* | — | yes | Return filmography type search result |
+| GET | `/api/v1/filmography/search/{movie_title}` | filmography_search_read | `movie_title`* | — | yes | Return filmography search result |
+| GET | `/api/v1/filmography/searchall/{param}` | filmography_searchall_read | `param`* | — | yes | Return filmography search result |
+| GET | `/api/v1/genre-type/search/{genre_description}` | genre-type_search_read | `genre_description`* | — | yes | Return genre type search result |
+| GET | `/api/v1/genre/search/{movie_title}` | genre_search_read | `movie_title`* | — | yes | Return movie genre search result |
+| GET | `/api/v1/genre/searchall/{movie_genre_type}` | genre_searchall_read | `movie_genre_type`* | — | yes | Return movie genre search result |
+| GET | `/api/v1/job/search/{job_title}` | job_search_read | `job_title`* | — | yes | Return job details search result |
+| GET | `/api/v1/job/searchall/{company_name}` | job_searchall_read | `company_name`* | — | yes | Return job details search result |
+| GET | `/api/v1/media/search/{movie_title}` | media_search_read | `movie_title`* | — | yes | Return movie media search result |
+| GET | `/api/v1/media/searchall/{user}` | media_searchall_read | `user`* | — | yes | Return cast media search result |
+| GET | `/api/v1/movie-cast/search/{movie_title}` | movie-cast_search_read | `movie_title`* | — | yes | Return movie cast search result |
+| GET | `/api/v1/movie-cast/searchall/{param}` | movie-cast_searchall_read | `param`* | — | yes | Return movie cast search result |
+| GET | `/api/v1/movie/search/{movie_title}` | movie_search_read | `movie_title`* | — | yes | Return movie search result |
+| GET | `/api/v1/news/search/{title}` | news_search_read | `title`* | — | yes | Return news or article search result |
+| GET | `/api/v1/people/search/{user}` | people_search_read | `user`* | — | yes | Return cast search result |
+| GET | `/api/v1/showtime/searchall/{param}` | showtime_searchall_read | `param`* | — | yes | Return showtime search result |
+| GET | `/api/v1/watchlist/search/{movie_title}` | watchlist_search_read | `movie_title`* | — | yes | Return watchlist search result |
+| GET | `/api/v1/watchlist/searchall/{param}` | watchlist_searchall_read | `param`* | — | yes | Return watchlist search result |

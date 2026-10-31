@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `25280e41877296e4c0103044b44800f8705dc8a0369d5b3a686b643e4bb6dfc1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,26 +34,28 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/airports` | getAirport | Search airports by country / Search nearby airports / Search an airport |
-| OPTIONS | `/airports` | options /airports | CORS support |
-| GET | `/cities/findcitiesfromlatlong` | getCities | Search all cities from lat/long or countrycode |
-| OPTIONS | `/cities/findcitiesfromlatlong` | options /cities/findcitiesfromlatlong | CORS support |
-| GET | `/cities/findcitiesfromtext` | getAutocomplete | Retrieve cities informations from a string / build an autocomplete |
-| OPTIONS | `/cities/findcitiesfromtext` | options /cities/findcitiesfromtext | CORS support |
-| GET | `/cities/significant` | getSignificantCities | Search significant cities from lat/long or countrycode |
-| OPTIONS | `/cities/significant` | options /cities/significant | CORS support |
-| GET | `/continents` | getContinents | Search all continents or one specific continent |
-| OPTIONS | `/continents` | options /continents | CORS support |
-| GET | `/countries` | getCountries | Search all countries or one specific country |
-| OPTIONS | `/countries` | options /countries | CORS support |
-| GET | `/distance` | getDistance | Calculate distance between lats/longs |
-| OPTIONS | `/distance` | options /distance | CORS support |
-| GET | `/elevation` | getElevation | Search elevation informations from lat/long |
-| OPTIONS | `/elevation` | options /elevation | CORS support |
-| GET | `/pong` | getPing | — |
-| GET | `/sun_positions` | getSun | Search position of sun from lat/long and date |
-| OPTIONS | `/sun_positions` | options /sun_positions | CORS support |
-| GET | `/timezone` | getTimezone | Search timezone and time informations from lat/long |
-| OPTIONS | `/timezone` | options /timezone | CORS support |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/airports` | getAirport | `language`*, `location`, `radius`, `countrycode`, `top_airports` | AirportsSearchResponse | yes | Search airports by country / Search nearby airports / Search an airport |
+| OPTIONS | `/airports` | options /airports | — | — | yes | CORS support |
+| GET | `/cities/findcitiesfromlatlong` | getCities | `language`*, `countrycode`, `location`, `radius`, `limit`, `offset`, `sort`* | CitiesResponse | yes | Search all cities from lat/long or countrycode |
+| OPTIONS | `/cities/findcitiesfromlatlong` | options /cities/findcitiesfromlatlong | — | — | yes | CORS support |
+| GET | `/cities/findcitiesfromtext` | getAutocomplete | `q`*, `language`*, `countrycode`, `sort`* | CitiesResponse | yes | Retrieve cities informations from a string / build an autocomplete |
+| OPTIONS | `/cities/findcitiesfromtext` | options /cities/findcitiesfromtext | — | — | yes | CORS support |
+| GET | `/cities/significant` | getSignificantCities | `language`*, `pourcent`, `countrycode`, `location`, `radius`, `limit`, `offset`, `sort`* | CitiesResponse | yes | Search significant cities from lat/long or countrycode |
+| OPTIONS | `/cities/significant` | options /cities/significant | — | — | yes | CORS support |
+| GET | `/continents` | getContinents | `language`*, `continentcode` | ContinentsResponse | yes | Search all continents or one specific continent |
+| OPTIONS | `/continents` | options /continents | — | — | yes | CORS support |
+| GET | `/countries` | getCountries | `language`*, `countrycode` | CountriesResponse | yes | Search all countries or one specific country |
+| OPTIONS | `/countries` | options /countries | — | — | yes | CORS support |
+| GET | `/distance` | getDistance | `locationA`*, `locationB`*, `unit` | DistanceResponse | yes | Calculate distance between lats/longs |
+| OPTIONS | `/distance` | options /distance | — | — | yes | CORS support |
+| GET | `/elevation` | getElevation | `locations`*, `unit` | ElevationResponse | yes | Search elevation informations from lat/long |
+| OPTIONS | `/elevation` | options /elevation | — | — | yes | CORS support |
+| GET | `/pong` | getPing | — | PongResponse | yes | — |
+| GET | `/sun_positions` | getSun | `location`*, `date` | SunPositionResponse | yes | Search position of sun from lat/long and date |
+| OPTIONS | `/sun_positions` | options /sun_positions | — | — | yes | CORS support |
+| GET | `/timezone` | getTimezone | `location`* | TimezoneResponse | yes | Search timezone and time informations from lat/long |
+| OPTIONS | `/timezone` | options /timezone | — | — | yes | CORS support |

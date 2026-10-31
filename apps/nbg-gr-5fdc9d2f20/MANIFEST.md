@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `53567bc9850785c82c486fb74c20fc4c62523a8d2c822457b695a9cfa948084a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,26 +34,28 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 70 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/account-access-consents` | post /account-access-consents | Create Account Access Consents |
-| DELETE | `/account-access-consents/{consentId}` | delete /account-access-consents/{consentId} | Delete Account Access Consents |
-| GET | `/account-access-consents/{consentId}` | get /account-access-consents/{consentId} | Get Account Access Consents |
-| GET | `/accounts` | get /accounts | Get Accounts |
-| GET | `/accounts/{accountId}` | get /accounts/{accountId} | Get Accounts |
-| GET | `/accounts/{accountId}/balances` | get /accounts/{accountId}/balances | Get Balances |
-| GET | `/accounts/{accountId}/beneficiaries` | get /accounts/{accountId}/beneficiaries | Get Beneficiaries |
-| GET | `/accounts/{accountId}/parties` | get /accounts/{accountId}/parties | Get Parties |
-| GET | `/accounts/{accountId}/party` | get /accounts/{accountId}/party | Get Party |
-| GET | `/accounts/{accountId}/scheduled-payments` | get /accounts/{accountId}/scheduled-payments | Get Scheduled Payments |
-| GET | `/accounts/{accountId}/standing-orders` | get /accounts/{accountId}/standing-orders | Get Standing Orders |
-| GET | `/accounts/{accountId}/statements` | get /accounts/{accountId}/statements | Get Statements |
-| GET | `/accounts/{accountId}/statements/{statementId}` | get /accounts/{accountId}/statements/{statementId} | Get Statements |
-| GET | `/accounts/{accountId}/statements/{statementId}/file` | get /accounts/{accountId}/statements/{statementId}/file | Get Statements |
-| GET | `/accounts/{accountId}/statements/{statementId}/transactions` | get /accounts/{accountId}/statements/{statementId}/transactions | Get Transactions |
-| GET | `/accounts/{accountId}/transactions` | get /accounts/{accountId}/transactions | Get Transactions |
-| GET | `/party` | get /party | Get Party |
-| POST | `/sandbox` | post /sandbox | Create Sandbox |
-| PUT | `/sandbox` | put /sandbox | Import Sandbox |
-| DELETE | `/sandbox/{sandboxId}` | delete /sandbox/{sandboxId} | Delete Sandbox |
-| GET | `/sandbox/{sandboxId}` | get /sandbox/{sandboxId} | Export Sandbox |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/account-access-consents` | post /account-access-consents | `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`*, body: OBReadConsent1 | OBReadConsentResponse1 |  | Create Account Access Consents |
+| GET | `/account-access-consents/{consentId}` | get /account-access-consents/{consentId} | `consentId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadConsentResponse1 | yes | Get Account Access Consents |
+| DELETE | `/account-access-consents/{consentId}` | delete /account-access-consents/{consentId} | `consentId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | — |  | Delete Account Access Consents |
+| GET | `/accounts` | get /accounts | `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadAccount5 | yes | Get Accounts |
+| GET | `/accounts/{accountId}` | get /accounts/{accountId} | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadAccount5 | yes | Get Accounts |
+| GET | `/accounts/{accountId}/balances` | get /accounts/{accountId}/balances | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadBalance1 | yes | Get Balances |
+| GET | `/accounts/{accountId}/beneficiaries` | get /accounts/{accountId}/beneficiaries | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadBeneficiary5 | yes | Get Beneficiaries |
+| GET | `/accounts/{accountId}/parties` | get /accounts/{accountId}/parties | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadParty3 | yes | Get Parties |
+| GET | `/accounts/{accountId}/party` | get /accounts/{accountId}/party | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadParty2 | yes | Get Party |
+| GET | `/accounts/{accountId}/scheduled-payments` | get /accounts/{accountId}/scheduled-payments | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadScheduledPayment3 | yes | Get Scheduled Payments |
+| GET | `/accounts/{accountId}/standing-orders` | get /accounts/{accountId}/standing-orders | `accountId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadStandingOrder6 | yes | Get Standing Orders |
+| GET | `/accounts/{accountId}/statements` | get /accounts/{accountId}/statements | `accountId`*, `fromStatementDateTime`, `toStatementDateTime`, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadStatement2 | yes | Get Statements |
+| GET | `/accounts/{accountId}/statements/{statementId}` | get /accounts/{accountId}/statements/{statementId} | `accountId`*, `statementId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadStatement2 | yes | Get Statements |
+| GET | `/accounts/{accountId}/statements/{statementId}/file` | get /accounts/{accountId}/statements/{statementId}/file | `accountId`*, `statementId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | string:binary | yes | Get Statements |
+| GET | `/accounts/{accountId}/statements/{statementId}/transactions` | get /accounts/{accountId}/statements/{statementId}/transactions | `accountId`*, `statementId`*, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadTransaction6 | yes | Get Transactions |
+| GET | `/accounts/{accountId}/transactions` | get /accounts/{accountId}/transactions | `accountId`*, `fromBookingDateTime`, `toBookingDateTime`, `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadTransaction6 | yes | Get Transactions |
+| GET | `/party` | get /party | `x-fapi-auth-date`, `x-fapi-customer-ip-address`, `x-fapi-interaction-id`, `x-customer-user-agent`, `sandbox-id`* | OBReadParty2 | yes | Get Party |
+| PUT | `/sandbox` | put /sandbox | body: Sandbox | — |  | Import Sandbox |
+| POST | `/sandbox` | post /sandbox | body: SandboxRequest | Sandbox |  | Create Sandbox |
+| GET | `/sandbox/{sandboxId}` | get /sandbox/{sandboxId} | `sandboxId`* | Sandbox | yes | Export Sandbox |
+| DELETE | `/sandbox/{sandboxId}` | delete /sandbox/{sandboxId} | `sandboxId`* | — |  | Delete Sandbox |

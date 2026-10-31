@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_gisgraphy_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `f5947ab35b453b5bc54978e385bfa86bd3942940a0df54593e302fd67f32e1de` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_gisgraphy_profile_i
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/addressparser/parse` | addressparsing | split a raw address into several parts |
-| GET | `/fulltext/search` | fulltxtsearch | search for places by text around a GPS point |
-| GET | `/geocoding/geocode` | geocode | Geocode an address |
-| GET | `/geoloc/search` | geoloc | Geocode an address |
-| GET | `/reversegeocoding/reversegeocode` | reversegeocode | Reverse geocode an address |
-| GET | `/street/find` | streetsearch | Geocode an address |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/addressparser/parse` | addressparsing | `address`*, `country`, `format`, `callback`, `indent`, `standardize`, `geocode` | AddressResultsDto | yes | split a raw address into several parts |
+| GET | `/fulltext/search` | fulltxtsearch | `q`*, `allwordsrequired`*, `spellchecking`, `lat`, `lng`, `radius`, `suggest`, `style`, `country`, `lang`, `format`, `from`, `to`, `callback`, `indent` | FulltextResultsDto | yes | search for places by text around a GPS point |
+| GET | `/geocoding/geocode` | geocode | `address`*, `country`, `postal`, `format`, `from`, `to`, `callback`, `indent` | AddressResultsDto | yes | Geocode an address |
+| GET | `/geoloc/search` | geoloc | `lat`*, `lng`*, `radius`, `distance`, `placetype`, `format`, `from`, `to`, `callback`, `indent` | GeolocResultsDto | yes | Geocode an address |
+| GET | `/reversegeocoding/reversegeocode` | reversegeocode | `lat`*, `lng`*, `format`, `from`, `to`, `callback`, `indent` | AddressResultsDto | yes | Reverse geocode an address |
+| GET | `/street/find` | streetsearch | `lat`*, `lng`*, `radius`, `oneway`, `distance`, `streettype`, `format`, `from`, `to`, `callback`, `indent` | StreetSearchResultsDto | yes | Geocode an address |

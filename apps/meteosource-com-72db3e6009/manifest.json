@@ -38,6 +38,291 @@
         "from": "meteosource-com-72db3e6009",
         "kind": "EXPOSES",
         "to": "operation:get:/time_machine"
+      },
+      {
+        "from": "operation:get:/air_quality",
+        "kind": "RETURNS",
+        "to": "schema:AirQuality_PointData"
+      },
+      {
+        "from": "operation:get:/find_places",
+        "kind": "RETURNS",
+        "to": "schema:FindPlacesModel"
+      },
+      {
+        "from": "operation:get:/find_places_prefix",
+        "kind": "RETURNS",
+        "to": "schema:FindPlacesModel"
+      },
+      {
+        "from": "operation:get:/nearest_place",
+        "kind": "RETURNS",
+        "to": "schema:FindPlacesModel"
+      },
+      {
+        "from": "operation:get:/point",
+        "kind": "RETURNS",
+        "to": "schema:Point_PointData"
+      },
+      {
+        "from": "operation:get:/time_machine",
+        "kind": "RETURNS",
+        "to": "schema:TimeMachine_TimeMachine"
+      },
+      {
+        "from": "schema:AirQuality_PointData",
+        "kind": "REFERENCES",
+        "to": "schema:AirQuality_PointHourlyData"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:Point_PointCurrentData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointCurrentPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointCurrentData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointCurrentWindData"
+      },
+      {
+        "from": "schema:Point_PointDaily",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyData"
+      },
+      {
+        "from": "schema:Point_PointDailyAfternoonData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAfternoonCloudCoverData"
+      },
+      {
+        "from": "schema:Point_PointDailyAfternoonData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAfternoonPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointDailyAfternoonData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAfternoonProbData"
+      },
+      {
+        "from": "schema:Point_PointDailyAfternoonData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAfternoonWindData"
+      },
+      {
+        "from": "schema:Point_PointDailyAllDayData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAllDayCloudCoverData"
+      },
+      {
+        "from": "schema:Point_PointDailyAllDayData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAllDayPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointDailyAllDayData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAllDayProbData"
+      },
+      {
+        "from": "schema:Point_PointDailyAllDayData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAllDayWindData"
+      },
+      {
+        "from": "schema:Point_PointDailyAstroData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyMoonData"
+      },
+      {
+        "from": "schema:Point_PointDailyAstroData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailySunData"
+      },
+      {
+        "from": "schema:Point_PointDailyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAfternoonData"
+      },
+      {
+        "from": "schema:Point_PointDailyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAllDayData"
+      },
+      {
+        "from": "schema:Point_PointDailyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyAstroData"
+      },
+      {
+        "from": "schema:Point_PointDailyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyEveningData"
+      },
+      {
+        "from": "schema:Point_PointDailyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyMorningData"
+      },
+      {
+        "from": "schema:Point_PointDailyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyStatsData"
+      },
+      {
+        "from": "schema:Point_PointDailyEveningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyEveningCloudCoverData"
+      },
+      {
+        "from": "schema:Point_PointDailyEveningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyEveningPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointDailyEveningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyEveningProbData"
+      },
+      {
+        "from": "schema:Point_PointDailyEveningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyEveningWindData"
+      },
+      {
+        "from": "schema:Point_PointDailyMorningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyMorningCloudCoverData"
+      },
+      {
+        "from": "schema:Point_PointDailyMorningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyMorningPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointDailyMorningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyMorningProbData"
+      },
+      {
+        "from": "schema:Point_PointDailyMorningData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyMorningWindData"
+      },
+      {
+        "from": "schema:Point_PointDailyStatsData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyStatsPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointDailyStatsData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyStatsTemperatureData"
+      },
+      {
+        "from": "schema:Point_PointDailyStatsData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDailyStatsWindData"
+      },
+      {
+        "from": "schema:Point_PointData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointAlerts"
+      },
+      {
+        "from": "schema:Point_PointData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointCurrentData"
+      },
+      {
+        "from": "schema:Point_PointData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointDaily"
+      },
+      {
+        "from": "schema:Point_PointData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointHourly"
+      },
+      {
+        "from": "schema:Point_PointData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointMinutely"
+      },
+      {
+        "from": "schema:Point_PointHourly",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointHourlyData"
+      },
+      {
+        "from": "schema:Point_PointHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointHourlyCloudCoverData"
+      },
+      {
+        "from": "schema:Point_PointHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointHourlyPrecipitationData"
+      },
+      {
+        "from": "schema:Point_PointHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointHourlyProbData"
+      },
+      {
+        "from": "schema:Point_PointHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointHourlyWindData"
+      },
+      {
+        "from": "schema:Point_PointMinutely",
+        "kind": "REFERENCES",
+        "to": "schema:Point_PointMinutelyPrecipitationData"
+      },
+      {
+        "from": "schema:TimeMachine_PointDailyStatsData",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_PointDailyStatsPrecipitationData"
+      },
+      {
+        "from": "schema:TimeMachine_PointDailyStatsData",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_PointDailyStatsTemperatureData"
+      },
+      {
+        "from": "schema:TimeMachine_PointDailyStatsData",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_PointDailyStatsWindData"
+      },
+      {
+        "from": "schema:TimeMachine_TimeMachine",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_PointDailyStatsData"
+      },
+      {
+        "from": "schema:TimeMachine_TimeMachine",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_TimeMachineHourlyData"
+      },
+      {
+        "from": "schema:TimeMachine_TimeMachineHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_TimeMachineCloudCoverData"
+      },
+      {
+        "from": "schema:TimeMachine_TimeMachineHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_TimeMachinePrecipitationData"
+      },
+      {
+        "from": "schema:TimeMachine_TimeMachineHourlyData",
+        "kind": "REFERENCES",
+        "to": "schema:TimeMachine_TimeMachineWindData"
       }
     ],
     "nodes": [
@@ -47,403 +332,982 @@
       },
       {
         "deprecated": false,
+        "description": "## Air quality forecast for a single location ### Location specification The location of the weather data is the only parameter that is required and must be sp…",
         "id": "operation:get:/air_quality",
         "kind": "operation",
         "method": "get",
         "name": "air_quality_air_quality_get",
+        "parameters": [
+          {
+            "description": "Identifier of a place.",
+            "in": "query",
+            "name": "place_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4",
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4",
+            "in": "query",
+            "name": "lon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Timezone to be used for the date fields.",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_quality",
         "pointer": "#/paths/~1air_quality/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AirQuality_PointData"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns air quality data for a single point (geographic name or GPS)"
+        "summary": "Returns air quality data for a single point (geographic name or GPS)",
+        "tags": [
+          "Point weather"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## Search for places You can use this endpoint to obtain `place_id` of the location you want, to be used in `point` endpoint.",
         "id": "operation:get:/find_places",
         "kind": "operation",
         "method": "get",
         "name": "find_places_find_places_get",
+        "parameters": [
+          {
+            "description": "Place name or ZIP code",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "The language of text summaries and place names (variable names are never translated).",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "Language"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/find_places",
         "pointer": "#/paths/~1find_places/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FindPlacesModel[]"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Search for places. Complete words required."
+        "summary": "Search for places. Complete words required.",
+        "tags": [
+          "Location endpoints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## Search for places by prefix You can use this endpoint to obtain `place_id` of the location you want, to be used in `point` endpoint.",
         "id": "operation:get:/find_places_prefix",
         "kind": "operation",
         "method": "get",
         "name": "find_places_prefix_find_places_prefix_get",
+        "parameters": [
+          {
+            "description": "Place name or ZIP code",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "The language of text summaries and place names (variable names are never translated).",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "Language"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/find_places_prefix",
         "pointer": "#/paths/~1find_places_prefix/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FindPlacesModel[]"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Prefix search for places. Useful for autocomplete forms."
+        "summary": "Prefix search for places. Useful for autocomplete forms.",
+        "tags": [
+          "Location endpoints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## PNG weather forecast maps for given area and variable ### Area specification There are two ways to specify geographical area you need for your map: 1.",
         "id": "operation:get:/map",
         "kind": "operation",
         "method": "get",
         "name": "map_map_get",
+        "parameters": [
+          {
+            "description": "The X coordinate of Google Maps tile",
+            "in": "query",
+            "name": "tile_x",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The Y coordinate of Google Maps tile",
+            "in": "query",
+            "name": "tile_y",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The zoom level of Google Maps tile",
+            "in": "query",
+            "name": "tile_zoom",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Minimal latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.2",
+            "in": "query",
+            "name": "min_lat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Minimal longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.2",
+            "in": "query",
+            "name": "min_lon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximal latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.2.",
+            "in": "query",
+            "name": "max_lat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximal longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.2",
+            "in": "query",
+            "name": "max_lon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the variable for your map.",
+            "in": "query",
+            "name": "variable",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "There are two ways to specify date and time for your map: 1.",
+            "in": "query",
+            "name": "datetime",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/map",
         "pointer": "#/paths/~1map/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns PNG weather map for given area and variable"
+        "summary": "Returns PNG weather map for given area and variable",
+        "tags": [
+          "Weather maps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## Search for nearest place by coordinates You can use this endpoint to find the nearest place from given coordinates.",
         "id": "operation:get:/nearest_place",
         "kind": "operation",
         "method": "get",
         "name": "nearest_place_nearest_place_get",
+        "parameters": [
+          {
+            "description": "Latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "The language of text summaries and place names (variable names are never translated).",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "Language"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nearest_place",
         "pointer": "#/paths/~1nearest_place/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FindPlacesModel"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns the nearest named location for a given GPS coordinates."
+        "summary": "Returns the nearest named location for a given GPS coordinates.",
+        "tags": [
+          "Location endpoints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## Current weather and forecast for single location ### Location specification The location of the weather data is the only parameter that is required and must…",
         "id": "operation:get:/point",
         "kind": "operation",
         "method": "get",
         "name": "point_point_get",
+        "parameters": [
+          {
+            "description": "Identifier of a place.",
+            "in": "query",
+            "name": "place_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4",
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4",
+            "in": "query",
+            "name": "lon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "current,hourly",
+            "description": "Sections to be included in the response.",
+            "in": "query",
+            "name": "sections",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Timezone to be used for the date fields.",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "The language of text summaries and place names (variable names are never translated).",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "Language"
+          },
+          {
+            "default": "auto",
+            "description": "Unit system to be used.",
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "Units"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/point",
         "pointer": "#/paths/~1point/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Point_PointData"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns weather data for a single point (geographic name or GPS)"
+        "summary": "Returns weather data for a single point (geographic name or GPS)",
+        "tags": [
+          "Point weather"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## Actual weather data for a single location and day in the past The output contains actual weather data for each day up to 8 years in the past, and long-term…",
         "id": "operation:get:/time_machine",
         "kind": "operation",
         "method": "get",
         "name": "time_machine_time_machine_get",
+        "parameters": [
+          {
+            "description": "Identifier of a place.",
+            "in": "query",
+            "name": "place_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4",
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4",
+            "in": "query",
+            "name": "lon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The UTC day of the data in the past.",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "Timezone to be used for the date fields.",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "auto",
+            "description": "Unit system to be used.",
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "Units"
+          },
+          {
+            "description": "Your unique API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/time_machine",
         "pointer": "#/paths/~1time_machine/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeMachine_TimeMachine"
+          },
+          {
+            "status": "400",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "402",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "403",
+            "type": "GeneralRequestError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "GeneralRequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns weather data for a single location and given day in the past"
+        "summary": "Returns weather data for a single location and given day in the past",
+        "tags": [
+          "Time machine - historical weather"
+        ]
       },
       {
         "id": "schema:AirQuality_PointData",
         "kind": "schema",
-        "name": "AirQuality_PointData"
+        "name": "AirQuality_PointData",
+        "type": "object"
       },
       {
         "id": "schema:AirQuality_PointHourlyData",
         "kind": "schema",
-        "name": "AirQuality_PointHourlyData"
+        "name": "AirQuality_PointHourlyData",
+        "type": "object"
       },
       {
         "id": "schema:FindPlacesModel",
         "kind": "schema",
-        "name": "FindPlacesModel"
+        "name": "FindPlacesModel",
+        "type": "object"
       },
       {
         "id": "schema:GeneralRequestError",
         "kind": "schema",
-        "name": "GeneralRequestError"
+        "name": "GeneralRequestError",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Language",
         "kind": "schema",
-        "name": "Language"
+        "name": "Language",
+        "type": "string"
       },
       {
         "id": "schema:Point_PointAlerts",
         "kind": "schema",
-        "name": "Point_PointAlerts"
+        "name": "Point_PointAlerts",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointCurrentData",
         "kind": "schema",
-        "name": "Point_PointCurrentData"
+        "name": "Point_PointCurrentData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointCurrentPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointCurrentPrecipitationData"
+        "name": "Point_PointCurrentPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointCurrentWindData",
         "kind": "schema",
-        "name": "Point_PointCurrentWindData"
+        "name": "Point_PointCurrentWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDaily",
         "kind": "schema",
-        "name": "Point_PointDaily"
+        "name": "Point_PointDaily",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAfternoonCloudCoverData",
         "kind": "schema",
-        "name": "Point_PointDailyAfternoonCloudCoverData"
+        "name": "Point_PointDailyAfternoonCloudCoverData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAfternoonData",
         "kind": "schema",
-        "name": "Point_PointDailyAfternoonData"
+        "name": "Point_PointDailyAfternoonData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAfternoonPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointDailyAfternoonPrecipitationData"
+        "name": "Point_PointDailyAfternoonPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAfternoonProbData",
         "kind": "schema",
-        "name": "Point_PointDailyAfternoonProbData"
+        "name": "Point_PointDailyAfternoonProbData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAfternoonWindData",
         "kind": "schema",
-        "name": "Point_PointDailyAfternoonWindData"
+        "name": "Point_PointDailyAfternoonWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAllDayCloudCoverData",
         "kind": "schema",
-        "name": "Point_PointDailyAllDayCloudCoverData"
+        "name": "Point_PointDailyAllDayCloudCoverData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAllDayData",
         "kind": "schema",
-        "name": "Point_PointDailyAllDayData"
+        "name": "Point_PointDailyAllDayData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAllDayPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointDailyAllDayPrecipitationData"
+        "name": "Point_PointDailyAllDayPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAllDayProbData",
         "kind": "schema",
-        "name": "Point_PointDailyAllDayProbData"
+        "name": "Point_PointDailyAllDayProbData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAllDayWindData",
         "kind": "schema",
-        "name": "Point_PointDailyAllDayWindData"
+        "name": "Point_PointDailyAllDayWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyAstroData",
         "kind": "schema",
-        "name": "Point_PointDailyAstroData"
+        "name": "Point_PointDailyAstroData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyData",
         "kind": "schema",
-        "name": "Point_PointDailyData"
+        "name": "Point_PointDailyData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyEveningCloudCoverData",
         "kind": "schema",
-        "name": "Point_PointDailyEveningCloudCoverData"
+        "name": "Point_PointDailyEveningCloudCoverData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyEveningData",
         "kind": "schema",
-        "name": "Point_PointDailyEveningData"
+        "name": "Point_PointDailyEveningData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyEveningPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointDailyEveningPrecipitationData"
+        "name": "Point_PointDailyEveningPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyEveningProbData",
         "kind": "schema",
-        "name": "Point_PointDailyEveningProbData"
+        "name": "Point_PointDailyEveningProbData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyEveningWindData",
         "kind": "schema",
-        "name": "Point_PointDailyEveningWindData"
+        "name": "Point_PointDailyEveningWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyMoonData",
         "kind": "schema",
-        "name": "Point_PointDailyMoonData"
+        "name": "Point_PointDailyMoonData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyMorningCloudCoverData",
         "kind": "schema",
-        "name": "Point_PointDailyMorningCloudCoverData"
+        "name": "Point_PointDailyMorningCloudCoverData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyMorningData",
         "kind": "schema",
-        "name": "Point_PointDailyMorningData"
+        "name": "Point_PointDailyMorningData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyMorningPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointDailyMorningPrecipitationData"
+        "name": "Point_PointDailyMorningPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyMorningProbData",
         "kind": "schema",
-        "name": "Point_PointDailyMorningProbData"
+        "name": "Point_PointDailyMorningProbData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyMorningWindData",
         "kind": "schema",
-        "name": "Point_PointDailyMorningWindData"
+        "name": "Point_PointDailyMorningWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyStatsData",
         "kind": "schema",
-        "name": "Point_PointDailyStatsData"
+        "name": "Point_PointDailyStatsData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyStatsPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointDailyStatsPrecipitationData"
+        "name": "Point_PointDailyStatsPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyStatsTemperatureData",
         "kind": "schema",
-        "name": "Point_PointDailyStatsTemperatureData"
+        "name": "Point_PointDailyStatsTemperatureData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailyStatsWindData",
         "kind": "schema",
-        "name": "Point_PointDailyStatsWindData"
+        "name": "Point_PointDailyStatsWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointDailySunData",
         "kind": "schema",
-        "name": "Point_PointDailySunData"
+        "name": "Point_PointDailySunData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointData",
         "kind": "schema",
-        "name": "Point_PointData"
+        "name": "Point_PointData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointHourly",
         "kind": "schema",
-        "name": "Point_PointHourly"
+        "name": "Point_PointHourly",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointHourlyCloudCoverData",
         "kind": "schema",
-        "name": "Point_PointHourlyCloudCoverData"
+        "name": "Point_PointHourlyCloudCoverData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointHourlyData",
         "kind": "schema",
-        "name": "Point_PointHourlyData"
+        "name": "Point_PointHourlyData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointHourlyPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointHourlyPrecipitationData"
+        "name": "Point_PointHourlyPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointHourlyProbData",
         "kind": "schema",
-        "name": "Point_PointHourlyProbData"
+        "name": "Point_PointHourlyProbData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointHourlyWindData",
         "kind": "schema",
-        "name": "Point_PointHourlyWindData"
+        "name": "Point_PointHourlyWindData",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointMinutely",
         "kind": "schema",
-        "name": "Point_PointMinutely"
+        "name": "Point_PointMinutely",
+        "type": "object"
       },
       {
         "id": "schema:Point_PointMinutelyPrecipitationData",
         "kind": "schema",
-        "name": "Point_PointMinutelyPrecipitationData"
+        "name": "Point_PointMinutelyPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_PointDailyStatsData",
         "kind": "schema",
-        "name": "TimeMachine_PointDailyStatsData"
+        "name": "TimeMachine_PointDailyStatsData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_PointDailyStatsPrecipitationData",
         "kind": "schema",
-        "name": "TimeMachine_PointDailyStatsPrecipitationData"
+        "name": "TimeMachine_PointDailyStatsPrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_PointDailyStatsTemperatureData",
         "kind": "schema",
-        "name": "TimeMachine_PointDailyStatsTemperatureData"
+        "name": "TimeMachine_PointDailyStatsTemperatureData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_PointDailyStatsWindData",
         "kind": "schema",
-        "name": "TimeMachine_PointDailyStatsWindData"
+        "name": "TimeMachine_PointDailyStatsWindData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_TimeMachine",
         "kind": "schema",
-        "name": "TimeMachine_TimeMachine"
+        "name": "TimeMachine_TimeMachine",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_TimeMachineCloudCoverData",
         "kind": "schema",
-        "name": "TimeMachine_TimeMachineCloudCoverData"
+        "name": "TimeMachine_TimeMachineCloudCoverData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_TimeMachineHourlyData",
         "kind": "schema",
-        "name": "TimeMachine_TimeMachineHourlyData"
+        "name": "TimeMachine_TimeMachineHourlyData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_TimeMachinePrecipitationData",
         "kind": "schema",
-        "name": "TimeMachine_TimeMachinePrecipitationData"
+        "name": "TimeMachine_TimeMachinePrecipitationData",
+        "type": "object"
       },
       {
         "id": "schema:TimeMachine_TimeMachineWindData",
         "kind": "schema",
-        "name": "TimeMachine_TimeMachineWindData"
+        "name": "TimeMachine_TimeMachineWindData",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Units",
         "kind": "schema",
-        "name": "Units"
+        "name": "Units",
+        "type": "string"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       }
     ]
   },

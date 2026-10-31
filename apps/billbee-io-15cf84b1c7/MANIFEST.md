@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_billbeeio_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `fbb3543b3d459a8a0e33a1ee06a8d0c13c13919f91b8b445886950cd733de102` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,81 +34,83 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_billbeeio_profile_i
 
 86 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/api/v1/automaticprovision/createaccount` | AutomaticProvisioning_CreateAccount | Creates a new Billbee user account with the data passed |
-| GET | `/api/v1/automaticprovision/termsinfo` | AutomaticProvisioning_TermsInfo | Returns infos about Billbee terms and conditions |
-| GET | `/api/v1/cloudstorages` | CloudStorageApi_GetList | Gets a list of all connected cloud storage devices |
-| GET | `/api/v1/customer-addresses` | CustomerAddresses_GetAll | Get a list of all customer addresses |
-| POST | `/api/v1/customer-addresses` | CustomerAddresses_Create | Creates a new customer address |
-| GET | `/api/v1/customer-addresses/{id}` | CustomerAddresses_GetOne | Queries a single customer address by id |
-| PUT | `/api/v1/customer-addresses/{id}` | CustomerAddresses_Update | Updates a customer address by id |
-| GET | `/api/v1/customers` | Customer_GetAll | Get a list of all customers |
-| POST | `/api/v1/customers` | Customer_Create | Creates a new customer |
-| GET | `/api/v1/customers/addresses/{id}` | Customer_GetCustomerAddress | Queries a single address from a customer |
-| PATCH | `/api/v1/customers/addresses/{id}` | Customer_PatchAddress | Updates one or more fields of an address |
-| PUT | `/api/v1/customers/addresses/{id}` | Customer_UpdateAddress | Updates all fields of an address |
-| GET | `/api/v1/customers/{id}` | Customer_GetOne | Queries a single customer by id |
-| PUT | `/api/v1/customers/{id}` | Customer_Update | Updates a customer by id |
-| GET | `/api/v1/customers/{id}/addresses` | Customer_GetCustomerAddresses | Queries a list of addresses from a customer |
-| POST | `/api/v1/customers/{id}/addresses` | Customer_AddCustomerAddress | Adds a new address to a customer |
-| GET | `/api/v1/customers/{id}/orders` | Customer_GetCustomerOrders | Queries a list of orders from a customer |
-| GET | `/api/v1/enums/orderstates` | EnumApi_GetOrderStates | Returns a list with all defined orderstates |
-| GET | `/api/v1/enums/paymenttypes` | EnumApi_GetPaymentTypes | Returns a list with all defined paymenttypes |
-| GET | `/api/v1/enums/shipmenttypes` | EnumApi_GetShipmentTypes | Returns a list with all defined shipmenttypes |
-| GET | `/api/v1/enums/shippingcarriers` | EnumApi_GetShippingCarriers | Returns a list with all defined shippingcarriers |
-| GET | `/api/v1/events` | EventApi_GetList | Get a list of all events optionally filtered by date. This request is extra throttled to 2 calls per page per hour. |
-| GET | `/api/v1/layouts` | LayoutApi_GetList | — |
-| GET | `/api/v1/orders` | OrderApi_GetList | Get a list of all orders optionally filtered by date |
-| POST | `/api/v1/orders` | OrderApi_PostNewOrder | Creates a new order in the Billbee account |
-| POST | `/api/v1/orders/CreateDeliveryNote/{id}` | OrderApi_CreateDeliveryNote | Create an delivery note for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes. |
-| POST | `/api/v1/orders/CreateInvoice/{id}` | OrderApi_CreateInvoice | Create an invoice for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes. |
-| GET | `/api/v1/orders/PatchableFields` | OrderApi_GetPatchableFields | Returns a list of fields which can be updated with the orders/{id} patch call |
-| GET | `/api/v1/orders/find/{id}/{partner}` | OrderApi_Find | Find a single order by its external id (order number) |
-| GET | `/api/v1/orders/findbyextref/{extRef}` | OrderApi_GetByExtRef | Get a single order by its external order number |
-| GET | `/api/v1/orders/invoices` | OrderApi_GetInvoiceList | Get a list of all invoices optionally filtered by date. This request ist throttled to 1 per 1 minute for same page and minInvoiceDate |
-| GET | `/api/v1/orders/{id}` | OrderApi_Get | Get a single order by its internal billbee id. This request is throttled to 6 calls per order in one minute |
-| PATCH | `/api/v1/orders/{id}` | OrderApi_PatchOrder | Updates one or more fields of an order |
-| PUT | `/api/v1/orders/{id}/orderstate` | OrderApi_UpdateState | Changes the main state of a single order |
-| POST | `/api/v1/orders/{id}/parse-placeholders` | OrderApi_ParsePlaceholders | Parses a text and replaces all placeholders |
-| POST | `/api/v1/orders/{id}/send-message` | OrderApi_SendMessage | Sends a message to the buyer |
-| POST | `/api/v1/orders/{id}/shipment` | OrderApi_AddShipment | Add a shipment to a given order |
-| POST | `/api/v1/orders/{id}/tags` | OrderApi_TagsCreate | Attach one or more tags to an order |
-| PUT | `/api/v1/orders/{id}/tags` | OrderApi_TagsUpdate | Sets the tags attached to an order |
-| POST | `/api/v1/orders/{id}/trigger-event` | OrderApi_TriggerEvent | Triggers a rule event |
-| GET | `/api/v1/products` | Article_GetList | Get a list of all products |
-| POST | `/api/v1/products` | Article_CreateArticle | Creates a new product |
-| GET | `/api/v1/products/PatchableFields` | Article_GetPatchableFields | Returns a list of fields which can be updated with the patch call |
-| GET | `/api/v1/products/category` | Article_GetCategory | GEts a list of all defined categories |
-| GET | `/api/v1/products/custom-fields` | Article_GetCustomFields | Queries a list of all custom fields |
-| GET | `/api/v1/products/custom-fields/{id}` | Article_GetCustomField | Queries a single custom field |
-| POST | `/api/v1/products/images/delete` | Article_DeleteImages | Delete multiple images by id |
-| DELETE | `/api/v1/products/images/{imageId}` | Article_DeleteImage | Deletes a single image by id |
-| GET | `/api/v1/products/images/{imageId}` | Article_GetImage | Returns a single image by id |
-| GET | `/api/v1/products/reservedamount` | Article_GetReservedAmount | Queries the reserved amount for a single article by id or by sku |
-| GET | `/api/v1/products/stocks` | Article_GetStocks | Query all defined stock locations |
-| POST | `/api/v1/products/updatestock` | Article_UpdateStock | Update the stock qty of an article |
-| POST | `/api/v1/products/updatestockcode` | Article_UpdateStockCode | Update the stock code of an article |
-| POST | `/api/v1/products/updatestockmultiple` | Article_UpdateStockMultiple | Update the stock qty for multiple articles at once |
-| DELETE | `/api/v1/products/{id}` | Article_DeleteArticle | Deletes a product |
-| GET | `/api/v1/products/{id}` | Article_GetArticle | Queries a single article by id or by sku |
-| PATCH | `/api/v1/products/{id}` | Article_PatchArticle | Updates one or more fields of a product |
-| GET | `/api/v1/products/{productId}/images` | Article_GetImages | Returns a list of all images of the product |
-| PUT | `/api/v1/products/{productId}/images` | Article_PutImages | Add multiple images to a product or replace the product images by the given images |
-| DELETE | `/api/v1/products/{productId}/images/{imageId}` | Article_DeleteImageFromProduct | Deletes a single image from a product |
-| GET | `/api/v1/products/{productId}/images/{imageId}` | Article_GetImageFromProduct | Returns a single image by id |
-| PUT | `/api/v1/products/{productId}/images/{imageId}` | Article_PutImage | Add or update an existing image of a product |
-| POST | `/api/v1/search` | Search_Search | Search for products, customers and orders. Type can be "order", "product" and / or "customer" Term can contains lucene query syntax |
-| GET | `/api/v1/shipment/ping` | Shipment_GetPing | — |
-| POST | `/api/v1/shipment/shipment` | Shipment_PostShipment | Creates a new shipment with the selected Shippingprovider |
-| GET | `/api/v1/shipment/shipments` | Shipment_GetList | Get a list of all shipments optionally filtered by date. All parameters are optional. |
-| GET | `/api/v1/shipment/shippingcarriers` | Shipment_GetShippingCarrier | Queries the currently available shipping carriers. |
-| GET | `/api/v1/shipment/shippingproviders` | Shipment_GetShippingproviders | Query all defined shipping providers |
-| POST | `/api/v1/shipment/shipwithlabel` | Shipment_ShipWithLabel | Creates a shipment for an order in billbee |
-| DELETE | `/api/v1/webhooks` | WebHookManagement_DeleteAll | Deletes all existing WebHook registrations. |
-| GET | `/api/v1/webhooks` | WebHookManagement_Get | Gets all registered WebHooks for a given user. |
-| POST | `/api/v1/webhooks` | WebHookManagement_Post | Registers a new WebHook for a given user. |
-| GET | `/api/v1/webhooks/filters` | WebHookManagement_GetFilters | Returns a list of all known filters you can use to register webhooks |
-| DELETE | `/api/v1/webhooks/{id}` | WebHookManagement_Delete | Deletes an existing WebHook registration. |
-| GET | `/api/v1/webhooks/{id}` | WebHookManagement_Lookup | Looks up a registered WebHook with the given {id} for a given user. |
-| PUT | `/api/v1/webhooks/{id}` | WebHookManagement_Put | Updates an existing WebHook registration. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/api/v1/automaticprovision/createaccount` | AutomaticProvisioning_CreateAccount | body*: Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer | object |  | Creates a new Billbee user account with the data passed |
+| GET | `/api/v1/automaticprovision/termsinfo` | AutomaticProvisioning_TermsInfo | — | object | yes | Returns infos about Billbee terms and conditions |
+| GET | `/api/v1/cloudstorages` | CloudStorageApi_GetList | — | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_ | yes | Gets a list of all connected cloud storage devices |
+| GET | `/api/v1/customer-addresses` | CustomerAddresses_GetAll | `page`, `pageSize` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ | yes | Get a list of all customer addresses |
+| POST | `/api/v1/customer-addresses` | CustomerAddresses_Create | body*: Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ |  | Creates a new customer address |
+| GET | `/api/v1/customer-addresses/{id}` | CustomerAddresses_GetOne | `id`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ | yes | Queries a single customer address by id |
+| PUT | `/api/v1/customer-addresses/{id}` | CustomerAddresses_Update | `id`*, body*: Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ |  | Updates a customer address by id |
+| GET | `/api/v1/customers` | Customer_GetAll | `page`, `pageSize` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_ | yes | Get a list of all customers |
+| POST | `/api/v1/customers` | Customer_Create | body*: Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_ |  | Creates a new customer |
+| GET | `/api/v1/customers/addresses/{id}` | Customer_GetCustomerAddress | `id`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ | yes | Queries a single address from a customer |
+| PUT | `/api/v1/customers/addresses/{id}` | Customer_UpdateAddress | `id`*, body*: Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ |  | Updates all fields of an address |
+| PATCH | `/api/v1/customers/addresses/{id}` | Customer_PatchAddress | `id`*, body*: object | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ |  | Updates one or more fields of an address |
+| GET | `/api/v1/customers/{id}` | Customer_GetOne | `id`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_ | yes | Queries a single customer by id |
+| PUT | `/api/v1/customers/{id}` | Customer_Update | `id`*, body*: Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_ |  | Updates a customer by id |
+| GET | `/api/v1/customers/{id}/addresses` | Customer_GetCustomerAddresses | `id`*, `page`, `pageSize` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ | yes | Queries a list of addresses from a customer |
+| POST | `/api/v1/customers/{id}/addresses` | Customer_AddCustomerAddress | `id`*, body*: Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_ |  | Adds a new address to a customer |
+| GET | `/api/v1/customers/{id}/orders` | Customer_GetCustomerOrders | `id`*, `page`, `pageSize` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_ | yes | Queries a list of orders from a customer |
+| GET | `/api/v1/enums/orderstates` | EnumApi_GetOrderStates | — | object | yes | Returns a list with all defined orderstates |
+| GET | `/api/v1/enums/paymenttypes` | EnumApi_GetPaymentTypes | — | object | yes | Returns a list with all defined paymenttypes |
+| GET | `/api/v1/enums/shipmenttypes` | EnumApi_GetShipmentTypes | — | object | yes | Returns a list with all defined shipmenttypes |
+| GET | `/api/v1/enums/shippingcarriers` | EnumApi_GetShippingCarriers | — | object | yes | Returns a list with all defined shippingcarriers |
+| GET | `/api/v1/events` | EventApi_GetList | `minDate`, `maxDate`, `page`, `pageSize`, `typeId`, `orderId` | object | yes | Get a list of all events optionally filtered by date. This request is extra throttled to 2 calls per page per hour. |
+| GET | `/api/v1/layouts` | LayoutApi_GetList | — | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_ | yes | — |
+| GET | `/api/v1/orders` | OrderApi_GetList | `minOrderDate`, `maxOrderDate`, `page`, `pageSize`, `shopId`, `orderStateId`, `tag`, `minimumBillBeeOrderId`, `modifiedAtMin`, `modifiedAtMax`, `articleTitleSource`, `excludeTags` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_ | yes | Get a list of all orders optionally filtered by date |
+| POST | `/api/v1/orders` | OrderApi_PostNewOrder | `shopId`, body*: Billbee.Interfaces.BillbeeAPI.Model.Order | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_ |  | Creates a new order in the Billbee account |
+| POST | `/api/v1/orders/CreateDeliveryNote/{id}` | OrderApi_CreateDeliveryNote | `id`*, `includePdf`, `sendToCloudId` | object |  | Create an delivery note for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes. |
+| POST | `/api/v1/orders/CreateInvoice/{id}` | OrderApi_CreateInvoice | `id`*, `includeInvoicePdf`, `templateId`, `sendToCloudId` | object |  | Create an invoice for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes. |
+| GET | `/api/v1/orders/PatchableFields` | OrderApi_GetPatchableFields | — | object | yes | Returns a list of fields which can be updated with the orders/{id} patch call |
+| GET | `/api/v1/orders/find/{id}/{partner}` | OrderApi_Find | `id`*, `partner`* | object | yes | Find a single order by its external id (order number) |
+| GET | `/api/v1/orders/findbyextref/{extRef}` | OrderApi_GetByExtRef | `extRef`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_ | yes | Get a single order by its external order number |
+| GET | `/api/v1/orders/invoices` | OrderApi_GetInvoiceList | `minInvoiceDate`, `maxInvoiceDate`, `page`, `pageSize`, `shopId`, `orderStateId`, `tag`, `minPayDate`, `maxPayDate`, `includePositions`, `excludeTags` | object | yes | Get a list of all invoices optionally filtered by date. This request ist throttled to 1 per 1 minute for same page and minInvoiceDate |
+| GET | `/api/v1/orders/{id}` | OrderApi_Get | `id`*, `articleTitleSource` | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_ | yes | Get a single order by its internal billbee id. This request is throttled to 6 calls per order in one minute |
+| PATCH | `/api/v1/orders/{id}` | OrderApi_PatchOrder | `id`*, body*: object | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_ |  | Updates one or more fields of an order |
+| PUT | `/api/v1/orders/{id}/orderstate` | OrderApi_UpdateState | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.OrderStateUpdate | object |  | Changes the main state of a single order |
+| POST | `/api/v1/orders/{id}/parse-placeholders` | OrderApi_ParsePlaceholders | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.ParseTextContainer | object |  | Parses a text and replaces all placeholders |
+| POST | `/api/v1/orders/{id}/send-message` | OrderApi_SendMessage | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel | object |  | Sends a message to the buyer |
+| POST | `/api/v1/orders/{id}/shipment` | OrderApi_AddShipment | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.ApiAddShipmentToOrderModel | object |  | Add a shipment to a given order |
+| PUT | `/api/v1/orders/{id}/tags` | OrderApi_TagsUpdate | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate | object |  | Sets the tags attached to an order |
+| POST | `/api/v1/orders/{id}/tags` | OrderApi_TagsCreate | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate | object |  | Attach one or more tags to an order |
+| POST | `/api/v1/orders/{id}/trigger-event` | OrderApi_TriggerEvent | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.TriggerEventContainer | object |  | Triggers a rule event |
+| GET | `/api/v1/products` | Article_GetList | `page`, `pageSize`, `minCreatedAt`, `minimumBillBeeArticleId`, `maximumBillBeeArticleId` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_ | yes | Get a list of all products |
+| POST | `/api/v1/products` | Article_CreateArticle | body*: Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel | object |  | Creates a new product |
+| GET | `/api/v1/products/PatchableFields` | Article_GetPatchableFields | — | object | yes | Returns a list of fields which can be updated with the patch call |
+| GET | `/api/v1/products/category` | Article_GetCategory | — | object | yes | GEts a list of all defined categories |
+| GET | `/api/v1/products/custom-fields` | Article_GetCustomFields | `page`, `pageSize` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_ | yes | Queries a list of all custom fields |
+| GET | `/api/v1/products/custom-fields/{id}` | Article_GetCustomField | `id`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_ | yes | Queries a single custom field |
+| POST | `/api/v1/products/images/delete` | Article_DeleteImages | body*: integer:int64[] | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_ |  | Delete multiple images by id |
+| GET | `/api/v1/products/images/{imageId}` | Article_GetImage | `imageId`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_ | yes | Returns a single image by id |
+| DELETE | `/api/v1/products/images/{imageId}` | Article_DeleteImage | `imageId`* | object |  | Deletes a single image by id |
+| GET | `/api/v1/products/reservedamount` | Article_GetReservedAmount | `id`*, `lookupBy`, `stockId` | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_ | yes | Queries the reserved amount for a single article by id or by sku |
+| GET | `/api/v1/products/stocks` | Article_GetStocks | — | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_ | yes | Query all defined stock locations |
+| POST | `/api/v1/products/updatestock` | Article_UpdateStock | body*: Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_ |  | Update the stock qty of an article |
+| POST | `/api/v1/products/updatestockcode` | Article_UpdateStockCode | body*: Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_ |  | Update the stock code of an article |
+| POST | `/api/v1/products/updatestockmultiple` | Article_UpdateStockMultiple | body*: Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel[] | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_[] |  | Update the stock qty for multiple articles at once |
+| GET | `/api/v1/products/{id}` | Article_GetArticle | `id`*, `lookupBy` | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_ | yes | Queries a single article by id or by sku |
+| DELETE | `/api/v1/products/{id}` | Article_DeleteArticle | `id`* | object |  | Deletes a product |
+| PATCH | `/api/v1/products/{id}` | Article_PatchArticle | `id`*, body*: object | object |  | Updates one or more fields of a product |
+| GET | `/api/v1/products/{productId}/images` | Article_GetImages | `productId`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_ | yes | Returns a list of all images of the product |
+| PUT | `/api/v1/products/{productId}/images` | Article_PutImages | `productId`*, `replace`, body*: Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel[] | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_ |  | Add multiple images to a product or replace the product images by the given images |
+| GET | `/api/v1/products/{productId}/images/{imageId}` | Article_GetImageFromProduct | `productId`*, `imageId`* | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_ | yes | Returns a single image by id |
+| PUT | `/api/v1/products/{productId}/images/{imageId}` | Article_PutImage | `productId`*, `imageId`*, body*: Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_ |  | Add or update an existing image of a product |
+| DELETE | `/api/v1/products/{productId}/images/{imageId}` | Article_DeleteImageFromProduct | `productId`*, `imageId`* | object |  | Deletes a single image from a product |
+| POST | `/api/v1/search` | Search_Search | body*: Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchModel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_ |  | Search for products, customers and orders. Type can be "order", "product" and / or "customer" Term can contains lucene query syntax |
+| GET | `/api/v1/shipment/ping` | Shipment_GetPing | — | object | yes | — |
+| POST | `/api/v1/shipment/shipment` | Shipment_PostShipment | body*: Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel | object |  | Creates a new shipment with the selected Shippingprovider |
+| GET | `/api/v1/shipment/shipments` | Shipment_GetList | `page`, `pageSize`, `createdAtMin`, `createdAtMax`, `orderId`, `minimumShipmentId`, `shippingProviderId` | Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_ | yes | Get a list of all shipments optionally filtered by date. All parameters are optional. |
+| GET | `/api/v1/shipment/shippingcarriers` | Shipment_GetShippingCarrier | — | object | yes | Queries the currently available shipping carriers. |
+| GET | `/api/v1/shipment/shippingproviders` | Shipment_GetShippingproviders | — | object | yes | Query all defined shipping providers |
+| POST | `/api/v1/shipment/shipwithlabel` | Shipment_ShipWithLabel | body*: Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel | Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_ |  | Creates a shipment for an order in billbee |
+| GET | `/api/v1/webhooks` | WebHookManagement_Get | — | Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel[] | yes | Gets all registered WebHooks for a given user. |
+| POST | `/api/v1/webhooks` | WebHookManagement_Post | body*: Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel | Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel |  | Registers a new WebHook for a given user. |
+| DELETE | `/api/v1/webhooks` | WebHookManagement_DeleteAll | — | object |  | Deletes all existing WebHook registrations. |
+| GET | `/api/v1/webhooks/filters` | WebHookManagement_GetFilters | — | object | yes | Returns a list of all known filters you can use to register webhooks |
+| GET | `/api/v1/webhooks/{id}` | WebHookManagement_Lookup | `id`* | Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel | yes | Looks up a registered WebHook with the given {id} for a given user. |
+| PUT | `/api/v1/webhooks/{id}` | WebHookManagement_Put | `id`*, body*: Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel | Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel |  | Updates an existing WebHook registration. |
+| DELETE | `/api/v1/webhooks/{id}` | WebHookManagement_Delete | `id`* | object |  | Deletes an existing WebHook registration. |

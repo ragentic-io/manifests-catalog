@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_SwaggerApi_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `081d1d9fd20ede4e83fe072511fdbec749b44c74b50d7ae1ec52f173ac193b94` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_SwaggerApi_profile_
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/gen/clients` | clientOptions | Gets languages supported by the client generator |
-| GET | `/gen/clients/{language}` | getClientOptions | Returns options for a client library |
-| POST | `/gen/clients/{language}` | generateClient | Generates a client library |
-| GET | `/gen/download/{fileId}` | downloadFile | Downloads a pre-generated file |
-| GET | `/gen/servers` | serverOptions | Gets languages supported by the server generator |
-| GET | `/gen/servers/{framework}` | getServerOptions | Returns options for a server framework |
-| POST | `/gen/servers/{framework}` | generateServerForLanguage | Generates a server library |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/gen/clients` | clientOptions | — | string[] | yes | Gets languages supported by the client generator |
+| GET | `/gen/clients/{language}` | getClientOptions | `language`* | object | yes | Returns options for a client library |
+| POST | `/gen/clients/{language}` | generateClient | `language`*, body*: GeneratorInput | ResponseCode |  | Generates a client library |
+| GET | `/gen/download/{fileId}` | downloadFile | `fileId`* | string | yes | Downloads a pre-generated file |
+| GET | `/gen/servers` | serverOptions | — | string[] | yes | Gets languages supported by the server generator |
+| GET | `/gen/servers/{framework}` | getServerOptions | `framework`* | object | yes | Returns options for a server framework |
+| POST | `/gen/servers/{framework}` | generateServerForLanguage | `framework`*, body*: GeneratorInput | ResponseCode |  | Generates a server library |

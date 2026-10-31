@@ -8,6 +8,16 @@
         "from": "hubapi-com-analytics-4cfce89b8c",
         "kind": "EXPOSES",
         "to": "operation:post:/events/v3/send"
+      },
+      {
+        "from": "operation:post:/events/v3/send",
+        "kind": "ACCEPTS",
+        "to": "schema:BehavioralEventHttpCompletionRequest"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorDetail"
       }
     ],
     "nodes": [
@@ -17,12 +27,30 @@
       },
       {
         "deprecated": false,
+        "description": "Endpoint to send an instance of a behavioral event",
         "id": "operation:post:/events/v3/send",
         "kind": "operation",
         "method": "post",
         "name": "post-/events/v3/send",
         "path": "/events/v3/send",
         "pointer": "#/paths/~1events~1v3~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BehavioralEventHttpCompletionRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hapikey": []
@@ -36,22 +64,28 @@
             ]
           }
         ],
-        "summary": "Sends Custom Behavioral Event"
+        "summary": "Sends Custom Behavioral Event",
+        "tags": [
+          "Behavioral_Events_Tracking"
+        ]
       },
       {
         "id": "schema:BehavioralEventHttpCompletionRequest",
         "kind": "schema",
-        "name": "BehavioralEventHttpCompletionRequest"
+        "name": "BehavioralEventHttpCompletionRequest",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDetail",
         "kind": "schema",
-        "name": "ErrorDetail"
+        "name": "ErrorDetail",
+        "type": "object"
       }
     ]
   },

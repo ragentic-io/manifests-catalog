@@ -308,6 +308,826 @@
         "from": "envoice-in-6968a8aaf9",
         "kind": "EXPOSES",
         "to": "operation:post:/api/worktype/update"
+      },
+      {
+        "from": "operation:get:/api/client/all",
+        "kind": "RETURNS",
+        "to": "schema:ClientDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/client/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:ClientDeleteApiModel"
+      },
+      {
+        "from": "operation:get:/api/client/details",
+        "kind": "RETURNS",
+        "to": "schema:ClientDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/client/new",
+        "kind": "ACCEPTS",
+        "to": "schema:ClientCreateApiModel"
+      },
+      {
+        "from": "operation:post:/api/client/update",
+        "kind": "ACCEPTS",
+        "to": "schema:ClientUpdateApiModel"
+      },
+      {
+        "from": "operation:get:/api/estimation/all",
+        "kind": "RETURNS",
+        "to": "schema:ListResult_EstimationDetailsApiModel_"
+      },
+      {
+        "from": "operation:post:/api/estimation/changestatus",
+        "kind": "ACCEPTS",
+        "to": "schema:EstimationChangeStatusApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/convert",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:EstimationDeleteApiModel"
+      },
+      {
+        "from": "operation:get:/api/estimation/details",
+        "kind": "RETURNS",
+        "to": "schema:EstimationFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/new",
+        "kind": "ACCEPTS",
+        "to": "schema:EstimationCreateApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/new",
+        "kind": "RETURNS",
+        "to": "schema:EstimationFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/sendtoclient",
+        "kind": "ACCEPTS",
+        "to": "schema:SendEstimationToClientApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/update",
+        "kind": "ACCEPTS",
+        "to": "schema:EstimationUpdateApiModel"
+      },
+      {
+        "from": "operation:post:/api/estimation/update",
+        "kind": "RETURNS",
+        "to": "schema:EstimationFullDetailsApiModel"
+      },
+      {
+        "from": "operation:get:/api/estimation/uri",
+        "kind": "RETURNS",
+        "to": "schema:EstimationUriApiModel"
+      },
+      {
+        "from": "operation:get:/api/general/countries",
+        "kind": "RETURNS",
+        "to": "schema:CountryDetailsApiModel"
+      },
+      {
+        "from": "operation:get:/api/general/currencies",
+        "kind": "RETURNS",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "operation:get:/api/general/uilanguages",
+        "kind": "RETURNS",
+        "to": "schema:UILanguageDetailsApiModel"
+      },
+      {
+        "from": "operation:get:/api/invoice/all",
+        "kind": "RETURNS",
+        "to": "schema:ListResult_InvoiceDetailsApiModel_"
+      },
+      {
+        "from": "operation:get:/api/invoice/allcategories",
+        "kind": "RETURNS",
+        "to": "schema:ListResult_InvoiceCategoryApiModel_"
+      },
+      {
+        "from": "operation:post:/api/invoice/changestatus",
+        "kind": "ACCEPTS",
+        "to": "schema:ChangeStatusApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceDeleteApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/deletecategory",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceCategoryDeleteApiModel"
+      },
+      {
+        "from": "operation:get:/api/invoice/details",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/new",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceCreateApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/new",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/newcategory",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceCategoryCreateApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/newcategory",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceCategoryApiModel"
+      },
+      {
+        "from": "operation:get:/api/invoice/pdf",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceUriApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/sendtoaccountant",
+        "kind": "ACCEPTS",
+        "to": "schema:SendInvoiceToAccountantApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/sendtoclient",
+        "kind": "ACCEPTS",
+        "to": "schema:SendInvoiceToClientApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/update",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceUpdateApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/update",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/updatecategory",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceCategoryUpdateApiModel"
+      },
+      {
+        "from": "operation:post:/api/invoice/updatecategory",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceCategoryApiModel"
+      },
+      {
+        "from": "operation:get:/api/invoice/uri",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceUriApiModel"
+      },
+      {
+        "from": "operation:get:/api/order/all",
+        "kind": "RETURNS",
+        "to": "schema:ListResult_OrderDetailsApiModel_"
+      },
+      {
+        "from": "operation:post:/api/order/changeshippingdetails",
+        "kind": "ACCEPTS",
+        "to": "schema:OrderShippingDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/order/changestatus",
+        "kind": "ACCEPTS",
+        "to": "schema:ChangeOrderStatusApiModel"
+      },
+      {
+        "from": "operation:post:/api/order/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:OrderDeleteApiModel"
+      },
+      {
+        "from": "operation:get:/api/order/details",
+        "kind": "RETURNS",
+        "to": "schema:OrderFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/order/new",
+        "kind": "ACCEPTS",
+        "to": "schema:OrderCreateApiModel"
+      },
+      {
+        "from": "operation:get:/api/payment/supported",
+        "kind": "RETURNS",
+        "to": "schema:PaymentGatewayDetailsApiModel"
+      },
+      {
+        "from": "operation:get:/api/paymentlink/all",
+        "kind": "RETURNS",
+        "to": "schema:ListResult_PaymentLink_"
+      },
+      {
+        "from": "operation:post:/api/paymentlink/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentLink"
+      },
+      {
+        "from": "operation:post:/api/paymentlink/new",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentLink"
+      },
+      {
+        "from": "operation:get:/api/paymentlink/uri",
+        "kind": "RETURNS",
+        "to": "schema:PaymentLinkUriApiModel"
+      },
+      {
+        "from": "operation:get:/api/product/all",
+        "kind": "RETURNS",
+        "to": "schema:ListResult_ProductDetailsApiModel_"
+      },
+      {
+        "from": "operation:post:/api/product/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductDeleteApiModel"
+      },
+      {
+        "from": "operation:get:/api/product/details",
+        "kind": "RETURNS",
+        "to": "schema:ProductFullDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/product/new",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductCreateApiModel"
+      },
+      {
+        "from": "operation:post:/api/product/update",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductUpdateApiModel"
+      },
+      {
+        "from": "operation:get:/api/tax/all",
+        "kind": "RETURNS",
+        "to": "schema:TaxDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/tax/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:TaxDeleteApiModel"
+      },
+      {
+        "from": "operation:post:/api/tax/new",
+        "kind": "ACCEPTS",
+        "to": "schema:TaxCreateApiModel"
+      },
+      {
+        "from": "operation:post:/api/tax/update",
+        "kind": "ACCEPTS",
+        "to": "schema:TaxUpdateApiModel"
+      },
+      {
+        "from": "operation:get:/api/worktype/all",
+        "kind": "RETURNS",
+        "to": "schema:WorkTypeDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/worktype/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:WorkTypeDeleteApiModel"
+      },
+      {
+        "from": "operation:get:/api/worktype/details",
+        "kind": "RETURNS",
+        "to": "schema:WorkTypeDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/worktype/new",
+        "kind": "ACCEPTS",
+        "to": "schema:WorkTypeCreateApiModel"
+      },
+      {
+        "from": "operation:get:/api/worktype/search",
+        "kind": "RETURNS",
+        "to": "schema:WorkTypeDetailsApiModel"
+      },
+      {
+        "from": "operation:post:/api/worktype/update",
+        "kind": "ACCEPTS",
+        "to": "schema:WorkTypeUpdateApiModel"
+      },
+      {
+        "from": "schema:AdditionalClientEmail",
+        "kind": "REFERENCES",
+        "to": "schema:Client"
+      },
+      {
+        "from": "schema:ClientCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalClientEmailApiModel"
+      },
+      {
+        "from": "schema:ClientDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalClientEmailApiModel"
+      },
+      {
+        "from": "schema:ClientUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalClientEmailApiModel"
+      },
+      {
+        "from": "schema:EstimationCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationCreateAttachmentApiModel"
+      },
+      {
+        "from": "schema:EstimationCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationCreateItemApiModel"
+      },
+      {
+        "from": "schema:EstimationCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationGatewayApiModel"
+      },
+      {
+        "from": "schema:EstimationDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ClientDetailsApiModel"
+      },
+      {
+        "from": "schema:EstimationDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:EstimationFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ClientDetailsApiModel"
+      },
+      {
+        "from": "schema:EstimationFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:EstimationFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationActivityApiModel"
+      },
+      {
+        "from": "schema:EstimationFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationAttachmentApiModel"
+      },
+      {
+        "from": "schema:EstimationFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationGatewayApiModel"
+      },
+      {
+        "from": "schema:EstimationFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationItemApiModel"
+      },
+      {
+        "from": "schema:EstimationUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationGatewayApiModel"
+      },
+      {
+        "from": "schema:EstimationUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationUpdateAttachmentApiModel"
+      },
+      {
+        "from": "schema:EstimationUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationUpdateItemApiModel"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:Activity"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceAttachment"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceItem"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:Payment"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentGatewayForInvoice"
+      },
+      {
+        "from": "schema:InvoiceCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceCreateAttachmentApiModel"
+      },
+      {
+        "from": "schema:InvoiceCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceCreateItemApiModel"
+      },
+      {
+        "from": "schema:InvoiceCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceGatewayApiModel"
+      },
+      {
+        "from": "schema:InvoiceCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceRecurringApiModel"
+      },
+      {
+        "from": "schema:InvoiceDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ClientDetailsApiModel"
+      },
+      {
+        "from": "schema:InvoiceDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:InvoiceDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceRecurringApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ClientDetailsApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceActivityApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceAttachmentApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceGatewayApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceItemApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoicePaymentApiModel"
+      },
+      {
+        "from": "schema:InvoiceFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceRecurringApiModel"
+      },
+      {
+        "from": "schema:InvoiceUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceGatewayApiModel"
+      },
+      {
+        "from": "schema:InvoiceUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceRecurringApiModel"
+      },
+      {
+        "from": "schema:InvoiceUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceUpdateAttachmentApiModel"
+      },
+      {
+        "from": "schema:InvoiceUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceUpdateItemApiModel"
+      },
+      {
+        "from": "schema:ListResult_EstimationDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:EstimationDetailsApiModel"
+      },
+      {
+        "from": "schema:ListResult_EstimationDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:IErrorInfo"
+      },
+      {
+        "from": "schema:ListResult_InvoiceCategoryApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:IErrorInfo"
+      },
+      {
+        "from": "schema:ListResult_InvoiceCategoryApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceCategoryApiModel"
+      },
+      {
+        "from": "schema:ListResult_InvoiceDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:IErrorInfo"
+      },
+      {
+        "from": "schema:ListResult_InvoiceDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceDetailsApiModel"
+      },
+      {
+        "from": "schema:ListResult_OrderDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:IErrorInfo"
+      },
+      {
+        "from": "schema:ListResult_OrderDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:OrderDetailsApiModel"
+      },
+      {
+        "from": "schema:ListResult_PaymentLink_",
+        "kind": "REFERENCES",
+        "to": "schema:IErrorInfo"
+      },
+      {
+        "from": "schema:ListResult_PaymentLink_",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLink"
+      },
+      {
+        "from": "schema:ListResult_ProductDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:IErrorInfo"
+      },
+      {
+        "from": "schema:ListResult_ProductDetailsApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:ProductDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderAttachmentApiModel"
+      },
+      {
+        "from": "schema:OrderCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderBillingDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItemApiModel"
+      },
+      {
+        "from": "schema:OrderCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderShippingDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderBillingDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderShippingDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderAttachmentApiModel"
+      },
+      {
+        "from": "schema:OrderFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderBillingDetailsApiModel"
+      },
+      {
+        "from": "schema:OrderFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItemApiModel"
+      },
+      {
+        "from": "schema:OrderFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrderShippingDetailsApiModel"
+      },
+      {
+        "from": "schema:Payment",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:PaymentGateway",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:PaymentGateway",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentGatewayInputField"
+      },
+      {
+        "from": "schema:PaymentGatewayDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyApiModel"
+      },
+      {
+        "from": "schema:PaymentLink",
+        "kind": "REFERENCES",
+        "to": "schema:Client"
+      },
+      {
+        "from": "schema:PaymentLink",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:PaymentLink",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:PaymentLink",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinkItem"
+      },
+      {
+        "from": "schema:PaymentLink",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:PaymentLinkItem",
+        "kind": "REFERENCES",
+        "to": "schema:Tax"
+      },
+      {
+        "from": "schema:PaymentLinkItem",
+        "kind": "REFERENCES",
+        "to": "schema:WorkType"
+      },
+      {
+        "from": "schema:ProductCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttachmentApiModel"
+      },
+      {
+        "from": "schema:ProductCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductCouponApiModel"
+      },
+      {
+        "from": "schema:ProductCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductDiscountApiModel"
+      },
+      {
+        "from": "schema:ProductCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductGatewayApiModel"
+      },
+      {
+        "from": "schema:ProductCreateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductItemApiModel"
+      },
+      {
+        "from": "schema:ProductDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:ProductFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyDetailsApiModel"
+      },
+      {
+        "from": "schema:ProductFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttachmentApiModel"
+      },
+      {
+        "from": "schema:ProductFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductCouponApiModel"
+      },
+      {
+        "from": "schema:ProductFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductDiscountApiModel"
+      },
+      {
+        "from": "schema:ProductFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductGatewayApiModel"
+      },
+      {
+        "from": "schema:ProductFullDetailsApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductItemApiModel"
+      },
+      {
+        "from": "schema:ProductUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttachmentApiModel"
+      },
+      {
+        "from": "schema:ProductUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductCouponApiModel"
+      },
+      {
+        "from": "schema:ProductUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductDiscountApiModel"
+      },
+      {
+        "from": "schema:ProductUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductGatewayApiModel"
+      },
+      {
+        "from": "schema:ProductUpdateApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductItemApiModel"
+      },
+      {
+        "from": "schema:QueuedInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalConnection"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:SubscriptionPlan"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UserSettings"
+      },
+      {
+        "from": "schema:UserSettings",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:UserSettings",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:UserSettings",
+        "kind": "REFERENCES",
+        "to": "schema:UiLanguage"
       }
     ],
     "nodes": [
@@ -321,10 +1141,36 @@
         "kind": "operation",
         "method": "get",
         "name": "ClientApi_All",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client/all",
         "pointer": "#/paths/~1api~1client~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClientDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all clients for the account"
+        "summary": "Return all clients for the account",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
@@ -332,10 +1178,42 @@
         "kind": "operation",
         "method": "get",
         "name": "ClientApi_CanDelete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client/candelete",
         "pointer": "#/paths/~1api~1client~1candelete/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check if the provided client can be deleted"
+        "summary": "Check if the provided client can be deleted",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
@@ -343,10 +1221,48 @@
         "kind": "operation",
         "method": "post",
         "name": "ClientApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client/delete",
         "pointer": "#/paths/~1api~1client~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ClientDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing client"
+        "summary": "Delete an existing client",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
@@ -354,10 +1270,42 @@
         "kind": "operation",
         "method": "get",
         "name": "ClientApi_Details",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client/details",
         "pointer": "#/paths/~1api~1client~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClientDetailsApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return client details. Activities and invoices included."
+        "summary": "Return client details. Activities and invoices included.",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
@@ -365,10 +1313,48 @@
         "kind": "operation",
         "method": "post",
         "name": "ClientApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client/new",
         "pointer": "#/paths/~1api~1client~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ClientCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a client"
+        "summary": "Create a client",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
@@ -376,10 +1362,47 @@
         "kind": "operation",
         "method": "post",
         "name": "ClientApi_Update",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client/update",
         "pointer": "#/paths/~1api~1client~1update/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ClientUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing client"
+        "summary": "Update an existing client",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
@@ -387,10 +1410,48 @@
         "kind": "operation",
         "method": "get",
         "name": "EstimationApi_All",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "queryOptions.page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/all",
         "pointer": "#/paths/~1api~1estimation~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResult_EstimationDetailsApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all estimation for the account"
+        "summary": "Return all estimation for the account",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -398,10 +1459,48 @@
         "kind": "operation",
         "method": "post",
         "name": "EstimationApi_ChangeStatus",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/changestatus",
         "pointer": "#/paths/~1api~1estimation~1changestatus/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "EstimationChangeStatusApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change estimation status"
+        "summary": "Change estimation status",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -409,10 +1508,48 @@
         "kind": "operation",
         "method": "post",
         "name": "EstimationApi_Convert",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/convert",
         "pointer": "#/paths/~1api~1estimation~1convert/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "integer:int32"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceFullDetailsApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Convert the estimation to an invoice"
+        "summary": "Convert the estimation to an invoice",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -420,10 +1557,48 @@
         "kind": "operation",
         "method": "post",
         "name": "EstimationApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/delete",
         "pointer": "#/paths/~1api~1estimation~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "EstimationDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing estimation"
+        "summary": "Delete an existing estimation",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -431,10 +1606,42 @@
         "kind": "operation",
         "method": "get",
         "name": "EstimationApi_Details",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/details",
         "pointer": "#/paths/~1api~1estimation~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EstimationFullDetailsApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return estimation data"
+        "summary": "Return estimation data",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -442,10 +1649,48 @@
         "kind": "operation",
         "method": "post",
         "name": "EstimationApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/new",
         "pointer": "#/paths/~1api~1estimation~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "EstimationCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EstimationFullDetailsApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an estimation"
+        "summary": "Create an estimation",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -453,10 +1698,48 @@
         "kind": "operation",
         "method": "post",
         "name": "EstimationApi_SendToClient",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/sendtoclient",
         "pointer": "#/paths/~1api~1estimation~1sendtoclient/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "SendEstimationToClientApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Send the provided estimation to the client"
+        "summary": "Send the provided estimation to the client",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -464,10 +1747,42 @@
         "kind": "operation",
         "method": "get",
         "name": "EstimationApi_Status",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/status",
         "pointer": "#/paths/~1api~1estimation~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the status of the estimation"
+        "summary": "Retrieve the status of the estimation",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -475,10 +1790,48 @@
         "kind": "operation",
         "method": "post",
         "name": "EstimationApi_Update",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/update",
         "pointer": "#/paths/~1api~1estimation~1update/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "EstimationUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EstimationFullDetailsApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing estimation"
+        "summary": "Update an existing estimation",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -486,10 +1839,42 @@
         "kind": "operation",
         "method": "get",
         "name": "EstimationApi_Uri",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/estimation/uri",
         "pointer": "#/paths/~1api~1estimation~1uri/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EstimationUriApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the unique url to the client's invoice"
+        "summary": "Return the unique url to the client's invoice",
+        "tags": [
+          "Estimation"
+        ]
       },
       {
         "deprecated": false,
@@ -497,10 +1882,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GeneralApi_Countries",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/general/countries",
         "pointer": "#/paths/~1api~1general~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountryDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all of the platform supported countries"
+        "summary": "Return all of the platform supported countries",
+        "tags": [
+          "General"
+        ]
       },
       {
         "deprecated": false,
@@ -508,10 +1919,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GeneralApi_Currencies",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/general/currencies",
         "pointer": "#/paths/~1api~1general~1currencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrencyDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all of the platform supported currencies"
+        "summary": "Return all of the platform supported currencies",
+        "tags": [
+          "General"
+        ]
       },
       {
         "deprecated": false,
@@ -519,10 +1956,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GeneralApi_DateFormats",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/general/dateformats",
         "pointer": "#/paths/~1api~1general~1dateformats/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all of the platform supported Date Formats"
+        "summary": "Return all of the platform supported Date Formats",
+        "tags": [
+          "General"
+        ]
       },
       {
         "deprecated": false,
@@ -530,10 +1993,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GeneralApi_UiLanguages",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/general/uilanguages",
         "pointer": "#/paths/~1api~1general~1uilanguages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UILanguageDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all of the platform supported UI languages"
+        "summary": "Return all of the platform supported UI languages",
+        "tags": [
+          "General"
+        ]
       },
       {
         "deprecated": false,
@@ -541,10 +2030,48 @@
         "kind": "operation",
         "method": "get",
         "name": "InvoiceApi_All",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "queryOptions.page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/all",
         "pointer": "#/paths/~1api~1invoice~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResult_InvoiceDetailsApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all invoices for the account"
+        "summary": "Return all invoices for the account",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -552,10 +2079,42 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/invoice/allcategories",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/allcategories",
         "pointer": "#/paths/~1api~1invoice~1allcategories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResult_InvoiceCategoryApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all invoice categories for the account"
+        "summary": "Return all invoice categories for the account",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -563,10 +2122,48 @@
         "kind": "operation",
         "method": "post",
         "name": "InvoiceApi_ChangeStatus",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/changestatus",
         "pointer": "#/paths/~1api~1invoice~1changestatus/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ChangeStatusApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change invoice status"
+        "summary": "Change invoice status",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -574,10 +2171,48 @@
         "kind": "operation",
         "method": "post",
         "name": "InvoiceApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/delete",
         "pointer": "#/paths/~1api~1invoice~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "InvoiceDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing invoice"
+        "summary": "Delete an existing invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -585,10 +2220,48 @@
         "kind": "operation",
         "method": "post",
         "name": "post /api/invoice/deletecategory",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/deletecategory",
         "pointer": "#/paths/~1api~1invoice~1deletecategory/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "InvoiceCategoryDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing invoice category"
+        "summary": "Delete an existing invoice category",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -596,10 +2269,42 @@
         "kind": "operation",
         "method": "get",
         "name": "InvoiceApi_Details",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/details",
         "pointer": "#/paths/~1api~1invoice~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceFullDetailsApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return invoice data"
+        "summary": "Return invoice data",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -607,10 +2312,48 @@
         "kind": "operation",
         "method": "post",
         "name": "InvoiceApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/new",
         "pointer": "#/paths/~1api~1invoice~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "InvoiceCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceFullDetailsApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an invoice"
+        "summary": "Create an invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -618,10 +2361,48 @@
         "kind": "operation",
         "method": "post",
         "name": "post /api/invoice/newcategory",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/newcategory",
         "pointer": "#/paths/~1api~1invoice~1newcategory/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "InvoiceCategoryCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceCategoryApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an invoice category"
+        "summary": "Create an invoice category",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -629,10 +2410,48 @@
         "kind": "operation",
         "method": "get",
         "name": "InvoiceApi_Pdf",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "signedVersion",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/pdf",
         "pointer": "#/paths/~1api~1invoice~1pdf/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceUriApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the PDF for the invoice"
+        "summary": "Return the PDF for the invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -640,10 +2459,48 @@
         "kind": "operation",
         "method": "post",
         "name": "InvoiceApi_SendToAccountant",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/sendtoaccountant",
         "pointer": "#/paths/~1api~1invoice~1sendtoaccountant/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "SendInvoiceToAccountantApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Send the provided invoice to the accountant"
+        "summary": "Send the provided invoice to the accountant",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -651,10 +2508,48 @@
         "kind": "operation",
         "method": "post",
         "name": "InvoiceApi_SendToClient",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/sendtoclient",
         "pointer": "#/paths/~1api~1invoice~1sendtoclient/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "SendInvoiceToClientApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Send the provided invoice to the client"
+        "summary": "Send the provided invoice to the client",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -662,10 +2557,42 @@
         "kind": "operation",
         "method": "get",
         "name": "InvoiceApi_Status",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/status",
         "pointer": "#/paths/~1api~1invoice~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the status of the invoice"
+        "summary": "Retrieve the status of the invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -673,10 +2600,48 @@
         "kind": "operation",
         "method": "post",
         "name": "InvoiceApi_Update",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/update",
         "pointer": "#/paths/~1api~1invoice~1update/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "InvoiceUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceFullDetailsApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing invoice"
+        "summary": "Update an existing invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -684,10 +2649,48 @@
         "kind": "operation",
         "method": "post",
         "name": "post /api/invoice/updatecategory",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/updatecategory",
         "pointer": "#/paths/~1api~1invoice~1updatecategory/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "InvoiceCategoryUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceCategoryApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing invoice category"
+        "summary": "Update an existing invoice category",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -695,10 +2698,42 @@
         "kind": "operation",
         "method": "get",
         "name": "InvoiceApi_Uri",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/invoice/uri",
         "pointer": "#/paths/~1api~1invoice~1uri/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceUriApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the unique url to the client's invoice"
+        "summary": "Return the unique url to the client's invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -706,10 +2741,48 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_All",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "queryOptions.page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/order/all",
         "pointer": "#/paths/~1api~1order~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResult_OrderDetailsApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all orders for the account"
+        "summary": "Return all orders for the account",
+        "tags": [
+          "Order"
+        ]
       },
       {
         "deprecated": false,
@@ -717,10 +2790,53 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_ChangeShippingDetails",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "orderId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/order/changeshippingdetails",
         "pointer": "#/paths/~1api~1order~1changeshippingdetails/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "OrderShippingDetailsApiModel"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change order shipping details"
+        "summary": "Change order shipping details",
+        "tags": [
+          "Order"
+        ]
       },
       {
         "deprecated": false,
@@ -728,10 +2844,47 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_ChangeStatus",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/order/changestatus",
         "pointer": "#/paths/~1api~1order~1changestatus/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ChangeOrderStatusApiModel"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change order status"
+        "summary": "Change order status",
+        "tags": [
+          "Order"
+        ]
       },
       {
         "deprecated": false,
@@ -739,10 +2892,48 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/order/delete",
         "pointer": "#/paths/~1api~1order~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "OrderDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing order"
+        "summary": "Delete an existing order",
+        "tags": [
+          "Order"
+        ]
       },
       {
         "deprecated": false,
@@ -750,10 +2941,42 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_Details",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/order/details",
         "pointer": "#/paths/~1api~1order~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrderFullDetailsApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return order details"
+        "summary": "Return order details",
+        "tags": [
+          "Order"
+        ]
       },
       {
         "deprecated": false,
@@ -761,10 +2984,48 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/order/new",
         "pointer": "#/paths/~1api~1order~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "OrderCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an order"
+        "summary": "Create an order",
+        "tags": [
+          "Order"
+        ]
       },
       {
         "deprecated": false,
@@ -772,10 +3033,36 @@
         "kind": "operation",
         "method": "get",
         "name": "PaymentApi_Supported",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/payment/supported",
         "pointer": "#/paths/~1api~1payment~1supported/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentGatewayDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all supported payment gateways (no currencies means all are supported)"
+        "summary": "Return all supported payment gateways (no currencies means all are supported)",
+        "tags": [
+          "Payment"
+        ]
       },
       {
         "deprecated": false,
@@ -783,10 +3070,48 @@
         "kind": "operation",
         "method": "get",
         "name": "PaymentLinkApi_All",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "queryOptions.page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/paymentlink/all",
         "pointer": "#/paths/~1api~1paymentlink~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResult_PaymentLink_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Create a payment link"
+        "summary": "Create a payment link",
+        "tags": [
+          "PaymentLink"
+        ]
       },
       {
         "deprecated": false,
@@ -794,10 +3119,48 @@
         "kind": "operation",
         "method": "post",
         "name": "PaymentLinkApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/paymentlink/delete",
         "pointer": "#/paths/~1api~1paymentlink~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "PaymentLink"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing payment link"
+        "summary": "Delete an existing payment link",
+        "tags": [
+          "PaymentLink"
+        ]
       },
       {
         "deprecated": false,
@@ -805,10 +3168,48 @@
         "kind": "operation",
         "method": "post",
         "name": "PaymentLinkApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/paymentlink/new",
         "pointer": "#/paths/~1api~1paymentlink~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "PaymentLink"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a payment link"
+        "summary": "Create a payment link",
+        "tags": [
+          "PaymentLink"
+        ]
       },
       {
         "deprecated": false,
@@ -816,10 +3217,42 @@
         "kind": "operation",
         "method": "get",
         "name": "PaymentLinkApi_Uri",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/paymentlink/uri",
         "pointer": "#/paths/~1api~1paymentlink~1uri/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentLinkUriApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the unique url to the client's payment link"
+        "summary": "Return the unique url to the client's payment link",
+        "tags": [
+          "PaymentLink"
+        ]
       },
       {
         "deprecated": false,
@@ -827,10 +3260,48 @@
         "kind": "operation",
         "method": "get",
         "name": "ProductApi_All",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "queryOptions.page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/product/all",
         "pointer": "#/paths/~1api~1product~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResult_ProductDetailsApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all products for the account"
+        "summary": "Return all products for the account",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
@@ -838,10 +3309,48 @@
         "kind": "operation",
         "method": "post",
         "name": "ProductApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/product/delete",
         "pointer": "#/paths/~1api~1product~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ProductDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing product"
+        "summary": "Delete an existing product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
@@ -849,10 +3358,42 @@
         "kind": "operation",
         "method": "get",
         "name": "ProductApi_Details",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/product/details",
         "pointer": "#/paths/~1api~1product~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductFullDetailsApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return product details"
+        "summary": "Return product details",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
@@ -860,10 +3401,48 @@
         "kind": "operation",
         "method": "post",
         "name": "ProductApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/product/new",
         "pointer": "#/paths/~1api~1product~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ProductCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a product"
+        "summary": "Create a product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
@@ -871,10 +3450,47 @@
         "kind": "operation",
         "method": "post",
         "name": "ProductApi_Update",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/product/update",
         "pointer": "#/paths/~1api~1product~1update/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ProductUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing product"
+        "summary": "Update an existing product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
@@ -882,10 +3498,36 @@
         "kind": "operation",
         "method": "get",
         "name": "TaxApi_All",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/tax/all",
         "pointer": "#/paths/~1api~1tax~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all taxes for the account"
+        "summary": "Return all taxes for the account",
+        "tags": [
+          "Tax"
+        ]
       },
       {
         "deprecated": false,
@@ -893,10 +3535,48 @@
         "kind": "operation",
         "method": "post",
         "name": "TaxApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/tax/delete",
         "pointer": "#/paths/~1api~1tax~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "TaxDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing tax"
+        "summary": "Delete an existing tax",
+        "tags": [
+          "Tax"
+        ]
       },
       {
         "deprecated": false,
@@ -904,10 +3584,48 @@
         "kind": "operation",
         "method": "post",
         "name": "TaxApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/tax/new",
         "pointer": "#/paths/~1api~1tax~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "TaxCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a tax"
+        "summary": "Create a tax",
+        "tags": [
+          "Tax"
+        ]
       },
       {
         "deprecated": false,
@@ -915,10 +3633,47 @@
         "kind": "operation",
         "method": "post",
         "name": "TaxApi_Update",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/tax/update",
         "pointer": "#/paths/~1api~1tax~1update/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "TaxUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing tax"
+        "summary": "Update an existing tax",
+        "tags": [
+          "Tax"
+        ]
       },
       {
         "deprecated": false,
@@ -926,10 +3681,36 @@
         "kind": "operation",
         "method": "get",
         "name": "WorkTypeApi_All",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/worktype/all",
         "pointer": "#/paths/~1api~1worktype~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WorkTypeDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all work types for the account"
+        "summary": "Return all work types for the account",
+        "tags": [
+          "WorkType"
+        ]
       },
       {
         "deprecated": false,
@@ -937,10 +3718,48 @@
         "kind": "operation",
         "method": "post",
         "name": "WorkTypeApi_Delete",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/worktype/delete",
         "pointer": "#/paths/~1api~1worktype~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "WorkTypeDeleteApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete an existing work type"
+        "summary": "Delete an existing work type",
+        "tags": [
+          "WorkType"
+        ]
       },
       {
         "deprecated": false,
@@ -948,10 +3767,42 @@
         "kind": "operation",
         "method": "get",
         "name": "WorkTypeApi_Details",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "workTypeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/worktype/details",
         "pointer": "#/paths/~1api~1worktype~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WorkTypeDetailsApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return work type details"
+        "summary": "Return work type details",
+        "tags": [
+          "WorkType"
+        ]
       },
       {
         "deprecated": false,
@@ -959,10 +3810,48 @@
         "kind": "operation",
         "method": "post",
         "name": "WorkTypeApi_New",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/worktype/new",
         "pointer": "#/paths/~1api~1worktype~1new/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "WorkTypeCreateApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a work type"
+        "summary": "Create a work type",
+        "tags": [
+          "WorkType"
+        ]
       },
       {
         "deprecated": false,
@@ -970,10 +3859,71 @@
         "kind": "operation",
         "method": "get",
         "name": "WorkTypeApi_Search",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "queryOptions.query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.orderBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "None",
+              "Asc",
+              "Desc"
+            ],
+            "in": "query",
+            "name": "queryOptions.order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "queryOptions.pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/worktype/search",
         "pointer": "#/paths/~1api~1worktype~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WorkTypeDetailsApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all work types for the account that match the query param"
+        "summary": "Return all work types for the account that match the query param",
+        "tags": [
+          "WorkType"
+        ]
       },
       {
         "deprecated": false,
@@ -981,560 +3931,708 @@
         "kind": "operation",
         "method": "post",
         "name": "WorkTypeApi_Update",
+        "parameters": [
+          {
+            "default": "[authentication key]",
+            "in": "header",
+            "name": "x-auth-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "[authentication secret]",
+            "in": "header",
+            "name": "x-auth-secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/worktype/update",
         "pointer": "#/paths/~1api~1worktype~1update/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/html",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "WorkTypeUpdateApiModel"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an existing work type"
+        "summary": "Update an existing work type",
+        "tags": [
+          "WorkType"
+        ]
       },
       {
         "id": "schema:Activity",
         "kind": "schema",
-        "name": "Activity"
+        "name": "Activity",
+        "type": "object"
       },
       {
         "id": "schema:AdditionalClientEmail",
         "kind": "schema",
-        "name": "AdditionalClientEmail"
+        "name": "AdditionalClientEmail",
+        "type": "object"
       },
       {
         "id": "schema:AdditionalClientEmailApiModel",
         "kind": "schema",
-        "name": "AdditionalClientEmailApiModel"
+        "name": "AdditionalClientEmailApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ChangeOrderStatusApiModel",
         "kind": "schema",
-        "name": "ChangeOrderStatusApiModel"
+        "name": "ChangeOrderStatusApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ChangeStatusApiModel",
         "kind": "schema",
-        "name": "ChangeStatusApiModel"
+        "name": "ChangeStatusApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Client",
         "kind": "schema",
-        "name": "Client"
+        "name": "Client",
+        "type": "object"
       },
       {
         "id": "schema:ClientCreateApiModel",
         "kind": "schema",
-        "name": "ClientCreateApiModel"
+        "name": "ClientCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ClientDeleteApiModel",
         "kind": "schema",
-        "name": "ClientDeleteApiModel"
+        "name": "ClientDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ClientDetailsApiModel",
         "kind": "schema",
-        "name": "ClientDetailsApiModel"
+        "name": "ClientDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ClientUpdateApiModel",
         "kind": "schema",
-        "name": "ClientUpdateApiModel"
+        "name": "ClientUpdateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "object"
       },
       {
         "id": "schema:CountryDetailsApiModel",
         "kind": "schema",
-        "name": "CountryDetailsApiModel"
+        "name": "CountryDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Currency",
         "kind": "schema",
-        "name": "Currency"
+        "name": "Currency",
+        "type": "object"
       },
       {
         "id": "schema:CurrencyApiModel",
         "kind": "schema",
-        "name": "CurrencyApiModel"
+        "name": "CurrencyApiModel",
+        "type": "object"
       },
       {
         "id": "schema:CurrencyDetailsApiModel",
         "kind": "schema",
-        "name": "CurrencyDetailsApiModel"
+        "name": "CurrencyDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationActivityApiModel",
         "kind": "schema",
-        "name": "EstimationActivityApiModel"
+        "name": "EstimationActivityApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationAttachmentApiModel",
         "kind": "schema",
-        "name": "EstimationAttachmentApiModel"
+        "name": "EstimationAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationChangeStatusApiModel",
         "kind": "schema",
-        "name": "EstimationChangeStatusApiModel"
+        "name": "EstimationChangeStatusApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationCreateApiModel",
         "kind": "schema",
-        "name": "EstimationCreateApiModel"
+        "name": "EstimationCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationCreateAttachmentApiModel",
         "kind": "schema",
-        "name": "EstimationCreateAttachmentApiModel"
+        "name": "EstimationCreateAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationCreateItemApiModel",
         "kind": "schema",
-        "name": "EstimationCreateItemApiModel"
+        "name": "EstimationCreateItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationDeleteApiModel",
         "kind": "schema",
-        "name": "EstimationDeleteApiModel"
+        "name": "EstimationDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationDetailsApiModel",
         "kind": "schema",
-        "name": "EstimationDetailsApiModel"
+        "name": "EstimationDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationFullDetailsApiModel",
         "kind": "schema",
-        "name": "EstimationFullDetailsApiModel"
+        "name": "EstimationFullDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationGatewayApiModel",
         "kind": "schema",
-        "name": "EstimationGatewayApiModel"
+        "name": "EstimationGatewayApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationItemApiModel",
         "kind": "schema",
-        "name": "EstimationItemApiModel"
+        "name": "EstimationItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationUpdateApiModel",
         "kind": "schema",
-        "name": "EstimationUpdateApiModel"
+        "name": "EstimationUpdateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationUpdateAttachmentApiModel",
         "kind": "schema",
-        "name": "EstimationUpdateAttachmentApiModel"
+        "name": "EstimationUpdateAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationUpdateItemApiModel",
         "kind": "schema",
-        "name": "EstimationUpdateItemApiModel"
+        "name": "EstimationUpdateItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:EstimationUriApiModel",
         "kind": "schema",
-        "name": "EstimationUriApiModel"
+        "name": "EstimationUriApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ExternalConnection",
         "kind": "schema",
-        "name": "ExternalConnection"
+        "name": "ExternalConnection",
+        "type": "object"
       },
       {
         "id": "schema:IErrorInfo",
         "kind": "schema",
-        "name": "IErrorInfo"
+        "name": "IErrorInfo",
+        "type": "object"
       },
       {
         "id": "schema:Invoice",
         "kind": "schema",
-        "name": "Invoice"
+        "name": "Invoice",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceActivityApiModel",
         "kind": "schema",
-        "name": "InvoiceActivityApiModel"
+        "name": "InvoiceActivityApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceAttachment",
         "kind": "schema",
-        "name": "InvoiceAttachment"
+        "name": "InvoiceAttachment",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceAttachmentApiModel",
         "kind": "schema",
-        "name": "InvoiceAttachmentApiModel"
+        "name": "InvoiceAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCategoryApiModel",
         "kind": "schema",
-        "name": "InvoiceCategoryApiModel"
+        "name": "InvoiceCategoryApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCategoryCreateApiModel",
         "kind": "schema",
-        "name": "InvoiceCategoryCreateApiModel"
+        "name": "InvoiceCategoryCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCategoryDeleteApiModel",
         "kind": "schema",
-        "name": "InvoiceCategoryDeleteApiModel"
+        "name": "InvoiceCategoryDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCategoryUpdateApiModel",
         "kind": "schema",
-        "name": "InvoiceCategoryUpdateApiModel"
+        "name": "InvoiceCategoryUpdateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCreateApiModel",
         "kind": "schema",
-        "name": "InvoiceCreateApiModel"
+        "name": "InvoiceCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCreateAttachmentApiModel",
         "kind": "schema",
-        "name": "InvoiceCreateAttachmentApiModel"
+        "name": "InvoiceCreateAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceCreateItemApiModel",
         "kind": "schema",
-        "name": "InvoiceCreateItemApiModel"
+        "name": "InvoiceCreateItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceDeleteApiModel",
         "kind": "schema",
-        "name": "InvoiceDeleteApiModel"
+        "name": "InvoiceDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceDetailsApiModel",
         "kind": "schema",
-        "name": "InvoiceDetailsApiModel"
+        "name": "InvoiceDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceFullDetailsApiModel",
         "kind": "schema",
-        "name": "InvoiceFullDetailsApiModel"
+        "name": "InvoiceFullDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceGatewayApiModel",
         "kind": "schema",
-        "name": "InvoiceGatewayApiModel"
+        "name": "InvoiceGatewayApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceItem",
         "kind": "schema",
-        "name": "InvoiceItem"
+        "name": "InvoiceItem",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceItemApiModel",
         "kind": "schema",
-        "name": "InvoiceItemApiModel"
+        "name": "InvoiceItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceMessage",
         "kind": "schema",
-        "name": "InvoiceMessage"
+        "name": "InvoiceMessage",
+        "type": "object"
       },
       {
         "id": "schema:InvoicePaymentApiModel",
         "kind": "schema",
-        "name": "InvoicePaymentApiModel"
+        "name": "InvoicePaymentApiModel",
+        "type": "object"
       },
       {
+        "description": "Definition of invoice recurring profile",
         "id": "schema:InvoiceRecurringApiModel",
         "kind": "schema",
-        "name": "InvoiceRecurringApiModel"
+        "name": "InvoiceRecurringApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceUpdateApiModel",
         "kind": "schema",
-        "name": "InvoiceUpdateApiModel"
+        "name": "InvoiceUpdateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceUpdateAttachmentApiModel",
         "kind": "schema",
-        "name": "InvoiceUpdateAttachmentApiModel"
+        "name": "InvoiceUpdateAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceUpdateItemApiModel",
         "kind": "schema",
-        "name": "InvoiceUpdateItemApiModel"
+        "name": "InvoiceUpdateItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceUriApiModel",
         "kind": "schema",
-        "name": "InvoiceUriApiModel"
+        "name": "InvoiceUriApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ListResult_EstimationDetailsApiModel_",
         "kind": "schema",
-        "name": "ListResult_EstimationDetailsApiModel_"
+        "name": "ListResult_EstimationDetailsApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:ListResult_InvoiceCategoryApiModel_",
         "kind": "schema",
-        "name": "ListResult_InvoiceCategoryApiModel_"
+        "name": "ListResult_InvoiceCategoryApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:ListResult_InvoiceDetailsApiModel_",
         "kind": "schema",
-        "name": "ListResult_InvoiceDetailsApiModel_"
+        "name": "ListResult_InvoiceDetailsApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:ListResult_OrderDetailsApiModel_",
         "kind": "schema",
-        "name": "ListResult_OrderDetailsApiModel_"
+        "name": "ListResult_OrderDetailsApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:ListResult_PaymentLink_",
         "kind": "schema",
-        "name": "ListResult_PaymentLink_"
+        "name": "ListResult_PaymentLink_",
+        "type": "object"
       },
       {
         "id": "schema:ListResult_ProductDetailsApiModel_",
         "kind": "schema",
-        "name": "ListResult_ProductDetailsApiModel_"
+        "name": "ListResult_ProductDetailsApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:OrderAttachmentApiModel",
         "kind": "schema",
-        "name": "OrderAttachmentApiModel"
+        "name": "OrderAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderBillingDetailsApiModel",
         "kind": "schema",
-        "name": "OrderBillingDetailsApiModel"
+        "name": "OrderBillingDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderCreateApiModel",
         "kind": "schema",
-        "name": "OrderCreateApiModel"
+        "name": "OrderCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderDeleteApiModel",
         "kind": "schema",
-        "name": "OrderDeleteApiModel"
+        "name": "OrderDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderDetailsApiModel",
         "kind": "schema",
-        "name": "OrderDetailsApiModel"
+        "name": "OrderDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderFullDetailsApiModel",
         "kind": "schema",
-        "name": "OrderFullDetailsApiModel"
+        "name": "OrderFullDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderItemApiModel",
         "kind": "schema",
-        "name": "OrderItemApiModel"
+        "name": "OrderItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:OrderShippingDetailsApiModel",
         "kind": "schema",
-        "name": "OrderShippingDetailsApiModel"
+        "name": "OrderShippingDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Payment",
         "kind": "schema",
-        "name": "Payment"
+        "name": "Payment",
+        "type": "object"
       },
       {
         "id": "schema:PaymentGateway",
         "kind": "schema",
-        "name": "PaymentGateway"
+        "name": "PaymentGateway",
+        "type": "object"
       },
       {
         "id": "schema:PaymentGatewayDetailsApiModel",
         "kind": "schema",
-        "name": "PaymentGatewayDetailsApiModel"
+        "name": "PaymentGatewayDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:PaymentGatewayForInvoice",
         "kind": "schema",
-        "name": "PaymentGatewayForInvoice"
+        "name": "PaymentGatewayForInvoice",
+        "type": "object"
       },
       {
         "id": "schema:PaymentGatewayInputField",
         "kind": "schema",
-        "name": "PaymentGatewayInputField"
+        "name": "PaymentGatewayInputField",
+        "type": "object"
       },
       {
         "id": "schema:PaymentLink",
         "kind": "schema",
-        "name": "PaymentLink"
+        "name": "PaymentLink",
+        "type": "object"
       },
       {
         "id": "schema:PaymentLinkItem",
         "kind": "schema",
-        "name": "PaymentLinkItem"
+        "name": "PaymentLinkItem",
+        "type": "object"
       },
       {
         "id": "schema:PaymentLinkUriApiModel",
         "kind": "schema",
-        "name": "PaymentLinkUriApiModel"
+        "name": "PaymentLinkUriApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductAttachmentApiModel",
         "kind": "schema",
-        "name": "ProductAttachmentApiModel"
+        "name": "ProductAttachmentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductCouponApiModel",
         "kind": "schema",
-        "name": "ProductCouponApiModel"
+        "name": "ProductCouponApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductCreateApiModel",
         "kind": "schema",
-        "name": "ProductCreateApiModel"
+        "name": "ProductCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductDeleteApiModel",
         "kind": "schema",
-        "name": "ProductDeleteApiModel"
+        "name": "ProductDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductDetailsApiModel",
         "kind": "schema",
-        "name": "ProductDetailsApiModel"
+        "name": "ProductDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductDiscountApiModel",
         "kind": "schema",
-        "name": "ProductDiscountApiModel"
+        "name": "ProductDiscountApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductFullDetailsApiModel",
         "kind": "schema",
-        "name": "ProductFullDetailsApiModel"
+        "name": "ProductFullDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductGatewayApiModel",
         "kind": "schema",
-        "name": "ProductGatewayApiModel"
+        "name": "ProductGatewayApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductItemApiModel",
         "kind": "schema",
-        "name": "ProductItemApiModel"
+        "name": "ProductItemApiModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductUpdateApiModel",
         "kind": "schema",
-        "name": "ProductUpdateApiModel"
+        "name": "ProductUpdateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:QueryOptions",
         "kind": "schema",
-        "name": "QueryOptions"
+        "name": "QueryOptions",
+        "type": "object"
       },
       {
         "id": "schema:QueuedInvoice",
         "kind": "schema",
-        "name": "QueuedInvoice"
+        "name": "QueuedInvoice",
+        "type": "object"
       },
       {
         "id": "schema:RecurringProfile",
         "kind": "schema",
-        "name": "RecurringProfile"
+        "name": "RecurringProfile",
+        "type": "object"
       },
       {
         "id": "schema:SearchRequest",
         "kind": "schema",
-        "name": "SearchRequest"
+        "name": "SearchRequest",
+        "type": "object"
       },
       {
         "id": "schema:SendEstimationToClientApiModel",
         "kind": "schema",
-        "name": "SendEstimationToClientApiModel"
+        "name": "SendEstimationToClientApiModel",
+        "type": "object"
       },
       {
         "id": "schema:SendInvoiceToAccountantApiModel",
         "kind": "schema",
-        "name": "SendInvoiceToAccountantApiModel"
+        "name": "SendInvoiceToAccountantApiModel",
+        "type": "object"
       },
       {
         "id": "schema:SendInvoiceToClientApiModel",
         "kind": "schema",
-        "name": "SendInvoiceToClientApiModel"
+        "name": "SendInvoiceToClientApiModel",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionPlan",
         "kind": "schema",
-        "name": "SubscriptionPlan"
+        "name": "SubscriptionPlan",
+        "type": "object"
       },
       {
         "id": "schema:Tax",
         "kind": "schema",
-        "name": "Tax"
+        "name": "Tax",
+        "type": "object"
       },
       {
         "id": "schema:TaxCreateApiModel",
         "kind": "schema",
-        "name": "TaxCreateApiModel"
+        "name": "TaxCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:TaxDeleteApiModel",
         "kind": "schema",
-        "name": "TaxDeleteApiModel"
+        "name": "TaxDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:TaxDetailsApiModel",
         "kind": "schema",
-        "name": "TaxDetailsApiModel"
+        "name": "TaxDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:TaxUpdateApiModel",
         "kind": "schema",
-        "name": "TaxUpdateApiModel"
+        "name": "TaxUpdateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:UILanguageDetailsApiModel",
         "kind": "schema",
-        "name": "UILanguageDetailsApiModel"
+        "name": "UILanguageDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:UiLanguage",
         "kind": "schema",
-        "name": "UiLanguage"
+        "name": "UiLanguage",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:UserSettings",
         "kind": "schema",
-        "name": "UserSettings"
+        "name": "UserSettings",
+        "type": "object"
       },
       {
         "id": "schema:WorkType",
         "kind": "schema",
-        "name": "WorkType"
+        "name": "WorkType",
+        "type": "object"
       },
       {
         "id": "schema:WorkTypeCreateApiModel",
         "kind": "schema",
-        "name": "WorkTypeCreateApiModel"
+        "name": "WorkTypeCreateApiModel",
+        "type": "object"
       },
       {
         "id": "schema:WorkTypeDeleteApiModel",
         "kind": "schema",
-        "name": "WorkTypeDeleteApiModel"
+        "name": "WorkTypeDeleteApiModel",
+        "type": "object"
       },
       {
         "id": "schema:WorkTypeDetailsApiModel",
         "kind": "schema",
-        "name": "WorkTypeDetailsApiModel"
+        "name": "WorkTypeDetailsApiModel",
+        "type": "object"
       },
       {
         "id": "schema:WorkTypeUpdateApiModel",
         "kind": "schema",
-        "name": "WorkTypeUpdateApiModel"
+        "name": "WorkTypeUpdateApiModel",
+        "type": "object"
       }
     ]
   },

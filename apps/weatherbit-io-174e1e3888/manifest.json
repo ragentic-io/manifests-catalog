@@ -238,6 +238,296 @@
         "from": "weatherbit-io-174e1e3888",
         "kind": "EXPOSES",
         "to": "operation:get:/history/subhourly?station={station}"
+      },
+      {
+        "from": "operation:get:/alerts?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:WeatherAlert"
+      },
+      {
+        "from": "operation:get:/current/airquality?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/current/airquality?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/current/airquality?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/current/airquality?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/current?cities={cities}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?points={points}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?station={station}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/current?stations={stations}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentObsGroup"
+      },
+      {
+        "from": "operation:get:/forecast/airquality?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:AQHourly"
+      },
+      {
+        "from": "operation:get:/forecast/airquality?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:AQHourly"
+      },
+      {
+        "from": "operation:get:/forecast/airquality?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:AQHourly"
+      },
+      {
+        "from": "operation:get:/forecast/airquality?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:AQHourly"
+      },
+      {
+        "from": "operation:get:/forecast/daily?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastDay"
+      },
+      {
+        "from": "operation:get:/forecast/daily?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastDay"
+      },
+      {
+        "from": "operation:get:/forecast/daily?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastDay"
+      },
+      {
+        "from": "operation:get:/forecast/daily?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastDay"
+      },
+      {
+        "from": "operation:get:/forecast/energy?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:EnergyObsGroupForecast"
+      },
+      {
+        "from": "operation:get:/forecast/hourly?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastHourly"
+      },
+      {
+        "from": "operation:get:/forecast/hourly?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastHourly"
+      },
+      {
+        "from": "operation:get:/forecast/hourly?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastHourly"
+      },
+      {
+        "from": "operation:get:/forecast/hourly?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:ForecastHourly"
+      },
+      {
+        "from": "operation:get:/history/airquality?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/history/airquality?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/history/airquality?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/history/airquality?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:AQCurrentGroup"
+      },
+      {
+        "from": "operation:get:/history/daily?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:HistoryDay"
+      },
+      {
+        "from": "operation:get:/history/daily?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:HistoryDay"
+      },
+      {
+        "from": "operation:get:/history/daily?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:HistoryDay"
+      },
+      {
+        "from": "operation:get:/history/daily?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:HistoryDay"
+      },
+      {
+        "from": "operation:get:/history/daily?station={station}",
+        "kind": "RETURNS",
+        "to": "schema:HistoryDay"
+      },
+      {
+        "from": "operation:get:/history/energy?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:EnergyObsGroup"
+      },
+      {
+        "from": "operation:get:/history/hourly?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:History"
+      },
+      {
+        "from": "operation:get:/history/hourly?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:History"
+      },
+      {
+        "from": "operation:get:/history/hourly?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:History"
+      },
+      {
+        "from": "operation:get:/history/hourly?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:History"
+      },
+      {
+        "from": "operation:get:/history/hourly?station={station}",
+        "kind": "RETURNS",
+        "to": "schema:History"
+      },
+      {
+        "from": "operation:get:/history/subhourly?city={city}&country={country}",
+        "kind": "RETURNS",
+        "to": "schema:History"
+      },
+      {
+        "from": "operation:get:/history/subhourly?city_id={city_id}",
+        "kind": "RETURNS",
+        "to": "schema:HistorySubhourly"
+      },
+      {
+        "from": "operation:get:/history/subhourly?lat={lat}&lon={lon}",
+        "kind": "RETURNS",
+        "to": "schema:HistorySubhourly"
+      },
+      {
+        "from": "operation:get:/history/subhourly?postal_code={postal_code}",
+        "kind": "RETURNS",
+        "to": "schema:HistorySubhourly"
+      },
+      {
+        "from": "operation:get:/history/subhourly?station={station}",
+        "kind": "RETURNS",
+        "to": "schema:HistorySubhourly"
+      },
+      {
+        "from": "schema:AQCurrentGroup",
+        "kind": "REFERENCES",
+        "to": "schema:AQCurrent"
+      },
+      {
+        "from": "schema:AQHourly",
+        "kind": "REFERENCES",
+        "to": "schema:AQHour"
+      },
+      {
+        "from": "schema:CurrentObsGroup",
+        "kind": "REFERENCES",
+        "to": "schema:CurrentObs"
+      },
+      {
+        "from": "schema:EnergyObsGroup",
+        "kind": "REFERENCES",
+        "to": "schema:EnergyObs"
+      },
+      {
+        "from": "schema:EnergyObsGroupForecast",
+        "kind": "REFERENCES",
+        "to": "schema:EnergyObsSeries"
+      },
+      {
+        "from": "schema:ForecastDay",
+        "kind": "REFERENCES",
+        "to": "schema:Forecast"
+      },
+      {
+        "from": "schema:ForecastHourly",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastHour"
+      },
+      {
+        "from": "schema:History",
+        "kind": "REFERENCES",
+        "to": "schema:HistoryObj"
+      },
+      {
+        "from": "schema:HistoryDay",
+        "kind": "REFERENCES",
+        "to": "schema:HistoryDayObj"
+      },
+      {
+        "from": "schema:HistorySubhourly",
+        "kind": "REFERENCES",
+        "to": "schema:HistoryObj"
+      },
+      {
+        "from": "schema:WeatherAlert",
+        "kind": "REFERENCES",
+        "to": "schema:WeatherAlertGroup"
+      },
+      {
+        "from": "schema:WeatherAlertGroup",
+        "kind": "REFERENCES",
+        "to": "schema:AlertRegionGroup"
       }
     ],
     "nodes": [
@@ -247,388 +537,3086 @@
       },
       {
         "deprecated": false,
+        "description": "Returns severe weather alerts issued by meteorological agencies - given a lat, and a lon.",
         "id": "operation:get:/alerts?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /alerts?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Wraps return in jsonp callback - Example - callback=func",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/alerts?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1alerts?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WeatherAlert"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns severe weather alerts issued by meteorological agencies - Given a lat/lon."
+        "summary": "Returns severe weather alerts issued by meteorological agencies - Given a lat/lon.",
+        "tags": [
+          "Alerts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Downloads bulk data files - OPTIONS: ( current.csv.gz, forecast_hourly.csv.gz, forecast_daily.csv.gz).",
         "id": "operation:get:/bulk/files/{file}",
         "kind": "operation",
         "method": "get",
         "name": "get /bulk/files/{file}",
+        "parameters": [
+          {
+            "description": "Filename (ie.",
+            "in": "path",
+            "name": "file",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/bulk/files/{file}",
         "pointer": "#/paths/~1bulk~1files~1{file}/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download pre-generated bulk datasets"
+        "summary": "Download pre-generated bulk datasets",
+        "tags": [
+          "Bulk Downloads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current air quality conditions.",
         "id": "operation:get:/current/airquality?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /current/airquality?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current/airquality?city={city}&country={country}",
         "pointer": "#/paths/~1current~1airquality?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns current air quality conditions - Given City and/or State, Country."
+        "summary": "Returns current air quality conditions - Given City and/or State, Country.",
+        "tags": [
+          "Current Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current air quality conditions.",
         "id": "operation:get:/current/airquality?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /current/airquality?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current/airquality?city_id={city_id}",
         "pointer": "#/paths/~1current~1airquality?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns current air quality conditions - Given a City ID."
+        "summary": "Returns current air quality conditions - Given a City ID.",
+        "tags": [
+          "Current Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current air quality conditions.",
         "id": "operation:get:/current/airquality?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /current/airquality?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current/airquality?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1current~1airquality?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns current air quality conditions - Given a lat/lon."
+        "summary": "Returns current air quality conditions - Given a lat/lon.",
+        "tags": [
+          "Current Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current air quality conditions.",
         "id": "operation:get:/current/airquality?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /current/airquality?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current/airquality?postal_code={postal_code}",
         "pointer": "#/paths/~1current~1airquality?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns current air quality conditions - Given a Postal Code."
+        "summary": "Returns current air quality conditions - Given a Postal Code.",
+        "tags": [
+          "Current Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a group of Current Observations - Given a list of City IDs.",
         "id": "operation:get:/current?cities={cities}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?cities={cities}",
+        "parameters": [
+          {
+            "description": "Comma separated list of City ID's.",
+            "in": "path",
+            "name": "cities",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Marine stations only (buoys, oil platforms, etc)",
+            "enum": [
+              "t"
+            ],
+            "in": "query",
+            "name": "marine",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback - Example - callback=func",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?cities={cities}",
         "pointer": "#/paths/~1current?cities={cities}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a group of observations given a list of cities"
+        "summary": "Returns a group of observations given a list of cities",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Current Observation - Given a city in the format of City,ST or City.",
         "id": "operation:get:/current?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Include 1 hour - minutely forecast in the response",
+            "enum": [
+              "minutely"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Marine stations only (buoys, oil platforms, etc)",
+            "enum": [
+              "t"
+            ],
+            "in": "query",
+            "name": "marine",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback - Example - callback=func",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?city={city}&country={country}",
         "pointer": "#/paths/~1current?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a Current Observation - Given City and/or State, Country."
+        "summary": "Returns a Current Observation - Given City and/or State, Country.",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current weather observation - Given a City ID.",
         "id": "operation:get:/current?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Include 1 hour - minutely forecast in the response",
+            "enum": [
+              "minutely"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Marine stations only (buoys, oil platforms, etc)",
+            "enum": [
+              "t"
+            ],
+            "in": "query",
+            "name": "marine",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback - Example - callback=func",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?city_id={city_id}",
         "pointer": "#/paths/~1current?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a current observation by city id."
+        "summary": "Returns a current observation by city id.",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Current Observation - given a lat, and a lon.",
         "id": "operation:get:/current?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Include 1 hour - minutely forecast in the response",
+            "enum": [
+              "minutely"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Marine stations only (buoys, oil platforms, etc)",
+            "enum": [
+              "t"
+            ],
+            "in": "query",
+            "name": "marine",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback - Example - callback=func",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1current?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a Current Observation - Given a lat/lon."
+        "summary": "Returns a Current Observation - Given a lat/lon.",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a group of Current Observations - Given a list of points (lat1, lon1), (lat2, lon2), (latN, lonN), ...",
         "id": "operation:get:/current?points={points}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?points={points}",
+        "parameters": [
+          {
+            "description": "Comma separated list of points.",
+            "in": "path",
+            "name": "points",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?points={points}",
         "pointer": "#/paths/~1current?points={points}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a group of observations given a list of points in the format (lat1, lon1), (lat2, lon2), (latN, lonN), ..."
+        "summary": "Returns a group of observations given a list of points in the format (lat1, lon1), (lat2, lon2), (latN, lonN), ...",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current weather observation - Given a Postal Code.",
         "id": "operation:get:/current?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Include 1 hour - minutely forecast in the response",
+            "enum": [
+              "minutely"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Marine stations only (buoys, oil platforms, etc)",
+            "enum": [
+              "t"
+            ],
+            "in": "query",
+            "name": "marine",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback - Example - callback=func",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?postal_code={postal_code}",
         "pointer": "#/paths/~1current?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a current observation by postal code."
+        "summary": "Returns a current observation by postal code.",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Current Observation - Given a station ID.",
         "id": "operation:get:/current?station={station}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?station={station}",
+        "parameters": [
+          {
+            "description": "Station Call ID.",
+            "in": "path",
+            "name": "station",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Include 1 hour - minutely forecast in the response",
+            "enum": [
+              "minutely"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?station={station}",
         "pointer": "#/paths/~1current?station={station}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a Current Observation. - Given a station ID."
+        "summary": "Returns a Current Observation. - Given a station ID.",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a group of Current Observations - Given a list of Station Call IDs.",
         "id": "operation:get:/current?stations={stations}",
         "kind": "operation",
         "method": "get",
         "name": "get /current?stations={stations}",
+        "parameters": [
+          {
+            "description": "Comma separated list of Station Call ID's.",
+            "in": "path",
+            "name": "stations",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/current?stations={stations}",
         "pointer": "#/paths/~1current?stations={stations}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a group of observations given a list of stations"
+        "summary": "Returns a group of observations given a list of stations",
+        "tags": [
+          "Current Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns 72 hour (hourly) Air Quality forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/airquality?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/airquality?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/airquality?city={city}&country={country}",
         "pointer": "#/paths/~1forecast~1airquality?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given City and/or State, Country."
+        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given City and/or State, Country.",
+        "tags": [
+          "Air Quality Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns 72 hour (hourly) Air Quality forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/airquality?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/airquality?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/airquality?city_id={city_id}",
         "pointer": "#/paths/~1forecast~1airquality?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given a City ID."
+        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given a City ID.",
+        "tags": [
+          "Air Quality Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns 72 hour (hourly) Air Quality forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/airquality?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/airquality?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/forecast/airquality?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1forecast~1airquality?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given a lat/lon."
+        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given a lat/lon.",
+        "tags": [
+          "Air Quality Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns 72 hour (hourly) Air Quality forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/airquality?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/airquality?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/airquality?postal_code={postal_code}",
         "pointer": "#/paths/~1forecast~1airquality?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given a Postal Code."
+        "summary": "Returns 72 hour (hourly) Air Quality forecast - Given a Postal Code.",
+        "tags": [
+          "Air Quality Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a daily forecast, where each point represents one day (24hr) period.",
         "id": "operation:get:/forecast/daily?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/daily?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of days to return.",
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/daily?city={city}&country={country}",
         "pointer": "#/paths/~1forecast~1daily?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a daily forecast - Given City and/or State, Country."
+        "summary": "Returns a daily forecast - Given City and/or State, Country.",
+        "tags": [
+          "16 day / daily Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a daily forecast, where each point represents one day (24hr) period.",
         "id": "operation:get:/forecast/daily?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/daily?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Number of days to return.",
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/daily?city_id={city_id}",
         "pointer": "#/paths/~1forecast~1daily?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a daily forecast - Given a City ID."
+        "summary": "Returns a daily forecast - Given a City ID.",
+        "tags": [
+          "16 day / daily Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a daily forecast, where each point represents one day (24hr) period.",
         "id": "operation:get:/forecast/daily?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/daily?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Number of days to return.",
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/daily?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1forecast~1daily?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a daily forecast - Given Lat/Lon."
+        "summary": "Returns a daily forecast - Given Lat/Lon.",
+        "tags": [
+          "16 day / daily Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a daily forecast, where each point represents one day (24hr) period.",
         "id": "operation:get:/forecast/daily?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/daily?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of days to return.",
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/daily?postal_code={postal_code}",
         "pointer": "#/paths/~1forecast~1daily?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a daily forecast - Given a Postal Code."
+        "summary": "Returns a daily forecast - Given a Postal Code.",
+        "tags": [
+          "16 day / daily Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an 8 day forecast relevant to te Energy Sector (degree days, solar radiation, precipitation, wind).",
         "id": "operation:get:/forecast/energy?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/energy?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Temperature threshold to use to calculate degree days (default 18 C)",
+            "in": "query",
+            "name": "threshold",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Time period (default: daily)",
+            "enum": [
+              "hourly",
+              "daily"
+            ],
+            "in": "query",
+            "name": "tp",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/energy?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1forecast~1energy?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnergyObsGroupForecast"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Energy Forecast API response  - Given a single lat/lon. "
+        "summary": "Returns Energy Forecast API response  - Given a single lat/lon. ",
+        "tags": [
+          "Forecast Degree Day API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an hourly forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/hourly?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/hourly?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/hourly?city={city}&country={country}",
         "pointer": "#/paths/~1forecast~1hourly?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an hourly forecast - Given City and/or State, Country."
+        "summary": "Returns an hourly forecast - Given City and/or State, Country.",
+        "tags": [
+          "240 hour / hourly Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an hourly forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/hourly?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/hourly?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/hourly?city_id={city_id}",
         "pointer": "#/paths/~1forecast~1hourly?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an hourly forecast - Given a City ID."
+        "summary": "Returns an hourly forecast - Given a City ID.",
+        "tags": [
+          "240 hour / hourly Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an hourly forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/hourly?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/hourly?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/forecast/hourly?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1forecast~1hourly?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an hourly forecast - Given a lat/lon."
+        "summary": "Returns an hourly forecast - Given a lat/lon.",
+        "tags": [
+          "240 hour / hourly Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an hourly forecast, where each point represents a one hour period.",
         "id": "operation:get:/forecast/hourly?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/hourly?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Number of hours to return.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/forecast/hourly?postal_code={postal_code}",
         "pointer": "#/paths/~1forecast~1hourly?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastHourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an hourly forecast - Given a Postal Code."
+        "summary": "Returns an hourly forecast - Given a Postal Code.",
+        "tags": [
+          "240 hour / hourly Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns historical air quality conditions.",
         "id": "operation:get:/history/airquality?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/airquality?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/airquality?city={city}&country={country}",
         "pointer": "#/paths/~1history~1airquality?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hours of historical quality conditions - Given City and/or State, Country."
+        "summary": "Returns 72 hours of historical quality conditions - Given City and/or State, Country.",
+        "tags": [
+          "Historical Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns historical air quality conditions.",
         "id": "operation:get:/history/airquality?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/airquality?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/airquality?city_id={city_id}",
         "pointer": "#/paths/~1history~1airquality?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hours of historical air quality conditions - Given a City ID."
+        "summary": "Returns 72 hours of historical air quality conditions - Given a City ID.",
+        "tags": [
+          "Historical Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns historical air quality conditions.",
         "id": "operation:get:/history/airquality?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/airquality?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/airquality?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1history~1airquality?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hours of historical air quality conditions - Given a lat/lon."
+        "summary": "Returns 72 hours of historical air quality conditions - Given a lat/lon.",
+        "tags": [
+          "Historical Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns historical air quality conditions.",
         "id": "operation:get:/history/airquality?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/airquality?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/airquality?postal_code={postal_code}",
         "pointer": "#/paths/~1history~1airquality?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AQCurrentGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns 72 hours of historical air quality conditions - Given a Postal Code."
+        "summary": "Returns 72 hours of historical air quality conditions - Given a Postal Code.",
+        "tags": [
+          "Historical Air Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a city in the format of City,ST or City.",
         "id": "operation:get:/history/daily?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/daily?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search..",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/daily?city={city}&country={country}",
         "pointer": "#/paths/~1history~1daily?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given City and/or State, Country."
+        "summary": "Returns Historical Observations - Given City and/or State, Country.",
+        "tags": [
+          "Daily Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a City ID.",
         "id": "operation:get:/history/daily?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/daily?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/daily?city_id={city_id}",
         "pointer": "#/paths/~1history~1daily?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a City ID"
+        "summary": "Returns Historical Observations - Given a City ID",
+        "tags": [
+          "Daily Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a lat, and lon.",
         "id": "operation:get:/history/daily?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/daily?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/daily?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1history~1daily?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a lat/lon."
+        "summary": "Returns Historical Observations - Given a lat/lon.",
+        "tags": [
+          "Daily Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a Postal Code.",
         "id": "operation:get:/history/daily?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/daily?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/daily?postal_code={postal_code}",
         "pointer": "#/paths/~1history~1daily?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a Postal Code"
+        "summary": "Returns Historical Observations - Given a Postal Code",
+        "tags": [
+          "Daily Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
@@ -636,65 +3624,710 @@
         "kind": "operation",
         "method": "get",
         "name": "get /history/daily?station={station}",
+        "parameters": [
+          {
+            "description": "Station ID.",
+            "in": "path",
+            "name": "station",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/daily?station={station}",
         "pointer": "#/paths/~1history~1daily?station={station}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryDay"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a station ID."
+        "summary": "Returns Historical Observations - Given a station ID.",
+        "tags": [
+          "Daily Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns aggregate energy specific historical weather fields, over a specified time period.",
         "id": "operation:get:/history/energy?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/energy?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Time period to aggregate by (daily, monthly)",
+            "enum": [
+              "hourly",
+              "daily",
+              "monthly"
+            ],
+            "in": "query",
+            "name": "tp",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Temperature threshold to use to calculate degree days (default 18 C)",
+            "in": "query",
+            "name": "threshold",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/energy?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1history~1energy?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnergyObsGroup"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Energy API response  - Given a single lat/lon. "
+        "summary": "Returns Energy API response  - Given a single lat/lon. ",
+        "tags": [
+          "Historical Degree Day API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a city in the format of City,ST or City.",
         "id": "operation:get:/history/hourly?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/hourly?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search.",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/hourly?city={city}&country={country}",
         "pointer": "#/paths/~1history~1hourly?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "History"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given City and/or State, Country."
+        "summary": "Returns Historical Observations - Given City and/or State, Country.",
+        "tags": [
+          "Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a City ID.",
         "id": "operation:get:/history/hourly?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/hourly?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/hourly?city_id={city_id}",
         "pointer": "#/paths/~1history~1hourly?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "History"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a City ID"
+        "summary": "Returns Historical Observations - Given a City ID",
+        "tags": [
+          "Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a lat, and lon.",
         "id": "operation:get:/history/hourly?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/hourly?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/hourly?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1history~1hourly?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "History"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a lat/lon."
+        "summary": "Returns Historical Observations - Given a lat/lon.",
+        "tags": [
+          "Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a Postal Code.",
         "id": "operation:get:/history/hourly?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/hourly?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/hourly?postal_code={postal_code}",
         "pointer": "#/paths/~1history~1hourly?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "History"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a Postal Code"
+        "summary": "Returns Historical Observations - Given a Postal Code",
+        "tags": [
+          "Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
@@ -702,54 +4335,621 @@
         "kind": "operation",
         "method": "get",
         "name": "get /history/hourly?station={station}",
+        "parameters": [
+          {
+            "description": "Station ID.",
+            "in": "path",
+            "name": "station",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/hourly?station={station}",
         "pointer": "#/paths/~1history~1hourly?station={station}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "History"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a station ID."
+        "summary": "Returns Historical Observations - Given a station ID.",
+        "tags": [
+          "Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a city in the format of City,ST or City.",
         "id": "operation:get:/history/subhourly?city={city}&country={country}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/subhourly?city={city}&country={country}",
+        "parameters": [
+          {
+            "description": "City search.",
+            "in": "path",
+            "name": "city",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Full name of state.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/subhourly?city={city}&country={country}",
         "pointer": "#/paths/~1history~1subhourly?city={city}&country={country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "History"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given City and/or State, Country."
+        "summary": "Returns Historical Observations - Given City and/or State, Country.",
+        "tags": [
+          "Sub-Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a City ID.",
         "id": "operation:get:/history/subhourly?city_id={city_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/subhourly?city_id={city_id}",
+        "parameters": [
+          {
+            "description": "City ID.",
+            "in": "path",
+            "name": "city_id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/subhourly?city_id={city_id}",
         "pointer": "#/paths/~1history~1subhourly?city_id={city_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistorySubhourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a City ID"
+        "summary": "Returns Historical Observations - Given a City ID",
+        "tags": [
+          "Sub-Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a lat, and lon.",
         "id": "operation:get:/history/subhourly?lat={lat}&lon={lon}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/subhourly?lat={lat}&lon={lon}",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "path",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "path",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/subhourly?lat={lat}&lon={lon}",
         "pointer": "#/paths/~1history~1subhourly?lat={lat}&lon={lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistorySubhourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a lat/lon."
+        "summary": "Returns Historical Observations - Given a lat/lon.",
+        "tags": [
+          "Sub-Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Historical Observations - Given a Postal Code.",
         "id": "operation:get:/history/subhourly?postal_code={postal_code}",
         "kind": "operation",
         "method": "get",
         "name": "get /history/subhourly?postal_code={postal_code}",
+        "parameters": [
+          {
+            "description": "Postal Code.",
+            "in": "path",
+            "name": "postal_code",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Country Code (2 letter).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/subhourly?postal_code={postal_code}",
         "pointer": "#/paths/~1history~1subhourly?postal_code={postal_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistorySubhourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a Postal Code"
+        "summary": "Returns Historical Observations - Given a Postal Code",
+        "tags": [
+          "Sub-Hourly Historical Weather Data"
+        ]
       },
       {
         "deprecated": false,
@@ -757,135 +4957,268 @@
         "kind": "operation",
         "method": "get",
         "name": "get /history/subhourly?station={station}",
+        "parameters": [
+          {
+            "description": "Station ID.",
+            "in": "path",
+            "name": "station",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH).",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Convert to units.",
+            "enum": [
+              "S",
+              "I"
+            ],
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>",
+            "enum": [
+              "ar",
+              "az",
+              "be",
+              "bg",
+              "bs",
+              "ca",
+              "cs",
+              "de",
+              "fi",
+              "fr",
+              "el",
+              "es",
+              "et",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "is",
+              "kw",
+              "nb",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Assume utc (default) or local time for start_date, end_date",
+            "enum": [
+              "local",
+              "utc"
+            ],
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Wraps return in jsonp callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Your registered API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/history/subhourly?station={station}",
         "pointer": "#/paths/~1history~1subhourly?station={station}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistorySubhourly"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Historical Observations - Given a station ID."
+        "summary": "Returns Historical Observations - Given a station ID.",
+        "tags": [
+          "Sub-Hourly Historical Weather Data"
+        ]
       },
       {
         "id": "schema:AQCurrent",
         "kind": "schema",
-        "name": "AQCurrent"
+        "name": "AQCurrent",
+        "type": "object"
       },
       {
         "id": "schema:AQCurrentGroup",
         "kind": "schema",
-        "name": "AQCurrentGroup"
+        "name": "AQCurrentGroup",
+        "type": "object"
       },
       {
         "id": "schema:AQHour",
         "kind": "schema",
-        "name": "AQHour"
+        "name": "AQHour",
+        "type": "object"
       },
       {
         "id": "schema:AQHourly",
         "kind": "schema",
-        "name": "AQHourly"
+        "name": "AQHourly",
+        "type": "object"
       },
       {
+        "description": "List of impacted regions",
         "id": "schema:AlertRegionGroup",
         "kind": "schema",
-        "name": "AlertRegionGroup"
+        "name": "AlertRegionGroup",
+        "type": "string"
       },
       {
         "id": "schema:CurrentObs",
         "kind": "schema",
-        "name": "CurrentObs"
+        "name": "CurrentObs",
+        "type": "object"
       },
       {
         "id": "schema:CurrentObsGroup",
         "kind": "schema",
-        "name": "CurrentObsGroup"
+        "name": "CurrentObsGroup",
+        "type": "object"
       },
       {
         "id": "schema:EnergyObs",
         "kind": "schema",
-        "name": "EnergyObs"
+        "name": "EnergyObs",
+        "type": "object"
       },
       {
         "id": "schema:EnergyObsGroup",
         "kind": "schema",
-        "name": "EnergyObsGroup"
+        "name": "EnergyObsGroup",
+        "type": "object"
       },
       {
         "id": "schema:EnergyObsGroupForecast",
         "kind": "schema",
-        "name": "EnergyObsGroupForecast"
+        "name": "EnergyObsGroupForecast",
+        "type": "object"
       },
       {
         "id": "schema:EnergyObsSeries",
         "kind": "schema",
-        "name": "EnergyObsSeries"
+        "name": "EnergyObsSeries",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Forecast",
         "kind": "schema",
-        "name": "Forecast"
+        "name": "Forecast",
+        "type": "object"
       },
       {
         "id": "schema:ForecastDay",
         "kind": "schema",
-        "name": "ForecastDay"
+        "name": "ForecastDay",
+        "type": "object"
       },
       {
         "id": "schema:ForecastHour",
         "kind": "schema",
-        "name": "ForecastHour"
+        "name": "ForecastHour",
+        "type": "object"
       },
       {
         "id": "schema:ForecastHourly",
         "kind": "schema",
-        "name": "ForecastHourly"
+        "name": "ForecastHourly",
+        "type": "object"
       },
       {
         "id": "schema:GeoIPObj",
         "kind": "schema",
-        "name": "GeoIPObj"
+        "name": "GeoIPObj",
+        "type": "object"
       },
       {
         "id": "schema:History",
         "kind": "schema",
-        "name": "History"
+        "name": "History",
+        "type": "object"
       },
       {
         "id": "schema:HistoryDay",
         "kind": "schema",
-        "name": "HistoryDay"
+        "name": "HistoryDay",
+        "type": "object"
       },
       {
         "id": "schema:HistoryDayObj",
         "kind": "schema",
-        "name": "HistoryDayObj"
+        "name": "HistoryDayObj",
+        "type": "object"
       },
       {
         "id": "schema:HistoryObj",
         "kind": "schema",
-        "name": "HistoryObj"
+        "name": "HistoryObj",
+        "type": "object"
       },
       {
         "id": "schema:HistorySubhourly",
         "kind": "schema",
-        "name": "HistorySubhourly"
+        "name": "HistorySubhourly",
+        "type": "object"
       },
       {
         "id": "schema:HistorySubhourlyObj",
         "kind": "schema",
-        "name": "HistorySubhourlyObj"
+        "name": "HistorySubhourlyObj",
+        "type": "object"
       },
       {
         "id": "schema:WeatherAlert",
         "kind": "schema",
-        "name": "WeatherAlert"
+        "name": "WeatherAlert",
+        "type": "object"
       },
       {
         "id": "schema:WeatherAlertGroup",
         "kind": "schema",
-        "name": "WeatherAlertGroup"
+        "name": "WeatherAlertGroup",
+        "type": "object"
       }
     ]
   },

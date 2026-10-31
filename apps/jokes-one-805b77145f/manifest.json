@@ -17,22 +17,22 @@
       {
         "from": "jokes-one-805b77145f",
         "kind": "EXPOSES",
-        "to": "operation:delete:/joke"
-      },
-      {
-        "from": "jokes-one-805b77145f",
-        "kind": "EXPOSES",
         "to": "operation:get:/joke"
       },
       {
         "from": "jokes-one-805b77145f",
         "kind": "EXPOSES",
-        "to": "operation:patch:/joke"
+        "to": "operation:put:/joke"
       },
       {
         "from": "jokes-one-805b77145f",
         "kind": "EXPOSES",
-        "to": "operation:put:/joke"
+        "to": "operation:delete:/joke"
+      },
+      {
+        "from": "jokes-one-805b77145f",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/joke"
       },
       {
         "from": "jokes-one-805b77145f",
@@ -63,6 +63,46 @@
         "from": "jokes-one-805b77145f",
         "kind": "EXPOSES",
         "to": "operation:post:/joke/tags/remove"
+      },
+      {
+        "from": "operation:get:/jod",
+        "kind": "RETURNS",
+        "to": "schema:JokeOfTheDayResponse"
+      },
+      {
+        "from": "operation:get:/joke",
+        "kind": "RETURNS",
+        "to": "schema:JokeResponse"
+      },
+      {
+        "from": "operation:get:/joke/random",
+        "kind": "RETURNS",
+        "to": "schema:JokeResponse"
+      },
+      {
+        "from": "operation:get:/joke/search",
+        "kind": "RETURNS",
+        "to": "schema:JokeResponse"
+      },
+      {
+        "from": "schema:Joke",
+        "kind": "REFERENCES",
+        "to": "schema:NewJoke"
+      },
+      {
+        "from": "schema:JokeOfTheDay",
+        "kind": "REFERENCES",
+        "to": "schema:Joke"
+      },
+      {
+        "from": "schema:JokeOfTheDayResponse",
+        "kind": "REFERENCES",
+        "to": "schema:JokeOfTheDay"
+      },
+      {
+        "from": "schema:JokeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Joke"
       }
     ],
     "nodes": [
@@ -72,184 +112,549 @@
       },
       {
         "deprecated": false,
+        "description": "Gets `Joke of the Day`.",
         "id": "operation:get:/jod",
         "kind": "operation",
         "method": "get",
         "name": "get /jod",
+        "parameters": [
+          {
+            "description": "JOD Category",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/jod",
         "pointer": "#/paths/~1jod/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JokeOfTheDayResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-JokesOne-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "jod"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Joke of the Day` Categories.",
         "id": "operation:get:/jod/categories",
         "kind": "operation",
         "method": "get",
         "name": "get /jod/categories",
         "path": "/jod/categories",
         "pointer": "#/paths/~1jod~1categories/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-JokesOne-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "jod"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/joke",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /joke",
-        "path": "/joke",
-        "pointer": "#/paths/~1joke/delete",
-        "security": [
-          {
-            "X-JokesOne-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Gets a `Joke` with a given `id`.",
         "id": "operation:get:/joke",
         "kind": "operation",
         "method": "get",
         "name": "get /joke",
+        "parameters": [
+          {
+            "description": "Joke ID",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/joke",
         "pointer": "#/paths/~1joke/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JokeResponse"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-JokesOne-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/joke",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /joke",
-        "path": "/joke",
-        "pointer": "#/paths/~1joke/patch",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Add a new joke to your private collection.",
         "id": "operation:put:/joke",
         "kind": "operation",
         "method": "put",
         "name": "put /joke",
+        "parameters": [
+          {
+            "description": "Joke Title",
+            "in": "query",
+            "name": "title",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Joke Text",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Joke Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/joke",
         "pointer": "#/paths/~1joke/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/joke/categories/search",
+        "description": "Delete a joke.",
+        "id": "operation:delete:/joke",
         "kind": "operation",
-        "method": "get",
-        "name": "get /joke/categories/search",
-        "path": "/joke/categories/search",
-        "pointer": "#/paths/~1joke~1categories~1search/get",
+        "method": "delete",
+        "name": "delete /joke",
+        "parameters": [
+          {
+            "description": "Joke ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/joke",
+        "pointer": "#/paths/~1joke/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-JokesOne-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a joke",
+        "id": "operation:patch:/joke",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /joke",
+        "parameters": [
+          {
+            "description": "Joke ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "title",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "text",
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Joke Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/joke",
+        "pointer": "#/paths/~1joke/patch",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets a list of `Joke` Categories, based on a query term.",
+        "id": "operation:get:/joke/categories/search",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /joke/categories/search",
+        "parameters": [
+          {
+            "description": "Search Query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/joke/categories/search",
+        "pointer": "#/paths/~1joke~1categories~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "X-JokesOne-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the list of jokes in your private collection.",
         "id": "operation:get:/joke/list",
         "kind": "operation",
         "method": "get",
         "name": "get /joke/list",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/joke/list",
         "pointer": "#/paths/~1joke~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a `Random Joke`.",
         "id": "operation:get:/joke/random",
         "kind": "operation",
         "method": "get",
         "name": "get /joke/random",
         "path": "/joke/random",
         "pointer": "#/paths/~1joke~1random/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JokeResponse"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for a `Joke` in Jokes One platform.",
         "id": "operation:get:/joke/search",
         "kind": "operation",
         "method": "get",
         "name": "get /joke/search",
+        "parameters": [
+          {
+            "description": "Joke Category",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "keyword to search for in the joke",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": 100,
+            "description": "Joke minimum Length",
+            "in": "query",
+            "name": "minlength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 300,
+            "description": "Joke maximum Length",
+            "in": "query",
+            "name": "maxlength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Joke Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": false,
+            "description": "Should search private collection?",
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/joke/search",
         "pointer": "#/paths/~1joke~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JokeResponse"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-JokesOne-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a tag to a given Joke.",
         "id": "operation:post:/joke/tags/add",
         "kind": "operation",
         "method": "post",
         "name": "post /joke/tags/add",
+        "parameters": [
+          {
+            "description": "Joke ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/joke/tags/add",
         "pointer": "#/paths/~1joke~1tags~1add/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a tag from a given joke.",
         "id": "operation:post:/joke/tags/remove",
         "kind": "operation",
         "method": "post",
         "name": "post /joke/tags/remove",
+        "parameters": [
+          {
+            "description": "Joke ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/joke/tags/remove",
         "pointer": "#/paths/~1joke~1tags~1remove/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "joke"
+        ]
       },
       {
         "id": "schema:Joke",
         "kind": "schema",
-        "name": "Joke"
+        "name": "Joke",
+        "type": "NewJoke|object"
       },
       {
         "id": "schema:JokeOfTheDay",
         "kind": "schema",
-        "name": "JokeOfTheDay"
+        "name": "JokeOfTheDay",
+        "type": "Joke|object"
       },
       {
         "id": "schema:JokeOfTheDayResponse",
         "kind": "schema",
-        "name": "JokeOfTheDayResponse"
+        "name": "JokeOfTheDayResponse",
+        "type": "object"
       },
       {
         "id": "schema:JokeResponse",
         "kind": "schema",
-        "name": "JokeResponse"
+        "name": "JokeResponse",
+        "type": "object"
       },
       {
         "id": "schema:NewJoke",
         "kind": "schema",
-        "name": "NewJoke"
+        "name": "NewJoke",
+        "type": "object"
       }
     ]
   },

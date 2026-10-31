@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Advicent_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `0a0d09bb90278a639f9cd523d7960eec776c2b25edb245176998593587d14869` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,156 +34,158 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Advicent_profile_im
 
 135 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/AccountTypes` | AccountTypes_GetByCountry | — |
-| GET | `/api/AccountTypes/{id}` | AccountTypes_GetById | — |
-| GET | `/api/Accounts` | Accounts_GetAccountsByFactFinderIdByFactfinderidExternalsourceid | — |
-| POST | `/api/Accounts` | Accounts_PostByModel | — |
-| GET | `/api/Accounts/{accountId}/Holdings` | Accounts_GetAccountHoldingsByAccountid | — |
-| POST | `/api/Accounts/{accountId}/Holdings` | Accounts_PostAccountHoldingByAccountidModel | — |
-| PUT | `/api/Accounts/{accountId}/Holdings` | Accounts_PutHoldingsByAccountidHoldings | — |
-| DELETE | `/api/Accounts/{accountId}/Holdings/{id}` | Accounts_DeleteAccountHoldingByAccountidId | — |
-| GET | `/api/Accounts/{accountId}/Holdings/{id}` | Accounts_GetAccountHoldingByAccountidId | — |
-| PUT | `/api/Accounts/{accountId}/Holdings/{id}` | Accounts_PutByAccountidIdHolding | — |
-| DELETE | `/api/Accounts/{accountId}/SavingsStrategies` | Accounts_DeleteSavingsStrategiesByAccountid | — |
-| GET | `/api/Accounts/{accountId}/SavingsStrategies` | Accounts_GetSavingsStrategiesByAccountIdByAccountid | — |
-| POST | `/api/Accounts/{accountId}/SavingsStrategies` | Accounts_PostSavingsStrategyByAccountidSavingsstrategy | — |
-| DELETE | `/api/Accounts/{accountId}/SavingsStrategies/{id}` | Accounts_DeleteSavingsStrategyByAccountidId | — |
-| GET | `/api/Accounts/{accountId}/SavingsStrategies/{id}` | Accounts_GetSavingsStrategiesByAccountIdAndSavingsStrategyIdByAccountidId | — |
-| PUT | `/api/Accounts/{accountId}/SavingsStrategies/{id}` | Accounts_PutSavingsStrategyByAccountidIdSavingsstrategy | — |
-| DELETE | `/api/Accounts/{id}` | Accounts_DeleteAccountById | — |
-| GET | `/api/Accounts/{id}` | Accounts_GetById | — |
-| PUT | `/api/Accounts/{id}` | Accounts_PutByIdModel | — |
-| POST | `/api/Clients` | Clients_PostByModel | — |
-| GET | `/api/CriticalIllnessInsurancePolicies` | CriticalIllnessInsurancePolicies_GetCriticalIllnessInsurancePoliciesByFactFinderIdByFactfinderid | — |
-| POST | `/api/CriticalIllnessInsurancePolicies` | CriticalIllnessInsurancePolicies_PostByModel | — |
-| DELETE | `/api/CriticalIllnessInsurancePolicies/{id}` | CriticalIllnessInsurancePolicies_DeleteById | — |
-| GET | `/api/CriticalIllnessInsurancePolicies/{id}` | CriticalIllnessInsurancePolicies_GetById | — |
-| PUT | `/api/CriticalIllnessInsurancePolicies/{id}` | CriticalIllnessInsurancePolicies_PutByIdModel | — |
-| GET | `/api/CriticalIllnessInsurancePolicyTypes` | CriticalIllnessInsurancePolicyTypes_GetByCountry | — |
-| GET | `/api/CriticalIllnessInsurancePolicyTypes/{id}` | CriticalIllnessInsurancePolicyTypes_GetById | — |
-| GET | `/api/DefinedBenefitPensions` | DefinedBenefitPensions_GetDefinedBenefitPensionsByFactFinderIdByFactfinderid | — |
-| POST | `/api/DefinedBenefitPensions` | DefinedBenefitPensions_PostByModel | — |
-| DELETE | `/api/DefinedBenefitPensions/{id}` | DefinedBenefitPensions_DeleteDefinedBenefitPensionById | — |
-| GET | `/api/DefinedBenefitPensions/{id}` | DefinedBenefitPensions_GetById | — |
-| PUT | `/api/DefinedBenefitPensions/{id}` | DefinedBenefitPensions_PutDefinedBenefitPensionByIdModel | — |
-| GET | `/api/Demographics` | Demographics_GetDemographicsByFactFinderIdByFactfinderid | — |
-| POST | `/api/Demographics` | Demographics_PostByModel | — |
-| GET | `/api/Demographics/{demographicId}/Dependents` | Demographics_GetDependentsByDemographicid | — |
-| POST | `/api/Demographics/{demographicId}/Dependents` | Demographics_PostByDemographicidModel | — |
-| DELETE | `/api/Demographics/{demographicId}/Dependents/{id}` | Demographics_DeleteDependentByDemographicidId | — |
-| GET | `/api/Demographics/{demographicId}/Dependents/{id}` | Demographics_GetDependentByDemographicidId | — |
-| PUT | `/api/Demographics/{demographicId}/Dependents/{id}` | Demographics_PutByDemographicidIdModel | — |
-| GET | `/api/Demographics/{id}` | Demographics_GetById | — |
-| PUT | `/api/Demographics/{id}` | Demographics_PutByIdModel | — |
-| GET | `/api/DisabilityInsurancePolicies` | DisabilityInsurancePolicies_GetDisabilityInsurancePoliciesByFactFinderIdByFactfinderid | — |
-| POST | `/api/DisabilityInsurancePolicies` | DisabilityInsurancePolicies_PostByModel | — |
-| DELETE | `/api/DisabilityInsurancePolicies/{id}` | DisabilityInsurancePolicies_DeleteById | — |
-| GET | `/api/DisabilityInsurancePolicies/{id}` | DisabilityInsurancePolicies_GetById | — |
-| PUT | `/api/DisabilityInsurancePolicies/{id}` | DisabilityInsurancePolicies_PutByIdModel | — |
-| GET | `/api/DisabilityInsurancePolicyTypes` | DisabilityInsurancePolicyTypes_GetByCountry | — |
-| GET | `/api/DisabilityInsurancePolicyTypes/{id}` | DisabilityInsurancePolicyTypes_GetById | — |
-| GET | `/api/EducationGoals` | EducationGoals_GetEducationGoalsByFactFinderIdByFactfinderid | — |
-| POST | `/api/EducationGoals` | EducationGoals_PostByModel | — |
-| GET | `/api/EducationGoals/{educationGoalId}/Expenses` | EducationGoals_GetEducationExpensesByEducationGoalIdByEducationgoalid | — |
-| POST | `/api/EducationGoals/{educationGoalId}/Expenses` | EducationGoals_PostByEducationgoalidModel | — |
-| DELETE | `/api/EducationGoals/{educationGoalId}/Expenses/{id}` | EducationGoals_DeleteByEducationgoalidId | — |
-| GET | `/api/EducationGoals/{educationGoalId}/Expenses/{id}` | EducationGoals_GetEducationExpenseByEducationgoalidId | — |
-| PUT | `/api/EducationGoals/{educationGoalId}/Expenses/{id}` | EducationGoals_PutByEducationgoalidIdModel | — |
-| DELETE | `/api/EducationGoals/{id}` | EducationGoals_DeleteById | — |
-| GET | `/api/EducationGoals/{id}` | EducationGoals_GetById | — |
-| PUT | `/api/EducationGoals/{id}` | EducationGoals_PutByIdModel | — |
-| GET | `/api/ExpenseTypes` | ExpenseTypes_GetByCountry | — |
-| GET | `/api/ExpenseTypes/{id}` | ExpenseTypes_GetById | — |
-| GET | `/api/Expenses` | Expenses_GetExpensesByFactFinderIdByFactfinderid | — |
-| POST | `/api/Expenses` | Expenses_PostByModel | — |
-| DELETE | `/api/Expenses/{id}` | Expenses_DeleteById | — |
-| GET | `/api/Expenses/{id}` | Expenses_GetById | — |
-| PUT | `/api/Expenses/{id}` | Expenses_PutByIdModel | — |
-| GET | `/api/FactFinders` | FactFinders_GetByHouseholdIdByHouseholdid | — |
-| POST | `/api/FactFinders` | FactFinders_PostByModel | — |
-| POST | `/api/FactFinders/Populate` | FactFinders_PostPopulateByModel | — |
-| GET | `/api/FactFinders/{factFinderId}/Modules` | FactFinderModules_GetByFactfinderid | — |
-| GET | `/api/FactFinders/{factFinderId}/Modules/{id}` | FactFinderModules_GetByFactfinderidId | — |
-| PUT | `/api/FactFinders/{factFinderId}/Modules/{id}` | FactFinderModules_PutByModelFactfinderidId | — |
-| GET | `/api/FactFinders/{factFinderId}/Snapshots` | FactFinders_GetSnapshotsByFactfinderid | — |
-| POST | `/api/FactFinders/{factFinderId}/Snapshots` | FactFinders_PostSnapshotsByFactfinderid | — |
-| DELETE | `/api/FactFinders/{id}` | FactFinders_DeleteById | — |
-| GET | `/api/FactFinders/{id}` | FactFinders_GetById | — |
-| PUT | `/api/FactFinders/{id}` | FactFinders_PutByIdModel | — |
-| PUT | `/api/FactFinders/{id}/Populate` | FactFinders_PutPopulateFactFinderByIdModel | — |
-| GET | `/api/FilingStatusTypes` | FilingStatusTypes_GetByCountry | — |
-| GET | `/api/FilingStatusTypes/{id}` | FilingStatusTypes_GetById | — |
-| GET | `/api/FrequencyTypes` | FrequencyTypes_GetByEntityCountry | — |
-| GET | `/api/FrequencyTypes/{id}` | FrequencyTypes_GetById | — |
-| GET | `/api/IncomeTypes` | IncomeTypes_GetByCountry | — |
-| GET | `/api/IncomeTypes/{id}` | IncomeTypes_GetById | — |
-| GET | `/api/Incomes` | Incomes_GetIncomesByFactFinderIdByFactfinderid | — |
-| POST | `/api/Incomes` | Incomes_PostByModel | — |
-| DELETE | `/api/Incomes/{id}` | Incomes_DeleteById | — |
-| GET | `/api/Incomes/{id}` | Incomes_GetById | — |
-| PUT | `/api/Incomes/{id}` | Incomes_PutByIdModel | — |
-| GET | `/api/Liabilities` | Liabilities_GetLiabilitiesByFactFinderIdByFactfinderidExternalsourceid | — |
-| POST | `/api/Liabilities` | Liabilities_PostByModel | — |
-| DELETE | `/api/Liabilities/{id}` | Liabilities_DeleteById | — |
-| GET | `/api/Liabilities/{id}` | Liabilities_GetById | — |
-| PUT | `/api/Liabilities/{id}` | Liabilities_PutByIdModel | — |
-| GET | `/api/LiabilityTypes` | LiabilityTypes_GetByCountry | — |
-| GET | `/api/LiabilityTypes/{id}` | LiabilityTypes_GetById | — |
-| GET | `/api/LifeInsurancePolicies` | LifeInsurancePolicies_GetLifeInsurancePoliciesByFactFinderIdByFactfinderid | — |
-| POST | `/api/LifeInsurancePolicies` | LifeInsurancePolicies_PostByModel | — |
-| DELETE | `/api/LifeInsurancePolicies/{id}` | LifeInsurancePolicies_DeleteById | — |
-| GET | `/api/LifeInsurancePolicies/{id}` | LifeInsurancePolicies_GetById | — |
-| PUT | `/api/LifeInsurancePolicies/{id}` | LifeInsurancePolicies_PutByIdModel | — |
-| GET | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts` | LifeInsurancePolicies_GetSubaccountsByLifeinsurancepolicyid | — |
-| POST | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts` | LifeInsurancePolicies_PostSubaccountByLifeinsurancepolicyidModel | — |
-| DELETE | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts/{id}` | LifeInsurancePolicies_DeleteSubaccountByLifeinsurancepolicyidId | — |
-| GET | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts/{id}` | LifeInsurancePolicies_GetSubaccountByLifeinsurancepolicyidId | — |
-| PUT | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts/{id}` | LifeInsurancePolicies_PutSubaccountByLifeinsurancepolicyidIdModel | — |
-| GET | `/api/LifeInsurancePolicyTypes` | LifeInsurancePolicyTypes_GetByCountry | — |
-| GET | `/api/LifeInsurancePolicyTypes/{id}` | LifeInsurancePolicyTypes_GetById | — |
-| GET | `/api/LifestyleAssetTypes` | LifestyleAssetTypes_GetByCountry | — |
-| GET | `/api/LifestyleAssetTypes/{id}` | LifestyleAssetTypes_GetById | — |
-| GET | `/api/LifestyleAssets` | LifestyleAssets_GetLifestyleAssetsByFactFinderIdByFactfinderid | — |
-| POST | `/api/LifestyleAssets` | LifestyleAssets_PostByModel | — |
-| DELETE | `/api/LifestyleAssets/{id}` | LifestyleAssets_DeleteById | — |
-| GET | `/api/LifestyleAssets/{id}` | LifestyleAssets_GetById | — |
-| PUT | `/api/LifestyleAssets/{id}` | LifestyleAssets_PutByIdModel | — |
-| GET | `/api/LongTermCareInsurancePolicies` | LongTermCareInsurancePolicies_GetLongTermCareInsurancePoliciesByFactFinderIdByFactfinderid | — |
-| POST | `/api/LongTermCareInsurancePolicies` | LongTermCareInsurancePolicies_PostByModel | — |
-| DELETE | `/api/LongTermCareInsurancePolicies/{id}` | LongTermCareInsurancePolicies_DeleteById | — |
-| GET | `/api/LongTermCareInsurancePolicies/{id}` | LongTermCareInsurancePolicies_GetById | — |
-| PUT | `/api/LongTermCareInsurancePolicies/{id}` | LongTermCareInsurancePolicies_PutByIdModel | — |
-| GET | `/api/MajorPurchaseGoalTypes` | MajorPurchaseGoalTypes_GetByCountry | — |
-| GET | `/api/MajorPurchaseGoalTypes/{id}` | MajorPurchaseGoalTypes_GetById | — |
-| GET | `/api/MajorPurchaseGoals` | MajorPurchaseGoals_GetMajorPurchaseGoalsByFactFinderIdByFactfinderid | — |
-| POST | `/api/MajorPurchaseGoals` | MajorPurchaseGoals_PostByModel | — |
-| DELETE | `/api/MajorPurchaseGoals/{id}` | MajorPurchaseGoals_DeleteById | — |
-| GET | `/api/MajorPurchaseGoals/{id}` | MajorPurchaseGoals_GetById | — |
-| PUT | `/api/MajorPurchaseGoals/{id}` | MajorPurchaseGoals_PutByIdModel | — |
-| GET | `/api/Presentation/Accounts` | Presentation_GetAccountsByFactfinderidExternalsourceid | — |
-| GET | `/api/Presentation/Demographics/Owners` | Presentation_GetDemographicOwnersByFactfinderid | — |
-| GET | `/api/Presentation/Demographics/Relationships` | Presentation_GetDemographicRelationships | — |
-| GET | `/api/Presentation/Incomes` | Presentation_GetIncomesByFactfinderid | — |
-| GET | `/api/Presentation/Liabilities` | Presentation_GetLiabilitiesByFactfinderid | — |
-| GET | `/api/Presentation/LifeInsurancePolicies` | Presentation_GetLifeInsurancePoliciesByFactfinderid | — |
-| GET | `/api/Presentation/Pensions` | Presentation_GetPensionsByFactfinderid | — |
-| GET | `/api/RealEstateAssets` | RealEstateAssets_GetRealEstateAssetsByFactFinderIdByFactfinderid | — |
-| POST | `/api/RealEstateAssets` | RealEstateAssets_PostByModel | — |
-| DELETE | `/api/RealEstateAssets/{id}` | RealEstateAssets_DeleteById | — |
-| GET | `/api/RealEstateAssets/{id}` | RealEstateAssets_GetById | — |
-| PUT | `/api/RealEstateAssets/{id}` | RealEstateAssets_PutByIdModel | — |
-| GET | `/api/RetirementGoals` | RetirementGoals_GetRetirementGoalsByFactFinderIdByFactfinderid | — |
-| POST | `/api/RetirementGoals` | RetirementGoals_PostByModel | — |
-| DELETE | `/api/RetirementGoals/{id}` | RetirementGoals_DeleteById | — |
-| GET | `/api/RetirementGoals/{id}` | RetirementGoals_GetById | — |
-| PUT | `/api/RetirementGoals/{id}` | RetirementGoals_PutByIdModel | — |
-| GET | `/api/RetirementGoals/{retirementGoalId}/Expenses` | RetirementGoals_GetRetirementExpensesByRetirementGoalIdByRetirementgoalid | — |
-| POST | `/api/RetirementGoals/{retirementGoalId}/Expenses` | RetirementGoals_PostByRetirementgoalidModel | — |
-| DELETE | `/api/RetirementGoals/{retirementGoalId}/Expenses/{id}` | RetirementGoals_DeleteByRetirementgoalidId | — |
-| GET | `/api/RetirementGoals/{retirementGoalId}/Expenses/{id}` | RetirementGoals_GetRetirementExpenseByRetirementgoalidId | — |
-| PUT | `/api/RetirementGoals/{retirementGoalId}/Expenses/{id}` | RetirementGoals_PutByRetirementgoalidIdModel | — |
-| GET | `/api/ServiceInformation` | FactFinderServiceInformation_Get | — |
-| GET | `/api/StatesProvinces` | StatesProvinces_GetByCountry | — |
-| GET | `/api/StatesProvinces/{id}` | StatesProvinces_GetById | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/AccountTypes` | AccountTypes_GetByCountry | `country`* | AccountTypesModel | yes | — |
+| GET | `/api/AccountTypes/{id}` | AccountTypes_GetById | `id`* | AccountTypeModel | yes | — |
+| GET | `/api/Accounts` | Accounts_GetAccountsByFactFinderIdByFactfinderidExternalsourceid | `factFinderId`*, `externalSourceId` | AccountsModel | yes | — |
+| POST | `/api/Accounts` | Accounts_PostByModel | body*: AccountModel | AccountWithIdModel |  | — |
+| GET | `/api/Accounts/{accountId}/Holdings` | Accounts_GetAccountHoldingsByAccountid | `accountId`* | AccountHoldingsModel | yes | — |
+| PUT | `/api/Accounts/{accountId}/Holdings` | Accounts_PutHoldingsByAccountidHoldings | `accountId`*, body*: AccountHoldingsWithoutIdModel | AccountHoldingsModel |  | — |
+| POST | `/api/Accounts/{accountId}/Holdings` | Accounts_PostAccountHoldingByAccountidModel | `accountId`*, body*: AccountHoldingModel | AccountHoldingWithIdModel |  | — |
+| GET | `/api/Accounts/{accountId}/Holdings/{id}` | Accounts_GetAccountHoldingByAccountidId | `accountId`*, `id`* | AccountHoldingWithIdModel | yes | — |
+| PUT | `/api/Accounts/{accountId}/Holdings/{id}` | Accounts_PutByAccountidIdHolding | `accountId`*, `id`*, body*: AccountHoldingModel | AccountHoldingModel |  | — |
+| DELETE | `/api/Accounts/{accountId}/Holdings/{id}` | Accounts_DeleteAccountHoldingByAccountidId | `accountId`*, `id`* | — |  | — |
+| GET | `/api/Accounts/{accountId}/SavingsStrategies` | Accounts_GetSavingsStrategiesByAccountIdByAccountid | `accountId`* | SavingsStrategiesModel | yes | — |
+| POST | `/api/Accounts/{accountId}/SavingsStrategies` | Accounts_PostSavingsStrategyByAccountidSavingsstrategy | `accountId`*, body*: SavingsStrategyModel | SavingsStrategyWithIdModel |  | — |
+| DELETE | `/api/Accounts/{accountId}/SavingsStrategies` | Accounts_DeleteSavingsStrategiesByAccountid | `accountId`* | — |  | — |
+| GET | `/api/Accounts/{accountId}/SavingsStrategies/{id}` | Accounts_GetSavingsStrategiesByAccountIdAndSavingsStrategyIdByAccountidId | `accountId`*, `id`* | SavingsStrategyWithIdModel | yes | — |
+| PUT | `/api/Accounts/{accountId}/SavingsStrategies/{id}` | Accounts_PutSavingsStrategyByAccountidIdSavingsstrategy | `accountId`*, `id`*, body*: SavingsStrategyModel | SavingsStrategyWithIdModel |  | — |
+| DELETE | `/api/Accounts/{accountId}/SavingsStrategies/{id}` | Accounts_DeleteSavingsStrategyByAccountidId | `accountId`*, `id`* | — |  | — |
+| GET | `/api/Accounts/{id}` | Accounts_GetById | `id`* | AccountWithIdModel | yes | — |
+| PUT | `/api/Accounts/{id}` | Accounts_PutByIdModel | `id`*, body*: AccountModel | AccountWithIdModel |  | — |
+| DELETE | `/api/Accounts/{id}` | Accounts_DeleteAccountById | `id`* | — |  | — |
+| POST | `/api/Clients` | Clients_PostByModel | body*: ClientsModel | ClientModel |  | — |
+| GET | `/api/CriticalIllnessInsurancePolicies` | CriticalIllnessInsurancePolicies_GetCriticalIllnessInsurancePoliciesByFactFinderIdByFactfinderid | `factFinderId`* | CriticalIllnessInsurancePoliciesModel | yes | — |
+| POST | `/api/CriticalIllnessInsurancePolicies` | CriticalIllnessInsurancePolicies_PostByModel | body*: CriticalIllnessInsurancePolicyModel | CriticalIllnessInsurancePolicyWithIdModel |  | — |
+| GET | `/api/CriticalIllnessInsurancePolicies/{id}` | CriticalIllnessInsurancePolicies_GetById | `id`* | CriticalIllnessInsurancePolicyWithIdModel | yes | — |
+| PUT | `/api/CriticalIllnessInsurancePolicies/{id}` | CriticalIllnessInsurancePolicies_PutByIdModel | `id`*, body*: CriticalIllnessInsurancePolicyModel | CriticalIllnessInsurancePolicyWithIdModel |  | — |
+| DELETE | `/api/CriticalIllnessInsurancePolicies/{id}` | CriticalIllnessInsurancePolicies_DeleteById | `id`* | — |  | — |
+| GET | `/api/CriticalIllnessInsurancePolicyTypes` | CriticalIllnessInsurancePolicyTypes_GetByCountry | `country`* | CriticalIllnessInsurancePolicyTypesModel | yes | — |
+| GET | `/api/CriticalIllnessInsurancePolicyTypes/{id}` | CriticalIllnessInsurancePolicyTypes_GetById | `id`* | CriticalIllnessInsurancePolicyTypeModel | yes | — |
+| GET | `/api/DefinedBenefitPensions` | DefinedBenefitPensions_GetDefinedBenefitPensionsByFactFinderIdByFactfinderid | `factFinderId`* | DefinedBenefitPensionsModel | yes | — |
+| POST | `/api/DefinedBenefitPensions` | DefinedBenefitPensions_PostByModel | body*: DefinedBenefitPensionModel | Object, DefinedBenefitPensionWithIdModel |  | — |
+| GET | `/api/DefinedBenefitPensions/{id}` | DefinedBenefitPensions_GetById | `id`* | DefinedBenefitPensionWithIdModel | yes | — |
+| PUT | `/api/DefinedBenefitPensions/{id}` | DefinedBenefitPensions_PutDefinedBenefitPensionByIdModel | `id`*, body*: DefinedBenefitPensionModel | DefinedBenefitPensionModel |  | — |
+| DELETE | `/api/DefinedBenefitPensions/{id}` | DefinedBenefitPensions_DeleteDefinedBenefitPensionById | `id`* | Object |  | — |
+| GET | `/api/Demographics` | Demographics_GetDemographicsByFactFinderIdByFactfinderid | `factFinderId`* | DemographicsWithIdModel | yes | — |
+| POST | `/api/Demographics` | Demographics_PostByModel | body*: DemographicsModel | DemographicsWithIdModel |  | — |
+| GET | `/api/Demographics/{demographicId}/Dependents` | Demographics_GetDependentsByDemographicid | `demographicId`* | DemographicsDependentsModel | yes | — |
+| POST | `/api/Demographics/{demographicId}/Dependents` | Demographics_PostByDemographicidModel | `demographicId`*, body*: DemographicsDependentModel | DemographicsDependentWithIdModel |  | — |
+| GET | `/api/Demographics/{demographicId}/Dependents/{id}` | Demographics_GetDependentByDemographicidId | `demographicId`*, `id`* | DemographicsDependentWithIdModel | yes | — |
+| PUT | `/api/Demographics/{demographicId}/Dependents/{id}` | Demographics_PutByDemographicidIdModel | `demographicId`*, `id`*, body*: DemographicsDependentModel | DemographicsDependentWithIdModel |  | — |
+| DELETE | `/api/Demographics/{demographicId}/Dependents/{id}` | Demographics_DeleteDependentByDemographicidId | `demographicId`*, `id`* | — |  | — |
+| GET | `/api/Demographics/{id}` | Demographics_GetById | `id`* | DemographicsWithIdModel | yes | — |
+| PUT | `/api/Demographics/{id}` | Demographics_PutByIdModel | `id`*, body*: DemographicsModel | DemographicsWithIdModel |  | — |
+| GET | `/api/DisabilityInsurancePolicies` | DisabilityInsurancePolicies_GetDisabilityInsurancePoliciesByFactFinderIdByFactfinderid | `factFinderId`* | DisabilityInsurancePoliciesModel | yes | — |
+| POST | `/api/DisabilityInsurancePolicies` | DisabilityInsurancePolicies_PostByModel | body*: DisabilityInsurancePolicyModel | DisabilityInsurancePolicyWithIdModel |  | — |
+| GET | `/api/DisabilityInsurancePolicies/{id}` | DisabilityInsurancePolicies_GetById | `id`* | DisabilityInsurancePolicyWithIdModel | yes | — |
+| PUT | `/api/DisabilityInsurancePolicies/{id}` | DisabilityInsurancePolicies_PutByIdModel | `id`*, body*: DisabilityInsurancePolicyModel | DisabilityInsurancePolicyWithIdModel |  | — |
+| DELETE | `/api/DisabilityInsurancePolicies/{id}` | DisabilityInsurancePolicies_DeleteById | `id`* | — |  | — |
+| GET | `/api/DisabilityInsurancePolicyTypes` | DisabilityInsurancePolicyTypes_GetByCountry | `country`* | DisabilityInsurancePolicyTypesModel | yes | — |
+| GET | `/api/DisabilityInsurancePolicyTypes/{id}` | DisabilityInsurancePolicyTypes_GetById | `id`* | DisabilityInsurancePolicyTypeModel | yes | — |
+| GET | `/api/EducationGoals` | EducationGoals_GetEducationGoalsByFactFinderIdByFactfinderid | `factFinderId`* | EducationGoalsModel | yes | — |
+| POST | `/api/EducationGoals` | EducationGoals_PostByModel | body*: EducationGoalModel | EducationGoalWithIdModel |  | — |
+| GET | `/api/EducationGoals/{educationGoalId}/Expenses` | EducationGoals_GetEducationExpensesByEducationGoalIdByEducationgoalid | `educationGoalId`* | EducationExpensesModel | yes | — |
+| POST | `/api/EducationGoals/{educationGoalId}/Expenses` | EducationGoals_PostByEducationgoalidModel | `educationGoalId`*, body*: EducationExpenseModel | EducationExpenseWithIdModel |  | — |
+| GET | `/api/EducationGoals/{educationGoalId}/Expenses/{id}` | EducationGoals_GetEducationExpenseByEducationgoalidId | `educationGoalId`*, `id`* | EducationExpenseWithIdModel | yes | — |
+| PUT | `/api/EducationGoals/{educationGoalId}/Expenses/{id}` | EducationGoals_PutByEducationgoalidIdModel | `educationGoalId`*, `id`*, body*: EducationExpenseModel | EducationExpenseWithIdModel |  | — |
+| DELETE | `/api/EducationGoals/{educationGoalId}/Expenses/{id}` | EducationGoals_DeleteByEducationgoalidId | `educationGoalId`*, `id`* | — |  | — |
+| GET | `/api/EducationGoals/{id}` | EducationGoals_GetById | `id`* | EducationGoalWithIdModel | yes | — |
+| PUT | `/api/EducationGoals/{id}` | EducationGoals_PutByIdModel | `id`*, body*: EducationGoalModel | EducationGoalWithIdModel |  | — |
+| DELETE | `/api/EducationGoals/{id}` | EducationGoals_DeleteById | `id`* | — |  | — |
+| GET | `/api/ExpenseTypes` | ExpenseTypes_GetByCountry | `country`* | ExpenseTypesModel | yes | — |
+| GET | `/api/ExpenseTypes/{id}` | ExpenseTypes_GetById | `id`* | ExpenseTypeModel | yes | — |
+| GET | `/api/Expenses` | Expenses_GetExpensesByFactFinderIdByFactfinderid | `factFinderId`* | ExpensesModel | yes | — |
+| POST | `/api/Expenses` | Expenses_PostByModel | body*: ExpenseModel | ExpenseWithIdModel |  | — |
+| GET | `/api/Expenses/{id}` | Expenses_GetById | `id`* | ExpenseWithIdModel | yes | — |
+| PUT | `/api/Expenses/{id}` | Expenses_PutByIdModel | `id`*, body*: ExpenseModel | ExpenseWithIdModel |  | — |
+| DELETE | `/api/Expenses/{id}` | Expenses_DeleteById | `id`* | — |  | — |
+| GET | `/api/FactFinders` | FactFinders_GetByHouseholdIdByHouseholdid | `householdId` | FactFinderWithIdModel[] | yes | — |
+| POST | `/api/FactFinders` | FactFinders_PostByModel | body*: FactFinderEntityModel | Object, FactFinderWithIdModel |  | — |
+| POST | `/api/FactFinders/Populate` | FactFinders_PostPopulateByModel | body*: FactFinderPopulatableEntityModel | Object, FactFinderWithIdModel |  | — |
+| GET | `/api/FactFinders/{factFinderId}/Modules` | FactFinderModules_GetByFactfinderid | `factFinderId`* | FactFinderModulesModel | yes | — |
+| GET | `/api/FactFinders/{factFinderId}/Modules/{id}` | FactFinderModules_GetByFactfinderidId | `factFinderId`*, `id`* | FactFinderModuleWithIdModel | yes | — |
+| PUT | `/api/FactFinders/{factFinderId}/Modules/{id}` | FactFinderModules_PutByModelFactfinderidId | `factFinderId`*, `id`*, body*: FactFinderModuleModel | FactFinderModuleWithIdModel |  | — |
+| GET | `/api/FactFinders/{factFinderId}/Snapshots` | FactFinders_GetSnapshotsByFactfinderid | `factFinderId`* | FactFinderSnapshotsModel | yes | — |
+| POST | `/api/FactFinders/{factFinderId}/Snapshots` | FactFinders_PostSnapshotsByFactfinderid | `factFinderId`* | Object, FactFinderSnapshotWithIdModel |  | — |
+| GET | `/api/FactFinders/{id}` | FactFinders_GetById | `id`* | FactFinderWithIdModel | yes | — |
+| PUT | `/api/FactFinders/{id}` | FactFinders_PutByIdModel | `id`*, body*: FactFinderModel | FactFinderWithIdModel |  | — |
+| DELETE | `/api/FactFinders/{id}` | FactFinders_DeleteById | `id`* | Object |  | — |
+| PUT | `/api/FactFinders/{id}/Populate` | FactFinders_PutPopulateFactFinderByIdModel | `id`*, body*: FactFinderPopulationModel | FactFinderWithIdModel |  | — |
+| GET | `/api/FilingStatusTypes` | FilingStatusTypes_GetByCountry | `country`* | FilingStatusTypesModel | yes | — |
+| GET | `/api/FilingStatusTypes/{id}` | FilingStatusTypes_GetById | `id`* | FilingStatusTypeModel | yes | — |
+| GET | `/api/FrequencyTypes` | FrequencyTypes_GetByEntityCountry | `entity`*, `country`* | FrequencyTypesModel | yes | — |
+| GET | `/api/FrequencyTypes/{id}` | FrequencyTypes_GetById | `id`* | FrequencyTypeModel | yes | — |
+| GET | `/api/IncomeTypes` | IncomeTypes_GetByCountry | `country`* | IncomeTypesModel | yes | — |
+| GET | `/api/IncomeTypes/{id}` | IncomeTypes_GetById | `id`* | IncomeTypeModel | yes | — |
+| GET | `/api/Incomes` | Incomes_GetIncomesByFactFinderIdByFactfinderid | `factFinderId`* | IncomesModel | yes | — |
+| POST | `/api/Incomes` | Incomes_PostByModel | body*: IncomeModel | IncomeWithIdModel |  | — |
+| GET | `/api/Incomes/{id}` | Incomes_GetById | `id`* | IncomeWithIdModel | yes | — |
+| PUT | `/api/Incomes/{id}` | Incomes_PutByIdModel | `id`*, body*: IncomeModel | IncomeWithIdModel |  | — |
+| DELETE | `/api/Incomes/{id}` | Incomes_DeleteById | `id`* | — |  | — |
+| GET | `/api/Liabilities` | Liabilities_GetLiabilitiesByFactFinderIdByFactfinderidExternalsourceid | `factFinderId`*, `externalSourceId` | LiabilitiesModel | yes | — |
+| POST | `/api/Liabilities` | Liabilities_PostByModel | body*: LiabilityModel | LiabilityWithIdModel |  | — |
+| GET | `/api/Liabilities/{id}` | Liabilities_GetById | `id`* | LiabilityWithIdModel | yes | — |
+| PUT | `/api/Liabilities/{id}` | Liabilities_PutByIdModel | `id`*, body*: LiabilityModel | LiabilityWithIdModel |  | — |
+| DELETE | `/api/Liabilities/{id}` | Liabilities_DeleteById | `id`* | — |  | — |
+| GET | `/api/LiabilityTypes` | LiabilityTypes_GetByCountry | `country`* | LiabilityTypesModel | yes | — |
+| GET | `/api/LiabilityTypes/{id}` | LiabilityTypes_GetById | `id`* | LiabilityTypeModel | yes | — |
+| GET | `/api/LifeInsurancePolicies` | LifeInsurancePolicies_GetLifeInsurancePoliciesByFactFinderIdByFactfinderid | `factFinderId`* | LifeInsurancePoliciesModel | yes | — |
+| POST | `/api/LifeInsurancePolicies` | LifeInsurancePolicies_PostByModel | body*: LifeInsurancePolicyModel | LifeInsurancePolicyWithIdModel |  | — |
+| GET | `/api/LifeInsurancePolicies/{id}` | LifeInsurancePolicies_GetById | `id`* | LifeInsurancePolicyWithIdModel | yes | — |
+| PUT | `/api/LifeInsurancePolicies/{id}` | LifeInsurancePolicies_PutByIdModel | `id`*, body*: LifeInsurancePolicyModel | LifeInsurancePolicyWithIdModel |  | — |
+| DELETE | `/api/LifeInsurancePolicies/{id}` | LifeInsurancePolicies_DeleteById | `id`* | — |  | — |
+| GET | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts` | LifeInsurancePolicies_GetSubaccountsByLifeinsurancepolicyid | `lifeInsurancePolicyId`* | LifeInsurancePolicySubaccountsModel | yes | — |
+| POST | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts` | LifeInsurancePolicies_PostSubaccountByLifeinsurancepolicyidModel | `lifeInsurancePolicyId`*, body*: LifeInsurancePolicySubaccountModel | LifeInsurancePolicySubaccountWithIdModel |  | — |
+| GET | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts/{id}` | LifeInsurancePolicies_GetSubaccountByLifeinsurancepolicyidId | `lifeInsurancePolicyId`*, `id`* | LifeInsurancePolicySubaccountWithIdModel | yes | — |
+| PUT | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts/{id}` | LifeInsurancePolicies_PutSubaccountByLifeinsurancepolicyidIdModel | `lifeInsurancePolicyId`*, `id`*, body*: LifeInsurancePolicySubaccountModel | LifeInsurancePolicySubaccountModel |  | — |
+| DELETE | `/api/LifeInsurancePolicies/{lifeInsurancePolicyId}/Subaccounts/{id}` | LifeInsurancePolicies_DeleteSubaccountByLifeinsurancepolicyidId | `lifeInsurancePolicyId`*, `id`* | — |  | — |
+| GET | `/api/LifeInsurancePolicyTypes` | LifeInsurancePolicyTypes_GetByCountry | `country`* | LifeInsurancePolicyTypesModel | yes | — |
+| GET | `/api/LifeInsurancePolicyTypes/{id}` | LifeInsurancePolicyTypes_GetById | `id`* | LifeInsurancePolicyTypeModel | yes | — |
+| GET | `/api/LifestyleAssetTypes` | LifestyleAssetTypes_GetByCountry | `country`* | LifestyleAssetTypesModel | yes | — |
+| GET | `/api/LifestyleAssetTypes/{id}` | LifestyleAssetTypes_GetById | `id`* | LifestyleAssetTypeModel | yes | — |
+| GET | `/api/LifestyleAssets` | LifestyleAssets_GetLifestyleAssetsByFactFinderIdByFactfinderid | `factFinderId`* | LifestyleAssetsModel | yes | — |
+| POST | `/api/LifestyleAssets` | LifestyleAssets_PostByModel | body*: LifestyleAssetModel | LifestyleAssetWithIdModel |  | — |
+| GET | `/api/LifestyleAssets/{id}` | LifestyleAssets_GetById | `id`* | LifestyleAssetWithIdModel | yes | — |
+| PUT | `/api/LifestyleAssets/{id}` | LifestyleAssets_PutByIdModel | `id`*, body*: LifestyleAssetModel | LifestyleAssetWithIdModel |  | — |
+| DELETE | `/api/LifestyleAssets/{id}` | LifestyleAssets_DeleteById | `id`* | — |  | — |
+| GET | `/api/LongTermCareInsurancePolicies` | LongTermCareInsurancePolicies_GetLongTermCareInsurancePoliciesByFactFinderIdByFactfinderid | `factFinderId`* | LongTermCareInsurancePoliciesModel | yes | — |
+| POST | `/api/LongTermCareInsurancePolicies` | LongTermCareInsurancePolicies_PostByModel | body*: LongTermCareInsurancePolicyModel | LongTermCareInsurancePolicyWithIdModel |  | — |
+| GET | `/api/LongTermCareInsurancePolicies/{id}` | LongTermCareInsurancePolicies_GetById | `id`* | LongTermCareInsurancePolicyWithIdModel | yes | — |
+| PUT | `/api/LongTermCareInsurancePolicies/{id}` | LongTermCareInsurancePolicies_PutByIdModel | `id`*, body*: LongTermCareInsurancePolicyModel | LongTermCareInsurancePolicyWithIdModel |  | — |
+| DELETE | `/api/LongTermCareInsurancePolicies/{id}` | LongTermCareInsurancePolicies_DeleteById | `id`* | — |  | — |
+| GET | `/api/MajorPurchaseGoalTypes` | MajorPurchaseGoalTypes_GetByCountry | `country`* | MajorPurchaseGoalTypesModel | yes | — |
+| GET | `/api/MajorPurchaseGoalTypes/{id}` | MajorPurchaseGoalTypes_GetById | `id`* | MajorPurchaseGoalTypeModel | yes | — |
+| GET | `/api/MajorPurchaseGoals` | MajorPurchaseGoals_GetMajorPurchaseGoalsByFactFinderIdByFactfinderid | `factFinderId`* | MajorPurchaseGoalsModel | yes | — |
+| POST | `/api/MajorPurchaseGoals` | MajorPurchaseGoals_PostByModel | body*: MajorPurchaseGoalModel | MajorPurchaseGoalWithIdModel |  | — |
+| GET | `/api/MajorPurchaseGoals/{id}` | MajorPurchaseGoals_GetById | `id`* | MajorPurchaseGoalWithIdModel | yes | — |
+| PUT | `/api/MajorPurchaseGoals/{id}` | MajorPurchaseGoals_PutByIdModel | `id`*, body*: MajorPurchaseGoalModel | MajorPurchaseGoalWithIdModel |  | — |
+| DELETE | `/api/MajorPurchaseGoals/{id}` | MajorPurchaseGoals_DeleteById | `id`* | — |  | — |
+| GET | `/api/Presentation/Accounts` | Presentation_GetAccountsByFactfinderidExternalsourceid | `factFinderId`*, `externalSourceId` | AccountsWithSubEntitiesModel | yes | — |
+| GET | `/api/Presentation/Demographics/Owners` | Presentation_GetDemographicOwnersByFactfinderid | `factFinderId`* | OwnersModel | yes | — |
+| GET | `/api/Presentation/Demographics/Relationships` | Presentation_GetDemographicRelationships | — | RelationshipTypesModel | yes | — |
+| GET | `/api/Presentation/Incomes` | Presentation_GetIncomesByFactfinderid | `factFinderId`* | IncomesModel | yes | — |
+| GET | `/api/Presentation/Liabilities` | Presentation_GetLiabilitiesByFactfinderid | `factFinderId`* | LiabilitiesModel | yes | — |
+| GET | `/api/Presentation/LifeInsurancePolicies` | Presentation_GetLifeInsurancePoliciesByFactfinderid | `factFinderId`* | LifeInsurancePoliciesWithSubEntitiesModel | yes | — |
+| GET | `/api/Presentation/Pensions` | Presentation_GetPensionsByFactfinderid | `factFinderId`* | DefinedBenefitPensionsModel | yes | — |
+| GET | `/api/RealEstateAssets` | RealEstateAssets_GetRealEstateAssetsByFactFinderIdByFactfinderid | `factFinderId`* | RealEstateAssetsModel | yes | — |
+| POST | `/api/RealEstateAssets` | RealEstateAssets_PostByModel | body*: RealEstateAssetModel | RealEstateAssetWithIdModel |  | — |
+| GET | `/api/RealEstateAssets/{id}` | RealEstateAssets_GetById | `id`* | RealEstateAssetWithIdModel | yes | — |
+| PUT | `/api/RealEstateAssets/{id}` | RealEstateAssets_PutByIdModel | `id`*, body*: RealEstateAssetModel | RealEstateAssetWithIdModel |  | — |
+| DELETE | `/api/RealEstateAssets/{id}` | RealEstateAssets_DeleteById | `id`* | — |  | — |
+| GET | `/api/RetirementGoals` | RetirementGoals_GetRetirementGoalsByFactFinderIdByFactfinderid | `factFinderId`* | RetirementGoalsModel | yes | — |
+| POST | `/api/RetirementGoals` | RetirementGoals_PostByModel | body*: RetirementGoalModel | RetirementGoalWithIdModel |  | — |
+| GET | `/api/RetirementGoals/{id}` | RetirementGoals_GetById | `id`* | RetirementGoalWithIdModel | yes | — |
+| PUT | `/api/RetirementGoals/{id}` | RetirementGoals_PutByIdModel | `id`*, body*: RetirementGoalModel | RetirementGoalWithIdModel |  | — |
+| DELETE | `/api/RetirementGoals/{id}` | RetirementGoals_DeleteById | `id`* | — |  | — |
+| GET | `/api/RetirementGoals/{retirementGoalId}/Expenses` | RetirementGoals_GetRetirementExpensesByRetirementGoalIdByRetirementgoalid | `retirementGoalId`* | RetirementExpensesModel | yes | — |
+| POST | `/api/RetirementGoals/{retirementGoalId}/Expenses` | RetirementGoals_PostByRetirementgoalidModel | `retirementGoalId`*, body*: RetirementExpenseModel | RetirementExpenseWithIdModel |  | — |
+| GET | `/api/RetirementGoals/{retirementGoalId}/Expenses/{id}` | RetirementGoals_GetRetirementExpenseByRetirementgoalidId | `retirementGoalId`*, `id`* | RetirementExpenseWithIdModel | yes | — |
+| PUT | `/api/RetirementGoals/{retirementGoalId}/Expenses/{id}` | RetirementGoals_PutByRetirementgoalidIdModel | `retirementGoalId`*, `id`*, body*: RetirementExpenseModel | RetirementExpenseWithIdModel |  | — |
+| DELETE | `/api/RetirementGoals/{retirementGoalId}/Expenses/{id}` | RetirementGoals_DeleteByRetirementgoalidId | `retirementGoalId`*, `id`* | — |  | — |
+| GET | `/api/ServiceInformation` | FactFinderServiceInformation_Get | — | ServiceInformationModel | yes | — |
+| GET | `/api/StatesProvinces` | StatesProvinces_GetByCountry | `country`* | StatesProvincesModel | yes | — |
+| GET | `/api/StatesProvinces/{id}` | StatesProvinces_GetById | `id`* | StateProvinceModel | yes | — |

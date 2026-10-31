@@ -77,146 +77,1136 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of xrefs and associated attributes that contain the query string for a given organism.",
         "id": "operation:get:/{organism}/attributeSearch/{query}",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/attributeSearch/{query}",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Text to find in attributes",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restrict search by attribute name (case sensitive).",
+            "in": "query",
+            "name": "attrName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/attributeSearch/{query}",
         "pointer": "#/paths/~1{organism}~1attributeSearch~1{query}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the supported attributes to the given Organism.",
         "id": "operation:get:/{organism}/attributeSet",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/attributeSet",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/attributeSet",
         "pointer": "#/paths/~1{organism}~1attributeSet/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the attributes for a given identifier, data source, organism.",
         "id": "operation:get:/{organism}/attributes/{systemCode}/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/attributes/{systemCode}/{identifier}",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "En",
+            "description": "System",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "path",
+            "name": "systemCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ENSG00000122375",
+            "description": "Identifier",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of attribute",
+            "in": "query",
+            "name": "attrName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/attributes/{systemCode}/{identifier}",
         "pointer": "#/paths/~1{organism}~1attributes~1{systemCode}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns `true` or `false` based on whether or not /{organism}/search/{query} is supported for a given organism.",
         "id": "operation:get:/{organism}/isFreeSearchSupported",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/isFreeSearchSupported",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/isFreeSearchSupported",
         "pointer": "#/paths/~1{organism}~1isFreeSearchSupported/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns `true` or `false` based on whether or not /{organism}/xrefs/{systemCode}/{identifier} would possibly return a {targetSystemCode} result given a {source…",
         "id": "operation:get:/{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode}",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode}",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "L",
+            "description": "[System code](http://vocabularies.bridgedb.org/#systemCode) for source (input/query) data source",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "path",
+            "name": "sourceSystemCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "[System code](http://vocabularies.bridgedb.org/#systemCode) for target (output/result) data source",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "path",
+            "name": "targetSystemCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode}",
         "pointer": "#/paths/~1{organism}~1isMappingSupported~1{sourceSystemCode}~1{targetSystemCode}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of properties available for a given organism",
         "id": "operation:get:/{organism}/properties",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/properties",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/properties",
         "pointer": "#/paths/~1{organism}~1properties/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of xrefs with identifiers that contain the query string for a given organism.",
         "id": "operation:get:/{organism}/search/{query}",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/search/{query}",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "1234",
+            "description": "Identifier query",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of results per data source",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/{organism}/search/{query}",
         "pointer": "#/paths/~1{organism}~1search~1{query}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of data sources available as xref sources for a given organism.",
         "id": "operation:get:/{organism}/sourceDataSources",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/sourceDataSources",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/sourceDataSources",
         "pointer": "#/paths/~1{organism}~1sourceDataSources/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of data sources available as xref targets for a given organism.",
         "id": "operation:get:/{organism}/targetDataSources",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/targetDataSources",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/targetDataSources",
         "pointer": "#/paths/~1{organism}~1targetDataSources/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns `true` or `false` based on whether or not an xref exists in the database given an identifier, data source, and organism.",
         "id": "operation:get:/{organism}/xrefExists/{systemCode}/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/xrefExists/{systemCode}/{identifier}",
+        "parameters": [
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "L",
+            "description": "Source (input) data source [system code](https://bridgedb.github.io/pages/system-codes.html)",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "path",
+            "name": "systemCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "1234",
+            "description": "Identifier",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/xrefExists/{systemCode}/{identifier}",
         "pointer": "#/paths/~1{organism}~1xrefExists~1{systemCode}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of xrefs that map to a given identifier, data source, and organism.",
         "id": "operation:get:/{organism}/xrefs/{systemCode}/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "get /{organism}/xrefs/{systemCode}/{identifier}",
+        "parameters": [
+          {
+            "description": "(Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "query",
+            "name": "dataSource",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "L",
+            "description": "Source (input) data source [system code](https://bridgedb.github.io/pages/system-codes.html)",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "path",
+            "name": "systemCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "1234",
+            "description": "Identifier",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/xrefs/{systemCode}/{identifier}",
         "pointer": "#/paths/~1{organism}~1xrefs~1{systemCode}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of xrefs, per identifier, that maps to a given list of identifiers an data source given an organism.",
         "id": "operation:post:/{organism}/xrefsBatch",
         "kind": "operation",
         "method": "post",
         "name": "post /{organism}/xrefsBatch",
+        "parameters": [
+          {
+            "description": "(Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "query",
+            "name": "dataSource",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/xrefsBatch",
         "pointer": "#/paths/~1{organism}~1xrefsBatch/post",
+        "request": {
+          "content_types": [
+            "text/html"
+          ],
+          "required": true,
+          "type": "string:string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of xrefs, that maps to a given list of identifiers to a given data source and organism.",
         "id": "operation:post:/{organism}/xrefsBatch/{systemCode}",
         "kind": "operation",
         "method": "post",
         "name": "post /{organism}/xrefsBatch/{systemCode}",
+        "parameters": [
+          {
+            "description": "(Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "query",
+            "name": "dataSource",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organism [Latin name](http://vocabularies.bridgedb.org/#latinName) or [short name](http://vocabularies.bridgedb.org/#shortName).",
+            "enum": [
+              "Human",
+              "Homo sapiens",
+              "Tuberculosis",
+              "Mycobacterium tuberculosis",
+              "Mosquito",
+              "Anopheles gambiae",
+              "Zebra fish",
+              "Danio rerio",
+              "Arabidopsis thaliana",
+              "Rice",
+              "Oryza sativa",
+              "Sea Squirt",
+              "Ciona intestinalis",
+              "Barley",
+              "Hordeum vulgare",
+              "Frog",
+              "Xenopus tropicalis",
+              "Soybean",
+              "Glycine max",
+              "Fruit fly",
+              "Drosophila melanogaster",
+              "Horse",
+              "Equus caballus",
+              "Rhesus Monkey",
+              "Macaca mulatta"
+            ],
+            "in": "path",
+            "name": "organism",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "L",
+            "description": "Source (input) data source [system code](http://vocabularies.bridgedb.org/#systemCode)",
+            "enum": [
+              "En",
+              "Cs",
+              "X",
+              "E",
+              "Rh",
+              "Ck",
+              "Eco",
+              "Cg",
+              "Ch",
+              "Il",
+              "Uc",
+              "Rf",
+              "Pd",
+              "U",
+              "Ma",
+              "Lm",
+              "Wd",
+              "Wi",
+              "Cpc",
+              "Mb",
+              "Rk",
+              "Ce",
+              "S",
+              "L",
+              "Wg"
+            ],
+            "in": "path",
+            "name": "systemCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{organism}/xrefsBatch/{systemCode}",
         "pointer": "#/paths/~1{organism}~1xrefsBatch~1{systemCode}/post",
+        "request": {
+          "content_types": [
+            "text/html"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Identifiers (Genes, proteins, metabolites, interactions)"
+        ]
       }
     ]
   },

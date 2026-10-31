@@ -26,10 +26,83 @@
         "kind": "operation",
         "method": "get",
         "name": "project",
+        "parameters": [
+          {
+            "default": "xml",
+            "description": "Response Format",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "path",
+            "name": "output_format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "DEMO_KEY",
+            "description": "API Key",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search Text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Portal ID",
+            "in": "query",
+            "name": "portal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "City",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "State or Province (ex: 'CO', 'AZ')",
+            "in": "query",
+            "name": "province",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Climate Region.",
+            "in": "query",
+            "name": "region",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/project.{output_format}",
         "pointer": "#/paths/~1project.{output_format}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "A filterable list of projects."
+        "summary": "A filterable list of projects.",
+        "tags": [
+          "project.json"
+        ]
       },
       {
         "deprecated": false,
@@ -37,10 +110,48 @@
         "kind": "operation",
         "method": "get",
         "name": "document",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "Response Format",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "path",
+            "name": "output_format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "DEMO_KEY",
+            "description": "API Key",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project ID",
+            "in": "path",
+            "name": "project_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/project/{project_id}.{output_format}",
         "pointer": "#/paths/~1project~1{project_id}.{output_format}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Project Details"
+        "summary": "Project Details",
+        "tags": [
+          "project.json"
+        ]
       }
     ]
   },

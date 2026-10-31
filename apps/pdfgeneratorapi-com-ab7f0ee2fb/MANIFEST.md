@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pdfgeneratorapi_com_assets_web_
 
 | | |
 | --- | --- |
-| Signed bundle | `0fb564142aa0441c1da5f09feae4e3798d52ea3a29dac309ad1008d9246bd8f3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,16 +34,18 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pdfgeneratorapi_com_assets_web_
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/templates` | getTemplates | Get templates |
-| POST | `/templates` | createTemplate | Create template |
-| POST | `/templates/output` | mergeTemplates | Generate document (multiple templates) |
-| DELETE | `/templates/templateId` | deleteTemplate | Delete template |
-| GET | `/templates/templateId` | getTemplate | Get template |
-| PUT | `/templates/templateId` | updateTemplate | Update template |
-| POST | `/templates/templateId/copy` | copyTemplate | Copy template |
-| POST | `/templates/templateId/editor` | getEditorUrl | Open editor |
-| POST | `/templates/templateId/output` | mergeTemplate | Generate document |
-| DELETE | `/workspaces/workspaceId` | deleteWorkspace | Delete workspace |
-| GET | `/workspaces/workspaceId` | getWorkspace | Get workspace |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/templates` | getTemplates | — | object | yes | Get templates |
+| POST | `/templates` | createTemplate | body*: TemplateDefinitionNew | object |  | Create template |
+| POST | `/templates/output` | mergeTemplates | `name`, `format`, `output`, body*: BatchData | object |  | Generate document (multiple templates) |
+| GET | `/templates/templateId` | getTemplate | `templateId`* | object | yes | Get template |
+| PUT | `/templates/templateId` | updateTemplate | `templateId`*, body*: TemplateDefinitionNew | object |  | Update template |
+| DELETE | `/templates/templateId` | deleteTemplate | `templateId`* | object |  | Delete template |
+| POST | `/templates/templateId/copy` | copyTemplate | `templateId`*, `name` | object |  | Copy template |
+| POST | `/templates/templateId/editor` | getEditorUrl | `templateId`*, `language`, body*: object | object |  | Open editor |
+| POST | `/templates/templateId/output` | mergeTemplate | `templateId`*, `name`, `format`, `output`, body*: Data | object |  | Generate document |
+| GET | `/workspaces/workspaceId` | getWorkspace | `workspaceId`* | object | yes | Get workspace |
+| DELETE | `/workspaces/workspaceId` | deleteWorkspace | `workspaceId`* | object |  | Delete workspace |

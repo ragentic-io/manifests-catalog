@@ -8,6 +8,41 @@
         "from": "proxykingdom-com-3dd647724e",
         "kind": "EXPOSES",
         "to": "operation:get:/proxy"
+      },
+      {
+        "from": "operation:get:/proxy",
+        "kind": "RETURNS",
+        "to": "schema:Proxy"
+      },
+      {
+        "from": "schema:Location",
+        "kind": "REFERENCES",
+        "to": "schema:Continent"
+      },
+      {
+        "from": "schema:Location",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:Location",
+        "kind": "REFERENCES",
+        "to": "schema:Subdivision"
+      },
+      {
+        "from": "schema:Proxy",
+        "kind": "REFERENCES",
+        "to": "schema:Isp"
+      },
+      {
+        "from": "schema:Proxy",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:Proxy",
+        "kind": "REFERENCES",
+        "to": "schema:Timings"
       }
     ],
     "nodes": [
@@ -21,45 +56,156 @@
         "kind": "operation",
         "method": "get",
         "name": "get /proxy",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Port",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccessType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ResponseTime",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "IsSsl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Uptime",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Continent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "LastTested",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "d85ab6a3-51a9-4359-b9d3-41f5dffb366e",
+            "description": "Correlation Id header field",
+            "in": "header",
+            "name": "correlation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/proxy",
         "pointer": "#/paths/~1proxy/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Proxy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a random proxy for chosen parameters."
+        "summary": "Gets a random proxy for chosen parameters.",
+        "tags": [
+          "Proxy"
+        ]
       },
       {
         "id": "schema:Continent",
         "kind": "schema",
-        "name": "Continent"
+        "name": "Continent",
+        "type": "object"
       },
       {
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "object"
       },
       {
         "id": "schema:Isp",
         "kind": "schema",
-        "name": "Isp"
+        "name": "Isp",
+        "type": "object"
       },
       {
         "id": "schema:Location",
         "kind": "schema",
-        "name": "Location"
+        "name": "Location",
+        "type": "object"
       },
       {
         "id": "schema:Proxy",
         "kind": "schema",
-        "name": "Proxy"
+        "name": "Proxy",
+        "type": "object"
       },
       {
         "id": "schema:Subdivision",
         "kind": "schema",
-        "name": "Subdivision"
+        "name": "Subdivision",
+        "type": "object"
       },
       {
         "id": "schema:Timings",
         "kind": "schema",
-        "name": "Timings"
+        "name": "Timings",
+        "type": "object"
       }
     ]
   },

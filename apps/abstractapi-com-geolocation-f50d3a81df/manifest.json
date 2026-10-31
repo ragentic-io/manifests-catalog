@@ -8,6 +8,11 @@
         "from": "abstractapi-com-geolocation-f50d3a81df",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/"
+      },
+      {
+        "from": "operation:get:/v1/",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_200"
       }
     ],
     "nodes": [
@@ -17,19 +22,48 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieve the location of an IP address",
         "id": "operation:get:/v1/",
         "kind": "operation",
         "method": "get",
         "name": "get /v1/",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ip_address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/",
         "pointer": "#/paths/~1v1~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inline_response_200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:inline_response_200",
         "kind": "schema",
-        "name": "inline_response_200"
+        "name": "inline_response_200",
+        "type": "object"
       }
     ]
   },

@@ -12,7 +12,7 @@ Independent connector for the DigitalOcean API. Not affiliated with or endorsed 
 
 | | |
 | --- | --- |
-| Signed bundle | `2e665451f19cf36ff3ea22fffe76c260fb0a68c57af5468f9d10eada0c6a936a` in `bundles/`, expires 2027-01-28 01:47 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.digitalocean.com` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.digitalocean.com/v2/account` |
@@ -40,863 +40,865 @@ Independent connector for the DigitalOcean API. Not affiliated with or endorsed 
 
 1288 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| PUT | `/<upload_url>` | inference_upload_batch_file | Upload a Batch Inference Input File |
-| POST | `/api/v1/chat/completions` | agentInference_create_chat_completion | Create a model response for the given chat conversation |
-| POST | `/approvals/session/{session_id}/{approval_id}` | gatewaySessionApprovals_update | Decide a Pending Approval |
-| POST | `/approvals/{approval_id}` | gatewayApprovals_update | Decide a Pending Approval by Session Header |
-| POST | `/code/execute` | gatewayCode_run | Execute Code |
-| GET | `/tools` | gatewayTools_list | List Session Tools |
-| POST | `/tools/invoke` | gatewayTools_run | Invoke Session Tools |
-| POST | `/tools/search` | gatewayTools_list_search | Search Session Tools |
-| POST | `/v1/async-invoke` | inference_create_async_invoke | Generate Image, Audio, or Text-to-Speech Using fal Models |
-| POST | `/v1/audio/speech` | inference_create_speech | Generate speech from text |
-| GET | `/v1/batches` | inference_list_batches | List Batch Inference Jobs |
-| POST | `/v1/batches` | inference_create_batch | Create a Batch Inference Job |
-| POST | `/v1/batches/files` | inference_create_batch_file | Create a Batch Inference Input File |
-| GET | `/v1/batches/{batch_id}` | inference_get_batch | Retrieve a Batch Inference Job |
-| POST | `/v1/batches/{batch_id}/cancel` | inference_cancel_batch | Cancel a Batch Inference Job |
-| GET | `/v1/batches/{batch_id}/results` | inference_get_batch_results | Get Batch Inference Results Download Links |
-| POST | `/v1/chat/completions` | inference_create_chat_completion | Create a model response for the given chat conversation |
-| GET | `/v1/consent` | signals_list_consents | List All Consent Records |
-| PUT | `/v1/consent` | signals_update_team_consent | Update Team-Level Consent |
-| GET | `/v1/consent/{environment_id}` | signals_get_consent | Retrieve Consent for an Environment |
-| PUT | `/v1/consent/{environment_id}` | signals_update_consent | Update Consent for an Environment |
-| POST | `/v1/embeddings` | inference_create_embedding | Create embedding |
-| POST | `/v1/images/generations` | inference_create_image | Generate images from text prompts |
-| POST | `/v1/messages` | inference_create_messages | Create the next assistant message |
-| GET | `/v1/models` | inference_list_models | List available models |
-| POST | `/v1/responses` | inference_create_response | Send Prompt to a Model Using the Responses API |
-| GET | `/v1/signals/agents/{environment_id}/sessions` | signals_list_agent_sessions | List Sessions for an Environment |
-| GET | `/v1/signals/deletions` | signals_list_deletions | List Data Deletion Jobs |
-| POST | `/v1/signals/deletions` | signals_create_deletion | Create a Data Deletion Job |
-| GET | `/v1/signals/deletions/{deletion_id}` | signals_get_deletion | Retrieve a Data Deletion Job |
-| GET | `/v1/signals/exports` | signals_list_exports | List Export Jobs |
-| POST | `/v1/signals/exports` | signals_create_export | Create an Export Job |
-| GET | `/v1/signals/exports/options` | signals_get_export_options | Get Export Options |
-| GET | `/v1/signals/exports/{export_id}` | signals_get_export | Retrieve an Export Job |
-| GET | `/v1/signals/exports/{export_id}/download` | signals_get_export_download | Get Export Download URL |
-| GET | `/v1/signals/sessions/{session_id}/dialogues` | signals_list_session_dialogues | List Dialogues for a Session |
-| POST | `/v1/systemone` | inference_create_systemone | Create a System One evaluation |
-| POST | `/v1/videos` | inference_create_video | Start a video generation job |
-| GET | `/v1/videos/{video_id}` | inference_get_video | Retrieve a video generation job |
-| GET | `/v1/videos/{video_id}/content` | inference_get_video_content | Download generated video content |
-| GET | `/v2/1-clicks` | oneClicks_list | List 1-Click Applications |
-| POST | `/v2/1-clicks/kubernetes` | oneClicks_install_kubernetes | Install Kubernetes 1-Click Applications |
-| GET | `/v2/account` | account_get | Get User Information |
-| GET | `/v2/account/keys` | sshKeys_list | List All SSH Keys |
-| POST | `/v2/account/keys` | sshKeys_create | Create a New SSH Key |
-| DELETE | `/v2/account/keys/{ssh_key_identifier}` | sshKeys_delete | Delete an SSH Key |
-| GET | `/v2/account/keys/{ssh_key_identifier}` | sshKeys_get | Retrieve an Existing SSH Key |
-| PUT | `/v2/account/keys/{ssh_key_identifier}` | sshKeys_update | Update an SSH Key's Name |
-| GET | `/v2/action-gateway/actors/{actor_id}/limits` | actorLimits_get | Get an Actor's Limits |
-| POST | `/v2/action-gateway/actors/{actor_id}/limits:clear` | actorLimits_delete | Clear an Actor's Limits |
-| POST | `/v2/action-gateway/actors/{actor_id}/limits:set` | actorLimits_update | Set an Actor's Limits |
-| GET | `/v2/action-gateway/connections` | connections_list | List Connections |
-| POST | `/v2/action-gateway/connections` | connections_create | Create a Connection |
-| DELETE | `/v2/action-gateway/connections/{id}` | connections_delete | Delete a Connection |
-| GET | `/v2/action-gateway/connections/{id}` | connections_get | Get a Connection |
-| GET | `/v2/action-gateway/mcp-servers` | mcpServers_list | List MCP Servers |
-| POST | `/v2/action-gateway/mcp-servers` | mcpServers_create | Register an MCP Server |
-| DELETE | `/v2/action-gateway/mcp-servers/{server_ref}` | mcpServers_delete | Delete an MCP Server |
-| GET | `/v2/action-gateway/mcp-servers/{server_ref}` | mcpServers_get | Get an MCP Server |
-| PATCH | `/v2/action-gateway/mcp-servers/{server_ref}` | mcpServers_patch | Update an MCP Server |
-| POST | `/v2/action-gateway/mcp-servers/{server_ref}/resync` | mcpServers_run_resync | Discover an MCP Server's Tools |
-| GET | `/v2/action-gateway/mcp-servers/{server_ref}/tools` | mcpServers_list_tools | List an MCP Server's Tools |
-| PUT | `/v2/action-gateway/mcp-servers/{server_ref}/tools` | mcpServers_update_tools | Set Which of an MCP Server's Tools Are Enabled |
-| GET | `/v2/action-gateway/output-views` | outputViews_list | List Output Views |
-| POST | `/v2/action-gateway/output-views` | outputViews_create | Create an Output View |
-| POST | `/v2/action-gateway/output-views/preview` | outputViews_validate | Preview an Output View |
-| DELETE | `/v2/action-gateway/output-views/{view_id}` | outputViews_delete | Delete an Output View |
-| GET | `/v2/action-gateway/output-views/{view_id}` | outputViews_get | Get an Output View |
-| GET | `/v2/action-gateway/sessions` | sessions_list | List Sessions |
-| POST | `/v2/action-gateway/sessions` | sessions_create | Create a Session |
-| GET | `/v2/action-gateway/sessions/search` | sessions_list_search | Search Sessions |
-| DELETE | `/v2/action-gateway/sessions/{session_urn}` | sessions_delete | Delete a Session |
-| GET | `/v2/action-gateway/toolbelts` | toolbelts_list | List Toolbelts |
-| POST | `/v2/action-gateway/toolbelts` | toolbelts_create | Create a Toolbelt |
-| GET | `/v2/action-gateway/toolbelts/search` | toolbelts_list_search | Search Toolbelts |
-| DELETE | `/v2/action-gateway/toolbelts/{name}` | toolbelts_delete | Delete a Toolbelt |
-| GET | `/v2/action-gateway/toolbelts/{name}` | toolbelts_get | Get a Toolbelt |
-| GET | `/v2/action-gateway/toolbelts/{name}/providers` | toolbelts_list_providers | List the Providers in a Toolbelt |
-| GET | `/v2/action-gateway/toolbelts/{name}/providers/{provider}/tools` | toolbelts_list_provider_tools | List a Toolbelt's Tools from One Provider |
-| POST | `/v2/action-gateway/toolbelts/{name}/tools/add` | toolbelts_add_tools | Add Tools to a Toolbelt |
-| POST | `/v2/action-gateway/toolbelts/{name}/tools/remove` | toolbelts_delete_tools | Remove Tools from a Toolbelt |
-| GET | `/v2/action-gateway/tools` | tools_list | List Tools |
-| GET | `/v2/action-gateway/tools/health` | tools_list_health | List Tool Health |
-| GET | `/v2/action-gateway/tools/health/providers` | tools_list_health_providers | List Provider Health |
-| GET | `/v2/action-gateway/tools/health/tools/{tool_slug}` | tools_get_health | Get Tool Health |
-| GET | `/v2/action-gateway/tools/providers` | tools_list_providers | List Providers |
-| GET | `/v2/action-gateway/tools/providers/search` | tools_list_search_providers | Search Providers |
-| GET | `/v2/action-gateway/tools/search` | tools_list_search | Search Tools |
-| GET | `/v2/action-gateway/tools/toolkits` | tools_list_toolkits | List Toolkits |
-| GET | `/v2/action-gateway/users` | users_list | List Users |
-| GET | `/v2/action-gateway/users/{user_id}` | users_get | Get a User |
-| GET | `/v2/actions` | actions_list | List All Actions |
-| GET | `/v2/actions/{action_id}` | actions_get | Retrieve an Existing Action |
-| GET | `/v2/add-ons/apps` | addons_get_app | List Available Add-On Applications |
-| GET | `/v2/add-ons/apps/{app_slug}/metadata` | addons_get_app_metadata | Get Metadata for an Add-On Application |
-| GET | `/v2/add-ons/saas` | addons_list | List all Add-On Resources |
-| POST | `/v2/add-ons/saas` | addons_create | Create/Provision a New Add-on Resource |
-| DELETE | `/v2/add-ons/saas/{resource_uuid}` | addons_delete | Delete/Deprovision an Add-on Resource |
-| GET | `/v2/add-ons/saas/{resource_uuid}` | addons_get | Get details on an Add-On Resource |
-| PATCH | `/v2/add-ons/saas/{resource_uuid}` | addons_patch | Update the name for an Add-On Resource |
-| PATCH | `/v2/add-ons/saas/{resource_uuid}/plan` | addons_patch_plan | Update the plan for an Add-On Resource |
-| GET | `/v2/agents/configs` | harness_list_configs | List active Environment Configs for the caller's team. |
-| POST | `/v2/agents/configs` | harness_create_config | Create an Environment Config (environment spec + optional Insights opt-in). |
-| DELETE | `/v2/agents/configs/{config_id}` | harness_delete_config | Soft-delete an Environment Config. |
-| GET | `/v2/agents/configs/{config_id}` | harness_get_config | Get an active Environment Config and its environment spec. |
-| POST | `/v2/agents/configs/{config_id}/clone` | harness_create_config_clone | Clone an Environment Config under a new name. |
-| GET | `/v2/agents/configs/{config_id}/sessions` | harness_list_config_sessions | List the sessions created from one Environment Config. |
-| GET | `/v2/agents/sessions` | harness_list_sessions | ListSessions enumerates sessions for the caller's tenant. |
-| POST | `/v2/agents/sessions` | harness_create_session | CreateSession provisions a sandbox and starts a Harness Runtime session. |
-| POST | `/v2/agents/sessions/policy/validate` | harness_validate_session_policy | ValidatePolicy checks a manifest's tool-permission policy against the agent's capabilities without creating a session. |
-| GET | `/v2/agents/sessions/sandbox/sizes` | harness_list_session_sandbox_sizes | ListSandboxSizes returns the customer-selectable sandbox (microVM) size catalog. |
-| DELETE | `/v2/agents/sessions/{session_id}` | harness_delete_session | DestroySession tears down the sandbox and marks the session DESTROYED. |
-| GET | `/v2/agents/sessions/{session_id}` | harness_get_session | GetSession returns the current snapshot of a session. |
-| PATCH | `/v2/agents/sessions/{session_id}` | harness_update_session | PatchSession updates session-scoped settings on an existing session. |
-| GET | `/v2/agents/sessions/{session_id}/checkpoints` | harness_list_session_checkpoints | ListCheckpoints enumerates a session's checkpoints, newest first. |
-| POST | `/v2/agents/sessions/{session_id}/checkpoints` | harness_create_session_checkpoint | CreateCheckpoint captures the session's live sandbox state as a durable checkpoint. |
-| DELETE | `/v2/agents/sessions/{session_id}/checkpoints/{checkpoint_id}` | harness_delete_session_checkpoint | DeleteCheckpoint removes a checkpoint and its underlying machine-state capture. |
-| GET | `/v2/agents/sessions/{session_id}/checkpoints/{checkpoint_id}` | harness_get_session_checkpoint | GetCheckpoint returns the current snapshot of a checkpoint. |
-| POST | `/v2/agents/sessions/{session_id}/checkpoints/{checkpoint_id}/rollback` | harness_revert_session_checkpoint | RollbackToCheckpoint rewinds a session to a checkpoint. |
-| GET | `/v2/agents/sessions/{session_id}/events` | harness_get_session_events | StreamSessionEvents opens the session's Server-Sent Events feed. |
-| POST | `/v2/agents/sessions/{session_id}/fork` | harness_create_session_fork | ForkSession creates child sessions from a checkpoint of this session. |
-| POST | `/v2/agents/sessions/{session_id}/hitl/{request_id}` | harness_post_session_hitl | ResolveHITL records the user's decision on a pending HITL request. |
-| GET | `/v2/agents/sessions/{session_id}/ingress` | harness_get_session_ingress | GetIngressURL returns the public HTTPS URL of the session's OpenHands Agent Server. |
-| POST | `/v2/agents/sessions/{session_id}/input` | harness_create_session_input | SendInput delivers a user chat message into the session. |
-| POST | `/v2/agents/sessions/{session_id}/pause` | harness_post_session_pause | PauseSession freezes the session's microVM sandbox. |
-| GET | `/v2/agents/sessions/{session_id}/port-forward/{port}` | harness_get_session_port_forward | PortForwardSession opens a WebSocket tunnel to a guest TCP port. |
-| POST | `/v2/agents/sessions/{session_id}/resume` | harness_post_session_resume | ResumeSession explicitly thaws a PAUSED session's microVM sandbox. |
-| POST | `/v2/agents/sessions/{session_id}/sandbox/exec` | harness_post_session_sandbox_exec | ExecInSandbox runs a one-shot command inside the session's sandbox. |
-| GET | `/v2/agents/sessions/{session_id}/workspace/download` | harness_get_session_workspace_download | Download a file or tar archive from the session's sandbox workspace. |
-| POST | `/v2/agents/sessions/{session_id}/workspace/transfers` | harness_create_session_workspace_transfer | Start a staged (large-file) workspace transfer. |
-| GET | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}` | harness_get_session_workspace_transfer | Get the status of a staged workspace transfer. |
-| POST | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}/cancel` | harness_cancel_session_workspace_transfer | Cancel a staged workspace transfer. |
-| POST | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}/commit` | harness_commit_session_workspace_transfer | Finalize a staged upload. |
-| POST | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}/part-upload-urls` | harness_create_session_workspace_part_upload_urls | Mint presigned PUT URLs for one or more multipart upload parts. |
-| POST | `/v2/agents/sessions/{session_id}/workspace/upload` | harness_create_session_workspace_upload | Upload a file or tar archive into the session's sandbox workspace. |
-| GET | `/v2/agents/templates` | harness_list_templates | ListTeamTemplates returns the caller's team custom templates. |
-| POST | `/v2/agents/templates` | harness_create_template | CreateTemplate creates a team custom template and kicks a build. |
-| DELETE | `/v2/agents/templates/{template_id}` | harness_delete_template | DeleteTemplate deletes a team custom template. |
-| GET | `/v2/agents/templates/{template_id}` | harness_get_template | GetTemplate returns a team custom template by public id. |
-| PUT | `/v2/agents/templates/{template_id}` | harness_update_template | UpdateTemplate updates a team template's source and kicks a new build. |
-| GET | `/v2/agents/templates/{template_id}/builds` | harness_list_template_builds | ListTemplateBuilds returns build history for a template. |
-| GET | `/v2/agents/templates/{template_id}/builds/{build_id}` | harness_get_template_build | GetTemplateBuild returns a single template build. |
-| GET | `/v2/agents/triggers` | harness_list_triggers | ListTriggers enumerates the calling team's triggers. |
-| POST | `/v2/agents/triggers` | harness_create_trigger | CreateTrigger creates a webhook or cron trigger. |
-| GET | `/v2/agents/triggers/by-session/{session_id}` | harness_get_trigger_by_session | GetTriggerBySession reverse-looks-up the trigger that produced or binds a session. |
-| GET | `/v2/agents/triggers/reusable-sessions` | harness_list_reusable_sessions | ListReusableSessions lists the team's PAUSED sessions for the reuse picker. |
-| DELETE | `/v2/agents/triggers/{trigger_id}` | harness_delete_trigger | DeleteTrigger soft-deletes a trigger. |
-| GET | `/v2/agents/triggers/{trigger_id}` | harness_get_trigger | GetTrigger returns a single trigger by id. |
-| PATCH | `/v2/agents/triggers/{trigger_id}` | harness_update_trigger | UpdateTrigger updates, pauses, or re-enables a trigger. |
-| GET | `/v2/agents/triggers/{trigger_id}/executions` | harness_list_trigger_executions | ListTriggerExecutions returns a trigger's execution history. |
-| GET | `/v2/agents/triggers/{trigger_id}/executions/{execution_id}` | harness_get_trigger_execution | GetTriggerExecution returns a single execution, including its payload. |
-| POST | `/v2/agents/triggers/{trigger_id}/executions/{execution_id}/cancel` | harness_cancel_trigger_execution | CancelExecution ends a running execution and frees the trigger's in-flight slot. |
-| POST | `/v2/agents/triggers/{trigger_id}/rotate-secret` | harness_post_trigger_rotate_secret | RotateTriggerSecret issues a new webhook secret. |
-| POST | `/v2/agents/triggers/{trigger_id}/webhook` | harness_post_trigger_webhook | ReceiveTriggerWebhook accepts a signed delivery from an external system. |
-| GET | `/v2/agents/webhook-providers` | harness_list_webhook_providers | ListWebhookProviders lists supported webhook providers for the create-trigger UI. |
-| GET | `/v2/apps` | apps_list | List All Apps |
-| POST | `/v2/apps` | apps_create | Create a New App |
-| POST | `/v2/apps/metrics/bandwidth_daily` | apps_list_metrics_bandwidth_daily | Retrieve Multiple Apps' Daily Bandwidth Metrics |
-| POST | `/v2/apps/propose` | apps_validate_appSpec | Propose an App Spec |
-| GET | `/v2/apps/regions` | apps_list_regions | List App Regions |
-| GET | `/v2/apps/tiers/instance_sizes` | apps_list_instanceSizes | List Instance Sizes |
-| GET | `/v2/apps/tiers/instance_sizes/{slug}` | apps_get_instanceSize | Retrieve an Instance Size |
-| GET | `/v2/apps/{app_id}/alerts` | apps_list_alerts | List all app alerts |
-| POST | `/v2/apps/{app_id}/alerts/{alert_id}/destinations` | apps_assign_alertDestinations | Update destinations for alerts |
-| GET | `/v2/apps/{app_id}/components/{component_name}/exec` | apps_get_exec_active_deployment | Retrieve Exec URL |
-| GET | `/v2/apps/{app_id}/components/{component_name}/logs` | apps_get_logs_active_deployment | Retrieve Active Deployment Logs |
-| GET | `/v2/apps/{app_id}/deployments` | apps_list_deployments | List App Deployments |
-| POST | `/v2/apps/{app_id}/deployments` | apps_create_deployment | Create an App Deployment |
-| GET | `/v2/apps/{app_id}/deployments/{deployment_id}` | apps_get_deployment | Retrieve an App Deployment |
-| POST | `/v2/apps/{app_id}/deployments/{deployment_id}/cancel` | apps_cancel_deployment | Cancel a Deployment |
-| GET | `/v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/exec` | apps_get_exec | Retrieve Exec URL for Deployment |
-| GET | `/v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/logs` | apps_get_logs | Retrieve Deployment Logs |
-| GET | `/v2/apps/{app_id}/deployments/{deployment_id}/logs` | apps_get_logs_aggregate | Retrieve Aggregate Deployment Logs |
-| GET | `/v2/apps/{app_id}/events` | apps_list_events | List App Events |
-| GET | `/v2/apps/{app_id}/events/{event_id}` | apps_get_event | Get an Event |
-| POST | `/v2/apps/{app_id}/events/{event_id}/cancel` | apps_cancel_event | Cancel an Event |
-| GET | `/v2/apps/{app_id}/events/{event_id}/logs` | apps_get_event_logs | Retrieve Event Logs |
-| GET | `/v2/apps/{app_id}/health` | apps_get_health | Retrieve App Health |
-| GET | `/v2/apps/{app_id}/instances` | apps_get_instances | Retrieve App Instances |
-| GET | `/v2/apps/{app_id}/job-invocations` | apps_list_job_invocations | List Job Invocations |
-| GET | `/v2/apps/{app_id}/job-invocations/{job_invocation_id}` | apps_get_job_invocation | Get Job Invocations |
-| POST | `/v2/apps/{app_id}/job-invocations/{job_invocation_id}/cancel` | apps_cancel_job_invocation | Cancel Job Invocation |
-| GET | `/v2/apps/{app_id}/jobs/{job_name}/invocations/{job_invocation_id}/logs` | apps_get_job_invocation_logs | Retrieve Job Invocation Logs |
-| GET | `/v2/apps/{app_id}/logs` | apps_get_logs_active_deployment_aggregate | Retrieve Active Deployment Aggregate Logs |
-| GET | `/v2/apps/{app_id}/metrics/bandwidth_daily` | apps_get_metrics_bandwidth_daily | Retrieve App Daily Bandwidth Metrics |
-| POST | `/v2/apps/{app_id}/restart` | apps_restart | Restart an App |
-| POST | `/v2/apps/{app_id}/rollback` | apps_create_rollback | Rollback App |
-| POST | `/v2/apps/{app_id}/rollback/commit` | apps_commit_rollback | Commit App Rollback |
-| POST | `/v2/apps/{app_id}/rollback/revert` | apps_revert_rollback | Revert App Rollback |
-| POST | `/v2/apps/{app_id}/rollback/validate` | apps_validate_rollback | Validate App Rollback |
-| DELETE | `/v2/apps/{id}` | apps_delete | Delete an App |
-| GET | `/v2/apps/{id}` | apps_get | Retrieve an Existing App |
-| PUT | `/v2/apps/{id}` | apps_update | Update an App |
-| GET | `/v2/billing/{account_urn}/insights/{start_date}/{end_date}` | billingInsights_list | List Billing Insights |
-| GET | `/v2/byoip_prefixes` | byoipPrefixes_list | List BYOIP Prefixes |
-| POST | `/v2/byoip_prefixes` | byoipPrefixes_create | Create a BYOIP Prefix |
-| DELETE | `/v2/byoip_prefixes/{byoip_prefix_uuid}` | byoipPrefixes_delete | Delete a BYOIP Prefix |
-| GET | `/v2/byoip_prefixes/{byoip_prefix_uuid}` | byoipPrefixes_get | Get a BYOIP Prefix |
-| PATCH | `/v2/byoip_prefixes/{byoip_prefix_uuid}` | byoipPrefixes_patch | Update a BYOIP Prefix |
-| GET | `/v2/byoip_prefixes/{byoip_prefix_uuid}/ips` | byoipPrefixes_list_resources | List BYOIP Prefix Resources |
-| GET | `/v2/cdn/endpoints` | cdn_list_endpoints | List All CDN Endpoints |
-| POST | `/v2/cdn/endpoints` | cdn_create_endpoint | Create a New CDN Endpoint |
-| DELETE | `/v2/cdn/endpoints/{cdn_id}` | cdn_delete_endpoint | Delete a CDN Endpoint |
-| GET | `/v2/cdn/endpoints/{cdn_id}` | cdn_get_endpoint | Retrieve an Existing CDN Endpoint |
-| PUT | `/v2/cdn/endpoints/{cdn_id}` | cdn_update_endpoints | Update a CDN Endpoint |
-| DELETE | `/v2/cdn/endpoints/{cdn_id}/cache` | cdn_purge_cache | Purge the Cache for an Existing CDN Endpoint |
-| GET | `/v2/certificates` | certificates_list | List All Certificates |
-| POST | `/v2/certificates` | certificates_create | Create a New Certificate |
-| DELETE | `/v2/certificates/{certificate_id}` | certificates_delete | Delete a Certificate |
-| GET | `/v2/certificates/{certificate_id}` | certificates_get | Retrieve an Existing Certificate |
-| GET | `/v2/customers/my/balance` | balance_get | Get Customer Balance |
-| GET | `/v2/customers/my/billing_history` | billingHistory_list | List Billing History |
-| GET | `/v2/customers/my/invoices` | invoices_list | List All Invoices |
-| GET | `/v2/customers/my/invoices/{invoice_uuid}` | invoices_get_byUUID | Retrieve an Invoice by UUID |
-| GET | `/v2/customers/my/invoices/{invoice_uuid}/csv` | invoices_get_csvByUUID | Retrieve an Invoice CSV by UUID |
-| GET | `/v2/customers/my/invoices/{invoice_uuid}/pdf` | invoices_get_pdfByUUID | Retrieve an Invoice PDF by UUID |
-| GET | `/v2/customers/my/invoices/{invoice_uuid}/summary` | invoices_get_summaryByUUID | Retrieve an Invoice Summary by UUID |
-| GET | `/v2/customers/my/prepayment_config` | prepaymentConfig_get | Get Customer Prepayment Configuration |
-| GET | `/v2/customers/my/prepayment_status` | prepaymentStatus_get | Get Customer Prepayment Status |
-| GET | `/v2/databases` | databases_list_clusters | List All Database Clusters |
-| POST | `/v2/databases` | databases_create_cluster | Create a New Database Cluster |
-| GET | `/v2/databases/metrics/credentials` | databases_get_cluster_metrics_credentials | Retrieve Database Clusters' Metrics Endpoint Credentials |
-| PUT | `/v2/databases/metrics/credentials` | databases_update_cluster_metrics_credentials | Update Database Clusters' Metrics Endpoint Credentials |
-| GET | `/v2/databases/options` | databases_list_options | List Database Options |
-| DELETE | `/v2/databases/{database_cluster_uuid}` | databases_destroy_cluster | Destroy a Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}` | databases_get_cluster | Retrieve an Existing Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/autoscale` | databases_get_autoscale | Retrieve Autoscale Configuration for a Database Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/autoscale` | databases_update_autoscale | Configure Autoscale Settings for a Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/backups` | databases_list_backups | List Backups for a Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/ca` | databases_get_ca | Retrieve the Public Certificate |
-| GET | `/v2/databases/{database_cluster_uuid}/config` | databases_get_config | Retrieve an Existing Database Cluster Configuration |
-| PATCH | `/v2/databases/{database_cluster_uuid}/config` | databases_patch_config | Update the Database Configuration for an Existing Database |
-| GET | `/v2/databases/{database_cluster_uuid}/dbs` | databases_list | List All Databases |
-| POST | `/v2/databases/{database_cluster_uuid}/dbs` | databases_add | Add a New Database |
-| DELETE | `/v2/databases/{database_cluster_uuid}/dbs/{database_name}` | databases_delete | Delete a Database |
-| GET | `/v2/databases/{database_cluster_uuid}/dbs/{database_name}` | databases_get | Retrieve an Existing Database |
-| GET | `/v2/databases/{database_cluster_uuid}/do_settings` | databases_get_do_settings | Retrieve DO Settings for a Database Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/do_settings` | databases_update_do_settings | Update DO Settings for a Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/events` | databases_list_events_logs | List all Events Logs |
-| GET | `/v2/databases/{database_cluster_uuid}/eviction_policy` | databases_get_evictionPolicy | Retrieve the Eviction Policy for a Caching or Valkey Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/eviction_policy` | databases_update_evictionPolicy | Configure the Eviction Policy for a Caching or Valkey Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/firewall` | databases_list_firewall_rules | List Firewall Rules (Trusted Sources) for a Database Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/firewall` | databases_update_firewall_rules | Update Firewall Rules (Trusted Sources) for a Database |
-| GET | `/v2/databases/{database_cluster_uuid}/indexes` | databases_list_opeasearch_indexes | List Indexes for a OpenSearch Cluster |
-| DELETE | `/v2/databases/{database_cluster_uuid}/indexes/{index_name}` | databases_delete_opensearch_index | Delete Index for OpenSearch Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/install_update` | databases_install_update | Start Database Maintenance |
-| GET | `/v2/databases/{database_cluster_uuid}/logsink` | databases_list_logsink | List Logsinks for a Database Cluster |
-| POST | `/v2/databases/{database_cluster_uuid}/logsink` | databases_create_logsink | Create Logsink for a Database Cluster |
-| DELETE | `/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}` | databases_delete_logsink | Delete Logsink for a Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}` | databases_get_logsink | Get Logsink for a Database Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}` | databases_update_logsink | Update Logsink for a Database Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/maintenance` | databases_update_maintenanceWindow | Configure a Database Cluster's Maintenance Window |
-| PUT | `/v2/databases/{database_cluster_uuid}/migrate` | databases_update_region | Migrate a Database Cluster to a New Region |
-| GET | `/v2/databases/{database_cluster_uuid}/online-migration` | databases_get_migrationStatus | Retrieve the Status of an Online Migration |
-| PUT | `/v2/databases/{database_cluster_uuid}/online-migration` | databases_update_onlineMigration | Start an Online Migration |
-| DELETE | `/v2/databases/{database_cluster_uuid}/online-migration/{migration_id}` | databases_delete_onlineMigration | Stop an Online Migration |
-| GET | `/v2/databases/{database_cluster_uuid}/pools` | databases_list_connectionPools | List Connection Pools (PostgreSQL) |
-| POST | `/v2/databases/{database_cluster_uuid}/pools` | databases_add_connectionPool | Add a New Connection Pool (PostgreSQL) |
-| DELETE | `/v2/databases/{database_cluster_uuid}/pools/{pool_name}` | databases_delete_connectionPool | Delete a Connection Pool (PostgreSQL) |
-| GET | `/v2/databases/{database_cluster_uuid}/pools/{pool_name}` | databases_get_connectionPool | Retrieve Existing Connection Pool (PostgreSQL) |
-| PUT | `/v2/databases/{database_cluster_uuid}/pools/{pool_name}` | databases_update_connectionPool | Update Connection Pools (PostgreSQL) |
-| GET | `/v2/databases/{database_cluster_uuid}/replicas` | databases_list_replicas | List All Read-only Replicas |
-| POST | `/v2/databases/{database_cluster_uuid}/replicas` | databases_create_replica | Create a Read-only Replica |
-| DELETE | `/v2/databases/{database_cluster_uuid}/replicas/{replica_name}` | databases_destroy_replica | Destroy a Read-only Replica |
-| GET | `/v2/databases/{database_cluster_uuid}/replicas/{replica_name}` | databases_get_replica | Retrieve an Existing Read-only Replica |
-| PUT | `/v2/databases/{database_cluster_uuid}/replicas/{replica_name}/promote` | databases_promote_replica | Promote a Read-only Replica to become a Primary Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/resize` | databases_update_clusterSize | Resize a Database Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/schema-registry` | databases_list_kafka_schemas | List Schemas for Kafka Cluster |
-| POST | `/v2/databases/{database_cluster_uuid}/schema-registry` | databases_create_kafka_schema | Create Schema Registry for Kafka Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/config` | databases_get_kafka_schema_config | Retrieve Schema Registry Configuration for a kafka Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/schema-registry/config` | databases_update_kafka_schema_config | Update Schema Registry Configuration for a kafka Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}` | databases_get_kafka_schema_subject_config | Retrieve Schema Registry Configuration for a Subject of kafka Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}` | databases_update_kafka_schema_subject_config | Update Schema Registry Configuration for a Subject of kafka Cluster |
-| DELETE | `/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}` | databases_delete_kafka_schema | Delete a Kafka Schema by Subject Name |
-| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}` | databases_get_kafka_schema | Get a Kafka Schema by Subject Name |
-| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}/versions/{version}` | databases_get_kafka_schema_version | Get Kafka Schema by Subject Version |
-| GET | `/v2/databases/{database_cluster_uuid}/sql_mode` | databases_get_sql_mode | Retrieve the SQL Modes for a MySQL Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/sql_mode` | databases_update_sql_mode | Update SQL Mode for a Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/topics` | databases_list_kafka_topics | List Topics for a Kafka Cluster |
-| POST | `/v2/databases/{database_cluster_uuid}/topics` | databases_create_kafka_topic | Create Topic for a Kafka Cluster |
-| DELETE | `/v2/databases/{database_cluster_uuid}/topics/{topic_name}` | databases_delete_kafka_topic | Delete Topic for a Kafka Cluster |
-| GET | `/v2/databases/{database_cluster_uuid}/topics/{topic_name}` | databases_get_kafka_topic | Get Topic for a Kafka Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/topics/{topic_name}` | databases_update_kafka_topic | Update Topic for a Kafka Cluster |
-| PUT | `/v2/databases/{database_cluster_uuid}/upgrade` | databases_update_major_version | Upgrade Major Version for a Database |
-| GET | `/v2/databases/{database_cluster_uuid}/users` | databases_list_users | List all Database Users |
-| POST | `/v2/databases/{database_cluster_uuid}/users` | databases_add_user | Add a Database User |
-| DELETE | `/v2/databases/{database_cluster_uuid}/users/{username}` | databases_delete_user | Remove a Database User |
-| GET | `/v2/databases/{database_cluster_uuid}/users/{username}` | databases_get_user | Retrieve an Existing Database User |
-| PUT | `/v2/databases/{database_cluster_uuid}/users/{username}` | databases_update_user | Update a Database User |
-| POST | `/v2/databases/{database_cluster_uuid}/users/{username}/reset_auth` | databases_reset_auth | Reset a Database User's Password or Authentication Method |
-| GET | `/v2/dedicated-inferences` | dedicatedInferences_list | List Dedicated Inferences |
-| POST | `/v2/dedicated-inferences` | dedicatedInferences_create | Create a Dedicated Inference |
-| GET | `/v2/dedicated-inferences/gpu-model-config` | dedicatedInferences_get_gpu_model_config | Get Dedicated Inference GPU Model Config |
-| GET | `/v2/dedicated-inferences/sizes` | dedicatedInferences_list_sizes | List Dedicated Inference Sizes |
-| DELETE | `/v2/dedicated-inferences/{dedicated_inference_id}` | dedicatedInferences_delete | Delete a Dedicated Inference |
-| GET | `/v2/dedicated-inferences/{dedicated_inference_id}` | dedicatedInferences_get | Get a Dedicated Inference |
-| PATCH | `/v2/dedicated-inferences/{dedicated_inference_id}` | dedicatedInferences_patch | Update a Dedicated Inference |
-| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/accelerators` | dedicatedInferences_list_accelerators | List Dedicated Inference Accelerators |
-| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/accelerators/{accelerator_id}` | dedicatedInferences_get_accelerator | Get a Dedicated Inference Accelerator |
-| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/ca` | dedicatedInferences_get_ca | Get Dedicated Inference CA Certificate |
-| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/tokens` | dedicatedInferences_list_tokens | List Dedicated Inference Tokens |
-| POST | `/v2/dedicated-inferences/{dedicated_inference_id}/tokens` | dedicatedInferences_create_tokens | Create a Dedicated Inference Token |
-| DELETE | `/v2/dedicated-inferences/{dedicated_inference_id}/tokens/{token_id}` | dedicatedInferences_delete_tokens | Revoke a Dedicated Inference Token |
-| GET | `/v2/domains` | domains_list | List All Domains |
-| POST | `/v2/domains` | domains_create | Create a New Domain |
-| DELETE | `/v2/domains/{domain_name}` | domains_delete | Delete a Domain |
-| GET | `/v2/domains/{domain_name}` | domains_get | Retrieve an Existing Domain |
-| GET | `/v2/domains/{domain_name}/records` | domains_list_records | List All Domain Records |
-| POST | `/v2/domains/{domain_name}/records` | domains_create_record | Create a New Domain Record |
-| DELETE | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_delete_record | Delete a Domain Record |
-| GET | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_get_record | Retrieve an Existing Domain Record |
-| PATCH | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_patch_record | Update a Domain Record |
-| PUT | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_update_record | Update a Domain Record |
-| DELETE | `/v2/droplets` | droplets_destroy_byTag | Deleting Droplets by Tag |
-| GET | `/v2/droplets` | droplets_list | List All Droplets |
-| POST | `/v2/droplets` | droplets_create | Create a New Droplet |
-| POST | `/v2/droplets/actions` | dropletActions_post_byTag | Acting on Tagged Droplets |
-| GET | `/v2/droplets/autoscale` | autoscalepools_list | List All Autoscale Pools |
-| POST | `/v2/droplets/autoscale` | autoscalepools_create | Create a New Autoscale Pool |
-| DELETE | `/v2/droplets/autoscale/{autoscale_pool_id}` | autoscalepools_delete | Delete autoscale pool |
-| GET | `/v2/droplets/autoscale/{autoscale_pool_id}` | autoscalepools_get | Retrieve an Existing Autoscale Pool |
-| PUT | `/v2/droplets/autoscale/{autoscale_pool_id}` | autoscalepools_update | Update Autoscale Pool |
-| DELETE | `/v2/droplets/autoscale/{autoscale_pool_id}/dangerous` | autoscalepools_delete_dangerous | Delete autoscale pool and resources |
-| GET | `/v2/droplets/autoscale/{autoscale_pool_id}/history` | autoscalepools_list_history | List history events |
-| GET | `/v2/droplets/autoscale/{autoscale_pool_id}/members` | autoscalepools_list_members | List members |
-| GET | `/v2/droplets/backups/policies` | droplets_list_backup_policies | List Backup Policies for All Existing Droplets |
-| GET | `/v2/droplets/backups/supported_policies` | droplets_list_supported_backup_policies | List Supported Droplet Backup Policies |
-| DELETE | `/v2/droplets/{droplet_id}` | droplets_destroy | Delete an Existing Droplet |
-| GET | `/v2/droplets/{droplet_id}` | droplets_get | Retrieve an Existing Droplet |
-| GET | `/v2/droplets/{droplet_id}/actions` | dropletActions_list | List Actions for a Droplet |
-| POST | `/v2/droplets/{droplet_id}/actions` | dropletActions_post | Initiate a Droplet Action |
-| GET | `/v2/droplets/{droplet_id}/actions/{action_id}` | dropletActions_get | Retrieve a Droplet Action |
-| GET | `/v2/droplets/{droplet_id}/backups` | droplets_list_backups | List Backups for a Droplet |
-| GET | `/v2/droplets/{droplet_id}/backups/policy` | droplets_get_backup_policy | Retrieve the Backup Policy for an Existing Droplet |
-| GET | `/v2/droplets/{droplet_id}/destroy_with_associated_resources` | droplets_list_associatedResources | List Associated Resources for a Droplet |
-| DELETE | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/dangerous` | droplets_destroy_withAssociatedResourcesDangerous | Destroy a Droplet and All of its Associated Resources (Dangerous) |
-| POST | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/retry` | droplets_destroy_retryWithAssociatedResources | Retry a Droplet Destroy with Associated Resources Request |
-| DELETE | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/selective` | droplets_destroy_withAssociatedResourcesSelective | Selectively Destroy a Droplet and its Associated Resources |
-| GET | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/status` | droplets_get_DestroyAssociatedResourcesStatus | Check Status of a Droplet Destroy with Associated Resources Request |
-| GET | `/v2/droplets/{droplet_id}/firewalls` | droplets_list_firewalls | List all Firewalls Applied to a Droplet |
-| GET | `/v2/droplets/{droplet_id}/kernels` | droplets_list_kernels | List All Available Kernels for a Droplet |
-| GET | `/v2/droplets/{droplet_id}/neighbors` | droplets_list_neighbors | List Neighbors for a Droplet |
-| GET | `/v2/droplets/{droplet_id}/snapshots` | droplets_list_snapshots | List Snapshots for a Droplet |
-| GET | `/v2/firewalls` | firewalls_list | List All Firewalls |
-| POST | `/v2/firewalls` | firewalls_create | Create a New Firewall |
-| DELETE | `/v2/firewalls/{firewall_id}` | firewalls_delete | Delete a Firewall |
-| GET | `/v2/firewalls/{firewall_id}` | firewalls_get | Retrieve an Existing Firewall |
-| PUT | `/v2/firewalls/{firewall_id}` | firewalls_update | Update a Firewall |
-| DELETE | `/v2/firewalls/{firewall_id}/droplets` | firewalls_delete_droplets | Remove Droplets from a Firewall |
-| POST | `/v2/firewalls/{firewall_id}/droplets` | firewalls_assign_droplets | Add Droplets to a Firewall |
-| DELETE | `/v2/firewalls/{firewall_id}/rules` | firewalls_delete_rules | Remove Rules from a Firewall |
-| POST | `/v2/firewalls/{firewall_id}/rules` | firewalls_add_rules | Add Rules to a Firewall |
-| DELETE | `/v2/firewalls/{firewall_id}/tags` | firewalls_delete_tags | Remove Tags from a Firewall |
-| POST | `/v2/firewalls/{firewall_id}/tags` | firewalls_add_tags | Add Tags to a Firewall |
-| GET | `/v2/floating_ips` | floatingIPs_list | List All Floating IPs |
-| POST | `/v2/floating_ips` | floatingIPs_create | Create a New Floating IP |
-| DELETE | `/v2/floating_ips/{floating_ip}` | floatingIPs_delete | Delete a Floating IP |
-| GET | `/v2/floating_ips/{floating_ip}` | floatingIPs_get | Retrieve an Existing Floating IP |
-| GET | `/v2/floating_ips/{floating_ip}/actions` | floatingIPsAction_list | List All Actions for a Floating IP |
-| POST | `/v2/floating_ips/{floating_ip}/actions` | floatingIPsAction_post | Initiate a Floating IP Action |
-| GET | `/v2/floating_ips/{floating_ip}/actions/{action_id}` | floatingIPsAction_get | Retrieve an Existing Floating IP Action |
-| GET | `/v2/functions/namespaces` | functions_list_namespaces | List Namespaces |
-| POST | `/v2/functions/namespaces` | functions_create_namespace | Create Namespace |
-| DELETE | `/v2/functions/namespaces/{namespace_id}` | functions_delete_namespace | Delete Namespace |
-| GET | `/v2/functions/namespaces/{namespace_id}` | functions_get_namespace | Get Namespace |
-| GET | `/v2/functions/namespaces/{namespace_id}/keys` | functionsAccessKey_list | List Namespace Access Keys |
-| POST | `/v2/functions/namespaces/{namespace_id}/keys` | functionsAccessKey_create | Create a Namespace Access Key |
-| DELETE | `/v2/functions/namespaces/{namespace_id}/keys/{key_id}` | functionsAccessKey_delete | Delete a Namespace Access Key |
-| PUT | `/v2/functions/namespaces/{namespace_id}/keys/{key_id}` | functionsAccessKey_update | Update a Namespace Access Key |
-| GET | `/v2/functions/namespaces/{namespace_id}/triggers` | functions_list_triggers | List Triggers |
-| POST | `/v2/functions/namespaces/{namespace_id}/triggers` | functions_create_trigger | Create Trigger |
-| DELETE | `/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}` | functions_delete_trigger | Delete Trigger |
-| GET | `/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}` | functions_get_trigger | Get Trigger |
-| PUT | `/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}` | functions_update_trigger | Update Trigger |
-| GET | `/v2/gen-ai/agents` | genai_list_agents | List Agents |
-| POST | `/v2/gen-ai/agents` | genai_create_agent | Create an Agent |
-| GET | `/v2/gen-ai/agents/{agent_uuid}/api_keys` | genai_list_agent_api_keys | List Agent API Keys |
-| POST | `/v2/gen-ai/agents/{agent_uuid}/api_keys` | genai_create_agent_api_key | Create an Agent API Key |
-| DELETE | `/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}` | genai_delete_agent_api_key | Delete API Key for an Agent |
-| PUT | `/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}` | genai_update_agent_api_key | Update API Key for an Agent |
-| PUT | `/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}/regenerate` | genai_regenerate_agent_api_key | Regenerate API Key for an Agent |
-| POST | `/v2/gen-ai/agents/{agent_uuid}/functions` | genai_attach_agent_function | Add Function Route to an Agent |
-| DELETE | `/v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}` | genai_detach_agent_function | Delete Function Route for an Agent |
-| PUT | `/v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}` | genai_update_agent_function | Update Function Route for an Agent |
-| POST | `/v2/gen-ai/agents/{agent_uuid}/guardrails` | genai_attach_agent_guardrails | Attach Guardrails to an Agent |
-| DELETE | `/v2/gen-ai/agents/{agent_uuid}/guardrails/{guardrail_uuid}` | genai_detach_agent_guardrail | Detach a Guardrail from an Agent |
-| POST | `/v2/gen-ai/agents/{agent_uuid}/knowledge_bases` | genai_attach_knowledge_bases | Attach Knowledge Bases to an Agent |
-| DELETE | `/v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}` | genai_detach_knowledge_base | Detach Knowledge Base from an Agent |
-| POST | `/v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}` | genai_attach_knowledge_base | Attach Knowledge Base to an Agent |
-| DELETE | `/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}` | genai_detach_agent | Delete Agent Route for an Agent |
-| POST | `/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}` | genai_attach_agent | Add Agent Route to an Agent |
-| PUT | `/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}` | genai_update_attached_agent | Update Agent Route for an Agent |
-| DELETE | `/v2/gen-ai/agents/{uuid}` | genai_delete_agent | Delete an Agent |
-| GET | `/v2/gen-ai/agents/{uuid}` | genai_get_agent | Retrieve an Existing Agent |
-| PUT | `/v2/gen-ai/agents/{uuid}` | genai_update_agent | Update an Agent |
-| GET | `/v2/gen-ai/agents/{uuid}/child_agents` | genai_get_agent_children | View Agent Routes |
-| PUT | `/v2/gen-ai/agents/{uuid}/deployment_visibility` | genai_update_agent_deployment_visibility | Update Agent Status |
-| GET | `/v2/gen-ai/agents/{uuid}/usage` | genai_get_agent_usage | Get Agent Usage |
-| GET | `/v2/gen-ai/agents/{uuid}/versions` | genai_list_agent_versions | List Agent Versions |
-| PUT | `/v2/gen-ai/agents/{uuid}/versions` | genai_rollback_to_agent_version | Rollback to Agent Version |
-| GET | `/v2/gen-ai/anthropic/keys` | genai_list_anthropic_api_keys | List Anthropic API Keys |
-| POST | `/v2/gen-ai/anthropic/keys` | genai_create_anthropic_api_key | Create Anthropic API Key |
-| DELETE | `/v2/gen-ai/anthropic/keys/{api_key_uuid}` | genai_delete_anthropic_api_key | Delete Anthropic API Key |
-| GET | `/v2/gen-ai/anthropic/keys/{api_key_uuid}` | genai_get_anthropic_api_key | Get Anthropic API Key |
-| PUT | `/v2/gen-ai/anthropic/keys/{api_key_uuid}` | genai_update_anthropic_api_key | Update Anthropic API Key |
-| GET | `/v2/gen-ai/anthropic/keys/{uuid}/agents` | genai_list_agents_by_anthropic_key | List agents by Anthropic key |
-| POST | `/v2/gen-ai/custom_evaluation_metrics` | genai_create_custom_evaluation_metric | Create Custom Evaluation Metric |
-| DELETE | `/v2/gen-ai/custom_evaluation_metrics/{metric_uuid}` | genai_delete_custom_evaluation_metric | Delete Custom Evaluation Metric |
-| PUT | `/v2/gen-ai/custom_evaluation_metrics/{metric_uuid}` | genai_update_custom_evaluation_metric | Update Custom Evaluation Metric |
-| GET | `/v2/gen-ai/custom_models` | genai_list_custom_models | List Custom Models |
-| POST | `/v2/gen-ai/custom_models/import` | genai_import_custom_model | Import Custom Model |
-| DELETE | `/v2/gen-ai/custom_models/{uuid}` | genai_delete_custom_model | Delete Custom Model |
-| GET | `/v2/gen-ai/custom_models/{uuid}` | genai_get_custom_model | Get Custom Model |
-| PATCH | `/v2/gen-ai/custom_models/{uuid}/metadata` | genai_update_custom_model_metadata | Update Custom Model Metadata |
-| GET | `/v2/gen-ai/evaluation_datasets` | genai_list_evaluation_datasets | List Evaluation Datasets |
-| POST | `/v2/gen-ai/evaluation_datasets` | genai_create_evaluation_dataset | Create Evaluation Dataset |
-| POST | `/v2/gen-ai/evaluation_datasets/file_upload_presigned_urls` | genai_create_evaluation_dataset_file_upload_presigned_urls | Create Presigned URLs for Evaluation Dataset File Upload |
-| DELETE | `/v2/gen-ai/evaluation_datasets/{dataset_uuid}` | genai_delete_evaluation_dataset | Delete Evaluation Dataset |
-| GET | `/v2/gen-ai/evaluation_datasets/{dataset_uuid}/download_url` | genai_get_evaluation_dataset_download_url | Get Download URL for Evaluation Dataset |
-| GET | `/v2/gen-ai/evaluation_metrics` | genai_list_evaluation_metrics | List Evaluation Metrics |
-| POST | `/v2/gen-ai/evaluation_runs` | genai_run_evaluation_test_case | Run an Evaluation Test Case |
-| GET | `/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}` | genai_get_evaluation_run | Retrieve Information About an Existing Evaluation Run |
-| GET | `/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results` | genai_get_evaluation_run_results | Retrieve Results of an Evaluation Run |
-| GET | `/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results/{prompt_id}` | genai_get_evaluation_run_prompt_results | Retrieve Results of an Evaluation Run Prompt |
-| GET | `/v2/gen-ai/evaluation_test_cases` | genai_list_evaluation_test_cases | List Evaluation Test Cases |
-| POST | `/v2/gen-ai/evaluation_test_cases` | genai_create_evaluation_test_case | Create Evaluation Test Case. |
-| GET | `/v2/gen-ai/evaluation_test_cases/{evaluation_test_case_uuid}/evaluation_runs` | genai_list_evaluation_runs_by_test_case | List Evaluation Runs by Test Case |
-| GET | `/v2/gen-ai/evaluation_test_cases/{test_case_uuid}` | genai_get_evaluation_test_case | Retrieve Information About an Existing Evaluation Test Case |
-| PUT | `/v2/gen-ai/evaluation_test_cases/{test_case_uuid}` | genai_update_evaluation_test_case | Update an Evaluation Test Case. |
-| GET | `/v2/gen-ai/indexing_jobs` | genai_list_indexing_jobs | List Indexing Jobs for a Knowledge Base |
-| POST | `/v2/gen-ai/indexing_jobs` | genai_create_indexing_job | Start Indexing Job for a Knowledge Base |
-| GET | `/v2/gen-ai/indexing_jobs/{indexing_job_uuid}/data_sources` | genai_list_indexing_job_data_sources | List Data Sources for Indexing Job for a Knowledge Base |
-| GET | `/v2/gen-ai/indexing_jobs/{indexing_job_uuid}/details_signed_url` | genai_get_indexing_job_details_signed_url | Get Signed URL for Indexing Job Details |
-| GET | `/v2/gen-ai/indexing_jobs/{uuid}` | genai_get_indexing_job | Retrieve Status of Indexing Job for a Knowledge Base |
-| PUT | `/v2/gen-ai/indexing_jobs/{uuid}/cancel` | genai_cancel_indexing_job | Cancel Indexing Job for a Knowledge Base |
-| GET | `/v2/gen-ai/knowledge_bases` | genai_list_knowledge_bases | List Knowledge Bases |
-| POST | `/v2/gen-ai/knowledge_bases` | genai_create_knowledge_base | Create a Knowledge Base |
-| POST | `/v2/gen-ai/knowledge_bases/data_sources/file_upload_presigned_urls` | genai_create_data_source_file_upload_presigned_urls | Create Presigned URLs for Data Source File Upload |
-| GET | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources` | genai_list_knowledge_base_data_sources | List Data Sources for a Knowledge Base |
-| POST | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources` | genai_create_knowledge_base_data_source | Add Data Source to a Knowledge Base |
-| DELETE | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}` | genai_delete_knowledge_base_data_source | Delete a Data Source from a Knowledge Base |
-| PUT | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}` | genai_update_knowledge_base_data_source | Update Data Source options |
-| GET | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/indexing_jobs` | genai_list_indexing_jobs_by_knowledge_base | List Indexing Jobs for a Knowledge Base |
-| DELETE | `/v2/gen-ai/knowledge_bases/{uuid}` | genai_delete_knowledge_base | Delete a Knowledge Base |
-| GET | `/v2/gen-ai/knowledge_bases/{uuid}` | genai_get_knowledge_base | Retrieve Information About an Existing Knowledge Base |
-| PUT | `/v2/gen-ai/knowledge_bases/{uuid}` | genai_update_knowledge_base | Update a Knowledge Base |
-| POST | `/v2/gen-ai/model_evaluation/datasets/file_upload_presigned_urls` | genai_create_model_eval_dataset_upload_presigned_urls | Create Presigned URLs for Model Evaluation Dataset File Upload |
-| GET | `/v2/gen-ai/model_evaluation_metrics` | genai_list_model_evaluation_metrics | List Model Evaluation Metrics |
-| GET | `/v2/gen-ai/model_evaluation_presets` | genai_list_model_evaluation_presets | List Model Evaluation Presets |
-| DELETE | `/v2/gen-ai/model_evaluation_presets/{eval_preset_uuid}` | genai_delete_model_evaluation_preset | Delete Model Evaluation Preset |
-| GET | `/v2/gen-ai/model_evaluation_presets/{eval_preset_uuid}` | genai_get_model_evaluation_preset | Retrieve Model Evaluation Preset |
-| GET | `/v2/gen-ai/model_evaluation_runs` | genai_list_model_evaluation_runs | List Model Evaluation Runs |
-| POST | `/v2/gen-ai/model_evaluation_runs` | genai_create_model_evaluation_run | Create Model Evaluation Run |
-| DELETE | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}` | genai_delete_model_evaluation_run | Delete Model Evaluation Run |
-| GET | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}` | genai_get_model_evaluation_run | Retrieve Model Evaluation Run |
-| PATCH | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}` | genai_update_model_evaluation_run | Update Model Evaluation Run |
-| PUT | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}/cancel` | genai_cancel_model_evaluation_run | Cancel Model Evaluation Run |
-| GET | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}/results/download_url` | genai_get_model_evaluation_run_results_download_url | Get Download URL for Model Evaluation Run Results |
-| GET | `/v2/gen-ai/models` | genai_list_models | List Available Models |
-| GET | `/v2/gen-ai/models/api_keys` | genai_list_model_api_keys | List Model API Keys |
-| POST | `/v2/gen-ai/models/api_keys` | genai_create_model_api_key | Create a Model API Key |
-| DELETE | `/v2/gen-ai/models/api_keys/{api_key_uuid}` | genai_delete_model_api_key | Delete API Key for a Model |
-| PUT | `/v2/gen-ai/models/api_keys/{api_key_uuid}` | genai_update_model_api_key | Update API Key for a Model |
-| PUT | `/v2/gen-ai/models/api_keys/{api_key_uuid}/regenerate` | genai_regenerate_model_api_key | Regenerate API Key for a Model |
-| GET | `/v2/gen-ai/models/catalog` | genai_list_model_catalog | List Model Catalog |
-| GET | `/v2/gen-ai/models/catalog/{id}` | genai_get_model_catalog_card | Get Model Catalog Card |
-| GET | `/v2/gen-ai/models/routers` | genai_list_model_routers | List Model Routers |
-| POST | `/v2/gen-ai/models/routers` | genai_create_model_router | Create a Model Router |
-| GET | `/v2/gen-ai/models/routers/presets` | genai_list_model_router_presets | List Model Router Presets |
-| GET | `/v2/gen-ai/models/routers/tasks/presets` | genai_list_model_router_task_presets | List Model Router Task Presets |
-| DELETE | `/v2/gen-ai/models/routers/{uuid}` | genai_delete_model_router | Delete a Model Router |
-| GET | `/v2/gen-ai/models/routers/{uuid}` | genai_get_model_router | Retrieve an Existing Model Router |
-| PUT | `/v2/gen-ai/models/routers/{uuid}` | genai_update_model_router | Update a Model Router |
-| POST | `/v2/gen-ai/oauth2/dropbox/tokens` | genai_create_oauth2_dropbox_tokens | Get Oauth2 Dropbox Tokens |
-| GET | `/v2/gen-ai/oauth2/url` | genai_get_oauth2_url | Get Oauth2 URL |
-| GET | `/v2/gen-ai/openai/keys` | genai_list_openai_api_keys | List OpenAI API Keys |
-| POST | `/v2/gen-ai/openai/keys` | genai_create_openai_api_key | Create OpenAI API Key |
-| DELETE | `/v2/gen-ai/openai/keys/{api_key_uuid}` | genai_delete_openai_api_key | Delete OpenAI API Key |
-| GET | `/v2/gen-ai/openai/keys/{api_key_uuid}` | genai_get_openai_api_key | Get OpenAI API Key |
-| PUT | `/v2/gen-ai/openai/keys/{api_key_uuid}` | genai_update_openai_api_key | Update OpenAI API Key |
-| GET | `/v2/gen-ai/openai/keys/{uuid}/agents` | genai_list_agents_by_openai_key | List agents by OpenAI key |
-| GET | `/v2/gen-ai/regions` | genai_list_datacenter_regions | List Datacenter Regions |
-| GET | `/v2/gen-ai/scenario_library` | genai_list_scenario_library | List Common Scenario & Goal Library |
-| POST | `/v2/gen-ai/scenario_library/{library_scenario_uuid}/create_scenario_set` | genai_create_scenario_set_from_library | Create Scenario Set From Library |
-| GET | `/v2/gen-ai/scenario_library/{library_scenario_uuid}/scenarios` | genai_list_scenario_library_scenarios | List Scenarios In Library Entry |
-| GET | `/v2/gen-ai/scenario_sets` | genai_list_scenario_sets | List Scenario Sets |
-| POST | `/v2/gen-ai/scenario_sets` | genai_create_scenario_set | Create Scenario Set |
-| POST | `/v2/gen-ai/scenario_sets/file_upload_presigned_urls` | genai_create_scenario_set_upload_presigned_urls | Create Presigned URLs for Scenario Set File Upload |
-| POST | `/v2/gen-ai/scenario_sets/generate` | genai_create_generated_scenario_set | Generate Scenario Set |
-| DELETE | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}` | genai_delete_scenario_set | Delete Scenario Set |
-| GET | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}` | genai_get_scenario_set | Retrieve Scenario Set |
-| PUT | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}` | genai_update_scenario_set | Update Scenario Set |
-| GET | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}/download_url` | genai_get_scenario_set_download_url | Retrieve Scenario Set Download URL |
-| POST | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}/duplicate` | genai_create_duplicate_scenario_set | Duplicate Scenario Set |
-| GET | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}/scenarios` | genai_list_scenarios | List Scenarios |
-| POST | `/v2/gen-ai/scheduled-indexing` | genai_create_scheduled_indexing | Create scheduled indexing for knowledge base |
-| GET | `/v2/gen-ai/scheduled-indexing/knowledge-base/{knowledge_base_uuid}` | genai_get_scheduled_indexing | Get Scheduled Indexing for Knowledge Base |
-| DELETE | `/v2/gen-ai/scheduled-indexing/{uuid}` | genai_delete_scheduled_indexing | Delete Scheduled Indexing |
-| GET | `/v2/gen-ai/simulation_runs` | genai_list_simulation_runs | List Simulation Runs |
-| POST | `/v2/gen-ai/simulation_runs` | genai_create_simulation_run | Create Simulation Run |
-| DELETE | `/v2/gen-ai/simulation_runs/{run_uuid}` | genai_delete_simulation_run | Delete Simulation Run |
-| GET | `/v2/gen-ai/simulation_runs/{run_uuid}` | genai_get_simulation_run | Retrieve Simulation Run |
-| PUT | `/v2/gen-ai/simulation_runs/{run_uuid}` | genai_update_simulation_run | Update Simulation Run |
-| PATCH | `/v2/gen-ai/simulation_runs/{run_uuid}/cancel` | genai_patch_cancel_simulation_run | Cancel Simulation Run |
-| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes` | genai_list_simulation_episodes | List Simulation Episodes |
-| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes/{episode_uuid}` | genai_get_simulation_episode | Retrieve Simulation Episode |
-| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes/{episode_uuid}/trajectory` | genai_get_simulation_episode_trajectory | Retrieve Episode Trajectory |
-| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes/{episode_uuid}/trajectory_url` | genai_get_simulation_episode_trajectory_url | Retrieve Episode Trajectory Download URL |
-| GET | `/v2/gen-ai/workspaces` | genai_list_workspaces | List Workspaces |
-| POST | `/v2/gen-ai/workspaces` | genai_create_workspace | Create a Workspace |
-| DELETE | `/v2/gen-ai/workspaces/{workspace_uuid}` | genai_delete_workspace | Delete a Workspace |
-| GET | `/v2/gen-ai/workspaces/{workspace_uuid}` | genai_get_workspace | Retrieve an Existing Workspace |
-| PUT | `/v2/gen-ai/workspaces/{workspace_uuid}` | genai_update_workspace | Update a Workspace |
-| GET | `/v2/gen-ai/workspaces/{workspace_uuid}/agents` | genai_list_agents_by_workspace | List agents by Workspace |
-| PUT | `/v2/gen-ai/workspaces/{workspace_uuid}/agents` | genai_update_agents_workspace | Move Agents to a Workspace |
-| GET | `/v2/gen-ai/workspaces/{workspace_uuid}/evaluation_test_cases` | genai_list_evaluation_test_cases_by_workspace | List Evaluation Test Cases by Workspace |
-| GET | `/v2/images` | images_list | List All Images |
-| POST | `/v2/images` | images_create_custom | Create a Custom Image |
-| DELETE | `/v2/images/{image_id}` | images_delete | Delete an Image |
-| GET | `/v2/images/{image_id}` | images_get | Retrieve an Existing Image |
-| PUT | `/v2/images/{image_id}` | images_update | Update an Image |
-| POST | `/v2/images/{image_id}/account_transfer` | images_post_account_transfer_create | Initiate an Image Account Transfer |
-| POST | `/v2/images/{image_id}/account_transfer/accept` | images_post_account_transfer_accept | Accept an Image Account Transfer |
-| POST | `/v2/images/{image_id}/account_transfer/cancel` | images_post_account_transfer_cancel | Cancel an Image Account Transfer |
-| POST | `/v2/images/{image_id}/account_transfer/decline` | images_post_account_transfer_decline | Decline an Image Account Transfer |
-| GET | `/v2/images/{image_id}/actions` | imageActions_list | List All Actions for an Image |
-| POST | `/v2/images/{image_id}/actions` | imageActions_post | Initiate an Image Action |
-| GET | `/v2/images/{image_id}/actions/{action_id}` | imageActions_get | Retrieve an Existing Action |
-| GET | `/v2/insights/alert-instances` | insights_list_alertInstances | List Alert Instances |
-| GET | `/v2/insights/alert-instances/{id}` | insights_get_alertInstance | Retrieve an Alert Instance |
-| GET | `/v2/insights/alert-rules` | insights_list_alertRules | List Alert Rules |
-| POST | `/v2/insights/alert-rules` | insights_create_alertRule | Create an Alert Rule |
-| DELETE | `/v2/insights/alert-rules/{id}` | insights_delete_alertRule | Delete an Alert Rule |
-| GET | `/v2/insights/alert-rules/{id}` | insights_get_alertRule | Retrieve an Alert Rule |
-| PUT | `/v2/insights/alert-rules/{id}` | insights_update_alertRule | Update an Alert Rule |
-| GET | `/v2/insights/notification-channels` | insights_list_notificationChannels | List Notification Channels |
-| POST | `/v2/insights/notification-channels` | insights_create_notificationChannel | Create a Notification Channel |
-| DELETE | `/v2/insights/notification-channels/{id}` | insights_delete_notificationChannel | Delete a Notification Channel |
-| GET | `/v2/insights/notification-channels/{id}` | insights_get_notificationChannel | Retrieve a Notification Channel |
-| PUT | `/v2/insights/notification-channels/{id}` | insights_update_notificationChannel | Update a Notification Channel |
-| POST | `/v2/insights/query/{region}/logs/search` | insights_post_logsSearch | Search logs |
-| GET | `/v2/insights/query/{region}/prom/api/v1/label/{name}/values` | insights_get_promLabelValues | List values for a label |
-| GET | `/v2/insights/query/{region}/prom/api/v1/labels` | insights_get_promLabels | List label names |
-| POST | `/v2/insights/query/{region}/prom/api/v1/labels` | insights_post_promLabels | List label names |
-| GET | `/v2/insights/query/{region}/prom/api/v1/query` | insights_get_promQuery | Execute an instant PromQL query |
-| POST | `/v2/insights/query/{region}/prom/api/v1/query` | insights_post_promQuery | Execute an instant PromQL query |
-| GET | `/v2/insights/query/{region}/prom/api/v1/query_range` | insights_get_promQueryRange | Execute a range PromQL query |
-| POST | `/v2/insights/query/{region}/prom/api/v1/query_range` | insights_post_promQueryRange | Execute a range PromQL query |
-| GET | `/v2/insights/query/{region}/prom/api/v1/series` | insights_get_promSeries | Find series by label selectors |
-| POST | `/v2/insights/query/{region}/prom/api/v1/series` | insights_post_promSeries | Find series by label selectors |
-| POST | `/v2/insights/query/{region}/spans/search` | insights_post_spansSearch | Search spans |
-| POST | `/v2/insights/query/{region}/traces/search` | insights_post_tracesSearch | Search traces |
-| GET | `/v2/insights/query/{region}/traces/{trace_id}` | insights_get_trace | Retrieve an existing trace |
-| GET | `/v2/insights/resources` | insights_list_resources | List Resource Signal Enablement |
-| GET | `/v2/insights/resources/{resource_urn}` | insights_get_resource | Retrieve Resource Signal Enablement |
-| PUT | `/v2/insights/resources/{resource_urn}/signals` | insights_update_resourceSignals | Update Resource Signal Enablement |
-| GET | `/v2/kubernetes/clusters` | kubernetes_list_clusters | List All Kubernetes Clusters |
-| POST | `/v2/kubernetes/clusters` | kubernetes_create_cluster | Create a New Kubernetes Cluster |
-| DELETE | `/v2/kubernetes/clusters/{cluster_id}` | kubernetes_delete_cluster | Delete a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}` | kubernetes_get_cluster | Retrieve an Existing Kubernetes Cluster |
-| PUT | `/v2/kubernetes/clusters/{cluster_id}` | kubernetes_update_cluster | Update a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/clusterlint` | kubernetes_get_clusterLintResults | Fetch Clusterlint Diagnostics for a Kubernetes Cluster |
-| POST | `/v2/kubernetes/clusters/{cluster_id}/clusterlint` | kubernetes_run_clusterLint | Run Clusterlint Checks on a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/credentials` | kubernetes_get_credentials | Retrieve Credentials for a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources` | kubernetes_list_associatedResources | List Associated Resources for Cluster Deletion |
-| DELETE | `/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/dangerous` | kubernetes_destroy_associatedResourcesDangerous | Delete a Cluster and All of its Associated Resources (Dangerous) |
-| DELETE | `/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/selective` | kubernetes_destroy_associatedResourcesSelective | Selectively Delete a Cluster and its Associated Resources |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/kubeconfig` | kubernetes_get_kubeconfig | Retrieve the kubeconfig for a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/node_pools` | kubernetes_list_nodePools | List All Node Pools in a Kubernetes Clusters |
-| POST | `/v2/kubernetes/clusters/{cluster_id}/node_pools` | kubernetes_add_nodePool | Add a Node Pool to a Kubernetes Cluster |
-| DELETE | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}` | kubernetes_delete_nodePool | Delete a Node Pool in a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}` | kubernetes_get_nodePool | Retrieve a Node Pool for a Kubernetes Cluster |
-| PUT | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}` | kubernetes_update_nodePool | Update a Node Pool in a Kubernetes Cluster |
-| DELETE | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/nodes/{node_id}` | kubernetes_delete_node | Delete a Node in a Kubernetes Cluster |
-| POST | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/recycle` | kubernetes_recycle_node_pool | Recycle a Kubernetes Node Pool |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/status_messages` | kubernetes_get_status_messages | Fetch Status Messages for a Kubernetes Cluster |
-| POST | `/v2/kubernetes/clusters/{cluster_id}/upgrade` | kubernetes_upgrade_cluster | Upgrade a Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/upgrades` | kubernetes_get_availableUpgrades | Retrieve Available Upgrades for an Existing Kubernetes Cluster |
-| GET | `/v2/kubernetes/clusters/{cluster_id}/user` | kubernetes_get_clusterUser | Retrieve User Information for a Kubernetes Cluster |
-| GET | `/v2/kubernetes/options` | kubernetes_list_options | List Available Regions, Node Sizes, and Versions of Kubernetes |
-| DELETE | `/v2/kubernetes/registries` | kubernetes_remove_registries | Remove Container Registries from Kubernetes Clusters |
-| POST | `/v2/kubernetes/registries` | kubernetes_add_registries | Add Container Registries to Kubernetes Clusters |
-| DELETE | `/v2/kubernetes/registry` | kubernetes_remove_registry | Remove Container Registry from Kubernetes Clusters |
-| POST | `/v2/kubernetes/registry` | kubernetes_add_registry | Add Container Registry to Kubernetes Clusters |
-| GET | `/v2/load_balancers` | loadBalancers_list | List All Load Balancers |
-| POST | `/v2/load_balancers` | loadBalancers_create | Create a New Load Balancer |
-| DELETE | `/v2/load_balancers/{lb_id}` | loadBalancers_delete | Delete a Load Balancer |
-| GET | `/v2/load_balancers/{lb_id}` | loadBalancers_get | Retrieve an Existing Load Balancer |
-| PUT | `/v2/load_balancers/{lb_id}` | loadBalancers_update | Update a Load Balancer |
-| DELETE | `/v2/load_balancers/{lb_id}/cache` | loadBalancers_delete_cache | Delete a Global Load Balancer CDN Cache |
-| DELETE | `/v2/load_balancers/{lb_id}/droplets` | loadBalancers_remove_droplets | Remove Droplets from a Load Balancer |
-| POST | `/v2/load_balancers/{lb_id}/droplets` | loadBalancers_add_droplets | Add Droplets to a Load Balancer |
-| DELETE | `/v2/load_balancers/{lb_id}/forwarding_rules` | loadBalancers_remove_forwardingRules | Remove Forwarding Rules from a Load Balancer |
-| POST | `/v2/load_balancers/{lb_id}/forwarding_rules` | loadBalancers_add_forwardingRules | Add Forwarding Rules to a Load Balancer |
-| GET | `/v2/microvms` | microvms_list | List all MicroVMs |
-| POST | `/v2/microvms` | microvms_create | Create a MicroVM |
-| GET | `/v2/microvms/checkpoints` | microvmCheckpoints_list | List checkpoints |
-| DELETE | `/v2/microvms/checkpoints/{checkpoint_id}` | microvmCheckpoints_delete | Delete a checkpoint |
-| GET | `/v2/microvms/checkpoints/{checkpoint_id}` | microvmCheckpoints_get | Retrieve a checkpoint |
-| GET | `/v2/microvms/options` | microvms_get_options | List MicroVM options |
-| DELETE | `/v2/microvms/{microvm_id}` | microvms_delete | Delete a MicroVM |
-| GET | `/v2/microvms/{microvm_id}` | microvms_get | Retrieve a MicroVM |
-| POST | `/v2/microvms/{microvm_id}/checkpoints` | microvmCheckpoints_create | Create a checkpoint of a MicroVM |
-| GET | `/v2/microvms/{microvm_id}/console` | microvms_get_console | Open a console in a MicroVM |
-| POST | `/v2/microvms/{microvm_id}/exec` | microvms_run_command | Run a command in a MicroVM |
-| POST | `/v2/microvms/{microvm_id}/pause` | microvms_post_pause | Pause a MicroVM |
-| POST | `/v2/microvms/{microvm_id}/resume` | microvms_post_resume | Resume a MicroVM |
-| GET | `/v2/monitoring/alerts` | monitoring_list_alertPolicy | List Alert Policies |
-| POST | `/v2/monitoring/alerts` | monitoring_create_alertPolicy | Create Alert Policy |
-| DELETE | `/v2/monitoring/alerts/{alert_uuid}` | monitoring_delete_alertPolicy | Delete an Alert Policy |
-| GET | `/v2/monitoring/alerts/{alert_uuid}` | monitoring_get_alertPolicy | Retrieve an Existing Alert Policy |
-| PUT | `/v2/monitoring/alerts/{alert_uuid}` | monitoring_update_alertPolicy | Update an Alert Policy |
-| GET | `/v2/monitoring/metrics/apps/cpu_percentage` | monitoring_get_appCPUPercentageMetrics | Get App CPU Percentage Metrics |
-| GET | `/v2/monitoring/metrics/apps/memory_percentage` | monitoring_get_appMemoryPercentageMetrics | Get App Memory Percentage Metrics |
-| GET | `/v2/monitoring/metrics/apps/restart_count` | monitoring_get_appRestartCountMetrics.yml | Get App Restart Count Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/cpu_usage` | monitoring_get_database_mysql_cpu_usage | Get Database MySQL CPU Usage Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/disk_usage` | monitoring_get_database_mysql_disk_usage | Get Database MySQL Disk Usage Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/index_vs_sequential_reads` | monitoring_get_database_mysql_index_vs_sequential_reads | Get Database MySQL Index vs Sequential Reads Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/load` | monitoring_get_database_mysql_load | Get Database MySQL Load Average Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/memory_usage` | monitoring_get_database_mysql_memory_usage | Get Database MySQL Memory Usage Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/op_rates` | monitoring_get_database_mysql_op_rates | Get Database MySQL Operations Throughput Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/schema_latency` | monitoring_get_database_mysql_schema_latency | Get Database MySQL Schema Latency Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/schema_throughput` | monitoring_get_database_mysql_schema_throughput | Get Database MySQL Schema Throughput Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/threads_active` | monitoring_get_database_mysql_threads_active | Get Database MySQL Threads Active Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/threads_connected` | monitoring_get_database_mysql_threads_connected | Get Database MySQL Threads Connected Metrics |
-| GET | `/v2/monitoring/metrics/database/mysql/threads_created_rate` | monitoring_get_database_mysql_threads_created_rate | Get Database MySQL Threads Created Rate Metrics |
-| GET | `/v2/monitoring/metrics/droplet/bandwidth` | monitoring_get_dropletBandwidthMetrics | Get Droplet Bandwidth Metrics |
-| GET | `/v2/monitoring/metrics/droplet/cpu` | monitoring_get_DropletCpuMetrics | Get Droplet CPU Metrics |
-| GET | `/v2/monitoring/metrics/droplet/filesystem_free` | monitoring_get_dropletFilesystemFreeMetrics | Get Droplet Filesystem Free Metrics |
-| GET | `/v2/monitoring/metrics/droplet/filesystem_size` | monitoring_get_dropletFilesystemSizeMetrics | Get Droplet Filesystem Size Metrics |
-| GET | `/v2/monitoring/metrics/droplet/load_1` | monitoring_get_dropletLoad1Metrics | Get Droplet Load1 Metrics |
-| GET | `/v2/monitoring/metrics/droplet/load_15` | monitoring_get_dropletLoad15Metrics | Get Droplet Load15 Metrics |
-| GET | `/v2/monitoring/metrics/droplet/load_5` | monitoring_get_dropletLoad5Metrics | Get Droplet Load5 Metrics |
-| GET | `/v2/monitoring/metrics/droplet/memory_available` | monitoring_get_dropletMemoryAvailableMetrics | Get Droplet Available Memory Metrics |
-| GET | `/v2/monitoring/metrics/droplet/memory_cached` | monitoring_get_dropletMemoryCachedMetrics | Get Droplet Cached Memory Metrics |
-| GET | `/v2/monitoring/metrics/droplet/memory_free` | monitoring_get_dropletMemoryFreeMetrics | Get Droplet Free Memory Metrics |
-| GET | `/v2/monitoring/metrics/droplet/memory_total` | monitoring_get_dropletMemoryTotalMetrics | Get Droplet Total Memory Metrics |
-| GET | `/v2/monitoring/metrics/droplet_autoscale/current_cpu_utilization` | monitoring_get_droplet_autoscale_current_cpu_utilization.yml | Get Droplet Autoscale Pool Current Average CPU utilization |
-| GET | `/v2/monitoring/metrics/droplet_autoscale/current_instances` | monitoring_get_droplet_autoscale_current_instances | Get Droplet Autoscale Pool Current Size |
-| GET | `/v2/monitoring/metrics/droplet_autoscale/current_memory_utilization` | monitoring_get_droplet_autoscale_current_memory_utilization | Get Droplet Autoscale Pool Current Average Memory utilization |
-| GET | `/v2/monitoring/metrics/droplet_autoscale/target_cpu_utilization` | monitoring_get_droplet_autoscale_target_cpu_utilization | Get Droplet Autoscale Pool Target Average CPU utilization |
-| GET | `/v2/monitoring/metrics/droplet_autoscale/target_instances` | monitoring_get_droplet_autoscale_target_instances | Get Droplet Autoscale Pool Target Size |
-| GET | `/v2/monitoring/metrics/droplet_autoscale/target_memory_utilization` | monitoring_get_droplet_autoscale_target_memory_utilization | Get Droplet Autoscale Pool Target Average Memory utilization |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_connections` | monitoring_get_lb_droplets_connections | Get Load Balancer Droplets Active Connections Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_downtime` | monitoring_get_lb_droplets_downtime | Get Load Balancer Droplets Downtime Status Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_health_checks` | monitoring_get_lb_droplets_health_checks | Get Load Balancer Droplets Health Check Status Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_50p` | monitoring_get_lb_droplets_http_response_time_50p | Get Load Balancer Droplets 50th Percentile HTTP Response Time Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_95p` | monitoring_get_lb_droplets_http_response_time_95p | Get Load Balancer Droplets 95th Percentile HTTP Response Time Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_99p` | monitoring_get_lb_droplets_http_response_time_99p | Get Load Balancer Droplets 99th Percentile HTTP Response Time Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_avg` | monitoring_get_lb_droplets_http_response_time_avg | Get Load Balancer Droplets Average HTTP Response Time Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_responses` | monitoring_get_lb_droplets_http_responses | Get Load Balancer Droplets HTTP Rate Of Response Code Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_50p` | monitoring_get_lb_droplets_http_session_duration_50p | Get Load Balancer Droplets 50th Percentile HTTP Session Duration Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_95p` | monitoring_get_lb_droplets_http_session_duration_95p | Get Load Balancer Droplets 95th Percentile HTTP Session Duration Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_avg` | monitoring_get_lb_droplets_http_session_duration_avg | Get Load Balancer Droplets Average HTTP Session Duration Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/droplets_queue_size` | monitoring_get_lb_droplets_queue_size | Get Load Balancer Droplets Queue Size Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_connections_current` | monitoring_get_lb_frontend_connections_current | Get Load Balancer Frontend Total Current Active Connections Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_connections_limit` | monitoring_get_lb_frontend_connections_limit | Get Load Balancer Frontend Max Connections Limit Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_cpu_utilization` | monitoring_get_lb_frontend_cpu_utilization | Get Load Balancer Frontend Average Percentage CPU Utilization Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_bytes` | monitoring_get_lb_frontend_firewall_dropped_bytes | Get Load Balancer Frontend Firewall Dropped Bytes Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_packets` | monitoring_get_lb_frontend_firewall_dropped_packets | Get Load Balancer Frontend Firewall Dropped Packets Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_http_requests_per_second` | monitoring_get_lb_frontend_http_requests_per_second | Get Load Balancer Frontend HTTP Requests Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_http_responses` | monitoring_get_lb_frontend_http_responses | Get Load Balancer Frontend HTTP Rate Of Response Code Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_network_throughput_http` | monitoring_get_lb_frontend_network_throughput_http | Get Load Balancer Frontend HTTP Throughput Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_network_throughput_tcp` | monitoring_get_lb_frontend_network_throughput_tcp | Get Load Balancer Frontend TCP Throughput Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_network_throughput_udp` | monitoring_get_lb_frontend_network_throughput_udp | Get Load Balancer Frontend UDP Throughput Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_nlb_tcp_network_throughput` | monitoring_get_lb_frontend_nlb_tcp_network_throughput | Get Network Load Balancer Frontend TCP Throughput Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_nlb_udp_network_throughput` | monitoring_get_lb_frontend_nlb_udp_network_throughput | Get Network Load Balancer Frontend UDP Throughput Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_tls_connections_current` | monitoring_get_lb_frontend_tls_connections_current | Get Load Balancer Frontend Current TLS Connections Rate Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_tls_connections_exceeding_rate_limit` | monitoring_get_lb_frontend_tls_connections_exceeding_rate_limit | Get Load Balancer Frontend Closed TLS Connections For Exceeded Rate Limit Metrics |
-| GET | `/v2/monitoring/metrics/load_balancer/frontend_tls_connections_limit` | monitoring_get_lb_frontend_tls_connections_limit | Get Load Balancer Frontend Max TLS Connections Limit Metrics |
-| GET | `/v2/monitoring/sinks` | monitoring_list_sinks | Lists all sinks |
-| POST | `/v2/monitoring/sinks` | monitoring_create_sink | Create Sink |
-| GET | `/v2/monitoring/sinks/destinations` | monitoring_list_destinations | List Logging Destinations |
-| POST | `/v2/monitoring/sinks/destinations` | monitoring_create_destination | Create Logging Destination |
-| DELETE | `/v2/monitoring/sinks/destinations/{destination_uuid}` | monitoring_delete_destination | Delete Logging Destination |
-| GET | `/v2/monitoring/sinks/destinations/{destination_uuid}` | monitoring_get_destination | Get Logging Destination |
-| POST | `/v2/monitoring/sinks/destinations/{destination_uuid}` | monitoring_update_destination | Update Logging Destination |
-| DELETE | `/v2/monitoring/sinks/{sink_uuid}` | monitoring_delete_sink | Delete Sink |
-| GET | `/v2/monitoring/sinks/{sink_uuid}` | monitoring_get_sink | Get Sink |
-| GET | `/v2/nfs` | nfs_list | List NFS shares per region |
-| POST | `/v2/nfs` | nfs_create | Create a new NFS share |
-| DELETE | `/v2/nfs/access_points/{access_point_id}` | nfs_delete_access_point | Delete an NFS access point |
-| GET | `/v2/nfs/access_points/{access_point_id}` | nfs_get_access_point | Get an NFS access point |
-| GET | `/v2/nfs/shares/{share_id}/access_points` | nfs_list_access_points | List NFS access points for a share |
-| POST | `/v2/nfs/shares/{share_id}/access_points` | nfs_create_access_point | Create an NFS access point |
-| GET | `/v2/nfs/snapshots` | nfs_list_snapshot | List NFS snapshots per region |
-| DELETE | `/v2/nfs/snapshots/{nfs_snapshot_id}` | nfs_delete_snapshot | Delete an NFS snapshot |
-| GET | `/v2/nfs/snapshots/{nfs_snapshot_id}` | nfs_get_snapshot | Get an NFS snapshot by ID |
-| DELETE | `/v2/nfs/{nfs_id}` | nfs_delete | Delete an NFS share |
-| GET | `/v2/nfs/{nfs_id}` | nfs_get | Get an NFS share |
-| POST | `/v2/nfs/{nfs_id}/actions` | nfs_create_action | Initiate an NFS action |
-| POST | `/v2/organizations/team` | organizations_create_team | Create a Team in an Organization |
-| GET | `/v2/organizations/teams` | organizations_list_teams | List Teams in an Organization |
-| GET | `/v2/partner_network_connect/attachments` | partnerAttachments_list | List all partner attachments |
-| POST | `/v2/partner_network_connect/attachments` | partnerAttachments_create | Create a new partner attachment |
-| DELETE | `/v2/partner_network_connect/attachments/{pa_id}` | partnerAttachments_delete | Delete an existing partner attachment |
-| GET | `/v2/partner_network_connect/attachments/{pa_id}` | partnerAttachments_get | Retrieve an existing partner attachment |
-| PATCH | `/v2/partner_network_connect/attachments/{pa_id}` | partnerAttachments_patch | Update an existing partner attachment |
-| GET | `/v2/partner_network_connect/attachments/{pa_id}/bgp_auth_key` | partnerAttachments_get_bgp_auth_key | Get current BGP auth key for the partner attachment |
-| GET | `/v2/partner_network_connect/attachments/{pa_id}/remote_routes` | partnerAttachments_list_remote_routes | List remote routes for a partner attachment |
-| GET | `/v2/partner_network_connect/attachments/{pa_id}/service_key` | partnerAttachments_get_service_key | Get the current service key for the partner attachment |
-| POST | `/v2/partner_network_connect/attachments/{pa_id}/service_key` | partnerAttachments_create_service_key | Regenerate the service key for the partner attachment |
-| GET | `/v2/projects` | projects_list | List All Projects |
-| POST | `/v2/projects` | projects_create | Create a Project |
-| GET | `/v2/projects/default` | projects_get_default | Retrieve the Default Project |
-| PATCH | `/v2/projects/default` | projects_patch_default | Patch the Default Project |
-| PUT | `/v2/projects/default` | projects_update_default | Update the Default Project |
-| GET | `/v2/projects/default/resources` | projects_list_resources_default | List Default Project Resources |
-| POST | `/v2/projects/default/resources` | projects_assign_resources_default | Assign Resources to Default Project |
-| DELETE | `/v2/projects/{project_id}` | projects_delete | Delete an Existing Project |
-| GET | `/v2/projects/{project_id}` | projects_get | Retrieve an Existing Project |
-| PATCH | `/v2/projects/{project_id}` | projects_patch | Patch a Project |
-| PUT | `/v2/projects/{project_id}` | projects_update | Update a Project |
-| GET | `/v2/projects/{project_id}/resources` | projects_list_resources | List Project Resources |
-| POST | `/v2/projects/{project_id}/resources` | projects_assign_resources | Assign Resources to a Project |
-| GET | `/v2/regions` | regions_list | List All Data Center Regions |
-| GET | `/v2/registries` | registries_list | List All Container Registries |
-| POST | `/v2/registries` | registries_create | Create Container Registry |
-| GET | `/v2/registries/options` | registries_get_options | List Registry Options (Subscription Tiers and Available Regions) |
-| GET | `/v2/registries/subscription` | registries_get_subscription | Get Subscription Information |
-| POST | `/v2/registries/subscription` | registries_update_subscription | Update Subscription Tier |
-| POST | `/v2/registries/validate-name` | registries_validate_name | Validate a Container Registry Name |
-| DELETE | `/v2/registries/{registry_name}` | registries_delete | Delete Container Registry By Name |
-| GET | `/v2/registries/{registry_name}` | registries_get | Get a Container Registry By Name |
-| GET | `/v2/registries/{registry_name}/docker-credentials` | registries_get_dockerCredentials | Get Docker Credentials By Registry Name |
-| GET | `/v2/registries/{registry_name}/garbage-collection` | registries_get_garbageCollection | Get Active Garbage Collection |
-| POST | `/v2/registries/{registry_name}/garbage-collection` | registries_run_garbageCollection | Start Garbage Collection |
-| PUT | `/v2/registries/{registry_name}/garbage-collection/{garbage_collection_uuid}` | registries_update_garbageCollection | Update Garbage Collection |
-| GET | `/v2/registries/{registry_name}/garbage-collections` | registries_list_garbageCollections | List Garbage Collections |
-| DELETE | `/v2/registries/{registry_name}/repositories/{repository_name}` | registries_delete_repository | Delete Container Registry Repository |
-| GET | `/v2/registries/{registry_name}/repositories/{repository_name}/digests` | registries_list_repositoryManifests | List All Container Registry Repository Manifests |
-| DELETE | `/v2/registries/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}` | registries_delete_repositoryManifest | Delete Container Registry Repository Manifest |
-| GET | `/v2/registries/{registry_name}/repositories/{repository_name}/tags` | registries_list_repositoryTags | List All Container Registry Repository Tags |
-| DELETE | `/v2/registries/{registry_name}/repositories/{repository_name}/tags/{repository_tag}` | registries_delete_repositoryTag | Delete Container Registry Repository Tag |
-| GET | `/v2/registries/{registry_name}/repositoriesV2` | registries_list_repositoriesV2 | List All Container Registry Repositories (V2) |
-| DELETE | `/v2/registry` | registry_delete | Delete Container Registry |
-| GET | `/v2/registry` | registry_get | Get Container Registry Information |
-| POST | `/v2/registry` | registry_create | Create Container Registry |
-| GET | `/v2/registry/docker-credentials` | registry_get_dockerCredentials | Get Docker Credentials for Container Registry |
-| GET | `/v2/registry/options` | registry_get_options | List Registry Options (Subscription Tiers and Available Regions) |
-| GET | `/v2/registry/subscription` | registry_get_subscription | Get Subscription |
-| POST | `/v2/registry/subscription` | registry_update_subscription | Update Subscription Tier |
-| POST | `/v2/registry/validate-name` | registry_validate_name | Validate a Container Registry Name |
-| GET | `/v2/registry/{registry_name}/garbage-collection` | registry_get_garbageCollection | Get Active Garbage Collection |
-| POST | `/v2/registry/{registry_name}/garbage-collection` | registry_run_garbageCollection | Start Garbage Collection |
-| PUT | `/v2/registry/{registry_name}/garbage-collection/{garbage_collection_uuid}` | registry_update_garbageCollection | Update Garbage Collection |
-| GET | `/v2/registry/{registry_name}/garbage-collections` | registry_list_garbageCollections | List Garbage Collections |
-| GET | `/v2/registry/{registry_name}/repositories` | registry_list_repositories | List All Container Registry Repositories |
-| GET | `/v2/registry/{registry_name}/repositories/{repository_name}/digests` | registry_list_repositoryManifests | List All Container Registry Repository Manifests |
-| DELETE | `/v2/registry/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}` | registry_delete_repositoryManifest | Delete Container Registry Repository Manifest |
-| GET | `/v2/registry/{registry_name}/repositories/{repository_name}/tags` | registry_list_repositoryTags | List All Container Registry Repository Tags |
-| DELETE | `/v2/registry/{registry_name}/repositories/{repository_name}/tags/{repository_tag}` | registry_delete_repositoryTag | Delete Container Registry Repository Tag |
-| GET | `/v2/registry/{registry_name}/repositoriesV2` | registry_list_repositoriesV2 | List All Container Registry Repositories (V2) |
-| GET | `/v2/reports/droplet_neighbors_ids` | droplets_list_neighborsIds | List All Droplet Neighbors |
-| GET | `/v2/reserved_ips` | reservedIPs_list | List All Reserved IPs |
-| POST | `/v2/reserved_ips` | reservedIPs_create | Create a New Reserved IP |
-| DELETE | `/v2/reserved_ips/{reserved_ip}` | reservedIPs_delete | Delete a Reserved IP |
-| GET | `/v2/reserved_ips/{reserved_ip}` | reservedIPs_get | Retrieve an Existing Reserved IP |
-| GET | `/v2/reserved_ips/{reserved_ip}/actions` | reservedIPsActions_list | List All Actions for a Reserved IP |
-| POST | `/v2/reserved_ips/{reserved_ip}/actions` | reservedIPsActions_post | Initiate a Reserved IP Action |
-| GET | `/v2/reserved_ips/{reserved_ip}/actions/{action_id}` | reservedIPsActions_get | Retrieve an Existing Reserved IP Action |
-| GET | `/v2/reserved_ipv6` | reservedIPv6_list | List All Reserved IPv6s |
-| POST | `/v2/reserved_ipv6` | reservedIPv6_create | Create a New Reserved IPv6 |
-| DELETE | `/v2/reserved_ipv6/{reserved_ipv6}` | reservedIPv6_delete | Delete a Reserved IPv6 |
-| GET | `/v2/reserved_ipv6/{reserved_ipv6}` | reservedIPv6_get | Retrieve an Existing Reserved IPv6 |
-| POST | `/v2/reserved_ipv6/{reserved_ipv6}/actions` | reservedIPv6Actions_post | Initiate a Reserved IPv6 Action |
-| GET | `/v2/security/scans` | security_list_scans | List Scans |
-| POST | `/v2/security/scans` | security_create_scan | Create Scan |
-| GET | `/v2/security/scans/latest` | security_get_latest_scan | Get Latest Scan |
-| POST | `/v2/security/scans/rules` | security_create_scan_rule | Create Scan Rule |
-| GET | `/v2/security/scans/{scan_id}` | security_get_scan | Get Scan |
-| GET | `/v2/security/scans/{scan_id}/findings/{finding_uuid}/affected_resources` | security_list_scan_finding_affected_resources | List Finding Affected Resources |
-| GET | `/v2/security/settings` | security_list_settings | List Settings |
-| PUT | `/v2/security/settings/plan` | security_update_settings_plan | Update Plan |
-| POST | `/v2/security/settings/suppressions` | security_create_suppression | Create Suppression |
-| DELETE | `/v2/security/settings/suppressions/{suppression_uuid}` | security_delete_suppression | Delete Suppression |
-| GET | `/v2/sizes` | sizes_list | List All Droplet Sizes |
-| GET | `/v2/snapshots` | snapshots_list | List All Snapshots |
-| DELETE | `/v2/snapshots/{snapshot_id}` | snapshots_delete | Delete a Snapshot |
-| GET | `/v2/snapshots/{snapshot_id}` | snapshots_get | Retrieve an Existing Snapshot |
-| GET | `/v2/spaces/keys` | spacesKey_list | List Spaces Access Keys |
-| POST | `/v2/spaces/keys` | spacesKey_create | Create a New Spaces Access Key |
-| DELETE | `/v2/spaces/keys/{access_key}` | spacesKey_delete | Delete a Spaces Access Key |
-| GET | `/v2/spaces/keys/{access_key}` | spacesKey_get | Get a Spaces Access Key |
-| PATCH | `/v2/spaces/keys/{access_key}` | spacesKey_patch | Update Spaces Access Keys |
-| PUT | `/v2/spaces/keys/{access_key}` | spacesKey_update | Update Spaces Access Keys |
-| GET | `/v2/tags` | tags_list | List All Tags |
-| POST | `/v2/tags` | tags_create | Create a New Tag |
-| DELETE | `/v2/tags/{tag_id}` | tags_delete | Delete a Tag |
-| GET | `/v2/tags/{tag_id}` | tags_get | Retrieve a Tag |
-| DELETE | `/v2/tags/{tag_id}/resources` | tags_unassign_resources | Untag a Resource |
-| POST | `/v2/tags/{tag_id}/resources` | tags_assign_resources | Tag a Resource |
-| GET | `/v2/uptime/checks` | uptime_list_checks | List All Checks |
-| POST | `/v2/uptime/checks` | uptime_create_check | Create a New Check |
-| DELETE | `/v2/uptime/checks/{check_id}` | uptime_delete_check | Delete a Check |
-| GET | `/v2/uptime/checks/{check_id}` | uptime_get_check | Retrieve an Existing Check |
-| PUT | `/v2/uptime/checks/{check_id}` | uptime_update_check | Update a Check |
-| GET | `/v2/uptime/checks/{check_id}/alerts` | uptime_list_alerts | List All Alerts |
-| POST | `/v2/uptime/checks/{check_id}/alerts` | uptime_create_alert | Create a New Alert |
-| DELETE | `/v2/uptime/checks/{check_id}/alerts/{alert_id}` | uptime_delete_alert | Delete an Alert |
-| GET | `/v2/uptime/checks/{check_id}/alerts/{alert_id}` | uptime_get_alert | Retrieve an Existing Alert |
-| PUT | `/v2/uptime/checks/{check_id}/alerts/{alert_id}` | uptime_update_alert | Update an Alert |
-| GET | `/v2/uptime/checks/{check_id}/state` | uptime_get_checkState | Retrieve Check State |
-| GET | `/v2/vector-databases` | vectorDatabases_list | List All Vector Databases |
-| POST | `/v2/vector-databases` | vectorDatabases_create | Create a New Vector Database |
-| DELETE | `/v2/vector-databases/{id}` | vectorDatabases_delete | Delete a Vector Database |
-| GET | `/v2/vector-databases/{id}` | vectorDatabases_get | Retrieve an Existing Vector Database |
-| PUT | `/v2/vector-databases/{id}` | vectorDatabases_update | Update a Vector Database |
-| GET | `/v2/vector-databases/{id}/backups` | vectorDatabases_list_backups | List Backups for a Vector Database |
-| GET | `/v2/vector-databases/{id}/backups/{backup_id}/restore` | vectorDatabases_get_restore_status | Retrieve the Status of a Restore |
-| POST | `/v2/vector-databases/{id}/backups/{backup_id}/restore` | vectorDatabases_post_restore_backup | Restore a Vector Database from a Backup |
-| GET | `/v2/vector-databases/{id}/credentials` | vectorDatabases_get_credentials | Retrieve Admin Credentials for a Vector Database |
-| POST | `/v2/vector-databases/{id}/resize` | vectorDatabases_post_resize | Resize a Vector Database |
-| PUT | `/v2/vector-databases/{id}/tags` | vectorDatabases_update_tags | Update Tags on a Vector Database |
-| DELETE | `/v2/volumes` | volumes_delete_byName | Delete a Block Storage Volume by Name |
-| GET | `/v2/volumes` | volumes_list | List All Block Storage Volumes |
-| POST | `/v2/volumes` | volumes_create | Create a New Block Storage Volume |
-| POST | `/v2/volumes/actions` | volumeActions_post | Initiate A Block Storage Action By Volume Name |
-| DELETE | `/v2/volumes/snapshots/{snapshot_id}` | volumeSnapshots_delete_byId | Delete a Volume Snapshot |
-| GET | `/v2/volumes/snapshots/{snapshot_id}` | volumeSnapshots_get_byId | Retrieve an Existing Volume Snapshot |
-| DELETE | `/v2/volumes/{volume_id}` | volumes_delete | Delete a Block Storage Volume |
-| GET | `/v2/volumes/{volume_id}` | volumes_get | Retrieve an Existing Block Storage Volume |
-| GET | `/v2/volumes/{volume_id}/actions` | volumeActions_list | List All Actions for a Volume |
-| POST | `/v2/volumes/{volume_id}/actions` | volumeActions_post_byId | Initiate A Block Storage Action By Volume Id |
-| GET | `/v2/volumes/{volume_id}/actions/{action_id}` | volumeActions_get | Retrieve an Existing Volume Action |
-| GET | `/v2/volumes/{volume_id}/snapshots` | volumeSnapshots_list | List Snapshots for a Volume |
-| POST | `/v2/volumes/{volume_id}/snapshots` | volumeSnapshots_create | Create Snapshot from a Volume |
-| GET | `/v2/vpc_nat_gateways` | vpcnatgateways_list | List All VPC NAT Gateways |
-| POST | `/v2/vpc_nat_gateways` | vpcnatgateways_create | Create a New VPC NAT Gateway |
-| DELETE | `/v2/vpc_nat_gateways/{id}` | vpcnatgateways_delete | Delete VPC NAT Gateway |
-| GET | `/v2/vpc_nat_gateways/{id}` | vpcnatgateways_get | Retrieve an Existing VPC NAT Gateway |
-| PUT | `/v2/vpc_nat_gateways/{id}` | vpcnatgateways_update | Update VPC NAT Gateway |
-| GET | `/v2/vpc_peerings` | vpcPeerings_list | List All VPC Peerings |
-| POST | `/v2/vpc_peerings` | vpcPeerings_create | Create a New VPC Peering |
-| DELETE | `/v2/vpc_peerings/{vpc_peering_id}` | vpcPeerings_delete | Delete a VPC peering |
-| GET | `/v2/vpc_peerings/{vpc_peering_id}` | vpcPeerings_get | Retrieve an Existing VPC Peering |
-| PATCH | `/v2/vpc_peerings/{vpc_peering_id}` | vpcPeerings_patch | Update a VPC peering |
-| GET | `/v2/vpcs` | vpcs_list | List All VPCs |
-| POST | `/v2/vpcs` | vpcs_create | Create a New VPC |
-| DELETE | `/v2/vpcs/{vpc_id}` | vpcs_delete | Delete a VPC |
-| GET | `/v2/vpcs/{vpc_id}` | vpcs_get | Retrieve an Existing VPC |
-| PATCH | `/v2/vpcs/{vpc_id}` | vpcs_patch | Partially Update a VPC |
-| PUT | `/v2/vpcs/{vpc_id}` | vpcs_update | Update a VPC |
-| GET | `/v2/vpcs/{vpc_id}/members` | vpcs_list_members | List the Member Resources of a VPC |
-| GET | `/v2/vpcs/{vpc_id}/peerings` | vpcs_list_peerings | List the Peerings of a VPC |
-| POST | `/v2/vpcs/{vpc_id}/peerings` | vpcs_create_peerings | Create a Peering with a VPC |
-| PATCH | `/v2/vpcs/{vpc_id}/peerings/{vpc_peering_id}` | vpcs_patch_peerings | Update a VPC Peering |
-| GET | `/v2/vpcs/{vpc_uuid}/routes` | vpcRoutes_list | List VPC Routes |
-| GET | `/v2/vpcs/{vpc_uuid}/subnets` | vpcSubnets_list | List VPC Subnets |
-| POST | `/v2/vpcs/{vpc_uuid}/subnets` | vpcSubnets_create | Create a VPC Subnet |
-| DELETE | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}` | vpcSubnets_delete | Delete a VPC Subnet |
-| GET | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}` | vpcSubnets_get | Retrieve a VPC Subnet |
-| PATCH | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}` | vpcSubnets_update | Update a VPC Subnet |
-| GET | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/members` | vpcSubnets_list_members | List the Member Resources of a VPC Subnet |
-| GET | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes` | vpcSubnetRoutes_list | List VPC Subnet Routes |
-| POST | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes` | vpcSubnetRoutes_create | Create a VPC Subnet Route |
-| DELETE | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes/{route_uuid}` | vpcSubnetRoutes_delete | Delete a VPC Subnet Route |
-| PATCH | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes/{route_uuid}` | vpcSubnetRoutes_update | Update a VPC Subnet Route |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/<upload_url>` | inference_upload_batch_file | body*: string:binary | — |  | Upload a Batch Inference Input File |
+| POST | `/api/v1/chat/completions` | agentInference_create_chat_completion | `agent`*, body*: chat_completion_request | chat_completion_response |  | Create a model response for the given chat conversation |
+| POST | `/approvals/session/{session_id}/{approval_id}` | gatewaySessionApprovals_update | `session_id`*, `approval_id`*, body*: approval_decision | approval_decision_response |  | Decide a Pending Approval |
+| POST | `/approvals/{approval_id}` | gatewayApprovals_update | `X-Session-Id`*, `approval_id`*, body*: approval_decision | approval_decision_response |  | Decide a Pending Approval by Session Header |
+| POST | `/code/execute` | gatewayCode_run | `X-Session-Id`*, body*: execute_code_request | execute_code_response |  | Execute Code |
+| GET | `/tools` | gatewayTools_list | `X-Session-Id`*, `page_size`, `page_token`, `If-None-Match` | list_session_tools_response | yes | List Session Tools |
+| POST | `/tools/invoke` | gatewayTools_run | `X-Session-Id`*, body*: invoke_tools_request | invoke_tools_response |  | Invoke Session Tools |
+| POST | `/tools/search` | gatewayTools_list_search | `X-Session-Id`*, body*: search_tools_request | data_plane_search_tools_response |  | Search Session Tools |
+| POST | `/v1/async-invoke` | inference_create_async_invoke | body*: async_invoke_request | async_invoke_response |  | Generate Image, Audio, or Text-to-Speech Using fal Models |
+| POST | `/v1/audio/speech` | inference_create_speech | body*: create_speech_request | speech_response |  | Generate speech from text |
+| GET | `/v1/batches` | inference_list_batches | `after`, `limit`, `status` | batch_list_response | yes | List Batch Inference Jobs |
+| POST | `/v1/batches` | inference_create_batch | body*: batch_create_request | batch |  | Create a Batch Inference Job |
+| POST | `/v1/batches/files` | inference_create_batch_file | body*: batch_file_create_request | batch_file_create_response |  | Create a Batch Inference Input File |
+| GET | `/v1/batches/{batch_id}` | inference_get_batch | `batch_id`* | batch | yes | Retrieve a Batch Inference Job |
+| POST | `/v1/batches/{batch_id}/cancel` | inference_cancel_batch | `batch_id`* | batch |  | Cancel a Batch Inference Job |
+| GET | `/v1/batches/{batch_id}/results` | inference_get_batch_results | `batch_id`* | batch_results_response | yes | Get Batch Inference Results Download Links |
+| POST | `/v1/chat/completions` | inference_create_chat_completion | body*: chat_completion_request | chat_completion_response |  | Create a model response for the given chat conversation |
+| GET | `/v1/consent` | signals_list_consents | `source` | list_consents | yes | List All Consent Records |
+| PUT | `/v1/consent` | signals_update_team_consent | `source`*, body*: object | object |  | Update Team-Level Consent |
+| GET | `/v1/consent/{environment_id}` | signals_get_consent | `environment_id`* | agent_consent | yes | Retrieve Consent for an Environment |
+| PUT | `/v1/consent/{environment_id}` | signals_update_consent | `environment_id`*, body*: object | object |  | Update Consent for an Environment |
+| POST | `/v1/embeddings` | inference_create_embedding | body*: embeddings_request | embeddings_response |  | Create embedding |
+| POST | `/v1/images/generations` | inference_create_image | body*: create_image_request | images_response |  | Generate images from text prompts |
+| POST | `/v1/messages` | inference_create_messages | body*: messages_create_request | messages_create_response |  | Create the next assistant message |
+| GET | `/v1/models` | inference_list_models | — | list_models_response | yes | List available models |
+| POST | `/v1/responses` | inference_create_response | body*: create_response_request | create_response_response |  | Send Prompt to a Model Using the Responses API |
+| GET | `/v1/signals/agents/{environment_id}/sessions` | signals_list_agent_sessions | `environment_id`*, `limit`, `after`, `start_time`, `end_time`, `signal_type` | object | yes | List Sessions for an Environment |
+| GET | `/v1/signals/deletions` | signals_list_deletions | `limit`, `after` | object | yes | List Data Deletion Jobs |
+| POST | `/v1/signals/deletions` | signals_create_deletion | body*: create_deletion_request | deletion_job |  | Create a Data Deletion Job |
+| GET | `/v1/signals/deletions/{deletion_id}` | signals_get_deletion | `deletion_id`* | deletion_job | yes | Retrieve a Data Deletion Job |
+| GET | `/v1/signals/exports` | signals_list_exports | `environment_id`, `agent_id`, `limit`, `after` | object | yes | List Export Jobs |
+| POST | `/v1/signals/exports` | signals_create_export | body*: create_export_request | export_job |  | Create an Export Job |
+| GET | `/v1/signals/exports/options` | signals_get_export_options | — | export_options | yes | Get Export Options |
+| GET | `/v1/signals/exports/{export_id}` | signals_get_export | `export_id`* | export_job | yes | Retrieve an Export Job |
+| GET | `/v1/signals/exports/{export_id}/download` | signals_get_export_download | `export_id`* | export_download | yes | Get Export Download URL |
+| GET | `/v1/signals/sessions/{session_id}/dialogues` | signals_list_session_dialogues | `session_id`*, `limit`, `after`, `start_time`, `end_time`, `signal_type` | object | yes | List Dialogues for a Session |
+| POST | `/v1/systemone` | inference_create_systemone | body*: systemone_request | systemone_response |  | Create a System One evaluation |
+| POST | `/v1/videos` | inference_create_video | body*: create_video_request | video_generation |  | Start a video generation job |
+| GET | `/v1/videos/{video_id}` | inference_get_video | `video_id`* | video_generation | yes | Retrieve a video generation job |
+| GET | `/v1/videos/{video_id}/content` | inference_get_video_content | `video_id`* | string:binary | yes | Download generated video content |
+| GET | `/v2/1-clicks` | oneClicks_list | `type` | object | yes | List 1-Click Applications |
+| POST | `/v2/1-clicks/kubernetes` | oneClicks_install_kubernetes | body*: oneClicks_create | object |  | Install Kubernetes 1-Click Applications |
+| GET | `/v2/account` | account_get | — | object | yes | Get User Information |
+| GET | `/v2/account/keys` | sshKeys_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All SSH Keys |
+| POST | `/v2/account/keys` | sshKeys_create | body*: sshKeys | object |  | Create a New SSH Key |
+| GET | `/v2/account/keys/{ssh_key_identifier}` | sshKeys_get | `ssh_key_identifier`* | object | yes | Retrieve an Existing SSH Key |
+| PUT | `/v2/account/keys/{ssh_key_identifier}` | sshKeys_update | `ssh_key_identifier`*, body*: object | object |  | Update an SSH Key's Name |
+| DELETE | `/v2/account/keys/{ssh_key_identifier}` | sshKeys_delete | `ssh_key_identifier`* | — |  | Delete an SSH Key |
+| GET | `/v2/action-gateway/actors/{actor_id}/limits` | actorLimits_get | `actor_id`* | get_actor_limits_response | yes | Get an Actor's Limits |
+| POST | `/v2/action-gateway/actors/{actor_id}/limits:clear` | actorLimits_delete | `actor_id`*, body*: clear_actor_limits | empty_response |  | Clear an Actor's Limits |
+| POST | `/v2/action-gateway/actors/{actor_id}/limits:set` | actorLimits_update | `actor_id`*, body*: set_actor_limits | empty_response |  | Set an Actor's Limits |
+| GET | `/v2/action-gateway/connections` | connections_list | `provider`, `user_id`, `status`, `sort`, `sort_direction`, `page`, `per_page` | list_connections_response | yes | List Connections |
+| POST | `/v2/action-gateway/connections` | connections_create | body*: connection_create | connection_response |  | Create a Connection |
+| GET | `/v2/action-gateway/connections/{id}` | connections_get | `id`* | get_connection_response | yes | Get a Connection |
+| DELETE | `/v2/action-gateway/connections/{id}` | connections_delete | `id`* | delete_connection_response |  | Delete a Connection |
+| GET | `/v2/action-gateway/mcp-servers` | mcpServers_list | — | list_mcp_servers_response | yes | List MCP Servers |
+| POST | `/v2/action-gateway/mcp-servers` | mcpServers_create | body*: mcp_server_create | mcp_server_response |  | Register an MCP Server |
+| GET | `/v2/action-gateway/mcp-servers/{server_ref}` | mcpServers_get | `server_ref`* | mcp_server_response | yes | Get an MCP Server |
+| DELETE | `/v2/action-gateway/mcp-servers/{server_ref}` | mcpServers_delete | `server_ref`* | mcp_server_response |  | Delete an MCP Server |
+| PATCH | `/v2/action-gateway/mcp-servers/{server_ref}` | mcpServers_patch | `server_ref`*, body*: mcp_server_update | mcp_server_response |  | Update an MCP Server |
+| POST | `/v2/action-gateway/mcp-servers/{server_ref}/resync` | mcpServers_run_resync | `server_ref`*, body*: mcp_server_resync | resync_mcp_server_response |  | Discover an MCP Server's Tools |
+| GET | `/v2/action-gateway/mcp-servers/{server_ref}/tools` | mcpServers_list_tools | `server_ref`* | list_mcp_server_tools_response | yes | List an MCP Server's Tools |
+| PUT | `/v2/action-gateway/mcp-servers/{server_ref}/tools` | mcpServers_update_tools | `server_ref`*, body*: mcp_server_tools_update | list_mcp_server_tools_response |  | Set Which of an MCP Server's Tools Are Enabled |
+| GET | `/v2/action-gateway/output-views` | outputViews_list | `tool`, `tool_id`, `page_size`, `page_token` | list_output_views_response | yes | List Output Views |
+| POST | `/v2/action-gateway/output-views` | outputViews_create | body*: output_view_create | output_view_response |  | Create an Output View |
+| POST | `/v2/action-gateway/output-views/preview` | outputViews_validate | body*: output_view_preview | output_view_response |  | Preview an Output View |
+| GET | `/v2/action-gateway/output-views/{view_id}` | outputViews_get | `view_id`* | output_view_response | yes | Get an Output View |
+| DELETE | `/v2/action-gateway/output-views/{view_id}` | outputViews_delete | `view_id`* | output_view_response |  | Delete an Output View |
+| GET | `/v2/action-gateway/sessions` | sessions_list | `end_user_id`, `page`, `per_page` | list_sessions_response | yes | List Sessions |
+| POST | `/v2/action-gateway/sessions` | sessions_create | body*: session_create | create_session_response |  | Create a Session |
+| GET | `/v2/action-gateway/sessions/search` | sessions_list_search | `query`, `end_user_id`, `page_size`, `page_token` | search_sessions_response | yes | Search Sessions |
+| DELETE | `/v2/action-gateway/sessions/{session_urn}` | sessions_delete | `session_urn`* | empty_response |  | Delete a Session |
+| GET | `/v2/action-gateway/toolbelts` | toolbelts_list | `status`, `page`, `per_page` | toolbelts_response | yes | List Toolbelts |
+| POST | `/v2/action-gateway/toolbelts` | toolbelts_create | body*: toolbelt_create | toolbelt_response |  | Create a Toolbelt |
+| GET | `/v2/action-gateway/toolbelts/search` | toolbelts_list_search | `query`, `status`, `page_size`, `page_token` | search_toolbelts_response | yes | Search Toolbelts |
+| GET | `/v2/action-gateway/toolbelts/{name}` | toolbelts_get | `name`*, `version`, `page_size`, `page_token`, `search` | get_toolbelt_response | yes | Get a Toolbelt |
+| DELETE | `/v2/action-gateway/toolbelts/{name}` | toolbelts_delete | `name`* | toolbelt_update_response |  | Delete a Toolbelt |
+| GET | `/v2/action-gateway/toolbelts/{name}/providers` | toolbelts_list_providers | `name`*, `version`, `page`, `per_page`, `search` | list_toolbelt_providers_response | yes | List the Providers in a Toolbelt |
+| GET | `/v2/action-gateway/toolbelts/{name}/providers/{provider}/tools` | toolbelts_list_provider_tools | `name`*, `provider`*, `version`, `page`, `per_page`, `search` | list_toolbelt_provider_tools_response | yes | List a Toolbelt's Tools from One Provider |
+| POST | `/v2/action-gateway/toolbelts/{name}/tools/add` | toolbelts_add_tools | `name`*, body*: toolbelt_tools | toolbelt_update_response |  | Add Tools to a Toolbelt |
+| POST | `/v2/action-gateway/toolbelts/{name}/tools/remove` | toolbelts_delete_tools | `name`*, body*: toolbelt_tools | toolbelt_update_response |  | Remove Tools from a Toolbelt |
+| GET | `/v2/action-gateway/tools` | tools_list | `toolkit_id`, `page`, `per_page` | list_tools_response | yes | List Tools |
+| GET | `/v2/action-gateway/tools/health` | tools_list_health | `provider`, `window`, `page`, `per_page` | list_tool_health_response | yes | List Tool Health |
+| GET | `/v2/action-gateway/tools/health/providers` | tools_list_health_providers | `provider`, `window`, `page`, `per_page` | list_provider_health_response | yes | List Provider Health |
+| GET | `/v2/action-gateway/tools/health/tools/{tool_slug}` | tools_get_health | `tool_slug`*, `window`, `include_history` | get_tool_health_response | yes | Get Tool Health |
+| GET | `/v2/action-gateway/tools/providers` | tools_list_providers | — | list_providers_response | yes | List Providers |
+| GET | `/v2/action-gateway/tools/providers/search` | tools_list_search_providers | `query`, `page_size`, `page_token` | search_providers_response | yes | Search Providers |
+| GET | `/v2/action-gateway/tools/search` | tools_list_search | `query`, `provider`, `toolbelt`, `page_size`, `page_token` | search_tools_response | yes | Search Tools |
+| GET | `/v2/action-gateway/tools/toolkits` | tools_list_toolkits | — | list_toolkits_response | yes | List Toolkits |
+| GET | `/v2/action-gateway/users` | users_list | `user_id`, `sort`, `sort_direction`, `page`, `per_page` | list_users_response | yes | List Users |
+| GET | `/v2/action-gateway/users/{user_id}` | users_get | `user_id`* | get_user_response | yes | Get a User |
+| GET | `/v2/actions` | actions_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Actions |
+| GET | `/v2/actions/{action_id}` | actions_get | `action_id`* | object | yes | Retrieve an Existing Action |
+| GET | `/v2/add-ons/apps` | addons_get_app | — | object | yes | List Available Add-On Applications |
+| GET | `/v2/add-ons/apps/{app_slug}/metadata` | addons_get_app_metadata | `app_slug`* | object | yes | Get Metadata for an Add-On Application |
+| GET | `/v2/add-ons/saas` | addons_list | — | object | yes | List all Add-On Resources |
+| POST | `/v2/add-ons/saas` | addons_create | body*: addons_resource_new | object |  | Create/Provision a New Add-on Resource |
+| GET | `/v2/add-ons/saas/{resource_uuid}` | addons_get | `resource_uuid`* | object | yes | Get details on an Add-On Resource |
+| DELETE | `/v2/add-ons/saas/{resource_uuid}` | addons_delete | `resource_uuid`* | — |  | Delete/Deprovision an Add-on Resource |
+| PATCH | `/v2/add-ons/saas/{resource_uuid}` | addons_patch | `resource_uuid`*, body*: object | object |  | Update the name for an Add-On Resource |
+| PATCH | `/v2/add-ons/saas/{resource_uuid}/plan` | addons_patch_plan | `resource_uuid`*, body*: object | object |  | Update the plan for an Add-On Resource |
+| GET | `/v2/agents/configs` | harness_list_configs | `page_size`, `page_token`, `search` | list_agent_configs_response | yes | List active Environment Configs for the caller's team. |
+| POST | `/v2/agents/configs` | harness_create_config | body*: agent_config_create_request | agent_config_response |  | Create an Environment Config (environment spec + optional Insights opt-in). |
+| GET | `/v2/agents/configs/{config_id}` | harness_get_config | `config_id`* | agent_config_response | yes | Get an active Environment Config and its environment spec. |
+| DELETE | `/v2/agents/configs/{config_id}` | harness_delete_config | `config_id`* | — |  | Soft-delete an Environment Config. |
+| POST | `/v2/agents/configs/{config_id}/clone` | harness_create_config_clone | `config_id`*, body*: agent_config_clone_request | agent_config_response |  | Clone an Environment Config under a new name. |
+| GET | `/v2/agents/configs/{config_id}/sessions` | harness_list_config_sessions | `config_id`*, `page_size`, `page_token`, `status` | definitions_list_sessions_response | yes | List the sessions created from one Environment Config. |
+| GET | `/v2/agents/sessions` | harness_list_sessions | `page_size`, `page_token`, `status`, `name`, `search` | definitions_list_sessions_response | yes | ListSessions enumerates sessions for the caller's tenant. |
+| POST | `/v2/agents/sessions` | harness_create_session | `X-Device-UUID`, `openai_session_id`, `resume_on_topoff`, body*: create_session_config_request | definitions_create_session_response |  | CreateSession provisions a sandbox and starts a Harness Runtime session. |
+| POST | `/v2/agents/sessions/policy/validate` | harness_validate_session_policy | body*: agent_manifest | validation_result |  | ValidatePolicy checks a manifest's tool-permission policy against the agent's capabilities without creating a session. |
+| GET | `/v2/agents/sessions/sandbox/sizes` | harness_list_session_sandbox_sizes | — | sandbox_sizes_response | yes | ListSandboxSizes returns the customer-selectable sandbox (microVM) size catalog. |
+| GET | `/v2/agents/sessions/{session_id}` | harness_get_session | `session_id`* | get_session_response | yes | GetSession returns the current snapshot of a session. |
+| DELETE | `/v2/agents/sessions/{session_id}` | harness_delete_session | `session_id`*, `X-Device-UUID` | — |  | DestroySession tears down the sandbox and marks the session DESTROYED. |
+| PATCH | `/v2/agents/sessions/{session_id}` | harness_update_session | `session_id`*, body*: patch_session_request | get_session_response |  | PatchSession updates session-scoped settings on an existing session. |
+| GET | `/v2/agents/sessions/{session_id}/checkpoints` | harness_list_session_checkpoints | `session_id`*, `page_size`, `page_token` | list_checkpoints_response | yes | ListCheckpoints enumerates a session's checkpoints, newest first. |
+| POST | `/v2/agents/sessions/{session_id}/checkpoints` | harness_create_session_checkpoint | `session_id`*, body: create_checkpoint_request | create_checkpoint_response |  | CreateCheckpoint captures the session's live sandbox state as a durable checkpoint. |
+| GET | `/v2/agents/sessions/{session_id}/checkpoints/{checkpoint_id}` | harness_get_session_checkpoint | `session_id`*, `checkpoint_id`* | get_checkpoint_response | yes | GetCheckpoint returns the current snapshot of a checkpoint. |
+| DELETE | `/v2/agents/sessions/{session_id}/checkpoints/{checkpoint_id}` | harness_delete_session_checkpoint | `session_id`*, `checkpoint_id`* | delete_checkpoint_response |  | DeleteCheckpoint removes a checkpoint and its underlying machine-state capture. |
+| POST | `/v2/agents/sessions/{session_id}/checkpoints/{checkpoint_id}/rollback` | harness_revert_session_checkpoint | `session_id`*, `checkpoint_id`* | rollback_to_checkpoint_response |  | RollbackToCheckpoint rewinds a session to a checkpoint. |
+| GET | `/v2/agents/sessions/{session_id}/events` | harness_get_session_events | `session_id`*, `replay_only`, `replay_from`, `cursor`, `device_id`, `Last-Event-ID`, `X-Device-UUID` | stream_event | yes | StreamSessionEvents opens the session's Server-Sent Events feed. |
+| POST | `/v2/agents/sessions/{session_id}/fork` | harness_create_session_fork | `session_id`*, body: fork_session_request | fork_session_response |  | ForkSession creates child sessions from a checkpoint of this session. |
+| POST | `/v2/agents/sessions/{session_id}/hitl/{request_id}` | harness_post_session_hitl | `session_id`*, `request_id`*, `X-Device-UUID`, body*: resolve_hitl_request | — |  | ResolveHITL records the user's decision on a pending HITL request. |
+| GET | `/v2/agents/sessions/{session_id}/ingress` | harness_get_session_ingress | `session_id`* | get_ingress_url_response | yes | GetIngressURL returns the public HTTPS URL of the session's OpenHands Agent Server. |
+| POST | `/v2/agents/sessions/{session_id}/input` | harness_create_session_input | `session_id`*, body*: send_input_request | send_input_response |  | SendInput delivers a user chat message into the session. |
+| POST | `/v2/agents/sessions/{session_id}/pause` | harness_post_session_pause | `session_id`*, `X-Device-UUID` | — |  | PauseSession freezes the session's microVM sandbox. |
+| GET | `/v2/agents/sessions/{session_id}/port-forward/{port}` | harness_get_session_port_forward | `session_id`*, `port`* | — | yes | PortForwardSession opens a WebSocket tunnel to a guest TCP port. |
+| POST | `/v2/agents/sessions/{session_id}/resume` | harness_post_session_resume | `session_id`*, `X-Device-UUID` | — |  | ResumeSession explicitly thaws a PAUSED session's microVM sandbox. |
+| POST | `/v2/agents/sessions/{session_id}/sandbox/exec` | harness_post_session_sandbox_exec | `session_id`*, body*: exec_in_sandbox_request | exec_in_sandbox_response |  | ExecInSandbox runs a one-shot command inside the session's sandbox. |
+| GET | `/v2/agents/sessions/{session_id}/workspace/download` | harness_get_session_workspace_download | `session_id`*, `path`*, `as_archive` | string:binary | yes | Download a file or tar archive from the session's sandbox workspace. |
+| POST | `/v2/agents/sessions/{session_id}/workspace/transfers` | harness_create_session_workspace_transfer | `session_id`*, body*: object | workspace_transfer_created |  | Start a staged (large-file) workspace transfer. |
+| GET | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}` | harness_get_session_workspace_transfer | `session_id`*, `transfer_id`* | workspace_transfer_status | yes | Get the status of a staged workspace transfer. |
+| POST | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}/cancel` | harness_cancel_session_workspace_transfer | `session_id`*, `transfer_id`*, body: object | workspace_transfer_cancelled |  | Cancel a staged workspace transfer. |
+| POST | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}/commit` | harness_commit_session_workspace_transfer | `session_id`*, `transfer_id`*, body: object | workspace_upload_committed |  | Finalize a staged upload. |
+| POST | `/v2/agents/sessions/{session_id}/workspace/transfers/{transfer_id}/part-upload-urls` | harness_create_session_workspace_part_upload_urls | `session_id`*, `transfer_id`*, body*: object | workspace_part_upload_urls |  | Mint presigned PUT URLs for one or more multipart upload parts. |
+| POST | `/v2/agents/sessions/{session_id}/workspace/upload` | harness_create_session_workspace_upload | `session_id`*, `path`*, `is_archive`, `X-Content-Sha256`, body*: string:binary | workspace_upload_response |  | Upload a file or tar archive into the session's sandbox workspace. |
+| GET | `/v2/agents/templates` | harness_list_templates | `page_size`, `page_token` | list_templates_response | yes | ListTeamTemplates returns the caller's team custom templates. |
+| POST | `/v2/agents/templates` | harness_create_template | body*: create_template_request | create_template_response |  | CreateTemplate creates a team custom template and kicks a build. |
+| GET | `/v2/agents/templates/{template_id}` | harness_get_template | `template_id`* | get_template_response | yes | GetTemplate returns a team custom template by public id. |
+| PUT | `/v2/agents/templates/{template_id}` | harness_update_template | `template_id`*, body*: update_template_request | create_template_response |  | UpdateTemplate updates a team template's source and kicks a new build. |
+| DELETE | `/v2/agents/templates/{template_id}` | harness_delete_template | `template_id`* | delete_template_response |  | DeleteTemplate deletes a team custom template. |
+| GET | `/v2/agents/templates/{template_id}/builds` | harness_list_template_builds | `template_id`*, `page_size`, `page_token` | list_template_builds_response | yes | ListTemplateBuilds returns build history for a template. |
+| GET | `/v2/agents/templates/{template_id}/builds/{build_id}` | harness_get_template_build | `template_id`*, `build_id`* | get_template_build_response | yes | GetTemplateBuild returns a single template build. |
+| GET | `/v2/agents/triggers` | harness_list_triggers | `page_size`, `page_token`, `kind`, `status` | list_triggers_response | yes | ListTriggers enumerates the calling team's triggers. |
+| POST | `/v2/agents/triggers` | harness_create_trigger | body*: create_trigger_request | create_trigger_response |  | CreateTrigger creates a webhook or cron trigger. |
+| GET | `/v2/agents/triggers/by-session/{session_id}` | harness_get_trigger_by_session | `session_id`* | get_trigger_response | yes | GetTriggerBySession reverse-looks-up the trigger that produced or binds a session. |
+| GET | `/v2/agents/triggers/reusable-sessions` | harness_list_reusable_sessions | `page_size`, `page_token` | list_reusable_sessions_response | yes | ListReusableSessions lists the team's PAUSED sessions for the reuse picker. |
+| GET | `/v2/agents/triggers/{trigger_id}` | harness_get_trigger | `trigger_id`* | get_trigger_response | yes | GetTrigger returns a single trigger by id. |
+| DELETE | `/v2/agents/triggers/{trigger_id}` | harness_delete_trigger | `trigger_id`* | — |  | DeleteTrigger soft-deletes a trigger. |
+| PATCH | `/v2/agents/triggers/{trigger_id}` | harness_update_trigger | `trigger_id`*, body*: update_trigger_request | get_trigger_response |  | UpdateTrigger updates, pauses, or re-enables a trigger. |
+| GET | `/v2/agents/triggers/{trigger_id}/executions` | harness_list_trigger_executions | `trigger_id`*, `page_size`, `page_token`, `status` | list_trigger_executions_response | yes | ListTriggerExecutions returns a trigger's execution history. |
+| GET | `/v2/agents/triggers/{trigger_id}/executions/{execution_id}` | harness_get_trigger_execution | `trigger_id`*, `execution_id`* | get_trigger_execution_response | yes | GetTriggerExecution returns a single execution, including its payload. |
+| POST | `/v2/agents/triggers/{trigger_id}/executions/{execution_id}/cancel` | harness_cancel_trigger_execution | `trigger_id`*, `execution_id`*, `force` | get_trigger_execution_response |  | CancelExecution ends a running execution and frees the trigger's in-flight slot. |
+| POST | `/v2/agents/triggers/{trigger_id}/rotate-secret` | harness_post_trigger_rotate_secret | `trigger_id`*, `grace_period_seconds` | rotate_secret_response |  | RotateTriggerSecret issues a new webhook secret. |
+| POST | `/v2/agents/triggers/{trigger_id}/webhook` | harness_post_trigger_webhook | `trigger_id`*, body*: string:binary | webhook_accepted_response |  | ReceiveTriggerWebhook accepts a signed delivery from an external system. |
+| GET | `/v2/agents/webhook-providers` | harness_list_webhook_providers | — | list_webhook_providers_response | yes | ListWebhookProviders lists supported webhook providers for the create-trigger UI. |
+| GET | `/v2/apps` | apps_list | `page`, `per_page`, `with_projects` | apps_response | yes | List All Apps |
+| POST | `/v2/apps` | apps_create | `Accept`, `Content-Type`, body*: apps_create_app_request | app_response |  | Create a New App |
+| POST | `/v2/apps/metrics/bandwidth_daily` | apps_list_metrics_bandwidth_daily | body*: app_metrics_bandwidth_usage_request | app_metrics_bandwidth_usage |  | Retrieve Multiple Apps' Daily Bandwidth Metrics |
+| POST | `/v2/apps/propose` | apps_validate_appSpec | body*: app_propose | app_propose_response |  | Propose an App Spec |
+| GET | `/v2/apps/regions` | apps_list_regions | — | apps_list_regions_response | yes | List App Regions |
+| GET | `/v2/apps/tiers/instance_sizes` | apps_list_instanceSizes | — | apps_list_instance_sizes_response | yes | List Instance Sizes |
+| GET | `/v2/apps/tiers/instance_sizes/{slug}` | apps_get_instanceSize | `slug`* | apps_get_instance_size_response | yes | Retrieve an Instance Size |
+| GET | `/v2/apps/{app_id}/alerts` | apps_list_alerts | `app_id`* | apps_list_alerts_response | yes | List all app alerts |
+| POST | `/v2/apps/{app_id}/alerts/{alert_id}/destinations` | apps_assign_alertDestinations | `app_id`*, `alert_id`*, body*: apps_assign_app_alert_destinations_request | apps_alert_response |  | Update destinations for alerts |
+| GET | `/v2/apps/{app_id}/components/{component_name}/exec` | apps_get_exec_active_deployment | `app_id`*, `component_name`*, `instance_name` | apps_get_exec_response | yes | Retrieve Exec URL |
+| GET | `/v2/apps/{app_id}/components/{component_name}/logs` | apps_get_logs_active_deployment | `app_id`*, `component_name`*, `follow`, `type`*, `pod_connection_timeout` | apps_get_logs_response | yes | Retrieve Active Deployment Logs |
+| GET | `/v2/apps/{app_id}/deployments` | apps_list_deployments | `app_id`*, `page`, `per_page`, `deployment_types` | apps_deployments_response | yes | List App Deployments |
+| POST | `/v2/apps/{app_id}/deployments` | apps_create_deployment | `app_id`*, body*: apps_create_deployment_request | apps_deployment_response |  | Create an App Deployment |
+| GET | `/v2/apps/{app_id}/deployments/{deployment_id}` | apps_get_deployment | `app_id`*, `deployment_id`* | apps_deployment_response | yes | Retrieve an App Deployment |
+| POST | `/v2/apps/{app_id}/deployments/{deployment_id}/cancel` | apps_cancel_deployment | `app_id`*, `deployment_id`* | apps_deployment_response |  | Cancel a Deployment |
+| GET | `/v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/exec` | apps_get_exec | `app_id`*, `deployment_id`*, `component_name`*, `instance_name` | apps_get_exec_response | yes | Retrieve Exec URL for Deployment |
+| GET | `/v2/apps/{app_id}/deployments/{deployment_id}/components/{component_name}/logs` | apps_get_logs | `app_id`*, `deployment_id`*, `component_name`*, `follow`, `type`*, `pod_connection_timeout` | apps_get_logs_response | yes | Retrieve Deployment Logs |
+| GET | `/v2/apps/{app_id}/deployments/{deployment_id}/logs` | apps_get_logs_aggregate | `app_id`*, `deployment_id`*, `follow`, `type`*, `pod_connection_timeout` | apps_get_logs_response | yes | Retrieve Aggregate Deployment Logs |
+| GET | `/v2/apps/{app_id}/events` | apps_list_events | `app_id`*, `page`, `per_page`, `event_types` | app_events | yes | List App Events |
+| GET | `/v2/apps/{app_id}/events/{event_id}` | apps_get_event | `app_id`*, `event_id`* | object | yes | Get an Event |
+| POST | `/v2/apps/{app_id}/events/{event_id}/cancel` | apps_cancel_event | `app_id`*, `event_id`* | object |  | Cancel an Event |
+| GET | `/v2/apps/{app_id}/events/{event_id}/logs` | apps_get_event_logs | `app_id`*, `event_id`*, `follow`, `type`*, `pod_connection_timeout` | apps_get_logs_response | yes | Retrieve Event Logs |
+| GET | `/v2/apps/{app_id}/health` | apps_get_health | `app_id`* | app_health_response | yes | Retrieve App Health |
+| GET | `/v2/apps/{app_id}/instances` | apps_get_instances | `app_id`* | app_instances | yes | Retrieve App Instances |
+| GET | `/v2/apps/{app_id}/job-invocations` | apps_list_job_invocations | `app_id`*, `job_names`, `deployment_id`, `page`, `per_page` | app_job_invocations | yes | List Job Invocations |
+| GET | `/v2/apps/{app_id}/job-invocations/{job_invocation_id}` | apps_get_job_invocation | `app_id`*, `job_invocation_id`*, `job_name` | app_job_invocation | yes | Get Job Invocations |
+| POST | `/v2/apps/{app_id}/job-invocations/{job_invocation_id}/cancel` | apps_cancel_job_invocation | `app_id`*, `job_invocation_id`*, `job_name` | app_job_invocation |  | Cancel Job Invocation |
+| GET | `/v2/apps/{app_id}/jobs/{job_name}/invocations/{job_invocation_id}/logs` | apps_get_job_invocation_logs | `app_id`*, `job_name`*, `job_invocation_id`*, `deployment_id`, `follow`, `type`*, `pod_connection_timeout`, `tail_lines` | apps_get_logs_response | yes | Retrieve Job Invocation Logs |
+| GET | `/v2/apps/{app_id}/logs` | apps_get_logs_active_deployment_aggregate | `app_id`*, `follow`, `type`*, `pod_connection_timeout` | apps_get_logs_response | yes | Retrieve Active Deployment Aggregate Logs |
+| GET | `/v2/apps/{app_id}/metrics/bandwidth_daily` | apps_get_metrics_bandwidth_daily | `app_id`*, `date` | app_metrics_bandwidth_usage | yes | Retrieve App Daily Bandwidth Metrics |
+| POST | `/v2/apps/{app_id}/restart` | apps_restart | `app_id`*, body: apps_restart_request | apps_deployment_response |  | Restart an App |
+| POST | `/v2/apps/{app_id}/rollback` | apps_create_rollback | `app_id`*, body*: apps_rollback_app_request | apps_deployment_response |  | Rollback App |
+| POST | `/v2/apps/{app_id}/rollback/commit` | apps_commit_rollback | `app_id`* | — |  | Commit App Rollback |
+| POST | `/v2/apps/{app_id}/rollback/revert` | apps_revert_rollback | `app_id`* | apps_deployment_response |  | Revert App Rollback |
+| POST | `/v2/apps/{app_id}/rollback/validate` | apps_validate_rollback | `app_id`*, body*: apps_rollback_app_request | object |  | Validate App Rollback |
+| GET | `/v2/apps/{id}` | apps_get | `id`*, `name` | app_response | yes | Retrieve an Existing App |
+| PUT | `/v2/apps/{id}` | apps_update | `id`*, body*: apps_update_app_request | app_response |  | Update an App |
+| DELETE | `/v2/apps/{id}` | apps_delete | `id`* | apps_delete_app_response |  | Delete an App |
+| GET | `/v2/billing/{account_urn}/insights/{start_date}/{end_date}` | billingInsights_list | `account_urn`*, `start_date`*, `end_date`*, `per_page`, `page` | object | yes | List Billing Insights |
+| GET | `/v2/byoip_prefixes` | byoipPrefixes_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List BYOIP Prefixes |
+| POST | `/v2/byoip_prefixes` | byoipPrefixes_create | body*: byoip_prefix_create | object |  | Create a BYOIP Prefix |
+| GET | `/v2/byoip_prefixes/{byoip_prefix_uuid}` | byoipPrefixes_get | `byoip_prefix_uuid`* | object | yes | Get a BYOIP Prefix |
+| DELETE | `/v2/byoip_prefixes/{byoip_prefix_uuid}` | byoipPrefixes_delete | `byoip_prefix_uuid`* | — |  | Delete a BYOIP Prefix |
+| PATCH | `/v2/byoip_prefixes/{byoip_prefix_uuid}` | byoipPrefixes_patch | `byoip_prefix_uuid`*, body*: byoip_prefix_update | object |  | Update a BYOIP Prefix |
+| GET | `/v2/byoip_prefixes/{byoip_prefix_uuid}/ips` | byoipPrefixes_list_resources | `byoip_prefix_uuid`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List BYOIP Prefix Resources |
+| GET | `/v2/cdn/endpoints` | cdn_list_endpoints | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All CDN Endpoints |
+| POST | `/v2/cdn/endpoints` | cdn_create_endpoint | body*: cdn_endpoint | object |  | Create a New CDN Endpoint |
+| GET | `/v2/cdn/endpoints/{cdn_id}` | cdn_get_endpoint | `cdn_id`* | object | yes | Retrieve an Existing CDN Endpoint |
+| PUT | `/v2/cdn/endpoints/{cdn_id}` | cdn_update_endpoints | `cdn_id`*, body*: update_endpoint | object |  | Update a CDN Endpoint |
+| DELETE | `/v2/cdn/endpoints/{cdn_id}` | cdn_delete_endpoint | `cdn_id`* | — |  | Delete a CDN Endpoint |
+| DELETE | `/v2/cdn/endpoints/{cdn_id}/cache` | cdn_purge_cache | `cdn_id`*, body*: purge_cache | — |  | Purge the Cache for an Existing CDN Endpoint |
+| GET | `/v2/certificates` | certificates_list | `per_page`, `page`, `name` | object\|pages_pagination\|meta | yes | List All Certificates |
+| POST | `/v2/certificates` | certificates_create | body*: certificate_request_lets_encrypt\|certificate_request_custom | object |  | Create a New Certificate |
+| GET | `/v2/certificates/{certificate_id}` | certificates_get | `certificate_id`* | object | yes | Retrieve an Existing Certificate |
+| DELETE | `/v2/certificates/{certificate_id}` | certificates_delete | `certificate_id`* | — |  | Delete a Certificate |
+| GET | `/v2/customers/my/balance` | balance_get | — | balance | yes | Get Customer Balance |
+| GET | `/v2/customers/my/billing_history` | billingHistory_list | — | object\|pages_pagination\|meta_optional_total | yes | List Billing History |
+| GET | `/v2/customers/my/invoices` | invoices_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Invoices |
+| GET | `/v2/customers/my/invoices/{invoice_uuid}` | invoices_get_byUUID | `invoice_uuid`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | Retrieve an Invoice by UUID |
+| GET | `/v2/customers/my/invoices/{invoice_uuid}/csv` | invoices_get_csvByUUID | `invoice_uuid`* | string | yes | Retrieve an Invoice CSV by UUID |
+| GET | `/v2/customers/my/invoices/{invoice_uuid}/pdf` | invoices_get_pdfByUUID | `invoice_uuid`* | string:binary | yes | Retrieve an Invoice PDF by UUID |
+| GET | `/v2/customers/my/invoices/{invoice_uuid}/summary` | invoices_get_summaryByUUID | `invoice_uuid`* | invoice_summary | yes | Retrieve an Invoice Summary by UUID |
+| GET | `/v2/customers/my/prepayment_config` | prepaymentConfig_get | — | prepayment_config_response | yes | Get Customer Prepayment Configuration |
+| GET | `/v2/customers/my/prepayment_status` | prepaymentStatus_get | — | prepayment_status_response | yes | Get Customer Prepayment Status |
+| GET | `/v2/databases` | databases_list_clusters | `tag_name` | object | yes | List All Database Clusters |
+| POST | `/v2/databases` | databases_create_cluster | body*: database_cluster\|object | object |  | Create a New Database Cluster |
+| GET | `/v2/databases/metrics/credentials` | databases_get_cluster_metrics_credentials | — | object | yes | Retrieve Database Clusters' Metrics Endpoint Credentials |
+| PUT | `/v2/databases/metrics/credentials` | databases_update_cluster_metrics_credentials | body: database_metrics_credentials | — |  | Update Database Clusters' Metrics Endpoint Credentials |
+| GET | `/v2/databases/options` | databases_list_options | — | options | yes | List Database Options |
+| GET | `/v2/databases/{database_cluster_uuid}` | databases_get_cluster | `database_cluster_uuid`* | object | yes | Retrieve an Existing Database Cluster |
+| DELETE | `/v2/databases/{database_cluster_uuid}` | databases_destroy_cluster | `database_cluster_uuid`* | — |  | Destroy a Database Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/autoscale` | databases_get_autoscale | `database_cluster_uuid`* | object | yes | Retrieve Autoscale Configuration for a Database Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/autoscale` | databases_update_autoscale | `database_cluster_uuid`*, body*: database_autoscale_params | — |  | Configure Autoscale Settings for a Database Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/backups` | databases_list_backups | `database_cluster_uuid`* | object | yes | List Backups for a Database Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/ca` | databases_get_ca | `database_cluster_uuid`* | object | yes | Retrieve the Public Certificate |
+| GET | `/v2/databases/{database_cluster_uuid}/config` | databases_get_config | `database_cluster_uuid`* | object | yes | Retrieve an Existing Database Cluster Configuration |
+| PATCH | `/v2/databases/{database_cluster_uuid}/config` | databases_patch_config | `database_cluster_uuid`*, body*: database_config | — |  | Update the Database Configuration for an Existing Database |
+| GET | `/v2/databases/{database_cluster_uuid}/dbs` | databases_list | `database_cluster_uuid`* | object | yes | List All Databases |
+| POST | `/v2/databases/{database_cluster_uuid}/dbs` | databases_add | `database_cluster_uuid`*, body*: database | object |  | Add a New Database |
+| GET | `/v2/databases/{database_cluster_uuid}/dbs/{database_name}` | databases_get | `database_cluster_uuid`*, `database_name`* | object | yes | Retrieve an Existing Database |
+| DELETE | `/v2/databases/{database_cluster_uuid}/dbs/{database_name}` | databases_delete | `database_cluster_uuid`*, `database_name`* | — |  | Delete a Database |
+| GET | `/v2/databases/{database_cluster_uuid}/do_settings` | databases_get_do_settings | `database_cluster_uuid`* | object | yes | Retrieve DO Settings for a Database Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/do_settings` | databases_update_do_settings | `database_cluster_uuid`*, body*: object | — |  | Update DO Settings for a Database Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/events` | databases_list_events_logs | `database_cluster_uuid`* | object | yes | List all Events Logs |
+| GET | `/v2/databases/{database_cluster_uuid}/eviction_policy` | databases_get_evictionPolicy | `database_cluster_uuid`* | object | yes | Retrieve the Eviction Policy for a Caching or Valkey Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/eviction_policy` | databases_update_evictionPolicy | `database_cluster_uuid`*, body*: object | — |  | Configure the Eviction Policy for a Caching or Valkey Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/firewall` | databases_list_firewall_rules | `database_cluster_uuid`* | object | yes | List Firewall Rules (Trusted Sources) for a Database Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/firewall` | databases_update_firewall_rules | `database_cluster_uuid`*, body*: object | — |  | Update Firewall Rules (Trusted Sources) for a Database |
+| GET | `/v2/databases/{database_cluster_uuid}/indexes` | databases_list_opeasearch_indexes | `database_cluster_uuid`* | object | yes | List Indexes for a OpenSearch Cluster |
+| DELETE | `/v2/databases/{database_cluster_uuid}/indexes/{index_name}` | databases_delete_opensearch_index | `database_cluster_uuid`*, `index_name`* | — |  | Delete Index for OpenSearch Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/install_update` | databases_install_update | `database_cluster_uuid`* | — |  | Start Database Maintenance |
+| GET | `/v2/databases/{database_cluster_uuid}/logsink` | databases_list_logsink | `database_cluster_uuid`* | object | yes | List Logsinks for a Database Cluster |
+| POST | `/v2/databases/{database_cluster_uuid}/logsink` | databases_create_logsink | `database_cluster_uuid`*, body*: logsink_create | object |  | Create Logsink for a Database Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}` | databases_get_logsink | `database_cluster_uuid`*, `logsink_id`* | logsink_schema | yes | Get Logsink for a Database Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}` | databases_update_logsink | `database_cluster_uuid`*, `logsink_id`*, body*: logsink_update | — |  | Update Logsink for a Database Cluster |
+| DELETE | `/v2/databases/{database_cluster_uuid}/logsink/{logsink_id}` | databases_delete_logsink | `database_cluster_uuid`*, `logsink_id`* | — |  | Delete Logsink for a Database Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/maintenance` | databases_update_maintenanceWindow | `database_cluster_uuid`*, body*: database_maintenance_window | — |  | Configure a Database Cluster's Maintenance Window |
+| PUT | `/v2/databases/{database_cluster_uuid}/migrate` | databases_update_region | `database_cluster_uuid`*, body*: object | — |  | Migrate a Database Cluster to a New Region |
+| GET | `/v2/databases/{database_cluster_uuid}/online-migration` | databases_get_migrationStatus | `database_cluster_uuid`* | online_migration | yes | Retrieve the Status of an Online Migration |
+| PUT | `/v2/databases/{database_cluster_uuid}/online-migration` | databases_update_onlineMigration | `database_cluster_uuid`*, body*: source_database | online_migration |  | Start an Online Migration |
+| DELETE | `/v2/databases/{database_cluster_uuid}/online-migration/{migration_id}` | databases_delete_onlineMigration | `database_cluster_uuid`*, `migration_id`* | — |  | Stop an Online Migration |
+| GET | `/v2/databases/{database_cluster_uuid}/pools` | databases_list_connectionPools | `database_cluster_uuid`* | connection_pools | yes | List Connection Pools (PostgreSQL) |
+| POST | `/v2/databases/{database_cluster_uuid}/pools` | databases_add_connectionPool | `database_cluster_uuid`*, body*: connection_pool | object |  | Add a New Connection Pool (PostgreSQL) |
+| GET | `/v2/databases/{database_cluster_uuid}/pools/{pool_name}` | databases_get_connectionPool | `database_cluster_uuid`*, `pool_name`* | object | yes | Retrieve Existing Connection Pool (PostgreSQL) |
+| PUT | `/v2/databases/{database_cluster_uuid}/pools/{pool_name}` | databases_update_connectionPool | `database_cluster_uuid`*, `pool_name`*, body*: connection_pool_update | — |  | Update Connection Pools (PostgreSQL) |
+| DELETE | `/v2/databases/{database_cluster_uuid}/pools/{pool_name}` | databases_delete_connectionPool | `database_cluster_uuid`*, `pool_name`* | — |  | Delete a Connection Pool (PostgreSQL) |
+| GET | `/v2/databases/{database_cluster_uuid}/replicas` | databases_list_replicas | `database_cluster_uuid`* | object | yes | List All Read-only Replicas |
+| POST | `/v2/databases/{database_cluster_uuid}/replicas` | databases_create_replica | `database_cluster_uuid`*, body: database_replica | object |  | Create a Read-only Replica |
+| GET | `/v2/databases/{database_cluster_uuid}/replicas/{replica_name}` | databases_get_replica | `database_cluster_uuid`*, `replica_name`* | object | yes | Retrieve an Existing Read-only Replica |
+| DELETE | `/v2/databases/{database_cluster_uuid}/replicas/{replica_name}` | databases_destroy_replica | `database_cluster_uuid`*, `replica_name`* | — |  | Destroy a Read-only Replica |
+| PUT | `/v2/databases/{database_cluster_uuid}/replicas/{replica_name}/promote` | databases_promote_replica | `database_cluster_uuid`*, `replica_name`* | — |  | Promote a Read-only Replica to become a Primary Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/resize` | databases_update_clusterSize | `database_cluster_uuid`*, body*: database_cluster_resize | — |  | Resize a Database Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/schema-registry` | databases_list_kafka_schemas | `database_cluster_uuid`* | object | yes | List Schemas for Kafka Cluster |
+| POST | `/v2/databases/{database_cluster_uuid}/schema-registry` | databases_create_kafka_schema | `database_cluster_uuid`*, body*: database_kafka_schema_create | kafka_schema_verbose |  | Create Schema Registry for Kafka Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/config` | databases_get_kafka_schema_config | `database_cluster_uuid`* | object | yes | Retrieve Schema Registry Configuration for a kafka Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/schema-registry/config` | databases_update_kafka_schema_config | `database_cluster_uuid`*, body: object | object |  | Update Schema Registry Configuration for a kafka Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}` | databases_get_kafka_schema_subject_config | `database_cluster_uuid`*, `subject_name`* | object | yes | Retrieve Schema Registry Configuration for a Subject of kafka Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/schema-registry/config/{subject_name}` | databases_update_kafka_schema_subject_config | `database_cluster_uuid`*, `subject_name`*, body: object | object |  | Update Schema Registry Configuration for a Subject of kafka Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}` | databases_get_kafka_schema | `database_cluster_uuid`*, `subject_name`* | kafka_schema_version_verbose | yes | Get a Kafka Schema by Subject Name |
+| DELETE | `/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}` | databases_delete_kafka_schema | `database_cluster_uuid`*, `subject_name`* | — |  | Delete a Kafka Schema by Subject Name |
+| GET | `/v2/databases/{database_cluster_uuid}/schema-registry/{subject_name}/versions/{version}` | databases_get_kafka_schema_version | `database_cluster_uuid`*, `subject_name`*, `version`* | kafka_schema_version_verbose | yes | Get Kafka Schema by Subject Version |
+| GET | `/v2/databases/{database_cluster_uuid}/sql_mode` | databases_get_sql_mode | `database_cluster_uuid`* | sql_mode | yes | Retrieve the SQL Modes for a MySQL Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/sql_mode` | databases_update_sql_mode | `database_cluster_uuid`*, body*: sql_mode | — |  | Update SQL Mode for a Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/topics` | databases_list_kafka_topics | `database_cluster_uuid`* | object | yes | List Topics for a Kafka Cluster |
+| POST | `/v2/databases/{database_cluster_uuid}/topics` | databases_create_kafka_topic | `database_cluster_uuid`*, body: kafka_topic_create | object |  | Create Topic for a Kafka Cluster |
+| GET | `/v2/databases/{database_cluster_uuid}/topics/{topic_name}` | databases_get_kafka_topic | `database_cluster_uuid`*, `topic_name`* | object | yes | Get Topic for a Kafka Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/topics/{topic_name}` | databases_update_kafka_topic | `database_cluster_uuid`*, `topic_name`*, body: kafka_topic_update | object |  | Update Topic for a Kafka Cluster |
+| DELETE | `/v2/databases/{database_cluster_uuid}/topics/{topic_name}` | databases_delete_kafka_topic | `database_cluster_uuid`*, `topic_name`* | — |  | Delete Topic for a Kafka Cluster |
+| PUT | `/v2/databases/{database_cluster_uuid}/upgrade` | databases_update_major_version | `database_cluster_uuid`*, body*: version-2 | — |  | Upgrade Major Version for a Database |
+| GET | `/v2/databases/{database_cluster_uuid}/users` | databases_list_users | `database_cluster_uuid`* | object | yes | List all Database Users |
+| POST | `/v2/databases/{database_cluster_uuid}/users` | databases_add_user | `database_cluster_uuid`*, body*: database_user\|object | object |  | Add a Database User |
+| GET | `/v2/databases/{database_cluster_uuid}/users/{username}` | databases_get_user | `database_cluster_uuid`*, `username`* | object | yes | Retrieve an Existing Database User |
+| PUT | `/v2/databases/{database_cluster_uuid}/users/{username}` | databases_update_user | `database_cluster_uuid`*, `username`*, body*: object | object |  | Update a Database User |
+| DELETE | `/v2/databases/{database_cluster_uuid}/users/{username}` | databases_delete_user | `database_cluster_uuid`*, `username`* | — |  | Remove a Database User |
+| POST | `/v2/databases/{database_cluster_uuid}/users/{username}/reset_auth` | databases_reset_auth | `database_cluster_uuid`*, `username`*, body*: object | object |  | Reset a Database User's Password or Authentication Method |
+| GET | `/v2/dedicated-inferences` | dedicatedInferences_list | `per_page`, `page`, `region` | object | yes | List Dedicated Inferences |
+| POST | `/v2/dedicated-inferences` | dedicatedInferences_create | body*: dedicated_inference_create_request | object |  | Create a Dedicated Inference |
+| GET | `/v2/dedicated-inferences/gpu-model-config` | dedicatedInferences_get_gpu_model_config | — | dedicated_inference_gpu_model_configs_response | yes | Get Dedicated Inference GPU Model Config |
+| GET | `/v2/dedicated-inferences/sizes` | dedicatedInferences_list_sizes | — | dedicated_inference_sizes_response | yes | List Dedicated Inference Sizes |
+| GET | `/v2/dedicated-inferences/{dedicated_inference_id}` | dedicatedInferences_get | `dedicated_inference_id`* | object | yes | Get a Dedicated Inference |
+| DELETE | `/v2/dedicated-inferences/{dedicated_inference_id}` | dedicatedInferences_delete | `dedicated_inference_id`* | — |  | Delete a Dedicated Inference |
+| PATCH | `/v2/dedicated-inferences/{dedicated_inference_id}` | dedicatedInferences_patch | `dedicated_inference_id`*, body*: dedicated_inference_update_request | object |  | Update a Dedicated Inference |
+| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/accelerators` | dedicatedInferences_list_accelerators | `dedicated_inference_id`*, `per_page`, `page`, `slug` | object\|pages_pagination\|meta | yes | List Dedicated Inference Accelerators |
+| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/accelerators/{accelerator_id}` | dedicatedInferences_get_accelerator | `dedicated_inference_id`*, `accelerator_id`* | dedicated_inference_accelerator | yes | Get a Dedicated Inference Accelerator |
+| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/ca` | dedicatedInferences_get_ca | `dedicated_inference_id`* | object | yes | Get Dedicated Inference CA Certificate |
+| GET | `/v2/dedicated-inferences/{dedicated_inference_id}/tokens` | dedicatedInferences_list_tokens | `dedicated_inference_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List Dedicated Inference Tokens |
+| POST | `/v2/dedicated-inferences/{dedicated_inference_id}/tokens` | dedicatedInferences_create_tokens | `dedicated_inference_id`*, body*: dedicated_inference_token_create_request | object |  | Create a Dedicated Inference Token |
+| DELETE | `/v2/dedicated-inferences/{dedicated_inference_id}/tokens/{token_id}` | dedicatedInferences_delete_tokens | `dedicated_inference_id`*, `token_id`* | — |  | Revoke a Dedicated Inference Token |
+| GET | `/v2/domains` | domains_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Domains |
+| POST | `/v2/domains` | domains_create | body: domain | object |  | Create a New Domain |
+| GET | `/v2/domains/{domain_name}` | domains_get | `domain_name`* | object | yes | Retrieve an Existing Domain |
+| DELETE | `/v2/domains/{domain_name}` | domains_delete | `domain_name`* | — |  | Delete a Domain |
+| GET | `/v2/domains/{domain_name}/records` | domains_list_records | `domain_name`*, `name`, `type`, `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Domain Records |
+| POST | `/v2/domains/{domain_name}/records` | domains_create_record | `domain_name`*, body: domain_record_a\|domain_record_aaaa\|domain_record_caa\|domain_record_cname\|domain_record_mx\|domain_record_ns\|domain_record_soa\|domain_record_srv\|domain_record_txt | object |  | Create a New Domain Record |
+| GET | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_get_record | `domain_name`*, `domain_record_id`* | object | yes | Retrieve an Existing Domain Record |
+| PUT | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_update_record | `domain_name`*, `domain_record_id`*, body: domain_record | object |  | Update a Domain Record |
+| DELETE | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_delete_record | `domain_name`*, `domain_record_id`* | — |  | Delete a Domain Record |
+| PATCH | `/v2/domains/{domain_name}/records/{domain_record_id}` | domains_patch_record | `domain_name`*, `domain_record_id`*, body: domain_record | object |  | Update a Domain Record |
+| GET | `/v2/droplets` | droplets_list | `per_page`, `page`, `tag_name`, `name`, `type` | object\|pages_pagination\|meta | yes | List All Droplets |
+| POST | `/v2/droplets` | droplets_create | body: droplet_single_create\|droplet_multi_create | object |  | Create a New Droplet |
+| DELETE | `/v2/droplets` | droplets_destroy_byTag | `tag_name`* | — |  | Deleting Droplets by Tag |
+| POST | `/v2/droplets/actions` | dropletActions_post_byTag | `tag_name`, body: droplet_action\|droplet_action_snapshot | object |  | Acting on Tagged Droplets |
+| GET | `/v2/droplets/autoscale` | autoscalepools_list | `per_page`, `page`, `name` | object\|pages_pagination\|meta | yes | List All Autoscale Pools |
+| POST | `/v2/droplets/autoscale` | autoscalepools_create | body: autoscale_pool_create | object |  | Create a New Autoscale Pool |
+| GET | `/v2/droplets/autoscale/{autoscale_pool_id}` | autoscalepools_get | `autoscale_pool_id`* | object | yes | Retrieve an Existing Autoscale Pool |
+| PUT | `/v2/droplets/autoscale/{autoscale_pool_id}` | autoscalepools_update | `autoscale_pool_id`*, body: autoscale_pool_create | object |  | Update Autoscale Pool |
+| DELETE | `/v2/droplets/autoscale/{autoscale_pool_id}` | autoscalepools_delete | `autoscale_pool_id`* | — |  | Delete autoscale pool |
+| DELETE | `/v2/droplets/autoscale/{autoscale_pool_id}/dangerous` | autoscalepools_delete_dangerous | `autoscale_pool_id`*, `X-Dangerous`* | — |  | Delete autoscale pool and resources |
+| GET | `/v2/droplets/autoscale/{autoscale_pool_id}/history` | autoscalepools_list_history | `per_page`, `page`, `autoscale_pool_id`* | object\|pages_pagination\|meta | yes | List history events |
+| GET | `/v2/droplets/autoscale/{autoscale_pool_id}/members` | autoscalepools_list_members | `per_page`, `page`, `autoscale_pool_id`* | object\|pages_pagination\|meta | yes | List members |
+| GET | `/v2/droplets/backups/policies` | droplets_list_backup_policies | `per_page`, `page` | object\|pages_pagination\|meta | yes | List Backup Policies for All Existing Droplets |
+| GET | `/v2/droplets/backups/supported_policies` | droplets_list_supported_backup_policies | — | object | yes | List Supported Droplet Backup Policies |
+| GET | `/v2/droplets/{droplet_id}` | droplets_get | `droplet_id`* | object | yes | Retrieve an Existing Droplet |
+| DELETE | `/v2/droplets/{droplet_id}` | droplets_destroy | `droplet_id`* | — |  | Delete an Existing Droplet |
+| GET | `/v2/droplets/{droplet_id}/actions` | dropletActions_list | `droplet_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List Actions for a Droplet |
+| POST | `/v2/droplets/{droplet_id}/actions` | dropletActions_post | `droplet_id`*, body: droplet_action\|droplet_action_enable_backups\|droplet_action_change_backup_policy\|droplet_action_restore\|droplet_action_resize\|droplet_action_rebuild\|droplet_action_rename\|droplet_action_change_kernel\|droplet_action_snapshot | object |  | Initiate a Droplet Action |
+| GET | `/v2/droplets/{droplet_id}/actions/{action_id}` | dropletActions_get | `droplet_id`*, `action_id`* | object | yes | Retrieve a Droplet Action |
+| GET | `/v2/droplets/{droplet_id}/backups` | droplets_list_backups | `droplet_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List Backups for a Droplet |
+| GET | `/v2/droplets/{droplet_id}/backups/policy` | droplets_get_backup_policy | `droplet_id`* | object | yes | Retrieve the Backup Policy for an Existing Droplet |
+| GET | `/v2/droplets/{droplet_id}/destroy_with_associated_resources` | droplets_list_associatedResources | `droplet_id`* | object | yes | List Associated Resources for a Droplet |
+| DELETE | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/dangerous` | droplets_destroy_withAssociatedResourcesDangerous | `droplet_id`*, `X-Dangerous`* | — |  | Destroy a Droplet and All of its Associated Resources (Dangerous) |
+| POST | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/retry` | droplets_destroy_retryWithAssociatedResources | `droplet_id`* | — |  | Retry a Droplet Destroy with Associated Resources Request |
+| DELETE | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/selective` | droplets_destroy_withAssociatedResourcesSelective | `droplet_id`*, body: selective_destroy_associated_resource | — |  | Selectively Destroy a Droplet and its Associated Resources |
+| GET | `/v2/droplets/{droplet_id}/destroy_with_associated_resources/status` | droplets_get_DestroyAssociatedResourcesStatus | `droplet_id`* | associated_resource_status | yes | Check Status of a Droplet Destroy with Associated Resources Request |
+| GET | `/v2/droplets/{droplet_id}/firewalls` | droplets_list_firewalls | `droplet_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List all Firewalls Applied to a Droplet |
+| GET | `/v2/droplets/{droplet_id}/kernels` | droplets_list_kernels | `droplet_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Available Kernels for a Droplet |
+| GET | `/v2/droplets/{droplet_id}/neighbors` | droplets_list_neighbors | `droplet_id`* | object | yes | List Neighbors for a Droplet |
+| GET | `/v2/droplets/{droplet_id}/snapshots` | droplets_list_snapshots | `droplet_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List Snapshots for a Droplet |
+| GET | `/v2/firewalls` | firewalls_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Firewalls |
+| POST | `/v2/firewalls` | firewalls_create | body: firewall | object |  | Create a New Firewall |
+| GET | `/v2/firewalls/{firewall_id}` | firewalls_get | `firewall_id`* | object | yes | Retrieve an Existing Firewall |
+| PUT | `/v2/firewalls/{firewall_id}` | firewalls_update | `firewall_id`*, body: firewall | object |  | Update a Firewall |
+| DELETE | `/v2/firewalls/{firewall_id}` | firewalls_delete | `firewall_id`* | — |  | Delete a Firewall |
+| POST | `/v2/firewalls/{firewall_id}/droplets` | firewalls_assign_droplets | `firewall_id`*, body: object | — |  | Add Droplets to a Firewall |
+| DELETE | `/v2/firewalls/{firewall_id}/droplets` | firewalls_delete_droplets | `firewall_id`*, body: object | — |  | Remove Droplets from a Firewall |
+| POST | `/v2/firewalls/{firewall_id}/rules` | firewalls_add_rules | `firewall_id`*, body: firewall_rules | — |  | Add Rules to a Firewall |
+| DELETE | `/v2/firewalls/{firewall_id}/rules` | firewalls_delete_rules | `firewall_id`*, body: firewall_rules | — |  | Remove Rules from a Firewall |
+| POST | `/v2/firewalls/{firewall_id}/tags` | firewalls_add_tags | `firewall_id`*, body: object | — |  | Add Tags to a Firewall |
+| DELETE | `/v2/firewalls/{firewall_id}/tags` | firewalls_delete_tags | `firewall_id`*, body: object | — |  | Remove Tags from a Firewall |
+| GET | `/v2/floating_ips` | floatingIPs_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Floating IPs |
+| POST | `/v2/floating_ips` | floatingIPs_create | body*: floating_ip_create | object |  | Create a New Floating IP |
+| GET | `/v2/floating_ips/{floating_ip}` | floatingIPs_get | `floating_ip`* | object | yes | Retrieve an Existing Floating IP |
+| DELETE | `/v2/floating_ips/{floating_ip}` | floatingIPs_delete | `floating_ip`* | — |  | Delete a Floating IP |
+| GET | `/v2/floating_ips/{floating_ip}/actions` | floatingIPsAction_list | `floating_ip`* | object\|pages_pagination\|meta | yes | List All Actions for a Floating IP |
+| POST | `/v2/floating_ips/{floating_ip}/actions` | floatingIPsAction_post | `floating_ip`*, body: floating_ip_action_unassign\|floating_ip_action_assign | object |  | Initiate a Floating IP Action |
+| GET | `/v2/floating_ips/{floating_ip}/actions/{action_id}` | floatingIPsAction_get | `floating_ip`*, `action_id`* | object | yes | Retrieve an Existing Floating IP Action |
+| GET | `/v2/functions/namespaces` | functions_list_namespaces | — | object | yes | List Namespaces |
+| POST | `/v2/functions/namespaces` | functions_create_namespace | body*: create_namespace | object |  | Create Namespace |
+| GET | `/v2/functions/namespaces/{namespace_id}` | functions_get_namespace | `namespace_id`* | object | yes | Get Namespace |
+| DELETE | `/v2/functions/namespaces/{namespace_id}` | functions_delete_namespace | `namespace_id`* | — |  | Delete Namespace |
+| GET | `/v2/functions/namespaces/{namespace_id}/keys` | functionsAccessKey_list | `namespace_id`* | object | yes | List Namespace Access Keys |
+| POST | `/v2/functions/namespaces/{namespace_id}/keys` | functionsAccessKey_create | `namespace_id`*, body*: access_key_create_request | object |  | Create a Namespace Access Key |
+| PUT | `/v2/functions/namespaces/{namespace_id}/keys/{key_id}` | functionsAccessKey_update | `namespace_id`*, `key_id`*, body*: object | object |  | Update a Namespace Access Key |
+| DELETE | `/v2/functions/namespaces/{namespace_id}/keys/{key_id}` | functionsAccessKey_delete | `namespace_id`*, `key_id`* | object |  | Delete a Namespace Access Key |
+| GET | `/v2/functions/namespaces/{namespace_id}/triggers` | functions_list_triggers | `namespace_id`* | object | yes | List Triggers |
+| POST | `/v2/functions/namespaces/{namespace_id}/triggers` | functions_create_trigger | `namespace_id`*, body*: create_trigger | object |  | Create Trigger |
+| GET | `/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}` | functions_get_trigger | `namespace_id`*, `trigger_name`* | object | yes | Get Trigger |
+| PUT | `/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}` | functions_update_trigger | `namespace_id`*, `trigger_name`*, body*: update_trigger | object |  | Update Trigger |
+| DELETE | `/v2/functions/namespaces/{namespace_id}/triggers/{trigger_name}` | functions_delete_trigger | `namespace_id`*, `trigger_name`* | — |  | Delete Trigger |
+| GET | `/v2/gen-ai/agents` | genai_list_agents | `only_deployed`, `page`, `per_page` | apiListAgentsOutputPublic | yes | List Agents |
+| POST | `/v2/gen-ai/agents` | genai_create_agent | body: apiCreateAgentInputPublic | apiCreateAgentOutput |  | Create an Agent |
+| GET | `/v2/gen-ai/agents/{agent_uuid}/api_keys` | genai_list_agent_api_keys | `agent_uuid`*, `page`, `per_page` | apiListAgentAPIKeysOutput | yes | List Agent API Keys |
+| POST | `/v2/gen-ai/agents/{agent_uuid}/api_keys` | genai_create_agent_api_key | `agent_uuid`*, body: apiCreateAgentAPIKeyInputPublic | apiCreateAgentAPIKeyOutput |  | Create an Agent API Key |
+| PUT | `/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}` | genai_update_agent_api_key | `agent_uuid`*, `api_key_uuid`*, body: apiUpdateAgentAPIKeyInputPublic | apiUpdateAgentAPIKeyOutput |  | Update API Key for an Agent |
+| DELETE | `/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}` | genai_delete_agent_api_key | `agent_uuid`*, `api_key_uuid`* | apiDeleteAgentAPIKeyOutput |  | Delete API Key for an Agent |
+| PUT | `/v2/gen-ai/agents/{agent_uuid}/api_keys/{api_key_uuid}/regenerate` | genai_regenerate_agent_api_key | `agent_uuid`*, `api_key_uuid`* | apiRegenerateAgentAPIKeyOutput |  | Regenerate API Key for an Agent |
+| POST | `/v2/gen-ai/agents/{agent_uuid}/functions` | genai_attach_agent_function | `agent_uuid`*, body: apiLinkAgentFunctionInputPublic | apiLinkAgentFunctionOutput |  | Add Function Route to an Agent |
+| PUT | `/v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}` | genai_update_agent_function | `agent_uuid`*, `function_uuid`*, body: apiUpdateAgentFunctionInputPublic | apiUpdateAgentFunctionOutput |  | Update Function Route for an Agent |
+| DELETE | `/v2/gen-ai/agents/{agent_uuid}/functions/{function_uuid}` | genai_detach_agent_function | `agent_uuid`*, `function_uuid`* | apiUnlinkAgentFunctionOutput |  | Delete Function Route for an Agent |
+| POST | `/v2/gen-ai/agents/{agent_uuid}/guardrails` | genai_attach_agent_guardrails | `agent_uuid`*, body: apiLinkAgentGuardrailsInputPublic | apiLinkAgentGuardrailOutput |  | Attach Guardrails to an Agent |
+| DELETE | `/v2/gen-ai/agents/{agent_uuid}/guardrails/{guardrail_uuid}` | genai_detach_agent_guardrail | `agent_uuid`*, `guardrail_uuid`* | apiUnlinkAgentGuardrailOutput |  | Detach a Guardrail from an Agent |
+| POST | `/v2/gen-ai/agents/{agent_uuid}/knowledge_bases` | genai_attach_knowledge_bases | `agent_uuid`* | apiLinkKnowledgeBaseOutput |  | Attach Knowledge Bases to an Agent |
+| POST | `/v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}` | genai_attach_knowledge_base | `agent_uuid`*, `knowledge_base_uuid`* | apiLinkKnowledgeBaseOutput |  | Attach Knowledge Base to an Agent |
+| DELETE | `/v2/gen-ai/agents/{agent_uuid}/knowledge_bases/{knowledge_base_uuid}` | genai_detach_knowledge_base | `agent_uuid`*, `knowledge_base_uuid`* | apiUnlinkKnowledgeBaseOutput |  | Detach Knowledge Base from an Agent |
+| PUT | `/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}` | genai_update_attached_agent | `parent_agent_uuid`*, `child_agent_uuid`*, body: apiUpdateLinkedAgentInputPublic | apiUpdateLinkedAgentOutput |  | Update Agent Route for an Agent |
+| POST | `/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}` | genai_attach_agent | `parent_agent_uuid`*, `child_agent_uuid`*, body: apiLinkAgentInputPublic | apiLinkAgentOutput |  | Add Agent Route to an Agent |
+| DELETE | `/v2/gen-ai/agents/{parent_agent_uuid}/child_agents/{child_agent_uuid}` | genai_detach_agent | `parent_agent_uuid`*, `child_agent_uuid`* | apiUnlinkAgentOutput |  | Delete Agent Route for an Agent |
+| GET | `/v2/gen-ai/agents/{uuid}` | genai_get_agent | `uuid`* | apiGetAgentOutput | yes | Retrieve an Existing Agent |
+| PUT | `/v2/gen-ai/agents/{uuid}` | genai_update_agent | `uuid`*, body: apiUpdateAgentInputPublic | apiUpdateAgentOutput |  | Update an Agent |
+| DELETE | `/v2/gen-ai/agents/{uuid}` | genai_delete_agent | `uuid`* | apiDeleteAgentOutput |  | Delete an Agent |
+| GET | `/v2/gen-ai/agents/{uuid}/child_agents` | genai_get_agent_children | `uuid`* | apiGetChildrenOutput | yes | View Agent Routes |
+| PUT | `/v2/gen-ai/agents/{uuid}/deployment_visibility` | genai_update_agent_deployment_visibility | `uuid`*, body: apiUpdateAgentDeploymentVisibilityInputPublic | apiUpdateAgentDeploymentVisbilityOutput |  | Update Agent Status |
+| GET | `/v2/gen-ai/agents/{uuid}/usage` | genai_get_agent_usage | `uuid`*, `start`, `stop` | apiGetAgentUsageOutput | yes | Get Agent Usage |
+| GET | `/v2/gen-ai/agents/{uuid}/versions` | genai_list_agent_versions | `uuid`*, `page`, `per_page` | apiListAgentVersionsOutput | yes | List Agent Versions |
+| PUT | `/v2/gen-ai/agents/{uuid}/versions` | genai_rollback_to_agent_version | `uuid`*, body: apiRollbackToAgentVersionInputPublic | apiRollbackToAgentVersionOutput |  | Rollback to Agent Version |
+| GET | `/v2/gen-ai/anthropic/keys` | genai_list_anthropic_api_keys | `page`, `per_page` | apiListAnthropicAPIKeysOutput | yes | List Anthropic API Keys |
+| POST | `/v2/gen-ai/anthropic/keys` | genai_create_anthropic_api_key | body: apiCreateAnthropicAPIKeyInputPublic | apiCreateAnthropicAPIKeyOutput |  | Create Anthropic API Key |
+| GET | `/v2/gen-ai/anthropic/keys/{api_key_uuid}` | genai_get_anthropic_api_key | `api_key_uuid`* | apiGetAnthropicAPIKeyOutput | yes | Get Anthropic API Key |
+| PUT | `/v2/gen-ai/anthropic/keys/{api_key_uuid}` | genai_update_anthropic_api_key | `api_key_uuid`*, body: apiUpdateAnthropicAPIKeyInputPublic | apiUpdateAnthropicAPIKeyOutput |  | Update Anthropic API Key |
+| DELETE | `/v2/gen-ai/anthropic/keys/{api_key_uuid}` | genai_delete_anthropic_api_key | `api_key_uuid`* | apiDeleteAnthropicAPIKeyOutput |  | Delete Anthropic API Key |
+| GET | `/v2/gen-ai/anthropic/keys/{uuid}/agents` | genai_list_agents_by_anthropic_key | `uuid`*, `page`, `per_page` | apiListAgentsByAnthropicKeyOutput | yes | List agents by Anthropic key |
+| POST | `/v2/gen-ai/custom_evaluation_metrics` | genai_create_custom_evaluation_metric | body: apiCreateCustomEvaluationMetricInputPublic | apiCreateCustomEvaluationMetricOutput |  | Create Custom Evaluation Metric |
+| PUT | `/v2/gen-ai/custom_evaluation_metrics/{metric_uuid}` | genai_update_custom_evaluation_metric | `metric_uuid`*, body: apiUpdateCustomEvaluationMetricInputPublic | apiUpdateCustomEvaluationMetricOutput |  | Update Custom Evaluation Metric |
+| DELETE | `/v2/gen-ai/custom_evaluation_metrics/{metric_uuid}` | genai_delete_custom_evaluation_metric | `metric_uuid`* | apiDeleteCustomEvaluationMetricOutput |  | Delete Custom Evaluation Metric |
+| GET | `/v2/gen-ai/custom_models` | genai_list_custom_models | `page`, `per_page`, `status` | apiListCustomModelsOutputPublic | yes | List Custom Models |
+| POST | `/v2/gen-ai/custom_models/import` | genai_import_custom_model | body: apiImportCustomModelInputPublic | apiImportCustomModelOutputPublic |  | Import Custom Model |
+| GET | `/v2/gen-ai/custom_models/{uuid}` | genai_get_custom_model | `uuid`* | apiGetCustomModelOutputPublic | yes | Get Custom Model |
+| DELETE | `/v2/gen-ai/custom_models/{uuid}` | genai_delete_custom_model | `uuid`* | apiDeleteCustomModelOutputPublic |  | Delete Custom Model |
+| PATCH | `/v2/gen-ai/custom_models/{uuid}/metadata` | genai_update_custom_model_metadata | `uuid`*, body: apiUpdateCustomModelMetadataInputPublic | apiUpdateCustomModelMetadataOutputPublic |  | Update Custom Model Metadata |
+| GET | `/v2/gen-ai/evaluation_datasets` | genai_list_evaluation_datasets | `dataset_type`, `dataset_paradigm`, `has_ground_truth` | apiListEvaluationDatasetsOutput | yes | List Evaluation Datasets |
+| POST | `/v2/gen-ai/evaluation_datasets` | genai_create_evaluation_dataset | body: apiCreateEvaluationDatasetInputPublic | apiCreateEvaluationDatasetOutput |  | Create Evaluation Dataset |
+| POST | `/v2/gen-ai/evaluation_datasets/file_upload_presigned_urls` | genai_create_evaluation_dataset_file_upload_presigned_urls | body: apiCreateDataSourceFileUploadPresignedUrlsInputPublic | apiCreateDataSourceFileUploadPresignedUrlsOutput |  | Create Presigned URLs for Evaluation Dataset File Upload |
+| DELETE | `/v2/gen-ai/evaluation_datasets/{dataset_uuid}` | genai_delete_evaluation_dataset | `dataset_uuid`* | apiDeleteEvaluationDatasetOutput |  | Delete Evaluation Dataset |
+| GET | `/v2/gen-ai/evaluation_datasets/{dataset_uuid}/download_url` | genai_get_evaluation_dataset_download_url | `dataset_uuid`* | apiGetEvaluationDatasetDownloadURLOutput | yes | Get Download URL for Evaluation Dataset |
+| GET | `/v2/gen-ai/evaluation_metrics` | genai_list_evaluation_metrics | — | apiListEvaluationMetricsOutput | yes | List Evaluation Metrics |
+| POST | `/v2/gen-ai/evaluation_runs` | genai_run_evaluation_test_case | body: apiRunEvaluationTestCaseInputPublic | apiRunEvaluationTestCaseOutput |  | Run an Evaluation Test Case |
+| GET | `/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}` | genai_get_evaluation_run | `evaluation_run_uuid`* | apiGetEvaluationRunOutput | yes | Retrieve Information About an Existing Evaluation Run |
+| GET | `/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results` | genai_get_evaluation_run_results | `evaluation_run_uuid`*, `page`, `per_page` | apiGetEvaluationRunResultsOutput | yes | Retrieve Results of an Evaluation Run |
+| GET | `/v2/gen-ai/evaluation_runs/{evaluation_run_uuid}/results/{prompt_id}` | genai_get_evaluation_run_prompt_results | `evaluation_run_uuid`*, `prompt_id`* | apiGetEvaluationRunPromptResultsOutput | yes | Retrieve Results of an Evaluation Run Prompt |
+| GET | `/v2/gen-ai/evaluation_test_cases` | genai_list_evaluation_test_cases | — | apiListEvaluationTestCasesOutput | yes | List Evaluation Test Cases |
+| POST | `/v2/gen-ai/evaluation_test_cases` | genai_create_evaluation_test_case | body: apiCreateEvaluationTestCaseInputPublic | apiCreateEvaluationTestCaseOutput |  | Create Evaluation Test Case. |
+| GET | `/v2/gen-ai/evaluation_test_cases/{evaluation_test_case_uuid}/evaluation_runs` | genai_list_evaluation_runs_by_test_case | `evaluation_test_case_uuid`*, `evaluation_test_case_version` | apiListEvaluationRunsByTestCaseOutput | yes | List Evaluation Runs by Test Case |
+| GET | `/v2/gen-ai/evaluation_test_cases/{test_case_uuid}` | genai_get_evaluation_test_case | `test_case_uuid`*, `evaluation_test_case_version` | apiGetEvaluationTestCaseOutput | yes | Retrieve Information About an Existing Evaluation Test Case |
+| PUT | `/v2/gen-ai/evaluation_test_cases/{test_case_uuid}` | genai_update_evaluation_test_case | `test_case_uuid`*, body: apiUpdateEvaluationTestCaseInputPublic | apiUpdateEvaluationTestCaseOutput |  | Update an Evaluation Test Case. |
+| GET | `/v2/gen-ai/indexing_jobs` | genai_list_indexing_jobs | `page`, `per_page` | apiListKnowledgeBaseIndexingJobsOutput | yes | List Indexing Jobs for a Knowledge Base |
+| POST | `/v2/gen-ai/indexing_jobs` | genai_create_indexing_job | body: apiStartKnowledgeBaseIndexingJobInputPublic | apiStartKnowledgeBaseIndexingJobOutput |  | Start Indexing Job for a Knowledge Base |
+| GET | `/v2/gen-ai/indexing_jobs/{indexing_job_uuid}/data_sources` | genai_list_indexing_job_data_sources | `indexing_job_uuid`* | apiListIndexingJobDataSourcesOutput | yes | List Data Sources for Indexing Job for a Knowledge Base |
+| GET | `/v2/gen-ai/indexing_jobs/{indexing_job_uuid}/details_signed_url` | genai_get_indexing_job_details_signed_url | `indexing_job_uuid`* | apiGetIndexingJobDetailsSignedURLOutput | yes | Get Signed URL for Indexing Job Details |
+| GET | `/v2/gen-ai/indexing_jobs/{uuid}` | genai_get_indexing_job | `uuid`* | apiGetKnowledgeBaseIndexingJobOutput | yes | Retrieve Status of Indexing Job for a Knowledge Base |
+| PUT | `/v2/gen-ai/indexing_jobs/{uuid}/cancel` | genai_cancel_indexing_job | `uuid`*, body: apiCancelKnowledgeBaseIndexingJobInputPublic | apiCancelKnowledgeBaseIndexingJobOutput |  | Cancel Indexing Job for a Knowledge Base |
+| GET | `/v2/gen-ai/knowledge_bases` | genai_list_knowledge_bases | `page`, `per_page` | apiListKnowledgeBasesOutput | yes | List Knowledge Bases |
+| POST | `/v2/gen-ai/knowledge_bases` | genai_create_knowledge_base | body: apiCreateKnowledgeBaseInputPublic | apiCreateKnowledgeBaseOutput |  | Create a Knowledge Base |
+| POST | `/v2/gen-ai/knowledge_bases/data_sources/file_upload_presigned_urls` | genai_create_data_source_file_upload_presigned_urls | body: apiCreateDataSourceFileUploadPresignedUrlsInputPublic | apiCreateDataSourceFileUploadPresignedUrlsOutput |  | Create Presigned URLs for Data Source File Upload |
+| GET | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources` | genai_list_knowledge_base_data_sources | `knowledge_base_uuid`*, `page`, `per_page` | apiListKnowledgeBaseDataSourcesOutput | yes | List Data Sources for a Knowledge Base |
+| POST | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources` | genai_create_knowledge_base_data_source | `knowledge_base_uuid`*, body: apiCreateKnowledgeBaseDataSourceInputPublic | apiCreateKnowledgeBaseDataSourceOutput |  | Add Data Source to a Knowledge Base |
+| PUT | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}` | genai_update_knowledge_base_data_source | `knowledge_base_uuid`*, `data_source_uuid`*, body: apiUpdateKnowledgeBaseDataSourceInputPublic | apiUpdateKnowledgeBaseDataSourceOutput |  | Update Data Source options |
+| DELETE | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/data_sources/{data_source_uuid}` | genai_delete_knowledge_base_data_source | `knowledge_base_uuid`*, `data_source_uuid`* | apiDeleteKnowledgeBaseDataSourceOutput |  | Delete a Data Source from a Knowledge Base |
+| GET | `/v2/gen-ai/knowledge_bases/{knowledge_base_uuid}/indexing_jobs` | genai_list_indexing_jobs_by_knowledge_base | `knowledge_base_uuid`* | apiListKnowledgeBaseIndexingJobsOutput | yes | List Indexing Jobs for a Knowledge Base |
+| GET | `/v2/gen-ai/knowledge_bases/{uuid}` | genai_get_knowledge_base | `uuid`* | apiGetKnowledgeBaseOutput | yes | Retrieve Information About an Existing Knowledge Base |
+| PUT | `/v2/gen-ai/knowledge_bases/{uuid}` | genai_update_knowledge_base | `uuid`*, body: apiUpdateKnowledgeBaseInputPublic | apiUpdateKnowledgeBaseOutput |  | Update a Knowledge Base |
+| DELETE | `/v2/gen-ai/knowledge_bases/{uuid}` | genai_delete_knowledge_base | `uuid`* | apiDeleteKnowledgeBaseOutput |  | Delete a Knowledge Base |
+| POST | `/v2/gen-ai/model_evaluation/datasets/file_upload_presigned_urls` | genai_create_model_eval_dataset_upload_presigned_urls | body: apiCreateModelEvalDatasetUploadPresignedUrlsInputPublic | apiCreateDataSourceFileUploadPresignedUrlsOutput |  | Create Presigned URLs for Model Evaluation Dataset File Upload |
+| GET | `/v2/gen-ai/model_evaluation_metrics` | genai_list_model_evaluation_metrics | — | apiListModelEvaluationMetricsOutput | yes | List Model Evaluation Metrics |
+| GET | `/v2/gen-ai/model_evaluation_presets` | genai_list_model_evaluation_presets | — | apiListModelEvaluationPresetsOutput | yes | List Model Evaluation Presets |
+| GET | `/v2/gen-ai/model_evaluation_presets/{eval_preset_uuid}` | genai_get_model_evaluation_preset | `eval_preset_uuid`* | apiGetModelEvaluationPresetOutput | yes | Retrieve Model Evaluation Preset |
+| DELETE | `/v2/gen-ai/model_evaluation_presets/{eval_preset_uuid}` | genai_delete_model_evaluation_preset | `eval_preset_uuid`* | apiDeleteModelEvaluationPresetOutput |  | Delete Model Evaluation Preset |
+| GET | `/v2/gen-ai/model_evaluation_runs` | genai_list_model_evaluation_runs | `eval_preset_uuid`, `status`, `page`, `per_page`, `statuses`, `candidate_types`, `search`, `sort_by`, `sort_direction` | apiListModelEvaluationRunsOutput | yes | List Model Evaluation Runs |
+| POST | `/v2/gen-ai/model_evaluation_runs` | genai_create_model_evaluation_run | body: apiCreateModelEvaluationRunInputPublic | apiCreateModelEvaluationRunOutput |  | Create Model Evaluation Run |
+| GET | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}` | genai_get_model_evaluation_run | `eval_run_uuid`*, `page`, `per_page` | apiGetModelEvaluationRunOutput | yes | Retrieve Model Evaluation Run |
+| DELETE | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}` | genai_delete_model_evaluation_run | `eval_run_uuid`* | apiDeleteModelEvaluationRunOutputPublic |  | Delete Model Evaluation Run |
+| PATCH | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}` | genai_update_model_evaluation_run | `eval_run_uuid`*, body: apiUpdateModelEvaluationRunInputPublic | apiUpdateModelEvaluationRunOutput |  | Update Model Evaluation Run |
+| PUT | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}/cancel` | genai_cancel_model_evaluation_run | `eval_run_uuid`*, body: apiCancelModelEvaluationRunInputPublic | apiCancelModelEvaluationRunOutput |  | Cancel Model Evaluation Run |
+| GET | `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}/results/download_url` | genai_get_model_evaluation_run_results_download_url | `eval_run_uuid`* | apiGetModelEvaluationRunResultsDownloadURLOutput | yes | Get Download URL for Model Evaluation Run Results |
+| GET | `/v2/gen-ai/models` | genai_list_models | `usecases`, `public_only`, `page`, `per_page` | apiListModelsOutputPublic | yes | List Available Models |
+| GET | `/v2/gen-ai/models/api_keys` | genai_list_model_api_keys | `page`, `per_page` | apiListModelAPIKeysOutput | yes | List Model API Keys |
+| POST | `/v2/gen-ai/models/api_keys` | genai_create_model_api_key | body: apiCreateModelAPIKeyInputPublic | — |  | Create a Model API Key |
+| PUT | `/v2/gen-ai/models/api_keys/{api_key_uuid}` | genai_update_model_api_key | `api_key_uuid`*, body: apiUpdateModelAPIKeyInputPublic | apiUpdateModelAPIKeyOutput |  | Update API Key for a Model |
+| DELETE | `/v2/gen-ai/models/api_keys/{api_key_uuid}` | genai_delete_model_api_key | `api_key_uuid`* | apiDeleteModelAPIKeyOutput |  | Delete API Key for a Model |
+| PUT | `/v2/gen-ai/models/api_keys/{api_key_uuid}/regenerate` | genai_regenerate_model_api_key | `api_key_uuid`* | apiRegenerateModelAPIKeyOutput |  | Regenerate API Key for a Model |
+| GET | `/v2/gen-ai/models/catalog` | genai_list_model_catalog | `page`, `limit`, `search`, `model_type`, `provider`, `availability`, `badges`, `sort_by`, `per_page`, `sort_direction`, `use_case` | apiListModelCatalogOutput | yes | List Model Catalog |
+| GET | `/v2/gen-ai/models/catalog/{id}` | genai_get_model_catalog_card | `id`*, `model_id` | apiGetModelCatalogCardOutput | yes | Get Model Catalog Card |
+| GET | `/v2/gen-ai/models/routers` | genai_list_model_routers | `page`, `per_page` | apiListModelRoutersOutput | yes | List Model Routers |
+| POST | `/v2/gen-ai/models/routers` | genai_create_model_router | body: apiCreateModelRouterInputPublic | apiCreateModelRouterOutput |  | Create a Model Router |
+| GET | `/v2/gen-ai/models/routers/presets` | genai_list_model_router_presets | `page`, `per_page` | apiListModelRouterPresetsOutput | yes | List Model Router Presets |
+| GET | `/v2/gen-ai/models/routers/tasks/presets` | genai_list_model_router_task_presets | `page`, `per_page` | apiListModelRouterTaskPresetsOutput | yes | List Model Router Task Presets |
+| GET | `/v2/gen-ai/models/routers/{uuid}` | genai_get_model_router | `uuid`* | apiGetModelRouterOutput | yes | Retrieve an Existing Model Router |
+| PUT | `/v2/gen-ai/models/routers/{uuid}` | genai_update_model_router | `uuid`*, body: apiUpdateModelRouterInputPublic | apiUpdateModelRouterOutput |  | Update a Model Router |
+| DELETE | `/v2/gen-ai/models/routers/{uuid}` | genai_delete_model_router | `uuid`* | apiDeleteModelRouterOutput |  | Delete a Model Router |
+| POST | `/v2/gen-ai/oauth2/dropbox/tokens` | genai_create_oauth2_dropbox_tokens | body: apiDropboxOauth2GetTokensInput | apiDropboxOauth2GetTokensOutput |  | Get Oauth2 Dropbox Tokens |
+| GET | `/v2/gen-ai/oauth2/url` | genai_get_oauth2_url | `type`, `redirect_url` | apiGenerateOauth2URLOutput | yes | Get Oauth2 URL |
+| GET | `/v2/gen-ai/openai/keys` | genai_list_openai_api_keys | `page`, `per_page` | apiListOpenAIAPIKeysOutput | yes | List OpenAI API Keys |
+| POST | `/v2/gen-ai/openai/keys` | genai_create_openai_api_key | body: apiCreateOpenAIAPIKeyInputPublic | apiCreateOpenAIAPIKeyOutput |  | Create OpenAI API Key |
+| GET | `/v2/gen-ai/openai/keys/{api_key_uuid}` | genai_get_openai_api_key | `api_key_uuid`* | apiGetOpenAIAPIKeyOutput | yes | Get OpenAI API Key |
+| PUT | `/v2/gen-ai/openai/keys/{api_key_uuid}` | genai_update_openai_api_key | `api_key_uuid`*, body: apiUpdateOpenAIAPIKeyInputPublic | apiUpdateOpenAIAPIKeyOutput |  | Update OpenAI API Key |
+| DELETE | `/v2/gen-ai/openai/keys/{api_key_uuid}` | genai_delete_openai_api_key | `api_key_uuid`* | apiDeleteOpenAIAPIKeyOutput |  | Delete OpenAI API Key |
+| GET | `/v2/gen-ai/openai/keys/{uuid}/agents` | genai_list_agents_by_openai_key | `uuid`*, `page`, `per_page` | apiListAgentsByOpenAIKeyOutput | yes | List agents by OpenAI key |
+| GET | `/v2/gen-ai/regions` | genai_list_datacenter_regions | `serves_inference`, `serves_batch` | apiListRegionsOutput | yes | List Datacenter Regions |
+| GET | `/v2/gen-ai/scenario_library` | genai_list_scenario_library | `page`, `per_page`, `category`, `search`, `sort_by`, `sort_direction` | apiListScenarioLibraryOutput | yes | List Common Scenario & Goal Library |
+| POST | `/v2/gen-ai/scenario_library/{library_scenario_uuid}/create_scenario_set` | genai_create_scenario_set_from_library | `library_scenario_uuid`*, body: apiCreateScenarioSetFromLibraryInputPublic | apiCreateScenarioSetFromLibraryOutput |  | Create Scenario Set From Library |
+| GET | `/v2/gen-ai/scenario_library/{library_scenario_uuid}/scenarios` | genai_list_scenario_library_scenarios | `library_scenario_uuid`*, `page`, `per_page`, `search`, `sort_by`, `sort_direction` | apiListScenariosOutput | yes | List Scenarios In Library Entry |
+| GET | `/v2/gen-ai/scenario_sets` | genai_list_scenario_sets | `page`, `per_page`, `statuses`, `source_kinds`, `search`, `sort_by`, `sort_direction` | apiListScenarioSetsOutput | yes | List Scenario Sets |
+| POST | `/v2/gen-ai/scenario_sets` | genai_create_scenario_set | body: apiCreateScenarioSetInputPublic | apiCreateScenarioSetOutput |  | Create Scenario Set |
+| POST | `/v2/gen-ai/scenario_sets/file_upload_presigned_urls` | genai_create_scenario_set_upload_presigned_urls | body: apiCreateScenarioSetUploadPresignedUrlsInputPublic | apiCreateDataSourceFileUploadPresignedUrlsOutput |  | Create Presigned URLs for Scenario Set File Upload |
+| POST | `/v2/gen-ai/scenario_sets/generate` | genai_create_generated_scenario_set | body: apiGenerateScenarioSetInputPublic | apiGenerateScenarioSetOutput |  | Generate Scenario Set |
+| GET | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}` | genai_get_scenario_set | `scenario_set_uuid`* | apiGetScenarioSetOutput | yes | Retrieve Scenario Set |
+| PUT | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}` | genai_update_scenario_set | `scenario_set_uuid`*, body: apiUpdateScenarioSetInputPublic | apiUpdateScenarioSetOutput |  | Update Scenario Set |
+| DELETE | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}` | genai_delete_scenario_set | `scenario_set_uuid`* | apiDeleteScenarioSetOutput |  | Delete Scenario Set |
+| GET | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}/download_url` | genai_get_scenario_set_download_url | `scenario_set_uuid`* | apiGetScenarioSetDownloadURLOutput | yes | Retrieve Scenario Set Download URL |
+| POST | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}/duplicate` | genai_create_duplicate_scenario_set | `scenario_set_uuid`*, body: apiDuplicateScenarioSetInputPublic | apiDuplicateScenarioSetOutput |  | Duplicate Scenario Set |
+| GET | `/v2/gen-ai/scenario_sets/{scenario_set_uuid}/scenarios` | genai_list_scenarios | `scenario_set_uuid`*, `page`, `per_page`, `search`, `sort_by`, `sort_direction` | apiListScenariosOutput | yes | List Scenarios |
+| POST | `/v2/gen-ai/scheduled-indexing` | genai_create_scheduled_indexing | body: apiCreateScheduledIndexingInputPublic | apiCreateScheduledIndexingOutput |  | Create scheduled indexing for knowledge base |
+| GET | `/v2/gen-ai/scheduled-indexing/knowledge-base/{knowledge_base_uuid}` | genai_get_scheduled_indexing | `knowledge_base_uuid`* | apiGetScheduledIndexingOutput | yes | Get Scheduled Indexing for Knowledge Base |
+| DELETE | `/v2/gen-ai/scheduled-indexing/{uuid}` | genai_delete_scheduled_indexing | `uuid`* | apiDeleteScheduledIndexingOutput |  | Delete Scheduled Indexing |
+| GET | `/v2/gen-ai/simulation_runs` | genai_list_simulation_runs | `scenario_set_uuid`, `page`, `per_page`, `statuses`, `search`, `sort_by`, `sort_direction` | apiListSimulationRunsOutput | yes | List Simulation Runs |
+| POST | `/v2/gen-ai/simulation_runs` | genai_create_simulation_run | body: apiCreateSimulationRunInputPublic | apiCreateSimulationRunOutput |  | Create Simulation Run |
+| GET | `/v2/gen-ai/simulation_runs/{run_uuid}` | genai_get_simulation_run | `run_uuid`* | apiGetSimulationRunOutput | yes | Retrieve Simulation Run |
+| PUT | `/v2/gen-ai/simulation_runs/{run_uuid}` | genai_update_simulation_run | `run_uuid`*, body: apiUpdateSimulationRunInputPublic | apiUpdateSimulationRunOutput |  | Update Simulation Run |
+| DELETE | `/v2/gen-ai/simulation_runs/{run_uuid}` | genai_delete_simulation_run | `run_uuid`* | apiDeleteSimulationRunOutput |  | Delete Simulation Run |
+| PATCH | `/v2/gen-ai/simulation_runs/{run_uuid}/cancel` | genai_patch_cancel_simulation_run | `run_uuid`*, body: apiCancelSimulationRunInputPublic | apiCancelSimulationRunOutput |  | Cancel Simulation Run |
+| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes` | genai_list_simulation_episodes | `run_uuid`*, `scenario_uuid`, `page`, `per_page`, `statuses`, `verdicts`, `search`, `sort_by`, `sort_direction` | apiListSimulationEpisodesOutput | yes | List Simulation Episodes |
+| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes/{episode_uuid}` | genai_get_simulation_episode | `run_uuid`*, `episode_uuid`* | apiGetSimulationEpisodeOutput | yes | Retrieve Simulation Episode |
+| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes/{episode_uuid}/trajectory` | genai_get_simulation_episode_trajectory | `run_uuid`*, `episode_uuid`* | apiGetSimulationEpisodeTrajectoryOutput | yes | Retrieve Episode Trajectory |
+| GET | `/v2/gen-ai/simulation_runs/{run_uuid}/episodes/{episode_uuid}/trajectory_url` | genai_get_simulation_episode_trajectory_url | `run_uuid`*, `episode_uuid`* | apiGetSimulationEpisodeTrajectoryURLOutput | yes | Retrieve Episode Trajectory Download URL |
+| GET | `/v2/gen-ai/workspaces` | genai_list_workspaces | — | apiListWorkspacesOutput | yes | List Workspaces |
+| POST | `/v2/gen-ai/workspaces` | genai_create_workspace | body: apiCreateWorkspaceInputPublic | apiCreateWorkspaceOutput |  | Create a Workspace |
+| GET | `/v2/gen-ai/workspaces/{workspace_uuid}` | genai_get_workspace | `workspace_uuid`* | apiGetWorkspaceOutput | yes | Retrieve an Existing Workspace |
+| PUT | `/v2/gen-ai/workspaces/{workspace_uuid}` | genai_update_workspace | `workspace_uuid`*, body: apiUpdateWorkspaceInputPublic | apiUpdateWorkspaceOutput |  | Update a Workspace |
+| DELETE | `/v2/gen-ai/workspaces/{workspace_uuid}` | genai_delete_workspace | `workspace_uuid`* | apiDeleteWorkspaceOutput |  | Delete a Workspace |
+| GET | `/v2/gen-ai/workspaces/{workspace_uuid}/agents` | genai_list_agents_by_workspace | `workspace_uuid`*, `only_deployed`, `page`, `per_page` | apiListAgentsByWorkspaceOutput | yes | List agents by Workspace |
+| PUT | `/v2/gen-ai/workspaces/{workspace_uuid}/agents` | genai_update_agents_workspace | `workspace_uuid`*, body: apiMoveAgentsToWorkspaceInputPublic | apiMoveAgentsToWorkspaceOutput |  | Move Agents to a Workspace |
+| GET | `/v2/gen-ai/workspaces/{workspace_uuid}/evaluation_test_cases` | genai_list_evaluation_test_cases_by_workspace | `workspace_uuid`* | apiListEvaluationTestCasesByWorkspaceOutput | yes | List Evaluation Test Cases by Workspace |
+| GET | `/v2/images` | images_list | `type`, `private`, `tag_name`, `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Images |
+| POST | `/v2/images` | images_create_custom | body*: image_new_custom | object |  | Create a Custom Image |
+| GET | `/v2/images/{image_id}` | images_get | `image_id`* | object | yes | Retrieve an Existing Image |
+| PUT | `/v2/images/{image_id}` | images_update | `image_id`*, body*: image_update | object |  | Update an Image |
+| DELETE | `/v2/images/{image_id}` | images_delete | `image_id`* | — |  | Delete an Image |
+| POST | `/v2/images/{image_id}/account_transfer` | images_post_account_transfer_create | `image_id`*, body*: images_post_account_transfer_create | object |  | Initiate an Image Account Transfer |
+| POST | `/v2/images/{image_id}/account_transfer/accept` | images_post_account_transfer_accept | `image_id`*, body*: images_post_account_transfer_accept | — |  | Accept an Image Account Transfer |
+| POST | `/v2/images/{image_id}/account_transfer/cancel` | images_post_account_transfer_cancel | `image_id`*, body*: images_post_account_transfer_cancel | — |  | Cancel an Image Account Transfer |
+| POST | `/v2/images/{image_id}/account_transfer/decline` | images_post_account_transfer_decline | `image_id`*, body*: images_post_account_transfer_decline | — |  | Decline an Image Account Transfer |
+| GET | `/v2/images/{image_id}/actions` | imageActions_list | `image_id`* | object\|pages_pagination\|meta | yes | List All Actions for an Image |
+| POST | `/v2/images/{image_id}/actions` | imageActions_post | `image_id`*, body: image_action_base\|image_action_transfer | action |  | Initiate an Image Action |
+| GET | `/v2/images/{image_id}/actions/{action_id}` | imageActions_get | `image_id`*, `action_id`* | action | yes | Retrieve an Existing Action |
+| GET | `/v2/insights/alert-instances` | insights_list_alertInstances | `per_page`, `page`, `status`, `rule_id`, `resource_urn` | object\|pages_pagination\|meta | yes | List Alert Instances |
+| GET | `/v2/insights/alert-instances/{id}` | insights_get_alertInstance | `id`* | object | yes | Retrieve an Alert Instance |
+| GET | `/v2/insights/alert-rules` | insights_list_alertRules | `page`, `per_page`, `resource_urn` | list_alert_rules\|pages_pagination\|meta | yes | List Alert Rules |
+| POST | `/v2/insights/alert-rules` | insights_create_alertRule | body*: alert_rule_create_request | object |  | Create an Alert Rule |
+| GET | `/v2/insights/alert-rules/{id}` | insights_get_alertRule | `id`* | object | yes | Retrieve an Alert Rule |
+| PUT | `/v2/insights/alert-rules/{id}` | insights_update_alertRule | `id`*, body*: alert_rule_request | object |  | Update an Alert Rule |
+| DELETE | `/v2/insights/alert-rules/{id}` | insights_delete_alertRule | `id`* | — |  | Delete an Alert Rule |
+| GET | `/v2/insights/notification-channels` | insights_list_notificationChannels | `page`, `per_page` | list_notification_channels\|pages_pagination\|meta | yes | List Notification Channels |
+| POST | `/v2/insights/notification-channels` | insights_create_notificationChannel | body*: notification_channel_request | object |  | Create a Notification Channel |
+| GET | `/v2/insights/notification-channels/{id}` | insights_get_notificationChannel | `id`* | object | yes | Retrieve a Notification Channel |
+| PUT | `/v2/insights/notification-channels/{id}` | insights_update_notificationChannel | `id`*, body*: notification_channel_request | object |  | Update a Notification Channel |
+| DELETE | `/v2/insights/notification-channels/{id}` | insights_delete_notificationChannel | `id`* | — |  | Delete a Notification Channel |
+| POST | `/v2/insights/query/{region}/logs/search` | insights_post_logsSearch | `region`*, body*: logs_search_request | logs_search_response |  | Search logs |
+| GET | `/v2/insights/query/{region}/prom/api/v1/label/{name}/values` | insights_get_promLabelValues | `region`*, `name`*, `start`, `end`, `match[]` | prom_string_list_response | yes | List values for a label |
+| GET | `/v2/insights/query/{region}/prom/api/v1/labels` | insights_get_promLabels | `region`*, `start`, `end`, `match[]` | prom_string_list_response | yes | List label names |
+| POST | `/v2/insights/query/{region}/prom/api/v1/labels` | insights_post_promLabels | `region`*, body: object | prom_string_list_response |  | List label names |
+| GET | `/v2/insights/query/{region}/prom/api/v1/query` | insights_get_promQuery | `region`*, `query`*, `time`, `timeout` | prom_query_response | yes | Execute an instant PromQL query |
+| POST | `/v2/insights/query/{region}/prom/api/v1/query` | insights_post_promQuery | `region`*, body*: object | prom_query_response |  | Execute an instant PromQL query |
+| GET | `/v2/insights/query/{region}/prom/api/v1/query_range` | insights_get_promQueryRange | `region`*, `query`*, `start`*, `end`*, `step`*, `timeout` | prom_query_range_response | yes | Execute a range PromQL query |
+| POST | `/v2/insights/query/{region}/prom/api/v1/query_range` | insights_post_promQueryRange | `region`*, body*: object | prom_query_range_response |  | Execute a range PromQL query |
+| GET | `/v2/insights/query/{region}/prom/api/v1/series` | insights_get_promSeries | `region`*, `match[]`*, `start`, `end` | prom_series_response | yes | Find series by label selectors |
+| POST | `/v2/insights/query/{region}/prom/api/v1/series` | insights_post_promSeries | `region`*, body*: object | prom_series_response |  | Find series by label selectors |
+| POST | `/v2/insights/query/{region}/spans/search` | insights_post_spansSearch | `region`*, body*: spans_search_request | spans_search_response |  | Search spans |
+| POST | `/v2/insights/query/{region}/traces/search` | insights_post_tracesSearch | `region`*, body*: traces_search_request | traces_search_response |  | Search traces |
+| GET | `/v2/insights/query/{region}/traces/{trace_id}` | insights_get_trace | `region`*, `trace_id`*, `from`, `to` | traces_trace_response | yes | Retrieve an existing trace |
+| GET | `/v2/insights/resources` | insights_list_resources | `filter.product_types`, `filter.regions`, `pagination.page`, `pagination.per_page`, `pagination.sort`, `pagination.sort_direction` | list_resources_response | yes | List Resource Signal Enablement |
+| GET | `/v2/insights/resources/{resource_urn}` | insights_get_resource | `resource_urn`* | resource_response | yes | Retrieve Resource Signal Enablement |
+| PUT | `/v2/insights/resources/{resource_urn}/signals` | insights_update_resourceSignals | `resource_urn`*, body*: resource_signals_update_request | resource_response |  | Update Resource Signal Enablement |
+| GET | `/v2/kubernetes/clusters` | kubernetes_list_clusters | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Kubernetes Clusters |
+| POST | `/v2/kubernetes/clusters` | kubernetes_create_cluster | body*: cluster | object |  | Create a New Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}` | kubernetes_get_cluster | `cluster_id`* | object | yes | Retrieve an Existing Kubernetes Cluster |
+| PUT | `/v2/kubernetes/clusters/{cluster_id}` | kubernetes_update_cluster | `cluster_id`*, body*: cluster_update | object |  | Update a Kubernetes Cluster |
+| DELETE | `/v2/kubernetes/clusters/{cluster_id}` | kubernetes_delete_cluster | `cluster_id`* | — |  | Delete a Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/clusterlint` | kubernetes_get_clusterLintResults | `cluster_id`*, `run_id` | clusterlint_results | yes | Fetch Clusterlint Diagnostics for a Kubernetes Cluster |
+| POST | `/v2/kubernetes/clusters/{cluster_id}/clusterlint` | kubernetes_run_clusterLint | `cluster_id`*, body: clusterlint_request | object |  | Run Clusterlint Checks on a Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/credentials` | kubernetes_get_credentials | `cluster_id`*, `expiry_seconds` | credentials | yes | Retrieve Credentials for a Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources` | kubernetes_list_associatedResources | `cluster_id`* | associated_kubernetes_resources | yes | List Associated Resources for Cluster Deletion |
+| DELETE | `/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/dangerous` | kubernetes_destroy_associatedResourcesDangerous | `cluster_id`* | — |  | Delete a Cluster and All of its Associated Resources (Dangerous) |
+| DELETE | `/v2/kubernetes/clusters/{cluster_id}/destroy_with_associated_resources/selective` | kubernetes_destroy_associatedResourcesSelective | `cluster_id`*, body*: destroy_associated_kubernetes_resources | — |  | Selectively Delete a Cluster and its Associated Resources |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/kubeconfig` | kubernetes_get_kubeconfig | `cluster_id`*, `expiry_seconds`, `type` | — | yes | Retrieve the kubeconfig for a Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/node_pools` | kubernetes_list_nodePools | `cluster_id`* | object | yes | List All Node Pools in a Kubernetes Clusters |
+| POST | `/v2/kubernetes/clusters/{cluster_id}/node_pools` | kubernetes_add_nodePool | `cluster_id`*, body*: kubernetes_node_pool | object |  | Add a Node Pool to a Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}` | kubernetes_get_nodePool | `cluster_id`*, `node_pool_id`* | object | yes | Retrieve a Node Pool for a Kubernetes Cluster |
+| PUT | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}` | kubernetes_update_nodePool | `cluster_id`*, `node_pool_id`*, body*: kubernetes_node_pool_update | object |  | Update a Node Pool in a Kubernetes Cluster |
+| DELETE | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}` | kubernetes_delete_nodePool | `cluster_id`*, `node_pool_id`* | — |  | Delete a Node Pool in a Kubernetes Cluster |
+| DELETE | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/nodes/{node_id}` | kubernetes_delete_node | `cluster_id`*, `node_pool_id`*, `node_id`*, `skip_drain`, `replace` | — |  | Delete a Node in a Kubernetes Cluster |
+| POST | `/v2/kubernetes/clusters/{cluster_id}/node_pools/{node_pool_id}/recycle` | kubernetes_recycle_node_pool | `cluster_id`*, `node_pool_id`*, body*: object | — |  | Recycle a Kubernetes Node Pool |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/status_messages` | kubernetes_get_status_messages | `cluster_id`*, `since` | object | yes | Fetch Status Messages for a Kubernetes Cluster |
+| POST | `/v2/kubernetes/clusters/{cluster_id}/upgrade` | kubernetes_upgrade_cluster | `cluster_id`*, body*: object | — |  | Upgrade a Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/upgrades` | kubernetes_get_availableUpgrades | `cluster_id`* | object | yes | Retrieve Available Upgrades for an Existing Kubernetes Cluster |
+| GET | `/v2/kubernetes/clusters/{cluster_id}/user` | kubernetes_get_clusterUser | `cluster_id`* | user-2 | yes | Retrieve User Information for a Kubernetes Cluster |
+| GET | `/v2/kubernetes/options` | kubernetes_list_options | — | kubernetes_options | yes | List Available Regions, Node Sizes, and Versions of Kubernetes |
+| POST | `/v2/kubernetes/registries` | kubernetes_add_registries | body: cluster_registries | — |  | Add Container Registries to Kubernetes Clusters |
+| DELETE | `/v2/kubernetes/registries` | kubernetes_remove_registries | body: cluster_registries | — |  | Remove Container Registries from Kubernetes Clusters |
+| POST | `/v2/kubernetes/registry` | kubernetes_add_registry | body: cluster_registry | — |  | Add Container Registry to Kubernetes Clusters |
+| DELETE | `/v2/kubernetes/registry` | kubernetes_remove_registry | body: cluster_registry | — |  | Remove Container Registry from Kubernetes Clusters |
+| GET | `/v2/load_balancers` | loadBalancers_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Load Balancers |
+| POST | `/v2/load_balancers` | loadBalancers_create | body*: load_balancer_create | object |  | Create a New Load Balancer |
+| GET | `/v2/load_balancers/{lb_id}` | loadBalancers_get | `lb_id`* | object | yes | Retrieve an Existing Load Balancer |
+| PUT | `/v2/load_balancers/{lb_id}` | loadBalancers_update | `lb_id`*, body*: load_balancer_update | object |  | Update a Load Balancer |
+| DELETE | `/v2/load_balancers/{lb_id}` | loadBalancers_delete | `lb_id`* | — |  | Delete a Load Balancer |
+| DELETE | `/v2/load_balancers/{lb_id}/cache` | loadBalancers_delete_cache | `lb_id`* | — |  | Delete a Global Load Balancer CDN Cache |
+| POST | `/v2/load_balancers/{lb_id}/droplets` | loadBalancers_add_droplets | `lb_id`*, body*: load_balancer_droplet_ids\|object | — |  | Add Droplets to a Load Balancer |
+| DELETE | `/v2/load_balancers/{lb_id}/droplets` | loadBalancers_remove_droplets | `lb_id`*, body*: load_balancer_droplet_ids\|object | — |  | Remove Droplets from a Load Balancer |
+| POST | `/v2/load_balancers/{lb_id}/forwarding_rules` | loadBalancers_add_forwardingRules | `lb_id`*, body*: object | — |  | Add Forwarding Rules to a Load Balancer |
+| DELETE | `/v2/load_balancers/{lb_id}/forwarding_rules` | loadBalancers_remove_forwardingRules | `lb_id`*, body*: object | — |  | Remove Forwarding Rules from a Load Balancer |
+| GET | `/v2/microvms` | microvms_list | `page`, `per_page`, `region`, `name`, `tag_name` | object\|pages_pagination\|meta | yes | List all MicroVMs |
+| POST | `/v2/microvms` | microvms_create | body*: microvm_create | object |  | Create a MicroVM |
+| GET | `/v2/microvms/checkpoints` | microvmCheckpoints_list | `page`, `per_page`, `microvm_id` | object\|pages_pagination\|meta | yes | List checkpoints |
+| GET | `/v2/microvms/checkpoints/{checkpoint_id}` | microvmCheckpoints_get | `checkpoint_id`* | object | yes | Retrieve a checkpoint |
+| DELETE | `/v2/microvms/checkpoints/{checkpoint_id}` | microvmCheckpoints_delete | `checkpoint_id`* | — |  | Delete a checkpoint |
+| GET | `/v2/microvms/options` | microvms_get_options | — | microvm_options | yes | List MicroVM options |
+| GET | `/v2/microvms/{microvm_id}` | microvms_get | `microvm_id`* | object | yes | Retrieve a MicroVM |
+| DELETE | `/v2/microvms/{microvm_id}` | microvms_delete | `microvm_id`* | — |  | Delete a MicroVM |
+| POST | `/v2/microvms/{microvm_id}/checkpoints` | microvmCheckpoints_create | `microvm_id`*, body: object | object |  | Create a checkpoint of a MicroVM |
+| GET | `/v2/microvms/{microvm_id}/console` | microvms_get_console | `microvm_id`*, `rows`, `cols` | — | yes | Open a console in a MicroVM |
+| POST | `/v2/microvms/{microvm_id}/exec` | microvms_run_command | `microvm_id`*, body*: exec_request | exec_response |  | Run a command in a MicroVM |
+| POST | `/v2/microvms/{microvm_id}/pause` | microvms_post_pause | `microvm_id`* | object |  | Pause a MicroVM |
+| POST | `/v2/microvms/{microvm_id}/resume` | microvms_post_resume | `microvm_id`* | object |  | Resume a MicroVM |
+| GET | `/v2/monitoring/alerts` | monitoring_list_alertPolicy | `per_page`, `page` | list_alert_policy\|pages_pagination\|meta | yes | List Alert Policies |
+| POST | `/v2/monitoring/alerts` | monitoring_create_alertPolicy | body*: alert_policy_request | object |  | Create Alert Policy |
+| GET | `/v2/monitoring/alerts/{alert_uuid}` | monitoring_get_alertPolicy | `alert_uuid`* | object | yes | Retrieve an Existing Alert Policy |
+| PUT | `/v2/monitoring/alerts/{alert_uuid}` | monitoring_update_alertPolicy | `alert_uuid`*, body*: alert_policy_request | object |  | Update an Alert Policy |
+| DELETE | `/v2/monitoring/alerts/{alert_uuid}` | monitoring_delete_alertPolicy | `alert_uuid`* | — |  | Delete an Alert Policy |
+| GET | `/v2/monitoring/metrics/apps/cpu_percentage` | monitoring_get_appCPUPercentageMetrics | `app_id`*, `app_component`, `start`*, `end`* | metrics | yes | Get App CPU Percentage Metrics |
+| GET | `/v2/monitoring/metrics/apps/memory_percentage` | monitoring_get_appMemoryPercentageMetrics | `app_id`*, `app_component`, `start`*, `end`* | metrics | yes | Get App Memory Percentage Metrics |
+| GET | `/v2/monitoring/metrics/apps/restart_count` | monitoring_get_appRestartCountMetrics.yml | `app_id`*, `app_component`, `start`*, `end`* | metrics | yes | Get App Restart Count Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/cpu_usage` | monitoring_get_database_mysql_cpu_usage | `db_id`*, `aggregate`*, `start`*, `end`* | metrics | yes | Get Database MySQL CPU Usage Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/disk_usage` | monitoring_get_database_mysql_disk_usage | `db_id`*, `aggregate`*, `start`*, `end`* | metrics | yes | Get Database MySQL Disk Usage Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/index_vs_sequential_reads` | monitoring_get_database_mysql_index_vs_sequential_reads | `db_id`*, `start`*, `end`* | metrics | yes | Get Database MySQL Index vs Sequential Reads Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/load` | monitoring_get_database_mysql_load | `db_id`*, `metric`*, `aggregate`*, `start`*, `end`* | metrics | yes | Get Database MySQL Load Average Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/memory_usage` | monitoring_get_database_mysql_memory_usage | `db_id`*, `aggregate`*, `start`*, `end`* | metrics | yes | Get Database MySQL Memory Usage Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/op_rates` | monitoring_get_database_mysql_op_rates | `db_id`*, `metric`*, `start`*, `end`* | metrics | yes | Get Database MySQL Operations Throughput Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/schema_latency` | monitoring_get_database_mysql_schema_latency | `db_id`*, `schema`*, `metric`*, `start`*, `end`* | metrics | yes | Get Database MySQL Schema Latency Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/schema_throughput` | monitoring_get_database_mysql_schema_throughput | `db_id`*, `schema`*, `metric`*, `start`*, `end`* | metrics | yes | Get Database MySQL Schema Throughput Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/threads_active` | monitoring_get_database_mysql_threads_active | `db_id`*, `start`*, `end`* | metrics | yes | Get Database MySQL Threads Active Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/threads_connected` | monitoring_get_database_mysql_threads_connected | `db_id`*, `start`*, `end`* | metrics | yes | Get Database MySQL Threads Connected Metrics |
+| GET | `/v2/monitoring/metrics/database/mysql/threads_created_rate` | monitoring_get_database_mysql_threads_created_rate | `db_id`*, `start`*, `end`* | metrics | yes | Get Database MySQL Threads Created Rate Metrics |
+| GET | `/v2/monitoring/metrics/droplet/bandwidth` | monitoring_get_dropletBandwidthMetrics | `host_id`*, `interface`*, `direction`*, `start`*, `end`* | metrics | yes | Get Droplet Bandwidth Metrics |
+| GET | `/v2/monitoring/metrics/droplet/cpu` | monitoring_get_DropletCpuMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet CPU Metrics |
+| GET | `/v2/monitoring/metrics/droplet/filesystem_free` | monitoring_get_dropletFilesystemFreeMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Filesystem Free Metrics |
+| GET | `/v2/monitoring/metrics/droplet/filesystem_size` | monitoring_get_dropletFilesystemSizeMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Filesystem Size Metrics |
+| GET | `/v2/monitoring/metrics/droplet/load_1` | monitoring_get_dropletLoad1Metrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Load1 Metrics |
+| GET | `/v2/monitoring/metrics/droplet/load_15` | monitoring_get_dropletLoad15Metrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Load15 Metrics |
+| GET | `/v2/monitoring/metrics/droplet/load_5` | monitoring_get_dropletLoad5Metrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Load5 Metrics |
+| GET | `/v2/monitoring/metrics/droplet/memory_available` | monitoring_get_dropletMemoryAvailableMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Available Memory Metrics |
+| GET | `/v2/monitoring/metrics/droplet/memory_cached` | monitoring_get_dropletMemoryCachedMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Cached Memory Metrics |
+| GET | `/v2/monitoring/metrics/droplet/memory_free` | monitoring_get_dropletMemoryFreeMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Free Memory Metrics |
+| GET | `/v2/monitoring/metrics/droplet/memory_total` | monitoring_get_dropletMemoryTotalMetrics | `host_id`*, `start`*, `end`* | metrics | yes | Get Droplet Total Memory Metrics |
+| GET | `/v2/monitoring/metrics/droplet_autoscale/current_cpu_utilization` | monitoring_get_droplet_autoscale_current_cpu_utilization.yml | `autoscale_pool_id`*, `start`*, `end`* | metrics | yes | Get Droplet Autoscale Pool Current Average CPU utilization |
+| GET | `/v2/monitoring/metrics/droplet_autoscale/current_instances` | monitoring_get_droplet_autoscale_current_instances | `autoscale_pool_id`*, `start`*, `end`* | metrics | yes | Get Droplet Autoscale Pool Current Size |
+| GET | `/v2/monitoring/metrics/droplet_autoscale/current_memory_utilization` | monitoring_get_droplet_autoscale_current_memory_utilization | `autoscale_pool_id`*, `start`*, `end`* | metrics | yes | Get Droplet Autoscale Pool Current Average Memory utilization |
+| GET | `/v2/monitoring/metrics/droplet_autoscale/target_cpu_utilization` | monitoring_get_droplet_autoscale_target_cpu_utilization | `autoscale_pool_id`*, `start`*, `end`* | metrics | yes | Get Droplet Autoscale Pool Target Average CPU utilization |
+| GET | `/v2/monitoring/metrics/droplet_autoscale/target_instances` | monitoring_get_droplet_autoscale_target_instances | `autoscale_pool_id`*, `start`*, `end`* | metrics | yes | Get Droplet Autoscale Pool Target Size |
+| GET | `/v2/monitoring/metrics/droplet_autoscale/target_memory_utilization` | monitoring_get_droplet_autoscale_target_memory_utilization | `autoscale_pool_id`*, `start`*, `end`* | metrics | yes | Get Droplet Autoscale Pool Target Average Memory utilization |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_connections` | monitoring_get_lb_droplets_connections | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets Active Connections Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_downtime` | monitoring_get_lb_droplets_downtime | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets Downtime Status Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_health_checks` | monitoring_get_lb_droplets_health_checks | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets Health Check Status Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_50p` | monitoring_get_lb_droplets_http_response_time_50p | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets 50th Percentile HTTP Response Time Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_95p` | monitoring_get_lb_droplets_http_response_time_95p | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets 95th Percentile HTTP Response Time Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_99p` | monitoring_get_lb_droplets_http_response_time_99p | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets 99th Percentile HTTP Response Time Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_response_time_avg` | monitoring_get_lb_droplets_http_response_time_avg | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets Average HTTP Response Time Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_responses` | monitoring_get_lb_droplets_http_responses | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets HTTP Rate Of Response Code Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_50p` | monitoring_get_lb_droplets_http_session_duration_50p | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets 50th Percentile HTTP Session Duration Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_95p` | monitoring_get_lb_droplets_http_session_duration_95p | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets 95th Percentile HTTP Session Duration Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_http_session_duration_avg` | monitoring_get_lb_droplets_http_session_duration_avg | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets Average HTTP Session Duration Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/droplets_queue_size` | monitoring_get_lb_droplets_queue_size | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Droplets Queue Size Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_connections_current` | monitoring_get_lb_frontend_connections_current | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Total Current Active Connections Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_connections_limit` | monitoring_get_lb_frontend_connections_limit | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Max Connections Limit Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_cpu_utilization` | monitoring_get_lb_frontend_cpu_utilization | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Average Percentage CPU Utilization Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_bytes` | monitoring_get_lb_frontend_firewall_dropped_bytes | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Firewall Dropped Bytes Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_firewall_dropped_packets` | monitoring_get_lb_frontend_firewall_dropped_packets | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Firewall Dropped Packets Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_http_requests_per_second` | monitoring_get_lb_frontend_http_requests_per_second | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend HTTP Requests Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_http_responses` | monitoring_get_lb_frontend_http_responses | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend HTTP Rate Of Response Code Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_network_throughput_http` | monitoring_get_lb_frontend_network_throughput_http | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend HTTP Throughput Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_network_throughput_tcp` | monitoring_get_lb_frontend_network_throughput_tcp | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend TCP Throughput Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_network_throughput_udp` | monitoring_get_lb_frontend_network_throughput_udp | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend UDP Throughput Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_nlb_tcp_network_throughput` | monitoring_get_lb_frontend_nlb_tcp_network_throughput | `lb_id`*, `start`*, `end`* | metrics | yes | Get Network Load Balancer Frontend TCP Throughput Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_nlb_udp_network_throughput` | monitoring_get_lb_frontend_nlb_udp_network_throughput | `lb_id`*, `start`*, `end`* | metrics | yes | Get Network Load Balancer Frontend UDP Throughput Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_tls_connections_current` | monitoring_get_lb_frontend_tls_connections_current | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Current TLS Connections Rate Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_tls_connections_exceeding_rate_limit` | monitoring_get_lb_frontend_tls_connections_exceeding_rate_limit | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Closed TLS Connections For Exceeded Rate Limit Metrics |
+| GET | `/v2/monitoring/metrics/load_balancer/frontend_tls_connections_limit` | monitoring_get_lb_frontend_tls_connections_limit | `lb_id`*, `start`*, `end`* | metrics | yes | Get Load Balancer Frontend Max TLS Connections Limit Metrics |
+| GET | `/v2/monitoring/sinks` | monitoring_list_sinks | `resource_id` | object | yes | Lists all sinks |
+| POST | `/v2/monitoring/sinks` | monitoring_create_sink | body*: object | — |  | Create Sink |
+| GET | `/v2/monitoring/sinks/destinations` | monitoring_list_destinations | — | object | yes | List Logging Destinations |
+| POST | `/v2/monitoring/sinks/destinations` | monitoring_create_destination | body*: destination_request | object |  | Create Logging Destination |
+| GET | `/v2/monitoring/sinks/destinations/{destination_uuid}` | monitoring_get_destination | `destination_uuid`* | object | yes | Get Logging Destination |
+| POST | `/v2/monitoring/sinks/destinations/{destination_uuid}` | monitoring_update_destination | `destination_uuid`*, body*: destination_request | — |  | Update Logging Destination |
+| DELETE | `/v2/monitoring/sinks/destinations/{destination_uuid}` | monitoring_delete_destination | `destination_uuid`* | — |  | Delete Logging Destination |
+| GET | `/v2/monitoring/sinks/{sink_uuid}` | monitoring_get_sink | `sink_uuid`* | object | yes | Get Sink |
+| DELETE | `/v2/monitoring/sinks/{sink_uuid}` | monitoring_delete_sink | `sink_uuid`* | — |  | Delete Sink |
+| GET | `/v2/nfs` | nfs_list | `region` | nfs_list_response | yes | List NFS shares per region |
+| POST | `/v2/nfs` | nfs_create | body*: nfs_request | nfs_create_response |  | Create a new NFS share |
+| GET | `/v2/nfs/access_points/{access_point_id}` | nfs_get_access_point | `access_point_id`* | access_point_get_response | yes | Get an NFS access point |
+| DELETE | `/v2/nfs/access_points/{access_point_id}` | nfs_delete_access_point | `access_point_id`* | access_point_action_response |  | Delete an NFS access point |
+| GET | `/v2/nfs/shares/{share_id}/access_points` | nfs_list_access_points | `share_id`*, `status` | access_point_list_response | yes | List NFS access points for a share |
+| POST | `/v2/nfs/shares/{share_id}/access_points` | nfs_create_access_point | `share_id`*, body*: access_point_request | access_point_action_response |  | Create an NFS access point |
+| GET | `/v2/nfs/snapshots` | nfs_list_snapshot | `region`, `share_id` | nfs_snapshot_list_response | yes | List NFS snapshots per region |
+| GET | `/v2/nfs/snapshots/{nfs_snapshot_id}` | nfs_get_snapshot | `nfs_snapshot_id`*, `region` | nfs_snapshot_get_response | yes | Get an NFS snapshot by ID |
+| DELETE | `/v2/nfs/snapshots/{nfs_snapshot_id}` | nfs_delete_snapshot | `nfs_snapshot_id`*, `region` | — |  | Delete an NFS snapshot |
+| GET | `/v2/nfs/{nfs_id}` | nfs_get | `nfs_id`*, `region` | nfs_get_response | yes | Get an NFS share |
+| DELETE | `/v2/nfs/{nfs_id}` | nfs_delete | `nfs_id`*, `region` | — |  | Delete an NFS share |
+| POST | `/v2/nfs/{nfs_id}/actions` | nfs_create_action | `nfs_id`*, body*: nfs_action_resize\|nfs_action_snapshot\|nfs_action_attach\|nfs_action_detach\|nfs_action_reassign\|nfs_action_switch_performance_tier | nfs_actions_response |  | Initiate an NFS action |
+| POST | `/v2/organizations/team` | organizations_create_team | body*: create_team_request | object |  | Create a Team in an Organization |
+| GET | `/v2/organizations/teams` | organizations_list_teams | — | object | yes | List Teams in an Organization |
+| GET | `/v2/partner_network_connect/attachments` | partnerAttachments_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List all partner attachments |
+| POST | `/v2/partner_network_connect/attachments` | partnerAttachments_create | body: partner_attachment_writable | object |  | Create a new partner attachment |
+| GET | `/v2/partner_network_connect/attachments/{pa_id}` | partnerAttachments_get | `pa_id`* | object | yes | Retrieve an existing partner attachment |
+| DELETE | `/v2/partner_network_connect/attachments/{pa_id}` | partnerAttachments_delete | `pa_id`* | object |  | Delete an existing partner attachment |
+| PATCH | `/v2/partner_network_connect/attachments/{pa_id}` | partnerAttachments_patch | `pa_id`*, body: partner_attachment_updatable | object |  | Update an existing partner attachment |
+| GET | `/v2/partner_network_connect/attachments/{pa_id}/bgp_auth_key` | partnerAttachments_get_bgp_auth_key | `pa_id`* | object | yes | Get current BGP auth key for the partner attachment |
+| GET | `/v2/partner_network_connect/attachments/{pa_id}/remote_routes` | partnerAttachments_list_remote_routes | `pa_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List remote routes for a partner attachment |
+| GET | `/v2/partner_network_connect/attachments/{pa_id}/service_key` | partnerAttachments_get_service_key | `pa_id`* | object | yes | Get the current service key for the partner attachment |
+| POST | `/v2/partner_network_connect/attachments/{pa_id}/service_key` | partnerAttachments_create_service_key | `pa_id`* | object |  | Regenerate the service key for the partner attachment |
+| GET | `/v2/projects` | projects_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Projects |
+| POST | `/v2/projects` | projects_create | body*: project_base | object |  | Create a Project |
+| GET | `/v2/projects/default` | projects_get_default | — | object | yes | Retrieve the Default Project |
+| PUT | `/v2/projects/default` | projects_update_default | body*: project | object |  | Update the Default Project |
+| PATCH | `/v2/projects/default` | projects_patch_default | body*: project | object |  | Patch the Default Project |
+| GET | `/v2/projects/default/resources` | projects_list_resources_default | — | object\|pages_pagination\|meta | yes | List Default Project Resources |
+| POST | `/v2/projects/default/resources` | projects_assign_resources_default | body*: project_assignment | object |  | Assign Resources to Default Project |
+| GET | `/v2/projects/{project_id}` | projects_get | `project_id`* | object | yes | Retrieve an Existing Project |
+| PUT | `/v2/projects/{project_id}` | projects_update | `project_id`*, body*: project | object |  | Update a Project |
+| DELETE | `/v2/projects/{project_id}` | projects_delete | `project_id`* | — |  | Delete an Existing Project |
+| PATCH | `/v2/projects/{project_id}` | projects_patch | `project_id`*, body*: project | object |  | Patch a Project |
+| GET | `/v2/projects/{project_id}/resources` | projects_list_resources | `project_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List Project Resources |
+| POST | `/v2/projects/{project_id}/resources` | projects_assign_resources | `project_id`*, body*: project_assignment | object |  | Assign Resources to a Project |
+| GET | `/v2/regions` | regions_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Data Center Regions |
+| GET | `/v2/registries` | registries_list | — | object | yes | List All Container Registries |
+| POST | `/v2/registries` | registries_create | body*: multiregistry_create | object |  | Create Container Registry |
+| GET | `/v2/registries/options` | registries_get_options | — | object | yes | List Registry Options (Subscription Tiers and Available Regions) |
+| GET | `/v2/registries/subscription` | registries_get_subscription | — | object | yes | Get Subscription Information |
+| POST | `/v2/registries/subscription` | registries_update_subscription | body: object | object |  | Update Subscription Tier |
+| POST | `/v2/registries/validate-name` | registries_validate_name | body*: validate_registry | — |  | Validate a Container Registry Name |
+| GET | `/v2/registries/{registry_name}` | registries_get | `registry_name`* | object | yes | Get a Container Registry By Name |
+| DELETE | `/v2/registries/{registry_name}` | registries_delete | `registry_name`* | — |  | Delete Container Registry By Name |
+| GET | `/v2/registries/{registry_name}/docker-credentials` | registries_get_dockerCredentials | `registry_name`* | docker_credentials | yes | Get Docker Credentials By Registry Name |
+| GET | `/v2/registries/{registry_name}/garbage-collection` | registries_get_garbageCollection | `registry_name`* | object | yes | Get Active Garbage Collection |
+| POST | `/v2/registries/{registry_name}/garbage-collection` | registries_run_garbageCollection | `registry_name`* | object |  | Start Garbage Collection |
+| PUT | `/v2/registries/{registry_name}/garbage-collection/{garbage_collection_uuid}` | registries_update_garbageCollection | `registry_name`*, `garbage_collection_uuid`*, body*: update_registry | object |  | Update Garbage Collection |
+| GET | `/v2/registries/{registry_name}/garbage-collections` | registries_list_garbageCollections | `registry_name`*, `per_page`, `page` | object | yes | List Garbage Collections |
+| DELETE | `/v2/registries/{registry_name}/repositories/{repository_name}` | registries_delete_repository | `registry_name`*, `repository_name`* | — |  | Delete Container Registry Repository |
+| GET | `/v2/registries/{registry_name}/repositories/{repository_name}/digests` | registries_list_repositoryManifests | `per_page`, `page`, `registry_name`*, `repository_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repository Manifests |
+| DELETE | `/v2/registries/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}` | registries_delete_repositoryManifest | `registry_name`*, `repository_name`*, `manifest_digest`* | — |  | Delete Container Registry Repository Manifest |
+| GET | `/v2/registries/{registry_name}/repositories/{repository_name}/tags` | registries_list_repositoryTags | `per_page`, `page`, `registry_name`*, `repository_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repository Tags |
+| DELETE | `/v2/registries/{registry_name}/repositories/{repository_name}/tags/{repository_tag}` | registries_delete_repositoryTag | `registry_name`*, `repository_name`*, `repository_tag`* | — |  | Delete Container Registry Repository Tag |
+| GET | `/v2/registries/{registry_name}/repositoriesV2` | registries_list_repositoriesV2 | `per_page`, `page`, `page_token`, `registry_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repositories (V2) |
+| GET | `/v2/registry` | registry_get | — | object | yes | Get Container Registry Information |
+| POST | `/v2/registry` | registry_create | body*: registry_create | object |  | Create Container Registry |
+| DELETE | `/v2/registry` | registry_delete | — | — |  | Delete Container Registry |
+| GET | `/v2/registry/docker-credentials` | registry_get_dockerCredentials | `expiry_seconds`, `read_write` | docker_credentials | yes | Get Docker Credentials for Container Registry |
+| GET | `/v2/registry/options` | registry_get_options | — | object | yes | List Registry Options (Subscription Tiers and Available Regions) |
+| GET | `/v2/registry/subscription` | registry_get_subscription | — | object | yes | Get Subscription |
+| POST | `/v2/registry/subscription` | registry_update_subscription | body: object | object |  | Update Subscription Tier |
+| POST | `/v2/registry/validate-name` | registry_validate_name | body*: validate_registry | — |  | Validate a Container Registry Name |
+| GET | `/v2/registry/{registry_name}/garbage-collection` | registry_get_garbageCollection | `registry_name`* | object | yes | Get Active Garbage Collection |
+| POST | `/v2/registry/{registry_name}/garbage-collection` | registry_run_garbageCollection | `registry_name`*, body: registry_run_gc | object |  | Start Garbage Collection |
+| PUT | `/v2/registry/{registry_name}/garbage-collection/{garbage_collection_uuid}` | registry_update_garbageCollection | `registry_name`*, `garbage_collection_uuid`*, body*: update_registry | object |  | Update Garbage Collection |
+| GET | `/v2/registry/{registry_name}/garbage-collections` | registry_list_garbageCollections | `registry_name`*, `per_page`, `page` | object | yes | List Garbage Collections |
+| GET | `/v2/registry/{registry_name}/repositories` | registry_list_repositories | `per_page`, `page`, `registry_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repositories |
+| GET | `/v2/registry/{registry_name}/repositories/{repository_name}/digests` | registry_list_repositoryManifests | `per_page`, `page`, `registry_name`*, `repository_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repository Manifests |
+| DELETE | `/v2/registry/{registry_name}/repositories/{repository_name}/digests/{manifest_digest}` | registry_delete_repositoryManifest | `registry_name`*, `repository_name`*, `manifest_digest`* | — |  | Delete Container Registry Repository Manifest |
+| GET | `/v2/registry/{registry_name}/repositories/{repository_name}/tags` | registry_list_repositoryTags | `per_page`, `page`, `registry_name`*, `repository_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repository Tags |
+| DELETE | `/v2/registry/{registry_name}/repositories/{repository_name}/tags/{repository_tag}` | registry_delete_repositoryTag | `registry_name`*, `repository_name`*, `repository_tag`* | — |  | Delete Container Registry Repository Tag |
+| GET | `/v2/registry/{registry_name}/repositoriesV2` | registry_list_repositoriesV2 | `per_page`, `page`, `page_token`, `registry_name`* | object\|pages_pagination\|meta | yes | List All Container Registry Repositories (V2) |
+| GET | `/v2/reports/droplet_neighbors_ids` | droplets_list_neighborsIds | — | neighbor_ids | yes | List All Droplet Neighbors |
+| GET | `/v2/reserved_ips` | reservedIPs_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Reserved IPs |
+| POST | `/v2/reserved_ips` | reservedIPs_create | body*: reserved_ip_create | object |  | Create a New Reserved IP |
+| GET | `/v2/reserved_ips/{reserved_ip}` | reservedIPs_get | `reserved_ip`* | object | yes | Retrieve an Existing Reserved IP |
+| DELETE | `/v2/reserved_ips/{reserved_ip}` | reservedIPs_delete | `reserved_ip`* | — |  | Delete a Reserved IP |
+| GET | `/v2/reserved_ips/{reserved_ip}/actions` | reservedIPsActions_list | `reserved_ip`* | object\|pages_pagination\|meta | yes | List All Actions for a Reserved IP |
+| POST | `/v2/reserved_ips/{reserved_ip}/actions` | reservedIPsActions_post | `reserved_ip`*, body: reserved_ip_action_unassign\|reserved_ip_action_assign | object |  | Initiate a Reserved IP Action |
+| GET | `/v2/reserved_ips/{reserved_ip}/actions/{action_id}` | reservedIPsActions_get | `reserved_ip`*, `action_id`* | object | yes | Retrieve an Existing Reserved IP Action |
+| GET | `/v2/reserved_ipv6` | reservedIPv6_list | `per_page`, `page` | reserved_ipv6_list\|pages_pagination\|meta | yes | List All Reserved IPv6s |
+| POST | `/v2/reserved_ipv6` | reservedIPv6_create | body*: reserved_ipv6_create | object |  | Create a New Reserved IPv6 |
+| GET | `/v2/reserved_ipv6/{reserved_ipv6}` | reservedIPv6_get | `reserved_ipv6`* | object | yes | Retrieve an Existing Reserved IPv6 |
+| DELETE | `/v2/reserved_ipv6/{reserved_ipv6}` | reservedIPv6_delete | `reserved_ipv6`* | — |  | Delete a Reserved IPv6 |
+| POST | `/v2/reserved_ipv6/{reserved_ipv6}/actions` | reservedIPv6Actions_post | `reserved_ipv6`*, body: reserved_ipv6_action_unassign\|reserved_ipv6_action_assign | object |  | Initiate a Reserved IPv6 Action |
+| GET | `/v2/security/scans` | security_list_scans | `per_page`, `page` | object\|pages_pagination\|meta | yes | List Scans |
+| POST | `/v2/security/scans` | security_create_scan | — | object |  | Create Scan |
+| GET | `/v2/security/scans/latest` | security_get_latest_scan | `per_page`, `page`, `severity`, `type` | object | yes | Get Latest Scan |
+| POST | `/v2/security/scans/rules` | security_create_scan_rule | body*: object | — |  | Create Scan Rule |
+| GET | `/v2/security/scans/{scan_id}` | security_get_scan | `scan_id`*, `severity`, `per_page`, `page`, `type` | object | yes | Get Scan |
+| GET | `/v2/security/scans/{scan_id}/findings/{finding_uuid}/affected_resources` | security_list_scan_finding_affected_resources | `scan_id`*, `finding_uuid`*, `per_page`, `page` | object | yes | List Finding Affected Resources |
+| GET | `/v2/security/settings` | security_list_settings | `per_page`, `page` | settings | yes | List Settings |
+| PUT | `/v2/security/settings/plan` | security_update_settings_plan | body*: object | object |  | Update Plan |
+| POST | `/v2/security/settings/suppressions` | security_create_suppression | body*: object | suppressed_resource_root |  | Create Suppression |
+| DELETE | `/v2/security/settings/suppressions/{suppression_uuid}` | security_delete_suppression | `suppression_uuid`* | — |  | Delete Suppression |
+| GET | `/v2/sizes` | sizes_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Droplet Sizes |
+| GET | `/v2/snapshots` | snapshots_list | `per_page`, `page`, `resource_type` | object\|pages_pagination\|meta | yes | List All Snapshots |
+| GET | `/v2/snapshots/{snapshot_id}` | snapshots_get | `snapshot_id`* | object | yes | Retrieve an Existing Snapshot |
+| DELETE | `/v2/snapshots/{snapshot_id}` | snapshots_delete | `snapshot_id`* | — |  | Delete a Snapshot |
+| GET | `/v2/spaces/keys` | spacesKey_list | `per_page`, `page`, `sort`, `sort_direction`, `name`, `bucket`, `permission` | object\|pages_pagination\|meta | yes | List Spaces Access Keys |
+| POST | `/v2/spaces/keys` | spacesKey_create | body*: key | object |  | Create a New Spaces Access Key |
+| GET | `/v2/spaces/keys/{access_key}` | spacesKey_get | `access_key`* | object | yes | Get a Spaces Access Key |
+| PUT | `/v2/spaces/keys/{access_key}` | spacesKey_update | `access_key`*, body*: key | object |  | Update Spaces Access Keys |
+| DELETE | `/v2/spaces/keys/{access_key}` | spacesKey_delete | `access_key`* | — |  | Delete a Spaces Access Key |
+| PATCH | `/v2/spaces/keys/{access_key}` | spacesKey_patch | `access_key`*, body*: key | object |  | Update Spaces Access Keys |
+| GET | `/v2/tags` | tags_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Tags |
+| POST | `/v2/tags` | tags_create | body*: tags | object |  | Create a New Tag |
+| GET | `/v2/tags/{tag_id}` | tags_get | `tag_id`* | object | yes | Retrieve a Tag |
+| DELETE | `/v2/tags/{tag_id}` | tags_delete | `tag_id`* | — |  | Delete a Tag |
+| POST | `/v2/tags/{tag_id}/resources` | tags_assign_resources | `tag_id`*, body*: tags_resource | — |  | Tag a Resource |
+| DELETE | `/v2/tags/{tag_id}/resources` | tags_unassign_resources | `tag_id`*, body*: tags_resource | — |  | Untag a Resource |
+| GET | `/v2/uptime/checks` | uptime_list_checks | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Checks |
+| POST | `/v2/uptime/checks` | uptime_create_check | body*: check_updatable | object |  | Create a New Check |
+| GET | `/v2/uptime/checks/{check_id}` | uptime_get_check | `check_id`* | object | yes | Retrieve an Existing Check |
+| PUT | `/v2/uptime/checks/{check_id}` | uptime_update_check | `check_id`*, body*: check_updatable | object |  | Update a Check |
+| DELETE | `/v2/uptime/checks/{check_id}` | uptime_delete_check | `check_id`* | — |  | Delete a Check |
+| GET | `/v2/uptime/checks/{check_id}/alerts` | uptime_list_alerts | `check_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Alerts |
+| POST | `/v2/uptime/checks/{check_id}/alerts` | uptime_create_alert | `check_id`*, body*: alert | object |  | Create a New Alert |
+| GET | `/v2/uptime/checks/{check_id}/alerts/{alert_id}` | uptime_get_alert | `check_id`*, `alert_id`* | object | yes | Retrieve an Existing Alert |
+| PUT | `/v2/uptime/checks/{check_id}/alerts/{alert_id}` | uptime_update_alert | `check_id`*, `alert_id`*, body*: alert_updatable | object |  | Update an Alert |
+| DELETE | `/v2/uptime/checks/{check_id}/alerts/{alert_id}` | uptime_delete_alert | `check_id`*, `alert_id`* | — |  | Delete an Alert |
+| GET | `/v2/uptime/checks/{check_id}/state` | uptime_get_checkState | `check_id`* | object | yes | Retrieve Check State |
+| GET | `/v2/vector-databases` | vectorDatabases_list | `page`, `per_page` | vectordbListVectorDBsResponse | yes | List All Vector Databases |
+| POST | `/v2/vector-databases` | vectorDatabases_create | body: vectordbCreateVectorDBRequest | vectordbCreateVectorDBResponse |  | Create a New Vector Database |
+| GET | `/v2/vector-databases/{id}` | vectorDatabases_get | `id`* | vectordbGetVectorDBResponse | yes | Retrieve an Existing Vector Database |
+| PUT | `/v2/vector-databases/{id}` | vectorDatabases_update | `id`*, body: vectordbUpdateVectorDBRequest | vectordbUpdateVectorDBResponse |  | Update a Vector Database |
+| DELETE | `/v2/vector-databases/{id}` | vectorDatabases_delete | `id`* | — |  | Delete a Vector Database |
+| GET | `/v2/vector-databases/{id}/backups` | vectorDatabases_list_backups | `id`* | vectordbListBackupsResponse | yes | List Backups for a Vector Database |
+| GET | `/v2/vector-databases/{id}/backups/{backup_id}/restore` | vectorDatabases_get_restore_status | `id`*, `backup_id`* | vectordbGetRestoreStatusResponse | yes | Retrieve the Status of a Restore |
+| POST | `/v2/vector-databases/{id}/backups/{backup_id}/restore` | vectorDatabases_post_restore_backup | `id`*, `backup_id`*, body: vectordbRestoreBackupRequest | vectordbRestoreBackupResponse |  | Restore a Vector Database from a Backup |
+| GET | `/v2/vector-databases/{id}/credentials` | vectorDatabases_get_credentials | `id`* | vectordbGetVectorDBAdminCredentialsResponse | yes | Retrieve Admin Credentials for a Vector Database |
+| POST | `/v2/vector-databases/{id}/resize` | vectorDatabases_post_resize | `id`*, body: vectordbResizeVectorDBRequest | vectordbResizeVectorDBResponse |  | Resize a Vector Database |
+| PUT | `/v2/vector-databases/{id}/tags` | vectorDatabases_update_tags | `id`*, body: vectordbUpdateVectorDBTagsRequest | vectordbUpdateVectorDBTagsResponse |  | Update Tags on a Vector Database |
+| GET | `/v2/volumes` | volumes_list | `name`, `region`, `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Block Storage Volumes |
+| POST | `/v2/volumes` | volumes_create | body*: volumes_ext4\|volumes_xfs | object |  | Create a New Block Storage Volume |
+| DELETE | `/v2/volumes` | volumes_delete_byName | `name`, `region` | — |  | Delete a Block Storage Volume by Name |
+| POST | `/v2/volumes/actions` | volumeActions_post | `per_page`, `page`, body*: volume_action_post_attach\|volume_action_post_detach | object |  | Initiate A Block Storage Action By Volume Name |
+| GET | `/v2/volumes/snapshots/{snapshot_id}` | volumeSnapshots_get_byId | `snapshot_id`* | object | yes | Retrieve an Existing Volume Snapshot |
+| DELETE | `/v2/volumes/snapshots/{snapshot_id}` | volumeSnapshots_delete_byId | `snapshot_id`* | — |  | Delete a Volume Snapshot |
+| GET | `/v2/volumes/{volume_id}` | volumes_get | `volume_id`* | object | yes | Retrieve an Existing Block Storage Volume |
+| DELETE | `/v2/volumes/{volume_id}` | volumes_delete | `volume_id`* | — |  | Delete a Block Storage Volume |
+| GET | `/v2/volumes/{volume_id}/actions` | volumeActions_list | `volume_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List All Actions for a Volume |
+| POST | `/v2/volumes/{volume_id}/actions` | volumeActions_post_byId | `volume_id`*, `per_page`, `page`, body*: volume_action_post_attach\|volume_action_post_detach\|volume_action_post_resize | object |  | Initiate A Block Storage Action By Volume Id |
+| GET | `/v2/volumes/{volume_id}/actions/{action_id}` | volumeActions_get | `volume_id`*, `action_id`*, `per_page`, `page` | object | yes | Retrieve an Existing Volume Action |
+| GET | `/v2/volumes/{volume_id}/snapshots` | volumeSnapshots_list | `volume_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List Snapshots for a Volume |
+| POST | `/v2/volumes/{volume_id}/snapshots` | volumeSnapshots_create | `volume_id`*, body*: object | object |  | Create Snapshot from a Volume |
+| GET | `/v2/vpc_nat_gateways` | vpcnatgateways_list | `per_page`, `page`, `state`, `region`, `type`, `name` | object\|pages_pagination\|meta | yes | List All VPC NAT Gateways |
+| POST | `/v2/vpc_nat_gateways` | vpcnatgateways_create | body: vpc_nat_gateway_create | object |  | Create a New VPC NAT Gateway |
+| GET | `/v2/vpc_nat_gateways/{id}` | vpcnatgateways_get | `id`* | object | yes | Retrieve an Existing VPC NAT Gateway |
+| PUT | `/v2/vpc_nat_gateways/{id}` | vpcnatgateways_update | `id`*, body: vpc_nat_gateway_update | object |  | Update VPC NAT Gateway |
+| DELETE | `/v2/vpc_nat_gateways/{id}` | vpcnatgateways_delete | `id`* | — |  | Delete VPC NAT Gateway |
+| GET | `/v2/vpc_peerings` | vpcPeerings_list | `per_page`, `page`, `region` | object\|pages_pagination\|meta | yes | List All VPC Peerings |
+| POST | `/v2/vpc_peerings` | vpcPeerings_create | body*: vpc_peering_updatable\|vpc_peering_create | object |  | Create a New VPC Peering |
+| GET | `/v2/vpc_peerings/{vpc_peering_id}` | vpcPeerings_get | `vpc_peering_id`* | object | yes | Retrieve an Existing VPC Peering |
+| DELETE | `/v2/vpc_peerings/{vpc_peering_id}` | vpcPeerings_delete | `vpc_peering_id`* | object |  | Delete a VPC peering |
+| PATCH | `/v2/vpc_peerings/{vpc_peering_id}` | vpcPeerings_patch | `vpc_peering_id`*, body*: vpc_peering_updatable | object |  | Update a VPC peering |
+| GET | `/v2/vpcs` | vpcs_list | `per_page`, `page` | object\|pages_pagination\|meta | yes | List All VPCs |
+| POST | `/v2/vpcs` | vpcs_create | body*: vpc_updatable\|vpc_create | object |  | Create a New VPC |
+| GET | `/v2/vpcs/{vpc_id}` | vpcs_get | `vpc_id`* | object | yes | Retrieve an Existing VPC |
+| PUT | `/v2/vpcs/{vpc_id}` | vpcs_update | `vpc_id`*, body*: vpc_updatable\|vpc_default | object |  | Update a VPC |
+| DELETE | `/v2/vpcs/{vpc_id}` | vpcs_delete | `vpc_id`* | — |  | Delete a VPC |
+| PATCH | `/v2/vpcs/{vpc_id}` | vpcs_patch | `vpc_id`*, body*: vpc_updatable\|vpc_default | object |  | Partially Update a VPC |
+| GET | `/v2/vpcs/{vpc_id}/members` | vpcs_list_members | `vpc_id`*, `resource_type`, `per_page`, `page` | object\|pages_pagination\|meta | yes | List the Member Resources of a VPC |
+| GET | `/v2/vpcs/{vpc_id}/peerings` | vpcs_list_peerings | `vpc_id`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List the Peerings of a VPC |
+| POST | `/v2/vpcs/{vpc_id}/peerings` | vpcs_create_peerings | `vpc_id`*, body*: object | object |  | Create a Peering with a VPC |
+| PATCH | `/v2/vpcs/{vpc_id}/peerings/{vpc_peering_id}` | vpcs_patch_peerings | `vpc_id`*, `vpc_peering_id`*, body*: vpc_peering_updatable | object |  | Update a VPC Peering |
+| GET | `/v2/vpcs/{vpc_uuid}/routes` | vpcRoutes_list | `vpc_uuid`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List VPC Routes |
+| GET | `/v2/vpcs/{vpc_uuid}/subnets` | vpcSubnets_list | `vpc_uuid`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List VPC Subnets |
+| POST | `/v2/vpcs/{vpc_uuid}/subnets` | vpcSubnets_create | `vpc_uuid`*, body*: vpc_subnet_create | object |  | Create a VPC Subnet |
+| GET | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}` | vpcSubnets_get | `vpc_uuid`*, `subnet_uuid`* | object | yes | Retrieve a VPC Subnet |
+| DELETE | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}` | vpcSubnets_delete | `vpc_uuid`*, `subnet_uuid`* | — |  | Delete a VPC Subnet |
+| PATCH | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}` | vpcSubnets_update | `vpc_uuid`*, `subnet_uuid`*, body*: vpc_subnet_update | object |  | Update a VPC Subnet |
+| GET | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/members` | vpcSubnets_list_members | `vpc_uuid`*, `subnet_uuid`*, `resource_type`, `per_page`, `page` | object\|pages_pagination\|meta | yes | List the Member Resources of a VPC Subnet |
+| GET | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes` | vpcSubnetRoutes_list | `vpc_uuid`*, `subnet_uuid`*, `per_page`, `page` | object\|pages_pagination\|meta | yes | List VPC Subnet Routes |
+| POST | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes` | vpcSubnetRoutes_create | `vpc_uuid`*, `subnet_uuid`*, body*: route_create | object |  | Create a VPC Subnet Route |
+| DELETE | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes/{route_uuid}` | vpcSubnetRoutes_delete | `vpc_uuid`*, `subnet_uuid`*, `route_uuid`* | — |  | Delete a VPC Subnet Route |
+| PATCH | `/v2/vpcs/{vpc_uuid}/subnets/{subnet_uuid}/routes/{route_uuid}` | vpcSubnetRoutes_update | `vpc_uuid`*, `subnet_uuid`*, `route_uuid`*, body*: route_update | object |  | Update a VPC Subnet Route |

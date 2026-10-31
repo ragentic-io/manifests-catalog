@@ -88,6 +88,321 @@
         "from": "opentrials-local-56db3f8f72",
         "kind": "EXPOSES",
         "to": "operation:get:/trials/{trialId}/records/{id}"
+      },
+      {
+        "from": "operation:get:/conditions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Condition"
+      },
+      {
+        "from": "operation:get:/document_categories",
+        "kind": "RETURNS",
+        "to": "schema:DocumentCategoryList"
+      },
+      {
+        "from": "operation:get:/documents",
+        "kind": "RETURNS",
+        "to": "schema:DocumentList"
+      },
+      {
+        "from": "operation:get:/documents/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/fda_applications",
+        "kind": "RETURNS",
+        "to": "schema:FDAApplicationList"
+      },
+      {
+        "from": "operation:get:/fda_applications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FDAApplication"
+      },
+      {
+        "from": "operation:get:/interventions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Intervention"
+      },
+      {
+        "from": "operation:get:/organisations/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Organisation"
+      },
+      {
+        "from": "operation:get:/persons/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Person"
+      },
+      {
+        "from": "operation:get:/publications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "operation:get:/search",
+        "kind": "RETURNS",
+        "to": "schema:TrialSearchResults"
+      },
+      {
+        "from": "operation:get:/search/autocomplete/{in}",
+        "kind": "RETURNS",
+        "to": "schema:AutocompleteResults"
+      },
+      {
+        "from": "operation:get:/search/fda_documents",
+        "kind": "RETURNS",
+        "to": "schema:FDADocumentSearchResults"
+      },
+      {
+        "from": "operation:get:/sources",
+        "kind": "RETURNS",
+        "to": "schema:SourceList"
+      },
+      {
+        "from": "operation:get:/trials/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Trial"
+      },
+      {
+        "from": "operation:get:/trials/{id}/records",
+        "kind": "RETURNS",
+        "to": "schema:RecordList"
+      },
+      {
+        "from": "operation:get:/trials/{trialId}/records/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Record"
+      },
+      {
+        "from": "schema:AutocompleteResults",
+        "kind": "REFERENCES",
+        "to": "schema:AutocompleteResult"
+      },
+      {
+        "from": "schema:Discrepancies",
+        "kind": "REFERENCES",
+        "to": "schema:DiscrepantFieldBoolean"
+      },
+      {
+        "from": "schema:Discrepancies",
+        "kind": "REFERENCES",
+        "to": "schema:DiscrepantFieldInteger"
+      },
+      {
+        "from": "schema:Discrepancies",
+        "kind": "REFERENCES",
+        "to": "schema:DiscrepantFieldString"
+      },
+      {
+        "from": "schema:DiscrepantFieldBoolean",
+        "kind": "REFERENCES",
+        "to": "schema:DiscrepancyFieldBase"
+      },
+      {
+        "from": "schema:DiscrepantFieldInteger",
+        "kind": "REFERENCES",
+        "to": "schema:DiscrepancyFieldBase"
+      },
+      {
+        "from": "schema:DiscrepantFieldString",
+        "kind": "REFERENCES",
+        "to": "schema:DiscrepancyFieldBase"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentCategory"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:FDAApplication"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:File"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:TrialSummary"
+      },
+      {
+        "from": "schema:DocumentCategoryList",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentCategory"
+      },
+      {
+        "from": "schema:DocumentList",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSummary"
+      },
+      {
+        "from": "schema:DocumentSummary",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentCategory"
+      },
+      {
+        "from": "schema:DocumentSummary",
+        "kind": "REFERENCES",
+        "to": "schema:FDAApplication"
+      },
+      {
+        "from": "schema:DocumentSummary",
+        "kind": "REFERENCES",
+        "to": "schema:FileSummary"
+      },
+      {
+        "from": "schema:DocumentSummary",
+        "kind": "REFERENCES",
+        "to": "schema:TrialSummary"
+      },
+      {
+        "from": "schema:FDAApplication",
+        "kind": "REFERENCES",
+        "to": "schema:FDAApproval"
+      },
+      {
+        "from": "schema:FDAApplication",
+        "kind": "REFERENCES",
+        "to": "schema:Organisation"
+      },
+      {
+        "from": "schema:FDAApplicationList",
+        "kind": "REFERENCES",
+        "to": "schema:FDAApplication"
+      },
+      {
+        "from": "schema:FDAApproval",
+        "kind": "REFERENCES",
+        "to": "schema:FDAApplication"
+      },
+      {
+        "from": "schema:FDADocumentSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSummary"
+      },
+      {
+        "from": "schema:FDADocumentSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:File"
+      },
+      {
+        "from": "schema:FDADocumentSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:FDADocumentSearchResult"
+      },
+      {
+        "from": "schema:File",
+        "kind": "REFERENCES",
+        "to": "schema:FileSummary"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:Record",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:RecordList",
+        "kind": "REFERENCES",
+        "to": "schema:Record"
+      },
+      {
+        "from": "schema:RiskOfBias",
+        "kind": "REFERENCES",
+        "to": "schema:RiskOfBiasCriteria"
+      },
+      {
+        "from": "schema:SourceList",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:Condition"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:Discrepancies"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSummary"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:Intervention"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationSummary"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:RecordSummary"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:RiskOfBias"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:TrialLocation"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:TrialOrganisation"
+      },
+      {
+        "from": "schema:Trial",
+        "kind": "REFERENCES",
+        "to": "schema:TrialPerson"
+      },
+      {
+        "from": "schema:TrialLocation",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:TrialOrganisation",
+        "kind": "REFERENCES",
+        "to": "schema:Organisation"
+      },
+      {
+        "from": "schema:TrialPerson",
+        "kind": "REFERENCES",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:TrialSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:Trial"
       }
     ],
     "nodes": [
@@ -97,390 +412,935 @@
       },
       {
         "deprecated": false,
+        "description": "Returns condition details",
         "id": "operation:get:/conditions/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getCondition",
+        "parameters": [
+          {
+            "description": "ID of the condition",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conditions/{id}",
         "pointer": "#/paths/~1conditions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Condition"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conditions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns document categories",
         "id": "operation:get:/document_categories",
         "kind": "operation",
         "method": "get",
         "name": "listDocumentCategories",
         "path": "/document_categories",
         "pointer": "#/paths/~1document_categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentCategoryList"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "document_categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns documents",
         "id": "operation:get:/documents",
         "kind": "operation",
         "method": "get",
         "name": "listDocuments",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "The page number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/documents",
         "pointer": "#/paths/~1documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentList"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns details of a document",
         "id": "operation:get:/documents/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getDocument",
+        "parameters": [
+          {
+            "description": "ID of the document",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/documents/{id}",
         "pointer": "#/paths/~1documents~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns FDA applications",
         "id": "operation:get:/fda_applications",
         "kind": "operation",
         "method": "get",
         "name": "listFDAApplications",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "The page number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/fda_applications",
         "pointer": "#/paths/~1fda_applications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FDAApplicationList"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fda_applications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an FDA application details",
         "id": "operation:get:/fda_applications/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getFDAApplication",
+        "parameters": [
+          {
+            "description": "ID of the FDA application",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fda_applications/{id}",
         "pointer": "#/paths/~1fda_applications~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FDAApplication"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fda_applications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns intervention details",
         "id": "operation:get:/interventions/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getIntervention",
+        "parameters": [
+          {
+            "description": "ID of the intervention",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/interventions/{id}",
         "pointer": "#/paths/~1interventions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Intervention"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "interventions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns organisation details",
         "id": "operation:get:/organisations/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getOrganisation",
+        "parameters": [
+          {
+            "description": "ID of the organisation",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/organisations/{id}",
         "pointer": "#/paths/~1organisations~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Organisation"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "organisations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns person details",
         "id": "operation:get:/persons/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getPerson",
+        "parameters": [
+          {
+            "description": "ID of the person",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/persons/{id}",
         "pointer": "#/paths/~1persons~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Person"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "persons"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns publication details",
         "id": "operation:get:/publications/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getPublication",
+        "parameters": [
+          {
+            "description": "ID of the publication",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/publications/{id}",
         "pointer": "#/paths/~1publications~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Publication"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "publications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns trials based on a search query.",
         "id": "operation:get:/search",
         "kind": "operation",
         "method": "get",
         "name": "searchTrials",
+        "parameters": [
+          {
+            "description": "The search query (follows the [ElasticSearch Query String](https://www.elastic.co/guide/en/elasticsearch/reference/2.3/query-dsl-query-string-query.html#query-…",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TrialSearchResults"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "trials"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Autocomplete search feature for supported database entities (`location`).",
         "id": "operation:get:/search/autocomplete/{in}",
         "kind": "operation",
         "method": "get",
         "name": "autocomplete",
+        "parameters": [
+          {
+            "description": "The entity to search for",
+            "enum": [
+              "location"
+            ],
+            "in": "path",
+            "name": "in",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The search query",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/search/autocomplete/{in}",
         "pointer": "#/paths/~1search~1autocomplete~1{in}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutocompleteResults"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search the FDA documents",
         "id": "operation:get:/search/fda_documents",
         "kind": "operation",
         "method": "get",
         "name": "searchFDADocuments",
+        "parameters": [
+          {
+            "description": "The search query (follows the [ElasticSearch Query String](https://www.elastic.co/guide/en/elasticsearch/reference/2.3/query-dsl-query-string-query.html#query-…",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search query on the documents file's text (follows the [ElasticSearch Simple Query String](https://www.elastic.co/guide/en/elasticsearch/reference/2.3/query-ds…",
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/search/fda_documents",
         "pointer": "#/paths/~1search~1fda_documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FDADocumentSearchResults"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns list of sources",
         "id": "operation:get:/sources",
         "kind": "operation",
         "method": "get",
         "name": "list",
         "path": "/sources",
         "pointer": "#/paths/~1sources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SourceList"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a trial's details and related entities (e.g.",
         "id": "operation:get:/trials/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getTrial",
+        "parameters": [
+          {
+            "description": "ID of the trial",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/trials/{id}",
         "pointer": "#/paths/~1trials~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trial"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "trials"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a trial's raw records from its sources",
         "id": "operation:get:/trials/{id}/records",
         "kind": "operation",
         "method": "get",
         "name": "getRecords",
+        "parameters": [
+          {
+            "description": "ID of the trial",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/trials/{id}/records",
         "pointer": "#/paths/~1trials~1{id}~1records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RecordList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "trials"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a trial's raw record from its sources",
         "id": "operation:get:/trials/{trialId}/records/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getRecord",
+        "parameters": [
+          {
+            "description": "ID of the trial",
+            "in": "path",
+            "name": "trialId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the trial's record",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/trials/{trialId}/records/{id}",
         "pointer": "#/paths/~1trials~1{trialId}~1records~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Record"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "trials"
+        ]
       },
       {
         "id": "schema:AutocompleteResult",
         "kind": "schema",
-        "name": "AutocompleteResult"
+        "name": "AutocompleteResult",
+        "type": "object"
       },
       {
         "id": "schema:AutocompleteResults",
         "kind": "schema",
-        "name": "AutocompleteResults"
+        "name": "AutocompleteResults",
+        "type": "object"
       },
       {
         "id": "schema:Condition",
         "kind": "schema",
-        "name": "Condition"
+        "name": "Condition",
+        "type": "object"
       },
       {
+        "description": "Object listing the Trial's discrepant fields",
         "id": "schema:Discrepancies",
         "kind": "schema",
-        "name": "Discrepancies"
+        "name": "Discrepancies",
+        "type": "object"
       },
       {
         "id": "schema:DiscrepancyFieldBase",
         "kind": "schema",
-        "name": "DiscrepancyFieldBase"
+        "name": "DiscrepancyFieldBase",
+        "type": "object"
       },
       {
         "id": "schema:DiscrepantFieldBoolean",
         "kind": "schema",
-        "name": "DiscrepantFieldBoolean"
+        "name": "DiscrepantFieldBoolean",
+        "type": "DiscrepancyFieldBase|object"
       },
       {
         "id": "schema:DiscrepantFieldInteger",
         "kind": "schema",
-        "name": "DiscrepantFieldInteger"
+        "name": "DiscrepantFieldInteger",
+        "type": "DiscrepancyFieldBase|object"
       },
       {
         "id": "schema:DiscrepantFieldString",
         "kind": "schema",
-        "name": "DiscrepantFieldString"
+        "name": "DiscrepantFieldString",
+        "type": "DiscrepancyFieldBase|object"
       },
       {
         "id": "schema:Document",
         "kind": "schema",
-        "name": "Document"
+        "name": "Document",
+        "type": "object"
       },
       {
         "id": "schema:DocumentCategory",
         "kind": "schema",
-        "name": "DocumentCategory"
+        "name": "DocumentCategory",
+        "type": "object"
       },
       {
         "id": "schema:DocumentCategoryList",
         "kind": "schema",
-        "name": "DocumentCategoryList"
+        "name": "DocumentCategoryList",
+        "type": "object"
       },
       {
         "id": "schema:DocumentList",
         "kind": "schema",
-        "name": "DocumentList"
+        "name": "DocumentList",
+        "type": "object"
       },
       {
         "id": "schema:DocumentSummary",
         "kind": "schema",
-        "name": "DocumentSummary"
+        "name": "DocumentSummary",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:FDAApplication",
         "kind": "schema",
-        "name": "FDAApplication"
+        "name": "FDAApplication",
+        "type": "object"
       },
       {
         "id": "schema:FDAApplicationList",
         "kind": "schema",
-        "name": "FDAApplicationList"
+        "name": "FDAApplicationList",
+        "type": "object"
       },
       {
         "id": "schema:FDAApproval",
         "kind": "schema",
-        "name": "FDAApproval"
+        "name": "FDAApproval",
+        "type": "object"
       },
       {
         "id": "schema:FDADocumentSearchResult",
         "kind": "schema",
-        "name": "FDADocumentSearchResult"
+        "name": "FDADocumentSearchResult",
+        "type": "DocumentSummary|object"
       },
       {
         "id": "schema:FDADocumentSearchResults",
         "kind": "schema",
-        "name": "FDADocumentSearchResults"
+        "name": "FDADocumentSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:File",
         "kind": "schema",
-        "name": "File"
+        "name": "File",
+        "type": "FileSummary|object"
       },
       {
         "id": "schema:FileSummary",
         "kind": "schema",
-        "name": "FileSummary"
+        "name": "FileSummary",
+        "type": "object"
       },
       {
         "id": "schema:Intervention",
         "kind": "schema",
-        "name": "Intervention"
+        "name": "Intervention",
+        "type": "object"
       },
       {
         "id": "schema:Location",
         "kind": "schema",
-        "name": "Location"
+        "name": "Location",
+        "type": "object"
       },
       {
         "id": "schema:Organisation",
         "kind": "schema",
-        "name": "Organisation"
+        "name": "Organisation",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
         "id": "schema:Publication",
         "kind": "schema",
-        "name": "Publication"
+        "name": "Publication",
+        "type": "object"
       },
       {
         "id": "schema:PublicationSummary",
         "kind": "schema",
-        "name": "PublicationSummary"
+        "name": "PublicationSummary",
+        "type": "object"
       },
       {
         "id": "schema:Record",
         "kind": "schema",
-        "name": "Record"
+        "name": "Record",
+        "type": "object"
       },
       {
         "id": "schema:RecordList",
         "kind": "schema",
-        "name": "RecordList"
+        "name": "RecordList",
+        "type": "Record[]"
       },
       {
         "id": "schema:RecordSummary",
         "kind": "schema",
-        "name": "RecordSummary"
+        "name": "RecordSummary",
+        "type": "object"
       },
       {
         "id": "schema:RiskOfBias",
         "kind": "schema",
-        "name": "RiskOfBias"
+        "name": "RiskOfBias",
+        "type": "object"
       },
       {
         "id": "schema:RiskOfBiasCriteria",
         "kind": "schema",
-        "name": "RiskOfBiasCriteria"
+        "name": "RiskOfBiasCriteria",
+        "type": "object"
       },
       {
         "id": "schema:Source",
         "kind": "schema",
-        "name": "Source"
+        "name": "Source",
+        "type": "object"
       },
       {
         "id": "schema:SourceList",
         "kind": "schema",
-        "name": "SourceList"
+        "name": "SourceList",
+        "type": "Source[]"
       },
       {
         "id": "schema:Trial",
         "kind": "schema",
-        "name": "Trial"
+        "name": "Trial",
+        "type": "object"
       },
       {
+        "description": "Location of a trial",
         "id": "schema:TrialLocation",
         "kind": "schema",
-        "name": "TrialLocation"
+        "name": "TrialLocation",
+        "type": "Location|object"
       },
       {
         "id": "schema:TrialOrganisation",
         "kind": "schema",
-        "name": "TrialOrganisation"
+        "name": "TrialOrganisation",
+        "type": "Organisation|object"
       },
       {
+        "description": "People related to a trial",
         "id": "schema:TrialPerson",
         "kind": "schema",
-        "name": "TrialPerson"
+        "name": "TrialPerson",
+        "type": "Person|object"
       },
       {
         "id": "schema:TrialSearchResults",
         "kind": "schema",
-        "name": "TrialSearchResults"
+        "name": "TrialSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:TrialSummary",
         "kind": "schema",
-        "name": "TrialSummary"
+        "name": "TrialSummary",
+        "type": "object"
       }
     ]
   },

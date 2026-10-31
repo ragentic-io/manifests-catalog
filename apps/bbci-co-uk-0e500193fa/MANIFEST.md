@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars0.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `582b3b7f191b76b0891b6172402019c616fd66c44d80687fd59f3a4e2a333c69` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars0.githubusercontent.com_
 
 19 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/atoz/{letter}/programmes` | Get_Programmes AtoZ search_ | Programmes by initial title character |
-| GET | `/categories` | Get_Categories_ | Get categories |
-| GET | `/categories/{category}` | Get_Sub-categories_ | Get sub-categories |
-| GET | `/categories/{category}/episodes` | Get_Episodes by category_ | List all the episodes for a category. |
-| GET | `/categories/{category}/highlights` | Get_Highlights by category_ | List the highlights for a category. |
-| GET | `/categories/{category}/programmes` | Get_Programmes by category_ | List all the programmes for a category. |
-| GET | `/channels` | Get_Channels_ | List all the channels. |
-| GET | `/channels/{channel}/broadcasts` | Get_Broadcasts by channel_ | Get broadcasts by channel |
-| GET | `/channels/{channel}/highlights` | Get_Highlights by channel_ | List the highlights for a channel. |
-| GET | `/channels/{channel}/programmes` | Get_Programmes by channel_ | Get programmes by channel |
-| GET | `/channels/{channel}/schedule/{date}` | Get_Schedule by channel_ | Get schedule by channel |
-| GET | `/clips/{pid}` | Get_Clips_ | Get Clips |
-| GET | `/episodes/{pid}` | Get_Programme by PID_ | Episode for a given pid. |
-| GET | `/episodes/{pid}/next` | Get_Onward_Journey | Get Onward Journey |
-| GET | `/episodes/{pid}/postrolls` | getPostRolls | Get Follow-ups (post-rolls) |
-| GET | `/episodes/{pid}/prerolls` | Get_Trailers (pre-rolls)_ | Get Trailers (pre-rolls) |
-| GET | `/episodes/{pid}/recommendations` | Get_Programme recommendations_ | Get programme recommendations |
-| GET | `/groups/popular/episodes` | Get_Programmes popular_ | Get programmes popular |
-| GET | `/groups/{pid}/episodes` | Get_Episodes by group_ | Get episodes by group, brand or series |
-| GET | `/home/highlights` | Get_Programme highlights_ | Get programme highlights |
-| GET | `/programmes/{pid}` | Get_Programmes by parent PID_ | Programme for a given pid. |
-| GET | `/programmes/{pid}/episodes` | Get_Episodes by parent PID_ | Child episodes for a given programme pid. |
-| GET | `/regions` | Get_Regions_ | List all regions |
-| GET | `/schema/ibl.json` | Get_Schema_ | Get schema |
-| GET | `/search` | Search_ | Search |
-| GET | `/search-suggest` | Search-suggest_ | Search-suggest |
-| GET | `/status` | Get_Status_ | Get status |
-| GET | `/user/purchases` | Get_User store purchases_ | Get user store purchases |
-| GET | `/user/recommendations` | Get_User store recommendations_ | Get user store recommendations |
-| GET | `/user/watching` | Get_User watching_ | Get user watching |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/atoz/{letter}/programmes` | Get_Programmes AtoZ search_ | `letter`*, `rights`*, `page`*, `per_page`*, `initial_child_count`*, `sort`*, `sort_direction`*, `availability`* | ibl | yes | Programmes by initial title character |
+| GET | `/categories` | Get_Categories_ | `lang`* | ibl | yes | Get categories |
+| GET | `/categories/{category}` | Get_Sub-categories_ | `category`*, `lang`* | ibl | yes | Get sub-categories |
+| GET | `/categories/{category}/episodes` | Get_Episodes by category_ | `category`*, `lang`*, `rights`*, `availability`*, `page`*, `per_page`*, `sort` | ibl | yes | List all the episodes for a category. |
+| GET | `/categories/{category}/highlights` | Get_Highlights by category_ | `category`*, `lang`*, `rights`*, `availability`*, `mixin` | ibl | yes | List the highlights for a category. |
+| GET | `/categories/{category}/programmes` | Get_Programmes by category_ | `category`*, `lang`*, `rights`*, `availability`*, `page`*, `per_page`* | ibl | yes | List all the programmes for a category. |
+| GET | `/channels` | Get_Channels_ | `region`, `lang`* | ibl | yes | List all the channels. |
+| GET | `/channels/{channel}/broadcasts` | Get_Broadcasts by channel_ | `channel`*, `lang`*, `rights`*, `availability`*, `mixin`, `per_page`*, `from` | ibl | yes | Get broadcasts by channel |
+| GET | `/channels/{channel}/highlights` | Get_Highlights by channel_ | `channel`*, `lang`*, `rights`*, `availability`*, `live`, `mixin` | ibl | yes | List the highlights for a channel. |
+| GET | `/channels/{channel}/programmes` | Get_Programmes by channel_ | `channel`*, `lang`*, `rights`*, `availability`*, `page`*, `per_page`* | ibl | yes | Get programmes by channel |
+| GET | `/channels/{channel}/schedule/{date}` | Get_Schedule by channel_ | `channel`*, `date`*, `lang`*, `rights`*, `availability`* | ibl | yes | Get schedule by channel |
+| GET | `/clips/{pid}` | Get_Clips_ | `pid`*, `rights`*, `availability`* | ibl | yes | Get Clips |
+| GET | `/episodes/{pid}` | Get_Programme by PID_ | `pid`*, `rights`*, `availability`*, `mixin` | ibl | yes | Episode for a given pid. |
+| GET | `/episodes/{pid}/next` | Get_Onward_Journey | `pid`*, `rights`*, `availability`* | ibl | yes | Get Onward Journey |
+| GET | `/episodes/{pid}/postrolls` | getPostRolls | `pid`*, `rights`*, `availability`* | ibl | yes | Get Follow-ups (post-rolls) |
+| GET | `/episodes/{pid}/prerolls` | Get_Trailers (pre-rolls)_ | `pid`*, `rights`*, `availability`* | ibl | yes | Get Trailers (pre-rolls) |
+| GET | `/episodes/{pid}/recommendations` | Get_Programme recommendations_ | `pid`*, `rights`*, `availability`*, `page`*, `per_page`* | ibl | yes | Get programme recommendations |
+| GET | `/groups/popular/episodes` | Get_Programmes popular_ | `rights`*, `page`*, `per_page`*, `initial_child_count`*, `sort`*, `sort_direction`*, `availability`*, `mixin` | ibl | yes | Get programmes popular |
+| GET | `/groups/{pid}/episodes` | Get_Episodes by group_ | `pid`*, `rights`*, `page`*, `per_page`*, `initial_child_count`*, `sort`*, `sort_direction`*, `availability`*, `mixin` | ibl | yes | Get episodes by group, brand or series |
+| GET | `/home/highlights` | Get_Programme highlights_ | `lang`*, `rights`*, `availability`*, `mixin` | ibl | yes | Get programme highlights |
+| GET | `/programmes/{pid}` | Get_Programmes by parent PID_ | `pid`*, `rights`*, `availability`*, `initial_child_count`* | ibl | yes | Programme for a given pid. |
+| GET | `/programmes/{pid}/episodes` | Get_Episodes by parent PID_ | `pid`*, `rights`*, `availability`*, `initial_child_count`* | ibl | yes | Child episodes for a given programme pid. |
+| GET | `/regions` | Get_Regions_ | `lang`* | ibl | yes | List all regions |
+| GET | `/schema/ibl.json` | Get_Schema_ | — | ibl | yes | Get schema |
+| GET | `/search` | Search_ | `q`*, `lang`*, `rights`*, `availability`* | ibl | yes | Search |
+| GET | `/search-suggest` | Search-suggest_ | `q`*, `lang`*, `rights`*, `availability`* | ibl | yes | Search-suggest |
+| GET | `/status` | Get_Status_ | — | ibl | yes | Get status |
+| GET | `/user/purchases` | Get_User store purchases_ | `identity_cookie`* | ibl | yes | Get user store purchases |
+| GET | `/user/recommendations` | Get_User store recommendations_ | `identity_cookie`* | ibl | yes | Get user store recommendations |
+| GET | `/user/watching` | Get_User watching_ | `identity_cookie`* | ibl | yes | Get user watching |

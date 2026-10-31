@@ -17,12 +17,47 @@
       },
       {
         "deprecated": false,
+        "description": "Transform API Descriptions from/to various formats e.g., Swagger, API Blueprint, RAML, WADL, Google Discovery, I/O Docs.",
         "id": "operation:post:/transform",
         "kind": "operation",
         "method": "post",
         "name": "ConvertAPI",
+        "parameters": [
+          {
+            "enum": [
+              "swagger10",
+              "swagger20",
+              "swaggeryaml",
+              "apiblueprint",
+              "wadl2009",
+              "raml",
+              "apimatic"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transform",
         "pointer": "#/paths/~1transform/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Transform API Descriptions from/to various formats"
       }

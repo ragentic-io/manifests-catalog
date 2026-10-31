@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.circl.lu_assets_images_circ
 
 | | |
 | --- | --- |
-| Signed bundle | `3a48161597c1abe3964d08d29a64aaf3211010a76195aaf96b51e86ddfebc550` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,16 +32,18 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.circl.lu_assets_images_circ
 
 ## Operations (11)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/bulk/md5` | post_bulkmd5 | — |
-| POST | `/bulk/sha1` | post_bulksha1 | — |
-| GET | `/children/{sha1}/{count}/{cursor}` | get_children | — |
-| GET | `/info` | get_info | — |
-| GET | `/lookup/md5/{md5}` | get_lookup_md5 | — |
-| GET | `/lookup/sha1/{sha1}` | get_lookup_sha1 | — |
-| GET | `/lookup/sha256/{sha256}` | get_lookup_sha256 | — |
-| GET | `/parents/{sha1}/{count}/{cursor}` | get_parents | — |
-| GET | `/session/create/{name}` | get_session_create | — |
-| GET | `/session/get/{name}` | get_session_matches | — |
-| GET | `/stats/top` | get_stattop | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/bulk/md5` | post_bulkmd5 | — | — |  | — |
+| POST | `/bulk/sha1` | post_bulksha1 | — | — |  | — |
+| GET | `/children/{sha1}/{count}/{cursor}` | get_children | `sha1`*, `count`*, `cursor`* | — | yes | — |
+| GET | `/info` | get_info | — | — | yes | — |
+| GET | `/lookup/md5/{md5}` | get_lookup_md5 | `md5`* | — | yes | — |
+| GET | `/lookup/sha1/{sha1}` | get_lookup_sha1 | `sha1`* | — | yes | — |
+| GET | `/lookup/sha256/{sha256}` | get_lookup_sha256 | `sha256`* | — | yes | — |
+| GET | `/parents/{sha1}/{count}/{cursor}` | get_parents | `sha1`*, `count`*, `cursor`* | — | yes | — |
+| GET | `/session/create/{name}` | get_session_create | `name`* | — | yes | — |
+| GET | `/session/get/{name}` | get_session_matches | `name`* | — | yes | — |
+| GET | `/stats/top` | get_stattop | — | — | yes | — |

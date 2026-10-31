@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_corrently.de_assets_img_Corrent
 
 | | |
 | --- | --- |
-| Signed bundle | `821378344a060aa639820667520db803a7d0502de248d8abae4fbdf2083bcaf3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_corrently.de_assets_img_Corrent
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/alternative/easee/lastSessions` | easeeSessions | Returns lastSession info for all easee wallboxes (chargers) given user has access to. |
-| GET | `/alternative/ocpp/lastSessions` | ocppSessions | Last Session Info |
-| GET | `/alternative/openmeter/activities` | omActivities | Public shared smart meters installed in Germany and available for subservices and exploration. |
-| GET | `/alternative/openmeter/meters` | omMeters | Public shared smart meters installed in Germany and available for subservices and exploration. |
-| GET | `/alternative/openmeter/readings` | omReadings | Public shared smart meters installed in Germany and available for subservices and exploration. |
-| GET | `/gsi/bestHour` | gsiBesthour | Get best hour (with most regional green energy) in a given timeframe. |
-| GET | `/gsi/dispatch` | gsiDispatch | Dispatch (Green Energy Distribution Schedule) |
-| GET | `/gsi/marketdata` | gsiMarketdata | Marketdata |
-| GET | `/gsi/prediction` | gsiPrediction | Prediction |
-| GET | `/metering/reading` | meteringGet | Meter Reading |
-| POST | `/metering/reading` | meteringPost | Meter Reading |
-| POST | `/quittung/commit` | quittungComit | Finishs a collection of data and finalizes receipt. Use this method after collecting all data via quittung/prepare |
-| POST | `/quittung/create` | quittungCreate | Create a receipt for an energy delivery (only valid in Germany). |
-| POST | `/quittung/prepare` | quittungPrepare | Allows to collect data with several requests (or a single) for a receipt. |
-| POST | `/quittung/tse` | quittungTSE | Retrieve TSE (Technische Sicherheitseinrichtung) Data for a given receipt (Strom-Quittung). |
-| POST | `/quittung/tsedata` | quittungTSEData | Retrieve TSE (Technische Sicherheitseinrichtung) raw data only for a given receipt (Strom-Quittung). |
-| POST | `/quittung/tsesignature` | quittungTSEsignature | Retrieve TSE (Technische Sicherheitseinrichtung) Signature only for a given receipt (Strom-Quittung). |
-| GET | `/quittung/zugferd` | quittungZugferd | Retrieve Zugferd XML for a given receipt (Strom-Quittung). |
-| GET | `/stromkonto/balances` | stromkontoBalances | Balances |
-| GET | `/stromkonto/choices` | stromkontoChoices | Selectable Choices for customer |
-| POST | `/stromkonto/login` | stromkontoLogin | Login (via Mail) |
-| POST | `/stromkonto/prepareTransaction` | prepareTransaction | Prepare Transaction |
-| POST | `/stromkonto/register` | stromkontoRegister | Register (new Stromkonto) |
-| GET | `/tariff/components` | tariffcomponents | Energy Tariff price components |
-| GET | `/tariff/slph0` | tariffSLPH0 | Energy Tariff information |
-| GET | `/wim/status` | wimstatus | WiM Proess Informtion |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/alternative/easee/lastSessions` | easeeSessions | `username`, `password` | easee-charger[] | yes | Returns lastSession info for all easee wallboxes (chargers) given user has access to. |
+| GET | `/alternative/ocpp/lastSessions` | ocppSessions | — | easee-charger[] | yes | Last Session Info |
+| GET | `/alternative/openmeter/activities` | omActivities | — | ommeters[] | yes | Public shared smart meters installed in Germany and available for subservices and exploration. |
+| GET | `/alternative/openmeter/meters` | omMeters | — | ommeters[] | yes | Public shared smart meters installed in Germany and available for subservices and exploration. |
+| GET | `/alternative/openmeter/readings` | omReadings | — | ommeters[] | yes | Public shared smart meters installed in Germany and available for subservices and exploration. |
+| GET | `/gsi/bestHour` | gsiBesthour | `zip`, `key`, `timeframe`, `hours` | boolean | yes | Get best hour (with most regional green energy) in a given timeframe. |
+| GET | `/gsi/dispatch` | gsiDispatch | `zip`, `key` | object | yes | Dispatch (Green Energy Distribution Schedule) |
+| GET | `/gsi/marketdata` | gsiMarketdata | `zip` | object | yes | Marketdata |
+| GET | `/gsi/prediction` | gsiPrediction | `zip`, `key` | object | yes | Prediction |
+| GET | `/metering/reading` | meteringGet | `account` | object | yes | Meter Reading |
+| POST | `/metering/reading` | meteringPost | body*: object | object |  | Meter Reading |
+| POST | `/quittung/commit` | quittungComit | body: object | string |  | Finishs a collection of data and finalizes receipt. Use this method after collecting all data via quittung/prepare |
+| POST | `/quittung/create` | quittungCreate | body*: object | string |  | Create a receipt for an energy delivery (only valid in Germany). |
+| POST | `/quittung/prepare` | quittungPrepare | body: object | string |  | Allows to collect data with several requests (or a single) for a receipt. |
+| POST | `/quittung/tse` | quittungTSE | `account` | object |  | Retrieve TSE (Technische Sicherheitseinrichtung) Data for a given receipt (Strom-Quittung). |
+| POST | `/quittung/tsedata` | quittungTSEData | `account` | — |  | Retrieve TSE (Technische Sicherheitseinrichtung) raw data only for a given receipt (Strom-Quittung). |
+| POST | `/quittung/tsesignature` | quittungTSEsignature | `account` | — |  | Retrieve TSE (Technische Sicherheitseinrichtung) Signature only for a given receipt (Strom-Quittung). |
+| GET | `/quittung/zugferd` | quittungZugferd | `account` | — | yes | Retrieve Zugferd XML for a given receipt (Strom-Quittung). |
+| GET | `/stromkonto/balances` | stromkontoBalances | `account` | Balance[] | yes | Balances |
+| GET | `/stromkonto/choices` | stromkontoChoices | `account` | Balance[] | yes | Selectable Choices for customer |
+| POST | `/stromkonto/login` | stromkontoLogin | body*: object | object |  | Login (via Mail) |
+| POST | `/stromkonto/prepareTransaction` | prepareTransaction | body*: object | — |  | Prepare Transaction |
+| POST | `/stromkonto/register` | stromkontoRegister | body*: object | — |  | Register (new Stromkonto) |
+| GET | `/tariff/components` | tariffcomponents | `zipcode`, `email`, `kwha`, `milliseconds`, `wh` | componentsh0 | yes | Energy Tariff price components |
+| GET | `/tariff/slph0` | tariffSLPH0 | `zipcode` | Tariffh0[] | yes | Energy Tariff information |
+| GET | `/wim/status` | wimstatus | `vid` | object | yes | WiM Proess Informtion |

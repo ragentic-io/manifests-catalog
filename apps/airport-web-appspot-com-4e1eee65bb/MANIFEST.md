@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 
 | | |
 | --- | --- |
-| Signed bundle | `e7ac37ae6a90c38f2aad7296c80ab56db7e81b4f3349b9ff87051a6736f6bb62` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/airportsapi/v1/airports/{icao_code}` | AirportApi_getAirport | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/airportsapi/v1/airports/{icao_code}` | AirportApi_getAirport | `icao_code`* | ApiEndpointsAirportResponse | yes | — |

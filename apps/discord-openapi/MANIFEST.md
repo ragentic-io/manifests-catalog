@@ -10,7 +10,7 @@ catalog: "published"
 
 | | |
 | --- | --- |
-| Signed bundle | `b40062396a8427fd28e6f26b5b81872b9d6b5dbb78774ac168163ff3bba3f346` in `bundles/`, expires 2027-01-28 01:47 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://discord.com/api/v10` |
 | Credential | api_key_header (`Authorization` 'Bot') |
 | Connection test | GET `https://discord.com/api/v10/users/@me` |
@@ -39,255 +39,257 @@ Copyright: Copyright 2023 Discord
 
 542 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/applications/@me` | get_my_application | — |
-| PATCH | `/applications/@me` | update_my_application | — |
-| GET | `/applications/{application_id}` | get_application | — |
-| PATCH | `/applications/{application_id}` | update_application | — |
-| GET | `/applications/{application_id}/activity-instances/{instance_id}` | applications_get_activity_instance | — |
-| POST | `/applications/{application_id}/attachment` | upload_application_attachment | — |
-| GET | `/applications/{application_id}/commands` | list_application_commands | — |
-| POST | `/applications/{application_id}/commands` | create_application_command | — |
-| PUT | `/applications/{application_id}/commands` | bulk_set_application_commands | — |
-| DELETE | `/applications/{application_id}/commands/{command_id}` | delete_application_command | — |
-| GET | `/applications/{application_id}/commands/{command_id}` | get_application_command | — |
-| PATCH | `/applications/{application_id}/commands/{command_id}` | update_application_command | — |
-| GET | `/applications/{application_id}/emojis` | list_application_emojis | — |
-| POST | `/applications/{application_id}/emojis` | create_application_emoji | — |
-| DELETE | `/applications/{application_id}/emojis/{emoji_id}` | delete_application_emoji | — |
-| GET | `/applications/{application_id}/emojis/{emoji_id}` | get_application_emoji | — |
-| PATCH | `/applications/{application_id}/emojis/{emoji_id}` | update_application_emoji | — |
-| GET | `/applications/{application_id}/entitlements` | get_entitlements | — |
-| POST | `/applications/{application_id}/entitlements` | create_entitlement | — |
-| DELETE | `/applications/{application_id}/entitlements/{entitlement_id}` | delete_entitlement | — |
-| GET | `/applications/{application_id}/entitlements/{entitlement_id}` | get_entitlement | — |
-| POST | `/applications/{application_id}/entitlements/{entitlement_id}/consume` | consume_entitlement | — |
-| GET | `/applications/{application_id}/guilds/{guild_id}/commands` | list_guild_application_commands | — |
-| POST | `/applications/{application_id}/guilds/{guild_id}/commands` | create_guild_application_command | — |
-| PUT | `/applications/{application_id}/guilds/{guild_id}/commands` | bulk_set_guild_application_commands | — |
-| GET | `/applications/{application_id}/guilds/{guild_id}/commands/permissions` | list_guild_application_command_permissions | — |
-| DELETE | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}` | delete_guild_application_command | — |
-| GET | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}` | get_guild_application_command | — |
-| PATCH | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}` | update_guild_application_command | — |
-| GET | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}/permissions` | get_guild_application_command_permissions | — |
-| PUT | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}/permissions` | set_guild_application_command_permissions | — |
-| GET | `/applications/{application_id}/role-connections/metadata` | get_application_role_connections_metadata | — |
-| PUT | `/applications/{application_id}/role-connections/metadata` | update_application_role_connections_metadata | — |
-| DELETE | `/channels/{channel_id}` | delete_channel | — |
-| GET | `/channels/{channel_id}` | get_channel | — |
-| PATCH | `/channels/{channel_id}` | update_channel | — |
-| POST | `/channels/{channel_id}/followers` | follow_channel | — |
-| GET | `/channels/{channel_id}/invites` | list_channel_invites | — |
-| POST | `/channels/{channel_id}/invites` | create_channel_invite | — |
-| GET | `/channels/{channel_id}/messages` | list_messages | — |
-| POST | `/channels/{channel_id}/messages` | create_message | — |
-| POST | `/channels/{channel_id}/messages/bulk-delete` | bulk_delete_messages | — |
-| GET | `/channels/{channel_id}/messages/pins` | list_pins | — |
-| DELETE | `/channels/{channel_id}/messages/pins/{message_id}` | delete_pin | — |
-| PUT | `/channels/{channel_id}/messages/pins/{message_id}` | create_pin | — |
-| DELETE | `/channels/{channel_id}/messages/{message_id}` | delete_message | — |
-| GET | `/channels/{channel_id}/messages/{message_id}` | get_message | — |
-| PATCH | `/channels/{channel_id}/messages/{message_id}` | update_message | — |
-| POST | `/channels/{channel_id}/messages/{message_id}/crosspost` | crosspost_message | — |
-| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions` | delete_all_message_reactions | — |
-| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}` | delete_all_message_reactions_by_emoji | — |
-| GET | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}` | list_message_reactions_by_emoji | — |
-| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}/@me` | delete_my_message_reaction | — |
-| PUT | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}/@me` | add_my_message_reaction | — |
-| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}/{user_id}` | delete_user_message_reaction | — |
-| POST | `/channels/{channel_id}/messages/{message_id}/threads` | create_thread_from_message | — |
-| GET | `/channels/{channel_id}/permissions/member/{user_id}` | get_channel_member_permissions | — |
-| GET | `/channels/{channel_id}/permissions/role/{role_id}` | get_channel_role_permissions | — |
-| DELETE | `/channels/{channel_id}/permissions/{overwrite_id}` | delete_channel_permission_overwrite | — |
-| PUT | `/channels/{channel_id}/permissions/{overwrite_id}` | set_channel_permission_overwrite | — |
-| GET | `/channels/{channel_id}/pins` | deprecated_list_pins | — |
-| DELETE | `/channels/{channel_id}/pins/{message_id}` | deprecated_delete_pin | — |
-| PUT | `/channels/{channel_id}/pins/{message_id}` | deprecated_create_pin | — |
-| GET | `/channels/{channel_id}/polls/{message_id}/answers/{answer_id}` | get_answer_voters | — |
-| POST | `/channels/{channel_id}/polls/{message_id}/expire` | poll_expire | — |
-| DELETE | `/channels/{channel_id}/recipients/{user_id}` | delete_group_dm_user | — |
-| PUT | `/channels/{channel_id}/recipients/{user_id}` | add_group_dm_user | — |
-| POST | `/channels/{channel_id}/send-soundboard-sound` | send_soundboard_sound | — |
-| GET | `/channels/{channel_id}/thread-members` | list_thread_members | — |
-| DELETE | `/channels/{channel_id}/thread-members/@me` | leave_thread | — |
-| PUT | `/channels/{channel_id}/thread-members/@me` | join_thread | — |
-| DELETE | `/channels/{channel_id}/thread-members/{user_id}` | delete_thread_member | — |
-| GET | `/channels/{channel_id}/thread-members/{user_id}` | get_thread_member | — |
-| PUT | `/channels/{channel_id}/thread-members/{user_id}` | add_thread_member | — |
-| POST | `/channels/{channel_id}/threads` | create_thread | — |
-| GET | `/channels/{channel_id}/threads/archived/private` | list_private_archived_threads | — |
-| GET | `/channels/{channel_id}/threads/archived/public` | list_public_archived_threads | — |
-| GET | `/channels/{channel_id}/threads/search` | thread_search | — |
-| POST | `/channels/{channel_id}/typing` | trigger_typing_indicator | — |
-| GET | `/channels/{channel_id}/users/@me/threads/archived/private` | list_my_private_archived_threads | — |
-| PUT | `/channels/{channel_id}/voice-status` | update_voice_channel_status | — |
-| GET | `/channels/{channel_id}/webhooks` | list_channel_webhooks | — |
-| POST | `/channels/{channel_id}/webhooks` | create_webhook | — |
-| GET | `/gateway` | get_gateway | — |
-| GET | `/gateway/bot` | get_bot_gateway | — |
-| GET | `/guilds/templates/{code}` | get_guild_template | — |
-| GET | `/guilds/{guild_id}` | get_guild | — |
-| PATCH | `/guilds/{guild_id}` | update_guild | — |
-| GET | `/guilds/{guild_id}/audit-logs` | list_guild_audit_log_entries | — |
-| GET | `/guilds/{guild_id}/auto-moderation/rules` | list_auto_moderation_rules | — |
-| POST | `/guilds/{guild_id}/auto-moderation/rules` | create_auto_moderation_rule | — |
-| DELETE | `/guilds/{guild_id}/auto-moderation/rules/{rule_id}` | delete_auto_moderation_rule | — |
-| GET | `/guilds/{guild_id}/auto-moderation/rules/{rule_id}` | get_auto_moderation_rule | — |
-| PATCH | `/guilds/{guild_id}/auto-moderation/rules/{rule_id}` | update_auto_moderation_rule | — |
-| GET | `/guilds/{guild_id}/bans` | list_guild_bans | — |
-| DELETE | `/guilds/{guild_id}/bans/{user_id}` | unban_user_from_guild | — |
-| GET | `/guilds/{guild_id}/bans/{user_id}` | get_guild_ban | — |
-| PUT | `/guilds/{guild_id}/bans/{user_id}` | ban_user_from_guild | — |
-| POST | `/guilds/{guild_id}/bulk-ban` | bulk_ban_users_from_guild | — |
-| GET | `/guilds/{guild_id}/channels` | list_guild_channels | — |
-| PATCH | `/guilds/{guild_id}/channels` | bulk_update_guild_channels | — |
-| POST | `/guilds/{guild_id}/channels` | create_guild_channel | — |
-| GET | `/guilds/{guild_id}/emojis` | list_guild_emojis | — |
-| POST | `/guilds/{guild_id}/emojis` | create_guild_emoji | — |
-| DELETE | `/guilds/{guild_id}/emojis/{emoji_id}` | delete_guild_emoji | — |
-| GET | `/guilds/{guild_id}/emojis/{emoji_id}` | get_guild_emoji | — |
-| PATCH | `/guilds/{guild_id}/emojis/{emoji_id}` | update_guild_emoji | — |
-| PUT | `/guilds/{guild_id}/incident-actions` | update_guild_incident_actions | — |
-| GET | `/guilds/{guild_id}/integrations` | list_guild_integrations | — |
-| DELETE | `/guilds/{guild_id}/integrations/{integration_id}` | delete_guild_integration | — |
-| GET | `/guilds/{guild_id}/invites` | list_guild_invites | — |
-| GET | `/guilds/{guild_id}/members` | list_guild_members | — |
-| PATCH | `/guilds/{guild_id}/members/@me` | update_my_guild_member | — |
-| GET | `/guilds/{guild_id}/members/search` | search_guild_members | — |
-| DELETE | `/guilds/{guild_id}/members/{user_id}` | delete_guild_member | — |
-| GET | `/guilds/{guild_id}/members/{user_id}` | get_guild_member | — |
-| PATCH | `/guilds/{guild_id}/members/{user_id}` | update_guild_member | — |
-| PUT | `/guilds/{guild_id}/members/{user_id}` | add_guild_member | — |
-| DELETE | `/guilds/{guild_id}/members/{user_id}/roles/{role_id}` | delete_guild_member_role | — |
-| PUT | `/guilds/{guild_id}/members/{user_id}/roles/{role_id}` | add_guild_member_role | — |
-| GET | `/guilds/{guild_id}/messages/search` | guild_search | — |
-| GET | `/guilds/{guild_id}/new-member-welcome` | get_guild_new_member_welcome | — |
-| GET | `/guilds/{guild_id}/onboarding` | get_guilds_onboarding | — |
-| PUT | `/guilds/{guild_id}/onboarding` | put_guilds_onboarding | — |
-| GET | `/guilds/{guild_id}/permissions/member/{user_id}` | get_guild_member_permissions | — |
-| GET | `/guilds/{guild_id}/permissions/role/{role_id}` | get_guild_role_permissions | — |
-| GET | `/guilds/{guild_id}/preview` | get_guild_preview | — |
-| GET | `/guilds/{guild_id}/prune` | preview_prune_guild | — |
-| POST | `/guilds/{guild_id}/prune` | prune_guild | — |
-| GET | `/guilds/{guild_id}/regions` | list_guild_voice_regions | — |
-| GET | `/guilds/{guild_id}/requests` | get_guild_join_requests | — |
-| PATCH | `/guilds/{guild_id}/requests/{request_id}` | action_guild_join_request | — |
-| GET | `/guilds/{guild_id}/roles` | list_guild_roles | — |
-| PATCH | `/guilds/{guild_id}/roles` | bulk_update_guild_roles | — |
-| POST | `/guilds/{guild_id}/roles` | create_guild_role | — |
-| GET | `/guilds/{guild_id}/roles/member-counts` | guild_role_member_counts | — |
-| DELETE | `/guilds/{guild_id}/roles/{role_id}` | delete_guild_role | — |
-| GET | `/guilds/{guild_id}/roles/{role_id}` | get_guild_role | — |
-| PATCH | `/guilds/{guild_id}/roles/{role_id}` | update_guild_role | — |
-| GET | `/guilds/{guild_id}/scheduled-events` | list_guild_scheduled_events | — |
-| POST | `/guilds/{guild_id}/scheduled-events` | create_guild_scheduled_event | — |
-| DELETE | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}` | delete_guild_scheduled_event | — |
-| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}` | get_guild_scheduled_event | — |
-| PATCH | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}` | update_guild_scheduled_event | — |
-| POST | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/exceptions` | create_guild_scheduled_event_exception | — |
-| DELETE | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/exceptions/{exception_id}` | delete_guild_scheduled_event_exception | — |
-| PATCH | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/exceptions/{exception_id}` | update_guild_scheduled_event_exception | — |
-| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/users` | list_guild_scheduled_event_users | — |
-| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/users/counts` | count_guild_scheduled_event_users | — |
-| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/{guild_scheduled_event_exception_id}/users` | list_guild_scheduled_event_exception_users | — |
-| GET | `/guilds/{guild_id}/soundboard-sounds` | list_guild_soundboard_sounds | — |
-| POST | `/guilds/{guild_id}/soundboard-sounds` | create_guild_soundboard_sound | — |
-| DELETE | `/guilds/{guild_id}/soundboard-sounds/{sound_id}` | delete_guild_soundboard_sound | — |
-| GET | `/guilds/{guild_id}/soundboard-sounds/{sound_id}` | get_guild_soundboard_sound | — |
-| PATCH | `/guilds/{guild_id}/soundboard-sounds/{sound_id}` | update_guild_soundboard_sound | — |
-| GET | `/guilds/{guild_id}/stickers` | list_guild_stickers | — |
-| POST | `/guilds/{guild_id}/stickers` | create_guild_sticker | — |
-| DELETE | `/guilds/{guild_id}/stickers/{sticker_id}` | delete_guild_sticker | — |
-| GET | `/guilds/{guild_id}/stickers/{sticker_id}` | get_guild_sticker | — |
-| PATCH | `/guilds/{guild_id}/stickers/{sticker_id}` | update_guild_sticker | — |
-| GET | `/guilds/{guild_id}/templates` | list_guild_templates | — |
-| POST | `/guilds/{guild_id}/templates` | create_guild_template | — |
-| DELETE | `/guilds/{guild_id}/templates/{code}` | delete_guild_template | — |
-| PATCH | `/guilds/{guild_id}/templates/{code}` | update_guild_template | — |
-| PUT | `/guilds/{guild_id}/templates/{code}` | sync_guild_template | — |
-| GET | `/guilds/{guild_id}/threads/active` | get_active_guild_threads | — |
-| GET | `/guilds/{guild_id}/vanity-url` | get_guild_vanity_url | — |
-| GET | `/guilds/{guild_id}/voice-states/@me` | get_self_voice_state | — |
-| PATCH | `/guilds/{guild_id}/voice-states/@me` | update_self_voice_state | — |
-| GET | `/guilds/{guild_id}/voice-states/{user_id}` | get_voice_state | — |
-| PATCH | `/guilds/{guild_id}/voice-states/{user_id}` | update_voice_state | — |
-| GET | `/guilds/{guild_id}/webhooks` | get_guild_webhooks | — |
-| GET | `/guilds/{guild_id}/welcome-screen` | get_guild_welcome_screen | — |
-| PATCH | `/guilds/{guild_id}/welcome-screen` | update_guild_welcome_screen | — |
-| GET | `/guilds/{guild_id}/widget` | get_guild_widget_settings | — |
-| PATCH | `/guilds/{guild_id}/widget` | update_guild_widget_settings | — |
-| GET | `/guilds/{guild_id}/widget.json` | get_guild_widget | — |
-| GET | `/guilds/{guild_id}/widget.png` | get_guild_widget_png | — |
-| POST | `/interactions/{interaction_id}/{interaction_token}/callback` | create_interaction_response | — |
-| DELETE | `/invites/{code}` | invite_revoke | — |
-| GET | `/invites/{code}` | invite_resolve | — |
-| GET | `/invites/{code}/target-users` | get_invite_target_users | — |
-| PUT | `/invites/{code}/target-users` | update_invite_target_users | — |
-| POST | `/invites/{code}/target-users/bulk-add` | bulk_add_invite_target_users | — |
-| POST | `/invites/{code}/target-users/bulk-delete` | bulk_remove_invite_target_users | — |
-| GET | `/invites/{code}/target-users/job-status` | get_invite_target_users_job_status | — |
-| DELETE | `/invites/{code}/target-users/{user_id}` | remove_invite_target_user | — |
-| PUT | `/invites/{code}/target-users/{user_id}` | add_invite_target_user | — |
-| POST | `/lobbies` | create_lobby | — |
-| PUT | `/lobbies` | create_or_join_lobby | — |
-| DELETE | `/lobbies/{lobby_id}` | delete_lobby | — |
-| GET | `/lobbies/{lobby_id}` | get_lobby | — |
-| PATCH | `/lobbies/{lobby_id}` | edit_lobby | — |
-| PATCH | `/lobbies/{lobby_id}/channel-linking` | edit_lobby_channel_link | — |
-| DELETE | `/lobbies/{lobby_id}/members/@me` | leave_lobby | — |
-| POST | `/lobbies/{lobby_id}/members/@me/invites` | create_linked_lobby_guild_invite_for_self | — |
-| POST | `/lobbies/{lobby_id}/members/bulk` | bulk_update_lobby_members | — |
-| DELETE | `/lobbies/{lobby_id}/members/{user_id}` | delete_lobby_member | — |
-| PUT | `/lobbies/{lobby_id}/members/{user_id}` | add_lobby_member | — |
-| POST | `/lobbies/{lobby_id}/members/{user_id}/invites` | create_linked_lobby_guild_invite_for_user | — |
-| GET | `/lobbies/{lobby_id}/messages` | get_lobby_messages | — |
-| POST | `/lobbies/{lobby_id}/messages` | create_lobby_message | — |
-| PUT | `/lobbies/{lobby_id}/messages/{message_id}/moderation-metadata` | update_lobby_message_external_moderation_metadata | — |
-| GET | `/oauth2/@me` | get_my_oauth2_authorization | — |
-| GET | `/oauth2/applications/@me` | get_my_oauth2_application | — |
-| GET | `/oauth2/keys` | get_public_keys | — |
-| GET | `/oauth2/userinfo` | get_openid_connect_userinfo | — |
-| PUT | `/partner-sdk/dms/{user_id_1}/{user_id_2}/messages/{message_id}/moderation-metadata` | update_user_message_external_moderation_metadata | — |
-| POST | `/partner-sdk/provisional-accounts/unmerge` | partner_sdk_unmerge_provisional_account | — |
-| POST | `/partner-sdk/provisional-accounts/unmerge/bot` | bot_partner_sdk_unmerge_provisional_account | — |
-| POST | `/partner-sdk/token` | partner_sdk_token | — |
-| POST | `/partner-sdk/token/bot` | bot_partner_sdk_token | — |
-| GET | `/skus/{sku_id}/subscriptions` | get_sku_subscriptions | — |
-| GET | `/skus/{sku_id}/subscriptions/{subscription_id}` | get_sku_subscription | — |
-| GET | `/soundboard-default-sounds` | get_soundboard_default_sounds | — |
-| POST | `/stage-instances` | create_stage_instance | — |
-| DELETE | `/stage-instances/{channel_id}` | delete_stage_instance | — |
-| GET | `/stage-instances/{channel_id}` | get_stage_instance | — |
-| PATCH | `/stage-instances/{channel_id}` | update_stage_instance | — |
-| GET | `/sticker-packs` | list_sticker_packs | — |
-| GET | `/sticker-packs/{pack_id}` | get_sticker_pack | — |
-| GET | `/stickers/{sticker_id}` | get_sticker | — |
-| GET | `/users/@me` | get_my_user | — |
-| PATCH | `/users/@me` | update_my_user | — |
-| GET | `/users/@me/applications/{application_id}/entitlements` | get_current_user_application_entitlements | — |
-| DELETE | `/users/@me/applications/{application_id}/role-connection` | delete_application_user_role_connection | — |
-| GET | `/users/@me/applications/{application_id}/role-connection` | get_application_user_role_connection | — |
-| PUT | `/users/@me/applications/{application_id}/role-connection` | update_application_user_role_connection | — |
-| POST | `/users/@me/channels` | create_dm | — |
-| GET | `/users/@me/connections` | list_my_connections | — |
-| GET | `/users/@me/guilds` | list_my_guilds | — |
-| DELETE | `/users/@me/guilds/{guild_id}` | leave_guild | — |
-| GET | `/users/@me/guilds/{guild_id}/member` | get_my_guild_member | — |
-| GET | `/users/{user_id}` | get_user | — |
-| GET | `/voice/regions` | list_voice_regions | — |
-| DELETE | `/webhooks/{webhook_id}` | delete_webhook | — |
-| GET | `/webhooks/{webhook_id}` | get_webhook | — |
-| PATCH | `/webhooks/{webhook_id}` | update_webhook | — |
-| DELETE | `/webhooks/{webhook_id}/{webhook_token}` | delete_webhook_by_token | — |
-| GET | `/webhooks/{webhook_id}/{webhook_token}` | get_webhook_by_token | — |
-| PATCH | `/webhooks/{webhook_id}/{webhook_token}` | update_webhook_by_token | — |
-| POST | `/webhooks/{webhook_id}/{webhook_token}` | execute_webhook | — |
-| POST | `/webhooks/{webhook_id}/{webhook_token}/github` | execute_github_compatible_webhook | — |
-| DELETE | `/webhooks/{webhook_id}/{webhook_token}/messages/@original` | delete_original_webhook_message | — |
-| GET | `/webhooks/{webhook_id}/{webhook_token}/messages/@original` | get_original_webhook_message | — |
-| PATCH | `/webhooks/{webhook_id}/{webhook_token}/messages/@original` | update_original_webhook_message | — |
-| DELETE | `/webhooks/{webhook_id}/{webhook_token}/messages/{message_id}` | delete_webhook_message | — |
-| GET | `/webhooks/{webhook_id}/{webhook_token}/messages/{message_id}` | get_webhook_message | — |
-| PATCH | `/webhooks/{webhook_id}/{webhook_token}/messages/{message_id}` | update_webhook_message | — |
-| POST | `/webhooks/{webhook_id}/{webhook_token}/slack` | execute_slack_compatible_webhook | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/applications/@me` | get_my_application | — | PrivateApplicationResponse | yes | — |
+| PATCH | `/applications/@me` | update_my_application | body*: ApplicationFormPartial | PrivateApplicationResponse |  | — |
+| GET | `/applications/{application_id}` | get_application | `application_id`* | PrivateApplicationResponse | yes | — |
+| PATCH | `/applications/{application_id}` | update_application | `application_id`*, body*: ApplicationFormPartial | PrivateApplicationResponse |  | — |
+| GET | `/applications/{application_id}/activity-instances/{instance_id}` | applications_get_activity_instance | `application_id`*, `instance_id`* | EmbeddedActivityInstance | yes | — |
+| POST | `/applications/{application_id}/attachment` | upload_application_attachment | `application_id`*, body*: object | ActivitiesAttachmentResponse |  | — |
+| GET | `/applications/{application_id}/commands` | list_application_commands | `application_id`*, `with_localizations` | ApplicationCommandResponse[] | yes | — |
+| PUT | `/applications/{application_id}/commands` | bulk_set_application_commands | `application_id`*, body*: ApplicationCommandUpdateRequest[] | ApplicationCommandResponse[] |  | — |
+| POST | `/applications/{application_id}/commands` | create_application_command | `application_id`*, body*: ApplicationCommandCreateRequest | ApplicationCommandResponse |  | — |
+| GET | `/applications/{application_id}/commands/{command_id}` | get_application_command | `application_id`*, `command_id`* | ApplicationCommandResponse | yes | — |
+| DELETE | `/applications/{application_id}/commands/{command_id}` | delete_application_command | `application_id`*, `command_id`* | — |  | — |
+| PATCH | `/applications/{application_id}/commands/{command_id}` | update_application_command | `application_id`*, `command_id`*, body*: ApplicationCommandPatchRequestPartial | ApplicationCommandResponse |  | — |
+| GET | `/applications/{application_id}/emojis` | list_application_emojis | `application_id`* | ListApplicationEmojisResponse | yes | — |
+| POST | `/applications/{application_id}/emojis` | create_application_emoji | `application_id`*, body*: object | EmojiResponse |  | — |
+| GET | `/applications/{application_id}/emojis/{emoji_id}` | get_application_emoji | `application_id`*, `emoji_id`* | EmojiResponse | yes | — |
+| DELETE | `/applications/{application_id}/emojis/{emoji_id}` | delete_application_emoji | `application_id`*, `emoji_id`* | — |  | — |
+| PATCH | `/applications/{application_id}/emojis/{emoji_id}` | update_application_emoji | `application_id`*, `emoji_id`*, body*: object | EmojiResponse |  | — |
+| GET | `/applications/{application_id}/entitlements` | get_entitlements | `application_id`*, `user_id`, `sku_ids`, `guild_id`, `before`, `after`, `limit`, `exclude_ended`, `exclude_deleted`, `only_active` | EntitlementResponse[] | yes | — |
+| POST | `/applications/{application_id}/entitlements` | create_entitlement | `application_id`*, body*: CreateEntitlementRequestData | EntitlementResponse |  | — |
+| GET | `/applications/{application_id}/entitlements/{entitlement_id}` | get_entitlement | `application_id`*, `entitlement_id`* | EntitlementResponse | yes | — |
+| DELETE | `/applications/{application_id}/entitlements/{entitlement_id}` | delete_entitlement | `application_id`*, `entitlement_id`* | — |  | — |
+| POST | `/applications/{application_id}/entitlements/{entitlement_id}/consume` | consume_entitlement | `application_id`*, `entitlement_id`* | — |  | — |
+| GET | `/applications/{application_id}/guilds/{guild_id}/commands` | list_guild_application_commands | `application_id`*, `guild_id`*, `with_localizations` | ApplicationCommandResponse[] | yes | — |
+| PUT | `/applications/{application_id}/guilds/{guild_id}/commands` | bulk_set_guild_application_commands | `application_id`*, `guild_id`*, body*: ApplicationCommandUpdateRequest[] | ApplicationCommandResponse[] |  | — |
+| POST | `/applications/{application_id}/guilds/{guild_id}/commands` | create_guild_application_command | `application_id`*, `guild_id`*, body*: ApplicationCommandCreateRequest | ApplicationCommandResponse |  | — |
+| GET | `/applications/{application_id}/guilds/{guild_id}/commands/permissions` | list_guild_application_command_permissions | `application_id`*, `guild_id`* | CommandPermissionsResponse[] | yes | — |
+| GET | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}` | get_guild_application_command | `application_id`*, `guild_id`*, `command_id`* | ApplicationCommandResponse | yes | — |
+| DELETE | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}` | delete_guild_application_command | `application_id`*, `guild_id`*, `command_id`* | — |  | — |
+| PATCH | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}` | update_guild_application_command | `application_id`*, `guild_id`*, `command_id`*, body*: ApplicationCommandPatchRequestPartial | ApplicationCommandResponse |  | — |
+| GET | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}/permissions` | get_guild_application_command_permissions | `application_id`*, `guild_id`*, `command_id`* | CommandPermissionsResponse | yes | — |
+| PUT | `/applications/{application_id}/guilds/{guild_id}/commands/{command_id}/permissions` | set_guild_application_command_permissions | `application_id`*, `guild_id`*, `command_id`*, body*: object | CommandPermissionsResponse |  | — |
+| GET | `/applications/{application_id}/role-connections/metadata` | get_application_role_connections_metadata | `application_id`* | ApplicationRoleConnectionsMetadataItemResponse[] | yes | — |
+| PUT | `/applications/{application_id}/role-connections/metadata` | update_application_role_connections_metadata | `application_id`*, body*: ApplicationRoleConnectionsMetadataItemRequest[] | ApplicationRoleConnectionsMetadataItemResponse[] |  | — |
+| GET | `/channels/{channel_id}` | get_channel | `channel_id`* | GuildChannelResponse\|PrivateChannelResponse\|PrivateGroupChannelResponse\|ThreadResponse | yes | — |
+| DELETE | `/channels/{channel_id}` | delete_channel | `channel_id`* | GuildChannelResponse\|PrivateChannelResponse\|PrivateGroupChannelResponse\|ThreadResponse |  | — |
+| PATCH | `/channels/{channel_id}` | update_channel | `channel_id`*, body*: UpdateDMRequestPartial\|UpdateGroupDMRequestPartial\|UpdateGuildChannelRequestPartial\|UpdateThreadRequestPartial | GuildChannelResponse\|PrivateChannelResponse\|PrivateGroupChannelResponse\|ThreadResponse |  | — |
+| POST | `/channels/{channel_id}/followers` | follow_channel | `channel_id`*, body*: object | ChannelFollowerResponse |  | — |
+| GET | `/channels/{channel_id}/invites` | list_channel_invites | `channel_id`* | FriendInviteResponse\|GroupDMInviteResponse\|GuildInviteResponse\|null[] | yes | — |
+| POST | `/channels/{channel_id}/invites` | create_channel_invite | `channel_id`*, body*: CreateGroupDMInviteRequest\|CreateGuildInviteRequest | FriendInviteResponse\|GroupDMInviteResponse\|GuildInviteResponse |  | — |
+| GET | `/channels/{channel_id}/messages` | list_messages | `channel_id`*, `around`, `before`, `after`, `limit` | MessageResponse[] | yes | — |
+| POST | `/channels/{channel_id}/messages` | create_message | `channel_id`*, body*: MessageCreateRequest | MessageResponse |  | — |
+| POST | `/channels/{channel_id}/messages/bulk-delete` | bulk_delete_messages | `channel_id`*, body*: object | — |  | — |
+| GET | `/channels/{channel_id}/messages/pins` | list_pins | `channel_id`*, `before`, `limit` | PinnedMessagesResponse | yes | — |
+| PUT | `/channels/{channel_id}/messages/pins/{message_id}` | create_pin | `channel_id`*, `message_id`* | — |  | — |
+| DELETE | `/channels/{channel_id}/messages/pins/{message_id}` | delete_pin | `channel_id`*, `message_id`* | — |  | — |
+| GET | `/channels/{channel_id}/messages/{message_id}` | get_message | `channel_id`*, `message_id`* | MessageResponse | yes | — |
+| DELETE | `/channels/{channel_id}/messages/{message_id}` | delete_message | `channel_id`*, `message_id`* | — |  | — |
+| PATCH | `/channels/{channel_id}/messages/{message_id}` | update_message | `channel_id`*, `message_id`*, body*: MessageEditRequestPartial | MessageResponse |  | — |
+| POST | `/channels/{channel_id}/messages/{message_id}/crosspost` | crosspost_message | `channel_id`*, `message_id`* | MessageResponse |  | — |
+| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions` | delete_all_message_reactions | `channel_id`*, `message_id`* | — |  | — |
+| GET | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}` | list_message_reactions_by_emoji | `channel_id`*, `message_id`*, `emoji_name`*, `after`, `limit`, `type` | UserResponse[] | yes | — |
+| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}` | delete_all_message_reactions_by_emoji | `channel_id`*, `message_id`*, `emoji_name`* | — |  | — |
+| PUT | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}/@me` | add_my_message_reaction | `channel_id`*, `message_id`*, `emoji_name`* | — |  | — |
+| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}/@me` | delete_my_message_reaction | `channel_id`*, `message_id`*, `emoji_name`* | — |  | — |
+| DELETE | `/channels/{channel_id}/messages/{message_id}/reactions/{emoji_name}/{user_id}` | delete_user_message_reaction | `channel_id`*, `message_id`*, `emoji_name`*, `user_id`* | — |  | — |
+| POST | `/channels/{channel_id}/messages/{message_id}/threads` | create_thread_from_message | `channel_id`*, `message_id`*, body*: CreateTextThreadWithMessageRequest | ThreadResponse |  | — |
+| GET | `/channels/{channel_id}/permissions/member/{user_id}` | get_channel_member_permissions | `channel_id`*, `user_id`*, `implicit` | PermissionsResponse | yes | — |
+| GET | `/channels/{channel_id}/permissions/role/{role_id}` | get_channel_role_permissions | `channel_id`*, `role_id`*, `implicit` | PermissionsResponse | yes | — |
+| PUT | `/channels/{channel_id}/permissions/{overwrite_id}` | set_channel_permission_overwrite | `channel_id`*, `overwrite_id`*, body*: object | — |  | — |
+| DELETE | `/channels/{channel_id}/permissions/{overwrite_id}` | delete_channel_permission_overwrite | `channel_id`*, `overwrite_id`* | — |  | — |
+| GET | `/channels/{channel_id}/pins` | deprecated_list_pins | `channel_id`* | MessageResponse[] | yes | — |
+| PUT | `/channels/{channel_id}/pins/{message_id}` | deprecated_create_pin | `channel_id`*, `message_id`* | — |  | — |
+| DELETE | `/channels/{channel_id}/pins/{message_id}` | deprecated_delete_pin | `channel_id`*, `message_id`* | — |  | — |
+| GET | `/channels/{channel_id}/polls/{message_id}/answers/{answer_id}` | get_answer_voters | `channel_id`*, `message_id`*, `answer_id`*, `after`, `limit` | PollAnswerDetailsResponse | yes | — |
+| POST | `/channels/{channel_id}/polls/{message_id}/expire` | poll_expire | `channel_id`*, `message_id`* | MessageResponse |  | — |
+| PUT | `/channels/{channel_id}/recipients/{user_id}` | add_group_dm_user | `channel_id`*, `user_id`*, body*: object | PrivateChannelResponse\|PrivateGroupChannelResponse |  | — |
+| DELETE | `/channels/{channel_id}/recipients/{user_id}` | delete_group_dm_user | `channel_id`*, `user_id`* | — |  | — |
+| POST | `/channels/{channel_id}/send-soundboard-sound` | send_soundboard_sound | `channel_id`*, body*: SoundboardSoundSendRequest | — |  | — |
+| GET | `/channels/{channel_id}/thread-members` | list_thread_members | `channel_id`*, `with_member`, `limit`, `after` | ThreadMemberResponse[] | yes | — |
+| PUT | `/channels/{channel_id}/thread-members/@me` | join_thread | `channel_id`* | — |  | — |
+| DELETE | `/channels/{channel_id}/thread-members/@me` | leave_thread | `channel_id`* | — |  | — |
+| GET | `/channels/{channel_id}/thread-members/{user_id}` | get_thread_member | `channel_id`*, `user_id`*, `with_member` | ThreadMemberResponse | yes | — |
+| PUT | `/channels/{channel_id}/thread-members/{user_id}` | add_thread_member | `channel_id`*, `user_id`* | — |  | — |
+| DELETE | `/channels/{channel_id}/thread-members/{user_id}` | delete_thread_member | `channel_id`*, `user_id`* | — |  | — |
+| POST | `/channels/{channel_id}/threads` | create_thread | `channel_id`*, body*: CreateForumThreadRequest\|CreateTextThreadWithoutMessageRequest | CreatedThreadResponse |  | — |
+| GET | `/channels/{channel_id}/threads/archived/private` | list_private_archived_threads | `channel_id`*, `before`, `limit` | ThreadsResponse | yes | — |
+| GET | `/channels/{channel_id}/threads/archived/public` | list_public_archived_threads | `channel_id`*, `before`, `limit` | ThreadsResponse | yes | — |
+| GET | `/channels/{channel_id}/threads/search` | thread_search | `channel_id`*, `name`, `slop`, `min_id`, `max_id`, `tag`, `tag_setting`, `archived`, `sort_by`, `sort_order`, `limit`, `offset` | ThreadSearchResponse, SearchIndexNotReadyResponse | yes | — |
+| POST | `/channels/{channel_id}/typing` | trigger_typing_indicator | `channel_id`* | TypingIndicatorResponse |  | — |
+| GET | `/channels/{channel_id}/users/@me/threads/archived/private` | list_my_private_archived_threads | `channel_id`*, `before`, `limit` | ThreadsResponse | yes | — |
+| PUT | `/channels/{channel_id}/voice-status` | update_voice_channel_status | `channel_id`*, body*: object | — |  | — |
+| GET | `/channels/{channel_id}/webhooks` | list_channel_webhooks | `channel_id`* | ApplicationIncomingWebhookResponse\|ChannelFollowerWebhookResponse\|GuildIncomingWebhookResponse[] | yes | — |
+| POST | `/channels/{channel_id}/webhooks` | create_webhook | `channel_id`*, body*: object | GuildIncomingWebhookResponse |  | — |
+| GET | `/gateway` | get_gateway | — | GatewayResponse | yes | — |
+| GET | `/gateway/bot` | get_bot_gateway | — | GatewayBotResponse | yes | — |
+| GET | `/guilds/templates/{code}` | get_guild_template | `code`* | GuildTemplateResponse | yes | — |
+| GET | `/guilds/{guild_id}` | get_guild | `guild_id`*, `with_counts` | GuildWithCountsResponse | yes | — |
+| PATCH | `/guilds/{guild_id}` | update_guild | `guild_id`*, body*: GuildPatchRequestPartial | GuildResponse |  | — |
+| GET | `/guilds/{guild_id}/audit-logs` | list_guild_audit_log_entries | `guild_id`*, `user_id`, `target_id`, `action_type`, `before`, `after`, `limit` | GuildAuditLogResponse | yes | — |
+| GET | `/guilds/{guild_id}/auto-moderation/rules` | list_auto_moderation_rules | `guild_id`* | DefaultKeywordRuleResponse\|KeywordRuleResponse\|MLSpamRuleResponse\|MentionSpamRuleResponse\|UserProfileRuleResponse\|null[] | yes | — |
+| POST | `/guilds/{guild_id}/auto-moderation/rules` | create_auto_moderation_rule | `guild_id`*, body*: DefaultKeywordListUpsertRequest\|KeywordUpsertRequest\|MLSpamUpsertRequest\|MentionSpamUpsertRequest\|UserProfileUpsertRequest | DefaultKeywordRuleResponse\|KeywordRuleResponse\|MLSpamRuleResponse\|MentionSpamRuleResponse\|UserProfileRuleResponse |  | — |
+| GET | `/guilds/{guild_id}/auto-moderation/rules/{rule_id}` | get_auto_moderation_rule | `guild_id`*, `rule_id`* | DefaultKeywordRuleResponse\|KeywordRuleResponse\|MLSpamRuleResponse\|MentionSpamRuleResponse\|UserProfileRuleResponse | yes | — |
+| DELETE | `/guilds/{guild_id}/auto-moderation/rules/{rule_id}` | delete_auto_moderation_rule | `guild_id`*, `rule_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/auto-moderation/rules/{rule_id}` | update_auto_moderation_rule | `guild_id`*, `rule_id`*, body*: DefaultKeywordListUpsertRequestPartial\|KeywordUpsertRequestPartial\|MLSpamUpsertRequestPartial\|MentionSpamUpsertRequestPartial\|UserProfileUpsertRequestPartial | DefaultKeywordRuleResponse\|KeywordRuleResponse\|MLSpamRuleResponse\|MentionSpamRuleResponse\|UserProfileRuleResponse |  | — |
+| GET | `/guilds/{guild_id}/bans` | list_guild_bans | `guild_id`*, `limit`, `before`, `after` | GuildBanResponse[] | yes | — |
+| GET | `/guilds/{guild_id}/bans/{user_id}` | get_guild_ban | `guild_id`*, `user_id`* | GuildBanResponse | yes | — |
+| PUT | `/guilds/{guild_id}/bans/{user_id}` | ban_user_from_guild | `guild_id`*, `user_id`*, body*: BanUserFromGuildRequest | — |  | — |
+| DELETE | `/guilds/{guild_id}/bans/{user_id}` | unban_user_from_guild | `guild_id`*, `user_id`*, body*: UnbanUserFromGuildRequest | — |  | — |
+| POST | `/guilds/{guild_id}/bulk-ban` | bulk_ban_users_from_guild | `guild_id`*, body*: BulkBanUsersRequest | BulkBanUsersResponse |  | — |
+| GET | `/guilds/{guild_id}/channels` | list_guild_channels | `guild_id`* | GuildChannelResponse\|PrivateChannelResponse\|PrivateGroupChannelResponse\|ThreadResponse[] | yes | — |
+| POST | `/guilds/{guild_id}/channels` | create_guild_channel | `guild_id`*, body*: CreateGuildChannelRequest | GuildChannelResponse |  | — |
+| PATCH | `/guilds/{guild_id}/channels` | bulk_update_guild_channels | `guild_id`*, body*: object[] | — |  | — |
+| GET | `/guilds/{guild_id}/emojis` | list_guild_emojis | `guild_id`* | EmojiResponse[] | yes | — |
+| POST | `/guilds/{guild_id}/emojis` | create_guild_emoji | `guild_id`*, body*: object | EmojiResponse |  | — |
+| GET | `/guilds/{guild_id}/emojis/{emoji_id}` | get_guild_emoji | `guild_id`*, `emoji_id`* | EmojiResponse | yes | — |
+| DELETE | `/guilds/{guild_id}/emojis/{emoji_id}` | delete_guild_emoji | `guild_id`*, `emoji_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/emojis/{emoji_id}` | update_guild_emoji | `guild_id`*, `emoji_id`*, body*: object | EmojiResponse |  | — |
+| PUT | `/guilds/{guild_id}/incident-actions` | update_guild_incident_actions | `guild_id`*, body*: GuildIncidentActionsRequest | GuildIncidentsDataResponse |  | — |
+| GET | `/guilds/{guild_id}/integrations` | list_guild_integrations | `guild_id`* | DiscordIntegrationResponse\|ExternalConnectionIntegrationResponse\|GuildSubscriptionIntegrationResponse[] | yes | — |
+| DELETE | `/guilds/{guild_id}/integrations/{integration_id}` | delete_guild_integration | `guild_id`*, `integration_id`* | — |  | — |
+| GET | `/guilds/{guild_id}/invites` | list_guild_invites | `guild_id`* | FriendInviteResponse\|GroupDMInviteResponse\|GuildInviteResponse\|null[] | yes | — |
+| GET | `/guilds/{guild_id}/members` | list_guild_members | `guild_id`*, `limit`, `after` | GuildMemberResponse[] | yes | — |
+| PATCH | `/guilds/{guild_id}/members/@me` | update_my_guild_member | `guild_id`*, body*: object | PrivateGuildMemberResponse |  | — |
+| GET | `/guilds/{guild_id}/members/search` | search_guild_members | `guild_id`*, `limit`, `query`* | GuildMemberResponse[] | yes | — |
+| GET | `/guilds/{guild_id}/members/{user_id}` | get_guild_member | `guild_id`*, `user_id`* | GuildMemberResponse | yes | — |
+| PUT | `/guilds/{guild_id}/members/{user_id}` | add_guild_member | `guild_id`*, `user_id`*, body*: BotAddGuildMemberRequest | GuildMemberResponse |  | — |
+| DELETE | `/guilds/{guild_id}/members/{user_id}` | delete_guild_member | `guild_id`*, `user_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/members/{user_id}` | update_guild_member | `guild_id`*, `user_id`*, body*: object | GuildMemberResponse |  | — |
+| PUT | `/guilds/{guild_id}/members/{user_id}/roles/{role_id}` | add_guild_member_role | `guild_id`*, `user_id`*, `role_id`* | — |  | — |
+| DELETE | `/guilds/{guild_id}/members/{user_id}/roles/{role_id}` | delete_guild_member_role | `guild_id`*, `user_id`*, `role_id`* | — |  | — |
+| GET | `/guilds/{guild_id}/messages/search` | guild_search | `guild_id`*, `sort_by`, `sort_order`, `content`, `slop`, `author_id`, `author_type`, `mentions`, `mentions_role_id`, `replied_to_user_id`, `replied_to_message_id`, `mention_everyone`, `min_id`, `max_id`, `limit`, `offset`, `has`, `link_hostname`, `embed_provider`, `embed_type`, `attachment_extension`, `attachment_filename`, `pinned`, `include_nsfw`, `channel_id` | GuildSearchResponse, SearchIndexNotReadyResponse | yes | — |
+| GET | `/guilds/{guild_id}/new-member-welcome` | get_guild_new_member_welcome | `guild_id`* | GuildHomeSettingsResponse | yes | — |
+| GET | `/guilds/{guild_id}/onboarding` | get_guilds_onboarding | `guild_id`* | UserGuildOnboardingResponse | yes | — |
+| PUT | `/guilds/{guild_id}/onboarding` | put_guilds_onboarding | `guild_id`*, body*: UpdateGuildOnboardingRequest | GuildOnboardingResponse |  | — |
+| GET | `/guilds/{guild_id}/permissions/member/{user_id}` | get_guild_member_permissions | `guild_id`*, `user_id`* | PermissionsResponse | yes | — |
+| GET | `/guilds/{guild_id}/permissions/role/{role_id}` | get_guild_role_permissions | `guild_id`*, `role_id`* | PermissionsResponse | yes | — |
+| GET | `/guilds/{guild_id}/preview` | get_guild_preview | `guild_id`* | GuildPreviewResponse | yes | — |
+| GET | `/guilds/{guild_id}/prune` | preview_prune_guild | `guild_id`*, `days`, `include_roles` | GuildPruneResponse | yes | — |
+| POST | `/guilds/{guild_id}/prune` | prune_guild | `guild_id`*, body*: PruneGuildRequest | GuildPruneResponse |  | — |
+| GET | `/guilds/{guild_id}/regions` | list_guild_voice_regions | `guild_id`* | VoiceRegionResponse[] | yes | — |
+| GET | `/guilds/{guild_id}/requests` | get_guild_join_requests | `guild_id`*, `status`, `limit`, `before`, `after` | GuildJoinRequestsListResponse | yes | — |
+| PATCH | `/guilds/{guild_id}/requests/{request_id}` | action_guild_join_request | `guild_id`*, `request_id`*, body*: object | GuildJoinRequestResponse |  | — |
+| GET | `/guilds/{guild_id}/roles` | list_guild_roles | `guild_id`* | GuildRoleResponse[] | yes | — |
+| POST | `/guilds/{guild_id}/roles` | create_guild_role | `guild_id`*, body*: CreateRoleRequest | GuildRoleResponse |  | — |
+| PATCH | `/guilds/{guild_id}/roles` | bulk_update_guild_roles | `guild_id`*, body*: UpdateRolePositionsRequest[] | GuildRoleResponse[] |  | — |
+| GET | `/guilds/{guild_id}/roles/member-counts` | guild_role_member_counts | `guild_id`* | object | yes | — |
+| GET | `/guilds/{guild_id}/roles/{role_id}` | get_guild_role | `guild_id`*, `role_id`* | GuildRoleResponse | yes | — |
+| DELETE | `/guilds/{guild_id}/roles/{role_id}` | delete_guild_role | `guild_id`*, `role_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/roles/{role_id}` | update_guild_role | `guild_id`*, `role_id`*, body*: UpdateRoleRequestPartial | GuildRoleResponse |  | — |
+| GET | `/guilds/{guild_id}/scheduled-events` | list_guild_scheduled_events | `guild_id`*, `with_user_count` | ExternalScheduledEventResponse\|StageScheduledEventResponse\|VoiceScheduledEventResponse[] | yes | — |
+| POST | `/guilds/{guild_id}/scheduled-events` | create_guild_scheduled_event | `guild_id`*, body*: ExternalScheduledEventCreateRequest\|StageScheduledEventCreateRequest\|VoiceScheduledEventCreateRequest | ExternalScheduledEventResponse\|StageScheduledEventResponse\|VoiceScheduledEventResponse |  | — |
+| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}` | get_guild_scheduled_event | `guild_id`*, `guild_scheduled_event_id`*, `with_user_count` | ExternalScheduledEventResponse\|StageScheduledEventResponse\|VoiceScheduledEventResponse | yes | — |
+| DELETE | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}` | delete_guild_scheduled_event | `guild_id`*, `guild_scheduled_event_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}` | update_guild_scheduled_event | `guild_id`*, `guild_scheduled_event_id`*, body*: ExternalScheduledEventPatchRequestPartial\|StageScheduledEventPatchRequestPartial\|VoiceScheduledEventPatchRequestPartial | ExternalScheduledEventResponse\|StageScheduledEventResponse\|VoiceScheduledEventResponse |  | — |
+| POST | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/exceptions` | create_guild_scheduled_event_exception | `guild_id`*, `guild_scheduled_event_id`*, body*: GuildScheduledEventExceptionCreateRequest | GuildScheduledEventExceptionResponse |  | — |
+| DELETE | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/exceptions/{exception_id}` | delete_guild_scheduled_event_exception | `guild_id`*, `guild_scheduled_event_id`*, `exception_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/exceptions/{exception_id}` | update_guild_scheduled_event_exception | `guild_id`*, `guild_scheduled_event_id`*, `exception_id`*, body*: GuildScheduledEventExceptionPatchRequestPartial | GuildScheduledEventExceptionResponse |  | — |
+| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/users` | list_guild_scheduled_event_users | `guild_id`*, `guild_scheduled_event_id`*, `with_member`, `limit`, `before`, `after` | ScheduledEventUserResponse[] | yes | — |
+| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/users/counts` | count_guild_scheduled_event_users | `guild_id`*, `guild_scheduled_event_id`*, `guild_scheduled_event_exception_ids` | ScheduledEventUserCountResponse | yes | — |
+| GET | `/guilds/{guild_id}/scheduled-events/{guild_scheduled_event_id}/{guild_scheduled_event_exception_id}/users` | list_guild_scheduled_event_exception_users | `guild_id`*, `guild_scheduled_event_id`*, `guild_scheduled_event_exception_id`*, `with_member`, `limit`, `before`, `after` | ScheduledEventUserResponse[] | yes | — |
+| GET | `/guilds/{guild_id}/soundboard-sounds` | list_guild_soundboard_sounds | `guild_id`* | ListGuildSoundboardSoundsResponse | yes | — |
+| POST | `/guilds/{guild_id}/soundboard-sounds` | create_guild_soundboard_sound | `guild_id`*, body*: SoundboardCreateRequest | SoundboardSoundResponse |  | — |
+| GET | `/guilds/{guild_id}/soundboard-sounds/{sound_id}` | get_guild_soundboard_sound | `guild_id`*, `sound_id`* | SoundboardSoundResponse | yes | — |
+| DELETE | `/guilds/{guild_id}/soundboard-sounds/{sound_id}` | delete_guild_soundboard_sound | `guild_id`*, `sound_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/soundboard-sounds/{sound_id}` | update_guild_soundboard_sound | `guild_id`*, `sound_id`*, body*: SoundboardPatchRequestPartial | SoundboardSoundResponse |  | — |
+| GET | `/guilds/{guild_id}/stickers` | list_guild_stickers | `guild_id`* | GuildStickerResponse[] | yes | — |
+| POST | `/guilds/{guild_id}/stickers` | create_guild_sticker | `guild_id`*, body*: object | GuildStickerResponse |  | — |
+| GET | `/guilds/{guild_id}/stickers/{sticker_id}` | get_guild_sticker | `guild_id`*, `sticker_id`* | GuildStickerResponse | yes | — |
+| DELETE | `/guilds/{guild_id}/stickers/{sticker_id}` | delete_guild_sticker | `guild_id`*, `sticker_id`* | — |  | — |
+| PATCH | `/guilds/{guild_id}/stickers/{sticker_id}` | update_guild_sticker | `guild_id`*, `sticker_id`*, body*: object | GuildStickerResponse |  | — |
+| GET | `/guilds/{guild_id}/templates` | list_guild_templates | `guild_id`* | GuildTemplateResponse[] | yes | — |
+| POST | `/guilds/{guild_id}/templates` | create_guild_template | `guild_id`*, body*: object | GuildTemplateResponse |  | — |
+| PUT | `/guilds/{guild_id}/templates/{code}` | sync_guild_template | `guild_id`*, `code`* | GuildTemplateResponse |  | — |
+| DELETE | `/guilds/{guild_id}/templates/{code}` | delete_guild_template | `guild_id`*, `code`* | GuildTemplateResponse |  | — |
+| PATCH | `/guilds/{guild_id}/templates/{code}` | update_guild_template | `guild_id`*, `code`*, body*: object | GuildTemplateResponse |  | — |
+| GET | `/guilds/{guild_id}/threads/active` | get_active_guild_threads | `guild_id`* | ThreadsResponse | yes | — |
+| GET | `/guilds/{guild_id}/vanity-url` | get_guild_vanity_url | `guild_id`* | VanityURLResponse | yes | — |
+| GET | `/guilds/{guild_id}/voice-states/@me` | get_self_voice_state | `guild_id`* | VoiceStateResponse | yes | — |
+| PATCH | `/guilds/{guild_id}/voice-states/@me` | update_self_voice_state | `guild_id`*, body*: UpdateSelfVoiceStateRequestPartial | — |  | — |
+| GET | `/guilds/{guild_id}/voice-states/{user_id}` | get_voice_state | `guild_id`*, `user_id`* | VoiceStateResponse | yes | — |
+| PATCH | `/guilds/{guild_id}/voice-states/{user_id}` | update_voice_state | `guild_id`*, `user_id`*, body*: UpdateVoiceStateRequestPartial | — |  | — |
+| GET | `/guilds/{guild_id}/webhooks` | get_guild_webhooks | `guild_id`* | ApplicationIncomingWebhookResponse\|ChannelFollowerWebhookResponse\|GuildIncomingWebhookResponse[] | yes | — |
+| GET | `/guilds/{guild_id}/welcome-screen` | get_guild_welcome_screen | `guild_id`* | GuildWelcomeScreenResponse | yes | — |
+| PATCH | `/guilds/{guild_id}/welcome-screen` | update_guild_welcome_screen | `guild_id`*, body*: WelcomeScreenPatchRequestPartial | GuildWelcomeScreenResponse |  | — |
+| GET | `/guilds/{guild_id}/widget` | get_guild_widget_settings | `guild_id`* | WidgetSettingsResponse | yes | — |
+| PATCH | `/guilds/{guild_id}/widget` | update_guild_widget_settings | `guild_id`*, body*: object | WidgetSettingsResponse |  | — |
+| GET | `/guilds/{guild_id}/widget.json` | get_guild_widget | `guild_id`* | WidgetResponse | yes | — |
+| GET | `/guilds/{guild_id}/widget.png` | get_guild_widget_png | `guild_id`*, `style` | string | yes | — |
+| POST | `/interactions/{interaction_id}/{interaction_token}/callback` | create_interaction_response | `interaction_id`*, `interaction_token`*, `with_response`, body*: ApplicationCommandAutocompleteCallbackRequest\|CreateMessageInteractionCallbackRequest\|LaunchActivityInteractionCallbackRequest\|ModalInteractionCallbackRequest\|PongInteractionCallbackRequest\|SocialLayerSKUPurchaseEligibilityInteractionCallbackRequest\|UpdateMessageInteractionCallbackRequest | InteractionCallbackResponse |  | — |
+| GET | `/invites/{code}` | invite_resolve | `code`*, `with_counts`, `guild_scheduled_event_id`, `target_channel_id`, `target_message_id` | FriendInviteResponse\|GroupDMInviteResponse\|GuildInviteResponse | yes | — |
+| DELETE | `/invites/{code}` | invite_revoke | `code`* | FriendInviteResponse\|GroupDMInviteResponse\|GuildInviteResponse |  | — |
+| GET | `/invites/{code}/target-users` | get_invite_target_users | `code`* | string | yes | — |
+| PUT | `/invites/{code}/target-users` | update_invite_target_users | `code`*, body*: object | — |  | — |
+| POST | `/invites/{code}/target-users/bulk-add` | bulk_add_invite_target_users | `code`*, body*: object | — |  | — |
+| POST | `/invites/{code}/target-users/bulk-delete` | bulk_remove_invite_target_users | `code`*, body*: object | — |  | — |
+| GET | `/invites/{code}/target-users/job-status` | get_invite_target_users_job_status | `code`* | TargetUsersJobStatusResponse | yes | — |
+| PUT | `/invites/{code}/target-users/{user_id}` | add_invite_target_user | `code`*, `user_id`* | — |  | — |
+| DELETE | `/invites/{code}/target-users/{user_id}` | remove_invite_target_user | `code`*, `user_id`* | — |  | — |
+| PUT | `/lobbies` | create_or_join_lobby | body*: object | LobbyResponse |  | — |
+| POST | `/lobbies` | create_lobby | body*: object | LobbyResponse |  | — |
+| GET | `/lobbies/{lobby_id}` | get_lobby | `lobby_id`* | LobbyResponse | yes | — |
+| DELETE | `/lobbies/{lobby_id}` | delete_lobby | `lobby_id`* | — |  | — |
+| PATCH | `/lobbies/{lobby_id}` | edit_lobby | `lobby_id`*, body*: object | LobbyResponse |  | — |
+| PATCH | `/lobbies/{lobby_id}/channel-linking` | edit_lobby_channel_link | `lobby_id`*, body*: object | LobbyResponse |  | — |
+| DELETE | `/lobbies/{lobby_id}/members/@me` | leave_lobby | `lobby_id`* | — |  | — |
+| POST | `/lobbies/{lobby_id}/members/@me/invites` | create_linked_lobby_guild_invite_for_self | `lobby_id`* | LobbyGuildInviteResponse |  | — |
+| POST | `/lobbies/{lobby_id}/members/bulk` | bulk_update_lobby_members | `lobby_id`*, body*: BulkLobbyMemberRequest[] | LobbyMemberResponse[] |  | — |
+| PUT | `/lobbies/{lobby_id}/members/{user_id}` | add_lobby_member | `lobby_id`*, `user_id`*, body*: object | LobbyMemberResponse |  | — |
+| DELETE | `/lobbies/{lobby_id}/members/{user_id}` | delete_lobby_member | `lobby_id`*, `user_id`* | — |  | — |
+| POST | `/lobbies/{lobby_id}/members/{user_id}/invites` | create_linked_lobby_guild_invite_for_user | `lobby_id`*, `user_id`* | LobbyGuildInviteResponse |  | — |
+| GET | `/lobbies/{lobby_id}/messages` | get_lobby_messages | `lobby_id`*, `limit` | LobbyMessageResponse[] | yes | — |
+| POST | `/lobbies/{lobby_id}/messages` | create_lobby_message | `lobby_id`*, body*: SDKMessageRequest | LobbyMessageResponse |  | — |
+| PUT | `/lobbies/{lobby_id}/messages/{message_id}/moderation-metadata` | update_lobby_message_external_moderation_metadata | `lobby_id`*, `message_id`*, body*: object | — |  | — |
+| GET | `/oauth2/@me` | get_my_oauth2_authorization | — | OAuth2GetAuthorizationResponse | yes | — |
+| GET | `/oauth2/applications/@me` | get_my_oauth2_application | — | PrivateApplicationResponse | yes | — |
+| GET | `/oauth2/keys` | get_public_keys | — | OAuth2GetKeys | yes | — |
+| GET | `/oauth2/userinfo` | get_openid_connect_userinfo | — | OAuth2GetOpenIDConnectUserInfoResponse | yes | — |
+| PUT | `/partner-sdk/dms/{user_id_1}/{user_id_2}/messages/{message_id}/moderation-metadata` | update_user_message_external_moderation_metadata | `user_id_1`*, `user_id_2`*, `message_id`*, body*: object | — |  | — |
+| POST | `/partner-sdk/provisional-accounts/unmerge` | partner_sdk_unmerge_provisional_account | body*: object | — |  | — |
+| POST | `/partner-sdk/provisional-accounts/unmerge/bot` | bot_partner_sdk_unmerge_provisional_account | body*: object | — |  | — |
+| POST | `/partner-sdk/token` | partner_sdk_token | body*: object | ProvisionalTokenResponse |  | — |
+| POST | `/partner-sdk/token/bot` | bot_partner_sdk_token | body*: object | ProvisionalTokenResponse |  | — |
+| GET | `/skus/{sku_id}/subscriptions` | get_sku_subscriptions | `sku_id`*, `before`, `after`, `limit`, `user_id` | SubscriptionResponse[] | yes | — |
+| GET | `/skus/{sku_id}/subscriptions/{subscription_id}` | get_sku_subscription | `sku_id`*, `subscription_id`*, `user_id` | SubscriptionResponse | yes | — |
+| GET | `/soundboard-default-sounds` | get_soundboard_default_sounds | — | SoundboardSoundResponse[] | yes | — |
+| POST | `/stage-instances` | create_stage_instance | body*: object | StageInstanceResponse |  | — |
+| GET | `/stage-instances/{channel_id}` | get_stage_instance | `channel_id`* | StageInstanceResponse | yes | — |
+| DELETE | `/stage-instances/{channel_id}` | delete_stage_instance | `channel_id`* | — |  | — |
+| PATCH | `/stage-instances/{channel_id}` | update_stage_instance | `channel_id`*, body*: object | StageInstanceResponse |  | — |
+| GET | `/sticker-packs` | list_sticker_packs | — | StickerPackCollectionResponse | yes | — |
+| GET | `/sticker-packs/{pack_id}` | get_sticker_pack | `pack_id`* | StickerPackResponse | yes | — |
+| GET | `/stickers/{sticker_id}` | get_sticker | `sticker_id`* | GuildStickerResponse\|StandardStickerResponse | yes | — |
+| GET | `/users/@me` | get_my_user | — | UserPIIResponse | yes | — |
+| PATCH | `/users/@me` | update_my_user | body*: BotAccountPatchRequest | UserPIIResponse |  | — |
+| GET | `/users/@me/applications/{application_id}/entitlements` | get_current_user_application_entitlements | `application_id`*, `sku_ids`, `exclude_consumed` | EntitlementResponse[] | yes | — |
+| GET | `/users/@me/applications/{application_id}/role-connection` | get_application_user_role_connection | `application_id`* | ApplicationUserRoleConnectionResponse | yes | — |
+| PUT | `/users/@me/applications/{application_id}/role-connection` | update_application_user_role_connection | `application_id`*, body*: UpdateApplicationUserRoleConnectionRequest | ApplicationUserRoleConnectionResponse |  | — |
+| DELETE | `/users/@me/applications/{application_id}/role-connection` | delete_application_user_role_connection | `application_id`* | — |  | — |
+| POST | `/users/@me/channels` | create_dm | body*: CreatePrivateChannelRequest | PrivateChannelResponse\|PrivateGroupChannelResponse |  | — |
+| GET | `/users/@me/connections` | list_my_connections | — | ConnectedAccountResponse[] | yes | — |
+| GET | `/users/@me/guilds` | list_my_guilds | `before`, `after`, `limit`, `shard`, `with_counts` | MyGuildResponse[] | yes | — |
+| DELETE | `/users/@me/guilds/{guild_id}` | leave_guild | `guild_id`* | — |  | — |
+| GET | `/users/@me/guilds/{guild_id}/member` | get_my_guild_member | `guild_id`* | PrivateGuildMemberResponse | yes | — |
+| GET | `/users/{user_id}` | get_user | `user_id`* | UserResponse | yes | — |
+| GET | `/voice/regions` | list_voice_regions | — | VoiceRegionResponse[] | yes | — |
+| GET | `/webhooks/{webhook_id}` | get_webhook | `webhook_id`* | ApplicationIncomingWebhookResponse\|ChannelFollowerWebhookResponse\|GuildIncomingWebhookResponse | yes | — |
+| DELETE | `/webhooks/{webhook_id}` | delete_webhook | `webhook_id`* | — |  | — |
+| PATCH | `/webhooks/{webhook_id}` | update_webhook | `webhook_id`*, body*: object | ApplicationIncomingWebhookResponse\|ChannelFollowerWebhookResponse\|GuildIncomingWebhookResponse |  | — |
+| GET | `/webhooks/{webhook_id}/{webhook_token}` | get_webhook_by_token | `webhook_id`*, `webhook_token`* | ApplicationIncomingWebhookResponse\|ChannelFollowerWebhookResponse\|GuildIncomingWebhookResponse | yes | — |
+| POST | `/webhooks/{webhook_id}/{webhook_token}` | execute_webhook | `webhook_id`*, `webhook_token`*, `wait`, `thread_id`, `with_components`, body*: IncomingWebhookRequestPartial\|IncomingWebhookUpdateRequestPartial | MessageResponse |  | — |
+| DELETE | `/webhooks/{webhook_id}/{webhook_token}` | delete_webhook_by_token | `webhook_id`*, `webhook_token`* | — |  | — |
+| PATCH | `/webhooks/{webhook_id}/{webhook_token}` | update_webhook_by_token | `webhook_id`*, `webhook_token`*, body*: object | ApplicationIncomingWebhookResponse\|ChannelFollowerWebhookResponse\|GuildIncomingWebhookResponse |  | — |
+| POST | `/webhooks/{webhook_id}/{webhook_token}/github` | execute_github_compatible_webhook | `webhook_id`*, `webhook_token`*, `wait`, `thread_id`, body*: GithubWebhook | — |  | — |
+| GET | `/webhooks/{webhook_id}/{webhook_token}/messages/@original` | get_original_webhook_message | `webhook_id`*, `webhook_token`*, `thread_id` | MessageResponse | yes | — |
+| DELETE | `/webhooks/{webhook_id}/{webhook_token}/messages/@original` | delete_original_webhook_message | `webhook_id`*, `webhook_token`*, `thread_id` | — |  | — |
+| PATCH | `/webhooks/{webhook_id}/{webhook_token}/messages/@original` | update_original_webhook_message | `webhook_id`*, `webhook_token`*, `thread_id`, `with_components`, body*: IncomingWebhookUpdateRequestPartial | MessageResponse |  | — |
+| GET | `/webhooks/{webhook_id}/{webhook_token}/messages/{message_id}` | get_webhook_message | `webhook_id`*, `webhook_token`*, `message_id`*, `thread_id` | MessageResponse | yes | — |
+| DELETE | `/webhooks/{webhook_id}/{webhook_token}/messages/{message_id}` | delete_webhook_message | `webhook_id`*, `webhook_token`*, `message_id`*, `thread_id` | — |  | — |
+| PATCH | `/webhooks/{webhook_id}/{webhook_token}/messages/{message_id}` | update_webhook_message | `webhook_id`*, `webhook_token`*, `message_id`*, `thread_id`, `with_components`, body*: IncomingWebhookUpdateRequestPartial | MessageResponse |  | — |
+| POST | `/webhooks/{webhook_id}/{webhook_token}/slack` | execute_slack_compatible_webhook | `webhook_id`*, `webhook_token`*, `wait`, `thread_id`, body*: SlackWebhook | string |  | — |

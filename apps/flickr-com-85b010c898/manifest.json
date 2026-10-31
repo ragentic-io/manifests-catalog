@@ -128,6 +128,51 @@
         "from": "flickr-com-85b010c898",
         "kind": "EXPOSES",
         "to": "operation:post:/upload"
+      },
+      {
+        "from": "schema:ContextPhotos",
+        "kind": "REFERENCES",
+        "to": "schema:ContextPhoto"
+      },
+      {
+        "from": "schema:Group",
+        "kind": "REFERENCES",
+        "to": "schema:Cover"
+      },
+      {
+        "from": "schema:Group",
+        "kind": "REFERENCES",
+        "to": "schema:PhotoURLs"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:Cover"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:PhotoURLs"
+      },
+      {
+        "from": "schema:Photo",
+        "kind": "REFERENCES",
+        "to": "schema:Note"
+      },
+      {
+        "from": "schema:Photo",
+        "kind": "REFERENCES",
+        "to": "schema:Owner"
+      },
+      {
+        "from": "schema:Photo",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Photo",
+        "kind": "REFERENCES",
+        "to": "schema:URL"
       }
     ],
     "nodes": [
@@ -137,358 +182,1432 @@
       },
       {
         "deprecated": false,
+        "description": "Returns an access token",
         "id": "operation:get:/oauth/access_token",
         "kind": "operation",
         "method": "get",
         "name": "getAccessToken",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "oauth_consumer_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_timestamp",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_signature_method",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_signature",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_verifier",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/access_token",
         "pointer": "#/paths/~1oauth~1access_token/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an oauth token and oauth token secret",
         "id": "operation:get:/oauth/request_token",
         "kind": "operation",
         "method": "get",
         "name": "getRequestToken",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "oauth_consumer_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_timestamp",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_signature_method",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_signature",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "oauth_callback",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/request_token",
         "pointer": "#/paths/~1oauth~1request_token/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns next and previous favorites for a photo in a user's favorites",
         "id": "operation:get:/rest?method=flickr.favorites.getContext",
         "kind": "operation",
         "method": "get",
         "name": "getFavoritesContextByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.favorites.getContext",
         "pointer": "#/paths/~1rest?method=flickr.favorites.getContext/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the user's favorite photos.",
         "id": "operation:get:/rest?method=flickr.favorites.getList",
         "kind": "operation",
         "method": "get",
         "name": "getFavoritesByPersonID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "min_fave_date",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_fave_date",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/rest?method=flickr.favorites.getList",
         "pointer": "#/paths/~1rest?method=flickr.favorites.getList/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of photos in a gallery.",
         "id": "operation:get:/rest?method=flickr.galleries.getPhotos",
         "kind": "operation",
         "method": "get",
         "name": "getGalleryPhotosByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "gallery_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.galleries.getPhotos",
         "pointer": "#/paths/~1rest?method=flickr.galleries.getPhotos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information on a group topic reply",
         "id": "operation:get:/rest?method=flickr.groups.discuss.replies.getInfo",
         "kind": "operation",
         "method": "get",
         "name": "getGroupTopicRepliesByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "topic_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "reply_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.groups.discuss.replies.getInfo",
         "pointer": "#/paths/~1rest?method=flickr.groups.discuss.replies.getInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about a group discussion topic",
         "id": "operation:get:/rest?method=flickr.groups.discuss.topics.getInfo",
         "kind": "operation",
         "method": "get",
         "name": "getGroupTopicByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "topic_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.groups.discuss.topics.getInfo",
         "pointer": "#/paths/~1rest?method=flickr.groups.discuss.topics.getInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of discussion topics in a group.",
         "id": "operation:get:/rest?method=flickr.groups.discuss.topics.getList",
         "kind": "operation",
         "method": "get",
         "name": "getGroupDiscussionsByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/rest?method=flickr.groups.discuss.topics.getList",
         "pointer": "#/paths/~1rest?method=flickr.groups.discuss.topics.getList/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about a group",
         "id": "operation:get:/rest?method=flickr.groups.getInfo",
         "kind": "operation",
         "method": "get",
         "name": "getGroupByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_path_alias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.groups.getInfo",
         "pointer": "#/paths/~1rest?method=flickr.groups.getInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns next and previous photos for a photo in a group pool",
         "id": "operation:get:/rest?method=flickr.groups.pools.getContext",
         "kind": "operation",
         "method": "get",
         "name": "get /rest?method=flickr.groups.pools.getContext",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.groups.pools.getContext",
         "pointer": "#/paths/~1rest?method=flickr.groups.pools.getContext/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of pool photos for a given group",
         "id": "operation:get:/rest?method=flickr.groups.pools.getPhotos",
         "kind": "operation",
         "method": "get",
         "name": "getGroupPhotosByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.groups.pools.getPhotos",
         "pointer": "#/paths/~1rest?method=flickr.groups.pools.getPhotos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a person",
         "id": "operation:get:/rest?method=flickr.people.getInfo",
         "kind": "operation",
         "method": "get",
         "name": "getPersonByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.people.getInfo",
         "pointer": "#/paths/~1rest?method=flickr.people.getInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return photos from the given user's photostream",
         "id": "operation:get:/rest?method=flickr.people.getPhotos",
         "kind": "operation",
         "method": "get",
         "name": "getMediaByPersonID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "safe_search",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_upload_date",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_upload_date",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_taken_date",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_taken_date",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "content_type",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "privacy_filter",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/rest?method=flickr.people.getPhotos",
         "pointer": "#/paths/~1rest?method=flickr.people.getPhotos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns next and previous photos in a photo list",
         "id": "operation:get:/rest?method=flickr.photolist.getContext",
         "kind": "operation",
         "method": "get",
         "name": "getPhotolistContextByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photolist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photolist.getContext",
         "pointer": "#/paths/~1rest?method=flickr.photolist.getContext/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns next and previous photos for a photo in a photostream",
         "id": "operation:get:/rest?method=flickr.photos.getContext",
         "kind": "operation",
         "method": "get",
         "name": "getPhotostreamContextByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photos.getContext",
         "pointer": "#/paths/~1rest?method=flickr.photos.getContext/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list of EXIF/TIFF/GPS tags for a given photo.",
         "id": "operation:get:/rest?method=flickr.photos.getExif",
         "kind": "operation",
         "method": "get",
         "name": "getPhotoExifByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "secret",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photos.getExif",
         "pointer": "#/paths/~1rest?method=flickr.photos.getExif/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a photo",
         "id": "operation:get:/rest?method=flickr.photos.getInfo",
         "kind": "operation",
         "method": "get",
         "name": "getPhotoByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photos.getInfo",
         "pointer": "#/paths/~1rest?method=flickr.photos.getInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns photo sizes",
         "id": "operation:get:/rest?method=flickr.photos.getSizes",
         "kind": "operation",
         "method": "get",
         "name": "getPhotoSizesByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photos.getSizes",
         "pointer": "#/paths/~1rest?method=flickr.photos.getSizes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches a list of available photo licenses for Flickr",
         "id": "operation:get:/rest?method=flickr.photos.licenses.getInfo",
         "kind": "operation",
         "method": "get",
         "name": "getLicenseByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photos.licenses.getInfo",
         "pointer": "#/paths/~1rest?method=flickr.photos.licenses.getInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of photos matching some criteria.",
         "id": "operation:get:/rest?method=flickr.photos.search",
         "kind": "operation",
         "method": "get",
         "name": "getMediaBySearch",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A free text search.",
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma-delimited list of tags.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The NSID of the user who's photo to search.",
+            "in": "query",
+            "name": "user_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Minimum upload date.",
+            "in": "query",
+            "name": "min_upload_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximum upload date.",
+            "in": "query",
+            "name": "max_upload_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Minimum taken date.",
+            "in": "query",
+            "name": "min_taken_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximum taken date.",
+            "in": "query",
+            "name": "max_taken_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The license id for photos (for possible values see the flickr.photos.licenses.getInfo method).",
+            "in": "query",
+            "name": "license",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The order in which to sort returned photos.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return photos only matching a certain privacy level.",
+            "in": "query",
+            "name": "privacy_filter",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched.",
+            "in": "query",
+            "name": "bbox",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Recorded accuracy level of the location information.",
+            "in": "query",
+            "name": "accuracy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Safe search setting: 1: for safe, 2: for moderate, 3: for restricted",
+            "in": "query",
+            "name": "safe_search",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Content Type setting: 1: photos only.",
+            "in": "query",
+            "name": "content_type",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : \"mach…",
+            "in": "query",
+            "name": "machine_tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Either 'any' for an OR combination of tags, or 'all' for an AND combination.",
+            "in": "query",
+            "name": "machine_tag_mode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The id of a group who's pool to search.",
+            "in": "query",
+            "name": "group_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search your contacts.",
+            "in": "query",
+            "name": "contacts",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A 32-bit identifier that uniquely represents spatial entities.",
+            "in": "query",
+            "name": "woe_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A Flickr place id.",
+            "in": "query",
+            "name": "place_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter results by media type.",
+            "in": "query",
+            "name": "media",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Any photo that has been geotagged, or if the value is \"0\" any photo that has not been geotagged.",
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Geo context is a numeric value representing the photo's geotagginess beyond latitude and longitude.",
+            "in": "query",
+            "name": "geo_context",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A valid latitude, in decimal format, for doing radial geo queries.",
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A valid longitude, in decimal format, for doing radial geo queries.",
+            "in": "query",
+            "name": "lon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The unit of measure when doing radial geo queries.",
+            "in": "query",
+            "name": "radius_units",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the scope of the search to only photos that are part of the Flickr Commons project.",
+            "in": "query",
+            "name": "is_commons",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit the scope of the search to only photos that are in a gallery?",
+            "in": "query",
+            "name": "in_gallery",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit the scope of the search to only photos that are for sale on Getty.",
+            "in": "query",
+            "name": "is_getty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Number of photos to return per page.",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The page of results to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/rest?method=flickr.photos.search",
         "pointer": "#/paths/~1rest?method=flickr.photos.search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns next and previous photos for a photo in a set",
         "id": "operation:get:/rest?method=flickr.photosets.getContext",
         "kind": "operation",
         "method": "get",
         "name": "getAlbumContextByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photoset_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photosets.getContext",
         "pointer": "#/paths/~1rest?method=flickr.photosets.getContext/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the albums belonging to the specified user",
         "id": "operation:get:/rest?method=flickr.photosets.getList",
         "kind": "operation",
         "method": "get",
         "name": "getAlbumsByPersonID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/rest?method=flickr.photosets.getList",
         "pointer": "#/paths/~1rest?method=flickr.photosets.getList/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of photos in an album.",
         "id": "operation:get:/rest?method=flickr.photosets.getPhotos",
         "kind": "operation",
         "method": "get",
         "name": "getAlbumByID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "photoset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.photosets.getPhotos",
         "pointer": "#/paths/~1rest?method=flickr.photosets.getPhotos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Echos the input parameters back in the response",
         "id": "operation:get:/rest?method=flickr.test.echo",
         "kind": "operation",
         "method": "get",
         "name": "echo",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "echo",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rest?method=flickr.test.echo",
         "pointer": "#/paths/~1rest?method=flickr.test.echo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Uploads a new photo to Flickr",
         "id": "operation:post:/upload",
         "kind": "operation",
         "method": "post",
         "name": "uploadPhoto",
         "path": "/upload",
         "pointer": "#/paths/~1upload/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Public"
+        ]
       },
       {
         "id": "schema:Album",
         "kind": "schema",
-        "name": "Album"
+        "name": "Album",
+        "type": "object"
       },
       {
         "id": "schema:ContextPhoto",
         "kind": "schema",
-        "name": "ContextPhoto"
+        "name": "ContextPhoto",
+        "type": "object"
       },
       {
         "id": "schema:ContextPhotos",
         "kind": "schema",
-        "name": "ContextPhotos"
+        "name": "ContextPhotos",
+        "type": "object"
       },
       {
         "id": "schema:Cover",
         "kind": "schema",
-        "name": "Cover"
+        "name": "Cover",
+        "type": "object"
       },
       {
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
         "id": "schema:Note",
         "kind": "schema",
-        "name": "Note"
+        "name": "Note",
+        "type": "object"
       },
       {
         "id": "schema:Owner",
         "kind": "schema",
-        "name": "Owner"
+        "name": "Owner",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
         "id": "schema:Photo",
         "kind": "schema",
-        "name": "Photo"
+        "name": "Photo",
+        "type": "object"
       },
       {
         "id": "schema:PhotoURLs",
         "kind": "schema",
-        "name": "PhotoURLs"
+        "name": "PhotoURLs",
+        "type": "object"
       },
       {
         "id": "schema:Size",
         "kind": "schema",
-        "name": "Size"
+        "name": "Size",
+        "type": "object"
       },
       {
         "id": "schema:Stat",
         "kind": "schema",
-        "name": "Stat"
+        "name": "Stat",
+        "type": "string"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:Topic",
         "kind": "schema",
-        "name": "Topic"
+        "name": "Topic",
+        "type": "object"
       },
       {
         "id": "schema:TopicReply",
         "kind": "schema",
-        "name": "TopicReply"
+        "name": "TopicReply",
+        "type": "object"
       },
       {
         "id": "schema:URL",
         "kind": "schema",
-        "name": "URL"
+        "name": "URL",
+        "type": "object"
       }
     ]
   },

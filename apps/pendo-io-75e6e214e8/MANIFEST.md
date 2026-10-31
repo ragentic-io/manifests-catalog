@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_receptiveio_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `4b8c91f11e5e0e4148c33f931698e30cc74646d8ee9792dcfb48ad39f4662465` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,36 +34,38 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_receptiveio_profile
 
 11 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | get /accounts | Query accounts |
-| DELETE | `/accounts/{id}` | delete /accounts/{id} | Delete an Account |
-| GET | `/accounts/{id}` | get /accounts/{id} | Get an Account |
-| PUT | `/accounts/{id}` | put /accounts/{id} | Update an Account |
-| DELETE | `/accounts/{id}/tags` | delete /accounts/{id}/tags | Delete custom Account tags |
-| GET | `/accounts/{id}/tags` | get /accounts/{id}/tags | Get custom Account tags |
-| POST | `/accounts/{id}/tags` | post /accounts/{id}/tags | Overwrite current custom Account tags with the given tags |
-| GET | `/comments` | get /comments | fetch Comment records |
-| GET | `/features` | get /features | Query features |
-| GET | `/features/{id}` | get /features/{id} | Get a Feature by ID |
-| DELETE | `/features/{id}/tags` | delete /features/{id}/tags | Delete custom Feature tags |
-| GET | `/features/{id}/tags` | get /features/{id}/tags | Get custom Feature tags |
-| POST | `/features/{id}/tags` | post /features/{id}/tags | Overwrite current custom Feature tags with the given tags |
-| GET | `/health-check/ping` | get /health-check/ping | Health check for API |
-| POST | `/hooks` | post /hooks | Subscribe to webhooks |
-| POST | `/hooks/unsubscribe` | post /hooks/unsubscribe | Unsubscribe from webhooks |
-| GET | `/search` | get /search | Search features |
-| GET | `/users` | get /users | fetch User records |
-| POST | `/users` | post /users | Ping to create or update an EndUser and Account in one call |
-| POST | `/users/invite_end_user` | post /users/invite_end_user | Invite an EndUser (customer) |
-| POST | `/users/invite_vendor_user` | post /users/invite_vendor_user | Invite a VendorUser (Team member) |
-| GET | `/users/search` | get /users/search | Find a User with a query |
-| DELETE | `/users/{id}` | delete /users/{id} | Delete a User |
-| GET | `/users/{id}` | get /users/{id} | Get a User record |
-| PUT | `/users/{id}` | put /users/{id} | Update a User |
-| DELETE | `/users/{id}/tags` | delete /users/{id}/tags | Delete custom User tags |
-| GET | `/users/{id}/tags` | get /users/{id}/tags | Get custom User tags |
-| POST | `/users/{id}/tags` | post /users/{id}/tags | Overwrite current custom User tags with the given tags |
-| POST | `/vendor_users` | post /vendor_users | Create or update a team member by their external_id |
-| GET | `/votes` | get /votes | — |
-| POST | `/votes` | post /votes | update specified votes for a User |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | get /accounts | `limit`, `start`, `order_dir`, `order_by` | Account[] | yes | Query accounts |
+| GET | `/accounts/{id}` | get /accounts/{id} | `id`* | Account | yes | Get an Account |
+| PUT | `/accounts/{id}` | put /accounts/{id} | `id`*, body: object | — |  | Update an Account |
+| DELETE | `/accounts/{id}` | delete /accounts/{id} | `id`* | Account |  | Delete an Account |
+| GET | `/accounts/{id}/tags` | get /accounts/{id}/tags | `id`* | — | yes | Get custom Account tags |
+| POST | `/accounts/{id}/tags` | post /accounts/{id}/tags | `id`*, body*: Tags | — |  | Overwrite current custom Account tags with the given tags |
+| DELETE | `/accounts/{id}/tags` | delete /accounts/{id}/tags | `id`* | — |  | Delete custom Account tags |
+| GET | `/comments` | get /comments | `case_id`* | Comment[] | yes | fetch Comment records |
+| GET | `/features` | get /features | `limit`, `start`, `order_dir`, `is_private`, `wanted_by`, `order_by`, `tags`, `products` | Feature[] | yes | Query features |
+| GET | `/features/{id}` | get /features/{id} | `id`* | Feature | yes | Get a Feature by ID |
+| GET | `/features/{id}/tags` | get /features/{id}/tags | `id`* | — | yes | Get custom Feature tags |
+| POST | `/features/{id}/tags` | post /features/{id}/tags | `id`*, body*: Tags | — |  | Overwrite current custom Feature tags with the given tags |
+| DELETE | `/features/{id}/tags` | delete /features/{id}/tags | `id`* | — |  | Delete custom Feature tags |
+| GET | `/health-check/ping` | get /health-check/ping | — | — | yes | Health check for API |
+| POST | `/hooks` | post /hooks | body*: object | — |  | Subscribe to webhooks |
+| POST | `/hooks/unsubscribe` | post /hooks/unsubscribe | body*: object | — |  | Unsubscribe from webhooks |
+| GET | `/search` | get /search | `scope`*, `q`*, `status`, `tags`, `products` | Feature[] | yes | Search features |
+| GET | `/users` | get /users | `role`*, `account`, `start`, `limit`, `order_by`, `order_dir` | User[] | yes | fetch User records |
+| POST | `/users` | post /users | body*: EndUserPing | — |  | Ping to create or update an EndUser and Account in one call |
+| POST | `/users/invite_end_user` | post /users/invite_end_user | body*: object | — |  | Invite an EndUser (customer) |
+| POST | `/users/invite_vendor_user` | post /users/invite_vendor_user | body*: object | — |  | Invite a VendorUser (Team member) |
+| GET | `/users/search` | get /users/search | `external_id`, `email`, `role` | User | yes | Find a User with a query |
+| GET | `/users/{id}` | get /users/{id} | `id`* | User | yes | Get a User record |
+| PUT | `/users/{id}` | put /users/{id} | `id`*, body: object | User |  | Update a User |
+| DELETE | `/users/{id}` | delete /users/{id} | `id`* | User |  | Delete a User |
+| GET | `/users/{id}/tags` | get /users/{id}/tags | `id`* | — | yes | Get custom User tags |
+| POST | `/users/{id}/tags` | post /users/{id}/tags | `id`*, body*: Tags | — |  | Overwrite current custom User tags with the given tags |
+| DELETE | `/users/{id}/tags` | delete /users/{id}/tags | `id`* | — |  | Delete custom User tags |
+| POST | `/vendor_users` | post /vendor_users | body*: object | — |  | Create or update a team member by their external_id |
+| GET | `/votes` | get /votes | `user_id`, `feature_id`, `positive`, `negative`, `offset`, `limit` | Vote[] | yes | — |
+| POST | `/votes` | post /votes | body*: object | — |  | update specified votes for a User |

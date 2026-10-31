@@ -12,7 +12,7 @@ Independent connector for GrowthBook REST API. Not affiliated with or endorsed b
 
 | | |
 | --- | --- |
-| Signed bundle | `9a358975593f1a77289fd4c1809b3d246f6cfb1b5fbec3406c0fbccdc08519f7` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.growthbook.io/api` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.growthbook.io/api/v1/settings` |
@@ -40,447 +40,449 @@ Independent connector for GrowthBook REST API. Not affiliated with or endorsed b
 
 172 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/archetypes` | listArchetypes | Get the organization's archetypes |
-| POST | `/v1/archetypes` | postArchetype | Create a single archetype |
-| DELETE | `/v1/archetypes/{id}` | deleteArchetype | Deletes a single archetype |
-| GET | `/v1/archetypes/{id}` | getArchetype | Get a single archetype |
-| PUT | `/v1/archetypes/{id}` | putArchetype | Update a single archetype |
-| GET | `/v1/attributes` | listAttributes | Get the organization's attributes |
-| POST | `/v1/attributes` | postAttribute | Create a new attribute |
-| DELETE | `/v1/attributes/{property}` | deleteAttribute | Deletes a single attribute |
-| PUT | `/v1/attributes/{property}` | putAttribute | Update an attribute |
-| GET | `/v1/auto-runs` | listAutoRuns | Get all autoRuns |
-| POST | `/v1/auto-runs` | createAutoRun | Create a single autoRun |
-| GET | `/v1/auto-runs/{id}` | getAutoRun | Get a single autoRun |
-| PUT | `/v1/auto-runs/{id}` | updateAutoRun | Update a single autoRun |
-| POST | `/v1/auto-runs/{id}/artifacts` | appendAutoRunArtifact | Record something an auto run created |
-| POST | `/v1/bulk-import/facts` | postBulkImportFacts | Bulk import fact tables, filters, and metrics |
-| GET | `/v1/code-refs` | listCodeRefs | Get list of all code references for the current organization |
-| POST | `/v1/code-refs` | postCodeRefs | Submit list of code references |
-| GET | `/v1/code-refs/{id}` | getCodeRefs | Get list of code references for a single feature id |
-| GET | `/v1/configs` | listConfigs | Get all configs |
-| POST | `/v1/configs` | postConfig | Create a single config |
-| GET | `/v1/configs-revisions` | listConfigRevisions | List config revisions across the organization |
-| GET | `/v1/configs-revisions/{key}` | getConfigRevisions | List revisions for a config |
-| POST | `/v1/configs-revisions/{key}` | postConfigRevision | Create a draft revision |
-| GET | `/v1/configs-revisions/{key}/latest` | getConfigRevisionLatest | Get the most recent active draft revision |
-| GET | `/v1/configs-revisions/{key}/{version}` | getConfigRevision | Get a single config revision |
-| PUT | `/v1/configs-revisions/{key}/{version}/archive` | putConfigRevisionArchive | Stage an archive/unarchive in a draft revision |
-| POST | `/v1/configs-revisions/{key}/{version}/discard` | postConfigRevisionDiscard | Discard a draft revision |
-| GET | `/v1/configs-revisions/{key}/{version}/merge-status` | getConfigRevisionMergeStatus | Get merge status for a draft revision |
-| PUT | `/v1/configs-revisions/{key}/{version}/metadata` | putConfigRevisionMetadata | Update config metadata in a draft revision |
-| DELETE | `/v1/configs-revisions/{key}/{version}/projection` | deleteConfigRevisionProjection | Remove a config's per-source render projection on a draft |
-| PUT | `/v1/configs-revisions/{key}/{version}/projection` | putConfigRevisionProjection | Set (or update) a config's per-source render projection on a draft |
-| DELETE | `/v1/configs-revisions/{key}/{version}/property` | deleteConfigRevisionProperty | Remove one property from a config draft revision's value |
-| PUT | `/v1/configs-revisions/{key}/{version}/property` | putConfigRevisionProperty | Set one property of a config draft revision's value |
-| POST | `/v1/configs-revisions/{key}/{version}/publish` | postConfigRevisionPublish | Publish a draft revision |
-| POST | `/v1/configs-revisions/{key}/{version}/rebase` | postConfigRevisionRebase | Rebase a draft revision onto the current live config |
-| POST | `/v1/configs-revisions/{key}/{version}/recall-review` | postConfigRevisionRecallReview | Recall a review request |
-| POST | `/v1/configs-revisions/{key}/{version}/reopen` | postConfigRevisionReopen | Reopen a discarded revision |
-| POST | `/v1/configs-revisions/{key}/{version}/request-review` | postConfigRevisionRequestReview | Request review for a draft revision |
-| POST | `/v1/configs-revisions/{key}/{version}/revert` | postConfigRevisionRevert | Revert the config to a prior revision |
-| POST | `/v1/configs-revisions/{key}/{version}/schedule-publish` | postConfigRevisionSchedulePublish | Schedule (or cancel) a deferred publish |
-| PUT | `/v1/configs-revisions/{key}/{version}/schema` | putConfigRevisionSchema | Update or import the schema of a config draft revision |
-| POST | `/v1/configs-revisions/{key}/{version}/submit-review` | postConfigRevisionSubmitReview | Submit a review on a draft revision |
-| POST | `/v1/configs-revisions/{key}/{version}/undo-review` | postConfigRevisionUndoReview | Retract your own review verdict |
-| PUT | `/v1/configs-revisions/{key}/{version}/value` | putConfigRevisionValue | Update the value of a config draft revision |
-| DELETE | `/v1/configs/{key}` | deleteConfig | Delete a single config |
-| GET | `/v1/configs/{key}` | getConfig | Get a single config |
-| POST | `/v1/configs/{key}` | updateConfig | Partially update a single config |
-| POST | `/v1/configs/{key}/archive` | archiveConfig | Archive a single config |
-| GET | `/v1/configs/{key}/key-usage` | getConfigKeyUsage | Get the feature rules and default values implementing each key |
-| GET | `/v1/configs/{key}/lineage` | getConfigLineage | Get the full lineage (family tree) for a config |
-| POST | `/v1/configs/{key}/lock` | lockConfig | Lock a config at its current published revision |
-| GET | `/v1/configs/{key}/references` | getConfigReferences | Get features and configs that reference this config |
-| GET | `/v1/configs/{key}/schema` | getConfigSchema | Export a config's schema |
-| POST | `/v1/configs/{key}/schema/verify` | verifyConfigSchema | Verify a config's schema against a source (drift check) |
-| POST | `/v1/configs/{key}/unarchive` | unarchiveConfig | Unarchive a single config |
-| POST | `/v1/configs/{key}/unlock` | unlockConfig | Unlock a config |
-| GET | `/v1/confirmations/{id}` | getConfirmation | Get a confirmation |
-| GET | `/v1/constants` | listConstants | Get all constants |
-| POST | `/v1/constants` | postConstant | Create a single constant |
-| GET | `/v1/constants-revisions` | listConstantRevisions | List constant revisions across the organization |
-| GET | `/v1/constants-revisions/{key}` | getConstantRevisions | List revisions for a constant |
-| POST | `/v1/constants-revisions/{key}` | postConstantRevision | Create a draft revision |
-| GET | `/v1/constants-revisions/{key}/latest` | getConstantRevisionLatest | Get the most recent active draft revision |
-| GET | `/v1/constants-revisions/{key}/{version}` | getConstantRevision | Get a single constant revision |
-| PUT | `/v1/constants-revisions/{key}/{version}/archive` | putConstantRevisionArchive | Stage an archive/unarchive in a draft revision |
-| POST | `/v1/constants-revisions/{key}/{version}/discard` | postConstantRevisionDiscard | Discard a draft revision |
-| GET | `/v1/constants-revisions/{key}/{version}/merge-status` | getConstantRevisionMergeStatus | Get merge status for a draft revision |
-| PUT | `/v1/constants-revisions/{key}/{version}/metadata` | putConstantRevisionMetadata | Update constant metadata in a draft revision |
-| POST | `/v1/constants-revisions/{key}/{version}/publish` | postConstantRevisionPublish | Publish a draft revision |
-| POST | `/v1/constants-revisions/{key}/{version}/rebase` | postConstantRevisionRebase | Rebase a draft revision onto the current live constant |
-| POST | `/v1/constants-revisions/{key}/{version}/recall-review` | postConstantRevisionRecallReview | Recall a review request |
-| POST | `/v1/constants-revisions/{key}/{version}/reopen` | postConstantRevisionReopen | Reopen a discarded revision |
-| POST | `/v1/constants-revisions/{key}/{version}/request-review` | postConstantRevisionRequestReview | Request review for a draft revision |
-| POST | `/v1/constants-revisions/{key}/{version}/revert` | postConstantRevisionRevert | Revert the constant to a prior revision |
-| POST | `/v1/constants-revisions/{key}/{version}/schedule-publish` | postConstantRevisionSchedulePublish | Schedule (or cancel) a deferred publish |
-| POST | `/v1/constants-revisions/{key}/{version}/submit-review` | postConstantRevisionSubmitReview | Submit a review on a draft revision |
-| POST | `/v1/constants-revisions/{key}/{version}/undo-review` | postConstantRevisionUndoReview | Retract your own review verdict |
-| PUT | `/v1/constants-revisions/{key}/{version}/value` | putConstantRevisionValue | Update the value of a constant draft revision |
-| DELETE | `/v1/constants/{key}` | deleteConstant | Delete a single constant |
-| GET | `/v1/constants/{key}` | getConstant | Get a single constant |
-| POST | `/v1/constants/{key}` | updateConstant | Partially update a single constant |
-| POST | `/v1/constants/{key}/archive` | archiveConstant | Archive a single constant |
-| GET | `/v1/constants/{key}/references` | getConstantReferences | Get features and constants that reference this constant |
-| POST | `/v1/constants/{key}/unarchive` | unarchiveConstant | Unarchive a single constant |
-| GET | `/v1/contextual-bandit-queries` | listContextualBanditQueries | Get all contextualBanditQueries |
-| POST | `/v1/contextual-bandit-queries` | createContextualBanditQuery | Create a single contextualBanditQuery |
-| DELETE | `/v1/contextual-bandit-queries/{id}` | deleteContextualBanditQuery | Delete a single contextualBanditQuery |
-| GET | `/v1/contextual-bandit-queries/{id}` | getContextualBanditQuery | Get a single contextualBanditQuery |
-| PUT | `/v1/contextual-bandit-queries/{id}` | updateContextualBanditQuery | Update a single contextualBanditQuery |
-| GET | `/v1/contextual-bandits` | listContextualBandits | Get all contextualBandits |
-| POST | `/v1/contextual-bandits` | createContextualBandit | Create a single contextualBandit |
-| DELETE | `/v1/contextual-bandits/{id}` | deleteContextualBandit | Delete a single contextualBandit |
-| GET | `/v1/contextual-bandits/{id}` | getContextualBandit | Get a single contextualBandit |
-| PUT | `/v1/contextual-bandits/{id}` | updateContextualBandit | Update a single contextualBandit |
-| POST | `/v1/contextual-bandits/{id}/cancel` | cancelContextualBandit | Cancel a running Contextual Bandit snapshot refresh |
-| GET | `/v1/contextual-bandits/{id}/current` | getContextualBanditCurrentWeights | Get current Contextual Bandit leaf weights and latest event |
-| GET | `/v1/contextual-bandits/{id}/events` | listContextualBanditEvents | List Contextual Bandit weight-update events |
-| GET | `/v1/contextual-bandits/{id}/events/{eventId}` | getContextualBanditEvent | Get a single Contextual Bandit weight-update event |
-| DELETE | `/v1/contextual-bandits/{id}/linked-feature/{featureId}` | deleteContextualBanditLinkedFeature | Unlink a feature from a Contextual Bandit |
-| POST | `/v1/contextual-bandits/{id}/linked-feature/{featureId}` | addContextualBanditLinkedFeature | Link a feature to a Contextual Bandit |
-| PUT | `/v1/contextual-bandits/{id}/linked-feature/{featureId}` | updateContextualBanditLinkedFeature | Replace a Contextual Bandit's rule on a linked feature |
-| GET | `/v1/contextual-bandits/{id}/linked-features` | getContextualBanditLinkedFeatures | Get features linked to a Contextual Bandit |
-| POST | `/v1/contextual-bandits/{id}/refresh` | refreshContextualBandit | Trigger a Contextual Bandit snapshot refresh |
-| GET | `/v1/contextual-bandits/{id}/results` | getContextualBanditResults | Get latest Contextual Bandit results |
-| GET | `/v1/contextual-bandits/{id}/snapshots` | listContextualBanditSnapshots | List Contextual Bandit snapshots |
-| GET | `/v1/contextual-bandits/{id}/snapshots/{snapshotId}` | getContextualBanditSnapshot | Get a single Contextual Bandit snapshot |
-| POST | `/v1/contextual-bandits/{id}/start` | startContextualBandit | Start a Contextual Bandit |
-| GET | `/v1/contextual-bandits/{id}/status` | getContextualBanditStatus | Get Contextual Bandit run status |
-| POST | `/v1/contextual-bandits/{id}/stop` | stopContextualBandit | Stop a Contextual Bandit |
-| POST | `/v1/contextual-bandits/{id}/variations` | updateContextualBanditVariations | Add or remove Contextual Bandit variations |
-| GET | `/v1/contextual-bandits/{id}/visual-changesets` | listContextualBanditVisualChangesets | List visual changesets for a Contextual Bandit |
-| POST | `/v1/contextual-bandits/{id}/visual-changesets` | postContextualBanditVisualChangesets | Create a visual changeset for a Contextual Bandit |
-| GET | `/v1/custom-fields` | listCustomFields | Get all custom fields |
-| POST | `/v1/custom-fields` | createCustomField | Create a single customField |
-| DELETE | `/v1/custom-fields/{id}` | deleteCustomField | Delete a single customField |
-| GET | `/v1/custom-fields/{id}` | getCustomField | Get a single customField |
-| PUT | `/v1/custom-fields/{id}` | updateCustomField | Update a single customField |
-| GET | `/v1/custom-hooks` | listCustomHooks | Get all custom hooks |
-| POST | `/v1/custom-hooks` | postCustomHook | Create a single custom hook |
-| POST | `/v1/custom-hooks/test` | testCustomHook | Dry-run hook code in the sandbox |
-| DELETE | `/v1/custom-hooks/{id}` | deleteCustomHook | Delete a single custom hook |
-| GET | `/v1/custom-hooks/{id}` | getCustomHook | Get a single custom hook |
-| POST | `/v1/custom-hooks/{id}` | updateCustomHook | Partially update a single custom hook |
-| GET | `/v1/custom-hooks/{id}/history` | listCustomHookHistory | List a custom hook's version history |
-| POST | `/v1/custom-hooks/{id}/revert` | revertCustomHook | Revert a custom hook to a previous version |
-| GET | `/v1/dashboards` | listDashboards | Get all dashboards |
-| POST | `/v1/dashboards` | createDashboard | Create a single dashboard |
-| GET | `/v1/dashboards/by-experiment/{experimentId}` | getDashboardsForExperiment | Get all dashboards for an experiment |
-| DELETE | `/v1/dashboards/{id}` | deleteDashboard | Delete a single dashboard |
-| GET | `/v1/dashboards/{id}` | getDashboard | Get a single dashboard |
-| PUT | `/v1/dashboards/{id}` | updateDashboard | Update a single dashboard |
-| GET | `/v1/data-sources` | listDataSources | Get all data sources |
-| GET | `/v1/data-sources/{dataSourceId}/information-schema` | getInformationSchema | Get a Data Source's Information Schema |
-| GET | `/v1/data-sources/{id}` | getDataSource | Get a single data source |
-| POST | `/v1/data-sources/{id}/sql/preview-values` | previewWarehouseColumnValues | Preview distinct column values |
-| POST | `/v1/data-sources/{id}/sql/run-query` | runSqlQuery | Execute a read-only SQL query |
-| POST | `/v1/data-sources/{id}/sql/search-tables` | searchWarehouseTables | Search warehouse tables |
-| POST | `/v1/data-sources/{id}/sql/table-schema` | getWarehouseTableSchema | Get warehouse table schemas |
-| GET | `/v1/dimensions` | listDimensions | Get all dimensions |
-| POST | `/v1/dimensions` | postDimension | Create a single dimension |
-| DELETE | `/v1/dimensions/{id}` | deleteDimension | Deletes a single dimension |
-| GET | `/v1/dimensions/{id}` | getDimension | Get a single dimension |
-| POST | `/v1/dimensions/{id}` | updateDimension | Update a single dimension |
-| GET | `/v1/environments` | listEnvironments | Get the organization's environments |
-| POST | `/v1/environments` | postEnvironment | Create a new environment |
-| DELETE | `/v1/environments/{id}` | deleteEnvironment | Deletes a single environment |
-| PUT | `/v1/environments/{id}` | putEnvironment | Update an environment |
-| GET | `/v1/experiment-names` | getExperimentNames | Get a list of experiments with names and ids |
-| GET | `/v1/experiment-templates` | listExperimentTemplates | Get all experimentTemplates |
-| POST | `/v1/experiment-templates` | createExperimentTemplate | Create a single experimentTemplate |
-| POST | `/v1/experiment-templates/bulk-import` | bulkImportExperimentTemplates | Bulk create or update experiment templates |
-| DELETE | `/v1/experiment-templates/{id}` | deleteExperimentTemplate | Delete a single experimentTemplate |
-| GET | `/v1/experiment-templates/{id}` | getExperimentTemplate | Get a single experimentTemplate |
-| PUT | `/v1/experiment-templates/{id}` | updateExperimentTemplate | Update a single experimentTemplate |
-| GET | `/v1/experiments` | listExperiments | Get all experiments |
-| POST | `/v1/experiments` | postExperiment | Create a single experiment |
-| GET | `/v1/experiments/results` | listExperimentResults | Get latest results for many experiments |
-| DELETE | `/v1/experiments/{id}` | deleteExperiment | Delete an experiment |
-| GET | `/v1/experiments/{id}` | getExperiment | Get a single experiment |
-| POST | `/v1/experiments/{id}` | updateExperiment | Update a single experiment |
-| POST | `/v1/experiments/{id}/archive` | postExperimentArchive | Archive an experiment |
-| POST | `/v1/experiments/{id}/comment` | postExperimentComment | Post a comment on an experiment |
-| POST | `/v1/experiments/{id}/modify-temporary-rollout` | postExperimentModifyTemporaryRollout | Modify temporary rollout status for a stopped experiment |
-| GET | `/v1/experiments/{id}/results` | getExperimentResults | Get results for an experiment |
-| PUT | `/v1/experiments/{id}/schedule` | putExperimentSchedule | Set an experiment's schedule and shipping automation |
-| POST | `/v1/experiments/{id}/snapshot` | postExperimentSnapshot | Create Experiment Snapshot |
-| POST | `/v1/experiments/{id}/start` | postExperimentStart | Start/Stage an experiment |
-| GET | `/v1/experiments/{id}/start-checklist` | getExperimentStartChecklist | Get an experiment pre-launch checklist status |
-| POST | `/v1/experiments/{id}/start-checklist/manual/complete` | postExperimentStartChecklistManualComplete | Mark manual pre-launch checklist items complete |
-| POST | `/v1/experiments/{id}/stop` | postExperimentStop | Stop an experiment |
-| POST | `/v1/experiments/{id}/unarchive` | postExperimentUnarchive | Unarchive an experiment |
-| DELETE | `/v1/experiments/{id}/variation/{variationId}/screenshot` | deleteVariationScreenshot | Delete a variation screenshot |
-| POST | `/v1/experiments/{id}/variation/{variationId}/screenshot/upload` | postVariationImageUpload | Upload a variation screenshot |
-| GET | `/v1/experiments/{id}/visual-changesets` | listVisualChangesets | Get all visual changesets |
-| POST | `/v1/experiments/{id}/visual-changesets` | postVisualChangesets | Create a visual changeset for an experiment |
-| GET | `/v1/fact-metrics` | listFactMetrics | Get all fact metrics |
-| POST | `/v1/fact-metrics` | postFactMetric | Create a single fact metric |
-| DELETE | `/v1/fact-metrics/{id}` | deleteFactMetric | Deletes a single fact metric |
-| GET | `/v1/fact-metrics/{id}` | getFactMetric | Get a single fact metric |
-| POST | `/v1/fact-metrics/{id}` | updateFactMetric | Update a single fact metric |
-| POST | `/v1/fact-metrics/{id}/analysis` | postFactMetricAnalysis | Create a fact metric analysis |
-| GET | `/v1/fact-tables` | listFactTables | Get all fact tables |
-| POST | `/v1/fact-tables` | postFactTable | Create a single fact table |
-| GET | `/v1/fact-tables/{factTableId}/filters` | listFactTableFilters | Get all filters for a fact table |
-| POST | `/v1/fact-tables/{factTableId}/filters` | postFactTableFilter | Create a single fact table filter |
-| DELETE | `/v1/fact-tables/{factTableId}/filters/{id}` | deleteFactTableFilter | Deletes a single fact table filter |
-| GET | `/v1/fact-tables/{factTableId}/filters/{id}` | getFactTableFilter | Get a single fact filter |
-| POST | `/v1/fact-tables/{factTableId}/filters/{id}` | updateFactTableFilter | Update a single fact table filter |
-| POST | `/v1/fact-tables/{factTableId}/virtual-columns` | postFactTableVirtualColumn | Create a virtual (computed) column on a fact table |
-| DELETE | `/v1/fact-tables/{factTableId}/virtual-columns/{id}` | deleteFactTableVirtualColumn | Delete a virtual (computed) column from a fact table |
-| POST | `/v1/fact-tables/{factTableId}/virtual-columns/{id}` | updateFactTableVirtualColumn | Update a virtual (computed) column on a fact table |
-| DELETE | `/v1/fact-tables/{id}` | deleteFactTable | Deletes a single fact table |
-| GET | `/v1/fact-tables/{id}` | getFactTable | Get a single fact table |
-| POST | `/v1/fact-tables/{id}` | updateFactTable | Update a single fact table |
-| GET | `/v1/fact-tables/{id}/aggregated-tables` | getAggregatedFactTables | Get the materialization status of a fact table's shared daily aggregated tables |
-| POST | `/v1/fact-tables/{id}/aggregated-tables/refresh` | refreshAggregatedFactTable | Force a refresh or full restate of a fact table's shared daily aggregated tables |
-| GET | `/v1/fact-tables/{id}/aggregated-tables/runs` | listAggregatedTableRuns | List aggregated table runs |
-| GET | `/v1/fact-tables/{id}/aggregated-tables/runs/{runId}` | getAggregatedTableRun | Get a single aggregated table run |
-| GET | `/v1/feature-keys` | getFeatureKeys | Get list of feature keys |
-| GET | `/v1/features` | listFeatures | Get all features |
-| POST | `/v1/features` | postFeature | Create a single feature |
-| DELETE | `/v1/features/{id}` | deleteFeature | Deletes a single feature |
-| GET | `/v1/features/{id}` | getFeature | Get a single feature |
-| POST | `/v1/features/{id}` | updateFeature | Partially update a feature |
-| POST | `/v1/features/{id}/revert` | revertFeature | Revert a feature to a specific revision |
-| GET | `/v1/features/{id}/revisions` | getFeatureRevisions | List revisions for a feature |
-| POST | `/v1/features/{id}/revisions` | postFeatureRevision | Create a draft revision |
-| GET | `/v1/features/{id}/revisions/latest` | getFeatureRevisionLatest | Get the most recent active draft revision |
-| GET | `/v1/features/{id}/revisions/{version}` | getFeatureRevision | Get a single feature revision |
-| PUT | `/v1/features/{id}/revisions/{version}/archive` | putFeatureRevisionArchive | Set archived state in a draft revision |
-| PUT | `/v1/features/{id}/revisions/{version}/default-value` | putFeatureRevisionDefaultValue | Set the default value in a draft revision |
-| POST | `/v1/features/{id}/revisions/{version}/discard` | postFeatureRevisionDiscard | Discard a draft revision |
-| PUT | `/v1/features/{id}/revisions/{version}/holdout` | putFeatureRevisionHoldout | Set holdout in a draft revision |
-| GET | `/v1/features/{id}/revisions/{version}/merge-status` | getFeatureRevisionMergeStatus | Get merge status for a draft revision |
-| PUT | `/v1/features/{id}/revisions/{version}/metadata` | putFeatureRevisionMetadata | Update revision metadata (comment, title, feature metadata) |
-| PUT | `/v1/features/{id}/revisions/{version}/prerequisites` | putFeatureRevisionPrerequisites | Set feature-level prerequisites in a draft revision |
-| POST | `/v1/features/{id}/revisions/{version}/publish` | postFeatureRevisionPublish | Publish a draft revision |
-| POST | `/v1/features/{id}/revisions/{version}/rebase` | postFeatureRevisionRebase | Rebase a draft revision onto the current live version |
-| POST | `/v1/features/{id}/revisions/{version}/request-review` | postFeatureRevisionRequestReview | Request review for a draft revision |
-| POST | `/v1/features/{id}/revisions/{version}/revert` | postFeatureRevisionRevert | Revert the feature to a prior revision |
-| POST | `/v1/features/{id}/revisions/{version}/rules` | postFeatureRevisionRuleAdd | Add a rule to a draft revision |
-| POST | `/v1/features/{id}/revisions/{version}/rules/reorder` | postFeatureRevisionRulesReorder | Reorder rules in an environment |
-| DELETE | `/v1/features/{id}/revisions/{version}/rules/{ruleId}` | deleteFeatureRevisionRule | Delete a rule from a draft revision |
-| PUT | `/v1/features/{id}/revisions/{version}/rules/{ruleId}` | putFeatureRevisionRule | Update a rule in a draft revision |
-| DELETE | `/v1/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | deleteFeatureRevisionRuleRampSchedule | Remove ramp schedule from a rule |
-| PUT | `/v1/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | putFeatureRevisionRuleRampSchedule | Set ramp schedule for a rule |
-| POST | `/v1/features/{id}/revisions/{version}/submit-review` | postFeatureRevisionSubmitReview | Submit a review on a draft revision |
-| POST | `/v1/features/{id}/revisions/{version}/toggle` | postFeatureRevisionToggle | Toggle an environment on/off in a draft revision |
-| POST | `/v1/features/{id}/toggle` | toggleFeature | Toggle a feature in one or more environments |
-| GET | `/v1/holdouts` | listHoldouts | Get all holdouts |
-| POST | `/v1/holdouts` | createHoldout | Create a single holdout |
-| GET | `/v1/holdouts/{id}` | getHoldout | Get a single holdout |
-| PUT | `/v1/holdouts/{id}` | updateHoldout | Update a single holdout |
-| POST | `/v1/holdouts/{id}/start` | startHoldout | Start the Holdout's Active Period |
-| POST | `/v1/holdouts/{id}/start-analysis` | startHoldoutAnalysis | Start the Holdout's Analysis Period |
-| POST | `/v1/holdouts/{id}/stop` | stopHoldout | Stop a Holdout |
-| GET | `/v1/information-schema-tables/{tableId}` | getInformationSchemaTable | Get a single Information Schema Table by id |
-| GET | `/v1/interleavings` | listInterleavings | Get all interleavings |
-| POST | `/v1/interleavings` | createInterleaving | Create a single interleaving |
-| GET | `/v1/interleavings/{id}` | getInterleaving | Get a single interleaving |
-| PUT | `/v1/interleavings/{id}` | updateInterleaving | Update a single interleaving |
-| POST | `/v1/interleavings/{id}/start` | startInterleaving | Start an interleaving experiment |
-| POST | `/v1/interleavings/{id}/stop` | stopInterleaving | Stop an interleaving experiment |
-| GET | `/v1/learnings` | listLearnings | Get all learnings |
-| POST | `/v1/learnings` | createLearning | Create a single learning |
-| POST | `/v1/learnings/search` | searchLearnings | Search saved Learnings by meaning rather than keyword |
-| DELETE | `/v1/learnings/{id}` | deleteLearning | Delete a single learning |
-| GET | `/v1/learnings/{id}` | getLearning | Get a single learning |
-| PUT | `/v1/learnings/{id}` | updateLearning | Update a single learning |
-| GET | `/v1/members` | listMembers | Get all organization members |
-| DELETE | `/v1/members/{id}` | deleteMember | Removes a single user from an organization |
-| POST | `/v1/members/{id}/role` | updateMemberRole | Update a member's role |
-| GET | `/v1/metric-groups` | listMetricGroups | Get all metricGroups |
-| POST | `/v1/metric-groups` | createMetricGroup | Create a single metricGroup |
-| DELETE | `/v1/metric-groups/{id}` | deleteMetricGroup | Delete a single metricGroup |
-| GET | `/v1/metric-groups/{id}` | getMetricGroup | Get a single metricGroup |
-| PUT | `/v1/metric-groups/{id}` | updateMetricGroup | Update a single metricGroup |
-| GET | `/v1/metrics` | listMetrics | Get all metrics |
-| POST | `/v1/metrics` | postMetric | Create a single metric |
-| DELETE | `/v1/metrics/{id}` | deleteMetric | Deletes a metric |
-| GET | `/v1/metrics/{id}` | getMetric | Get a single metric |
-| PUT | `/v1/metrics/{id}` | putMetric | Update a metric |
-| GET | `/v1/metrics/{id}/experiments` | listMetricExperiments | Get results for all experiments that use a metric |
-| GET | `/v1/namespaces` | listNamespaces | Get all namespaces |
-| POST | `/v1/namespaces` | postNamespace | Create a namespace |
-| DELETE | `/v1/namespaces/{id}` | deleteNamespace | Delete a namespace |
-| GET | `/v1/namespaces/{id}` | getNamespace | Get a single namespace |
-| PUT | `/v1/namespaces/{id}` | putNamespace | Update a namespace |
-| GET | `/v1/namespaces/{id}/memberships` | getNamespaceMemberships | Get namespace membership |
-| POST | `/v1/namespaces/{id}/rotateSeed` | postNamespaceRotateSeed | Rotate namespace seed |
-| GET | `/v1/organizations` | listOrganizations | Get all organizations (only for super admins on multi-org Enterprise Plan only) |
-| POST | `/v1/organizations` | postOrganization | Create a single organization (only for super admins on multi-org Enterprise Plan only) |
-| PUT | `/v1/organizations/{id}` | putOrganization | Edit a single organization (only for super admins on multi-org Enterprise Plan only) |
-| GET | `/v1/populations` | listPopulations | Get all populations |
-| POST | `/v1/populations` | createPopulation | Create a single population |
-| DELETE | `/v1/populations/{id}` | deletePopulation | Delete a single population |
-| GET | `/v1/populations/{id}` | getPopulation | Get a single population |
-| PUT | `/v1/populations/{id}` | updatePopulation | Update a single population |
-| POST | `/v1/product-analytics/column-values` | getProductAnalyticsColumnValues | Fetch values for Product Analytics string columns |
-| GET | `/v1/product-analytics/columns` | getProductAnalyticsColumns | List columns available to a Product Analytics exploration |
-| POST | `/v1/product-analytics/data-source-exploration` | postDataSourceExploration | Create a Data Source based visualization |
-| GET | `/v1/product-analytics/explorations/{id}` | getProductAnalyticsExploration | Get a Product Analytics exploration |
-| POST | `/v1/product-analytics/fact-table-exploration` | postFactTableExploration | Run a Fact Table based visualization |
-| POST | `/v1/product-analytics/funnel-exploration` | postFunnelExploration | Run a Funnel based visualization |
-| POST | `/v1/product-analytics/journey-exploration` | postJourneyExploration | Run a User Journey based visualization |
-| POST | `/v1/product-analytics/metric-exploration` | postMetricExploration | Create a Metric based visualization |
-| GET | `/v1/product-analytics/search` | searchProductAnalyticsResources | Search Product Analytics resources |
-| POST | `/v1/product-analytics/sql-exploration` | postSqlExploration | Create a SQL based visualization |
-| GET | `/v1/projects` | listProjects | Get all projects |
-| POST | `/v1/projects` | postProject | Create a single project |
-| DELETE | `/v1/projects/{id}` | deleteProject | Deletes a single project |
-| GET | `/v1/projects/{id}` | getProject | Get a single project |
-| PUT | `/v1/projects/{id}` | putProject | Edit a single project |
-| GET | `/v1/queries/{id}` | getQuery | Get a single query |
-| GET | `/v1/ramp-schedule-templates` | listRampScheduleTemplates | Get all rampScheduleTemplates |
-| POST | `/v1/ramp-schedule-templates` | createRampScheduleTemplate | Create a single rampScheduleTemplate |
-| DELETE | `/v1/ramp-schedule-templates/{id}` | deleteRampScheduleTemplate | Delete a single rampScheduleTemplate |
-| GET | `/v1/ramp-schedule-templates/{id}` | getRampScheduleTemplate | Get a single rampScheduleTemplate |
-| PUT | `/v1/ramp-schedule-templates/{id}` | updateRampScheduleTemplate | Update a single rampScheduleTemplate |
-| GET | `/v1/ramp-schedules` | listRampSchedules | Get all rampSchedules |
-| POST | `/v1/ramp-schedules` | postRampSchedule | Create a ramp schedule |
-| POST | `/v1/ramp-schedules/actions/pause` | pauseMatchingRampSchedules | Pause matching ramp schedules |
-| POST | `/v1/ramp-schedules/actions/rollback` | rollbackMatchingRampSchedules | Roll back matching ramp schedules |
-| DELETE | `/v1/ramp-schedules/{id}` | deleteRampSchedule | Delete a single rampSchedule |
-| GET | `/v1/ramp-schedules/{id}` | getRampSchedule | Get a single rampSchedule |
-| PUT | `/v1/ramp-schedules/{id}` | updateRampSchedule | Update a single rampSchedule |
-| POST | `/v1/ramp-schedules/{id}/actions/add-target` | addTargetRampSchedule | Add a target rule to a ramp schedule |
-| POST | `/v1/ramp-schedules/{id}/actions/advance` | apiAdvanceRampSchedule | Advance to the next step, overriding any holds |
-| POST | `/v1/ramp-schedules/{id}/actions/approve-step` | approveStepRampSchedule | Approve the pending approval gate |
-| POST | `/v1/ramp-schedules/{id}/actions/complete` | completeRampSchedule | Complete a ramp schedule immediately |
-| POST | `/v1/ramp-schedules/{id}/actions/eject-target` | ejectTargetRampSchedule | Remove a target rule from a ramp schedule |
-| POST | `/v1/ramp-schedules/{id}/actions/jump` | jumpRampSchedule | Jump to a specific step |
-| POST | `/v1/ramp-schedules/{id}/actions/pause` | pauseRampSchedule | Pause a ramp schedule |
-| POST | `/v1/ramp-schedules/{id}/actions/refresh-monitoring` | refreshMonitoringRampSchedule | Trigger a manual monitoring update |
-| POST | `/v1/ramp-schedules/{id}/actions/restart` | restartRampSchedule | Restart a terminal ramp schedule |
-| POST | `/v1/ramp-schedules/{id}/actions/resume` | resumeRampSchedule | Resume a paused ramp schedule |
-| POST | `/v1/ramp-schedules/{id}/actions/rollback` | rollbackRampSchedule | Roll back a ramp schedule |
-| POST | `/v1/ramp-schedules/{id}/actions/set-auto-update` | setAutoUpdateRampSchedule | Toggle automatic monitoring updates |
-| POST | `/v1/ramp-schedules/{id}/actions/set-monitoring-mode` | setMonitoringModeRampSchedule | Set ramp monitoring mode |
-| POST | `/v1/ramp-schedules/{id}/actions/start` | startRampSchedule | Start a ramp schedule |
-| PUT | `/v1/ramp-schedules/{id}/lockdown` | updateRampScheduleLockdown | Update ramp lockdown configuration |
-| PUT | `/v1/ramp-schedules/{id}/monitoring` | updateRampScheduleMonitoring | Update ramp monitoring configuration |
-| GET | `/v1/ramp-schedules/{id}/status` | getRampScheduleStatus | Get ramp schedule status summary |
-| PUT | `/v1/ramp-schedules/{id}/steps` | updateRampScheduleSteps | Update ramp schedule steps |
-| POST | `/v1/releases/publish-revisions` | postReleasePublishRevisions | Atomically publish revisions across multiple entities |
-| GET | `/v1/reports` | listReports | Get all reports |
-| POST | `/v1/reports` | postReport | Create a new report |
-| GET | `/v1/reports/{id}` | getReport | Get a single report |
-| PUT | `/v1/reports/{id}/metadata` | putReportMetadata | Update report metadata (title, description, visibility) |
-| POST | `/v1/reports/{id}/refresh` | postReportRefresh | Refresh a report by re-running its analysis |
-| PUT | `/v1/reports/{id}/settings` | putReportSettings | Update report analysis settings |
-| GET | `/v1/revisions` | listRevisions | List feature revisions |
-| GET | `/v1/saved-groups` | listSavedGroups | Get all saved group |
-| POST | `/v1/saved-groups` | postSavedGroup | Create a single saved group |
-| GET | `/v1/saved-groups-revisions` | listSavedGroupRevisions | List saved-group revisions across the organization |
-| GET | `/v1/saved-groups-revisions/{savedGroupId}` | getSavedGroupRevisions | List revisions for a saved group |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}` | postSavedGroupRevision | Create a draft revision |
-| GET | `/v1/saved-groups-revisions/{savedGroupId}/latest` | getSavedGroupRevisionLatest | Get the most recent active draft revision |
-| GET | `/v1/saved-groups-revisions/{savedGroupId}/{version}` | getSavedGroupRevision | Get a single saved group revision |
-| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/archive` | putSavedGroupRevisionArchive | Stage an archive/unarchive in a draft revision |
-| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/condition` | putSavedGroupRevisionCondition | Update the condition of a condition saved group draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/discard` | postSavedGroupRevisionDiscard | Discard a draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/items/add` | postSavedGroupRevisionItemsAdd | Append items to a list saved group draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/items/remove` | postSavedGroupRevisionItemsRemove | Remove items from a list saved group draft revision |
-| GET | `/v1/saved-groups-revisions/{savedGroupId}/{version}/merge-status` | getSavedGroupRevisionMergeStatus | Get merge status for a draft revision |
-| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/metadata` | putSavedGroupRevisionMetadata | Update saved group metadata in a draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/publish` | postSavedGroupRevisionPublish | Publish a draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/rebase` | postSavedGroupRevisionRebase | Rebase a draft revision onto the current live saved group |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/recall-review` | postSavedGroupRevisionRecallReview | Recall a review request |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/reopen` | postSavedGroupRevisionReopen | Reopen a discarded revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/request-review` | postSavedGroupRevisionRequestReview | Request review for a draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/revert` | postSavedGroupRevisionRevert | Revert the saved group to a prior revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/schedule-publish` | postSavedGroupRevisionSchedulePublish | Schedule (or cancel) a deferred publish |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/submit-review` | postSavedGroupRevisionSubmitReview | Submit a review on a draft revision |
-| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/undo-review` | postSavedGroupRevisionUndoReview | Retract your own review verdict |
-| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/upload-version` | putSavedGroupRevisionUploadVersion | Set the upload a remote saved group draft revision uses |
-| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/values` | putSavedGroupRevisionValues | Replace the values list in a list saved group draft revision |
-| DELETE | `/v1/saved-groups/{id}` | deleteSavedGroup | Deletes a single saved group |
-| GET | `/v1/saved-groups/{id}` | getSavedGroup | Get a single saved group |
-| POST | `/v1/saved-groups/{id}` | updateSavedGroup | Partially update a single saved group |
-| POST | `/v1/saved-groups/{id}/archive` | archiveSavedGroup | Archive a single saved group |
-| GET | `/v1/saved-groups/{id}/references` | getSavedGroupReferences | Get features, experiments, and saved groups that reference this saved group |
-| POST | `/v1/saved-groups/{id}/unarchive` | unarchiveSavedGroup | Unarchive a single saved group |
-| POST | `/v1/saved-groups/{id}/upload-url` | postSavedGroupUploadUrl | Get a signed URL to upload a remote saved group CSV |
-| GET | `/v1/saved-groups/{id}/uploads` | listSavedGroupUploads | List the uploads of a remote saved group |
-| POST | `/v1/saved-groups/{id}/uploads` | postSavedGroupUpload | Upload a new version of a remote saved group's IDs |
-| DELETE | `/v1/saved-groups/{id}/uploads/{version}` | deleteSavedGroupUpload | Delete an upload of a remote saved group |
-| GET | `/v1/saved-groups/{id}/uploads/{version}` | getSavedGroupUpload | Get one upload of a remote saved group |
-| POST | `/v1/saved-groups/{id}/uploads/{version}/loads` | postSavedGroupUploadLoad | Report loading a remote saved group upload into a data store |
-| GET | `/v1/sdk-connections` | listSdkConnections | Get all sdk connections |
-| POST | `/v1/sdk-connections` | postSdkConnection | Create a single sdk connection |
-| GET | `/v1/sdk-connections/lookup/{key}` | lookupSdkConnectionByKey | Find a single sdk connection by its key |
-| DELETE | `/v1/sdk-connections/{id}` | deleteSdkConnection | Deletes a single SDK connection |
-| GET | `/v1/sdk-connections/{id}` | getSdkConnection | Get a single sdk connection |
-| PUT | `/v1/sdk-connections/{id}` | putSdkConnection | Update a single sdk connection |
-| GET | `/v1/sdk-payload/{key}` | getSdkPayload | Get a SDK payload |
-| GET | `/v1/segments` | listSegments | Get all segments |
-| POST | `/v1/segments` | postSegment | Create a single segment |
-| DELETE | `/v1/segments/{id}` | deleteSegment | Deletes a single segment |
-| GET | `/v1/segments/{id}` | getSegment | Get a single segment |
-| POST | `/v1/segments/{id}` | updateSegment | Update a single segment |
-| GET | `/v1/settings` | getSettings | Get organization settings |
-| PUT | `/v1/settings/approvals` | putApprovalSettings | Update approval settings |
-| GET | `/v1/snapshots/{id}` | getExperimentSnapshot | Get an experiment snapshot status |
-| GET | `/v1/stale-features` | getFeatureStale | Get stale status for one or more features |
-| GET | `/v1/teams` | listTeams | Get all teams |
-| POST | `/v1/teams` | createTeam | Create a single team |
-| DELETE | `/v1/teams/{id}` | deleteTeam | Delete a single team |
-| GET | `/v1/teams/{id}` | getTeam | Get a single team |
-| PUT | `/v1/teams/{id}` | updateTeam | Update a single team |
-| DELETE | `/v1/teams/{id}/members` | removeTeamMember | Remove members from team |
-| POST | `/v1/teams/{id}/members` | addTeamMembers | Add members to team |
-| POST | `/v1/transform-copy` | postCopyTransform | — |
-| GET | `/v1/usage/metrics` | getMetricUsage | Get metric usage across experiments |
-| GET | `/v1/version` | getVersion | Get the GrowthBook server version and build info |
-| GET | `/v1/visual-changesets/{id}` | getVisualChangeset | Get a single visual changeset |
-| PUT | `/v1/visual-changesets/{id}` | putVisualChangeset | Update a visual changeset |
-| POST | `/v1/visual-changesets/{id}/visual-change` | postVisualChange | Create a visual change for a visual changeset |
-| PUT | `/v1/visual-changesets/{id}/visual-change/{visualChangeId}` | putVisualChange | Update a visual change for a visual changeset |
-| POST | `/v2/dashboards` | createDashboardV2 | Create a single dashboard |
-| GET | `/v2/feature-keys` | getFeatureKeysV2 | Get list of feature keys |
-| GET | `/v2/feature-revisions` | listRevisionsV2 | List revisions across all features |
-| GET | `/v2/features` | listFeaturesV2 | Get all features |
-| POST | `/v2/features` | postFeatureV2 | Create a single feature |
-| DELETE | `/v2/features/{id}` | deleteFeatureV2 | Deletes a single feature |
-| GET | `/v2/features/{id}` | getFeatureV2 | Get a single feature |
-| POST | `/v2/features/{id}` | updateFeatureV2 | Partially update a feature |
-| POST | `/v2/features/{id}/revert` | revertFeatureV2 | Revert a feature to a specific revision |
-| GET | `/v2/features/{id}/revisions` | getFeatureRevisionsV2 | List revisions for a feature |
-| POST | `/v2/features/{id}/revisions` | postFeatureRevisionV2 | Create a draft revision |
-| GET | `/v2/features/{id}/revisions/latest` | getFeatureRevisionLatestV2 | Get the most recent active draft revision |
-| GET | `/v2/features/{id}/revisions/{version}` | getFeatureRevisionV2 | Get a single feature revision |
-| PUT | `/v2/features/{id}/revisions/{version}/archive` | putFeatureRevisionArchiveV2 | Set archived state in a draft revision |
-| PUT | `/v2/features/{id}/revisions/{version}/default-value` | putFeatureRevisionDefaultValueV2 | Set the default value in a draft revision |
-| GET | `/v2/features/{id}/revisions/{version}/diff` | getFeatureRevisionDiffV2 | Diff a revision against another revision |
-| POST | `/v2/features/{id}/revisions/{version}/discard` | postFeatureRevisionDiscardV2 | Discard a draft revision |
-| PUT | `/v2/features/{id}/revisions/{version}/holdout` | putFeatureRevisionHoldoutV2 | Set holdout in a draft revision |
-| GET | `/v2/features/{id}/revisions/{version}/log` | getFeatureRevisionLogV2 | List the activity log for a revision |
-| DELETE | `/v2/features/{id}/revisions/{version}/log/{logId}` | deleteFeatureRevisionLogEntryV2 | Delete an owned revision Comment entry |
-| PUT | `/v2/features/{id}/revisions/{version}/log/{logId}` | putFeatureRevisionLogCommentV2 | Edit the comment text of an owned log entry |
-| GET | `/v2/features/{id}/revisions/{version}/merge-status` | getFeatureRevisionMergeStatusV2 | Get merge status for a draft revision |
-| PUT | `/v2/features/{id}/revisions/{version}/metadata` | putFeatureRevisionMetadataV2 | Update revision metadata |
-| PUT | `/v2/features/{id}/revisions/{version}/prerequisites` | putFeatureRevisionPrerequisitesV2 | Set feature-level prerequisites in a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/publish` | postFeatureRevisionPublishV2 | Publish a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/rebase` | postFeatureRevisionRebaseV2 | Rebase a draft revision onto the current live version |
-| POST | `/v2/features/{id}/revisions/{version}/rebase/preview` | postFeatureRevisionRebasePreviewV2 | Preview a rebase without applying it |
-| POST | `/v2/features/{id}/revisions/{version}/recall-review` | postFeatureRevisionRecallReviewV2 | Recall a review request (revert to draft) |
-| POST | `/v2/features/{id}/revisions/{version}/reopen` | postFeatureRevisionReopenV2 | Reopen a discarded revision as a draft |
-| POST | `/v2/features/{id}/revisions/{version}/request-review` | postFeatureRevisionRequestReviewV2 | Request review for a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/revert` | postFeatureRevisionRevertV2 | Revert the feature to a prior revision |
-| POST | `/v2/features/{id}/revisions/{version}/rules` | postFeatureRevisionRuleAddV2 | Add a rule to a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/rules/reorder` | postFeatureRevisionRulesReorderV2 | Reorder rules in the revision |
-| DELETE | `/v2/features/{id}/revisions/{version}/rules/{ruleId}` | deleteFeatureRevisionRuleV2 | Delete a rule from a draft revision |
-| PUT | `/v2/features/{id}/revisions/{version}/rules/{ruleId}` | putFeatureRevisionRuleV2 | Update a rule in a draft revision |
-| DELETE | `/v2/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | deleteFeatureRevisionRuleRampScheduleV2 | Remove ramp schedule from a rule |
-| PUT | `/v2/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | putFeatureRevisionRuleRampScheduleV2 | Set ramp schedule for a rule |
-| POST | `/v2/features/{id}/revisions/{version}/schedule-publish` | postFeatureRevisionSchedulePublishV2 | Schedule (or cancel) a deferred publish for a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/submit-review` | postFeatureRevisionSubmitReviewV2 | Submit a review on a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/toggle` | postFeatureRevisionToggleV2 | Toggle an environment on/off in a draft revision |
-| POST | `/v2/features/{id}/revisions/{version}/undo-review` | postFeatureRevisionUndoReviewV2 | Undo a reviewer's own review verdict |
-| POST | `/v2/features/{id}/toggle` | toggleFeatureV2 | Toggle a feature in one or more environments |
-| GET | `/v2/stale-features` | getFeatureStaleV2 | Get stale status for one or more features |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/archetypes` | listArchetypes | — | object | yes | Get the organization's archetypes |
+| POST | `/v1/archetypes` | postArchetype | body*: object | object, ConfirmationHeld |  | Create a single archetype |
+| GET | `/v1/archetypes/{id}` | getArchetype | `id`* | object | yes | Get a single archetype |
+| PUT | `/v1/archetypes/{id}` | putArchetype | `id`*, body*: object | object, ConfirmationHeld |  | Update a single archetype |
+| DELETE | `/v1/archetypes/{id}` | deleteArchetype | `id`* | object, ConfirmationHeld |  | Deletes a single archetype |
+| GET | `/v1/attributes` | listAttributes | `projectId` | object | yes | Get the organization's attributes |
+| POST | `/v1/attributes` | postAttribute | body*: object | object, ConfirmationHeld |  | Create a new attribute |
+| PUT | `/v1/attributes/{property}` | putAttribute | `property`*, body*: object | object, ConfirmationHeld |  | Update an attribute |
+| DELETE | `/v1/attributes/{property}` | deleteAttribute | `property`* | object, ConfirmationHeld |  | Deletes a single attribute |
+| GET | `/v1/auto-runs` | listAutoRuns | — | object | yes | Get all autoRuns |
+| POST | `/v1/auto-runs` | createAutoRun | body*: object | object, ConfirmationHeld |  | Create a single autoRun |
+| GET | `/v1/auto-runs/{id}` | getAutoRun | `id`* | object | yes | Get a single autoRun |
+| PUT | `/v1/auto-runs/{id}` | updateAutoRun | `id`*, body*: object | object, ConfirmationHeld |  | Update a single autoRun |
+| POST | `/v1/auto-runs/{id}/artifacts` | appendAutoRunArtifact | `id`*, body*: object | object, ConfirmationHeld |  | Record something an auto run created |
+| POST | `/v1/bulk-import/facts` | postBulkImportFacts | body*: object | object, ConfirmationHeld |  | Bulk import fact tables, filters, and metrics |
+| GET | `/v1/code-refs` | listCodeRefs | `limit`, `offset` | object\|PaginationFields | yes | Get list of all code references for the current organization |
+| POST | `/v1/code-refs` | postCodeRefs | `deleteMissing`, body*: object | object, ConfirmationHeld |  | Submit list of code references |
+| GET | `/v1/code-refs/{id}` | getCodeRefs | `id`* | object | yes | Get list of code references for a single feature id |
+| GET | `/v1/configs` | listConfigs | `limit`, `offset` | object\|PaginationFields | yes | Get all configs |
+| POST | `/v1/configs` | postConfig | `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Create a single config |
+| GET | `/v1/configs-revisions` | listConfigRevisions | `limit`, `offset`, `skipPagination`, `key`, `status`, `author`, `mine` | object | yes | List config revisions across the organization |
+| GET | `/v1/configs-revisions/{key}` | getConfigRevisions | `key`*, `limit`, `offset`, `skipPagination`, `status`, `author`, `mine` | object | yes | List revisions for a config |
+| POST | `/v1/configs-revisions/{key}` | postConfigRevision | `key`*, body*: object | object, ConfirmationHeld |  | Create a draft revision |
+| GET | `/v1/configs-revisions/{key}/latest` | getConfigRevisionLatest | `key`*, `mine` | object | yes | Get the most recent active draft revision |
+| GET | `/v1/configs-revisions/{key}/{version}` | getConfigRevision | `key`*, `version`* | object | yes | Get a single config revision |
+| PUT | `/v1/configs-revisions/{key}/{version}/archive` | putConfigRevisionArchive | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Stage an archive/unarchive in a draft revision |
+| POST | `/v1/configs-revisions/{key}/{version}/discard` | postConfigRevisionDiscard | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Discard a draft revision |
+| GET | `/v1/configs-revisions/{key}/{version}/merge-status` | getConfigRevisionMergeStatus | `key`*, `version`* | object | yes | Get merge status for a draft revision |
+| PUT | `/v1/configs-revisions/{key}/{version}/metadata` | putConfigRevisionMetadata | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Update config metadata in a draft revision |
+| PUT | `/v1/configs-revisions/{key}/{version}/projection` | putConfigRevisionProjection | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Set (or update) a config's per-source render projection on a draft |
+| DELETE | `/v1/configs-revisions/{key}/{version}/projection` | deleteConfigRevisionProjection | `key`*, `version`*, `source`* | object, ConfirmationHeld |  | Remove a config's per-source render projection on a draft |
+| PUT | `/v1/configs-revisions/{key}/{version}/property` | putConfigRevisionProperty | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Set one property of a config draft revision's value |
+| DELETE | `/v1/configs-revisions/{key}/{version}/property` | deleteConfigRevisionProperty | `key`*, `version`*, `property`*, `skipSchemaValidation`, `ignoreWarnings` | object, ConfirmationHeld |  | Remove one property from a config draft revision's value |
+| POST | `/v1/configs-revisions/{key}/{version}/publish` | postConfigRevisionPublish | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Publish a draft revision |
+| POST | `/v1/configs-revisions/{key}/{version}/rebase` | postConfigRevisionRebase | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Rebase a draft revision onto the current live config |
+| POST | `/v1/configs-revisions/{key}/{version}/recall-review` | postConfigRevisionRecallReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Recall a review request |
+| POST | `/v1/configs-revisions/{key}/{version}/reopen` | postConfigRevisionReopen | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Reopen a discarded revision |
+| POST | `/v1/configs-revisions/{key}/{version}/request-review` | postConfigRevisionRequestReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Request review for a draft revision |
+| POST | `/v1/configs-revisions/{key}/{version}/revert` | postConfigRevisionRevert | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Revert the config to a prior revision |
+| POST | `/v1/configs-revisions/{key}/{version}/schedule-publish` | postConfigRevisionSchedulePublish | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Schedule (or cancel) a deferred publish |
+| PUT | `/v1/configs-revisions/{key}/{version}/schema` | putConfigRevisionSchema | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Update or import the schema of a config draft revision |
+| POST | `/v1/configs-revisions/{key}/{version}/submit-review` | postConfigRevisionSubmitReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Submit a review on a draft revision |
+| POST | `/v1/configs-revisions/{key}/{version}/undo-review` | postConfigRevisionUndoReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Retract your own review verdict |
+| PUT | `/v1/configs-revisions/{key}/{version}/value` | putConfigRevisionValue | `key`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Update the value of a config draft revision |
+| GET | `/v1/configs/{key}` | getConfig | `key`* | object | yes | Get a single config |
+| POST | `/v1/configs/{key}` | updateConfig | `key`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Partially update a single config |
+| DELETE | `/v1/configs/{key}` | deleteConfig | `key`* | object, ConfirmationHeld |  | Delete a single config |
+| POST | `/v1/configs/{key}/archive` | archiveConfig | `key`*, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Archive a single config |
+| GET | `/v1/configs/{key}/key-usage` | getConfigKeyUsage | `key`* | object | yes | Get the feature rules and default values implementing each key |
+| GET | `/v1/configs/{key}/lineage` | getConfigLineage | `key`* | object | yes | Get the full lineage (family tree) for a config |
+| POST | `/v1/configs/{key}/lock` | lockConfig | `key`*, body*: object | object, ConfirmationHeld |  | Lock a config at its current published revision |
+| GET | `/v1/configs/{key}/references` | getConfigReferences | `key`* | object | yes | Get features and configs that reference this config |
+| GET | `/v1/configs/{key}/schema` | getConfigSchema | `key`*, `format`, `effective`, `source` | object | yes | Export a config's schema |
+| POST | `/v1/configs/{key}/schema/verify` | verifyConfigSchema | `key`*, body*: object | object |  | Verify a config's schema against a source (drift check) |
+| POST | `/v1/configs/{key}/unarchive` | unarchiveConfig | `key`*, body*: object | object, ConfirmationHeld |  | Unarchive a single config |
+| POST | `/v1/configs/{key}/unlock` | unlockConfig | `key`* | object, ConfirmationHeld |  | Unlock a config |
+| GET | `/v1/confirmations/{id}` | getConfirmation | `id`*, `wait` | object | yes | Get a confirmation |
+| GET | `/v1/constants` | listConstants | `limit`, `offset` | object\|PaginationFields | yes | Get all constants |
+| POST | `/v1/constants` | postConstant | body*: object | object, ConfirmationHeld |  | Create a single constant |
+| GET | `/v1/constants-revisions` | listConstantRevisions | `limit`, `offset`, `skipPagination`, `key`, `status`, `author`, `mine` | object | yes | List constant revisions across the organization |
+| GET | `/v1/constants-revisions/{key}` | getConstantRevisions | `key`*, `limit`, `offset`, `skipPagination`, `status`, `author`, `mine` | object | yes | List revisions for a constant |
+| POST | `/v1/constants-revisions/{key}` | postConstantRevision | `key`*, body*: object | object, ConfirmationHeld |  | Create a draft revision |
+| GET | `/v1/constants-revisions/{key}/latest` | getConstantRevisionLatest | `key`*, `mine` | object | yes | Get the most recent active draft revision |
+| GET | `/v1/constants-revisions/{key}/{version}` | getConstantRevision | `key`*, `version`* | object | yes | Get a single constant revision |
+| PUT | `/v1/constants-revisions/{key}/{version}/archive` | putConstantRevisionArchive | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Stage an archive/unarchive in a draft revision |
+| POST | `/v1/constants-revisions/{key}/{version}/discard` | postConstantRevisionDiscard | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Discard a draft revision |
+| GET | `/v1/constants-revisions/{key}/{version}/merge-status` | getConstantRevisionMergeStatus | `key`*, `version`* | object | yes | Get merge status for a draft revision |
+| PUT | `/v1/constants-revisions/{key}/{version}/metadata` | putConstantRevisionMetadata | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Update constant metadata in a draft revision |
+| POST | `/v1/constants-revisions/{key}/{version}/publish` | postConstantRevisionPublish | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Publish a draft revision |
+| POST | `/v1/constants-revisions/{key}/{version}/rebase` | postConstantRevisionRebase | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Rebase a draft revision onto the current live constant |
+| POST | `/v1/constants-revisions/{key}/{version}/recall-review` | postConstantRevisionRecallReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Recall a review request |
+| POST | `/v1/constants-revisions/{key}/{version}/reopen` | postConstantRevisionReopen | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Reopen a discarded revision |
+| POST | `/v1/constants-revisions/{key}/{version}/request-review` | postConstantRevisionRequestReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Request review for a draft revision |
+| POST | `/v1/constants-revisions/{key}/{version}/revert` | postConstantRevisionRevert | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Revert the constant to a prior revision |
+| POST | `/v1/constants-revisions/{key}/{version}/schedule-publish` | postConstantRevisionSchedulePublish | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Schedule (or cancel) a deferred publish |
+| POST | `/v1/constants-revisions/{key}/{version}/submit-review` | postConstantRevisionSubmitReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Submit a review on a draft revision |
+| POST | `/v1/constants-revisions/{key}/{version}/undo-review` | postConstantRevisionUndoReview | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Retract your own review verdict |
+| PUT | `/v1/constants-revisions/{key}/{version}/value` | putConstantRevisionValue | `key`*, `version`*, body*: object | object, ConfirmationHeld |  | Update the value of a constant draft revision |
+| GET | `/v1/constants/{key}` | getConstant | `key`* | object | yes | Get a single constant |
+| POST | `/v1/constants/{key}` | updateConstant | `key`*, body*: object | object, ConfirmationHeld |  | Partially update a single constant |
+| DELETE | `/v1/constants/{key}` | deleteConstant | `key`* | object, ConfirmationHeld |  | Delete a single constant |
+| POST | `/v1/constants/{key}/archive` | archiveConstant | `key`*, body*: object | object, ConfirmationHeld |  | Archive a single constant |
+| GET | `/v1/constants/{key}/references` | getConstantReferences | `key`* | object | yes | Get features and constants that reference this constant |
+| POST | `/v1/constants/{key}/unarchive` | unarchiveConstant | `key`*, body*: object | object, ConfirmationHeld |  | Unarchive a single constant |
+| GET | `/v1/contextual-bandit-queries` | listContextualBanditQueries | `datasourceId` | object | yes | Get all contextualBanditQueries |
+| POST | `/v1/contextual-bandit-queries` | createContextualBanditQuery | body*: object | object, ConfirmationHeld |  | Create a single contextualBanditQuery |
+| GET | `/v1/contextual-bandit-queries/{id}` | getContextualBanditQuery | `id`* | object | yes | Get a single contextualBanditQuery |
+| PUT | `/v1/contextual-bandit-queries/{id}` | updateContextualBanditQuery | `id`*, body*: object | object, ConfirmationHeld |  | Update a single contextualBanditQuery |
+| DELETE | `/v1/contextual-bandit-queries/{id}` | deleteContextualBanditQuery | `id`* | object, ConfirmationHeld |  | Delete a single contextualBanditQuery |
+| GET | `/v1/contextual-bandits` | listContextualBandits | `projectId`, `datasourceId`, `trackingKey` | object | yes | Get all contextualBandits |
+| POST | `/v1/contextual-bandits` | createContextualBandit | body*: object | object, ConfirmationHeld |  | Create a single contextualBandit |
+| GET | `/v1/contextual-bandits/{id}` | getContextualBandit | `id`* | object | yes | Get a single contextualBandit |
+| PUT | `/v1/contextual-bandits/{id}` | updateContextualBandit | `id`*, body*: object | object, ConfirmationHeld |  | Update a single contextualBandit |
+| DELETE | `/v1/contextual-bandits/{id}` | deleteContextualBandit | `id`* | object, ConfirmationHeld |  | Delete a single contextualBandit |
+| POST | `/v1/contextual-bandits/{id}/cancel` | cancelContextualBandit | `id`* | object |  | Cancel a running Contextual Bandit snapshot refresh |
+| GET | `/v1/contextual-bandits/{id}/current` | getContextualBanditCurrentWeights | `id`* | object | yes | Get current Contextual Bandit leaf weights and latest event |
+| GET | `/v1/contextual-bandits/{id}/events` | listContextualBanditEvents | `id`*, `limit` | object | yes | List Contextual Bandit weight-update events |
+| GET | `/v1/contextual-bandits/{id}/events/{eventId}` | getContextualBanditEvent | `id`*, `eventId`* | object | yes | Get a single Contextual Bandit weight-update event |
+| PUT | `/v1/contextual-bandits/{id}/linked-feature/{featureId}` | updateContextualBanditLinkedFeature | `id`*, `featureId`*, body*: object | object, ConfirmationHeld |  | Replace a Contextual Bandit's rule on a linked feature |
+| POST | `/v1/contextual-bandits/{id}/linked-feature/{featureId}` | addContextualBanditLinkedFeature | `id`*, `featureId`*, body*: object | object, ConfirmationHeld |  | Link a feature to a Contextual Bandit |
+| DELETE | `/v1/contextual-bandits/{id}/linked-feature/{featureId}` | deleteContextualBanditLinkedFeature | `id`*, `featureId`*, `autoPublish`, `draftVersion` | object, ConfirmationHeld |  | Unlink a feature from a Contextual Bandit |
+| GET | `/v1/contextual-bandits/{id}/linked-features` | getContextualBanditLinkedFeatures | `id`* | object | yes | Get features linked to a Contextual Bandit |
+| POST | `/v1/contextual-bandits/{id}/refresh` | refreshContextualBandit | `id`* | object, ConfirmationHeld |  | Trigger a Contextual Bandit snapshot refresh |
+| GET | `/v1/contextual-bandits/{id}/results` | getContextualBanditResults | `id`* | object | yes | Get latest Contextual Bandit results |
+| GET | `/v1/contextual-bandits/{id}/snapshots` | listContextualBanditSnapshots | `id`*, `limit` | object | yes | List Contextual Bandit snapshots |
+| GET | `/v1/contextual-bandits/{id}/snapshots/{snapshotId}` | getContextualBanditSnapshot | `id`*, `snapshotId`* | object | yes | Get a single Contextual Bandit snapshot |
+| POST | `/v1/contextual-bandits/{id}/start` | startContextualBandit | `id`* | object, ConfirmationHeld |  | Start a Contextual Bandit |
+| GET | `/v1/contextual-bandits/{id}/status` | getContextualBanditStatus | `id`* | object | yes | Get Contextual Bandit run status |
+| POST | `/v1/contextual-bandits/{id}/stop` | stopContextualBandit | `id`* | object, ConfirmationHeld |  | Stop a Contextual Bandit |
+| POST | `/v1/contextual-bandits/{id}/variations` | updateContextualBanditVariations | `id`*, body*: object | object, ConfirmationHeld |  | Add or remove Contextual Bandit variations |
+| GET | `/v1/contextual-bandits/{id}/visual-changesets` | listContextualBanditVisualChangesets | `id`* | object | yes | List visual changesets for a Contextual Bandit |
+| POST | `/v1/contextual-bandits/{id}/visual-changesets` | postContextualBanditVisualChangesets | `id`*, body*: object | object, ConfirmationHeld |  | Create a visual changeset for a Contextual Bandit |
+| GET | `/v1/custom-fields` | listCustomFields | `projectId` | CustomField[] | yes | Get all custom fields |
+| POST | `/v1/custom-fields` | createCustomField | body*: object | object, ConfirmationHeld |  | Create a single customField |
+| GET | `/v1/custom-fields/{id}` | getCustomField | `id`* | object | yes | Get a single customField |
+| PUT | `/v1/custom-fields/{id}` | updateCustomField | `id`*, body*: object | object, ConfirmationHeld |  | Update a single customField |
+| DELETE | `/v1/custom-fields/{id}` | deleteCustomField | `id`*, `index` | object, ConfirmationHeld |  | Delete a single customField |
+| GET | `/v1/custom-hooks` | listCustomHooks | `limit`, `offset` | object\|PaginationFields | yes | Get all custom hooks |
+| POST | `/v1/custom-hooks` | postCustomHook | body*: object | object, ConfirmationHeld |  | Create a single custom hook |
+| POST | `/v1/custom-hooks/test` | testCustomHook | body*: object | object |  | Dry-run hook code in the sandbox |
+| GET | `/v1/custom-hooks/{id}` | getCustomHook | `id`* | object | yes | Get a single custom hook |
+| POST | `/v1/custom-hooks/{id}` | updateCustomHook | `id`*, body*: object | object, ConfirmationHeld |  | Partially update a single custom hook |
+| DELETE | `/v1/custom-hooks/{id}` | deleteCustomHook | `id`* | object, ConfirmationHeld |  | Delete a single custom hook |
+| GET | `/v1/custom-hooks/{id}/history` | listCustomHookHistory | `id`*, `limit`, `offset` | object\|PaginationFields | yes | List a custom hook's version history |
+| POST | `/v1/custom-hooks/{id}/revert` | revertCustomHook | `id`*, body*: object | object, ConfirmationHeld |  | Revert a custom hook to a previous version |
+| GET | `/v1/dashboards` | listDashboards | — | object | yes | Get all dashboards |
+| POST | `/v1/dashboards` | createDashboard | body*: object | object, ConfirmationHeld |  | Create a single dashboard |
+| GET | `/v1/dashboards/by-experiment/{experimentId}` | getDashboardsForExperiment | `experimentId`* | object | yes | Get all dashboards for an experiment |
+| GET | `/v1/dashboards/{id}` | getDashboard | `id`* | object | yes | Get a single dashboard |
+| PUT | `/v1/dashboards/{id}` | updateDashboard | `id`*, body*: object | object, ConfirmationHeld |  | Update a single dashboard |
+| DELETE | `/v1/dashboards/{id}` | deleteDashboard | `id`* | object, ConfirmationHeld |  | Delete a single dashboard |
+| GET | `/v1/data-sources` | listDataSources | `limit`, `offset`, `projectId` | object\|PaginationFields | yes | Get all data sources |
+| GET | `/v1/data-sources/{dataSourceId}/information-schema` | getInformationSchema | `dataSourceId`* | object | yes | Get a Data Source's Information Schema |
+| GET | `/v1/data-sources/{id}` | getDataSource | `id`* | object | yes | Get a single data source |
+| POST | `/v1/data-sources/{id}/sql/preview-values` | previewWarehouseColumnValues | `id`*, body*: object | object |  | Preview distinct column values |
+| POST | `/v1/data-sources/{id}/sql/run-query` | runSqlQuery | `id`*, body*: object | object |  | Execute a read-only SQL query |
+| POST | `/v1/data-sources/{id}/sql/search-tables` | searchWarehouseTables | `id`*, body*: object | object |  | Search warehouse tables |
+| POST | `/v1/data-sources/{id}/sql/table-schema` | getWarehouseTableSchema | `id`*, body*: object | object |  | Get warehouse table schemas |
+| GET | `/v1/dimensions` | listDimensions | `limit`, `offset`, `datasourceId` | object\|PaginationFields | yes | Get all dimensions |
+| POST | `/v1/dimensions` | postDimension | body*: object | object, ConfirmationHeld |  | Create a single dimension |
+| GET | `/v1/dimensions/{id}` | getDimension | `id`* | object | yes | Get a single dimension |
+| POST | `/v1/dimensions/{id}` | updateDimension | `id`*, body*: object | object, ConfirmationHeld |  | Update a single dimension |
+| DELETE | `/v1/dimensions/{id}` | deleteDimension | `id`* | object, ConfirmationHeld |  | Deletes a single dimension |
+| GET | `/v1/environments` | listEnvironments | — | object | yes | Get the organization's environments |
+| POST | `/v1/environments` | postEnvironment | body*: object | object, ConfirmationHeld |  | Create a new environment |
+| PUT | `/v1/environments/{id}` | putEnvironment | `id`*, body*: object | object, ConfirmationHeld |  | Update an environment |
+| DELETE | `/v1/environments/{id}` | deleteEnvironment | `id`* | object, ConfirmationHeld |  | Deletes a single environment |
+| GET | `/v1/experiment-names` | getExperimentNames | `projectId` | object | yes | Get a list of experiments with names and ids |
+| GET | `/v1/experiment-templates` | listExperimentTemplates | `projectId` | object | yes | Get all experimentTemplates |
+| POST | `/v1/experiment-templates` | createExperimentTemplate | body*: object | object, ConfirmationHeld |  | Create a single experimentTemplate |
+| POST | `/v1/experiment-templates/bulk-import` | bulkImportExperimentTemplates | body*: object | object, ConfirmationHeld |  | Bulk create or update experiment templates |
+| GET | `/v1/experiment-templates/{id}` | getExperimentTemplate | `id`* | object | yes | Get a single experimentTemplate |
+| PUT | `/v1/experiment-templates/{id}` | updateExperimentTemplate | `id`*, body*: object | object, ConfirmationHeld |  | Update a single experimentTemplate |
+| DELETE | `/v1/experiment-templates/{id}` | deleteExperimentTemplate | `id`* | object, ConfirmationHeld |  | Delete a single experimentTemplate |
+| GET | `/v1/experiments` | listExperiments | `limit`, `offset`, `projectId`, `datasourceId`, `trackingKey`, `experimentId`, `status`, `q`, `owner`, `result`, `tag`, `implementationType`, `metricId`, `bandits`, `archived`, `sortBy`, `sortOrder` | object\|PaginationFields | yes | Get all experiments |
+| POST | `/v1/experiments` | postExperiment | body*: object | object, ConfirmationHeld |  | Create a single experiment |
+| GET | `/v1/experiments/results` | listExperimentResults | `limit`, `offset`, `projectId`, `datasourceId`, `trackingKey`, `status` | object\|PaginationFields | yes | Get latest results for many experiments |
+| GET | `/v1/experiments/{id}` | getExperiment | `id`* | object | yes | Get a single experiment |
+| POST | `/v1/experiments/{id}` | updateExperiment | `id`*, body*: object | object, ConfirmationHeld |  | Update a single experiment |
+| DELETE | `/v1/experiments/{id}` | deleteExperiment | `id`*, `linkedChanges` | object, ConfirmationHeld |  | Delete an experiment |
+| POST | `/v1/experiments/{id}/archive` | postExperimentArchive | `id`*, body*: object | object, ConfirmationHeld |  | Archive an experiment |
+| POST | `/v1/experiments/{id}/comment` | postExperimentComment | `id`*, body*: object | object, ConfirmationHeld |  | Post a comment on an experiment |
+| POST | `/v1/experiments/{id}/modify-temporary-rollout` | postExperimentModifyTemporaryRollout | `id`*, body*: object | object, ConfirmationHeld |  | Modify temporary rollout status for a stopped experiment |
+| GET | `/v1/experiments/{id}/results` | getExperimentResults | `id`*, `phase`, `dimension` | object | yes | Get results for an experiment |
+| PUT | `/v1/experiments/{id}/schedule` | putExperimentSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Set an experiment's schedule and shipping automation |
+| POST | `/v1/experiments/{id}/snapshot` | postExperimentSnapshot | `id`*, body: object | object |  | Create Experiment Snapshot |
+| POST | `/v1/experiments/{id}/start` | postExperimentStart | `id`*, body: object | object, ConfirmationHeld |  | Start/Stage an experiment |
+| GET | `/v1/experiments/{id}/start-checklist` | getExperimentStartChecklist | `id`* | object | yes | Get an experiment pre-launch checklist status |
+| POST | `/v1/experiments/{id}/start-checklist/manual/complete` | postExperimentStartChecklistManualComplete | `id`*, body*: object | object, ConfirmationHeld |  | Mark manual pre-launch checklist items complete |
+| POST | `/v1/experiments/{id}/stop` | postExperimentStop | `id`*, body*: object | object, ConfirmationHeld |  | Stop an experiment |
+| POST | `/v1/experiments/{id}/unarchive` | postExperimentUnarchive | `id`*, body*: object | object, ConfirmationHeld |  | Unarchive an experiment |
+| DELETE | `/v1/experiments/{id}/variation/{variationId}/screenshot` | deleteVariationScreenshot | `id`*, `variationId`*, body*: object | object, ConfirmationHeld |  | Delete a variation screenshot |
+| POST | `/v1/experiments/{id}/variation/{variationId}/screenshot/upload` | postVariationImageUpload | `id`*, `variationId`*, body*: object | object, ConfirmationHeld |  | Upload a variation screenshot |
+| GET | `/v1/experiments/{id}/visual-changesets` | listVisualChangesets | `id`* | object | yes | Get all visual changesets |
+| POST | `/v1/experiments/{id}/visual-changesets` | postVisualChangesets | `id`*, body*: object | object, ConfirmationHeld |  | Create a visual changeset for an experiment |
+| GET | `/v1/fact-metrics` | listFactMetrics | `limit`, `offset`, `datasourceId`, `projectId`, `factTableId` | object\|PaginationFields | yes | Get all fact metrics |
+| POST | `/v1/fact-metrics` | postFactMetric | body*: object | object, ConfirmationHeld |  | Create a single fact metric |
+| GET | `/v1/fact-metrics/{id}` | getFactMetric | `id`* | object | yes | Get a single fact metric |
+| POST | `/v1/fact-metrics/{id}` | updateFactMetric | `id`*, body*: object | object, ConfirmationHeld |  | Update a single fact metric |
+| DELETE | `/v1/fact-metrics/{id}` | deleteFactMetric | `id`* | object, ConfirmationHeld |  | Deletes a single fact metric |
+| POST | `/v1/fact-metrics/{id}/analysis` | postFactMetricAnalysis | `id`*, body: object | object |  | Create a fact metric analysis |
+| GET | `/v1/fact-tables` | listFactTables | `limit`, `offset`, `datasourceId`, `projectId` | object\|PaginationFields | yes | Get all fact tables |
+| POST | `/v1/fact-tables` | postFactTable | body*: object | object, ConfirmationHeld |  | Create a single fact table |
+| GET | `/v1/fact-tables/{factTableId}/filters` | listFactTableFilters | `factTableId`*, `limit`, `offset` | object\|PaginationFields | yes | Get all filters for a fact table |
+| POST | `/v1/fact-tables/{factTableId}/filters` | postFactTableFilter | `factTableId`*, body*: object | object, ConfirmationHeld |  | Create a single fact table filter |
+| GET | `/v1/fact-tables/{factTableId}/filters/{id}` | getFactTableFilter | `factTableId`*, `id`* | object | yes | Get a single fact filter |
+| POST | `/v1/fact-tables/{factTableId}/filters/{id}` | updateFactTableFilter | `factTableId`*, `id`*, body*: object | object, ConfirmationHeld |  | Update a single fact table filter |
+| DELETE | `/v1/fact-tables/{factTableId}/filters/{id}` | deleteFactTableFilter | `factTableId`*, `id`* | object, ConfirmationHeld |  | Deletes a single fact table filter |
+| POST | `/v1/fact-tables/{factTableId}/virtual-columns` | postFactTableVirtualColumn | `factTableId`*, body*: object | object, ConfirmationHeld |  | Create a virtual (computed) column on a fact table |
+| POST | `/v1/fact-tables/{factTableId}/virtual-columns/{id}` | updateFactTableVirtualColumn | `factTableId`*, `id`*, body*: object | object, ConfirmationHeld |  | Update a virtual (computed) column on a fact table |
+| DELETE | `/v1/fact-tables/{factTableId}/virtual-columns/{id}` | deleteFactTableVirtualColumn | `factTableId`*, `id`* | object, ConfirmationHeld |  | Delete a virtual (computed) column from a fact table |
+| GET | `/v1/fact-tables/{id}` | getFactTable | `id`* | object | yes | Get a single fact table |
+| POST | `/v1/fact-tables/{id}` | updateFactTable | `id`*, body*: object | object, ConfirmationHeld |  | Update a single fact table |
+| DELETE | `/v1/fact-tables/{id}` | deleteFactTable | `id`* | object, ConfirmationHeld |  | Deletes a single fact table |
+| GET | `/v1/fact-tables/{id}/aggregated-tables` | getAggregatedFactTables | `id`* | object | yes | Get the materialization status of a fact table's shared daily aggregated tables |
+| POST | `/v1/fact-tables/{id}/aggregated-tables/refresh` | refreshAggregatedFactTable | `id`*, body*: object | object |  | Force a refresh or full restate of a fact table's shared daily aggregated tables |
+| GET | `/v1/fact-tables/{id}/aggregated-tables/runs` | listAggregatedTableRuns | `id`*, `idType`, `limit`, `offset` | object\|PaginationFields | yes | List aggregated table runs |
+| GET | `/v1/fact-tables/{id}/aggregated-tables/runs/{runId}` | getAggregatedTableRun | `id`*, `runId`* | object | yes | Get a single aggregated table run |
+| GET | `/v1/feature-keys` | getFeatureKeys | `projectId` | string[] | yes | Get list of feature keys |
+| GET | `/v1/features` | listFeatures | `limit`, `offset`, `projectId`, `clientKey`, `skipPagination` | object\|PaginationFields | yes | Get all features |
+| POST | `/v1/features` | postFeature | body*: object | object, ConfirmationHeld |  | Create a single feature |
+| GET | `/v1/features/{id}` | getFeature | `id`*, `withRevisions` | object | yes | Get a single feature |
+| POST | `/v1/features/{id}` | updateFeature | `id`*, body*: object | object, ConfirmationHeld |  | Partially update a feature |
+| DELETE | `/v1/features/{id}` | deleteFeature | `id`* | object, ConfirmationHeld |  | Deletes a single feature |
+| POST | `/v1/features/{id}/revert` | revertFeature | `id`*, body*: object | object, ConfirmationHeld |  | Revert a feature to a specific revision |
+| GET | `/v1/features/{id}/revisions` | getFeatureRevisions | `id`*, `limit`, `offset`, `skipPagination`, `status`, `author` | object | yes | List revisions for a feature |
+| POST | `/v1/features/{id}/revisions` | postFeatureRevision | `id`*, `overrideDraftLimit`, body*: object | object, ConfirmationHeld |  | Create a draft revision |
+| GET | `/v1/features/{id}/revisions/latest` | getFeatureRevisionLatest | `id`*, `mine` | object | yes | Get the most recent active draft revision |
+| GET | `/v1/features/{id}/revisions/{version}` | getFeatureRevision | `id`*, `version`* | object | yes | Get a single feature revision |
+| PUT | `/v1/features/{id}/revisions/{version}/archive` | putFeatureRevisionArchive | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set archived state in a draft revision |
+| PUT | `/v1/features/{id}/revisions/{version}/default-value` | putFeatureRevisionDefaultValue | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set the default value in a draft revision |
+| POST | `/v1/features/{id}/revisions/{version}/discard` | postFeatureRevisionDiscard | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Discard a draft revision |
+| PUT | `/v1/features/{id}/revisions/{version}/holdout` | putFeatureRevisionHoldout | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set holdout in a draft revision |
+| GET | `/v1/features/{id}/revisions/{version}/merge-status` | getFeatureRevisionMergeStatus | `id`*, `version`* | object | yes | Get merge status for a draft revision |
+| PUT | `/v1/features/{id}/revisions/{version}/metadata` | putFeatureRevisionMetadata | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Update revision metadata (comment, title, feature metadata) |
+| PUT | `/v1/features/{id}/revisions/{version}/prerequisites` | putFeatureRevisionPrerequisites | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set feature-level prerequisites in a draft revision |
+| POST | `/v1/features/{id}/revisions/{version}/publish` | postFeatureRevisionPublish | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Publish a draft revision |
+| POST | `/v1/features/{id}/revisions/{version}/rebase` | postFeatureRevisionRebase | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Rebase a draft revision onto the current live version |
+| POST | `/v1/features/{id}/revisions/{version}/request-review` | postFeatureRevisionRequestReview | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Request review for a draft revision |
+| POST | `/v1/features/{id}/revisions/{version}/revert` | postFeatureRevisionRevert | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Revert the feature to a prior revision |
+| POST | `/v1/features/{id}/revisions/{version}/rules` | postFeatureRevisionRuleAdd | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Add a rule to a draft revision |
+| POST | `/v1/features/{id}/revisions/{version}/rules/reorder` | postFeatureRevisionRulesReorder | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Reorder rules in an environment |
+| PUT | `/v1/features/{id}/revisions/{version}/rules/{ruleId}` | putFeatureRevisionRule | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Update a rule in a draft revision |
+| DELETE | `/v1/features/{id}/revisions/{version}/rules/{ruleId}` | deleteFeatureRevisionRule | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Delete a rule from a draft revision |
+| PUT | `/v1/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | putFeatureRevisionRuleRampSchedule | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Set ramp schedule for a rule |
+| DELETE | `/v1/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | deleteFeatureRevisionRuleRampSchedule | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Remove ramp schedule from a rule |
+| POST | `/v1/features/{id}/revisions/{version}/submit-review` | postFeatureRevisionSubmitReview | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Submit a review on a draft revision |
+| POST | `/v1/features/{id}/revisions/{version}/toggle` | postFeatureRevisionToggle | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Toggle an environment on/off in a draft revision |
+| POST | `/v1/features/{id}/toggle` | toggleFeature | `id`*, body*: object | object, ConfirmationHeld |  | Toggle a feature in one or more environments |
+| GET | `/v1/holdouts` | listHoldouts | `projectId`, `datasourceId`, `stage`, `archived` | object | yes | Get all holdouts |
+| POST | `/v1/holdouts` | createHoldout | body*: object | object, ConfirmationHeld |  | Create a single holdout |
+| GET | `/v1/holdouts/{id}` | getHoldout | `id`* | object | yes | Get a single holdout |
+| PUT | `/v1/holdouts/{id}` | updateHoldout | `id`*, body*: object | object, ConfirmationHeld |  | Update a single holdout |
+| POST | `/v1/holdouts/{id}/start` | startHoldout | `id`* | object, ConfirmationHeld |  | Start the Holdout's Active Period |
+| POST | `/v1/holdouts/{id}/start-analysis` | startHoldoutAnalysis | `id`* | object, ConfirmationHeld |  | Start the Holdout's Analysis Period |
+| POST | `/v1/holdouts/{id}/stop` | stopHoldout | `id`* | object, ConfirmationHeld |  | Stop a Holdout |
+| GET | `/v1/information-schema-tables/{tableId}` | getInformationSchemaTable | `tableId`* | object | yes | Get a single Information Schema Table by id |
+| GET | `/v1/interleavings` | listInterleavings | `projectId`, `datasourceId`, `trackingKey`, `key` | object | yes | Get all interleavings |
+| POST | `/v1/interleavings` | createInterleaving | body*: object | object, ConfirmationHeld |  | Create a single interleaving |
+| GET | `/v1/interleavings/{id}` | getInterleaving | `id`* | object | yes | Get a single interleaving |
+| PUT | `/v1/interleavings/{id}` | updateInterleaving | `id`*, body*: object | object, ConfirmationHeld |  | Update a single interleaving |
+| POST | `/v1/interleavings/{id}/start` | startInterleaving | `id`* | object, ConfirmationHeld |  | Start an interleaving experiment |
+| POST | `/v1/interleavings/{id}/stop` | stopInterleaving | `id`* | object, ConfirmationHeld |  | Stop an interleaving experiment |
+| GET | `/v1/learnings` | listLearnings | `projectId`, `experimentId`, `tag`, `status` | object | yes | Get all learnings |
+| POST | `/v1/learnings` | createLearning | body*: object | object, ConfirmationHeld |  | Create a single learning |
+| POST | `/v1/learnings/search` | searchLearnings | body*: object | object |  | Search saved Learnings by meaning rather than keyword |
+| GET | `/v1/learnings/{id}` | getLearning | `id`* | object | yes | Get a single learning |
+| PUT | `/v1/learnings/{id}` | updateLearning | `id`*, body*: object | object, ConfirmationHeld |  | Update a single learning |
+| DELETE | `/v1/learnings/{id}` | deleteLearning | `id`* | object, ConfirmationHeld |  | Delete a single learning |
+| GET | `/v1/members` | listMembers | `limit`, `offset`, `userName`, `userEmail`, `globalRole` | object\|PaginationFields | yes | Get all organization members |
+| DELETE | `/v1/members/{id}` | deleteMember | `id`* | object, ConfirmationHeld |  | Removes a single user from an organization |
+| POST | `/v1/members/{id}/role` | updateMemberRole | `id`*, body*: object | object, ConfirmationHeld |  | Update a member's role |
+| GET | `/v1/metric-groups` | listMetricGroups | — | object | yes | Get all metricGroups |
+| POST | `/v1/metric-groups` | createMetricGroup | body*: object | object, ConfirmationHeld |  | Create a single metricGroup |
+| GET | `/v1/metric-groups/{id}` | getMetricGroup | `id`* | object | yes | Get a single metricGroup |
+| PUT | `/v1/metric-groups/{id}` | updateMetricGroup | `id`*, body*: object | object, ConfirmationHeld |  | Update a single metricGroup |
+| DELETE | `/v1/metric-groups/{id}` | deleteMetricGroup | `id`* | object, ConfirmationHeld |  | Delete a single metricGroup |
+| GET | `/v1/metrics` | listMetrics | `limit`, `offset`, `projectId`, `datasourceId`, `includeArchived` | object\|PaginationFields | yes | Get all metrics |
+| POST | `/v1/metrics` | postMetric | body*: object | object, ConfirmationHeld |  | Create a single metric |
+| GET | `/v1/metrics/{id}` | getMetric | `id`* | object | yes | Get a single metric |
+| PUT | `/v1/metrics/{id}` | putMetric | `id`*, body*: object | object, ConfirmationHeld |  | Update a metric |
+| DELETE | `/v1/metrics/{id}` | deleteMetric | `id`* | object, ConfirmationHeld |  | Deletes a metric |
+| GET | `/v1/metrics/{id}/experiments` | listMetricExperiments | `id`*, `limit`, `offset`, `q`, `projectId`, `owner`, `status`, `result`, `tag`, `type`, `bandits`, `startDate`, `endDate` | object\|PaginationFields | yes | Get results for all experiments that use a metric |
+| GET | `/v1/namespaces` | listNamespaces | `limit`, `offset` | object\|PaginationFields | yes | Get all namespaces |
+| POST | `/v1/namespaces` | postNamespace | body*: object | object, ConfirmationHeld |  | Create a namespace |
+| GET | `/v1/namespaces/{id}` | getNamespace | `id`* | object | yes | Get a single namespace |
+| PUT | `/v1/namespaces/{id}` | putNamespace | `id`*, body*: object | object, ConfirmationHeld |  | Update a namespace |
+| DELETE | `/v1/namespaces/{id}` | deleteNamespace | `id`* | object, ConfirmationHeld |  | Delete a namespace |
+| GET | `/v1/namespaces/{id}/memberships` | getNamespaceMemberships | `id`*, `limit`, `offset` | object\|PaginationFields | yes | Get namespace membership |
+| POST | `/v1/namespaces/{id}/rotateSeed` | postNamespaceRotateSeed | `id`*, body*: object | object, ConfirmationHeld |  | Rotate namespace seed |
+| GET | `/v1/organizations` | listOrganizations | `search`, `limit`, `offset` | object | yes | Get all organizations (only for super admins on multi-org Enterprise Plan only) |
+| POST | `/v1/organizations` | postOrganization | body*: object | object, ConfirmationHeld |  | Create a single organization (only for super admins on multi-org Enterprise Plan only) |
+| PUT | `/v1/organizations/{id}` | putOrganization | `id`*, body*: object | object, ConfirmationHeld |  | Edit a single organization (only for super admins on multi-org Enterprise Plan only) |
+| GET | `/v1/populations` | listPopulations | `limit`, `offset` | object | yes | Get all populations |
+| POST | `/v1/populations` | createPopulation | body*: object | object, ConfirmationHeld |  | Create a single population |
+| GET | `/v1/populations/{id}` | getPopulation | `id`* | object | yes | Get a single population |
+| PUT | `/v1/populations/{id}` | updatePopulation | `id`*, body*: object | object, ConfirmationHeld |  | Update a single population |
+| DELETE | `/v1/populations/{id}` | deletePopulation | `id`* | object, ConfirmationHeld |  | Delete a single population |
+| POST | `/v1/product-analytics/column-values` | getProductAnalyticsColumnValues | body*: object | object |  | Fetch values for Product Analytics string columns |
+| GET | `/v1/product-analytics/columns` | getProductAnalyticsColumns | `source`*, `factTableId`, `metricIds` | object | yes | List columns available to a Product Analytics exploration |
+| POST | `/v1/product-analytics/data-source-exploration` | postDataSourceExploration | `cache`, body*: object | object |  | Create a Data Source based visualization |
+| GET | `/v1/product-analytics/explorations/{id}` | getProductAnalyticsExploration | `id`* | object | yes | Get a Product Analytics exploration |
+| POST | `/v1/product-analytics/fact-table-exploration` | postFactTableExploration | `cache`, body*: object | object |  | Run a Fact Table based visualization |
+| POST | `/v1/product-analytics/funnel-exploration` | postFunnelExploration | `cache`, body*: object | object |  | Run a Funnel based visualization |
+| POST | `/v1/product-analytics/journey-exploration` | postJourneyExploration | `cache`, body*: object | object |  | Run a User Journey based visualization |
+| POST | `/v1/product-analytics/metric-exploration` | postMetricExploration | `cache`, body*: object | object |  | Create a Metric based visualization |
+| GET | `/v1/product-analytics/search` | searchProductAnalyticsResources | `query`, `limit`, `skip`, `datasourceId` | object | yes | Search Product Analytics resources |
+| POST | `/v1/product-analytics/sql-exploration` | postSqlExploration | `cache`, body*: object | object |  | Create a SQL based visualization |
+| GET | `/v1/projects` | listProjects | `limit`, `offset` | object | yes | Get all projects |
+| POST | `/v1/projects` | postProject | body*: object | object, ConfirmationHeld |  | Create a single project |
+| GET | `/v1/projects/{id}` | getProject | `id`* | object | yes | Get a single project |
+| PUT | `/v1/projects/{id}` | putProject | `id`*, body*: object | object, ConfirmationHeld |  | Edit a single project |
+| DELETE | `/v1/projects/{id}` | deleteProject | `id`* | object, ConfirmationHeld |  | Deletes a single project |
+| GET | `/v1/queries/{id}` | getQuery | `id`* | object | yes | Get a single query |
+| GET | `/v1/ramp-schedule-templates` | listRampScheduleTemplates | — | object | yes | Get all rampScheduleTemplates |
+| POST | `/v1/ramp-schedule-templates` | createRampScheduleTemplate | body*: object | object, ConfirmationHeld |  | Create a single rampScheduleTemplate |
+| GET | `/v1/ramp-schedule-templates/{id}` | getRampScheduleTemplate | `id`* | object | yes | Get a single rampScheduleTemplate |
+| PUT | `/v1/ramp-schedule-templates/{id}` | updateRampScheduleTemplate | `id`*, body*: object | object, ConfirmationHeld |  | Update a single rampScheduleTemplate |
+| DELETE | `/v1/ramp-schedule-templates/{id}` | deleteRampScheduleTemplate | `id`* | object, ConfirmationHeld |  | Delete a single rampScheduleTemplate |
+| GET | `/v1/ramp-schedules` | listRampSchedules | `limit`, `offset`, `featureId`, `status` | object | yes | Get all rampSchedules |
+| POST | `/v1/ramp-schedules` | postRampSchedule | body*: object | object, ConfirmationHeld |  | Create a ramp schedule |
+| POST | `/v1/ramp-schedules/actions/pause` | pauseMatchingRampSchedules | `environment`, `project`, `tag`, `feature`, `customFields`, `reason`, body: object | object, ConfirmationHeld |  | Pause matching ramp schedules |
+| POST | `/v1/ramp-schedules/actions/rollback` | rollbackMatchingRampSchedules | `environment`, `project`, `tag`, `feature`, `customFields`, `reason`, body: object | object, ConfirmationHeld |  | Roll back matching ramp schedules |
+| GET | `/v1/ramp-schedules/{id}` | getRampSchedule | `id`* | object | yes | Get a single rampSchedule |
+| PUT | `/v1/ramp-schedules/{id}` | updateRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Update a single rampSchedule |
+| DELETE | `/v1/ramp-schedules/{id}` | deleteRampSchedule | `id`* | object, ConfirmationHeld |  | Delete a single rampSchedule |
+| POST | `/v1/ramp-schedules/{id}/actions/add-target` | addTargetRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Add a target rule to a ramp schedule |
+| POST | `/v1/ramp-schedules/{id}/actions/advance` | apiAdvanceRampSchedule | `id`*, body: object | object, ConfirmationHeld |  | Advance to the next step, overriding any holds |
+| POST | `/v1/ramp-schedules/{id}/actions/approve-step` | approveStepRampSchedule | `id`* | object, ConfirmationHeld |  | Approve the pending approval gate |
+| POST | `/v1/ramp-schedules/{id}/actions/complete` | completeRampSchedule | `id`*, body: object | object, ConfirmationHeld |  | Complete a ramp schedule immediately |
+| POST | `/v1/ramp-schedules/{id}/actions/eject-target` | ejectTargetRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Remove a target rule from a ramp schedule |
+| POST | `/v1/ramp-schedules/{id}/actions/jump` | jumpRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Jump to a specific step |
+| POST | `/v1/ramp-schedules/{id}/actions/pause` | pauseRampSchedule | `id`* | object, ConfirmationHeld |  | Pause a ramp schedule |
+| POST | `/v1/ramp-schedules/{id}/actions/refresh-monitoring` | refreshMonitoringRampSchedule | `id`* | object |  | Trigger a manual monitoring update |
+| POST | `/v1/ramp-schedules/{id}/actions/restart` | restartRampSchedule | `id`* | object, ConfirmationHeld |  | Restart a terminal ramp schedule |
+| POST | `/v1/ramp-schedules/{id}/actions/resume` | resumeRampSchedule | `id`* | object, ConfirmationHeld |  | Resume a paused ramp schedule |
+| POST | `/v1/ramp-schedules/{id}/actions/rollback` | rollbackRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Roll back a ramp schedule |
+| POST | `/v1/ramp-schedules/{id}/actions/set-auto-update` | setAutoUpdateRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Toggle automatic monitoring updates |
+| POST | `/v1/ramp-schedules/{id}/actions/set-monitoring-mode` | setMonitoringModeRampSchedule | `id`*, body*: object | object, ConfirmationHeld |  | Set ramp monitoring mode |
+| POST | `/v1/ramp-schedules/{id}/actions/start` | startRampSchedule | `id`* | object, ConfirmationHeld |  | Start a ramp schedule |
+| PUT | `/v1/ramp-schedules/{id}/lockdown` | updateRampScheduleLockdown | `id`*, body*: object | object, ConfirmationHeld |  | Update ramp lockdown configuration |
+| PUT | `/v1/ramp-schedules/{id}/monitoring` | updateRampScheduleMonitoring | `id`*, body*: object | object, ConfirmationHeld |  | Update ramp monitoring configuration |
+| GET | `/v1/ramp-schedules/{id}/status` | getRampScheduleStatus | `id`* | object | yes | Get ramp schedule status summary |
+| PUT | `/v1/ramp-schedules/{id}/steps` | updateRampScheduleSteps | `id`*, body*: object | object, ConfirmationHeld |  | Update ramp schedule steps |
+| POST | `/v1/releases/publish-revisions` | postReleasePublishRevisions | body*: object | object, ConfirmationHeld |  | Atomically publish revisions across multiple entities |
+| GET | `/v1/reports` | listReports | `limit`, `offset`, `experimentId` | object\|PaginationFields | yes | Get all reports |
+| POST | `/v1/reports` | postReport | body*: object | object, ConfirmationHeld |  | Create a new report |
+| GET | `/v1/reports/{id}` | getReport | `id`* | object | yes | Get a single report |
+| PUT | `/v1/reports/{id}/metadata` | putReportMetadata | `id`*, body*: object | object, ConfirmationHeld |  | Update report metadata (title, description, visibility) |
+| POST | `/v1/reports/{id}/refresh` | postReportRefresh | `id`* | object |  | Refresh a report by re-running its analysis |
+| PUT | `/v1/reports/{id}/settings` | putReportSettings | `id`*, body*: object | object, ConfirmationHeld |  | Update report analysis settings |
+| GET | `/v1/revisions` | listRevisions | `limit`, `offset`, `skipPagination`, `featureId`, `status`, `author`, `mine` | object | yes | List feature revisions |
+| GET | `/v1/saved-groups` | listSavedGroups | `limit`, `offset`, `type` | object\|PaginationFields | yes | Get all saved group |
+| POST | `/v1/saved-groups` | postSavedGroup | body*: object | object, ConfirmationHeld |  | Create a single saved group |
+| GET | `/v1/saved-groups-revisions` | listSavedGroupRevisions | `limit`, `offset`, `skipPagination`, `savedGroupId`, `status`, `author`, `mine` | object | yes | List saved-group revisions across the organization |
+| GET | `/v1/saved-groups-revisions/{savedGroupId}` | getSavedGroupRevisions | `savedGroupId`*, `limit`, `offset`, `skipPagination`, `status`, `author`, `mine` | object | yes | List revisions for a saved group |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}` | postSavedGroupRevision | `savedGroupId`*, body*: object | object, ConfirmationHeld |  | Create a draft revision |
+| GET | `/v1/saved-groups-revisions/{savedGroupId}/latest` | getSavedGroupRevisionLatest | `savedGroupId`*, `mine` | object | yes | Get the most recent active draft revision |
+| GET | `/v1/saved-groups-revisions/{savedGroupId}/{version}` | getSavedGroupRevision | `savedGroupId`*, `version`* | object | yes | Get a single saved group revision |
+| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/archive` | putSavedGroupRevisionArchive | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Stage an archive/unarchive in a draft revision |
+| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/condition` | putSavedGroupRevisionCondition | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Update the condition of a condition saved group draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/discard` | postSavedGroupRevisionDiscard | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Discard a draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/items/add` | postSavedGroupRevisionItemsAdd | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Append items to a list saved group draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/items/remove` | postSavedGroupRevisionItemsRemove | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Remove items from a list saved group draft revision |
+| GET | `/v1/saved-groups-revisions/{savedGroupId}/{version}/merge-status` | getSavedGroupRevisionMergeStatus | `savedGroupId`*, `version`* | object | yes | Get merge status for a draft revision |
+| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/metadata` | putSavedGroupRevisionMetadata | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Update saved group metadata in a draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/publish` | postSavedGroupRevisionPublish | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Publish a draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/rebase` | postSavedGroupRevisionRebase | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Rebase a draft revision onto the current live saved group |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/recall-review` | postSavedGroupRevisionRecallReview | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Recall a review request |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/reopen` | postSavedGroupRevisionReopen | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Reopen a discarded revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/request-review` | postSavedGroupRevisionRequestReview | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Request review for a draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/revert` | postSavedGroupRevisionRevert | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Revert the saved group to a prior revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/schedule-publish` | postSavedGroupRevisionSchedulePublish | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Schedule (or cancel) a deferred publish |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/submit-review` | postSavedGroupRevisionSubmitReview | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Submit a review on a draft revision |
+| POST | `/v1/saved-groups-revisions/{savedGroupId}/{version}/undo-review` | postSavedGroupRevisionUndoReview | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Retract your own review verdict |
+| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/upload-version` | putSavedGroupRevisionUploadVersion | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Set the upload a remote saved group draft revision uses |
+| PUT | `/v1/saved-groups-revisions/{savedGroupId}/{version}/values` | putSavedGroupRevisionValues | `savedGroupId`*, `version`*, body*: object | object, ConfirmationHeld |  | Replace the values list in a list saved group draft revision |
+| GET | `/v1/saved-groups/{id}` | getSavedGroup | `id`* | object | yes | Get a single saved group |
+| POST | `/v1/saved-groups/{id}` | updateSavedGroup | `id`*, body*: object | object, ConfirmationHeld |  | Partially update a single saved group |
+| DELETE | `/v1/saved-groups/{id}` | deleteSavedGroup | `id`* | object, ConfirmationHeld |  | Deletes a single saved group |
+| POST | `/v1/saved-groups/{id}/archive` | archiveSavedGroup | `id`*, body*: object | object, ConfirmationHeld |  | Archive a single saved group |
+| GET | `/v1/saved-groups/{id}/references` | getSavedGroupReferences | `id`* | object | yes | Get features, experiments, and saved groups that reference this saved group |
+| POST | `/v1/saved-groups/{id}/unarchive` | unarchiveSavedGroup | `id`* | object, ConfirmationHeld |  | Unarchive a single saved group |
+| POST | `/v1/saved-groups/{id}/upload-url` | postSavedGroupUploadUrl | `id`* | object, ConfirmationHeld |  | Get a signed URL to upload a remote saved group CSV |
+| GET | `/v1/saved-groups/{id}/uploads` | listSavedGroupUploads | `id`*, `limit`, `offset` | object | yes | List the uploads of a remote saved group |
+| POST | `/v1/saved-groups/{id}/uploads` | postSavedGroupUpload | `id`*, body*: object | object, ConfirmationHeld |  | Upload a new version of a remote saved group's IDs |
+| GET | `/v1/saved-groups/{id}/uploads/{version}` | getSavedGroupUpload | `id`*, `version`* | object | yes | Get one upload of a remote saved group |
+| DELETE | `/v1/saved-groups/{id}/uploads/{version}` | deleteSavedGroupUpload | `id`*, `version`* | object, ConfirmationHeld |  | Delete an upload of a remote saved group |
+| POST | `/v1/saved-groups/{id}/uploads/{version}/loads` | postSavedGroupUploadLoad | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Report loading a remote saved group upload into a data store |
+| GET | `/v1/sdk-connections` | listSdkConnections | `limit`, `offset`, `projectId`, `withProxy`, `multiOrg` | object\|PaginationFields | yes | Get all sdk connections |
+| POST | `/v1/sdk-connections` | postSdkConnection | body*: object | object, ConfirmationHeld |  | Create a single sdk connection |
+| GET | `/v1/sdk-connections/lookup/{key}` | lookupSdkConnectionByKey | `key`* | object | yes | Find a single sdk connection by its key |
+| GET | `/v1/sdk-connections/{id}` | getSdkConnection | `id`* | object | yes | Get a single sdk connection |
+| PUT | `/v1/sdk-connections/{id}` | putSdkConnection | `id`*, body*: object | object, ConfirmationHeld |  | Update a single sdk connection |
+| DELETE | `/v1/sdk-connections/{id}` | deleteSdkConnection | `id`* | object, ConfirmationHeld |  | Deletes a single SDK connection |
+| GET | `/v1/sdk-payload/{key}` | getSdkPayload | `key`* | — | yes | Get a SDK payload |
+| GET | `/v1/segments` | listSegments | `limit`, `offset`, `datasourceId` | object\|PaginationFields | yes | Get all segments |
+| POST | `/v1/segments` | postSegment | body*: object | object, ConfirmationHeld |  | Create a single segment |
+| GET | `/v1/segments/{id}` | getSegment | `id`* | object | yes | Get a single segment |
+| POST | `/v1/segments/{id}` | updateSegment | `id`*, body*: object | object, ConfirmationHeld |  | Update a single segment |
+| DELETE | `/v1/segments/{id}` | deleteSegment | `id`* | object, ConfirmationHeld |  | Deletes a single segment |
+| GET | `/v1/settings` | getSettings | — | object | yes | Get organization settings |
+| PUT | `/v1/settings/approvals` | putApprovalSettings | body*: object | object, ConfirmationHeld |  | Update approval settings |
+| GET | `/v1/snapshots/{id}` | getExperimentSnapshot | `id`* | object | yes | Get an experiment snapshot status |
+| GET | `/v1/stale-features` | getFeatureStale | `ids`* | object | yes | Get stale status for one or more features |
+| GET | `/v1/teams` | listTeams | — | object | yes | Get all teams |
+| POST | `/v1/teams` | createTeam | body*: object | object, ConfirmationHeld |  | Create a single team |
+| GET | `/v1/teams/{id}` | getTeam | `id`* | object | yes | Get a single team |
+| PUT | `/v1/teams/{id}` | updateTeam | `id`*, body*: object | object, ConfirmationHeld |  | Update a single team |
+| DELETE | `/v1/teams/{id}` | deleteTeam | `id`*, `deleteMembers` | object, ConfirmationHeld |  | Delete a single team |
+| POST | `/v1/teams/{id}/members` | addTeamMembers | `id`*, body*: object | object, ConfirmationHeld |  | Add members to team |
+| DELETE | `/v1/teams/{id}/members` | removeTeamMember | `id`*, body*: object | object, ConfirmationHeld |  | Remove members from team |
+| POST | `/v1/transform-copy` | postCopyTransform | body*: object | — |  | — |
+| GET | `/v1/usage/metrics` | getMetricUsage | `ids`* | object | yes | Get metric usage across experiments |
+| GET | `/v1/version` | getVersion | — | object | yes | Get the GrowthBook server version and build info |
+| GET | `/v1/visual-changesets/{id}` | getVisualChangeset | `id`*, `includeExperiment` | object | yes | Get a single visual changeset |
+| PUT | `/v1/visual-changesets/{id}` | putVisualChangeset | `id`*, body*: object | object, ConfirmationHeld |  | Update a visual changeset |
+| POST | `/v1/visual-changesets/{id}/visual-change` | postVisualChange | `id`*, body*: object | object, ConfirmationHeld |  | Create a visual change for a visual changeset |
+| PUT | `/v1/visual-changesets/{id}/visual-change/{visualChangeId}` | putVisualChange | `id`*, `visualChangeId`*, body*: object | object, ConfirmationHeld |  | Update a visual change for a visual changeset |
+| POST | `/v2/dashboards` | createDashboardV2 | body*: object | object, ConfirmationHeld |  | Create a single dashboard |
+| GET | `/v2/feature-keys` | getFeatureKeysV2 | `projectId` | string[] | yes | Get list of feature keys |
+| GET | `/v2/feature-revisions` | listRevisionsV2 | `limit`, `offset`, `skipPagination`, `featureId`, `status`, `author`, `mine`, `archived` | object | yes | List revisions across all features |
+| GET | `/v2/features` | listFeaturesV2 | `limit`, `offset`, `projectId`, `clientKey`, `archived`, `skipPagination` | object\|PaginationFields | yes | Get all features |
+| POST | `/v2/features` | postFeatureV2 | `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Create a single feature |
+| GET | `/v2/features/{id}` | getFeatureV2 | `id`*, `withRevisions` | object | yes | Get a single feature |
+| POST | `/v2/features/{id}` | updateFeatureV2 | `id`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Partially update a feature |
+| DELETE | `/v2/features/{id}` | deleteFeatureV2 | `id`* | object, ConfirmationHeld |  | Deletes a single feature |
+| POST | `/v2/features/{id}/revert` | revertFeatureV2 | `id`*, body*: object | object, ConfirmationHeld |  | Revert a feature to a specific revision |
+| GET | `/v2/features/{id}/revisions` | getFeatureRevisionsV2 | `id`*, `limit`, `offset`, `skipPagination`, `status`, `author`, `mine` | object | yes | List revisions for a feature |
+| POST | `/v2/features/{id}/revisions` | postFeatureRevisionV2 | `id`*, `overrideDraftLimit`, body*: object | object, ConfirmationHeld |  | Create a draft revision |
+| GET | `/v2/features/{id}/revisions/latest` | getFeatureRevisionLatestV2 | `id`*, `mine`, `status`, `author` | object | yes | Get the most recent active draft revision |
+| GET | `/v2/features/{id}/revisions/{version}` | getFeatureRevisionV2 | `id`*, `version`* | object | yes | Get a single feature revision |
+| PUT | `/v2/features/{id}/revisions/{version}/archive` | putFeatureRevisionArchiveV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set archived state in a draft revision |
+| PUT | `/v2/features/{id}/revisions/{version}/default-value` | putFeatureRevisionDefaultValueV2 | `id`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Set the default value in a draft revision |
+| GET | `/v2/features/{id}/revisions/{version}/diff` | getFeatureRevisionDiffV2 | `id`*, `version`*, `format`, `base` | object | yes | Diff a revision against another revision |
+| POST | `/v2/features/{id}/revisions/{version}/discard` | postFeatureRevisionDiscardV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Discard a draft revision |
+| PUT | `/v2/features/{id}/revisions/{version}/holdout` | putFeatureRevisionHoldoutV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set holdout in a draft revision |
+| GET | `/v2/features/{id}/revisions/{version}/log` | getFeatureRevisionLogV2 | `id`*, `version`* | object | yes | List the activity log for a revision |
+| PUT | `/v2/features/{id}/revisions/{version}/log/{logId}` | putFeatureRevisionLogCommentV2 | `id`*, `version`*, `logId`*, body*: object | object, ConfirmationHeld |  | Edit the comment text of an owned log entry |
+| DELETE | `/v2/features/{id}/revisions/{version}/log/{logId}` | deleteFeatureRevisionLogEntryV2 | `id`*, `version`*, `logId`*, body*: object | object, ConfirmationHeld |  | Delete an owned revision Comment entry |
+| GET | `/v2/features/{id}/revisions/{version}/merge-status` | getFeatureRevisionMergeStatusV2 | `id`*, `version`* | object | yes | Get merge status for a draft revision |
+| PUT | `/v2/features/{id}/revisions/{version}/metadata` | putFeatureRevisionMetadataV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Update revision metadata |
+| PUT | `/v2/features/{id}/revisions/{version}/prerequisites` | putFeatureRevisionPrerequisitesV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Set feature-level prerequisites in a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/publish` | postFeatureRevisionPublishV2 | `id`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Publish a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/rebase` | postFeatureRevisionRebaseV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Rebase a draft revision onto the current live version |
+| POST | `/v2/features/{id}/revisions/{version}/rebase/preview` | postFeatureRevisionRebasePreviewV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Preview a rebase without applying it |
+| POST | `/v2/features/{id}/revisions/{version}/recall-review` | postFeatureRevisionRecallReviewV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Recall a review request (revert to draft) |
+| POST | `/v2/features/{id}/revisions/{version}/reopen` | postFeatureRevisionReopenV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Reopen a discarded revision as a draft |
+| POST | `/v2/features/{id}/revisions/{version}/request-review` | postFeatureRevisionRequestReviewV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Request review for a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/revert` | postFeatureRevisionRevertV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Revert the feature to a prior revision |
+| POST | `/v2/features/{id}/revisions/{version}/rules` | postFeatureRevisionRuleAddV2 | `id`*, `version`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Add a rule to a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/rules/reorder` | postFeatureRevisionRulesReorderV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Reorder rules in the revision |
+| PUT | `/v2/features/{id}/revisions/{version}/rules/{ruleId}` | putFeatureRevisionRuleV2 | `id`*, `version`*, `ruleId`*, `skipSchemaValidation`, `ignoreWarnings`, body*: object | object, ConfirmationHeld |  | Update a rule in a draft revision |
+| DELETE | `/v2/features/{id}/revisions/{version}/rules/{ruleId}` | deleteFeatureRevisionRuleV2 | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Delete a rule from a draft revision |
+| PUT | `/v2/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | putFeatureRevisionRuleRampScheduleV2 | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Set ramp schedule for a rule |
+| DELETE | `/v2/features/{id}/revisions/{version}/rules/{ruleId}/ramp-schedule` | deleteFeatureRevisionRuleRampScheduleV2 | `id`*, `version`*, `ruleId`*, body*: object | object, ConfirmationHeld |  | Remove ramp schedule from a rule |
+| POST | `/v2/features/{id}/revisions/{version}/schedule-publish` | postFeatureRevisionSchedulePublishV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Schedule (or cancel) a deferred publish for a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/submit-review` | postFeatureRevisionSubmitReviewV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Submit a review on a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/toggle` | postFeatureRevisionToggleV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Toggle an environment on/off in a draft revision |
+| POST | `/v2/features/{id}/revisions/{version}/undo-review` | postFeatureRevisionUndoReviewV2 | `id`*, `version`*, body*: object | object, ConfirmationHeld |  | Undo a reviewer's own review verdict |
+| POST | `/v2/features/{id}/toggle` | toggleFeatureV2 | `id`*, body*: object | object, ConfirmationHeld |  | Toggle a feature in one or more environments |
+| GET | `/v2/stale-features` | getFeatureStaleV2 | `ids`* | object | yes | Get stale status for one or more features |

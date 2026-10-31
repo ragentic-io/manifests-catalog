@@ -52,17 +52,17 @@
       {
         "from": "ideal-postcodes-co-uk-984b3d4119",
         "kind": "EXPOSES",
-        "to": "operation:delete:/keys/{key}/configs/{config}"
-      },
-      {
-        "from": "ideal-postcodes-co-uk-984b3d4119",
-        "kind": "EXPOSES",
         "to": "operation:get:/keys/{key}/configs/{config}"
       },
       {
         "from": "ideal-postcodes-co-uk-984b3d4119",
         "kind": "EXPOSES",
         "to": "operation:post:/keys/{key}/configs/{config}"
+      },
+      {
+        "from": "ideal-postcodes-co-uk-984b3d4119",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/keys/{key}/configs/{config}"
       },
       {
         "from": "ideal-postcodes-co-uk-984b3d4119",
@@ -82,17 +82,17 @@
       {
         "from": "ideal-postcodes-co-uk-984b3d4119",
         "kind": "EXPOSES",
-        "to": "operation:delete:/keys/{key}/licensees/{licensee}"
-      },
-      {
-        "from": "ideal-postcodes-co-uk-984b3d4119",
-        "kind": "EXPOSES",
         "to": "operation:get:/keys/{key}/licensees/{licensee}"
       },
       {
         "from": "ideal-postcodes-co-uk-984b3d4119",
         "kind": "EXPOSES",
         "to": "operation:put:/keys/{key}/licensees/{licensee}"
+      },
+      {
+        "from": "ideal-postcodes-co-uk-984b3d4119",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/keys/{key}/licensees/{licensee}"
       },
       {
         "from": "ideal-postcodes-co-uk-984b3d4119",
@@ -133,6 +133,1111 @@
         "from": "ideal-postcodes-co-uk-984b3d4119",
         "kind": "EXPOSES",
         "to": "operation:get:/umprn/{umprn}"
+      },
+      {
+        "from": "operation:get:/addresses",
+        "kind": "RETURNS",
+        "to": "schema:AddressResponse"
+      },
+      {
+        "from": "operation:get:/autocomplete/addresses",
+        "kind": "RETURNS",
+        "to": "schema:AutocompleteResponse"
+      },
+      {
+        "from": "operation:get:/autocomplete/addresses/{address}/gbr",
+        "kind": "RETURNS",
+        "to": "schema:GbrResolveAddressResponse"
+      },
+      {
+        "from": "operation:get:/autocomplete/addresses/{address}/usa",
+        "kind": "RETURNS",
+        "to": "schema:UsaResolveAddressResponse"
+      },
+      {
+        "from": "operation:post:/cleanse/addresses",
+        "kind": "RETURNS",
+        "to": "schema:CleanseResponse"
+      },
+      {
+        "from": "operation:get:/emails",
+        "kind": "RETURNS",
+        "to": "schema:EmailResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKeyResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}/configs",
+        "kind": "RETURNS",
+        "to": "schema:ConfigsResponse"
+      },
+      {
+        "from": "operation:post:/keys/{key}/configs",
+        "kind": "ACCEPTS",
+        "to": "schema:ConfigNewParam"
+      },
+      {
+        "from": "operation:post:/keys/{key}/configs",
+        "kind": "RETURNS",
+        "to": "schema:ConfigResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}/configs/{config}",
+        "kind": "RETURNS",
+        "to": "schema:ConfigResponse"
+      },
+      {
+        "from": "operation:post:/keys/{key}/configs/{config}",
+        "kind": "ACCEPTS",
+        "to": "schema:ConfigUpdateParam"
+      },
+      {
+        "from": "operation:post:/keys/{key}/configs/{config}",
+        "kind": "RETURNS",
+        "to": "schema:ConfigResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}/details",
+        "kind": "RETURNS",
+        "to": "schema:ApiKeyDetailsResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}/licensees",
+        "kind": "RETURNS",
+        "to": "schema:LicenseesResponse"
+      },
+      {
+        "from": "operation:post:/keys/{key}/licensees",
+        "kind": "ACCEPTS",
+        "to": "schema:LicenseeEditable"
+      },
+      {
+        "from": "operation:post:/keys/{key}/licensees",
+        "kind": "RETURNS",
+        "to": "schema:LicenseeResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}/licensees/{licensee}",
+        "kind": "RETURNS",
+        "to": "schema:LicenseeResponse"
+      },
+      {
+        "from": "operation:put:/keys/{key}/licensees/{licensee}",
+        "kind": "ACCEPTS",
+        "to": "schema:LicenseeEditable"
+      },
+      {
+        "from": "operation:put:/keys/{key}/licensees/{licensee}",
+        "kind": "RETURNS",
+        "to": "schema:LicenseeResponse"
+      },
+      {
+        "from": "operation:get:/keys/{key}/usage",
+        "kind": "RETURNS",
+        "to": "schema:ApiKeyUsageResponse"
+      },
+      {
+        "from": "operation:get:/phone_numbers",
+        "kind": "RETURNS",
+        "to": "schema:PhoneNumberResponse"
+      },
+      {
+        "from": "operation:get:/places",
+        "kind": "RETURNS",
+        "to": "schema:PlaceResponse"
+      },
+      {
+        "from": "operation:get:/places/${place}",
+        "kind": "RETURNS",
+        "to": "schema:ResolvePlaceResponse"
+      },
+      {
+        "from": "operation:get:/postcodes/{postcode}",
+        "kind": "RETURNS",
+        "to": "schema:PostcodeResponse"
+      },
+      {
+        "from": "operation:get:/udprn/{udprn}",
+        "kind": "RETURNS",
+        "to": "schema:UDPRNResponse"
+      },
+      {
+        "from": "operation:get:/umprn/{umprn}",
+        "kind": "RETURNS",
+        "to": "schema:UMPRNResponse"
+      },
+      {
+        "from": "schema:AddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MrAddress"
+      },
+      {
+        "from": "schema:AddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NybAddress"
+      },
+      {
+        "from": "schema:AddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAddress"
+      },
+      {
+        "from": "schema:AddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAliasAddress"
+      },
+      {
+        "from": "schema:AddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WelshPafAddress"
+      },
+      {
+        "from": "schema:AddressSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ApiKey",
+        "kind": "REFERENCES",
+        "to": "schema:AvailableContexts"
+      },
+      {
+        "from": "schema:ApiKey",
+        "kind": "REFERENCES",
+        "to": "schema:Context"
+      },
+      {
+        "from": "schema:ApiKey",
+        "kind": "REFERENCES",
+        "to": "schema:NoContext"
+      },
+      {
+        "from": "schema:ApiKeyDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyAutomatedTopup"
+      },
+      {
+        "from": "schema:ApiKeyDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyCurrentPurchase"
+      },
+      {
+        "from": "schema:ApiKeyDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyDailyLimit"
+      },
+      {
+        "from": "schema:ApiKeyDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyDatasets"
+      },
+      {
+        "from": "schema:ApiKeyDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyIndividualLimit"
+      },
+      {
+        "from": "schema:ApiKeyDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyNotifications"
+      },
+      {
+        "from": "schema:ApiKeyDetailsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKeyDetails"
+      },
+      {
+        "from": "schema:ApiKeyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "schema:ApiKeyUsageResponse",
+        "kind": "REFERENCES",
+        "to": "schema:KeyUsageResult"
+      },
+      {
+        "from": "schema:AutocompleteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AddressSuggestion"
+      },
+      {
+        "from": "schema:AutocompleteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UkAddressSuggestion"
+      },
+      {
+        "from": "schema:BadRequestResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorResponse"
+      },
+      {
+        "from": "schema:CleanseResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GbrCleanseMatch"
+      },
+      {
+        "from": "schema:CleanseResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GbrCleanseNoMatch"
+      },
+      {
+        "from": "schema:ConfigResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Config"
+      },
+      {
+        "from": "schema:ConfigsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Config"
+      },
+      {
+        "from": "schema:EcadAddress",
+        "kind": "REFERENCES",
+        "to": "schema:EircBase"
+      },
+      {
+        "from": "schema:EcafAddress",
+        "kind": "REFERENCES",
+        "to": "schema:EircBase"
+      },
+      {
+        "from": "schema:EircBase",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:EircBase",
+        "kind": "REFERENCES",
+        "to": "schema:Latitude"
+      },
+      {
+        "from": "schema:EircBase",
+        "kind": "REFERENCES",
+        "to": "schema:Longitude"
+      },
+      {
+        "from": "schema:EmailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Email"
+      },
+      {
+        "from": "schema:EmailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UnknownEmail"
+      },
+      {
+        "from": "schema:GbrCleanseMatch",
+        "kind": "REFERENCES",
+        "to": "schema:MrAddress"
+      },
+      {
+        "from": "schema:GbrCleanseMatch",
+        "kind": "REFERENCES",
+        "to": "schema:NybAddress"
+      },
+      {
+        "from": "schema:GbrCleanseMatch",
+        "kind": "REFERENCES",
+        "to": "schema:PafAddress"
+      },
+      {
+        "from": "schema:GbrCleanseMatch",
+        "kind": "REFERENCES",
+        "to": "schema:PafAliasAddress"
+      },
+      {
+        "from": "schema:GbrCleanseMatch",
+        "kind": "REFERENCES",
+        "to": "schema:WelshPafAddress"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:CountryISO"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:CountryISO2"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Dataset"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:EcadAddress"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:EcafAddress"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Latitude"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Longitude"
+      },
+      {
+        "from": "schema:GbrGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:UspsAddress"
+      },
+      {
+        "from": "schema:GbrResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GbrGlobalAddress"
+      },
+      {
+        "from": "schema:GbrResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MrAddress"
+      },
+      {
+        "from": "schema:GbrResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NybAddress"
+      },
+      {
+        "from": "schema:GbrResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAddress"
+      },
+      {
+        "from": "schema:GbrResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAliasAddress"
+      },
+      {
+        "from": "schema:GbrResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WelshPafAddress"
+      },
+      {
+        "from": "schema:GeonamesPlace",
+        "kind": "REFERENCES",
+        "to": "schema:Latitude"
+      },
+      {
+        "from": "schema:GeonamesPlace",
+        "kind": "REFERENCES",
+        "to": "schema:Longitude"
+      },
+      {
+        "from": "schema:Licensee",
+        "kind": "REFERENCES",
+        "to": "schema:LicenseeEditable"
+      },
+      {
+        "from": "schema:LicenseeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Licensee"
+      },
+      {
+        "from": "schema:LicenseesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Licensee"
+      },
+      {
+        "from": "schema:MrAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafBase"
+      },
+      {
+        "from": "schema:NotFoundResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorResponse"
+      },
+      {
+        "from": "schema:NybAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafBase"
+      },
+      {
+        "from": "schema:PafAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafBase"
+      },
+      {
+        "from": "schema:PafAliasAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafBase"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:Eastings"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:Latitude"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:Longitude"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:Northings"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_administrative_county"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_building_name"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_building_number"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_country"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_country_iso"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_country_iso_2"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_county"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_dataset"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_delivery_point_suffix"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_department_name"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_dependant_locality"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_dependant_thoroughfare"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_district"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_double_dependant_locality"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_language"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_line1"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_line2"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_line3"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_organisation_name"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_pobox"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_post_town"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_postal_county"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_postcode"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_postcode_inward"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_postcode_outward"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_postcode_type"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_premise"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_su_organisation_indicator"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_sub_building_name"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_thoroughfare"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_traditional_county"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_udprn"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_umprn"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_uprn"
+      },
+      {
+        "from": "schema:PafBase",
+        "kind": "REFERENCES",
+        "to": "schema:paf_ward"
+      },
+      {
+        "from": "schema:PhoneNumber",
+        "kind": "REFERENCES",
+        "to": "schema:Carrier"
+      },
+      {
+        "from": "schema:PhoneNumberResponse",
+        "kind": "REFERENCES",
+        "to": "schema:InvalidPhoneNumber"
+      },
+      {
+        "from": "schema:PhoneNumberResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneNumber"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:GeonamesPlace"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:Latitude"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:Longitude"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:place_country_iso"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:place_descriptive_name"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:place_name"
+      },
+      {
+        "from": "schema:PlaceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaceSuggestion"
+      },
+      {
+        "from": "schema:PlaceSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:place_country_iso"
+      },
+      {
+        "from": "schema:PlaceSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:place_descriptive_name"
+      },
+      {
+        "from": "schema:PlaceSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:place_id"
+      },
+      {
+        "from": "schema:PlaceSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:place_name"
+      },
+      {
+        "from": "schema:PostcodeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GbrGlobalAddress"
+      },
+      {
+        "from": "schema:PostcodeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MrAddress"
+      },
+      {
+        "from": "schema:PostcodeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NybAddress"
+      },
+      {
+        "from": "schema:PostcodeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAddress"
+      },
+      {
+        "from": "schema:PostcodeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAliasAddress"
+      },
+      {
+        "from": "schema:PostcodeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WelshPafAddress"
+      },
+      {
+        "from": "schema:RateLimitedResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorResponse"
+      },
+      {
+        "from": "schema:ResolvePlaceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Place"
+      },
+      {
+        "from": "schema:UDPRNResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NybAddress"
+      },
+      {
+        "from": "schema:UDPRNResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PafAddress"
+      },
+      {
+        "from": "schema:UMPRNResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MrAddress"
+      },
+      {
+        "from": "schema:UkAddressSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:UkAddressSuggestion",
+        "kind": "REFERENCES",
+        "to": "schema:paf_udprn"
+      },
+      {
+        "from": "schema:UnauthorizedResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorResponse"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:CountryISO"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:CountryISO2"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Dataset"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:EcadAddress"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:EcafAddress"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:Language"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:MrAddress"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:NybAddress"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafAddress"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafAliasAddress"
+      },
+      {
+        "from": "schema:UsaGlobalAddress",
+        "kind": "REFERENCES",
+        "to": "schema:WelshPafAddress"
+      },
+      {
+        "from": "schema:UsaResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UsaGlobalAddress"
+      },
+      {
+        "from": "schema:UsaResolveAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UspsAddress"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:address_secondary_abbreviation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:base_alternate_code"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:building_or_firm_name"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:carrier_route_id"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:carrier_route_rate_sortation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:city"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:city_abbreviation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:city_state_mailing_name_indicator"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:city_state_name_facility_code"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:congressional_district_number"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:county"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:county_number"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:finance_number"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:government_building_indicator"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:lacs_status_indicator"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:last_line"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:line_1"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:line_2"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:municipality_city_state_key"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:plus_4_code"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:preferred_city"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:preferred_last_line_city_state_key"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:primary_number"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:record_type_code"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:secondary_number"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:state"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:state_abbreviation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:street_name"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:street_post_directional_abbreviation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:street_pre_directional_abbreviation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:street_suffix_abbreviation"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:update_key_number"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:urbanization_city_state_key"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:usps_country"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:usps_country_iso"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:usps_country_iso_2"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:usps_dataset"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:usps_language"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:zip_classification_code"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:zip_code"
+      },
+      {
+        "from": "schema:UspsAddress",
+        "kind": "REFERENCES",
+        "to": "schema:zip_plus_4_code"
+      },
+      {
+        "from": "schema:WelshPafAddress",
+        "kind": "REFERENCES",
+        "to": "schema:PafBase"
+      },
+      {
+        "from": "schema:ecad",
+        "kind": "REFERENCES",
+        "to": "schema:EcadAddress"
+      },
+      {
+        "from": "schema:ecaf",
+        "kind": "REFERENCES",
+        "to": "schema:EcafAddress"
+      },
+      {
+        "from": "schema:geonames",
+        "kind": "REFERENCES",
+        "to": "schema:GeonamesPlace"
       }
     ],
     "nodes": [
@@ -142,894 +1247,2329 @@
       },
       {
         "deprecated": false,
+        "description": "Extract a list of complete addresses that match the query ordered by relevance score.",
         "id": "operation:get:/addresses",
         "kind": "operation",
         "method": "get",
         "name": "Addresses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "Specifies the address you wish to query.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "LimitParam"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "PageParam"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "FilterParam"
+          },
+          {
+            "in": "query",
+            "name": "lon",
+            "required": false,
+            "type": "AddressLongitudeParam"
+          },
+          {
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "AddressLatitudeParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_outward",
+            "required": false,
+            "type": "PostcodeOutwardParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode",
+            "required": false,
+            "type": "PostcodeParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_area",
+            "required": false,
+            "type": "PostcodeAreaParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_sector",
+            "required": false,
+            "type": "PostcodeSectorParam"
+          },
+          {
+            "in": "query",
+            "name": "post_town",
+            "required": false,
+            "type": "PostTownParam"
+          },
+          {
+            "in": "query",
+            "name": "uprn",
+            "required": false,
+            "type": "UPRNParam"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "CountryParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_type",
+            "required": false,
+            "type": "PostcodeTypeParam"
+          },
+          {
+            "in": "query",
+            "name": "su_organisation_indicator",
+            "required": false,
+            "type": "SmallUserParam"
+          },
+          {
+            "in": "query",
+            "name": "box",
+            "required": false,
+            "type": "BoxParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode_outward",
+            "required": false,
+            "type": "BiasPostcodeOutwardParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode",
+            "required": false,
+            "type": "BiasPostcodeParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode_area",
+            "required": false,
+            "type": "BiasPostcodeAreaParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode_sector",
+            "required": false,
+            "type": "BiasPostcodeSectorParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_post_town",
+            "required": false,
+            "type": "BiasPosttownParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_thoroughfare",
+            "required": false,
+            "type": "BiasThoroughfareParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_country",
+            "required": false,
+            "type": "BiasCountryParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_lonlat",
+            "required": false,
+            "type": "BiasLonLatParam"
+          }
+        ],
         "path": "/addresses",
         "pointer": "#/paths/~1addresses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AddressResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "404",
+            "type": "PostcodeNotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Extract Addresses"
+        "summary": "Extract Addresses",
+        "tags": [
+          "UK"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The address autocomplete API returns a list of address suggestions that match the query ordered by relevance.",
         "id": "operation:get:/autocomplete/addresses",
         "kind": "operation",
         "method": "get",
         "name": "AddressAutocomplete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "Specifies the address you wish to query.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "context",
+            "required": false,
+            "type": "Context"
+          },
+          {
+            "description": "Limits number of address suggestions unless a postcode is detected.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "LimitParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_outward",
+            "required": false,
+            "type": "PostcodeOutwardParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode",
+            "required": false,
+            "type": "PostcodeParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_area",
+            "required": false,
+            "type": "PostcodeAreaParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_sector",
+            "required": false,
+            "type": "PostcodeSectorParam"
+          },
+          {
+            "in": "query",
+            "name": "post_town",
+            "required": false,
+            "type": "PostTownParam"
+          },
+          {
+            "in": "query",
+            "name": "uprn",
+            "required": false,
+            "type": "UPRNParam"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "CountryParam"
+          },
+          {
+            "in": "query",
+            "name": "postcode_type",
+            "required": false,
+            "type": "PostcodeTypeParam"
+          },
+          {
+            "in": "query",
+            "name": "su_organisation_indicator",
+            "required": false,
+            "type": "SmallUserParam"
+          },
+          {
+            "in": "query",
+            "name": "box",
+            "required": false,
+            "type": "BoxParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode_outward",
+            "required": false,
+            "type": "BiasPostcodeOutwardParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode",
+            "required": false,
+            "type": "BiasPostcodeParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode_area",
+            "required": false,
+            "type": "BiasPostcodeAreaParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_postcode_sector",
+            "required": false,
+            "type": "BiasPostcodeSectorParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_post_town",
+            "required": false,
+            "type": "BiasPosttownParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_thoroughfare",
+            "required": false,
+            "type": "BiasThoroughfareParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_country",
+            "required": false,
+            "type": "BiasCountryParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_lonlat",
+            "required": false,
+            "type": "BiasLonLatParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_ip",
+            "required": false,
+            "type": "BiasIpParam"
+          }
+        ],
         "path": "/autocomplete/addresses",
         "pointer": "#/paths/~1autocomplete~1addresses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutocompleteResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find Address"
+        "summary": "Find Address",
+        "tags": [
+          "Address Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resolves an address autocompletion by its address ID.",
         "id": "operation:get:/autocomplete/addresses/{address}/gbr",
         "kind": "operation",
         "method": "get",
         "name": "Resolve",
+        "parameters": [
+          {
+            "description": "ID of address suggestion",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          }
+        ],
         "path": "/autocomplete/addresses/{address}/gbr",
         "pointer": "#/paths/~1autocomplete~1addresses~1{address}~1gbr/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GbrResolveAddressResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve Address (GBR)"
+        "summary": "Resolve Address (GBR)",
+        "tags": [
+          "Address Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resolves an address autocompletion by its address ID.",
         "id": "operation:get:/autocomplete/addresses/{address}/usa",
         "kind": "operation",
         "method": "get",
         "name": "ResolveUsa",
+        "parameters": [
+          {
+            "description": "ID of address suggestion",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          }
+        ],
         "path": "/autocomplete/addresses/{address}/usa",
         "pointer": "#/paths/~1autocomplete~1addresses~1{address}~1usa/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UsaResolveAddressResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve Address (USA)"
+        "summary": "Resolve Address (USA)",
+        "tags": [
+          "Address Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The address cleanse API attempts to return the closest matching address for any given address inputs.",
         "id": "operation:post:/cleanse/addresses",
         "kind": "operation",
         "method": "post",
         "name": "AddressCleanse",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          }
+        ],
         "path": "/cleanse/addresses",
         "pointer": "#/paths/~1cleanse~1addresses/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CleanseResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401",
+            "type": "UnauthorizedResponse"
+          },
+          {
+            "status": "429",
+            "type": "RateLimitedResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Cleanse"
+        "summary": "Cleanse",
+        "tags": [
+          "UK"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query for and validate email addresses.",
         "id": "operation:get:/emails",
         "kind": "operation",
         "method": "get",
         "name": "EmailValidation",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "Specifies the email address to validate",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/emails",
         "pointer": "#/paths/~1emails/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmailResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Email Validation"
+        "summary": "Email Validation",
+        "tags": [
+          "Emails"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns public information on key.",
         "id": "operation:get:/keys/{key}",
         "kind": "operation",
         "method": "get",
         "name": "KeyAvailability",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          }
+        ],
         "path": "/keys/{key}",
         "pointer": "#/paths/~1keys~1{key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKeyResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Availability"
+        "summary": "Availability",
+        "tags": [
+          "Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists configurations associated with a key",
         "id": "operation:get:/keys/{key}/configs",
         "kind": "operation",
         "method": "get",
         "name": "ListConfigs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/configs",
         "pointer": "#/paths/~1keys~1{key}~1configs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigsResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401",
+            "type": "UnauthorizedResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List"
+        "summary": "List",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a config",
         "id": "operation:post:/keys/{key}/configs",
         "kind": "operation",
         "method": "post",
         "name": "CreateConfig",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/configs",
         "pointer": "#/paths/~1keys~1{key}~1configs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ConfigNewParam"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401",
+            "type": "UnauthorizedResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create"
+        "summary": "Create",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/keys/{key}/configs/{config}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteConfig",
-        "path": "/keys/{key}/configs/{config}",
-        "pointer": "#/paths/~1keys~1{key}~1configs~1{config}/delete",
-        "security": [],
-        "summary": "Delete"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve config object by name",
         "id": "operation:get:/keys/{key}/configs/{config}",
         "kind": "operation",
         "method": "get",
         "name": "RetrieveConfig",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "path",
+            "name": "config",
+            "required": true,
+            "type": "ConfigParam"
+          }
+        ],
         "path": "/keys/{key}/configs/{config}",
         "pointer": "#/paths/~1keys~1{key}~1configs~1{config}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve"
+        "summary": "Retrieve",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates configuration object",
         "id": "operation:post:/keys/{key}/configs/{config}",
         "kind": "operation",
         "method": "post",
         "name": "UpdateConfig",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "path",
+            "name": "config",
+            "required": true,
+            "type": "ConfigParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/configs/{config}",
         "pointer": "#/paths/~1keys~1{key}~1configs~1{config}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ConfigUpdateParam"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401",
+            "type": "UnauthorizedResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update"
+        "summary": "Update",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Permanently deletes a configuration object.",
+        "id": "operation:delete:/keys/{key}/configs/{config}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteConfig",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "path",
+            "name": "config",
+            "required": true,
+            "type": "ConfigParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
+        "path": "/keys/{key}/configs/{config}",
+        "pointer": "#/paths/~1keys~1{key}~1configs~1{config}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401",
+            "type": "UnauthorizedResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete",
+        "tags": [
+          "Configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns private data on the key including remaining lookups, available datasets and usage limits.",
         "id": "operation:get:/keys/{key}/details",
         "kind": "operation",
         "method": "get",
         "name": "KeyDetails",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/details",
         "pointer": "#/paths/~1keys~1{key}~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKeyDetailsResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Details"
+        "summary": "Details",
+        "tags": [
+          "Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of licensees for a key.",
         "id": "operation:get:/keys/{key}/licensees",
         "kind": "operation",
         "method": "get",
         "name": "ListLicensees",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "Specify ID of the licensee after which you would like to list results",
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          },
+          {
+            "description": "Specify the maximum number of results to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "LimitParam"
+          },
+          {
+            "description": "Filter result by licensee name.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/keys/{key}/licensees",
         "pointer": "#/paths/~1keys~1{key}~1licensees/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LicenseesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List"
+        "summary": "List",
+        "tags": [
+          "Licensees"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a licensee for the specified API Key.",
         "id": "operation:post:/keys/{key}/licensees",
         "kind": "operation",
         "method": "post",
         "name": "CreateLicensee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/licensees",
         "pointer": "#/paths/~1keys~1{key}~1licensees/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LicenseeEditable"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LicenseeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create"
+        "summary": "Create",
+        "tags": [
+          "Licensees"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/keys/{key}/licensees/{licensee}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteLicensee",
-        "path": "/keys/{key}/licensees/{licensee}",
-        "pointer": "#/paths/~1keys~1{key}~1licensees~1{licensee}/delete",
-        "security": [],
-        "summary": "Cancel"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns licensee information as identified by the licensee key.",
         "id": "operation:get:/keys/{key}/licensees/{licensee}",
         "kind": "operation",
         "method": "get",
         "name": "RetrieveLicensee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "path",
+            "name": "licensee",
+            "required": true,
+            "type": "LicenseeParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/licensees/{licensee}",
         "pointer": "#/paths/~1keys~1{key}~1licensees~1{licensee}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LicenseeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve"
+        "summary": "Retrieve",
+        "tags": [
+          "Licensees"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update Licensee",
         "id": "operation:put:/keys/{key}/licensees/{licensee}",
         "kind": "operation",
         "method": "put",
         "name": "UpdateLicensee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "path",
+            "name": "licensee",
+            "required": true,
+            "type": "LicenseeParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
         "path": "/keys/{key}/licensees/{licensee}",
         "pointer": "#/paths/~1keys~1{key}~1licensees~1{licensee}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LicenseeEditable"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LicenseeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update"
+        "summary": "Update",
+        "tags": [
+          "Licensees"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancels a licensee key.",
+        "id": "operation:delete:/keys/{key}/licensees/{licensee}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteLicensee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "path",
+            "name": "licensee",
+            "required": true,
+            "type": "LicenseeParam"
+          },
+          {
+            "in": "query",
+            "name": "user_token",
+            "required": false,
+            "type": "UserTokenParam"
+          }
+        ],
+        "path": "/keys/{key}/licensees/{licensee}",
+        "pointer": "#/paths/~1keys~1{key}~1licensees~1{licensee}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Cancel",
+        "tags": [
+          "Licensees"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Reports lookup information on a key for paid lookups.",
         "id": "operation:get:/keys/{key}/lookups",
         "kind": "operation",
         "method": "get",
         "name": "KeyLogs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "An start date/time in the form of a UNIX Timestamp in milliseconds, e.g.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "StartParam"
+          },
+          {
+            "description": "An end date/time in the form of a UNIX Timestamp in milliseconds, e.g.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "EndParam"
+          },
+          {
+            "description": "Sublicensed keys only.",
+            "in": "query",
+            "name": "licensee",
+            "required": false,
+            "type": "LicenseeParam"
+          }
+        ],
         "path": "/keys/{key}/lookups",
         "pointer": "#/paths/~1keys~1{key}~1lookups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Logs (CSV)"
+        "summary": "Logs (CSV)",
+        "tags": [
+          "Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reports the number of lookups consumed on a key for a range of days.",
         "id": "operation:get:/keys/{key}/usage",
         "kind": "operation",
         "method": "get",
         "name": "KeyUsage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "A start date/time in the form of a UNIX Timestamp in milliseconds, e.g.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "StartParam"
+          },
+          {
+            "description": "An end date/time in the form of a UNIX Timestamp in milliseconds, e.g.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "EndParam"
+          },
+          {
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "TagsParam"
+          },
+          {
+            "description": "Sublicensed keys only.",
+            "in": "query",
+            "name": "licensee",
+            "required": false,
+            "type": "LicenseeParam"
+          }
+        ],
         "path": "/keys/{key}/usage",
         "pointer": "#/paths/~1keys~1{key}~1usage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKeyUsageResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Usage Stats"
+        "summary": "Usage Stats",
+        "tags": [
+          "Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query for and validate phone numbers.",
         "id": "operation:get:/phone_numbers",
         "kind": "operation",
         "method": "get",
         "name": "PhoneNumberValidation",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "Specifies the phone number to validate.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/phone_numbers",
         "pointer": "#/paths/~1phone_numbers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhoneNumberResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Phone Number Validation"
+        "summary": "Phone Number Validation",
+        "tags": [
+          "Phone Numbers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query for geographical places across countries.",
         "id": "operation:get:/places",
         "kind": "operation",
         "method": "get",
         "name": "FindPlace",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "ApiKeyParam"
+          },
+          {
+            "description": "Specifies the place you wish to query.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "country_iso",
+            "required": false,
+            "type": "CountryIsoParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_country_iso",
+            "required": false,
+            "type": "BiasCountryIsoParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_lonlat",
+            "required": false,
+            "type": "BiasLonLatParam"
+          },
+          {
+            "in": "query",
+            "name": "bias_ip",
+            "required": false,
+            "type": "BiasIpParam"
+          }
+        ],
         "path": "/places",
         "pointer": "#/paths/~1places/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlaceResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find Place"
+        "summary": "Find Place",
+        "tags": [
+          "Place Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resolves a place autocompletion by its place ID.",
         "id": "operation:get:/places/${place}",
         "kind": "operation",
         "method": "get",
         "name": "ResolvePlace",
+        "parameters": [
+          {
+            "description": "ID of place suggestion",
+            "in": "path",
+            "name": "place",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          }
+        ],
         "path": "/places/${place}",
         "pointer": "#/paths/~1places~1${place}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResolvePlaceResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve Place"
+        "summary": "Resolve Place",
+        "tags": [
+          "Place Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the complete list of addresses for a postcode.",
         "id": "operation:get:/postcodes/{postcode}",
         "kind": "operation",
         "method": "get",
         "name": "Postcodes",
+        "parameters": [
+          {
+            "description": "Postcode to retrieve",
+            "in": "path",
+            "name": "postcode",
+            "required": true,
+            "type": "paf_postcode"
+          },
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "FilterParam"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "PageParam"
+          }
+        ],
         "path": "/postcodes/{postcode}",
         "pointer": "#/paths/~1postcodes~1{postcode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PostcodeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "404",
+            "type": "PostcodeNotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lookup Postcode"
+        "summary": "Lookup Postcode",
+        "tags": [
+          "UK"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an address as identified by its Unique Delivery Point Reference Number (UDPRN).",
         "id": "operation:get:/udprn/{udprn}",
         "kind": "operation",
         "method": "get",
         "name": "UDPRN",
+        "parameters": [
+          {
+            "description": "UDPRN to be retrieved",
+            "in": "path",
+            "name": "udprn",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "FilterParam"
+          }
+        ],
         "path": "/udprn/{udprn}",
         "pointer": "#/paths/~1udprn~1{udprn}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UDPRNResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve by UDPRN"
+        "summary": "Retrieve by UDPRN",
+        "tags": [
+          "UK"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a multiple occupancy address identifited via its UMPRN (Multiple Residence Unique ID).",
         "id": "operation:get:/umprn/{umprn}",
         "kind": "operation",
         "method": "get",
         "name": "UMPRN",
+        "parameters": [
+          {
+            "description": "UMPRN to be retrieved",
+            "in": "path",
+            "name": "umprn",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "ApiKeyParam"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "FilterParam"
+          }
+        ],
         "path": "/umprn/{umprn}",
         "pointer": "#/paths/~1umprn~1{umprn}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UMPRNResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve by UMPRN"
+        "summary": "Retrieve by UMPRN",
+        "tags": [
+          "UK"
+        ]
       },
       {
+        "description": "Latitude query for reverse geocoding.",
         "id": "schema:AddressLatitudeParam",
         "kind": "schema",
-        "name": "AddressLatitudeParam"
+        "name": "AddressLatitudeParam",
+        "type": "number:float"
       },
       {
+        "description": "Longitude query for reverse geocoding.",
         "id": "schema:AddressLongitudeParam",
         "kind": "schema",
-        "name": "AddressLongitudeParam"
+        "name": "AddressLongitudeParam",
+        "type": "number:float"
       },
       {
         "id": "schema:AddressResponse",
         "kind": "schema",
-        "name": "AddressResponse"
+        "name": "AddressResponse",
+        "type": "object"
       },
       {
+        "description": "Represents an address suggestion for any address in the world",
         "id": "schema:AddressSuggestion",
         "kind": "schema",
-        "name": "AddressSuggestion"
+        "name": "AddressSuggestion",
+        "type": "object"
       },
       {
         "id": "schema:ApiKey",
         "kind": "schema",
-        "name": "ApiKey"
+        "name": "ApiKey",
+        "type": "object"
       },
       {
+        "description": "Automated topup status",
         "id": "schema:ApiKeyAutomatedTopup",
         "kind": "schema",
-        "name": "ApiKeyAutomatedTopup"
+        "name": "ApiKeyAutomatedTopup",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyCurrentPurchase",
         "kind": "schema",
-        "name": "ApiKeyCurrentPurchase"
+        "name": "ApiKeyCurrentPurchase",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyDailyLimit",
         "kind": "schema",
-        "name": "ApiKeyDailyLimit"
+        "name": "ApiKeyDailyLimit",
+        "type": "object"
       },
       {
+        "description": "Indicates which datasets are available and added by default to the address responses",
         "id": "schema:ApiKeyDatasets",
         "kind": "schema",
-        "name": "ApiKeyDatasets"
+        "name": "ApiKeyDatasets",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyDetails",
         "kind": "schema",
-        "name": "ApiKeyDetails"
+        "name": "ApiKeyDetails",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyDetailsResponse",
         "kind": "schema",
-        "name": "ApiKeyDetailsResponse"
+        "name": "ApiKeyDetailsResponse",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyIndividualLimit",
         "kind": "schema",
-        "name": "ApiKeyIndividualLimit"
+        "name": "ApiKeyIndividualLimit",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyNotifications",
         "kind": "schema",
-        "name": "ApiKeyNotifications"
+        "name": "ApiKeyNotifications",
+        "type": "object"
       },
       {
+        "description": "Your API Key.",
         "id": "schema:ApiKeyParam",
         "kind": "schema",
-        "name": "ApiKeyParam"
+        "name": "ApiKeyParam",
+        "type": "string"
       },
       {
         "id": "schema:ApiKeyResponse",
         "kind": "schema",
-        "name": "ApiKeyResponse"
+        "name": "ApiKeyResponse",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeyUsageResponse",
         "kind": "schema",
-        "name": "ApiKeyUsageResponse"
+        "name": "ApiKeyUsageResponse",
+        "type": "object"
       },
       {
         "id": "schema:AutocompleteResponse",
         "kind": "schema",
-        "name": "AutocompleteResponse"
+        "name": "AutocompleteResponse",
+        "type": "object"
       },
       {
+        "description": "A list of available contexts for a key",
         "id": "schema:AvailableContexts",
         "kind": "schema",
-        "name": "AvailableContexts"
+        "name": "AvailableContexts",
+        "type": "object[]"
       },
       {
         "id": "schema:BadRequestResponse",
         "kind": "schema",
-        "name": "BadRequestResponse"
+        "name": "BadRequestResponse",
+        "type": "ErrorResponse|object"
       },
       {
+        "description": "Bias by country ISO code.",
         "id": "schema:BiasCountryIsoParam",
         "kind": "schema",
-        "name": "BiasCountryIsoParam"
+        "name": "BiasCountryIsoParam",
+        "type": "string"
       },
       {
+        "description": "Bias by country.",
         "id": "schema:BiasCountryParam",
         "kind": "schema",
-        "name": "BiasCountryParam"
+        "name": "BiasCountryParam",
+        "type": "string"
       },
       {
+        "description": "Biases search based on approximate geolocation of IP address.",
         "id": "schema:BiasIpParam",
         "kind": "schema",
-        "name": "BiasIpParam"
+        "name": "BiasIpParam",
+        "type": "string"
       },
       {
+        "description": "Bias search to a geospatial circle determined by an origin and radius in meters.",
         "id": "schema:BiasLonLatParam",
         "kind": "schema",
-        "name": "BiasLonLatParam"
+        "name": "BiasLonLatParam",
+        "type": "string"
       },
       {
+        "description": "Bias by postcode area, the first one or two non-numeric characters of a postcode.",
         "id": "schema:BiasPostcodeAreaParam",
         "kind": "schema",
-        "name": "BiasPostcodeAreaParam"
+        "name": "BiasPostcodeAreaParam",
+        "type": "string"
       },
       {
+        "description": "Bias by outward code",
         "id": "schema:BiasPostcodeOutwardParam",
         "kind": "schema",
-        "name": "BiasPostcodeOutwardParam"
+        "name": "BiasPostcodeOutwardParam",
+        "type": "string"
       },
       {
+        "description": "Bias by postcode.",
         "id": "schema:BiasPostcodeParam",
         "kind": "schema",
-        "name": "BiasPostcodeParam"
+        "name": "BiasPostcodeParam",
+        "type": "string"
       },
       {
+        "description": "Bias by postcode sector, the outward code plus first numeric of the inward code.",
         "id": "schema:BiasPostcodeSectorParam",
         "kind": "schema",
-        "name": "BiasPostcodeSectorParam"
+        "name": "BiasPostcodeSectorParam",
+        "type": "string"
       },
       {
+        "description": "Bias by town.",
         "id": "schema:BiasPosttownParam",
         "kind": "schema",
-        "name": "BiasPosttownParam"
+        "name": "BiasPosttownParam",
+        "type": "string"
       },
       {
+        "description": "Bias by street name.",
         "id": "schema:BiasThoroughfareParam",
         "kind": "schema",
-        "name": "BiasThoroughfareParam"
+        "name": "BiasThoroughfareParam",
+        "type": "string"
       },
       {
+        "description": "Restrict search to a geospatial box determined by the \"top-left\" and \"bottom-right\" gelocations.",
         "id": "schema:BoxParam",
         "kind": "schema",
-        "name": "BoxParam"
+        "name": "BoxParam",
+        "type": "string"
       },
       {
         "id": "schema:Carrier",
         "kind": "schema",
-        "name": "Carrier"
+        "name": "Carrier",
+        "type": "object"
       },
       {
         "id": "schema:CleanseResponse",
         "kind": "schema",
-        "name": "CleanseResponse"
+        "name": "CleanseResponse",
+        "type": "object"
       },
       {
         "id": "schema:Config",
         "kind": "schema",
-        "name": "Config"
+        "name": "Config",
+        "type": "object"
       },
       {
+        "description": "Required configuration object parameters",
         "id": "schema:ConfigNewParam",
         "kind": "schema",
-        "name": "ConfigNewParam"
+        "name": "ConfigNewParam",
+        "type": "object"
       },
       {
+        "description": "User provided configuration object name",
         "id": "schema:ConfigParam",
         "kind": "schema",
-        "name": "ConfigParam"
+        "name": "ConfigParam",
+        "type": "string"
       },
       {
         "id": "schema:ConfigResponse",
         "kind": "schema",
-        "name": "ConfigResponse"
+        "name": "ConfigResponse",
+        "type": "object"
       },
       {
+        "description": "Config object update parameters",
         "id": "schema:ConfigUpdateParam",
         "kind": "schema",
-        "name": "ConfigUpdateParam"
+        "name": "ConfigUpdateParam",
+        "type": "object"
       },
       {
         "id": "schema:ConfigsResponse",
         "kind": "schema",
-        "name": "ConfigsResponse"
+        "name": "ConfigsResponse",
+        "type": "object"
       },
       {
+        "description": "Limits search results within a geographical boundary or country.",
         "id": "schema:Context",
         "kind": "schema",
-        "name": "Context"
+        "name": "Context",
+        "type": "string"
       },
       {
+        "description": "Full country names (ISO 3166)",
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "string"
       },
       {
+        "description": "3 letter country code (ISO 3166-1)",
         "id": "schema:CountryISO",
         "kind": "schema",
-        "name": "CountryISO"
+        "name": "CountryISO",
+        "type": "string"
       },
       {
+        "description": "2 letter country code (ISO 3166-1)",
         "id": "schema:CountryISO2",
         "kind": "schema",
-        "name": "CountryISO2"
+        "name": "CountryISO2",
+        "type": "string"
       },
       {
+        "description": "Filter by country ISO code.",
         "id": "schema:CountryIsoParam",
         "kind": "schema",
-        "name": "CountryIsoParam"
+        "name": "CountryIsoParam",
+        "type": "string"
       },
       {
+        "description": "Filter by country.",
         "id": "schema:CountryParam",
         "kind": "schema",
-        "name": "CountryParam"
+        "name": "CountryParam",
+        "type": "string"
       },
       {
+        "description": "Indicates the provenance of an address.",
         "id": "schema:Dataset",
         "kind": "schema",
-        "name": "Dataset"
+        "name": "Dataset",
+        "type": "string"
       },
       {
+        "description": "Eastings reference using the [Ordnance Survey National Grid reference system](https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid).",
         "id": "schema:Eastings",
         "kind": "schema",
-        "name": "Eastings"
+        "name": "Eastings",
+        "type": "string|number"
       },
       {
+        "description": "The ECAD contains additional data for each ECAF address.",
         "id": "schema:EcadAddress",
         "kind": "schema",
-        "name": "EcadAddress"
+        "name": "EcadAddress",
+        "type": "EircBase|object"
       },
       {
+        "description": "ECAF is the Eircode Address File which contains one record for each Postal Address.",
         "id": "schema:EcafAddress",
         "kind": "schema",
-        "name": "EcafAddress"
+        "name": "EcafAddress",
+        "type": "EircBase|object"
       },
       {
         "id": "schema:EircBase",
         "kind": "schema",
-        "name": "EircBase"
+        "name": "EircBase",
+        "type": "object"
       },
       {
         "id": "schema:Email",
         "kind": "schema",
-        "name": "Email"
+        "name": "Email",
+        "type": "object"
       },
       {
         "id": "schema:EmailResponse",
         "kind": "schema",
-        "name": "EmailResponse"
+        "name": "EmailResponse",
+        "type": "object"
       },
       {
+        "description": "An start date/time in the form of a UNIX Timestamp in milliseconds, e.g.",
         "id": "schema:EndParam",
         "kind": "schema",
-        "name": "EndParam"
+        "name": "EndParam",
+        "type": "integer:int32"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
+        "description": "Comma separated whitelist of address elements to return.",
         "id": "schema:FilterParam",
         "kind": "schema",
-        "name": "FilterParam"
+        "name": "FilterParam",
+        "type": "string"
       },
       {
         "id": "schema:GbrCleanseMatch",
         "kind": "schema",
-        "name": "GbrCleanseMatch"
+        "name": "GbrCleanseMatch",
+        "type": "object"
       },
       {
         "id": "schema:GbrCleanseNoMatch",
         "kind": "schema",
-        "name": "GbrCleanseNoMatch"
+        "name": "GbrCleanseNoMatch",
+        "type": "object"
       },
       {
+        "description": "Global (non-UK) address in the UK address format",
         "id": "schema:GbrGlobalAddress",
         "kind": "schema",
-        "name": "GbrGlobalAddress"
+        "name": "GbrGlobalAddress",
+        "type": "object"
       },
       {
         "id": "schema:GbrResolveAddressResponse",
         "kind": "schema",
-        "name": "GbrResolveAddressResponse"
+        "name": "GbrResolveAddressResponse",
+        "type": "object"
       },
       {
+        "description": "Full GeoNames place specification",
         "id": "schema:GeonamesPlace",
         "kind": "schema",
-        "name": "GeonamesPlace"
+        "name": "GeonamesPlace",
+        "type": "object"
       },
       {
+        "description": "Global unique internally generated identifier for an address",
         "id": "schema:ID",
         "kind": "schema",
-        "name": "ID"
+        "name": "ID",
+        "type": "string"
       },
       {
         "id": "schema:InvalidPhoneNumber",
         "kind": "schema",
-        "name": "InvalidPhoneNumber"
+        "name": "InvalidPhoneNumber",
+        "type": "object"
       },
       {
         "id": "schema:KeyUsageResult",
         "kind": "schema",
-        "name": "KeyUsageResult"
+        "name": "KeyUsageResult",
+        "type": "object"
       },
       {
+        "description": "Language represented by 2 letter ISO Code (639-1)",
         "id": "schema:Language",
         "kind": "schema",
-        "name": "Language"
+        "name": "Language",
+        "type": "string"
       },
       {
+        "description": "The latitude of the postcode (WGS84/ETRS89).",
         "id": "schema:Latitude",
         "kind": "schema",
-        "name": "Latitude"
+        "name": "Latitude",
+        "type": "string|number"
       },
       {
         "id": "schema:Licensee",
         "kind": "schema",
-        "name": "Licensee"
+        "name": "Licensee",
+        "type": "LicenseeEditable|object"
       },
       {
+        "description": "Licensee object which can be defined by user",
         "id": "schema:LicenseeEditable",
         "kind": "schema",
-        "name": "LicenseeEditable"
+        "name": "LicenseeEditable",
+        "type": "object"
       },
       {
+        "description": "Uniquely identifies a licensee",
         "id": "schema:LicenseeParam",
         "kind": "schema",
-        "name": "LicenseeParam"
+        "name": "LicenseeParam",
+        "type": "string"
       },
       {
         "id": "schema:LicenseeResponse",
         "kind": "schema",
-        "name": "LicenseeResponse"
+        "name": "LicenseeResponse",
+        "type": "object"
       },
       {
         "id": "schema:LicenseesResponse",
         "kind": "schema",
-        "name": "LicenseesResponse"
+        "name": "LicenseesResponse",
+        "type": "object"
       },
       {
+        "description": "Specifies the maximum number of suggestions to retrieve.",
         "id": "schema:LimitParam",
         "kind": "schema",
-        "name": "LimitParam"
+        "name": "LimitParam",
+        "type": "integer:int32"
       },
       {
+        "description": "The longitude of the postcode (WGS84/ETRS89).",
         "id": "schema:Longitude",
         "kind": "schema",
-        "name": "Longitude"
+        "name": "Longitude",
+        "type": "string|number"
       },
       {
+        "description": "Subdivision of a Postcode Address File address.",
         "id": "schema:MrAddress",
         "kind": "schema",
-        "name": "MrAddress"
+        "name": "MrAddress",
+        "type": "PafBase|object"
       },
       {
+        "description": "Empty string if no context is provided or key check has failed",
         "id": "schema:NoContext",
         "kind": "schema",
-        "name": "NoContext"
+        "name": "NoContext",
+        "type": "string"
       },
       {
+        "description": "Northings reference using the [Ordnance Survey National Grid reference system](https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid) Northern Ireland No…",
         "id": "schema:Northings",
         "kind": "schema",
-        "name": "Northings"
+        "name": "Northings",
+        "type": "string|number"
       },
       {
         "id": "schema:NotFoundResponse",
         "kind": "schema",
-        "name": "NotFoundResponse"
+        "name": "NotFoundResponse",
+        "type": "ErrorResponse|object"
       },
       {
+        "description": "A UK premise under construction and currently not occupied.",
         "id": "schema:NybAddress",
         "kind": "schema",
-        "name": "NybAddress"
+        "name": "NybAddress",
+        "type": "PafBase|object"
       },
       {
+        "description": "Standard UK Address.",
         "id": "schema:PafAddress",
         "kind": "schema",
-        "name": "PafAddress"
+        "name": "PafAddress",
+        "type": "PafBase|object"
       },
       {
+        "description": "PAF Aliases addresses are alternate ways to present an address already found on PAF.",
         "id": "schema:PafAliasAddress",
         "kind": "schema",
-        "name": "PafAliasAddress"
+        "name": "PafAliasAddress",
+        "type": "PafBase|object"
       },
       {
         "id": "schema:PafBase",
         "kind": "schema",
-        "name": "PafBase"
+        "name": "PafBase",
+        "type": "object"
       },
       {
+        "description": "0 indexed indicator of the page of results to receive.",
         "id": "schema:PageParam",
         "kind": "schema",
-        "name": "PageParam"
+        "name": "PageParam",
+        "type": "integer:int32"
       },
       {
         "id": "schema:PhoneNumber",
         "kind": "schema",
-        "name": "PhoneNumber"
+        "name": "PhoneNumber",
+        "type": "object"
       },
       {
         "id": "schema:PhoneNumberResponse",
         "kind": "schema",
-        "name": "PhoneNumberResponse"
+        "name": "PhoneNumberResponse",
+        "type": "object"
       },
       {
+        "description": "Represents a geographical place",
         "id": "schema:Place",
         "kind": "schema",
-        "name": "Place"
+        "name": "Place",
+        "type": "object"
       },
       {
         "id": "schema:PlaceResponse",
         "kind": "schema",
-        "name": "PlaceResponse"
+        "name": "PlaceResponse",
+        "type": "object"
       },
       {
+        "description": "Represents a possible place given an autocomplete query.",
         "id": "schema:PlaceSuggestion",
         "kind": "schema",
-        "name": "PlaceSuggestion"
+        "name": "PlaceSuggestion",
+        "type": "object"
       },
       {
+        "description": "Filter by town.",
         "id": "schema:PostTownParam",
         "kind": "schema",
-        "name": "PostTownParam"
+        "name": "PostTownParam",
+        "type": "string"
       },
       {
+        "description": "Filter by postcode.",
         "id": "schema:PostcodeAreaParam",
         "kind": "schema",
-        "name": "PostcodeAreaParam"
+        "name": "PostcodeAreaParam",
+        "type": "string"
       },
       {
         "id": "schema:PostcodeNotFoundResponse",
         "kind": "schema",
-        "name": "PostcodeNotFoundResponse"
+        "name": "PostcodeNotFoundResponse",
+        "type": "object"
       },
       {
+        "description": "Filter by outward code.",
         "id": "schema:PostcodeOutwardParam",
         "kind": "schema",
-        "name": "PostcodeOutwardParam"
+        "name": "PostcodeOutwardParam",
+        "type": "string"
       },
       {
+        "description": "Filter by postcode.",
         "id": "schema:PostcodeParam",
         "kind": "schema",
-        "name": "PostcodeParam"
+        "name": "PostcodeParam",
+        "type": "string"
       },
       {
         "id": "schema:PostcodeResponse",
         "kind": "schema",
-        "name": "PostcodeResponse"
+        "name": "PostcodeResponse",
+        "type": "object"
       },
       {
+        "description": "Filter by postcode sector, the outward code plus first numeric of the inward code.",
         "id": "schema:PostcodeSectorParam",
         "kind": "schema",
-        "name": "PostcodeSectorParam"
+        "name": "PostcodeSectorParam",
+        "type": "string"
       },
       {
+        "description": "Filter by Postcode Type.",
         "id": "schema:PostcodeTypeParam",
         "kind": "schema",
-        "name": "PostcodeTypeParam"
+        "name": "PostcodeTypeParam",
+        "type": "string"
       },
       {
         "id": "schema:RateLimitedResponse",
         "kind": "schema",
-        "name": "RateLimitedResponse"
+        "name": "RateLimitedResponse",
+        "type": "ErrorResponse|object"
       },
       {
         "id": "schema:ResolvePlaceResponse",
         "kind": "schema",
-        "name": "ResolvePlaceResponse"
+        "name": "ResolvePlaceResponse",
+        "type": "object"
       },
       {
+        "description": "Filter by Organisation Indicator.",
         "id": "schema:SmallUserParam",
         "kind": "schema",
-        "name": "SmallUserParam"
+        "name": "SmallUserParam",
+        "type": "string"
       },
       {
+        "description": "A start date/time in the form of a UNIX Timestamp in milliseconds, e.g.",
         "id": "schema:StartParam",
         "kind": "schema",
-        "name": "StartParam"
+        "name": "StartParam",
+        "type": "integer:int32"
       },
       {
+        "description": "A comma separated list of tags to query over.",
         "id": "schema:TagsParam",
         "kind": "schema",
-        "name": "TagsParam"
+        "name": "TagsParam",
+        "type": "string"
       },
       {
         "id": "schema:UDPRNResponse",
         "kind": "schema",
-        "name": "UDPRNResponse"
+        "name": "UDPRNResponse",
+        "type": "object"
       },
       {
         "id": "schema:UMPRNResponse",
         "kind": "schema",
-        "name": "UMPRNResponse"
+        "name": "UMPRNResponse",
+        "type": "object"
       },
       {
+        "description": "Filters by UPRN.",
         "id": "schema:UPRNParam",
         "kind": "schema",
-        "name": "UPRNParam"
+        "name": "UPRNParam",
+        "type": "integer"
       },
       {
+        "description": "Represents a possible address given an autocomplete query.",
         "id": "schema:UkAddressSuggestion",
         "kind": "schema",
-        "name": "UkAddressSuggestion"
+        "name": "UkAddressSuggestion",
+        "type": "object"
       },
       {
         "id": "schema:UnauthorizedResponse",
         "kind": "schema",
-        "name": "UnauthorizedResponse"
+        "name": "UnauthorizedResponse",
+        "type": "ErrorResponse|object"
       },
       {
         "id": "schema:UnknownEmail",
         "kind": "schema",
-        "name": "UnknownEmail"
+        "name": "UnknownEmail",
+        "type": "object"
       },
       {
+        "description": "Global (non-US) Address in the US address format",
         "id": "schema:UsaGlobalAddress",
         "kind": "schema",
-        "name": "UsaGlobalAddress"
+        "name": "UsaGlobalAddress",
+        "type": "object"
       },
       {
         "id": "schema:UsaResolveAddressResponse",
         "kind": "schema",
-        "name": "UsaResolveAddressResponse"
+        "name": "UsaResolveAddressResponse",
+        "type": "object"
       },
       {
+        "description": "A secret key used for sensitive operations on your account and API Keys.",
         "id": "schema:UserTokenParam",
         "kind": "schema",
-        "name": "UserTokenParam"
+        "name": "UserTokenParam",
+        "type": "string"
       },
       {
+        "description": "Standard USA Address",
         "id": "schema:UspsAddress",
         "kind": "schema",
-        "name": "UspsAddress"
+        "name": "UspsAddress",
+        "type": "object"
       },
       {
+        "description": "Welsh language alternative for a PAF Address",
         "id": "schema:WelshPafAddress",
         "kind": "schema",
-        "name": "WelshPafAddress"
+        "name": "WelshPafAddress",
+        "type": "PafBase|object"
       },
       {
+        "description": "A descriptive code used to identify the type of address secondary range information in the Address Secondary Range field.",
         "id": "schema:address_secondary_abbreviation",
         "kind": "schema",
-        "name": "address_secondary_abbreviation"
+        "name": "address_secondary_abbreviation",
+        "type": "string"
       },
       {
+        "description": "Code that specifies whether a record is a base (preferred) or alternate record.",
         "id": "schema:base_alternate_code",
         "kind": "schema",
-        "name": "base_alternate_code"
+        "name": "base_alternate_code",
+        "type": "string"
       },
       {
+        "description": "The name of a company, building, apartment complex, shopping center, or other distinguishing secondary address information.",
         "id": "schema:building_or_firm_name",
         "kind": "schema",
-        "name": "building_or_firm_name"
+        "name": "building_or_firm_name",
+        "type": "string"
       },
       {
+        "description": "A 4 character ID identifying the postal route for the address.",
         "id": "schema:carrier_route_id",
         "kind": "schema",
-        "name": "carrier_route_id"
+        "name": "carrier_route_id",
+        "type": "string"
       },
       {
+        "description": "Identifies where automation Carrier Route rates are available and where the commingling of automation and non-automation mail, including Enhanced Carrier Route…",
         "id": "schema:carrier_route_rate_sortation",
         "kind": "schema",
-        "name": "carrier_route_rate_sortation"
+        "name": "carrier_route_rate_sortation",
+        "type": "string"
       },
       {
+        "description": "A valid city name for mailing purposes; appears in the last line of an address on a mail piece.",
         "id": "schema:city",
         "kind": "schema",
-        "name": "city"
+        "name": "city",
+        "type": "string"
       },
       {
+        "description": "A standard 13-character abbreviation for a city/state name.",
         "id": "schema:city_abbreviation",
         "kind": "schema",
-        "name": "city_abbreviation"
+        "name": "city_abbreviation",
+        "type": "string"
       },
       {
+        "description": "Specifies whether or not the city state name can be used as a last line of address on a mail piece.",
         "id": "schema:city_state_mailing_name_indicator",
         "kind": "schema",
-        "name": "city_state_mailing_name_indicator"
+        "name": "city_state_mailing_name_indicator",
+        "type": "string"
       },
       {
+        "description": "The type of locale identified in the city/state name.",
         "id": "schema:city_state_name_facility_code",
         "kind": "schema",
-        "name": "city_state_name_facility_code"
+        "name": "city_state_name_facility_code",
+        "type": "string"
       },
       {
+        "description": "A standard value identifying a geographic area within the United States served by a member of the U.S.",
         "id": "schema:congressional_district_number",
         "kind": "schema",
-        "name": "congressional_district_number"
+        "name": "congressional_district_number",
+        "type": "string|number"
       },
       {
+        "description": "The name of the county or parish in which the 5-digit ZIP Code resides.",
         "id": "schema:county",
         "kind": "schema",
-        "name": "county"
+        "name": "county",
+        "type": "string"
       },
       {
+        "description": "The Federal Information Processing Standard (FIPS) code assigned to a given county or parish within a state.",
         "id": "schema:county_number",
         "kind": "schema",
-        "name": "county_number"
+        "name": "county_number",
+        "type": "string|number"
       },
       {
         "id": "schema:ecad",
@@ -1042,9 +3582,11 @@
         "name": "ecaf"
       },
       {
+        "description": "A code assigned to Postal Service facilities (primarily Post Offices) to collect cost and statistical data and compile revenue and expense data.",
         "id": "schema:finance_number",
         "kind": "schema",
-        "name": "finance_number"
+        "name": "finance_number",
+        "type": "string|number"
       },
       {
         "id": "schema:geonames",
@@ -1052,339 +3594,473 @@
         "name": "geonames"
       },
       {
+        "description": "An alphabetic value that identifies the type of government agency at the delivery point and/or whether a firm is the only delivery at an address.",
         "id": "schema:government_building_indicator",
         "kind": "schema",
-        "name": "government_building_indicator"
+        "name": "government_building_indicator",
+        "type": "string"
       },
       {
+        "description": "The Locatable Address Conversion Service (LACS) indicator describes records that have been converted to the LACS system (a product/system in a different USPS®…",
         "id": "schema:lacs_status_indicator",
         "kind": "schema",
-        "name": "lacs_status_indicator"
+        "name": "lacs_status_indicator",
+        "type": "string"
       },
       {
+        "description": "Last line of the address comprising of city, state, zip code and zip+4",
         "id": "schema:last_line",
         "kind": "schema",
-        "name": "last_line"
+        "name": "last_line",
+        "type": "string"
       },
       {
+        "description": "The primary delivery line (usually the street address) of the address.",
         "id": "schema:line_1",
         "kind": "schema",
-        "name": "line_1"
+        "name": "line_1",
+        "type": "string"
       },
       {
+        "description": "Secondary delivery line of the address.",
         "id": "schema:line_2",
         "kind": "schema",
-        "name": "line_2"
+        "name": "line_2",
+        "type": "string"
       },
       {
+        "description": "Municipality City State Key.",
         "id": "schema:municipality_city_state_key",
         "kind": "schema",
-        "name": "municipality_city_state_key"
+        "name": "municipality_city_state_key",
+        "type": "string"
       },
       {
+        "description": "The current administrative county to which the postcode has been assigned.",
         "id": "schema:paf_administrative_county",
         "kind": "schema",
-        "name": "paf_administrative_county"
+        "name": "paf_administrative_county",
+        "type": "string"
       },
       {
+        "description": "Name of residential or commercial premise.",
         "id": "schema:paf_building_name",
         "kind": "schema",
-        "name": "paf_building_name"
+        "name": "paf_building_name",
+        "type": "string"
       },
       {
+        "description": "Number to identify premise on a thoroughfare or dependant thoroughfare.",
         "id": "schema:paf_building_number",
         "kind": "schema",
-        "name": "paf_building_number"
+        "name": "paf_building_number",
+        "type": "string"
       },
       {
+        "description": "Full country names (ISO 3166)",
         "id": "schema:paf_country",
         "kind": "schema",
-        "name": "paf_country"
+        "name": "paf_country",
+        "type": "string"
       },
       {
+        "description": "3 letter country code (ISO 3166-1)",
         "id": "schema:paf_country_iso",
         "kind": "schema",
-        "name": "paf_country_iso"
+        "name": "paf_country_iso",
+        "type": "string"
       },
       {
+        "description": "2 letter country code (ISO 3166-1)",
         "id": "schema:paf_country_iso_2",
         "kind": "schema",
-        "name": "paf_country_iso_2"
+        "name": "paf_country_iso_2",
+        "type": "string"
       },
       {
+        "description": "Since postal, administrative or traditional counties may not apply to some addresses, the county field is designed to return whatever county data is available.",
         "id": "schema:paf_county",
         "kind": "schema",
-        "name": "paf_county"
+        "name": "paf_county",
+        "type": "string"
       },
       {
+        "description": "Indicates the provenance of an address",
         "id": "schema:paf_dataset",
         "kind": "schema",
-        "name": "paf_dataset"
+        "name": "paf_dataset",
+        "type": "string"
       },
       {
+        "description": "A unique Royal Mail 2-character code (the first numeric & the second alphabetical), which, when added to the Postcode, enables each live Delivery Point to be u…",
         "id": "schema:paf_delivery_point_suffix",
         "kind": "schema",
-        "name": "paf_delivery_point_suffix"
+        "name": "paf_delivery_point_suffix",
+        "type": "string"
       },
       {
+        "description": "Used to supplment Organisation Name to identify a deparment within the organisation.",
         "id": "schema:paf_department_name",
         "kind": "schema",
-        "name": "paf_department_name"
+        "name": "paf_department_name",
+        "type": "string"
       },
       {
+        "description": "When the same thoroughfare name reoccurs in a Post town, it may not be possible to make it dependant on a dependant thoroughfare.",
         "id": "schema:paf_dependant_locality",
         "kind": "schema",
-        "name": "paf_dependant_locality"
+        "name": "paf_dependant_locality",
+        "type": "string"
       },
       {
+        "description": "Used to supplement thoroughfare.",
         "id": "schema:paf_dependant_thoroughfare",
         "kind": "schema",
-        "name": "paf_dependant_thoroughfare"
+        "name": "paf_dependant_thoroughfare",
+        "type": "string"
       },
       {
+        "description": "The current district/unitary authority to which the postcode has been assigned.",
         "id": "schema:paf_district",
         "kind": "schema",
-        "name": "paf_district"
+        "name": "paf_district",
+        "type": "string"
       },
       {
+        "description": "Used to supplement Dependant Locality.",
         "id": "schema:paf_double_dependant_locality",
         "kind": "schema",
-        "name": "paf_double_dependant_locality"
+        "name": "paf_double_dependant_locality",
+        "type": "string"
       },
       {
+        "description": "Language represented by 2 letter ISO Code (639-1)",
         "id": "schema:paf_language",
         "kind": "schema",
-        "name": "paf_language"
+        "name": "paf_language",
+        "type": "string"
       },
       {
+        "description": "First Address Line.",
         "id": "schema:paf_line1",
         "kind": "schema",
-        "name": "paf_line1"
+        "name": "paf_line1",
+        "type": "string"
       },
       {
+        "description": "Second Address Line.",
         "id": "schema:paf_line2",
         "kind": "schema",
-        "name": "paf_line2"
+        "name": "paf_line2",
+        "type": "string"
       },
       {
+        "description": "Third address line.",
         "id": "schema:paf_line3",
         "kind": "schema",
-        "name": "paf_line3"
+        "name": "paf_line3",
+        "type": "string"
       },
       {
+        "description": "Used to supplment Organisation Name to identify a deparment within the organisation",
         "id": "schema:paf_organisation_name",
         "kind": "schema",
-        "name": "paf_organisation_name"
+        "name": "paf_organisation_name",
+        "type": "string"
       },
       {
+        "description": "When the PO Box Number field is populated it will contain PO BOX nnnnnn where n represents the PO Box number.",
         "id": "schema:paf_pobox",
         "kind": "schema",
-        "name": "paf_pobox"
+        "name": "paf_pobox",
+        "type": "string"
       },
       {
+        "description": "A Post Town is mandatory for delivery of mail to a Delivery Point.",
         "id": "schema:paf_post_town",
         "kind": "schema",
-        "name": "paf_post_town"
+        "name": "paf_post_town",
+        "type": "string"
       },
       {
+        "description": "Postal counties were used for the distribution of mail before the Postcode system was introduced in the 1970s.",
         "id": "schema:paf_postal_county",
         "kind": "schema",
-        "name": "paf_postal_county"
+        "name": "paf_postal_county",
+        "type": "string"
       },
       {
+        "description": "Correctly formatted postcode.",
         "id": "schema:paf_postcode",
         "kind": "schema",
-        "name": "paf_postcode"
+        "name": "paf_postcode",
+        "type": "string"
       },
       {
+        "description": "The second part of a postcode is known as the inward code.",
         "id": "schema:paf_postcode_inward",
         "kind": "schema",
-        "name": "paf_postcode_inward"
+        "name": "paf_postcode_inward",
+        "type": "string"
       },
       {
+        "description": "The first part of a postcode is known as the outward code.",
         "id": "schema:paf_postcode_outward",
         "kind": "schema",
-        "name": "paf_postcode_outward"
+        "name": "paf_postcode_outward",
+        "type": "string"
       },
       {
+        "description": "This indicates the type of user.",
         "id": "schema:paf_postcode_type",
         "kind": "schema",
-        "name": "paf_postcode_type"
+        "name": "paf_postcode_type",
+        "type": "string"
       },
       {
+        "description": "A pre-computed string which sensibly combines building_number, building_name and sub_building_name.",
         "id": "schema:paf_premise",
         "kind": "schema",
-        "name": "paf_premise"
+        "name": "paf_premise",
+        "type": "string"
       },
       {
+        "description": "Small User Organisation Indicator can have the values 'Y' or space.",
         "id": "schema:paf_su_organisation_indicator",
         "kind": "schema",
-        "name": "paf_su_organisation_indicator"
+        "name": "paf_su_organisation_indicator",
+        "type": "string"
       },
       {
+        "description": "When a premise is split into individual units such as flats, apartments or business units.",
         "id": "schema:paf_sub_building_name",
         "kind": "schema",
-        "name": "paf_sub_building_name"
+        "name": "paf_sub_building_name",
+        "type": "string"
       },
       {
+        "description": "Also known as the street or road name.",
         "id": "schema:paf_thoroughfare",
         "kind": "schema",
-        "name": "paf_thoroughfare"
+        "name": "paf_thoroughfare",
+        "type": "string"
       },
       {
+        "description": "Traditional counties are provided by the Association of British Counties.",
         "id": "schema:paf_traditional_county",
         "kind": "schema",
-        "name": "paf_traditional_county"
+        "name": "paf_traditional_county",
+        "type": "string"
       },
       {
+        "description": "UDPRN stands for ‘Unique Delivery Point Reference Number’.",
         "id": "schema:paf_udprn",
         "kind": "schema",
-        "name": "paf_udprn"
+        "name": "paf_udprn",
+        "type": "integer:int32"
       },
       {
+        "description": "A small minority of individual premises (as identified by a UDPRN) may have multiple occupants behind the same letterbox.",
         "id": "schema:paf_umprn",
         "kind": "schema",
-        "name": "paf_umprn"
+        "name": "paf_umprn",
+        "type": "string|number"
       },
       {
+        "description": "UPRN stands for Unique Property Reference Number and is maintained by the Ordnance Survey (OS).",
         "id": "schema:paf_uprn",
         "kind": "schema",
-        "name": "paf_uprn"
+        "name": "paf_uprn",
+        "type": "string"
       },
       {
+        "description": "The current administrative/electoral area to which the postcode has been assigned.",
         "id": "schema:paf_ward",
         "kind": "schema",
-        "name": "paf_ward"
+        "name": "paf_ward",
+        "type": "string"
       },
       {
+        "description": "3 letter country code (ISO 3166-1)",
         "id": "schema:place_country_iso",
         "kind": "schema",
-        "name": "place_country_iso"
+        "name": "place_country_iso",
+        "type": "string"
       },
       {
+        "description": "Longer form description of the place.",
         "id": "schema:place_descriptive_name",
         "kind": "schema",
-        "name": "place_descriptive_name"
+        "name": "place_descriptive_name",
+        "type": "string"
       },
       {
+        "description": "Unique identifier for place",
         "id": "schema:place_id",
         "kind": "schema",
-        "name": "place_id"
+        "name": "place_id",
+        "type": "string"
       },
       {
+        "description": "Place name",
         "id": "schema:place_name",
         "kind": "schema",
-        "name": "place_name"
+        "name": "place_name",
+        "type": "string"
       },
       {
+        "description": "4 digit ZIP add-on code.",
         "id": "schema:plus_4_code",
         "kind": "schema",
-        "name": "plus_4_code"
+        "name": "plus_4_code",
+        "type": "string"
       },
       {
+        "description": "Field that contains the default preferred or alternate preferred last-line name for a ZIP Code.",
         "id": "schema:preferred_city",
         "kind": "schema",
-        "name": "preferred_city"
+        "name": "preferred_city",
+        "type": "string"
       },
       {
+        "description": "In the Carrier Route, Five-Digit ZIP Code, Delivery Statistics, and ZIP + 4 products, an index to the City State product record that provides the preferred las…",
         "id": "schema:preferred_last_line_city_state_key",
         "kind": "schema",
-        "name": "preferred_last_line_city_state_key"
+        "name": "preferred_last_line_city_state_key",
+        "type": "string"
       },
       {
+        "description": "A house, rural route, contract box, or Post Office Box number.",
         "id": "schema:primary_number",
         "kind": "schema",
-        "name": "primary_number"
+        "name": "primary_number",
+        "type": "string"
       },
       {
+        "description": "An alphabetic value that identifies the type of data in the record.",
         "id": "schema:record_type_code",
         "kind": "schema",
-        "name": "record_type_code"
+        "name": "record_type_code",
+        "type": "string"
       },
       {
+        "description": "Number of the sub unit, apartment, suite etc",
         "id": "schema:secondary_number",
         "kind": "schema",
-        "name": "secondary_number"
+        "name": "secondary_number",
+        "type": "string"
       },
       {
+        "description": "Full name of a state, U.S.",
         "id": "schema:state",
         "kind": "schema",
-        "name": "state"
+        "name": "state",
+        "type": "string"
       },
       {
+        "description": "A 2-character abbreviation for the name of a state, U.S.",
         "id": "schema:state_abbreviation",
         "kind": "schema",
-        "name": "state_abbreviation"
+        "name": "state_abbreviation",
+        "type": "string"
       },
       {
+        "description": "The official name of a street as assigned by a local governing authority.",
         "id": "schema:street_name",
         "kind": "schema",
-        "name": "street_name"
+        "name": "street_name",
+        "type": "string"
       },
       {
+        "description": "A geographic direction that follows the street name.",
         "id": "schema:street_post_directional_abbreviation",
         "kind": "schema",
-        "name": "street_post_directional_abbreviation"
+        "name": "street_post_directional_abbreviation",
+        "type": "string"
       },
       {
+        "description": "A geographic direction that precedes the street name.",
         "id": "schema:street_pre_directional_abbreviation",
         "kind": "schema",
-        "name": "street_pre_directional_abbreviation"
+        "name": "street_pre_directional_abbreviation",
+        "type": "string"
       },
       {
+        "description": "Code that is the standard USPS abbreviation for the trailing designator in a street address.",
         "id": "schema:street_suffix_abbreviation",
         "kind": "schema",
-        "name": "street_suffix_abbreviation"
+        "name": "street_suffix_abbreviation",
+        "type": "string"
       },
       {
+        "description": "Field that contains a number that uniquely identifies a record; used to identify the base record to which an add or delete transaction is being directed.",
         "id": "schema:update_key_number",
         "kind": "schema",
-        "name": "update_key_number"
+        "name": "update_key_number",
+        "type": "string"
       },
       {
+        "description": "An index to the City State file that provides the urbanization name for this delivery range.",
         "id": "schema:urbanization_city_state_key",
         "kind": "schema",
-        "name": "urbanization_city_state_key"
+        "name": "urbanization_city_state_key",
+        "type": "string"
       },
       {
+        "description": "Full country names (ISO 3166)",
         "id": "schema:usps_country",
         "kind": "schema",
-        "name": "usps_country"
+        "name": "usps_country",
+        "type": "string"
       },
       {
+        "description": "3 letter country code (ISO 3166-1)",
         "id": "schema:usps_country_iso",
         "kind": "schema",
-        "name": "usps_country_iso"
+        "name": "usps_country_iso",
+        "type": "string"
       },
       {
+        "description": "2 letter country code (ISO 3166-1)",
         "id": "schema:usps_country_iso_2",
         "kind": "schema",
-        "name": "usps_country_iso_2"
+        "name": "usps_country_iso_2",
+        "type": "string"
       },
       {
+        "description": "Identifies the address as sourced from USPS",
         "id": "schema:usps_dataset",
         "kind": "schema",
-        "name": "usps_dataset"
+        "name": "usps_dataset",
+        "type": "string"
       },
       {
+        "description": "Language represented by 2 letter ISO Code (639-1)",
         "id": "schema:usps_language",
         "kind": "schema",
-        "name": "usps_language"
+        "name": "usps_language",
+        "type": "string"
       },
       {
+        "description": "A field that describes the type of ZIP area that a 5-digit ZIP Code serves, e.g., a single educational institution, post office boxes only, or a single address…",
         "id": "schema:zip_classification_code",
         "kind": "schema",
-        "name": "zip_classification_code"
+        "name": "zip_classification_code",
+        "type": "string"
       },
       {
+        "description": "A 5-digit code that identifies a specific geographic delivery area.",
         "id": "schema:zip_code",
         "kind": "schema",
-        "name": "zip_code"
+        "name": "zip_code",
+        "type": "string"
       },
       {
+        "description": "Nine-digit code that identifies a small geographic delivery area that is serviceable by a single carrier; appears in the last line of the address on a mail pie…",
         "id": "schema:zip_plus_4_code",
         "kind": "schema",
-        "name": "zip_plus_4_code"
+        "name": "zip_plus_4_code",
+        "type": "string"
       }
     ]
   },

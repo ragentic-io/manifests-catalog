@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_threatjammer.com_threatjammer-r
 
 | | |
 | --- | --- |
-| Signed bundle | `74105b4297f0cc722fc33d5f99380c3e4b9b20ac5a74cdbf61d7609d9a43f1f6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,101 +34,103 @@ logo: "https://api.apis.guru/v2/cache/logo/https_threatjammer.com_threatjammer-r
 
 83 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/allowlist/private` | create_private_allowlist_of_the_user_v1_allowlist_private_post | Creates a new private allowlist binded to the user. |
-| GET | `/v1/allowlist/private/all` | get_all_private_allowlists_v1_allowlist_private_all_get | Get the set of private allowlists of the user. |
-| GET | `/v1/allowlist/private/all/{resource_type}` | get_all_private_allowlists_by_resource_type_v1_allowlist_private_all__resource_type__get | Get the set of private allowlists of the user by resource type. |
-| GET | `/v1/allowlist/private/ip/{address}` | query_resource_denylists_v1_allowlist_private_ip__address__get | Get the different private allowlists where the IP address was found. |
-| DELETE | `/v1/allowlist/private/{allowlist_id}` | delete_the_allowlist_v1_allowlist_private__allowlist_id__delete | Delete all the bindings between a user and a private allowlist. |
-| GET | `/v1/allowlist/private/{allowlist_id}` | get_single_allowlist_v1_allowlist_private__allowlist_id__get | Get the details of a specific private allowlist of the user. |
-| PUT | `/v1/allowlist/private/{allowlist_id}` | update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put | Update the information of an existing private allowlist of the user. |
-| DELETE | `/v1/allowlist/private/{allowlist_id}/content` | delete_the_allowlist_content_v1_allowlist_private__allowlist_id__content_delete | Delete all the content of a private allowlist of the user. |
-| GET | `/v1/allowlist/private/{allowlist_id}/content` | get_allowlist_content_v1_allowlist_private__allowlist_id__content_get | Get the content of a private allowlist of the user. |
-| PUT | `/v1/allowlist/private/{allowlist_id}/content` | update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put | Add or remove content of a private allowlist of the user. |
-| PUT | `/v1/allowlist/private/{allowlist_id}/origin` | change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put | Toogle the status of the origin in an allow list. |
-| GET | `/v1/allowlist/public/all` | get_all_public_allowlists_v1_allowlist_public_all_get | Get the set of public allowlists. |
-| GET | `/v1/allowlist/public/all/{resource_type}` | get_all_public_allowlists_by_resource_type_v1_allowlist_public_all__resource_type__get | Get the set of public allowlists by resource type. |
-| GET | `/v1/allowlist/public/ip/{address}` | query_resource_allowlists_v1_allowlist_public_ip__address__get | Get the different public allowlists where the IP address was found. |
-| GET | `/v1/allowlist/public/owned` | get_public_allowlists_owned_by_the_user_v1_allowlist_public_owned_get | Get the set of owned allowlists. |
-| GET | `/v1/allowlist/public/owned/{resource_type}` | get_all_owned_allowlists_by_resource_type_v1_allowlist_public_owned__resource_type__get | Get the set of public allowlists of a user by resource type. |
-| DELETE | `/v1/allowlist/public/{allowlist_id}` | delete_the_allowlist_v1_allowlist_public__allowlist_id__delete | Delete all the bindings between a user and an allowlist. |
-| GET | `/v1/allowlist/public/{allowlist_id}` | get_single_allowlist_v1_allowlist_public__allowlist_id__get | Get the details of the allowlist. |
-| PUT | `/v1/allowlist/public/{allowlist_id}` | change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put | Toogle the status of an allow list. |
-| PUT | `/v1/allowlist/public/{allowlist_id}/origin` | change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put | Toogle the status of the origin in an allow list. |
-| GET | `/v1/asn/ip/{ip_address}` | query_IP_address_network_information_v1_asn_ip__ip_address__get | Get the IPv4 or IPv6 prefix of the IP address given. |
-| POST | `/v1/asn/prefix` | query_asn_prefix_information_v1_asn_prefix_post | Get the IPv4 or IPv6 prefix of the CIDR given. |
-| GET | `/v1/asn/registry/all` | query_registry_names_v1_asn_registry_all_get | Get the list of the Regional Internet Registries (RIRs) entities worldwide. |
-| GET | `/v1/asn/registry/{code}` | query_registry_by_the_name_v1_asn_registry__code__get | Get the information of a Regional Internet Registries (RIRs) given. |
-| GET | `/v1/asn/status/all` | query_status_names_v1_asn_status_all_get | Get the list of status of an object in a registry. |
-| GET | `/v1/asn/status/{code}` | query_status_by_the_name_v1_asn_status__code__get | Get the information of a status given. |
-| GET | `/v1/asn/{number}` | query_asn_v1_asn__number__get | Get the Autonomous System details of the AS number given. |
-| GET | `/v1/asn/{number}/prefixes` | query_asn_prefixes_list_v1_asn__number__prefixes_get | Get the list of IPv4 and IPv6 prefixes of the AS number given. |
-| POST | `/v1/assess/ip` | assess_ip_set_v1_assess_ip_post | Get the risk score of all IP address passed in the body and other data signals. |
-| POST | `/v1/assess/ip/csv` | assess_ip_set_csv_v1_assess_ip_csv_post | Get the risk score of all IP address uploaded and other data signals. |
-| GET | `/v1/assess/ip/{ip_address}` | assess_ip_v1_assess_ip__ip_address__get | Get a risk score of the IP address and different data signals. |
-| GET | `/v1/datacenter/ip/{ip_address}` | query_IP_address_network_information_v1_datacenter_ip__ip_address__get | Get the IPv4 or IPv6 prefix of the IP address given. |
-| POST | `/v1/datacenter/prefix` | query_datacenter_prefix_information_v1_datacenter_prefix_post | Get the IPv4 or IPv6 prefix of the CIDR given. |
-| GET | `/v1/datacenter/{datacenter_id}` | query_datacenter_v1_datacenter__datacenter_id__get | Get the Datacenter details of datacente given. |
-| GET | `/v1/datacenter/{datacenter_id}/prefixes` | query_datacenter_prefixes_list_v1_datacenter__datacenter_id__prefixes_get | Get the list of IPv4 and IPv6 prefixes of the Datacenter given. |
-| GET | `/v1/dataset/ip` | query_datataset_information_of_all_the_resource_types_v1_dataset_ip_get | Get the list of all the datasets available in the platform. |
-| GET | `/v1/dataset/ip/{name}` | query_datataset_information_of_the_resource_type_v1_dataset_ip__name__get | Get the detailed information of the dataset queried. |
-| POST | `/v1/denylist/private` | create_private_denylist_of_the_user_v1_denylist_private_post | Creates a new private denylist binded to the user. |
-| GET | `/v1/denylist/private/all` | get_all_private_denylists_v1_denylist_private_all_get | Get the set of private denylists of the user. |
-| GET | `/v1/denylist/private/all/{resource_type}` | get_all_private_denylists_by_resource_type_v1_denylist_private_all__resource_type__get | Get the set of private denylists of the user by resource type. |
-| GET | `/v1/denylist/private/ip/{address}` | query_resource_denylists_v1_denylist_private_ip__address__get | Get the different denylists where the IP address was found. |
-| DELETE | `/v1/denylist/private/{denylist_id}` | delete_the_denylist_v1_denylist_private__denylist_id__delete | Delete all the bindings between a user and a private denylist. |
-| GET | `/v1/denylist/private/{denylist_id}` | get_single_denylist_v1_denylist_private__denylist_id__get | Get the details of a specific private denylist of the user. |
-| PUT | `/v1/denylist/private/{denylist_id}` | update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put | Update the information of an existing private denylist of the user. |
-| DELETE | `/v1/denylist/private/{denylist_id}/content` | delete_the_denylist_content_v1_denylist_private__denylist_id__content_delete | Delete all the content of a private denylist of the user. |
-| GET | `/v1/denylist/private/{denylist_id}/content` | get_denylist_content_v1_denylist_private__denylist_id__content_get | Get the content of a private denylist of the user. |
-| PUT | `/v1/denylist/private/{denylist_id}/content` | update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put | Add or remove content of a private denylist of the user. |
-| PUT | `/v1/denylist/private/{denylist_id}/origin` | change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put | Toogle the status of the origin in a deny list. |
-| GET | `/v1/denylist/public/all` | get_all_public_denylists_v1_denylist_public_all_get | Get the set of public denylists. |
-| GET | `/v1/denylist/public/all/{resource_type}` | get_all_public_denylists_by_resource_type_v1_denylist_public_all__resource_type__get | Get the set of public denylists by resource type. |
-| GET | `/v1/denylist/public/ip/{address}` | query_resource_denylists_v1_denylist_public_ip__address__get | Get the different public denylists where the IP address was found. |
-| GET | `/v1/denylist/public/owned` | get_public_denylists_owned_by_the_user_v1_denylist_public_owned_get | Get the set of owned denylists. |
-| GET | `/v1/denylist/public/owned/{resource_type}` | get_all_owned_denylists_by_resource_type_v1_denylist_public_owned__resource_type__get | Get the set of public denylists of a user by resource type. |
-| DELETE | `/v1/denylist/public/{denylist_id}` | delete_the_denylist_v1_denylist_public__denylist_id__delete | Delete all the bindings between a user and an denylist. |
-| GET | `/v1/denylist/public/{denylist_id}` | get_single_denylist_v1_denylist_public__denylist_id__get | Get the details of the denylist. |
-| PUT | `/v1/denylist/public/{denylist_id}` | change_status_of_the_denylist_v1_denylist_public__denylist_id__put | Toogle the status of an deny list. |
-| PUT | `/v1/denylist/public/{denylist_id}/origin` | change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put | Toogle the status of the origin in a deny list. |
-| GET | `/v1/denylist/reported/ip` | query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_get | Get the list of automatically reported IP addresses by the user. |
-| DELETE | `/v1/denylist/reported/ip/all` | delete_all_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_all_delete | Delete all the automatically reported IP addresses by the user. |
-| DELETE | `/v1/denylist/reported/ip/{ip_address}` | delete_an_ip_address_reported_by_the_user_v1_denylist_reported_ip__ip_address__delete | Delete the automatically reported IP address by the user. |
-| GET | `/v1/denylist/reported/ip/{ip_address}` | query_an_ip_addresses_reported_by_the_user_v1_denylist_reported_ip__ip_address__get | Get the details of an automatically reported IP addresses by the user. |
-| POST | `/v1/geo` | geolocate_ip_set_v1_geo_post | Get the geolocation data of the IP addresses set. |
-| POST | `/v1/geo/csv` | assess_ip_set_csv_v1_geo_csv_post | Get the geolocation data of all the IP addresses uploaded. |
-| GET | `/v1/geo/{ip_address}` | geolocate_ip_v1_geo__ip_address__get | Get the geo location data of the IP address. |
-| GET | `/v1/log/ip/id/{logchange_id}` | log_change_id_v1_log_ip_id__logchange_id__get | Get a log event. |
-| GET | `/v1/log/ip/{ip_address}` | logchanges_ip_v1_log_ip__ip_address__get | Get the changes logged in the different datasets of an IP address. |
-| GET | `/v1/origin` | query_origin_information_v1_origin_get | Get the information of an origin of the user in the region. |
-| PUT | `/v1/origin` | update_configuration_origin_v1_origin_put | Update the configuration of an origin of the user in the region. |
-| GET | `/v1/origin/addresses` | query_origin_address_status_information_v1_origin_addresses_get | Get the address status of the origin of the user in the region. |
-| GET | `/v1/origin/all` | query_all_origin_information_v1_origin_all_get | Get the information of the origins of the user in the region. |
-| GET | `/v1/origin/client/analysis` | query_origin_traffic_client_v1_origin_client_analysis_get | Get the type of clients of the trafffic of the origin. |
-| GET | `/v1/origin/cookies` | query_origin_cookie_id_status_information_v1_origin_cookies_get | Get the tracking cookie ID status of the origin of the user in the region. |
-| GET | `/v1/origin/scripts` | query_origin_scripts_v1_origin_scripts_get | Get the code snippets of an origin of the user in the region. |
-| POST | `/v1/origin/status` | query_origin_status_v1_origin_status_post | Get the current cookie ID and IP address status of the origin of user in the region. |
-| GET | `/v1/origin/status/detail/{status_id}` | query_origin_status_detail_v1_origin_status_detail__status_id__get | Get detail of a status available in the platform. |
-| GET | `/v1/origin/status/details` | query_origin_status_details_v1_origin_status_details_get | Get the list of different status available in the platform. |
-| GET | `/v1/origin/traffic/analysis` | query_origin_traffic_analysis_v1_origin_traffic_analysis_get | Get the traffic analysis of the origin. |
-| DELETE | `/v1/origin_token` | delete_token_v1_origin_token_delete | Delete an origin token of the user in the region. |
-| POST | `/v1/origin_token` | query_origin_token_info_v1_origin_token_post | Get the information of an origin token of the user in the region. |
-| GET | `/v1/origin_token/all` | query_all_origin_tokens_in_the_region_v1_origin_token_all_get | Get the information of the origin tokens of the user in the region. |
-| PUT | `/v1/origin_token/disable` | disable_origin_token_v1_origin_token_disable_put | Disable a enabled origin token of the user in the region. |
-| PUT | `/v1/origin_token/enable` | enable_origin_token_v1_origin_token_enable_put | Enable a disabled origin token of the user in the region. |
-| POST | `/v1/origin_token/new` | create_a_new_origin_token_v1_origin_token_new_post | Create an origin token of the user in the region. |
-| GET | `/v1/source/ip` | get_all_sources_v1_source_ip_get | Get the full information of all the source lists for the subscription level given. |
-| GET | `/v1/source/ip/{source}` | get_source_info_v1_source_ip__source__get | Get the full information of the source list given as argument. |
-| GET | `/v1/source/ip/{source}/range/{time_range}` | get_source_and_timerange_info_v1_source_ip__source__range__time_range__get | Get the information of the source list given for a specific time range. |
-| GET | `/v1/token` | query_token_info_v1_token_get | Get the information of the user's token in the region. |
-| GET | `/v1/token/activity` | query_token_activity_v1_token_activity_get | Get the activity information of the token in the region. |
-| POST | `/v1/ua` | parse_user_agents_v1_ua_post | Get the information found in a set of User Agents. |
-| POST | `/v1/ua/csv` | parse_user_agents_csv_v1_ua_csv_post | Get the information found in the set of User Agents uploaded. |
-| GET | `/v1/ua/device/{code}` | query_device_by_code_v1_ua_device__code__get | Get the information of the device of a user agent. |
-| GET | `/v1/ua/family/{code}` | query_family_by_code_v1_ua_family__code__get | Get the information of the family of a user agent. |
-| GET | `/v1/ua/os/{code}` | query_os_by_code_v1_ua_os__code__get | Get the information of the Operating System of a user agent. |
-| GET | `/v1/ua/type/{code}` | query_type_by_code_v1_ua_type__code__get | Get the information of the type of a user agent. |
-| GET | `/v1/ua/vendor/{code}` | query_vendor_by_code_v1_ua_vendor__code__get | Get the information of the vendor of a user agent. |
-| GET | `/v1/ua/{user_agent_urlencoded}` | parse_user_agent_v1_ua__user_agent_urlencoded__get | Get the information found in an User Agent. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/allowlist/private` | create_private_allowlist_of_the_user_v1_allowlist_private_post | body*: Body_create_private_allowlist_of_the_user_v1_allowlist_private_post | string:uuid |  | Creates a new private allowlist binded to the user. |
+| GET | `/v1/allowlist/private/all` | get_all_private_allowlists_v1_allowlist_private_all_get | — | PrivateAclGroupListCollectionOutput | yes | Get the set of private allowlists of the user. |
+| GET | `/v1/allowlist/private/all/{resource_type}` | get_all_private_allowlists_by_resource_type_v1_allowlist_private_all__resource_type__get | `resource_type`* | PrivateAclGroupListCollectionOutput | yes | Get the set of private allowlists of the user by resource type. |
+| GET | `/v1/allowlist/private/ip/{address}` | query_resource_denylists_v1_allowlist_private_ip__address__get | `address`* | AclListCollectionOutput | yes | Get the different private allowlists where the IP address was found. |
+| GET | `/v1/allowlist/private/{allowlist_id}` | get_single_allowlist_v1_allowlist_private__allowlist_id__get | `allowlist_id`* | PrivateAclGroupListOutput | yes | Get the details of a specific private allowlist of the user. |
+| PUT | `/v1/allowlist/private/{allowlist_id}` | update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put | `allowlist_id`*, body: Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put | — |  | Update the information of an existing private allowlist of the user. |
+| DELETE | `/v1/allowlist/private/{allowlist_id}` | delete_the_allowlist_v1_allowlist_private__allowlist_id__delete | `allowlist_id`* | — |  | Delete all the bindings between a user and a private allowlist. |
+| GET | `/v1/allowlist/private/{allowlist_id}/content` | get_allowlist_content_v1_allowlist_private__allowlist_id__content_get | `allowlist_id`* | PrivateAclListCollectionOutput | yes | Get the content of a private allowlist of the user. |
+| PUT | `/v1/allowlist/private/{allowlist_id}/content` | update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put | `allowlist_id`*, body: Body_update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put | — |  | Add or remove content of a private allowlist of the user. |
+| DELETE | `/v1/allowlist/private/{allowlist_id}/content` | delete_the_allowlist_content_v1_allowlist_private__allowlist_id__content_delete | `allowlist_id`* | — |  | Delete all the content of a private allowlist of the user. |
+| PUT | `/v1/allowlist/private/{allowlist_id}/origin` | change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put | `allowlist_id`*, body*: Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put | — |  | Toogle the status of the origin in an allow list. |
+| GET | `/v1/allowlist/public/all` | get_all_public_allowlists_v1_allowlist_public_all_get | — | PublicAclGroupListCollectionOutput | yes | Get the set of public allowlists. |
+| GET | `/v1/allowlist/public/all/{resource_type}` | get_all_public_allowlists_by_resource_type_v1_allowlist_public_all__resource_type__get | `resource_type`* | PublicAclGroupListCollectionOutput | yes | Get the set of public allowlists by resource type. |
+| GET | `/v1/allowlist/public/ip/{address}` | query_resource_allowlists_v1_allowlist_public_ip__address__get | `address`* | AclListCollectionOutput | yes | Get the different public allowlists where the IP address was found. |
+| GET | `/v1/allowlist/public/owned` | get_public_allowlists_owned_by_the_user_v1_allowlist_public_owned_get | — | PublicAclGroupListCollectionOutput | yes | Get the set of owned allowlists. |
+| GET | `/v1/allowlist/public/owned/{resource_type}` | get_all_owned_allowlists_by_resource_type_v1_allowlist_public_owned__resource_type__get | `resource_type`* | PublicAclGroupListCollectionOutput | yes | Get the set of public allowlists of a user by resource type. |
+| GET | `/v1/allowlist/public/{allowlist_id}` | get_single_allowlist_v1_allowlist_public__allowlist_id__get | `allowlist_id`* | PublicAclGroupListOutput | yes | Get the details of the allowlist. |
+| PUT | `/v1/allowlist/public/{allowlist_id}` | change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put | `allowlist_id`*, body*: Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put | — |  | Toogle the status of an allow list. |
+| DELETE | `/v1/allowlist/public/{allowlist_id}` | delete_the_allowlist_v1_allowlist_public__allowlist_id__delete | `allowlist_id`* | — |  | Delete all the bindings between a user and an allowlist. |
+| PUT | `/v1/allowlist/public/{allowlist_id}/origin` | change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put | `allowlist_id`*, body*: Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put | — |  | Toogle the status of the origin in an allow list. |
+| GET | `/v1/asn/ip/{ip_address}` | query_IP_address_network_information_v1_asn_ip__ip_address__get | `ip_address`* | AutonomousSystemPrefixOutput | yes | Get the IPv4 or IPv6 prefix of the IP address given. |
+| POST | `/v1/asn/prefix` | query_asn_prefix_information_v1_asn_prefix_post | body*: Body_query_asn_prefix_information_v1_asn_prefix_post | AutonomousSystemPrefixOutput |  | Get the IPv4 or IPv6 prefix of the CIDR given. |
+| GET | `/v1/asn/registry/all` | query_registry_names_v1_asn_registry_all_get | — | AutonomousSystemRegistryOutput[] | yes | Get the list of the Regional Internet Registries (RIRs) entities worldwide. |
+| GET | `/v1/asn/registry/{code}` | query_registry_by_the_name_v1_asn_registry__code__get | `code`* | AutonomousSystemRegistryOutput | yes | Get the information of a Regional Internet Registries (RIRs) given. |
+| GET | `/v1/asn/status/all` | query_status_names_v1_asn_status_all_get | — | AutonomousSystemStatusOutput[] | yes | Get the list of status of an object in a registry. |
+| GET | `/v1/asn/status/{code}` | query_status_by_the_name_v1_asn_status__code__get | `code`* | AutonomousSystemStatusOutput | yes | Get the information of a status given. |
+| GET | `/v1/asn/{number}` | query_asn_v1_asn__number__get | `number`* | AutonomousSystemOutput | yes | Get the Autonomous System details of the AS number given. |
+| GET | `/v1/asn/{number}/prefixes` | query_asn_prefixes_list_v1_asn__number__prefixes_get | `number`* | AutonomousSystemPrefixesOutput | yes | Get the list of IPv4 and IPv6 prefixes of the AS number given. |
+| POST | `/v1/assess/ip` | assess_ip_set_v1_assess_ip_post | body*: string:ipvanyaddress[] | IPAssessmentCollectionOutput |  | Get the risk score of all IP address passed in the body and other data signals. |
+| POST | `/v1/assess/ip/csv` | assess_ip_set_csv_v1_assess_ip_csv_post | `strict_parse`, body*: Body_assess_ip_set_csv_v1_assess_ip_csv_post | IPAssessmentCollectionOutput |  | Get the risk score of all IP address uploaded and other data signals. |
+| GET | `/v1/assess/ip/{ip_address}` | assess_ip_v1_assess_ip__ip_address__get | `ip_address`* | IPAssessmentOutput | yes | Get a risk score of the IP address and different data signals. |
+| GET | `/v1/datacenter/ip/{ip_address}` | query_IP_address_network_information_v1_datacenter_ip__ip_address__get | `ip_address`* | DatacenterPrefixOutput | yes | Get the IPv4 or IPv6 prefix of the IP address given. |
+| POST | `/v1/datacenter/prefix` | query_datacenter_prefix_information_v1_datacenter_prefix_post | body*: Body_query_datacenter_prefix_information_v1_datacenter_prefix_post | DatacenterPrefixOutput |  | Get the IPv4 or IPv6 prefix of the CIDR given. |
+| GET | `/v1/datacenter/{datacenter_id}` | query_datacenter_v1_datacenter__datacenter_id__get | `datacenter_id`* | DatacenterOutput | yes | Get the Datacenter details of datacente given. |
+| GET | `/v1/datacenter/{datacenter_id}/prefixes` | query_datacenter_prefixes_list_v1_datacenter__datacenter_id__prefixes_get | `datacenter_id`* | DatacenterPrefixesOutput | yes | Get the list of IPv4 and IPv6 prefixes of the Datacenter given. |
+| GET | `/v1/dataset/ip` | query_datataset_information_of_all_the_resource_types_v1_dataset_ip_get | — | DatasetTypeCollectionOutput | yes | Get the list of all the datasets available in the platform. |
+| GET | `/v1/dataset/ip/{name}` | query_datataset_information_of_the_resource_type_v1_dataset_ip__name__get | `name`* | DatasetTypeOutput | yes | Get the detailed information of the dataset queried. |
+| POST | `/v1/denylist/private` | create_private_denylist_of_the_user_v1_denylist_private_post | body*: Body_create_private_denylist_of_the_user_v1_denylist_private_post | string:uuid |  | Creates a new private denylist binded to the user. |
+| GET | `/v1/denylist/private/all` | get_all_private_denylists_v1_denylist_private_all_get | — | PrivateAclGroupListCollectionOutput | yes | Get the set of private denylists of the user. |
+| GET | `/v1/denylist/private/all/{resource_type}` | get_all_private_denylists_by_resource_type_v1_denylist_private_all__resource_type__get | `resource_type`* | PrivateAclGroupListCollectionOutput | yes | Get the set of private denylists of the user by resource type. |
+| GET | `/v1/denylist/private/ip/{address}` | query_resource_denylists_v1_denylist_private_ip__address__get | `address`* | AclListCollectionOutput | yes | Get the different denylists where the IP address was found. |
+| GET | `/v1/denylist/private/{denylist_id}` | get_single_denylist_v1_denylist_private__denylist_id__get | `denylist_id`* | PrivateAclGroupListOutput | yes | Get the details of a specific private denylist of the user. |
+| PUT | `/v1/denylist/private/{denylist_id}` | update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put | `denylist_id`*, body: Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put | — |  | Update the information of an existing private denylist of the user. |
+| DELETE | `/v1/denylist/private/{denylist_id}` | delete_the_denylist_v1_denylist_private__denylist_id__delete | `denylist_id`* | — |  | Delete all the bindings between a user and a private denylist. |
+| GET | `/v1/denylist/private/{denylist_id}/content` | get_denylist_content_v1_denylist_private__denylist_id__content_get | `denylist_id`* | PrivateAclListCollectionOutput | yes | Get the content of a private denylist of the user. |
+| PUT | `/v1/denylist/private/{denylist_id}/content` | update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put | `denylist_id`*, body: Body_update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put | — |  | Add or remove content of a private denylist of the user. |
+| DELETE | `/v1/denylist/private/{denylist_id}/content` | delete_the_denylist_content_v1_denylist_private__denylist_id__content_delete | `denylist_id`* | — |  | Delete all the content of a private denylist of the user. |
+| PUT | `/v1/denylist/private/{denylist_id}/origin` | change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put | `denylist_id`*, body*: Body_change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put | — |  | Toogle the status of the origin in a deny list. |
+| GET | `/v1/denylist/public/all` | get_all_public_denylists_v1_denylist_public_all_get | — | PublicAclGroupListCollectionOutput | yes | Get the set of public denylists. |
+| GET | `/v1/denylist/public/all/{resource_type}` | get_all_public_denylists_by_resource_type_v1_denylist_public_all__resource_type__get | `resource_type`* | PublicAclGroupListCollectionOutput | yes | Get the set of public denylists by resource type. |
+| GET | `/v1/denylist/public/ip/{address}` | query_resource_denylists_v1_denylist_public_ip__address__get | `address`* | AclListCollectionOutput | yes | Get the different public denylists where the IP address was found. |
+| GET | `/v1/denylist/public/owned` | get_public_denylists_owned_by_the_user_v1_denylist_public_owned_get | — | PublicAclGroupListCollectionOutput | yes | Get the set of owned denylists. |
+| GET | `/v1/denylist/public/owned/{resource_type}` | get_all_owned_denylists_by_resource_type_v1_denylist_public_owned__resource_type__get | `resource_type`* | PublicAclGroupListCollectionOutput | yes | Get the set of public denylists of a user by resource type. |
+| GET | `/v1/denylist/public/{denylist_id}` | get_single_denylist_v1_denylist_public__denylist_id__get | `denylist_id`* | PublicAclGroupListOutput | yes | Get the details of the denylist. |
+| PUT | `/v1/denylist/public/{denylist_id}` | change_status_of_the_denylist_v1_denylist_public__denylist_id__put | `denylist_id`*, body*: Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put | — |  | Toogle the status of an deny list. |
+| DELETE | `/v1/denylist/public/{denylist_id}` | delete_the_denylist_v1_denylist_public__denylist_id__delete | `denylist_id`* | — |  | Delete all the bindings between a user and an denylist. |
+| PUT | `/v1/denylist/public/{denylist_id}/origin` | change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put | `denylist_id`*, body*: Body_change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put | — |  | Toogle the status of the origin in a deny list. |
+| GET | `/v1/denylist/reported/ip` | query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_get | `dataset`, `reported_before`, `reported_after`, `expires_before`, `expires_after`, `greater_than`, `less_than`, `ip_protocol_version`, `output_format` | IPListCollectionOutput | yes | Get the list of automatically reported IP addresses by the user. |
+| DELETE | `/v1/denylist/reported/ip/all` | delete_all_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_all_delete | — | — |  | Delete all the automatically reported IP addresses by the user. |
+| GET | `/v1/denylist/reported/ip/{ip_address}` | query_an_ip_addresses_reported_by_the_user_v1_denylist_reported_ip__ip_address__get | `ip_address`* | IPListOutput | yes | Get the details of an automatically reported IP addresses by the user. |
+| DELETE | `/v1/denylist/reported/ip/{ip_address}` | delete_an_ip_address_reported_by_the_user_v1_denylist_reported_ip__ip_address__delete | `ip_address`* | — |  | Delete the automatically reported IP address by the user. |
+| POST | `/v1/geo` | geolocate_ip_set_v1_geo_post | body*: string:ipvanyaddress[] | GeoIPCollectionOutput |  | Get the geolocation data of the IP addresses set. |
+| POST | `/v1/geo/csv` | assess_ip_set_csv_v1_geo_csv_post | `strict_parse`, body*: Body_assess_ip_set_csv_v1_geo_csv_post | GeoIPCollectionOutput |  | Get the geolocation data of all the IP addresses uploaded. |
+| GET | `/v1/geo/{ip_address}` | geolocate_ip_v1_geo__ip_address__get | `ip_address`* | GeoIPOutput | yes | Get the geo location data of the IP address. |
+| GET | `/v1/log/ip/id/{logchange_id}` | log_change_id_v1_log_ip_id__logchange_id__get | `logchange_id`* | IPLogOutput | yes | Get a log event. |
+| GET | `/v1/log/ip/{ip_address}` | logchanges_ip_v1_log_ip__ip_address__get | `ip_address`*, `dataset`, `logged_after` | IPLogCollectionOutput | yes | Get the changes logged in the different datasets of an IP address. |
+| GET | `/v1/origin` | query_origin_information_v1_origin_get | `query`* | OriginOutput | yes | Get the information of an origin of the user in the region. |
+| PUT | `/v1/origin` | update_configuration_origin_v1_origin_put | body*: Body_update_configuration_origin_v1_origin_put | object |  | Update the configuration of an origin of the user in the region. |
+| GET | `/v1/origin/addresses` | query_origin_address_status_information_v1_origin_addresses_get | `query`*, `page`, `page_size` | OriginAddressStatusCollectionOutput | yes | Get the address status of the origin of the user in the region. |
+| GET | `/v1/origin/all` | query_all_origin_information_v1_origin_all_get | — | OriginCollectionOutput | yes | Get the information of the origins of the user in the region. |
+| GET | `/v1/origin/client/analysis` | query_origin_traffic_client_v1_origin_client_analysis_get | `query`*, `interval`*, `from_timestamp`*, `to_timestamp` | OriginClientAnalysisCollectionOutput | yes | Get the type of clients of the trafffic of the origin. |
+| GET | `/v1/origin/cookies` | query_origin_cookie_id_status_information_v1_origin_cookies_get | `query`*, `page`, `page_size` | OriginCookieIdStatusCollectionOutput | yes | Get the tracking cookie ID status of the origin of the user in the region. |
+| GET | `/v1/origin/scripts` | query_origin_scripts_v1_origin_scripts_get | `query`* | OriginScriptsOutput | yes | Get the code snippets of an origin of the user in the region. |
+| POST | `/v1/origin/status` | query_origin_status_v1_origin_status_post | `query`*, body: Body_query_origin_status_v1_origin_status_post | OriginStatusOutput |  | Get the current cookie ID and IP address status of the origin of user in the region. |
+| GET | `/v1/origin/status/detail/{status_id}` | query_origin_status_detail_v1_origin_status_detail__status_id__get | `status_id`* | OriginStatusDetailsOutput | yes | Get detail of a status available in the platform. |
+| GET | `/v1/origin/status/details` | query_origin_status_details_v1_origin_status_details_get | — | OriginStatusDetailsCollectionOutput | yes | Get the list of different status available in the platform. |
+| GET | `/v1/origin/traffic/analysis` | query_origin_traffic_analysis_v1_origin_traffic_analysis_get | `query`*, `interval`*, `from_timestamp`*, `to_timestamp` | OriginTrafficAnalysisCollectionOutput | yes | Get the traffic analysis of the origin. |
+| POST | `/v1/origin_token` | query_origin_token_info_v1_origin_token_post | body*: Body_query_origin_token_info_v1_origin_token_post | OriginTokenOutput |  | Get the information of an origin token of the user in the region. |
+| DELETE | `/v1/origin_token` | delete_token_v1_origin_token_delete | body*: Body_delete_token_v1_origin_token_delete | — |  | Delete an origin token of the user in the region. |
+| GET | `/v1/origin_token/all` | query_all_origin_tokens_in_the_region_v1_origin_token_all_get | — | OriginTokenCollectionOutput | yes | Get the information of the origin tokens of the user in the region. |
+| PUT | `/v1/origin_token/disable` | disable_origin_token_v1_origin_token_disable_put | body*: Body_disable_origin_token_v1_origin_token_disable_put | — |  | Disable a enabled origin token of the user in the region. |
+| PUT | `/v1/origin_token/enable` | enable_origin_token_v1_origin_token_enable_put | body*: Body_enable_origin_token_v1_origin_token_enable_put | — |  | Enable a disabled origin token of the user in the region. |
+| POST | `/v1/origin_token/new` | create_a_new_origin_token_v1_origin_token_new_post | body*: OriginTokenInput | OriginTokenOutput |  | Create an origin token of the user in the region. |
+| GET | `/v1/source/ip` | get_all_sources_v1_source_ip_get | — | SourceCollectionOutput | yes | Get the full information of all the source lists for the subscription level given. |
+| GET | `/v1/source/ip/{source}` | get_source_info_v1_source_ip__source__get | `source`* | v1__models__source__SourceOutput | yes | Get the full information of the source list given as argument. |
+| GET | `/v1/source/ip/{source}/range/{time_range}` | get_source_and_timerange_info_v1_source_ip__source__range__time_range__get | `source`*, `time_range`* | SourceTimeRangeOutput | yes | Get the information of the source list given for a specific time range. |
+| GET | `/v1/token` | query_token_info_v1_token_get | — | TokenOutput | yes | Get the information of the user's token in the region. |
+| GET | `/v1/token/activity` | query_token_activity_v1_token_activity_get | `page`, `page_size` | ActivityCollectionOutput | yes | Get the activity information of the token in the region. |
+| POST | `/v1/ua` | parse_user_agents_v1_ua_post | body*: string[] | UACollectionOutput |  | Get the information found in a set of User Agents. |
+| POST | `/v1/ua/csv` | parse_user_agents_csv_v1_ua_csv_post | body*: Body_parse_user_agents_csv_v1_ua_csv_post | UACollectionOutput |  | Get the information found in the set of User Agents uploaded. |
+| GET | `/v1/ua/device/{code}` | query_device_by_code_v1_ua_device__code__get | `code`* | DeviceOutput | yes | Get the information of the device of a user agent. |
+| GET | `/v1/ua/family/{code}` | query_family_by_code_v1_ua_family__code__get | `code`* | FamilyOutput | yes | Get the information of the family of a user agent. |
+| GET | `/v1/ua/os/{code}` | query_os_by_code_v1_ua_os__code__get | `code`* | OSOutput | yes | Get the information of the Operating System of a user agent. |
+| GET | `/v1/ua/type/{code}` | query_type_by_code_v1_ua_type__code__get | `code`* | TypeOutput | yes | Get the information of the type of a user agent. |
+| GET | `/v1/ua/vendor/{code}` | query_vendor_by_code_v1_ua_vendor__code__get | `code`* | VendorOutput | yes | Get the information of the vendor of a user agent. |
+| GET | `/v1/ua/{user_agent_urlencoded}` | parse_user_agent_v1_ua__user_agent_urlencoded__get | `user_agent_urlencoded`* | UAOutput | yes | Get the information found in an User Agent. |

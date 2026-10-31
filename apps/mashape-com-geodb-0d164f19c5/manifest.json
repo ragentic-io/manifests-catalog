@@ -133,6 +133,306 @@
         "from": "mashape-com-geodb-0d164f19c5",
         "kind": "EXPOSES",
         "to": "operation:get:/locale/timezones/{zoneId}/time"
+      },
+      {
+        "from": "operation:get:/geo/adminDivisions",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/adminDivisions/{divisionId}",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlaceResponse"
+      },
+      {
+        "from": "operation:get:/geo/adminDivisions/{divisionId}/nearbyCities",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/adminDivisions/{divisionId}/nearbyDivisions",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities/{cityId}",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlaceResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities/{cityId}/dateTime",
+        "kind": "RETURNS",
+        "to": "schema:DateTimeResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities/{cityId}/distance",
+        "kind": "RETURNS",
+        "to": "schema:DistanceResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities/{cityId}/locatedIn",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlaceResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities/{cityId}/nearbyCities",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/cities/{cityId}/time",
+        "kind": "RETURNS",
+        "to": "schema:TimeResponse"
+      },
+      {
+        "from": "operation:get:/geo/countries",
+        "kind": "RETURNS",
+        "to": "schema:CountriesResponse"
+      },
+      {
+        "from": "operation:get:/geo/countries/{countryId}",
+        "kind": "RETURNS",
+        "to": "schema:CountryResponse"
+      },
+      {
+        "from": "operation:get:/geo/countries/{countryId}/regions",
+        "kind": "RETURNS",
+        "to": "schema:RegionsResponse"
+      },
+      {
+        "from": "operation:get:/geo/countries/{countryId}/regions/{regionCode}",
+        "kind": "RETURNS",
+        "to": "schema:RegionResponse"
+      },
+      {
+        "from": "operation:get:/geo/countries/{countryId}/regions/{regionCode}/adminDivisions",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/countries/{countryId}/regions/{regionCode}/cities",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/locations/{locationId}/nearbyCities",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/geo/locations/{locationId}/nearbyDivisions",
+        "kind": "RETURNS",
+        "to": "schema:PopulatedPlacesResponse"
+      },
+      {
+        "from": "operation:get:/locale/currencies",
+        "kind": "RETURNS",
+        "to": "schema:CurrenciesResponse"
+      },
+      {
+        "from": "operation:get:/locale/languages",
+        "kind": "RETURNS",
+        "to": "schema:LanguagesResponse"
+      },
+      {
+        "from": "operation:get:/locale/locales",
+        "kind": "RETURNS",
+        "to": "schema:LocalesResponse"
+      },
+      {
+        "from": "operation:get:/locale/timezones",
+        "kind": "RETURNS",
+        "to": "schema:TimeZonesResponse"
+      },
+      {
+        "from": "operation:get:/locale/timezones/{zoneId}",
+        "kind": "RETURNS",
+        "to": "schema:TimeZoneResponse"
+      },
+      {
+        "from": "operation:get:/locale/timezones/{zoneId}/dateTime",
+        "kind": "RETURNS",
+        "to": "schema:DateTimeResponse"
+      },
+      {
+        "from": "operation:get:/locale/timezones/{zoneId}/time",
+        "kind": "RETURNS",
+        "to": "schema:TimeResponse"
+      },
+      {
+        "from": "schema:BadRequestResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:BaseCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:BaseCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:BaseCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:BaseResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:CountriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:CountriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CountrySummary"
+      },
+      {
+        "from": "schema:CountryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:CountryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CountryDetails"
+      },
+      {
+        "from": "schema:CurrenciesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:CurrenciesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:DateTimeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:DistanceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorCode"
+      },
+      {
+        "from": "schema:ForbiddenResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:LanguagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:LanguagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LanguageDescriptor"
+      },
+      {
+        "from": "schema:LocalesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:LocalesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Locale"
+      },
+      {
+        "from": "schema:NotFoundResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:PopulatedPlaceDetails",
+        "kind": "REFERENCES",
+        "to": "schema:PopulatedPlaceType"
+      },
+      {
+        "from": "schema:PopulatedPlaceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:PopulatedPlaceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PopulatedPlaceDetails"
+      },
+      {
+        "from": "schema:PopulatedPlaceSummary",
+        "kind": "REFERENCES",
+        "to": "schema:PopulatedPlaceType"
+      },
+      {
+        "from": "schema:PopulatedPlacesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:PopulatedPlacesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PopulatedPlaceSummary"
+      },
+      {
+        "from": "schema:RegionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:RegionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RegionDetails"
+      },
+      {
+        "from": "schema:RegionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:RegionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RegionSummary"
+      },
+      {
+        "from": "schema:TimeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:TimeZoneResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseResponse"
+      },
+      {
+        "from": "schema:TimeZonesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseCollectionResponse"
+      },
+      {
+        "from": "schema:TimeZonesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeZoneDescriptor"
       }
     ],
     "nodes": [
@@ -142,93 +442,815 @@
       },
       {
         "deprecated": false,
+        "description": "Find administrative divisions, filtering by optional criteria.",
         "id": "operation:get:/geo/adminDivisions",
         "kind": "operation",
         "method": "get",
         "name": "findAdminDivisionsUsingGET",
+        "parameters": [
+          {
+            "description": "Only places near this location.",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/adminDivisions",
         "pointer": "#/paths/~1geo~1adminDivisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find administrative divisions"
+        "summary": "Find administrative divisions",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the details for a specific administrative division, including location coordinates, population, and elevation above sea-level (if available).",
         "id": "operation:get:/geo/adminDivisions/{divisionId}",
         "kind": "operation",
         "method": "get",
         "name": "getAdminDivisionUsingGET",
+        "parameters": [
+          {
+            "description": "An admin-division id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "divisionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/adminDivisions/{divisionId}",
         "pointer": "#/paths/~1geo~1adminDivisions~1{divisionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlaceResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get administrative division details"
+        "summary": "Get administrative division details",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find cities near the given administrative division, filtering by optional criteria.",
         "id": "operation:get:/geo/adminDivisions/{divisionId}/nearbyCities",
         "kind": "operation",
         "method": "get",
         "name": "findCitiesNearAdminDivisionUsingGET",
+        "parameters": [
+          {
+            "description": "An admin-division id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "divisionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places for these types (comma-delimited): CITY | ADM2",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/adminDivisions/{divisionId}/nearbyCities",
         "pointer": "#/paths/~1geo~1adminDivisions~1{divisionId}~1nearbyCities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find cities near division"
+        "summary": "Find cities near division",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find administrative divisions near the given origin division, filtering by optional criteria.",
         "id": "operation:get:/geo/adminDivisions/{divisionId}/nearbyDivisions",
         "kind": "operation",
         "method": "get",
         "name": "findDivisionsNearAdminDivisionUsingGET",
+        "parameters": [
+          {
+            "description": "An admin-division id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "divisionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/adminDivisions/{divisionId}/nearbyDivisions",
         "pointer": "#/paths/~1geo~1adminDivisions~1{divisionId}~1nearbyDivisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find divisions near division"
+        "summary": "Find divisions near division",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find cities, filtering by optional criteria.",
         "id": "operation:get:/geo/cities",
         "kind": "operation",
         "method": "get",
         "name": "findCitiesUsingGET",
+        "parameters": [
+          {
+            "description": "Only places near this location.",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places for these types (comma-delimited): CITY | ADM2",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities",
         "pointer": "#/paths/~1geo~1cities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find cities"
+        "summary": "Find cities",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the details for a specific city, including location coordinates, population, and elevation above sea-level (if available).",
         "id": "operation:get:/geo/cities/{cityId}",
         "kind": "operation",
         "method": "get",
         "name": "getCityUsingGET",
+        "parameters": [
+          {
+            "description": "A city id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "cityId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities/{cityId}",
         "pointer": "#/paths/~1geo~1cities~1{cityId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlaceResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get city details"
+        "summary": "Get city details",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
@@ -236,59 +1258,354 @@
         "kind": "operation",
         "method": "get",
         "name": "getCityDateTimeUsingGET",
+        "parameters": [
+          {
+            "description": "A city id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "cityId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities/{cityId}/dateTime",
         "pointer": "#/paths/~1geo~1cities~1{cityId}~1dateTime/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DateTimeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get city date-time"
+        "summary": "Get city date-time",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get distance from the given city",
         "id": "operation:get:/geo/cities/{cityId}/distance",
         "kind": "operation",
         "method": "get",
         "name": "getCityDistanceUsingGET",
+        "parameters": [
+          {
+            "description": "A city id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "cityId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Distance to this city",
+            "in": "query",
+            "name": "toCityId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities/{cityId}/distance",
         "pointer": "#/paths/~1geo~1cities~1{cityId}~1distance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistanceResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get city distance"
+        "summary": "Get city distance",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the details for the containing populated place (e.g., its county or other administrative division), including location coordinates, population, and elevati…",
         "id": "operation:get:/geo/cities/{cityId}/locatedIn",
         "kind": "operation",
         "method": "get",
         "name": "getCityLocatedInUsingGET",
+        "parameters": [
+          {
+            "description": "A city id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "cityId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities/{cityId}/locatedIn",
         "pointer": "#/paths/~1geo~1cities~1{cityId}~1locatedIn/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlaceResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get city admin region"
+        "summary": "Get city admin region",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find cities near the given origin city, filtering by optional criteria.",
         "id": "operation:get:/geo/cities/{cityId}/nearbyCities",
         "kind": "operation",
         "method": "get",
         "name": "findCitiesNearCityUsingGET",
+        "parameters": [
+          {
+            "description": "A city id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "cityId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places for these types (comma-delimited): CITY | ADM2",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities/{cityId}/nearbyCities",
         "pointer": "#/paths/~1geo~1cities~1{cityId}~1nearbyCities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find cities near city"
+        "summary": "Find cities near city",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
@@ -296,194 +1613,1300 @@
         "kind": "operation",
         "method": "get",
         "name": "getCityTimeUsingGET",
+        "parameters": [
+          {
+            "description": "A city id (either native 'id' or 'wikiDataId')",
+            "in": "path",
+            "name": "cityId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/geo/cities/{cityId}/time",
         "pointer": "#/paths/~1geo~1cities~1{cityId}~1time/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get city time"
+        "summary": "Get city time",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find countries, filtering by optional criteria.",
         "id": "operation:get:/geo/countries",
         "kind": "operation",
         "method": "get",
         "name": "getCountriesUsingGET",
+        "parameters": [
+          {
+            "description": "Only countries supporting this currency",
+            "in": "query",
+            "name": "currencyCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort countries.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/countries",
         "pointer": "#/paths/~1geo~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountriesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find countries"
+        "summary": "Find countries",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the details for a specific country, including number of regions.",
         "id": "operation:get:/geo/countries/{countryId}",
         "kind": "operation",
         "method": "get",
         "name": "getCountryUsingGET",
+        "parameters": [
+          {
+            "description": "An ISO-3166 country code or WikiData id",
+            "in": "path",
+            "name": "countryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/countries/{countryId}",
         "pointer": "#/paths/~1geo~1countries~1{countryId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountryResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get country details"
+        "summary": "Get country details",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all regions in a specific country.",
         "id": "operation:get:/geo/countries/{countryId}/regions",
         "kind": "operation",
         "method": "get",
         "name": "getRegionsUsingGET",
+        "parameters": [
+          {
+            "description": "An ISO-3166 country code or WikiData id",
+            "in": "path",
+            "name": "countryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort regions.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/countries/{countryId}/regions",
         "pointer": "#/paths/~1geo~1countries~1{countryId}~1regions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RegionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find country regions"
+        "summary": "Find country regions",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the details of a specific country region, including number of cities.",
         "id": "operation:get:/geo/countries/{countryId}/regions/{regionCode}",
         "kind": "operation",
         "method": "get",
         "name": "getRegionUsingGET",
+        "parameters": [
+          {
+            "description": "An ISO-3166 country code or WikiData id",
+            "in": "path",
+            "name": "countryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An ISO-3166 or FIPS region code",
+            "in": "path",
+            "name": "regionCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/countries/{countryId}/regions/{regionCode}",
         "pointer": "#/paths/~1geo~1countries~1{countryId}~1regions~1{regionCode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RegionResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get region details"
+        "summary": "Get region details",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the administrative divisions in a specific country region.",
         "id": "operation:get:/geo/countries/{countryId}/regions/{regionCode}/adminDivisions",
         "kind": "operation",
         "method": "get",
         "name": "findRegionDivisionsUsingGET",
+        "parameters": [
+          {
+            "description": "An ISO-3166 country code or WikiData id",
+            "in": "path",
+            "name": "countryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An ISO-3166 or FIPS region code",
+            "in": "path",
+            "name": "regionCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort place results.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/countries/{countryId}/regions/{regionCode}/adminDivisions",
         "pointer": "#/paths/~1geo~1countries~1{countryId}~1regions~1{regionCode}~1adminDivisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find country region administrative divisions"
+        "summary": "Find country region administrative divisions",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the cities in a specific country region.",
         "id": "operation:get:/geo/countries/{countryId}/regions/{regionCode}/cities",
         "kind": "operation",
         "method": "get",
         "name": "findRegionCitiesUsingGET",
+        "parameters": [
+          {
+            "description": "An ISO-3166 country code or WikiData id",
+            "in": "path",
+            "name": "countryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An ISO-3166 or FIPS region code",
+            "in": "path",
+            "name": "regionCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places for these types (comma-delimited): CITY | ADM2",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort place results.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/countries/{countryId}/regions/{regionCode}/cities",
         "pointer": "#/paths/~1geo~1countries~1{countryId}~1regions~1{regionCode}~1cities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find country region cities"
+        "summary": "Find country region cities",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find cities near the given location, filtering by optional criteria.",
         "id": "operation:get:/geo/locations/{locationId}/nearbyCities",
         "kind": "operation",
         "method": "get",
         "name": "findCitiesNearLocationUsingGET",
+        "parameters": [
+          {
+            "description": "A latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
+            "in": "path",
+            "name": "locationId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places for these types (comma-delimited): CITY | ADM2",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/locations/{locationId}/nearbyCities",
         "pointer": "#/paths/~1geo~1locations~1{locationId}~1nearbyCities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find cities near location"
+        "summary": "Find cities near location",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find administrative divisions near the given location, filtering by optional criteria.",
         "id": "operation:get:/geo/locations/{locationId}/nearbyDivisions",
         "kind": "operation",
         "method": "get",
         "name": "findDivisionsNearLocationUsingGET",
+        "parameters": [
+          {
+            "description": "A latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
+            "in": "path",
+            "name": "locationId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location radius within which to find places",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "MI",
+            "description": "The unit of distance: MI | KM",
+            "in": "query",
+            "name": "distanceUnit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "countryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
+            "in": "query",
+            "name": "excludedCountryIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only places having at least this population",
+            "in": "query",
+            "name": "minPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only places having no more than this population",
+            "in": "query",
+            "name": "maxPopulation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only entities whose names start with this prefix.",
+            "in": "query",
+            "name": "namePrefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.",
+            "in": "query",
+            "name": "namePrefixDefaultLangResults",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Only places in these time-zones (comma-delimited)",
+            "in": "query",
+            "name": "timeZoneIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Display results using ASCII characters",
+            "in": "query",
+            "name": "asciiMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Display results in this language",
+            "in": "query",
+            "name": "languageCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "How to sort places.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "NONE",
+            "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geo/locations/{locationId}/nearbyDivisions",
         "pointer": "#/paths/~1geo~1locations~1{locationId}~1nearbyDivisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PopulatedPlacesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find divisions near location"
+        "summary": "Find divisions near location",
+        "tags": [
+          "Geo"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find currencies, filtering by optional criteria.",
         "id": "operation:get:/locale/currencies",
         "kind": "operation",
         "method": "get",
         "name": "getCurrenciesUsingGET",
+        "parameters": [
+          {
+            "description": "Currencies for this country id",
+            "in": "query",
+            "name": "countryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/locale/currencies",
         "pointer": "#/paths/~1locale~1currencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrenciesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Find currencies"
+        "summary": "Find currencies",
+        "tags": [
+          "Locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all supported languages",
         "id": "operation:get:/locale/languages",
         "kind": "operation",
         "method": "get",
         "name": "getLanguagesUsingGET",
+        "parameters": [
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/locale/languages",
         "pointer": "#/paths/~1locale~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LanguagesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get languages"
+        "summary": "Get languages",
+        "tags": [
+          "Locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all known locales",
         "id": "operation:get:/locale/locales",
         "kind": "operation",
         "method": "get",
         "name": "getLocalesUsingGET",
+        "parameters": [
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/locale/locales",
         "pointer": "#/paths/~1locale~1locales/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LocalesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get locales"
+        "summary": "Get locales",
+        "tags": [
+          "Locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all known time-zones",
         "id": "operation:get:/locale/timezones",
         "kind": "operation",
         "method": "get",
         "name": "getTimezonesUsingGET",
+        "parameters": [
+          {
+            "default": true,
+            "description": "Include HATEOAS-style links in results",
+            "in": "query",
+            "name": "hateoasMode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of results to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The zero-ary offset index into the results",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/locale/timezones",
         "pointer": "#/paths/~1locale~1timezones/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeZonesResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get time-zones"
+        "summary": "Get time-zones",
+        "tags": [
+          "Locale"
+        ]
       },
       {
         "deprecated": false,
@@ -491,14 +2914,48 @@
         "kind": "operation",
         "method": "get",
         "name": "getTimeZoneUsingGET",
+        "parameters": [
+          {
+            "description": "A time-zone id",
+            "in": "path",
+            "name": "zoneId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/locale/timezones/{zoneId}",
         "pointer": "#/paths/~1locale~1timezones~1{zoneId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeZoneResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get time-zone"
+        "summary": "Get time-zone",
+        "tags": [
+          "Locale"
+        ]
       },
       {
         "deprecated": false,
@@ -506,14 +2963,48 @@
         "kind": "operation",
         "method": "get",
         "name": "getTimeZoneDateTimeUsingGET",
+        "parameters": [
+          {
+            "description": "A time-zone id",
+            "in": "path",
+            "name": "zoneId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/locale/timezones/{zoneId}/dateTime",
         "pointer": "#/paths/~1locale~1timezones~1{zoneId}~1dateTime/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DateTimeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get time-zone date-time"
+        "summary": "Get time-zone date-time",
+        "tags": [
+          "Locale"
+        ]
       },
       {
         "deprecated": false,
@@ -521,184 +3012,286 @@
         "kind": "operation",
         "method": "get",
         "name": "getTimeZoneTimeUsingGET",
+        "parameters": [
+          {
+            "description": "A time-zone id",
+            "in": "path",
+            "name": "zoneId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/locale/timezones/{zoneId}/time",
         "pointer": "#/paths/~1locale~1timezones~1{zoneId}~1time/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "ForbiddenResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFoundResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Get time-zone time"
+        "summary": "Get time-zone time",
+        "tags": [
+          "Locale"
+        ]
       },
       {
+        "description": "Bad Request Response",
         "id": "schema:BadRequestResponse",
         "kind": "schema",
-        "name": "BadRequestResponse"
+        "name": "BadRequestResponse",
+        "type": "BaseResponse"
       },
       {
+        "description": "Common properties for all collection responses",
         "id": "schema:BaseCollectionResponse",
         "kind": "schema",
-        "name": "BaseCollectionResponse"
+        "name": "BaseCollectionResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "Common properties for all responses",
         "id": "schema:BaseResponse",
         "kind": "schema",
-        "name": "BaseResponse"
+        "name": "BaseResponse",
+        "type": "object"
       },
       {
+        "description": "A list of countries",
         "id": "schema:CountriesResponse",
         "kind": "schema",
-        "name": "CountriesResponse"
+        "name": "CountriesResponse",
+        "type": "BaseCollectionResponse|object"
       },
       {
+        "description": "Full country details",
         "id": "schema:CountryDetails",
         "kind": "schema",
-        "name": "CountryDetails"
+        "name": "CountryDetails",
+        "type": "object"
       },
       {
+        "description": "Country details response",
         "id": "schema:CountryResponse",
         "kind": "schema",
-        "name": "CountryResponse"
+        "name": "CountryResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "Minimal country info",
         "id": "schema:CountrySummary",
         "kind": "schema",
-        "name": "CountrySummary"
+        "name": "CountrySummary",
+        "type": "object"
       },
       {
+        "description": "A list of currencies",
         "id": "schema:CurrenciesResponse",
         "kind": "schema",
-        "name": "CurrenciesResponse"
+        "name": "CurrenciesResponse",
+        "type": "BaseCollectionResponse|object"
       },
       {
+        "description": "Currency info",
         "id": "schema:Currency",
         "kind": "schema",
-        "name": "Currency"
+        "name": "Currency",
+        "type": "object"
       },
       {
+        "description": "An ISO-6801 date-time response",
         "id": "schema:DateTimeResponse",
         "kind": "schema",
-        "name": "DateTimeResponse"
+        "name": "DateTimeResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "A decimal distance (in miles or kilometers)",
         "id": "schema:DistanceResponse",
         "kind": "schema",
-        "name": "DistanceResponse"
+        "name": "DistanceResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "An error that occurred processing the request",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "One of a set of enumerated error codes representing the types of errors that can occur processing a request",
         "id": "schema:ErrorCode",
         "kind": "schema",
-        "name": "ErrorCode"
+        "name": "ErrorCode",
+        "type": "string"
       },
       {
+        "description": "Forbidden Response",
         "id": "schema:ForbiddenResponse",
         "kind": "schema",
-        "name": "ForbiddenResponse"
+        "name": "ForbiddenResponse",
+        "type": "BaseResponse"
       },
       {
+        "description": "A language supported by the service",
         "id": "schema:LanguageDescriptor",
         "kind": "schema",
-        "name": "LanguageDescriptor"
+        "name": "LanguageDescriptor",
+        "type": "object"
       },
       {
+        "description": "A list of languages supported by the system",
         "id": "schema:LanguagesResponse",
         "kind": "schema",
-        "name": "LanguagesResponse"
+        "name": "LanguagesResponse",
+        "type": "BaseCollectionResponse|object"
       },
       {
+        "description": "A HATEAOS link",
         "id": "schema:Link",
         "kind": "schema",
-        "name": "Link"
+        "name": "Link",
+        "type": "object"
       },
       {
+        "description": "A locale representing a language/region combination",
         "id": "schema:Locale",
         "kind": "schema",
-        "name": "Locale"
+        "name": "Locale",
+        "type": "object"
       },
       {
+        "description": "A list of locales",
         "id": "schema:LocalesResponse",
         "kind": "schema",
-        "name": "LocalesResponse"
+        "name": "LocalesResponse",
+        "type": "BaseCollectionResponse|object"
       },
       {
+        "description": "Result metadata (currently only associated with collection results)",
         "id": "schema:Metadata",
         "kind": "schema",
-        "name": "Metadata"
+        "name": "Metadata",
+        "type": "object"
       },
       {
+        "description": "Not Found Response",
         "id": "schema:NotFoundResponse",
         "kind": "schema",
-        "name": "NotFoundResponse"
+        "name": "NotFoundResponse",
+        "type": "BaseResponse"
       },
       {
+        "description": "Full populated-place details",
         "id": "schema:PopulatedPlaceDetails",
         "kind": "schema",
-        "name": "PopulatedPlaceDetails"
+        "name": "PopulatedPlaceDetails",
+        "type": "object"
       },
       {
+        "description": "Populated-place details response",
         "id": "schema:PopulatedPlaceResponse",
         "kind": "schema",
-        "name": "PopulatedPlaceResponse"
+        "name": "PopulatedPlaceResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "Minimal populated-place info",
         "id": "schema:PopulatedPlaceSummary",
         "kind": "schema",
-        "name": "PopulatedPlaceSummary"
+        "name": "PopulatedPlaceSummary",
+        "type": "object"
       },
       {
+        "description": "One of a set of enumerated populated-place types known by the service (currently only level-2 admin divisions and cities)",
         "id": "schema:PopulatedPlaceType",
         "kind": "schema",
-        "name": "PopulatedPlaceType"
+        "name": "PopulatedPlaceType",
+        "type": "string"
       },
       {
+        "description": "A list of populated places",
         "id": "schema:PopulatedPlacesResponse",
         "kind": "schema",
-        "name": "PopulatedPlacesResponse"
+        "name": "PopulatedPlacesResponse",
+        "type": "BaseCollectionResponse|object"
       },
       {
+        "description": "Full country region details",
         "id": "schema:RegionDetails",
         "kind": "schema",
-        "name": "RegionDetails"
+        "name": "RegionDetails",
+        "type": "object"
       },
       {
+        "description": "Country region details response",
         "id": "schema:RegionResponse",
         "kind": "schema",
-        "name": "RegionResponse"
+        "name": "RegionResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "Minimal country region info",
         "id": "schema:RegionSummary",
         "kind": "schema",
-        "name": "RegionSummary"
+        "name": "RegionSummary",
+        "type": "object"
       },
       {
+        "description": "A list of country regions",
         "id": "schema:RegionsResponse",
         "kind": "schema",
-        "name": "RegionsResponse"
+        "name": "RegionsResponse",
+        "type": "BaseCollectionResponse|object"
       },
       {
+        "description": "An ISO-8601 time response",
         "id": "schema:TimeResponse",
         "kind": "schema",
-        "name": "TimeResponse"
+        "name": "TimeResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "A time-zone",
         "id": "schema:TimeZoneDescriptor",
         "kind": "schema",
-        "name": "TimeZoneDescriptor"
+        "name": "TimeZoneDescriptor",
+        "type": "object"
       },
       {
+        "description": "A time-zone",
         "id": "schema:TimeZoneResponse",
         "kind": "schema",
-        "name": "TimeZoneResponse"
+        "name": "TimeZoneResponse",
+        "type": "BaseResponse|object"
       },
       {
+        "description": "A list of time-zones",
         "id": "schema:TimeZonesResponse",
         "kind": "schema",
-        "name": "TimeZonesResponse"
+        "name": "TimeZonesResponse",
+        "type": "BaseCollectionResponse|object"
       }
     ]
   },

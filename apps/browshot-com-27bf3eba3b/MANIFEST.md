@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.browshot.com_static_images_
 
 | | |
 | --- | --- |
-| Signed bundle | `385e271046bb98de9085483d0539a5bd79613c651f29c2a471eafa2d5a02f15e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,22 +34,24 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.browshot.com_static_images_
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account/info` | GetAccountInfo | Get information about your account |
-| POST | `/batch/ceate` | CreateBatch | Requests thousands of screenshtos at once |
-| GET | `/batch/info` | GetBatchInfo | Get the batch status |
-| GET | `/browser/info` | GetBrowserInfo | Get information about a browser |
-| GET | `/browser/list` | GetBrowsersInfo | Get all browsers |
-| GET | `/instance/info` | GetInstanceInfo | Get information about an instance |
-| GET | `/instance/list` | GetInstancesInfo | Get all instances |
-| GET | `/screenshot/create` | CreateScreenshot | Request a screenshot |
-| GET | `/screenshot/delete` | DeleteScreenshot | Delete screenshot data |
-| GET | `/screenshot/host` | HostScreenshot | Host thumbnails on your own S3 account or on Browshot. |
-| GET | `/screenshot/html` | GetHTML | Get the HTML code |
-| GET | `/screenshot/info` | GetScreenshotInfo | Query screenshot status |
-| GET | `/screenshot/list` | GetMultipleScreenshotsInfo | Get information about screenshots |
-| GET | `/screenshot/multiple` | CreateMultipleScreenshots | Request multiple screenshots |
-| GET | `/screenshot/search` | SearchScreenshot | Search for screenshots |
-| GET | `/screenshot/share` | ShareScreenshot | Share a screenshot |
-| GET | `/screenshot/thumbnail` | GetThumbnail | Retrieve a thumbnail image |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account/info` | GetAccountInfo | `details` | Account | yes | Get information about your account |
+| POST | `/batch/ceate` | CreateBatch | `instance_id`*, `file`, `size`, `name`, `width`, `height`, `delay`, `flash_delay`, `screen_width`, `screen_height`, `priority`, `referer`, `post_data`, `cookie`, `script`, `details`, `html`, `max_wait`, `headers`, `format`, `hosting`, `hosting_height`, `hosting_width`, `hosting_scale`, `hosting_bucket`, `hosting_file`, `hosting_headers` | Batch[] |  | Requests thousands of screenshtos at once |
+| GET | `/batch/info` | GetBatchInfo | `id`* | Batch | yes | Get the batch status |
+| GET | `/browser/info` | GetBrowserInfo | `id`* | Browser | yes | Get information about a browser |
+| GET | `/browser/list` | GetBrowsersInfo | — | BrowserList | yes | Get all browsers |
+| GET | `/instance/info` | GetInstanceInfo | `id`* | Instance | yes | Get information about an instance |
+| GET | `/instance/list` | GetInstancesInfo | — | InstanceList | yes | Get all instances |
+| GET | `/screenshot/create` | CreateScreenshot | `url`*, `instance_id`*, `size`, `cache`, `delay`, `flash_delay`, `screen_width`, `screen_height`, `priority`, `referer`, `post_data`, `cookie`, `script`, `details`, `html`, `max_wait`, `headers`, `shots`, `shot_interval`, `hosting`, `hosting_height`, `hosting_width`, `hosting_scale`, `hosting_bucket`, `hosting_file`, `hosting_headers` | Screenshot | yes | Request a screenshot |
+| GET | `/screenshot/delete` | DeleteScreenshot | `id`*, `data` | ScreenshotShort[] | yes | Delete screenshot data |
+| GET | `/screenshot/host` | HostScreenshot | `id`*, `hosting`*, `width`, `height`, `scale`, `bucket`, `file`, `headers` | ScreenshotHost[] | yes | Host thumbnails on your own S3 account or on Browshot. |
+| GET | `/screenshot/html` | GetHTML | `id`* | — | yes | Get the HTML code |
+| GET | `/screenshot/info` | GetScreenshotInfo | `id`*, `details` | Screenshot[] | yes | Query screenshot status |
+| GET | `/screenshot/list` | GetMultipleScreenshotsInfo | `limit`, `status` | ScreenshotList[] | yes | Get information about screenshots |
+| GET | `/screenshot/multiple` | CreateMultipleScreenshots | `url`*, `instance_id`*, `size`, `cache`, `delay`, `flash_delay`, `screen_width`, `screen_height`, `priority`, `referer`, `post_data`, `cookie`, `script`, `details`, `html`, `max_wait`, `headers`, `hosting`, `hosting_height`, `hosting_width`, `hosting_scale`, `hosting_bucket`, `hosting_file`, `hosting_headers` | ScreenshotList | yes | Request multiple screenshots |
+| GET | `/screenshot/search` | SearchScreenshot | `url`*, `limit`, `status` | ScreenshotList[] | yes | Search for screenshots |
+| GET | `/screenshot/share` | ShareScreenshot | `id`*, `note` | ScreenshotHost[] | yes | Share a screenshot |
+| GET | `/screenshot/thumbnail` | GetThumbnail | `id`*, `width`, `height`, `scale`, `zoom`, `ratio`, `left`, `right`, `top`, `bottom`, `format`, `shot`, `quality` | — | yes | Retrieve a thumbnail image |

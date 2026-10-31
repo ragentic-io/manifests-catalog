@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `abd7f519f97ebfc99b2733c7d948e29bc066e166bdcbcc0afb60018ef7a1c5fd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 11 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/en_core_web_sm/` | read_root_v1_en_core_web_sm__get | Read Root |
-| POST | `/v1/en_core_web_sm/dependencies` | read_dependencies_v1_en_core_web_sm_dependencies_post | Read Dependencies |
-| POST | `/v1/en_core_web_sm/entities` | read_entities_v1_en_core_web_sm_entities_post | Read Entities |
-| POST | `/v1/en_core_web_sm/sentence-dependencies` | read_sentence_dependencies_v1_en_core_web_sm_sentence_dependencies_post | Read Sentence Dependencies |
-| GET | `/v1/en_core_web_sm/version` | read_version_v1_en_core_web_sm_version_get | Read Version |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/en_core_web_sm/` | read_root_v1_en_core_web_sm__get | — | — | yes | Read Root |
+| POST | `/v1/en_core_web_sm/dependencies` | read_dependencies_v1_en_core_web_sm_dependencies_post | body*: UserRequestIn | DependenciesOut |  | Read Dependencies |
+| POST | `/v1/en_core_web_sm/entities` | read_entities_v1_en_core_web_sm_entities_post | body*: UserRequestIn | EntitiesOut |  | Read Entities |
+| POST | `/v1/en_core_web_sm/sentence-dependencies` | read_sentence_dependencies_v1_en_core_web_sm_sentence_dependencies_post | body*: UserRequestIn | SentenceDependenciesOut |  | Read Sentence Dependencies |
+| GET | `/v1/en_core_web_sm/version` | read_version_v1_en_core_web_sm_version_get | — | VersionOut | yes | Read Version |

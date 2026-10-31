@@ -17,17 +17,17 @@
       {
         "from": "impala-travel-hotels-b7caa74eb3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/bookings/{bookingId}"
-      },
-      {
-        "from": "impala-travel-hotels-b7caa74eb3",
-        "kind": "EXPOSES",
         "to": "operation:get:/bookings/{bookingId}"
       },
       {
         "from": "impala-travel-hotels-b7caa74eb3",
         "kind": "EXPOSES",
         "to": "operation:put:/bookings/{bookingId}"
+      },
+      {
+        "from": "impala-travel-hotels-b7caa74eb3",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/bookings/{bookingId}"
       },
       {
         "from": "impala-travel-hotels-b7caa74eb3",
@@ -53,6 +53,351 @@
         "from": "impala-travel-hotels-b7caa74eb3",
         "kind": "EXPOSES",
         "to": "operation:get:/hotels/{hotelId}/rate-plans/{ratePlanId}"
+      },
+      {
+        "from": "operation:post:/bookings",
+        "kind": "ACCEPTS",
+        "to": "schema:bookingRequest"
+      },
+      {
+        "from": "operation:post:/bookings",
+        "kind": "RETURNS",
+        "to": "schema:booking"
+      },
+      {
+        "from": "operation:get:/bookings/{bookingId}",
+        "kind": "RETURNS",
+        "to": "schema:booking"
+      },
+      {
+        "from": "operation:put:/bookings/{bookingId}",
+        "kind": "ACCEPTS",
+        "to": "schema:updateBookingRequest"
+      },
+      {
+        "from": "operation:put:/bookings/{bookingId}",
+        "kind": "RETURNS",
+        "to": "schema:booking"
+      },
+      {
+        "from": "operation:delete:/bookings/{bookingId}",
+        "kind": "RETURNS",
+        "to": "schema:booking"
+      },
+      {
+        "from": "operation:put:/bookings/{bookingId}/booking-contact",
+        "kind": "ACCEPTS",
+        "to": "schema:updateBookingContactRequest"
+      },
+      {
+        "from": "operation:put:/bookings/{bookingId}/booking-contact",
+        "kind": "RETURNS",
+        "to": "schema:booking"
+      },
+      {
+        "from": "operation:get:/hotels/{hotelId}",
+        "kind": "RETURNS",
+        "to": "schema:hotelFullDetail"
+      },
+      {
+        "from": "operation:get:/hotels/{hotelId}/rate-plans/{ratePlanId}",
+        "kind": "RETURNS",
+        "to": "schema:ratePlan"
+      },
+      {
+        "from": "schema:adjustmentConditions",
+        "kind": "REFERENCES",
+        "to": "schema:adjustmentConditionLengthOfStayRule"
+      },
+      {
+        "from": "schema:bookedRate",
+        "kind": "REFERENCES",
+        "to": "schema:cancellationPolicy"
+      },
+      {
+        "from": "schema:bookedRate",
+        "kind": "REFERENCES",
+        "to": "schema:hotelAgreementStub"
+      },
+      {
+        "from": "schema:bookedRate",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:bookedRate",
+        "kind": "REFERENCES",
+        "to": "schema:rateComponent"
+      },
+      {
+        "from": "schema:bookedRate",
+        "kind": "REFERENCES",
+        "to": "schema:taxOrFee"
+      },
+      {
+        "from": "schema:bookedRoom",
+        "kind": "REFERENCES",
+        "to": "schema:bookedRate"
+      },
+      {
+        "from": "schema:bookedRoom",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:bookedRoom",
+        "kind": "REFERENCES",
+        "to": "schema:notesBookedRoom"
+      },
+      {
+        "from": "schema:booking",
+        "kind": "REFERENCES",
+        "to": "schema:bookedRoom"
+      },
+      {
+        "from": "schema:booking",
+        "kind": "REFERENCES",
+        "to": "schema:cancellationFee"
+      },
+      {
+        "from": "schema:booking",
+        "kind": "REFERENCES",
+        "to": "schema:hotelStub"
+      },
+      {
+        "from": "schema:booking",
+        "kind": "REFERENCES",
+        "to": "schema:personInfo"
+      },
+      {
+        "from": "schema:bookingRequest",
+        "kind": "REFERENCES",
+        "to": "schema:notesBookedRoom"
+      },
+      {
+        "from": "schema:bookingRequest",
+        "kind": "REFERENCES",
+        "to": "schema:notesBooking"
+      },
+      {
+        "from": "schema:bookingRequest",
+        "kind": "REFERENCES",
+        "to": "schema:personInfo"
+      },
+      {
+        "from": "schema:bookingRequestWithRatePlans",
+        "kind": "REFERENCES",
+        "to": "schema:notesBooking"
+      },
+      {
+        "from": "schema:bookingRequestWithRatePlans",
+        "kind": "REFERENCES",
+        "to": "schema:ratePlanRoom"
+      },
+      {
+        "from": "schema:cancellationFee",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:cancellationPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:cancellationFee"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:address"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:amenity"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:externalUrl"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:image"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:location"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:roomType"
+      },
+      {
+        "from": "schema:hotelFullDetail",
+        "kind": "REFERENCES",
+        "to": "schema:timeRange"
+      },
+      {
+        "from": "schema:hotelStub",
+        "kind": "REFERENCES",
+        "to": "schema:address"
+      },
+      {
+        "from": "schema:hotelStub",
+        "kind": "REFERENCES",
+        "to": "schema:image"
+      },
+      {
+        "from": "schema:hotelStub",
+        "kind": "REFERENCES",
+        "to": "schema:location"
+      },
+      {
+        "from": "schema:hotelStub",
+        "kind": "REFERENCES",
+        "to": "schema:timeRange"
+      },
+      {
+        "from": "schema:rate",
+        "kind": "REFERENCES",
+        "to": "schema:cancellationPolicy"
+      },
+      {
+        "from": "schema:rate",
+        "kind": "REFERENCES",
+        "to": "schema:hotelAgreementStub"
+      },
+      {
+        "from": "schema:rate",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:rate",
+        "kind": "REFERENCES",
+        "to": "schema:rateComponent"
+      },
+      {
+        "from": "schema:rate",
+        "kind": "REFERENCES",
+        "to": "schema:taxOrFee"
+      },
+      {
+        "from": "schema:rateAdjustment",
+        "kind": "REFERENCES",
+        "to": "schema:adjustmentConditions"
+      },
+      {
+        "from": "schema:ratePlan",
+        "kind": "REFERENCES",
+        "to": "schema:conditions"
+      },
+      {
+        "from": "schema:ratePlan",
+        "kind": "REFERENCES",
+        "to": "schema:rateAdjustment"
+      },
+      {
+        "from": "schema:ratePlan",
+        "kind": "REFERENCES",
+        "to": "schema:rateComponent"
+      },
+      {
+        "from": "schema:ratePlan",
+        "kind": "REFERENCES",
+        "to": "schema:ratePlanRestrictions"
+      },
+      {
+        "from": "schema:ratePlan",
+        "kind": "REFERENCES",
+        "to": "schema:ratePlanRoomType"
+      },
+      {
+        "from": "schema:ratePlanRate",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:ratePlanRoom",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:ratePlanRoom",
+        "kind": "REFERENCES",
+        "to": "schema:notesBookedRoom"
+      },
+      {
+        "from": "schema:ratePlanRoomType",
+        "kind": "REFERENCES",
+        "to": "schema:ratesPerDate"
+      },
+      {
+        "from": "schema:ratesPerDate",
+        "kind": "REFERENCES",
+        "to": "schema:ratePlanRate"
+      },
+      {
+        "from": "schema:roomType",
+        "kind": "REFERENCES",
+        "to": "schema:amenity"
+      },
+      {
+        "from": "schema:roomType",
+        "kind": "REFERENCES",
+        "to": "schema:image"
+      },
+      {
+        "from": "schema:roomType",
+        "kind": "REFERENCES",
+        "to": "schema:rate"
+      },
+      {
+        "from": "schema:taxOrFee",
+        "kind": "REFERENCES",
+        "to": "schema:money"
+      },
+      {
+        "from": "schema:updateBookingContactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:personInfo"
+      },
+      {
+        "from": "schema:updateBookingContactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:updateBookingVersionAtTimestamp"
+      },
+      {
+        "from": "schema:updateBookingRequest",
+        "kind": "REFERENCES",
+        "to": "schema:bookingRequest"
+      },
+      {
+        "from": "schema:updateBookingRequest",
+        "kind": "REFERENCES",
+        "to": "schema:updateBookingVersionAtTimestamp"
+      },
+      {
+        "from": "schema:updateBookingRequestWithRatePlans",
+        "kind": "REFERENCES",
+        "to": "schema:bookingRequestWithRatePlans"
+      },
+      {
+        "from": "schema:updateBookingRequestWithRatePlans",
+        "kind": "REFERENCES",
+        "to": "schema:updateBookingVersionAtTimestamp"
+      },
+      {
+        "from": "schema:validationError",
+        "kind": "REFERENCES",
+        "to": "schema:genericError"
+      },
+      {
+        "from": "schema:validationError",
+        "kind": "REFERENCES",
+        "to": "schema:validationResult"
       }
     ],
     "nodes": [
@@ -62,163 +407,766 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all the bookings you've made.",
         "id": "operation:get:/bookings",
         "kind": "operation",
         "method": "get",
         "name": "listBookings",
+        "parameters": [
+          {
+            "description": "Allows for filtering based on arrival date of the booking in ISO 8601 format (e.g.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Allows for filtering based on departure date of the booking in ISO 8601 format (e.g.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Allows for filtering based on creation date and time of the booking in ISO 8601 format (e.g.",
+            "in": "query",
+            "name": "created",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Allows for filtering based on the date and time the booking was last updated, in ISO 8601 format (e.g.",
+            "in": "query",
+            "name": "updated",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 100,
+            "description": "Pagination size.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": 0,
+            "description": "Pagination offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": "createdAt:asc",
+            "description": "Order in which the results should be sorted.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/bookings",
         "pointer": "#/paths/~1bookings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "List all bookings"
+        "summary": "List all bookings",
+        "tags": [
+          "Bookings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a booking for for the rate and dates you specify in the request body.",
         "id": "operation:post:/bookings",
         "kind": "operation",
         "method": "post",
         "name": "createBooking",
         "path": "/bookings",
         "pointer": "#/paths/~1bookings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "bookingRequest"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "booking"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "403",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "Create a booking"
+        "summary": "Create a booking",
+        "tags": [
+          "Bookings"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/bookings/{bookingId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "cancelBooking",
-        "path": "/bookings/{bookingId}",
-        "pointer": "#/paths/~1bookings~1{bookingId}/delete",
-        "security": [
-          {
-            "API_Key_Authentication": []
-          }
-        ],
-        "summary": "Cancel a booking"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns all details for the specified booking.",
         "id": "operation:get:/bookings/{bookingId}",
         "kind": "operation",
         "method": "get",
         "name": "retrieveBooking",
+        "parameters": [
+          {
+            "description": "The unique identifier of the booking you would like to update.",
+            "in": "path",
+            "name": "bookingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bookings/{bookingId}",
         "pointer": "#/paths/~1bookings~1{bookingId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "booking"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "404",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "Retrieve a booking"
+        "summary": "Retrieve a booking",
+        "tags": [
+          "Bookings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<!-- theme: danger --> > Updates the specified booking with immediate effect.",
         "id": "operation:put:/bookings/{bookingId}",
         "kind": "operation",
         "method": "put",
         "name": "updateBooking",
+        "parameters": [
+          {
+            "description": "The unique identifier of the booking you would like to update.",
+            "in": "path",
+            "name": "bookingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bookings/{bookingId}",
         "pointer": "#/paths/~1bookings~1{bookingId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "updateBookingRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "booking"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "404",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "Change a booking"
+        "summary": "Change a booking",
+        "tags": [
+          "Bookings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<!-- theme: danger --> > Cancels the specified booking with immediate effect.",
+        "id": "operation:delete:/bookings/{bookingId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "cancelBooking",
+        "parameters": [
+          {
+            "description": "The unique identifier of the booking you would like to update.",
+            "in": "path",
+            "name": "bookingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/bookings/{bookingId}",
+        "pointer": "#/paths/~1bookings~1{bookingId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "booking"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "403",
+            "type": "genericError"
+          },
+          {
+            "status": "404",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "API_Key_Authentication": []
+          }
+        ],
+        "summary": "Cancel a booking",
+        "tags": [
+          "Bookings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a confirmed booking with the booking contact details you provide in the request body.",
         "id": "operation:put:/bookings/{bookingId}/booking-contact",
         "kind": "operation",
         "method": "put",
         "name": "updateBookingContact",
+        "parameters": [
+          {
+            "description": "The unique identifier of the booking you would like to update.",
+            "in": "path",
+            "name": "bookingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bookings/{bookingId}/booking-contact",
         "pointer": "#/paths/~1bookings~1{bookingId}~1booking-contact/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "updateBookingContactRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "booking"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "404",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "Change a booking contact"
+        "summary": "Change a booking contact",
+        "tags": [
+          "Bookings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all hotels worldwide that can be booked through Impala.",
         "id": "operation:get:/hotels",
         "kind": "operation",
         "method": "get",
         "name": "listHotels",
+        "parameters": [
+          {
+            "description": "Allows for filtering based on the property name.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Allows for filtering based on the starRating of a property.",
+            "in": "query",
+            "name": "starRating",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Allows for filtering based on the country of a property.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The arrival day of the desired stay range in ISO 8601 format (`YYYY-MM-DD`).",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The departure day of the desired stay range in ISO 8601 format (`YYYY-MM-DD`).",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The WGS 84 latitude of the location to search around (e.g.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "The WGS 84 longitude of the location to search around (e.g.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "The distance (in meters) to search around the specified location (e.g.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A comma-separated list of hotel ids you wish to filter by (e.g.",
+            "in": "query",
+            "name": "hotelIds",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Allows for filtering based on the date and time when this hotel was first added to the Impala platform, in ISO 8601 format (e.g.",
+            "in": "query",
+            "name": "created",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Allows for filtering based on the date and time the content of this hotel was last updated, in ISO 8601 format (e.g.",
+            "in": "query",
+            "name": "updated",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 25,
+            "description": "Number of hotels returned on a given page (pagination).",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": 0,
+            "description": "Offset from the first hotel in the result (for pagination).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": "createdAt:desc",
+            "description": "Order in which the results should be sorted.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/hotels",
         "pointer": "#/paths/~1hotels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "List all hotels"
+        "summary": "List all hotels",
+        "tags": [
+          "Hotels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the full content, room types and rates for the specified hotel.",
         "id": "operation:get:/hotels/{hotelId}",
         "kind": "operation",
         "method": "get",
         "name": "retrieveHotel",
+        "parameters": [
+          {
+            "description": "The unique identifier of this hotel on the Impala platform.",
+            "in": "path",
+            "name": "hotelId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The arrival day of the desired stay range in ISO 8601 format (`YYYY-MM-DD`).",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The departure day of the desired stay range in ISO 8601 format (`YYYY-MM-DD`).",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/hotels/{hotelId}",
         "pointer": "#/paths/~1hotels~1{hotelId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "hotelFullDetail"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "401",
+            "type": "genericError"
+          },
+          {
+            "status": "403",
+            "type": "genericError"
+          },
+          {
+            "status": "500",
+            "type": "genericError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "Retrieve a hotel"
+        "summary": "Retrieve a hotel",
+        "tags": [
+          "Hotels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all rate plans available for you for a hotel.",
         "id": "operation:get:/hotels/{hotelId}/rate-plans",
         "kind": "operation",
         "method": "get",
         "name": "listRatePlansForHotel",
+        "parameters": [
+          {
+            "description": "The uuid of hotel for which rate plans are being fetched.",
+            "in": "path",
+            "name": "hotelId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Returns rate plans changed after the supplied date.",
+            "in": "query",
+            "name": "updatedAt",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 25,
+            "description": "Number of rate plans returned on a given page (pagination).",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": 0,
+            "description": "Offset from the first rate plan in the result (for pagination).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "description": "Start date of the considered time window for the returned rate plan.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Start date of the considered time window for the returned rate plan.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of room for which rate plans are being fetched.",
+            "in": "query",
+            "name": "roomId",
+            "required": false,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/hotels/{hotelId}/rate-plans",
         "pointer": "#/paths/~1hotels~1{hotelId}~1rate-plans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "404",
+            "type": "genericError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "List all rate plans (rate calendar) for a hotel (Beta endpoint)"
+        "summary": "List all rate plans (rate calendar) for a hotel (Beta endpoint)",
+        "tags": [
+          "Rate Calendar"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single rate plan available for you for a hotel.",
         "id": "operation:get:/hotels/{hotelId}/rate-plans/{ratePlanId}",
         "kind": "operation",
         "method": "get",
         "name": "listRatePlanForHotelForRatePlanId",
+        "parameters": [
+          {
+            "description": "The uuid of hotel for which rate plans are being fetched.",
+            "in": "path",
+            "name": "hotelId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of requested rateplan",
+            "in": "path",
+            "name": "ratePlanId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Returns rate plans changed after the supplied date.",
+            "in": "query",
+            "name": "updatedAt",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 25,
+            "description": "Number of rate plans returned on a given page (pagination).",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": 0,
+            "description": "Offset from the first rate plan in the result (for pagination).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "description": "Start date of the considered time window for the returned rate plan.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Start date of the considered time window for the returned rate plan.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The uuid of room for which rate plans are being fetched.",
+            "in": "query",
+            "name": "roomTypeId",
+            "required": false,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/hotels/{hotelId}/rate-plans/{ratePlanId}",
         "pointer": "#/paths/~1hotels~1{hotelId}~1rate-plans~1{ratePlanId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ratePlan"
+          },
+          {
+            "status": "400",
+            "type": "validationError"
+          },
+          {
+            "status": "404",
+            "type": "genericError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key_Authentication": []
           }
         ],
-        "summary": "List a rate plan (rate calendar) for a hotel (Beta endpoint)."
+        "summary": "List a rate plan (rate calendar) for a hotel (Beta endpoint).",
+        "tags": [
+          "Rate Calendar"
+        ]
       },
       {
+        "description": "Physical address",
         "id": "schema:address",
         "kind": "schema",
-        "name": "address"
+        "name": "address",
+        "type": "object"
       },
       {
         "id": "schema:adjustmentConditionLengthOfStayRule",
         "kind": "schema",
-        "name": "adjustmentConditionLengthOfStayRule"
+        "name": "adjustmentConditionLengthOfStayRule",
+        "type": "object"
       },
       {
         "id": "schema:adjustmentConditions",
@@ -226,219 +1174,290 @@
         "name": "adjustmentConditions"
       },
       {
+        "description": "<!-- type: tab title: Description --> Feature or facility available in the hotel or room type.",
         "id": "schema:amenity",
         "kind": "schema",
-        "name": "amenity"
+        "name": "amenity",
+        "type": "object"
       },
       {
+        "description": "Information on the price of the booked room, other components of the room (such as breakfast, lunch or a welcome drink) and the cancellation policies that appl…",
         "id": "schema:bookedRate",
         "kind": "schema",
-        "name": "bookedRate"
+        "name": "bookedRate",
+        "type": "object"
       },
       {
         "id": "schema:bookedRoom",
         "kind": "schema",
-        "name": "bookedRoom"
+        "name": "bookedRoom",
+        "type": "object"
       },
       {
+        "description": "Details of an existing booking.",
         "id": "schema:booking",
         "kind": "schema",
-        "name": "booking"
+        "name": "booking",
+        "type": "object"
       },
       {
         "id": "schema:bookingRequest",
         "kind": "schema",
-        "name": "bookingRequest"
+        "name": "bookingRequest",
+        "type": "object"
       },
       {
+        "description": "Request body with the explicit rate taken from the rate calendar endpoint",
         "id": "schema:bookingRequestWithRatePlans",
         "kind": "schema",
-        "name": "bookingRequestWithRatePlans"
+        "name": "bookingRequestWithRatePlans",
+        "type": "object"
       },
       {
+        "description": "Describes the costs associated with a cancellation and how it is calculated.",
         "id": "schema:cancellationFee",
         "kind": "schema",
-        "name": "cancellationFee"
+        "name": "cancellationFee",
+        "type": "object"
       },
       {
+        "description": "A rule that applies if the booking is cancelled.",
         "id": "schema:cancellationPolicy",
         "kind": "schema",
-        "name": "cancellationPolicy"
+        "name": "cancellationPolicy",
+        "type": "object"
       },
       {
+        "description": "Conditions described by the rate plan.",
         "id": "schema:conditions",
         "kind": "schema",
-        "name": "conditions"
+        "name": "conditions",
+        "type": "object"
       },
       {
+        "description": "A deal request you've sent to hotels on Impala.",
         "id": "schema:dealRequest",
         "kind": "schema",
-        "name": "dealRequest"
+        "name": "dealRequest",
+        "type": "object"
       },
       {
         "id": "schema:externalUrl",
         "kind": "schema",
-        "name": "externalUrl"
+        "name": "externalUrl",
+        "type": "object"
       },
       {
         "id": "schema:genericError",
         "kind": "schema",
-        "name": "genericError"
+        "name": "genericError",
+        "type": "object"
       },
       {
         "id": "schema:guestPaymentErrorStub",
         "kind": "schema",
-        "name": "guestPaymentErrorStub"
+        "name": "guestPaymentErrorStub",
+        "type": "object"
       },
       {
         "id": "schema:guestPaymentStub",
         "kind": "schema",
-        "name": "guestPaymentStub"
+        "name": "guestPaymentStub",
+        "type": "object"
       },
       {
+        "description": "Hotel agreements detail which hotels have accepted/rejected the conditions of your deal request.",
         "id": "schema:hotelAgreement",
         "kind": "schema",
-        "name": "hotelAgreement"
+        "name": "hotelAgreement",
+        "type": "object"
       },
       {
+        "description": "Essential information on an agreement with a hotel.",
         "id": "schema:hotelAgreementStub",
         "kind": "schema",
-        "name": "hotelAgreementStub"
+        "name": "hotelAgreementStub",
+        "type": "object"
       },
       {
+        "description": "Full details on a hotel, including its room types and available rates",
         "id": "schema:hotelFullDetail",
         "kind": "schema",
-        "name": "hotelFullDetail"
+        "name": "hotelFullDetail",
+        "type": "object"
       },
       {
+        "description": "Essential information on a hotel returned as part of other resources, linking to the full resource within its `href` field.",
         "id": "schema:hotelStub",
         "kind": "schema",
-        "name": "hotelStub"
+        "name": "hotelStub",
+        "type": "object"
       },
       {
         "id": "schema:image",
         "kind": "schema",
-        "name": "image"
+        "name": "image",
+        "type": "object"
       },
       {
+        "description": "Precise location on a map (using WGS 84 longitude and latitude notation)",
         "id": "schema:location",
         "kind": "schema",
-        "name": "location"
+        "name": "location",
+        "type": "object"
       },
       {
+        "description": "An amount of money in the specified currency (used in the context of prices, fees, refunds etc.)",
         "id": "schema:money",
         "kind": "schema",
-        "name": "money"
+        "name": "money",
+        "type": "object"
       },
       {
+        "description": "Notes about this booked room.",
         "id": "schema:notesBookedRoom",
         "kind": "schema",
-        "name": "notesBookedRoom"
+        "name": "notesBookedRoom",
+        "type": "object"
       },
       {
+        "description": "Notes allow sellers to their guests to communicate relevant information to the hotel.",
         "id": "schema:notesBooking",
         "kind": "schema",
-        "name": "notesBooking"
+        "name": "notesBooking",
+        "type": "object"
       },
       {
+        "description": "Information that helps paginate through lists of resources.",
         "id": "schema:pagination",
         "kind": "schema",
-        "name": "pagination"
+        "name": "pagination",
+        "type": "object"
       },
       {
+        "description": "Information on a person and their contact details.",
         "id": "schema:personInfo",
         "kind": "schema",
-        "name": "personInfo"
+        "name": "personInfo",
+        "type": "object"
       },
       {
+        "description": "Information on the price of the room, other components of the room (such as breakfast, lunch or a welcome drink) and the cancellation policies that apply.",
         "id": "schema:rate",
         "kind": "schema",
-        "name": "rate"
+        "name": "rate",
+        "type": "object"
       },
       {
         "id": "schema:rateAdjustment",
         "kind": "schema",
-        "name": "rateAdjustment"
+        "name": "rateAdjustment",
+        "type": "object"
       },
       {
+        "description": "Product or service offered as part of a rate in addition to accommodation in the room.",
         "id": "schema:rateComponent",
         "kind": "schema",
-        "name": "rateComponent"
+        "name": "rateComponent",
+        "type": "object"
       },
       {
+        "description": "Rate plan encapsulates rates given a set of internal conditions like cancellation policy or meal plan.",
         "id": "schema:ratePlan",
         "kind": "schema",
-        "name": "ratePlan"
+        "name": "ratePlan",
+        "type": "object"
       },
       {
         "id": "schema:ratePlanRate",
         "kind": "schema",
-        "name": "ratePlanRate"
+        "name": "ratePlanRate",
+        "type": "object"
       },
       {
+        "description": "Restrictions that apply to this rate plan.",
         "id": "schema:ratePlanRestrictions",
         "kind": "schema",
-        "name": "ratePlanRestrictions"
+        "name": "ratePlanRestrictions",
+        "type": "object"
       },
       {
         "id": "schema:ratePlanRoom",
         "kind": "schema",
-        "name": "ratePlanRoom"
+        "name": "ratePlanRoom",
+        "type": "object"
       },
       {
         "id": "schema:ratePlanRoomType",
         "kind": "schema",
-        "name": "ratePlanRoomType"
+        "name": "ratePlanRoomType",
+        "type": "object"
       },
       {
         "id": "schema:ratesPerDate",
         "kind": "schema",
-        "name": "ratesPerDate"
+        "name": "ratesPerDate",
+        "type": "object"
       },
       {
+        "description": "Bookable category of bookable rooms within a hotel",
         "id": "schema:roomType",
         "kind": "schema",
-        "name": "roomType"
+        "name": "roomType",
+        "type": "object"
       },
       {
+        "description": "Details of a tax or fee (included or excluded in a rate).",
         "id": "schema:taxOrFee",
         "kind": "schema",
-        "name": "taxOrFee"
+        "name": "taxOrFee",
+        "type": "object"
       },
       {
+        "description": "A time range.",
         "id": "schema:timeRange",
         "kind": "schema",
-        "name": "timeRange"
+        "name": "timeRange",
+        "type": "object"
       },
       {
+        "description": "Request body for update contact booking",
         "id": "schema:updateBookingContactRequest",
         "kind": "schema",
-        "name": "updateBookingContactRequest"
+        "name": "updateBookingContactRequest",
+        "type": "object"
       },
       {
         "id": "schema:updateBookingRequest",
         "kind": "schema",
-        "name": "updateBookingRequest"
+        "name": "updateBookingRequest",
+        "type": "bookingRequest|object"
       },
       {
         "id": "schema:updateBookingRequestWithRatePlans",
         "kind": "schema",
-        "name": "updateBookingRequestWithRatePlans"
+        "name": "updateBookingRequestWithRatePlans",
+        "type": "bookingRequestWithRatePlans|object"
       },
       {
+        "description": "The timestamp of when the booking was last updated",
         "id": "schema:updateBookingVersionAtTimestamp",
         "kind": "schema",
-        "name": "updateBookingVersionAtTimestamp"
+        "name": "updateBookingVersionAtTimestamp",
+        "type": "string:date-time"
       },
       {
         "id": "schema:validationError",
         "kind": "schema",
-        "name": "validationError"
+        "name": "validationError",
+        "type": "genericError|object"
       },
       {
+        "description": "Describes the validation that failed.",
         "id": "schema:validationResult",
         "kind": "schema",
-        "name": "validationResult"
+        "name": "validationResult",
+        "type": "object"
       }
     ]
   },

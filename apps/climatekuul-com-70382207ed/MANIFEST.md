@@ -10,7 +10,7 @@ catalog: "drafts"
 
 | | |
 | --- | --- |
-| Signed bundle | `edd03a12d6ceb8522e24cdc59da1a8f7b73658d4a0c0a44b773b8465cf26e1f9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -33,31 +33,33 @@ catalog: "drafts"
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/airtravelCoordinates` | airtravelCoordinates | airtravelCoordinates |
-| PATCH | `/airtravelCoordinates/confirmCarbonOffset` | confirmCarbonOffset4 | confirmCarbonOffset |
-| PATCH | `/airtravelCoordinates/confirmPayment` | confirmPayment4 | confirmPayment |
-| PATCH | `/airtravelCoordinates/confirmPlanting` | confirmsPlanting4 | confirmPlanting |
-| PATCH | `/airtravelCoordinates/confirmTransaction` | confirmPaymentOfTransaction4 | confirmTransaction |
-| POST | `/airtravelMultileg` | airtravelMultileg | airtravelMultileg |
-| PATCH | `/airtravelMultileg/confirmCarbonOffset` | confirmCarbonOffset3 | confirmCarbonOffset |
-| PATCH | `/airtravelMultileg/confirmPayment` | confirmPayment3 | confirmPayment |
-| PATCH | `/airtravelMultileg/confirmPlanting` | confirmsPlanting3 | confirmPlanting |
-| PATCH | `/airtravelMultileg/confirmTransaction` | confirmPaymentOfTransaction3 | confirmTransaction |
-| POST | `/ecommerceDelivery` | ecommerceDelivery | ecommerceDelivery |
-| PATCH | `/ecommerceDelivery/confirmCarbonOffset` | confirmCarbonOffset1 | confirmCarbonOffset |
-| PATCH | `/ecommerceDelivery/confirmPayment` | confirmPayment1 | confirmPayment |
-| PATCH | `/ecommerceDelivery/confirmPlanting` | confirmsPlanting2 | confirmPlanting |
-| PATCH | `/ecommerceDelivery/confirmTransaction` | confirmPaymentOfTransaction1 | confirmTransaction |
-| POST | `/requestApiKey` | requestApiKey | requestApiKey |
-| POST | `/roadDistance` | roadDistance | RoadDistance |
-| PATCH | `/roadDistance/confirmCarbonOffset` | confirmCarbonOffset5 | confirmCarbonOffset |
-| PATCH | `/roadDistance/confirmPayment` | confirmPayment5 | confirmPayment |
-| PATCH | `/roadDistance/confirmPlanting` | confirmsPlanting5 | confirmPlanting |
-| PATCH | `/roadDistance/confirmTransaction` | confirmPaymentOfTransaction5 | confirmTransaction |
-| POST | `/urbanDelivery` | urbanDelivery | urbanDelivery |
-| PATCH | `/urbanDelivery/confirmCarbonOffset` | confirmCarbonOffset | confirmCarbonOffset |
-| PATCH | `/urbanDelivery/confirmPayment` | confirmPayment | confirmPayment |
-| PATCH | `/urbanDelivery/confirmPlanting` | confirmsPlanting | confirmPlanting |
-| PATCH | `/urbanDelivery/confirmTransaction` | confirmPaymentOfTransaction | confirmTransaction |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/airtravelCoordinates` | airtravelCoordinates | `Content-Type`*, body: object | — |  | airtravelCoordinates |
+| PATCH | `/airtravelCoordinates/confirmCarbonOffset` | confirmCarbonOffset4 | body: object | — |  | confirmCarbonOffset |
+| PATCH | `/airtravelCoordinates/confirmPayment` | confirmPayment4 | body: object | — |  | confirmPayment |
+| PATCH | `/airtravelCoordinates/confirmPlanting` | confirmsPlanting4 | body: object | — |  | confirmPlanting |
+| PATCH | `/airtravelCoordinates/confirmTransaction` | confirmPaymentOfTransaction4 | body: object | — |  | confirmTransaction |
+| POST | `/airtravelMultileg` | airtravelMultileg | body*: airtravelMultilegRequest | — |  | airtravelMultileg |
+| PATCH | `/airtravelMultileg/confirmCarbonOffset` | confirmCarbonOffset3 | body: object | — |  | confirmCarbonOffset |
+| PATCH | `/airtravelMultileg/confirmPayment` | confirmPayment3 | body: object | — |  | confirmPayment |
+| PATCH | `/airtravelMultileg/confirmPlanting` | confirmsPlanting3 | body: object | — |  | confirmPlanting |
+| PATCH | `/airtravelMultileg/confirmTransaction` | confirmPaymentOfTransaction3 | body: object | — |  | confirmTransaction |
+| POST | `/ecommerceDelivery` | ecommerceDelivery | `Content-Type`*, body: object | — |  | ecommerceDelivery |
+| PATCH | `/ecommerceDelivery/confirmCarbonOffset` | confirmCarbonOffset1 | body: object | — |  | confirmCarbonOffset |
+| PATCH | `/ecommerceDelivery/confirmPayment` | confirmPayment1 | body: object | — |  | confirmPayment |
+| PATCH | `/ecommerceDelivery/confirmPlanting` | confirmsPlanting2 | body: object | — |  | confirmPlanting |
+| PATCH | `/ecommerceDelivery/confirmTransaction` | confirmPaymentOfTransaction1 | body: object | — |  | confirmTransaction |
+| POST | `/requestApiKey` | requestApiKey | body: object | — |  | requestApiKey |
+| POST | `/roadDistance` | roadDistance | body: object | — |  | RoadDistance |
+| PATCH | `/roadDistance/confirmCarbonOffset` | confirmCarbonOffset5 | body: object | — |  | confirmCarbonOffset |
+| PATCH | `/roadDistance/confirmPayment` | confirmPayment5 | body: object | — |  | confirmPayment |
+| PATCH | `/roadDistance/confirmPlanting` | confirmsPlanting5 | body: object | — |  | confirmPlanting |
+| PATCH | `/roadDistance/confirmTransaction` | confirmPaymentOfTransaction5 | body: object | — |  | confirmTransaction |
+| POST | `/urbanDelivery` | urbanDelivery | body: object | — |  | urbanDelivery |
+| PATCH | `/urbanDelivery/confirmCarbonOffset` | confirmCarbonOffset | body: object | — |  | confirmCarbonOffset |
+| PATCH | `/urbanDelivery/confirmPayment` | confirmPayment | body: object | — |  | confirmPayment |
+| PATCH | `/urbanDelivery/confirmPlanting` | confirmsPlanting | body: object | — |  | confirmPlanting |
+| PATCH | `/urbanDelivery/confirmTransaction` | confirmPaymentOfTransaction | body: object | — |  | confirmTransaction |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_onsched_com_img_apple-touch-ico
 
 | | |
 | --- | --- |
-| Signed bundle | `b9bfd2dd1c0b80fadccb43ed8118e2a7e190c3d0d0b2b4574c6db6525b634d1e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,43 +34,45 @@ logo: "https://api.apis.guru/v2/cache/logo/https_onsched_com_img_apple-touch-ico
 
 70 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/consumer/v1/appointments` | get /consumer/v1/appointments | Get Appointments |
-| POST | `/consumer/v1/appointments` | post /consumer/v1/appointments | Create Appointment |
-| GET | `/consumer/v1/appointments/bookingfields` | get /consumer/v1/appointments/bookingfields | Get Custom Fields Labels |
-| GET | `/consumer/v1/appointments/customfields` | get /consumer/v1/appointments/customfields | Get Custom Fields List |
-| DELETE | `/consumer/v1/appointments/{id}` | delete /consumer/v1/appointments/{id} | Delete Appointment |
-| GET | `/consumer/v1/appointments/{id}` | get /consumer/v1/appointments/{id} | Get Appointment |
-| PUT | `/consumer/v1/appointments/{id}/book` | put /consumer/v1/appointments/{id}/book | Book Appointment |
-| PUT | `/consumer/v1/appointments/{id}/cancel` | put /consumer/v1/appointments/{id}/cancel | Cancel Appointment |
-| PUT | `/consumer/v1/appointments/{id}/confirm` | put /consumer/v1/appointments/{id}/confirm | Confirm Appointment |
-| PUT | `/consumer/v1/appointments/{id}/noshow` | put /consumer/v1/appointments/{id}/noshow | Set NoShow Status |
-| PUT | `/consumer/v1/appointments/{id}/reschedule` | put /consumer/v1/appointments/{id}/reschedule | Reschedule Appointment |
-| PUT | `/consumer/v1/appointments/{id}/reserve` | put /consumer/v1/appointments/{id}/reserve | Reserve Appointment |
-| GET | `/consumer/v1/availability/{serviceId}/{startDate}/{endDate}` | get /consumer/v1/availability/{serviceId}/{startDate}/{endDate} | Get Available Times |
-| GET | `/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days` | get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days | Get Available Days |
-| GET | `/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable` | get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable | Get Unavailable Times |
-| GET | `/consumer/v1/customers` | get /consumer/v1/customers | List Customers |
-| POST | `/consumer/v1/customers` | post /consumer/v1/customers | Create Customer |
-| GET | `/consumer/v1/customers/bookingfields` | get /consumer/v1/customers/bookingfields | Get Customer Booking Fields |
-| GET | `/consumer/v1/customers/countries` | get /consumer/v1/customers/countries | List Country Codes |
-| GET | `/consumer/v1/customers/customfields` | get /consumer/v1/customers/customfields | Get Customer Custom Fields |
-| GET | `/consumer/v1/customers/states` | get /consumer/v1/customers/states | List Country States |
-| DELETE | `/consumer/v1/customers/{id}` | delete /consumer/v1/customers/{id} | Delete Customer |
-| GET | `/consumer/v1/customers/{id}` | get /consumer/v1/customers/{id} | Get Customer |
-| PUT | `/consumer/v1/customers/{id}` | put /consumer/v1/customers/{id} | Update Customer |
-| GET | `/consumer/v1/locations` | get /consumer/v1/locations | List Locations |
-| GET | `/consumer/v1/locations/{id}` | get /consumer/v1/locations/{id} | Get Location |
-| GET | `/consumer/v1/resourcegroups` | get /consumer/v1/resourcegroups | List Resource Groups |
-| GET | `/consumer/v1/resourcegroups/{id}` | get /consumer/v1/resourcegroups/{id} | Get Resource Group |
-| GET | `/consumer/v1/resources` | get /consumer/v1/resources | List Resources |
-| GET | `/consumer/v1/resources/{id}` | get /consumer/v1/resources/{id} | Get Resource |
-| GET | `/consumer/v1/resources/{id}/services` | get /consumer/v1/resources/{id}/services | Get Resource Linked Services |
-| GET | `/consumer/v1/servicegroups` | get /consumer/v1/servicegroups | List Service Groups |
-| GET | `/consumer/v1/servicegroups/{id}` | get /consumer/v1/servicegroups/{id} | Get Service Group |
-| GET | `/consumer/v1/services` | get /consumer/v1/services | List Services |
-| GET | `/consumer/v1/services/allocations/{id}` | get /consumer/v1/services/allocations/{id} | Get Service Allocation |
-| GET | `/consumer/v1/services/{id}` | get /consumer/v1/services/{id} | Get Service |
-| GET | `/consumer/v1/services/{id}/allocations` | get /consumer/v1/services/{id}/allocations | List Service Allocations |
-| GET | `/consumer/v1/services/{id}/resources` | get /consumer/v1/services/{id}/resources | List Resources for Service |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/consumer/v1/appointments` | get /consumer/v1/appointments | `locationId`, `email`, `lastname`, `phone`, `serviceId`, `calendarId`, `resourceId`, `customerId`, `serviceAllocationId`, `startDate`, `endDate`, `status`, `bookedBy`, `offset`, `limit` | AppointmentListViewModel | yes | Get Appointments |
+| POST | `/consumer/v1/appointments` | post /consumer/v1/appointments | `completeBooking`, body: AppointmentInitialModel | AppointmentInitialViewModel |  | Create Appointment |
+| GET | `/consumer/v1/appointments/bookingfields` | get /consumer/v1/appointments/bookingfields | `locationId` | BookingFieldListViewModel | yes | Get Custom Fields Labels |
+| GET | `/consumer/v1/appointments/customfields` | get /consumer/v1/appointments/customfields | `locationId` | CustomFieldDefinitionListViewModel | yes | Get Custom Fields List |
+| GET | `/consumer/v1/appointments/{id}` | get /consumer/v1/appointments/{id} | `id`* | AppointmentViewModel | yes | Get Appointment |
+| DELETE | `/consumer/v1/appointments/{id}` | delete /consumer/v1/appointments/{id} | `id`* | AppointmentViewModel |  | Delete Appointment |
+| PUT | `/consumer/v1/appointments/{id}/book` | put /consumer/v1/appointments/{id}/book | `id`*, body: AppointmentBookModel | AppointmentViewModel |  | Book Appointment |
+| PUT | `/consumer/v1/appointments/{id}/cancel` | put /consumer/v1/appointments/{id}/cancel | `id`* | AppointmentViewModel |  | Cancel Appointment |
+| PUT | `/consumer/v1/appointments/{id}/confirm` | put /consumer/v1/appointments/{id}/confirm | `id`*, `undo` | — |  | Confirm Appointment |
+| PUT | `/consumer/v1/appointments/{id}/noshow` | put /consumer/v1/appointments/{id}/noshow | `id`*, body: AppointmentNoShowModel | — |  | Set NoShow Status |
+| PUT | `/consumer/v1/appointments/{id}/reschedule` | put /consumer/v1/appointments/{id}/reschedule | `id`*, body: AppointmentRescheduleModel | AppointmentViewModel |  | Reschedule Appointment |
+| PUT | `/consumer/v1/appointments/{id}/reserve` | put /consumer/v1/appointments/{id}/reserve | `id`*, `sendNotifications`, body: AppointmentReserveModel | — |  | Reserve Appointment |
+| GET | `/consumer/v1/availability/{serviceId}/{startDate}/{endDate}` | get /consumer/v1/availability/{serviceId}/{startDate}/{endDate} | `serviceId`*, `startDate`*, `endDate`*, `startTime`, `endTime`, `locationId`, `resourceId`, `resourceGroupId`, `resourceIds`, `roundRobin`, `duration`, `interval`, `timezoneName`, `tzOffset`, `destination`, `dayAvailabilityStartDate`, `dayAvailability`, `firstDayAvailable` | AvailabilityViewModel | yes | Get Available Times |
+| GET | `/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days` | get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days | `serviceId`*, `startDate`*, `endDate`*, `locationId`, `resourceId`, `tzOffset` | AvailabilityDayViewModel | yes | Get Available Days |
+| GET | `/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable` | get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable | `serviceId`*, `startDate`*, `endDate`*, `locationId`, `resourceId`, `duration`, `tzOffset`, `skipTimePastUnavailability` | UnavailableTimeListViewModel | yes | Get Unavailable Times |
+| GET | `/consumer/v1/customers` | get /consumer/v1/customers | `locationId`, `groupId`, `email`, `lastname`, `deleted`, `offset`, `limit` | CustomerListViewModel | yes | List Customers |
+| POST | `/consumer/v1/customers` | post /consumer/v1/customers | body: CustomerInputModel | CustomerViewModel |  | Create Customer |
+| GET | `/consumer/v1/customers/bookingfields` | get /consumer/v1/customers/bookingfields | `locationId` | BookingFieldListViewModel | yes | Get Customer Booking Fields |
+| GET | `/consumer/v1/customers/countries` | get /consumer/v1/customers/countries | — | CountryViewModel[] | yes | List Country Codes |
+| GET | `/consumer/v1/customers/customfields` | get /consumer/v1/customers/customfields | `locationId`, `leadQuestions` | CustomFieldDefinitionListViewModel | yes | Get Customer Custom Fields |
+| GET | `/consumer/v1/customers/states` | get /consumer/v1/customers/states | `country` | StateViewModel[] | yes | List Country States |
+| GET | `/consumer/v1/customers/{id}` | get /consumer/v1/customers/{id} | `id`* | CustomerViewModel | yes | Get Customer |
+| PUT | `/consumer/v1/customers/{id}` | put /consumer/v1/customers/{id} | `id`*, body: CustomerUpdateModel | — |  | Update Customer |
+| DELETE | `/consumer/v1/customers/{id}` | delete /consumer/v1/customers/{id} | `id`* | — |  | Delete Customer |
+| GET | `/consumer/v1/locations` | get /consumer/v1/locations | `name`, `nearestTo`, `proximity`, `units`, `serviceId`, `friendlyId`, `regionId`, `ignorePrimary`, `offset`, `limit` | LocationListViewModel | yes | List Locations |
+| GET | `/consumer/v1/locations/{id}` | get /consumer/v1/locations/{id} | `id`* | LocationViewModel | yes | Get Location |
+| GET | `/consumer/v1/resourcegroups` | get /consumer/v1/resourcegroups | `locationId`, `deleted`, `offset`, `limit` | ResourceGroupListViewModel | yes | List Resource Groups |
+| GET | `/consumer/v1/resourcegroups/{id}` | get /consumer/v1/resourcegroups/{id} | `id`* | ResourceGroupViewModel | yes | Get Resource Group |
+| GET | `/consumer/v1/resources` | get /consumer/v1/resources | `locationId`, `resourceGroupId`, `email`, `name`, `sortOrder`, `offset`, `limit` | ResourceListViewModel | yes | List Resources |
+| GET | `/consumer/v1/resources/{id}` | get /consumer/v1/resources/{id} | `id`* | ResourceViewModel | yes | Get Resource |
+| GET | `/consumer/v1/resources/{id}/services` | get /consumer/v1/resources/{id}/services | `id`*, `offset`, `limit` | ResourceServiceListViewModel | yes | Get Resource Linked Services |
+| GET | `/consumer/v1/servicegroups` | get /consumer/v1/servicegroups | `locationId`, `offset`, `limit` | ServiceGroupListViewModel | yes | List Service Groups |
+| GET | `/consumer/v1/servicegroups/{id}` | get /consumer/v1/servicegroups/{id} | `id`* | ServiceGroupViewModel | yes | Get Service Group |
+| GET | `/consumer/v1/services` | get /consumer/v1/services | `locationId`, `serviceGroupId`, `defaultService`, `allLocations`, `scope`, `name`, `serviceId`, `offset`, `limit`, `sortOrder`, `sortDescending` | ServiceListViewModel | yes | List Services |
+| GET | `/consumer/v1/services/allocations/{id}` | get /consumer/v1/services/allocations/{id} | `id`* | ServiceAllocationViewModel | yes | Get Service Allocation |
+| GET | `/consumer/v1/services/{id}` | get /consumer/v1/services/{id} | `id`* | ServiceViewModel | yes | Get Service |
+| GET | `/consumer/v1/services/{id}/allocations` | get /consumer/v1/services/{id}/allocations | `id`*, `locationId`, `resourceId`, `startDate`, `endDate`, `offset`, `limit` | ServiceAllocationListViewModel | yes | List Service Allocations |
+| GET | `/consumer/v1/services/{id}/resources` | get /consumer/v1/services/{id}/resources | `id`*, `locationId`, `offset`, `limit` | ResourceListViewModel | yes | List Resources for Service |

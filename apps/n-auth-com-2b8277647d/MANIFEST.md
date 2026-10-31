@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_nauthsec_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `a4c9c8b75fe5ea1621bcb72874f269614719ff4fc8b940d83595a2b145886caa` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,60 +34,62 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_nauthsec_profile_im
 
 19 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/apikeys/` | getApiKeys | Get all API keys. |
-| POST | `/apikeys/` | createApiKey | Create a new API key. |
-| DELETE | `/attributes/` | deleteGlobalAttributes | Delete all global attributes |
-| GET | `/attributes/` | getGlobalAttributes | Get all global attributes |
-| POST | `/attributes/` | setGlobalAttributes | Set all global attributes |
-| PUT | `/attributes/` | updateGlobalAttributes | Update specified global attributes |
-| DELETE | `/attributes/{attributekey}` | deleteGlobalAttribute | Delete specific global attribute |
-| GET | `/servers/` | getServers | List all your servers |
-| POST | `/servers/` | createServer | Create a new server |
-| GET | `/servers/{serverid}/` | getServer | Configuration of a specific server |
-| PUT | `/servers/{serverid}/` | updateServer | Update configuration of a specific server |
-| GET | `/servers/{serverid}/accounts/` | getAllAccounts | Get all accounts |
-| DELETE | `/servers/{serverid}/accounts/{accountid}/` | deleteAccount | Delete specific account |
-| GET | `/servers/{serverid}/accounts/{accountid}/` | getAccount | Get specific account |
-| PUT | `/servers/{serverid}/accounts/{accountid}/` | updateAccount | Update specific account |
-| POST | `/servers/{serverid}/accounts/{accountid}/provokelogin` | provokeLoginOnAccount | Push a login confirmation to the user's app |
-| PUT | `/servers/{serverid}/accounts/{accountid}/user` | updateAccountUser | Update user of the given account. |
-| DELETE | `/servers/{serverid}/attributes/` | deleteServerAttributes | Delete all attributes of a specific server |
-| GET | `/servers/{serverid}/attributes/` | getServerAttributes | Get all attributes of a specific server |
-| POST | `/servers/{serverid}/attributes/` | setServerAttributes | Set all attributes of a specific server |
-| PUT | `/servers/{serverid}/attributes/` | updateServerAttributes | Update specified attributes of a specific server |
-| DELETE | `/servers/{serverid}/attributes/{attributekey}` | deleteServerAttribute | Delete specific attribute of a specific server |
-| GET | `/servers/{serverid}/permissions/` | getAllPermissions | Get all permissions for the specified server. |
-| DELETE | `/servers/{serverid}/permissions/{roleid}` | revokePermissions | Revoke all permissions for the specified server and role. |
-| GET | `/servers/{serverid}/permissions/{roleid}` | getPermissions | Get all permissions for the specified server and role. |
-| POST | `/servers/{serverid}/permissions/{roleid}` | grantPermissions | Set new permissions for the specified role on a server |
-| DELETE | `/servers/{serverid}/privilegedattributes/` | deleteServerPrivilegedAttributes | Delete all privileged attributes of a specific server |
-| GET | `/servers/{serverid}/privilegedattributes/` | getServerPrivilegedAttributes | Get all privileged attributes of a specific server |
-| POST | `/servers/{serverid}/privilegedattributes/` | setServerPrivilegedAttributes | Set all privileged attributes of a specific server |
-| PUT | `/servers/{serverid}/privilegedattributes/` | updateServerPrivilegedAttributes | Update privileged specified attributes of a specific server |
-| DELETE | `/servers/{serverid}/privilegedattributes/{attributekey}` | deleteServerPrivilegedAttribute | Delete specific privileged attribute of a specific server |
-| GET | `/servers/{serverid}/sessions/` | getSession | Check if the user is logged in |
-| GET | `/servers/{serverid}/sessions/html/enrol` | getHtmlEnrol | Generate HTML to enrol a new user |
-| GET | `/servers/{serverid}/sessions/html/footer` | getHtmlFooter | Generic HTML to add to footer. Required for login/logout/enrol functionality. |
-| GET | `/servers/{serverid}/sessions/html/login` | getHtmlLogin | Generate HTML for the login block |
-| POST | `/servers/{serverid}/sessions/logout` | logout | Force a logout on the given session |
-| POST | `/servers/{serverid}/sessions/provokelogin` | provokeLogin | Push a login confirmation to the user's app |
-| GET | `/servers/{serverid}/sessions/qr/enrol` | getQrEnrol | Generate data for an enrol qr code |
-| GET | `/servers/{serverid}/sessions/qr/login` | getQrLogin | Generate data for a login qr code |
-| POST | `/servers/{serverid}/sessions/registeruser` | registerUser | Register a userid for the currently logged in account. |
-| POST | `/servers/{serverid}/sessions/transactions` | createTransaction | Create a transaction to be approved within the current session. |
-| GET | `/servers/{serverid}/transactions/{transactionid}` | getTransactionResult | Get transaction result for a given transaction. |
-| GET | `/servers/{serverid}/users/` | getUsers | Get all users |
-| DELETE | `/servers/{serverid}/users/{userid}/` | deleteUser | Delete a specific user |
-| DELETE | `/servers/{serverid}/users/{userid}/accounts` | deleteUserAccounts | Delete all accounts of a specific user |
-| GET | `/servers/{serverid}/users/{userid}/accounts` | getUser | Get all accounts of a specific user |
-| DELETE | `/servers/{serverid}/users/{userid}/attributes/` | deleteUserAttributes | Delete all attributes of a specific user |
-| GET | `/servers/{serverid}/users/{userid}/attributes/` | getUserAttributes | Get all attributes of a specific user |
-| POST | `/servers/{serverid}/users/{userid}/attributes/` | setUserAttributes | Set all attributes of a specific user |
-| PUT | `/servers/{serverid}/users/{userid}/attributes/` | updateUserAttributes | Update specified attributes of a specific user |
-| DELETE | `/servers/{serverid}/users/{userid}/attributes/{attributekey}` | deleteUserAttribute | Delete specific attribute of a specific user |
-| POST | `/servers/{serverid}/users/{userid}/provokelogin` | provokeLoginOnUser | Push a login confirmation to the user's app |
-| GET | `/servers/{serverid}/users/{userid}/role/` | getUserRole | Get role for a specific user. |
-| POST | `/servers/{serverid}/users/{userid}/role/` | getOrCreateUserRole | Get or create a role for a specific user. |
-| GET | `/servers/{serverid}/vash` | getServerVash | Visual hash of this server |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/apikeys/` | getApiKeys | — | ApiKeys | yes | Get all API keys. |
+| POST | `/apikeys/` | createApiKey | `description`* | ApiKey |  | Create a new API key. |
+| GET | `/attributes/` | getGlobalAttributes | — | string | yes | Get all global attributes |
+| PUT | `/attributes/` | updateGlobalAttributes | body*: object | — |  | Update specified global attributes |
+| POST | `/attributes/` | setGlobalAttributes | body*: object | — |  | Set all global attributes |
+| DELETE | `/attributes/` | deleteGlobalAttributes | — | — |  | Delete all global attributes |
+| DELETE | `/attributes/{attributekey}` | deleteGlobalAttribute | `attributekey`* | — |  | Delete specific global attribute |
+| GET | `/servers/` | getServers | `limit`, `marker` | Servers | yes | List all your servers |
+| POST | `/servers/` | createServer | body*: Server | Server |  | Create a new server |
+| GET | `/servers/{serverid}/` | getServer | `serverid`* | Server | yes | Configuration of a specific server |
+| PUT | `/servers/{serverid}/` | updateServer | `serverid`*, body*: Server | Server |  | Update configuration of a specific server |
+| GET | `/servers/{serverid}/accounts/` | getAllAccounts | `serverid`*, `filter`, `limit`, `marker`, `sort` | Accounts | yes | Get all accounts |
+| GET | `/servers/{serverid}/accounts/{accountid}/` | getAccount | `serverid`*, `accountid`* | Account | yes | Get specific account |
+| PUT | `/servers/{serverid}/accounts/{accountid}/` | updateAccount | `serverid`*, `accountid`*, `blocked`* | Account |  | Update specific account |
+| DELETE | `/servers/{serverid}/accounts/{accountid}/` | deleteAccount | `serverid`*, `accountid`* | — |  | Delete specific account |
+| POST | `/servers/{serverid}/accounts/{accountid}/provokelogin` | provokeLoginOnAccount | `serverid`*, `X-nonce`*, `accountid`*, body: UserContext | — |  | Push a login confirmation to the user's app |
+| PUT | `/servers/{serverid}/accounts/{accountid}/user` | updateAccountUser | `serverid`*, `accountid`*, `userid`* | Account |  | Update user of the given account. |
+| GET | `/servers/{serverid}/attributes/` | getServerAttributes | `serverid`* | string | yes | Get all attributes of a specific server |
+| PUT | `/servers/{serverid}/attributes/` | updateServerAttributes | `serverid`*, body*: object | — |  | Update specified attributes of a specific server |
+| POST | `/servers/{serverid}/attributes/` | setServerAttributes | `serverid`*, body*: object | — |  | Set all attributes of a specific server |
+| DELETE | `/servers/{serverid}/attributes/` | deleteServerAttributes | `serverid`* | — |  | Delete all attributes of a specific server |
+| DELETE | `/servers/{serverid}/attributes/{attributekey}` | deleteServerAttribute | `serverid`*, `attributekey`* | — |  | Delete specific attribute of a specific server |
+| GET | `/servers/{serverid}/permissions/` | getAllPermissions | `serverid`* | Permissions | yes | Get all permissions for the specified server. |
+| GET | `/servers/{serverid}/permissions/{roleid}` | getPermissions | `serverid`*, `roleid`* | Permissions | yes | Get all permissions for the specified server and role. |
+| POST | `/servers/{serverid}/permissions/{roleid}` | grantPermissions | `serverid`*, `roleid`*, body*: string[] | — |  | Set new permissions for the specified role on a server |
+| DELETE | `/servers/{serverid}/permissions/{roleid}` | revokePermissions | `serverid`*, `roleid`* | — |  | Revoke all permissions for the specified server and role. |
+| GET | `/servers/{serverid}/privilegedattributes/` | getServerPrivilegedAttributes | `serverid`* | string | yes | Get all privileged attributes of a specific server |
+| PUT | `/servers/{serverid}/privilegedattributes/` | updateServerPrivilegedAttributes | `serverid`*, body*: object | — |  | Update privileged specified attributes of a specific server |
+| POST | `/servers/{serverid}/privilegedattributes/` | setServerPrivilegedAttributes | `serverid`*, body*: object | — |  | Set all privileged attributes of a specific server |
+| DELETE | `/servers/{serverid}/privilegedattributes/` | deleteServerPrivilegedAttributes | `serverid`* | — |  | Delete all privileged attributes of a specific server |
+| DELETE | `/servers/{serverid}/privilegedattributes/{attributekey}` | deleteServerPrivilegedAttribute | `serverid`*, `attributekey`* | — |  | Delete specific privileged attribute of a specific server |
+| GET | `/servers/{serverid}/sessions/` | getSession | `serverid`*, `X-nonce`* | LoginStatus | yes | Check if the user is logged in |
+| GET | `/servers/{serverid}/sessions/html/enrol` | getHtmlEnrol | `serverid`*, `X-nonce`*, `name`, `userid` | string | yes | Generate HTML to enrol a new user |
+| GET | `/servers/{serverid}/sessions/html/footer` | getHtmlFooter | `serverid`*, `X-nonce`*, body: HtmlFooterBody | string | yes | Generic HTML to add to footer. Required for login/logout/enrol functionality. |
+| GET | `/servers/{serverid}/sessions/html/login` | getHtmlLogin | `serverid`*, `X-nonce`*, body: UserContext | string | yes | Generate HTML for the login block |
+| POST | `/servers/{serverid}/sessions/logout` | logout | `serverid`*, `X-nonce`* | — |  | Force a logout on the given session |
+| POST | `/servers/{serverid}/sessions/provokelogin` | provokeLogin | `serverid`*, `X-nonce`*, body: UserContext | — |  | Push a login confirmation to the user's app |
+| GET | `/servers/{serverid}/sessions/qr/enrol` | getQrEnrol | `serverid`*, `X-nonce`*, `name`*, `userid`, `img`, `s` | file | yes | Generate data for an enrol qr code |
+| GET | `/servers/{serverid}/sessions/qr/login` | getQrLogin | `serverid`*, `X-nonce`*, `img`, `s`, body: UserContext | file | yes | Generate data for a login qr code |
+| POST | `/servers/{serverid}/sessions/registeruser` | registerUser | `serverid`*, `X-nonce`*, `userid`* | — |  | Register a userid for the currently logged in account. |
+| POST | `/servers/{serverid}/sessions/transactions` | createTransaction | `serverid`*, `X-nonce`*, body*: Transaction | TransactionId |  | Create a transaction to be approved within the current session. |
+| GET | `/servers/{serverid}/transactions/{transactionid}` | getTransactionResult | `serverid`*, `transactionid`* | TransactionResult | yes | Get transaction result for a given transaction. |
+| GET | `/servers/{serverid}/users/` | getUsers | `serverid`*, `filter`, `search`, `limit`, `marker`, `sort` | Users | yes | Get all users |
+| DELETE | `/servers/{serverid}/users/{userid}/` | deleteUser | `serverid`*, `userid`* | — |  | Delete a specific user |
+| GET | `/servers/{serverid}/users/{userid}/accounts` | getUser | `serverid`*, `userid`*, `limit`, `marker`, `sort` | Accounts | yes | Get all accounts of a specific user |
+| DELETE | `/servers/{serverid}/users/{userid}/accounts` | deleteUserAccounts | `serverid`*, `userid`* | — |  | Delete all accounts of a specific user |
+| GET | `/servers/{serverid}/users/{userid}/attributes/` | getUserAttributes | `serverid`*, `userid`* | string | yes | Get all attributes of a specific user |
+| PUT | `/servers/{serverid}/users/{userid}/attributes/` | updateUserAttributes | `serverid`*, `userid`*, body*: object | — |  | Update specified attributes of a specific user |
+| POST | `/servers/{serverid}/users/{userid}/attributes/` | setUserAttributes | `serverid`*, `userid`*, body*: object | — |  | Set all attributes of a specific user |
+| DELETE | `/servers/{serverid}/users/{userid}/attributes/` | deleteUserAttributes | `serverid`*, `userid`* | — |  | Delete all attributes of a specific user |
+| DELETE | `/servers/{serverid}/users/{userid}/attributes/{attributekey}` | deleteUserAttribute | `serverid`*, `userid`*, `attributekey`* | — |  | Delete specific attribute of a specific user |
+| POST | `/servers/{serverid}/users/{userid}/provokelogin` | provokeLoginOnUser | `serverid`*, `X-nonce`*, `userid`*, body: UserContext | — |  | Push a login confirmation to the user's app |
+| GET | `/servers/{serverid}/users/{userid}/role/` | getUserRole | `serverid`*, `userid`* | Role | yes | Get role for a specific user. |
+| POST | `/servers/{serverid}/users/{userid}/role/` | getOrCreateUserRole | `serverid`*, `userid`* | object |  | Get or create a role for a specific user. |
+| GET | `/servers/{serverid}/vash` | getServerVash | `serverid`* | file | yes | Visual hash of this server |

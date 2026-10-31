@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_Adyen_profile_image
 
 | | |
 | --- | --- |
-| Signed bundle | `9794f0cde79c2d202b9ed1ce3556d1a32b4725098b4df9c927380fa9c9e52132` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,25 +34,27 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_Adyen_profile_image
 
 76 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/checkAccountHolder` | post-checkAccountHolder | Trigger verification |
-| POST | `/closeAccount` | post-closeAccount | Close an account |
-| POST | `/closeAccountHolder` | post-closeAccountHolder | Close an account holder |
-| POST | `/closeStores` | post-closeStores | Close stores |
-| POST | `/createAccount` | post-createAccount | Create an account |
-| POST | `/createAccountHolder` | post-createAccountHolder | Create an account holder |
-| POST | `/deleteBankAccounts` | post-deleteBankAccounts | Delete bank accounts |
-| POST | `/deleteLegalArrangements` | post-deleteLegalArrangements | Delete legal arrangements |
-| POST | `/deletePayoutMethods` | post-deletePayoutMethods | Delete payout methods |
-| POST | `/deleteShareholders` | post-deleteShareholders | Delete shareholders |
-| POST | `/deleteSignatories` | post-deleteSignatories | Delete signatories |
-| POST | `/getAccountHolder` | post-getAccountHolder | Get an account holder |
-| POST | `/getTaxForm` | post-getTaxForm | Get a tax form |
-| POST | `/getUploadedDocuments` | post-getUploadedDocuments | Get documents |
-| POST | `/suspendAccountHolder` | post-suspendAccountHolder | Suspend an account holder |
-| POST | `/unSuspendAccountHolder` | post-unSuspendAccountHolder | Unsuspend an account holder |
-| POST | `/updateAccount` | post-updateAccount | Update an account |
-| POST | `/updateAccountHolder` | post-updateAccountHolder | Update an account holder |
-| POST | `/updateAccountHolderState` | post-updateAccountHolderState | Update payout or processing state |
-| POST | `/uploadDocument` | post-uploadDocument | Upload a document |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/checkAccountHolder` | post-checkAccountHolder | body: PerformVerificationRequest | GenericResponse |  | Trigger verification |
+| POST | `/closeAccount` | post-closeAccount | body: CloseAccountRequest | CloseAccountResponse |  | Close an account |
+| POST | `/closeAccountHolder` | post-closeAccountHolder | body: CloseAccountHolderRequest | CloseAccountHolderResponse |  | Close an account holder |
+| POST | `/closeStores` | post-closeStores | body: CloseStoresRequest | GenericResponse |  | Close stores |
+| POST | `/createAccount` | post-createAccount | body: CreateAccountRequest | CreateAccountResponse |  | Create an account |
+| POST | `/createAccountHolder` | post-createAccountHolder | body: CreateAccountHolderRequest | CreateAccountHolderResponse |  | Create an account holder |
+| POST | `/deleteBankAccounts` | post-deleteBankAccounts | body: DeleteBankAccountRequest | GenericResponse |  | Delete bank accounts |
+| POST | `/deleteLegalArrangements` | post-deleteLegalArrangements | body: DeleteLegalArrangementRequest | GenericResponse |  | Delete legal arrangements |
+| POST | `/deletePayoutMethods` | post-deletePayoutMethods | body: DeletePayoutMethodRequest | GenericResponse |  | Delete payout methods |
+| POST | `/deleteShareholders` | post-deleteShareholders | body: DeleteShareholderRequest | GenericResponse |  | Delete shareholders |
+| POST | `/deleteSignatories` | post-deleteSignatories | body: DeleteSignatoriesRequest | GenericResponse |  | Delete signatories |
+| POST | `/getAccountHolder` | post-getAccountHolder | body: GetAccountHolderRequest | GetAccountHolderResponse |  | Get an account holder |
+| POST | `/getTaxForm` | post-getTaxForm | body: GetTaxFormRequest | GetTaxFormResponse |  | Get a tax form |
+| POST | `/getUploadedDocuments` | post-getUploadedDocuments | body: GetUploadedDocumentsRequest | GetUploadedDocumentsResponse |  | Get documents |
+| POST | `/suspendAccountHolder` | post-suspendAccountHolder | body: SuspendAccountHolderRequest | SuspendAccountHolderResponse |  | Suspend an account holder |
+| POST | `/unSuspendAccountHolder` | post-unSuspendAccountHolder | body: UnSuspendAccountHolderRequest | UnSuspendAccountHolderResponse |  | Unsuspend an account holder |
+| POST | `/updateAccount` | post-updateAccount | body: UpdateAccountRequest | UpdateAccountResponse |  | Update an account |
+| POST | `/updateAccountHolder` | post-updateAccountHolder | body: UpdateAccountHolderRequest | UpdateAccountHolderResponse |  | Update an account holder |
+| POST | `/updateAccountHolderState` | post-updateAccountHolderState | body: UpdateAccountHolderStateRequest | GetAccountHolderStatusResponse |  | Update payout or processing state |
+| POST | `/uploadDocument` | post-uploadDocument | body: UploadDocumentRequest | UpdateAccountHolderResponse |  | Upload a document |

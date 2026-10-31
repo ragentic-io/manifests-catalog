@@ -11,7 +11,7 @@ logo: "https://developer.ebay.com/favicon.ico"
 
 | | |
 | --- | --- |
-| Signed bundle | `0ba4f7bb400d63f0a2a82b1f17fb48eb8dbdc1f4f28bd5afd73928367977d703` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://developer.ebay.com/favicon.ico"
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/user/` | getUser | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/user/` | getUser | — | UserResponse | yes | — |

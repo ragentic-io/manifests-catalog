@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `faa3b351fc117a74877370052f4f80facd251e390accc61e5aa8df0d7fec8890` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 22 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/` | Start Screenshot Test | Start Screenshot Test |
-| GET | `/devices` | devices | Fetch all available device combinations. |
-| GET | `/locations` | Locations | Fetch Locations |
-| GET | `/os-browsers` | os-browsers | Fetch all available os-browser combinations. |
-| GET | `/profiles` | Profiles | Fetch login profiles |
-| GET | `/resolutions` | Resolutions | Fetch all available resolution on different OS |
-| PUT | `/stop/{test_id}` | stop screenshots test | Stop specified screenshot test |
-| GET | `/{test_id}` | screenshots | Fetch specified screenshot details |
-| GET | `/{test_id}/zip` | ZippedScreenshots | Fetch Zipped Screenshots |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/` | Start Screenshot Test | body*: screenshot-payload | start-screenshot-success |  | Start Screenshot Test |
+| GET | `/devices` | devices | `os` | os-devices | yes | Fetch all available device combinations. |
+| GET | `/locations` | Locations | — | locations | yes | Fetch Locations |
+| GET | `/os-browsers` | os-browsers | `os` | os-browsers | yes | Fetch all available os-browser combinations. |
+| GET | `/profiles` | Profiles | — | profiles | yes | Fetch login profiles |
+| GET | `/resolutions` | Resolutions | — | resolutions | yes | Fetch all available resolution on different OS |
+| PUT | `/stop/{test_id}` | stop screenshots test | `test_id`* | stop-screenshot-success |  | Stop specified screenshot test |
+| GET | `/{test_id}` | screenshots | `test_id`* | screenshot-details | yes | Fetch specified screenshot details |
+| GET | `/{test_id}/zip` | ZippedScreenshots | `test_id`* | zipped-screenshots-success | yes | Fetch Zipped Screenshots |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_retriever.openindex.ai_.well-kn
 
 | | |
 | --- | --- |
-| Signed bundle | `97b4cf08df0f42e0dc31f7d0ff0ef952c95d6ec7d09374d2f6f65ac4fb72f721` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_retriever.openindex.ai_.well-kn
 
 10 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/query` | query_query_post | Query |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/query` | query_query_post | body*: QueryRequest | QueryResponse |  | Query |

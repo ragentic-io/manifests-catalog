@@ -57,12 +57,12 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/v1/customers/addresses/{id}"
+        "to": "operation:put:/api/v1/customers/addresses/{id}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/v1/customers/addresses/{id}"
+        "to": "operation:patch:/api/v1/customers/addresses/{id}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
@@ -192,12 +192,12 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/v1/orders/{id}/tags"
+        "to": "operation:put:/api/v1/orders/{id}/tags"
       },
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/v1/orders/{id}/tags"
+        "to": "operation:post:/api/v1/orders/{id}/tags"
       },
       {
         "from": "billbee-io-15cf84b1c7",
@@ -242,12 +242,12 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/products/images/{imageId}"
+        "to": "operation:get:/api/v1/products/images/{imageId}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/products/images/{imageId}"
+        "to": "operation:delete:/api/v1/products/images/{imageId}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
@@ -277,12 +277,12 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/products/{id}"
+        "to": "operation:get:/api/v1/products/{id}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/products/{id}"
+        "to": "operation:delete:/api/v1/products/{id}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
@@ -302,17 +302,17 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/products/{productId}/images/{imageId}"
-      },
-      {
-        "from": "billbee-io-15cf84b1c7",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/products/{productId}/images/{imageId}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/products/{productId}/images/{imageId}"
+      },
+      {
+        "from": "billbee-io-15cf84b1c7",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/products/{productId}/images/{imageId}"
       },
       {
         "from": "billbee-io-15cf84b1c7",
@@ -352,11 +352,6 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/webhooks"
-      },
-      {
-        "from": "billbee-io-15cf84b1c7",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/webhooks"
       },
       {
@@ -367,12 +362,12 @@
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/webhooks/filters"
+        "to": "operation:delete:/api/v1/webhooks"
       },
       {
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/webhooks/{id}"
+        "to": "operation:get:/api/v1/webhooks/filters"
       },
       {
         "from": "billbee-io-15cf84b1c7",
@@ -383,6 +378,676 @@
         "from": "billbee-io-15cf84b1c7",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/webhooks/{id}"
+      },
+      {
+        "from": "billbee-io-15cf84b1c7",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/webhooks/{id}"
+      },
+      {
+        "from": "operation:post:/api/v1/automaticprovision/createaccount",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer"
+      },
+      {
+        "from": "operation:get:/api/v1/cloudstorages",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customer-addresses",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/customer-addresses",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/customer-addresses",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customer-addresses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:put:/api/v1/customer-addresses/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/customer-addresses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customers",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/customers",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/customers",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customers/addresses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:put:/api/v1/customers/addresses/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/customers/addresses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:patch:/api/v1/customers/addresses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+      },
+      {
+        "from": "operation:put:/api/v1/customers/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/customers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customers/{id}/addresses",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/customers/{id}/addresses",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/customers/{id}/addresses",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/customers/{id}/orders",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_"
+      },
+      {
+        "from": "operation:get:/api/v1/layouts",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_"
+      },
+      {
+        "from": "operation:get:/api/v1/orders",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+      },
+      {
+        "from": "operation:post:/api/v1/orders",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order"
+      },
+      {
+        "from": "operation:post:/api/v1/orders",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+      },
+      {
+        "from": "operation:get:/api/v1/orders/findbyextref/{extRef}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+      },
+      {
+        "from": "operation:get:/api/v1/orders/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+      },
+      {
+        "from": "operation:patch:/api/v1/orders/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+      },
+      {
+        "from": "operation:put:/api/v1/orders/{id}/orderstate",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderStateUpdate"
+      },
+      {
+        "from": "operation:post:/api/v1/orders/{id}/parse-placeholders",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.ParseTextContainer"
+      },
+      {
+        "from": "operation:post:/api/v1/orders/{id}/send-message",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel"
+      },
+      {
+        "from": "operation:post:/api/v1/orders/{id}/shipment",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiAddShipmentToOrderModel"
+      },
+      {
+        "from": "operation:put:/api/v1/orders/{id}/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate"
+      },
+      {
+        "from": "operation:post:/api/v1/orders/{id}/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate"
+      },
+      {
+        "from": "operation:post:/api/v1/orders/{id}/trigger-event",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.TriggerEventContainer"
+      },
+      {
+        "from": "operation:get:/api/v1/products",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/products",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel"
+      },
+      {
+        "from": "operation:get:/api/v1/products/custom-fields",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/custom-fields/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/products/images/delete",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/images/{imageId}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/reservedamount",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/stocks",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_"
+      },
+      {
+        "from": "operation:post:/api/v1/products/updatestock",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/products/updatestock",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_"
+      },
+      {
+        "from": "operation:post:/api/v1/products/updatestockcode",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/products/updatestockcode",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_"
+      },
+      {
+        "from": "operation:post:/api/v1/products/updatestockmultiple",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/products/updatestockmultiple",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/{productId}/images",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+      },
+      {
+        "from": "operation:put:/api/v1/products/{productId}/images",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/products/{productId}/images",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+      },
+      {
+        "from": "operation:get:/api/v1/products/{productId}/images/{imageId}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+      },
+      {
+        "from": "operation:put:/api/v1/products/{productId}/images/{imageId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/products/{productId}/images/{imageId}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/search",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchModel"
+      },
+      {
+        "from": "operation:post:/api/v1/search",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_"
+      },
+      {
+        "from": "operation:post:/api/v1/shipment/shipment",
+        "kind": "ACCEPTS",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel"
+      },
+      {
+        "from": "operation:get:/api/v1/shipment/shipments",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_"
+      },
+      {
+        "from": "operation:post:/api/v1/shipment/shipwithlabel",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel"
+      },
+      {
+        "from": "operation:post:/api/v1/shipment/shipwithlabel",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_"
+      },
+      {
+        "from": "operation:get:/api/v1/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/webhooks",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+      },
+      {
+        "from": "operation:post:/api/v1/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+      },
+      {
+        "from": "operation:get:/api/v1/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/webhooks/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+      },
+      {
+        "from": "operation:put:/api/v1/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldValueModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleCategoryApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleSourceApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.BomSubArticleApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.StockArticleApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Order.MultiLanguageString"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Models.CustomerMetaDataApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ShipmentAddressApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Shipping.ProductService"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Shipping.ShipmentData.Dimensions"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Models.CustomerMetaDataApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CommentApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderAddressApiModel"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderItem"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderUser"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.Shipment"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Models.OrderPayment"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Order.HistoryEntry"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Shipping.ProductService"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderItem",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderItemAttribute"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderItem",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.SoldProduct"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.BillbeeAPI.Model.SoldProduct",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ProductImage"
+      },
+      {
+        "from": "schema:Billbee.Interfaces.Shipping.ProductService",
+        "kind": "REFERENCES",
+        "to": "schema:System.Collections.Generic.KeyValuePair_System.String_System.Collections.Generic.List_System.Collections.Generic.KeyValuePair_System.Int32_System.String_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.Shipment"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.Order"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Model.StockResponseData"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer.UserAddress"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Order.MultiLanguageString"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.CustomerResult"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.OrderResult"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel",
+        "kind": "REFERENCES",
+        "to": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.ProductResult"
+      },
+      {
+        "from": "schema:Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel",
+        "kind": "REFERENCES",
+        "to": "schema:Billbee.Interfaces.Shipping.ShipmentData.Dimensions"
+      },
+      {
+        "from": "schema:System.Collections.Generic.KeyValuePair_System.String_System.Collections.Generic.List_System.Collections.Generic.KeyValuePair_System.Int32_System.String_",
+        "kind": "REFERENCES",
+        "to": "schema:System.Collections.Generic.KeyValuePair_System.Int32_System.String_"
       }
     ],
     "nodes": [
@@ -398,8 +1063,29 @@
         "name": "AutomaticProvisioning_CreateAccount",
         "path": "/api/v1/automaticprovision/createaccount",
         "pointer": "#/paths/~1api~1v1~1automaticprovision~1createaccount/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new Billbee user account with the data passed"
+        "summary": "Creates a new Billbee user account with the data passed",
+        "tags": [
+          "Provisioning"
+        ]
       },
       {
         "deprecated": false,
@@ -409,8 +1095,18 @@
         "name": "AutomaticProvisioning_TermsInfo",
         "path": "/api/v1/automaticprovision/termsinfo",
         "pointer": "#/paths/~1api~1v1~1automaticprovision~1termsinfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns infos about Billbee terms and conditions"
+        "summary": "Returns infos about Billbee terms and conditions",
+        "tags": [
+          "Provisioning"
+        ]
       },
       {
         "deprecated": false,
@@ -420,8 +1116,18 @@
         "name": "CloudStorageApi_GetList",
         "path": "/api/v1/cloudstorages",
         "pointer": "#/paths/~1api~1v1~1cloudstorages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of all connected cloud storage devices"
+        "summary": "Gets a list of all connected cloud storage devices",
+        "tags": [
+          "CloudStorage"
+        ]
       },
       {
         "deprecated": false,
@@ -429,10 +1135,36 @@
         "kind": "operation",
         "method": "get",
         "name": "CustomerAddresses_GetAll",
+        "parameters": [
+          {
+            "description": "The current page to request starting with 1 (default is 1)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The page size for the result list.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/customer-addresses",
         "pointer": "#/paths/~1api~1v1~1customer-addresses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all customer addresses"
+        "summary": "Get a list of all customer addresses",
+        "tags": [
+          "CustomerAddresses"
+        ]
       },
       {
         "deprecated": false,
@@ -442,8 +1174,29 @@
         "name": "CustomerAddresses_Create",
         "path": "/api/v1/customer-addresses",
         "pointer": "#/paths/~1api~1v1~1customer-addresses/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new customer address"
+        "summary": "Creates a new customer address",
+        "tags": [
+          "CustomerAddresses"
+        ]
       },
       {
         "deprecated": false,
@@ -451,10 +1204,29 @@
         "kind": "operation",
         "method": "get",
         "name": "CustomerAddresses_GetOne",
+        "parameters": [
+          {
+            "description": "The id of the address to query",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customer-addresses/{id}",
         "pointer": "#/paths/~1api~1v1~1customer-addresses~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a single customer address by id"
+        "summary": "Queries a single customer address by id",
+        "tags": [
+          "CustomerAddresses"
+        ]
       },
       {
         "deprecated": false,
@@ -462,10 +1234,40 @@
         "kind": "operation",
         "method": "put",
         "name": "CustomerAddresses_Update",
+        "parameters": [
+          {
+            "description": "The id of the address",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customer-addresses/{id}",
         "pointer": "#/paths/~1api~1v1~1customer-addresses~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates a customer address by id"
+        "summary": "Updates a customer address by id",
+        "tags": [
+          "CustomerAddresses"
+        ]
       },
       {
         "deprecated": false,
@@ -473,10 +1275,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Customer_GetAll",
+        "parameters": [
+          {
+            "description": "The current page to request starting with 1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The pagesize for the result list.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/customers",
         "pointer": "#/paths/~1api~1v1~1customers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all customers"
+        "summary": "Get a list of all customers",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -486,8 +1314,29 @@
         "name": "Customer_Create",
         "path": "/api/v1/customers",
         "pointer": "#/paths/~1api~1v1~1customers/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new customer"
+        "summary": "Creates a new customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -495,32 +1344,111 @@
         "kind": "operation",
         "method": "get",
         "name": "Customer_GetCustomerAddress",
+        "parameters": [
+          {
+            "description": "The id of the address",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customers/addresses/{id}",
         "pointer": "#/paths/~1api~1v1~1customers~1addresses~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a single address from a customer"
+        "summary": "Queries a single address from a customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/api/v1/customers/addresses/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "Customer_PatchAddress",
-        "path": "/api/v1/customers/addresses/{id}",
-        "pointer": "#/paths/~1api~1v1~1customers~1addresses~1{id}/patch",
-        "security": [],
-        "summary": "Updates one or more fields of an address"
-      },
-      {
-        "deprecated": false,
+        "description": "Id and CustomerId cannot be changed.",
         "id": "operation:put:/api/v1/customers/addresses/{id}",
         "kind": "operation",
         "method": "put",
         "name": "Customer_UpdateAddress",
+        "parameters": [
+          {
+            "description": "The id of the address",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customers/addresses/{id}",
         "pointer": "#/paths/~1api~1v1~1customers~1addresses~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates all fields of an address"
+        "summary": "Updates all fields of an address",
+        "tags": [
+          "Customers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Id and CustomerId cannot be changed",
+        "id": "operation:patch:/api/v1/customers/addresses/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "Customer_PatchAddress",
+        "parameters": [
+          {
+            "description": "The id of the address",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v1/customers/addresses/{id}",
+        "pointer": "#/paths/~1api~1v1~1customers~1addresses~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "text/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Updates one or more fields of an address",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -528,10 +1456,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Customer_GetOne",
+        "parameters": [
+          {
+            "description": "The id of the customer to query",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customers/{id}",
         "pointer": "#/paths/~1api~1v1~1customers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a single customer by id"
+        "summary": "Queries a single customer by id",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -539,10 +1486,40 @@
         "kind": "operation",
         "method": "put",
         "name": "Customer_Update",
+        "parameters": [
+          {
+            "description": "The id of the customer",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customers/{id}",
         "pointer": "#/paths/~1api~1v1~1customers~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates a customer by id"
+        "summary": "Updates a customer by id",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -550,21 +1527,85 @@
         "kind": "operation",
         "method": "get",
         "name": "Customer_GetCustomerAddresses",
+        "parameters": [
+          {
+            "description": "The id of the customer",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The current page to request starting with 1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The pagesize for the result list.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/customers/{id}/addresses",
         "pointer": "#/paths/~1api~1v1~1customers~1{id}~1addresses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a list of addresses from a customer"
+        "summary": "Queries a list of addresses from a customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Id and CustomerId will be ignored in model.",
         "id": "operation:post:/api/v1/customers/{id}/addresses",
         "kind": "operation",
         "method": "post",
         "name": "Customer_AddCustomerAddress",
+        "parameters": [
+          {
+            "description": "CustomerId to attach the new address to.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/customers/{id}/addresses",
         "pointer": "#/paths/~1api~1v1~1customers~1{id}~1addresses/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Adds a new address to a customer"
+        "summary": "Adds a new address to a customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -572,10 +1613,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Customer_GetCustomerOrders",
+        "parameters": [
+          {
+            "description": "The id of the customer",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The current page to request starting with 1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The pagesize for the result list.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/customers/{id}/orders",
         "pointer": "#/paths/~1api~1v1~1customers~1{id}~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a list of orders from a customer"
+        "summary": "Queries a list of orders from a customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
@@ -585,8 +1659,18 @@
         "name": "EnumApi_GetOrderStates",
         "path": "/api/v1/enums/orderstates",
         "pointer": "#/paths/~1api~1v1~1enums~1orderstates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list with all defined orderstates"
+        "summary": "Returns a list with all defined orderstates",
+        "tags": [
+          "EnumApi"
+        ]
       },
       {
         "deprecated": false,
@@ -596,8 +1680,18 @@
         "name": "EnumApi_GetPaymentTypes",
         "path": "/api/v1/enums/paymenttypes",
         "pointer": "#/paths/~1api~1v1~1enums~1paymenttypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list with all defined paymenttypes"
+        "summary": "Returns a list with all defined paymenttypes",
+        "tags": [
+          "EnumApi"
+        ]
       },
       {
         "deprecated": false,
@@ -607,8 +1701,18 @@
         "name": "EnumApi_GetShipmentTypes",
         "path": "/api/v1/enums/shipmenttypes",
         "pointer": "#/paths/~1api~1v1~1enums~1shipmenttypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list with all defined shipmenttypes"
+        "summary": "Returns a list with all defined shipmenttypes",
+        "tags": [
+          "EnumApi"
+        ]
       },
       {
         "deprecated": false,
@@ -618,8 +1722,18 @@
         "name": "EnumApi_GetShippingCarriers",
         "path": "/api/v1/enums/shippingcarriers",
         "pointer": "#/paths/~1api~1v1~1enums~1shippingcarriers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list with all defined shippingcarriers"
+        "summary": "Returns a list with all defined shippingcarriers",
+        "tags": [
+          "EnumApi"
+        ]
       },
       {
         "deprecated": false,
@@ -627,10 +1741,64 @@
         "kind": "operation",
         "method": "get",
         "name": "EventApi_GetList",
+        "parameters": [
+          {
+            "description": "Specifies the oldest date to include in the response",
+            "in": "query",
+            "name": "minDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the newest date to include in the response",
+            "in": "query",
+            "name": "maxDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the pagesize.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter for specific event types",
+            "in": "query",
+            "name": "typeId",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter for specific order id",
+            "in": "query",
+            "name": "orderId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/events",
         "pointer": "#/paths/~1api~1v1~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all events optionally filtered by date. This request is extra throttled to 2 calls per page per hour."
+        "summary": "Get a list of all events optionally filtered by date. This request is extra throttled to 2 calls per page per hour.",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
@@ -640,8 +1808,18 @@
         "name": "LayoutApi_GetList",
         "path": "/api/v1/layouts",
         "pointer": "#/paths/~1api~1v1~1layouts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -649,21 +1827,160 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_GetList",
+        "parameters": [
+          {
+            "description": "Specifies the oldest order date to include in the response",
+            "in": "query",
+            "name": "minOrderDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the newest order date to include in the response",
+            "in": "query",
+            "name": "maxOrderDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the pagesize.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies a list of shop ids for which invoices should be included",
+            "in": "query",
+            "name": "shopId",
+            "required": false,
+            "type": "integer:int64[]"
+          },
+          {
+            "description": "Specifies a list of state ids to include in the response",
+            "in": "query",
+            "name": "orderStateId",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Specifies a list of tags the order must have attached to be included in the response",
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "If given, all delivered orders have an Id greater than or equal to the given minimumOrderId",
+            "in": "query",
+            "name": "minimumBillBeeOrderId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "If given, the last modification has to be newer than the given date",
+            "in": "query",
+            "name": "modifiedAtMin",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "If given, the last modification has to be older or equal than the given date.",
+            "in": "query",
+            "name": "modifiedAtMax",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The source field for the article title.",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "in": "query",
+            "name": "articleTitleSource",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "If true the list of tags passed to the call are used to filter orders to not include these tags",
+            "in": "query",
+            "name": "excludeTags",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/orders",
         "pointer": "#/paths/~1api~1v1~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all orders optionally filtered by date"
+        "summary": "Get a list of all orders optionally filtered by date",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To create an order POST an JSON object to the orders endpoint with the shown properties.",
         "id": "operation:post:/api/v1/orders",
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_PostNewOrder",
+        "parameters": [
+          {
+            "description": "Deprecated, if orderData.ApiAccountId is set, it will be used instead of 'shopId'",
+            "in": "query",
+            "name": "shopId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders",
         "pointer": "#/paths/~1api~1v1~1orders/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.Order"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new order in the Billbee account"
+        "summary": "Creates a new order in the Billbee account",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -671,10 +1988,44 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_CreateDeliveryNote",
+        "parameters": [
+          {
+            "description": "The internal billbee id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "If true, the PDF is included in the response as base64 encoded string",
+            "in": "query",
+            "name": "includePdf",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Optionally specify the id of a billbee connected cloud device to send the pdf to",
+            "in": "query",
+            "name": "sendToCloudId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/CreateDeliveryNote/{id}",
         "pointer": "#/paths/~1api~1v1~1orders~1CreateDeliveryNote~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an delivery note for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes."
+        "summary": "Create an delivery note for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes.",
+        "tags": [
+          "Orders",
+          "DeliveryNote"
+        ]
       },
       {
         "deprecated": false,
@@ -682,10 +2033,51 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_CreateInvoice",
+        "parameters": [
+          {
+            "description": "The internal billbee id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "If true, the PDF is included in the response as base64 encoded string",
+            "in": "query",
+            "name": "includeInvoicePdf",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "You can pass the id of an invoice template to overwrite the assigned template for invoice creation",
+            "in": "query",
+            "name": "templateId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "You can pass the id of a connected cloud printer/storage to send the invoice to it",
+            "in": "query",
+            "name": "sendToCloudId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/CreateInvoice/{id}",
         "pointer": "#/paths/~1api~1v1~1orders~1CreateInvoice~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an invoice for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes."
+        "summary": "Create an invoice for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes.",
+        "tags": [
+          "Orders",
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -695,8 +2087,18 @@
         "name": "OrderApi_GetPatchableFields",
         "path": "/api/v1/orders/PatchableFields",
         "pointer": "#/paths/~1api~1v1~1orders~1PatchableFields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of fields which can be updated with the orders/{id} patch call"
+        "summary": "Returns a list of fields which can be updated with the orders/{id} patch call",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": true,
@@ -704,10 +2106,36 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_Find",
+        "parameters": [
+          {
+            "description": "The order id from the external system",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional the name of the shop/marketplace the order was imported from",
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/orders/find/{id}/{partner}",
         "pointer": "#/paths/~1api~1v1~1orders~1find~1{id}~1{partner}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find a single order by its external id (order number)"
+        "summary": "Find a single order by its external id (order number)",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -715,10 +2143,29 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_GetByExtRef",
+        "parameters": [
+          {
+            "description": "The extern order number of the order",
+            "in": "path",
+            "name": "extRef",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/orders/findbyextref/{extRef}",
         "pointer": "#/paths/~1api~1v1~1orders~1findbyextref~1{extRef}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single order by its external order number"
+        "summary": "Get a single order by its external order number",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -726,10 +2173,96 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_GetInvoiceList",
+        "parameters": [
+          {
+            "description": "Specifies the oldest invoice date to include",
+            "in": "query",
+            "name": "minInvoiceDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the newest invoice date to include",
+            "in": "query",
+            "name": "maxInvoiceDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the pagesize.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies a list of shop ids for which invoices should be included",
+            "in": "query",
+            "name": "shopId",
+            "required": false,
+            "type": "integer:int64[]"
+          },
+          {
+            "description": "Specifies a list of state ids to include in the response",
+            "in": "query",
+            "name": "orderStateId",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "minPayDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "maxPayDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "includePositions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true the list of tags passed to the call are used to filter orders to not include these tags",
+            "in": "query",
+            "name": "excludeTags",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/orders/invoices",
         "pointer": "#/paths/~1api~1v1~1orders~1invoices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all invoices optionally filtered by date. This request ist throttled to 1 per 1 minute for same page and minInvoiceDate"
+        "summary": "Get a list of all invoices optionally filtered by date. This request ist throttled to 1 per 1 minute for same page and minInvoiceDate",
+        "tags": [
+          "Orders",
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -737,10 +2270,42 @@
         "kind": "operation",
         "method": "get",
         "name": "OrderApi_Get",
+        "parameters": [
+          {
+            "description": "The internal billbee id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The source field for the article title.",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "in": "query",
+            "name": "articleTitleSource",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/orders/{id}",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single order by its internal billbee id. This request is throttled to 6 calls per order in one minute"
+        "summary": "Get a single order by its internal billbee id. This request is throttled to 6 calls per order in one minute",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -748,21 +2313,79 @@
         "kind": "operation",
         "method": "patch",
         "name": "OrderApi_PatchOrder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "text/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates one or more fields of an order"
+        "summary": "Updates one or more fields of an order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### REMARKS ### Use this call to change the state of an order to i.e.",
         "id": "operation:put:/api/v1/orders/{id}/orderstate",
         "kind": "operation",
         "method": "put",
         "name": "OrderApi_UpdateState",
+        "parameters": [
+          {
+            "description": "The internal id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}/orderstate",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}~1orderstate/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.OrderStateUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Changes the main state of a single order"
+        "summary": "Changes the main state of a single order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -770,10 +2393,40 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_ParsePlaceholders",
+        "parameters": [
+          {
+            "description": "The id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}/parse-placeholders",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}~1parse-placeholders/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.ParseTextContainer"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Parses a text and replaces all placeholders"
+        "summary": "Parses a text and replaces all placeholders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -781,10 +2434,40 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_SendMessage",
+        "parameters": [
+          {
+            "description": "The id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}/send-message",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}~1send-message/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sends a message to the buyer"
+        "summary": "Sends a message to the buyer",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -792,32 +2475,124 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_AddShipment",
+        "parameters": [
+          {
+            "description": "The internal billbee id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}/shipment",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}~1shipment/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiAddShipmentToOrderModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a shipment to a given order"
+        "summary": "Add a shipment to a given order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/api/v1/orders/{id}/tags",
-        "kind": "operation",
-        "method": "post",
-        "name": "OrderApi_TagsCreate",
-        "path": "/api/v1/orders/{id}/tags",
-        "pointer": "#/paths/~1api~1v1~1orders~1{id}~1tags/post",
-        "security": [],
-        "summary": "Attach one or more tags to an order"
-      },
-      {
-        "deprecated": false,
+        "description": "All existing tags will be replaced by the given list of new tags.",
         "id": "operation:put:/api/v1/orders/{id}/tags",
         "kind": "operation",
         "method": "put",
         "name": "OrderApi_TagsUpdate",
+        "parameters": [
+          {
+            "description": "The internal id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}/tags",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}~1tags/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sets the tags attached to an order"
+        "summary": "Sets the tags attached to an order",
+        "tags": [
+          "Orders"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "When a tag is already attached, it is ignored.",
+        "id": "operation:post:/api/v1/orders/{id}/tags",
+        "kind": "operation",
+        "method": "post",
+        "name": "OrderApi_TagsCreate",
+        "parameters": [
+          {
+            "description": "The internal id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v1/orders/{id}/tags",
+        "pointer": "#/paths/~1api~1v1~1orders~1{id}~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Attach one or more tags to an order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -825,10 +2600,40 @@
         "kind": "operation",
         "method": "post",
         "name": "OrderApi_TriggerEvent",
+        "parameters": [
+          {
+            "description": "The id of the order",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/orders/{id}/trigger-event",
         "pointer": "#/paths/~1api~1v1~1orders~1{id}~1trigger-event/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.TriggerEventContainer"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Triggers a rule event"
+        "summary": "Triggers a rule event",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -836,10 +2641,55 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetList",
+        "parameters": [
+          {
+            "description": "The current page to request starting with 1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The pagesize for the result list.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional the oldest create date of the articles to be returned",
+            "in": "query",
+            "name": "minCreatedAt",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "minimumBillBeeArticleId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "maximumBillBeeArticleId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products",
         "pointer": "#/paths/~1api~1v1~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all products"
+        "summary": "Get a list of all products",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -849,8 +2699,27 @@
         "name": "Article_CreateArticle",
         "path": "/api/v1/products",
         "pointer": "#/paths/~1api~1v1~1products/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "text/json"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new product"
+        "summary": "Creates a new product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -860,8 +2729,18 @@
         "name": "Article_GetPatchableFields",
         "path": "/api/v1/products/PatchableFields",
         "pointer": "#/paths/~1api~1v1~1products~1PatchableFields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of fields which can be updated with the patch call"
+        "summary": "Returns a list of fields which can be updated with the patch call",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -871,8 +2750,18 @@
         "name": "Article_GetCategory",
         "path": "/api/v1/products/category",
         "pointer": "#/paths/~1api~1v1~1products~1category/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GEts a list of all defined categories"
+        "summary": "GEts a list of all defined categories",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -880,10 +2769,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetCustomFields",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/products/custom-fields",
         "pointer": "#/paths/~1api~1v1~1products~1custom-fields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a list of all custom fields"
+        "summary": "Queries a list of all custom fields",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -891,10 +2804,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetCustomField",
+        "parameters": [
+          {
+            "description": "The id of the custom field to query",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/custom-fields/{id}",
         "pointer": "#/paths/~1api~1v1~1products~1custom-fields~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a single custom field"
+        "summary": "Queries a single custom field",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -904,19 +2836,29 @@
         "name": "Article_DeleteImages",
         "path": "/api/v1/products/images/delete",
         "pointer": "#/paths/~1api~1v1~1products~1images~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "integer:int64[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete multiple images by id"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v1/products/images/{imageId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Article_DeleteImage",
-        "path": "/api/v1/products/images/{imageId}",
-        "pointer": "#/paths/~1api~1v1~1products~1images~1{imageId}/delete",
-        "security": [],
-        "summary": "Deletes a single image by id"
+        "summary": "Delete multiple images by id",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -924,10 +2866,59 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetImage",
+        "parameters": [
+          {
+            "description": "The Id of the image",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/images/{imageId}",
         "pointer": "#/paths/~1api~1v1~1products~1images~1{imageId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a single image by id"
+        "summary": "Returns a single image by id",
+        "tags": [
+          "Products"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v1/products/images/{imageId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Article_DeleteImage",
+        "parameters": [
+          {
+            "description": "The image id",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v1/products/images/{imageId}",
+        "pointer": "#/paths/~1api~1v1~1products~1images~1{imageId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes a single image by id",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -935,10 +2926,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetReservedAmount",
+        "parameters": [
+          {
+            "description": "The id or the sku of the article to query",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Either the value id or the value sku to specify the meaning of the id parameter",
+            "in": "query",
+            "name": "lookupBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional the stock id if the multi stock feature is enabled",
+            "in": "query",
+            "name": "stockId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/reservedamount",
         "pointer": "#/paths/~1api~1v1~1products~1reservedamount/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries the reserved amount for a single article by id or by sku"
+        "summary": "Queries the reserved amount for a single article by id or by sku",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -948,19 +2972,51 @@
         "name": "Article_GetStocks",
         "path": "/api/v1/products/stocks",
         "pointer": "#/paths/~1api~1v1~1products~1stocks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Query all defined stock locations"
+        "summary": "Query all defined stock locations",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The article is specified by sku.",
         "id": "operation:post:/api/v1/products/updatestock",
         "kind": "operation",
         "method": "post",
         "name": "Article_UpdateStock",
         "path": "/api/v1/products/updatestock",
         "pointer": "#/paths/~1api~1v1~1products~1updatestock/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update the stock qty of an article"
+        "summary": "Update the stock qty of an article",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -970,8 +3026,29 @@
         "name": "Article_UpdateStockCode",
         "path": "/api/v1/products/updatestockcode",
         "pointer": "#/paths/~1api~1v1~1products~1updatestockcode/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update the stock code of an article"
+        "summary": "Update the stock code of an article",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -981,19 +3058,29 @@
         "name": "Article_UpdateStockMultiple",
         "path": "/api/v1/products/updatestockmultiple",
         "pointer": "#/paths/~1api~1v1~1products~1updatestockmultiple/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update the stock qty for multiple articles at once"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v1/products/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Article_DeleteArticle",
-        "path": "/api/v1/products/{id}",
-        "pointer": "#/paths/~1api~1v1~1products~1{id}/delete",
-        "security": [],
-        "summary": "Deletes a product"
+        "summary": "Update the stock qty for multiple articles at once",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1001,10 +3088,66 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetArticle",
+        "parameters": [
+          {
+            "description": "The id or the sku of the article to query",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Either the value id, ean or the value sku to specify the meaning of the id parameter.",
+            "in": "query",
+            "name": "lookupBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/products/{id}",
         "pointer": "#/paths/~1api~1v1~1products~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries a single article by id or by sku"
+        "summary": "Queries a single article by id or by sku",
+        "tags": [
+          "Products"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v1/products/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Article_DeleteArticle",
+        "parameters": [
+          {
+            "description": "The id of the Product",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v1/products/{id}",
+        "pointer": "#/paths/~1api~1v1~1products~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes a product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1012,10 +3155,38 @@
         "kind": "operation",
         "method": "patch",
         "name": "Article_PatchArticle",
+        "parameters": [
+          {
+            "description": "The id of the Product",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/{id}",
         "pointer": "#/paths/~1api~1v1~1products~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "text/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates one or more fields of a product"
+        "summary": "Updates one or more fields of a product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1023,10 +3194,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetImages",
+        "parameters": [
+          {
+            "description": "The Id of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/{productId}/images",
         "pointer": "#/paths/~1api~1v1~1products~1{productId}~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of all images of the product"
+        "summary": "Returns a list of all images of the product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1034,21 +3224,47 @@
         "kind": "operation",
         "method": "put",
         "name": "Article_PutImages",
+        "parameters": [
+          {
+            "description": "The id of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "If you pass true, the images will be replaced by the passed images.",
+            "in": "query",
+            "name": "replace",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/products/{productId}/images",
         "pointer": "#/paths/~1api~1v1~1products~1{productId}~1images/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add multiple images to a product or replace the product images by the given images"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v1/products/{productId}/images/{imageId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Article_DeleteImageFromProduct",
-        "path": "/api/v1/products/{productId}/images/{imageId}",
-        "pointer": "#/paths/~1api~1v1~1products~1{productId}~1images~1{imageId}/delete",
-        "security": [],
-        "summary": "Deletes a single image from a product"
+        "summary": "Add multiple images to a product or replace the product images by the given images",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1056,10 +3272,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Article_GetImageFromProduct",
+        "parameters": [
+          {
+            "description": "The Id of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The Id of the image",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/{productId}/images/{imageId}",
         "pointer": "#/paths/~1api~1v1~1products~1{productId}~1images~1{imageId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a single image by id"
+        "summary": "Returns a single image by id",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1067,10 +3309,84 @@
         "kind": "operation",
         "method": "put",
         "name": "Article_PutImage",
+        "parameters": [
+          {
+            "description": "The product id",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The image id.",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/products/{productId}/images/{imageId}",
         "pointer": "#/paths/~1api~1v1~1products~1{productId}~1images~1{imageId}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add or update an existing image of a product"
+        "summary": "Add or update an existing image of a product",
+        "tags": [
+          "Products"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v1/products/{productId}/images/{imageId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Article_DeleteImageFromProduct",
+        "parameters": [
+          {
+            "description": "The product id",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The image id",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v1/products/{productId}/images/{imageId}",
+        "pointer": "#/paths/~1api~1v1~1products~1{productId}~1images~1{imageId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes a single image from a product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -1080,8 +3396,31 @@
         "name": "Search_Search",
         "path": "/api/v1/search",
         "pointer": "#/paths/~1api~1v1~1search/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Search for products, customers and orders.\r\nType can be \"order\", \"product\" and / or \"customer\"\r\nTerm can contains lucene query syntax"
+        "summary": "Search for products, customers and orders.\r\nType can be \"order\", \"product\" and / or \"customer\"\r\nTerm can contains lucene query syntax",
+        "tags": [
+          "Products",
+          "Customers",
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -1091,8 +3430,18 @@
         "name": "Shipment_GetPing",
         "path": "/api/v1/shipment/ping",
         "pointer": "#/paths/~1api~1v1~1shipment~1ping/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Shipments"
+        ]
       },
       {
         "deprecated": false,
@@ -1102,8 +3451,29 @@
         "name": "Shipment_PostShipment",
         "path": "/api/v1/shipment/shipment",
         "pointer": "#/paths/~1api~1v1~1shipment~1shipment/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new shipment with the selected Shippingprovider"
+        "summary": "Creates a new shipment with the selected Shippingprovider",
+        "tags": [
+          "Shipments"
+        ]
       },
       {
         "deprecated": false,
@@ -1111,10 +3481,71 @@
         "kind": "operation",
         "method": "get",
         "name": "Shipment_GetList",
+        "parameters": [
+          {
+            "description": "Specifies the page to request.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the pagesize.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the oldest shipment date to include in the response",
+            "in": "query",
+            "name": "createdAtMin",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the newest shipment date to include in the response",
+            "in": "query",
+            "name": "createdAtMax",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Get shipments for this order only.",
+            "in": "query",
+            "name": "orderId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Get Shipments with a shipment greater or equal than this id.",
+            "in": "query",
+            "name": "minimumShipmentId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Get Shippings for the specified shipping provider only.",
+            "in": "query",
+            "name": "shippingProviderId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/shipment/shipments",
         "pointer": "#/paths/~1api~1v1~1shipment~1shipments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all shipments optionally filtered by date. All parameters are optional."
+        "summary": "Get a list of all shipments optionally filtered by date. All parameters are optional.",
+        "tags": [
+          "Shipments"
+        ]
       },
       {
         "deprecated": false,
@@ -1124,8 +3555,18 @@
         "name": "Shipment_GetShippingCarrier",
         "path": "/api/v1/shipment/shippingcarriers",
         "pointer": "#/paths/~1api~1v1~1shipment~1shippingcarriers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries the currently available shipping carriers."
+        "summary": "Queries the currently available shipping carriers.",
+        "tags": [
+          "Shipments"
+        ]
       },
       {
         "deprecated": false,
@@ -1135,8 +3576,18 @@
         "name": "Shipment_GetShippingproviders",
         "path": "/api/v1/shipment/shippingproviders",
         "pointer": "#/paths/~1api~1v1~1shipment~1shippingproviders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Query all defined shipping providers"
+        "summary": "Query all defined shipping providers",
+        "tags": [
+          "Shipments"
+        ]
       },
       {
         "deprecated": false,
@@ -1146,19 +3597,29 @@
         "name": "Shipment_ShipWithLabel",
         "path": "/api/v1/shipment/shipwithlabel",
         "pointer": "#/paths/~1api~1v1~1shipment~1shipwithlabel/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a shipment for an order in billbee"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v1/webhooks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "WebHookManagement_DeleteAll",
-        "path": "/api/v1/webhooks",
-        "pointer": "#/paths/~1api~1v1~1webhooks/delete",
-        "security": [],
-        "summary": "Deletes all existing WebHook registrations."
+        "summary": "Creates a shipment for an order in billbee",
+        "tags": [
+          "Shipments"
+        ]
       },
       {
         "deprecated": false,
@@ -1168,8 +3629,18 @@
         "name": "WebHookManagement_Get",
         "path": "/api/v1/webhooks",
         "pointer": "#/paths/~1api~1v1~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all registered WebHooks for a given user."
+        "summary": "Gets all registered WebHooks for a given user.",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1179,8 +3650,48 @@
         "name": "WebHookManagement_Post",
         "path": "/api/v1/webhooks",
         "pointer": "#/paths/~1api~1v1~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "text/json"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Registers a new WebHook for a given user."
+        "summary": "Registers a new WebHook for a given user.",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v1/webhooks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "WebHookManagement_DeleteAll",
+        "path": "/api/v1/webhooks",
+        "pointer": "#/paths/~1api~1v1~1webhooks/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes all existing WebHook registrations.",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1190,19 +3701,18 @@
         "name": "WebHookManagement_GetFilters",
         "path": "/api/v1/webhooks/filters",
         "pointer": "#/paths/~1api~1v1~1webhooks~1filters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of all known filters you can use to register webhooks"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v1/webhooks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "WebHookManagement_Delete",
-        "path": "/api/v1/webhooks/{id}",
-        "pointer": "#/paths/~1api~1v1~1webhooks~1{id}/delete",
-        "security": [],
-        "summary": "Deletes an existing WebHook registration."
+        "summary": "Returns a list of all known filters you can use to register webhooks",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1210,10 +3720,28 @@
         "kind": "operation",
         "method": "get",
         "name": "WebHookManagement_Lookup",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/webhooks/{id}",
         "pointer": "#/paths/~1api~1v1~1webhooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Looks up a registered WebHook with the given {id} for a given user."
+        "summary": "Looks up a registered WebHook with the given {id} for a given user.",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1221,440 +3749,591 @@
         "kind": "operation",
         "method": "put",
         "name": "WebHookManagement_Put",
+        "parameters": [
+          {
+            "description": "The WebHook ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/webhooks/{id}",
         "pointer": "#/paths/~1api~1v1~1webhooks~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "text/json"
+          ],
+          "required": true,
+          "type": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates an existing WebHook registration."
+        "summary": "Updates an existing WebHook registration.",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v1/webhooks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "WebHookManagement_Delete",
+        "parameters": [
+          {
+            "description": "The WebHook ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/webhooks/{id}",
+        "pointer": "#/paths/~1api~1v1~1webhooks~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes an existing WebHook registration.",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldValueModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldValueModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldValueModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleCategoryApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleCategoryApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleCategoryApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ArticleSourceApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleSourceApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ArticleSourceApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.BomSubArticleApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.BomSubArticleApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.BomSubArticleApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.CommentApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.CommentApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.CommentApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel",
+        "type": "object"
       },
       {
+        "description": "Container for passing address data",
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData",
+        "type": "object"
       },
       {
+        "description": "A class that represents the Billbee data model of a single order",
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.Order",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.Order"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.Order",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderAddressApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderAddressApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderAddressApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderItem",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderItem"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderItem",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderItemAttribute",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderItemAttribute"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderItemAttribute",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.OrderUser",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderUser"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.OrderUser",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ProductImage",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ProductImage"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ProductImage",
+        "type": "object"
       },
       {
+        "description": "Represents a single shipment.",
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.Shipment",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.Shipment"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.Shipment",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.ShipmentAddressApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.ShipmentAddressApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.ShipmentAddressApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.SoldProduct",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.SoldProduct"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.SoldProduct",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.StockArticleApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.StockArticleApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.StockArticleApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.StockResponseData",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.StockResponseData"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.StockResponseData",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData"
+        "name": "Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Models.CustomerMetaDataApiModel",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Models.CustomerMetaDataApiModel"
+        "name": "Billbee.Interfaces.BillbeeAPI.Models.CustomerMetaDataApiModel",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate"
+        "name": "Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.BillbeeAPI.Models.OrderPayment",
         "kind": "schema",
-        "name": "Billbee.Interfaces.BillbeeAPI.Models.OrderPayment"
+        "name": "Billbee.Interfaces.BillbeeAPI.Models.OrderPayment",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.Order.HistoryEntry",
         "kind": "schema",
-        "name": "Billbee.Interfaces.Order.HistoryEntry"
+        "name": "Billbee.Interfaces.Order.HistoryEntry",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.Order.MultiLanguageString",
         "kind": "schema",
-        "name": "Billbee.Interfaces.Order.MultiLanguageString"
+        "name": "Billbee.Interfaces.Order.MultiLanguageString",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.Shipping.ProductService",
         "kind": "schema",
-        "name": "Billbee.Interfaces.Shipping.ProductService"
+        "name": "Billbee.Interfaces.Shipping.ProductService",
+        "type": "object"
       },
       {
         "id": "schema:Billbee.Interfaces.Shipping.ShipmentData.Dimensions",
         "kind": "schema",
-        "name": "Billbee.Interfaces.Shipping.ShipmentData.Dimensions"
+        "name": "Billbee.Interfaces.Shipping.ShipmentData.Dimensions",
+        "type": "object"
       },
       {
+        "description": "Data of the shipment to be created",
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiAddShipmentToOrderModel",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiAddShipmentToOrderModel"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiAddShipmentToOrderModel",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult.PagingInformation_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Order_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.Shipment_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult_System.Collections.Generic.List_Rechnungsdruck.WebApp.Controllers.Api.Order_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.CustomerApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.DeletedImagesModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.Order_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockCodeResponseData_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Billbee.Interfaces.BillbeeAPI.Model.UpdateStockResponseData_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Model.StockResponseData_",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ApiResult_System.Collections.Generic.List_Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate_",
+        "type": "object"
       },
       {
+        "description": "Data used to create a new Billbee user account",
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer",
+        "type": "object"
       },
       {
+        "description": "Represents the invoice address of a Billbee user",
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer.UserAddress",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer.UserAddress"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer.UserAddress",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.Order",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.Order"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.Order",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.ParseTextContainer",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.ParseTextContainer"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.ParseTextContainer",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.SendMessageModel",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.TriggerEventContainer",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.TriggerEventContainer"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderApiController.TriggerEventContainer",
+        "type": "object"
       },
       {
+        "description": "Specifies the parameters used to set the new state of an order",
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderStateUpdate",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderStateUpdate"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderStateUpdate",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.OrderTagCreate",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.CustomerResult",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.CustomerResult"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.CustomerResult",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.OrderResult",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.OrderResult"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.OrderResult",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.ProductResult",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.ProductResult"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.ProductResult",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchModel",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchModel"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchModel",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabelResult",
+        "type": "object"
       },
       {
         "id": "schema:Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel",
         "kind": "schema",
-        "name": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel"
+        "name": "Rechnungsdruck.WebApp.Controllers.Api.WebHookApiModel",
+        "type": "object"
       },
       {
         "id": "schema:System.Collections.Generic.KeyValuePair_System.Int32_System.String_",
         "kind": "schema",
-        "name": "System.Collections.Generic.KeyValuePair_System.Int32_System.String_"
+        "name": "System.Collections.Generic.KeyValuePair_System.Int32_System.String_",
+        "type": "object"
       },
       {
         "id": "schema:System.Collections.Generic.KeyValuePair_System.String_System.Collections.Generic.List_System.Collections.Generic.KeyValuePair_System.Int32_System.String_",
         "kind": "schema",
-        "name": "System.Collections.Generic.KeyValuePair_System.String_System.Collections.Generic.List_System.Collections.Generic.KeyValuePair_System.Int32_System.String_"
+        "name": "System.Collections.Generic.KeyValuePair_System.String_System.Collections.Generic.List_System.Collections.Generic.KeyValuePair_System.Int32_System.String_",
+        "type": "object"
       }
     ]
   },

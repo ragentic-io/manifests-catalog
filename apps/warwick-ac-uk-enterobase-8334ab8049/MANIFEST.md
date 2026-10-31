@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_warwickuni_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `83780d8994c5e71d2a54efffcc691bb0eec41434c41261712d72e481b9b54fd9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,31 +32,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_warwickuni_profile_
 
 ## Operations (26)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v2.0` | get /api/v2.0 | — |
-| GET | `/api/v2.0/login` | get /api/v2.0/login | — |
-| GET | `/api/v2.0/lookup` | get /api/v2.0/lookup | — |
-| GET | `/api/v2.0/lookup/{barcode}` | get /api/v2.0/lookup/{barcode} | — |
-| POST | `/api/v2.0/lookup/{barcode}` | post /api/v2.0/lookup/{barcode} | — |
-| GET | `/api/v2.0/{database}/assemblies` | get /api/v2.0/{database}/assemblies | — |
-| GET | `/api/v2.0/{database}/assemblies/{barcode}` | get /api/v2.0/{database}/assemblies/{barcode} | — |
-| POST | `/api/v2.0/{database}/assemblies/{barcode}` | post /api/v2.0/{database}/assemblies/{barcode} | — |
-| PUT | `/api/v2.0/{database}/assemblies/{barcode}` | put /api/v2.0/{database}/assemblies/{barcode} | — |
-| GET | `/api/v2.0/{database}/schemes` | get /api/v2.0/{database}/schemes | — |
-| GET | `/api/v2.0/{database}/schemes/{barcode}` | get /api/v2.0/{database}/schemes/{barcode} | — |
-| POST | `/api/v2.0/{database}/schemes/{barcode}` | post /api/v2.0/{database}/schemes/{barcode} | — |
-| PUT | `/api/v2.0/{database}/schemes/{barcode}` | put /api/v2.0/{database}/schemes/{barcode} | — |
-| GET | `/api/v2.0/{database}/straindata` | get /api/v2.0/{database}/straindata | — |
-| GET | `/api/v2.0/{database}/strains` | get /api/v2.0/{database}/strains | — |
-| GET | `/api/v2.0/{database}/strains/{barcode}` | get /api/v2.0/{database}/strains/{barcode} | — |
-| POST | `/api/v2.0/{database}/strains/{barcode}` | post /api/v2.0/{database}/strains/{barcode} | — |
-| PUT | `/api/v2.0/{database}/strains/{barcode}` | put /api/v2.0/{database}/strains/{barcode} | — |
-| GET | `/api/v2.0/{database}/strainsversion` | get /api/v2.0/{database}/strainsversion | — |
-| GET | `/api/v2.0/{database}/traces` | get /api/v2.0/{database}/traces | — |
-| GET | `/api/v2.0/{database}/traces/{barcode}` | get /api/v2.0/{database}/traces/{barcode} | — |
-| POST | `/api/v2.0/{database}/traces/{barcode}` | post /api/v2.0/{database}/traces/{barcode} | — |
-| PUT | `/api/v2.0/{database}/traces/{barcode}` | put /api/v2.0/{database}/traces/{barcode} | — |
-| GET | `/api/v2.0/{database}/{scheme}/alleles` | get /api/v2.0/{database}/{scheme}/alleles | — |
-| GET | `/api/v2.0/{database}/{scheme}/loci` | get /api/v2.0/{database}/{scheme}/loci | — |
-| GET | `/api/v2.0/{database}/{scheme}/sts` | get /api/v2.0/{database}/{scheme}/sts | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v2.0` | get /api/v2.0 | `prefix`, `name`, `description` | — | yes | — |
+| GET | `/api/v2.0/login` | get /api/v2.0/login | `username`, `password` | — | yes | — |
+| GET | `/api/v2.0/lookup` | get /api/v2.0/lookup | `barcode` | — | yes | — |
+| GET | `/api/v2.0/lookup/{barcode}` | get /api/v2.0/lookup/{barcode} | `barcode`* | — | yes | — |
+| POST | `/api/v2.0/lookup/{barcode}` | post /api/v2.0/lookup/{barcode} | `barcode`*, body: object | — |  | — |
+| GET | `/api/v2.0/{database}/assemblies` | get /api/v2.0/{database}/assemblies | `orderby`, `only_fields`, `barcode`, `n50`, `top_species`, `uberstrain`, `version`, `limit`, `reldate`, `offset`, `assembly_status`, `sortorder`, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/assemblies/{barcode}` | get /api/v2.0/{database}/assemblies/{barcode} | `barcode`*, `database`*, body: object | — | yes | — |
+| PUT | `/api/v2.0/{database}/assemblies/{barcode}` | put /api/v2.0/{database}/assemblies/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| POST | `/api/v2.0/{database}/assemblies/{barcode}` | post /api/v2.0/{database}/assemblies/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| GET | `/api/v2.0/{database}/schemes` | get /api/v2.0/{database}/schemes | `orderby`, `scheme_name`, `created`, `lastmodified`, `barcode`, `label`, `only_fields`, `version`, `limit`, `sortorder`, `offset`, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/schemes/{barcode}` | get /api/v2.0/{database}/schemes/{barcode} | `barcode`*, `database`*, body: object | — | yes | — |
+| PUT | `/api/v2.0/{database}/schemes/{barcode}` | put /api/v2.0/{database}/schemes/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| POST | `/api/v2.0/{database}/schemes/{barcode}` | post /api/v2.0/{database}/schemes/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| GET | `/api/v2.0/{database}/straindata` | get /api/v2.0/{database}/straindata | `comment`, `secondary_sample_accession`, `my_strains`, `offset`, `serotype`, `n50`, `county`, `only_fields`, `postcode`, `lab_contact`, `substrains`, `custom_fields`, `city`, `strain_name`, `collection_date`, `collection_month`, `reldate`, `continent`, `source_details`, `version`, `latitude`, `email`, `source_niche`, `barcode`, `uberstrain`, `sortorder`, `collection_year`, `orderby`, `assembly_status`, `source_type`, `country`, `region`, `longitude`, `sample_accession`, `limit`, `top_species`, `collection_time`, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/strains` | get /api/v2.0/{database}/strains | `comment`, `secondary_sample_accession`, `antigenic_formulas`, `my_strains`, `serotype`, `county`, `only_fields`, `postcode`, `lab_contact`, `substrains`, `city`, `strain_name`, `collection_date`, `collection_month`, `reldate`, `continent`, `source_details`, `version`, `latitude`, `assembly_barcode`, `source_niche`, `barcode`, `uberstrain`, `sortorder`, `offset`, `collection_year`, `orderby`, `return_all`, `source_type`, `country`, `region`, `longitude`, `sample_accession`, `limit`, `collection_time`, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/strains/{barcode}` | get /api/v2.0/{database}/strains/{barcode} | `barcode`*, `database`*, body: object | — | yes | — |
+| PUT | `/api/v2.0/{database}/strains/{barcode}` | put /api/v2.0/{database}/strains/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| POST | `/api/v2.0/{database}/strains/{barcode}` | post /api/v2.0/{database}/strains/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| GET | `/api/v2.0/{database}/strainsversion` | get /api/v2.0/{database}/strainsversion | `comment`, `secondary_sample_accession`, `antigenic_formulas`, `my_strains`, `serotype`, `county`, `only_fields`, `postcode`, `lab_contact`, `substrains`, `city`, `strain_name`, `collection_date`, `collection_month`, `reldate`, `continent`, `source_details`, `version`, `latitude`, `assembly_barcode`, `source_niche`, `barcode`, `uberstrain`, `sortorder`, `offset`, `collection_year`, `orderby`, `return_all`, `source_type`, `country`, `region`, `longitude`, `sample_accession`, `limit`, `collection_time`, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/traces` | get /api/v2.0/{database}/traces | `orderby`, `barcode`, `only_fields`, `limit`, `sortorder`, `offset`, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/traces/{barcode}` | get /api/v2.0/{database}/traces/{barcode} | `barcode`*, `database`*, body: object | — | yes | — |
+| PUT | `/api/v2.0/{database}/traces/{barcode}` | put /api/v2.0/{database}/traces/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| POST | `/api/v2.0/{database}/traces/{barcode}` | post /api/v2.0/{database}/traces/{barcode} | `barcode`*, `database`*, body: object | — |  | — |
+| GET | `/api/v2.0/{database}/{scheme}/alleles` | get /api/v2.0/{database}/{scheme}/alleles | `allele_id`, `seq`, `barcode`, `reldate`, `locus`*, `only_fields`, `limit`, `offset`, `scheme`*, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/{scheme}/loci` | get /api/v2.0/{database}/{scheme}/loci | `barcode`, `locus`, `only_fields`, `create_time`, `limit`, `offset`, `scheme`, `scheme`*, `database`* | — | yes | — |
+| GET | `/api/v2.0/{database}/{scheme}/sts` | get /api/v2.0/{database}/{scheme}/sts | `st_id`, `scheme`, `show_alleles`, `barcode`, `only_fields`, `limit`, `reldate`, `offset`, `scheme`*, `database`* | — | yes | — |

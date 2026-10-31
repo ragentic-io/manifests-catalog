@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_patrowl_io_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `70c50ac6e258022741935cf99d52f46845f997c227fa18cff7c5468cb6523329` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_patrowl_io_profile_
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getDefaultPage | Index page |
-| GET | `/clean` | CleanScansPage | Clean all scans |
-| GET | `/clean/{scanId}` | CleanScanPage | Clean scan |
-| GET | `/getfindings/{scanId}` | GetFindingPage | Get findings on finished scans |
-| GET | `/info` | getInfoPage | Engine info page |
-| GET | `/liveness` | getLivenessPage | Liveness page |
-| GET | `/readiness` | getReadinessPage | Readiness page |
-| GET | `/reloadconfig` | reloadConfigurationPage | Configuration reloading page |
-| POST | `/startscan` | StartScanPage | Start a new scan |
-| GET | `/status` | StatusScansPage | Status on all scans |
-| GET | `/status/{scanId}` | StatusScanPage | Status of a scan |
-| GET | `/stop/{scanId}` | StopScanPage | Stop a scan |
-| GET | `/stopscans` | StopScansPage | Stop all scans |
-| GET | `/test` | getTestPage | Test page |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getDefaultPage | — | ApiResponse | yes | Index page |
+| GET | `/clean` | CleanScansPage | — | ApiResponse | yes | Clean all scans |
+| GET | `/clean/{scanId}` | CleanScanPage | `scanId`* | ApiResponse | yes | Clean scan |
+| GET | `/getfindings/{scanId}` | GetFindingPage | `scanId`* | Findings | yes | Get findings on finished scans |
+| GET | `/info` | getInfoPage | — | ApiResponse | yes | Engine info page |
+| GET | `/liveness` | getLivenessPage | — | — | yes | Liveness page |
+| GET | `/readiness` | getReadinessPage | — | — | yes | Readiness page |
+| GET | `/reloadconfig` | reloadConfigurationPage | — | ApiResponse | yes | Configuration reloading page |
+| POST | `/startscan` | StartScanPage | body*: ScanDefinition | ApiResponse |  | Start a new scan |
+| GET | `/status` | StatusScansPage | — | ApiResponse | yes | Status on all scans |
+| GET | `/status/{scanId}` | StatusScanPage | `scanId`* | ApiResponse | yes | Status of a scan |
+| GET | `/stop/{scanId}` | StopScanPage | `scanId`* | ApiResponse | yes | Stop a scan |
+| GET | `/stopscans` | StopScansPage | — | ApiResponse | yes | Stop all scans |
+| GET | `/test` | getTestPage | — | — | yes | Test page |

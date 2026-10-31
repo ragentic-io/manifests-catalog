@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `a6ecc4b3c3c0084c2db8dfbbc71c53ad1c062c9ce377e88db30e00077bec25cf` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 13 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/{parent}/messages:send` | fcm.projects.messages.send | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/{parent}/messages:send` | fcm.projects.messages.send | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, body: SendMessageRequest | Message |  | — |

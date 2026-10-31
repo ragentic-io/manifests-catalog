@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `b05766eb7a933e6c21d72d70f0e304b62e125250326bdd06c7886086c1cf0ba8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,34 +34,36 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 25 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getVersion | Version information |
-| GET | `/analyses/{analysis-id}` | getAnalysis | Get analysis summary |
-| GET | `/analyses/{analysis-id}/alerts` | getAlerts | Get detailed alert information |
-| POST | `/analyses/{project-id}` | requestAnalysis | Run analysis of a specific commit |
-| GET | `/analyses/{project-id}/commits/{commit-id}` | getAnalysisForCommit | Get analysis summary for a specific commit |
-| POST | `/codereviews/{project-id}` | requestReview | Run code review for a patch |
-| GET | `/codereviews/{review-id}` | getCodeReview | Get results of code review |
-| GET | `/issues/{project-id}/{alert-key}` | getIssue | Get detailed alert information for an issue |
-| GET | `/openapi` | getSpec | API specification |
-| GET | `/operations/{operation-id}` | getOperation | Get operation status |
-| GET | `/projects` | getProjects | List projects |
-| POST | `/projects` | addProject | Add a project to LGTM |
-| DELETE | `/projects/{project-id}` | deleteProject | Delete project by numeric identifier |
-| GET | `/projects/{project-id}` | getProject | Get project by numeric identifier |
-| GET | `/projects/{project-id}/settings/analysis-configuration` | getProjectConfig | Get configuration for a project identified by numeric identifier |
-| PUT | `/projects/{project-id}/settings/analysis-configuration` | setProjectConfig | Set the administrator configuration for a project identified by numeric identifier |
-| GET | `/projects/{provider}/{org}/{name}` | getProjectByUrlIdentifier | Get project by URL identifier |
-| POST | `/queryjobs` | createQueryJob | Run a CodeQL query on one or more projects |
-| GET | `/queryjobs/{queryjob-id}` | getQueryJob | Get the status of a query job |
-| GET | `/queryjobs/{queryjob-id}/results` | getQueryJobResultsOverview | Provide a summary of results for the projects in the query job |
-| GET | `/queryjobs/{queryjob-id}/results/{project-id}` | getQueryJobResultsForProject | Fetch the results of a query job for a specific project |
-| DELETE | `/snapshots/uploads/{session-id}` | abortUpload | Abort database upload process |
-| POST | `/snapshots/uploads/{session-id}` | completeUpload | Complete snapshot upload session |
-| PUT | `/snapshots/uploads/{session-id}` | uploadPart | Upload snapshot |
-| GET | `/snapshots/{project-id}/{language}` | getSnapshot | Download a snapshot |
-| POST | `/snapshots/{project-id}/{language}` | initSnapshotUpload | Start snapshot upload session |
-| GET | `/system/health` | getHealth | Get a summary of the application's health |
-| GET | `/system/metrics` | getMetrics | Get the identifiers and descriptions of the usage metrics |
-| GET | `/system/metrics/{metric-id}` | getMetric | Get the computed values of the specified metric |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getVersion | — | version | yes | Version information |
+| GET | `/analyses/{analysis-id}` | getAnalysis | `analysis-id`* | analysis | yes | Get analysis summary |
+| GET | `/analyses/{analysis-id}/alerts` | getAlerts | `analysis-id`*, `sarif-version`, `excluded-files` | object | yes | Get detailed alert information |
+| POST | `/analyses/{project-id}` | requestAnalysis | `project-id`*, `commit`*, `language` | operation |  | Run analysis of a specific commit |
+| GET | `/analyses/{project-id}/commits/{commit-id}` | getAnalysisForCommit | `project-id`*, `commit-id`* | analysis | yes | Get analysis summary for a specific commit |
+| POST | `/codereviews/{project-id}` | requestReview | `project-id`*, `base`*, `external-id`*, `review-url`, `callback-url`, `callback-secret`, body*: string:binary | operation |  | Run code review for a patch |
+| GET | `/codereviews/{review-id}` | getCodeReview | `review-id`* | code-review[] | yes | Get results of code review |
+| GET | `/issues/{project-id}/{alert-key}` | getIssue | `project-id`*, `alert-key`* | object | yes | Get detailed alert information for an issue |
+| GET | `/openapi` | getSpec | — | object | yes | API specification |
+| GET | `/operations/{operation-id}` | getOperation | `operation-id`* | operation | yes | Get operation status |
+| GET | `/projects` | getProjects | `limit`, `start` | project-list | yes | List projects |
+| POST | `/projects` | addProject | `repository`*, `language`, `mode`, `commit`, `date`, `worker-label`, body: string | operation |  | Add a project to LGTM |
+| GET | `/projects/{project-id}` | getProject | `project-id`* | project-details | yes | Get project by numeric identifier |
+| DELETE | `/projects/{project-id}` | deleteProject | `project-id`* | project-details |  | Delete project by numeric identifier |
+| GET | `/projects/{project-id}/settings/analysis-configuration` | getProjectConfig | `project-id`*, `source` | object | yes | Get configuration for a project identified by numeric identifier |
+| PUT | `/projects/{project-id}/settings/analysis-configuration` | setProjectConfig | `project-id`*, body*: string | object |  | Set the administrator configuration for a project identified by numeric identifier |
+| GET | `/projects/{provider}/{org}/{name}` | getProjectByUrlIdentifier | `provider`*, `org`*, `name`* | project-details | yes | Get project by URL identifier |
+| POST | `/queryjobs` | createQueryJob | `language`*, `project-id`, `projects-list`, body*: string | operation |  | Run a CodeQL query on one or more projects |
+| GET | `/queryjobs/{queryjob-id}` | getQueryJob | `queryjob-id`* | queryjob | yes | Get the status of a query job |
+| GET | `/queryjobs/{queryjob-id}/results` | getQueryJobResultsOverview | `queryjob-id`*, `start`, `limit`, `filter` | queryjob-results-overview | yes | Provide a summary of results for the projects in the query job |
+| GET | `/queryjobs/{queryjob-id}/results/{project-id}` | getQueryJobResultsForProject | `queryjob-id`*, `project-id`*, `start`, `limit`, `nofilter` | queryjob-project-results | yes | Fetch the results of a query job for a specific project |
+| PUT | `/snapshots/uploads/{session-id}` | uploadPart | `session-id`*, body*: string:binary | — |  | Upload snapshot |
+| POST | `/snapshots/uploads/{session-id}` | completeUpload | `session-id`* | operation |  | Complete snapshot upload session |
+| DELETE | `/snapshots/uploads/{session-id}` | abortUpload | `session-id`* | operation |  | Abort database upload process |
+| GET | `/snapshots/{project-id}/{language}` | getSnapshot | `project-id`*, `language`* | — | yes | Download a snapshot |
+| POST | `/snapshots/{project-id}/{language}` | initSnapshotUpload | `project-id`*, `language`*, `commit`*, `date` | upload-session |  | Start snapshot upload session |
+| GET | `/system/health` | getHealth | — | health | yes | Get a summary of the application's health |
+| GET | `/system/metrics` | getMetrics | — | metrics-list | yes | Get the identifiers and descriptions of the usage metrics |
+| GET | `/system/metrics/{metric-id}` | getMetric | `metric-id`* | metric | yes | Get the computed values of the specified metric |

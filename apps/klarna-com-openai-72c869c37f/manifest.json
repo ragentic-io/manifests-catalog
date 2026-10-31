@@ -8,6 +8,16 @@
         "from": "klarna-com-openai-72c869c37f",
         "kind": "EXPOSES",
         "to": "operation:get:/public/openai/v0/products"
+      },
+      {
+        "from": "operation:get:/public/openai/v0/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductResponse"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Product"
       }
     ],
     "nodes": [
@@ -21,20 +31,58 @@
         "kind": "operation",
         "method": "get",
         "name": "productsUsingGET",
+        "parameters": [
+          {
+            "description": "A precise query that matches one very small category or product that needs to be searched for to find the products the user is looking for.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "number of products returned",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "maximum price of the matching product in local currency, filters results",
+            "in": "query",
+            "name": "budget",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/public/openai/v0/products",
         "pointer": "#/paths/~1public~1openai~1v0~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductResponse"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "API for fetching Klarna product information"
+        "summary": "API for fetching Klarna product information",
+        "tags": [
+          "open-ai-product-endpoint"
+        ]
       },
       {
         "id": "schema:Product",
         "kind": "schema",
-        "name": "Product"
+        "name": "Product",
+        "type": "object"
       },
       {
         "id": "schema:ProductResponse",
         "kind": "schema",
-        "name": "ProductResponse"
+        "name": "ProductResponse",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_Channel4_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `43b3bb26b6dd148619b63b1be478c961ea28b8e8c03a729c68be4a2be85bb274` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,73 +34,75 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_Channel4_profile_im
 
 23 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/4od/episode-list/date/{yyyy}/{mm}/{dd}.atom` | 4oD_Browse_by_Date_Feed | 4oD Browse by Date Feed |
-| GET | `/4od/episode-list/popular.atom` | 4oD_Most_Popular_Episodes_Feed | 4oD Most Popular Episodes Feed |
-| GET | `/4od/recently-added/videos.atom` | 4oD_Clips_Catch_Up_Feed | 4oD Clips Catch Up Feed |
-| GET | `/atoz.atom` | A_to_Z_Landing_Feed | A to Z Landing Feed |
-| GET | `/atoz/{start_letter}.atom` | A_to_Z_Letter_Feed | A to Z Letter Feed |
-| GET | `/atoz/{start_letter}/page-{pageno}.atom` | A_to_Z_Letter_Feed(2) | A to Z Letter Feed(2) |
-| GET | `/brands/4od.atom` | 4oD_Title_All_Brands_Feed | 4oD Title All Brands Feed |
-| GET | `/brands/4od/page-{pageno}.atom` | 4oD_Title_All_Brands_Feed(2) | 4oD Title All Brands Feed(2) |
-| GET | `/brands/4od/popular.atom` | 4oD_Popular_All_Brands_Feed | 4oD Popular All Brands Feed |
-| GET | `/brands/4od/popular/page-{pageno}.atom` | 4oD_Popular_All_Brands_Feed(2) | 4oD Popular All Brands Feed(2) |
-| GET | `/brands/popular.atom` | Popular_Brands_Feed | Popular Brands Feed |
-| GET | `/brands/popular/page-{pageno}.atom` | Popular_Brands_Feed(2) | Popular Brands Feed(2) |
-| GET | `/categories.atom` | Categories_Landing_Feed | Categories Landing Feed |
-| GET | `/categories/{category}.atom` | All_Programmes_by_TX_Date | All Programmes by TX Date |
-| GET | `/categories/{category}/4od.atom` | 4oD_Programmes_by_TX_Date | 4oD Programmes by TX Date |
-| GET | `/categories/{category}/4od/page-{pageno}.atom` | 4oD_Programmes_by_TX_Date(4) | 4oD Programmes by TX Date(4) |
-| GET | `/categories/{category}/4od/popular.atom` | Most_Popular_Brands_Feed | Most Popular Brands Feed |
-| GET | `/categories/{category}/4od/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(5) | Most Popular Brands Feed(5) |
-| GET | `/categories/{category}/4od/title.atom` | 4oD_Programmes_by_Title | 4oD Programmes by Title |
-| GET | `/categories/{category}/4od/title/page-{pageno}.atom` | 4oD_Programmes_by_Title(4) | 4oD Programmes by Title(4) |
-| GET | `/categories/{category}/channel/{channel}.atom` | All_Programmes_by_TX_Date(2) | All Programmes by TX Date(2) |
-| GET | `/categories/{category}/channel/{channel}/4od.atom` | 4oD_Programmes_by_TX_Date(2) | 4oD Programmes by TX Date(2) |
-| GET | `/categories/{category}/channel/{channel}/4od/page-{pageno}.atom` | 4oD_Programmes_by_TX_Date(5) | 4oD Programmes by TX Date(5) |
-| GET | `/categories/{category}/channel/{channel}/4od/popular.atom` | Most_Popular_Brands_Feed(3) | Most Popular Brands Feed(3) |
-| GET | `/categories/{category}/channel/{channel}/4od/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(7) | Most Popular Brands Feed(7) |
-| GET | `/categories/{category}/channel/{channel}/4od/title.atom` | 4oD_Programmes_by_Title(2) | 4oD Programmes by Title(2) |
-| GET | `/categories/{category}/channel/{channel}/4od/title/page-{pageno}.atom` | 4oD_Programmes_by_Title(5) | 4oD Programmes by Title(5) |
-| GET | `/categories/{category}/channel/{channel}/page-{pageno}.atom` | All_Programmes_by_TX_Date(5) | All Programmes by TX Date(5) |
-| GET | `/categories/{category}/channel/{channel}/title.atom` | All_Programmes_by_Title(2) | All Programmes by Title(2) |
-| GET | `/categories/{category}/channel/{channel}/title/page-{pageno}.atom` | All_Programmes_by_Title(5) | All Programmes by Title(5) |
-| GET | `/categories/{category}/derived/ad.atom` | All_Programmes_by_TX_Date(3) | All Programmes by TX Date(3) |
-| GET | `/categories/{category}/derived/ad/4od.atom` | 4oD_Programmes_by_TX_Date(3) | 4oD Programmes by TX Date(3) |
-| GET | `/categories/{category}/derived/ad/4od/page-{pageno}.atom` | 4oD_Programmes_by_TX_Date(6) | 4oD Programmes by TX Date(6) |
-| GET | `/categories/{category}/derived/ad/4od/popular.atom` | Most_Popular_Brands_Feed(4) | Most Popular Brands Feed(4) |
-| GET | `/categories/{category}/derived/ad/4od/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(8) | Most Popular Brands Feed(8) |
-| GET | `/categories/{category}/derived/ad/4od/title.atom` | 4oD_Programmes_by_Title(3) | 4oD Programmes by Title(3) |
-| GET | `/categories/{category}/derived/ad/4od/title/page-{pageno}.atom` | 4oD_Programmes_by_Title(6) | 4oD Programmes by Title(6) |
-| GET | `/categories/{category}/derived/ad/page-{pageno}.atom` | All_Programmes_by_TX_Date(6) | All Programmes by TX Date(6) |
-| GET | `/categories/{category}/derived/ad/title.atom` | All_Programmes_by_Title(3) | All Programmes by Title(3) |
-| GET | `/categories/{category}/derived/ad/title/page-{pageno}.atom` | All_Programmes_by_Title(6) | All Programmes by Title(6) |
-| GET | `/categories/{category}/page-{pageno}.atom` | All_Programmes_by_TX_Date(4) | All Programmes by TX Date(4) |
-| GET | `/categories/{category}/popular.atom` | Most_Popular_Brands_Feed(2) | Most Popular Brands Feed(2) |
-| GET | `/categories/{category}/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(6) | Most Popular Brands Feed(6) |
-| GET | `/categories/{category}/title.atom` | All_Programmes_by_Title | All Programmes by Title |
-| GET | `/categories/{category}/title/page-{pageno}.atom` | All_Programmes_by_Title(4) | All Programmes by Title(4) |
-| GET | `/collections/{collection_name}.atom` | Collections_Feed(2) | Collections Feed(2) |
-| GET | `/collections/{collection_name}/4od.atom` | Collections_Feed | Collections Feed |
-| GET | `/collections/{collection_name}/flattened.atom` | Flattened_Collection_Feed(2) | Flattened Collection Feed(2) |
-| GET | `/collections/{collection_name}/flattened/4od.atom` | Flattened_Collection_Feed | Flattened Collection Feed |
-| GET | `/coming-soon.atom` | Coming_Soon_feed | Coming Soon feed |
-| GET | `/coming-soon/{category}.atom` | Coming_Soon_feed(2) | Coming Soon feed(2) |
-| GET | `/programme/{programme-id}.atom` | Programme_Feed | Programme Feed |
-| GET | `/search.atom` | Search_Feed | Search Feed |
-| GET | `/search/page-{pageno}.atom` | Search_Feed(3) | Search Feed(3) |
-| GET | `/search/{q}.atom` | Search_Feed(2) | Search Feed(2) |
-| GET | `/search/{q}/page-{pageno}.atom` | Search_Feed(4) | Search Feed(4) |
-| GET | `/tv-listings/daily/{yyyy}/{mm}/{dd}.atom` | TV_Listings_Feed | TV Listings Feed |
-| GET | `/tv-listings/daily/{yyyy}/{mm}/{dd}/{channel}.atom` | TV_Listings_Feed(2) | TV Listings Feed(2) |
-| GET | `/{brand-web-safe-title}.atom` | Hub_Feed | Hub Feed |
-| GET | `/{brand-web-safe-title}/4od.atom` | 4oD_Feed | 4oD Feed |
-| GET | `/{brand-web-safe-title}/epg.atom` | Brand_EPG_Atom_Feed | Brand EPG Atom Feed |
-| GET | `/{brand-web-safe-title}/episode-guide.atom` | Episode_Guide_Feed_Series_Landing | Episode Guide Feed Series Landing |
-| GET | `/{brand-web-safe-title}/episode-guide/series-{series_number}.atom` | Episode_Guide_Feed_Series_Detail | Episode Guide Feed Series Detail |
-| GET | `/{brand-web-safe-title}/episode-guide/series-{series_number}/episode-{episode_number}.atom` | Episode_Guide_Feed_Episode_Detail | Episode Guide Feed Episode Detail |
-| GET | `/{brand-web-safe-title}/videos/all.atom` | Clips_Landing_Feed_Brand_Series_and_Episode_Levels | Clips Landing Feed Brand Series and Episode Levels |
-| GET | `/{brand-web-safe-title}/videos/series-{series_number}.atom` | Clips_Landing_Feed_Brand_Series_and_Episode_Levels(2) | Clips Landing Feed Brand Series and Episode Levels(2) |
-| GET | `/{brand-web-safe-title}/videos/series-{series_number}/episode-{episode_number}.atom` | Clips_Landing_Feed_Brand_Series_and_Episode_Levels(3) | Clips Landing Feed Brand Series and Episode Levels(3) |
-| GET | `/{brand-web-safe-title}/videos/{clip-asset-id}.atom` | Clip_Detail_Atom_Feed | Clip Detail Atom Feed |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/4od/episode-list/date/{yyyy}/{mm}/{dd}.atom` | 4oD_Browse_by_Date_Feed | `platform`, `yyyy`*, `mm`*, `dd`* | atom | yes | 4oD Browse by Date Feed |
+| GET | `/4od/episode-list/popular.atom` | 4oD_Most_Popular_Episodes_Feed | `platform` | atom | yes | 4oD Most Popular Episodes Feed |
+| GET | `/4od/recently-added/videos.atom` | 4oD_Clips_Catch_Up_Feed | `platform` | atom | yes | 4oD Clips Catch Up Feed |
+| GET | `/atoz.atom` | A_to_Z_Landing_Feed | `platform` | atom | yes | A to Z Landing Feed |
+| GET | `/atoz/{start_letter}.atom` | A_to_Z_Letter_Feed | `platform`, `start_letter`* | atom | yes | A to Z Letter Feed |
+| GET | `/atoz/{start_letter}/page-{pageno}.atom` | A_to_Z_Letter_Feed(2) | `platform`, `start_letter`*, `pageno`* | atom | yes | A to Z Letter Feed(2) |
+| GET | `/brands/4od.atom` | 4oD_Title_All_Brands_Feed | `platform` | atom | yes | 4oD Title All Brands Feed |
+| GET | `/brands/4od/page-{pageno}.atom` | 4oD_Title_All_Brands_Feed(2) | `platform`, `pageno`* | atom | yes | 4oD Title All Brands Feed(2) |
+| GET | `/brands/4od/popular.atom` | 4oD_Popular_All_Brands_Feed | `platform` | atom | yes | 4oD Popular All Brands Feed |
+| GET | `/brands/4od/popular/page-{pageno}.atom` | 4oD_Popular_All_Brands_Feed(2) | `platform`, `pageno`* | atom | yes | 4oD Popular All Brands Feed(2) |
+| GET | `/brands/popular.atom` | Popular_Brands_Feed | `platform` | atom | yes | Popular Brands Feed |
+| GET | `/brands/popular/page-{pageno}.atom` | Popular_Brands_Feed(2) | `platform`, `pageno`* | atom | yes | Popular Brands Feed(2) |
+| GET | `/categories.atom` | Categories_Landing_Feed | `platform` | atom | yes | Categories Landing Feed |
+| GET | `/categories/{category}.atom` | All_Programmes_by_TX_Date | `platform`, `category`* | atom | yes | All Programmes by TX Date |
+| GET | `/categories/{category}/4od.atom` | 4oD_Programmes_by_TX_Date | `platform`, `category`* | atom | yes | 4oD Programmes by TX Date |
+| GET | `/categories/{category}/4od/page-{pageno}.atom` | 4oD_Programmes_by_TX_Date(4) | `platform`, `category`*, `pageno`* | atom | yes | 4oD Programmes by TX Date(4) |
+| GET | `/categories/{category}/4od/popular.atom` | Most_Popular_Brands_Feed | `platform`, `category`* | atom | yes | Most Popular Brands Feed |
+| GET | `/categories/{category}/4od/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(5) | `platform`, `category`*, `pageno`* | atom | yes | Most Popular Brands Feed(5) |
+| GET | `/categories/{category}/4od/title.atom` | 4oD_Programmes_by_Title | `platform`, `category`* | atom | yes | 4oD Programmes by Title |
+| GET | `/categories/{category}/4od/title/page-{pageno}.atom` | 4oD_Programmes_by_Title(4) | `platform`, `category`*, `pageno`* | atom | yes | 4oD Programmes by Title(4) |
+| GET | `/categories/{category}/channel/{channel}.atom` | All_Programmes_by_TX_Date(2) | `platform`, `category`*, `channel`* | atom | yes | All Programmes by TX Date(2) |
+| GET | `/categories/{category}/channel/{channel}/4od.atom` | 4oD_Programmes_by_TX_Date(2) | `platform`, `category`*, `channel`* | atom | yes | 4oD Programmes by TX Date(2) |
+| GET | `/categories/{category}/channel/{channel}/4od/page-{pageno}.atom` | 4oD_Programmes_by_TX_Date(5) | `platform`, `category`*, `channel`*, `pageno`* | atom | yes | 4oD Programmes by TX Date(5) |
+| GET | `/categories/{category}/channel/{channel}/4od/popular.atom` | Most_Popular_Brands_Feed(3) | `platform`, `category`*, `channel`* | atom | yes | Most Popular Brands Feed(3) |
+| GET | `/categories/{category}/channel/{channel}/4od/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(7) | `platform`, `category`*, `channel`*, `pageno`* | atom | yes | Most Popular Brands Feed(7) |
+| GET | `/categories/{category}/channel/{channel}/4od/title.atom` | 4oD_Programmes_by_Title(2) | `platform`, `category`*, `channel`* | atom | yes | 4oD Programmes by Title(2) |
+| GET | `/categories/{category}/channel/{channel}/4od/title/page-{pageno}.atom` | 4oD_Programmes_by_Title(5) | `platform`, `category`*, `channel`*, `pageno`* | atom | yes | 4oD Programmes by Title(5) |
+| GET | `/categories/{category}/channel/{channel}/page-{pageno}.atom` | All_Programmes_by_TX_Date(5) | `platform`, `category`*, `channel`*, `pageno`* | atom | yes | All Programmes by TX Date(5) |
+| GET | `/categories/{category}/channel/{channel}/title.atom` | All_Programmes_by_Title(2) | `platform`, `category`*, `channel`* | atom | yes | All Programmes by Title(2) |
+| GET | `/categories/{category}/channel/{channel}/title/page-{pageno}.atom` | All_Programmes_by_Title(5) | `platform`, `category`*, `channel`*, `pageno`* | atom | yes | All Programmes by Title(5) |
+| GET | `/categories/{category}/derived/ad.atom` | All_Programmes_by_TX_Date(3) | `platform`, `category`* | atom | yes | All Programmes by TX Date(3) |
+| GET | `/categories/{category}/derived/ad/4od.atom` | 4oD_Programmes_by_TX_Date(3) | `platform`, `category`* | atom | yes | 4oD Programmes by TX Date(3) |
+| GET | `/categories/{category}/derived/ad/4od/page-{pageno}.atom` | 4oD_Programmes_by_TX_Date(6) | `platform`, `category`*, `pageno`* | atom | yes | 4oD Programmes by TX Date(6) |
+| GET | `/categories/{category}/derived/ad/4od/popular.atom` | Most_Popular_Brands_Feed(4) | `platform`, `category`* | atom | yes | Most Popular Brands Feed(4) |
+| GET | `/categories/{category}/derived/ad/4od/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(8) | `platform`, `category`*, `pageno`* | atom | yes | Most Popular Brands Feed(8) |
+| GET | `/categories/{category}/derived/ad/4od/title.atom` | 4oD_Programmes_by_Title(3) | `platform`, `category`* | atom | yes | 4oD Programmes by Title(3) |
+| GET | `/categories/{category}/derived/ad/4od/title/page-{pageno}.atom` | 4oD_Programmes_by_Title(6) | `platform`, `category`*, `pageno`* | atom | yes | 4oD Programmes by Title(6) |
+| GET | `/categories/{category}/derived/ad/page-{pageno}.atom` | All_Programmes_by_TX_Date(6) | `platform`, `category`*, `pageno`* | atom | yes | All Programmes by TX Date(6) |
+| GET | `/categories/{category}/derived/ad/title.atom` | All_Programmes_by_Title(3) | `platform`, `category`* | atom | yes | All Programmes by Title(3) |
+| GET | `/categories/{category}/derived/ad/title/page-{pageno}.atom` | All_Programmes_by_Title(6) | `platform`, `category`*, `pageno`* | atom | yes | All Programmes by Title(6) |
+| GET | `/categories/{category}/page-{pageno}.atom` | All_Programmes_by_TX_Date(4) | `platform`, `category`*, `pageno`* | atom | yes | All Programmes by TX Date(4) |
+| GET | `/categories/{category}/popular.atom` | Most_Popular_Brands_Feed(2) | `platform`, `category`* | atom | yes | Most Popular Brands Feed(2) |
+| GET | `/categories/{category}/popular/page-{pageno}.atom` | Most_Popular_Brands_Feed(6) | `platform`, `category`*, `pageno`* | atom | yes | Most Popular Brands Feed(6) |
+| GET | `/categories/{category}/title.atom` | All_Programmes_by_Title | `platform`, `category`* | atom | yes | All Programmes by Title |
+| GET | `/categories/{category}/title/page-{pageno}.atom` | All_Programmes_by_Title(4) | `platform`, `category`*, `pageno`* | atom | yes | All Programmes by Title(4) |
+| GET | `/collections/{collection_name}.atom` | Collections_Feed(2) | `platform`, `collection_name`* | atom | yes | Collections Feed(2) |
+| GET | `/collections/{collection_name}/4od.atom` | Collections_Feed | `platform`, `collection_name`* | atom | yes | Collections Feed |
+| GET | `/collections/{collection_name}/flattened.atom` | Flattened_Collection_Feed(2) | `platform`, `collection_name`* | atom | yes | Flattened Collection Feed(2) |
+| GET | `/collections/{collection_name}/flattened/4od.atom` | Flattened_Collection_Feed | `platform`, `collection_name`* | atom | yes | Flattened Collection Feed |
+| GET | `/coming-soon.atom` | Coming_Soon_feed | `platform` | atom | yes | Coming Soon feed |
+| GET | `/coming-soon/{category}.atom` | Coming_Soon_feed(2) | `platform`, `category`* | atom | yes | Coming Soon feed(2) |
+| GET | `/programme/{programme-id}.atom` | Programme_Feed | `platform`, `programme-id`* | atom | yes | Programme Feed |
+| GET | `/search.atom` | Search_Feed | `platform`, `q`* | atom | yes | Search Feed |
+| GET | `/search/page-{pageno}.atom` | Search_Feed(3) | `platform`, `q`*, `pageno`* | atom | yes | Search Feed(3) |
+| GET | `/search/{q}.atom` | Search_Feed(2) | `platform`, `q`* | atom | yes | Search Feed(2) |
+| GET | `/search/{q}/page-{pageno}.atom` | Search_Feed(4) | `platform`, `q`*, `pageno`* | atom | yes | Search Feed(4) |
+| GET | `/tv-listings/daily/{yyyy}/{mm}/{dd}.atom` | TV_Listings_Feed | `platform`, `yyyy`*, `mm`*, `dd`* | atom | yes | TV Listings Feed |
+| GET | `/tv-listings/daily/{yyyy}/{mm}/{dd}/{channel}.atom` | TV_Listings_Feed(2) | `platform`, `yyyy`*, `mm`*, `dd`*, `channel`* | atom | yes | TV Listings Feed(2) |
+| GET | `/{brand-web-safe-title}.atom` | Hub_Feed | `platform`, `brand-web-safe-title`* | atom | yes | Hub Feed |
+| GET | `/{brand-web-safe-title}/4od.atom` | 4oD_Feed | `platform`, `brand-web-safe-title`* | atom | yes | 4oD Feed |
+| GET | `/{brand-web-safe-title}/epg.atom` | Brand_EPG_Atom_Feed | `platform`, `brand-web-safe-title`* | atom | yes | Brand EPG Atom Feed |
+| GET | `/{brand-web-safe-title}/episode-guide.atom` | Episode_Guide_Feed_Series_Landing | `platform`, `brand-web-safe-title`* | atom | yes | Episode Guide Feed Series Landing |
+| GET | `/{brand-web-safe-title}/episode-guide/series-{series_number}.atom` | Episode_Guide_Feed_Series_Detail | `platform`, `brand-web-safe-title`*, `series_number`* | atom | yes | Episode Guide Feed Series Detail |
+| GET | `/{brand-web-safe-title}/episode-guide/series-{series_number}/episode-{episode_number}.atom` | Episode_Guide_Feed_Episode_Detail | `platform`, `brand-web-safe-title`*, `series_number`*, `episode_number`* | atom | yes | Episode Guide Feed Episode Detail |
+| GET | `/{brand-web-safe-title}/videos/all.atom` | Clips_Landing_Feed_Brand_Series_and_Episode_Levels | `platform`, `brand-web-safe-title`* | atom | yes | Clips Landing Feed Brand Series and Episode Levels |
+| GET | `/{brand-web-safe-title}/videos/series-{series_number}.atom` | Clips_Landing_Feed_Brand_Series_and_Episode_Levels(2) | `platform`, `brand-web-safe-title`*, `series_number`* | atom | yes | Clips Landing Feed Brand Series and Episode Levels(2) |
+| GET | `/{brand-web-safe-title}/videos/series-{series_number}/episode-{episode_number}.atom` | Clips_Landing_Feed_Brand_Series_and_Episode_Levels(3) | `platform`, `brand-web-safe-title`*, `series_number`*, `episode_number`* | atom | yes | Clips Landing Feed Brand Series and Episode Levels(3) |
+| GET | `/{brand-web-safe-title}/videos/{clip-asset-id}.atom` | Clip_Detail_Atom_Feed | `platform`, `brand-web-safe-title`*, `clip-asset-id`* | atom | yes | Clip Detail Atom Feed |

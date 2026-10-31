@@ -17,17 +17,17 @@
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/license/{licenseNumber}"
-      },
-      {
-        "from": "netlicensing-io-3a1d6c96b5",
-        "kind": "EXPOSES",
         "to": "operation:get:/license/{licenseNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
         "to": "operation:post:/license/{licenseNumber}"
+      },
+      {
+        "from": "netlicensing-io-3a1d6c96b5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/license/{licenseNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
@@ -42,17 +42,17 @@
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/licensee/{licenseeNumber}"
-      },
-      {
-        "from": "netlicensing-io-3a1d6c96b5",
-        "kind": "EXPOSES",
         "to": "operation:get:/licensee/{licenseeNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
         "to": "operation:post:/licensee/{licenseeNumber}"
+      },
+      {
+        "from": "netlicensing-io-3a1d6c96b5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/licensee/{licenseeNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
@@ -77,17 +77,17 @@
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/licensetemplate/{licenseTemplateNumber}"
-      },
-      {
-        "from": "netlicensing-io-3a1d6c96b5",
-        "kind": "EXPOSES",
         "to": "operation:get:/licensetemplate/{licenseTemplateNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
         "to": "operation:post:/licensetemplate/{licenseTemplateNumber}"
+      },
+      {
+        "from": "netlicensing-io-3a1d6c96b5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/licensetemplate/{licenseTemplateNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
@@ -117,17 +117,17 @@
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/product/{productNumber}"
-      },
-      {
-        "from": "netlicensing-io-3a1d6c96b5",
-        "kind": "EXPOSES",
         "to": "operation:get:/product/{productNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
         "to": "operation:post:/product/{productNumber}"
+      },
+      {
+        "from": "netlicensing-io-3a1d6c96b5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/product/{productNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
@@ -142,17 +142,17 @@
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/productmodule/{productModuleNumber}"
-      },
-      {
-        "from": "netlicensing-io-3a1d6c96b5",
-        "kind": "EXPOSES",
         "to": "operation:get:/productmodule/{productModuleNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
         "to": "operation:post:/productmodule/{productModuleNumber}"
+      },
+      {
+        "from": "netlicensing-io-3a1d6c96b5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/productmodule/{productModuleNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
@@ -167,12 +167,12 @@
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/token/{tokenNumber}"
+        "to": "operation:get:/token/{tokenNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
-        "to": "operation:get:/token/{tokenNumber}"
+        "to": "operation:delete:/token/{tokenNumber}"
       },
       {
         "from": "netlicensing-io-3a1d6c96b5",
@@ -203,6 +203,216 @@
         "from": "netlicensing-io-3a1d6c96b5",
         "kind": "EXPOSES",
         "to": "operation:get:/utility/licensingModels"
+      },
+      {
+        "from": "operation:get:/license",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/license",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/license/{licenseNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/license/{licenseNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:delete:/license/{licenseNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/licensee",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/licensee",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/licensee/{licenseeNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/licensee/{licenseeNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:delete:/licensee/{licenseeNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/licensee/{licenseeNumber}/transfer",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/licensee/{licenseeNumber}/validate",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/licensetemplate",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/licensetemplate",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/licensetemplate/{licenseTemplateNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/licensetemplate/{licenseTemplateNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:delete:/licensetemplate/{licenseTemplateNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/paymentmethod",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/paymentmethod/{paymentMethodNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/paymentmethod/{paymentMethodNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/product",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/product",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/product/{productNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/product/{productNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:delete:/product/{productNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/productmodule",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/productmodule",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/productmodule/{productModuleNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/productmodule/{productModuleNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:delete:/productmodule/{productModuleNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/token",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/token",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/token/{tokenNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:delete:/token/{tokenNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/transaction",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/transaction",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/transaction/{transactionNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:post:/transaction/{transactionNumber}",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/utility/licenseTypes",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "operation:get:/utility/licensingModels",
+        "kind": "RETURNS",
+        "to": "schema:netlicensing"
+      },
+      {
+        "from": "schema:netlicensing",
+        "kind": "REFERENCES",
+        "to": "schema:infos"
+      },
+      {
+        "from": "schema:netlicensing",
+        "kind": "REFERENCES",
+        "to": "schema:items"
       }
     ],
     "nodes": [
@@ -212,648 +422,1942 @@
       },
       {
         "deprecated": false,
+        "description": "Return a list of all Licenses for the current Vendor",
         "id": "operation:get:/license",
         "kind": "operation",
         "method": "get",
         "name": "listLicenses",
         "path": "/license",
         "pointer": "#/paths/~1license/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Licenses"
+        "summary": "List Licenses",
+        "tags": [
+          "License"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new License",
         "id": "operation:post:/license",
         "kind": "operation",
         "method": "post",
         "name": "createLicense",
         "path": "/license",
         "pointer": "#/paths/~1license/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create License"
+        "summary": "Create License",
+        "tags": [
+          "License"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/license/{licenseNumber}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteLicense",
-        "path": "/license/{licenseNumber}",
-        "pointer": "#/paths/~1license~1{licenseNumber}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete License"
-      },
-      {
-        "deprecated": false,
+        "description": "Get License by a 'licenseNumber'",
         "id": "operation:get:/license/{licenseNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getLicense",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products/Licensees of a Vendor) that identifies the License.",
+            "in": "path",
+            "name": "licenseNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/license/{licenseNumber}",
         "pointer": "#/paths/~1license~1{licenseNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get License"
+        "summary": "Get License",
+        "tags": [
+          "License"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update License by a 'licenseNumber'",
         "id": "operation:post:/license/{licenseNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updateLicense",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products/Licensees of a Vendor) that identifies the License.",
+            "in": "path",
+            "name": "licenseNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/license/{licenseNumber}",
         "pointer": "#/paths/~1license~1{licenseNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update License"
+        "summary": "Update License",
+        "tags": [
+          "License"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete License by a 'licenseNumber'",
+        "id": "operation:delete:/license/{licenseNumber}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteLicense",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products/Licensees of a Vendor) that identifies the License.",
+            "in": "path",
+            "name": "licenseNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/license/{licenseNumber}",
+        "pointer": "#/paths/~1license~1{licenseNumber}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete License",
+        "tags": [
+          "License"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Return a list of all Licensees for the current Vendor",
         "id": "operation:get:/licensee",
         "kind": "operation",
         "method": "get",
         "name": "listLicensees",
         "path": "/licensee",
         "pointer": "#/paths/~1licensee/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Licensees"
+        "summary": "List Licensees",
+        "tags": [
+          "Licensee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new Licensee",
         "id": "operation:post:/licensee",
         "kind": "operation",
         "method": "post",
         "name": "createLicensee",
         "path": "/licensee",
         "pointer": "#/paths/~1licensee/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create Licensee"
+        "summary": "Create Licensee",
+        "tags": [
+          "Licensee"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/licensee/{licenseeNumber}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteLicensee",
-        "path": "/licensee/{licenseeNumber}",
-        "pointer": "#/paths/~1licensee~1{licenseeNumber}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete Licensee"
-      },
-      {
-        "deprecated": false,
+        "description": "Return a Licensee by 'licenseeNumber'",
         "id": "operation:get:/licensee/{licenseeNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getLicensee",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Licensee.",
+            "in": "path",
+            "name": "licenseeNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/licensee/{licenseeNumber}",
         "pointer": "#/paths/~1licensee~1{licenseeNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get Licensee"
+        "summary": "Get Licensee",
+        "tags": [
+          "Licensee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets the provided properties to a Licensee.",
         "id": "operation:post:/licensee/{licenseeNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updateLicensee",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Licensee.",
+            "in": "path",
+            "name": "licenseeNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/licensee/{licenseeNumber}",
         "pointer": "#/paths/~1licensee~1{licenseeNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update Licensee"
+        "summary": "Update Licensee",
+        "tags": [
+          "Licensee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a Licensee by 'number'",
+        "id": "operation:delete:/licensee/{licenseeNumber}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteLicensee",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Licensee.",
+            "in": "path",
+            "name": "licenseeNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Force object deletion and all descendants.",
+            "in": "query",
+            "name": "forceCascade",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/licensee/{licenseeNumber}",
+        "pointer": "#/paths/~1licensee~1{licenseeNumber}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete Licensee",
+        "tags": [
+          "Licensee"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Licenses transfer between Licensees",
         "id": "operation:post:/licensee/{licenseeNumber}/transfer",
         "kind": "operation",
         "method": "post",
         "name": "transferLicenses",
+        "parameters": [
+          {
+            "description": "Licensee number with a maximum length of 1000 characters",
+            "in": "path",
+            "name": "licenseeNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/licensee/{licenseeNumber}/transfer",
         "pointer": "#/paths/~1licensee~1{licenseeNumber}~1transfer/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Transfer Licenses"
+        "summary": "Transfer Licenses",
+        "tags": [
+          "Licensee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Validates active Licenses of the Licensee",
         "id": "operation:post:/licensee/{licenseeNumber}/validate",
         "kind": "operation",
         "method": "post",
         "name": "validateLicensee",
+        "parameters": [
+          {
+            "description": "Licensee number with a maximum length of 1000 characters",
+            "in": "path",
+            "name": "licenseeNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/licensee/{licenseeNumber}/validate",
         "pointer": "#/paths/~1licensee~1{licenseeNumber}~1validate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Validate Licensee"
+        "summary": "Validate Licensee",
+        "tags": [
+          "Licensee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of all License Templates for the current Vendor",
         "id": "operation:get:/licensetemplate",
         "kind": "operation",
         "method": "get",
         "name": "listLicenseTemplates",
         "path": "/licensetemplate",
         "pointer": "#/paths/~1licensetemplate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List License Templates"
+        "summary": "List License Templates",
+        "tags": [
+          "License Template"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new License Template",
         "id": "operation:post:/licensetemplate",
         "kind": "operation",
         "method": "post",
         "name": "createLicenseTemplate",
         "path": "/licensetemplate",
         "pointer": "#/paths/~1licensetemplate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create License Template"
+        "summary": "Create License Template",
+        "tags": [
+          "License Template"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/licensetemplate/{licenseTemplateNumber}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteLicenseTemplate",
-        "path": "/licensetemplate/{licenseTemplateNumber}",
-        "pointer": "#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete License Template"
-      },
-      {
-        "deprecated": false,
+        "description": "Return a License Template by 'licenseTemplateNumber'",
         "id": "operation:get:/licensetemplate/{licenseTemplateNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getLicenseTemplate",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the License Template.",
+            "in": "path",
+            "name": "licenseTemplateNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/licensetemplate/{licenseTemplateNumber}",
         "pointer": "#/paths/~1licensetemplate~1{licenseTemplateNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get License Template"
+        "summary": "Get License Template",
+        "tags": [
+          "License Template"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets the provided properties to a License Template.",
         "id": "operation:post:/licensetemplate/{licenseTemplateNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updateLicenseTemplate",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the License Template.",
+            "in": "path",
+            "name": "licenseTemplateNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/licensetemplate/{licenseTemplateNumber}",
         "pointer": "#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update License Template"
+        "summary": "Update License Template",
+        "tags": [
+          "License Template"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a License Template by 'number'.",
+        "id": "operation:delete:/licensetemplate/{licenseTemplateNumber}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteLicenseTemplate",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the License Template.",
+            "in": "path",
+            "name": "licenseTemplateNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Force object deletion and all descendants.",
+            "in": "query",
+            "name": "forceCascade",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/licensetemplate/{licenseTemplateNumber}",
+        "pointer": "#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete License Template",
+        "tags": [
+          "License Template"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Return a list of all Payment Methods for the current Vendor",
         "id": "operation:get:/paymentmethod",
         "kind": "operation",
         "method": "get",
         "name": "listPaymentMethods",
         "path": "/paymentmethod",
         "pointer": "#/paths/~1paymentmethod/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Payment Methods"
+        "summary": "List Payment Methods",
+        "tags": [
+          "Payment Method"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a Payment Method info by 'paymentMethodNumber'",
         "id": "operation:get:/paymentmethod/{paymentMethodNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentMethod",
+        "parameters": [
+          {
+            "description": "Payment method number",
+            "in": "path",
+            "name": "paymentMethodNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/paymentmethod/{paymentMethodNumber}",
         "pointer": "#/paths/~1paymentmethod~1{paymentMethodNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get Payment Method"
+        "summary": "Get Payment Method",
+        "tags": [
+          "Payment Method"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets the provided properties to a Payment Method.",
         "id": "operation:post:/paymentmethod/{paymentMethodNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updatePaymentMethod",
+        "parameters": [
+          {
+            "description": "Payment method number",
+            "in": "path",
+            "name": "paymentMethodNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/paymentmethod/{paymentMethodNumber}",
         "pointer": "#/paths/~1paymentmethod~1{paymentMethodNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update Payment Method"
+        "summary": "Update Payment Method",
+        "tags": [
+          "Payment Method"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of all configured Products for the current Vendor",
         "id": "operation:get:/product",
         "kind": "operation",
         "method": "get",
         "name": "listProducts",
         "path": "/product",
         "pointer": "#/paths/~1product/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Products"
+        "summary": "List Products",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new Product",
         "id": "operation:post:/product",
         "kind": "operation",
         "method": "post",
         "name": "createProduct",
         "path": "/product",
         "pointer": "#/paths/~1product/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create Product"
+        "summary": "Create Product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/product/{productNumber}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteProduct",
-        "path": "/product/{productNumber}",
-        "pointer": "#/paths/~1product~1{productNumber}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete Product"
-      },
-      {
-        "deprecated": false,
+        "description": "Return a Product by 'productNumber'",
         "id": "operation:get:/product/{productNumber}",
         "kind": "operation",
         "method": "get",
         "name": "productNumber",
+        "parameters": [
+          {
+            "description": "Unique number that identifies the Product.",
+            "in": "path",
+            "name": "productNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{productNumber}",
         "pointer": "#/paths/~1product~1{productNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get Product"
+        "summary": "Get Product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets the provided properties to a Product.",
         "id": "operation:post:/product/{productNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updateProduct",
+        "parameters": [
+          {
+            "description": "Unique number that identifies the Product.",
+            "in": "path",
+            "name": "productNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{productNumber}",
         "pointer": "#/paths/~1product~1{productNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update Product"
+        "summary": "Update Product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a Product by 'number'",
+        "id": "operation:delete:/product/{productNumber}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteProduct",
+        "parameters": [
+          {
+            "description": "Unique number that identifies the Product.",
+            "in": "path",
+            "name": "productNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Force object deletion and all descendants.",
+            "in": "query",
+            "name": "forceCascade",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/product/{productNumber}",
+        "pointer": "#/paths/~1product~1{productNumber}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete Product",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Return a list of all Product Modules for the current Vendor",
         "id": "operation:get:/productmodule",
         "kind": "operation",
         "method": "get",
         "name": "listProductModules",
         "path": "/productmodule",
         "pointer": "#/paths/~1productmodule/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Product Modules"
+        "summary": "List Product Modules",
+        "tags": [
+          "Product Module"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new Product Module",
         "id": "operation:post:/productmodule",
         "kind": "operation",
         "method": "post",
         "name": "createProductModule",
         "path": "/productmodule",
         "pointer": "#/paths/~1productmodule/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create Product Module"
+        "summary": "Create Product Module",
+        "tags": [
+          "Product Module"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/productmodule/{productModuleNumber}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteProductModule",
-        "path": "/productmodule/{productModuleNumber}",
-        "pointer": "#/paths/~1productmodule~1{productModuleNumber}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete Product Module"
-      },
-      {
-        "deprecated": false,
+        "description": "Return a Product Module by 'productModuleNumber'",
         "id": "operation:get:/productmodule/{productModuleNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getProductModule",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Product Module.",
+            "in": "path",
+            "name": "productModuleNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/productmodule/{productModuleNumber}",
         "pointer": "#/paths/~1productmodule~1{productModuleNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get Product Module"
+        "summary": "Get Product Module",
+        "tags": [
+          "Product Module"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets the provided properties to a Product Module.",
         "id": "operation:post:/productmodule/{productModuleNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updateProductModule",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Product Module.",
+            "in": "path",
+            "name": "productModuleNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/productmodule/{productModuleNumber}",
         "pointer": "#/paths/~1productmodule~1{productModuleNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update Product Module"
+        "summary": "Update Product Module",
+        "tags": [
+          "Product Module"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a Product Module by 'number'",
+        "id": "operation:delete:/productmodule/{productModuleNumber}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteProductModule",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Product Module.",
+            "in": "path",
+            "name": "productModuleNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Force object deletion and all descendants.",
+            "in": "query",
+            "name": "forceCascade",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/productmodule/{productModuleNumber}",
+        "pointer": "#/paths/~1productmodule~1{productModuleNumber}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete Product Module",
+        "tags": [
+          "Product Module"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Return a list of all tokens for the current Vendor",
         "id": "operation:get:/token",
         "kind": "operation",
         "method": "get",
         "name": "listTokens",
         "path": "/token",
         "pointer": "#/paths/~1token/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Tokens"
+        "summary": "List Tokens",
+        "tags": [
+          "Token"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create token by 'tokenType' and additional token parameters",
         "id": "operation:post:/token",
         "kind": "operation",
         "method": "post",
         "name": "createToken",
         "path": "/token",
         "pointer": "#/paths/~1token/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create token"
+        "summary": "Create token",
+        "tags": [
+          "Token"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/token/{tokenNumber}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteToken",
-        "path": "/token/{tokenNumber}",
-        "pointer": "#/paths/~1token~1{tokenNumber}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete token"
-      },
-      {
-        "deprecated": false,
+        "description": "Return a token by 'tokenNumber'",
         "id": "operation:get:/token/{tokenNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getToken",
+        "parameters": [
+          {
+            "description": "Token number",
+            "in": "path",
+            "name": "tokenNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/token/{tokenNumber}",
         "pointer": "#/paths/~1token~1{tokenNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get token"
+        "summary": "Get token",
+        "tags": [
+          "Token"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a token by 'number'",
+        "id": "operation:delete:/token/{tokenNumber}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteToken",
+        "parameters": [
+          {
+            "description": "Token number",
+            "in": "path",
+            "name": "tokenNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/token/{tokenNumber}",
+        "pointer": "#/paths/~1token~1{tokenNumber}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete token",
+        "tags": [
+          "Token"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Return a list of all Transactions for the current Vendor",
         "id": "operation:get:/transaction",
         "kind": "operation",
         "method": "get",
         "name": "listTransactions",
         "path": "/transaction",
         "pointer": "#/paths/~1transaction/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Transactions"
+        "summary": "List Transactions",
+        "tags": [
+          "Transaction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new Transaction",
         "id": "operation:post:/transaction",
         "kind": "operation",
         "method": "post",
         "name": "createTransaction",
         "path": "/transaction",
         "pointer": "#/paths/~1transaction/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create Transaction"
+        "summary": "Create Transaction",
+        "tags": [
+          "Transaction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a Transaction by 'transactionNumber'",
         "id": "operation:get:/transaction/{transactionNumber}",
         "kind": "operation",
         "method": "get",
         "name": "getTransaction",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Transaction",
+            "in": "path",
+            "name": "transactionNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transaction/{transactionNumber}",
         "pointer": "#/paths/~1transaction~1{transactionNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get Transaction "
+        "summary": "Get Transaction ",
+        "tags": [
+          "Transaction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets the provided properties to a Transaction.",
         "id": "operation:post:/transaction/{transactionNumber}",
         "kind": "operation",
         "method": "post",
         "name": "updateTransaction",
+        "parameters": [
+          {
+            "description": "Unique number (across all Products of a Vendor) that identifies the Transaction",
+            "in": "path",
+            "name": "transactionNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transaction/{transactionNumber}",
         "pointer": "#/paths/~1transaction~1{transactionNumber}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update Transaction"
+        "summary": "Update Transaction",
+        "tags": [
+          "Transaction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of all License Types supported by the service",
         "id": "operation:get:/utility/licenseTypes",
         "kind": "operation",
         "method": "get",
         "name": "licenseTypes",
         "path": "/utility/licenseTypes",
         "pointer": "#/paths/~1utility~1licenseTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List License Types"
+        "summary": "List License Types",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of all licensing models supported by the service",
         "id": "operation:get:/utility/licensingModels",
         "kind": "operation",
         "method": "get",
         "name": "licensingModels",
         "path": "/utility/licensingModels",
         "pointer": "#/paths/~1utility~1licensingModels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "netlicensing"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Licensing Models"
+        "summary": "List Licensing Models",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "id": "schema:License",
         "kind": "schema",
-        "name": "License"
+        "name": "License",
+        "type": "object"
       },
       {
         "id": "schema:LicenseTemplate",
         "kind": "schema",
-        "name": "LicenseTemplate"
+        "name": "LicenseTemplate",
+        "type": "object"
       },
       {
         "id": "schema:Licensee",
         "kind": "schema",
-        "name": "Licensee"
+        "name": "Licensee",
+        "type": "object"
       },
       {
         "id": "schema:PaymentMethod",
         "kind": "schema",
-        "name": "PaymentMethod"
+        "name": "PaymentMethod",
+        "type": "object"
       },
       {
         "id": "schema:Product",
         "kind": "schema",
-        "name": "Product"
+        "name": "Product",
+        "type": "object"
       },
       {
         "id": "schema:ProductModule",
         "kind": "schema",
-        "name": "ProductModule"
+        "name": "ProductModule",
+        "type": "object"
       },
       {
         "id": "schema:Token",
         "kind": "schema",
-        "name": "Token"
+        "name": "Token",
+        "type": "object"
       },
       {
         "id": "schema:Transaction",
         "kind": "schema",
-        "name": "Transaction"
+        "name": "Transaction",
+        "type": "object"
       },
       {
         "id": "schema:discount",
         "kind": "schema",
-        "name": "discount"
+        "name": "discount",
+        "type": "object"
       },
       {
         "id": "schema:infos",
@@ -868,12 +2372,14 @@
       {
         "id": "schema:licensingModel",
         "kind": "schema",
-        "name": "licensingModel"
+        "name": "licensingModel",
+        "type": "object"
       },
       {
         "id": "schema:netlicensing",
         "kind": "schema",
-        "name": "netlicensing"
+        "name": "netlicensing",
+        "type": "object"
       }
     ]
   },

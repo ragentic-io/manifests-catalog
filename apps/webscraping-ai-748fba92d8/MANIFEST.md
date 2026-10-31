@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `9bc3ad91b787b87287b3f3918f1875a9f53b8b7c3c6ec8c8d2fe8946a05c872f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | account | Information about your account calls quota |
-| GET | `/html` | getHTML | Page HTML by URL |
-| GET | `/selected` | getSelected | HTML of a selected page area by URL and CSS selector |
-| GET | `/selected-multiple` | getSelectedMultiple | HTML of multiple page areas by URL and CSS selectors |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | account | — | Account | yes | Information about your account calls quota |
+| GET | `/html` | getHTML | `url`*, `headers`, `timeout`, `js`, `js_timeout`, `proxy`, `country`, `device`, `error_on_404`, `error_on_redirect` | string | yes | Page HTML by URL |
+| GET | `/selected` | getSelected | `selector`, `url`*, `headers`, `timeout`, `js`, `js_timeout`, `proxy`, `country`, `device`, `error_on_404`, `error_on_redirect` | string | yes | HTML of a selected page area by URL and CSS selector |
+| GET | `/selected-multiple` | getSelectedMultiple | `selectors`, `url`*, `headers`, `timeout`, `js`, `js_timeout`, `proxy`, `country`, `device`, `error_on_404`, `error_on_redirect` | SelectedAreas | yes | HTML of multiple page areas by URL and CSS selectors |

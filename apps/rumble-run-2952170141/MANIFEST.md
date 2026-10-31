@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/__www_rumble_run_img_rumble-twitter-c
 
 | | |
 | --- | --- |
-| Signed bundle | `aa1b8a7fc7ea2a290ab1e0f45d3adfbea248cdbc61b7c561cff80caae7f51b28` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,121 +34,123 @@ logo: "https://api.apis.guru/v2/cache/logo/__www_rumble_run_img_rumble-twitter-c
 
 45 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account/agents` | getAccountAgents | Get all agents across all organizations |
-| GET | `/account/credentials` | getAccountCredentials | Get all account credentials |
-| PUT | `/account/credentials` | createAccountCredential | Create a new credential |
-| DELETE | `/account/credentials/{credential_id}` | removeAccountCredential | Remove this credential |
-| GET | `/account/credentials/{credential_id}` | getAccountCredential | Get credential details |
-| GET | `/account/events.json` | exportEventsJSON | System event log as JSON |
-| GET | `/account/events.jsonl` | exportEventsJSONL | System event log as JSON line-delimited |
-| GET | `/account/groups` | getAccountGroups | Get all groups |
-| POST | `/account/groups` | createAccountGroup | Create a new group |
-| PUT | `/account/groups` | updateAccountGroup | Update an existing group |
-| DELETE | `/account/groups/{group_id}` | removeAccountGroup | Remove this group |
-| GET | `/account/groups/{group_id}` | getAccountGroup | Get group details |
-| GET | `/account/keys` | getAccountKeys | Get all active API keys |
-| PUT | `/account/keys` | createAccountKey | Create a new key |
-| DELETE | `/account/keys/{key_id}` | removeAccountKey | Remove this key |
-| GET | `/account/keys/{key_id}` | getAccountKey | Get key details |
-| PATCH | `/account/keys/{key_id}/rotate` | rotateAccountKey | Rotates the key secret |
-| GET | `/account/license` | getAccountLicense | Get license details |
-| GET | `/account/orgs` | getAccountOrganizations | Get all organization details |
-| PUT | `/account/orgs` | createAccountOrganization | Create a new organization |
-| DELETE | `/account/orgs/{org_id}` | removeAccountOrganization | Remove this organization |
-| GET | `/account/orgs/{org_id}` | getAccountOrganization | Get organization details |
-| PATCH | `/account/orgs/{org_id}` | updateAccountOrganization | Update organization details |
-| DELETE | `/account/orgs/{org_id}/exportToken` | deleteAccountOrganizationExportToken | Removes the export token from the specified organization |
-| PATCH | `/account/orgs/{org_id}/exportToken/rotate` | rotateAccountOrganizationExportToken | Rotates the organization export token and returns the updated organization |
-| GET | `/account/sites` | getAccountSites | Get all sites details across all organizations |
-| GET | `/account/sso/groups` | getAccountGroupMappings | Get all SSO group mappings |
-| POST | `/account/sso/groups` | createAccountGroupMapping | Create a new SSO group mapping |
-| PUT | `/account/sso/groups` | updateAccountGroupMapping | Update an existing SSO group mapping |
-| DELETE | `/account/sso/groups/{group_mapping_id}` | removeAccountGroupMapping | Remove this SSO group mapping |
-| GET | `/account/sso/groups/{group_mapping_id}` | getAccountGroupMapping | Get SSO group mapping details |
-| GET | `/account/tasks` | getAccountTasks | Get all task details across all organizations (up to 1000) |
-| GET | `/account/tasks/templates` | getAccountScanTemplates | Get all scan templates across all organizations (up to 1000) |
-| POST | `/account/tasks/templates` | createAccountScanTemplate | Create a new scan template |
-| PUT | `/account/tasks/templates` | updateAccountScanTemplate | Update scan template |
-| DELETE | `/account/tasks/templates/{scan_template_id}` | removeAccountScanTemplate | Remove scan template |
-| GET | `/account/tasks/templates/{scan_template_id}` | getAccountScanTemplate | Get scan template details |
-| GET | `/account/users` | getAccountUsers | Get all users |
-| PUT | `/account/users` | createAccountUser | Create a new user account |
-| PUT | `/account/users/invite` | createAccountUserInvite | Create a new user account and send an email invite |
-| DELETE | `/account/users/{user_id}` | removeAccountUser | Remove this user |
-| GET | `/account/users/{user_id}` | getAccountUser | Get user details |
-| PATCH | `/account/users/{user_id}` | updateAccountUser | Update a user's details |
-| PATCH | `/account/users/{user_id}/resetLockout` | resetAccountUserLockout | Resets the user's lockout status |
-| PATCH | `/account/users/{user_id}/resetMFA` | resetAccountUserMFA | Resets the user's MFA tokens |
-| PATCH | `/account/users/{user_id}/resetPassword` | resetAccountUserPassword | Sends the user a password reset email |
-| GET | `/export/org/assets.cisco.csv` | exportAssetsCiscoCSV | Cisco serial number and model name export for Cisco Smart Net Total Care Service. |
-| GET | `/export/org/assets.csv` | exportAssetsCSV | Asset inventory as CSV |
-| GET | `/export/org/assets.json` | exportAssetsJSON | Exports the asset inventory |
-| GET | `/export/org/assets.jsonl` | exportAssetsJSONL | Asset inventory as JSON line-delimited |
-| GET | `/export/org/assets.nmap.xml` | exportAssetsNmapXML | Asset inventory as Nmap-style XML |
-| GET | `/export/org/assets.servicenow.csv` | snowExportAssetsCSV | Export an asset inventory as CSV for ServiceNow integration |
-| GET | `/export/org/assets.servicenow.json` | snowExportAssetsJSON | Exports the asset inventory as JSON |
-| GET | `/export/org/assets/sync/created/assets.json` | splunkAssetSyncCreatedJSON | Exports the asset inventory in a sync-friendly manner using created_at as a checkpoint. Requires the Splunk entitlement. |
-| GET | `/export/org/assets/sync/updated/assets.json` | splunkAssetSyncUpdatedJSON | Exports the asset inventory in a sync-friendly manner using updated_at as a checkpoint. Requires the Splunk entitlement. |
-| GET | `/export/org/services.csv` | exportServicesCSV | Service inventory as CSV |
-| GET | `/export/org/services.json` | exportServicesJSON | Service inventory as JSON |
-| GET | `/export/org/services.jsonl` | exportServicesJSONL | Service inventory as JSON line-delimited |
-| GET | `/export/org/services.servicenow.csv` | snowExportServicesCSV | Export a service inventory as CSV for ServiceNow integration |
-| GET | `/export/org/sites.csv` | exportSitesCSV | Site list as CSV |
-| GET | `/export/org/sites.json` | exportSitesJSON | Export all sites |
-| GET | `/export/org/sites.jsonl` | exportSitesJSONL | Site list as JSON line-delimited |
-| GET | `/export/org/wireless.csv` | exportWirelessCSV | Wireless inventory as CSV |
-| GET | `/export/org/wireless.json` | exportWirelessJSON | Wireless inventory as JSON |
-| GET | `/export/org/wireless.jsonl` | exportWirelessJSONL | Wireless inventory as JSON line-delimited |
-| GET | `/org` | getOrganization | Get organization details |
-| PATCH | `/org` | updateOrganization | Update organization details |
-| GET | `/org/agents` | getAgents | Get all agents |
-| DELETE | `/org/agents/{agent_id}` | removeAgent | Remove and uninstall an agent |
-| GET | `/org/agents/{agent_id}` | getAgent | Get details for a single agent |
-| PATCH | `/org/agents/{agent_id}` | updateAgentSite | Update the site associated with agent |
-| POST | `/org/agents/{agent_id}/update` | upgradeAgent | Force an agent to update and restart |
-| GET | `/org/assets` | getAssets | Get all assets |
-| POST | `/org/assets/bulk/clearTags` | clearBulkAssetTags | Clear all tags across multiple assets based on a search query |
-| PATCH | `/org/assets/bulk/tags` | updateBulkAssetTags | Update tags across multiple assets based on a search query |
-| GET | `/org/assets/top.hw.csv` | exportAssetTopHWCSV | Top asset hardware products as CSV |
-| GET | `/org/assets/top.os.csv` | exportAssetTopOSCSV | Top asset operating systems as CSV |
-| GET | `/org/assets/top.tags.csv` | exportAssetTopTagsCSV | Top asset tags as CSV |
-| GET | `/org/assets/top.types.csv` | exportAssetTopTypesCSV | Top asset types as CSV |
-| DELETE | `/org/assets/{asset_id}` | removeAsset | Remove an asset |
-| GET | `/org/assets/{asset_id}` | getAsset | Get asset details |
-| PATCH | `/org/assets/{asset_id}/comments` | updateAssetComments | Update asset comments |
-| PATCH | `/org/assets/{asset_id}/tags` | updateAssetTags | Update asset tags |
-| DELETE | `/org/key` | removeKey | Remove the current API key |
-| GET | `/org/key` | getKey | Get API key details |
-| PATCH | `/org/key/rotate` | rotateKey | Rotate the API key secret and return the updated key |
-| GET | `/org/services` | getServices | Get all services |
-| GET | `/org/services/subnet.stats.csv` | exportSubnetUtilizationStatsCSV | Subnet utilization statistics as as CSV |
-| GET | `/org/services/top.products.csv` | exportServicesTopProductsCSV | Top service products as CSV |
-| GET | `/org/services/top.protocols.csv` | exportServicesTopProtocolsCSV | Top service protocols as CSV |
-| GET | `/org/services/top.tcp.csv` | exportServicesTopTCPCSV | Top TCP services as CSV |
-| GET | `/org/services/top.udp.csv` | exportServicesTopUDPCSV | Top UDP services as CSV |
-| DELETE | `/org/services/{service_id}` | removeService | Remove a service |
-| GET | `/org/services/{service_id}` | getService | Get service details |
-| GET | `/org/sites` | getSites | Get all sites |
-| PUT | `/org/sites` | createSite | Create a new site |
-| DELETE | `/org/sites/{site_id}` | removeSite | Remove a site and associated assets |
-| GET | `/org/sites/{site_id}` | getSite | Get site details |
-| PATCH | `/org/sites/{site_id}` | updateSite | Update a site definition |
-| PUT | `/org/sites/{site_id}/import` | importScanData | Import a scan data file into a site |
-| PUT | `/org/sites/{site_id}/import/nessus` | importNessusScanData | Import a Nessus scan data file into a site |
-| PUT | `/org/sites/{site_id}/scan` | createScan | Create a scan task for a given site |
-| GET | `/org/tasks` | getTasks | Get all tasks (last 1000) |
-| GET | `/org/tasks/{task_id}` | getTask | Get task details |
-| PATCH | `/org/tasks/{task_id}` | updateTask | Update task parameters |
-| GET | `/org/tasks/{task_id}/changes` | getTaskChangeReport | Returns a temporary task change report data url |
-| GET | `/org/tasks/{task_id}/data` | getTaskScanData | Returns a temporary task scan data url |
-| POST | `/org/tasks/{task_id}/hide` | hideTask | Signal that a completed task should be hidden |
-| GET | `/org/tasks/{task_id}/log` | getTaskLog | Returns a temporary task log data url |
-| POST | `/org/tasks/{task_id}/stop` | stopTask | Signal that a task should be stopped or canceledThis will also remove recurring and scheduled tasks |
-| GET | `/org/wireless` | getWirelessLANs | Get all wireless LANs |
-| DELETE | `/org/wireless/{wireless_id}` | removeWirelessLAN | Remove a wireless LAN |
-| GET | `/org/wireless/{wireless_id}` | getWirelessLAN | Get wireless LAN details |
-| GET | `/releases/agent/version` | getLatestAgentVersion | Returns latest agent version |
-| GET | `/releases/platform/version` | getLatestPlatformVersion | Returns latest platform version |
-| GET | `/releases/scanner/version` | getLatestScannerVersion | Returns latest scanner version |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account/agents` | getAccountAgents | `search` | Agent[] | yes | Get all agents across all organizations |
+| GET | `/account/credentials` | getAccountCredentials | `search` | Credential[] | yes | Get all account credentials |
+| PUT | `/account/credentials` | createAccountCredential | body*: CredentialOptions | Credential |  | Create a new credential |
+| GET | `/account/credentials/{credential_id}` | getAccountCredential | `credential_id`* | Credential | yes | Get credential details |
+| DELETE | `/account/credentials/{credential_id}` | removeAccountCredential | `credential_id`* | — |  | Remove this credential |
+| GET | `/account/events.json` | exportEventsJSON | `search`, `fields` | Event[] | yes | System event log as JSON |
+| GET | `/account/events.jsonl` | exportEventsJSONL | `search`, `fields` | Event[] | yes | System event log as JSON line-delimited |
+| GET | `/account/groups` | getAccountGroups | — | Group | yes | Get all groups |
+| PUT | `/account/groups` | updateAccountGroup | body*: GroupPut | Group |  | Update an existing group |
+| POST | `/account/groups` | createAccountGroup | body*: GroupPost | Group |  | Create a new group |
+| GET | `/account/groups/{group_id}` | getAccountGroup | `group_id`* | Group | yes | Get group details |
+| DELETE | `/account/groups/{group_id}` | removeAccountGroup | `group_id`* | — |  | Remove this group |
+| GET | `/account/keys` | getAccountKeys | — | APIKey[] | yes | Get all active API keys |
+| PUT | `/account/keys` | createAccountKey | body*: APIKeyOptions | APIKey |  | Create a new key |
+| GET | `/account/keys/{key_id}` | getAccountKey | `key_id`* | APIKey | yes | Get key details |
+| DELETE | `/account/keys/{key_id}` | removeAccountKey | `key_id`* | — |  | Remove this key |
+| PATCH | `/account/keys/{key_id}/rotate` | rotateAccountKey | `key_id`* | APIKey |  | Rotates the key secret |
+| GET | `/account/license` | getAccountLicense | — | License | yes | Get license details |
+| GET | `/account/orgs` | getAccountOrganizations | `search` | Organization[] | yes | Get all organization details |
+| PUT | `/account/orgs` | createAccountOrganization | body*: OrgOptions | Organization |  | Create a new organization |
+| GET | `/account/orgs/{org_id}` | getAccountOrganization | `org_id`* | Organization | yes | Get organization details |
+| DELETE | `/account/orgs/{org_id}` | removeAccountOrganization | `org_id`* | — |  | Remove this organization |
+| PATCH | `/account/orgs/{org_id}` | updateAccountOrganization | `org_id`*, body*: OrgOptions | Organization |  | Update organization details |
+| DELETE | `/account/orgs/{org_id}/exportToken` | deleteAccountOrganizationExportToken | `org_id`* | — |  | Removes the export token from the specified organization |
+| PATCH | `/account/orgs/{org_id}/exportToken/rotate` | rotateAccountOrganizationExportToken | `org_id`* | Organization |  | Rotates the organization export token and returns the updated organization |
+| GET | `/account/sites` | getAccountSites | `search` | Site[] | yes | Get all sites details across all organizations |
+| GET | `/account/sso/groups` | getAccountGroupMappings | — | GroupMapping | yes | Get all SSO group mappings |
+| PUT | `/account/sso/groups` | updateAccountGroupMapping | body*: GroupMapping | GroupMapping |  | Update an existing SSO group mapping |
+| POST | `/account/sso/groups` | createAccountGroupMapping | body*: GroupMapping | GroupMapping |  | Create a new SSO group mapping |
+| GET | `/account/sso/groups/{group_mapping_id}` | getAccountGroupMapping | `group_mapping_id`* | GroupMapping | yes | Get SSO group mapping details |
+| DELETE | `/account/sso/groups/{group_mapping_id}` | removeAccountGroupMapping | `group_mapping_id`* | — |  | Remove this SSO group mapping |
+| GET | `/account/tasks` | getAccountTasks | `search` | Task[] | yes | Get all task details across all organizations (up to 1000) |
+| GET | `/account/tasks/templates` | getAccountScanTemplates | `search` | ScanTemplate[] | yes | Get all scan templates across all organizations (up to 1000) |
+| PUT | `/account/tasks/templates` | updateAccountScanTemplate | body*: ScanTemplate | ScanTemplate |  | Update scan template |
+| POST | `/account/tasks/templates` | createAccountScanTemplate | body*: ScanTemplateOptions | ScanTemplate |  | Create a new scan template |
+| GET | `/account/tasks/templates/{scan_template_id}` | getAccountScanTemplate | `scan_template_id`* | ScanTemplate | yes | Get scan template details |
+| DELETE | `/account/tasks/templates/{scan_template_id}` | removeAccountScanTemplate | `scan_template_id`* | ScanTemplate |  | Remove scan template |
+| GET | `/account/users` | getAccountUsers | — | User[] | yes | Get all users |
+| PUT | `/account/users` | createAccountUser | body*: UserOptions | User |  | Create a new user account |
+| PUT | `/account/users/invite` | createAccountUserInvite | body*: UserInviteOptions | User |  | Create a new user account and send an email invite |
+| GET | `/account/users/{user_id}` | getAccountUser | `user_id`* | User | yes | Get user details |
+| DELETE | `/account/users/{user_id}` | removeAccountUser | `user_id`* | — |  | Remove this user |
+| PATCH | `/account/users/{user_id}` | updateAccountUser | `user_id`*, body*: UserOptions | User |  | Update a user's details |
+| PATCH | `/account/users/{user_id}/resetLockout` | resetAccountUserLockout | `user_id`* | User |  | Resets the user's lockout status |
+| PATCH | `/account/users/{user_id}/resetMFA` | resetAccountUserMFA | `user_id`* | User |  | Resets the user's MFA tokens |
+| PATCH | `/account/users/{user_id}/resetPassword` | resetAccountUserPassword | `user_id`* | User |  | Sends the user a password reset email |
+| GET | `/export/org/assets.cisco.csv` | exportAssetsCiscoCSV | `search` | string:binary | yes | Cisco serial number and model name export for Cisco Smart Net Total Care Service. |
+| GET | `/export/org/assets.csv` | exportAssetsCSV | `search` | string:binary | yes | Asset inventory as CSV |
+| GET | `/export/org/assets.json` | exportAssetsJSON | `search`, `fields` | Asset[] | yes | Exports the asset inventory |
+| GET | `/export/org/assets.jsonl` | exportAssetsJSONL | `search`, `fields` | string:binary | yes | Asset inventory as JSON line-delimited |
+| GET | `/export/org/assets.nmap.xml` | exportAssetsNmapXML | `search` | string:binary | yes | Asset inventory as Nmap-style XML |
+| GET | `/export/org/assets.servicenow.csv` | snowExportAssetsCSV | — | string:binary | yes | Export an asset inventory as CSV for ServiceNow integration |
+| GET | `/export/org/assets.servicenow.json` | snowExportAssetsJSON | — | AssetServiceNow[] | yes | Exports the asset inventory as JSON |
+| GET | `/export/org/assets/sync/created/assets.json` | splunkAssetSyncCreatedJSON | `search`, `fields`, `since` | AssetsWithCheckpoint | yes | Exports the asset inventory in a sync-friendly manner using created_at as a checkpoint. Requires the Splunk entitlement. |
+| GET | `/export/org/assets/sync/updated/assets.json` | splunkAssetSyncUpdatedJSON | `search`, `fields`, `since` | AssetsWithCheckpoint | yes | Exports the asset inventory in a sync-friendly manner using updated_at as a checkpoint. Requires the Splunk entitlement. |
+| GET | `/export/org/services.csv` | exportServicesCSV | `search` | string:binary | yes | Service inventory as CSV |
+| GET | `/export/org/services.json` | exportServicesJSON | `search`, `fields` | Service[] | yes | Service inventory as JSON |
+| GET | `/export/org/services.jsonl` | exportServicesJSONL | `search`, `fields` | string:binary | yes | Service inventory as JSON line-delimited |
+| GET | `/export/org/services.servicenow.csv` | snowExportServicesCSV | — | string:binary | yes | Export a service inventory as CSV for ServiceNow integration |
+| GET | `/export/org/sites.csv` | exportSitesCSV | — | string:binary | yes | Site list as CSV |
+| GET | `/export/org/sites.json` | exportSitesJSON | `search`, `fields` | Site[] | yes | Export all sites |
+| GET | `/export/org/sites.jsonl` | exportSitesJSONL | `search`, `fields` | string:binary | yes | Site list as JSON line-delimited |
+| GET | `/export/org/wireless.csv` | exportWirelessCSV | `search` | string:binary | yes | Wireless inventory as CSV |
+| GET | `/export/org/wireless.json` | exportWirelessJSON | `search`, `fields` | Wireless[] | yes | Wireless inventory as JSON |
+| GET | `/export/org/wireless.jsonl` | exportWirelessJSONL | `search`, `fields` | string:binary | yes | Wireless inventory as JSON line-delimited |
+| GET | `/org` | getOrganization | — | Organization | yes | Get organization details |
+| PATCH | `/org` | updateOrganization | body*: OrgOptions | Organization |  | Update organization details |
+| GET | `/org/agents` | getAgents | — | Agent[] | yes | Get all agents |
+| GET | `/org/agents/{agent_id}` | getAgent | `agent_id`* | Agent | yes | Get details for a single agent |
+| DELETE | `/org/agents/{agent_id}` | removeAgent | `agent_id`* | — |  | Remove and uninstall an agent |
+| PATCH | `/org/agents/{agent_id}` | updateAgentSite | `agent_id`*, body*: AgentSiteID | Agent |  | Update the site associated with agent |
+| POST | `/org/agents/{agent_id}/update` | upgradeAgent | `agent_id`* | — |  | Force an agent to update and restart |
+| GET | `/org/assets` | getAssets | `search` | Asset[] | yes | Get all assets |
+| POST | `/org/assets/bulk/clearTags` | clearBulkAssetTags | body*: Search | — |  | Clear all tags across multiple assets based on a search query |
+| PATCH | `/org/assets/bulk/tags` | updateBulkAssetTags | body*: AssetTagsWithSearch | — |  | Update tags across multiple assets based on a search query |
+| GET | `/org/assets/top.hw.csv` | exportAssetTopHWCSV | — | string:binary | yes | Top asset hardware products as CSV |
+| GET | `/org/assets/top.os.csv` | exportAssetTopOSCSV | — | string:binary | yes | Top asset operating systems as CSV |
+| GET | `/org/assets/top.tags.csv` | exportAssetTopTagsCSV | — | string:binary | yes | Top asset tags as CSV |
+| GET | `/org/assets/top.types.csv` | exportAssetTopTypesCSV | — | string:binary | yes | Top asset types as CSV |
+| GET | `/org/assets/{asset_id}` | getAsset | `asset_id`* | Asset | yes | Get asset details |
+| DELETE | `/org/assets/{asset_id}` | removeAsset | `asset_id`* | — |  | Remove an asset |
+| PATCH | `/org/assets/{asset_id}/comments` | updateAssetComments | `asset_id`*, body*: AssetComments | Asset |  | Update asset comments |
+| PATCH | `/org/assets/{asset_id}/tags` | updateAssetTags | `asset_id`*, body*: AssetTags | Asset |  | Update asset tags |
+| GET | `/org/key` | getKey | — | APIKey | yes | Get API key details |
+| DELETE | `/org/key` | removeKey | — | — |  | Remove the current API key |
+| PATCH | `/org/key/rotate` | rotateKey | — | APIKey |  | Rotate the API key secret and return the updated key |
+| GET | `/org/services` | getServices | `search` | Service[] | yes | Get all services |
+| GET | `/org/services/subnet.stats.csv` | exportSubnetUtilizationStatsCSV | `mask` | string:binary | yes | Subnet utilization statistics as as CSV |
+| GET | `/org/services/top.products.csv` | exportServicesTopProductsCSV | — | string:binary | yes | Top service products as CSV |
+| GET | `/org/services/top.protocols.csv` | exportServicesTopProtocolsCSV | — | string:binary | yes | Top service protocols as CSV |
+| GET | `/org/services/top.tcp.csv` | exportServicesTopTCPCSV | — | string:binary | yes | Top TCP services as CSV |
+| GET | `/org/services/top.udp.csv` | exportServicesTopUDPCSV | — | string:binary | yes | Top UDP services as CSV |
+| GET | `/org/services/{service_id}` | getService | `service_id`* | Service | yes | Get service details |
+| DELETE | `/org/services/{service_id}` | removeService | `service_id`* | — |  | Remove a service |
+| GET | `/org/sites` | getSites | — | Site[] | yes | Get all sites |
+| PUT | `/org/sites` | createSite | body*: SiteOptions | Site |  | Create a new site |
+| GET | `/org/sites/{site_id}` | getSite | `site_id`* | Site | yes | Get site details |
+| DELETE | `/org/sites/{site_id}` | removeSite | `site_id`* | — |  | Remove a site and associated assets |
+| PATCH | `/org/sites/{site_id}` | updateSite | `site_id`*, body*: SiteOptions | Site |  | Update a site definition |
+| PUT | `/org/sites/{site_id}/import` | importScanData | `site_id`*, body: string:binary | Task |  | Import a scan data file into a site |
+| PUT | `/org/sites/{site_id}/import/nessus` | importNessusScanData | `site_id`*, body: string:binary | Task |  | Import a Nessus scan data file into a site |
+| PUT | `/org/sites/{site_id}/scan` | createScan | `site_id`*, body: ScanOptions | Task |  | Create a scan task for a given site |
+| GET | `/org/tasks` | getTasks | `status`, `search` | Task[] | yes | Get all tasks (last 1000) |
+| GET | `/org/tasks/{task_id}` | getTask | `task_id`* | Task | yes | Get task details |
+| PATCH | `/org/tasks/{task_id}` | updateTask | `task_id`*, body*: Task | Task |  | Update task parameters |
+| GET | `/org/tasks/{task_id}/changes` | getTaskChangeReport | `task_id`* | URL | yes | Returns a temporary task change report data url |
+| GET | `/org/tasks/{task_id}/data` | getTaskScanData | `task_id`* | URL | yes | Returns a temporary task scan data url |
+| POST | `/org/tasks/{task_id}/hide` | hideTask | `task_id`* | Task |  | Signal that a completed task should be hidden |
+| GET | `/org/tasks/{task_id}/log` | getTaskLog | `task_id`* | URL | yes | Returns a temporary task log data url |
+| POST | `/org/tasks/{task_id}/stop` | stopTask | `task_id`* | Task |  | Signal that a task should be stopped or canceledThis will also remove recurring and scheduled tasks |
+| GET | `/org/wireless` | getWirelessLANs | `search` | Wireless[] | yes | Get all wireless LANs |
+| GET | `/org/wireless/{wireless_id}` | getWirelessLAN | `wireless_id`* | Wireless | yes | Get wireless LAN details |
+| DELETE | `/org/wireless/{wireless_id}` | removeWirelessLAN | `wireless_id`* | — |  | Remove a wireless LAN |
+| GET | `/releases/agent/version` | getLatestAgentVersion | — | ComponentVersion | yes | Returns latest agent version |
+| GET | `/releases/platform/version` | getLatestPlatformVersion | — | ComponentVersion | yes | Returns latest platform version |
+| GET | `/releases/scanner/version` | getLatestScannerVersion | — | ComponentVersion | yes | Returns latest scanner version |

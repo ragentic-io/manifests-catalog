@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_prod-va-gov-assets.s3-us-gov-we
 
 | | |
 | --- | --- |
-| Signed bundle | `ef99f4101e451e2dcad519870375acb6dd69b3856389683a708be0fe22d9a09f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_prod-va-gov-assets.s3-us-gov-we
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| PUT | `/path` | putBenefitsDocumentUpload | Accepts document upload. |
-| POST | `/uploads` | postBenefitsDocumentUpload | Get a location for subsequent document upload PUT request |
-| POST | `/uploads/report` | getBenefitsDocumentUploadStatusReport | Get a bulk status report for a list of previous uploads |
-| POST | `/uploads/validate_document` | postBenefitsDocumentUploadValidateDocument | Validate an individual document against system file requirements |
-| GET | `/uploads/{id}` | getBenefitsDocumentUploadStatus | Get status for a previous benefits document upload |
-| GET | `/uploads/{id}/download` | getBenefitsDocumentUploadDownload | Download zip of "what the server sees" |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/path` | putBenefitsDocumentUpload | `Content-MD5` | — |  | Accepts document upload. |
+| POST | `/uploads` | postBenefitsDocumentUpload | — | object |  | Get a location for subsequent document upload PUT request |
+| POST | `/uploads/report` | getBenefitsDocumentUploadStatusReport | body*: DocumentUploadStatusGuidList | object |  | Get a bulk status report for a list of previous uploads |
+| POST | `/uploads/validate_document` | postBenefitsDocumentUploadValidateDocument | — | object |  | Validate an individual document against system file requirements |
+| GET | `/uploads/{id}` | getBenefitsDocumentUploadStatus | `id`* | object | yes | Get status for a previous benefits document upload |
+| GET | `/uploads/{id}/download` | getBenefitsDocumentUploadDownload | `id`* | string:binary | yes | Download zip of "what the server sees" |

@@ -25,6 +25,7 @@ import os
 import re
 import sys
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -216,9 +217,172 @@ def _escape(segment):
     return segment.replace("~", "~0").replace("/", "~1")
 
 
+SAFE_METHODS = ("get", "head", "options")
+SCHEMA_REFS = ("#/components/schemas/", "#/definitions/")
+JSON_TYPE = re.compile(r"^application/(.+\+)?json")
+MAX_ENUM = 25
+
+
+def _short(text, limit=160):
+    """The first sentence of a description, whitespace collapsed, at most limit characters."""
+    if not isinstance(text, str):
+        return None
+    text = re.sub(r"\s+", " ", text).strip()
+    sentence = re.match(r"(.+?[.!?])(\s|$)", text)
+    if sentence and len(sentence.group(1)) <= limit:
+        return sentence.group(1)
+    return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
+
+
+def _resolve(document, obj, depth=0):
+    """Follow a local $ref (parameters, request bodies, responses), at most a few hops."""
+    while isinstance(obj, dict) and isinstance(obj.get("$ref"), str) and depth < 5:
+        ref = obj["$ref"]
+        if not ref.startswith("#/") or ref.startswith(SCHEMA_REFS):
+            return obj
+        target = document
+        for part in ref[2:].split("/"):
+            part = urllib.parse.unquote(part).replace("~1", "/").replace("~0", "~")
+            target = target.get(part) if isinstance(target, dict) else None
+        obj, depth = target, depth + 1
+    return obj if isinstance(obj, dict) else {}
+
+
+def _schema_name(ref):
+    for prefix in SCHEMA_REFS:
+        if isinstance(ref, str) and ref.startswith(prefix):
+            return urllib.parse.unquote(ref[len(prefix) :]).replace("~1", "/").replace("~0", "~")
+    return None
+
+
+def _type(schema, refs):
+    """A compact type for a schema (`Pet`, `Pet[]`, `string`, `A|B`), collecting the schema names it names."""
+    if not isinstance(schema, dict):
+        return None
+    name = _schema_name(schema.get("$ref"))
+    if name:
+        refs.add(name)
+        return name
+    for combo in ("oneOf", "anyOf", "allOf"):
+        if isinstance(schema.get(combo), list):
+            parts = [t for t in (_type(s, refs) for s in schema[combo]) if t]
+            return "|".join(dict.fromkeys(parts)) or None
+    kind = schema.get("type")
+    if isinstance(kind, list):
+        kind = "|".join(k for k in kind if k != "null")
+    if kind == "array":
+        inner = _type(schema.get("items"), refs)
+        return f"{inner}[]" if inner else "array"
+    if not kind and schema.get("properties"):
+        kind = "object"
+    return f"{kind}:{schema['format']}" if kind and schema.get("format") else kind
+
+
+def _parameter(document, raw, refs):
+    p = _resolve(document, raw)
+    schema = p.get("schema") if "schema" in p else p  # Swagger 2 keeps type on the parameter
+    out = {
+        "name": p.get("name"),
+        "in": p.get("in"),
+        "required": bool(p.get("required") or p.get("in") == "path"),
+        "type": _type(schema, refs),
+        "description": _short(p.get("description")),
+    }
+    enum = (schema or {}).get("enum") if isinstance(schema, dict) else None
+    if isinstance(enum, list) and all(isinstance(v, (str, int, float, bool)) for v in enum):
+        out["enum"] = enum[:MAX_ENUM]
+    if isinstance(schema, dict) and isinstance(schema.get("default"), (str, int, float, bool)):
+        out["default"] = schema["default"]
+    return {k: v for k, v in out.items() if v not in (None, "")}
+
+
+def _content(content, refs):
+    """Content types, and the type of the JSON (or else first) representation."""
+    if not isinstance(content, dict) or not content:
+        return [], None
+    types = list(content)
+    chosen = next((t for t in types if JSON_TYPE.match(t)), types[0])
+    return types, _type((content.get(chosen) or {}).get("schema"), refs)
+
+
+def _operation(document, path, item, method, op):
+    accepts, returns, refs = set(), set(), set()
+    params, request = [], None
+    seen = {}
+    for raw in (item.get("parameters") or []) + (op.get("parameters") or []):
+        p = _resolve(document, raw)
+        seen[(p.get("name"), p.get("in"))] = raw  # operation parameters override path-level ones
+    for raw in seen.values():
+        p = _resolve(document, raw)
+        if p.get("in") == "body":  # Swagger 2 request body
+            consumes = op.get("consumes") or document.get("consumes") or ["application/json"]
+            request = {"content_types": consumes, "required": bool(p.get("required")), "type": _type(p.get("schema"), accepts)}
+        else:
+            params.append(_parameter(document, raw, refs))
+    body = _resolve(document, op.get("requestBody"))
+    if body:
+        types, kind = _content(body.get("content"), accepts)
+        request = {"content_types": types, "required": bool(body.get("required")), "type": kind}
+    responses = []
+    for status, raw in (op.get("responses") or {}).items():
+        r = _resolve(document, raw)
+        sink = returns if str(status).startswith("2") else refs
+        if "content" in r:
+            _, kind = _content(r.get("content"), sink)
+        else:
+            kind = _type(r.get("schema"), sink)
+        responses.append({k: v for k, v in {"status": str(status), "type": kind}.items() if v})
+    summary = op.get("summary")
+    description = _short(op.get("description"))
+    node = {
+        "deprecated": bool(op.get("deprecated", False)),
+        "kind": "operation",
+        "method": method,
+        "name": op["operationId"] if "operationId" in op else f"{method} {path}",
+        "path": path,
+        "pointer": f"#/paths/{_escape(path)}/{method}",
+        "safe": method in SAFE_METHODS,
+        "security": op.get("security", document.get("security", [])),
+        "summary": summary,
+    }
+    if description and description != _short(summary):
+        node["description"] = description
+    if op.get("tags"):
+        node["tags"] = op["tags"]
+    if params:
+        node["parameters"] = params
+    if request:
+        node["request"] = {k: v for k, v in request.items() if v not in (None, [])}
+    if responses:
+        node["responses"] = responses
+    return node, accepts, returns
+
+
+def _references(schema, refs, depth=0):
+    """Schema names a schema refers to, without following the references themselves."""
+    if depth > 40:
+        return
+    if isinstance(schema, dict):
+        name = _schema_name(schema.get("$ref"))
+        if name:
+            refs.add(name)
+        for v in schema.values():
+            _references(v, refs, depth + 1)
+    elif isinstance(schema, list):
+        for v in schema:
+            _references(v, refs, depth + 1)
+
+
 def openapi_graph(app_id, document):
-    """The application -> operation graph, plus schema nodes, of an OpenAPI or Swagger document."""
-    nodes, edges = [{"id": app_id, "kind": "application"}], []
+    """The operation graph of an OpenAPI or Swagger document.
+
+    Nodes: the application, each operation (parameters, request and response types,
+    tags, scopes, and whether it is safe to call for a preview) and each schema.
+    Edges: application EXPOSES operation, operation ACCEPTS / RETURNS schema, and
+    schema REFERENCES schema.
+    """
+    schemas = (document.get("components") or {}).get("schemas") or document.get("definitions") or {}
+    nodes, edges, links = [{"id": app_id, "kind": "application"}], [], []
     for path, item in (document.get("paths") or {}).items():
         if not isinstance(item, dict):
             continue
@@ -227,23 +391,24 @@ def openapi_graph(app_id, document):
             if not isinstance(op, dict):
                 continue
             op_id = f"operation:{method}:{path}"
-            nodes.append(
-                {
-                    "deprecated": bool(op.get("deprecated", False)),
-                    "id": op_id,
-                    "kind": "operation",
-                    "method": method,
-                    "name": op["operationId"] if "operationId" in op else f"{method} {path}",
-                    "path": path,
-                    "pointer": f"#/paths/{_escape(path)}/{method}",
-                    "security": op.get("security", document.get("security", [])),
-                    "summary": op.get("summary"),
-                }
-            )
+            node, accepts, returns = _operation(document, path, item, method, op)
+            nodes.append({"id": op_id, **node})
             edges.append({"from": app_id, "kind": "EXPOSES", "to": op_id})
-    schemas = (document.get("components") or {}).get("schemas") or document.get("definitions") or {}
-    nodes += [{"id": f"schema:{name}", "kind": "schema", "name": name} for name in schemas]
-    return {"edges": edges, "nodes": nodes}
+            links += [{"from": op_id, "kind": "ACCEPTS", "to": f"schema:{n}"} for n in sorted(accepts) if n in schemas]
+            links += [{"from": op_id, "kind": "RETURNS", "to": f"schema:{n}"} for n in sorted(returns) if n in schemas]
+    for name, schema in schemas.items():
+        node = {"id": f"schema:{name}", "kind": "schema", "name": name}
+        if isinstance(schema, dict):
+            kind = _type({k: v for k, v in schema.items() if k != "$ref"}, set())
+            if kind:
+                node["type"] = kind
+            if _short(schema.get("description")):
+                node["description"] = _short(schema.get("description"))
+        nodes.append(node)
+        refs = set()
+        _references(schema, refs)
+        links += [{"from": f"schema:{name}", "kind": "REFERENCES", "to": f"schema:{n}"} for n in sorted(refs) if n in schemas and n != name]
+    return {"edges": edges + links, "nodes": nodes}
 
 
 def _sorted_graph(graph):
@@ -608,6 +773,18 @@ def _code(value):
     return f"`{value}`" if value not in (None, "") else "—"
 
 
+def _params(node):
+    names = [f"`{_cell(p.get('name'))}`{'*' if p.get('required') else ''}" for p in node.get("parameters", [])]
+    if node.get("request"):
+        names.append(f"body{'*' if node['request'].get('required') else ''}: {_cell(node['request'].get('type'))}")
+    return ", ".join(names) or "—"
+
+
+def _returns(node):
+    ok = [r["type"] for r in node.get("responses", []) if r["status"].startswith("2") and r.get("type")]
+    return _cell(", ".join(dict.fromkeys(ok))) if ok else "—"
+
+
 def render(app_id, payload, listing, signed):
     spec = (payload.get("manifest") or {}).get("spec") or {}
     base = spec.get("base") or {}
@@ -648,7 +825,7 @@ def render(app_id, payload, listing, signed):
         ("Connection test", f"{probe.get('method', '')} {_code(probe.get('endpoint'))}".strip() if probe else "—"),
         ("Setup verification", _code(payload.get("setup_verification"))),
         ("Source definition", prov.get("url") or "—"),
-        ("Upstream", f"{prov['repository']} @ `{prov.get('commit', '')[:12]}`" if prov.get("repository") else "—"),
+        ("Upstream", prov["repository"] + (f" @ `{prov['commit'][:12]}`" if prov.get("commit") else "") if prov.get("repository") else "—"),
         ("Source SHA-256", _code(prov.get("sha256"))),
         ("Source license", source_rights.get("spdx") or license_.get("name") or "—"),
         ("Fetched", prov.get("fetched_at") or "—"),
@@ -680,9 +857,15 @@ def render(app_id, payload, listing, signed):
         out += [", ".join(f"{v} {k} nodes" for k, v in sorted(others.items())) + " in the graph.", ""]
     if ops:
         if all("method" in n and "path" in n for n in ops):
-            out += ["| Method | Path | Name | Summary |", "| --- | --- | --- | --- |"]
             out += [
-                f"| {n['method'].upper()} | `{_cell(n['path'])}` | {_cell(n.get('name'))} | {_cell(n.get('summary'))} |"
+                "Parameters marked * are required. Safe operations only read, so a preview may call them.",
+                "",
+                "| Method | Path | Name | Parameters | Returns | Safe | Summary |",
+                "| --- | --- | --- | --- | --- | --- | --- |",
+            ]
+            out += [
+                f"| {n['method'].upper()} | `{_cell(n['path'])}` | {_cell(n.get('name'))} | {_params(n)} | "
+                f"{_returns(n)} | {'yes' if n.get('safe') else ''} | {_cell(n.get('summary'))} |"
                 for n in ops
             ]
         else:

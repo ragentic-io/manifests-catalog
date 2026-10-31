@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_www.hhs.gov_sites_all_themes_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `b25b2d8330dfcaa8ea10b10f7f729a7126f71b471516ce849b78eb3af2315ad4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,36 +34,38 @@ logo: "https://api.apis.guru/v2/cache/logo/http_www.hhs.gov_sites_all_themes_pro
 
 47 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/resources.json` | get /resources.json | Get Resources by search query |
-| GET | `/resources/campaigns.json` | get /resources/campaigns.json | Get Campaigns |
-| GET | `/resources/campaigns/{id}.json` | get /resources/campaigns/{id}.json | Get Campaign by ID |
-| GET | `/resources/campaigns/{id}/media.json` | get /resources/campaigns/{id}/media.json | Get MediaItems by Campaign ID |
-| GET | `/resources/campaigns/{id}/syndicate.{format}` | get /resources/campaigns/{id}/syndicate.{format} | Get MediaItems for Campaign |
-| GET | `/resources/languages.json` | get /resources/languages.json | Get Languages |
-| GET | `/resources/languages/{id}.json` | get /resources/languages/{id}.json | Get Language by ID |
-| GET | `/resources/media.json` | get /resources/media.json | Get MediaItems |
-| GET | `/resources/media/featured.json` | get /resources/media/featured.json | Get the list of featured content in the syndication system |
-| GET | `/resources/media/mostPopularMedia.{format}` | get /resources/media/mostPopularMedia.{format} | Get MediaItems by popularity |
-| GET | `/resources/media/searchResults.json` | get /resources/media/searchResults.json | Get MediaItems by search query |
-| GET | `/resources/media/{id}.json` | get /resources/media/{id}.json | Get MediaItem by ID |
-| GET | `/resources/media/{id}/content` | get /resources/media/{id}/content | Get content for MediaItem |
-| GET | `/resources/media/{id}/embed.json` | get /resources/media/{id}/embed.json | Get embed code for MediaItem |
-| GET | `/resources/media/{id}/preview.jpg` | get /resources/media/{id}/preview.jpg | Get Tag by ID |
-| GET | `/resources/media/{id}/relatedMedia.{format}` | get /resources/media/{id}/relatedMedia.{format} | Get related MediaItems by ID |
-| GET | `/resources/media/{id}/syndicate.{format}` | get /resources/media/{id}/syndicate.{format} | Get syndicated content for MediaItem |
-| GET | `/resources/media/{id}/thumbnail.jpg` | get /resources/media/{id}/thumbnail.jpg | Get JPG thumbnail for MediaItem |
-| GET | `/resources/media/{id}/youtubeMetaData.json` | get /resources/media/{id}/youtubeMetaData.json | Get Youtube metadata for MediaItem |
-| GET | `/resources/mediaTypes.{format}` | get /resources/mediaTypes.{format} | Get MediaTypes |
-| GET | `/resources/sources.json` | get /resources/sources.json | Get Sources |
-| GET | `/resources/sources/{id}.json` | get /resources/sources/{id}.json | Get Source by ID |
-| GET | `/resources/sources/{id}/syndicate.{format}` | get /resources/sources/{id}/syndicate.{format} | Get MediaItems for Source |
-| GET | `/resources/tags.{format}` | get /resources/tags.{format} | Get Tags |
-| GET | `/resources/tags/tagLanguages.{format}` | get /resources/tags/tagLanguages.{format} | Get TagLanguages |
-| GET | `/resources/tags/tagTypes.{format}` | get /resources/tags/tagTypes.{format} | Get MediaItems for Tag |
-| GET | `/resources/tags/{id}.{format}` | get /resources/tags/{id}.{format} | Get Tag by ID |
-| GET | `/resources/tags/{id}/media.{format}` | get /resources/tags/{id}/media.{format} | Get MediaItems for Tag |
-| GET | `/resources/tags/{id}/related.{format}` | get /resources/tags/{id}/related.{format} | Get related Tags by ID |
-| GET | `/resources/tags/{id}/syndicate.{format}` | get /resources/tags/{id}/syndicate.{format} | Get MediaItems for Tag |
-| GET | `/resources/userMediaLists/{id}.json` | get /resources/userMediaLists/{id}.json | Get UserMediaList by ID |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/resources.json` | get /resources.json | `q`* | ResourceWrapped[] | yes | Get Resources by search query |
+| GET | `/resources/campaigns.json` | get /resources/campaigns.json | `max`, `offset`, `sort` | CampaignWrapped | yes | Get Campaigns |
+| GET | `/resources/campaigns/{id}.json` | get /resources/campaigns/{id}.json | `id`* | CampaignWrapped | yes | Get Campaign by ID |
+| GET | `/resources/campaigns/{id}/media.json` | get /resources/campaigns/{id}/media.json | `id`*, `sort`, `max`, `offset` | MediaItemWrapped | yes | Get MediaItems by Campaign ID |
+| GET | `/resources/campaigns/{id}/syndicate.{format}` | get /resources/campaigns/{id}/syndicate.{format} | `id`*, `displayMethod`, `format`* | SyndicateMarshallerWrapped | yes | Get MediaItems for Campaign |
+| GET | `/resources/languages.json` | get /resources/languages.json | `max`, `offset`, `sort` | LanguageWrapped[] | yes | Get Languages |
+| GET | `/resources/languages/{id}.json` | get /resources/languages/{id}.json | `id`* | LanguageWrapped[] | yes | Get Language by ID |
+| GET | `/resources/media.json` | get /resources/media.json | `max`, `offset`, `sort`, `order`, `mediaTypes`, `name`, `collectionId`, `nameContains`, `descriptionContains`, `sourceUrl`, `sourceUrlContains`, `customThumbnailUrl`, `customThumbnailUrlContains`, `dateContentAuthored`, `dateContentUpdated`, `dateContentPublished`, `dateContentReviewed`, `dateSyndicationCaptured`, `dateSyndicationUpdated`, `contentAuthoredSinceDate`, `contentAuthoredBeforeDate`, `contentAuthoredInRange`, `contentUpdatedSinceDate`, `contentUpdatedBeforeDate`, `contentUpdatedInRange`, `contentPublishedSinceDate`, `contentPublishedBeforeDate`, `contentPublishedInRange`, `contentReviewedSinceDate`, `contentReviewedBeforeDate`, `contentReviewedInRange`, `syndicationCapturedSinceDate`, `syndicationCapturedBeforeDate`, `syndicationCapturedInRange`, `syndicationUpdatedSinceDate`, `syndicationUpdatedBeforeDate`, `syndicationUpdatedInRange`, `syndicationVisibleSinceDate`, `syndicationVisibleBeforeDate`, `syndicationVisibleInRange`, `languageId`, `languageName`, `languageIsoCode`, `hash`, `hashContains`, `sourceId`, `sourceName`, `sourceNameContains`, `sourceAcronym`, `sourceAcronymContains`, `tagIds`, `restrictToSet`, `createdBy` | MediaItemWrapped[] | yes | Get MediaItems |
+| GET | `/resources/media/featured.json` | get /resources/media/featured.json | `sort`, `max`, `offset` | MediaItem[] | yes | Get the list of featured content in the syndication system |
+| GET | `/resources/media/mostPopularMedia.{format}` | get /resources/media/mostPopularMedia.{format} | `max`, `offset`, `format`* | MediaItemWrapped[] | yes | Get MediaItems by popularity |
+| GET | `/resources/media/searchResults.json` | get /resources/media/searchResults.json | `q`*, `max`, `offset` | MediaItemWrapped[] | yes | Get MediaItems by search query |
+| GET | `/resources/media/{id}.json` | get /resources/media/{id}.json | `id`* | MediaItemWrapped[] | yes | Get MediaItem by ID |
+| GET | `/resources/media/{id}/content` | get /resources/media/{id}/content | `id`*, `calledByBuild` | string | yes | Get content for MediaItem |
+| GET | `/resources/media/{id}/embed.json` | get /resources/media/{id}/embed.json | `id`*, `flavor`, `width`, `height`, `iframeName`, `excludeJquery`, `excludeDiv`, `divId`, `displayMethod` | string | yes | Get embed code for MediaItem |
+| GET | `/resources/media/{id}/preview.jpg` | get /resources/media/{id}/preview.jpg | `id`* | object | yes | Get Tag by ID |
+| GET | `/resources/media/{id}/relatedMedia.{format}` | get /resources/media/{id}/relatedMedia.{format} | `id`*, `max`, `offset`, `sort`, `format`* | MediaItemWrapped[] | yes | Get related MediaItems by ID |
+| GET | `/resources/media/{id}/syndicate.{format}` | get /resources/media/{id}/syndicate.{format} | `id`*, `cssClass`, `stripStyles`, `stripScripts`, `stripImages`, `stripBreaks`, `stripClasses`, `font-size`, `imageFloat`, `imageMargin`, `autoplay`, `rel`, `format`* | SyndicateMarshallerWrapped | yes | Get syndicated content for MediaItem |
+| GET | `/resources/media/{id}/thumbnail.jpg` | get /resources/media/{id}/thumbnail.jpg | `id`* | object | yes | Get JPG thumbnail for MediaItem |
+| GET | `/resources/media/{id}/youtubeMetaData.json` | get /resources/media/{id}/youtubeMetaData.json | `id`* | object | yes | Get Youtube metadata for MediaItem |
+| GET | `/resources/mediaTypes.{format}` | get /resources/mediaTypes.{format} | `format`* | MediaTypeHolderWrapped[] | yes | Get MediaTypes |
+| GET | `/resources/sources.json` | get /resources/sources.json | `max`, `offset`, `sort` | SourceWrapped[] | yes | Get Sources |
+| GET | `/resources/sources/{id}.json` | get /resources/sources/{id}.json | `id`* | SourceWrapped[] | yes | Get Source by ID |
+| GET | `/resources/sources/{id}/syndicate.{format}` | get /resources/sources/{id}/syndicate.{format} | `id`*, `displayMethod`, `format`* | MediaItemWrapped[] | yes | Get MediaItems for Source |
+| GET | `/resources/tags.{format}` | get /resources/tags.{format} | `sort`, `max`, `offset`, `name`, `nameContains`, `mediaId`, `typeId`, `typeName`, `format`* | TagMarshallerWrapped[] | yes | Get Tags |
+| GET | `/resources/tags/tagLanguages.{format}` | get /resources/tags/tagLanguages.{format} | `format`* | TagLanguageMarshallerWrapped[] | yes | Get TagLanguages |
+| GET | `/resources/tags/tagTypes.{format}` | get /resources/tags/tagTypes.{format} | `format`* | TagTypeMarshallerWrapped[] | yes | Get MediaItems for Tag |
+| GET | `/resources/tags/{id}.{format}` | get /resources/tags/{id}.{format} | `id`*, `format`* | TagMarshallerWrapped[] | yes | Get Tag by ID |
+| GET | `/resources/tags/{id}/media.{format}` | get /resources/tags/{id}/media.{format} | `id`*, `sort`, `max`, `offset`, `format`* | MediaItemWrapped[] | yes | Get MediaItems for Tag |
+| GET | `/resources/tags/{id}/related.{format}` | get /resources/tags/{id}/related.{format} | `id`*, `sort`, `max`, `offset`, `format`* | TagMarshallerWrapped[] | yes | Get related Tags by ID |
+| GET | `/resources/tags/{id}/syndicate.{format}` | get /resources/tags/{id}/syndicate.{format} | `id`*, `displayMethod`, `format`* | string | yes | Get MediaItems for Tag |
+| GET | `/resources/userMediaLists/{id}.json` | get /resources/userMediaLists/{id}.json | `id`*, `displayMethod` | MediaItemWrapped[] | yes | Get UserMediaList by ID |

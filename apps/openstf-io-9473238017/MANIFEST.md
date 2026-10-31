@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_open_stf_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `863e2048f6f79cca0f2e7e1b5b45cd8ad03bd060b69ad3760cc0ec3e6f97bf4d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_open_stf_profile_im
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/devices` | getDevices | Device List |
-| GET | `/devices/{serial}` | getDeviceBySerial | Device Information |
-| GET | `/user` | getUser | User Profile |
-| GET | `/user/accessTokens` | getUserAccessTokens | Access Tokens |
-| GET | `/user/devices` | getUserDevices | User Devices |
-| POST | `/user/devices` | addUserDevice | Add a device to a user |
-| DELETE | `/user/devices/{serial}` | deleteUserDeviceBySerial | Delete User Device |
-| GET | `/user/devices/{serial}` | getUserDeviceBySerial | User Device |
-| DELETE | `/user/devices/{serial}/remoteConnect` | remoteDisconnectUserDeviceBySerial | Remote Disconnect |
-| POST | `/user/devices/{serial}/remoteConnect` | remoteConnectUserDeviceBySerial | Remote Connect |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/devices` | getDevices | `fields` | DeviceListResponse | yes | Device List |
+| GET | `/devices/{serial}` | getDeviceBySerial | `serial`*, `fields` | DeviceResponse | yes | Device Information |
+| GET | `/user` | getUser | — | UserResponse | yes | User Profile |
+| GET | `/user/accessTokens` | getUserAccessTokens | — | AccessTokensResponse | yes | Access Tokens |
+| GET | `/user/devices` | getUserDevices | `fields` | DeviceListResponse | yes | User Devices |
+| POST | `/user/devices` | addUserDevice | body*: AddUserDevicePayload | — |  | Add a device to a user |
+| GET | `/user/devices/{serial}` | getUserDeviceBySerial | `serial`*, `fields` | DeviceResponse | yes | User Device |
+| DELETE | `/user/devices/{serial}` | deleteUserDeviceBySerial | `serial`* | — |  | Delete User Device |
+| POST | `/user/devices/{serial}/remoteConnect` | remoteConnectUserDeviceBySerial | `serial`* | RemoteConnectUserDeviceResponse |  | Remote Connect |
+| DELETE | `/user/devices/{serial}/remoteConnect` | remoteDisconnectUserDeviceBySerial | `serial`* | — |  | Remote Disconnect |

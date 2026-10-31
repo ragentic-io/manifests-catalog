@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `b9e0900f783a0a1f37aa7226fdf34266472e3121329dd43efbe668ba7c0f23af` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,225 +34,227 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 163 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/admin/allapps` | DevGetAssets | DEVELOPER - Get platform assets |
-| GET | `/admin/allcollections` | DevGetCollections | DEVELOPER - Get collections |
-| GET | `/admin/allsystems` | GetSystems | DEVELOPER - Get systems |
-| GET | `/admin/audit` | GetAudit | AUDIT - Get Audit Info |
-| GET | `/admin/audit/count` | GetCounts | Audit - Get counts |
-| GET | `/admin/audit/{systemKey}` | GetAuditDev | AUDIT - Get Audit Info |
-| GET | `/admin/audit/{systemKey}/count` | GetCountsDev | AUDIT - Get counts |
-| POST | `/admin/auth` | AuthDev | DEVELOPER - Authenticate dev |
-| POST | `/admin/checkauth` | VerifyAuth | DEVELOPER - Verifies access to the system |
-| DELETE | `/admin/collectionmanagement` | DevDeleteCollection | DEVELOPER - Delete collection |
-| POST | `/admin/collectionmanagement` | DevCreateCollection | DEVELOPER - Create collection |
-| PUT | `/admin/collectionmanagement` | DevUpdateCollection | DEVELOPER - Update collection |
-| GET | `/admin/count/developers` | GetAdminDevCount | ADMIN - Get number of admin developers |
-| GET | `/admin/count/systems` | GetSystemCount | ADMIN - Get number of systems available |
-| GET | `/admin/database/status` | GetDatabaseStatus | DATABASES - Retrieves all internal and external database statuses |
-| PUT | `/admin/developers/{systemKey}` | AdminOwnerChange | ADMIN - Add/Remove/Change owner |
-| DELETE | `/admin/devices/keys/{systemKey}/{deviceName}` | DeleteDeviceKeys | DEVELOPER - Delete rotating keys for a device |
-| POST | `/admin/devices/keys/{systemKey}/{deviceName}` | CreateRotatingKeys | DEVICE -Creates rotating keys for a device. |
-| DELETE | `/admin/devices/{systemKey}` | DeleteDevicesAdmin | DEVELOPER - Delete devices using a query |
-| GET | `/admin/devices/{systemKey}` | GetSystemDevices | DEVELOPER - Get devices with or without a query |
-| PUT | `/admin/devices/{systemKey}` | UpdateDevicesAdmin | DEVELOPER - Update devices using a query |
-| DELETE | `/admin/devices/{systemKey}/{name}` | DeleteSystemDevice | DEVELOPER - Delete device |
-| GET | `/admin/devices/{systemKey}/{name}` | GetSystemDevice | DEVELOPER - Get device |
-| POST | `/admin/devices/{systemKey}/{name}` | CreateSystemDevice | DEVELOPER - Create device |
-| PUT | `/admin/devices/{systemKey}/{name}` | UpdateSystemDevice | DEVELOPER - Update device |
-| GET | `/admin/edges/template/{systemKey}` | GetEdgeTemplate | DEVELOPER - Get edge template |
-| PUT | `/admin/edges/template/{systemKey}/{edgeName}` | UpdateEdgeTemplate | DEVELOPER - Update edge template |
-| GET | `/admin/edges/{systemKey}` | GetEdges | DEVELOPER - Get edges |
-| GET | `/admin/edges/{systemKey}/control` | GetAdapterEdges | DEVELOPER - Get edges for the adapter |
-| DELETE | `/admin/edges/{systemKey}/{edgeName}` | DeleteEdge | DEVELOPER - Delete edge |
-| GET | `/admin/edges/{systemKey}/{edgeName}` | GetEdge | DEVELOPER - Get edge |
-| POST | `/admin/edges/{systemKey}/{edgeName}` | CreateEdge | DEVELOPER - Create edge |
-| PUT | `/admin/edges/{systemKey}/{edgeName}` | UpdateEdge | DEVELOPER - Update edge |
-| POST | `/admin/logout` | DevLogout | DEVELOPER - Log out dev |
-| GET | `/admin/pkey` | GetLicenseKey | ADMIN - Get platform license key. |
-| GET | `/admin/platform/developer` | GetDev | ADMIN - Get developer |
-| POST | `/admin/platform/developer` | DisableDev | DEVELOPER - Disable developer |
-| GET | `/admin/platform/developers` | GetDevs | ADMIN - Get developers |
-| GET | `/admin/platform/systems` | GetSystemUpdates | AUDIT - Get list of systems that have been updated |
-| GET | `/admin/platform/systems/{systemKey}` | GetSystemUpdatesDev | AUDIT - Get list of systems that have been updated |
-| GET | `/admin/platform/{systemKey}` | GetSystemStatus | ADMIN - Get system status |
-| GET | `/admin/portals/{systemKey}` | GetPortalInfo | DEVELOPER - Gets the information for a portal |
-| PUT | `/admin/putpass` | ChangeDevPassword | DEVELOPER - Change dev password |
-| POST | `/admin/reg` | RegDev | DEVELOPER - Register new dev |
-| PUT | `/admin/regensystemsecret` | RegenSecret | DEVELOPER - Regen secret |
-| POST | `/admin/resetpassword` | ResetPassword | ADMIN - Change dev password (Admin) |
-| DELETE | `/admin/settings/email-service` | DeleteEmailSettings | 2FA - Delete email settings |
-| GET | `/admin/settings/email-service` | EmailSettings | 2FA - Get Email Settings |
-| POST | `/admin/settings/email-service` | CreateEmailCommunication | 2FA - Create Email Communication |
-| PUT | `/admin/settings/email-service` | UpdateEmailSettings | 2FA - Update Email Settings |
-| POST | `/admin/settings/email-service/test` | TestEmail | 2FA - Test Email Service |
-| GET | `/admin/settings/security` | ViewSecurity | 2FA - View Security Settings |
-| PUT | `/admin/settings/security` | UpdateSecurity | 2FA - Update Security Settings |
-| DELETE | `/admin/settings/sms-service` | DeleteSMSSettings | 2FA - Delete SMS settings |
-| GET | `/admin/settings/sms-service` | SMSSettings | 2FA - Get SMS Settings |
-| POST | `/admin/settings/sms-service` | CreateSMSCommunication | 2FA - Create SMS Communication |
-| PUT | `/admin/settings/sms-service` | UpdateSMSSettings | 2FA - Update SMS Settings |
-| POST | `/admin/settings/sms-service/test` | TestSMS | 2FA - Test SMS Service |
-| GET | `/admin/systems/{devEmail}` | GetSystemsForDev | Get Systems for a developer |
-| GET | `/admin/triggers/definitions` | GetTriggers | DEVELOPER - Get trigger definitions |
-| GET | `/admin/triggers/handlers/{systemKey}` | GetTriggerHandlers | DEVELOPER - Get trigger handlers |
-| DELETE | `/admin/triggers/handlers/{systemKey}/{name}` | DeleteTriggerHandler | DEVELOPER - Delete trigger handler |
-| GET | `/admin/triggers/handlers/{systemKey}/{name}` | GetTriggerHandler | DEVELOPER - Get trigger handler |
-| POST | `/admin/triggers/handlers/{systemKey}/{name}` | CreateTrigger | DEVELOPER - Create trigger handler |
-| PUT | `/admin/triggers/handlers/{systemKey}/{name}` | UpdateTriggerHandler | DEVELOPER - Update trigger handler |
-| GET | `/admin/triggers/timers/{systemKey}` | GetTimerHandlers | DEVELOPER - Get timer handlers |
-| DELETE | `/admin/triggers/timers/{systemKey}/{name}` | DeleteTimerHandler | DEVELOPER - Delete trigger handler |
-| GET | `/admin/triggers/timers/{systemKey}/{name}` | GetTimerHandler | DEVELOPER - Get timer handler |
-| POST | `/admin/triggers/timers/{systemKey}/{name}` | create_timer_handler | DEVELOPER - Create time handler |
-| PUT | `/admin/triggers/timers/{systemKey}/{name}` | UpdateTimerHandler | DEVELOPER - Update timer handler |
-| DELETE | `/admin/user/{systemKey}` | DeleteUser | DEVELOPER - Delete user |
-| GET | `/admin/user/{systemKey}` | GetUserList | DEVELOPER - Get list of users and information |
-| POST | `/admin/user/{systemKey}` | AddUser | DEVELOPER - Add user |
-| PUT | `/admin/user/{systemKey}` | UserChangeUserInfo | DEVELOPER - Change user information and permissions |
-| GET | `/admin/user/{systemKey}/columns` | GetUserColumnData | DEVELOPER - Get users column info. |
-| POST | `/admin/user/{systemKey}/columns` | AddColumn | DEVELOPER - Add new column |
-| DELETE | `/admin/user/{systemKey}/roles` | DeleteRoles | DEVELOPER - Delete roles |
-| GET | `/admin/user/{systemKey}/roles` | GetRoles | DEVELOPER - Get list of roles |
-| POST | `/admin/user/{systemKey}/roles` | AddRole | DEVELOPER - Add new role |
-| PUT | `/admin/user/{systemKey}/roles` | SettingsChanges | DEVELOPER - Changes roles settings |
-| GET | `/admin/user/{systemKey}/roles/count` | GetRolesCount | DEVELOPER - Get number of roles |
-| GET | `/admin/userinfo` | GetDevInfo | DEVELOPER - Get dev info |
-| PUT | `/admin/userinfo` | UpdateDev2FA | 2FA - Update developer 2FA information. |
-| GET | `/admin/v/4/service_caches/{systemKey}` | GetSharedCache | SHARED CACHE - Gets shared caches for a system |
-| DELETE | `/admin/v/4/service_caches/{systemKey}/{cacheName}` | DeleteSharedCache | SHARED CACHE - Delete a shared cache |
-| POST | `/admin/v/4/service_caches/{systemKey}/{cacheName}` | addSharedCache | SHARED CACHE - Add a shared cache |
-| PUT | `/admin/v/4/service_caches/{systemKey}/{cacheName}` | UpdateSharedCache | SHARED CACHE - Update a shared cache |
-| DELETE | `/admin/v/4/session/{systemKey}/device` | DeleteDeviceSession | SESSION - Delete device session |
-| GET | `/admin/v/4/session/{systemKey}/device` | GetDeviceSession | SESSION - Get device session info |
-| GET | `/admin/v/4/session/{systemKey}/device/count` | GetDeviceSessionCount | SESSION - Get device session count |
-| DELETE | `/admin/v/4/session/{systemKey}/user` | DeleteUserSession | SESSION - Delete user session |
-| GET | `/admin/v/4/session/{systemKey}/user` | GetUserSession | SESSION - Get user session info |
-| GET | `/admin/v/4/session/{systemKey}/user/count` | GetUserSessionCount | SESSION - Get user session count |
-| DELETE | `/admin/v/4/systemmanagement` | DeleteSystem | DEVELOPER - Delete system |
-| GET | `/admin/v/4/systemmanagement` | GetSystemInfo | DEVELOPER - Get system info |
-| POST | `/admin/v/4/systemmanagement` | CreateSystem | DEVELOPER - Create system |
-| PUT | `/admin/v/4/systemmanagement` | UpdateSystem | DEVELOPER - Update system info |
-| GET | `/admin/v/4/webhook/{systemKey}` | GetWebhooks | WEBHOOKS - Returns webhooks in the system |
-| DELETE | `/admin/v/4/webhook/{systemKey}/{name}` | DeleteWebhook | WEBHOOKS - Delete a webhook |
-| POST | `/admin/v/4/webhook/{systemKey}/{name}` | CreateWebhook | WEBHOOKS - Creates a webhook |
-| PUT | `/admin/v/4/webhook/{systemKey}/{name}` | UpdateWebhook | WEBHOOKS - Update a webhook |
-| POST | `/admin/validate` | SendValidation | 2FA - Send validation link |
-| GET | `/admin/{systemKey}/sync/alledges/status` | AllEdgeSyncStatus | EDGE - Gets sync status for all edges |
-| GET | `/admin/{systemKey}/sync/deployment/status/{deploymentName}` | GetSyncStatus | DEPLOYMENTS - Gets sync status for a deployment |
-| GET | `/admin/{systemKey}/sync/edge/status/{edgeName}` | EdgeSyncStatus | EDGE - Gets sync status for an edge |
-| POST | `/admin/{systemKey}/sync/retry` | RetrySync | DEPLOYMENTS - Retries sync for an asset |
-| GET | `/api/about` | APIInfo | DEVELOPER - Gets the information for the platform |
-| GET | `/api/v/1/code/{systemKey}/{serviceName}` | GetService | CODE - Retrieve information about service |
-| POST | `/api/v/1/code/{systemKey}/{serviceName}` | ExecuteService | CODE - Call/Execute code service |
-| DELETE | `/api/v/1/collection/{systemKey}/{collectionName}` | DeleteCollectionData | DATA(name) - Delete items |
-| GET | `/api/v/1/collection/{systemKey}/{collectionName}` | GetCollectionData | DATA(name) - Get items |
-| POST | `/api/v/1/collection/{systemKey}/{collectionName}` | CreateCollectionData | DATA(name) - Create items |
-| PUT | `/api/v/1/collection/{systemKey}/{collectionName}` | UpdateCollectionData | DATA(name) - Update items |
-| DELETE | `/api/v/1/data/{collectionID}` | DeleteCollectionDataAlt | DATA(id) - Delete items |
-| GET | `/api/v/1/data/{collectionID}` | GetCollectionDataAlt | DATA(id) - Get items |
-| POST | `/api/v/1/data/{collectionID}` | CreateCollectionDataAlt | DATA(id) - Create items |
-| PUT | `/api/v/1/data/{collectionID}` | UpdateCollectionDataAlt | DATA(id) - Update items |
-| GET | `/api/v/1/data/{collectionID}/columns` | GetColumns | DATA(id) - Get columns |
-| DELETE | `/api/v/1/message/{systemKey}` | DeleteMessageHistory | MESSAGING - Delete history |
-| GET | `/api/v/1/message/{systemKey}` | GetMessageHistory | MESSAGING - Get history |
-| POST | `/api/v/1/message/{systemKey}/publish` | PublishMessage | MESSAGING - Publish message |
-| GET | `/api/v/1/user` | GetUsers | USERS - Get all users |
-| POST | `/api/v/1/user/anon` | AuthAnon | USERS - Authenticate anonymous user |
-| POST | `/api/v/1/user/auth` | AuthUser | USERS - Authenticate user |
-| POST | `/api/v/1/user/checkauth` | UserCheckAuth | USERS - Check user auth |
-| DELETE | `/api/v/1/user/info` | DeleteUserAsUser | Allows an user with adequate permissions to delete another user |
-| GET | `/api/v/1/user/info` | GetUserInfo | USERS - Get user info |
-| PUT | `/api/v/1/user/info` | UpdateUserInfo | USERS - Update user info |
-| POST | `/api/v/1/user/logout` | UserLogout | USERS - Log out user |
-| PUT | `/api/v/1/user/pass` | UpdateUserPass | USERS - Change user password |
-| POST | `/api/v/1/user/reg` | RegUser | USERS - Register new user |
-| DELETE | `/api/v/2/devices/{SystemKey}` | DeleteDevices | DEVICES - Delete devices using a query |
-| GET | `/api/v/2/devices/{SystemKey}` | GetDevices | DEVICES - Get all devices |
-| PUT | `/api/v/2/devices/{SystemKey}` | UpdateDevices | DEVICES - Update devices using a query |
-| POST | `/api/v/2/devices/{SystemKey}/auth` | AuthDevice | DEVICES - Authenticate device |
-| POST | `/api/v/2/devices/{systemKey}/{name}` | AddDevice | DEVICES - Adds a device |
-| PUT | `/api/v/2/devices/{systemKey}/{name}` | UpdateDeviceInfo | DEVICES - Update info |
-| GET | `/api/v/2/edges/{systemKey}` | GetAllEdges | EDGE - Fetch all edges |
-| GET | `/api/v/3/allcollections/{systemKey}` | GetCollections | DATA - Get collections |
-| GET | `/api/v/3/code/codemeta/{systemKey}` | ReturnServiceSettings | CODE - Returns code services and settings |
-| DELETE | `/api/v/3/code/{systemKey}/timer/{name}` | DeleteTimerByName | HANDLERS - Delete trigger handler |
-| GET | `/api/v/3/code/{systemKey}/timer/{name}` | GetTimerByName | HANDLERS - Get timer handler |
-| POST | `/api/v/3/code/{systemKey}/timer/{name}` | CreateNewTimer | HANDLERS - Create timer handler |
-| PUT | `/api/v/3/code/{systemKey}/timer/{name}` | UpdateTimerByName | HANDLERS - Update timer handler |
-| GET | `/api/v/3/code/{systemKey}/timers` | GetAllTimers | HANDLERS - Get timer handlers |
-| DELETE | `/api/v/3/code/{systemKey}/trigger/{name}` | DeleteTriggerByName | HANDLERS - Delete trigger handler |
-| GET | `/api/v/3/code/{systemKey}/trigger/{name}` | GetTriggerByName | HANDLERS - Get trigger handler |
-| POST | `/api/v/3/code/{systemKey}/trigger/{name}` | CreateNewTrigger | HANDLERS - Create trigger handler |
-| PUT | `/api/v/3/code/{systemKey}/trigger/{name}` | UpdateTriggerByName | HANDLERS - Update trigger handler |
-| GET | `/api/v/3/code/{systemKey}/triggers` | GetAllTrigger | HANDLERS - Get trigger handlers |
-| DELETE | `/api/v/3/collectionmanagement` | DeleteCollection | DATA - Delete collection |
-| POST | `/api/v/3/collectionmanagement` | CreateCollection | DATA - Create collection |
-| PUT | `/api/v/3/collectionmanagement` | UpdateCollection | DATA - Update collection |
-| GET | `/api/v/3/devices/{systemKey}/columns` | GetDeviceTableSchema | EDGE - Get device columns |
-| GET | `/api/v/3/devices/{systemKey}/count` | GetDeviceCount | DEVICES - Get count |
-| GET | `/api/v/3/edges/{systemKey}/columns` | GetEdgeTableSchema | EDGE - Get columns |
-| GET | `/api/v/3/edges/{systemKey}/count` | GetEdgeCount | EDGE - Get count |
-| DELETE | `/api/v/3/edges/{systemKey}/{name}` | DeleteEdgeByName | Edge - Delete edge |
-| GET | `/api/v/3/edges/{systemKey}/{name}` | GetEdgeDataByName | Edge(name) - Get edge info |
-| POST | `/api/v/3/edges/{systemKey}/{name}` | CreateNewEdge | EDGE - Create edge |
-| PUT | `/api/v/3/edges/{systemKey}/{name}` | UpdateEdgeByName | EDGE - Update edge |
-| GET | `/api/v/3/{systemKey}/deployments` | GetAllDeployments | DEPLOYMENTS - Gets all deployment names and descriptions for a system |
-| POST | `/api/v/3/{systemKey}/deployments` | CreateDeployment | DEPLOYMENTS - Creates a deployment |
-| DELETE | `/api/v/3/{systemKey}/deployments/{deploymentName}` | DeleteDeployment | DEPLOYMENT - Delete a deployment |
-| GET | `/api/v/3/{systemKey}/deployments/{deploymentName}` | GetADeployment | DEPLOYMENTS - Gets a deloyment for a system |
-| PUT | `/api/v/3/{systemKey}/deployments/{deploymentName}` | UpdateDeployment | DEPLOYMENT - Update deployment |
-| GET | `/api/v/4/bucket_sets/{systemKey}` | GetBucketsData | FILES - Returns a list of metadata for buckets in system |
-| GET | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}` | GetSingleBucketData | FILES - Returns metadata for specified bucket |
-| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/copy` | CopyBucketFile | FILES - Copies a file to a new location within buckets |
-| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/create` | CreateBucketFile | FILES - Creates a new file in a bucket |
-| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/delete` | DeleteBucketFile | FILES - Deletes a file from the bucket. |
-| GET | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/meta` | GetBoxFilesMeta | FILES - Get a file's metadata in a box |
-| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/move` | MoveBucketFile | FILES - Moves a file to a new location within buckets. |
-| GET | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/files` | GetBoxFiles | FILES - Get all files metadata in a box |
-| DELETE | `/api/v/4/data/{systemKey}/{collectionName}/index` | DeleteNonUniqueIndex | DATA - Delete collection |
-| POST | `/api/v/4/data/{systemKey}/{collectionName}/index` | CreateNonUniqueIndex | DATA - Create collection |
-| GET | `/api/v/4/data/{systemKey}/{collectionName}/listindexes` | GetIndexes | DATA - Get list of indexes |
-| DELETE | `/api/v/4/data/{systemKey}/{collectionName}/uniqueindex` | DeleteUniqueIndex | DATA - Delete unique index |
-| POST | `/api/v/4/data/{systemKey}/{collectionName}/uniqueindex` | CreateUniqueIndex | DATA - Create Unique Index |
-| PUT | `/api/v/4/data/{systemKey}/{collectionName}/upsert` | UpdateUpsert | DATA - Update upsert values |
-| GET | `/api/v/4/devices/{systemKey}/connectioncount` | ConnectedDeviceCount | DEVICES - Get total of connected devices |
-| GET | `/api/v/4/devices/{systemKey}/connections` | GetConnectedDeviceList | DEVICES - Get connected device list |
-| GET | `/api/v/4/devices/{systemKey}/connections/{name}` | GetConnectedDeviceInfo | DEVICES - Get information for a connected device |
-| GET | `/api/v/4/external-db/{systemKey}` | GetAllExternalDB | DATABASES - Retrieves all external database connections |
-| POST | `/api/v/4/external-db/{systemKey}` | CreateExternalDB | DATABASES - Create a external database connection |
-| DELETE | `/api/v/4/external-db/{systemKey}/{name}` | DeleteExternalDB | DATABASES - Delete a external database connection |
-| GET | `/api/v/4/external-db/{systemKey}/{name}` | GetExternalDB | DATABASES - Retrieve a specific external database connection |
-| PUT | `/api/v/4/external-db/{systemKey}/{name}` | UpdateDatabaseCredentials | DATABASES - Update external database credentials |
-| POST | `/api/v/4/external-db/{systemKey}/{name}/data` | PerformDBOperation | DATABASES - Create a external database connection |
-| GET | `/api/v/4/message/{systemKey}/topics` | GetTopics | MESSAGING - Gets list of topics |
-| GET | `/api/v/4/message/{systemKey}/topics/count` | GetTopicCount | MESSAGING - Gets number of topics |
-| PUT | `/api/v/4/user/manage` | ChangeUserInfo | USER - Users change roles and passwords for other users |
-| GET | `/api/v/4/webhook/execute/{systemKey}/{webhookName}` | PayloadWebhookQuery | WEBHOOKS - Executes query string payload webhook |
-| POST | `/api/v/4/webhook/execute/{systemKey}/{webhookName}` | ExecuteWebhook | WEBHOOKS - Executing a webhook |
-| GET | `/api/v/4/{SystemKey}/adapters` | GetAdapters | ADAPTERS - Get all adapters |
-| POST | `/api/v/4/{SystemKey}/adapters` | addAdapter | ADAPTERS - Add an adapter |
-| DELETE | `/api/v/4/{SystemKey}/adapters/{AdapterName}` | DeleteAdapter | ADAPTERS - Delete adapter |
-| PUT | `/api/v/4/{SystemKey}/adapters/{AdapterName}` | MapAdapterCommand | ADAPTERS - Map Adapter command to execute a file |
-| PUT | `/api/v/4/{SystemKey}/adapters/{AdapterName}/control` | AddEdgeCommand | ADAPTERS - Send command to edge |
-| GET | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files` | AdapterConfig | Gets list of configuration information for all adapter files |
-| POST | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files` | updateFileInfo | ADAPTERS - Add or replace file content & configuration |
-| DELETE | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files/{fileName}` | DeleteFile | ADAPTERS - Delete adapter files |
-| GET | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files/{fileName}` | FileDownload | ADAPTERS - Download file from adapter |
-| PUT | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files/{fileName}` | updateExistingFileContent | ADAPTERS - Update Existing File's content |
-| GET | `/api/v/4/{systemKey}/code/failed` | GetFailedServiceQuery | CODE - Get all failed services using Query |
-| GET | `/codeadmin/failed` | GetFailedServices | DEVELOPER - Get all failed services |
-| DELETE | `/codeadmin/failed/{systemKey}` | DeleteFailedService | DEVELOPER - Delete failed service run |
-| GET | `/codeadmin/failed/{systemKey}` | GetSystemFailedServices | DEVELOPER - Get system's failed services |
-| POST | `/codeadmin/failed/{systemKey}` | RetryFailedService | DEVELOPER - Retry failed service |
-| GET | `/codeadmin/v/2/history/library/{systemKey}/{libName}` | LibraryHistory | DEVELOPER - Get library history |
-| GET | `/codeadmin/v/2/history/library/{systemKey}/{libName}/{libVersion}` | GetOldLibraryVersion | DEVELOPER - Get old library version |
-| GET | `/codeadmin/v/2/library/{systemKey}` | GetLibraries | DEVELOPER - Get all libraries |
-| DELETE | `/codeadmin/v/2/library/{systemKey}/{libName}` | DeleteLibrary | DEVELOPER - Delete library |
-| GET | `/codeadmin/v/2/library/{systemKey}/{libName}` | GetLibrary | DEVELOPER - Get library |
-| POST | `/codeadmin/v/2/library/{systemKey}/{libName}` | CreateLibrary | DEVELOPER - Create library |
-| PUT | `/codeadmin/v/2/library/{systemKey}/{libName}` | UpdateLibrary | DEVELOPER - Update library |
-| GET | `/codeadmin/v/2/logs/{systemKey}/{serviceName}` | GetLogs | DEVELOPER - Get services logs |
-| DELETE | `/codeadmin/v/2/{systemKey}/{serviceName}` | DeleteService | DEVELOPER - Delete code service |
-| POST | `/codeadmin/v/2/{systemKey}/{serviceName}` | AddService | DEVELOPER - Add code service |
-| PUT | `/codeadmin/v/2/{systemKey}/{serviceName}` | UpdateService | DEVELOPER - Update code service |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/admin/allapps` | DevGetAssets | `ClearBlade-DevToken`* | — | yes | DEVELOPER - Get platform assets |
+| GET | `/admin/allcollections` | DevGetCollections | `ClearBlade-DevToken`*, `appid`* | — | yes | DEVELOPER - Get collections |
+| GET | `/admin/allsystems` | GetSystems | `ClearBlade-DevToken`* | — | yes | DEVELOPER - Get systems |
+| GET | `/admin/audit` | GetAudit | `ClearBlade-DevToken`*, `query` | auditInfo | yes | AUDIT - Get Audit Info |
+| GET | `/admin/audit/count` | GetCounts | `ClearBlade-DevToken`* | — | yes | Audit - Get counts |
+| GET | `/admin/audit/{systemKey}` | GetAuditDev | `systemKey`*, `ClearBlade-DevToken`*, `query` | auditInfo | yes | AUDIT - Get Audit Info |
+| GET | `/admin/audit/{systemKey}/count` | GetCountsDev | `systemKey`*, `ClearBlade-DevToken`* | — | yes | AUDIT - Get counts |
+| POST | `/admin/auth` | AuthDev | body*: authdata | devregresp |  | DEVELOPER - Authenticate dev |
+| POST | `/admin/checkauth` | VerifyAuth | `ClearBlade-DevToken`* | — |  | DEVELOPER - Verifies access to the system |
+| PUT | `/admin/collectionmanagement` | DevUpdateCollection | `ClearBlade-DevToken`, body: updateCollection | — |  | DEVELOPER - Update collection |
+| POST | `/admin/collectionmanagement` | DevCreateCollection | `ClearBlade-DevToken`*, body*: newcollection | — |  | DEVELOPER - Create collection |
+| DELETE | `/admin/collectionmanagement` | DevDeleteCollection | `ClearBlade-DevToken`*, `id`* | — |  | DEVELOPER - Delete collection |
+| GET | `/admin/count/developers` | GetAdminDevCount | `ClearBlade-DevToken`* | — | yes | ADMIN - Get number of admin developers |
+| GET | `/admin/count/systems` | GetSystemCount | `ClearBlade-DevToken`* | — | yes | ADMIN - Get number of systems available |
+| GET | `/admin/database/status` | GetDatabaseStatus | — | — | yes | DATABASES - Retrieves all internal and external database statuses |
+| PUT | `/admin/developers/{systemKey}` | AdminOwnerChange | `systemKey`*, `ClearBlade-DevToken`*, body: updateOwner | — |  | ADMIN - Add/Remove/Change owner |
+| POST | `/admin/devices/keys/{systemKey}/{deviceName}` | CreateRotatingKeys | `ClearBlade-DevToken`*, `systemKey`*, `deviceName`*, body*: count | deviceKey |  | DEVICE -Creates rotating keys for a device. |
+| DELETE | `/admin/devices/keys/{systemKey}/{deviceName}` | DeleteDeviceKeys | `ClearBlade-DevToken`*, `systemKey`*, `deviceName`* | — |  | DEVELOPER - Delete rotating keys for a device |
+| GET | `/admin/devices/{systemKey}` | GetSystemDevices | `ClearBlade-DevToken`*, `systemKey`*, `query` | — | yes | DEVELOPER - Get devices with or without a query |
+| PUT | `/admin/devices/{systemKey}` | UpdateDevicesAdmin | `systemKey`*, `ClearBlade-DevToken`*, body*: PutQuery | QueryResultSet |  | DEVELOPER - Update devices using a query |
+| DELETE | `/admin/devices/{systemKey}` | DeleteDevicesAdmin | `systemKey`*, `ClearBlade-DevToken`*, `query`* | — |  | DEVELOPER - Delete devices using a query |
+| GET | `/admin/devices/{systemKey}/{name}` | GetSystemDevice | `ClearBlade-DevToken`*, `systemKey`*, `name`* | — | yes | DEVELOPER - Get device |
+| PUT | `/admin/devices/{systemKey}/{name}` | UpdateSystemDevice | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: deviceAdminUpdate | — |  | DEVELOPER - Update device |
+| POST | `/admin/devices/{systemKey}/{name}` | CreateSystemDevice | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: deviceAdminNew | — |  | DEVELOPER - Create device |
+| DELETE | `/admin/devices/{systemKey}/{name}` | DeleteSystemDevice | `ClearBlade-DevToken`*, `systemKey`*, `name`* | — |  | DEVELOPER - Delete device |
+| GET | `/admin/edges/template/{systemKey}` | GetEdgeTemplate | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get edge template |
+| PUT | `/admin/edges/template/{systemKey}/{edgeName}` | UpdateEdgeTemplate | `ClearBlade-DevToken`*, `systemKey`*, `edgeName`*, body*: edgeTemplateUpdate | — |  | DEVELOPER - Update edge template |
+| GET | `/admin/edges/{systemKey}` | GetEdges | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get edges |
+| GET | `/admin/edges/{systemKey}/control` | GetAdapterEdges | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get edges for the adapter |
+| GET | `/admin/edges/{systemKey}/{edgeName}` | GetEdge | `ClearBlade-DevToken`*, `systemKey`*, `edgeName`* | — | yes | DEVELOPER - Get edge |
+| PUT | `/admin/edges/{systemKey}/{edgeName}` | UpdateEdge | `ClearBlade-DevToken`*, `systemKey`*, `edgeName`*, body*: edgeUpdate | — |  | DEVELOPER - Update edge |
+| POST | `/admin/edges/{systemKey}/{edgeName}` | CreateEdge | `ClearBlade-DevToken`*, `systemKey`*, `edgeName`*, body*: edgeNew | — |  | DEVELOPER - Create edge |
+| DELETE | `/admin/edges/{systemKey}/{edgeName}` | DeleteEdge | `ClearBlade-DevToken`*, `systemKey`*, `edgeName`* | — |  | DEVELOPER - Delete edge |
+| POST | `/admin/logout` | DevLogout | `ClearBlade-DevToken`* | — |  | DEVELOPER - Log out dev |
+| GET | `/admin/pkey` | GetLicenseKey | `ClearBlade-DevToken`* | — | yes | ADMIN - Get platform license key. |
+| GET | `/admin/platform/developer` | GetDev | `ClearBlade-DevToken`*, `developer`* | — | yes | ADMIN - Get developer |
+| POST | `/admin/platform/developer` | DisableDev | `ClearBlade-DevToken`*, body*: disableData | — |  | DEVELOPER - Disable developer |
+| GET | `/admin/platform/developers` | GetDevs | `ClearBlade-DevToken`*, `pagesize`, `pagenum`, `total`, `filter` | — | yes | ADMIN - Get developers |
+| GET | `/admin/platform/systems` | GetSystemUpdates | `Clearblade-DevToken`*, `query` | systemInfo | yes | AUDIT - Get list of systems that have been updated |
+| GET | `/admin/platform/systems/{systemKey}` | GetSystemUpdatesDev | `systemKey`*, `clearblade-devtoken`*, `query` | systemInfo | yes | AUDIT - Get list of systems that have been updated |
+| GET | `/admin/platform/{systemKey}` | GetSystemStatus | `ClearBlade-DevToken`*, `systemKey`* | — | yes | ADMIN - Get system status |
+| GET | `/admin/portals/{systemKey}` | GetPortalInfo | `ClearBlade-DevToken`*, `systemKey`* | portalArray | yes | DEVELOPER - Gets the information for a portal |
+| PUT | `/admin/putpass` | ChangeDevPassword | `ClearBlade-DevToken`*, body*: devpass | — |  | DEVELOPER - Change dev password |
+| POST | `/admin/reg` | RegDev | body*: devregdata | devregresp |  | DEVELOPER - Register new dev |
+| PUT | `/admin/regensystemsecret` | RegenSecret | `ClearBlade-DevToken`*, body*: regensystem | — |  | DEVELOPER - Regen secret |
+| POST | `/admin/resetpassword` | ResetPassword | `ClearBlade-DevToken`*, body*: resetPassword | — |  | ADMIN - Change dev password (Admin) |
+| GET | `/admin/settings/email-service` | EmailSettings | `ClearBlade-DevToken`* | emailSettings | yes | 2FA - Get Email Settings |
+| PUT | `/admin/settings/email-service` | UpdateEmailSettings | `ClearBlade-DevToken`*, body*: emailSettings | SuccessResp |  | 2FA - Update Email Settings |
+| POST | `/admin/settings/email-service` | CreateEmailCommunication | `ClearBlade-DevToken`*, body*: emailSettings | — |  | 2FA - Create Email Communication |
+| DELETE | `/admin/settings/email-service` | DeleteEmailSettings | `ClearBlade-DevToken`* | SuccessResp |  | 2FA - Delete email settings |
+| POST | `/admin/settings/email-service/test` | TestEmail | `ClearBlade-DevToken`*, body*: emailTest | SuccessResp |  | 2FA - Test Email Service |
+| GET | `/admin/settings/security` | ViewSecurity | `ClearBlade-DevToken`* | SecuritySettings | yes | 2FA - View Security Settings |
+| PUT | `/admin/settings/security` | UpdateSecurity | `ClearBlade-DevToken`*, body*: SecuritySettings | SecuritySettings |  | 2FA - Update Security Settings |
+| GET | `/admin/settings/sms-service` | SMSSettings | `ClearBlade-DevToken`* | SMSSettings | yes | 2FA - Get SMS Settings |
+| PUT | `/admin/settings/sms-service` | UpdateSMSSettings | `ClearBlade-DevToken`*, body*: SMSSettings | SuccessResp |  | 2FA - Update SMS Settings |
+| POST | `/admin/settings/sms-service` | CreateSMSCommunication | `ClearBlade-DevToken`*, body*: SMSSettings | SuccessResp |  | 2FA - Create SMS Communication |
+| DELETE | `/admin/settings/sms-service` | DeleteSMSSettings | `ClearBlade-DevToken`* | SuccessResp |  | 2FA - Delete SMS settings |
+| POST | `/admin/settings/sms-service/test` | TestSMS | `ClearBlade-DevToken`*, body*: SMSTest | SuccessResp |  | 2FA - Test SMS Service |
+| GET | `/admin/systems/{devEmail}` | GetSystemsForDev | `ClearBlade-DevToken`*, `devEmail`* | systemInfo | yes | Get Systems for a developer |
+| GET | `/admin/triggers/definitions` | GetTriggers | `ClearBlade-DevToken`* | — | yes | DEVELOPER - Get trigger definitions |
+| GET | `/admin/triggers/handlers/{systemKey}` | GetTriggerHandlers | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get trigger handlers |
+| GET | `/admin/triggers/handlers/{systemKey}/{name}` | GetTriggerHandler | `ClearBlade-DevToken`*, `systemKey`*, `name`* | — | yes | DEVELOPER - Get trigger handler |
+| PUT | `/admin/triggers/handlers/{systemKey}/{name}` | UpdateTriggerHandler | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: triggerdata | — |  | DEVELOPER - Update trigger handler |
+| POST | `/admin/triggers/handlers/{systemKey}/{name}` | CreateTrigger | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: triggerdata | — |  | DEVELOPER - Create trigger handler |
+| DELETE | `/admin/triggers/handlers/{systemKey}/{name}` | DeleteTriggerHandler | `ClearBlade-DevToken`*, `systemKey`*, `name`* | — |  | DEVELOPER - Delete trigger handler |
+| GET | `/admin/triggers/timers/{systemKey}` | GetTimerHandlers | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get timer handlers |
+| GET | `/admin/triggers/timers/{systemKey}/{name}` | GetTimerHandler | `ClearBlade-DevToken`*, `systemKey`*, `name`* | — | yes | DEVELOPER - Get timer handler |
+| PUT | `/admin/triggers/timers/{systemKey}/{name}` | UpdateTimerHandler | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: timerdata | — |  | DEVELOPER - Update timer handler |
+| POST | `/admin/triggers/timers/{systemKey}/{name}` | create_timer_handler | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: timerdata | — |  | DEVELOPER - Create time handler |
+| DELETE | `/admin/triggers/timers/{systemKey}/{name}` | DeleteTimerHandler | `ClearBlade-DevToken`*, `systemKey`*, `name`* | — |  | DEVELOPER - Delete trigger handler |
+| GET | `/admin/user/{systemKey}` | GetUserList | `systemKey`*, `ClearBlade-DevToken`*, `query` | — | yes | DEVELOPER - Get list of users and information |
+| PUT | `/admin/user/{systemKey}` | UserChangeUserInfo | `systemKey`*, `ClearBlade-DevToken`*, body*: roles | — |  | DEVELOPER - Change user information and permissions |
+| POST | `/admin/user/{systemKey}` | AddUser | `systemKey`*, `ClearBlade-DevToken`*, body*: userlogin | — |  | DEVELOPER - Add user |
+| DELETE | `/admin/user/{systemKey}` | DeleteUser | `ClearBlade-DevToken`*, `systemKey`*, `user` | — |  | DEVELOPER - Delete user |
+| GET | `/admin/user/{systemKey}/columns` | GetUserColumnData | `systemKey`*, `ClearBlade-DevToken`* | — | yes | DEVELOPER - Get users column info. |
+| POST | `/admin/user/{systemKey}/columns` | AddColumn | `systemKey`*, `ClearBlade-DevToken`*, body*: addUserColumn | — |  | DEVELOPER - Add new column |
+| GET | `/admin/user/{systemKey}/roles` | GetRoles | `systemKey`*, `ClearBlade-DevToken`*, `query` | — | yes | DEVELOPER - Get list of roles |
+| PUT | `/admin/user/{systemKey}/roles` | SettingsChanges | `systemKey`*, `ClearBlade-DevToken`*, body*: changeRoleSettings | — |  | DEVELOPER - Changes roles settings |
+| POST | `/admin/user/{systemKey}/roles` | AddRole | `systemKey`*, `ClearBlade-DevToken`*, body: rolesinfo | — |  | DEVELOPER - Add new role |
+| DELETE | `/admin/user/{systemKey}/roles` | DeleteRoles | `ClearBlade-DevToken`*, `systemKey`*, `query`* | — |  | DEVELOPER - Delete roles |
+| GET | `/admin/user/{systemKey}/roles/count` | GetRolesCount | `systemKey`*, `ClearBlade-DevToken`*, `user`* | — | yes | DEVELOPER - Get number of roles |
+| GET | `/admin/userinfo` | GetDevInfo | `ClearBlade-DevToken`* | userinfo | yes | DEVELOPER - Get dev info |
+| PUT | `/admin/userinfo` | UpdateDev2FA | `ClearBlade-DevToken`*, body*: 2FAinfo | SuccessResp |  | 2FA - Update developer 2FA information. |
+| GET | `/admin/v/4/service_caches/{systemKey}` | GetSharedCache | `ClearBlade-DevToken`*, `systemKey`* | CacheArrayResp | yes | SHARED CACHE - Gets shared caches for a system |
+| PUT | `/admin/v/4/service_caches/{systemKey}/{cacheName}` | UpdateSharedCache | `ClearBlade-DevToken`*, `systemKey`*, `cacheName`*, body*: updateCache | SuccessResp |  | SHARED CACHE - Update a shared cache |
+| POST | `/admin/v/4/service_caches/{systemKey}/{cacheName}` | addSharedCache | `ClearBlade-DevToken`*, `systemKey`*, `cacheName`*, body*: addCache | SuccessResp |  | SHARED CACHE - Add a shared cache |
+| DELETE | `/admin/v/4/service_caches/{systemKey}/{cacheName}` | DeleteSharedCache | `ClearBlade-DevToken`*, `systemKey`*, `cacheName`* | SuccessResp |  | SHARED CACHE - Delete a shared cache |
+| GET | `/admin/v/4/session/{systemKey}/device` | GetDeviceSession | `ClearBlade-DevToken`*, `query`, `systemKey`* | deviceSession | yes | SESSION - Get device session info |
+| DELETE | `/admin/v/4/session/{systemKey}/device` | DeleteDeviceSession | `ClearBlade-DevToken`*, `query`, `systemKey`* | — |  | SESSION - Delete device session |
+| GET | `/admin/v/4/session/{systemKey}/device/count` | GetDeviceSessionCount | `ClearBlade-DevToken`*, `query`, `systemKey`* | count | yes | SESSION - Get device session count |
+| GET | `/admin/v/4/session/{systemKey}/user` | GetUserSession | `ClearBlade-DevToken`*, `query`, `systemKey`* | userSession | yes | SESSION - Get user session info |
+| DELETE | `/admin/v/4/session/{systemKey}/user` | DeleteUserSession | `ClearBlade-DevToken`*, `query`, `systemKey`* | — |  | SESSION - Delete user session |
+| GET | `/admin/v/4/session/{systemKey}/user/count` | GetUserSessionCount | `ClearBlade-DevToken`*, `query`, `systemKey`* | count | yes | SESSION - Get user session count |
+| GET | `/admin/v/4/systemmanagement` | GetSystemInfo | `ClearBlade-DevToken`*, `id`* | systemSettings | yes | DEVELOPER - Get system info |
+| PUT | `/admin/v/4/systemmanagement` | UpdateSystem | `ClearBlade-DevToken`*, body*: systemSettings | — |  | DEVELOPER - Update system info |
+| POST | `/admin/v/4/systemmanagement` | CreateSystem | `ClearBlade-DevToken`*, body*: newsystem | systemSettings |  | DEVELOPER - Create system |
+| DELETE | `/admin/v/4/systemmanagement` | DeleteSystem | `ClearBlade-DevToken`*, `id`* | — |  | DEVELOPER - Delete system |
+| GET | `/admin/v/4/webhook/{systemKey}` | GetWebhooks | `ClearBlade-DevToken`*, `systemKey`* | webhookResp | yes | WEBHOOKS - Returns webhooks in the system |
+| PUT | `/admin/v/4/webhook/{systemKey}/{name}` | UpdateWebhook | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body: webhookUpdate | — |  | WEBHOOKS - Update a webhook |
+| POST | `/admin/v/4/webhook/{systemKey}/{name}` | CreateWebhook | `ClearBlade-DevToken`*, `systemKey`*, `name`*, body*: webhookCreate | SuccessResp |  | WEBHOOKS - Creates a webhook |
+| DELETE | `/admin/v/4/webhook/{systemKey}/{name}` | DeleteWebhook | `ClearBlade-DevToken`*, `systemKey`*, `name`* | SuccessResp |  | WEBHOOKS - Delete a webhook |
+| POST | `/admin/validate` | SendValidation | `ClearBlade-DevToken`*, body*: validation | SuccessResp |  | 2FA - Send validation link |
+| GET | `/admin/{systemKey}/sync/alledges/status` | AllEdgeSyncStatus | `ClearBlade-DevToken`*, `systemKey`* | — | yes | EDGE - Gets sync status for all edges |
+| GET | `/admin/{systemKey}/sync/deployment/status/{deploymentName}` | GetSyncStatus | `ClearBlade-DevToken`*, `systemKey`*, `deploymentName`* | — | yes | DEPLOYMENTS - Gets sync status for a deployment |
+| GET | `/admin/{systemKey}/sync/edge/status/{edgeName}` | EdgeSyncStatus | `ClearBlade-DevToken`*, `systemKey`*, `edgeName`* | — | yes | EDGE - Gets sync status for an edge |
+| POST | `/admin/{systemKey}/sync/retry` | RetrySync | `ClearBlade-DevToken`*, `systemKey`*, body*: retrySync | — |  | DEPLOYMENTS - Retries sync for an asset |
+| GET | `/api/about` | APIInfo | — | platformInfo | yes | DEVELOPER - Gets the information for the platform |
+| GET | `/api/v/1/code/{systemKey}/{serviceName}` | GetService | `ClearBlade-DevToken`*, `systemKey`*, `serviceName`* | — | yes | CODE - Retrieve information about service |
+| POST | `/api/v/1/code/{systemKey}/{serviceName}` | ExecuteService | `ClearBlade-UserToken`*, `systemKey`*, `serviceName`*, body: object | — |  | CODE - Call/Execute code service |
+| GET | `/api/v/1/collection/{systemKey}/{collectionName}` | GetCollectionData | `ClearBlade-UserToken`*, `systemKey`*, `collectionName`*, `query` | collectionSuccess | yes | DATA(name) - Get items |
+| PUT | `/api/v/1/collection/{systemKey}/{collectionName}` | UpdateCollectionData | `ClearBlade-UserToken`*, `systemKey`*, `collectionName`*, body*: DataPut | count |  | DATA(name) - Update items |
+| POST | `/api/v/1/collection/{systemKey}/{collectionName}` | CreateCollectionData | `ClearBlade-UserToken`*, `systemKey`*, `collectionName`*, body: ColumnField | ColumnField |  | DATA(name) - Create items |
+| DELETE | `/api/v/1/collection/{systemKey}/{collectionName}` | DeleteCollectionData | `ClearBlade-UserToken`*, `systemKey`*, `collectionName`*, `query`* | count |  | DATA(name) - Delete items |
+| GET | `/api/v/1/data/{collectionID}` | GetCollectionDataAlt | `ClearBlade-UserToken`*, `collectionID`*, `query` | collectionSuccess | yes | DATA(id) - Get items |
+| PUT | `/api/v/1/data/{collectionID}` | UpdateCollectionDataAlt | `ClearBlade-UserToken`*, `collectionID`*, body*: DataPut | count |  | DATA(id) - Update items |
+| POST | `/api/v/1/data/{collectionID}` | CreateCollectionDataAlt | `ClearBlade-UserToken`*, `collectionID`*, body*: ColumnField | ColumnField |  | DATA(id) - Create items |
+| DELETE | `/api/v/1/data/{collectionID}` | DeleteCollectionDataAlt | `ClearBlade-UserToken`*, `collectionID`*, `query`* | count |  | DATA(id) - Delete items |
+| GET | `/api/v/1/data/{collectionID}/columns` | GetColumns | `ClearBlade-UserToken`*, `collectionID`*, `ClearBlade-SystemKey`*, `ClearBlade-SystemSecret`* | columnSuccess | yes | DATA(id) - Get columns |
+| GET | `/api/v/1/message/{systemKey}` | GetMessageHistory | `ClearBlade-UserToken`*, `systemKey`*, `topic`*, `count`*, `last`, `start`, `stop` | — | yes | MESSAGING - Get history |
+| DELETE | `/api/v/1/message/{systemKey}` | DeleteMessageHistory | `ClearBlade-UserToken`*, `systemKey`*, `topic`*, `count`*, `last`, `start`, `stop` | — |  | MESSAGING - Delete history |
+| POST | `/api/v/1/message/{systemKey}/publish` | PublishMessage | `ClearBlade-UserToken`*, `systemKey`*, body*: messagePublish | — |  | MESSAGING - Publish message |
+| GET | `/api/v/1/user` | GetUsers | `ClearBlade-UserToken`*, `query` | getUsersSuccess | yes | USERS - Get all users |
+| POST | `/api/v/1/user/anon` | AuthAnon | `ClearBlade-SystemKey`*, `ClearBlade-SystemSecret`* | authAnon |  | USERS - Authenticate anonymous user |
+| POST | `/api/v/1/user/auth` | AuthUser | `ClearBlade-SystemKey`*, `ClearBlade-SystemSecret`*, body*: authdata | authUser |  | USERS - Authenticate user |
+| POST | `/api/v/1/user/checkauth` | UserCheckAuth | `ClearBlade-SystemKey`*, `ClearBlade-UserToken`* | userCheck |  | USERS - Check user auth |
+| GET | `/api/v/1/user/info` | GetUserInfo | `ClearBlade-UserToken`* | getUsers | yes | USERS - Get user info |
+| PUT | `/api/v/1/user/info` | UpdateUserInfo | `ClearBlade-UserToken`*, body*: userdata | — |  | USERS - Update user info |
+| DELETE | `/api/v/1/user/info` | DeleteUserAsUser | `ClearBlade-UserToken`*, `ClearBlade-SystemKey`*, `ClearBlade-SystemSecret`*, body*: deleteuserdata | — |  | Allows an user with adequate permissions to delete another user |
+| POST | `/api/v/1/user/logout` | UserLogout | `ClearBlade-UserToken`* | — |  | USERS - Log out user |
+| PUT | `/api/v/1/user/pass` | UpdateUserPass | `ClearBlade-UserToken`*, body*: passdata | — |  | USERS - Change user password |
+| POST | `/api/v/1/user/reg` | RegUser | `ClearBlade-SystemKey`*, `ClearBlade-SystemSecret`*, `ClearBlade-UserToken`*, body*: userregdata | regUser |  | USERS - Register new user |
+| GET | `/api/v/2/devices/{SystemKey}` | GetDevices | `SystemKey`*, `ClearBlade-UserToken`*, `query` | deviceUpdate | yes | DEVICES - Get all devices |
+| PUT | `/api/v/2/devices/{SystemKey}` | UpdateDevices | `SystemKey`*, `ClearBlade-UserToken`*, body*: PutQuery | QueryResultSet |  | DEVICES - Update devices using a query |
+| DELETE | `/api/v/2/devices/{SystemKey}` | DeleteDevices | `SystemKey`*, `ClearBlade-UserToken`*, `query`* | — |  | DEVICES - Delete devices using a query |
+| POST | `/api/v/2/devices/{SystemKey}/auth` | AuthDevice | `SystemKey`*, body*: deviceAuthdata | deviceAuth |  | DEVICES - Authenticate device |
+| PUT | `/api/v/2/devices/{systemKey}/{name}` | UpdateDeviceInfo | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: deviceUserUpdate | deviceUpdate |  | DEVICES - Update info |
+| POST | `/api/v/2/devices/{systemKey}/{name}` | AddDevice | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: deviceAdd | deviceUpdate |  | DEVICES - Adds a device |
+| GET | `/api/v/2/edges/{systemKey}` | GetAllEdges | `ClearBlade-UserToken`*, `systemKey`*, `id`* | — | yes | EDGE - Fetch all edges |
+| GET | `/api/v/3/allcollections/{systemKey}` | GetCollections | `ClearBlade-UserToken`*, `systemKey`* | allCollectionsSuccess | yes | DATA - Get collections |
+| GET | `/api/v/3/code/codemeta/{systemKey}` | ReturnServiceSettings | `ClearBlade-DevToken`*, `systemKey`* | codeMeta | yes | CODE - Returns code services and settings |
+| GET | `/api/v/3/code/{systemKey}/timer/{name}` | GetTimerByName | `ClearBlade-UserToken`*, `systemKey`*, `name`* | timerList | yes | HANDLERS - Get timer handler |
+| PUT | `/api/v/3/code/{systemKey}/timer/{name}` | UpdateTimerByName | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: timerdata | timerList |  | HANDLERS - Update timer handler |
+| POST | `/api/v/3/code/{systemKey}/timer/{name}` | CreateNewTimer | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: timerdata | timerList |  | HANDLERS - Create timer handler |
+| DELETE | `/api/v/3/code/{systemKey}/timer/{name}` | DeleteTimerByName | `ClearBlade-UserToken`*, `systemKey`*, `name`* | — |  | HANDLERS - Delete trigger handler |
+| GET | `/api/v/3/code/{systemKey}/timers` | GetAllTimers | `ClearBlade-UserToken`*, `systemKey`* | timerArray | yes | HANDLERS - Get timer handlers |
+| GET | `/api/v/3/code/{systemKey}/trigger/{name}` | GetTriggerByName | `ClearBlade-UserToken`*, `systemKey`*, `name`* | triggerArray | yes | HANDLERS - Get trigger handler |
+| PUT | `/api/v/3/code/{systemKey}/trigger/{name}` | UpdateTriggerByName | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: triggerdata | triggerArray |  | HANDLERS - Update trigger handler |
+| POST | `/api/v/3/code/{systemKey}/trigger/{name}` | CreateNewTrigger | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: triggerdata | triggerArray |  | HANDLERS - Create trigger handler |
+| DELETE | `/api/v/3/code/{systemKey}/trigger/{name}` | DeleteTriggerByName | `ClearBlade-UserToken`*, `systemKey`*, `name`* | — |  | HANDLERS - Delete trigger handler |
+| GET | `/api/v/3/code/{systemKey}/triggers` | GetAllTrigger | `ClearBlade-UserToken`*, `systemKey`* | triggerArray | yes | HANDLERS - Get trigger handlers |
+| PUT | `/api/v/3/collectionmanagement` | UpdateCollection | `ClearBlade-UserToken`*, `ClearBlade-SystemKey`*, body: updateCollection | — |  | DATA - Update collection |
+| POST | `/api/v/3/collectionmanagement` | CreateCollection | `ClearBlade-UserToken`*, `ClearBlade-SystemKey`*, body*: newcollection | newcollection |  | DATA - Create collection |
+| DELETE | `/api/v/3/collectionmanagement` | DeleteCollection | `ClearBlade-UserToken`*, `ClearBlade-SystemKey`*, `id`* | — |  | DATA - Delete collection |
+| GET | `/api/v/3/devices/{systemKey}/columns` | GetDeviceTableSchema | `ClearBlade-UserToken`*, `systemKey`* | columnSuccess | yes | EDGE - Get device columns |
+| GET | `/api/v/3/devices/{systemKey}/count` | GetDeviceCount | `ClearBlade-UserToken`*, `systemKey`* | count | yes | DEVICES - Get count |
+| GET | `/api/v/3/edges/{systemKey}/columns` | GetEdgeTableSchema | `ClearBlade-UserToken`*, `systemKey`* | — | yes | EDGE - Get columns |
+| GET | `/api/v/3/edges/{systemKey}/count` | GetEdgeCount | `ClearBlade-UserToken`*, `systemKey`* | — | yes | EDGE - Get count |
+| GET | `/api/v/3/edges/{systemKey}/{name}` | GetEdgeDataByName | `ClearBlade-UserToken`*, `systemKey`*, `name`* | — | yes | Edge(name) - Get edge info |
+| PUT | `/api/v/3/edges/{systemKey}/{name}` | UpdateEdgeByName | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: edgeUpdate | — |  | EDGE - Update edge |
+| POST | `/api/v/3/edges/{systemKey}/{name}` | CreateNewEdge | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body*: edgeNew | — |  | EDGE - Create edge |
+| DELETE | `/api/v/3/edges/{systemKey}/{name}` | DeleteEdgeByName | `ClearBlade-UserToken`*, `systemKey`*, `name`* | — |  | Edge - Delete edge |
+| GET | `/api/v/3/{systemKey}/deployments` | GetAllDeployments | `ClearBlade-UserToken`*, `query`, `systemKey`* | deploymentSuccess | yes | DEPLOYMENTS - Gets all deployment names and descriptions for a system |
+| POST | `/api/v/3/{systemKey}/deployments` | CreateDeployment | `ClearBlade-UserToken`*, `systemKey`*, body*: createDeployment | — |  | DEPLOYMENTS - Creates a deployment |
+| GET | `/api/v/3/{systemKey}/deployments/{deploymentName}` | GetADeployment | `clearblade-usertoken`*, `systemKey`*, `deploymentName`* | — | yes | DEPLOYMENTS - Gets a deloyment for a system |
+| PUT | `/api/v/3/{systemKey}/deployments/{deploymentName}` | UpdateDeployment | `ClearBlade-UserToken`*, `systemKey`*, `deploymentName`*, body*: updateDeployment | — |  | DEPLOYMENT - Update deployment |
+| DELETE | `/api/v/3/{systemKey}/deployments/{deploymentName}` | DeleteDeployment | `ClearBlade-UserToken`*, `systemKey`*, `deploymentName`* | — |  | DEPLOYMENT - Delete a deployment |
+| GET | `/api/v/4/bucket_sets/{systemKey}` | GetBucketsData | `ClearBlade-DevToken`*, `systemKey`* | allBuckets | yes | FILES - Returns a list of metadata for buckets in system |
+| GET | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}` | GetSingleBucketData | `ClearBlade-DevToken`*, `systemKey`*, `deploymentName`* | buckets | yes | FILES - Returns metadata for specified bucket |
+| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/copy` | CopyBucketFile | `ClearBlade-DevToken`*, `systemKey`*, `deploymentName`*, body: copyFile | — |  | FILES - Copies a file to a new location within buckets |
+| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/create` | CreateBucketFile | `ClearBlade-DevToken`*, `systemKey`*, `deploymentName`*, body: createBox | box_data |  | FILES - Creates a new file in a bucket |
+| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/delete` | DeleteBucketFile | `ClearBlade-DevToken`*, `systemKey`*, `deploymentName`*, body: deleteFile | — |  | FILES - Deletes a file from the bucket. |
+| GET | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/meta` | GetBoxFilesMeta | `ClearBlade-DevToken`*, `box`, `path`, `systemKey`*, `deploymentName`* | box_data | yes | FILES - Get a file's metadata in a box |
+| POST | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/file/move` | MoveBucketFile | `ClearBlade-DevToken`*, `systemKey`*, `deploymentName`*, body: copyFile | — |  | FILES - Moves a file to a new location within buckets. |
+| GET | `/api/v/4/bucket_sets/{systemKey}/{deploymentName}/files` | GetBoxFiles | `ClearBlade-DevToken`*, `box`, `systemKey`*, `deploymentName`* | box | yes | FILES - Get all files metadata in a box |
+| POST | `/api/v/4/data/{systemKey}/{collectionName}/index` | CreateNonUniqueIndex | `ClearBlade-DevToken`*, `systemKey`*, `collectionName`*, `columnName`* | SuccessResp |  | DATA - Create collection |
+| DELETE | `/api/v/4/data/{systemKey}/{collectionName}/index` | DeleteNonUniqueIndex | `ClearBlade-DevToken`*, `systemKey`*, `collectionName`*, `columnName`* | SuccessResp |  | DATA - Delete collection |
+| GET | `/api/v/4/data/{systemKey}/{collectionName}/listindexes` | GetIndexes | `ClearBlade-DevToken`*, `systemKey`*, `collectionName`* | allIndexes | yes | DATA - Get list of indexes |
+| POST | `/api/v/4/data/{systemKey}/{collectionName}/uniqueindex` | CreateUniqueIndex | `ClearBlade-DevToken`*, `systemKey`*, `collectionName`*, `columnName`* | SuccessResp |  | DATA - Create Unique Index |
+| DELETE | `/api/v/4/data/{systemKey}/{collectionName}/uniqueindex` | DeleteUniqueIndex | `ClearBlade-DevToken`*, `systemKey`*, `collectionName`*, `columnName`* | SuccessResp |  | DATA - Delete unique index |
+| PUT | `/api/v/4/data/{systemKey}/{collectionName}/upsert` | UpdateUpsert | `ClearBlade-DevToken`*, `systemKey`*, `collectionName`*, `conflictColumn`* | — |  | DATA - Update upsert values |
+| GET | `/api/v/4/devices/{systemKey}/connectioncount` | ConnectedDeviceCount | `ClearBlade-UserToken`*, `systemKey`* | connectedDeviceCount | yes | DEVICES - Get total of connected devices |
+| GET | `/api/v/4/devices/{systemKey}/connections` | GetConnectedDeviceList | `ClearBlade-UserToken`*, `systemKey`* | connectedDevice | yes | DEVICES - Get connected device list |
+| GET | `/api/v/4/devices/{systemKey}/connections/{name}` | GetConnectedDeviceInfo | `ClearBlade-UserToken`*, `systemKey`*, `name`* | connectedDeviceInfo | yes | DEVICES - Get information for a connected device |
+| GET | `/api/v/4/external-db/{systemKey}` | GetAllExternalDB | `ClearBlade-DevToken`*, `systemKey`* | allDatabases | yes | DATABASES - Retrieves all external database connections |
+| POST | `/api/v/4/external-db/{systemKey}` | CreateExternalDB | `ClearBlade-DevToken`*, `systemKey`*, body: createDatabase | SuccessResp |  | DATABASES - Create a external database connection |
+| GET | `/api/v/4/external-db/{systemKey}/{name}` | GetExternalDB | `ClearBlade-UserToken`*, `systemKey`*, `name`* | externalDB | yes | DATABASES - Retrieve a specific external database connection |
+| PUT | `/api/v/4/external-db/{systemKey}/{name}` | UpdateDatabaseCredentials | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body: credentials | credentials |  | DATABASES - Update external database credentials |
+| DELETE | `/api/v/4/external-db/{systemKey}/{name}` | DeleteExternalDB | `ClearBlade-UserToken`*, `systemKey`*, `name`* | SuccessResp |  | DATABASES - Delete a external database connection |
+| POST | `/api/v/4/external-db/{systemKey}/{name}/data` | PerformDBOperation | `ClearBlade-UserToken`*, `systemKey`*, `name`*, body: operationsDB | DBResp |  | DATABASES - Create a external database connection |
+| GET | `/api/v/4/message/{systemKey}/topics` | GetTopics | `ClearBlade-DevToken`*, `systemKey`*, `query` | msgArray | yes | MESSAGING - Gets list of topics |
+| GET | `/api/v/4/message/{systemKey}/topics/count` | GetTopicCount | `ClearBlade-DevToken`*, `systemKey`* | count | yes | MESSAGING - Gets number of topics |
+| PUT | `/api/v/4/user/manage` | ChangeUserInfo | `ClearBlade-UserToken`*, body*: rolespass | — |  | USER - Users change roles and passwords for other users |
+| GET | `/api/v/4/webhook/execute/{systemKey}/{webhookName}` | PayloadWebhookQuery | `systemKey`*, `webhookName`*, `token`* | — | yes | WEBHOOKS - Executes query string payload webhook |
+| POST | `/api/v/4/webhook/execute/{systemKey}/{webhookName}` | ExecuteWebhook | `ClearBlade-UserToken`*, `systemKey`*, `webhookName`*, body*: executeWebhook | — |  | WEBHOOKS - Executing a webhook |
+| GET | `/api/v/4/{SystemKey}/adapters` | GetAdapters | `SystemKey`*, `ClearBlade-DevToken`* | — | yes | ADAPTERS - Get all adapters |
+| POST | `/api/v/4/{SystemKey}/adapters` | addAdapter | `SystemKey`*, `ClearBlade-DevToken`*, body*: addAdapter | — |  | ADAPTERS - Add an adapter |
+| PUT | `/api/v/4/{SystemKey}/adapters/{AdapterName}` | MapAdapterCommand | `SystemKey`*, `AdapterName`*, `ClearBlade-DevToken`*, body*: MapAdapterCommand | — |  | ADAPTERS - Map Adapter command to execute a file |
+| DELETE | `/api/v/4/{SystemKey}/adapters/{AdapterName}` | DeleteAdapter | `SystemKey`*, `ClearBlade-DevToken`*, `AdapterName`* | — |  | ADAPTERS - Delete adapter |
+| PUT | `/api/v/4/{SystemKey}/adapters/{AdapterName}/control` | AddEdgeCommand | `SystemKey`*, `AdapterName`*, `ClearBlade-DevToken`*, body*: edgeCommand | — |  | ADAPTERS - Send command to edge |
+| GET | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files` | AdapterConfig | `AdapterName`*, `SystemKey`*, `ClearBlade-DevToken`* | — | yes | Gets list of configuration information for all adapter files |
+| POST | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files` | updateFileInfo | `SystemKey`*, `AdapterName`*, `ClearBlade-DevToken`*, body*: AdapterFileConfig | — |  | ADAPTERS - Add or replace file content & configuration |
+| GET | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files/{fileName}` | FileDownload | `AdapterName`*, `SystemKey`*, `fileName`*, `ClearBlade-DevToken`* | — | yes | ADAPTERS - Download file from adapter |
+| PUT | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files/{fileName}` | updateExistingFileContent | `SystemKey`*, `AdapterName`*, `fileName`*, `ClearBlade-DevToken`*, body*: object | — |  | ADAPTERS - Update Existing File's content |
+| DELETE | `/api/v/4/{SystemKey}/adapters/{AdapterName}/files/{fileName}` | DeleteFile | `SystemKey`*, `ClearBlade-DevToken`*, `AdapterName`*, `fileName`* | — |  | ADAPTERS - Delete adapter files |
+| GET | `/api/v/4/{systemKey}/code/failed` | GetFailedServiceQuery | `ClearBlade-DevToken`*, `systemKey`*, `query` | — | yes | CODE - Get all failed services using Query |
+| GET | `/codeadmin/failed` | GetFailedServices | `ClearBlade-DevToken`* | — | yes | DEVELOPER - Get all failed services |
+| GET | `/codeadmin/failed/{systemKey}` | GetSystemFailedServices | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get system's failed services |
+| POST | `/codeadmin/failed/{systemKey}` | RetryFailedService | `ClearBlade-DevToken`*, `systemKey`*, body: string | — |  | DEVELOPER - Retry failed service |
+| DELETE | `/codeadmin/failed/{systemKey}` | DeleteFailedService | `ClearBlade-DevToken`*, `systemKey`*, body: string | — |  | DEVELOPER - Delete failed service run |
+| GET | `/codeadmin/v/2/history/library/{systemKey}/{libName}` | LibraryHistory | `ClearBlade-DevToken`*, `systemKey`*, `libName`* | — | yes | DEVELOPER - Get library history |
+| GET | `/codeadmin/v/2/history/library/{systemKey}/{libName}/{libVersion}` | GetOldLibraryVersion | `ClearBlade-DevToken`*, `systemKey`*, `libName`*, `libVersion`* | — | yes | DEVELOPER - Get old library version |
+| GET | `/codeadmin/v/2/library/{systemKey}` | GetLibraries | `ClearBlade-DevToken`*, `systemKey`* | — | yes | DEVELOPER - Get all libraries |
+| GET | `/codeadmin/v/2/library/{systemKey}/{libName}` | GetLibrary | `ClearBlade-DevToken`*, `systemKey`*, `libName`* | — | yes | DEVELOPER - Get library |
+| PUT | `/codeadmin/v/2/library/{systemKey}/{libName}` | UpdateLibrary | `ClearBlade-DevToken`*, `systemKey`*, `libName`*, body*: updatedata | — |  | DEVELOPER - Update library |
+| POST | `/codeadmin/v/2/library/{systemKey}/{libName}` | CreateLibrary | `ClearBlade-DevToken`*, `systemKey`*, `libName`*, body*: libdata | — |  | DEVELOPER - Create library |
+| DELETE | `/codeadmin/v/2/library/{systemKey}/{libName}` | DeleteLibrary | `ClearBlade-DevToken`*, `systemKey`*, `libName`* | — |  | DEVELOPER - Delete library |
+| GET | `/codeadmin/v/2/logs/{systemKey}/{serviceName}` | GetLogs | `ClearBlade-DevToken`*, `systemKey`*, `serviceName`* | — | yes | DEVELOPER - Get services logs |
+| PUT | `/codeadmin/v/2/{systemKey}/{serviceName}` | UpdateService | `ClearBlade-DevToken`*, `systemKey`*, `serviceName`*, body: serviceUpdate | — |  | DEVELOPER - Update code service |
+| POST | `/codeadmin/v/2/{systemKey}/{serviceName}` | AddService | `ClearBlade-DevToken`*, `systemKey`*, `serviceName`*, body*: addservice | — |  | DEVELOPER - Add code service |
+| DELETE | `/codeadmin/v/2/{systemKey}/{serviceName}` | DeleteService | `ClearBlade-DevToken`*, `systemKey`*, `serviceName`* | — |  | DEVELOPER - Delete code service |

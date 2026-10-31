@@ -68,6 +68,121 @@
         "from": "dataatwork-org-4b0e1658ba",
         "kind": "EXPOSES",
         "to": "operation:get:/skills/{id}/related_skills"
+      },
+      {
+        "from": "operation:get:/jobs",
+        "kind": "RETURNS",
+        "to": "schema:Jobs"
+      },
+      {
+        "from": "operation:get:/jobs/autocomplete",
+        "kind": "RETURNS",
+        "to": "schema:Jobs"
+      },
+      {
+        "from": "operation:get:/jobs/normalize",
+        "kind": "RETURNS",
+        "to": "schema:NormalizedJobs"
+      },
+      {
+        "from": "operation:get:/jobs/unusual_titles",
+        "kind": "RETURNS",
+        "to": "schema:NormalizedJobs"
+      },
+      {
+        "from": "operation:get:/jobs/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Job"
+      },
+      {
+        "from": "operation:get:/jobs/{id}/related_jobs",
+        "kind": "RETURNS",
+        "to": "schema:JobRelatedJobs"
+      },
+      {
+        "from": "operation:get:/jobs/{id}/related_skills",
+        "kind": "RETURNS",
+        "to": "schema:JobSkills"
+      },
+      {
+        "from": "operation:get:/skills",
+        "kind": "RETURNS",
+        "to": "schema:Skills"
+      },
+      {
+        "from": "operation:get:/skills/autocomplete",
+        "kind": "RETURNS",
+        "to": "schema:SkillJobs"
+      },
+      {
+        "from": "operation:get:/skills/normalize",
+        "kind": "RETURNS",
+        "to": "schema:NormalizedSkills"
+      },
+      {
+        "from": "operation:get:/skills/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Skill"
+      },
+      {
+        "from": "operation:get:/skills/{id}/related_jobs",
+        "kind": "RETURNS",
+        "to": "schema:SkillJobs"
+      },
+      {
+        "from": "operation:get:/skills/{id}/related_skills",
+        "kind": "RETURNS",
+        "to": "schema:SkillRelatedSkills"
+      },
+      {
+        "from": "schema:JobRelatedJobs",
+        "kind": "REFERENCES",
+        "to": "schema:JobRelatedJob"
+      },
+      {
+        "from": "schema:JobSkills",
+        "kind": "REFERENCES",
+        "to": "schema:SkillJob"
+      },
+      {
+        "from": "schema:Jobs",
+        "kind": "REFERENCES",
+        "to": "schema:Job"
+      },
+      {
+        "from": "schema:Jobs",
+        "kind": "REFERENCES",
+        "to": "schema:PageLink"
+      },
+      {
+        "from": "schema:NormalizedJobs",
+        "kind": "REFERENCES",
+        "to": "schema:NormalizedJob"
+      },
+      {
+        "from": "schema:NormalizedSkills",
+        "kind": "REFERENCES",
+        "to": "schema:NormalizedSkill"
+      },
+      {
+        "from": "schema:SkillJobs",
+        "kind": "REFERENCES",
+        "to": "schema:JobSkill"
+      },
+      {
+        "from": "schema:SkillRelatedSkills",
+        "kind": "REFERENCES",
+        "to": "schema:SkillRelatedSkill"
+      },
+      {
+        "from": "schema:Skills",
+        "kind": "REFERENCES",
+        "to": "schema:PageLink"
+      },
+      {
+        "from": "schema:Skills",
+        "kind": "REFERENCES",
+        "to": "schema:Skill"
       }
     ],
     "nodes": [
@@ -77,236 +192,562 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves the names, descriptions, and UUIDs of all job titles.",
         "id": "operation:get:/jobs",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs",
+        "parameters": [
+          {
+            "description": "Pagination offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum number of items per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/jobs",
         "pointer": "#/paths/~1jobs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Jobs"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Job Titles and Descriptions"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the names, descriptions, and UUIDs of all job titles matching a given search criteria.",
         "id": "operation:get:/jobs/autocomplete",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs/autocomplete",
+        "parameters": [
+          {
+            "description": "Find job titles beginning with the given text fragment",
+            "in": "query",
+            "name": "begins_with",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find job titles containing the given text fragment",
+            "in": "query",
+            "name": "contains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find job titles ending with the given text fragment",
+            "in": "query",
+            "name": "ends_with",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/autocomplete",
         "pointer": "#/paths/~1jobs~1autocomplete/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Jobs"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Job Title Autocomplete"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the canonical job title for a synonymous job title",
         "id": "operation:get:/jobs/normalize",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs/normalize",
+        "parameters": [
+          {
+            "description": "Find the canonical job title(s) for jobs matching the given text fragment",
+            "in": "query",
+            "name": "job_title",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximumn number of job title synonyms to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/jobs/normalize",
         "pointer": "#/paths/~1jobs~1normalize/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NormalizedJobs"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Job Title Normalization"
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list of unusual job titles and the UUIDs of their canonical jobs.",
         "id": "operation:get:/jobs/unusual_titles",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs/unusual_titles",
         "path": "/jobs/unusual_titles",
         "pointer": "#/paths/~1jobs~1unusual_titles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NormalizedJobs"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Unusual Job Titles"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the name, description, and UUID of a job by specifying its O*NET SOC Code or UUID.",
         "id": "operation:get:/jobs/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs/{id}",
+        "parameters": [
+          {
+            "description": "The O*NET SOC Code or UUID of the job title to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The FIPS Code of a Core-Based Statistical Area.",
+            "in": "query",
+            "name": "fips",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}",
         "pointer": "#/paths/~1jobs~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Job"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Job Title and Description"
       },
       {
         "deprecated": false,
+        "description": "Retrieves a collection of jobs associated with a specified job.",
         "id": "operation:get:/jobs/{id}/related_jobs",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs/{id}/related_jobs",
+        "parameters": [
+          {
+            "description": "The UUID of the job to retrieve related jobs for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}/related_jobs",
         "pointer": "#/paths/~1jobs~1{id}~1related_jobs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobRelatedJobs"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Jobs Associated with a Job"
       },
       {
         "deprecated": false,
+        "description": "Retrieves a collection of skills associated with a specified job.",
         "id": "operation:get:/jobs/{id}/related_skills",
         "kind": "operation",
         "method": "get",
         "name": "get /jobs/{id}/related_skills",
+        "parameters": [
+          {
+            "description": "The UUID of the job to retrieve skills for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}/related_skills",
         "pointer": "#/paths/~1jobs~1{id}~1related_skills/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobSkills"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Skills Associated with a Job"
       },
       {
         "deprecated": false,
+        "description": "Retrieve the names, descriptions, and UUIDs of all skills.",
         "id": "operation:get:/skills",
         "kind": "operation",
         "method": "get",
         "name": "get /skills",
+        "parameters": [
+          {
+            "description": "Pagination offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum number of items per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/skills",
         "pointer": "#/paths/~1skills/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Skills"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Skill Names and Descriptions"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the names, descriptions, and UUIDs of all skills matching a given search criteria.",
         "id": "operation:get:/skills/autocomplete",
         "kind": "operation",
         "method": "get",
         "name": "get /skills/autocomplete",
+        "parameters": [
+          {
+            "description": "Find skill names beginning with the given text fragment",
+            "in": "query",
+            "name": "begins_with",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find skill names containing the given text fragment",
+            "in": "query",
+            "name": "contains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find skill names ending with the given text fragment",
+            "in": "query",
+            "name": "ends_with",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/skills/autocomplete",
         "pointer": "#/paths/~1skills~1autocomplete/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkillJobs"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Skill Name Autocomplete"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the canonical skill name for a synonymous skill name",
         "id": "operation:get:/skills/normalize",
         "kind": "operation",
         "method": "get",
         "name": "get /skills/normalize",
+        "parameters": [
+          {
+            "description": "Find the canonical skill name(s) for skills matching the given text fragment",
+            "in": "query",
+            "name": "skill_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/skills/normalize",
         "pointer": "#/paths/~1skills~1normalize/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NormalizedSkills"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Skill Name Normalization"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the name, description, and UUID of a job by specifying its UUID.",
         "id": "operation:get:/skills/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /skills/{id}",
+        "parameters": [
+          {
+            "description": "The UUID of the skill name to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/skills/{id}",
         "pointer": "#/paths/~1skills~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Skill"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Skill Name and Description"
       },
       {
         "deprecated": false,
+        "description": "Retrieves a collection of jobs associated with a specified skill.",
         "id": "operation:get:/skills/{id}/related_jobs",
         "kind": "operation",
         "method": "get",
         "name": "get /skills/{id}/related_jobs",
+        "parameters": [
+          {
+            "description": "The UUID of the skill to retrieve jobs for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/skills/{id}/related_jobs",
         "pointer": "#/paths/~1skills~1{id}~1related_jobs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkillJobs"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Jobs Associated with a Skill"
       },
       {
         "deprecated": false,
+        "description": "Retrieves a collection of skills associated with a specified skill.",
         "id": "operation:get:/skills/{id}/related_skills",
         "kind": "operation",
         "method": "get",
         "name": "get /skills/{id}/related_skills",
+        "parameters": [
+          {
+            "description": "The UUID of the skill to retrieve related skills for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/skills/{id}/related_skills",
         "pointer": "#/paths/~1skills~1{id}~1related_skills/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkillRelatedSkills"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Skills Associated with a Skill"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Job",
         "kind": "schema",
-        "name": "Job"
+        "name": "Job",
+        "type": "object"
       },
       {
         "id": "schema:JobRelatedJob",
         "kind": "schema",
-        "name": "JobRelatedJob"
+        "name": "JobRelatedJob",
+        "type": "object"
       },
       {
         "id": "schema:JobRelatedJobs",
         "kind": "schema",
-        "name": "JobRelatedJobs"
+        "name": "JobRelatedJobs",
+        "type": "object"
       },
       {
         "id": "schema:JobSkill",
         "kind": "schema",
-        "name": "JobSkill"
+        "name": "JobSkill",
+        "type": "object"
       },
       {
         "id": "schema:JobSkills",
         "kind": "schema",
-        "name": "JobSkills"
+        "name": "JobSkills",
+        "type": "object"
       },
       {
         "id": "schema:Jobs",
         "kind": "schema",
-        "name": "Jobs"
+        "name": "Jobs",
+        "type": "Job[]"
       },
       {
         "id": "schema:NormalizedJob",
         "kind": "schema",
-        "name": "NormalizedJob"
+        "name": "NormalizedJob",
+        "type": "object"
       },
       {
         "id": "schema:NormalizedJobs",
         "kind": "schema",
-        "name": "NormalizedJobs"
+        "name": "NormalizedJobs",
+        "type": "NormalizedJob[]"
       },
       {
         "id": "schema:NormalizedSkill",
         "kind": "schema",
-        "name": "NormalizedSkill"
+        "name": "NormalizedSkill",
+        "type": "object"
       },
       {
         "id": "schema:NormalizedSkills",
         "kind": "schema",
-        "name": "NormalizedSkills"
+        "name": "NormalizedSkills",
+        "type": "NormalizedSkill[]"
       },
       {
         "id": "schema:PageLink",
         "kind": "schema",
-        "name": "PageLink"
+        "name": "PageLink",
+        "type": "object"
       },
       {
         "id": "schema:Skill",
         "kind": "schema",
-        "name": "Skill"
+        "name": "Skill",
+        "type": "object"
       },
       {
         "id": "schema:SkillJob",
         "kind": "schema",
-        "name": "SkillJob"
+        "name": "SkillJob",
+        "type": "object"
       },
       {
         "id": "schema:SkillJobs",
         "kind": "schema",
-        "name": "SkillJobs"
+        "name": "SkillJobs",
+        "type": "object"
       },
       {
         "id": "schema:SkillRelatedSkill",
         "kind": "schema",
-        "name": "SkillRelatedSkill"
+        "name": "SkillRelatedSkill",
+        "type": "object"
       },
       {
         "id": "schema:SkillRelatedSkills",
         "kind": "schema",
-        "name": "SkillRelatedSkills"
+        "name": "SkillRelatedSkills",
+        "type": "object"
       },
       {
         "id": "schema:Skills",
         "kind": "schema",
-        "name": "Skills"
+        "name": "Skills",
+        "type": "Skill[]"
       }
     ]
   },

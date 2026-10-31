@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_opencagedata.com_opencagelogo-g
 
 | | |
 | --- | --- |
-| Signed bundle | `2291984edfbf2c304c2b26890cf9b6823904930aaee45740ffc69c6a3c66f970` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_opencagedata.com_opencagelogo-g
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v{version}/{format}` | get /v{version}/{format} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v{version}/{format}` | get /v{version}/{format} | `version`*, `format`*, `q`*, `key`*, `abbrv`, `address_only`, `add_request`, `bounds`, `countrycode`, `jsonp`, `language`, `limit`, `min_confidence`, `no_annotations`, `no_dedupe`, `no_record`, `pretty`, `proximity`, `roadinfo` | Response | yes | — |

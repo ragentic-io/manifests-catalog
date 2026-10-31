@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GOVUK_profile_image
 
 | | |
 | --- | --- |
-| Signed bundle | `8b90d5f8a6c76a956860a538d12c9d24fa212f41a531113eec8da76e2682fe9e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GOVUK_profile_image
 
 32 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/payments` | Search payments | Search payments |
-| POST | `/v1/payments` | Create a payment | Create new payment |
-| GET | `/v1/payments/{paymentId}` | Get a payment | Find payment by ID |
-| POST | `/v1/payments/{paymentId}/cancel` | Cancel a payment | Cancel payment |
-| POST | `/v1/payments/{paymentId}/capture` | Capture a payment | Capture payment |
-| GET | `/v1/payments/{paymentId}/events` | Get events for a payment | Return payment events by ID |
-| GET | `/v1/payments/{paymentId}/refunds` | Get all refunds for a payment | Get all refunds for a payment |
-| POST | `/v1/payments/{paymentId}/refunds` | Submit a refund for a payment | Submit a refund for a payment |
-| GET | `/v1/payments/{paymentId}/refunds/{refundId}` | Get a payment refund | Find payment refund by ID |
-| GET | `/v1/refunds` | Search refunds | Search refunds |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/payments` | Search payments | `reference`, `email`, `state`, `card_brand`, `from_date`, `to_date`, `page`, `display_size`, `cardholder_name`, `first_digits_card_number`, `last_digits_card_number`, `from_settled_date`, `to_settled_date` | PaymentSearchResults | yes | Search payments |
+| POST | `/v1/payments` | Create a payment | body*: CreateCardPaymentRequest | CreatePaymentResult |  | Create new payment |
+| GET | `/v1/payments/{paymentId}` | Get a payment | `paymentId`* | GetPaymentResult | yes | Find payment by ID |
+| POST | `/v1/payments/{paymentId}/cancel` | Cancel a payment | `paymentId`* | — |  | Cancel payment |
+| POST | `/v1/payments/{paymentId}/capture` | Capture a payment | `paymentId`* | — |  | Capture payment |
+| GET | `/v1/payments/{paymentId}/events` | Get events for a payment | `paymentId`* | PaymentEvents | yes | Return payment events by ID |
+| GET | `/v1/payments/{paymentId}/refunds` | Get all refunds for a payment | `paymentId`* | RefundForSearchResult | yes | Get all refunds for a payment |
+| POST | `/v1/payments/{paymentId}/refunds` | Submit a refund for a payment | `paymentId`*, body*: PaymentRefundRequest | Refund |  | Submit a refund for a payment |
+| GET | `/v1/payments/{paymentId}/refunds/{refundId}` | Get a payment refund | `paymentId`*, `refundId`* | Refund | yes | Find payment refund by ID |
+| GET | `/v1/refunds` | Search refunds | `from_date`, `to_date`, `from_settled_date`, `to_settled_date`, `page`, `display_size` | RefundSearchResults | yes | Search refunds |

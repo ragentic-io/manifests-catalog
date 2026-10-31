@@ -33,6 +33,61 @@
         "from": "gisgraphy-com-54d5a6f16c",
         "kind": "EXPOSES",
         "to": "operation:get:/street/find"
+      },
+      {
+        "from": "operation:get:/addressparser/parse",
+        "kind": "RETURNS",
+        "to": "schema:AddressResultsDto"
+      },
+      {
+        "from": "operation:get:/fulltext/search",
+        "kind": "RETURNS",
+        "to": "schema:FulltextResultsDto"
+      },
+      {
+        "from": "operation:get:/geocoding/geocode",
+        "kind": "RETURNS",
+        "to": "schema:AddressResultsDto"
+      },
+      {
+        "from": "operation:get:/geoloc/search",
+        "kind": "RETURNS",
+        "to": "schema:GeolocResultsDto"
+      },
+      {
+        "from": "operation:get:/reversegeocoding/reversegeocode",
+        "kind": "RETURNS",
+        "to": "schema:AddressResultsDto"
+      },
+      {
+        "from": "operation:get:/street/find",
+        "kind": "RETURNS",
+        "to": "schema:StreetSearchResultsDto"
+      },
+      {
+        "from": "schema:AddressResultsDto",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:FulltextResultsDto",
+        "kind": "REFERENCES",
+        "to": "schema:SolrResponseDto"
+      },
+      {
+        "from": "schema:GeolocResultsDto",
+        "kind": "REFERENCES",
+        "to": "schema:GisFeatureDistance"
+      },
+      {
+        "from": "schema:SolrResponseDto",
+        "kind": "REFERENCES",
+        "to": "schema:HouseNumberDto"
+      },
+      {
+        "from": "schema:StreetSearchResultsDto",
+        "kind": "REFERENCES",
+        "to": "schema:StreetDistance"
       }
     ],
     "nodes": [
@@ -42,138 +97,810 @@
       },
       {
         "deprecated": false,
+        "description": "The address parser and address standardizer, are part of the Gisgraphy project (free open source worldwide geocoder).",
         "id": "operation:get:/addressparser/parse",
         "kind": "operation",
         "method": "get",
         "name": "addressparsing",
+        "parameters": [
+          {
+            "description": "A postal address.",
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ISO 3166 Alpha 2 code of the country.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "XML",
+            "description": "The output format.",
+            "enum": [
+              "XML",
+              "JSON",
+              "PHP",
+              "RUBY",
+              "PYTHON",
+              "YAML"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The callback method name (optional), use to wrap the content into a (alphanumeric) Javascript method.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "indents the results.Default to false.",
+            "in": "query",
+            "name": "indent",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "false",
+            "description": "Whether the address should be standardized after parsing, the value will be 'on' or 'off', so for a simple use : the value of indent can be 'true' or 'on'",
+            "in": "query",
+            "name": "standardize",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "false",
+            "description": "UNUSED YET.",
+            "in": "query",
+            "name": "geocode",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/addressparser/parse",
         "pointer": "#/paths/~1addressparser~1parse/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AddressResultsDto"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "split a raw address into several parts"
+        "summary": "split a raw address into several parts",
+        "tags": [
+          "addressparser - standardizer"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The full text service allows you to search for features / places / street and do autocompletion .",
         "id": "operation:get:/fulltext/search",
         "kind": "operation",
         "method": "get",
         "name": "fulltxtsearch",
+        "parameters": [
+          {
+            "description": "The searched text : The text for the query can be a zip code, a string or one or more strings",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Whether the fulltext engine should considers all the words specified as required.",
+            "in": "query",
+            "name": "allwordsrequired",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "description": "The spellchecking (optional) : whether some suggestions should be provided if no results are found",
+            "in": "query",
+            "name": "spellchecking",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The latitude (north-south) for the location point to search around.",
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "TThe longitude (east-West) for the location point to search around.",
+            "in": "query",
+            "name": "lng",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "default": 10000,
+            "description": "distance from the location point in meters we'd like to search around.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "default": "false",
+            "description": "If this parameter is set then it will search in part of the names of the street, place,....",
+            "in": "query",
+            "name": "suggest",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "MEDIUM",
+            "description": "The output style verbosity (optional) : Determines the output verbosity.",
+            "enum": [
+              "SHORT",
+              "MEDIUM",
+              "LONG",
+              "FULL"
+            ],
+            "in": "query",
+            "name": "style",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "limit the search to the specified ISO 3166 country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The language code (optional) : The iso 639 Alpha2 or alpha3 Language Code.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "XML",
+            "description": "The output format.",
+            "enum": [
+              "XML",
+              "JSON",
+              "PHP",
+              "RUBY",
+              "PYTHON",
+              "YAML",
+              "ATOM",
+              "GEORSS"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The first pagination index.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "The last pagination index.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The callback method name (optional), use to wrap the content into a (alphanumeric) Javascript method.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "indents the results.Default to false.",
+            "in": "query",
+            "name": "indent",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/fulltext/search",
         "pointer": "#/paths/~1fulltext~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FulltextResultsDto"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "search for places by text around a GPS point"
+        "summary": "search for places by text around a GPS point",
+        "tags": [
+          "fulltext - autocomplete"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Gisgraphy geocoding service allows you to transform postal addresses or other descriptions (a street, a city, a postal code, a country, or a combination) o…",
         "id": "operation:get:/geocoding/geocode",
         "kind": "operation",
         "method": "get",
         "name": "geocode",
+        "parameters": [
+          {
+            "description": "A postal address, structured or not, a street, a city, a postal code, a country, or a combination.",
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The country where the place/address is.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Whether the given address is a postal address.",
+            "in": "query",
+            "name": "postal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "XML",
+            "description": "The output format.",
+            "enum": [
+              "XML",
+              "JSON",
+              "PHP",
+              "RUBY",
+              "PYTHON",
+              "YAML"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The first pagination index.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "The last pagination index.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The callback method name (optional), use to wrap the content into a (alphanumeric) Javascript method.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "indents the results.",
+            "in": "query",
+            "name": "indent",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/geocoding/geocode",
         "pointer": "#/paths/~1geocoding~1geocode/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AddressResultsDto"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Geocode an address"
+        "summary": "Geocode an address",
+        "tags": [
+          "geocoding"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The geolocalisation service allows to search for features around a earth location.",
         "id": "operation:get:/geoloc/search",
         "kind": "operation",
         "method": "get",
         "name": "geoloc",
+        "parameters": [
+          {
+            "description": "The latitude (north-south) for the location point to search around.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "TThe longitude (east-West) for the location point to search around.",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "default": 10000,
+            "description": "distance from the location point in meters we'd like to search around.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "default": true,
+            "description": "Whether (or not) we want the distance field to be output.",
+            "in": "query",
+            "name": "distance",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "filter search for a given placetype",
+            "in": "query",
+            "name": "placetype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "XML",
+            "description": "The output format.",
+            "enum": [
+              "XML",
+              "JSON",
+              "PHP",
+              "RUBY",
+              "PYTHON",
+              "YAML"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The first pagination index.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "The last pagination index.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The callback method name (optional), use to wrap the content into a (alphanumeric) Javascript method.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "indents the results.Default to false.",
+            "in": "query",
+            "name": "indent",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/geoloc/search",
         "pointer": "#/paths/~1geoloc~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeolocResultsDto"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Geocode an address"
+        "summary": "Geocode an address",
+        "tags": [
+          "geolocalisation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Reverse geocoding service allows to search for an address for a given GPS position.",
         "id": "operation:get:/reversegeocoding/reversegeocode",
         "kind": "operation",
         "method": "get",
         "name": "reversegeocode",
+        "parameters": [
+          {
+            "description": "The latitude (north-south) for the location point to search around.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "TThe longitude (east-West) for the location point to search around.",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "default": "XML",
+            "description": "The output format.",
+            "enum": [
+              "XML",
+              "JSON",
+              "PHP",
+              "RUBY",
+              "PYTHON",
+              "YAML"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The first pagination index.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "The last pagination index.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The callback method name (optional), use to wrap the content into a (alphanumeric) Javascript method.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "indents the results.",
+            "in": "query",
+            "name": "indent",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/reversegeocoding/reversegeocode",
         "pointer": "#/paths/~1reversegeocoding~1reversegeocode/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AddressResultsDto"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Reverse geocode an address"
+        "summary": "Reverse geocode an address",
+        "tags": [
+          "reversegeocoding"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The street service allows you to search for street by GPS position.",
         "id": "operation:get:/street/find",
         "kind": "operation",
         "method": "get",
         "name": "streetsearch",
+        "parameters": [
+          {
+            "description": "The latitude (north-south) for the location point to search around.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "TThe longitude (east-West) for the location point to search around.",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "default": 10000,
+            "description": "distance from the location point in meters we'd like to search around.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "default": "false",
+            "description": "whether the street should be a oneWay street (optional) : limit the search to the street that are one way street.",
+            "in": "query",
+            "name": "oneway",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Whether (or not) we want the distance field to be output.",
+            "in": "query",
+            "name": "distance",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "filter search with a stret type",
+            "in": "query",
+            "name": "streettype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "XML",
+            "description": "The output format.",
+            "enum": [
+              "XML",
+              "JSON",
+              "PHP",
+              "RUBY",
+              "PYTHON",
+              "YAML"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The first pagination index.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "The last pagination index.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The callback method name (optional), use to wrap the content into a (alphanumeric) Javascript method.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "indents the results.",
+            "in": "query",
+            "name": "indent",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/street/find",
         "pointer": "#/paths/~1street~1find/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StreetSearchResultsDto"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Geocode an address"
+        "summary": "Geocode an address",
+        "tags": [
+          "streetservice"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:AddressResultsDto",
         "kind": "schema",
-        "name": "AddressResultsDto"
+        "name": "AddressResultsDto",
+        "type": "object"
       },
       {
         "id": "schema:FulltextResultsDto",
         "kind": "schema",
-        "name": "FulltextResultsDto"
+        "name": "FulltextResultsDto",
+        "type": "object"
       },
       {
         "id": "schema:GeolocResultsDto",
         "kind": "schema",
-        "name": "GeolocResultsDto"
+        "name": "GeolocResultsDto",
+        "type": "object"
       },
       {
         "id": "schema:GisFeatureDistance",
         "kind": "schema",
-        "name": "GisFeatureDistance"
+        "name": "GisFeatureDistance",
+        "type": "object"
       },
       {
         "id": "schema:HouseNumberDto",
         "kind": "schema",
-        "name": "HouseNumberDto"
+        "name": "HouseNumberDto",
+        "type": "object"
       },
       {
         "id": "schema:SolrResponseDto",
         "kind": "schema",
-        "name": "SolrResponseDto"
+        "name": "SolrResponseDto",
+        "type": "object"
       },
       {
         "id": "schema:StreetDistance",
         "kind": "schema",
-        "name": "StreetDistance"
+        "name": "StreetDistance",
+        "type": "object"
       },
       {
         "id": "schema:StreetSearchResultsDto",
         "kind": "schema",
-        "name": "StreetSearchResultsDto"
+        "name": "StreetSearchResultsDto",
+        "type": "object"
       }
     ]
   },

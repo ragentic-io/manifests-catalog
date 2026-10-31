@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.apideck.com_icon.png
 
 | | |
 | --- | --- |
-| Signed bundle | `46ffa411ded831cb01d03bf135bcd1428a25a2e7d3ae31b986374582c123ebe2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,58 +34,60 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.apideck.com_icon.png
 
 140 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounting/balance-sheet` | balanceSheetOne | Get BalanceSheet |
-| GET | `/accounting/bills` | billsAll | List Bills |
-| POST | `/accounting/bills` | billsAdd | Create Bill |
-| DELETE | `/accounting/bills/{id}` | billsDelete | Delete Bill |
-| GET | `/accounting/bills/{id}` | billsOne | Get Bill |
-| PATCH | `/accounting/bills/{id}` | billsUpdate | Update Bill |
-| GET | `/accounting/company-info` | companyInfoOne | Get company info |
-| GET | `/accounting/credit-notes` | creditNotesAll | List Credit Notes |
-| POST | `/accounting/credit-notes` | creditNotesAdd | Create Credit Note |
-| DELETE | `/accounting/credit-notes/{id}` | creditNotesDelete | Delete Credit Note |
-| GET | `/accounting/credit-notes/{id}` | creditNotesOne | Get Credit Note |
-| PATCH | `/accounting/credit-notes/{id}` | creditNotesUpdate | Update Credit Note |
-| GET | `/accounting/customers` | customersAll | List Customers |
-| POST | `/accounting/customers` | customersAdd | Create Customer |
-| DELETE | `/accounting/customers/{id}` | customersDelete | Delete Customer |
-| GET | `/accounting/customers/{id}` | customersOne | Get Customer |
-| PATCH | `/accounting/customers/{id}` | customersUpdate | Update Customer |
-| GET | `/accounting/invoice-items` | invoiceItemsAll | List Invoice Items |
-| POST | `/accounting/invoice-items` | invoiceItemsAdd | Create Invoice Item |
-| DELETE | `/accounting/invoice-items/{id}` | invoiceItemsDelete | Delete Invoice Item |
-| GET | `/accounting/invoice-items/{id}` | invoiceItemsOne | Get Invoice Item |
-| PATCH | `/accounting/invoice-items/{id}` | invoiceItemsUpdate | Update Invoice Item |
-| GET | `/accounting/invoices` | invoicesAll | List Invoices |
-| POST | `/accounting/invoices` | invoicesAdd | Create Invoice |
-| DELETE | `/accounting/invoices/{id}` | invoicesDelete | Delete Invoice |
-| GET | `/accounting/invoices/{id}` | invoicesOne | Get Invoice |
-| PATCH | `/accounting/invoices/{id}` | invoicesUpdate | Update Invoice |
-| GET | `/accounting/journal-entries` | journalEntriesAll | List Journal Entries |
-| POST | `/accounting/journal-entries` | journalEntriesAdd | Create Journal Entry |
-| DELETE | `/accounting/journal-entries/{id}` | journalEntriesDelete | Delete Journal Entry |
-| GET | `/accounting/journal-entries/{id}` | journalEntriesOne | Get Journal Entry |
-| PATCH | `/accounting/journal-entries/{id}` | journalEntriesUpdate | Update Journal Entry |
-| GET | `/accounting/ledger-accounts` | ledgerAccountsAll | List Ledger Accounts |
-| POST | `/accounting/ledger-accounts` | ledgerAccountsAdd | Create Ledger Account |
-| DELETE | `/accounting/ledger-accounts/{id}` | ledgerAccountsDelete | Delete Ledger Account |
-| GET | `/accounting/ledger-accounts/{id}` | ledgerAccountsOne | Get Ledger Account |
-| PATCH | `/accounting/ledger-accounts/{id}` | ledgerAccountsUpdate | Update Ledger Account |
-| GET | `/accounting/payments` | paymentsAll | List Payments |
-| POST | `/accounting/payments` | paymentsAdd | Create Payment |
-| DELETE | `/accounting/payments/{id}` | paymentsDelete | Delete Payment |
-| GET | `/accounting/payments/{id}` | paymentsOne | Get Payment |
-| PATCH | `/accounting/payments/{id}` | paymentsUpdate | Update Payment |
-| GET | `/accounting/profit-and-loss` | profitAndLossOne | Get Profit and Loss |
-| GET | `/accounting/suppliers` | suppliersAll | List Suppliers |
-| POST | `/accounting/suppliers` | suppliersAdd | Create Supplier |
-| DELETE | `/accounting/suppliers/{id}` | suppliersDelete | Delete Supplier |
-| GET | `/accounting/suppliers/{id}` | suppliersOne | Get Supplier |
-| PATCH | `/accounting/suppliers/{id}` | suppliersUpdate | Update Supplier |
-| GET | `/accounting/tax-rates` | taxRatesAll | List Tax Rates |
-| POST | `/accounting/tax-rates` | taxRatesAdd | Create Tax Rate |
-| DELETE | `/accounting/tax-rates/{id}` | taxRatesDelete | Delete Tax Rate |
-| GET | `/accounting/tax-rates/{id}` | taxRatesOne | Get Tax Rate |
-| PATCH | `/accounting/tax-rates/{id}` | taxRatesUpdate | Update Tax Rate |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounting/balance-sheet` | balanceSheetOne | `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `pass_through`, `filter`, `raw` | GetBalanceSheetResponse | yes | Get BalanceSheet |
+| GET | `/accounting/bills` | billsAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `sort`, `pass_through`, `fields` | GetBillsResponse | yes | List Bills |
+| POST | `/accounting/bills` | billsAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: Bill | CreateBillResponse |  | Create Bill |
+| GET | `/accounting/bills/{id}` | billsOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetBillResponse | yes | Get Bill |
+| DELETE | `/accounting/bills/{id}` | billsDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteBillResponse |  | Delete Bill |
+| PATCH | `/accounting/bills/{id}` | billsUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: Bill | UpdateBillResponse |  | Update Bill |
+| GET | `/accounting/company-info` | companyInfoOne | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `fields` | GetCompanyInfoResponse | yes | Get company info |
+| GET | `/accounting/credit-notes` | creditNotesAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `pass_through`, `fields` | GetCreditNotesResponse | yes | List Credit Notes |
+| POST | `/accounting/credit-notes` | creditNotesAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: CreditNote | CreateCreditNoteResponse |  | Create Credit Note |
+| GET | `/accounting/credit-notes/{id}` | creditNotesOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetCreditNoteResponse | yes | Get Credit Note |
+| DELETE | `/accounting/credit-notes/{id}` | creditNotesDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteCreditNoteResponse |  | Delete Credit Note |
+| PATCH | `/accounting/credit-notes/{id}` | creditNotesUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: CreditNote | UpdateCreditNoteResponse |  | Update Credit Note |
+| GET | `/accounting/customers` | customersAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `filter`, `pass_through`, `fields` | GetCustomersResponse | yes | List Customers |
+| POST | `/accounting/customers` | customersAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: AccountingCustomer | CreateCustomerResponse |  | Create Customer |
+| GET | `/accounting/customers/{id}` | customersOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetCustomerResponse | yes | Get Customer |
+| DELETE | `/accounting/customers/{id}` | customersDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteCustomerResponse |  | Delete Customer |
+| PATCH | `/accounting/customers/{id}` | customersUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: AccountingCustomer | UpdateCustomerResponse |  | Update Customer |
+| GET | `/accounting/invoice-items` | invoiceItemsAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `filter`, `pass_through`, `fields` | GetInvoiceItemsResponse | yes | List Invoice Items |
+| POST | `/accounting/invoice-items` | invoiceItemsAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: InvoiceItem | CreateInvoiceItemResponse |  | Create Invoice Item |
+| GET | `/accounting/invoice-items/{id}` | invoiceItemsOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetInvoiceItemResponse | yes | Get Invoice Item |
+| DELETE | `/accounting/invoice-items/{id}` | invoiceItemsDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteTaxRateResponse |  | Delete Invoice Item |
+| PATCH | `/accounting/invoice-items/{id}` | invoiceItemsUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: InvoiceItem | UpdateInvoiceItemsResponse |  | Update Invoice Item |
+| GET | `/accounting/invoices` | invoicesAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `sort`, `pass_through`, `fields` | GetInvoicesResponse | yes | List Invoices |
+| POST | `/accounting/invoices` | invoicesAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: Invoice | CreateInvoiceResponse |  | Create Invoice |
+| GET | `/accounting/invoices/{id}` | invoicesOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetInvoiceResponse | yes | Get Invoice |
+| DELETE | `/accounting/invoices/{id}` | invoicesDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteInvoiceResponse |  | Delete Invoice |
+| PATCH | `/accounting/invoices/{id}` | invoicesUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: Invoice | UpdateInvoiceResponse |  | Update Invoice |
+| GET | `/accounting/journal-entries` | journalEntriesAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `pass_through`, `fields` | GetJournalEntriesResponse | yes | List Journal Entries |
+| POST | `/accounting/journal-entries` | journalEntriesAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: JournalEntry | CreateJournalEntryResponse |  | Create Journal Entry |
+| GET | `/accounting/journal-entries/{id}` | journalEntriesOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetJournalEntryResponse | yes | Get Journal Entry |
+| DELETE | `/accounting/journal-entries/{id}` | journalEntriesDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteJournalEntryResponse |  | Delete Journal Entry |
+| PATCH | `/accounting/journal-entries/{id}` | journalEntriesUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: JournalEntry | UpdateJournalEntryResponse |  | Update Journal Entry |
+| GET | `/accounting/ledger-accounts` | ledgerAccountsAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `pass_through`, `fields` | GetLedgerAccountsResponse | yes | List Ledger Accounts |
+| POST | `/accounting/ledger-accounts` | ledgerAccountsAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: LedgerAccount | CreateLedgerAccountResponse |  | Create Ledger Account |
+| GET | `/accounting/ledger-accounts/{id}` | ledgerAccountsOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetLedgerAccountResponse | yes | Get Ledger Account |
+| DELETE | `/accounting/ledger-accounts/{id}` | ledgerAccountsDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteLedgerAccountResponse |  | Delete Ledger Account |
+| PATCH | `/accounting/ledger-accounts/{id}` | ledgerAccountsUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: LedgerAccount | UpdateLedgerAccountResponse |  | Update Ledger Account |
+| GET | `/accounting/payments` | paymentsAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `pass_through`, `fields` | GetPaymentsResponse | yes | List Payments |
+| POST | `/accounting/payments` | paymentsAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: Payment | CreatePaymentResponse |  | Create Payment |
+| GET | `/accounting/payments/{id}` | paymentsOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetPaymentResponse | yes | Get Payment |
+| DELETE | `/accounting/payments/{id}` | paymentsDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeletePaymentResponse |  | Delete Payment |
+| PATCH | `/accounting/payments/{id}` | paymentsUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: Payment | UpdatePaymentResponse |  | Update Payment |
+| GET | `/accounting/profit-and-loss` | profitAndLossOne | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `filter`, `pass_through`, `fields` | GetProfitAndLossResponse | yes | Get Profit and Loss |
+| GET | `/accounting/suppliers` | suppliersAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `filter`, `pass_through`, `fields` | GetSuppliersResponse | yes | List Suppliers |
+| POST | `/accounting/suppliers` | suppliersAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: Supplier | CreateSupplierResponse |  | Create Supplier |
+| GET | `/accounting/suppliers/{id}` | suppliersOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetSupplierResponse | yes | Get Supplier |
+| DELETE | `/accounting/suppliers/{id}` | suppliersDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteSupplierResponse |  | Delete Supplier |
+| PATCH | `/accounting/suppliers/{id}` | suppliersUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: Supplier | UpdateSupplierResponse |  | Update Supplier |
+| GET | `/accounting/tax-rates` | taxRatesAll | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `cursor`, `limit`, `filter`, `pass_through`, `fields` | GetTaxRatesResponse | yes | List Tax Rates |
+| POST | `/accounting/tax-rates` | taxRatesAdd | `raw`, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, body*: TaxRate | CreateTaxRateResponse |  | Create Tax Rate |
+| GET | `/accounting/tax-rates/{id}` | taxRatesOne | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, `fields` | GetTaxRateResponse | yes | Get Tax Rate |
+| DELETE | `/accounting/tax-rates/{id}` | taxRatesDelete | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw` | DeleteTaxRateResponse |  | Delete Tax Rate |
+| PATCH | `/accounting/tax-rates/{id}` | taxRatesUpdate | `id`*, `x-apideck-consumer-id`*, `x-apideck-app-id`*, `x-apideck-service-id`, `raw`, body*: TaxRate | UpdateTaxRateResponse |  | Update Tax Rate |

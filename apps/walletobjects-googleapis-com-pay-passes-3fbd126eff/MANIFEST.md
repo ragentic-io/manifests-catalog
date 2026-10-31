@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `0fdf3e382d1a7829057e6ca753afced02c1483ab99d4011c673fd881cd596b0a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,100 +34,102 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 145 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/walletobjects/v1/eventTicketClass` | walletobjects.eventticketclass.list | — |
-| POST | `/walletobjects/v1/eventTicketClass` | walletobjects.eventticketclass.insert | — |
-| GET | `/walletobjects/v1/eventTicketClass/{resourceId}` | walletobjects.eventticketclass.get | — |
-| PATCH | `/walletobjects/v1/eventTicketClass/{resourceId}` | walletobjects.eventticketclass.patch | — |
-| PUT | `/walletobjects/v1/eventTicketClass/{resourceId}` | walletobjects.eventticketclass.update | — |
-| POST | `/walletobjects/v1/eventTicketClass/{resourceId}/addMessage` | walletobjects.eventticketclass.addmessage | — |
-| GET | `/walletobjects/v1/eventTicketObject` | walletobjects.eventticketobject.list | — |
-| POST | `/walletobjects/v1/eventTicketObject` | walletobjects.eventticketobject.insert | — |
-| GET | `/walletobjects/v1/eventTicketObject/{resourceId}` | walletobjects.eventticketobject.get | — |
-| PATCH | `/walletobjects/v1/eventTicketObject/{resourceId}` | walletobjects.eventticketobject.patch | — |
-| PUT | `/walletobjects/v1/eventTicketObject/{resourceId}` | walletobjects.eventticketobject.update | — |
-| POST | `/walletobjects/v1/eventTicketObject/{resourceId}/addMessage` | walletobjects.eventticketobject.addmessage | — |
-| POST | `/walletobjects/v1/eventTicketObject/{resourceId}/modifyLinkedOfferObjects` | walletobjects.eventticketobject.modifylinkedofferobjects | — |
-| GET | `/walletobjects/v1/flightClass` | walletobjects.flightclass.list | — |
-| POST | `/walletobjects/v1/flightClass` | walletobjects.flightclass.insert | — |
-| GET | `/walletobjects/v1/flightClass/{resourceId}` | walletobjects.flightclass.get | — |
-| PATCH | `/walletobjects/v1/flightClass/{resourceId}` | walletobjects.flightclass.patch | — |
-| PUT | `/walletobjects/v1/flightClass/{resourceId}` | walletobjects.flightclass.update | — |
-| POST | `/walletobjects/v1/flightClass/{resourceId}/addMessage` | walletobjects.flightclass.addmessage | — |
-| GET | `/walletobjects/v1/flightObject` | walletobjects.flightobject.list | — |
-| POST | `/walletobjects/v1/flightObject` | walletobjects.flightobject.insert | — |
-| GET | `/walletobjects/v1/flightObject/{resourceId}` | walletobjects.flightobject.get | — |
-| PATCH | `/walletobjects/v1/flightObject/{resourceId}` | walletobjects.flightobject.patch | — |
-| PUT | `/walletobjects/v1/flightObject/{resourceId}` | walletobjects.flightobject.update | — |
-| POST | `/walletobjects/v1/flightObject/{resourceId}/addMessage` | walletobjects.flightobject.addmessage | — |
-| GET | `/walletobjects/v1/genericClass` | walletobjects.genericclass.list | — |
-| POST | `/walletobjects/v1/genericClass` | walletobjects.genericclass.insert | — |
-| GET | `/walletobjects/v1/genericClass/{resourceId}` | walletobjects.genericclass.get | — |
-| PATCH | `/walletobjects/v1/genericClass/{resourceId}` | walletobjects.genericclass.patch | — |
-| PUT | `/walletobjects/v1/genericClass/{resourceId}` | walletobjects.genericclass.update | — |
-| GET | `/walletobjects/v1/genericObject` | walletobjects.genericobject.list | — |
-| POST | `/walletobjects/v1/genericObject` | walletobjects.genericobject.insert | — |
-| GET | `/walletobjects/v1/genericObject/{resourceId}` | walletobjects.genericobject.get | — |
-| PATCH | `/walletobjects/v1/genericObject/{resourceId}` | walletobjects.genericobject.patch | — |
-| PUT | `/walletobjects/v1/genericObject/{resourceId}` | walletobjects.genericobject.update | — |
-| GET | `/walletobjects/v1/giftCardClass` | walletobjects.giftcardclass.list | — |
-| POST | `/walletobjects/v1/giftCardClass` | walletobjects.giftcardclass.insert | — |
-| GET | `/walletobjects/v1/giftCardClass/{resourceId}` | walletobjects.giftcardclass.get | — |
-| PATCH | `/walletobjects/v1/giftCardClass/{resourceId}` | walletobjects.giftcardclass.patch | — |
-| PUT | `/walletobjects/v1/giftCardClass/{resourceId}` | walletobjects.giftcardclass.update | — |
-| POST | `/walletobjects/v1/giftCardClass/{resourceId}/addMessage` | walletobjects.giftcardclass.addmessage | — |
-| GET | `/walletobjects/v1/giftCardObject` | walletobjects.giftcardobject.list | — |
-| POST | `/walletobjects/v1/giftCardObject` | walletobjects.giftcardobject.insert | — |
-| GET | `/walletobjects/v1/giftCardObject/{resourceId}` | walletobjects.giftcardobject.get | — |
-| PATCH | `/walletobjects/v1/giftCardObject/{resourceId}` | walletobjects.giftcardobject.patch | — |
-| PUT | `/walletobjects/v1/giftCardObject/{resourceId}` | walletobjects.giftcardobject.update | — |
-| POST | `/walletobjects/v1/giftCardObject/{resourceId}/addMessage` | walletobjects.giftcardobject.addmessage | — |
-| GET | `/walletobjects/v1/issuer` | walletobjects.issuer.list | — |
-| POST | `/walletobjects/v1/issuer` | walletobjects.issuer.insert | — |
-| GET | `/walletobjects/v1/issuer/{resourceId}` | walletobjects.issuer.get | — |
-| PATCH | `/walletobjects/v1/issuer/{resourceId}` | walletobjects.issuer.patch | — |
-| PUT | `/walletobjects/v1/issuer/{resourceId}` | walletobjects.issuer.update | — |
-| POST | `/walletobjects/v1/jwt` | walletobjects.jwt.insert | — |
-| GET | `/walletobjects/v1/loyaltyClass` | walletobjects.loyaltyclass.list | — |
-| POST | `/walletobjects/v1/loyaltyClass` | walletobjects.loyaltyclass.insert | — |
-| GET | `/walletobjects/v1/loyaltyClass/{resourceId}` | walletobjects.loyaltyclass.get | — |
-| PATCH | `/walletobjects/v1/loyaltyClass/{resourceId}` | walletobjects.loyaltyclass.patch | — |
-| PUT | `/walletobjects/v1/loyaltyClass/{resourceId}` | walletobjects.loyaltyclass.update | — |
-| POST | `/walletobjects/v1/loyaltyClass/{resourceId}/addMessage` | walletobjects.loyaltyclass.addmessage | — |
-| GET | `/walletobjects/v1/loyaltyObject` | walletobjects.loyaltyobject.list | — |
-| POST | `/walletobjects/v1/loyaltyObject` | walletobjects.loyaltyobject.insert | — |
-| GET | `/walletobjects/v1/loyaltyObject/{resourceId}` | walletobjects.loyaltyobject.get | — |
-| PATCH | `/walletobjects/v1/loyaltyObject/{resourceId}` | walletobjects.loyaltyobject.patch | — |
-| PUT | `/walletobjects/v1/loyaltyObject/{resourceId}` | walletobjects.loyaltyobject.update | — |
-| POST | `/walletobjects/v1/loyaltyObject/{resourceId}/addMessage` | walletobjects.loyaltyobject.addmessage | — |
-| POST | `/walletobjects/v1/loyaltyObject/{resourceId}/modifyLinkedOfferObjects` | walletobjects.loyaltyobject.modifylinkedofferobjects | — |
-| GET | `/walletobjects/v1/offerClass` | walletobjects.offerclass.list | — |
-| POST | `/walletobjects/v1/offerClass` | walletobjects.offerclass.insert | — |
-| GET | `/walletobjects/v1/offerClass/{resourceId}` | walletobjects.offerclass.get | — |
-| PATCH | `/walletobjects/v1/offerClass/{resourceId}` | walletobjects.offerclass.patch | — |
-| PUT | `/walletobjects/v1/offerClass/{resourceId}` | walletobjects.offerclass.update | — |
-| POST | `/walletobjects/v1/offerClass/{resourceId}/addMessage` | walletobjects.offerclass.addmessage | — |
-| GET | `/walletobjects/v1/offerObject` | walletobjects.offerobject.list | — |
-| POST | `/walletobjects/v1/offerObject` | walletobjects.offerobject.insert | — |
-| GET | `/walletobjects/v1/offerObject/{resourceId}` | walletobjects.offerobject.get | — |
-| PATCH | `/walletobjects/v1/offerObject/{resourceId}` | walletobjects.offerobject.patch | — |
-| PUT | `/walletobjects/v1/offerObject/{resourceId}` | walletobjects.offerobject.update | — |
-| POST | `/walletobjects/v1/offerObject/{resourceId}/addMessage` | walletobjects.offerobject.addmessage | — |
-| GET | `/walletobjects/v1/permissions/{resourceId}` | walletobjects.permissions.get | — |
-| PUT | `/walletobjects/v1/permissions/{resourceId}` | walletobjects.permissions.update | — |
-| POST | `/walletobjects/v1/privateContent/uploadPrivateData` | walletobjects.walletobjects.v1.privateContent.uploadPrivateData | — |
-| POST | `/walletobjects/v1/privateContent/{issuerId}/uploadPrivateImage` | walletobjects.media.upload | — |
-| POST | `/walletobjects/v1/smartTap` | walletobjects.smarttap.insert | — |
-| GET | `/walletobjects/v1/transitClass` | walletobjects.transitclass.list | — |
-| POST | `/walletobjects/v1/transitClass` | walletobjects.transitclass.insert | — |
-| GET | `/walletobjects/v1/transitClass/{resourceId}` | walletobjects.transitclass.get | — |
-| PATCH | `/walletobjects/v1/transitClass/{resourceId}` | walletobjects.transitclass.patch | — |
-| PUT | `/walletobjects/v1/transitClass/{resourceId}` | walletobjects.transitclass.update | — |
-| POST | `/walletobjects/v1/transitClass/{resourceId}/addMessage` | walletobjects.transitclass.addmessage | — |
-| GET | `/walletobjects/v1/transitObject` | walletobjects.transitobject.list | — |
-| POST | `/walletobjects/v1/transitObject` | walletobjects.transitobject.insert | — |
-| GET | `/walletobjects/v1/transitObject/{resourceId}` | walletobjects.transitobject.get | — |
-| PATCH | `/walletobjects/v1/transitObject/{resourceId}` | walletobjects.transitobject.patch | — |
-| PUT | `/walletobjects/v1/transitObject/{resourceId}` | walletobjects.transitobject.update | — |
-| POST | `/walletobjects/v1/transitObject/{resourceId}/addMessage` | walletobjects.transitobject.addmessage | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/walletobjects/v1/eventTicketClass` | walletobjects.eventticketclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | EventTicketClassListResponse | yes | — |
+| POST | `/walletobjects/v1/eventTicketClass` | walletobjects.eventticketclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: EventTicketClass | EventTicketClass |  | — |
+| GET | `/walletobjects/v1/eventTicketClass/{resourceId}` | walletobjects.eventticketclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | EventTicketClass | yes | — |
+| PUT | `/walletobjects/v1/eventTicketClass/{resourceId}` | walletobjects.eventticketclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: EventTicketClass | EventTicketClass |  | — |
+| PATCH | `/walletobjects/v1/eventTicketClass/{resourceId}` | walletobjects.eventticketclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: EventTicketClass | EventTicketClass |  | — |
+| POST | `/walletobjects/v1/eventTicketClass/{resourceId}/addMessage` | walletobjects.eventticketclass.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | EventTicketClassAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/eventTicketObject` | walletobjects.eventticketobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | EventTicketObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/eventTicketObject` | walletobjects.eventticketobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: EventTicketObject | EventTicketObject |  | — |
+| GET | `/walletobjects/v1/eventTicketObject/{resourceId}` | walletobjects.eventticketobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | EventTicketObject | yes | — |
+| PUT | `/walletobjects/v1/eventTicketObject/{resourceId}` | walletobjects.eventticketobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: EventTicketObject | EventTicketObject |  | — |
+| PATCH | `/walletobjects/v1/eventTicketObject/{resourceId}` | walletobjects.eventticketobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: EventTicketObject | EventTicketObject |  | — |
+| POST | `/walletobjects/v1/eventTicketObject/{resourceId}/addMessage` | walletobjects.eventticketobject.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | EventTicketObjectAddMessageResponse |  | — |
+| POST | `/walletobjects/v1/eventTicketObject/{resourceId}/modifyLinkedOfferObjects` | walletobjects.eventticketobject.modifylinkedofferobjects | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: ModifyLinkedOfferObjectsRequest | EventTicketObject |  | — |
+| GET | `/walletobjects/v1/flightClass` | walletobjects.flightclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | FlightClassListResponse | yes | — |
+| POST | `/walletobjects/v1/flightClass` | walletobjects.flightclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: FlightClass | FlightClass |  | — |
+| GET | `/walletobjects/v1/flightClass/{resourceId}` | walletobjects.flightclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | FlightClass | yes | — |
+| PUT | `/walletobjects/v1/flightClass/{resourceId}` | walletobjects.flightclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: FlightClass | FlightClass |  | — |
+| PATCH | `/walletobjects/v1/flightClass/{resourceId}` | walletobjects.flightclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: FlightClass | FlightClass |  | — |
+| POST | `/walletobjects/v1/flightClass/{resourceId}/addMessage` | walletobjects.flightclass.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | FlightClassAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/flightObject` | walletobjects.flightobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | FlightObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/flightObject` | walletobjects.flightobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: FlightObject | FlightObject |  | — |
+| GET | `/walletobjects/v1/flightObject/{resourceId}` | walletobjects.flightobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | FlightObject | yes | — |
+| PUT | `/walletobjects/v1/flightObject/{resourceId}` | walletobjects.flightobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: FlightObject | FlightObject |  | — |
+| PATCH | `/walletobjects/v1/flightObject/{resourceId}` | walletobjects.flightobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: FlightObject | FlightObject |  | — |
+| POST | `/walletobjects/v1/flightObject/{resourceId}/addMessage` | walletobjects.flightobject.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | FlightObjectAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/genericClass` | walletobjects.genericclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | GenericClassListResponse | yes | — |
+| POST | `/walletobjects/v1/genericClass` | walletobjects.genericclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: GenericClass | GenericClass |  | — |
+| GET | `/walletobjects/v1/genericClass/{resourceId}` | walletobjects.genericclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | GenericClass | yes | — |
+| PUT | `/walletobjects/v1/genericClass/{resourceId}` | walletobjects.genericclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GenericClass | GenericClass |  | — |
+| PATCH | `/walletobjects/v1/genericClass/{resourceId}` | walletobjects.genericclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GenericClass | GenericClass |  | — |
+| GET | `/walletobjects/v1/genericObject` | walletobjects.genericobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | GenericObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/genericObject` | walletobjects.genericobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: GenericObject | GenericObject |  | — |
+| GET | `/walletobjects/v1/genericObject/{resourceId}` | walletobjects.genericobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | GenericObject | yes | — |
+| PUT | `/walletobjects/v1/genericObject/{resourceId}` | walletobjects.genericobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GenericObject | GenericObject |  | — |
+| PATCH | `/walletobjects/v1/genericObject/{resourceId}` | walletobjects.genericobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GenericObject | GenericObject |  | — |
+| GET | `/walletobjects/v1/giftCardClass` | walletobjects.giftcardclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | GiftCardClassListResponse | yes | — |
+| POST | `/walletobjects/v1/giftCardClass` | walletobjects.giftcardclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: GiftCardClass | GiftCardClass |  | — |
+| GET | `/walletobjects/v1/giftCardClass/{resourceId}` | walletobjects.giftcardclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | GiftCardClass | yes | — |
+| PUT | `/walletobjects/v1/giftCardClass/{resourceId}` | walletobjects.giftcardclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GiftCardClass | GiftCardClass |  | — |
+| PATCH | `/walletobjects/v1/giftCardClass/{resourceId}` | walletobjects.giftcardclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GiftCardClass | GiftCardClass |  | — |
+| POST | `/walletobjects/v1/giftCardClass/{resourceId}/addMessage` | walletobjects.giftcardclass.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | GiftCardClassAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/giftCardObject` | walletobjects.giftcardobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | GiftCardObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/giftCardObject` | walletobjects.giftcardobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: GiftCardObject | GiftCardObject |  | — |
+| GET | `/walletobjects/v1/giftCardObject/{resourceId}` | walletobjects.giftcardobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | GiftCardObject | yes | — |
+| PUT | `/walletobjects/v1/giftCardObject/{resourceId}` | walletobjects.giftcardobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GiftCardObject | GiftCardObject |  | — |
+| PATCH | `/walletobjects/v1/giftCardObject/{resourceId}` | walletobjects.giftcardobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: GiftCardObject | GiftCardObject |  | — |
+| POST | `/walletobjects/v1/giftCardObject/{resourceId}/addMessage` | walletobjects.giftcardobject.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | GiftCardObjectAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/issuer` | walletobjects.issuer.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType` | IssuerListResponse | yes | — |
+| POST | `/walletobjects/v1/issuer` | walletobjects.issuer.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: Issuer | Issuer |  | — |
+| GET | `/walletobjects/v1/issuer/{resourceId}` | walletobjects.issuer.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | Issuer | yes | — |
+| PUT | `/walletobjects/v1/issuer/{resourceId}` | walletobjects.issuer.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: Issuer | Issuer |  | — |
+| PATCH | `/walletobjects/v1/issuer/{resourceId}` | walletobjects.issuer.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: Issuer | Issuer |  | — |
+| POST | `/walletobjects/v1/jwt` | walletobjects.jwt.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: JwtResource | JwtInsertResponse |  | — |
+| GET | `/walletobjects/v1/loyaltyClass` | walletobjects.loyaltyclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | LoyaltyClassListResponse | yes | — |
+| POST | `/walletobjects/v1/loyaltyClass` | walletobjects.loyaltyclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: LoyaltyClass | LoyaltyClass |  | — |
+| GET | `/walletobjects/v1/loyaltyClass/{resourceId}` | walletobjects.loyaltyclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | LoyaltyClass | yes | — |
+| PUT | `/walletobjects/v1/loyaltyClass/{resourceId}` | walletobjects.loyaltyclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: LoyaltyClass | LoyaltyClass |  | — |
+| PATCH | `/walletobjects/v1/loyaltyClass/{resourceId}` | walletobjects.loyaltyclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: LoyaltyClass | LoyaltyClass |  | — |
+| POST | `/walletobjects/v1/loyaltyClass/{resourceId}/addMessage` | walletobjects.loyaltyclass.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | LoyaltyClassAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/loyaltyObject` | walletobjects.loyaltyobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | LoyaltyObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/loyaltyObject` | walletobjects.loyaltyobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: LoyaltyObject | LoyaltyObject |  | — |
+| GET | `/walletobjects/v1/loyaltyObject/{resourceId}` | walletobjects.loyaltyobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | LoyaltyObject | yes | — |
+| PUT | `/walletobjects/v1/loyaltyObject/{resourceId}` | walletobjects.loyaltyobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: LoyaltyObject | LoyaltyObject |  | — |
+| PATCH | `/walletobjects/v1/loyaltyObject/{resourceId}` | walletobjects.loyaltyobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: LoyaltyObject | LoyaltyObject |  | — |
+| POST | `/walletobjects/v1/loyaltyObject/{resourceId}/addMessage` | walletobjects.loyaltyobject.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | LoyaltyObjectAddMessageResponse |  | — |
+| POST | `/walletobjects/v1/loyaltyObject/{resourceId}/modifyLinkedOfferObjects` | walletobjects.loyaltyobject.modifylinkedofferobjects | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: ModifyLinkedOfferObjectsRequest | LoyaltyObject |  | — |
+| GET | `/walletobjects/v1/offerClass` | walletobjects.offerclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | OfferClassListResponse | yes | — |
+| POST | `/walletobjects/v1/offerClass` | walletobjects.offerclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: OfferClass | OfferClass |  | — |
+| GET | `/walletobjects/v1/offerClass/{resourceId}` | walletobjects.offerclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | OfferClass | yes | — |
+| PUT | `/walletobjects/v1/offerClass/{resourceId}` | walletobjects.offerclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: OfferClass | OfferClass |  | — |
+| PATCH | `/walletobjects/v1/offerClass/{resourceId}` | walletobjects.offerclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: OfferClass | OfferClass |  | — |
+| POST | `/walletobjects/v1/offerClass/{resourceId}/addMessage` | walletobjects.offerclass.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | OfferClassAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/offerObject` | walletobjects.offerobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | OfferObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/offerObject` | walletobjects.offerobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: OfferObject | OfferObject |  | — |
+| GET | `/walletobjects/v1/offerObject/{resourceId}` | walletobjects.offerobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | OfferObject | yes | — |
+| PUT | `/walletobjects/v1/offerObject/{resourceId}` | walletobjects.offerobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: OfferObject | OfferObject |  | — |
+| PATCH | `/walletobjects/v1/offerObject/{resourceId}` | walletobjects.offerobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: OfferObject | OfferObject |  | — |
+| POST | `/walletobjects/v1/offerObject/{resourceId}/addMessage` | walletobjects.offerobject.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | OfferObjectAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/permissions/{resourceId}` | walletobjects.permissions.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | Permissions | yes | — |
+| PUT | `/walletobjects/v1/permissions/{resourceId}` | walletobjects.permissions.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: Permissions | Permissions |  | — |
+| POST | `/walletobjects/v1/privateContent/uploadPrivateData` | walletobjects.walletobjects.v1.privateContent.uploadPrivateData | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: UploadPrivateDataRequest | UploadPrivateDataResponse |  | — |
+| POST | `/walletobjects/v1/privateContent/{issuerId}/uploadPrivateImage` | walletobjects.media.upload | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`*, body: UploadPrivateImageRequest | UploadPrivateImageResponse |  | — |
+| POST | `/walletobjects/v1/smartTap` | walletobjects.smarttap.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: SmartTap | SmartTap |  | — |
+| GET | `/walletobjects/v1/transitClass` | walletobjects.transitclass.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `issuerId`, `maxResults`, `token` | TransitClassListResponse | yes | — |
+| POST | `/walletobjects/v1/transitClass` | walletobjects.transitclass.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: TransitClass | TransitClass |  | — |
+| GET | `/walletobjects/v1/transitClass/{resourceId}` | walletobjects.transitclass.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | TransitClass | yes | — |
+| PUT | `/walletobjects/v1/transitClass/{resourceId}` | walletobjects.transitclass.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: TransitClass | TransitClass |  | — |
+| PATCH | `/walletobjects/v1/transitClass/{resourceId}` | walletobjects.transitclass.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: TransitClass | TransitClass |  | — |
+| POST | `/walletobjects/v1/transitClass/{resourceId}/addMessage` | walletobjects.transitclass.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | TransitClassAddMessageResponse |  | — |
+| GET | `/walletobjects/v1/transitObject` | walletobjects.transitobject.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `classId`, `maxResults`, `token` | TransitObjectListResponse | yes | — |
+| POST | `/walletobjects/v1/transitObject` | walletobjects.transitobject.insert | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, body: TransitObject | TransitObject |  | — |
+| GET | `/walletobjects/v1/transitObject/{resourceId}` | walletobjects.transitobject.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`* | TransitObject | yes | — |
+| PUT | `/walletobjects/v1/transitObject/{resourceId}` | walletobjects.transitobject.update | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: TransitObject | TransitObject |  | — |
+| PATCH | `/walletobjects/v1/transitObject/{resourceId}` | walletobjects.transitobject.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: TransitObject | TransitObject |  | — |
+| POST | `/walletobjects/v1/transitObject/{resourceId}/addMessage` | walletobjects.transitobject.addmessage | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `resourceId`*, body: AddMessageRequest | TransitObjectAddMessageResponse |  | — |

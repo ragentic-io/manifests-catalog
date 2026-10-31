@@ -17,12 +17,12 @@
       {
         "from": "pinecone-io-7ac816b553",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collectionName}"
+        "to": "operation:get:/collections/{collectionName}"
       },
       {
         "from": "pinecone-io-7ac816b553",
         "kind": "EXPOSES",
-        "to": "operation:get:/collections/{collectionName}"
+        "to": "operation:delete:/collections/{collectionName}"
       },
       {
         "from": "pinecone-io-7ac816b553",
@@ -42,12 +42,12 @@
       {
         "from": "pinecone-io-7ac816b553",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/{indexName}"
+        "to": "operation:get:/indexes/{indexName}"
       },
       {
         "from": "pinecone-io-7ac816b553",
         "kind": "EXPOSES",
-        "to": "operation:get:/indexes/{indexName}"
+        "to": "operation:delete:/indexes/{indexName}"
       },
       {
         "from": "pinecone-io-7ac816b553",
@@ -78,6 +78,356 @@
         "from": "pinecone-io-7ac816b553",
         "kind": "EXPOSES",
         "to": "operation:post:/vectors/upsert"
+      },
+      {
+        "from": "operation:get:/collections",
+        "kind": "RETURNS",
+        "to": "schema:CollectionsList"
+      },
+      {
+        "from": "operation:post:/collections",
+        "kind": "ACCEPTS",
+        "to": "schema:CollectionDefinition"
+      },
+      {
+        "from": "operation:get:/collections/{collectionName}",
+        "kind": "RETURNS",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "operation:post:/describe_index_stats",
+        "kind": "ACCEPTS",
+        "to": "schema:DescribeIndexStatsRequest"
+      },
+      {
+        "from": "operation:post:/describe_index_stats",
+        "kind": "RETURNS",
+        "to": "schema:DescribeIndexStatsResponse"
+      },
+      {
+        "from": "operation:get:/indexes",
+        "kind": "RETURNS",
+        "to": "schema:IndexesList"
+      },
+      {
+        "from": "operation:post:/indexes",
+        "kind": "ACCEPTS",
+        "to": "schema:IndexDefinition"
+      },
+      {
+        "from": "operation:get:/indexes/{indexName}",
+        "kind": "RETURNS",
+        "to": "schema:Index"
+      },
+      {
+        "from": "operation:patch:/indexes/{indexName}",
+        "kind": "ACCEPTS",
+        "to": "schema:IndexConfiguration"
+      },
+      {
+        "from": "operation:post:/query",
+        "kind": "ACCEPTS",
+        "to": "schema:QueryRequest"
+      },
+      {
+        "from": "operation:post:/query",
+        "kind": "RETURNS",
+        "to": "schema:QueryResponse"
+      },
+      {
+        "from": "operation:post:/vectors/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteRequest"
+      },
+      {
+        "from": "operation:post:/vectors/delete",
+        "kind": "RETURNS",
+        "to": "schema:DeleteResponse"
+      },
+      {
+        "from": "operation:post:/vectors/fetch",
+        "kind": "ACCEPTS",
+        "to": "schema:FetchRequest"
+      },
+      {
+        "from": "operation:post:/vectors/fetch",
+        "kind": "RETURNS",
+        "to": "schema:FetchResponse"
+      },
+      {
+        "from": "operation:post:/vectors/update",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateRequest"
+      },
+      {
+        "from": "operation:post:/vectors/update",
+        "kind": "RETURNS",
+        "to": "schema:UpdateResponse"
+      },
+      {
+        "from": "operation:post:/vectors/upsert",
+        "kind": "ACCEPTS",
+        "to": "schema:UpsertRequest"
+      },
+      {
+        "from": "operation:post:/vectors/upsert",
+        "kind": "RETURNS",
+        "to": "schema:UpsertResponse"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionName"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionState"
+      },
+      {
+        "from": "schema:CollectionDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionName"
+      },
+      {
+        "from": "schema:CollectionDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:IndexName"
+      },
+      {
+        "from": "schema:CollectionsList",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionName"
+      },
+      {
+        "from": "schema:DeleteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:DeleteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorFilter"
+      },
+      {
+        "from": "schema:DeleteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorId"
+      },
+      {
+        "from": "schema:DescribeIndexStatsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorFilter"
+      },
+      {
+        "from": "schema:DescribeIndexStatsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:IndexNamespaceStats"
+      },
+      {
+        "from": "schema:DescribeIndexStatsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:VectorDimensionality"
+      },
+      {
+        "from": "schema:FetchRequest",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:FetchRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorId"
+      },
+      {
+        "from": "schema:FetchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:FetchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:VectorData"
+      },
+      {
+        "from": "schema:Index",
+        "kind": "REFERENCES",
+        "to": "schema:IndexDatabase"
+      },
+      {
+        "from": "schema:Index",
+        "kind": "REFERENCES",
+        "to": "schema:IndexStatus"
+      },
+      {
+        "from": "schema:IndexConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:PodType"
+      },
+      {
+        "from": "schema:IndexDatabase",
+        "kind": "REFERENCES",
+        "to": "schema:IndexMetric"
+      },
+      {
+        "from": "schema:IndexDatabase",
+        "kind": "REFERENCES",
+        "to": "schema:IndexName"
+      },
+      {
+        "from": "schema:IndexDatabase",
+        "kind": "REFERENCES",
+        "to": "schema:PodType"
+      },
+      {
+        "from": "schema:IndexDatabase",
+        "kind": "REFERENCES",
+        "to": "schema:VectorDimensionality"
+      },
+      {
+        "from": "schema:IndexDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionName"
+      },
+      {
+        "from": "schema:IndexDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:IndexMetadataConfig"
+      },
+      {
+        "from": "schema:IndexDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:IndexMetric"
+      },
+      {
+        "from": "schema:IndexDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:IndexName"
+      },
+      {
+        "from": "schema:IndexDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:PodType"
+      },
+      {
+        "from": "schema:IndexDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:VectorDimensionality"
+      },
+      {
+        "from": "schema:IndexStatus",
+        "kind": "REFERENCES",
+        "to": "schema:IndexState"
+      },
+      {
+        "from": "schema:IndexesList",
+        "kind": "REFERENCES",
+        "to": "schema:IndexName"
+      },
+      {
+        "from": "schema:QueryMatch",
+        "kind": "REFERENCES",
+        "to": "schema:SparseVectorData"
+      },
+      {
+        "from": "schema:QueryMatch",
+        "kind": "REFERENCES",
+        "to": "schema:VectorData"
+      },
+      {
+        "from": "schema:QueryMatch",
+        "kind": "REFERENCES",
+        "to": "schema:VectorId"
+      },
+      {
+        "from": "schema:QueryMatch",
+        "kind": "REFERENCES",
+        "to": "schema:VectorMetadata"
+      },
+      {
+        "from": "schema:QueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:QueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SparseVectorData"
+      },
+      {
+        "from": "schema:QueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorData"
+      },
+      {
+        "from": "schema:QueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorFilter"
+      },
+      {
+        "from": "schema:QueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorId"
+      },
+      {
+        "from": "schema:QueryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:QueryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:QueryMatch"
+      },
+      {
+        "from": "schema:UpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:UpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SparseVectorData"
+      },
+      {
+        "from": "schema:UpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorData"
+      },
+      {
+        "from": "schema:UpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VectorMetadata"
+      },
+      {
+        "from": "schema:UpsertRequest",
+        "kind": "REFERENCES",
+        "to": "schema:NamespaceName"
+      },
+      {
+        "from": "schema:UpsertRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UpsertVector"
+      },
+      {
+        "from": "schema:UpsertVector",
+        "kind": "REFERENCES",
+        "to": "schema:SparseVectorData"
+      },
+      {
+        "from": "schema:UpsertVector",
+        "kind": "REFERENCES",
+        "to": "schema:VectorData"
+      },
+      {
+        "from": "schema:UpsertVector",
+        "kind": "REFERENCES",
+        "to": "schema:VectorId"
+      },
+      {
+        "from": "schema:UpsertVector",
+        "kind": "REFERENCES",
+        "to": "schema:VectorMetadata"
       }
     ],
     "nodes": [
@@ -87,428 +437,817 @@
       },
       {
         "deprecated": false,
+        "description": "This operation returns a list of your Pinecone collections.",
         "id": "operation:get:/collections",
         "kind": "operation",
         "method": "get",
         "name": "list_collections",
         "path": "/collections",
         "pointer": "#/paths/~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CollectionsList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "List collections"
+        "summary": "List collections",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation creates a Pinecone collection.",
         "id": "operation:post:/collections",
         "kind": "operation",
         "method": "post",
         "name": "create_collection",
         "path": "/collections",
         "pointer": "#/paths/~1collections/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CollectionDefinition"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "409",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Create collection"
+        "summary": "Create collection",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collectionName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_collection",
-        "path": "/collections/{collectionName}",
-        "pointer": "#/paths/~1collections~1{collectionName}/delete",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
-        "summary": "Delete Collection"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a description of a collection.",
         "id": "operation:get:/collections/{collectionName}",
         "kind": "operation",
         "method": "get",
         "name": "describe_collection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "collectionName",
+            "required": true,
+            "type": "CollectionName"
+          }
+        ],
         "path": "/collections/{collectionName}",
         "pointer": "#/paths/~1collections~1{collectionName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Collection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Describe collection"
+        "summary": "Describe collection",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation deletes an existing collection.",
+        "id": "operation:delete:/collections/{collectionName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_collection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "collectionName",
+            "required": true,
+            "type": "CollectionName"
+          }
+        ],
+        "path": "/collections/{collectionName}",
+        "pointer": "#/paths/~1collections~1{collectionName}/delete",
+        "responses": [
+          {
+            "status": "202",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ],
+        "summary": "Delete Collection",
+        "tags": [
+          "Index Operations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The `DescribeIndexStats` operation returns statistics about the index's contents, including the vector count per namespace and the number of dimensions.",
         "id": "operation:post:/describe_index_stats",
         "kind": "operation",
         "method": "post",
         "name": "DescribeIndexStats",
         "path": "/describe_index_stats",
         "pointer": "#/paths/~1describe_index_stats/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DescribeIndexStatsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DescribeIndexStatsResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Describe Index Stats"
+        "summary": "Describe Index Stats",
+        "tags": [
+          "Vector Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation returns a list of your Pinecone indexes.",
         "id": "operation:get:/indexes",
         "kind": "operation",
         "method": "get",
         "name": "list_indexes",
         "path": "/indexes",
         "pointer": "#/paths/~1indexes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IndexesList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "List indexes"
+        "summary": "List indexes",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation creates a Pinecone index.",
         "id": "operation:post:/indexes",
         "kind": "operation",
         "method": "post",
         "name": "create_index",
         "path": "/indexes",
         "pointer": "#/paths/~1indexes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "IndexDefinition"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "409",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Create index"
+        "summary": "Create index",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/{indexName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_index",
-        "path": "/indexes/{indexName}",
-        "pointer": "#/paths/~1indexes~1{indexName}/delete",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
-        "summary": "Delete Index"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a description of an index.",
         "id": "operation:get:/indexes/{indexName}",
         "kind": "operation",
         "method": "get",
         "name": "describe_index",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "indexName",
+            "required": true,
+            "type": "IndexName"
+          }
+        ],
         "path": "/indexes/{indexName}",
         "pointer": "#/paths/~1indexes~1{indexName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Index"
+          },
+          {
+            "status": "404",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Describe index"
+        "summary": "Describe index",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation deletes an existing index.",
+        "id": "operation:delete:/indexes/{indexName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_index",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "indexName",
+            "required": true,
+            "type": "IndexName"
+          }
+        ],
+        "path": "/indexes/{indexName}",
+        "pointer": "#/paths/~1indexes~1{indexName}/delete",
+        "responses": [
+          {
+            "status": "202",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ],
+        "summary": "Delete Index",
+        "tags": [
+          "Index Operations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This operation specifies the pod type and number of replicas for an index.",
         "id": "operation:patch:/indexes/{indexName}",
         "kind": "operation",
         "method": "patch",
         "name": "configure_index",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "indexName",
+            "required": true,
+            "type": "IndexName"
+          }
+        ],
         "path": "/indexes/{indexName}",
         "pointer": "#/paths/~1indexes~1{indexName}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "IndexConfiguration"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "404",
+            "type": "ErrorMessage"
+          },
+          {
+            "status": "500",
+            "type": "ErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Configure index"
+        "summary": "Configure index",
+        "tags": [
+          "Index Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `Query` operation searches a namespace, using a query vector.",
         "id": "operation:post:/query",
         "kind": "operation",
         "method": "post",
         "name": "Query",
         "path": "/query",
         "pointer": "#/paths/~1query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "QueryRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "QueryResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Query"
+        "summary": "Query",
+        "tags": [
+          "Vector Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `Delete` operation deletes vectors, by id, from a single namespace.",
         "id": "operation:post:/vectors/delete",
         "kind": "operation",
         "method": "post",
         "name": "Delete",
         "path": "/vectors/delete",
         "pointer": "#/paths/~1vectors~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeleteRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Delete"
+        "summary": "Delete",
+        "tags": [
+          "Vector Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `Fetch` operation looks up and returns vectors, by ID, from a single namespace.",
         "id": "operation:post:/vectors/fetch",
         "kind": "operation",
         "method": "post",
         "name": "Fetch",
         "path": "/vectors/fetch",
         "pointer": "#/paths/~1vectors~1fetch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FetchRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Fetch"
+        "summary": "Fetch",
+        "tags": [
+          "Vector Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `Update` operation updates vector in a namespace.",
         "id": "operation:post:/vectors/update",
         "kind": "operation",
         "method": "post",
         "name": "Update",
         "path": "/vectors/update",
         "pointer": "#/paths/~1vectors~1update/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Fetch"
+        "summary": "Fetch",
+        "tags": [
+          "Vector Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Upsert operation writes vectors into a namespace.",
         "id": "operation:post:/vectors/upsert",
         "kind": "operation",
         "method": "post",
         "name": "Upsert",
         "path": "/vectors/upsert",
         "pointer": "#/paths/~1vectors~1upsert/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpsertRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpsertResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Upsert"
+        "summary": "Upsert",
+        "tags": [
+          "Vector Operations"
+        ]
       },
       {
         "id": "schema:Collection",
         "kind": "schema",
-        "name": "Collection"
+        "name": "Collection",
+        "type": "object"
       },
       {
         "id": "schema:CollectionDefinition",
         "kind": "schema",
-        "name": "CollectionDefinition"
+        "name": "CollectionDefinition",
+        "type": "object"
       },
       {
+        "description": "The unique name of a collection.",
         "id": "schema:CollectionName",
         "kind": "schema",
-        "name": "CollectionName"
+        "name": "CollectionName",
+        "type": "string:CollectionName"
       },
       {
+        "description": "The current status of a collection.",
         "id": "schema:CollectionState",
         "kind": "schema",
-        "name": "CollectionState"
+        "name": "CollectionState",
+        "type": "string:CollectionState"
       },
       {
         "id": "schema:CollectionsList",
         "kind": "schema",
-        "name": "CollectionsList"
+        "name": "CollectionsList",
+        "type": "CollectionName[]"
       },
       {
         "id": "schema:DeleteRequest",
         "kind": "schema",
-        "name": "DeleteRequest"
+        "name": "DeleteRequest",
+        "type": "object"
       },
       {
         "id": "schema:DeleteResponse",
         "kind": "schema",
-        "name": "DeleteResponse"
+        "name": "DeleteResponse",
+        "type": "object"
       },
       {
         "id": "schema:DescribeIndexStatsRequest",
         "kind": "schema",
-        "name": "DescribeIndexStatsRequest"
+        "name": "DescribeIndexStatsRequest",
+        "type": "object"
       },
       {
         "id": "schema:DescribeIndexStatsResponse",
         "kind": "schema",
-        "name": "DescribeIndexStatsResponse"
+        "name": "DescribeIndexStatsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Environment",
         "kind": "schema",
-        "name": "Environment"
+        "name": "Environment",
+        "type": "string"
       },
       {
         "id": "schema:ErrorMessage",
         "kind": "schema",
-        "name": "ErrorMessage"
+        "name": "ErrorMessage",
+        "type": "string"
       },
       {
         "id": "schema:FetchRequest",
         "kind": "schema",
-        "name": "FetchRequest"
+        "name": "FetchRequest",
+        "type": "object"
       },
       {
         "id": "schema:FetchResponse",
         "kind": "schema",
-        "name": "FetchResponse"
+        "name": "FetchResponse",
+        "type": "object"
       },
       {
         "id": "schema:Index",
         "kind": "schema",
-        "name": "Index"
+        "name": "Index",
+        "type": "object"
       },
       {
         "id": "schema:IndexConfiguration",
         "kind": "schema",
-        "name": "IndexConfiguration"
+        "name": "IndexConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:IndexDatabase",
         "kind": "schema",
-        "name": "IndexDatabase"
+        "name": "IndexDatabase",
+        "type": "object"
       },
       {
         "id": "schema:IndexDefinition",
         "kind": "schema",
-        "name": "IndexDefinition"
+        "name": "IndexDefinition",
+        "type": "object"
       },
       {
+        "description": "Configuration for the behavior of Pinecone's internal metadata index.",
         "id": "schema:IndexMetadataConfig",
         "kind": "schema",
-        "name": "IndexMetadataConfig"
+        "name": "IndexMetadataConfig",
+        "type": "object"
       },
       {
+        "description": "The vector similarity metric of the index",
         "id": "schema:IndexMetric",
         "kind": "schema",
-        "name": "IndexMetric"
+        "name": "IndexMetric",
+        "type": "string"
       },
       {
+        "description": "The unique name of an index.",
         "id": "schema:IndexName",
         "kind": "schema",
-        "name": "IndexName"
+        "name": "IndexName",
+        "type": "string:IndexName"
       },
       {
         "id": "schema:IndexNamespaceStats",
         "kind": "schema",
-        "name": "IndexNamespaceStats"
+        "name": "IndexNamespaceStats",
+        "type": "object"
       },
       {
+        "description": "The current status of a index.",
         "id": "schema:IndexState",
         "kind": "schema",
-        "name": "IndexState"
+        "name": "IndexState",
+        "type": "string:IndexState"
       },
       {
         "id": "schema:IndexStatus",
         "kind": "schema",
-        "name": "IndexStatus"
+        "name": "IndexStatus",
+        "type": "object"
       },
       {
         "id": "schema:IndexesList",
         "kind": "schema",
-        "name": "IndexesList"
+        "name": "IndexesList",
+        "type": "IndexName[]"
       },
       {
+        "description": "An index namespace name",
         "id": "schema:NamespaceName",
         "kind": "schema",
-        "name": "NamespaceName"
+        "name": "NamespaceName",
+        "type": "string:NamespaceName"
       },
       {
+        "description": "The pod type",
         "id": "schema:PodType",
         "kind": "schema",
-        "name": "PodType"
+        "name": "PodType",
+        "type": "string"
       },
       {
         "id": "schema:QueryMatch",
         "kind": "schema",
-        "name": "QueryMatch"
+        "name": "QueryMatch",
+        "type": "object"
       },
       {
         "id": "schema:QueryRequest",
         "kind": "schema",
-        "name": "QueryRequest"
+        "name": "QueryRequest",
+        "type": "object"
       },
       {
         "id": "schema:QueryResponse",
         "kind": "schema",
-        "name": "QueryResponse"
+        "name": "QueryResponse",
+        "type": "object"
       },
       {
+        "description": "Vector sparse data.",
         "id": "schema:SparseVectorData",
         "kind": "schema",
-        "name": "SparseVectorData"
+        "name": "SparseVectorData",
+        "type": "object"
       },
       {
         "id": "schema:UpdateRequest",
         "kind": "schema",
-        "name": "UpdateRequest"
+        "name": "UpdateRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateResponse",
         "kind": "schema",
-        "name": "UpdateResponse"
+        "name": "UpdateResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpsertRequest",
         "kind": "schema",
-        "name": "UpsertRequest"
+        "name": "UpsertRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpsertResponse",
         "kind": "schema",
-        "name": "UpsertResponse"
+        "name": "UpsertResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpsertVector",
         "kind": "schema",
-        "name": "UpsertVector"
+        "name": "UpsertVector",
+        "type": "object"
       },
       {
+        "description": "Vector dense data.",
         "id": "schema:VectorData",
         "kind": "schema",
-        "name": "VectorData"
+        "name": "VectorData",
+        "type": "number:float[]"
       },
       {
+        "description": "The number of dimensions in the vector representation",
         "id": "schema:VectorDimensionality",
         "kind": "schema",
-        "name": "VectorDimensionality"
+        "name": "VectorDimensionality",
+        "type": "integer:int32"
       },
       {
+        "description": "If this parameter is present, the operation only affects vectors that satisfy the filter.",
         "id": "schema:VectorFilter",
         "kind": "schema",
-        "name": "VectorFilter"
+        "name": "VectorFilter",
+        "type": "object"
       },
       {
+        "description": "The unique ID of a vector",
         "id": "schema:VectorId",
         "kind": "schema",
-        "name": "VectorId"
+        "name": "VectorId",
+        "type": "string:VectorId"
       },
       {
         "id": "schema:VectorMetadata",
         "kind": "schema",
-        "name": "VectorMetadata"
+        "name": "VectorMetadata",
+        "type": "object"
       }
     ]
   },

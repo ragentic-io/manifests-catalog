@@ -42,69 +42,261 @@
       },
       {
         "deprecated": false,
+        "description": "Gets `media` at a given path",
         "id": "operation:get:/id/media/{path}",
         "kind": "operation",
         "method": "get",
         "name": "get media",
+        "parameters": [
+          {
+            "description": "The media `identifier`",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The desired media `rendering` Possible values: * `original.jpg` * `original.pdf` * `thumbnail.jpg` (fixed with 70px) * `standard.jpg` (fixed width 440px and he…",
+            "in": "query",
+            "name": "rendering",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/id/media/{path}",
         "pointer": "#/paths/~1id~1media~1{path}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve media associated with Collections and Cenotaph subjects in Auckland Museum"
+        "summary": "Retrieve media associated with Collections and Cenotaph subjects in Auckland Museum",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets information about a `subject` identified by the `identifier`.",
         "id": "operation:get:/id/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "get subject",
+        "parameters": [
+          {
+            "description": "The identifier path of the `subject` you're looking for",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/id/{identifier}",
         "pointer": "#/paths/~1id~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Explore details about a given subject node"
+        "summary": "Explore details about a given subject node",
+        "tags": [
+          "subject"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to perform simple search queries for finding information and subjects you may be interested in Searches performed via this endpoint run again…",
         "id": "operation:get:/search/{index}/{operation}",
         "kind": "operation",
         "method": "get",
         "name": "get search",
+        "parameters": [
+          {
+            "description": "search index name Possible values: * `collectionsonline` * `cenotaph`",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "One of the supported elasticsearch operations like `_search` or `_suggest`",
+            "in": "path",
+            "name": "operation",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "One of the supported elasticsearch query parameter values for key `q`",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search/{index}/{operation}",
         "pointer": "#/paths/~1search~1{index}~1{operation}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Perform simple search queries over Auckland Museum Collections and Cenotaph data"
+        "summary": "Perform simple search queries over Auckland Museum Collections and Cenotaph data",
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searches performed via this endpoint run against an [Elastic](www.elastic.co) server.",
         "id": "operation:post:/search/{index}/{operation}",
         "kind": "operation",
         "method": "post",
         "name": "post search",
+        "parameters": [
+          {
+            "description": "search index name Possible values: * `collectionsonline` * `cenotaph`",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "One of the supported elasticsearch operations like `_search` or `_suggest`",
+            "in": "path",
+            "name": "operation",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/{index}/{operation}",
         "pointer": "#/paths/~1search~1{index}~1{operation}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object:application/json"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Perform complex search queries over Auckland Museum Collections and Cenotaph data"
+        "summary": "Perform complex search queries over Auckland Museum Collections and Cenotaph data",
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can execute your [SPARQL](http://www.w3.org/TR/rdf-sparql-query/) queries against this endpoint.",
         "id": "operation:get:/sparql",
         "kind": "operation",
         "method": "get",
         "name": "get sparql",
+        "parameters": [
+          {
+            "description": "sparql query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "callback",
+            "description": "The [JSON-P](http://json-p.org/) callback parameter",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Whether to get inferred results in the response",
+            "in": "query",
+            "name": "infer",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/sparql",
         "pointer": "#/paths/~1sparql/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Auckland Museum SPARQL endpoint"
+        "summary": "Auckland Museum SPARQL endpoint",
+        "tags": [
+          "sparql"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can execute your [SPARQL](http://www.w3.org/TR/rdf-sparql-query/) queries against this endpoint.",
         "id": "operation:post:/sparql",
         "kind": "operation",
         "method": "post",
         "name": "post sparql",
+        "parameters": [
+          {
+            "description": "sparql query",
+            "in": "formData",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Whether to get inferred results in the response",
+            "in": "formData",
+            "name": "infer",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/sparql",
         "pointer": "#/paths/~1sparql/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Auckland Museum SPARQL endpoint"
+        "summary": "Auckland Museum SPARQL endpoint",
+        "tags": [
+          "sparql"
+        ]
       }
     ]
   },

@@ -43,6 +43,611 @@
         "from": "optimade-local-7867449a19",
         "kind": "EXPOSES",
         "to": "operation:get:/versions"
+      },
+      {
+        "from": "operation:get:/info",
+        "kind": "RETURNS",
+        "to": "schema:InfoResponse"
+      },
+      {
+        "from": "operation:get:/info/{entry}",
+        "kind": "RETURNS",
+        "to": "schema:EntryInfoResponse"
+      },
+      {
+        "from": "operation:get:/links",
+        "kind": "RETURNS",
+        "to": "schema:LinksResponse"
+      },
+      {
+        "from": "operation:get:/references",
+        "kind": "RETURNS",
+        "to": "schema:ReferenceResponseMany"
+      },
+      {
+        "from": "operation:get:/references/{entry_id}",
+        "kind": "RETURNS",
+        "to": "schema:ReferenceResponseOne"
+      },
+      {
+        "from": "operation:get:/structures",
+        "kind": "RETURNS",
+        "to": "schema:StructureResponseMany"
+      },
+      {
+        "from": "operation:get:/structures/{entry_id}",
+        "kind": "RETURNS",
+        "to": "schema:StructureResponseOne"
+      },
+      {
+        "from": "schema:BaseInfoAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:AvailableApiVersion"
+      },
+      {
+        "from": "schema:BaseInfoResource",
+        "kind": "REFERENCES",
+        "to": "schema:BaseInfoAttributes"
+      },
+      {
+        "from": "schema:BaseInfoResource",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:BaseInfoResource",
+        "kind": "REFERENCES",
+        "to": "schema:Relationships"
+      },
+      {
+        "from": "schema:BaseInfoResource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceLinks"
+      },
+      {
+        "from": "schema:BaseRelationshipResource",
+        "kind": "REFERENCES",
+        "to": "schema:BaseRelationshipMeta"
+      },
+      {
+        "from": "schema:EntryInfoProperty",
+        "kind": "REFERENCES",
+        "to": "schema:DataType"
+      },
+      {
+        "from": "schema:EntryInfoResource",
+        "kind": "REFERENCES",
+        "to": "schema:EntryInfoProperty"
+      },
+      {
+        "from": "schema:EntryInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EntryInfoResource"
+      },
+      {
+        "from": "schema:EntryInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:EntryInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:EntryInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:EntryInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:EntryInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:EntryRelationships",
+        "kind": "REFERENCES",
+        "to": "schema:ReferenceRelationship"
+      },
+      {
+        "from": "schema:EntryRelationships",
+        "kind": "REFERENCES",
+        "to": "schema:StructureRelationship"
+      },
+      {
+        "from": "schema:EntryResource",
+        "kind": "REFERENCES",
+        "to": "schema:EntryRelationships"
+      },
+      {
+        "from": "schema:EntryResource",
+        "kind": "REFERENCES",
+        "to": "schema:EntryResourceAttributes"
+      },
+      {
+        "from": "schema:EntryResource",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:EntryResource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceLinks"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorLinks"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorSource"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:ErrorLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OptimadeError"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:Implementation",
+        "kind": "REFERENCES",
+        "to": "schema:ImplementationMaintainer"
+      },
+      {
+        "from": "schema:Implementation",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:InfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BaseInfoResource"
+      },
+      {
+        "from": "schema:InfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:InfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:InfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:InfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:InfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:JsonApi",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:LinksResource",
+        "kind": "REFERENCES",
+        "to": "schema:EntryRelationships"
+      },
+      {
+        "from": "schema:LinksResource",
+        "kind": "REFERENCES",
+        "to": "schema:LinksResourceAttributes"
+      },
+      {
+        "from": "schema:LinksResource",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:LinksResource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceLinks"
+      },
+      {
+        "from": "schema:LinksResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Aggregate"
+      },
+      {
+        "from": "schema:LinksResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:LinksResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:LinkType"
+      },
+      {
+        "from": "schema:LinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EntryResource"
+      },
+      {
+        "from": "schema:LinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:LinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:LinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LinksResource"
+      },
+      {
+        "from": "schema:LinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:LinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:OptimadeError",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorLinks"
+      },
+      {
+        "from": "schema:OptimadeError",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorSource"
+      },
+      {
+        "from": "schema:OptimadeError",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Provider",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:ReferenceRelationship",
+        "kind": "REFERENCES",
+        "to": "schema:BaseRelationshipResource"
+      },
+      {
+        "from": "schema:ReferenceRelationship",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:ReferenceRelationship",
+        "kind": "REFERENCES",
+        "to": "schema:RelationshipLinks"
+      },
+      {
+        "from": "schema:ReferenceResource",
+        "kind": "REFERENCES",
+        "to": "schema:EntryRelationships"
+      },
+      {
+        "from": "schema:ReferenceResource",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:ReferenceResource",
+        "kind": "REFERENCES",
+        "to": "schema:ReferenceResourceAttributes"
+      },
+      {
+        "from": "schema:ReferenceResource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceLinks"
+      },
+      {
+        "from": "schema:ReferenceResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:ReferenceResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:EntryResource"
+      },
+      {
+        "from": "schema:ReferenceResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:ReferenceResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:ReferenceResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:ReferenceResource"
+      },
+      {
+        "from": "schema:ReferenceResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:ReferenceResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:ReferenceResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:EntryResource"
+      },
+      {
+        "from": "schema:ReferenceResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:ReferenceResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:ReferenceResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:ReferenceResource"
+      },
+      {
+        "from": "schema:ReferenceResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:ReferenceResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:RelationshipLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:Attributes"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:Relationships"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceLinks"
+      },
+      {
+        "from": "schema:ResourceLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:ResponseMeta",
+        "kind": "REFERENCES",
+        "to": "schema:Implementation"
+      },
+      {
+        "from": "schema:ResponseMeta",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:ResponseMeta",
+        "kind": "REFERENCES",
+        "to": "schema:Provider"
+      },
+      {
+        "from": "schema:ResponseMeta",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMetaQuery"
+      },
+      {
+        "from": "schema:ResponseMeta",
+        "kind": "REFERENCES",
+        "to": "schema:Warnings"
+      },
+      {
+        "from": "schema:StructureRelationship",
+        "kind": "REFERENCES",
+        "to": "schema:BaseRelationshipResource"
+      },
+      {
+        "from": "schema:StructureRelationship",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:StructureRelationship",
+        "kind": "REFERENCES",
+        "to": "schema:RelationshipLinks"
+      },
+      {
+        "from": "schema:StructureResource",
+        "kind": "REFERENCES",
+        "to": "schema:EntryRelationships"
+      },
+      {
+        "from": "schema:StructureResource",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:StructureResource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceLinks"
+      },
+      {
+        "from": "schema:StructureResource",
+        "kind": "REFERENCES",
+        "to": "schema:StructureResourceAttributes"
+      },
+      {
+        "from": "schema:StructureResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Assembly"
+      },
+      {
+        "from": "schema:StructureResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Periodicity"
+      },
+      {
+        "from": "schema:StructureResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Species"
+      },
+      {
+        "from": "schema:StructureResourceAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:StructureFeatures"
+      },
+      {
+        "from": "schema:StructureResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:EntryResource"
+      },
+      {
+        "from": "schema:StructureResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:StructureResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:StructureResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:StructureResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:StructureResource"
+      },
+      {
+        "from": "schema:StructureResponseMany",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:StructureResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:EntryResource"
+      },
+      {
+        "from": "schema:StructureResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:StructureResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:JsonApi"
+      },
+      {
+        "from": "schema:StructureResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMeta"
+      },
+      {
+        "from": "schema:StructureResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:StructureResource"
+      },
+      {
+        "from": "schema:StructureResponseOne",
+        "kind": "REFERENCES",
+        "to": "schema:ToplevelLinks"
+      },
+      {
+        "from": "schema:ToplevelLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:Warnings",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorLinks"
+      },
+      {
+        "from": "schema:Warnings",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorSource"
+      },
+      {
+        "from": "schema:Warnings",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
       }
     ],
     "nodes": [
@@ -58,8 +663,46 @@
         "name": "get_info_info_get",
         "path": "/info",
         "pointer": "#/paths/~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InfoResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Info"
+        "summary": "Get Info",
+        "tags": [
+          "Info"
+        ]
       },
       {
         "deprecated": false,
@@ -67,10 +710,56 @@
         "kind": "operation",
         "method": "get",
         "name": "get_entry_info_info__entry__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entry",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/info/{entry}",
         "pointer": "#/paths/~1info~1{entry}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EntryInfoResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Entry Info"
+        "summary": "Get Entry Info",
+        "tags": [
+          "Info"
+        ]
       },
       {
         "deprecated": false,
@@ -78,10 +767,149 @@
         "kind": "operation",
         "method": "get",
         "name": "get_links_links_get",
+        "parameters": [
+          {
+            "description": "A filter string, in the format described in section API Filtering Format Specification of the specification.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "The output format requested (see section Response Format).",
+            "in": "query",
+            "name": "response_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An email address of the user making the request.",
+            "in": "query",
+            "name": "email_address",
+            "required": false,
+            "type": "string:email"
+          },
+          {
+            "description": "A comma-delimited set of fields to be provided in the output.",
+            "in": "query",
+            "name": "response_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If supporting sortable queries, an implementation MUST use the `sort` query parameter with format as specified by [JSON API 1.0](https://jsonapi.org/format/1.0…",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Sets a numerical limit on the number of entries returned.",
+            "in": "query",
+            "name": "page_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_number",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_cursor",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_above",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_below",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "references",
+            "description": "A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `in…",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If the client provides the parameter, the value SHOULD have the format `vMAJOR` or `vMAJOR.MINOR`, where MAJOR is a major version and MINOR is a minor version…",
+            "in": "query",
+            "name": "api_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/links",
         "pointer": "#/paths/~1links/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinksResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Links"
+        "summary": "Get Links",
+        "tags": [
+          "Links"
+        ]
       },
       {
         "deprecated": false,
@@ -89,10 +917,149 @@
         "kind": "operation",
         "method": "get",
         "name": "get_references_references_get",
+        "parameters": [
+          {
+            "description": "A filter string, in the format described in section API Filtering Format Specification of the specification.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "The output format requested (see section Response Format).",
+            "in": "query",
+            "name": "response_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An email address of the user making the request.",
+            "in": "query",
+            "name": "email_address",
+            "required": false,
+            "type": "string:email"
+          },
+          {
+            "description": "A comma-delimited set of fields to be provided in the output.",
+            "in": "query",
+            "name": "response_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If supporting sortable queries, an implementation MUST use the `sort` query parameter with format as specified by [JSON API 1.0](https://jsonapi.org/format/1.0…",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Sets a numerical limit on the number of entries returned.",
+            "in": "query",
+            "name": "page_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_number",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_cursor",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_above",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_below",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "references",
+            "description": "A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `in…",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If the client provides the parameter, the value SHOULD have the format `vMAJOR` or `vMAJOR.MINOR`, where MAJOR is a major version and MINOR is a minor version…",
+            "in": "query",
+            "name": "api_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/references",
         "pointer": "#/paths/~1references/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReferenceResponseMany"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get References"
+        "summary": "Get References",
+        "tags": [
+          "References"
+        ]
       },
       {
         "deprecated": false,
@@ -100,10 +1067,93 @@
         "kind": "operation",
         "method": "get",
         "name": "get_single_reference_references__entry_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entry_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "The output format requested (see section Response Format).",
+            "in": "query",
+            "name": "response_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An email address of the user making the request.",
+            "in": "query",
+            "name": "email_address",
+            "required": false,
+            "type": "string:email"
+          },
+          {
+            "description": "A comma-delimited set of fields to be provided in the output.",
+            "in": "query",
+            "name": "response_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "references",
+            "description": "A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `in…",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If the client provides the parameter, the value SHOULD have the format `vMAJOR` or `vMAJOR.MINOR`, where MAJOR is a major version and MINOR is a minor version…",
+            "in": "query",
+            "name": "api_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/references/{entry_id}",
         "pointer": "#/paths/~1references~1{entry_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReferenceResponseOne"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Single Reference"
+        "summary": "Get Single Reference",
+        "tags": [
+          "References"
+        ]
       },
       {
         "deprecated": false,
@@ -111,10 +1161,149 @@
         "kind": "operation",
         "method": "get",
         "name": "get_structures_structures_get",
+        "parameters": [
+          {
+            "description": "A filter string, in the format described in section API Filtering Format Specification of the specification.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "The output format requested (see section Response Format).",
+            "in": "query",
+            "name": "response_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An email address of the user making the request.",
+            "in": "query",
+            "name": "email_address",
+            "required": false,
+            "type": "string:email"
+          },
+          {
+            "description": "A comma-delimited set of fields to be provided in the output.",
+            "in": "query",
+            "name": "response_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If supporting sortable queries, an implementation MUST use the `sort` query parameter with format as specified by [JSON API 1.0](https://jsonapi.org/format/1.0…",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Sets a numerical limit on the number of entries returned.",
+            "in": "query",
+            "name": "page_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_number",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_cursor",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_above",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.",
+            "in": "query",
+            "name": "page_below",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "references",
+            "description": "A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `in…",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If the client provides the parameter, the value SHOULD have the format `vMAJOR` or `vMAJOR.MINOR`, where MAJOR is a major version and MINOR is a minor version…",
+            "in": "query",
+            "name": "api_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/structures",
         "pointer": "#/paths/~1structures/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StructureResponseMany"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Structures"
+        "summary": "Get Structures",
+        "tags": [
+          "Structures"
+        ]
       },
       {
         "deprecated": false,
@@ -122,63 +1311,173 @@
         "kind": "operation",
         "method": "get",
         "name": "get_single_structure_structures__entry_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entry_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "The output format requested (see section Response Format).",
+            "in": "query",
+            "name": "response_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An email address of the user making the request.",
+            "in": "query",
+            "name": "email_address",
+            "required": false,
+            "type": "string:email"
+          },
+          {
+            "description": "A comma-delimited set of fields to be provided in the output.",
+            "in": "query",
+            "name": "response_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "references",
+            "description": "A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `in…",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If the client provides the parameter, the value SHOULD have the format `vMAJOR` or `vMAJOR.MINOR`, where MAJOR is a major version and MINOR is a minor version…",
+            "in": "query",
+            "name": "api_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/structures/{entry_id}",
         "pointer": "#/paths/~1structures~1{entry_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StructureResponseOne"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "501",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "553",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Single Structure"
+        "summary": "Get Single Structure",
+        "tags": [
+          "Structures"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Respond with the text/csv representation for the served versions.",
         "id": "operation:get:/versions",
         "kind": "operation",
         "method": "get",
         "name": "get_versions_versions_get",
         "path": "/versions",
         "pointer": "#/paths/~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Versions"
+        "summary": "Get Versions",
+        "tags": [
+          "Versions"
+        ]
       },
       {
+        "description": "Enumeration of aggregate values",
         "id": "schema:Aggregate",
         "kind": "schema",
         "name": "Aggregate"
       },
       {
+        "description": "A description of groups of sites that are statistically correlated.",
         "id": "schema:Assembly",
         "kind": "schema",
-        "name": "Assembly"
+        "name": "Assembly",
+        "type": "object"
       },
       {
+        "description": "Members of the attributes object (\"attributes\") represent information about the resource object in which it's defined.",
         "id": "schema:Attributes",
         "kind": "schema",
-        "name": "Attributes"
+        "name": "Attributes",
+        "type": "object"
       },
       {
+        "description": "A JSON object containing information about an available API version",
         "id": "schema:AvailableApiVersion",
         "kind": "schema",
-        "name": "AvailableApiVersion"
+        "name": "AvailableApiVersion",
+        "type": "object"
       },
       {
+        "description": "Attributes for Base URL Info endpoint",
         "id": "schema:BaseInfoAttributes",
         "kind": "schema",
-        "name": "BaseInfoAttributes"
+        "name": "BaseInfoAttributes",
+        "type": "object"
       },
       {
+        "description": "Resource objects appear in a JSON API document to represent resources.",
         "id": "schema:BaseInfoResource",
         "kind": "schema",
-        "name": "BaseInfoResource"
+        "name": "BaseInfoResource",
+        "type": "object"
       },
       {
+        "description": "Specific meta field for base relationship resource",
         "id": "schema:BaseRelationshipMeta",
         "kind": "schema",
-        "name": "BaseRelationshipMeta"
+        "name": "BaseRelationshipMeta",
+        "type": "object"
       },
       {
+        "description": "Minimum requirements to represent a relationship resource",
         "id": "schema:BaseRelationshipResource",
         "kind": "schema",
-        "name": "BaseRelationshipResource"
+        "name": "BaseRelationshipResource",
+        "type": "object"
       },
       {
+        "description": "Optimade Data Types See the section \"Data types\" in the OPTIMADE API specification for more information.",
         "id": "schema:DataType",
         "kind": "schema",
         "name": "DataType"
@@ -186,222 +1485,306 @@
       {
         "id": "schema:EntryInfoProperty",
         "kind": "schema",
-        "name": "EntryInfoProperty"
+        "name": "EntryInfoProperty",
+        "type": "object"
       },
       {
         "id": "schema:EntryInfoResource",
         "kind": "schema",
-        "name": "EntryInfoResource"
+        "name": "EntryInfoResource",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:EntryInfoResponse",
         "kind": "schema",
-        "name": "EntryInfoResponse"
+        "name": "EntryInfoResponse",
+        "type": "object"
       },
       {
+        "description": "This model wraps the JSON API Relationships to include type-specific top level keys.",
         "id": "schema:EntryRelationships",
         "kind": "schema",
-        "name": "EntryRelationships"
+        "name": "EntryRelationships",
+        "type": "object"
       },
       {
+        "description": "The base model for an entry resource.",
         "id": "schema:EntryResource",
         "kind": "schema",
-        "name": "EntryResource"
+        "name": "EntryResource",
+        "type": "object"
       },
       {
+        "description": "Contains key-value pairs representing the entry's properties.",
         "id": "schema:EntryResourceAttributes",
         "kind": "schema",
-        "name": "EntryResourceAttributes"
+        "name": "EntryResourceAttributes",
+        "type": "object"
       },
       {
+        "description": "An error response",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "A Links object specific to Error objects",
         "id": "schema:ErrorLinks",
         "kind": "schema",
-        "name": "ErrorLinks"
+        "name": "ErrorLinks",
+        "type": "object"
       },
       {
+        "description": "errors MUST be present and data MUST be skipped",
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
+        "description": "an object containing references to the source of the error",
         "id": "schema:ErrorSource",
         "kind": "schema",
-        "name": "ErrorSource"
+        "name": "ErrorSource",
+        "type": "object"
       },
       {
+        "description": "Information on the server implementation",
         "id": "schema:Implementation",
         "kind": "schema",
-        "name": "Implementation"
+        "name": "Implementation",
+        "type": "object"
       },
       {
+        "description": "Details about the maintainer of the implementation",
         "id": "schema:ImplementationMaintainer",
         "kind": "schema",
-        "name": "ImplementationMaintainer"
+        "name": "ImplementationMaintainer",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:InfoResponse",
         "kind": "schema",
-        "name": "InfoResponse"
+        "name": "InfoResponse",
+        "type": "object"
       },
       {
+        "description": "An object describing the server's implementation",
         "id": "schema:JsonApi",
         "kind": "schema",
-        "name": "JsonApi"
+        "name": "JsonApi",
+        "type": "object"
       },
       {
+        "description": "A link **MUST** be represented as either: a string containing the link's URL or a link object.",
         "id": "schema:Link",
         "kind": "schema",
-        "name": "Link"
+        "name": "Link",
+        "type": "object"
       },
       {
+        "description": "Enumeration of link_type values",
         "id": "schema:LinkType",
         "kind": "schema",
         "name": "LinkType"
       },
       {
+        "description": "A Links endpoint resource object",
         "id": "schema:LinksResource",
         "kind": "schema",
-        "name": "LinksResource"
+        "name": "LinksResource",
+        "type": "object"
       },
       {
+        "description": "Links endpoint resource object attributes",
         "id": "schema:LinksResourceAttributes",
         "kind": "schema",
-        "name": "LinksResourceAttributes"
+        "name": "LinksResourceAttributes",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:LinksResponse",
         "kind": "schema",
-        "name": "LinksResponse"
+        "name": "LinksResponse",
+        "type": "object"
       },
       {
+        "description": "Non-standard meta-information that can not be represented as an attribute or relationship.",
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
+        "description": "detail MUST be present",
         "id": "schema:OptimadeError",
         "kind": "schema",
-        "name": "OptimadeError"
+        "name": "OptimadeError",
+        "type": "object"
       },
       {
+        "description": "Integer enumeration of dimension_types values",
         "id": "schema:Periodicity",
         "kind": "schema",
-        "name": "Periodicity"
+        "name": "Periodicity",
+        "type": "integer"
       },
       {
+        "description": "A person, i.e., an author, editor or other.",
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
+        "description": "Information on the database provider of the implementation.",
         "id": "schema:Provider",
         "kind": "schema",
-        "name": "Provider"
+        "name": "Provider",
+        "type": "object"
       },
       {
+        "description": "Similar to normal JSON API relationship, but with addition of OPTIONAL meta field for a resource",
         "id": "schema:ReferenceRelationship",
         "kind": "schema",
-        "name": "ReferenceRelationship"
+        "name": "ReferenceRelationship",
+        "type": "object"
       },
       {
+        "description": "The `references` entries describe bibliographic references.",
         "id": "schema:ReferenceResource",
         "kind": "schema",
-        "name": "ReferenceResource"
+        "name": "ReferenceResource",
+        "type": "object"
       },
       {
+        "description": "Model that stores the attributes of a reference.",
         "id": "schema:ReferenceResourceAttributes",
         "kind": "schema",
-        "name": "ReferenceResourceAttributes"
+        "name": "ReferenceResourceAttributes",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:ReferenceResponseMany",
         "kind": "schema",
-        "name": "ReferenceResponseMany"
+        "name": "ReferenceResponseMany",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:ReferenceResponseOne",
         "kind": "schema",
-        "name": "ReferenceResponseOne"
+        "name": "ReferenceResponseOne",
+        "type": "object"
       },
       {
+        "description": "A resource object **MAY** contain references to other resource objects (\"relationships\").",
         "id": "schema:RelationshipLinks",
         "kind": "schema",
-        "name": "RelationshipLinks"
+        "name": "RelationshipLinks",
+        "type": "object"
       },
       {
+        "description": "Members of the relationships object (\"relationships\") represent references from the resource object in which it's defined to other resource objects.",
         "id": "schema:Relationships",
         "kind": "schema",
-        "name": "Relationships"
+        "name": "Relationships",
+        "type": "object"
       },
       {
+        "description": "Resource objects appear in a JSON API document to represent resources.",
         "id": "schema:Resource",
         "kind": "schema",
-        "name": "Resource"
+        "name": "Resource",
+        "type": "object"
       },
       {
+        "description": "A Resource Links object",
         "id": "schema:ResourceLinks",
         "kind": "schema",
-        "name": "ResourceLinks"
+        "name": "ResourceLinks",
+        "type": "object"
       },
       {
+        "description": "A [JSON API meta member](https://jsonapi.org/format/1.0#document-meta) that contains JSON API meta objects of non-standard meta-information.",
         "id": "schema:ResponseMeta",
         "kind": "schema",
-        "name": "ResponseMeta"
+        "name": "ResponseMeta",
+        "type": "object"
       },
       {
+        "description": "Information on the query that was requested.",
         "id": "schema:ResponseMetaQuery",
         "kind": "schema",
-        "name": "ResponseMetaQuery"
+        "name": "ResponseMetaQuery",
+        "type": "object"
       },
       {
+        "description": "A list describing the species of the sites of this structure.",
         "id": "schema:Species",
         "kind": "schema",
-        "name": "Species"
+        "name": "Species",
+        "type": "object"
       },
       {
+        "description": "Enumeration of structure_features values",
         "id": "schema:StructureFeatures",
         "kind": "schema",
         "name": "StructureFeatures"
       },
       {
+        "description": "Similar to normal JSON API relationship, but with addition of OPTIONAL meta field for a resource",
         "id": "schema:StructureRelationship",
         "kind": "schema",
-        "name": "StructureRelationship"
+        "name": "StructureRelationship",
+        "type": "object"
       },
       {
+        "description": "Representing a structure.",
         "id": "schema:StructureResource",
         "kind": "schema",
-        "name": "StructureResource"
+        "name": "StructureResource",
+        "type": "object"
       },
       {
+        "description": "This class contains the Field for the attributes used to represent a structure, e.g.",
         "id": "schema:StructureResourceAttributes",
         "kind": "schema",
-        "name": "StructureResourceAttributes"
+        "name": "StructureResourceAttributes",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:StructureResponseMany",
         "kind": "schema",
-        "name": "StructureResponseMany"
+        "name": "StructureResponseMany",
+        "type": "object"
       },
       {
+        "description": "errors are not allowed",
         "id": "schema:StructureResponseOne",
         "kind": "schema",
-        "name": "StructureResponseOne"
+        "name": "StructureResponseOne",
+        "type": "object"
       },
       {
+        "description": "A set of Links objects, possibly including pagination",
         "id": "schema:ToplevelLinks",
         "kind": "schema",
-        "name": "ToplevelLinks"
+        "name": "ToplevelLinks",
+        "type": "object"
       },
       {
+        "description": "OPTIMADE-specific warning class based on OPTIMADE-specific JSON API Error.",
         "id": "schema:Warnings",
         "kind": "schema",
-        "name": "Warnings"
+        "name": "Warnings",
+        "type": "object"
       }
     ]
   },

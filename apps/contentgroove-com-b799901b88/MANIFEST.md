@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_contentgroove.com_wp-content_up
 
 | | |
 | --- | --- |
-| Signed bundle | `9fb7afd467735805527f5d7f5da3dad95dc70946b3c8bfc2d91694b6953f7573` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,20 +32,22 @@ logo: "https://api.apis.guru/v2/cache/logo/https_contentgroove.com_wp-content_up
 
 ## Operations (15)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/clips` | get /api/v1/clips | list clips |
-| POST | `/api/v1/clips` | post /api/v1/clips | create clip |
-| DELETE | `/api/v1/clips/{id}` | delete /api/v1/clips/{id} | delete clip |
-| GET | `/api/v1/clips/{id}` | get /api/v1/clips/{id} | show clip |
-| PUT | `/api/v1/clips/{id}` | put /api/v1/clips/{id} | update clip |
-| GET | `/api/v1/direct_uploads` | get /api/v1/direct_uploads | prepare presigned upload url |
-| GET | `/api/v1/medias` | get /api/v1/medias | list medias |
-| POST | `/api/v1/medias` | post /api/v1/medias | create media |
-| DELETE | `/api/v1/medias/{id}` | delete /api/v1/medias/{id} | delete media |
-| GET | `/api/v1/medias/{id}` | get /api/v1/medias/{id} | show media |
-| PUT | `/api/v1/medias/{id}` | put /api/v1/medias/{id} | update media |
-| GET | `/api/v1/webhook_subscriptions` | get /api/v1/webhook_subscriptions | list webhook subscriptions |
-| POST | `/api/v1/webhook_subscriptions` | post /api/v1/webhook_subscriptions | create webhook subscription |
-| DELETE | `/api/v1/webhook_subscriptions/{id}` | delete /api/v1/webhook_subscriptions/{id} | delete webhook subscription |
-| GET | `/api/v1/webhook_subscriptions/{id}` | get /api/v1/webhook_subscriptions/{id} | show webhook subscription |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/clips` | get /api/v1/clips | `filter`, `page`, `sort` | — | yes | list clips |
+| POST | `/api/v1/clips` | post /api/v1/clips | body*: object | — |  | create clip |
+| GET | `/api/v1/clips/{id}` | get /api/v1/clips/{id} | `id`* | — | yes | show clip |
+| PUT | `/api/v1/clips/{id}` | put /api/v1/clips/{id} | `id`*, body*: object | — |  | update clip |
+| DELETE | `/api/v1/clips/{id}` | delete /api/v1/clips/{id} | `id`* | — |  | delete clip |
+| GET | `/api/v1/direct_uploads` | get /api/v1/direct_uploads | — | — | yes | prepare presigned upload url |
+| GET | `/api/v1/medias` | get /api/v1/medias | `filter`, `page`, `sort` | — | yes | list medias |
+| POST | `/api/v1/medias` | post /api/v1/medias | body*: object | — |  | create media |
+| GET | `/api/v1/medias/{id}` | get /api/v1/medias/{id} | `id`* | — | yes | show media |
+| PUT | `/api/v1/medias/{id}` | put /api/v1/medias/{id} | `id`*, body*: object | — |  | update media |
+| DELETE | `/api/v1/medias/{id}` | delete /api/v1/medias/{id} | `id`* | — |  | delete media |
+| GET | `/api/v1/webhook_subscriptions` | get /api/v1/webhook_subscriptions | `filter`, `sort` | — | yes | list webhook subscriptions |
+| POST | `/api/v1/webhook_subscriptions` | post /api/v1/webhook_subscriptions | body*: object | — |  | create webhook subscription |
+| GET | `/api/v1/webhook_subscriptions/{id}` | get /api/v1/webhook_subscriptions/{id} | `id`* | — | yes | show webhook subscription |
+| DELETE | `/api/v1/webhook_subscriptions/{id}` | delete /api/v1/webhook_subscriptions/{id} | `id`* | — |  | delete webhook subscription |

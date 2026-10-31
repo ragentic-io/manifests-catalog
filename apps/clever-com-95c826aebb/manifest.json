@@ -223,6 +223,376 @@
         "from": "clever-com-95c826aebb",
         "kind": "EXPOSES",
         "to": "operation:get:/teachers/{id}/students"
+      },
+      {
+        "from": "operation:get:/contacts",
+        "kind": "RETURNS",
+        "to": "schema:StudentContactsResponse"
+      },
+      {
+        "from": "operation:get:/contacts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:StudentContactResponse"
+      },
+      {
+        "from": "operation:get:/contacts/{id}/district",
+        "kind": "RETURNS",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "operation:get:/contacts/{id}/student",
+        "kind": "RETURNS",
+        "to": "schema:StudentResponse"
+      },
+      {
+        "from": "operation:get:/district_admins",
+        "kind": "RETURNS",
+        "to": "schema:DistrictAdminsResponse"
+      },
+      {
+        "from": "operation:get:/district_admins/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DistrictAdminResponse"
+      },
+      {
+        "from": "operation:get:/districts",
+        "kind": "RETURNS",
+        "to": "schema:DistrictsResponse"
+      },
+      {
+        "from": "operation:get:/districts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "operation:get:/districts/{id}/admins",
+        "kind": "RETURNS",
+        "to": "schema:DistrictAdminsResponse"
+      },
+      {
+        "from": "operation:get:/districts/{id}/schools",
+        "kind": "RETURNS",
+        "to": "schema:SchoolsResponse"
+      },
+      {
+        "from": "operation:get:/districts/{id}/sections",
+        "kind": "RETURNS",
+        "to": "schema:SectionsResponse"
+      },
+      {
+        "from": "operation:get:/districts/{id}/status",
+        "kind": "RETURNS",
+        "to": "schema:DistrictStatusResponses"
+      },
+      {
+        "from": "operation:get:/districts/{id}/students",
+        "kind": "RETURNS",
+        "to": "schema:StudentsResponse"
+      },
+      {
+        "from": "operation:get:/districts/{id}/teachers",
+        "kind": "RETURNS",
+        "to": "schema:TeachersResponse"
+      },
+      {
+        "from": "operation:get:/school_admins",
+        "kind": "RETURNS",
+        "to": "schema:SchoolAdminsResponse"
+      },
+      {
+        "from": "operation:get:/school_admins/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SchoolAdminResponse"
+      },
+      {
+        "from": "operation:get:/school_admins/{id}/schools",
+        "kind": "RETURNS",
+        "to": "schema:SchoolsResponse"
+      },
+      {
+        "from": "operation:get:/schools",
+        "kind": "RETURNS",
+        "to": "schema:SchoolsResponse"
+      },
+      {
+        "from": "operation:get:/schools/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SchoolResponse"
+      },
+      {
+        "from": "operation:get:/schools/{id}/district",
+        "kind": "RETURNS",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "operation:get:/schools/{id}/sections",
+        "kind": "RETURNS",
+        "to": "schema:SectionsResponse"
+      },
+      {
+        "from": "operation:get:/schools/{id}/students",
+        "kind": "RETURNS",
+        "to": "schema:StudentsResponse"
+      },
+      {
+        "from": "operation:get:/schools/{id}/teachers",
+        "kind": "RETURNS",
+        "to": "schema:TeachersResponse"
+      },
+      {
+        "from": "operation:get:/sections",
+        "kind": "RETURNS",
+        "to": "schema:SectionsResponse"
+      },
+      {
+        "from": "operation:get:/sections/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SectionResponse"
+      },
+      {
+        "from": "operation:get:/sections/{id}/district",
+        "kind": "RETURNS",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "operation:get:/sections/{id}/school",
+        "kind": "RETURNS",
+        "to": "schema:SchoolResponse"
+      },
+      {
+        "from": "operation:get:/sections/{id}/students",
+        "kind": "RETURNS",
+        "to": "schema:StudentsResponse"
+      },
+      {
+        "from": "operation:get:/sections/{id}/teacher",
+        "kind": "RETURNS",
+        "to": "schema:TeacherResponse"
+      },
+      {
+        "from": "operation:get:/sections/{id}/teachers",
+        "kind": "RETURNS",
+        "to": "schema:TeachersResponse"
+      },
+      {
+        "from": "operation:get:/students",
+        "kind": "RETURNS",
+        "to": "schema:StudentsResponse"
+      },
+      {
+        "from": "operation:get:/students/{id}",
+        "kind": "RETURNS",
+        "to": "schema:StudentResponse"
+      },
+      {
+        "from": "operation:get:/students/{id}/contacts",
+        "kind": "RETURNS",
+        "to": "schema:StudentContactsForStudentResponse"
+      },
+      {
+        "from": "operation:get:/students/{id}/district",
+        "kind": "RETURNS",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "operation:get:/students/{id}/school",
+        "kind": "RETURNS",
+        "to": "schema:SchoolResponse"
+      },
+      {
+        "from": "operation:get:/students/{id}/sections",
+        "kind": "RETURNS",
+        "to": "schema:SectionsResponse"
+      },
+      {
+        "from": "operation:get:/students/{id}/teachers",
+        "kind": "RETURNS",
+        "to": "schema:TeachersResponse"
+      },
+      {
+        "from": "operation:get:/teachers",
+        "kind": "RETURNS",
+        "to": "schema:TeachersResponse"
+      },
+      {
+        "from": "operation:get:/teachers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TeacherResponse"
+      },
+      {
+        "from": "operation:get:/teachers/{id}/district",
+        "kind": "RETURNS",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "operation:get:/teachers/{id}/grade_levels",
+        "kind": "RETURNS",
+        "to": "schema:GradeLevelsResponse"
+      },
+      {
+        "from": "operation:get:/teachers/{id}/school",
+        "kind": "RETURNS",
+        "to": "schema:SchoolResponse"
+      },
+      {
+        "from": "operation:get:/teachers/{id}/sections",
+        "kind": "RETURNS",
+        "to": "schema:SectionsResponse"
+      },
+      {
+        "from": "operation:get:/teachers/{id}/students",
+        "kind": "RETURNS",
+        "to": "schema:StudentsResponse"
+      },
+      {
+        "from": "schema:DistrictAdmin",
+        "kind": "REFERENCES",
+        "to": "schema:Name"
+      },
+      {
+        "from": "schema:DistrictAdminResponse",
+        "kind": "REFERENCES",
+        "to": "schema:DistrictAdmin"
+      },
+      {
+        "from": "schema:DistrictAdminsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:DistrictAdmin"
+      },
+      {
+        "from": "schema:DistrictResponse",
+        "kind": "REFERENCES",
+        "to": "schema:District"
+      },
+      {
+        "from": "schema:DistrictStatusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:DistrictStatus"
+      },
+      {
+        "from": "schema:DistrictStatusResponses",
+        "kind": "REFERENCES",
+        "to": "schema:DistrictStatusResponse"
+      },
+      {
+        "from": "schema:DistrictsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:DistrictResponse"
+      },
+      {
+        "from": "schema:School",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:School",
+        "kind": "REFERENCES",
+        "to": "schema:Principal"
+      },
+      {
+        "from": "schema:SchoolAdmin",
+        "kind": "REFERENCES",
+        "to": "schema:Credentials"
+      },
+      {
+        "from": "schema:SchoolAdmin",
+        "kind": "REFERENCES",
+        "to": "schema:Name"
+      },
+      {
+        "from": "schema:SchoolAdminResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SchoolAdmin"
+      },
+      {
+        "from": "schema:SchoolAdminsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SchoolAdminResponse"
+      },
+      {
+        "from": "schema:SchoolResponse",
+        "kind": "REFERENCES",
+        "to": "schema:School"
+      },
+      {
+        "from": "schema:SchoolsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SchoolResponse"
+      },
+      {
+        "from": "schema:Section",
+        "kind": "REFERENCES",
+        "to": "schema:Term"
+      },
+      {
+        "from": "schema:SectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Section"
+      },
+      {
+        "from": "schema:SectionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SectionResponse"
+      },
+      {
+        "from": "schema:Student",
+        "kind": "REFERENCES",
+        "to": "schema:Credentials"
+      },
+      {
+        "from": "schema:Student",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:Student",
+        "kind": "REFERENCES",
+        "to": "schema:Name"
+      },
+      {
+        "from": "schema:StudentContactResponse",
+        "kind": "REFERENCES",
+        "to": "schema:StudentContact"
+      },
+      {
+        "from": "schema:StudentContactsForStudentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:StudentContact"
+      },
+      {
+        "from": "schema:StudentContactsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:StudentContactResponse"
+      },
+      {
+        "from": "schema:StudentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Student"
+      },
+      {
+        "from": "schema:StudentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:StudentResponse"
+      },
+      {
+        "from": "schema:Teacher",
+        "kind": "REFERENCES",
+        "to": "schema:Credentials"
+      },
+      {
+        "from": "schema:Teacher",
+        "kind": "REFERENCES",
+        "to": "schema:Name"
+      },
+      {
+        "from": "schema:TeacherResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Teacher"
+      },
+      {
+        "from": "schema:TeachersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TeacherResponse"
       }
     ],
     "nodes": [
@@ -232,848 +602,2295 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of student contacts",
         "id": "operation:get:/contacts",
         "kind": "operation",
         "method": "get",
         "name": "getContacts",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/contacts",
         "pointer": "#/paths/~1contacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentContactsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Contacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific student contact",
         "id": "operation:get:/contacts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getContact",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contacts/{id}",
         "pointer": "#/paths/~1contacts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentContactResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Contacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the district for a student contact",
         "id": "operation:get:/contacts/{id}/district",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictForStudentContact",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contacts/{id}/district",
         "pointer": "#/paths/~1contacts~1{id}~1district/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Contacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the student for a student contact",
         "id": "operation:get:/contacts/{id}/student",
         "kind": "operation",
         "method": "get",
         "name": "getStudentForContact",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contacts/{id}/student",
         "pointer": "#/paths/~1contacts~1{id}~1student/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Contacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of district admins",
         "id": "operation:get:/district_admins",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictAdmins",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "show_links",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/district_admins",
         "pointer": "#/paths/~1district_admins/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictAdminsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "District Admins"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific district admin",
         "id": "operation:get:/district_admins/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictAdmin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district_admins/{id}",
         "pointer": "#/paths/~1district_admins~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictAdminResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "District Admins"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of districts.",
         "id": "operation:get:/districts",
         "kind": "operation",
         "method": "get",
         "name": "getDistricts",
         "path": "/districts",
         "pointer": "#/paths/~1districts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific district",
         "id": "operation:get:/districts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getDistrict",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}",
         "pointer": "#/paths/~1districts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the admins for a district",
         "id": "operation:get:/districts/{id}/admins",
         "kind": "operation",
         "method": "get",
         "name": "getAdminsForDistrict",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}/admins",
         "pointer": "#/paths/~1districts~1{id}~1admins/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictAdminsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the schools for a district",
         "id": "operation:get:/districts/{id}/schools",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolsForDistrict",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}/schools",
         "pointer": "#/paths/~1districts~1{id}~1schools/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the sections for a district",
         "id": "operation:get:/districts/{id}/sections",
         "kind": "operation",
         "method": "get",
         "name": "getSectionsForDistrict",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}/sections",
         "pointer": "#/paths/~1districts~1{id}~1sections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the status of the district",
         "id": "operation:get:/districts/{id}/status",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}/status",
         "pointer": "#/paths/~1districts~1{id}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictStatusResponses"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the students for a district",
         "id": "operation:get:/districts/{id}/students",
         "kind": "operation",
         "method": "get",
         "name": "getStudentsForDistrict",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}/students",
         "pointer": "#/paths/~1districts~1{id}~1students/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the teachers for a district",
         "id": "operation:get:/districts/{id}/teachers",
         "kind": "operation",
         "method": "get",
         "name": "getTeachersForDistrict",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/districts/{id}/teachers",
         "pointer": "#/paths/~1districts~1{id}~1teachers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeachersResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Districts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of school admins",
         "id": "operation:get:/school_admins",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolAdmins",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/school_admins",
         "pointer": "#/paths/~1school_admins/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolAdminsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "School Admins"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific school admin",
         "id": "operation:get:/school_admins/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolAdmin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/school_admins/{id}",
         "pointer": "#/paths/~1school_admins~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolAdminResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "School Admins"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the schools for a school admin",
         "id": "operation:get:/school_admins/{id}/schools",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolsForSchoolAdmin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/school_admins/{id}/schools",
         "pointer": "#/paths/~1school_admins~1{id}~1schools/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "School Admins"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of schools",
         "id": "operation:get:/schools",
         "kind": "operation",
         "method": "get",
         "name": "getSchools",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/schools",
         "pointer": "#/paths/~1schools/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Schools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific school",
         "id": "operation:get:/schools/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getSchool",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schools/{id}",
         "pointer": "#/paths/~1schools~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Schools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the district for a school",
         "id": "operation:get:/schools/{id}/district",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictForSchool",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schools/{id}/district",
         "pointer": "#/paths/~1schools~1{id}~1district/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Schools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the sections for a school",
         "id": "operation:get:/schools/{id}/sections",
         "kind": "operation",
         "method": "get",
         "name": "getSectionsForSchool",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/schools/{id}/sections",
         "pointer": "#/paths/~1schools~1{id}~1sections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Schools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the students for a school",
         "id": "operation:get:/schools/{id}/students",
         "kind": "operation",
         "method": "get",
         "name": "getStudentsForSchool",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/schools/{id}/students",
         "pointer": "#/paths/~1schools~1{id}~1students/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Schools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the teachers for a school",
         "id": "operation:get:/schools/{id}/teachers",
         "kind": "operation",
         "method": "get",
         "name": "getTeachersForSchool",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/schools/{id}/teachers",
         "pointer": "#/paths/~1schools~1{id}~1teachers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeachersResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Schools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of sections",
         "id": "operation:get:/sections",
         "kind": "operation",
         "method": "get",
         "name": "getSections",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sections",
         "pointer": "#/paths/~1sections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific section",
         "id": "operation:get:/sections/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getSection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sections/{id}",
         "pointer": "#/paths/~1sections~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the district for a section",
         "id": "operation:get:/sections/{id}/district",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictForSection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sections/{id}/district",
         "pointer": "#/paths/~1sections~1{id}~1district/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the school for a section",
         "id": "operation:get:/sections/{id}/school",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolForSection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sections/{id}/school",
         "pointer": "#/paths/~1sections~1{id}~1school/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the students for a section",
         "id": "operation:get:/sections/{id}/students",
         "kind": "operation",
         "method": "get",
         "name": "getStudentsForSection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sections/{id}/students",
         "pointer": "#/paths/~1sections~1{id}~1students/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the primary teacher for a section",
         "id": "operation:get:/sections/{id}/teacher",
         "kind": "operation",
         "method": "get",
         "name": "getTeacherForSection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sections/{id}/teacher",
         "pointer": "#/paths/~1sections~1{id}~1teacher/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeacherResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the teachers for a section",
         "id": "operation:get:/sections/{id}/teachers",
         "kind": "operation",
         "method": "get",
         "name": "getTeachersForSection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sections/{id}/teachers",
         "pointer": "#/paths/~1sections~1{id}~1teachers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeachersResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Sections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of students",
         "id": "operation:get:/students",
         "kind": "operation",
         "method": "get",
         "name": "getStudents",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/students",
         "pointer": "#/paths/~1students/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific student",
         "id": "operation:get:/students/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getStudent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/students/{id}",
         "pointer": "#/paths/~1students~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the contacts for a student",
         "id": "operation:get:/students/{id}/contacts",
         "kind": "operation",
         "method": "get",
         "name": "getContactsForStudent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/students/{id}/contacts",
         "pointer": "#/paths/~1students~1{id}~1contacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentContactsForStudentResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the district for a student",
         "id": "operation:get:/students/{id}/district",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictForStudent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/students/{id}/district",
         "pointer": "#/paths/~1students~1{id}~1district/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the primary school for a student",
         "id": "operation:get:/students/{id}/school",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolForStudent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/students/{id}/school",
         "pointer": "#/paths/~1students~1{id}~1school/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the sections for a student",
         "id": "operation:get:/students/{id}/sections",
         "kind": "operation",
         "method": "get",
         "name": "getSectionsForStudent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/students/{id}/sections",
         "pointer": "#/paths/~1students~1{id}~1sections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the teachers for a student",
         "id": "operation:get:/students/{id}/teachers",
         "kind": "operation",
         "method": "get",
         "name": "getTeachersForStudent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/students/{id}/teachers",
         "pointer": "#/paths/~1students~1{id}~1teachers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeachersResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Students"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of teachers",
         "id": "operation:get:/teachers",
         "kind": "operation",
         "method": "get",
         "name": "getTeachers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teachers",
         "pointer": "#/paths/~1teachers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeachersResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a specific teacher",
         "id": "operation:get:/teachers/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getTeacher",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teachers/{id}",
         "pointer": "#/paths/~1teachers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeacherResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the district for a teacher",
         "id": "operation:get:/teachers/{id}/district",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictForTeacher",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teachers/{id}/district",
         "pointer": "#/paths/~1teachers~1{id}~1district/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistrictResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the grade levels for sections a teacher teaches",
         "id": "operation:get:/teachers/{id}/grade_levels",
         "kind": "operation",
         "method": "get",
         "name": "getGradeLevelsForTeacher",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teachers/{id}/grade_levels",
         "pointer": "#/paths/~1teachers~1{id}~1grade_levels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GradeLevelsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves school info for a teacher.",
         "id": "operation:get:/teachers/{id}/school",
         "kind": "operation",
         "method": "get",
         "name": "getSchoolForTeacher",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teachers/{id}/school",
         "pointer": "#/paths/~1teachers~1{id}~1school/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchoolResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the sections for a teacher",
         "id": "operation:get:/teachers/{id}/sections",
         "kind": "operation",
         "method": "get",
         "name": "getSectionsForTeacher",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teachers/{id}/sections",
         "pointer": "#/paths/~1teachers~1{id}~1sections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the students for a teacher",
         "id": "operation:get:/teachers/{id}/students",
         "kind": "operation",
         "method": "get",
         "name": "getStudentsForTeacher",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "starting_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ending_before",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teachers/{id}/students",
         "pointer": "#/paths/~1teachers~1{id}~1students/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StudentsResponse"
+          },
+          {
+            "status": "404",
+            "type": "NotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Teachers"
+        ]
       },
       {
         "id": "schema:BadRequest",
         "kind": "schema",
-        "name": "BadRequest"
+        "name": "BadRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credentials",
         "kind": "schema",
-        "name": "Credentials"
+        "name": "Credentials",
+        "type": "object"
       },
       {
         "id": "schema:District",
         "kind": "schema",
-        "name": "District"
+        "name": "District",
+        "type": "object"
       },
       {
         "id": "schema:DistrictAdmin",
         "kind": "schema",
-        "name": "DistrictAdmin"
+        "name": "DistrictAdmin",
+        "type": "object"
       },
       {
         "id": "schema:DistrictAdminResponse",
         "kind": "schema",
-        "name": "DistrictAdminResponse"
+        "name": "DistrictAdminResponse",
+        "type": "object"
       },
       {
         "id": "schema:DistrictAdminsResponse",
         "kind": "schema",
-        "name": "DistrictAdminsResponse"
+        "name": "DistrictAdminsResponse",
+        "type": "object"
       },
       {
         "id": "schema:DistrictResponse",
         "kind": "schema",
-        "name": "DistrictResponse"
+        "name": "DistrictResponse",
+        "type": "object"
       },
       {
         "id": "schema:DistrictStatus",
         "kind": "schema",
-        "name": "DistrictStatus"
+        "name": "DistrictStatus",
+        "type": "object"
       },
       {
         "id": "schema:DistrictStatusResponse",
         "kind": "schema",
-        "name": "DistrictStatusResponse"
+        "name": "DistrictStatusResponse",
+        "type": "object"
       },
       {
         "id": "schema:DistrictStatusResponses",
         "kind": "schema",
-        "name": "DistrictStatusResponses"
+        "name": "DistrictStatusResponses",
+        "type": "object"
       },
       {
         "id": "schema:DistrictsResponse",
         "kind": "schema",
-        "name": "DistrictsResponse"
+        "name": "DistrictsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GradeLevelsResponse",
         "kind": "schema",
-        "name": "GradeLevelsResponse"
+        "name": "GradeLevelsResponse",
+        "type": "object"
       },
       {
         "id": "schema:InternalError",
         "kind": "schema",
-        "name": "InternalError"
+        "name": "InternalError",
+        "type": "object"
       },
       {
         "id": "schema:Location",
         "kind": "schema",
-        "name": "Location"
+        "name": "Location",
+        "type": "object"
       },
       {
         "id": "schema:Name",
         "kind": "schema",
-        "name": "Name"
+        "name": "Name",
+        "type": "object"
       },
       {
         "id": "schema:NotFound",
         "kind": "schema",
-        "name": "NotFound"
+        "name": "NotFound",
+        "type": "object"
       },
       {
         "id": "schema:Principal",
         "kind": "schema",
-        "name": "Principal"
+        "name": "Principal",
+        "type": "object"
       },
       {
         "id": "schema:School",
         "kind": "schema",
-        "name": "School"
+        "name": "School",
+        "type": "object"
       },
       {
         "id": "schema:SchoolAdmin",
         "kind": "schema",
-        "name": "SchoolAdmin"
+        "name": "SchoolAdmin",
+        "type": "object"
       },
       {
         "id": "schema:SchoolAdminResponse",
         "kind": "schema",
-        "name": "SchoolAdminResponse"
+        "name": "SchoolAdminResponse",
+        "type": "object"
       },
       {
         "id": "schema:SchoolAdminsResponse",
         "kind": "schema",
-        "name": "SchoolAdminsResponse"
+        "name": "SchoolAdminsResponse",
+        "type": "object"
       },
       {
         "id": "schema:SchoolResponse",
         "kind": "schema",
-        "name": "SchoolResponse"
+        "name": "SchoolResponse",
+        "type": "object"
       },
       {
         "id": "schema:SchoolsResponse",
         "kind": "schema",
-        "name": "SchoolsResponse"
+        "name": "SchoolsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Section",
         "kind": "schema",
-        "name": "Section"
+        "name": "Section",
+        "type": "object"
       },
       {
         "id": "schema:SectionResponse",
         "kind": "schema",
-        "name": "SectionResponse"
+        "name": "SectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:SectionsResponse",
         "kind": "schema",
-        "name": "SectionsResponse"
+        "name": "SectionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Student",
         "kind": "schema",
-        "name": "Student"
+        "name": "Student",
+        "type": "object"
       },
       {
         "id": "schema:StudentContact",
         "kind": "schema",
-        "name": "StudentContact"
+        "name": "StudentContact",
+        "type": "object"
       },
       {
         "id": "schema:StudentContactResponse",
         "kind": "schema",
-        "name": "StudentContactResponse"
+        "name": "StudentContactResponse",
+        "type": "object"
       },
       {
         "id": "schema:StudentContactsForStudentResponse",
         "kind": "schema",
-        "name": "StudentContactsForStudentResponse"
+        "name": "StudentContactsForStudentResponse",
+        "type": "object"
       },
       {
         "id": "schema:StudentContactsResponse",
         "kind": "schema",
-        "name": "StudentContactsResponse"
+        "name": "StudentContactsResponse",
+        "type": "object"
       },
       {
         "id": "schema:StudentResponse",
         "kind": "schema",
-        "name": "StudentResponse"
+        "name": "StudentResponse",
+        "type": "object"
       },
       {
         "id": "schema:StudentsResponse",
         "kind": "schema",
-        "name": "StudentsResponse"
+        "name": "StudentsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Teacher",
         "kind": "schema",
-        "name": "Teacher"
+        "name": "Teacher",
+        "type": "object"
       },
       {
         "id": "schema:TeacherResponse",
         "kind": "schema",
-        "name": "TeacherResponse"
+        "name": "TeacherResponse",
+        "type": "object"
       },
       {
         "id": "schema:TeachersResponse",
         "kind": "schema",
-        "name": "TeachersResponse"
+        "name": "TeachersResponse",
+        "type": "object"
       },
       {
         "id": "schema:Term",
         "kind": "schema",
-        "name": "Term"
+        "name": "Term",
+        "type": "object"
       }
     ]
   },

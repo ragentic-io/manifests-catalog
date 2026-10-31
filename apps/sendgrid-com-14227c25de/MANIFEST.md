@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 
 | | |
 | --- | --- |
-| Signed bundle | `5afa6a3bcdaa184a08571e685f97bc3fefd6d7525fb1488f890b3016e1b541be` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,339 +34,341 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 
 145 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/access_settings/activity` | GET_access_settings-activity | Retrieve all recent access attempts |
-| DELETE | `/access_settings/whitelist` | DELETE_access_settings-whitelist | Remove one or more IPs from the allow list |
-| GET | `/access_settings/whitelist` | GET_access_settings-whitelist | Retrieve a list of currently allowed IPs |
-| POST | `/access_settings/whitelist` | POST_access_settings-whitelist | Add one or more IPs to the allow list |
-| DELETE | `/access_settings/whitelist/{rule_id}` | DELETE_access_settings-whitelist-rule_id | Remove a specific IP from the allowed list |
-| GET | `/access_settings/whitelist/{rule_id}` | GET_access_settings-whitelist-rule_id | Retrieve a specific allowed IP |
-| GET | `/alerts` | GET_alerts | Retrieve all alerts |
-| POST | `/alerts` | POST_alerts | Create a new Alert |
-| DELETE | `/alerts/{alert_id}` | DELETE_alerts-alert_id | Delete an alert |
-| GET | `/alerts/{alert_id}` | GET_alerts-alert_id | Retrieve a specific alert |
-| PATCH | `/alerts/{alert_id}` | PATCH_alerts-alert_id | Update an alert |
-| GET | `/api_keys` | GET_api_keys | Retrieve all API Keys belonging to the authenticated user |
-| POST | `/api_keys` | create-api-keys | Create API keys |
-| DELETE | `/api_keys/{api_key_id}` | DELETE_api_keys-api_key_id | Delete API keys |
-| GET | `/api_keys/{api_key_id}` | GET_api_keys-api_key_id | Retrieve an existing API Key |
-| PATCH | `/api_keys/{api_key_id}` | PATCH_api_keys-api_key_id | Update API key name |
-| PUT | `/api_keys/{api_key_id}` | PUT_api_keys-api_key_id | Update API key name and scopes |
-| GET | `/asm/groups` | GET_asm-groups | Retrieve all suppression groups associated with the user. |
-| POST | `/asm/groups` | POST_asm-groups | Create a new suppression group |
-| DELETE | `/asm/groups/{group_id}` | DELETE_asm-groups-group_id | Delete a Suppression Group |
-| GET | `/asm/groups/{group_id}` | GET_asm-groups-group_id | Get information on a single suppression group. |
-| PATCH | `/asm/groups/{group_id}` | PATCH_asm-groups-group_id | Update a suppression group. |
-| GET | `/asm/groups/{group_id}/suppressions` | GET_asm-groups-group_id-suppressions | Retrieve all suppressions for a suppression group |
-| POST | `/asm/groups/{group_id}/suppressions` | POST_asm-groups-group_id-suppressions | Add suppressions to a suppression group |
-| POST | `/asm/groups/{group_id}/suppressions/search` | POST_asm-groups-group_id-suppressions-search | Search for suppressions within a group |
-| DELETE | `/asm/groups/{group_id}/suppressions/{email}` | DELETE_asm-groups-group_id-suppressions-email | Delete a suppression from a suppression group |
-| GET | `/asm/suppressions` | GET_asm-suppressions | Retrieve all suppressions |
-| POST | `/asm/suppressions/global` | POST_asm-suppressions-global | Add recipient addresses to the global suppression group. |
-| DELETE | `/asm/suppressions/global/{email}` | DELETE_asm-suppressions-global-email | Delete a Global Suppression |
-| GET | `/asm/suppressions/global/{email}` | GET_asm-suppressions-global-email | Retrieve a Global Suppression |
-| GET | `/asm/suppressions/{email}` | GET_asm-suppressions-email | Retrieve all suppression groups for an email address |
-| GET | `/browsers/stats` | GET_browsers-stats | Retrieve email statistics by browser. |
-| GET | `/campaigns` | GET_campaigns | Retrieve all Campaigns |
-| POST | `/campaigns` | POST_campaigns | Create a Campaign |
-| DELETE | `/campaigns/{campaign_id}` | DELETE_campaigns-campaign_id | Delete a Campaign |
-| GET | `/campaigns/{campaign_id}` | GET_campaigns-campaign_id | Retrieve a single campaign |
-| PATCH | `/campaigns/{campaign_id}` | PATCH_campaigns-campaign_id | Update a Campaign |
-| DELETE | `/campaigns/{campaign_id}/schedules` | DELETE_campaigns-campaign_id-schedules | Unschedule a Scheduled Campaign |
-| GET | `/campaigns/{campaign_id}/schedules` | GET_campaigns-campaign_id-schedules | View Scheduled Time of a Campaign |
-| PATCH | `/campaigns/{campaign_id}/schedules` | PATCH_campaigns-campaign_id-schedules | Update a Scheduled Campaign |
-| POST | `/campaigns/{campaign_id}/schedules` | POST_campaigns-campaign_id-schedules | Schedule a Campaign |
-| POST | `/campaigns/{campaign_id}/schedules/now` | POST_campaigns-campaign_id-schedules-now | Send a Campaign |
-| POST | `/campaigns/{campaign_id}/schedules/test` | POST_campaigns-campaign_id-schedules-test | Send a Test Campaign |
-| GET | `/categories` | GET_categories | Retrieve all categories |
-| GET | `/categories/stats` | GET_categories-stats | Retrieve Email Statistics for Categories |
-| GET | `/categories/stats/sums` | GET_categories-stats-sums | Retrieve sums of email stats for each category [Needs: Stats object defined, has category ID?] |
-| GET | `/clients/stats` | GET_clients-stats | Retrieve email statistics by client type. |
-| GET | `/clients/{client_type}/stats` | GET_clients-client_type-stats | Retrieve stats by a specific client type. |
-| GET | `/contactdb/custom_fields` | GET_contactdb-custom_fields | Retrieve all custom fields |
-| POST | `/contactdb/custom_fields` | POST_contactdb-custom_fields | Create a Custom Field |
-| DELETE | `/contactdb/custom_fields/{custom_field_id}` | DELETE_contactdb-custom_fields-custom_field_id | Delete a Custom Field |
-| GET | `/contactdb/custom_fields/{custom_field_id}` | GET_contactdb-custom_fields-custom_field_id | Retrieve a Custom Field |
-| DELETE | `/contactdb/lists` | DELETE_contactdb-lists | Delete Multiple lists |
-| GET | `/contactdb/lists` | GET_contactdb-lists | Retrieve all lists |
-| POST | `/contactdb/lists` | POST_contactdb-lists | Create a List |
-| DELETE | `/contactdb/lists/{list_id}` | DELETE_contactdb-lists-list_id | Delete a List |
-| GET | `/contactdb/lists/{list_id}` | GET_contactdb-lists-list_id | Retrieve a single list |
-| PATCH | `/contactdb/lists/{list_id}` | PATCH_contactdb-lists-list_id | Update a List |
-| GET | `/contactdb/lists/{list_id}/recipients` | GET_contactdb-lists-list_id-recipients | Retrieve all recipients on a List |
-| POST | `/contactdb/lists/{list_id}/recipients` | POST_contactdb-lists-list_id-recipients | Add Multiple Recipients to a List |
-| DELETE | `/contactdb/lists/{list_id}/recipients/{recipient_id}` | DELETE_contactdb-lists-list_id-recipients-recipient_id | Delete a Single Recipient from a Single List |
-| POST | `/contactdb/lists/{list_id}/recipients/{recipient_id}` | POST_contactdb-lists-list_id-recipients-recipient_id | Add a Single Recipient to a List |
-| DELETE | `/contactdb/recipients` | DELETE_contactdb-recipients | Delete Recipients |
-| GET | `/contactdb/recipients` | GET_contactdb-recipients | Retrieve recipients |
-| PATCH | `/contactdb/recipients` | PATCH_contactdb-recipients | Update Recipient |
-| POST | `/contactdb/recipients` | POST_contactdb-recipients | Add recipients |
-| GET | `/contactdb/recipients/billable_count` | GET_contactdb-recipients-billable_count | Retrieve the count of billable recipients |
-| GET | `/contactdb/recipients/count` | GET_contactdb-recipients-count | Retrieve a Count of Recipients |
-| GET | `/contactdb/recipients/search` | GET_contactdb-recipients-search | Search recipients |
-| POST | `/contactdb/recipients/search` | POST_contactdb-recipients-search | Search recipients |
-| DELETE | `/contactdb/recipients/{recipient_id}` | DELETE_contactdb-recipients-recipient_id | Delete a Recipient |
-| GET | `/contactdb/recipients/{recipient_id}` | GET_contactdb-recipients-recipient_id | Retrieve a single recipient |
-| GET | `/contactdb/recipients/{recipient_id}/lists` | GET_contactdb-recipients-recipient_id-lists | Retrieve the lists that a recipient is on |
-| GET | `/contactdb/reserved_fields` | GET_contactdb-reserved_fields | Retrieve reserved fields |
-| GET | `/contactdb/segments` | GET_contactdb-segments | Retrieve all segments |
-| POST | `/contactdb/segments` | POST_contactdb-segments | Create a Segment |
-| DELETE | `/contactdb/segments/{segment_id}` | DELETE_contactdb-segments-segment_id | Delete a segment |
-| GET | `/contactdb/segments/{segment_id}` | GET_contactdb-segments-segment_id | Retrieve a segment |
-| PATCH | `/contactdb/segments/{segment_id}` | PATCH_contactdb-segments-segment_id | Update a segment |
-| GET | `/contactdb/segments/{segment_id}/recipients` | GET_contactdb-segments-segment_id-recipients | Retrieve recipients on a segment |
-| GET | `/contactdb/status` | GET_contactdb-status | Get Recipient Upload Status |
-| GET | `/designs` | LIST-designs | List Designs |
-| POST | `/designs` | post /designs | Create Design |
-| GET | `/designs/pre-builts` | LIST-Sendgrid-Pre-built-designs | List SendGrid Pre-built Designs |
-| GET | `/designs/pre-builts/{id}` | GET-sendgrid-pre-built-design | Get SendGrid Pre-built Design |
-| POST | `/designs/pre-builts/{id}` | POST-sendgrid-pre-built-design | Duplicate SendGrid Pre-built Design |
-| DELETE | `/designs/{id}` | DELETE-design | Delete Design |
-| GET | `/designs/{id}` | GET-design | Get Design |
-| PATCH | `/designs/{id}` | PUT-design | Update Design |
-| POST | `/designs/{id}` | POST-design | Duplicate Design |
-| GET | `/devices/stats` | GET_devices-stats | Retrieve email statistics by device type. |
-| GET | `/geo/stats` | GET_geo-stats | Retrieve email statistics by country and state/province. |
-| GET | `/ips` | GET_ips | Retrieve all IP addresses |
-| POST | `/ips` | POST_ips | Add IPs |
-| GET | `/ips/assigned` | GET_ips-assigned | Retrieve all assigned IPs |
-| GET | `/ips/pools` | GET_ips-pools | Retrieve all IP pools |
-| POST | `/ips/pools` | POST_ips-pools | Create an IP pool |
-| DELETE | `/ips/pools/{pool_name}` | DELETE_ips-pools-pool_name | Delete an IP pool |
-| GET | `/ips/pools/{pool_name}` | GET_ips-pools-pool_name | Retrieve all the IPs in a specified pool |
-| PUT | `/ips/pools/{pool_name}` | PUT_ips-pools-pool_name | Rename an IP pool |
-| POST | `/ips/pools/{pool_name}/ips` | POST_ips-pools-pool_name-ips | Add an IP address to a pool |
-| DELETE | `/ips/pools/{pool_name}/ips/{ip}` | DELETE_ips-pools-pool_name-ips-ip | Remove an IP address from a pool |
-| GET | `/ips/remaining` | GET_ips-remaining | Get remaining IPs count |
-| GET | `/ips/warmup` | GET_ips-warmup | Retrieve all IPs currently in warmup |
-| POST | `/ips/warmup` | POST_ips-warmup | Start warming up an IP address |
-| DELETE | `/ips/warmup/{ip_address}` | DELETE_ips-warmup-ip_address | Stop warming up an IP address |
-| GET | `/ips/warmup/{ip_address}` | GET_ips-warmup-ip_address | Retrieve the warmup status for a specific IP address |
-| GET | `/ips/{ip_address}` | GET_ips-ip_address | Retrieve all IP pools an IP address belongs to |
-| POST | `/mail/batch` | POST_mail-batch | Create a batch ID |
-| GET | `/mail/batch/{batch_id}` | GET_mail-batch-batch_id | Validate batch ID |
-| POST | `/mail/send` | POST_mail-send | v3 Mail Send |
-| GET | `/mail_settings` | GET_mail_settings | Retrieve all mail settings |
-| GET | `/mail_settings/address_whitelist` | GET_mail_settings-address_whitelist | Retrieve address whitelist mail settings |
-| PATCH | `/mail_settings/address_whitelist` | PATCH_mail_settings-address_whitelist | Update address whitelist mail settings |
-| GET | `/mail_settings/bounce_purge` | GET_mail_settings-bounce_purge | Retrieve bounce purge mail settings |
-| PATCH | `/mail_settings/bounce_purge` | PATCH_mail_settings-bounce_purge | Update bounce purge mail settings |
-| GET | `/mail_settings/footer` | GET_mail_settings-footer | Retrieve footer mail settings |
-| PATCH | `/mail_settings/footer` | PATCH_mail_settings-footer | Update footer mail settings |
-| GET | `/mail_settings/forward_bounce` | GET_mail_settings-forward_bounce | Retrieve forward bounce mail settings |
-| PATCH | `/mail_settings/forward_bounce` | PATCH_mail_settings-forward_bounce | Update forward bounce mail settings |
-| GET | `/mail_settings/forward_spam` | GET_mail_settings-forward_spam | Retrieve forward spam mail settings |
-| PATCH | `/mail_settings/forward_spam` | PATCH_mail_settings-forward_spam | Update forward spam mail settings |
-| GET | `/mail_settings/template` | GET_mail_settings-template | Retrieve legacy template mail settings |
-| PATCH | `/mail_settings/template` | PATCH_mail_settings-template | Update template mail settings |
-| GET | `/mailbox_providers/stats` | GET_mailbox_providers-stats | Retrieve email statistics by mailbox provider. |
-| DELETE | `/marketing/contacts` | DELETE_mc-contacts | Delete Contacts |
-| GET | `/marketing/contacts` | GET_mc-contats | Get Sample Contacts |
-| PUT | `/marketing/contacts` | PUT_mc-contacts | Add or Update a Contact |
-| POST | `/marketing/contacts/batch` | POST_marketing-contacts-batch | Get Batched Contacts by IDs |
-| GET | `/marketing/contacts/count` | GET_mc-contacts-count | Get Total Contact Count |
-| GET | `/marketing/contacts/exports` | GET_marketing-contacts-exports | Get All Existing Exports |
-| POST | `/marketing/contacts/exports` | POST_mc-contacts-exports | Export Contacts |
-| GET | `/marketing/contacts/exports/{id}` | GET_mc-contacts-exports-id | Export Contacts Status |
-| PUT | `/marketing/contacts/imports` | PUT_mc-contacts-imports | Import Contacts |
-| GET | `/marketing/contacts/imports/{id}` | GET_marketing-contacts-imports-id | Import Contacts Status |
-| POST | `/marketing/contacts/search` | POST_mc-contacts-search | Search Contacts |
-| POST | `/marketing/contacts/search/emails` | POST_marketing-contacts-search-emails | Get Contacts by Emails |
-| GET | `/marketing/contacts/{id}` | GET_mc-contacts-id | Get a Contact by ID |
-| GET | `/marketing/field_definitions` | GET_mc-field_definitions | Get All Field Definitions |
-| POST | `/marketing/field_definitions` | POST_mc-field_definitions | Create Custom Field Definition |
-| DELETE | `/marketing/field_definitions/{custom_field_id}` | DELETE_mc-field_definitions-custom_field_id | Delete Custom Field Definition |
-| PATCH | `/marketing/field_definitions/{custom_field_id}` | PATCH_mc-field_definitions-custom_field_id | Update Custom Field Definition |
-| GET | `/marketing/lists` | GET_mc-lists | Get All Lists |
-| POST | `/marketing/lists` | POST_mc-lists | Create List |
-| DELETE | `/marketing/lists/{id}` | DELETE_lists-id | Delete a list |
-| GET | `/marketing/lists/{id}` | GET_mc-lists-id | Get a List by ID |
-| PATCH | `/marketing/lists/{id}` | PATCH_mc-lists-id | Update List |
-| DELETE | `/marketing/lists/{id}/contacts` | DELETE_mc-lists-id-contacts | Remove Contacts from a List |
-| GET | `/marketing/lists/{id}/contacts/count` | GET_mc-lists-id-contacts-count | Get List Contact Count |
-| GET | `/marketing/segments` | GET_marketing-segments | Get List of Segments |
-| POST | `/marketing/segments` | POST_marketing-segments | Create Segment |
-| GET | `/marketing/segments/2.0` | GET_segments | Get List of Segments |
-| POST | `/marketing/segments/2.0` | POST_segments | Create Segment |
-| DELETE | `/marketing/segments/2.0/{segment_id}` | DELETE_segments-segment_id | Delete segment |
-| GET | `/marketing/segments/2.0/{segment_id}` | GET_segments-segment_id | Get Segment by ID |
-| PATCH | `/marketing/segments/2.0/{segment_id}` | PATCH_segments-segment_id | Update Segment |
-| POST | `/marketing/segments/delete` | POST_marketing-segments-delete | Bulk Delete Segments |
-| DELETE | `/marketing/segments/{segment_id}` | DELETE_marketing-segments-segment_id | Delete Segment |
-| GET | `/marketing/segments/{segment_id}` | GET_marketing-segments-segment_id | Get Segment by ID |
-| PATCH | `/marketing/segments/{segment_id}` | PATCH_marketing-segments-segment_id | Update Segment |
-| POST | `/marketing/senders` | POST_marketing-senders | Create a Sender Identity |
-| DELETE | `/marketing/singlesends` | DELETE_marketing-singlesends | Bulk Delete Single Sends |
-| GET | `/marketing/singlesends` | GET_marketing-singlesends | Get All Single Sends |
-| POST | `/marketing/singlesends` | POST_marketing-singlesends | Create Single Send |
-| GET | `/marketing/singlesends/categories` | GET_marketing-singlesends-categories | Get All Categories |
-| POST | `/marketing/singlesends/search` | POST_marketing-singlesends-search | Get Single Sends Search |
-| DELETE | `/marketing/singlesends/{id}` | DELETE_marketing-singlesends-id | Delete Single Send by ID |
-| GET | `/marketing/singlesends/{id}` | GET_marketing-singlesends-id | Get Single Send by ID |
-| PATCH | `/marketing/singlesends/{id}` | PATCH_marketing-singlesends-id | Update Single Send |
-| POST | `/marketing/singlesends/{id}` | POST_marketing-singlesends-id | Duplicate Single Send |
-| DELETE | `/marketing/singlesends/{id}/schedule` | DELETE_marketing-singlesends-id-schedule | Delete Single Send Schedule |
-| PUT | `/marketing/singlesends/{id}/schedule` | PUT_marketing-singlesends-id-schedule | Schedule Single Send |
-| GET | `/marketing/stats/automations` | getall-automation-stats | Get All Automation Stats |
-| GET | `/marketing/stats/automations/export` | get-automations-stats-export | Export Automation Stats |
-| GET | `/marketing/stats/automations/{id}` | get-automation-stat | Get Automation Stats by ID |
-| GET | `/marketing/stats/automations/{id}/links` | get-automation-link-stat | Get Automation Click Tracking Stats by ID |
-| GET | `/marketing/stats/singlesends` | getall-singlesend-stats | Get All Single Sends Stats |
-| GET | `/marketing/stats/singlesends/export` | get-singlesend-stats-export | Export Single Send Stats |
-| GET | `/marketing/stats/singlesends/{id}` | get-singlesend-stat | Get Single Send Stats by ID |
-| GET | `/marketing/stats/singlesends/{id}/links` | get-singlesend-link-stat | Get Single Send Click Tracking Stats by ID |
-| POST | `/marketing/test/send_email` | POST_marketing-test-send_email | Send a Test Marketing Email |
-| GET | `/messages` | GET-messages | Filter all messages |
-| POST | `/messages/download` | POST_v3-messages-download | Request CSV |
-| GET | `/messages/download/{download_uuid}` | GET_v3-messages-download-download_uuid | Download CSV |
-| GET | `/messages/{msg_id}` | GET-v3-messages-msg_id | Filter messages by message ID |
-| GET | `/partner_settings` | GET_partner_settings | Returns a list of all partner settings. |
-| GET | `/partner_settings/new_relic` | GET_partner_settings-new_relic | Returns all New Relic partner settings. |
-| PATCH | `/partner_settings/new_relic` | PATCH_partner_settings-new_relic | Updates New Relic partner settings. |
-| GET | `/scopes` | GET_scopes | Retrieve a list of scopes for which this user has access. |
-| GET | `/scopes/requests` | GET_v3-scopes-requests | Retrieve access requests |
-| DELETE | `/scopes/requests/{request_id}` | DELETE_v3-scopes-requests-request_id | Deny access request |
-| PATCH | `/scopes/requests/{request_id}/approve` | PATCH_v3-scopes-requests-approve-id | Approve access request |
-| GET | `/senders` | GET_v3-senders | Get all Sender Identities |
-| POST | `/senders` | POST_senders | Create a Sender Identity |
-| DELETE | `/senders/{sender_id}` | DELETE_v3-senders-sender_id | Delete a Sender Identity |
-| GET | `/senders/{sender_id}` | GET_v3-senders-sender_id | View a Sender Identity |
-| PATCH | `/senders/{sender_id}` | PATCH_v3-senders-sender_id | Update a Sender Identity |
-| POST | `/senders/{sender_id}/resend_verification` | POST_v3-senders-sender_id-resend_verification | Resend Sender Identity Verification |
-| POST | `/sso/certificates` | POST_sso-certificates | Create an SSO Certificate |
-| DELETE | `/sso/certificates/{cert_id}` | DELETE_sso-certificates-cert_id | Delete an SSO Certificate |
-| GET | `/sso/certificates/{cert_id}` | GET_sso-certificates-cert_id | Get an SSO Certificate |
-| PATCH | `/sso/certificates/{cert_id}` | PATCH_sso-certificates-cert_id | Update SSO Certificate |
-| GET | `/sso/integrations` | GET_sso-integrations | Get All SSO Integrations |
-| POST | `/sso/integrations` | POST_sso-integrations | Create an SSO Integration |
-| DELETE | `/sso/integrations/{id}` | DELETE_sso-integrations-id | Delete an SSO Integration |
-| GET | `/sso/integrations/{id}` | GET_sso-integrations-id | Get an SSO Integration |
-| PATCH | `/sso/integrations/{id}` | PATCH_sso-integrations-id | Update an SSO Integration |
-| GET | `/sso/integrations/{integration_id}/certificates` | GET_sso-integrations-integration_id-certificates | Get All SSO Certificates by Integration |
-| POST | `/sso/teammates` | POST_sso-teammates | Create SSO Teammate |
-| PATCH | `/sso/teammates/{username}` | PATCH_sso-teammates-username | Edit an SSO Teammate |
-| GET | `/stats` | GET_stats | Retrieve global email statistics |
-| GET | `/subusers` | GET_subusers | List all Subusers |
-| POST | `/subusers` | POST_subusers | Create Subuser |
-| GET | `/subusers/reputations` | GET_subusers-reputations | Retrieve Subuser Reputations |
-| GET | `/subusers/stats` | GET_subusers-stats | Retrieve email statistics for your subusers. |
-| GET | `/subusers/stats/monthly` | GET_subusers-stats-monthly | Retrieve monthly stats for all subusers |
-| GET | `/subusers/stats/sums` | GET_subusers-stats-sums | Retrieve the totals for each email statistic metric for all subusers. |
-| DELETE | `/subusers/{subuser_name}` | DELETE_subusers-subuser_name | Delete a subuser |
-| PATCH | `/subusers/{subuser_name}` | PATCH_subusers-subuser_name | Enable/disable a subuser |
-| PUT | `/subusers/{subuser_name}/ips` | PUT_subusers-subuser_name-ips | Update IPs assigned to a subuser |
-| DELETE | `/subusers/{subuser_name}/monitor` | DELETE_subusers-subuser_name-monitor | Delete monitor settings |
-| GET | `/subusers/{subuser_name}/monitor` | GET_subusers-subuser_name-monitor | Retrieve monitor settings for a subuser |
-| POST | `/subusers/{subuser_name}/monitor` | POST_subusers-subuser_name-monitor | Create monitor settings |
-| PUT | `/subusers/{subuser_name}/monitor` | PUT_subusers-subuser_name-monitor | Update Monitor Settings for a subuser |
-| GET | `/subusers/{subuser_name}/stats/monthly` | GET_subusers-subuser_name-stats-monthly | Retrieve the monthly email statistics for a single subuser |
-| DELETE | `/suppression/blocks` | DELETE_suppression-blocks | Delete blocks |
-| GET | `/suppression/blocks` | GET_suppression-blocks | Retrieve all blocks |
-| DELETE | `/suppression/blocks/{email}` | DELETE_suppression-blocks-email | Delete a specific block |
-| GET | `/suppression/blocks/{email}` | GET_suppression-blocks-email | Retrieve a specific block |
-| DELETE | `/suppression/bounces` | DELETE_suppression-bounces | Delete bounces |
-| GET | `/suppression/bounces` | GET_suppression-bounces | Retrieve all bounces |
-| DELETE | `/suppression/bounces/{email}` | DELETE_suppression-bounces-email | Delete a bounce |
-| GET | `/suppression/bounces/{email}` | GET_suppression-bounces-email | Retrieve a Bounce |
-| DELETE | `/suppression/invalid_emails` | DELETE_suppression-invalid_emails | Delete invalid emails |
-| GET | `/suppression/invalid_emails` | GET_suppression-invalid_emails | Retrieve all invalid emails |
-| DELETE | `/suppression/invalid_emails/{email}` | DELETE_suppression-invalid_emails-email | Delete a specific invalid email |
-| GET | `/suppression/invalid_emails/{email}` | GET_suppression-invalid_emails-email | Retrieve a specific invalid email |
-| DELETE | `/suppression/spam_reports` | DELETE_suppression-spam_reports | Delete spam reports |
-| GET | `/suppression/spam_reports` | GET_suppression-spam_reports | Retrieve all spam reports |
-| DELETE | `/suppression/spam_reports/{email}` | DELETE_suppression-spam_reports-email | Delete a specific spam report |
-| GET | `/suppression/spam_reports/{email}` | GET_suppression-spam_reports-email | Retrieve a specific spam report |
-| GET | `/suppression/unsubscribes` | GET_suppression-unsubscribes | Retrieve all global suppressions |
-| GET | `/teammates` | GET_v3-teammates | Retrieve all teammates |
-| POST | `/teammates` | POST_v3-teammates | Invite teammate |
-| GET | `/teammates/pending` | GET_v3-teammates-pending | Retrieve all pending teammates |
-| DELETE | `/teammates/pending/{token}` | DELETE_v3-teammates-pending-token | Delete pending teammate |
-| POST | `/teammates/pending/{token}/resend` | POST_v3-teammates-pending-token-resend | Resend teammate invite |
-| DELETE | `/teammates/{username}` | DELETE_v3-teammates-username | Delete teammate |
-| GET | `/teammates/{username}` | GET_v3-teammates-username | Retrieve specific teammate |
-| PATCH | `/teammates/{username}` | PATCH_v3-teammates-username | Update teammate's permissions |
-| GET | `/templates` | GET_templates | Retrieve paged transactional templates. |
-| POST | `/templates` | POST_templates | Create a transactional template. |
-| DELETE | `/templates/{template_id}` | DELETE_templates-template_id | Delete a template. |
-| GET | `/templates/{template_id}` | GET_templates-template_id | Retrieve a single transactional template. |
-| PATCH | `/templates/{template_id}` | PATCH_templates-template_id | Edit a transactional template. |
-| POST | `/templates/{template_id}` | POST_templates-template_id | Duplicate a transactional template. |
-| POST | `/templates/{template_id}/versions` | POST_templates-template_id-versions | Create a new transactional template version. |
-| DELETE | `/templates/{template_id}/versions/{version_id}` | DELETE_templates-template_id-versions-version_id | Delete a transactional template version. |
-| GET | `/templates/{template_id}/versions/{version_id}` | GET_templates-template_id-versions-version_id | Retrieve a specific transactional template version. |
-| PATCH | `/templates/{template_id}/versions/{version_id}` | PATCH_templates-template_id-versions-version_id | Edit a transactional template version. |
-| POST | `/templates/{template_id}/versions/{version_id}/activate` | POST_templates-template_id-versions-version_id-activate | Activate a transactional template version. |
-| GET | `/tracking_settings` | GET_tracking_settings | Retrieve Tracking Settings |
-| GET | `/tracking_settings/click` | GET_tracking_settings-click | Retrieve Click Track Settings |
-| PATCH | `/tracking_settings/click` | PATCH_tracking_settings-click | Update Click Tracking Settings |
-| GET | `/tracking_settings/google_analytics` | GET_tracking_settings-google_analytics | Retrieve Google Analytics Settings |
-| PATCH | `/tracking_settings/google_analytics` | PATCH_tracking_settings-google_analytics | Update Google Analytics Settings |
-| GET | `/tracking_settings/open` | GET_tracking_settings-open | Get Open Tracking Settings |
-| PATCH | `/tracking_settings/open` | PATCH_tracking_settings-open | Update Open Tracking Settings |
-| GET | `/tracking_settings/subscription` | GET_tracking_settings-subscription | Retrieve Subscription Tracking Settings |
-| PATCH | `/tracking_settings/subscription` | PATCH_tracking_settings-subscription | Update Subscription Tracking Settings |
-| GET | `/user/account` | GET_user-account | Get a user's account information. |
-| GET | `/user/credits` | GET_user-credits | Retrieve your credit balance |
-| GET | `/user/email` | GET_user-email | Retrieve your account email address |
-| PUT | `/user/email` | PUT_user-email | Update your account email address |
-| PUT | `/user/password` | PUT_user-password | Update your password |
-| GET | `/user/profile` | GET_user-profile | Get a user's profile |
-| PATCH | `/user/profile` | PATCH_user-profile | Update a user's profile |
-| GET | `/user/scheduled_sends` | GET_user-scheduled_sends | Retrieve all scheduled sends |
-| POST | `/user/scheduled_sends` | POST_user-scheduled_sends | Cancel or pause a scheduled send |
-| DELETE | `/user/scheduled_sends/{batch_id}` | DELETE_user-scheduled_sends-batch_id | Delete a cancellation or pause from a scheduled send |
-| GET | `/user/scheduled_sends/{batch_id}` | GET_user-scheduled_sends-batch_id | Retrieve scheduled send |
-| PATCH | `/user/scheduled_sends/{batch_id}` | PATCH_user-scheduled_sends-batch_id | Update a scheduled send |
-| GET | `/user/settings/enforced_tls` | GET_user-settings-enforced_tls | Retrieve current Enforced TLS settings. |
-| PATCH | `/user/settings/enforced_tls` | PATCH_user-settings-enforced_tls | Update Enforced TLS settings |
-| GET | `/user/username` | GET_user-username | Retrieve your username |
-| PUT | `/user/username` | PUT_user-username | Update your username |
-| GET | `/user/webhooks/event/settings` | GET_user-webhooks-event-settings | Retrieve Event Webhook settings |
-| PATCH | `/user/webhooks/event/settings` | PATCH_user-webhooks-event-settings | Update Event Notification Settings |
-| GET | `/user/webhooks/event/settings/signed` | GET_user-webhooks-event-settings-signed | Retrieve Signed Webhook Public Key |
-| PATCH | `/user/webhooks/event/settings/signed` | PATCH_user-webhooks-event-settings-signed | Enable/Disable Signed Webhook |
-| POST | `/user/webhooks/event/test` | POST_user-webhooks-event-test | Test Event Notification Settings |
-| GET | `/user/webhooks/parse/settings` | GET_user-webhooks-parse-settings | Retrieve all parse settings |
-| POST | `/user/webhooks/parse/settings` | POST_user-webhooks-parse-settings | Create a parse setting |
-| DELETE | `/user/webhooks/parse/settings/{hostname}` | DELETE_user-webhooks-parse-settings-hostname | Delete a parse setting |
-| GET | `/user/webhooks/parse/settings/{hostname}` | GET_user-webhooks-parse-settings-hostname | Retrieve a specific parse setting |
-| PATCH | `/user/webhooks/parse/settings/{hostname}` | PATCH_user-webhooks-parse-settings-hostname | Update a parse setting |
-| GET | `/user/webhooks/parse/stats` | GET_user-webhooks-parse-stats | Retrieves Inbound Parse Webhook statistics. |
-| POST | `/validations/email` | POST_validations-email | Validate an email |
-| GET | `/verified_senders` | GET_verified_senders | Get All Verified Senders |
-| POST | `/verified_senders` | POST_verified_senders | Create Verified Sender Request |
-| GET | `/verified_senders/domains` | GET_verified_senders-domains | Domain Warn List |
-| POST | `/verified_senders/resend/{id}` | POST_verified_senders-resend-id | Resend Verified Sender Request |
-| GET | `/verified_senders/steps_completed` | GET_verified_senders-steps_completed | Completed Steps |
-| GET | `/verified_senders/verify/{token}` | GET_verified_senders-verify-token | Verify Sender Request |
-| DELETE | `/verified_senders/{id}` | DELETE_verified_senders-id | Delete Verified Sender |
-| PATCH | `/verified_senders/{id}` | PATCH_verified_senders-id | Edit Verified Sender |
-| POST | `/whitelabel/dns/email` | POST_whitelabel-dns-email | Email DNS records to a co-worker |
-| GET | `/whitelabel/domains` | GET_whitelabel-domains | List all authenticated domains |
-| POST | `/whitelabel/domains` | POST_whitelabel-domains | Authenticate a domain |
-| GET | `/whitelabel/domains/default` | GET_whitelabel-domains-default | Get the default authentication |
-| DELETE | `/whitelabel/domains/subuser` | DELETE_whitelabel-domains-subuser | Disassociate an authenticated domain from a given user. |
-| GET | `/whitelabel/domains/subuser` | GET_whitelabel-domains-subuser | List the authenticated domain associated with the given user. |
-| DELETE | `/whitelabel/domains/{domain_id}` | DELETE_whitelabel-domains-domain_id | Delete an authenticated domain. |
-| GET | `/whitelabel/domains/{domain_id}` | GET_whitelabel-domains-domain_id | Retrieve an authenticated domain |
-| PATCH | `/whitelabel/domains/{domain_id}` | PATCH_whitelabel-domains-domain_id | Update an authenticated domain |
-| POST | `/whitelabel/domains/{domain_id}/subuser` | POST_whitelabel-domains-domain_id-subuser | Associate an authenticated domain with a given user. |
-| POST | `/whitelabel/domains/{id}/ips` | POST_whitelabel-domains-id-ips | Add an IP to an authenticated domain |
-| DELETE | `/whitelabel/domains/{id}/ips/{ip}` | DELETE_whitelabel-domains-id-ips-ip | Remove an IP from an authenticated domain. |
-| POST | `/whitelabel/domains/{id}/validate` | POST_whitelabel-domains-id-validate | Validate a domain authentication. |
-| GET | `/whitelabel/ips` | GET_whitelabel-ips | Retrieve all reverse DNS records |
-| POST | `/whitelabel/ips` | POST_whitelabel-ips | Set up reverse DNS |
-| DELETE | `/whitelabel/ips/{id}` | DELETE_whitelabel-ips-id | Delete a reverse DNS record |
-| GET | `/whitelabel/ips/{id}` | GET_whitelabel-ips-id | Retrieve a reverse DNS record |
-| POST | `/whitelabel/ips/{id}/validate` | POST_whitelabel-ips-id-validate | Validate a reverse DNS record |
-| GET | `/whitelabel/links` | GET_whitelabel-links | Retrieve all branded links |
-| POST | `/whitelabel/links` | POST_whitelabel-links | Create a branded link |
-| GET | `/whitelabel/links/default` | GET_whitelabel-links-default | Retrieve the default branded link |
-| DELETE | `/whitelabel/links/subuser` | DELETE_whitelabel-links-subuser | Disassociate a branded link from a subuser |
-| GET | `/whitelabel/links/subuser` | GET_whitelabel-links-subuser | Retrieve a subuser's branded link |
-| DELETE | `/whitelabel/links/{id}` | DELETE_whitelabel-links-id | Delete a branded link |
-| GET | `/whitelabel/links/{id}` | GET_whitelabel-links-id | Retrieve a branded link |
-| PATCH | `/whitelabel/links/{id}` | PATCH_whitelabel-links-id | Update a branded link |
-| POST | `/whitelabel/links/{id}/validate` | POST_whitelabel-links-id-validate | Validate a branded link |
-| POST | `/whitelabel/links/{link_id}/subuser` | POST_whitelabel-links-link_id-subuser | Associate a branded link with a subuser |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/access_settings/activity` | GET_access_settings-activity | `limit`, `on-behalf-of` | object | yes | Retrieve all recent access attempts |
+| GET | `/access_settings/whitelist` | GET_access_settings-whitelist | `on-behalf-of` | ip-access-response | yes | Retrieve a list of currently allowed IPs |
+| POST | `/access_settings/whitelist` | POST_access_settings-whitelist | `on-behalf-of`, body: object | ip-access-response |  | Add one or more IPs to the allow list |
+| DELETE | `/access_settings/whitelist` | DELETE_access_settings-whitelist | `on-behalf-of`, body: object | object |  | Remove one or more IPs from the allow list |
+| GET | `/access_settings/whitelist/{rule_id}` | GET_access_settings-whitelist-rule_id | `rule_id`*, `on-behalf-of` | ip-access-response | yes | Retrieve a specific allowed IP |
+| DELETE | `/access_settings/whitelist/{rule_id}` | DELETE_access_settings-whitelist-rule_id | `rule_id`*, `on-behalf-of` | object |  | Remove a specific IP from the allowed list |
+| GET | `/alerts` | GET_alerts | `Authorization`, `on-behalf-of` | object[] | yes | Retrieve all alerts |
+| POST | `/alerts` | POST_alerts | `Authorization`, `on-behalf-of`, body: object | object |  | Create a new Alert |
+| GET | `/alerts/{alert_id}` | GET_alerts-alert_id | `alert_id`*, `Authorization`, `on-behalf-of` | object | yes | Retrieve a specific alert |
+| DELETE | `/alerts/{alert_id}` | DELETE_alerts-alert_id | `alert_id`*, `on-behalf-of` | object |  | Delete an alert |
+| PATCH | `/alerts/{alert_id}` | PATCH_alerts-alert_id | `alert_id`*, `on-behalf-of`, body: object | object |  | Update an alert |
+| GET | `/api_keys` | GET_api_keys | `limit`, `on-behalf-of` | object | yes | Retrieve all API Keys belonging to the authenticated user |
+| POST | `/api_keys` | create-api-keys | `on-behalf-of`, body: object | object |  | Create API keys |
+| GET | `/api_keys/{api_key_id}` | GET_api_keys-api_key_id | `api_key_id`*, `on-behalf-of` | object | yes | Retrieve an existing API Key |
+| PUT | `/api_keys/{api_key_id}` | PUT_api_keys-api_key_id | `api_key_id`*, `on-behalf-of`, body: object | api_key_name_id_scopes |  | Update API key name and scopes |
+| DELETE | `/api_keys/{api_key_id}` | DELETE_api_keys-api_key_id | `api_key_id`*, `on-behalf-of` | — |  | Delete API keys |
+| PATCH | `/api_keys/{api_key_id}` | PATCH_api_keys-api_key_id | `api_key_id`*, `on-behalf-of`, body: object | api_key_name_id |  | Update API key name |
+| GET | `/asm/groups` | GET_asm-groups | `id`, `on-behalf-of` | suppression_group[] | yes | Retrieve all suppression groups associated with the user. |
+| POST | `/asm/groups` | POST_asm-groups | `on-behalf-of`, body: suppression-group-request-base | object |  | Create a new suppression group |
+| GET | `/asm/groups/{group_id}` | GET_asm-groups-group_id | `group_id`*, `on-behalf-of` | suppression-group-request-base\|object | yes | Get information on a single suppression group. |
+| DELETE | `/asm/groups/{group_id}` | DELETE_asm-groups-group_id | `group_id`*, `on-behalf-of` | object |  | Delete a Suppression Group |
+| PATCH | `/asm/groups/{group_id}` | PATCH_asm-groups-group_id | `group_id`*, `on-behalf-of`, body: suppression-group-request-base | suppression_group |  | Update a suppression group. |
+| GET | `/asm/groups/{group_id}/suppressions` | GET_asm-groups-group_id-suppressions | `group_id`*, `on-behalf-of` | string:email[] | yes | Retrieve all suppressions for a suppression group |
+| POST | `/asm/groups/{group_id}/suppressions` | POST_asm-groups-group_id-suppressions | `group_id`*, `on-behalf-of`, body: suppressions-request | object |  | Add suppressions to a suppression group |
+| POST | `/asm/groups/{group_id}/suppressions/search` | POST_asm-groups-group_id-suppressions-search | `group_id`*, `on-behalf-of`, body: suppressions-request | string:email[] |  | Search for suppressions within a group |
+| DELETE | `/asm/groups/{group_id}/suppressions/{email}` | DELETE_asm-groups-group_id-suppressions-email | `group_id`*, `email`*, `on-behalf-of` | — |  | Delete a suppression from a suppression group |
+| GET | `/asm/suppressions` | GET_asm-suppressions | `on-behalf-of` | object[] | yes | Retrieve all suppressions |
+| POST | `/asm/suppressions/global` | POST_asm-suppressions-global | `on-behalf-of`, body: suppressions-request | object |  | Add recipient addresses to the global suppression group. |
+| GET | `/asm/suppressions/global/{email}` | GET_asm-suppressions-global-email | `email`*, `on-behalf-of` | object | yes | Retrieve a Global Suppression |
+| DELETE | `/asm/suppressions/global/{email}` | DELETE_asm-suppressions-global-email | `email`*, `on-behalf-of` | object |  | Delete a Global Suppression |
+| GET | `/asm/suppressions/{email}` | GET_asm-suppressions-email | `email`*, `on-behalf-of` | object | yes | Retrieve all suppression groups for an email address |
+| GET | `/browsers/stats` | GET_browsers-stats | `browsers`, `on-behalf-of`, `limit`, `offset`, `aggregated_by`, `start_date`*, `end_date` | object[] | yes | Retrieve email statistics by browser. |
+| GET | `/campaigns` | GET_campaigns | `limit`, `offset`, `on-behalf-of` | object | yes | Retrieve all Campaigns |
+| POST | `/campaigns` | POST_campaigns | `on-behalf-of`, body: campaign_request | campaign_response |  | Create a Campaign |
+| GET | `/campaigns/{campaign_id}` | GET_campaigns-campaign_id | `campaign_id`*, `on-behalf-of` | object | yes | Retrieve a single campaign |
+| DELETE | `/campaigns/{campaign_id}` | DELETE_campaigns-campaign_id | `campaign_id`*, `on-behalf-of` | — |  | Delete a Campaign |
+| PATCH | `/campaigns/{campaign_id}` | PATCH_campaigns-campaign_id | `campaign_id`*, `on-behalf-of`, body: object | campaign_response |  | Update a Campaign |
+| GET | `/campaigns/{campaign_id}/schedules` | GET_campaigns-campaign_id-schedules | `campaign_id`*, `on-behalf-of` | object | yes | View Scheduled Time of a Campaign |
+| POST | `/campaigns/{campaign_id}/schedules` | POST_campaigns-campaign_id-schedules | `campaign_id`*, `on-behalf-of`, body: object | object |  | Schedule a Campaign |
+| DELETE | `/campaigns/{campaign_id}/schedules` | DELETE_campaigns-campaign_id-schedules | `campaign_id`*, `on-behalf-of` | — |  | Unschedule a Scheduled Campaign |
+| PATCH | `/campaigns/{campaign_id}/schedules` | PATCH_campaigns-campaign_id-schedules | `campaign_id`*, `on-behalf-of`, body: object | object |  | Update a Scheduled Campaign |
+| POST | `/campaigns/{campaign_id}/schedules/now` | POST_campaigns-campaign_id-schedules-now | `campaign_id`*, `on-behalf-of` | object |  | Send a Campaign |
+| POST | `/campaigns/{campaign_id}/schedules/test` | POST_campaigns-campaign_id-schedules-test | `campaign_id`*, `on-behalf-of`, body: object | object |  | Send a Test Campaign |
+| GET | `/categories` | GET_categories | `limit`, `category`, `offset`, `on-behalf-of` | object[] | yes | Retrieve all categories |
+| GET | `/categories/stats` | GET_categories-stats | `start_date`*, `end_date`, `categories`*, `limit`, `offset`, `aggregated_by`, `on-behalf-of` | category_stats[] | yes | Retrieve Email Statistics for Categories |
+| GET | `/categories/stats/sums` | GET_categories-stats-sums | `sort_by_metric`, `sort_by_direction`, `start_date`*, `end_date`, `limit`, `offset`, `aggregated_by`, `on-behalf-of` | category_stats | yes | Retrieve sums of email stats for each category [Needs: Stats object defined, has category ID?] |
+| GET | `/clients/stats` | GET_clients-stats | `on-behalf-of`, `start_date`*, `end_date`, `aggregated_by` | object[] | yes | Retrieve email statistics by client type. |
+| GET | `/clients/{client_type}/stats` | GET_clients-client_type-stats | `client_type`*, `on-behalf-of`, `start_date`*, `end_date`, `aggregated_by` | object[] | yes | Retrieve stats by a specific client type. |
+| GET | `/contactdb/custom_fields` | GET_contactdb-custom_fields | `on-behalf-of` | object | yes | Retrieve all custom fields |
+| POST | `/contactdb/custom_fields` | POST_contactdb-custom_fields | `on-behalf-of`, body: object | contactdb_custom_field_with_id |  | Create a Custom Field |
+| GET | `/contactdb/custom_fields/{custom_field_id}` | GET_contactdb-custom_fields-custom_field_id | `custom_field_id`*, `on-behalf-of` | contactdb_custom_field_with_id | yes | Retrieve a Custom Field |
+| DELETE | `/contactdb/custom_fields/{custom_field_id}` | DELETE_contactdb-custom_fields-custom_field_id | `custom_field_id`*, `on-behalf-of` | global_error_response_schema |  | Delete a Custom Field |
+| GET | `/contactdb/lists` | GET_contactdb-lists | `on-behalf-of` | object | yes | Retrieve all lists |
+| POST | `/contactdb/lists` | POST_contactdb-lists | `on-behalf-of`, body: object | contactdb_list |  | Create a List |
+| DELETE | `/contactdb/lists` | DELETE_contactdb-lists | `on-behalf-of`, body: integer[] | — |  | Delete Multiple lists |
+| GET | `/contactdb/lists/{list_id}` | GET_contactdb-lists-list_id | `list_id`*, `list_id`, `on-behalf-of` | contactdb_list | yes | Retrieve a single list |
+| DELETE | `/contactdb/lists/{list_id}` | DELETE_contactdb-lists-list_id | `list_id`*, `delete_contacts`, `on-behalf-of`, body: — | — |  | Delete a List |
+| PATCH | `/contactdb/lists/{list_id}` | PATCH_contactdb-lists-list_id | `list_id`*, `list_id`*, `on-behalf-of`, body: object | object |  | Update a List |
+| GET | `/contactdb/lists/{list_id}/recipients` | GET_contactdb-lists-list_id-recipients | `list_id`*, `page`, `page_size`, `list_id`*, `on-behalf-of` | object | yes | Retrieve all recipients on a List |
+| POST | `/contactdb/lists/{list_id}/recipients` | POST_contactdb-lists-list_id-recipients | `list_id`*, `on-behalf-of`, body: integer[] | — |  | Add Multiple Recipients to a List |
+| POST | `/contactdb/lists/{list_id}/recipients/{recipient_id}` | POST_contactdb-lists-list_id-recipients-recipient_id | `list_id`*, `recipient_id`*, `on-behalf-of` | — |  | Add a Single Recipient to a List |
+| DELETE | `/contactdb/lists/{list_id}/recipients/{recipient_id}` | DELETE_contactdb-lists-list_id-recipients-recipient_id | `list_id`*, `recipient_id`*, `list_id`*, `recipient_id`*, `on-behalf-of`, body: — | — |  | Delete a Single Recipient from a Single List |
+| GET | `/contactdb/recipients` | GET_contactdb-recipients | `page`, `page_size`, `on-behalf-of` | object | yes | Retrieve recipients |
+| POST | `/contactdb/recipients` | POST_contactdb-recipients | `on-behalf-of`, body: object[] | contactdb_recipient_response |  | Add recipients |
+| DELETE | `/contactdb/recipients` | DELETE_contactdb-recipients | `on-behalf-of`, body: string[] | object |  | Delete Recipients |
+| PATCH | `/contactdb/recipients` | PATCH_contactdb-recipients | `on-behalf-of`, body: object[] | contactdb_recipient_response |  | Update Recipient |
+| GET | `/contactdb/recipients/billable_count` | GET_contactdb-recipients-billable_count | `on-behalf-of` | contactdb_recipient_count | yes | Retrieve the count of billable recipients |
+| GET | `/contactdb/recipients/count` | GET_contactdb-recipients-count | `on-behalf-of` | contactdb_recipient_count | yes | Retrieve a Count of Recipients |
+| GET | `/contactdb/recipients/search` | GET_contactdb-recipients-search | `{field_name}`, `on-behalf-of` | object | yes | Search recipients |
+| POST | `/contactdb/recipients/search` | POST_contactdb-recipients-search | body: object | object |  | Search recipients |
+| GET | `/contactdb/recipients/{recipient_id}` | GET_contactdb-recipients-recipient_id | `recipient_id`*, `on-behalf-of` | contactdb_recipient | yes | Retrieve a single recipient |
+| DELETE | `/contactdb/recipients/{recipient_id}` | DELETE_contactdb-recipients-recipient_id | `recipient_id`*, `on-behalf-of` | object |  | Delete a Recipient |
+| GET | `/contactdb/recipients/{recipient_id}/lists` | GET_contactdb-recipients-recipient_id-lists | `recipient_id`*, `on-behalf-of` | object | yes | Retrieve the lists that a recipient is on |
+| GET | `/contactdb/reserved_fields` | GET_contactdb-reserved_fields | `on-behalf-of` | object | yes | Retrieve reserved fields |
+| GET | `/contactdb/segments` | GET_contactdb-segments | `on-behalf-of` | object | yes | Retrieve all segments |
+| POST | `/contactdb/segments` | POST_contactdb-segments | `on-behalf-of`, body: contactdb_segments | contactdb_segments_with_id |  | Create a Segment |
+| GET | `/contactdb/segments/{segment_id}` | GET_contactdb-segments-segment_id | `segment_id`*, `segment_id`*, `on-behalf-of` | contactdb_segments | yes | Retrieve a segment |
+| DELETE | `/contactdb/segments/{segment_id}` | DELETE_contactdb-segments-segment_id | `segment_id`*, `delete_contacts`, `on-behalf-of`, body: — | — |  | Delete a segment |
+| PATCH | `/contactdb/segments/{segment_id}` | PATCH_contactdb-segments-segment_id | `segment_id`*, `segment_id`, `on-behalf-of`, body: object | contactdb_segments |  | Update a segment |
+| GET | `/contactdb/segments/{segment_id}/recipients` | GET_contactdb-segments-segment_id-recipients | `segment_id`*, `page`, `page_size`, `on-behalf-of` | object | yes | Retrieve recipients on a segment |
+| GET | `/contactdb/status` | GET_contactdb-status | `on-behalf-of` | object | yes | Get Recipient Upload Status |
+| GET | `/designs` | LIST-designs | `page_size`, `page_token`, `summary` | object | yes | List Designs |
+| POST | `/designs` | post /designs | body: design-input | design-output |  | Create Design |
+| GET | `/designs/pre-builts` | LIST-Sendgrid-Pre-built-designs | `page_size`, `page_token`, `summary` | object | yes | List SendGrid Pre-built Designs |
+| GET | `/designs/pre-builts/{id}` | GET-sendgrid-pre-built-design | `id`* | design-output | yes | Get SendGrid Pre-built Design |
+| POST | `/designs/pre-builts/{id}` | POST-sendgrid-pre-built-design | `id`*, body: design-duplicate-input | design-output |  | Duplicate SendGrid Pre-built Design |
+| GET | `/designs/{id}` | GET-design | `id`* | design-output | yes | Get Design |
+| POST | `/designs/{id}` | POST-design | `id`*, body: design-duplicate-input | design-output |  | Duplicate Design |
+| DELETE | `/designs/{id}` | DELETE-design | `id`* | object |  | Delete Design |
+| PATCH | `/designs/{id}` | PUT-design | `id`*, body: object | design-output |  | Update Design |
+| GET | `/devices/stats` | GET_devices-stats | `on-behalf-of`, `limit`, `offset`, `aggregated_by`, `start_date`*, `end_date` | object[] | yes | Retrieve email statistics by device type. |
+| GET | `/geo/stats` | GET_geo-stats | `country`, `on-behalf-of`, `limit`, `offset`, `aggregated_by`, `start_date`*, `end_date` | object[] | yes | Retrieve email statistics by country and state/province. |
+| GET | `/ips` | GET_ips | `ip`, `exclude_whitelabels`, `limit`, `offset`, `subuser`, `sort_by_direction` | object[] | yes | Retrieve all IP addresses |
+| POST | `/ips` | POST_ips | body: object | object |  | Add IPs |
+| GET | `/ips/assigned` | GET_ips-assigned | — | object[] | yes | Retrieve all assigned IPs |
+| GET | `/ips/pools` | GET_ips-pools | — | ip_pool_response[] | yes | Retrieve all IP pools |
+| POST | `/ips/pools` | POST_ips-pools | body: object | ip_pool_response |  | Create an IP pool |
+| GET | `/ips/pools/{pool_name}` | GET_ips-pools-pool_name | `pool_name`* | object | yes | Retrieve all the IPs in a specified pool |
+| PUT | `/ips/pools/{pool_name}` | PUT_ips-pools-pool_name | `pool_name`*, body: object | ip_pool_response |  | Rename an IP pool |
+| DELETE | `/ips/pools/{pool_name}` | DELETE_ips-pools-pool_name | `pool_name`* | object |  | Delete an IP pool |
+| POST | `/ips/pools/{pool_name}/ips` | POST_ips-pools-pool_name-ips | `pool_name`*, body: object | object |  | Add an IP address to a pool |
+| DELETE | `/ips/pools/{pool_name}/ips/{ip}` | DELETE_ips-pools-pool_name-ips-ip | `pool_name`*, `ip`* | object |  | Remove an IP address from a pool |
+| GET | `/ips/remaining` | GET_ips-remaining | — | object | yes | Get remaining IPs count |
+| GET | `/ips/warmup` | GET_ips-warmup | — | ip_warmup_response | yes | Retrieve all IPs currently in warmup |
+| POST | `/ips/warmup` | POST_ips-warmup | body: object | ip_warmup_response |  | Start warming up an IP address |
+| GET | `/ips/warmup/{ip_address}` | GET_ips-warmup-ip_address | `ip_address`* | ip_warmup_response | yes | Retrieve the warmup status for a specific IP address |
+| DELETE | `/ips/warmup/{ip_address}` | DELETE_ips-warmup-ip_address | `ip_address`* | object |  | Stop warming up an IP address |
+| GET | `/ips/{ip_address}` | GET_ips-ip_address | `ip_address`* | object | yes | Retrieve all IP pools an IP address belongs to |
+| POST | `/mail/batch` | POST_mail-batch | `on-behalf-of` | mail_batch_id |  | Create a batch ID |
+| GET | `/mail/batch/{batch_id}` | GET_mail-batch-batch_id | `batch_id`*, `on-behalf-of` | mail_batch_id | yes | Validate batch ID |
+| POST | `/mail/send` | POST_mail-send | body: object | — |  | v3 Mail Send |
+| GET | `/mail_settings` | GET_mail_settings | `limit`, `offset`, `on-behalf-of` | object | yes | Retrieve all mail settings |
+| GET | `/mail_settings/address_whitelist` | GET_mail_settings-address_whitelist | `on-behalf-of` | mail_settings_address_whitelabel | yes | Retrieve address whitelist mail settings |
+| PATCH | `/mail_settings/address_whitelist` | PATCH_mail_settings-address_whitelist | `on-behalf-of`, body: object | mail_settings_address_whitelabel |  | Update address whitelist mail settings |
+| GET | `/mail_settings/bounce_purge` | GET_mail_settings-bounce_purge | `on-behalf-of` | mail_settings_bounce_purge | yes | Retrieve bounce purge mail settings |
+| PATCH | `/mail_settings/bounce_purge` | PATCH_mail_settings-bounce_purge | `on-behalf-of`, body: mail_settings_bounce_purge | mail_settings_bounce_purge |  | Update bounce purge mail settings |
+| GET | `/mail_settings/footer` | GET_mail_settings-footer | `on-behalf-of` | mail_settings_footer | yes | Retrieve footer mail settings |
+| PATCH | `/mail_settings/footer` | PATCH_mail_settings-footer | `on-behalf-of`, body: mail_settings_footer | mail_settings_footer |  | Update footer mail settings |
+| GET | `/mail_settings/forward_bounce` | GET_mail_settings-forward_bounce | `on-behalf-of` | mail_settings_forward_bounce | yes | Retrieve forward bounce mail settings |
+| PATCH | `/mail_settings/forward_bounce` | PATCH_mail_settings-forward_bounce | `on-behalf-of`, body: mail_settings_forward_bounce | mail_settings_forward_bounce |  | Update forward bounce mail settings |
+| GET | `/mail_settings/forward_spam` | GET_mail_settings-forward_spam | `on-behalf-of` | mail_settings_forward_spam | yes | Retrieve forward spam mail settings |
+| PATCH | `/mail_settings/forward_spam` | PATCH_mail_settings-forward_spam | `on-behalf-of`, body: mail_settings_forward_spam | mail_settings_forward_spam |  | Update forward spam mail settings |
+| GET | `/mail_settings/template` | GET_mail_settings-template | `on-behalf-of` | mail_settings_template | yes | Retrieve legacy template mail settings |
+| PATCH | `/mail_settings/template` | PATCH_mail_settings-template | `on-behalf-of`, body: object | object |  | Update template mail settings |
+| GET | `/mailbox_providers/stats` | GET_mailbox_providers-stats | `mailbox_providers`, `on-behalf-of`, `limit`, `offset`, `aggregated_by`, `start_date`*, `end_date` | object[] | yes | Retrieve email statistics by mailbox provider. |
+| GET | `/marketing/contacts` | GET_mc-contats | — | object | yes | Get Sample Contacts |
+| PUT | `/marketing/contacts` | PUT_mc-contacts | body: object | object |  | Add or Update a Contact |
+| DELETE | `/marketing/contacts` | DELETE_mc-contacts | `delete_all_contacts`, `ids` | object |  | Delete Contacts |
+| POST | `/marketing/contacts/batch` | POST_marketing-contacts-batch | body: object | object |  | Get Batched Contacts by IDs |
+| GET | `/marketing/contacts/count` | GET_mc-contacts-count | — | object | yes | Get Total Contact Count |
+| GET | `/marketing/contacts/exports` | GET_marketing-contacts-exports | — | object | yes | Get All Existing Exports |
+| POST | `/marketing/contacts/exports` | POST_mc-contacts-exports | body: object | object |  | Export Contacts |
+| GET | `/marketing/contacts/exports/{id}` | GET_mc-contacts-exports-id | `id`* | contact-export | yes | Export Contacts Status |
+| PUT | `/marketing/contacts/imports` | PUT_mc-contacts-imports | body: object | object |  | Import Contacts |
+| GET | `/marketing/contacts/imports/{id}` | GET_marketing-contacts-imports-id | `id`* | contact-import | yes | Import Contacts Status |
+| POST | `/marketing/contacts/search` | POST_mc-contacts-search | body: object | object |  | Search Contacts |
+| POST | `/marketing/contacts/search/emails` | POST_marketing-contacts-search-emails | body: object | object |  | Get Contacts by Emails |
+| GET | `/marketing/contacts/{id}` | GET_mc-contacts-id | `id`* | contact-details3 | yes | Get a Contact by ID |
+| GET | `/marketing/field_definitions` | GET_mc-field_definitions | — | object | yes | Get All Field Definitions |
+| POST | `/marketing/field_definitions` | POST_mc-field_definitions | body: object | custom_field_definitions_response\|object |  | Create Custom Field Definition |
+| DELETE | `/marketing/field_definitions/{custom_field_id}` | DELETE_mc-field_definitions-custom_field_id | `custom_field_id`* | — |  | Delete Custom Field Definition |
+| PATCH | `/marketing/field_definitions/{custom_field_id}` | PATCH_mc-field_definitions-custom_field_id | `custom_field_id`*, body: object | custom_field_definitions_response\|object |  | Update Custom Field Definition |
+| GET | `/marketing/lists` | GET_mc-lists | `page_size`, `page_token` | object | yes | Get All Lists |
+| POST | `/marketing/lists` | POST_mc-lists | body: object | list |  | Create List |
+| GET | `/marketing/lists/{id}` | GET_mc-lists-id | `id`*, `contact_sample` | list\|object | yes | Get a List by ID |
+| DELETE | `/marketing/lists/{id}` | DELETE_lists-id | `id`*, `delete_contacts` | object, string |  | Delete a list |
+| PATCH | `/marketing/lists/{id}` | PATCH_mc-lists-id | `id`*, body: object | list |  | Update List |
+| DELETE | `/marketing/lists/{id}/contacts` | DELETE_mc-lists-id-contacts | `id`*, `contact_ids`* | object |  | Remove Contacts from a List |
+| GET | `/marketing/lists/{id}/contacts/count` | GET_mc-lists-id-contacts-count | `id`* | object | yes | Get List Contact Count |
+| GET | `/marketing/segments` | GET_marketing-segments | `parent_list_ids`, `no_parent_list_id` | object | yes | Get List of Segments |
+| POST | `/marketing/segments` | POST_marketing-segments | body: segment_write_v2\|object | full-segment |  | Create Segment |
+| GET | `/marketing/segments/2.0` | GET_segments | `parent_list_ids`, `no_parent_list_id` | all_segments_response | yes | Get List of Segments |
+| POST | `/marketing/segments/2.0` | POST_segments | body: segment_write_v2 | segment_response |  | Create Segment |
+| GET | `/marketing/segments/2.0/{segment_id}` | GET_segments-segment_id | `segment_id`*, `contacts_sample` | segment_response | yes | Get Segment by ID |
+| DELETE | `/marketing/segments/2.0/{segment_id}` | DELETE_segments-segment_id | `segment_id`* | — |  | Delete segment |
+| PATCH | `/marketing/segments/2.0/{segment_id}` | PATCH_segments-segment_id | `segment_id`*, body: segment_update | segment_response |  | Update Segment |
+| POST | `/marketing/segments/delete` | POST_marketing-segments-delete | body: object | object |  | Bulk Delete Segments |
+| GET | `/marketing/segments/{segment_id}` | GET_marketing-segments-segment_id | `segment_id`*, `query_json` | full-segment | yes | Get Segment by ID |
+| DELETE | `/marketing/segments/{segment_id}` | DELETE_marketing-segments-segment_id | `segment_id`* | object |  | Delete Segment |
+| PATCH | `/marketing/segments/{segment_id}` | PATCH_marketing-segments-segment_id | `segment_id`*, body: segment_write_v2 | full-segment |  | Update Segment |
+| POST | `/marketing/senders` | POST_marketing-senders | `on-behalf-of`, body: object | senderID |  | Create a Sender Identity |
+| GET | `/marketing/singlesends` | GET_marketing-singlesends | `page_size`, `page_token` | object | yes | Get All Single Sends |
+| POST | `/marketing/singlesends` | POST_marketing-singlesends | body: singlesend_request | singlesend_response |  | Create Single Send |
+| DELETE | `/marketing/singlesends` | DELETE_marketing-singlesends | `ids` | — |  | Bulk Delete Single Sends |
+| GET | `/marketing/singlesends/categories` | GET_marketing-singlesends-categories | — | object | yes | Get All Categories |
+| POST | `/marketing/singlesends/search` | POST_marketing-singlesends-search | `page_size`, `page_token`, body: singlesend_search | object |  | Get Single Sends Search |
+| GET | `/marketing/singlesends/{id}` | GET_marketing-singlesends-id | `id`* | singlesend_response | yes | Get Single Send by ID |
+| POST | `/marketing/singlesends/{id}` | POST_marketing-singlesends-id | `id`*, body: object | singlesend_response |  | Duplicate Single Send |
+| DELETE | `/marketing/singlesends/{id}` | DELETE_marketing-singlesends-id | `id`* | — |  | Delete Single Send by ID |
+| PATCH | `/marketing/singlesends/{id}` | PATCH_marketing-singlesends-id | `id`*, body: singlesend_request | singlesend_response |  | Update Single Send |
+| PUT | `/marketing/singlesends/{id}/schedule` | PUT_marketing-singlesends-id-schedule | `id`*, body: object | object |  | Schedule Single Send |
+| DELETE | `/marketing/singlesends/{id}/schedule` | DELETE_marketing-singlesends-id-schedule | `id`* | singlesend_schedule |  | Delete Single Send Schedule |
+| GET | `/marketing/stats/automations` | getall-automation-stats | `automation_ids`, `page_size`, `page_token` | automations-response | yes | Get All Automation Stats |
+| GET | `/marketing/stats/automations/export` | get-automations-stats-export | `ids`, `timezone` | string | yes | Export Automation Stats |
+| GET | `/marketing/stats/automations/{id}` | get-automation-stat | `id`*, `group_by`, `step_ids`, `aggregated_by`, `start_date`, `end_date`, `timezone`, `page_size`, `page_token` | automations-response | yes | Get Automation Stats by ID |
+| GET | `/marketing/stats/automations/{id}/links` | get-automation-link-stat | `id`*, `group_by`, `step_ids`, `page_size`, `page_token` | automations-link-stats-response | yes | Get Automation Click Tracking Stats by ID |
+| GET | `/marketing/stats/singlesends` | getall-singlesend-stats | `singlesend_ids`, `page_size`, `page_token` | singlesends-response | yes | Get All Single Sends Stats |
+| GET | `/marketing/stats/singlesends/export` | get-singlesend-stats-export | `ids`, `timezone` | string | yes | Export Single Send Stats |
+| GET | `/marketing/stats/singlesends/{id}` | get-singlesend-stat | `id`*, `aggregated_by`, `start_date`, `end_date`, `timezone`, `page_size`, `page_token`, `group_by` | singlesends-response | yes | Get Single Send Stats by ID |
+| GET | `/marketing/stats/singlesends/{id}/links` | get-singlesend-link-stat | `id`*, `page_size`, `page_token`, `group_by`, `ab_variation_id`, `ab_phase_id` | singlesends-link-stats-response | yes | Get Single Send Click Tracking Stats by ID |
+| POST | `/marketing/test/send_email` | POST_marketing-test-send_email | body: object | object |  | Send a Test Marketing Email |
+| GET | `/messages` | GET-messages | `query`*, `limit`, `X-Query-Id`, `X-Cursor`, `Authorization`* | object | yes | Filter all messages |
+| POST | `/messages/download` | POST_v3-messages-download | `query`, `Authorization`* | object |  | Request CSV |
+| GET | `/messages/download/{download_uuid}` | GET_v3-messages-download-download_uuid | `download_uuid`*, `Authorization`* | object | yes | Download CSV |
+| GET | `/messages/{msg_id}` | GET-v3-messages-msg_id | `msg_id`*, `Authorization`* | email-activity-response-common-fields\|object | yes | Filter messages by message ID |
+| GET | `/partner_settings` | GET_partner_settings | `limit`, `offset`, `on-behalf-of` | object | yes | Returns a list of all partner settings. |
+| GET | `/partner_settings/new_relic` | GET_partner_settings-new_relic | `on-behalf-of` | partner_settings_new_relic | yes | Returns all New Relic partner settings. |
+| PATCH | `/partner_settings/new_relic` | PATCH_partner_settings-new_relic | `on-behalf-of`, body: object | partner_settings_new_relic |  | Updates New Relic partner settings. |
+| GET | `/scopes` | GET_scopes | `on-behalf-of` | object | yes | Retrieve a list of scopes for which this user has access. |
+| GET | `/scopes/requests` | GET_v3-scopes-requests | `limit`, `offset` | object[] | yes | Retrieve access requests |
+| DELETE | `/scopes/requests/{request_id}` | DELETE_v3-scopes-requests-request_id | `request_id`* | — |  | Deny access request |
+| PATCH | `/scopes/requests/{request_id}/approve` | PATCH_v3-scopes-requests-approve-id | `request_id`* | object |  | Approve access request |
+| GET | `/senders` | GET_v3-senders | `on-behalf-of` | object | yes | Get all Sender Identities |
+| POST | `/senders` | POST_senders | `on-behalf-of`, body: sender-id-request\|object | senderID |  | Create a Sender Identity |
+| GET | `/senders/{sender_id}` | GET_v3-senders-sender_id | `sender_id`*, `on-behalf-of` | senderID | yes | View a Sender Identity |
+| DELETE | `/senders/{sender_id}` | DELETE_v3-senders-sender_id | `sender_id`*, `on-behalf-of` | object |  | Delete a Sender Identity |
+| PATCH | `/senders/{sender_id}` | PATCH_v3-senders-sender_id | `sender_id`*, `on-behalf-of`, body: sender-id-request | senderID |  | Update a Sender Identity |
+| POST | `/senders/{sender_id}/resend_verification` | POST_v3-senders-sender_id-resend_verification | `sender_id`*, `on-behalf-of` | object |  | Resend Sender Identity Verification |
+| POST | `/sso/certificates` | POST_sso-certificates | body: object | sso-certificate-body |  | Create an SSO Certificate |
+| GET | `/sso/certificates/{cert_id}` | GET_sso-certificates-cert_id | `cert_id`* | sso-certificate-body | yes | Get an SSO Certificate |
+| DELETE | `/sso/certificates/{cert_id}` | DELETE_sso-certificates-cert_id | `cert_id`* | sso-certificate-body |  | Delete an SSO Certificate |
+| PATCH | `/sso/certificates/{cert_id}` | PATCH_sso-certificates-cert_id | `cert_id`*, body: object | — |  | Update SSO Certificate |
+| GET | `/sso/integrations` | GET_sso-integrations | `si` | sso-integration[] | yes | Get All SSO Integrations |
+| POST | `/sso/integrations` | POST_sso-integrations | body: create-integration-request | sso-integration |  | Create an SSO Integration |
+| GET | `/sso/integrations/{id}` | GET_sso-integrations-id | `id`*, `si` | sso-integration | yes | Get an SSO Integration |
+| DELETE | `/sso/integrations/{id}` | DELETE_sso-integrations-id | `id`* | — |  | Delete an SSO Integration |
+| PATCH | `/sso/integrations/{id}` | PATCH_sso-integrations-id | `id`*, `si`, body: create-integration-request | sso-integration |  | Update an SSO Integration |
+| GET | `/sso/integrations/{integration_id}/certificates` | GET_sso-integrations-integration_id-certificates | `integration_id`* | sso-certificate-body[] | yes | Get All SSO Certificates by Integration |
+| POST | `/sso/teammates` | POST_sso-teammates | body: sso-teammate-request | sso-teammate-response |  | Create SSO Teammate |
+| PATCH | `/sso/teammates/{username}` | PATCH_sso-teammates-username | `username`*, body: object | sso-teammates-patch-response |  | Edit an SSO Teammate |
+| GET | `/stats` | GET_stats | `on-behalf-of`, `limit`, `offset`, `aggregated_by`, `start_date`*, `end_date` | object[] | yes | Retrieve global email statistics |
+| GET | `/subusers` | GET_subusers | `username`, `limit`, `offset` | subuser[] | yes | List all Subusers |
+| POST | `/subusers` | POST_subusers | body: object | subuser_post |  | Create Subuser |
+| GET | `/subusers/reputations` | GET_subusers-reputations | `usernames` | object[] | yes | Retrieve Subuser Reputations |
+| GET | `/subusers/stats` | GET_subusers-stats | `limit`, `offset`, `aggregated_by`, `subusers`*, `start_date`*, `end_date` | category_stats | yes | Retrieve email statistics for your subusers. |
+| GET | `/subusers/stats/monthly` | GET_subusers-stats-monthly | `date`*, `subuser`, `sort_by_metric`, `sort_by_direction`, `limit`, `offset` | subuser_stats | yes | Retrieve monthly stats for all subusers |
+| GET | `/subusers/stats/sums` | GET_subusers-stats-sums | `sort_by_direction`, `start_date`*, `end_date`, `limit`, `offset`, `aggregated_by`, `sort_by_metric` | category_stats | yes | Retrieve the totals for each email statistic metric for all subusers. |
+| DELETE | `/subusers/{subuser_name}` | DELETE_subusers-subuser_name | `subuser_name`* | object |  | Delete a subuser |
+| PATCH | `/subusers/{subuser_name}` | PATCH_subusers-subuser_name | `subuser_name`*, body: object | object |  | Enable/disable a subuser |
+| PUT | `/subusers/{subuser_name}/ips` | PUT_subusers-subuser_name-ips | `subuser_name`*, body: string:ipv4[] | object |  | Update IPs assigned to a subuser |
+| GET | `/subusers/{subuser_name}/monitor` | GET_subusers-subuser_name-monitor | `subuser_name`* | monitor | yes | Retrieve monitor settings for a subuser |
+| PUT | `/subusers/{subuser_name}/monitor` | PUT_subusers-subuser_name-monitor | `subuser_name`*, body: monitor | monitor |  | Update Monitor Settings for a subuser |
+| POST | `/subusers/{subuser_name}/monitor` | POST_subusers-subuser_name-monitor | `subuser_name`*, body: monitor | monitor |  | Create monitor settings |
+| DELETE | `/subusers/{subuser_name}/monitor` | DELETE_subusers-subuser_name-monitor | `subuser_name`* | object |  | Delete monitor settings |
+| GET | `/subusers/{subuser_name}/stats/monthly` | GET_subusers-subuser_name-stats-monthly | `subuser_name`*, `date`*, `sort_by_metric`, `sort_by_direction`, `limit`, `offset` | subuser_stats | yes | Retrieve the monthly email statistics for a single subuser |
+| GET | `/suppression/blocks` | GET_suppression-blocks | `start_time`, `end_time`, `limit`, `offset`, `on-behalf-of` | blocks-response | yes | Retrieve all blocks |
+| DELETE | `/suppression/blocks` | DELETE_suppression-blocks | `on-behalf-of`, body: object | object |  | Delete blocks |
+| GET | `/suppression/blocks/{email}` | GET_suppression-blocks-email | `email`*, `on-behalf-of` | blocks-response | yes | Retrieve a specific block |
+| DELETE | `/suppression/blocks/{email}` | DELETE_suppression-blocks-email | `email`*, `on-behalf-of` | object |  | Delete a specific block |
+| GET | `/suppression/bounces` | GET_suppression-bounces | `start_time`, `end_time`, `Accept`*, `on-behalf-of` | bounce_response[] | yes | Retrieve all bounces |
+| DELETE | `/suppression/bounces` | DELETE_suppression-bounces | `on-behalf-of`, body: object | — |  | Delete bounces |
+| GET | `/suppression/bounces/{email}` | GET_suppression-bounces-email | `email`*, `on-behalf-of` | bounce_response[] | yes | Retrieve a Bounce |
+| DELETE | `/suppression/bounces/{email}` | DELETE_suppression-bounces-email | `email`*, `email_address`*, `on-behalf-of`, body: — | object |  | Delete a bounce |
+| GET | `/suppression/invalid_emails` | GET_suppression-invalid_emails | `start_time`, `end_time`, `limit`, `offset`, `on-behalf-of` | invalid-email[] | yes | Retrieve all invalid emails |
+| DELETE | `/suppression/invalid_emails` | DELETE_suppression-invalid_emails | `on-behalf-of`, body: object | object |  | Delete invalid emails |
+| GET | `/suppression/invalid_emails/{email}` | GET_suppression-invalid_emails-email | `email`*, `on-behalf-of` | invalid-email[] | yes | Retrieve a specific invalid email |
+| DELETE | `/suppression/invalid_emails/{email}` | DELETE_suppression-invalid_emails-email | `email`*, `on-behalf-of` | object |  | Delete a specific invalid email |
+| GET | `/suppression/spam_reports` | GET_suppression-spam_reports | `start_time`, `end_time`, `limit`, `offset`, `on-behalf-of` | spam-reports-response | yes | Retrieve all spam reports |
+| DELETE | `/suppression/spam_reports` | DELETE_suppression-spam_reports | `on-behalf-of`, body: object | object |  | Delete spam reports |
+| GET | `/suppression/spam_reports/{email}` | GET_suppression-spam_reports-email | `email`*, `on-behalf-of` | spam-reports-response | yes | Retrieve a specific spam report |
+| DELETE | `/suppression/spam_reports/{email}` | DELETE_suppression-spam_reports-email | `email`*, `on-behalf-of` | object |  | Delete a specific spam report |
+| GET | `/suppression/unsubscribes` | GET_suppression-unsubscribes | `start_time`, `end_time`, `limit`, `offset`, `on-behalf-of` | object[] | yes | Retrieve all global suppressions |
+| GET | `/teammates` | GET_v3-teammates | `limit`, `offset`, `on-behalf-of` | object | yes | Retrieve all teammates |
+| POST | `/teammates` | POST_v3-teammates | `on-behalf-of`, body: object | object |  | Invite teammate |
+| GET | `/teammates/pending` | GET_v3-teammates-pending | `on-behalf-of` | object | yes | Retrieve all pending teammates |
+| DELETE | `/teammates/pending/{token}` | DELETE_v3-teammates-pending-token | `token`*, `on-behalf-of` | — |  | Delete pending teammate |
+| POST | `/teammates/pending/{token}/resend` | POST_v3-teammates-pending-token-resend | `token`*, `on-behalf-of` | object |  | Resend teammate invite |
+| GET | `/teammates/{username}` | GET_v3-teammates-username | `username`*, `on-behalf-of` | object | yes | Retrieve specific teammate |
+| DELETE | `/teammates/{username}` | DELETE_v3-teammates-username | `username`*, `on-behalf-of` | object |  | Delete teammate |
+| PATCH | `/teammates/{username}` | PATCH_v3-teammates-username | `username`*, `on-behalf-of`, body: object | object |  | Update teammate's permissions |
+| GET | `/templates` | GET_templates | `generations`, `page_size`*, `page_token`, `on-behalf-of` | object | yes | Retrieve paged transactional templates. |
+| POST | `/templates` | POST_templates | `on-behalf-of`, body: object | transactional_template |  | Create a transactional template. |
+| GET | `/templates/{template_id}` | GET_templates-template_id | `template_id`*, `on-behalf-of` | transactional_template | yes | Retrieve a single transactional template. |
+| POST | `/templates/{template_id}` | POST_templates-template_id | `template_id`*, `on-behalf-of`, body: object | transactional_template |  | Duplicate a transactional template. |
+| DELETE | `/templates/{template_id}` | DELETE_templates-template_id | `template_id`*, `on-behalf-of` | object |  | Delete a template. |
+| PATCH | `/templates/{template_id}` | PATCH_templates-template_id | `template_id`*, `on-behalf-of`, body: object | transactional_template |  | Edit a transactional template. |
+| POST | `/templates/{template_id}/versions` | POST_templates-template_id-versions | `template_id`*, `on-behalf-of`, body: transactional_template_version_create | transactional_template_version_output |  | Create a new transactional template version. |
+| GET | `/templates/{template_id}/versions/{version_id}` | GET_templates-template_id-versions-version_id | `template_id`*, `version_id`*, `on-behalf-of` | transactional_template_version_output | yes | Retrieve a specific transactional template version. |
+| DELETE | `/templates/{template_id}/versions/{version_id}` | DELETE_templates-template_id-versions-version_id | `template_id`*, `version_id`*, `on-behalf-of` | — |  | Delete a transactional template version. |
+| PATCH | `/templates/{template_id}/versions/{version_id}` | PATCH_templates-template_id-versions-version_id | `template_id`*, `version_id`*, `on-behalf-of`, body: transactional_template_version_create | transactional_template_version_output |  | Edit a transactional template version. |
+| POST | `/templates/{template_id}/versions/{version_id}/activate` | POST_templates-template_id-versions-version_id-activate | `template_id`*, `version_id`*, `on-behalf-of` | transactional_template_version_output |  | Activate a transactional template version. |
+| GET | `/tracking_settings` | GET_tracking_settings | `on-behalf-of` | object | yes | Retrieve Tracking Settings |
+| GET | `/tracking_settings/click` | GET_tracking_settings-click | `on-behalf-of` | click-tracking | yes | Retrieve Click Track Settings |
+| PATCH | `/tracking_settings/click` | PATCH_tracking_settings-click | `on-behalf-of`, body: object | click-tracking |  | Update Click Tracking Settings |
+| GET | `/tracking_settings/google_analytics` | GET_tracking_settings-google_analytics | `on-behalf-of` | google_analytics_settings | yes | Retrieve Google Analytics Settings |
+| PATCH | `/tracking_settings/google_analytics` | PATCH_tracking_settings-google_analytics | `on-behalf-of`, body: google_analytics_settings | google_analytics_settings |  | Update Google Analytics Settings |
+| GET | `/tracking_settings/open` | GET_tracking_settings-open | `on-behalf-of` | object | yes | Get Open Tracking Settings |
+| PATCH | `/tracking_settings/open` | PATCH_tracking_settings-open | `on-behalf-of`, body: object | object |  | Update Open Tracking Settings |
+| GET | `/tracking_settings/subscription` | GET_tracking_settings-subscription | `on-behalf-of` | subscription_tracking_settings | yes | Retrieve Subscription Tracking Settings |
+| PATCH | `/tracking_settings/subscription` | PATCH_tracking_settings-subscription | `on-behalf-of`, body: subscription_tracking_settings | subscription_tracking_settings |  | Update Subscription Tracking Settings |
+| GET | `/user/account` | GET_user-account | `on-behalf-of` | object | yes | Get a user's account information. |
+| GET | `/user/credits` | GET_user-credits | `on-behalf-of` | object | yes | Retrieve your credit balance |
+| GET | `/user/email` | GET_user-email | `on-behalf-of` | object | yes | Retrieve your account email address |
+| PUT | `/user/email` | PUT_user-email | `on-behalf-of`, body: object | object |  | Update your account email address |
+| PUT | `/user/password` | PUT_user-password | `on-behalf-of`, body: object | object |  | Update your password |
+| GET | `/user/profile` | GET_user-profile | `on-behalf-of` | object | yes | Get a user's profile |
+| PATCH | `/user/profile` | PATCH_user-profile | `on-behalf-of`, body: user_profile | user_profile |  | Update a user's profile |
+| GET | `/user/scheduled_sends` | GET_user-scheduled_sends | `on-behalf-of` | user_scheduled_send_status[] | yes | Retrieve all scheduled sends |
+| POST | `/user/scheduled_sends` | POST_user-scheduled_sends | `on-behalf-of`, body: object | user_scheduled_send_status |  | Cancel or pause a scheduled send |
+| GET | `/user/scheduled_sends/{batch_id}` | GET_user-scheduled_sends-batch_id | `batch_id`*, `on-behalf-of` | user_scheduled_send_status[] | yes | Retrieve scheduled send |
+| DELETE | `/user/scheduled_sends/{batch_id}` | DELETE_user-scheduled_sends-batch_id | `batch_id`*, `on-behalf-of` | — |  | Delete a cancellation or pause from a scheduled send |
+| PATCH | `/user/scheduled_sends/{batch_id}` | PATCH_user-scheduled_sends-batch_id | `batch_id`*, `on-behalf-of`, body: object | — |  | Update a scheduled send |
+| GET | `/user/settings/enforced_tls` | GET_user-settings-enforced_tls | `on-behalf-of` | enforced-tls-request-response | yes | Retrieve current Enforced TLS settings. |
+| PATCH | `/user/settings/enforced_tls` | PATCH_user-settings-enforced_tls | `on-behalf-of`, body: enforced-tls-request-response | enforced-tls-request-response |  | Update Enforced TLS settings |
+| GET | `/user/username` | GET_user-username | `on-behalf-of` | object | yes | Retrieve your username |
+| PUT | `/user/username` | PUT_user-username | `on-behalf-of`, body: object | object |  | Update your username |
+| GET | `/user/webhooks/event/settings` | GET_user-webhooks-event-settings | `on-behalf-of` | event-webhook-response | yes | Retrieve Event Webhook settings |
+| PATCH | `/user/webhooks/event/settings` | PATCH_user-webhooks-event-settings | `on-behalf-of`, body: event-webhook-update-oauth-request | event-webhook-response |  | Update Event Notification Settings |
+| GET | `/user/webhooks/event/settings/signed` | GET_user-webhooks-event-settings-signed | `on-behalf-of` | object | yes | Retrieve Signed Webhook Public Key |
+| PATCH | `/user/webhooks/event/settings/signed` | PATCH_user-webhooks-event-settings-signed | `on-behalf-of`, body: object | object |  | Enable/Disable Signed Webhook |
+| POST | `/user/webhooks/event/test` | POST_user-webhooks-event-test | `on-behalf-of`, body: object | — |  | Test Event Notification Settings |
+| GET | `/user/webhooks/parse/settings` | GET_user-webhooks-parse-settings | `on-behalf-of` | object | yes | Retrieve all parse settings |
+| POST | `/user/webhooks/parse/settings` | POST_user-webhooks-parse-settings | `on-behalf-of`, body: parse-setting | parse-setting |  | Create a parse setting |
+| GET | `/user/webhooks/parse/settings/{hostname}` | GET_user-webhooks-parse-settings-hostname | `hostname`*, `on-behalf-of` | parse-setting | yes | Retrieve a specific parse setting |
+| DELETE | `/user/webhooks/parse/settings/{hostname}` | DELETE_user-webhooks-parse-settings-hostname | `hostname`*, `on-behalf-of` | object |  | Delete a parse setting |
+| PATCH | `/user/webhooks/parse/settings/{hostname}` | PATCH_user-webhooks-parse-settings-hostname | `hostname`*, `on-behalf-of`, body: parse-setting | parse-setting |  | Update a parse setting |
+| GET | `/user/webhooks/parse/stats` | GET_user-webhooks-parse-stats | `limit`, `offset`, `aggregated_by`, `start_date`*, `end_date`, `on-behalf-of` | object[] | yes | Retrieves Inbound Parse Webhook statistics. |
+| POST | `/validations/email` | POST_validations-email | body: object | object |  | Validate an email |
+| GET | `/verified_senders` | GET_verified_senders | `limit`, `lastSeenID`, `id` | object | yes | Get All Verified Senders |
+| POST | `/verified_senders` | POST_verified_senders | body: verified-sender-request-schema | verified-sender-response-schema |  | Create Verified Sender Request |
+| GET | `/verified_senders/domains` | GET_verified_senders-domains | — | object | yes | Domain Warn List |
+| POST | `/verified_senders/resend/{id}` | POST_verified_senders-resend-id | `id`* | object |  | Resend Verified Sender Request |
+| GET | `/verified_senders/steps_completed` | GET_verified_senders-steps_completed | — | object | yes | Completed Steps |
+| GET | `/verified_senders/verify/{token}` | GET_verified_senders-verify-token | `token`* | — | yes | Verify Sender Request |
+| DELETE | `/verified_senders/{id}` | DELETE_verified_senders-id | `id`* | object |  | Delete Verified Sender |
+| PATCH | `/verified_senders/{id}` | PATCH_verified_senders-id | `id`*, body: verified-sender-request-schema | verified-sender-response-schema |  | Edit Verified Sender |
+| POST | `/whitelabel/dns/email` | POST_whitelabel-dns-email | body: object | — |  | Email DNS records to a co-worker |
+| GET | `/whitelabel/domains` | GET_whitelabel-domains | `limit`, `offset`, `exclude_subusers`, `username`, `domain`, `on-behalf-of` | domain-authentication-200-response | yes | List all authenticated domains |
+| POST | `/whitelabel/domains` | POST_whitelabel-domains | `on-behalf-of`, body: object | authentication_domain |  | Authenticate a domain |
+| GET | `/whitelabel/domains/default` | GET_whitelabel-domains-default | `domain`, `on-behalf-of` | domain-authentication-200-response | yes | Get the default authentication |
+| GET | `/whitelabel/domains/subuser` | GET_whitelabel-domains-subuser | `username`* | domain_authentication_domain_spf | yes | List the authenticated domain associated with the given user. |
+| DELETE | `/whitelabel/domains/subuser` | DELETE_whitelabel-domains-subuser | `username` | object |  | Disassociate an authenticated domain from a given user. |
+| GET | `/whitelabel/domains/{domain_id}` | GET_whitelabel-domains-domain_id | `domain_id`*, `on-behalf-of` | authentication_domain | yes | Retrieve an authenticated domain |
+| DELETE | `/whitelabel/domains/{domain_id}` | DELETE_whitelabel-domains-domain_id | `domain_id`*, `on-behalf-of` | object |  | Delete an authenticated domain. |
+| PATCH | `/whitelabel/domains/{domain_id}` | PATCH_whitelabel-domains-domain_id | `domain_id`*, `on-behalf-of`, body: object | domain-authentication-200-response |  | Update an authenticated domain |
+| POST | `/whitelabel/domains/{domain_id}/subuser` | POST_whitelabel-domains-domain_id-subuser | `domain_id`*, body: object | domain_authentication_domain_spf |  | Associate an authenticated domain with a given user. |
+| POST | `/whitelabel/domains/{id}/ips` | POST_whitelabel-domains-id-ips | `id`*, `on-behalf-of`, body: object | domain_authentication_domain_spf |  | Add an IP to an authenticated domain |
+| DELETE | `/whitelabel/domains/{id}/ips/{ip}` | DELETE_whitelabel-domains-id-ips-ip | `id`*, `ip`*, `on-behalf-of` | domain_authentication_domain_spf |  | Remove an IP from an authenticated domain. |
+| POST | `/whitelabel/domains/{id}/validate` | POST_whitelabel-domains-id-validate | `id`*, `on-behalf-of` | object |  | Validate a domain authentication. |
+| GET | `/whitelabel/ips` | GET_whitelabel-ips | `limit`, `offset`, `ip`, `on-behalf-of` | reverse_dns[] | yes | Retrieve all reverse DNS records |
+| POST | `/whitelabel/ips` | POST_whitelabel-ips | `on-behalf-of`, body: object | reverse_dns |  | Set up reverse DNS |
+| GET | `/whitelabel/ips/{id}` | GET_whitelabel-ips-id | `id`*, `on-behalf-of` | reverse_dns | yes | Retrieve a reverse DNS record |
+| DELETE | `/whitelabel/ips/{id}` | DELETE_whitelabel-ips-id | `id`*, `on-behalf-of` | object |  | Delete a reverse DNS record |
+| POST | `/whitelabel/ips/{id}/validate` | POST_whitelabel-ips-id-validate | `id`*, `on-behalf-of` | object |  | Validate a reverse DNS record |
+| GET | `/whitelabel/links` | GET_whitelabel-links | `limit`, `on-behalf-of` | link_branding_200_response[] | yes | Retrieve all branded links |
+| POST | `/whitelabel/links` | POST_whitelabel-links | `on-behalf-of`, body: object | link_branding_200_response |  | Create a branded link |
+| GET | `/whitelabel/links/default` | GET_whitelabel-links-default | `domain`, `on-behalf-of` | link_branding_200_response | yes | Retrieve the default branded link |
+| GET | `/whitelabel/links/subuser` | GET_whitelabel-links-subuser | `username`* | link_branding_200_response | yes | Retrieve a subuser's branded link |
+| DELETE | `/whitelabel/links/subuser` | DELETE_whitelabel-links-subuser | `username`* | object |  | Disassociate a branded link from a subuser |
+| GET | `/whitelabel/links/{id}` | GET_whitelabel-links-id | `id`*, `on-behalf-of` | link_branding_200_response | yes | Retrieve a branded link |
+| DELETE | `/whitelabel/links/{id}` | DELETE_whitelabel-links-id | `id`*, `on-behalf-of` | object |  | Delete a branded link |
+| PATCH | `/whitelabel/links/{id}` | PATCH_whitelabel-links-id | `id`*, `on-behalf-of`, body: object | link_branding_200_response |  | Update a branded link |
+| POST | `/whitelabel/links/{id}/validate` | POST_whitelabel-links-id-validate | `id`*, `on-behalf-of` | object |  | Validate a branded link |
+| POST | `/whitelabel/links/{link_id}/subuser` | POST_whitelabel-links-link_id-subuser | `link_id`*, body: object | link_branding_200_response |  | Associate a branded link with a subuser |

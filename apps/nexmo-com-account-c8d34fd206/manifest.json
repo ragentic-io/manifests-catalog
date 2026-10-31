@@ -37,12 +37,67 @@
       {
         "from": "nexmo-com-account-c8d34fd206",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{api_key}/secrets/{secret_id}"
+        "to": "operation:get:/accounts/{api_key}/secrets/{secret_id}"
       },
       {
         "from": "nexmo-com-account-c8d34fd206",
         "kind": "EXPOSES",
-        "to": "operation:get:/accounts/{api_key}/secrets/{secret_id}"
+        "to": "operation:delete:/accounts/{api_key}/secrets/{secret_id}"
+      },
+      {
+        "from": "operation:get:/account/get-balance",
+        "kind": "RETURNS",
+        "to": "schema:accountBalance"
+      },
+      {
+        "from": "operation:post:/account/register-sender",
+        "kind": "ACCEPTS",
+        "to": "schema:registerEmailRequest"
+      },
+      {
+        "from": "operation:post:/account/register-sender",
+        "kind": "RETURNS",
+        "to": "schema:registerEmailResponse"
+      },
+      {
+        "from": "operation:post:/account/settings",
+        "kind": "ACCEPTS",
+        "to": "schema:accountSettingsRequest"
+      },
+      {
+        "from": "operation:post:/account/settings",
+        "kind": "RETURNS",
+        "to": "schema:accountSettings"
+      },
+      {
+        "from": "operation:post:/account/top-up",
+        "kind": "ACCEPTS",
+        "to": "schema:topupRequest"
+      },
+      {
+        "from": "operation:post:/account/top-up",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:post:/accounts/{api_key}/secrets",
+        "kind": "ACCEPTS",
+        "to": "schema:createSecretRequest"
+      },
+      {
+        "from": "operation:post:/accounts/{api_key}/secrets",
+        "kind": "RETURNS",
+        "to": "schema:secretInfo"
+      },
+      {
+        "from": "operation:get:/accounts/{api_key}/secrets/{secret_id}",
+        "kind": "RETURNS",
+        "to": "schema:secretInfo"
+      },
+      {
+        "from": "schema:secretInfo",
+        "kind": "REFERENCES",
+        "to": "schema:secretMgmtLinks"
       }
     ],
     "nodes": [
@@ -52,47 +107,187 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieve the current balance of your Vonage API account",
         "id": "operation:get:/account/get-balance",
         "kind": "operation",
         "method": "get",
         "name": "getAccountBalance",
+        "parameters": [
+          {
+            "description": "Your Vonage API key.",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your Vonage API secret.",
+            "in": "query",
+            "name": "api_secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/get-balance",
         "pointer": "#/paths/~1account~1get-balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "accountBalance"
+          },
+          {
+            "status": "401",
+            "type": "ErrorAuthenticationFailedAccountBalance"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Account Balance"
+        "summary": "Get Account Balance",
+        "tags": [
+          "Balance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register an email sender with an API Key for using email with Verify V2.",
         "id": "operation:post:/account/register-sender",
         "kind": "operation",
         "method": "post",
         "name": "registerSender",
+        "parameters": [
+          {
+            "description": "Your Vonage API key.",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your Vonage API secret.",
+            "in": "query",
+            "name": "api_secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/register-sender",
         "pointer": "#/paths/~1account~1register-sender/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "registerEmailRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "registerEmailResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Register an email sender"
+        "summary": "Register an email sender",
+        "tags": [
+          "Configuration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the default webhook URLs associated with your account: * Callback URL for incoming SMS messages * Callback URL for delivery receipts Note that the URLs…",
         "id": "operation:post:/account/settings",
         "kind": "operation",
         "method": "post",
         "name": "changeAccountSettings",
+        "parameters": [
+          {
+            "description": "Your Vonage API key.",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your Vonage API secret.",
+            "in": "query",
+            "name": "api_secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/settings",
         "pointer": "#/paths/~1account~1settings/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "accountSettingsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "accountSettings"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change Account Settings"
+        "summary": "Change Account Settings",
+        "tags": [
+          "Configuration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can top up your account using this API when you have enabled auto-reload in the dashboard.",
         "id": "operation:post:/account/top-up",
         "kind": "operation",
         "method": "post",
         "name": "topUpAccountBalance",
+        "parameters": [
+          {
+            "description": "Your Vonage API key.",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your Vonage API secret.",
+            "in": "query",
+            "name": "api_secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/top-up",
         "pointer": "#/paths/~1account~1top-up/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "topupRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "401",
+            "type": "ErrorAuthenticationFailed|ErrorAutoReloadNotEnabled"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Top Up Account Balance"
+        "summary": "Top Up Account Balance",
+        "tags": [
+          "Balance"
+        ]
       },
       {
         "deprecated": false,
@@ -100,14 +295,41 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveAPISecrets",
+        "parameters": [
+          {
+            "description": "The API key to manage secrets for",
+            "in": "path",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{api_key}/secrets",
         "pointer": "#/paths/~1accounts~1{api_key}~1secrets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "ErrorAPIKeyNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Retrieve API Secrets"
+        "summary": "Retrieve API Secrets",
+        "tags": [
+          "Secret Management"
+        ]
       },
       {
         "deprecated": false,
@@ -115,29 +337,52 @@
         "kind": "operation",
         "method": "post",
         "name": "createAPISecret",
+        "parameters": [
+          {
+            "description": "The API key to manage secrets for",
+            "in": "path",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{api_key}/secrets",
         "pointer": "#/paths/~1accounts~1{api_key}~1secrets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "createSecretRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "secretInfo"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "ErrorAPIKeyNotFound"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create API Secret"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/accounts/{api_key}/secrets/{secret_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "revokeAPISecret",
-        "path": "/accounts/{api_key}/secrets/{secret_id}",
-        "pointer": "#/paths/~1accounts~1{api_key}~1secrets~1{secret_id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Revoke an API Secret"
+        "summary": "Create API Secret",
+        "tags": [
+          "Secret Management"
+        ]
       },
       {
         "deprecated": false,
@@ -145,89 +390,196 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveAPISecret",
+        "parameters": [
+          {
+            "description": "The API key to manage secrets for",
+            "in": "path",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the API Secret",
+            "in": "path",
+            "name": "secret_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{api_key}/secrets/{secret_id}",
         "pointer": "#/paths/~1accounts~1{api_key}~1secrets~1{secret_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "secretInfo"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "ErrorAPIKeyNotFound|ErrorSecretIDNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Retrieve one API Secret"
+        "summary": "Retrieve one API Secret",
+        "tags": [
+          "Secret Management"
+        ]
       },
       {
+        "deprecated": false,
+        "id": "operation:delete:/accounts/{api_key}/secrets/{secret_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "revokeAPISecret",
+        "parameters": [
+          {
+            "description": "The API key to manage secrets for",
+            "in": "path",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the API Secret",
+            "in": "path",
+            "name": "secret_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/accounts/{api_key}/secrets/{secret_id}",
+        "pointer": "#/paths/~1accounts~1{api_key}~1secrets~1{secret_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "ErrorAPIKeyNotFound|ErrorSecretIDNotFound"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Revoke an API Secret",
+        "tags": [
+          "Secret Management"
+        ]
+      },
+      {
+        "description": "This API key was not recognised",
         "id": "schema:ErrorAPIKeyNotFound",
         "kind": "schema",
-        "name": "ErrorAPIKeyNotFound"
+        "name": "ErrorAPIKeyNotFound",
+        "type": "object"
       },
       {
+        "description": "Authentication Failed",
         "id": "schema:ErrorAuthenticationFailed",
         "kind": "schema",
-        "name": "ErrorAuthenticationFailed"
+        "name": "ErrorAuthenticationFailed",
+        "type": "object"
       },
       {
+        "description": "Authentication Failed",
         "id": "schema:ErrorAuthenticationFailedAccountBalance",
         "kind": "schema",
-        "name": "ErrorAuthenticationFailedAccountBalance"
+        "name": "ErrorAuthenticationFailedAccountBalance",
+        "type": "object"
       },
       {
+        "description": "Auto-Reload not enabled",
         "id": "schema:ErrorAutoReloadNotEnabled",
         "kind": "schema",
-        "name": "ErrorAutoReloadNotEnabled"
+        "name": "ErrorAutoReloadNotEnabled",
+        "type": "object"
       },
       {
+        "description": "This secret ID was not recognised",
         "id": "schema:ErrorSecretIDNotFound",
         "kind": "schema",
-        "name": "ErrorSecretIDNotFound"
+        "name": "ErrorSecretIDNotFound",
+        "type": "object"
       },
       {
         "id": "schema:accountBalance",
         "kind": "schema",
-        "name": "accountBalance"
+        "name": "accountBalance",
+        "type": "object"
       },
       {
         "id": "schema:accountSettings",
         "kind": "schema",
-        "name": "accountSettings"
+        "name": "accountSettings",
+        "type": "object"
       },
       {
         "id": "schema:accountSettingsRequest",
         "kind": "schema",
-        "name": "accountSettingsRequest"
+        "name": "accountSettingsRequest",
+        "type": "object"
       },
       {
         "id": "schema:createSecretRequest",
         "kind": "schema",
-        "name": "createSecretRequest"
+        "name": "createSecretRequest",
+        "type": "object"
       },
       {
         "id": "schema:registerEmailRequest",
         "kind": "schema",
-        "name": "registerEmailRequest"
+        "name": "registerEmailRequest",
+        "type": "object"
       },
       {
         "id": "schema:registerEmailResponse",
         "kind": "schema",
-        "name": "registerEmailResponse"
+        "name": "registerEmailResponse",
+        "type": "object"
       },
       {
         "id": "schema:secretInfo",
         "kind": "schema",
-        "name": "secretInfo"
+        "name": "secretInfo",
+        "type": "object"
       },
       {
+        "description": "Links related to this resource",
         "id": "schema:secretMgmtLinks",
         "kind": "schema",
-        "name": "secretMgmtLinks"
+        "name": "secretMgmtLinks",
+        "type": "object"
       },
       {
         "id": "schema:success",
         "kind": "schema",
-        "name": "success"
+        "name": "success",
+        "type": "object"
       },
       {
         "id": "schema:topupRequest",
         "kind": "schema",
-        "name": "topupRequest"
+        "name": "topupRequest",
+        "type": "object"
       }
     ]
   },

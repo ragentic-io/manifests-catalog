@@ -17,12 +17,12 @@
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}"
+        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}"
+        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
@@ -42,12 +42,12 @@
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}"
+        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}"
+        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
@@ -87,12 +87,12 @@
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}"
+        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}"
+        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
@@ -112,12 +112,12 @@
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}"
+        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}"
+        "to": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}"
       },
       {
         "from": "apigee-local-registry-71b81033ab",
@@ -162,11 +162,6 @@
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/projects/{project}/locations/{location}/artifacts/{artifact}"
-      },
-      {
-        "from": "apigee-local-registry-71b81033ab",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/projects/{project}/locations/{location}/artifacts/{artifact}"
       },
       {
@@ -177,7 +172,262 @@
       {
         "from": "apigee-local-registry-71b81033ab",
         "kind": "EXPOSES",
+        "to": "operation:delete:/v1/projects/{project}/locations/{location}/artifacts/{artifact}"
+      },
+      {
+        "from": "apigee-local-registry-71b81033ab",
+        "kind": "EXPOSES",
         "to": "operation:get:/v1/projects/{project}/locations/{location}/artifacts/{artifact}:getContents"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis",
+        "kind": "RETURNS",
+        "to": "schema:ListApisResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis",
+        "kind": "ACCEPTS",
+        "to": "schema:Api"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis",
+        "kind": "RETURNS",
+        "to": "schema:Api"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}",
+        "kind": "RETURNS",
+        "to": "schema:Api"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}",
+        "kind": "ACCEPTS",
+        "to": "schema:Api"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}",
+        "kind": "RETURNS",
+        "to": "schema:Api"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
+        "kind": "RETURNS",
+        "to": "schema:ListApiDeploymentsResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
+        "kind": "RETURNS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
+        "kind": "RETURNS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
+        "kind": "RETURNS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:deleteRevision",
+        "kind": "RETURNS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:listRevisions",
+        "kind": "RETURNS",
+        "to": "schema:ListApiDeploymentRevisionsResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:rollback",
+        "kind": "ACCEPTS",
+        "to": "schema:RollbackApiDeploymentRequest"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:rollback",
+        "kind": "RETURNS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:tagRevision",
+        "kind": "ACCEPTS",
+        "to": "schema:TagApiDeploymentRevisionRequest"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:tagRevision",
+        "kind": "RETURNS",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions",
+        "kind": "RETURNS",
+        "to": "schema:ListApiVersionsResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions",
+        "kind": "RETURNS",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
+        "kind": "RETURNS",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
+        "kind": "RETURNS",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
+        "kind": "RETURNS",
+        "to": "schema:ListApiSpecsResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
+        "kind": "RETURNS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
+        "kind": "RETURNS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
+        "kind": "RETURNS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:deleteRevision",
+        "kind": "RETURNS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:listRevisions",
+        "kind": "RETURNS",
+        "to": "schema:ListApiSpecRevisionsResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:rollback",
+        "kind": "ACCEPTS",
+        "to": "schema:RollbackApiSpecRequest"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:rollback",
+        "kind": "RETURNS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:tagRevision",
+        "kind": "ACCEPTS",
+        "to": "schema:TagApiSpecRevisionRequest"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:tagRevision",
+        "kind": "RETURNS",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:ListArtifactsResponse"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/artifacts",
+        "kind": "ACCEPTS",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "operation:post:/v1/projects/{project}/locations/{location}/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "operation:get:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
+        "kind": "RETURNS",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "operation:put:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
+        "kind": "ACCEPTS",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "operation:put:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
+        "kind": "RETURNS",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "schema:ListApiDeploymentRevisionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "schema:ListApiDeploymentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiDeployment"
+      },
+      {
+        "from": "schema:ListApiSpecRevisionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "schema:ListApiSpecsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiSpec"
+      },
+      {
+        "from": "schema:ListApiVersionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "schema:ListApisResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Api"
+      },
+      {
+        "from": "schema:ListArtifactsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:GoogleProtobufAny"
       }
     ],
     "nodes": [
@@ -187,478 +437,2355 @@
       },
       {
         "deprecated": false,
+        "description": "ListApis returns matching APIs.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListApis",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of APIs to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A page token, received from a previous `ListApis` call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An expression that can be used to filter the list.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApisResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "CreateApi creates a specified API.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis",
         "kind": "operation",
         "method": "post",
         "name": "Registry_CreateApi",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "apiId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Api"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Api"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Registry_DeleteApi",
-        "path": "/v1/projects/{project}/locations/{location}/apis/{api}",
-        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "GetApi returns a specified API.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetApi",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Api"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteApi removes a specified API and all of the resources that it owns.",
+        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Registry_DeleteApi",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If set to true, any child resources will also be deleted.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/projects/{project}/locations/{location}/apis/{api}",
+        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "UpdateApi can be used to modify a specified API.",
         "id": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}",
         "kind": "operation",
         "method": "patch",
         "name": "Registry_UpdateApi",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The list of fields to be updated.",
+            "in": "query",
+            "name": "updateMask",
+            "required": false,
+            "type": "string:field-mask"
+          },
+          {
+            "description": "If set to true, and the api is not found, a new api_versions will be created.",
+            "in": "query",
+            "name": "allowMissing",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Api"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Api"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ListApiDeployments returns matching deployments.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListApiDeployments",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of deployments to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A page token, received from a previous `ListApiDeployments` call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An expression that can be used to filter the list.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApiDeploymentsResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "CreateApiDeployment creates a specified deployment.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
         "kind": "operation",
         "method": "post",
         "name": "Registry_CreateApiDeployment",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "apiDeploymentId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiDeployment"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Registry_DeleteApiDeployment",
-        "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
-        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "GetApiDeployment returns a specified deployment.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetApiDeployment",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteApiDeployment removes a specified deployment, all revisions, and all child resources (e.g.",
+        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Registry_DeleteApiDeployment",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If set to true, any child resources will also be deleted.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
+        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "UpdateApiDeployment can be used to modify a specified deployment.",
         "id": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
         "kind": "operation",
         "method": "patch",
         "name": "Registry_UpdateApiDeployment",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The list of fields to be updated.",
+            "in": "query",
+            "name": "updateMask",
+            "required": false,
+            "type": "string:field-mask"
+          },
+          {
+            "description": "If set to true, and the deployment is not found, a new deployment will be created.",
+            "in": "query",
+            "name": "allowMissing",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiDeployment"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteApiDeploymentRevision deletes a revision of a deployment.",
         "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:deleteRevision",
         "kind": "operation",
         "method": "delete",
         "name": "Registry_DeleteApiDeploymentRevision",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:deleteRevision",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}:deleteRevision/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ListApiDeploymentRevisions lists all revisions of a deployment.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:listRevisions",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListApiDeploymentRevisions",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of revisions to return per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The page token, received from a previous ListApiDeploymentRevisions call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:listRevisions",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}:listRevisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApiDeploymentRevisionsResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "RollbackApiDeployment sets the current revision to a specified prior revision.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:rollback",
         "kind": "operation",
         "method": "post",
         "name": "Registry_RollbackApiDeployment",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:rollback",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}:rollback/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RollbackApiDeploymentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "TagApiDeploymentRevision adds a tag to a specified revision of a deployment.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:tagRevision",
         "kind": "operation",
         "method": "post",
         "name": "Registry_TagApiDeploymentRevision",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The deployment id.",
+            "in": "path",
+            "name": "deployment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:tagRevision",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1deployments~1{deployment}:tagRevision/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TagApiDeploymentRevisionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ListApiVersions returns matching versions.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListApiVersions",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of versions to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A page token, received from a previous `ListApiVersions` call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An expression that can be used to filter the list.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApiVersionsResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "CreateApiVersion creates a specified version.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions",
         "kind": "operation",
         "method": "post",
         "name": "Registry_CreateApiVersion",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "apiVersionId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiVersion"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiVersion"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Registry_DeleteApiVersion",
-        "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
-        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "GetApiVersion returns a specified version.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetApiVersion",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiVersion"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteApiVersion removes a specified version and all of the resources that it owns.",
+        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Registry_DeleteApiVersion",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If set to true, any child resources will also be deleted.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
+        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "UpdateApiVersion can be used to modify a specified version.",
         "id": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
         "kind": "operation",
         "method": "patch",
         "name": "Registry_UpdateApiVersion",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The list of fields to be updated.",
+            "in": "query",
+            "name": "updateMask",
+            "required": false,
+            "type": "string:field-mask"
+          },
+          {
+            "description": "If set to true, and the version is not found, a new version will be created.",
+            "in": "query",
+            "name": "allowMissing",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiVersion"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiVersion"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ListApiSpecs returns matching specs.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListApiSpecs",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of specs to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A page token, received from a previous `ListApiSpecs` call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An expression that can be used to filter the list.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApiSpecsResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "CreateApiSpec creates a specified spec.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
         "kind": "operation",
         "method": "post",
         "name": "Registry_CreateApiSpec",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "apiSpecId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiSpec"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiSpec"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Registry_DeleteApiSpec",
-        "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
-        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "GetApiSpec returns a specified spec.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetApiSpec",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiSpec"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteApiSpec removes a specified spec, all revisions, and all child resources (e.g.",
+        "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Registry_DeleteApiSpec",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If set to true, any child resources will also be deleted.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
+        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "UpdateApiSpec can be used to modify a specified spec.",
         "id": "operation:patch:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
         "kind": "operation",
         "method": "patch",
         "name": "Registry_UpdateApiSpec",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The list of fields to be updated.",
+            "in": "query",
+            "name": "updateMask",
+            "required": false,
+            "type": "string:field-mask"
+          },
+          {
+            "description": "If set to true, and the spec is not found, a new spec will be created.",
+            "in": "query",
+            "name": "allowMissing",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiSpec"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiSpec"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteApiSpecRevision deletes a revision of a spec.",
         "id": "operation:delete:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:deleteRevision",
         "kind": "operation",
         "method": "delete",
         "name": "Registry_DeleteApiSpecRevision",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:deleteRevision",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}:deleteRevision/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiSpec"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "GetApiSpecContents returns the contents of a specified spec.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:getContents",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetApiSpecContents",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:getContents",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}:getContents/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ListApiSpecRevisions lists all revisions of a spec.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:listRevisions",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListApiSpecRevisions",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of revisions to return per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The page token, received from a previous ListApiSpecRevisions call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:listRevisions",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}:listRevisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApiSpecRevisionsResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "RollbackApiSpec sets the current revision to a specified prior revision.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:rollback",
         "kind": "operation",
         "method": "post",
         "name": "Registry_RollbackApiSpec",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:rollback",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}:rollback/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RollbackApiSpecRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiSpec"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "TagApiSpecRevision adds a tag to a specified revision of a spec.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:tagRevision",
         "kind": "operation",
         "method": "post",
         "name": "Registry_TagApiSpecRevision",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The api id.",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version id.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The spec id.",
+            "in": "path",
+            "name": "spec",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:tagRevision",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1apis~1{api}~1versions~1{version}~1specs~1{spec}:tagRevision/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TagApiSpecRevisionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiSpec"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ListArtifacts returns matching artifacts.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/artifacts",
         "kind": "operation",
         "method": "get",
         "name": "Registry_ListArtifacts",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of artifacts to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A page token, received from a previous `ListArtifacts` call.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An expression that can be used to filter the list.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/artifacts",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListArtifactsResponse"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "CreateArtifact creates a specified artifact.",
         "id": "operation:post:/v1/projects/{project}/locations/{location}/artifacts",
         "kind": "operation",
         "method": "post",
         "name": "Registry_CreateArtifact",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "artifactId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/artifacts",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Artifact"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Artifact"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Registry_DeleteArtifact",
-        "path": "/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
-        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts~1{artifact}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "GetArtifact returns a specified artifact.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetArtifact",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The artifact id.",
+            "in": "path",
+            "name": "artifact",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts~1{artifact}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Artifact"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "ReplaceArtifact can be used to replace a specified artifact.",
         "id": "operation:put:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
         "kind": "operation",
         "method": "put",
         "name": "Registry_ReplaceArtifact",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The artifact id.",
+            "in": "path",
+            "name": "artifact",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts~1{artifact}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Artifact"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Artifact"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DeleteArtifact removes a specified artifact.",
+        "id": "operation:delete:/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Registry_DeleteArtifact",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The artifact id.",
+            "in": "path",
+            "name": "artifact",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/projects/{project}/locations/{location}/artifacts/{artifact}",
+        "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts~1{artifact}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "GetArtifactContents returns the contents of a specified artifact.",
         "id": "operation:get:/v1/projects/{project}/locations/{location}/artifacts/{artifact}:getContents",
         "kind": "operation",
         "method": "get",
         "name": "Registry_GetArtifactContents",
+        "parameters": [
+          {
+            "description": "The project id.",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location id.",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The artifact id.",
+            "in": "path",
+            "name": "artifact",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/projects/{project}/locations/{location}/artifacts/{artifact}:getContents",
         "pointer": "#/paths/~1v1~1projects~1{project}~1locations~1{location}~1artifacts~1{artifact}:getContents/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "Status"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Registry"
+        ]
       },
       {
+        "description": "An Api is a top-level description of an API.",
         "id": "schema:Api",
         "kind": "schema",
-        "name": "Api"
+        "name": "Api",
+        "type": "object"
       },
       {
+        "description": "An ApiDeployment describes a service running at particular address that provides a particular version of an API.",
         "id": "schema:ApiDeployment",
         "kind": "schema",
-        "name": "ApiDeployment"
+        "name": "ApiDeployment",
+        "type": "object"
       },
       {
+        "description": "An ApiSpec describes a version of an API in a structured way.",
         "id": "schema:ApiSpec",
         "kind": "schema",
-        "name": "ApiSpec"
+        "name": "ApiSpec",
+        "type": "object"
       },
       {
+        "description": "An ApiVersion describes a particular version of an API.",
         "id": "schema:ApiVersion",
         "kind": "schema",
-        "name": "ApiVersion"
+        "name": "ApiVersion",
+        "type": "object"
       },
       {
+        "description": "Artifacts of resources.",
         "id": "schema:Artifact",
         "kind": "schema",
-        "name": "Artifact"
+        "name": "Artifact",
+        "type": "object"
       },
       {
+        "description": "Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.",
         "id": "schema:GoogleProtobufAny",
         "kind": "schema",
-        "name": "GoogleProtobufAny"
+        "name": "GoogleProtobufAny",
+        "type": "object"
       },
       {
+        "description": "Response message for ListApiDeploymentRevisionsResponse.",
         "id": "schema:ListApiDeploymentRevisionsResponse",
         "kind": "schema",
-        "name": "ListApiDeploymentRevisionsResponse"
+        "name": "ListApiDeploymentRevisionsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListApiDeployments.",
         "id": "schema:ListApiDeploymentsResponse",
         "kind": "schema",
-        "name": "ListApiDeploymentsResponse"
+        "name": "ListApiDeploymentsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListApiSpecRevisionsResponse.",
         "id": "schema:ListApiSpecRevisionsResponse",
         "kind": "schema",
-        "name": "ListApiSpecRevisionsResponse"
+        "name": "ListApiSpecRevisionsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListApiSpecs.",
         "id": "schema:ListApiSpecsResponse",
         "kind": "schema",
-        "name": "ListApiSpecsResponse"
+        "name": "ListApiSpecsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListApiVersions.",
         "id": "schema:ListApiVersionsResponse",
         "kind": "schema",
-        "name": "ListApiVersionsResponse"
+        "name": "ListApiVersionsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListApis.",
         "id": "schema:ListApisResponse",
         "kind": "schema",
-        "name": "ListApisResponse"
+        "name": "ListApisResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListArtifacts.",
         "id": "schema:ListArtifactsResponse",
         "kind": "schema",
-        "name": "ListArtifactsResponse"
+        "name": "ListArtifactsResponse",
+        "type": "object"
       },
       {
+        "description": "Request message for RollbackApiDeployment.",
         "id": "schema:RollbackApiDeploymentRequest",
         "kind": "schema",
-        "name": "RollbackApiDeploymentRequest"
+        "name": "RollbackApiDeploymentRequest",
+        "type": "object"
       },
       {
+        "description": "Request message for RollbackApiSpec.",
         "id": "schema:RollbackApiSpecRequest",
         "kind": "schema",
-        "name": "RollbackApiSpecRequest"
+        "name": "RollbackApiSpecRequest",
+        "type": "object"
       },
       {
+        "description": "The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs.",
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "object"
       },
       {
+        "description": "Request message for TagApiDeploymentRevision.",
         "id": "schema:TagApiDeploymentRevisionRequest",
         "kind": "schema",
-        "name": "TagApiDeploymentRevisionRequest"
+        "name": "TagApiDeploymentRevisionRequest",
+        "type": "object"
       },
       {
+        "description": "Request message for TagApiSpecRevision.",
         "id": "schema:TagApiSpecRevisionRequest",
         "kind": "schema",
-        "name": "TagApiSpecRevisionRequest"
+        "name": "TagApiSpecRevisionRequest",
+        "type": "object"
       }
     ]
   },

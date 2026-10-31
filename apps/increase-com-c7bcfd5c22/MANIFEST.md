@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_storage.googleapis.com_bank-277
 
 | | |
 | --- | --- |
-| Signed bundle | `9b0e7edfdfbbff80b3be7eb010dd8dc266b92fc6ed6ab14c76cded6e0d468d65` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,120 +34,122 @@ logo: "https://api.apis.guru/v2/cache/logo/https_storage.googleapis.com_bank-277
 
 103 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account_numbers` | list_account_numbers | List Account Numbers |
-| POST | `/account_numbers` | create_an_account_number | Create an Account Number |
-| GET | `/account_numbers/{account_number_id}` | retrieve_an_account_number | Retrieve an Account Number |
-| PATCH | `/account_numbers/{account_number_id}` | update_an_account_number | Update an Account Number |
-| GET | `/account_statements` | list_account_statements | List Account Statements |
-| GET | `/account_statements/{account_statement_id}` | retrieve_an_account_statement | Retrieve an Account Statement |
-| GET | `/account_transfers` | list_account_transfers | List Account Transfers |
-| POST | `/account_transfers` | create_an_account_transfer | Create an Account Transfer |
-| GET | `/account_transfers/{account_transfer_id}` | retrieve_an_account_transfer | Retrieve an Account Transfer |
-| POST | `/account_transfers/{account_transfer_id}/approve` | approve_an_account_transfer | Approve an Account Transfer |
-| POST | `/account_transfers/{account_transfer_id}/cancel` | cancel_an_account_transfer | Cancel an Account Transfer |
-| GET | `/accounts` | list_accounts | List Accounts |
-| POST | `/accounts` | create_an_account | Create an Account |
-| GET | `/accounts/{account_id}` | retrieve_an_account | Retrieve an Account |
-| PATCH | `/accounts/{account_id}` | update_an_account | Update an Account |
-| POST | `/accounts/{account_id}/close` | close_an_account | Close an Account |
-| GET | `/ach_prenotifications` | list_ach_prenotifications | List ACH Prenotifications |
-| POST | `/ach_prenotifications` | create_an_ach_prenotification | Create an ACH Prenotification |
-| GET | `/ach_prenotifications/{ach_prenotification_id}` | retrieve_an_ach_prenotification | Retrieve an ACH Prenotification |
-| GET | `/ach_transfers` | list_ach_transfers | List ACH Transfers |
-| POST | `/ach_transfers` | create_an_ach_transfer | Create an ACH Transfer |
-| GET | `/ach_transfers/{ach_transfer_id}` | retrieve_an_ach_transfer | Retrieve an ACH Transfer |
-| POST | `/ach_transfers/{ach_transfer_id}/approve` | approve_an_ach_transfer | Approve an ACH Transfer |
-| POST | `/ach_transfers/{ach_transfer_id}/cancel` | cancel_a_pending_ach_transfer | Cancel a pending ACH Transfer |
-| GET | `/card_disputes` | list_card_disputes | List Card Disputes |
-| POST | `/card_disputes` | create_a_card_dispute | Create a Card Dispute |
-| GET | `/card_disputes/{card_dispute_id}` | retrieve_a_card_dispute | Retrieve a Card Dispute |
-| GET | `/card_profiles` | list_card_profiles | List Card Profiles |
-| POST | `/card_profiles` | create_a_card_profile | Create a Card Profile |
-| GET | `/card_profiles/{card_profile_id}` | retrieve_a_card_profile | Retrieve a Card Profile |
-| GET | `/cards` | list_cards | List Cards |
-| POST | `/cards` | create_a_card | Create a Card |
-| GET | `/cards/{card_id}` | retrieve_a_card | Retrieve a Card |
-| PATCH | `/cards/{card_id}` | update_a_card | Update a Card |
-| GET | `/cards/{card_id}/details` | retrieve_sensitive_details_for_a_card | Retrieve sensitive details for a Card |
-| GET | `/check_deposits` | list_check_deposits | List Check Deposits |
-| POST | `/check_deposits` | create_a_check_deposit | Create a Check Deposit |
-| GET | `/check_deposits/{check_deposit_id}` | retrieve_a_check_deposit | Retrieve a Check Deposit |
-| GET | `/check_transfers` | list_check_transfers | List Check Transfers |
-| POST | `/check_transfers` | create_a_check_transfer | Create a Check Transfer |
-| GET | `/check_transfers/{check_transfer_id}` | retrieve_a_check_transfer | Retrieve a Check Transfer |
-| POST | `/check_transfers/{check_transfer_id}/approve` | approve_a_check_transfer | Approve a Check Transfer |
-| POST | `/check_transfers/{check_transfer_id}/cancel` | cancel_a_pending_check_transfer | Cancel a pending Check Transfer |
-| POST | `/check_transfers/{check_transfer_id}/stop_payment` | request_a_stop_payment_on_a_check_transfer | Request a stop payment on a Check Transfer |
-| GET | `/declined_transactions` | list_declined_transactions | List Declined Transactions |
-| GET | `/declined_transactions/{declined_transaction_id}` | retrieve_a_declined_transaction | Retrieve a Declined Transaction |
-| GET | `/digital_wallet_tokens` | list_digital_wallet_tokens | List Digital Wallet Tokens |
-| GET | `/digital_wallet_tokens/{digital_wallet_token_id}` | retrieve_a_digital_wallet_token | Retrieve a Digital Wallet Token |
-| GET | `/documents` | list_documents | List Documents |
-| GET | `/documents/{document_id}` | retrieve_a_document | Retrieve a Document |
-| GET | `/entities` | list_entities | List Entities |
-| POST | `/entities` | create_an_entity | Create an Entity |
-| GET | `/entities/{entity_id}` | retrieve_an_entity | Retrieve an Entity |
-| POST | `/entities/{entity_id}/supplemental_documents` | create_a_supplemental_document_for_an_entity | Create a supplemental document for an Entity |
-| GET | `/event_subscriptions` | list_event_subscriptions | List Event Subscriptions |
-| POST | `/event_subscriptions` | create_an_event_subscription | Create an Event Subscription |
-| GET | `/event_subscriptions/{event_subscription_id}` | retrieve_an_event_subscription | Retrieve an Event Subscription |
-| PATCH | `/event_subscriptions/{event_subscription_id}` | update_an_event_subscription | Update an Event Subscription |
-| GET | `/events` | list_events | List Events |
-| GET | `/events/{event_id}` | retrieve_an_event | Retrieve an Event |
-| GET | `/external_accounts` | list_external_accounts | List External Accounts |
-| POST | `/external_accounts` | create_an_external_account | Create an External Account |
-| GET | `/external_accounts/{external_account_id}` | retrieve_an_external_account | Retrieve an External Account |
-| PATCH | `/external_accounts/{external_account_id}` | update_an_external_account | Update an External Account |
-| GET | `/files` | list_files | List Files |
-| POST | `/files` | create_a_file | Create a File |
-| GET | `/files/{file_id}` | retrieve_a_file | Retrieve a File |
-| GET | `/groups/current` | retrieve_group_details | Retrieve Group details |
-| GET | `/inbound_ach_transfer_returns` | list_inbound_ach_transfer_returns | List Inbound ACH Transfer Returns |
-| POST | `/inbound_ach_transfer_returns` | create_an_ach_return | Create an ACH Return |
-| GET | `/inbound_ach_transfer_returns/{inbound_ach_transfer_return_id}` | retrieve_an_inbound_ach_transfer_return | Retrieve an Inbound ACH Transfer Return |
-| GET | `/inbound_wire_drawdown_requests` | list_inbound_wire_drawdown_requests | List Inbound Wire Drawdown Requests |
-| GET | `/inbound_wire_drawdown_requests/{inbound_wire_drawdown_request_id}` | retrieve_an_inbound_wire_drawdown_request | Retrieve an Inbound Wire Drawdown Request |
-| GET | `/limits` | list_limits | List Limits |
-| POST | `/limits` | create_a_limit | Create a Limit |
-| GET | `/limits/{limit_id}` | retrieve_a_limit | Retrieve a Limit |
-| PATCH | `/limits/{limit_id}` | update_a_limit | Update a Limit |
-| GET | `/oauth_connections` | list_oauth_connections | List OAuth Connections |
-| GET | `/oauth_connections/{oauth_connection_id}` | retrieve_an_oauth_connection | Retrieve an OAuth Connection |
-| GET | `/pending_transactions` | list_pending_transactions | List Pending Transactions |
-| GET | `/pending_transactions/{pending_transaction_id}` | retrieve_a_pending_transaction | Retrieve a Pending Transaction |
-| GET | `/real_time_decisions/{real_time_decision_id}` | retrieve_a_real_time_decision | Retrieve a Real-Time Decision |
-| POST | `/real_time_decisions/{real_time_decision_id}/action` | action_a_real_time_decision | Action a Real-Time Decision |
-| GET | `/routing_numbers` | list_routing_numbers | List Routing Numbers |
-| POST | `/simulations/account_statements` | simulate_an_account_statement_being_created | Simulate an Account Statement being created |
-| POST | `/simulations/account_transfers/{account_transfer_id}/complete` | complete_a_sandbox_account_transfer | Complete a Sandbox Account Transfer |
-| POST | `/simulations/ach_transfers/{ach_transfer_id}/return` | return_a_sandbox_ach_transfer | Return a Sandbox ACH Transfer |
-| POST | `/simulations/ach_transfers/{ach_transfer_id}/submit` | submit_a_sandbox_ach_transfer | Submit a Sandbox ACH Transfer |
-| POST | `/simulations/card_authorizations` | simulate_an_authorization_on_a_card | Simulate an authorization on a Card |
-| POST | `/simulations/card_disputes/{card_dispute_id}/action` | simulates_advancing_the_state_of_a_card_dispute | Simulates advancing the state of a card dispute |
-| POST | `/simulations/card_refunds` | simulate_a_refund_on_a_card | Simulate a refund on a card |
-| POST | `/simulations/card_settlements` | simulate_settling_a_card_authorization | Simulate settling a card authorization |
-| POST | `/simulations/check_deposits/{check_deposit_id}/reject` | reject_a_sandbox_check_deposit | Reject a Sandbox Check Deposit |
-| POST | `/simulations/check_deposits/{check_deposit_id}/return` | return_a_sandbox_check_deposit | Return a Sandbox Check Deposit |
-| POST | `/simulations/check_deposits/{check_deposit_id}/submit` | submit_a_sandbox_check_deposit | Submit a Sandbox Check Deposit |
-| POST | `/simulations/check_transfers/{check_transfer_id}/deposit` | deposit_a_sandbox_check_transfer | Deposit a Sandbox Check Transfer |
-| POST | `/simulations/check_transfers/{check_transfer_id}/mail` | mail_a_sandbox_check_transfer | Mail a Sandbox Check Transfer |
-| POST | `/simulations/digital_wallet_token_requests` | simulate_digital_wallet_provisioning_for_a_card | Simulate digital wallet provisioning for a card |
-| POST | `/simulations/documents` | simulate_a_tax_document_being_created | Simulate a tax document being created |
-| POST | `/simulations/inbound_ach_transfers` | simulate_an_ach_transfer_to_your_account | Simulate an ACH Transfer to your account |
-| POST | `/simulations/inbound_real_time_payments_transfers` | simulate_a_real_time_payments_transfer_to_your_account | Simulate a Real Time Payments Transfer to your account |
-| POST | `/simulations/inbound_wire_drawdown_requests` | simulate_an_inbound_wire_drawdown_request_being_created | Simulate an Inbound Wire Drawdown request being created |
-| POST | `/simulations/inbound_wire_transfers` | simulate_a_wire_transfer_to_your_account | Simulate a Wire Transfer to your account |
-| POST | `/simulations/wire_transfers/{wire_transfer_id}/reverse` | reverse_a_sandbox_wire_transfer | Reverse a Sandbox Wire Transfer |
-| POST | `/simulations/wire_transfers/{wire_transfer_id}/submit` | submit_a_sandbox_wire_transfer | Submit a Sandbox Wire Transfer |
-| GET | `/transactions` | list_transactions | List Transactions |
-| GET | `/transactions/{transaction_id}` | retrieve_a_transaction | Retrieve a Transaction |
-| GET | `/wire_drawdown_requests` | list_wire_drawdown_requests | List Wire Drawdown Requests |
-| POST | `/wire_drawdown_requests` | create_a_wire_drawdown_request | Create a Wire Drawdown Request |
-| GET | `/wire_drawdown_requests/{wire_drawdown_request_id}` | retrieve_a_wire_drawdown_request | Retrieve a Wire Drawdown Request |
-| GET | `/wire_transfers` | list_wire_transfers | List Wire Transfers |
-| POST | `/wire_transfers` | create_a_wire_transfer | Create a Wire Transfer |
-| GET | `/wire_transfers/{wire_transfer_id}` | retrieve_a_wire_transfer | Retrieve a Wire Transfer |
-| POST | `/wire_transfers/{wire_transfer_id}/approve` | approve_a_wire_transfer | Approve a Wire Transfer |
-| POST | `/wire_transfers/{wire_transfer_id}/cancel` | cancel_a_pending_wire_transfer | Cancel a pending Wire Transfer |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account_numbers` | list_account_numbers | `cursor`, `limit`, `status`, `account_id` | account_number_list | yes | List Account Numbers |
+| POST | `/account_numbers` | create_an_account_number | body*: create_an_account_number_parameters | account_number |  | Create an Account Number |
+| GET | `/account_numbers/{account_number_id}` | retrieve_an_account_number | `account_number_id`* | account_number | yes | Retrieve an Account Number |
+| PATCH | `/account_numbers/{account_number_id}` | update_an_account_number | `account_number_id`*, body*: update_an_account_number_parameters | account_number |  | Update an Account Number |
+| GET | `/account_statements` | list_account_statements | `cursor`, `limit`, `account_id`, `statement_period_start.after`, `statement_period_start.before`, `statement_period_start.on_or_after`, `statement_period_start.on_or_before` | account_statement_list | yes | List Account Statements |
+| GET | `/account_statements/{account_statement_id}` | retrieve_an_account_statement | `account_statement_id`* | account_statement | yes | Retrieve an Account Statement |
+| GET | `/account_transfers` | list_account_transfers | `cursor`, `limit`, `account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | account_transfer_list | yes | List Account Transfers |
+| POST | `/account_transfers` | create_an_account_transfer | body*: create_an_account_transfer_parameters | account_transfer |  | Create an Account Transfer |
+| GET | `/account_transfers/{account_transfer_id}` | retrieve_an_account_transfer | `account_transfer_id`* | account_transfer | yes | Retrieve an Account Transfer |
+| POST | `/account_transfers/{account_transfer_id}/approve` | approve_an_account_transfer | `account_transfer_id`* | account_transfer |  | Approve an Account Transfer |
+| POST | `/account_transfers/{account_transfer_id}/cancel` | cancel_an_account_transfer | `account_transfer_id`* | account_transfer |  | Cancel an Account Transfer |
+| GET | `/accounts` | list_accounts | `cursor`, `limit`, `entity_id`, `status` | account_list | yes | List Accounts |
+| POST | `/accounts` | create_an_account | body*: create_an_account_parameters | account |  | Create an Account |
+| GET | `/accounts/{account_id}` | retrieve_an_account | `account_id`* | account | yes | Retrieve an Account |
+| PATCH | `/accounts/{account_id}` | update_an_account | `account_id`*, body*: update_an_account_parameters | account |  | Update an Account |
+| POST | `/accounts/{account_id}/close` | close_an_account | `account_id`* | account |  | Close an Account |
+| GET | `/ach_prenotifications` | list_ach_prenotifications | `cursor`, `limit`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | ach_prenotification_list | yes | List ACH Prenotifications |
+| POST | `/ach_prenotifications` | create_an_ach_prenotification | body*: create_an_ach_prenotification_parameters | ach_prenotification |  | Create an ACH Prenotification |
+| GET | `/ach_prenotifications/{ach_prenotification_id}` | retrieve_an_ach_prenotification | `ach_prenotification_id`* | ach_prenotification | yes | Retrieve an ACH Prenotification |
+| GET | `/ach_transfers` | list_ach_transfers | `cursor`, `limit`, `account_id`, `external_account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | ach_transfer_list | yes | List ACH Transfers |
+| POST | `/ach_transfers` | create_an_ach_transfer | body*: create_an_ach_transfer_parameters | ach_transfer |  | Create an ACH Transfer |
+| GET | `/ach_transfers/{ach_transfer_id}` | retrieve_an_ach_transfer | `ach_transfer_id`* | ach_transfer | yes | Retrieve an ACH Transfer |
+| POST | `/ach_transfers/{ach_transfer_id}/approve` | approve_an_ach_transfer | `ach_transfer_id`* | ach_transfer |  | Approve an ACH Transfer |
+| POST | `/ach_transfers/{ach_transfer_id}/cancel` | cancel_a_pending_ach_transfer | `ach_transfer_id`* | ach_transfer |  | Cancel a pending ACH Transfer |
+| GET | `/card_disputes` | list_card_disputes | `cursor`, `limit`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before`, `status.in` | card_dispute_list | yes | List Card Disputes |
+| POST | `/card_disputes` | create_a_card_dispute | body*: create_a_card_dispute_parameters | card_dispute |  | Create a Card Dispute |
+| GET | `/card_disputes/{card_dispute_id}` | retrieve_a_card_dispute | `card_dispute_id`* | card_dispute | yes | Retrieve a Card Dispute |
+| GET | `/card_profiles` | list_card_profiles | `cursor`, `limit`, `status.in` | card_profile_list | yes | List Card Profiles |
+| POST | `/card_profiles` | create_a_card_profile | body*: create_a_card_profile_parameters | card_profile |  | Create a Card Profile |
+| GET | `/card_profiles/{card_profile_id}` | retrieve_a_card_profile | `card_profile_id`* | card_profile | yes | Retrieve a Card Profile |
+| GET | `/cards` | list_cards | `cursor`, `limit`, `account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | card_list | yes | List Cards |
+| POST | `/cards` | create_a_card | body*: create_a_card_parameters | card |  | Create a Card |
+| GET | `/cards/{card_id}` | retrieve_a_card | `card_id`* | card | yes | Retrieve a Card |
+| PATCH | `/cards/{card_id}` | update_a_card | `card_id`*, body*: update_a_card_parameters | card |  | Update a Card |
+| GET | `/cards/{card_id}/details` | retrieve_sensitive_details_for_a_card | `card_id`* | card_details | yes | Retrieve sensitive details for a Card |
+| GET | `/check_deposits` | list_check_deposits | `cursor`, `limit`, `account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | check_deposit_list | yes | List Check Deposits |
+| POST | `/check_deposits` | create_a_check_deposit | body*: create_a_check_deposit_parameters | check_deposit |  | Create a Check Deposit |
+| GET | `/check_deposits/{check_deposit_id}` | retrieve_a_check_deposit | `check_deposit_id`* | check_deposit | yes | Retrieve a Check Deposit |
+| GET | `/check_transfers` | list_check_transfers | `cursor`, `limit`, `account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | check_transfer_list | yes | List Check Transfers |
+| POST | `/check_transfers` | create_a_check_transfer | body*: create_a_check_transfer_parameters | check_transfer |  | Create a Check Transfer |
+| GET | `/check_transfers/{check_transfer_id}` | retrieve_a_check_transfer | `check_transfer_id`* | check_transfer | yes | Retrieve a Check Transfer |
+| POST | `/check_transfers/{check_transfer_id}/approve` | approve_a_check_transfer | `check_transfer_id`* | check_transfer |  | Approve a Check Transfer |
+| POST | `/check_transfers/{check_transfer_id}/cancel` | cancel_a_pending_check_transfer | `check_transfer_id`* | check_transfer |  | Cancel a pending Check Transfer |
+| POST | `/check_transfers/{check_transfer_id}/stop_payment` | request_a_stop_payment_on_a_check_transfer | `check_transfer_id`* | check_transfer |  | Request a stop payment on a Check Transfer |
+| GET | `/declined_transactions` | list_declined_transactions | `cursor`, `limit`, `account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before`, `route_id` | declined_transaction_list | yes | List Declined Transactions |
+| GET | `/declined_transactions/{declined_transaction_id}` | retrieve_a_declined_transaction | `declined_transaction_id`* | declined_transaction | yes | Retrieve a Declined Transaction |
+| GET | `/digital_wallet_tokens` | list_digital_wallet_tokens | `cursor`, `limit`, `card_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | digital_wallet_token_list | yes | List Digital Wallet Tokens |
+| GET | `/digital_wallet_tokens/{digital_wallet_token_id}` | retrieve_a_digital_wallet_token | `digital_wallet_token_id`* | digital_wallet_token | yes | Retrieve a Digital Wallet Token |
+| GET | `/documents` | list_documents | `cursor`, `limit`, `entity_id`, `category.in`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | document_list | yes | List Documents |
+| GET | `/documents/{document_id}` | retrieve_a_document | `document_id`* | document | yes | Retrieve a Document |
+| GET | `/entities` | list_entities | `cursor`, `limit` | entity_list | yes | List Entities |
+| POST | `/entities` | create_an_entity | body*: create_an_entity_parameters | entity |  | Create an Entity |
+| GET | `/entities/{entity_id}` | retrieve_an_entity | `entity_id`* | entity | yes | Retrieve an Entity |
+| POST | `/entities/{entity_id}/supplemental_documents` | create_a_supplemental_document_for_an_entity | `entity_id`*, body*: create_a_supplemental_document_for_an_entity_parameters | entity |  | Create a supplemental document for an Entity |
+| GET | `/event_subscriptions` | list_event_subscriptions | `cursor`, `limit` | event_subscription_list | yes | List Event Subscriptions |
+| POST | `/event_subscriptions` | create_an_event_subscription | body*: create_an_event_subscription_parameters | event_subscription |  | Create an Event Subscription |
+| GET | `/event_subscriptions/{event_subscription_id}` | retrieve_an_event_subscription | `event_subscription_id`* | event_subscription | yes | Retrieve an Event Subscription |
+| PATCH | `/event_subscriptions/{event_subscription_id}` | update_an_event_subscription | `event_subscription_id`*, body*: update_an_event_subscription_parameters | event_subscription |  | Update an Event Subscription |
+| GET | `/events` | list_events | `cursor`, `limit`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before`, `category.in`, `associated_object_id` | event_list | yes | List Events |
+| GET | `/events/{event_id}` | retrieve_an_event | `event_id`* | event | yes | Retrieve an Event |
+| GET | `/external_accounts` | list_external_accounts | `cursor`, `limit`, `status.in` | external_account_list | yes | List External Accounts |
+| POST | `/external_accounts` | create_an_external_account | body*: create_an_external_account_parameters | external_account |  | Create an External Account |
+| GET | `/external_accounts/{external_account_id}` | retrieve_an_external_account | `external_account_id`* | external_account | yes | Retrieve an External Account |
+| PATCH | `/external_accounts/{external_account_id}` | update_an_external_account | `external_account_id`*, body*: update_an_external_account_parameters | external_account |  | Update an External Account |
+| GET | `/files` | list_files | `cursor`, `limit`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before`, `purpose.in` | file_list | yes | List Files |
+| POST | `/files` | create_a_file | body*: create_a_file_parameters | file |  | Create a File |
+| GET | `/files/{file_id}` | retrieve_a_file | `file_id`* | file | yes | Retrieve a File |
+| GET | `/groups/current` | retrieve_group_details | — | group | yes | Retrieve Group details |
+| GET | `/inbound_ach_transfer_returns` | list_inbound_ach_transfer_returns | `cursor`, `limit` | inbound_ach_transfer_return_list | yes | List Inbound ACH Transfer Returns |
+| POST | `/inbound_ach_transfer_returns` | create_an_ach_return | body*: create_an_ach_return_parameters | inbound_ach_transfer_return |  | Create an ACH Return |
+| GET | `/inbound_ach_transfer_returns/{inbound_ach_transfer_return_id}` | retrieve_an_inbound_ach_transfer_return | `inbound_ach_transfer_return_id`* | inbound_ach_transfer_return | yes | Retrieve an Inbound ACH Transfer Return |
+| GET | `/inbound_wire_drawdown_requests` | list_inbound_wire_drawdown_requests | `cursor`, `limit` | inbound_wire_drawdown_request_list | yes | List Inbound Wire Drawdown Requests |
+| GET | `/inbound_wire_drawdown_requests/{inbound_wire_drawdown_request_id}` | retrieve_an_inbound_wire_drawdown_request | `inbound_wire_drawdown_request_id`* | inbound_wire_drawdown_request | yes | Retrieve an Inbound Wire Drawdown Request |
+| GET | `/limits` | list_limits | `cursor`, `limit`, `model_id`, `status` | limit_list | yes | List Limits |
+| POST | `/limits` | create_a_limit | body*: create_a_limit_parameters | limit |  | Create a Limit |
+| GET | `/limits/{limit_id}` | retrieve_a_limit | `limit_id`* | limit | yes | Retrieve a Limit |
+| PATCH | `/limits/{limit_id}` | update_a_limit | `limit_id`*, body*: update_a_limit_parameters | limit |  | Update a Limit |
+| GET | `/oauth_connections` | list_oauth_connections | `cursor`, `limit` | oauth_connection_list | yes | List OAuth Connections |
+| GET | `/oauth_connections/{oauth_connection_id}` | retrieve_an_oauth_connection | `oauth_connection_id`* | oauth_connection | yes | Retrieve an OAuth Connection |
+| GET | `/pending_transactions` | list_pending_transactions | `cursor`, `limit`, `account_id`, `route_id`, `source_id`, `status.in` | pending_transaction_list | yes | List Pending Transactions |
+| GET | `/pending_transactions/{pending_transaction_id}` | retrieve_a_pending_transaction | `pending_transaction_id`* | pending_transaction | yes | Retrieve a Pending Transaction |
+| GET | `/real_time_decisions/{real_time_decision_id}` | retrieve_a_real_time_decision | `real_time_decision_id`* | real_time_decision | yes | Retrieve a Real-Time Decision |
+| POST | `/real_time_decisions/{real_time_decision_id}/action` | action_a_real_time_decision | `real_time_decision_id`*, body*: action_a_real_time_decision_parameters | real_time_decision |  | Action a Real-Time Decision |
+| GET | `/routing_numbers` | list_routing_numbers | `cursor`, `limit`, `routing_number`* | routing_number_list | yes | List Routing Numbers |
+| POST | `/simulations/account_statements` | simulate_an_account_statement_being_created | body*: simulate_an_account_statement_being_created_parameters | account_statement |  | Simulate an Account Statement being created |
+| POST | `/simulations/account_transfers/{account_transfer_id}/complete` | complete_a_sandbox_account_transfer | `account_transfer_id`* | account_transfer |  | Complete a Sandbox Account Transfer |
+| POST | `/simulations/ach_transfers/{ach_transfer_id}/return` | return_a_sandbox_ach_transfer | `ach_transfer_id`*, body*: return_a_sandbox_ach_transfer_parameters | ach_transfer |  | Return a Sandbox ACH Transfer |
+| POST | `/simulations/ach_transfers/{ach_transfer_id}/submit` | submit_a_sandbox_ach_transfer | `ach_transfer_id`* | ach_transfer |  | Submit a Sandbox ACH Transfer |
+| POST | `/simulations/card_authorizations` | simulate_an_authorization_on_a_card | body*: simulate_an_authorization_on_a_card_parameters | inbound_card_authorization_simulation_result |  | Simulate an authorization on a Card |
+| POST | `/simulations/card_disputes/{card_dispute_id}/action` | simulates_advancing_the_state_of_a_card_dispute | `card_dispute_id`*, body*: simulates_advancing_the_state_of_a_card_dispute_parameters | card_dispute |  | Simulates advancing the state of a card dispute |
+| POST | `/simulations/card_refunds` | simulate_a_refund_on_a_card | body*: simulate_a_refund_on_a_card_parameters | transaction |  | Simulate a refund on a card |
+| POST | `/simulations/card_settlements` | simulate_settling_a_card_authorization | body*: simulate_settling_a_card_authorization_parameters | transaction |  | Simulate settling a card authorization |
+| POST | `/simulations/check_deposits/{check_deposit_id}/reject` | reject_a_sandbox_check_deposit | `check_deposit_id`* | check_deposit |  | Reject a Sandbox Check Deposit |
+| POST | `/simulations/check_deposits/{check_deposit_id}/return` | return_a_sandbox_check_deposit | `check_deposit_id`* | check_deposit |  | Return a Sandbox Check Deposit |
+| POST | `/simulations/check_deposits/{check_deposit_id}/submit` | submit_a_sandbox_check_deposit | `check_deposit_id`* | check_deposit |  | Submit a Sandbox Check Deposit |
+| POST | `/simulations/check_transfers/{check_transfer_id}/deposit` | deposit_a_sandbox_check_transfer | `check_transfer_id`* | check_transfer |  | Deposit a Sandbox Check Transfer |
+| POST | `/simulations/check_transfers/{check_transfer_id}/mail` | mail_a_sandbox_check_transfer | `check_transfer_id`* | check_transfer |  | Mail a Sandbox Check Transfer |
+| POST | `/simulations/digital_wallet_token_requests` | simulate_digital_wallet_provisioning_for_a_card | body*: simulate_digital_wallet_provisioning_for_a_card_parameters | inbound_digital_wallet_token_request_simulation_result |  | Simulate digital wallet provisioning for a card |
+| POST | `/simulations/documents` | simulate_a_tax_document_being_created | body*: simulate_a_tax_document_being_created_parameters | document |  | Simulate a tax document being created |
+| POST | `/simulations/inbound_ach_transfers` | simulate_an_ach_transfer_to_your_account | body*: simulate_an_ach_transfer_to_your_account_parameters | inbound_ach_transfer_simulation_result |  | Simulate an ACH Transfer to your account |
+| POST | `/simulations/inbound_real_time_payments_transfers` | simulate_a_real_time_payments_transfer_to_your_account | body*: simulate_a_real_time_payments_transfer_to_your_account_parameters | inbound_real_time_payments_transfer_simulation_result |  | Simulate a Real Time Payments Transfer to your account |
+| POST | `/simulations/inbound_wire_drawdown_requests` | simulate_an_inbound_wire_drawdown_request_being_created | body*: simulate_an_inbound_wire_drawdown_request_being_created_parameters | inbound_wire_drawdown_request |  | Simulate an Inbound Wire Drawdown request being created |
+| POST | `/simulations/inbound_wire_transfers` | simulate_a_wire_transfer_to_your_account | body*: simulate_a_wire_transfer_to_your_account_parameters | inbound_wire_transfer_simulation_result |  | Simulate a Wire Transfer to your account |
+| POST | `/simulations/wire_transfers/{wire_transfer_id}/reverse` | reverse_a_sandbox_wire_transfer | `wire_transfer_id`* | wire_transfer |  | Reverse a Sandbox Wire Transfer |
+| POST | `/simulations/wire_transfers/{wire_transfer_id}/submit` | submit_a_sandbox_wire_transfer | `wire_transfer_id`* | wire_transfer |  | Submit a Sandbox Wire Transfer |
+| GET | `/transactions` | list_transactions | `cursor`, `limit`, `account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before`, `category.in`, `route_id` | transaction_list | yes | List Transactions |
+| GET | `/transactions/{transaction_id}` | retrieve_a_transaction | `transaction_id`* | transaction | yes | Retrieve a Transaction |
+| GET | `/wire_drawdown_requests` | list_wire_drawdown_requests | `cursor`, `limit` | wire_drawdown_request_list | yes | List Wire Drawdown Requests |
+| POST | `/wire_drawdown_requests` | create_a_wire_drawdown_request | body*: create_a_wire_drawdown_request_parameters | wire_drawdown_request |  | Create a Wire Drawdown Request |
+| GET | `/wire_drawdown_requests/{wire_drawdown_request_id}` | retrieve_a_wire_drawdown_request | `wire_drawdown_request_id`* | wire_drawdown_request | yes | Retrieve a Wire Drawdown Request |
+| GET | `/wire_transfers` | list_wire_transfers | `cursor`, `limit`, `account_id`, `external_account_id`, `created_at.after`, `created_at.before`, `created_at.on_or_after`, `created_at.on_or_before` | wire_transfer_list | yes | List Wire Transfers |
+| POST | `/wire_transfers` | create_a_wire_transfer | body*: create_a_wire_transfer_parameters | wire_transfer |  | Create a Wire Transfer |
+| GET | `/wire_transfers/{wire_transfer_id}` | retrieve_a_wire_transfer | `wire_transfer_id`* | wire_transfer | yes | Retrieve a Wire Transfer |
+| POST | `/wire_transfers/{wire_transfer_id}/approve` | approve_a_wire_transfer | `wire_transfer_id`* | wire_transfer |  | Approve a Wire Transfer |
+| POST | `/wire_transfers/{wire_transfer_id}/cancel` | cancel_a_pending_wire_transfer | `wire_transfer_id`* | wire_transfer |  | Cancel a pending Wire Transfer |

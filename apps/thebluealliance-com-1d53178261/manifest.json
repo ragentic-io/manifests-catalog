@@ -328,6 +328,366 @@
         "from": "thebluealliance-com-1d53178261",
         "kind": "EXPOSES",
         "to": "operation:get:/teams/{year}/{page_num}/simple"
+      },
+      {
+        "from": "operation:get:/district/{district_key}/events",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/district/{district_key}/events/simple",
+        "kind": "RETURNS",
+        "to": "schema:Event_Simple"
+      },
+      {
+        "from": "operation:get:/district/{district_key}/rankings",
+        "kind": "RETURNS",
+        "to": "schema:District_Ranking"
+      },
+      {
+        "from": "operation:get:/district/{district_key}/teams",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/district/{district_key}/teams/simple",
+        "kind": "RETURNS",
+        "to": "schema:Team_Simple"
+      },
+      {
+        "from": "operation:get:/districts/{year}",
+        "kind": "RETURNS",
+        "to": "schema:District_List"
+      },
+      {
+        "from": "operation:get:/event/{event_key}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/alliances",
+        "kind": "RETURNS",
+        "to": "schema:Elimination_Alliance"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/awards",
+        "kind": "RETURNS",
+        "to": "schema:Award"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/district_points",
+        "kind": "RETURNS",
+        "to": "schema:Event_District_Points"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/insights",
+        "kind": "RETURNS",
+        "to": "schema:Event_Insights"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/matches",
+        "kind": "RETURNS",
+        "to": "schema:Match"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/matches/simple",
+        "kind": "RETURNS",
+        "to": "schema:Match_Simple"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/oprs",
+        "kind": "RETURNS",
+        "to": "schema:Event_OPRs"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/predictions",
+        "kind": "RETURNS",
+        "to": "schema:Event_Predictions"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/rankings",
+        "kind": "RETURNS",
+        "to": "schema:Event_Ranking"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Event_Simple"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/teams",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/event/{event_key}/teams/simple",
+        "kind": "RETURNS",
+        "to": "schema:Team_Simple"
+      },
+      {
+        "from": "operation:get:/events/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/events/{year}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Event_Simple"
+      },
+      {
+        "from": "operation:get:/match/{match_key}",
+        "kind": "RETURNS",
+        "to": "schema:Match"
+      },
+      {
+        "from": "operation:get:/match/{match_key}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Match_Simple"
+      },
+      {
+        "from": "operation:get:/match/{match_key}/zebra_motionworks",
+        "kind": "RETURNS",
+        "to": "schema:Zebra"
+      },
+      {
+        "from": "operation:get:/status",
+        "kind": "RETURNS",
+        "to": "schema:API_Status"
+      },
+      {
+        "from": "operation:get:/team/{team_key}",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/awards",
+        "kind": "RETURNS",
+        "to": "schema:Award"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/awards/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Award"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/districts",
+        "kind": "RETURNS",
+        "to": "schema:District_List"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/event/{event_key}/awards",
+        "kind": "RETURNS",
+        "to": "schema:Award"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/event/{event_key}/matches",
+        "kind": "RETURNS",
+        "to": "schema:Match"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/event/{event_key}/matches/simple",
+        "kind": "RETURNS",
+        "to": "schema:Match"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/event/{event_key}/status",
+        "kind": "RETURNS",
+        "to": "schema:Team_Event_Status"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/events",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/events/simple",
+        "kind": "RETURNS",
+        "to": "schema:Event_Simple"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/events/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/events/{year}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Event_Simple"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/matches/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Match"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/matches/{year}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Match_Simple"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/media/tag/{media_tag}",
+        "kind": "RETURNS",
+        "to": "schema:Media"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/media/tag/{media_tag}/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Media"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/media/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Media"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/robots",
+        "kind": "RETURNS",
+        "to": "schema:Team_Robot"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Team_Simple"
+      },
+      {
+        "from": "operation:get:/team/{team_key}/social_media",
+        "kind": "RETURNS",
+        "to": "schema:Media"
+      },
+      {
+        "from": "operation:get:/teams/{page_num}",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/teams/{page_num}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Team_Simple"
+      },
+      {
+        "from": "operation:get:/teams/{year}/{page_num}",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/teams/{year}/{page_num}/simple",
+        "kind": "RETURNS",
+        "to": "schema:Team_Simple"
+      },
+      {
+        "from": "schema:API_Status",
+        "kind": "REFERENCES",
+        "to": "schema:API_Status_App_Version"
+      },
+      {
+        "from": "schema:Award",
+        "kind": "REFERENCES",
+        "to": "schema:Award_Recipient"
+      },
+      {
+        "from": "schema:Elimination_Alliance",
+        "kind": "REFERENCES",
+        "to": "schema:WLT_Record"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:District_List"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Webcast"
+      },
+      {
+        "from": "schema:Event_Ranking",
+        "kind": "REFERENCES",
+        "to": "schema:WLT_Record"
+      },
+      {
+        "from": "schema:Event_Simple",
+        "kind": "REFERENCES",
+        "to": "schema:District_List"
+      },
+      {
+        "from": "schema:Match",
+        "kind": "REFERENCES",
+        "to": "schema:Match_alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2015",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2015_Alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2016",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2016_Alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2017",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2017_Alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2018",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2018_Alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2019",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2019_Alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2020",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2020_Alliance"
+      },
+      {
+        "from": "schema:Match_Score_Breakdown_2022",
+        "kind": "REFERENCES",
+        "to": "schema:Match_Score_Breakdown_2022_Alliance"
+      },
+      {
+        "from": "schema:Match_Simple",
+        "kind": "REFERENCES",
+        "to": "schema:Match_alliance"
+      },
+      {
+        "from": "schema:Team_Event_Status",
+        "kind": "REFERENCES",
+        "to": "schema:Team_Event_Status_alliance"
+      },
+      {
+        "from": "schema:Team_Event_Status",
+        "kind": "REFERENCES",
+        "to": "schema:Team_Event_Status_playoff"
+      },
+      {
+        "from": "schema:Team_Event_Status",
+        "kind": "REFERENCES",
+        "to": "schema:Team_Event_Status_rank"
+      },
+      {
+        "from": "schema:Team_Event_Status_alliance",
+        "kind": "REFERENCES",
+        "to": "schema:Team_Event_Status_alliance_backup"
+      },
+      {
+        "from": "schema:Team_Event_Status_playoff",
+        "kind": "REFERENCES",
+        "to": "schema:WLT_Record"
+      },
+      {
+        "from": "schema:Team_Event_Status_rank",
+        "kind": "REFERENCES",
+        "to": "schema:WLT_Record"
+      },
+      {
+        "from": "schema:Zebra",
+        "kind": "REFERENCES",
+        "to": "schema:Zebra_team"
       }
     ],
     "nodes": [
@@ -337,1218 +697,3620 @@
       },
       {
         "deprecated": false,
+        "description": "Gets a list of events in the given district.",
         "id": "operation:get:/district/{district_key}/events",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictEvents",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/events",
         "pointer": "#/paths/~1district~1{district_key}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "event",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of event keys for events in the given district.",
         "id": "operation:get:/district/{district_key}/events/keys",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictEventsKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/events/keys",
         "pointer": "#/paths/~1district~1{district_key}~1events~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "event",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of events in the given district.",
         "id": "operation:get:/district/{district_key}/events/simple",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictEventsSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/events/simple",
         "pointer": "#/paths/~1district~1{district_key}~1events~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "event",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of team district rankings for the given district.",
         "id": "operation:get:/district/{district_key}/rankings",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictRankings",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/rankings",
         "pointer": "#/paths/~1district~1{district_key}~1rankings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "District_Ranking[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Team` objects that competed in events in the given district.",
         "id": "operation:get:/district/{district_key}/teams",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictTeams",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/teams",
         "pointer": "#/paths/~1district~1{district_key}~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Team` objects that competed in events in the given district.",
         "id": "operation:get:/district/{district_key}/teams/keys",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictTeamsKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/teams/keys",
         "pointer": "#/paths/~1district~1{district_key}~1teams~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of `Team` objects that competed in events in the given district.",
         "id": "operation:get:/district/{district_key}/teams/simple",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictTeamsSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA District Key, eg `2016fim`",
+            "in": "path",
+            "name": "district_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/district/{district_key}/teams/simple",
         "pointer": "#/paths/~1district~1{district_key}~1teams~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of districts and their corresponding district key, for the given year.",
         "id": "operation:get:/districts/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getDistrictsByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/districts/{year}",
         "pointer": "#/paths/~1districts~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "District_List[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "district"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets an Event.",
         "id": "operation:get:/event/{event_key}",
         "kind": "operation",
         "method": "get",
         "name": "getEvent",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}",
         "pointer": "#/paths/~1event~1{event_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of Elimination Alliances for the given Event.",
         "id": "operation:get:/event/{event_key}/alliances",
         "kind": "operation",
         "method": "get",
         "name": "getEventAlliances",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/alliances",
         "pointer": "#/paths/~1event~1{event_key}~1alliances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Elimination_Alliance[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of awards from the given event.",
         "id": "operation:get:/event/{event_key}/awards",
         "kind": "operation",
         "method": "get",
         "name": "getEventAwards",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/awards",
         "pointer": "#/paths/~1event~1{event_key}~1awards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Award[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of team rankings for the Event.",
         "id": "operation:get:/event/{event_key}/district_points",
         "kind": "operation",
         "method": "get",
         "name": "getEventDistrictPoints",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/district_points",
         "pointer": "#/paths/~1event~1{event_key}~1district_points/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_District_Points"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "district"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a set of Event-specific insights for the given Event.",
         "id": "operation:get:/event/{event_key}/insights",
         "kind": "operation",
         "method": "get",
         "name": "getEventInsights",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/insights",
         "pointer": "#/paths/~1event~1{event_key}~1insights/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Insights"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of matches for the given event.",
         "id": "operation:get:/event/{event_key}/matches",
         "kind": "operation",
         "method": "get",
         "name": "getEventMatches",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/matches",
         "pointer": "#/paths/~1event~1{event_key}~1matches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of match keys for the given event.",
         "id": "operation:get:/event/{event_key}/matches/keys",
         "kind": "operation",
         "method": "get",
         "name": "getEventMatchesKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/matches/keys",
         "pointer": "#/paths/~1event~1{event_key}~1matches~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of matches for the given event.",
         "id": "operation:get:/event/{event_key}/matches/simple",
         "kind": "operation",
         "method": "get",
         "name": "getEventMatchesSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/matches/simple",
         "pointer": "#/paths/~1event~1{event_key}~1matches~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets an array of Match Keys for the given event key that have timeseries data.",
         "id": "operation:get:/event/{event_key}/matches/timeseries",
         "kind": "operation",
         "method": "get",
         "name": "getEventMatchTimeseries",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/matches/timeseries",
         "pointer": "#/paths/~1event~1{event_key}~1matches~1timeseries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the given Event.",
         "id": "operation:get:/event/{event_key}/oprs",
         "kind": "operation",
         "method": "get",
         "name": "getEventOPRs",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/oprs",
         "pointer": "#/paths/~1event~1{event_key}~1oprs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_OPRs"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets information on TBA-generated predictions for the given Event.",
         "id": "operation:get:/event/{event_key}/predictions",
         "kind": "operation",
         "method": "get",
         "name": "getEventPredictions",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/predictions",
         "pointer": "#/paths/~1event~1{event_key}~1predictions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Predictions"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of team rankings for the Event.",
         "id": "operation:get:/event/{event_key}/rankings",
         "kind": "operation",
         "method": "get",
         "name": "getEventRankings",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/rankings",
         "pointer": "#/paths/~1event~1{event_key}~1rankings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Ranking"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form Event.",
         "id": "operation:get:/event/{event_key}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getEventSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/simple",
         "pointer": "#/paths/~1event~1{event_key}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Simple"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Team` objects that competed in the given event.",
         "id": "operation:get:/event/{event_key}/teams",
         "kind": "operation",
         "method": "get",
         "name": "getEventTeams",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/teams",
         "pointer": "#/paths/~1event~1{event_key}~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Team` keys that competed in the given event.",
         "id": "operation:get:/event/{event_key}/teams/keys",
         "kind": "operation",
         "method": "get",
         "name": "getEventTeamsKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/teams/keys",
         "pointer": "#/paths/~1event~1{event_key}~1teams~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of `Team` objects that competed in the given event.",
         "id": "operation:get:/event/{event_key}/teams/simple",
         "kind": "operation",
         "method": "get",
         "name": "getEventTeamsSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/teams/simple",
         "pointer": "#/paths/~1event~1{event_key}~1teams~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a key-value list of the event statuses for teams competing at the given event.",
         "id": "operation:get:/event/{event_key}/teams/statuses",
         "kind": "operation",
         "method": "get",
         "name": "getEventTeamsStatuses",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event/{event_key}/teams/statuses",
         "pointer": "#/paths/~1event~1{event_key}~1teams~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of events in the given year.",
         "id": "operation:get:/events/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getEventsByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/events/{year}",
         "pointer": "#/paths/~1events~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of event keys in the given year.",
         "id": "operation:get:/events/{year}/keys",
         "kind": "operation",
         "method": "get",
         "name": "getEventsByYearKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/events/{year}/keys",
         "pointer": "#/paths/~1events~1{year}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of events in the given year.",
         "id": "operation:get:/events/{year}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getEventsByYearSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/events/{year}/simple",
         "pointer": "#/paths/~1events~1{year}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "event",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a `Match` object for the given match key.",
         "id": "operation:get:/match/{match_key}",
         "kind": "operation",
         "method": "get",
         "name": "getMatch",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Match Key, eg `2016nytr_qm1`",
+            "in": "path",
+            "name": "match_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/match/{match_key}",
         "pointer": "#/paths/~1match~1{match_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form `Match` object for the given match key.",
         "id": "operation:get:/match/{match_key}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getMatchSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Match Key, eg `2016nytr_qm1`",
+            "in": "path",
+            "name": "match_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/match/{match_key}/simple",
         "pointer": "#/paths/~1match~1{match_key}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match_Simple"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available.",
         "id": "operation:get:/match/{match_key}/timeseries",
         "kind": "operation",
         "method": "get",
         "name": "getMatchTimeseries",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Match Key, eg `2016nytr_qm1`",
+            "in": "path",
+            "name": "match_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/match/{match_key}/timeseries",
         "pointer": "#/paths/~1match~1{match_key}~1timeseries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets Zebra MotionWorks data for a Match for the given match key.",
         "id": "operation:get:/match/{match_key}/zebra_motionworks",
         "kind": "operation",
         "method": "get",
         "name": "getMatchZebra",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Match Key, eg `2016nytr_qm1`",
+            "in": "path",
+            "name": "match_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/match/{match_key}/zebra_motionworks",
         "pointer": "#/paths/~1match~1{match_key}~1zebra_motionworks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zebra"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns API status, and TBA status information.",
         "id": "operation:get:/status",
         "kind": "operation",
         "method": "get",
         "name": "getStatus",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/status",
         "pointer": "#/paths/~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API_Status"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "TBA"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a `Team` object for the team referenced by the given key.",
         "id": "operation:get:/team/{team_key}",
         "kind": "operation",
         "method": "get",
         "name": "getTeam",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}",
         "pointer": "#/paths/~1team~1{team_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of awards the given team has won.",
         "id": "operation:get:/team/{team_key}/awards",
         "kind": "operation",
         "method": "get",
         "name": "getTeamAwards",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/awards",
         "pointer": "#/paths/~1team~1{team_key}~1awards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Award[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of awards the given team has won in a given year.",
         "id": "operation:get:/team/{team_key}/awards/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamAwardsByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/awards/{year}",
         "pointer": "#/paths/~1team~1{team_key}~1awards~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Award[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets an array of districts representing each year the team was in a district.",
         "id": "operation:get:/team/{team_key}/districts",
         "kind": "operation",
         "method": "get",
         "name": "getTeamDistricts",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/districts",
         "pointer": "#/paths/~1team~1{team_key}~1districts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "District_List[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "district"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of awards the given team won at the given event.",
         "id": "operation:get:/team/{team_key}/event/{event_key}/awards",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventAwards",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/event/{event_key}/awards",
         "pointer": "#/paths/~1team~1{team_key}~1event~1{event_key}~1awards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Award[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of matches for the given team and event.",
         "id": "operation:get:/team/{team_key}/event/{event_key}/matches",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventMatches",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/event/{event_key}/matches",
         "pointer": "#/paths/~1team~1{team_key}~1event~1{event_key}~1matches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of match keys for matches for the given team and event.",
         "id": "operation:get:/team/{team_key}/event/{event_key}/matches/keys",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventMatchesKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/event/{event_key}/matches/keys",
         "pointer": "#/paths/~1team~1{team_key}~1event~1{event_key}~1matches~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of matches for the given team and event.",
         "id": "operation:get:/team/{team_key}/event/{event_key}/matches/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventMatchesSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/event/{event_key}/matches/simple",
         "pointer": "#/paths/~1team~1{team_key}~1event~1{event_key}~1matches~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the competition rank and status of the team at the given event.",
         "id": "operation:get:/team/{team_key}/event/{event_key}/status",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventStatus",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "TBA Event Key, eg `2016nytr`",
+            "in": "path",
+            "name": "event_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/event/{event_key}/status",
         "pointer": "#/paths/~1team~1{team_key}~1event~1{event_key}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Event_Status"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of all events this team has competed at.",
         "id": "operation:get:/team/{team_key}/events",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEvents",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/events",
         "pointer": "#/paths/~1team~1{team_key}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of the event keys for all events this team has competed at.",
         "id": "operation:get:/team/{team_key}/events/keys",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventsKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/events/keys",
         "pointer": "#/paths/~1team~1{team_key}~1events~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of all events this team has competed at.",
         "id": "operation:get:/team/{team_key}/events/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventsSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/events/simple",
         "pointer": "#/paths/~1team~1{team_key}~1events~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of events this team has competed at in the given year.",
         "id": "operation:get:/team/{team_key}/events/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventsByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/events/{year}",
         "pointer": "#/paths/~1team~1{team_key}~1events~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of the event keys for events this team has competed at in the given year.",
         "id": "operation:get:/team/{team_key}/events/{year}/keys",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventsByYearKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/events/{year}/keys",
         "pointer": "#/paths/~1team~1{team_key}~1events~1{year}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of events this team has competed at in the given year.",
         "id": "operation:get:/team/{team_key}/events/{year}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventsByYearSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/events/{year}/simple",
         "pointer": "#/paths/~1team~1{team_key}~1events~1{year}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a key-value list of the event statuses for events this team has competed at in the given year.",
         "id": "operation:get:/team/{team_key}/events/{year}/statuses",
         "kind": "operation",
         "method": "get",
         "name": "getTeamEventsStatusesByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/events/{year}/statuses",
         "pointer": "#/paths/~1team~1{team_key}~1events~1{year}~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "list",
+          "team",
+          "event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of matches for the given team and year.",
         "id": "operation:get:/team/{team_key}/matches/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMatchesByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/matches/{year}",
         "pointer": "#/paths/~1team~1{team_key}~1matches~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of match keys for matches for the given team and year.",
         "id": "operation:get:/team/{team_key}/matches/{year}/keys",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMatchesByYearKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/matches/{year}/keys",
         "pointer": "#/paths/~1team~1{team_key}~1matches~1{year}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a short-form list of matches for the given team and year.",
         "id": "operation:get:/team/{team_key}/matches/{year}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMatchesByYearSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/matches/{year}/simple",
         "pointer": "#/paths/~1team~1{team_key}~1matches~1{year}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Match_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "match"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of Media (videos / pictures) for the given team and tag.",
         "id": "operation:get:/team/{team_key}/media/tag/{media_tag}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMediaByTag",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Media Tag which describes the Media.",
+            "in": "path",
+            "name": "media_tag",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/media/tag/{media_tag}",
         "pointer": "#/paths/~1team~1{team_key}~1media~1tag~1{media_tag}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Media[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of Media (videos / pictures) for the given team, tag and year.",
         "id": "operation:get:/team/{team_key}/media/tag/{media_tag}/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMediaByTagYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Media Tag which describes the Media.",
+            "in": "path",
+            "name": "media_tag",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/media/tag/{media_tag}/{year}",
         "pointer": "#/paths/~1team~1{team_key}~1media~1tag~1{media_tag}~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Media[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of Media (videos / pictures) for the given team and year.",
         "id": "operation:get:/team/{team_key}/media/{year}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMediaByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/team/{team_key}/media/{year}",
         "pointer": "#/paths/~1team~1{team_key}~1media~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Media[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of year and robot name pairs for each year that a robot name was provided.",
         "id": "operation:get:/team/{team_key}/robots",
         "kind": "operation",
         "method": "get",
         "name": "getTeamRobots",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/robots",
         "pointer": "#/paths/~1team~1{team_key}~1robots/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Robot[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a `Team_Simple` object for the team referenced by the given key.",
         "id": "operation:get:/team/{team_key}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/simple",
         "pointer": "#/paths/~1team~1{team_key}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Simple"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of Media (social media) for the given team.",
         "id": "operation:get:/team/{team_key}/social_media",
         "kind": "operation",
         "method": "get",
         "name": "getTeamSocialMedia",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/social_media",
         "pointer": "#/paths/~1team~1{team_key}~1social_media/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Media[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of years in which the team participated in at least one competition.",
         "id": "operation:get:/team/{team_key}/years_participated",
         "kind": "operation",
         "method": "get",
         "name": "getTeamYearsParticipated",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TBA Team Key, eg `frc254`",
+            "in": "path",
+            "name": "team_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{team_key}/years_participated",
         "pointer": "#/paths/~1team~1{team_key}~1years_participated/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Team` objects, paginated in groups of 500.",
         "id": "operation:get:/teams/{page_num}",
         "kind": "operation",
         "method": "get",
         "name": "getTeams",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number of results to return, zero-indexed",
+            "in": "path",
+            "name": "page_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/{page_num}",
         "pointer": "#/paths/~1teams~1{page_num}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of Team keys, paginated in groups of 500.",
         "id": "operation:get:/teams/{page_num}/keys",
         "kind": "operation",
         "method": "get",
         "name": "getTeamsKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number of results to return, zero-indexed",
+            "in": "path",
+            "name": "page_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/{page_num}/keys",
         "pointer": "#/paths/~1teams~1{page_num}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of short form `Team_Simple` objects, paginated in groups of 500.",
         "id": "operation:get:/teams/{page_num}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamsSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number of results to return, zero-indexed",
+            "in": "path",
+            "name": "page_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/{page_num}/simple",
         "pointer": "#/paths/~1teams~1{page_num}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Team` objects that competed in the given year, paginated in groups of 500.",
         "id": "operation:get:/teams/{year}/{page_num}",
         "kind": "operation",
         "method": "get",
         "name": "getTeamsByYear",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Page number of results to return, zero-indexed",
+            "in": "path",
+            "name": "page_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/{year}/{page_num}",
         "pointer": "#/paths/~1teams~1{year}~1{page_num}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list Team Keys that competed in the given year, paginated in groups of 500.",
         "id": "operation:get:/teams/{year}/{page_num}/keys",
         "kind": "operation",
         "method": "get",
         "name": "getTeamsByYearKeys",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Page number of results to return, zero-indexed",
+            "in": "path",
+            "name": "page_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/{year}/{page_num}/keys",
         "pointer": "#/paths/~1teams~1{year}~1{page_num}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "list"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of short form `Team_Simple` objects that competed in the given year, paginated in groups of 500.",
         "id": "operation:get:/teams/{year}/{page_num}/simple",
         "kind": "operation",
         "method": "get",
         "name": "getTeamsByYearSimple",
+        "parameters": [
+          {
+            "description": "Value of the `ETag` header in the most recently cached response by the client.",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Competition Year (or Season).",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Page number of results to return, zero-indexed",
+            "in": "path",
+            "name": "page_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/{year}/{page_num}/simple",
         "pointer": "#/paths/~1teams~1{year}~1{page_num}~1simple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team_Simple[]"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "team",
+          "list"
+        ]
       },
       {
         "id": "schema:API_Status",
         "kind": "schema",
-        "name": "API_Status"
+        "name": "API_Status",
+        "type": "object"
       },
       {
         "id": "schema:API_Status_App_Version",
         "kind": "schema",
-        "name": "API_Status_App_Version"
+        "name": "API_Status_App_Version",
+        "type": "object"
       },
       {
         "id": "schema:Award",
         "kind": "schema",
-        "name": "Award"
+        "name": "Award",
+        "type": "object"
       },
       {
+        "description": "An `Award_Recipient` object represents the team and/or person who received an award at an event.",
         "id": "schema:Award_Recipient",
         "kind": "schema",
-        "name": "Award_Recipient"
+        "name": "Award_Recipient",
+        "type": "object"
       },
       {
         "id": "schema:District_List",
         "kind": "schema",
-        "name": "District_List"
+        "name": "District_List",
+        "type": "object"
       },
       {
+        "description": "Rank of a team in a district.",
         "id": "schema:District_Ranking",
         "kind": "schema",
-        "name": "District_Ranking"
+        "name": "District_Ranking",
+        "type": "object"
       },
       {
         "id": "schema:Elimination_Alliance",
         "kind": "schema",
-        "name": "Elimination_Alliance"
+        "name": "Elimination_Alliance",
+        "type": "object"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
         "id": "schema:Event_District_Points",
         "kind": "schema",
-        "name": "Event_District_Points"
+        "name": "Event_District_Points",
+        "type": "object"
       },
       {
+        "description": "A year-specific event insight object expressed as a JSON string, separated in to `qual` and `playoff` fields.",
         "id": "schema:Event_Insights",
         "kind": "schema",
-        "name": "Event_Insights"
+        "name": "Event_Insights",
+        "type": "object"
       },
       {
+        "description": "Insights for FIRST Stronghold qualification and elimination matches.",
         "id": "schema:Event_Insights_2016",
         "kind": "schema",
-        "name": "Event_Insights_2016"
+        "name": "Event_Insights_2016",
+        "type": "object"
       },
       {
+        "description": "Insights for FIRST STEAMWORKS qualification and elimination matches.",
         "id": "schema:Event_Insights_2017",
         "kind": "schema",
-        "name": "Event_Insights_2017"
+        "name": "Event_Insights_2017",
+        "type": "object"
       },
       {
+        "description": "Insights for FIRST Power Up qualification and elimination matches.",
         "id": "schema:Event_Insights_2018",
         "kind": "schema",
-        "name": "Event_Insights_2018"
+        "name": "Event_Insights_2018",
+        "type": "object"
       },
       {
+        "description": "OPR, DPR, and CCWM for teams at the event.",
         "id": "schema:Event_OPRs",
         "kind": "schema",
-        "name": "Event_OPRs"
+        "name": "Event_OPRs",
+        "type": "object"
       },
       {
+        "description": "JSON Object containing prediction information for the event.",
         "id": "schema:Event_Predictions",
         "kind": "schema",
-        "name": "Event_Predictions"
+        "name": "Event_Predictions",
+        "type": "object"
       },
       {
         "id": "schema:Event_Ranking",
         "kind": "schema",
-        "name": "Event_Ranking"
+        "name": "Event_Ranking",
+        "type": "object"
       },
       {
         "id": "schema:Event_Simple",
         "kind": "schema",
-        "name": "Event_Simple"
+        "name": "Event_Simple",
+        "type": "object"
       },
       {
         "id": "schema:Match",
         "kind": "schema",
-        "name": "Match"
+        "name": "Match",
+        "type": "object"
       },
       {
+        "description": "See the 2015 FMS API documentation for a description of each value",
         "id": "schema:Match_Score_Breakdown_2015",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2015"
+        "name": "Match_Score_Breakdown_2015",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2015_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2015_Alliance"
+        "name": "Match_Score_Breakdown_2015_Alliance",
+        "type": "object"
       },
       {
+        "description": "See the 2016 FMS API documentation for a description of each value.",
         "id": "schema:Match_Score_Breakdown_2016",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2016"
+        "name": "Match_Score_Breakdown_2016",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2016_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2016_Alliance"
+        "name": "Match_Score_Breakdown_2016_Alliance",
+        "type": "object"
       },
       {
+        "description": "See the 2017 FMS API documentation for a description of each value.",
         "id": "schema:Match_Score_Breakdown_2017",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2017"
+        "name": "Match_Score_Breakdown_2017",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2017_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2017_Alliance"
+        "name": "Match_Score_Breakdown_2017_Alliance",
+        "type": "object"
       },
       {
+        "description": "See the 2018 FMS API documentation for a description of each value.",
         "id": "schema:Match_Score_Breakdown_2018",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2018"
+        "name": "Match_Score_Breakdown_2018",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2018_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2018_Alliance"
+        "name": "Match_Score_Breakdown_2018_Alliance",
+        "type": "object"
       },
       {
+        "description": "See the 2019 FMS API documentation for a description of each value.",
         "id": "schema:Match_Score_Breakdown_2019",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2019"
+        "name": "Match_Score_Breakdown_2019",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2019_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2019_Alliance"
+        "name": "Match_Score_Breakdown_2019_Alliance",
+        "type": "object"
       },
       {
+        "description": "See the 2020 FMS API documentation for a description of each value.",
         "id": "schema:Match_Score_Breakdown_2020",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2020"
+        "name": "Match_Score_Breakdown_2020",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2020_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2020_Alliance"
+        "name": "Match_Score_Breakdown_2020_Alliance",
+        "type": "object"
       },
       {
+        "description": "See the 2022 FMS API documentation for a description of each value.",
         "id": "schema:Match_Score_Breakdown_2022",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2022"
+        "name": "Match_Score_Breakdown_2022",
+        "type": "object"
       },
       {
         "id": "schema:Match_Score_Breakdown_2022_Alliance",
         "kind": "schema",
-        "name": "Match_Score_Breakdown_2022_Alliance"
+        "name": "Match_Score_Breakdown_2022_Alliance",
+        "type": "object"
       },
       {
         "id": "schema:Match_Simple",
         "kind": "schema",
-        "name": "Match_Simple"
+        "name": "Match_Simple",
+        "type": "object"
       },
       {
+        "description": "Timeseries data for the 2018 game *FIRST* POWER UP.",
         "id": "schema:Match_Timeseries_2018",
         "kind": "schema",
-        "name": "Match_Timeseries_2018"
+        "name": "Match_Timeseries_2018",
+        "type": "object"
       },
       {
         "id": "schema:Match_alliance",
         "kind": "schema",
-        "name": "Match_alliance"
+        "name": "Match_alliance",
+        "type": "object"
       },
       {
+        "description": "The `Media` object contains a reference for most any media associated with a team or event on TBA.",
         "id": "schema:Media",
         "kind": "schema",
-        "name": "Media"
+        "name": "Media",
+        "type": "object"
       },
       {
         "id": "schema:Team",
         "kind": "schema",
-        "name": "Team"
+        "name": "Team",
+        "type": "object"
       },
       {
         "id": "schema:Team_Event_Status",
         "kind": "schema",
-        "name": "Team_Event_Status"
+        "name": "Team_Event_Status",
+        "type": "object"
       },
       {
         "id": "schema:Team_Event_Status_alliance",
         "kind": "schema",
-        "name": "Team_Event_Status_alliance"
+        "name": "Team_Event_Status_alliance",
+        "type": "object"
       },
       {
+        "description": "Backup status, may be null.",
         "id": "schema:Team_Event_Status_alliance_backup",
         "kind": "schema",
-        "name": "Team_Event_Status_alliance_backup"
+        "name": "Team_Event_Status_alliance_backup",
+        "type": "object"
       },
       {
+        "description": "Playoff status for this team, may be null if the team did not make playoffs, or playoffs have not begun.",
         "id": "schema:Team_Event_Status_playoff",
         "kind": "schema",
-        "name": "Team_Event_Status_playoff"
+        "name": "Team_Event_Status_playoff",
+        "type": "object"
       },
       {
         "id": "schema:Team_Event_Status_rank",
         "kind": "schema",
-        "name": "Team_Event_Status_rank"
+        "name": "Team_Event_Status_rank",
+        "type": "object"
       },
       {
         "id": "schema:Team_Robot",
         "kind": "schema",
-        "name": "Team_Robot"
+        "name": "Team_Robot",
+        "type": "object"
       },
       {
         "id": "schema:Team_Simple",
         "kind": "schema",
-        "name": "Team_Simple"
+        "name": "Team_Simple",
+        "type": "object"
       },
       {
+        "description": "A Win-Loss-Tie record for a team, or an alliance.",
         "id": "schema:WLT_Record",
         "kind": "schema",
-        "name": "WLT_Record"
+        "name": "WLT_Record",
+        "type": "object"
       },
       {
         "id": "schema:Webcast",
         "kind": "schema",
-        "name": "Webcast"
+        "name": "Webcast",
+        "type": "object"
       },
       {
         "id": "schema:Zebra",
         "kind": "schema",
-        "name": "Zebra"
+        "name": "Zebra",
+        "type": "object"
       },
       {
         "id": "schema:Zebra_team",
         "kind": "schema",
-        "name": "Zebra_team"
+        "name": "Zebra_team",
+        "type": "object"
       }
     ]
   },

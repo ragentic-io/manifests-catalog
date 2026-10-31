@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_math.tools_branding_blackboard_
 
 | | |
 | --- | --- |
-| Signed bundle | `918e5d777b6107ba09c6eec85f239ee3be1af6a5fd2ab05d499213f7a1c55e2a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,31 +32,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_math.tools_branding_blackboard_
 
 ## Operations (26)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/numbers/base` | get /numbers/base | — |
-| GET | `/numbers/base/binary` | get /numbers/base/binary | — |
-| GET | `/numbers/base/hex` | get /numbers/base/hex | — |
-| GET | `/numbers/base/octal` | get /numbers/base/octal | — |
-| GET | `/numbers/cardinal` | get /numbers/cardinal | — |
-| GET | `/numbers/currency` | get /numbers/currency | — |
-| GET | `/numbers/fact` | get /numbers/fact | — |
-| GET | `/numbers/is-cube` | get /numbers/is-cube | — |
-| GET | `/numbers/is-palindrome` | get /numbers/is-palindrome | — |
-| GET | `/numbers/is-square` | get /numbers/is-square | — |
-| GET | `/numbers/is-triangle` | get /numbers/is-triangle | — |
-| GET | `/numbers/nod` | get /numbers/nod | — |
-| GET | `/numbers/numeral/chinese` | get /numbers/numeral/chinese | — |
-| GET | `/numbers/numeral/egyptian` | get /numbers/numeral/egyptian | — |
-| GET | `/numbers/numeral/roman` | get /numbers/numeral/roman | — |
-| GET | `/numbers/ordinal` | get /numbers/ordinal | — |
-| GET | `/numbers/pi` | get /numbers/pi | — |
-| GET | `/numbers/prime/factors` | get /numbers/prime/factors | — |
-| GET | `/numbers/prime/is-fermat-prime` | get /numbers/prime/is-fermat-prime | — |
-| GET | `/numbers/prime/is-fibonacci-prime` | get /numbers/prime/is-fibonacci-prime | — |
-| GET | `/numbers/prime/is-mersenne-prime` | get /numbers/prime/is-mersenne-prime | — |
-| GET | `/numbers/prime/is-partition-prime` | get /numbers/prime/is-partition-prime | — |
-| GET | `/numbers/prime/is-pell-prime` | get /numbers/prime/is-pell-prime | — |
-| GET | `/numbers/prime/is-perfect` | get /numbers/prime/is-perfect | — |
-| GET | `/numbers/prime/is-prime` | get /numbers/prime/is-prime | — |
-| GET | `/numbers/random` | get /numbers/random | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/numbers/base` | get /numbers/base | `number`*, `from`, `to`* | — | yes | — |
+| GET | `/numbers/base/binary` | get /numbers/base/binary | `number`*, `from` | — | yes | — |
+| GET | `/numbers/base/hex` | get /numbers/base/hex | `number`*, `from` | — | yes | — |
+| GET | `/numbers/base/octal` | get /numbers/base/octal | `number`*, `from` | — | yes | — |
+| GET | `/numbers/cardinal` | get /numbers/cardinal | `number`, `language` | — | yes | — |
+| GET | `/numbers/currency` | get /numbers/currency | `number`, `language` | — | yes | — |
+| GET | `/numbers/fact` | get /numbers/fact | `number`* | — | yes | — |
+| GET | `/numbers/is-cube` | get /numbers/is-cube | `number` | — | yes | — |
+| GET | `/numbers/is-palindrome` | get /numbers/is-palindrome | `number` | — | yes | — |
+| GET | `/numbers/is-square` | get /numbers/is-square | `number` | — | yes | — |
+| GET | `/numbers/is-triangle` | get /numbers/is-triangle | `number` | — | yes | — |
+| GET | `/numbers/nod` | get /numbers/nod | — | — | yes | — |
+| GET | `/numbers/numeral/chinese` | get /numbers/numeral/chinese | `number` | — | yes | — |
+| GET | `/numbers/numeral/egyptian` | get /numbers/numeral/egyptian | `number` | — | yes | — |
+| GET | `/numbers/numeral/roman` | get /numbers/numeral/roman | `number` | — | yes | — |
+| GET | `/numbers/ordinal` | get /numbers/ordinal | `number` | — | yes | — |
+| GET | `/numbers/pi` | get /numbers/pi | `from`, `to` | — | yes | — |
+| GET | `/numbers/prime/factors` | get /numbers/prime/factors | `number` | — | yes | — |
+| GET | `/numbers/prime/is-fermat-prime` | get /numbers/prime/is-fermat-prime | `number` | — | yes | — |
+| GET | `/numbers/prime/is-fibonacci-prime` | get /numbers/prime/is-fibonacci-prime | `number` | — | yes | — |
+| GET | `/numbers/prime/is-mersenne-prime` | get /numbers/prime/is-mersenne-prime | `number` | — | yes | — |
+| GET | `/numbers/prime/is-partition-prime` | get /numbers/prime/is-partition-prime | `number` | — | yes | — |
+| GET | `/numbers/prime/is-pell-prime` | get /numbers/prime/is-pell-prime | `number` | — | yes | — |
+| GET | `/numbers/prime/is-perfect` | get /numbers/prime/is-perfect | `number` | — | yes | — |
+| GET | `/numbers/prime/is-prime` | get /numbers/prime/is-prime | `number` | — | yes | — |
+| GET | `/numbers/random` | get /numbers/random | `min`, `max`, `total` | — | yes | — |

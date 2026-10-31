@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_n140.meraki.com_images_cisco-me
 
 | | |
 | --- | --- |
-| Signed bundle | `4d7f2dae893d4e2cccc54afa909ff5fee1aae03a4e8b02a2add16de856d10278` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,268 +32,270 @@ logo: "https://api.apis.guru/v2/cache/logo/https_n140.meraki.com_images_cisco-me
 
 ## Operations (263)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/devices/{serial}/camera/analytics/live` | getDeviceCameraAnalyticsLive | Returns live state from camera of analytics zones |
-| GET | `/devices/{serial}/camera/analytics/overview` | getDeviceCameraAnalyticsOverview | Returns an overview of aggregate analytics data for a timespan |
-| GET | `/devices/{serial}/camera/analytics/recent` | getDeviceCameraAnalyticsRecent | Returns most recent record for analytics zones |
-| GET | `/devices/{serial}/camera/analytics/zones` | getDeviceCameraAnalyticsZones | Returns all configured analytic zones for this camera |
-| GET | `/devices/{serial}/camera/analytics/zones/{zoneId}/history` | getDeviceCameraAnalyticsZoneHistory | Return historical records for analytic zones |
-| GET | `/devices/{serial}/camera/qualityAndRetentionSettings` | getDeviceCameraQualityAndRetentionSettings | Returns quality and retention settings for the given camera |
-| PUT | `/devices/{serial}/camera/qualityAndRetentionSettings` | updateDeviceCameraQualityAndRetentionSettings | Update quality and retention settings for the given camera |
-| GET | `/devices/{serial}/camera/video/settings` | getDeviceCameraVideoSettings | Returns video settings for the given camera |
-| PUT | `/devices/{serial}/camera/video/settings` | updateDeviceCameraVideoSettings | Update video settings for the given camera |
-| GET | `/devices/{serial}/cellularGateway/settings` | getDeviceCellularGatewaySettings | Show the LAN Settings of a MG |
-| PUT | `/devices/{serial}/cellularGateway/settings` | updateDeviceCellularGatewaySettings | Update the LAN Settings for a single MG. |
-| GET | `/devices/{serial}/cellularGateway/settings/portForwardingRules` | getDeviceCellularGatewaySettingsPortForwardingRules | Returns the port forwarding rules for a single MG. |
-| PUT | `/devices/{serial}/cellularGateway/settings/portForwardingRules` | updateDeviceCellularGatewaySettingsPortForwardingRules | Updates the port forwarding rules for a single MG. |
-| GET | `/devices/{serial}/clients` | getDeviceClients | List the clients of a device, up to a maximum of a month ago |
-| POST | `/devices/{serial}/switch/ports/cycle` | cycleDeviceSwitchPorts | Cycle a set of switch ports |
-| GET | `/devices/{serial}/switchPortStatuses` | getDeviceSwitchPortStatuses | Return the status for all the ports of a switch |
-| GET | `/devices/{serial}/switchPortStatuses/packets` | getDeviceSwitchPortStatusesPackets | Return the packet counters for all the ports of a switch |
-| PUT | `/devices/{serial}/wireless/bluetooth/settings` | updateDeviceWirelessBluetoothSettings | Update the bluetooth settings for a wireless device |
-| DELETE | `/networks/{networkId}` | deleteNetwork | Delete a network |
-| GET | `/networks/{networkId}` | getNetwork | Return a network |
-| PUT | `/networks/{networkId}` | updateNetwork | Update a network |
-| GET | `/networks/{networkId}/accessPolicies` | getNetworkAccessPolicies | List the access policies for this network |
-| GET | `/networks/{networkId}/airMarshal` | getNetworkAirMarshal | List Air Marshal scan results from a network |
-| GET | `/networks/{networkId}/alertSettings` | getNetworkAlertSettings | Return the alert configuration for this network |
-| PUT | `/networks/{networkId}/alertSettings` | updateNetworkAlertSettings | Update the alert configuration for this network |
-| GET | `/networks/{networkId}/appliance/firewall/inboundFirewallRules` | getNetworkApplianceFirewallInboundFirewallRules | Return the inbound firewall rules for an MX network |
-| PUT | `/networks/{networkId}/appliance/firewall/inboundFirewallRules` | updateNetworkApplianceFirewallInboundFirewallRules | Update the inbound firewall rules of an MX network |
-| GET | `/networks/{networkId}/appliancePorts` | getNetworkAppliancePorts | List per-port VLAN settings for all ports of a MX. |
-| GET | `/networks/{networkId}/appliancePorts/{appliancePortId}` | getNetworkAppliancePort | Return per-port VLAN settings for a single MX port. |
-| PUT | `/networks/{networkId}/appliancePorts/{appliancePortId}` | updateNetworkAppliancePort | Update the per-port VLAN settings for a single MX port. |
-| POST | `/networks/{networkId}/bind` | bindNetwork | Bind a network to a template. |
-| GET | `/networks/{networkId}/bluetoothClients` | getNetworkBluetoothClients | List the Bluetooth clients seen by APs in this network |
-| GET | `/networks/{networkId}/bluetoothClients/{bluetoothClientId}` | getNetworkBluetoothClient | Return a Bluetooth client |
-| GET | `/networks/{networkId}/bluetoothSettings` | getNetworkBluetoothSettings | Return the Bluetooth settings for a network. <a href="https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)">Bluetooth settings</a> must be enabled on the network. |
-| PUT | `/networks/{networkId}/bluetoothSettings` | updateNetworkBluetoothSettings | Update the Bluetooth settings for a network |
-| GET | `/networks/{networkId}/camera/qualityRetentionProfiles` | getNetworkCameraQualityRetentionProfiles | List the quality retention profiles for this network |
-| POST | `/networks/{networkId}/camera/qualityRetentionProfiles` | createNetworkCameraQualityRetentionProfile | Creates new quality retention profile for this network. |
-| DELETE | `/networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}` | deleteNetworkCameraQualityRetentionProfile | Delete an existing quality retention profile for this network. |
-| GET | `/networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}` | getNetworkCameraQualityRetentionProfile | Retrieve a single quality retention profile |
-| PUT | `/networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}` | updateNetworkCameraQualityRetentionProfile | Update an existing quality retention profile for this network. |
-| GET | `/networks/{networkId}/camera/schedules` | getNetworkCameraSchedules | Returns a list of all camera recording schedules. |
-| POST | `/networks/{networkId}/cameras/{serial}/snapshot` | generateNetworkCameraSnapshot | Generate a snapshot of what the camera sees at the specified time and return a link to that image. |
-| GET | `/networks/{networkId}/cameras/{serial}/videoLink` | getNetworkCameraVideoLink | Returns video link to the specified camera |
-| GET | `/networks/{networkId}/cellularFirewallRules` | getNetworkCellularFirewallRules | Return the cellular firewall rules for an MX network |
-| PUT | `/networks/{networkId}/cellularFirewallRules` | updateNetworkCellularFirewallRules | Update the cellular firewall rules of an MX network |
-| GET | `/networks/{networkId}/clients` | getNetworkClients | List the clients that have used this network in the timespan |
-| GET | `/networks/{networkId}/clients/connectionStats` | getNetworkClientsConnectionStats | Aggregated connectivity info for this network, grouped by clients |
-| GET | `/networks/{networkId}/clients/latencyStats` | getNetworkClientsLatencyStats | Aggregated latency info for this network, grouped by clients |
-| POST | `/networks/{networkId}/clients/provision` | provisionNetworkClients | Provisions a client with a name and policy |
-| GET | `/networks/{networkId}/clients/{clientId}` | getNetworkClient | Return the client associated with the given identifier |
-| GET | `/networks/{networkId}/clients/{clientId}/connectionStats` | getNetworkClientConnectionStats | Aggregated connectivity info for a given client on this network |
-| GET | `/networks/{networkId}/clients/{clientId}/events` | getNetworkClientEvents | Return the events associated with this client |
-| GET | `/networks/{networkId}/clients/{clientId}/latencyHistory` | getNetworkClientLatencyHistory | Return the latency history for a client |
-| GET | `/networks/{networkId}/clients/{clientId}/latencyStats` | getNetworkClientLatencyStats | Aggregated latency info for a given client on this network |
-| GET | `/networks/{networkId}/clients/{clientId}/policy` | getNetworkClientPolicy | Return the policy assigned to a client on the network |
-| PUT | `/networks/{networkId}/clients/{clientId}/policy` | updateNetworkClientPolicy | Update the policy assigned to a client on the network |
-| GET | `/networks/{networkId}/clients/{clientId}/splashAuthorizationStatus` | getNetworkClientSplashAuthorizationStatus | Return the splash authorization for a client, for each SSID they've associated with through splash |
-| PUT | `/networks/{networkId}/clients/{clientId}/splashAuthorizationStatus` | updateNetworkClientSplashAuthorizationStatus | Update a client's splash authorization |
-| GET | `/networks/{networkId}/clients/{clientId}/usageHistory` | getNetworkClientUsageHistory | Return the client's daily usage history |
-| GET | `/networks/{networkId}/connectionStats` | getNetworkConnectionStats | Aggregated connectivity info for this network |
-| GET | `/networks/{networkId}/contentFiltering` | getNetworkContentFiltering | Return the content filtering settings for an MX network |
-| PUT | `/networks/{networkId}/contentFiltering` | updateNetworkContentFiltering | Update the content filtering settings for an MX network |
-| GET | `/networks/{networkId}/contentFiltering/categories` | getNetworkContentFilteringCategories | List all available content filtering categories for an MX network |
-| GET | `/networks/{networkId}/devices` | getNetworkDevices | List the devices in a network |
-| POST | `/networks/{networkId}/devices/claim` | claimNetworkDevices | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed) |
-| GET | `/networks/{networkId}/devices/connectionStats` | getNetworkDevicesConnectionStats | Aggregated connectivity info for this network, grouped by node |
-| GET | `/networks/{networkId}/devices/latencyStats` | getNetworkDevicesLatencyStats | Aggregated latency info for this network, grouped by node |
-| GET | `/networks/{networkId}/devices/{serial}` | getNetworkDevice | Return a single device |
-| PUT | `/networks/{networkId}/devices/{serial}` | updateNetworkDevice | Update the attributes of a device |
-| GET | `/networks/{networkId}/devices/{serial}/connectionStats` | getNetworkDeviceConnectionStats | Aggregated connectivity info for a given AP on this network |
-| GET | `/networks/{networkId}/devices/{serial}/latencyStats` | getNetworkDeviceLatencyStats | Aggregated latency info for a given AP on this network |
-| GET | `/networks/{networkId}/devices/{serial}/lossAndLatencyHistory` | getNetworkDeviceLossAndLatencyHistory | Get the uplink loss percentage and latency in milliseconds for a wired network device. |
-| GET | `/networks/{networkId}/devices/{serial}/performance` | getNetworkDevicePerformance | Return the performance score for a single MX |
-| POST | `/networks/{networkId}/devices/{serial}/reboot` | rebootNetworkDevice | Reboot a device |
-| POST | `/networks/{networkId}/devices/{serial}/remove` | removeNetworkDevice | Remove a single device |
-| GET | `/networks/{networkId}/devices/{serial}/uplink` | getNetworkDeviceUplink | Return the uplink information for a device. |
-| GET | `/networks/{networkId}/devices/{serial}/wireless/status` | getNetworkDeviceWirelessStatus | Return the SSID statuses of an access point |
-| GET | `/networks/{networkId}/events` | getNetworkEvents | List the events for the network |
-| GET | `/networks/{networkId}/events/eventTypes` | getNetworkEventsEventTypes | List the event type to human-readable description |
-| GET | `/networks/{networkId}/failedConnections` | getNetworkFailedConnections | List of all failed client connection events on this network in a given time range |
-| GET | `/networks/{networkId}/firewalledServices` | getNetworkFirewalledServices | List the appliance services and their accessibility rules |
-| GET | `/networks/{networkId}/firewalledServices/{service}` | getNetworkFirewalledService | Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP') |
-| PUT | `/networks/{networkId}/firewalledServices/{service}` | updateNetworkFirewalledService | Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP') |
-| GET | `/networks/{networkId}/floorPlans` | getNetworkFloorPlans | List the floor plans that belong to your network |
-| POST | `/networks/{networkId}/floorPlans` | createNetworkFloorPlan | Upload a floor plan |
-| DELETE | `/networks/{networkId}/floorPlans/{floorPlanId}` | deleteNetworkFloorPlan | Destroy a floor plan |
-| GET | `/networks/{networkId}/floorPlans/{floorPlanId}` | getNetworkFloorPlan | Find a floor plan by ID |
-| PUT | `/networks/{networkId}/floorPlans/{floorPlanId}` | updateNetworkFloorPlan | Update a floor plan's geolocation and other meta data |
-| GET | `/networks/{networkId}/l3FirewallRules` | getNetworkL3FirewallRules | Return the L3 firewall rules for an MX network |
-| PUT | `/networks/{networkId}/l3FirewallRules` | updateNetworkL3FirewallRules | Update the L3 firewall rules of an MX network |
-| GET | `/networks/{networkId}/l7FirewallRules` | getNetworkL7FirewallRules | List the MX L7 firewall rules for an MX network |
-| PUT | `/networks/{networkId}/l7FirewallRules` | updateNetworkL7FirewallRules | Update the MX L7 firewall rules for an MX network |
-| GET | `/networks/{networkId}/l7FirewallRules/applicationCategories` | getNetworkL7FirewallRulesApplicationCategories | Return the L7 firewall application categories and their associated applications for an MX network |
-| GET | `/networks/{networkId}/latencyStats` | getNetworkLatencyStats | Aggregated latency info for this network |
-| GET | `/networks/{networkId}/merakiAuthUsers` | getNetworkMerakiAuthUsers | List the splash or RADIUS users configured under Meraki Authentication for a network |
-| GET | `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}` | getNetworkMerakiAuthUser | Return the Meraki Auth splash or RADIUS user |
-| GET | `/networks/{networkId}/oneToManyNatRules` | getNetworkOneToManyNatRules | Return the 1:Many NAT mapping rules for an MX network |
-| PUT | `/networks/{networkId}/oneToManyNatRules` | updateNetworkOneToManyNatRules | Set the 1:Many NAT mapping rules for an MX network |
-| GET | `/networks/{networkId}/oneToOneNatRules` | getNetworkOneToOneNatRules | Return the 1:1 NAT mapping rules for an MX network |
-| PUT | `/networks/{networkId}/oneToOneNatRules` | updateNetworkOneToOneNatRules | Set the 1:1 NAT mapping rules for an MX network |
-| GET | `/networks/{networkId}/pii/piiKeys` | getNetworkPiiPiiKeys | List the keys required to access Personally Identifiable Information (PII) for a given identifier |
-| GET | `/networks/{networkId}/pii/requests` | getNetworkPiiRequests | List the PII requests for this network or organization |
-| POST | `/networks/{networkId}/pii/requests` | createNetworkPiiRequest | Submit a new delete or restrict processing PII request |
-| DELETE | `/networks/{networkId}/pii/requests/{requestId}` | deleteNetworkPiiRequest | Delete a restrict processing PII request |
-| GET | `/networks/{networkId}/pii/requests/{requestId}` | getNetworkPiiRequest | Return a PII request |
-| GET | `/networks/{networkId}/pii/smDevicesForKey` | getNetworkPiiSmDevicesForKey | Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier |
-| GET | `/networks/{networkId}/pii/smOwnersForKey` | getNetworkPiiSmOwnersForKey | Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier |
-| GET | `/networks/{networkId}/portForwardingRules` | getNetworkPortForwardingRules | Return the port forwarding rules for an MX network |
-| PUT | `/networks/{networkId}/portForwardingRules` | updateNetworkPortForwardingRules | Update the port forwarding rules for an MX network |
-| GET | `/networks/{networkId}/security/intrusionSettings` | getNetworkSecurityIntrusionSettings | Returns all supported intrusion settings for an MX network |
-| PUT | `/networks/{networkId}/security/intrusionSettings` | updateNetworkSecurityIntrusionSettings | Set the supported intrusion settings for an MX network |
-| GET | `/networks/{networkId}/security/malwareSettings` | getNetworkSecurityMalwareSettings | Returns all supported malware settings for an MX network |
-| PUT | `/networks/{networkId}/security/malwareSettings` | updateNetworkSecurityMalwareSettings | Set the supported malware settings for an MX network |
-| GET | `/networks/{networkId}/securityEvents` | getNetworkSecurityEvents | List the security events (intrusion detection only) for a network |
-| GET | `/networks/{networkId}/siteToSiteVpn` | getNetworkSiteToSiteVpn | Return the site-to-site VPN settings of a network |
-| PUT | `/networks/{networkId}/siteToSiteVpn` | updateNetworkSiteToSiteVpn | Update the site-to-site VPN settings of a network |
-| POST | `/networks/{networkId}/sm/bypassActivationLockAttempts` | createNetworkSmBypassActivationLockAttempt | Bypass activation lock attempt |
-| GET | `/networks/{networkId}/sm/bypassActivationLockAttempts/{attemptId}` | getNetworkSmBypassActivationLockAttempt | Bypass activation lock attempt status |
-| PUT | `/networks/{networkId}/sm/device/fields` | updateNetworkSmDeviceFields | Modify the fields of a device |
-| PUT | `/networks/{networkId}/sm/device/wipe` | wipeNetworkSmDevice | Wipe a device |
-| POST | `/networks/{networkId}/sm/device/{deviceId}/refreshDetails` | refreshNetworkSmDeviceDetails | Refresh the details of a device |
-| GET | `/networks/{networkId}/sm/devices` | getNetworkSmDevices | List the devices enrolled in an SM network with various specified fields and filters |
-| PUT | `/networks/{networkId}/sm/devices/checkin` | checkinNetworkSmDevices | Force check-in a set of devices |
-| PUT | `/networks/{networkId}/sm/devices/tags` | updateNetworkSmDevicesTags | Add, delete, or update the tags of a set of devices |
-| POST | `/networks/{networkId}/sm/devices/{deviceId}/unenroll` | unenrollNetworkSmDevice | Unenroll a device |
-| GET | `/networks/{networkId}/sm/profiles` | getNetworkSmProfiles | List all the profiles in the network |
-| GET | `/networks/{networkId}/sm/targetGroups` | getNetworkSmTargetGroups | List the target groups in this network |
-| POST | `/networks/{networkId}/sm/targetGroups` | createNetworkSmTargetGroup | Add a target group |
-| DELETE | `/networks/{networkId}/sm/targetGroups/{targetGroupId}` | deleteNetworkSmTargetGroup | Delete a target group from a network |
-| GET | `/networks/{networkId}/sm/targetGroups/{targetGroupId}` | getNetworkSmTargetGroup | Return a target group |
-| PUT | `/networks/{networkId}/sm/targetGroups/{targetGroupId}` | updateNetworkSmTargetGroup | Update a target group |
-| GET | `/networks/{networkId}/sm/user/{userId}/deviceProfiles` | getNetworkSmUserDeviceProfiles | Get the profiles associated with a user |
-| GET | `/networks/{networkId}/sm/user/{userId}/softwares` | getNetworkSmUserSoftwares | Get a list of softwares associated with a user |
-| GET | `/networks/{networkId}/sm/users` | getNetworkSmUsers | List the owners in an SM network with various specified fields and filters |
-| GET | `/networks/{networkId}/sm/{deviceId}/cellularUsageHistory` | getNetworkSmCellularUsageHistory | Return the client's daily cellular data usage history |
-| GET | `/networks/{networkId}/sm/{deviceId}/certs` | getNetworkSmCerts | List the certs on a device |
-| GET | `/networks/{networkId}/sm/{deviceId}/deviceProfiles` | getNetworkSmDeviceProfiles | Get the profiles associated with a device |
-| GET | `/networks/{networkId}/sm/{deviceId}/networkAdapters` | getNetworkSmNetworkAdapters | List the network adapters of a device |
-| GET | `/networks/{networkId}/sm/{deviceId}/restrictions` | getNetworkSmRestrictions | List the restrictions on a device |
-| GET | `/networks/{networkId}/sm/{deviceId}/securityCenters` | getNetworkSmSecurityCenters | List the security centers on a device |
-| GET | `/networks/{networkId}/sm/{deviceId}/softwares` | getNetworkSmSoftwares | Get a list of softwares associated with a device |
-| GET | `/networks/{networkId}/sm/{deviceId}/wlanLists` | getNetworkSmWlanLists | List the saved SSID names on a device |
-| GET | `/networks/{networkId}/snmpSettings` | getNetworkSnmpSettings | Return the SNMP settings for a network |
-| GET | `/networks/{networkId}/splashLoginAttempts` | getNetworkSplashLoginAttempts | List the splash login attempts for a network |
-| POST | `/networks/{networkId}/split` | splitNetwork | Split a combined network into individual networks for each type of device |
-| GET | `/networks/{networkId}/ssids` | getNetworkSsids | List the SSIDs in a network |
-| GET | `/networks/{networkId}/ssids/{number}` | getNetworkSsid | Return a single SSID |
-| PUT | `/networks/{networkId}/ssids/{number}` | updateNetworkSsid | Update the attributes of an SSID |
-| GET | `/networks/{networkId}/ssids/{number}/l3FirewallRules` | getNetworkSsidL3FirewallRules | Return the L3 firewall rules for an SSID on an MR network |
-| PUT | `/networks/{networkId}/ssids/{number}/l3FirewallRules` | updateNetworkSsidL3FirewallRules | Update the L3 firewall rules of an SSID on an MR network |
-| GET | `/networks/{networkId}/ssids/{number}/splashSettings` | getNetworkSsidSplashSettings | Display the splash page settings for the given SSID |
-| PUT | `/networks/{networkId}/ssids/{number}/splashSettings` | updateNetworkSsidSplashSettings | Modify the splash page settings for the given SSID |
-| GET | `/networks/{networkId}/staticRoutes` | getNetworkStaticRoutes | List the static routes for an MX or teleworker network |
-| POST | `/networks/{networkId}/staticRoutes` | createNetworkStaticRoute | Add a static route for an MX or teleworker network |
-| DELETE | `/networks/{networkId}/staticRoutes/{staticRouteId}` | deleteNetworkStaticRoute | Delete a static route from an MX or teleworker network |
-| GET | `/networks/{networkId}/staticRoutes/{staticRouteId}` | getNetworkStaticRoute | Return a static route for an MX or teleworker network |
-| PUT | `/networks/{networkId}/staticRoutes/{staticRouteId}` | updateNetworkStaticRoute | Update a static route for an MX or teleworker network |
-| POST | `/networks/{networkId}/swapWarmSpare` | swapNetworkWarmSpare | Swap MX primary and warm spare appliances |
-| GET | `/networks/{networkId}/switch/linkAggregations` | getNetworkSwitchLinkAggregations | List link aggregation groups |
-| POST | `/networks/{networkId}/switch/linkAggregations` | createNetworkSwitchLinkAggregation | Create a link aggregation group |
-| DELETE | `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}` | deleteNetworkSwitchLinkAggregation | Split a link aggregation group into separate ports |
-| PUT | `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}` | updateNetworkSwitchLinkAggregation | Update a link aggregation group |
-| GET | `/networks/{networkId}/switch/portSchedules` | getNetworkSwitchPortSchedules | List switch port schedules |
-| POST | `/networks/{networkId}/switch/portSchedules` | createNetworkSwitchPortSchedule | Add a switch port schedule |
-| DELETE | `/networks/{networkId}/switch/portSchedules/{portScheduleId}` | deleteNetworkSwitchPortSchedule | Delete a switch port schedule |
-| PUT | `/networks/{networkId}/switch/portSchedules/{portScheduleId}` | updateNetworkSwitchPortSchedule | Update a switch port schedule |
-| GET | `/networks/{networkId}/switch/settings` | getNetworkSwitchSettings | Returns the switch network settings |
-| PUT | `/networks/{networkId}/switch/settings` | updateNetworkSwitchSettings | Update switch network settings |
-| GET | `/networks/{networkId}/switch/settings/mtu` | getNetworkSwitchSettingsMtu | Return the MTU configuration |
-| PUT | `/networks/{networkId}/switch/settings/mtu` | updateNetworkSwitchSettingsMtu | Update the MTU configuration |
-| GET | `/networks/{networkId}/switch/settings/multicast` | getNetworkSwitchSettingsMulticast | Return multicast settings for a network |
-| PUT | `/networks/{networkId}/switch/settings/multicast` | updateNetworkSwitchSettingsMulticast | Update multicast settings for a network |
-| GET | `/networks/{networkId}/switch/settings/qosRules` | getNetworkSwitchSettingsQosRules | List quality of service rules |
-| POST | `/networks/{networkId}/switch/settings/qosRules` | createNetworkSwitchSettingsQosRule | Add a quality of service rule |
-| GET | `/networks/{networkId}/switch/settings/qosRules/order` | getNetworkSwitchSettingsQosRulesOrder | Return the quality of service rule IDs by order in which they will be processed by the switch |
-| PUT | `/networks/{networkId}/switch/settings/qosRules/order` | updateNetworkSwitchSettingsQosRulesOrder | Update the order in which the rules should be processed by the switch |
-| DELETE | `/networks/{networkId}/switch/settings/qosRules/{qosRuleId}` | deleteNetworkSwitchSettingsQosRule | Delete a quality of service rule |
-| GET | `/networks/{networkId}/switch/settings/qosRules/{qosRuleId}` | getNetworkSwitchSettingsQosRule | Return a quality of service rule |
-| PUT | `/networks/{networkId}/switch/settings/qosRules/{qosRuleId}` | updateNetworkSwitchSettingsQosRule | Update a quality of service rule |
-| GET | `/networks/{networkId}/switch/settings/stormControl` | getNetworkSwitchSettingsStormControl | Return the storm control configuration for a switch network |
-| PUT | `/networks/{networkId}/switch/settings/stormControl` | updateNetworkSwitchSettingsStormControl | Update the storm control configuration for a switch network |
-| GET | `/networks/{networkId}/switchStacks` | getNetworkSwitchStacks | List the switch stacks in a network |
-| POST | `/networks/{networkId}/switchStacks` | createNetworkSwitchStack | Create a stack |
-| DELETE | `/networks/{networkId}/switchStacks/{switchStackId}` | deleteNetworkSwitchStack | Delete a stack |
-| GET | `/networks/{networkId}/switchStacks/{switchStackId}` | getNetworkSwitchStack | Show a switch stack |
-| POST | `/networks/{networkId}/switchStacks/{switchStackId}/add` | addNetworkSwitchStack | Add a switch to a stack |
-| POST | `/networks/{networkId}/switchStacks/{switchStackId}/remove` | removeNetworkSwitchStack | Remove a switch from a stack |
-| GET | `/networks/{networkId}/syslogServers` | getNetworkSyslogServers | List the syslog servers for a network |
-| PUT | `/networks/{networkId}/syslogServers` | updateNetworkSyslogServers | Update the syslog servers for a network |
-| GET | `/networks/{networkId}/traffic` | getNetworkTraffic | Return the traffic analysis data for this network |
-| POST | `/networks/{networkId}/unbind` | unbindNetwork | Unbind a network from a template. |
-| GET | `/networks/{networkId}/uplinkSettings` | getNetworkUplinkSettings | Returns the uplink settings for your MX network. |
-| PUT | `/networks/{networkId}/uplinkSettings` | updateNetworkUplinkSettings | Updates the uplink settings for your MX network. |
-| GET | `/networks/{networkId}/vlans` | getNetworkVlans | List the VLANs for an MX network |
-| POST | `/networks/{networkId}/vlans` | createNetworkVlan | Add a VLAN |
-| DELETE | `/networks/{networkId}/vlans/{vlanId}` | deleteNetworkVlan | Delete a VLAN from a network |
-| GET | `/networks/{networkId}/vlans/{vlanId}` | getNetworkVlan | Return a VLAN |
-| PUT | `/networks/{networkId}/vlans/{vlanId}` | updateNetworkVlan | Update a VLAN |
-| GET | `/networks/{networkId}/vlansEnabledState` | getNetworkVlansEnabledState | Returns the enabled status of VLANs for the network |
-| PUT | `/networks/{networkId}/vlansEnabledState` | updateNetworkVlansEnabledState | Enable/Disable VLANs for the given network |
-| GET | `/networks/{networkId}/warmSpareSettings` | getNetworkWarmSpareSettings | Return MX warm spare settings |
-| PUT | `/networks/{networkId}/warmSpareSettings` | updateNetworkWarmSpareSettings | Update MX warm spare settings |
-| GET | `/networks/{networkId}/wireless/rfProfiles` | getNetworkWirelessRfProfiles | List the non-basic RF profiles for this network |
-| POST | `/networks/{networkId}/wireless/rfProfiles` | createNetworkWirelessRfProfile | Creates new RF profile for this network |
-| DELETE | `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}` | deleteNetworkWirelessRfProfile | Delete a RF Profile |
-| GET | `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}` | getNetworkWirelessRfProfile | Return a RF profile |
-| PUT | `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}` | updateNetworkWirelessRfProfile | Updates specified RF profile for this network |
-| GET | `/networks/{networkId}/wireless/settings` | getNetworkWirelessSettings | Return the wireless settings for a network |
-| PUT | `/networks/{networkId}/wireless/settings` | updateNetworkWirelessSettings | Update the wireless settings for a network |
-| PUT | `/networks/{network_id}/sm/devices/lock` | lockNetworkSmDevices | Lock a set of devices |
-| GET | `/networks/{network_id}/sm/{id}/connectivity` | getNetworkSmConnectivity | Returns historical connectivity data (whether a device is regularly checking in to Dashboard). |
-| GET | `/networks/{network_id}/sm/{id}/desktopLogs` | getNetworkSmDesktopLogs | Return historical records of various Systems Manager network connection details for desktop devices. |
-| GET | `/networks/{network_id}/sm/{id}/deviceCommandLogs` | getNetworkSmDeviceCommandLogs | Return historical records of commands sent to Systems Manager devices |
-| GET | `/networks/{network_id}/sm/{id}/performanceHistory` | getNetworkSmPerformanceHistory | Return historical records of various Systems Manager client metrics for desktop devices. |
-| GET | `/organizations` | getOrganizations | List the organizations that the user has privileges on |
-| GET | `/organizations/{organizationId}` | getOrganization | Return an organization |
-| GET | `/organizations/{organizationId}/actionBatches` | getOrganizationActionBatches | Return the list of action batches in the organization |
-| POST | `/organizations/{organizationId}/actionBatches` | createOrganizationActionBatch | Create an action batch |
-| DELETE | `/organizations/{organizationId}/actionBatches/{actionBatchId}` | deleteOrganizationActionBatch | Delete an action batch |
-| PUT | `/organizations/{organizationId}/actionBatches/{actionBatchId}` | updateOrganizationActionBatch | Update an action batch |
-| GET | `/organizations/{organizationId}/admins` | getOrganizationAdmins | List the dashboard administrators in this organization |
-| POST | `/organizations/{organizationId}/admins` | createOrganizationAdmin | Create a new dashboard administrator |
-| DELETE | `/organizations/{organizationId}/admins/{adminId}` | deleteOrganizationAdmin | Revoke all access for a dashboard administrator within this organization |
-| PUT | `/organizations/{organizationId}/admins/{adminId}` | updateOrganizationAdmin | Update an administrator |
-| GET | `/organizations/{organizationId}/apiRequests` | getOrganizationApiRequests | List the API requests made by an organization |
-| GET | `/organizations/{organizationId}/apiRequests/overview` | getOrganizationApiRequestsOverview | Return an aggregated overview of API requests data |
-| POST | `/organizations/{organizationId}/claim` | claimIntoOrganization | Claim a list of devices, licenses, and/or orders into an organization |
-| POST | `/organizations/{organizationId}/clone` | cloneOrganization | Create a new organization by cloning the addressed organization |
-| GET | `/organizations/{organizationId}/configTemplates` | getOrganizationConfigTemplates | List the configuration templates for this organization |
-| DELETE | `/organizations/{organizationId}/configTemplates/{configTemplateId}` | deleteOrganizationConfigTemplate | Remove a configuration template |
-| GET | `/organizations/{organizationId}/configTemplates/{configTemplateId}/switchProfiles` | getOrganizationConfigTemplateSwitchProfiles | List the switch profiles for your switch template configuration |
-| GET | `/organizations/{organizationId}/configurationChanges` | getOrganizationConfigurationChanges | View the Change Log for your organization |
-| GET | `/organizations/{organizationId}/deviceStatuses` | getOrganizationDeviceStatuses | List the status of every Meraki device in the organization |
-| GET | `/organizations/{organizationId}/devices` | getOrganizationDevices | List the devices in an organization |
-| GET | `/organizations/{organizationId}/insight/monitoredMediaServers` | getOrganizationInsightMonitoredMediaServers | List the monitored media servers for this organization |
-| POST | `/organizations/{organizationId}/insight/monitoredMediaServers` | createOrganizationInsightMonitoredMediaServer | Add a media server to be monitored for this organization |
-| DELETE | `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}` | deleteOrganizationInsightMonitoredMediaServer | Delete a monitored media server from this organization |
-| GET | `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}` | getOrganizationInsightMonitoredMediaServer | Return a monitored media server for this organization |
-| PUT | `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}` | updateOrganizationInsightMonitoredMediaServer | Update a monitored media server for this organization |
-| GET | `/organizations/{organizationId}/inventory` | getOrganizationInventory | Return the inventory for an organization |
-| GET | `/organizations/{organizationId}/licenseState` | getOrganizationLicenseState | Return an overview of the license state for an organization |
-| GET | `/organizations/{organizationId}/licenses` | getOrganizationLicenses | List the licenses for an organization |
-| POST | `/organizations/{organizationId}/licenses/assignSeats` | assignOrganizationLicensesSeats | Assign SM seats to a network |
-| POST | `/organizations/{organizationId}/licenses/moveSeats` | moveOrganizationLicensesSeats | Move SM seats to another organization |
-| POST | `/organizations/{organizationId}/licenses/renewSeats` | renewOrganizationLicensesSeats | Renew SM seats of a license |
-| GET | `/organizations/{organizationId}/licenses/{licenseId}` | getOrganizationLicense | Display a license |
-| GET | `/organizations/{organizationId}/networks` | getOrganizationNetworks | List the networks in an organization |
-| POST | `/organizations/{organizationId}/networks` | createOrganizationNetwork | Create a network |
-| POST | `/organizations/{organizationId}/networks/combine` | combineOrganizationNetworks | Combine multiple networks into a single network |
-| GET | `/organizations/{organizationId}/openapiSpec` | getOrganizationOpenapiSpec | Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON |
-| GET | `/organizations/{organizationId}/samlRoles` | getOrganizationSamlRoles | List the SAML roles for this organization |
-| POST | `/organizations/{organizationId}/samlRoles` | createOrganizationSamlRole | Create a SAML role |
-| GET | `/organizations/{organizationId}/samlRoles/{samlRoleId}` | getOrganizationSamlRole | Return a SAML role |
-| PUT | `/organizations/{organizationId}/samlRoles/{samlRoleId}` | updateOrganizationSamlRole | Update a SAML role |
-| GET | `/organizations/{organizationId}/security/intrusionSettings` | getOrganizationSecurityIntrusionSettings | Returns all supported intrusion settings for an organization |
-| PUT | `/organizations/{organizationId}/security/intrusionSettings` | updateOrganizationSecurityIntrusionSettings | Sets supported intrusion settings for an organization |
-| GET | `/organizations/{organizationId}/securityEvents` | getOrganizationSecurityEvents | List the security events (intrusion detection only) for an organization |
-| GET | `/organizations/{organizationId}/snmp` | getOrganizationSnmp | Return the SNMP settings for an organization |
-| GET | `/organizations/{organizationId}/thirdPartyVPNPeers` | getOrganizationThirdPartyVPNPeers | Return the third party VPN peers for an organization |
-| PUT | `/organizations/{organizationId}/thirdPartyVPNPeers` | updateOrganizationThirdPartyVPNPeers | Update the third party VPN peers for an organization |
-| GET | `/organizations/{organizationId}/uplinksLossAndLatency` | getOrganizationUplinksLossAndLatency | Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago |
-| GET | `/organizations/{organizationId}/vpnFirewallRules` | getOrganizationVpnFirewallRules | Return the firewall rules for an organization's site-to-site VPN |
-| PUT | `/organizations/{organizationId}/vpnFirewallRules` | updateOrganizationVpnFirewallRules | Update the firewall rules of an organization's site-to-site VPN |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/devices/{serial}/camera/analytics/live` | getDeviceCameraAnalyticsLive | `serial`* | object | yes | Returns live state from camera of analytics zones |
+| GET | `/devices/{serial}/camera/analytics/overview` | getDeviceCameraAnalyticsOverview | `serial`*, `t0`, `t1`, `timespan`, `objectType` | object[] | yes | Returns an overview of aggregate analytics data for a timespan |
+| GET | `/devices/{serial}/camera/analytics/recent` | getDeviceCameraAnalyticsRecent | `serial`*, `objectType` | object[] | yes | Returns most recent record for analytics zones |
+| GET | `/devices/{serial}/camera/analytics/zones` | getDeviceCameraAnalyticsZones | `serial`* | object[] | yes | Returns all configured analytic zones for this camera |
+| GET | `/devices/{serial}/camera/analytics/zones/{zoneId}/history` | getDeviceCameraAnalyticsZoneHistory | `serial`*, `zoneId`*, `t0`, `t1`, `timespan`, `resolution`, `objectType` | object[] | yes | Return historical records for analytic zones |
+| GET | `/devices/{serial}/camera/qualityAndRetentionSettings` | getDeviceCameraQualityAndRetentionSettings | `serial`* | object | yes | Returns quality and retention settings for the given camera |
+| PUT | `/devices/{serial}/camera/qualityAndRetentionSettings` | updateDeviceCameraQualityAndRetentionSettings | `serial`*, body: object | object |  | Update quality and retention settings for the given camera |
+| GET | `/devices/{serial}/camera/video/settings` | getDeviceCameraVideoSettings | `serial`* | object | yes | Returns video settings for the given camera |
+| PUT | `/devices/{serial}/camera/video/settings` | updateDeviceCameraVideoSettings | `serial`*, body: object | object |  | Update video settings for the given camera |
+| GET | `/devices/{serial}/cellularGateway/settings` | getDeviceCellularGatewaySettings | `serial`* | object | yes | Show the LAN Settings of a MG |
+| PUT | `/devices/{serial}/cellularGateway/settings` | updateDeviceCellularGatewaySettings | `serial`*, body: object | object |  | Update the LAN Settings for a single MG. |
+| GET | `/devices/{serial}/cellularGateway/settings/portForwardingRules` | getDeviceCellularGatewaySettingsPortForwardingRules | `serial`* | object | yes | Returns the port forwarding rules for a single MG. |
+| PUT | `/devices/{serial}/cellularGateway/settings/portForwardingRules` | updateDeviceCellularGatewaySettingsPortForwardingRules | `serial`*, body: object | object |  | Updates the port forwarding rules for a single MG. |
+| GET | `/devices/{serial}/clients` | getDeviceClients | `serial`*, `t0`, `timespan` | object[] | yes | List the clients of a device, up to a maximum of a month ago |
+| POST | `/devices/{serial}/switch/ports/cycle` | cycleDeviceSwitchPorts | `serial`*, body*: object | object |  | Cycle a set of switch ports |
+| GET | `/devices/{serial}/switchPortStatuses` | getDeviceSwitchPortStatuses | `serial`*, `t0`, `timespan` | object[] | yes | Return the status for all the ports of a switch |
+| GET | `/devices/{serial}/switchPortStatuses/packets` | getDeviceSwitchPortStatusesPackets | `serial`*, `t0`, `timespan` | object[] | yes | Return the packet counters for all the ports of a switch |
+| PUT | `/devices/{serial}/wireless/bluetooth/settings` | updateDeviceWirelessBluetoothSettings | `serial`*, body: object | object |  | Update the bluetooth settings for a wireless device |
+| GET | `/networks/{networkId}` | getNetwork | `networkId`* | object | yes | Return a network |
+| PUT | `/networks/{networkId}` | updateNetwork | `networkId`*, body: object | object |  | Update a network |
+| DELETE | `/networks/{networkId}` | deleteNetwork | `networkId`* | — |  | Delete a network |
+| GET | `/networks/{networkId}/accessPolicies` | getNetworkAccessPolicies | `networkId`* | object[] | yes | List the access policies for this network |
+| GET | `/networks/{networkId}/airMarshal` | getNetworkAirMarshal | `networkId`*, `t0`, `timespan` | object[] | yes | List Air Marshal scan results from a network |
+| GET | `/networks/{networkId}/alertSettings` | getNetworkAlertSettings | `networkId`* | object | yes | Return the alert configuration for this network |
+| PUT | `/networks/{networkId}/alertSettings` | updateNetworkAlertSettings | `networkId`*, body: object | object |  | Update the alert configuration for this network |
+| GET | `/networks/{networkId}/appliance/firewall/inboundFirewallRules` | getNetworkApplianceFirewallInboundFirewallRules | `networkId`* | object | yes | Return the inbound firewall rules for an MX network |
+| PUT | `/networks/{networkId}/appliance/firewall/inboundFirewallRules` | updateNetworkApplianceFirewallInboundFirewallRules | `networkId`*, body: object | object |  | Update the inbound firewall rules of an MX network |
+| GET | `/networks/{networkId}/appliancePorts` | getNetworkAppliancePorts | `networkId`* | object[] | yes | List per-port VLAN settings for all ports of a MX. |
+| GET | `/networks/{networkId}/appliancePorts/{appliancePortId}` | getNetworkAppliancePort | `networkId`*, `appliancePortId`* | object | yes | Return per-port VLAN settings for a single MX port. |
+| PUT | `/networks/{networkId}/appliancePorts/{appliancePortId}` | updateNetworkAppliancePort | `networkId`*, `appliancePortId`*, body: object | object |  | Update the per-port VLAN settings for a single MX port. |
+| POST | `/networks/{networkId}/bind` | bindNetwork | `networkId`*, body*: object | — |  | Bind a network to a template. |
+| GET | `/networks/{networkId}/bluetoothClients` | getNetworkBluetoothClients | `networkId`*, `t0`, `timespan`, `perPage`, `startingAfter`, `endingBefore`, `includeConnectivityHistory` | object[] | yes | List the Bluetooth clients seen by APs in this network |
+| GET | `/networks/{networkId}/bluetoothClients/{bluetoothClientId}` | getNetworkBluetoothClient | `networkId`*, `bluetoothClientId`*, `includeConnectivityHistory`, `connectivityHistoryTimespan` | object | yes | Return a Bluetooth client |
+| GET | `/networks/{networkId}/bluetoothSettings` | getNetworkBluetoothSettings | `networkId`* | object | yes | Return the Bluetooth settings for a network. <a href="https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)">Bluetooth settings</a> must be enabled on the network. |
+| PUT | `/networks/{networkId}/bluetoothSettings` | updateNetworkBluetoothSettings | `networkId`*, body: object | object |  | Update the Bluetooth settings for a network |
+| GET | `/networks/{networkId}/camera/qualityRetentionProfiles` | getNetworkCameraQualityRetentionProfiles | `networkId`* | object[] | yes | List the quality retention profiles for this network |
+| POST | `/networks/{networkId}/camera/qualityRetentionProfiles` | createNetworkCameraQualityRetentionProfile | `networkId`*, body*: object | object |  | Creates new quality retention profile for this network. |
+| GET | `/networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}` | getNetworkCameraQualityRetentionProfile | `networkId`*, `qualityRetentionProfileId`* | object | yes | Retrieve a single quality retention profile |
+| PUT | `/networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}` | updateNetworkCameraQualityRetentionProfile | `networkId`*, `qualityRetentionProfileId`*, body: object | object |  | Update an existing quality retention profile for this network. |
+| DELETE | `/networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}` | deleteNetworkCameraQualityRetentionProfile | `networkId`*, `qualityRetentionProfileId`* | — |  | Delete an existing quality retention profile for this network. |
+| GET | `/networks/{networkId}/camera/schedules` | getNetworkCameraSchedules | `networkId`* | object[] | yes | Returns a list of all camera recording schedules. |
+| POST | `/networks/{networkId}/cameras/{serial}/snapshot` | generateNetworkCameraSnapshot | `networkId`*, `serial`*, body: object | object |  | Generate a snapshot of what the camera sees at the specified time and return a link to that image. |
+| GET | `/networks/{networkId}/cameras/{serial}/videoLink` | getNetworkCameraVideoLink | `networkId`*, `serial`*, `timestamp` | object | yes | Returns video link to the specified camera |
+| GET | `/networks/{networkId}/cellularFirewallRules` | getNetworkCellularFirewallRules | `networkId`* | object[] | yes | Return the cellular firewall rules for an MX network |
+| PUT | `/networks/{networkId}/cellularFirewallRules` | updateNetworkCellularFirewallRules | `networkId`*, body: object | object[] |  | Update the cellular firewall rules of an MX network |
+| GET | `/networks/{networkId}/clients` | getNetworkClients | `networkId`*, `t0`, `timespan`, `perPage`, `startingAfter`, `endingBefore` | object | yes | List the clients that have used this network in the timespan |
+| GET | `/networks/{networkId}/clients/connectionStats` | getNetworkClientsConnectionStats | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag` | object[] | yes | Aggregated connectivity info for this network, grouped by clients |
+| GET | `/networks/{networkId}/clients/latencyStats` | getNetworkClientsLatencyStats | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag`, `fields` | object[] | yes | Aggregated latency info for this network, grouped by clients |
+| POST | `/networks/{networkId}/clients/provision` | provisionNetworkClients | `networkId`*, body*: object | object |  | Provisions a client with a name and policy |
+| GET | `/networks/{networkId}/clients/{clientId}` | getNetworkClient | `networkId`*, `clientId`* | object | yes | Return the client associated with the given identifier |
+| GET | `/networks/{networkId}/clients/{clientId}/connectionStats` | getNetworkClientConnectionStats | `networkId`*, `clientId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag` | object | yes | Aggregated connectivity info for a given client on this network |
+| GET | `/networks/{networkId}/clients/{clientId}/events` | getNetworkClientEvents | `networkId`*, `clientId`*, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | Return the events associated with this client |
+| GET | `/networks/{networkId}/clients/{clientId}/latencyHistory` | getNetworkClientLatencyHistory | `networkId`*, `clientId`*, `t0`, `t1`, `timespan`, `resolution` | object[] | yes | Return the latency history for a client |
+| GET | `/networks/{networkId}/clients/{clientId}/latencyStats` | getNetworkClientLatencyStats | `networkId`*, `clientId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag`, `fields` | object | yes | Aggregated latency info for a given client on this network |
+| GET | `/networks/{networkId}/clients/{clientId}/policy` | getNetworkClientPolicy | `networkId`*, `clientId`* | object | yes | Return the policy assigned to a client on the network |
+| PUT | `/networks/{networkId}/clients/{clientId}/policy` | updateNetworkClientPolicy | `networkId`*, `clientId`*, body*: object | object |  | Update the policy assigned to a client on the network |
+| GET | `/networks/{networkId}/clients/{clientId}/splashAuthorizationStatus` | getNetworkClientSplashAuthorizationStatus | `networkId`*, `clientId`* | object | yes | Return the splash authorization for a client, for each SSID they've associated with through splash |
+| PUT | `/networks/{networkId}/clients/{clientId}/splashAuthorizationStatus` | updateNetworkClientSplashAuthorizationStatus | `networkId`*, `clientId`*, body*: object | object |  | Update a client's splash authorization |
+| GET | `/networks/{networkId}/clients/{clientId}/usageHistory` | getNetworkClientUsageHistory | `networkId`*, `clientId`* | object[] | yes | Return the client's daily usage history |
+| GET | `/networks/{networkId}/connectionStats` | getNetworkConnectionStats | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag` | object | yes | Aggregated connectivity info for this network |
+| GET | `/networks/{networkId}/contentFiltering` | getNetworkContentFiltering | `networkId`* | object | yes | Return the content filtering settings for an MX network |
+| PUT | `/networks/{networkId}/contentFiltering` | updateNetworkContentFiltering | `networkId`*, body: object | object |  | Update the content filtering settings for an MX network |
+| GET | `/networks/{networkId}/contentFiltering/categories` | getNetworkContentFilteringCategories | `networkId`* | object | yes | List all available content filtering categories for an MX network |
+| GET | `/networks/{networkId}/devices` | getNetworkDevices | `networkId`* | object[] | yes | List the devices in a network |
+| POST | `/networks/{networkId}/devices/claim` | claimNetworkDevices | `networkId`*, body: object | — |  | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed) |
+| GET | `/networks/{networkId}/devices/connectionStats` | getNetworkDevicesConnectionStats | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag` | object[] | yes | Aggregated connectivity info for this network, grouped by node |
+| GET | `/networks/{networkId}/devices/latencyStats` | getNetworkDevicesLatencyStats | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag`, `fields` | object[] | yes | Aggregated latency info for this network, grouped by node |
+| GET | `/networks/{networkId}/devices/{serial}` | getNetworkDevice | `networkId`*, `serial`* | object | yes | Return a single device |
+| PUT | `/networks/{networkId}/devices/{serial}` | updateNetworkDevice | `networkId`*, `serial`*, body: object | object |  | Update the attributes of a device |
+| GET | `/networks/{networkId}/devices/{serial}/connectionStats` | getNetworkDeviceConnectionStats | `networkId`*, `serial`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag` | object | yes | Aggregated connectivity info for a given AP on this network |
+| GET | `/networks/{networkId}/devices/{serial}/latencyStats` | getNetworkDeviceLatencyStats | `networkId`*, `serial`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag`, `fields` | object | yes | Aggregated latency info for a given AP on this network |
+| GET | `/networks/{networkId}/devices/{serial}/lossAndLatencyHistory` | getNetworkDeviceLossAndLatencyHistory | `networkId`*, `serial`*, `t0`, `t1`, `timespan`, `resolution`, `uplink`, `ip`* | object[] | yes | Get the uplink loss percentage and latency in milliseconds for a wired network device. |
+| GET | `/networks/{networkId}/devices/{serial}/performance` | getNetworkDevicePerformance | `networkId`*, `serial`* | object | yes | Return the performance score for a single MX |
+| POST | `/networks/{networkId}/devices/{serial}/reboot` | rebootNetworkDevice | `networkId`*, `serial`* | object |  | Reboot a device |
+| POST | `/networks/{networkId}/devices/{serial}/remove` | removeNetworkDevice | `networkId`*, `serial`* | — |  | Remove a single device |
+| GET | `/networks/{networkId}/devices/{serial}/uplink` | getNetworkDeviceUplink | `networkId`*, `serial`* | object[] | yes | Return the uplink information for a device. |
+| GET | `/networks/{networkId}/devices/{serial}/wireless/status` | getNetworkDeviceWirelessStatus | `networkId`*, `serial`* | object | yes | Return the SSID statuses of an access point |
+| GET | `/networks/{networkId}/events` | getNetworkEvents | `networkId`*, `productType`, `includedEventTypes`, `excludedEventTypes`, `deviceMac`, `deviceSerial`, `deviceName`, `clientIp`, `clientMac`, `clientName`, `smDeviceMac`, `smDeviceName`, `perPage`, `startingAfter`, `endingBefore` | object | yes | List the events for the network |
+| GET | `/networks/{networkId}/events/eventTypes` | getNetworkEventsEventTypes | `networkId`* | object[] | yes | List the event type to human-readable description |
+| GET | `/networks/{networkId}/failedConnections` | getNetworkFailedConnections | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag`, `serial`, `clientId` | object[] | yes | List of all failed client connection events on this network in a given time range |
+| GET | `/networks/{networkId}/firewalledServices` | getNetworkFirewalledServices | `networkId`* | object[] | yes | List the appliance services and their accessibility rules |
+| GET | `/networks/{networkId}/firewalledServices/{service}` | getNetworkFirewalledService | `networkId`*, `service`* | object | yes | Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP') |
+| PUT | `/networks/{networkId}/firewalledServices/{service}` | updateNetworkFirewalledService | `networkId`*, `service`*, body*: object | object |  | Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP') |
+| GET | `/networks/{networkId}/floorPlans` | getNetworkFloorPlans | `networkId`* | object[] | yes | List the floor plans that belong to your network |
+| POST | `/networks/{networkId}/floorPlans` | createNetworkFloorPlan | `networkId`*, body*: object | object |  | Upload a floor plan |
+| GET | `/networks/{networkId}/floorPlans/{floorPlanId}` | getNetworkFloorPlan | `networkId`*, `floorPlanId`* | object | yes | Find a floor plan by ID |
+| PUT | `/networks/{networkId}/floorPlans/{floorPlanId}` | updateNetworkFloorPlan | `networkId`*, `floorPlanId`*, body: object | object |  | Update a floor plan's geolocation and other meta data |
+| DELETE | `/networks/{networkId}/floorPlans/{floorPlanId}` | deleteNetworkFloorPlan | `networkId`*, `floorPlanId`* | — |  | Destroy a floor plan |
+| GET | `/networks/{networkId}/l3FirewallRules` | getNetworkL3FirewallRules | `networkId`* | object[] | yes | Return the L3 firewall rules for an MX network |
+| PUT | `/networks/{networkId}/l3FirewallRules` | updateNetworkL3FirewallRules | `networkId`*, body: object | object[] |  | Update the L3 firewall rules of an MX network |
+| GET | `/networks/{networkId}/l7FirewallRules` | getNetworkL7FirewallRules | `networkId`* | object | yes | List the MX L7 firewall rules for an MX network |
+| PUT | `/networks/{networkId}/l7FirewallRules` | updateNetworkL7FirewallRules | `networkId`*, body: object | object |  | Update the MX L7 firewall rules for an MX network |
+| GET | `/networks/{networkId}/l7FirewallRules/applicationCategories` | getNetworkL7FirewallRulesApplicationCategories | `networkId`* | object | yes | Return the L7 firewall application categories and their associated applications for an MX network |
+| GET | `/networks/{networkId}/latencyStats` | getNetworkLatencyStats | `networkId`*, `t0`, `t1`, `timespan`, `band`, `ssid`, `vlan`, `apTag`, `fields` | object | yes | Aggregated latency info for this network |
+| GET | `/networks/{networkId}/merakiAuthUsers` | getNetworkMerakiAuthUsers | `networkId`* | object[] | yes | List the splash or RADIUS users configured under Meraki Authentication for a network |
+| GET | `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}` | getNetworkMerakiAuthUser | `networkId`*, `merakiAuthUserId`* | object | yes | Return the Meraki Auth splash or RADIUS user |
+| GET | `/networks/{networkId}/oneToManyNatRules` | getNetworkOneToManyNatRules | `networkId`* | object | yes | Return the 1:Many NAT mapping rules for an MX network |
+| PUT | `/networks/{networkId}/oneToManyNatRules` | updateNetworkOneToManyNatRules | `networkId`*, body*: object | object |  | Set the 1:Many NAT mapping rules for an MX network |
+| GET | `/networks/{networkId}/oneToOneNatRules` | getNetworkOneToOneNatRules | `networkId`* | object | yes | Return the 1:1 NAT mapping rules for an MX network |
+| PUT | `/networks/{networkId}/oneToOneNatRules` | updateNetworkOneToOneNatRules | `networkId`*, body*: object | object |  | Set the 1:1 NAT mapping rules for an MX network |
+| GET | `/networks/{networkId}/pii/piiKeys` | getNetworkPiiPiiKeys | `networkId`*, `username`, `email`, `mac`, `serial`, `imei`, `bluetoothMac` | object | yes | List the keys required to access Personally Identifiable Information (PII) for a given identifier |
+| GET | `/networks/{networkId}/pii/requests` | getNetworkPiiRequests | `networkId`* | object[] | yes | List the PII requests for this network or organization |
+| POST | `/networks/{networkId}/pii/requests` | createNetworkPiiRequest | `networkId`*, body: object | object |  | Submit a new delete or restrict processing PII request |
+| GET | `/networks/{networkId}/pii/requests/{requestId}` | getNetworkPiiRequest | `networkId`*, `requestId`* | object | yes | Return a PII request |
+| DELETE | `/networks/{networkId}/pii/requests/{requestId}` | deleteNetworkPiiRequest | `networkId`*, `requestId`* | — |  | Delete a restrict processing PII request |
+| GET | `/networks/{networkId}/pii/smDevicesForKey` | getNetworkPiiSmDevicesForKey | `networkId`*, `username`, `email`, `mac`, `serial`, `imei`, `bluetoothMac` | object | yes | Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier |
+| GET | `/networks/{networkId}/pii/smOwnersForKey` | getNetworkPiiSmOwnersForKey | `networkId`*, `username`, `email`, `mac`, `serial`, `imei`, `bluetoothMac` | object | yes | Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier |
+| GET | `/networks/{networkId}/portForwardingRules` | getNetworkPortForwardingRules | `networkId`* | object | yes | Return the port forwarding rules for an MX network |
+| PUT | `/networks/{networkId}/portForwardingRules` | updateNetworkPortForwardingRules | `networkId`*, body*: object | object |  | Update the port forwarding rules for an MX network |
+| GET | `/networks/{networkId}/security/intrusionSettings` | getNetworkSecurityIntrusionSettings | `networkId`* | object | yes | Returns all supported intrusion settings for an MX network |
+| PUT | `/networks/{networkId}/security/intrusionSettings` | updateNetworkSecurityIntrusionSettings | `networkId`*, body: object | object |  | Set the supported intrusion settings for an MX network |
+| GET | `/networks/{networkId}/security/malwareSettings` | getNetworkSecurityMalwareSettings | `networkId`* | object | yes | Returns all supported malware settings for an MX network |
+| PUT | `/networks/{networkId}/security/malwareSettings` | updateNetworkSecurityMalwareSettings | `networkId`*, body*: object | object |  | Set the supported malware settings for an MX network |
+| GET | `/networks/{networkId}/securityEvents` | getNetworkSecurityEvents | `networkId`*, `t0`, `t1`, `timespan`, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | List the security events (intrusion detection only) for a network |
+| GET | `/networks/{networkId}/siteToSiteVpn` | getNetworkSiteToSiteVpn | `networkId`* | object | yes | Return the site-to-site VPN settings of a network |
+| PUT | `/networks/{networkId}/siteToSiteVpn` | updateNetworkSiteToSiteVpn | `networkId`*, body*: object | object |  | Update the site-to-site VPN settings of a network |
+| POST | `/networks/{networkId}/sm/bypassActivationLockAttempts` | createNetworkSmBypassActivationLockAttempt | `networkId`*, body*: object | object |  | Bypass activation lock attempt |
+| GET | `/networks/{networkId}/sm/bypassActivationLockAttempts/{attemptId}` | getNetworkSmBypassActivationLockAttempt | `networkId`*, `attemptId`* | object | yes | Bypass activation lock attempt status |
+| PUT | `/networks/{networkId}/sm/device/fields` | updateNetworkSmDeviceFields | `networkId`*, body*: object | object |  | Modify the fields of a device |
+| PUT | `/networks/{networkId}/sm/device/wipe` | wipeNetworkSmDevice | `networkId`*, body: object | object |  | Wipe a device |
+| POST | `/networks/{networkId}/sm/device/{deviceId}/refreshDetails` | refreshNetworkSmDeviceDetails | `networkId`*, `deviceId`* | — |  | Refresh the details of a device |
+| GET | `/networks/{networkId}/sm/devices` | getNetworkSmDevices | `networkId`*, `fields`, `wifiMacs`, `serials`, `ids`, `scope`, `batchSize`, `batchToken` | object | yes | List the devices enrolled in an SM network with various specified fields and filters |
+| PUT | `/networks/{networkId}/sm/devices/checkin` | checkinNetworkSmDevices | `networkId`*, body: object | object |  | Force check-in a set of devices |
+| PUT | `/networks/{networkId}/sm/devices/tags` | updateNetworkSmDevicesTags | `networkId`*, body*: object | object |  | Add, delete, or update the tags of a set of devices |
+| POST | `/networks/{networkId}/sm/devices/{deviceId}/unenroll` | unenrollNetworkSmDevice | `networkId`*, `deviceId`* | object |  | Unenroll a device |
+| GET | `/networks/{networkId}/sm/profiles` | getNetworkSmProfiles | `networkId`* | object | yes | List all the profiles in the network |
+| GET | `/networks/{networkId}/sm/targetGroups` | getNetworkSmTargetGroups | `networkId`*, `withDetails` | object[] | yes | List the target groups in this network |
+| POST | `/networks/{networkId}/sm/targetGroups` | createNetworkSmTargetGroup | `networkId`*, body: object | object |  | Add a target group |
+| GET | `/networks/{networkId}/sm/targetGroups/{targetGroupId}` | getNetworkSmTargetGroup | `networkId`*, `targetGroupId`*, `withDetails` | object | yes | Return a target group |
+| PUT | `/networks/{networkId}/sm/targetGroups/{targetGroupId}` | updateNetworkSmTargetGroup | `networkId`*, `targetGroupId`*, body: object | object |  | Update a target group |
+| DELETE | `/networks/{networkId}/sm/targetGroups/{targetGroupId}` | deleteNetworkSmTargetGroup | `networkId`*, `targetGroupId`* | — |  | Delete a target group from a network |
+| GET | `/networks/{networkId}/sm/user/{userId}/deviceProfiles` | getNetworkSmUserDeviceProfiles | `networkId`*, `userId`* | object[] | yes | Get the profiles associated with a user |
+| GET | `/networks/{networkId}/sm/user/{userId}/softwares` | getNetworkSmUserSoftwares | `networkId`*, `userId`* | object[] | yes | Get a list of softwares associated with a user |
+| GET | `/networks/{networkId}/sm/users` | getNetworkSmUsers | `networkId`*, `ids`, `usernames`, `emails`, `scope` | object[] | yes | List the owners in an SM network with various specified fields and filters |
+| GET | `/networks/{networkId}/sm/{deviceId}/cellularUsageHistory` | getNetworkSmCellularUsageHistory | `networkId`*, `deviceId`* | object[] | yes | Return the client's daily cellular data usage history |
+| GET | `/networks/{networkId}/sm/{deviceId}/certs` | getNetworkSmCerts | `networkId`*, `deviceId`* | object[] | yes | List the certs on a device |
+| GET | `/networks/{networkId}/sm/{deviceId}/deviceProfiles` | getNetworkSmDeviceProfiles | `networkId`*, `deviceId`* | object[] | yes | Get the profiles associated with a device |
+| GET | `/networks/{networkId}/sm/{deviceId}/networkAdapters` | getNetworkSmNetworkAdapters | `networkId`*, `deviceId`* | object[] | yes | List the network adapters of a device |
+| GET | `/networks/{networkId}/sm/{deviceId}/restrictions` | getNetworkSmRestrictions | `networkId`*, `deviceId`* | object[] | yes | List the restrictions on a device |
+| GET | `/networks/{networkId}/sm/{deviceId}/securityCenters` | getNetworkSmSecurityCenters | `networkId`*, `deviceId`* | object[] | yes | List the security centers on a device |
+| GET | `/networks/{networkId}/sm/{deviceId}/softwares` | getNetworkSmSoftwares | `networkId`*, `deviceId`* | object[] | yes | Get a list of softwares associated with a device |
+| GET | `/networks/{networkId}/sm/{deviceId}/wlanLists` | getNetworkSmWlanLists | `networkId`*, `deviceId`* | object[] | yes | List the saved SSID names on a device |
+| GET | `/networks/{networkId}/snmpSettings` | getNetworkSnmpSettings | `networkId`* | object | yes | Return the SNMP settings for a network |
+| GET | `/networks/{networkId}/splashLoginAttempts` | getNetworkSplashLoginAttempts | `networkId`*, `ssidNumber`, `loginIdentifier`, `timespan` | object[] | yes | List the splash login attempts for a network |
+| POST | `/networks/{networkId}/split` | splitNetwork | `networkId`* | object |  | Split a combined network into individual networks for each type of device |
+| GET | `/networks/{networkId}/ssids` | getNetworkSsids | `networkId`* | object[] | yes | List the SSIDs in a network |
+| GET | `/networks/{networkId}/ssids/{number}` | getNetworkSsid | `networkId`*, `number`* | object | yes | Return a single SSID |
+| PUT | `/networks/{networkId}/ssids/{number}` | updateNetworkSsid | `networkId`*, `number`*, body: object | object |  | Update the attributes of an SSID |
+| GET | `/networks/{networkId}/ssids/{number}/l3FirewallRules` | getNetworkSsidL3FirewallRules | `networkId`*, `number`* | object[] | yes | Return the L3 firewall rules for an SSID on an MR network |
+| PUT | `/networks/{networkId}/ssids/{number}/l3FirewallRules` | updateNetworkSsidL3FirewallRules | `networkId`*, `number`*, body: object | object[] |  | Update the L3 firewall rules of an SSID on an MR network |
+| GET | `/networks/{networkId}/ssids/{number}/splashSettings` | getNetworkSsidSplashSettings | `networkId`*, `number`* | object | yes | Display the splash page settings for the given SSID |
+| PUT | `/networks/{networkId}/ssids/{number}/splashSettings` | updateNetworkSsidSplashSettings | `networkId`*, `number`*, body: object | object |  | Modify the splash page settings for the given SSID |
+| GET | `/networks/{networkId}/staticRoutes` | getNetworkStaticRoutes | `networkId`* | object[] | yes | List the static routes for an MX or teleworker network |
+| POST | `/networks/{networkId}/staticRoutes` | createNetworkStaticRoute | `networkId`*, body*: object | object |  | Add a static route for an MX or teleworker network |
+| GET | `/networks/{networkId}/staticRoutes/{staticRouteId}` | getNetworkStaticRoute | `networkId`*, `staticRouteId`* | object | yes | Return a static route for an MX or teleworker network |
+| PUT | `/networks/{networkId}/staticRoutes/{staticRouteId}` | updateNetworkStaticRoute | `networkId`*, `staticRouteId`*, body: object | object |  | Update a static route for an MX or teleworker network |
+| DELETE | `/networks/{networkId}/staticRoutes/{staticRouteId}` | deleteNetworkStaticRoute | `networkId`*, `staticRouteId`* | — |  | Delete a static route from an MX or teleworker network |
+| POST | `/networks/{networkId}/swapWarmSpare` | swapNetworkWarmSpare | `networkId`* | object |  | Swap MX primary and warm spare appliances |
+| GET | `/networks/{networkId}/switch/linkAggregations` | getNetworkSwitchLinkAggregations | `networkId`* | object[] | yes | List link aggregation groups |
+| POST | `/networks/{networkId}/switch/linkAggregations` | createNetworkSwitchLinkAggregation | `networkId`*, body: object | object |  | Create a link aggregation group |
+| PUT | `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}` | updateNetworkSwitchLinkAggregation | `networkId`*, `linkAggregationId`*, body: object | object |  | Update a link aggregation group |
+| DELETE | `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}` | deleteNetworkSwitchLinkAggregation | `networkId`*, `linkAggregationId`* | — |  | Split a link aggregation group into separate ports |
+| GET | `/networks/{networkId}/switch/portSchedules` | getNetworkSwitchPortSchedules | `networkId`* | object[] | yes | List switch port schedules |
+| POST | `/networks/{networkId}/switch/portSchedules` | createNetworkSwitchPortSchedule | `networkId`*, body*: object | object |  | Add a switch port schedule |
+| PUT | `/networks/{networkId}/switch/portSchedules/{portScheduleId}` | updateNetworkSwitchPortSchedule | `networkId`*, `portScheduleId`*, body: object | object |  | Update a switch port schedule |
+| DELETE | `/networks/{networkId}/switch/portSchedules/{portScheduleId}` | deleteNetworkSwitchPortSchedule | `networkId`*, `portScheduleId`* | — |  | Delete a switch port schedule |
+| GET | `/networks/{networkId}/switch/settings` | getNetworkSwitchSettings | `networkId`* | object | yes | Returns the switch network settings |
+| PUT | `/networks/{networkId}/switch/settings` | updateNetworkSwitchSettings | `networkId`*, body: object | object |  | Update switch network settings |
+| GET | `/networks/{networkId}/switch/settings/mtu` | getNetworkSwitchSettingsMtu | `networkId`* | object | yes | Return the MTU configuration |
+| PUT | `/networks/{networkId}/switch/settings/mtu` | updateNetworkSwitchSettingsMtu | `networkId`*, body: object | object |  | Update the MTU configuration |
+| GET | `/networks/{networkId}/switch/settings/multicast` | getNetworkSwitchSettingsMulticast | `networkId`* | object | yes | Return multicast settings for a network |
+| PUT | `/networks/{networkId}/switch/settings/multicast` | updateNetworkSwitchSettingsMulticast | `networkId`*, body: object | object |  | Update multicast settings for a network |
+| GET | `/networks/{networkId}/switch/settings/qosRules` | getNetworkSwitchSettingsQosRules | `networkId`* | object[] | yes | List quality of service rules |
+| POST | `/networks/{networkId}/switch/settings/qosRules` | createNetworkSwitchSettingsQosRule | `networkId`*, body*: object | object |  | Add a quality of service rule |
+| GET | `/networks/{networkId}/switch/settings/qosRules/order` | getNetworkSwitchSettingsQosRulesOrder | `networkId`* | object | yes | Return the quality of service rule IDs by order in which they will be processed by the switch |
+| PUT | `/networks/{networkId}/switch/settings/qosRules/order` | updateNetworkSwitchSettingsQosRulesOrder | `networkId`*, body*: object | object |  | Update the order in which the rules should be processed by the switch |
+| GET | `/networks/{networkId}/switch/settings/qosRules/{qosRuleId}` | getNetworkSwitchSettingsQosRule | `networkId`*, `qosRuleId`* | object | yes | Return a quality of service rule |
+| PUT | `/networks/{networkId}/switch/settings/qosRules/{qosRuleId}` | updateNetworkSwitchSettingsQosRule | `networkId`*, `qosRuleId`*, body: object | object |  | Update a quality of service rule |
+| DELETE | `/networks/{networkId}/switch/settings/qosRules/{qosRuleId}` | deleteNetworkSwitchSettingsQosRule | `networkId`*, `qosRuleId`* | — |  | Delete a quality of service rule |
+| GET | `/networks/{networkId}/switch/settings/stormControl` | getNetworkSwitchSettingsStormControl | `networkId`* | object | yes | Return the storm control configuration for a switch network |
+| PUT | `/networks/{networkId}/switch/settings/stormControl` | updateNetworkSwitchSettingsStormControl | `networkId`*, body: object | object |  | Update the storm control configuration for a switch network |
+| GET | `/networks/{networkId}/switchStacks` | getNetworkSwitchStacks | `networkId`* | object[] | yes | List the switch stacks in a network |
+| POST | `/networks/{networkId}/switchStacks` | createNetworkSwitchStack | `networkId`*, body*: object | object |  | Create a stack |
+| GET | `/networks/{networkId}/switchStacks/{switchStackId}` | getNetworkSwitchStack | `networkId`*, `switchStackId`* | object | yes | Show a switch stack |
+| DELETE | `/networks/{networkId}/switchStacks/{switchStackId}` | deleteNetworkSwitchStack | `networkId`*, `switchStackId`* | — |  | Delete a stack |
+| POST | `/networks/{networkId}/switchStacks/{switchStackId}/add` | addNetworkSwitchStack | `networkId`*, `switchStackId`*, body*: object | object |  | Add a switch to a stack |
+| POST | `/networks/{networkId}/switchStacks/{switchStackId}/remove` | removeNetworkSwitchStack | `networkId`*, `switchStackId`*, body*: object | object |  | Remove a switch from a stack |
+| GET | `/networks/{networkId}/syslogServers` | getNetworkSyslogServers | `networkId`* | object[] | yes | List the syslog servers for a network |
+| PUT | `/networks/{networkId}/syslogServers` | updateNetworkSyslogServers | `networkId`*, body*: object | object[] |  | Update the syslog servers for a network |
+| GET | `/networks/{networkId}/traffic` | getNetworkTraffic | `networkId`*, `t0`, `timespan`, `deviceType` | object[] | yes | Return the traffic analysis data for this network |
+| POST | `/networks/{networkId}/unbind` | unbindNetwork | `networkId`* | — |  | Unbind a network from a template. |
+| GET | `/networks/{networkId}/uplinkSettings` | getNetworkUplinkSettings | `networkId`* | object | yes | Returns the uplink settings for your MX network. |
+| PUT | `/networks/{networkId}/uplinkSettings` | updateNetworkUplinkSettings | `networkId`*, body: object | object |  | Updates the uplink settings for your MX network. |
+| GET | `/networks/{networkId}/vlans` | getNetworkVlans | `networkId`* | object[] | yes | List the VLANs for an MX network |
+| POST | `/networks/{networkId}/vlans` | createNetworkVlan | `networkId`*, body*: object | object |  | Add a VLAN |
+| GET | `/networks/{networkId}/vlans/{vlanId}` | getNetworkVlan | `networkId`*, `vlanId`* | object | yes | Return a VLAN |
+| PUT | `/networks/{networkId}/vlans/{vlanId}` | updateNetworkVlan | `networkId`*, `vlanId`*, body: object | object |  | Update a VLAN |
+| DELETE | `/networks/{networkId}/vlans/{vlanId}` | deleteNetworkVlan | `networkId`*, `vlanId`* | — |  | Delete a VLAN from a network |
+| GET | `/networks/{networkId}/vlansEnabledState` | getNetworkVlansEnabledState | `networkId`* | object | yes | Returns the enabled status of VLANs for the network |
+| PUT | `/networks/{networkId}/vlansEnabledState` | updateNetworkVlansEnabledState | `networkId`*, body*: object | object |  | Enable/Disable VLANs for the given network |
+| GET | `/networks/{networkId}/warmSpareSettings` | getNetworkWarmSpareSettings | `networkId`* | object | yes | Return MX warm spare settings |
+| PUT | `/networks/{networkId}/warmSpareSettings` | updateNetworkWarmSpareSettings | `networkId`*, body*: object | object |  | Update MX warm spare settings |
+| GET | `/networks/{networkId}/wireless/rfProfiles` | getNetworkWirelessRfProfiles | `networkId`*, `includeTemplateProfiles` | object[] | yes | List the non-basic RF profiles for this network |
+| POST | `/networks/{networkId}/wireless/rfProfiles` | createNetworkWirelessRfProfile | `networkId`*, body*: object | object |  | Creates new RF profile for this network |
+| GET | `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}` | getNetworkWirelessRfProfile | `networkId`*, `rfProfileId`* | object | yes | Return a RF profile |
+| PUT | `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}` | updateNetworkWirelessRfProfile | `networkId`*, `rfProfileId`*, body: object | object |  | Updates specified RF profile for this network |
+| DELETE | `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}` | deleteNetworkWirelessRfProfile | `networkId`*, `rfProfileId`* | — |  | Delete a RF Profile |
+| GET | `/networks/{networkId}/wireless/settings` | getNetworkWirelessSettings | `networkId`* | object | yes | Return the wireless settings for a network |
+| PUT | `/networks/{networkId}/wireless/settings` | updateNetworkWirelessSettings | `networkId`*, body: object | object |  | Update the wireless settings for a network |
+| PUT | `/networks/{network_id}/sm/devices/lock` | lockNetworkSmDevices | `network_id`*, body: object | object |  | Lock a set of devices |
+| GET | `/networks/{network_id}/sm/{id}/connectivity` | getNetworkSmConnectivity | `network_id`*, `id`*, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | Returns historical connectivity data (whether a device is regularly checking in to Dashboard). |
+| GET | `/networks/{network_id}/sm/{id}/desktopLogs` | getNetworkSmDesktopLogs | `network_id`*, `id`*, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | Return historical records of various Systems Manager network connection details for desktop devices. |
+| GET | `/networks/{network_id}/sm/{id}/deviceCommandLogs` | getNetworkSmDeviceCommandLogs | `network_id`*, `id`*, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | Return historical records of commands sent to Systems Manager devices |
+| GET | `/networks/{network_id}/sm/{id}/performanceHistory` | getNetworkSmPerformanceHistory | `network_id`*, `id`*, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | Return historical records of various Systems Manager client metrics for desktop devices. |
+| GET | `/organizations` | getOrganizations | — | object[] | yes | List the organizations that the user has privileges on |
+| GET | `/organizations/{organizationId}` | getOrganization | `organizationId`* | object | yes | Return an organization |
+| GET | `/organizations/{organizationId}/actionBatches` | getOrganizationActionBatches | `organizationId`*, `status` | object[] | yes | Return the list of action batches in the organization |
+| POST | `/organizations/{organizationId}/actionBatches` | createOrganizationActionBatch | `organizationId`*, body*: object | object |  | Create an action batch |
+| PUT | `/organizations/{organizationId}/actionBatches/{actionBatchId}` | updateOrganizationActionBatch | `organizationId`*, `actionBatchId`*, body: object | object |  | Update an action batch |
+| DELETE | `/organizations/{organizationId}/actionBatches/{actionBatchId}` | deleteOrganizationActionBatch | `organizationId`*, `actionBatchId`* | — |  | Delete an action batch |
+| GET | `/organizations/{organizationId}/admins` | getOrganizationAdmins | `organizationId`* | object[] | yes | List the dashboard administrators in this organization |
+| POST | `/organizations/{organizationId}/admins` | createOrganizationAdmin | `organizationId`*, body*: object | object |  | Create a new dashboard administrator |
+| PUT | `/organizations/{organizationId}/admins/{adminId}` | updateOrganizationAdmin | `organizationId`*, `adminId`*, body: object | object |  | Update an administrator |
+| DELETE | `/organizations/{organizationId}/admins/{adminId}` | deleteOrganizationAdmin | `organizationId`*, `adminId`* | — |  | Revoke all access for a dashboard administrator within this organization |
+| GET | `/organizations/{organizationId}/apiRequests` | getOrganizationApiRequests | `organizationId`*, `t0`, `t1`, `timespan`, `perPage`, `startingAfter`, `endingBefore`, `adminId`, `path`, `method`, `responseCode`, `sourceIp` | object[] | yes | List the API requests made by an organization |
+| GET | `/organizations/{organizationId}/apiRequests/overview` | getOrganizationApiRequestsOverview | `organizationId`*, `t0`, `t1`, `timespan` | object | yes | Return an aggregated overview of API requests data |
+| POST | `/organizations/{organizationId}/claim` | claimIntoOrganization | `organizationId`*, body: object | object |  | Claim a list of devices, licenses, and/or orders into an organization |
+| POST | `/organizations/{organizationId}/clone` | cloneOrganization | `organizationId`*, body*: object | object |  | Create a new organization by cloning the addressed organization |
+| GET | `/organizations/{organizationId}/configTemplates` | getOrganizationConfigTemplates | `organizationId`* | object[] | yes | List the configuration templates for this organization |
+| DELETE | `/organizations/{organizationId}/configTemplates/{configTemplateId}` | deleteOrganizationConfigTemplate | `organizationId`*, `configTemplateId`* | — |  | Remove a configuration template |
+| GET | `/organizations/{organizationId}/configTemplates/{configTemplateId}/switchProfiles` | getOrganizationConfigTemplateSwitchProfiles | `organizationId`*, `configTemplateId`* | object[] | yes | List the switch profiles for your switch template configuration |
+| GET | `/organizations/{organizationId}/configurationChanges` | getOrganizationConfigurationChanges | `organizationId`*, `t0`, `t1`, `timespan`, `perPage`, `startingAfter`, `endingBefore`, `networkId`, `adminId` | object[] | yes | View the Change Log for your organization |
+| GET | `/organizations/{organizationId}/deviceStatuses` | getOrganizationDeviceStatuses | `organizationId`* | object[] | yes | List the status of every Meraki device in the organization |
+| GET | `/organizations/{organizationId}/devices` | getOrganizationDevices | `organizationId`*, `perPage`, `startingAfter`, `endingBefore`, `configurationUpdatedAfter` | object[] | yes | List the devices in an organization |
+| GET | `/organizations/{organizationId}/insight/monitoredMediaServers` | getOrganizationInsightMonitoredMediaServers | `organizationId`* | object[] | yes | List the monitored media servers for this organization |
+| POST | `/organizations/{organizationId}/insight/monitoredMediaServers` | createOrganizationInsightMonitoredMediaServer | `organizationId`*, body*: object | object |  | Add a media server to be monitored for this organization |
+| GET | `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}` | getOrganizationInsightMonitoredMediaServer | `organizationId`*, `monitoredMediaServerId`* | object | yes | Return a monitored media server for this organization |
+| PUT | `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}` | updateOrganizationInsightMonitoredMediaServer | `organizationId`*, `monitoredMediaServerId`*, body: object | object |  | Update a monitored media server for this organization |
+| DELETE | `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}` | deleteOrganizationInsightMonitoredMediaServer | `organizationId`*, `monitoredMediaServerId`* | — |  | Delete a monitored media server from this organization |
+| GET | `/organizations/{organizationId}/inventory` | getOrganizationInventory | `organizationId`*, `includeLicenseInfo` | object[] | yes | Return the inventory for an organization |
+| GET | `/organizations/{organizationId}/licenseState` | getOrganizationLicenseState | `organizationId`* | object | yes | Return an overview of the license state for an organization |
+| GET | `/organizations/{organizationId}/licenses` | getOrganizationLicenses | `organizationId`*, `perPage`, `startingAfter`, `endingBefore`, `deviceSerial`, `networkId`, `state` | object[] | yes | List the licenses for an organization |
+| POST | `/organizations/{organizationId}/licenses/assignSeats` | assignOrganizationLicensesSeats | `organizationId`*, body*: object | object |  | Assign SM seats to a network |
+| POST | `/organizations/{organizationId}/licenses/moveSeats` | moveOrganizationLicensesSeats | `organizationId`*, body*: object | object |  | Move SM seats to another organization |
+| POST | `/organizations/{organizationId}/licenses/renewSeats` | renewOrganizationLicensesSeats | `organizationId`*, body*: object | object |  | Renew SM seats of a license |
+| GET | `/organizations/{organizationId}/licenses/{licenseId}` | getOrganizationLicense | `organizationId`*, `licenseId`* | object | yes | Display a license |
+| GET | `/organizations/{organizationId}/networks` | getOrganizationNetworks | `organizationId`*, `configTemplateId` | object[] | yes | List the networks in an organization |
+| POST | `/organizations/{organizationId}/networks` | createOrganizationNetwork | `organizationId`*, body*: object | object |  | Create a network |
+| POST | `/organizations/{organizationId}/networks/combine` | combineOrganizationNetworks | `organizationId`*, body*: object | object |  | Combine multiple networks into a single network |
+| GET | `/organizations/{organizationId}/openapiSpec` | getOrganizationOpenapiSpec | `organizationId`* | object | yes | Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON |
+| GET | `/organizations/{organizationId}/samlRoles` | getOrganizationSamlRoles | `organizationId`* | object[] | yes | List the SAML roles for this organization |
+| POST | `/organizations/{organizationId}/samlRoles` | createOrganizationSamlRole | `organizationId`*, body*: object | object |  | Create a SAML role |
+| GET | `/organizations/{organizationId}/samlRoles/{samlRoleId}` | getOrganizationSamlRole | `organizationId`*, `samlRoleId`* | object | yes | Return a SAML role |
+| PUT | `/organizations/{organizationId}/samlRoles/{samlRoleId}` | updateOrganizationSamlRole | `organizationId`*, `samlRoleId`*, body: object | object |  | Update a SAML role |
+| GET | `/organizations/{organizationId}/security/intrusionSettings` | getOrganizationSecurityIntrusionSettings | `organizationId`* | object | yes | Returns all supported intrusion settings for an organization |
+| PUT | `/organizations/{organizationId}/security/intrusionSettings` | updateOrganizationSecurityIntrusionSettings | `organizationId`*, body*: object | object |  | Sets supported intrusion settings for an organization |
+| GET | `/organizations/{organizationId}/securityEvents` | getOrganizationSecurityEvents | `organizationId`*, `t0`, `t1`, `timespan`, `perPage`, `startingAfter`, `endingBefore` | object[] | yes | List the security events (intrusion detection only) for an organization |
+| GET | `/organizations/{organizationId}/snmp` | getOrganizationSnmp | `organizationId`* | object | yes | Return the SNMP settings for an organization |
+| GET | `/organizations/{organizationId}/thirdPartyVPNPeers` | getOrganizationThirdPartyVPNPeers | `organizationId`* | object[] | yes | Return the third party VPN peers for an organization |
+| PUT | `/organizations/{organizationId}/thirdPartyVPNPeers` | updateOrganizationThirdPartyVPNPeers | `organizationId`*, body*: object | object[] |  | Update the third party VPN peers for an organization |
+| GET | `/organizations/{organizationId}/uplinksLossAndLatency` | getOrganizationUplinksLossAndLatency | `organizationId`*, `t0`, `t1`, `timespan`, `uplink`, `ip` | object[] | yes | Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago |
+| GET | `/organizations/{organizationId}/vpnFirewallRules` | getOrganizationVpnFirewallRules | `organizationId`* | object[] | yes | Return the firewall rules for an organization's site-to-site VPN |
+| PUT | `/organizations/{organizationId}/vpnFirewallRules` | updateOrganizationVpnFirewallRules | `organizationId`*, body: object | object[] |  | Update the firewall rules of an organization's site-to-site VPN |

@@ -22,12 +22,17 @@
       {
         "from": "azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425",
         "kind": "EXPOSES",
-        "to": "operation:delete:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
+        "to": "operation:get:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
       },
       {
         "from": "azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425",
         "kind": "EXPOSES",
-        "to": "operation:get:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
+        "to": "operation:put:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
+      },
+      {
+        "from": "azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
       },
       {
         "from": "azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425",
@@ -35,9 +40,84 @@
         "to": "operation:patch:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
       },
       {
-        "from": "azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425",
-        "kind": "EXPOSES",
-        "to": "operation:put:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}"
+        "from": "operation:get:/providers/Microsoft.EnterpriseKnowledgeGraph/operations",
+        "kind": "RETURNS",
+        "to": "schema:OperationEntityListResult"
+      },
+      {
+        "from": "operation:get:/subscriptions/{subscriptionId}/providers/Microsoft.EnterpriseKnowledgeGraph/services",
+        "kind": "RETURNS",
+        "to": "schema:EnterpriseKnowledgeGraphResponseList"
+      },
+      {
+        "from": "operation:get:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services",
+        "kind": "RETURNS",
+        "to": "schema:EnterpriseKnowledgeGraphResponseList"
+      },
+      {
+        "from": "operation:get:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "RETURNS",
+        "to": "schema:EnterpriseKnowledgeGraph"
+      },
+      {
+        "from": "operation:put:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "ACCEPTS",
+        "to": "schema:EnterpriseKnowledgeGraph"
+      },
+      {
+        "from": "operation:put:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "RETURNS",
+        "to": "schema:EnterpriseKnowledgeGraph"
+      },
+      {
+        "from": "operation:patch:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "ACCEPTS",
+        "to": "schema:EnterpriseKnowledgeGraph"
+      },
+      {
+        "from": "operation:patch:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "RETURNS",
+        "to": "schema:EnterpriseKnowledgeGraph"
+      },
+      {
+        "from": "schema:EnterpriseKnowledgeGraph",
+        "kind": "REFERENCES",
+        "to": "schema:EnterpriseKnowledgeGraphProperties"
+      },
+      {
+        "from": "schema:EnterpriseKnowledgeGraph",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:EnterpriseKnowledgeGraphResponseList",
+        "kind": "REFERENCES",
+        "to": "schema:EnterpriseKnowledgeGraph"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorBody"
+      },
+      {
+        "from": "schema:OperationEntity",
+        "kind": "REFERENCES",
+        "to": "schema:OperationDisplayInfo"
+      },
+      {
+        "from": "schema:OperationEntityListResult",
+        "kind": "REFERENCES",
+        "to": "schema:OperationEntity"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:Sku"
+      },
+      {
+        "from": "schema:Sku",
+        "kind": "REFERENCES",
+        "to": "schema:SkuName"
       }
     ],
     "nodes": [
@@ -47,135 +127,450 @@
       },
       {
         "deprecated": false,
+        "description": "Lists all the available EnterpriseKnowledgeGraph services operations.",
         "id": "operation:get:/providers/Microsoft.EnterpriseKnowledgeGraph/operations",
         "kind": "operation",
         "method": "get",
         "name": "Operations_List",
+        "parameters": [
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/providers/Microsoft.EnterpriseKnowledgeGraph/operations",
         "pointer": "#/paths/~1providers~1Microsoft.EnterpriseKnowledgeGraph~1operations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OperationEntityListResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all the resources of a particular type belonging to a subscription.",
         "id": "operation:get:/subscriptions/{subscriptionId}/providers/Microsoft.EnterpriseKnowledgeGraph/services",
         "kind": "operation",
         "method": "get",
         "name": "EnterpriseKnowledgeGraph_List",
+        "parameters": [
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Azure Subscription ID.",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscriptions/{subscriptionId}/providers/Microsoft.EnterpriseKnowledgeGraph/services",
         "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnterpriseKnowledgeGraphResponseList"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "EnterpriseKnowledgeGraph"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all the resources of a particular type belonging to a resource group",
         "id": "operation:get:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services",
         "kind": "operation",
         "method": "get",
         "name": "EnterpriseKnowledgeGraph_ListByResourceGroup",
+        "parameters": [
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource group in the user subscription.",
+            "in": "path",
+            "name": "resourceGroupName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Azure Subscription ID.",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services",
         "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnterpriseKnowledgeGraphResponseList"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "EnterpriseKnowledgeGraph"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "EnterpriseKnowledgeGraph_Delete",
-        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
-        "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services~1{resourceName}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a EnterpriseKnowledgeGraph service specified by the parameters.",
         "id": "operation:get:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
         "kind": "operation",
         "method": "get",
         "name": "EnterpriseKnowledgeGraph_Get",
+        "parameters": [
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource group in the user subscription.",
+            "in": "path",
+            "name": "resourceGroupName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource.",
+            "in": "path",
+            "name": "resourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Azure Subscription ID.",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
         "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services~1{resourceName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnterpriseKnowledgeGraph"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "EnterpriseKnowledgeGraph"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "EnterpriseKnowledgeGraph_Update",
-        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
-        "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services~1{resourceName}/patch",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Creates a EnterpriseKnowledgeGraph Service.",
         "id": "operation:put:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
         "kind": "operation",
         "method": "put",
         "name": "EnterpriseKnowledgeGraph_Create",
+        "parameters": [
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource group in the user subscription.",
+            "in": "path",
+            "name": "resourceGroupName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource.",
+            "in": "path",
+            "name": "resourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Azure Subscription ID.",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
         "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services~1{resourceName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EnterpriseKnowledgeGraph"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnterpriseKnowledgeGraph"
+          },
+          {
+            "status": "201",
+            "type": "EnterpriseKnowledgeGraph"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "EnterpriseKnowledgeGraph"
+        ]
       },
       {
+        "deprecated": false,
+        "description": "Deletes a EnterpriseKnowledgeGraph Service from the resource group.",
+        "id": "operation:delete:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "EnterpriseKnowledgeGraph_Delete",
+        "parameters": [
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource group in the user subscription.",
+            "in": "path",
+            "name": "resourceGroupName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource.",
+            "in": "path",
+            "name": "resourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Azure Subscription ID.",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services~1{resourceName}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "EnterpriseKnowledgeGraph"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a EnterpriseKnowledgeGraph Service",
+        "id": "operation:patch:/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "EnterpriseKnowledgeGraph_Update",
+        "parameters": [
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource group in the user subscription.",
+            "in": "path",
+            "name": "resourceGroupName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the EnterpriseKnowledgeGraph resource.",
+            "in": "path",
+            "name": "resourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version of the API to be used with the client request.",
+            "in": "query",
+            "name": "api-version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Azure Subscription ID.",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}",
+        "pointer": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.EnterpriseKnowledgeGraph~1services~1{resourceName}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EnterpriseKnowledgeGraph"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnterpriseKnowledgeGraph"
+          },
+          {
+            "status": "201",
+            "type": "EnterpriseKnowledgeGraph"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "EnterpriseKnowledgeGraph"
+        ]
+      },
+      {
+        "description": "EnterpriseKnowledgeGraph resource definition",
         "id": "schema:EnterpriseKnowledgeGraph",
         "kind": "schema",
-        "name": "EnterpriseKnowledgeGraph"
+        "name": "EnterpriseKnowledgeGraph",
+        "type": "Resource"
       },
       {
+        "description": "The parameters to provide for the EnterpriseKnowledgeGraph.",
         "id": "schema:EnterpriseKnowledgeGraphProperties",
         "kind": "schema",
-        "name": "EnterpriseKnowledgeGraphProperties"
+        "name": "EnterpriseKnowledgeGraphProperties",
+        "type": "object"
       },
       {
+        "description": "The list of EnterpriseKnowledgeGraph service operation response.",
         "id": "schema:EnterpriseKnowledgeGraphResponseList",
         "kind": "schema",
-        "name": "EnterpriseKnowledgeGraphResponseList"
+        "name": "EnterpriseKnowledgeGraphResponseList",
+        "type": "object"
       },
       {
+        "description": "EnterpriseKnowledgeGraph Service error object.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "EnterpriseKnowledgeGraph Service error body.",
         "id": "schema:ErrorBody",
         "kind": "schema",
-        "name": "ErrorBody"
+        "name": "ErrorBody",
+        "type": "object"
       },
       {
+        "description": "The operation supported by EnterpriseKnowledgeGraph Service Management.",
         "id": "schema:OperationDisplayInfo",
         "kind": "schema",
-        "name": "OperationDisplayInfo"
+        "name": "OperationDisplayInfo",
+        "type": "object"
       },
       {
+        "description": "The operations supported by EnterpriseKnowledgeGraph Service Management.",
         "id": "schema:OperationEntity",
         "kind": "schema",
-        "name": "OperationEntity"
+        "name": "OperationEntity",
+        "type": "object"
       },
       {
+        "description": "The list of EnterpriseKnowledgeGraph service operation response.",
         "id": "schema:OperationEntityListResult",
         "kind": "schema",
-        "name": "OperationEntityListResult"
+        "name": "OperationEntityListResult",
+        "type": "object"
       },
       {
+        "description": "Azure resource",
         "id": "schema:Resource",
         "kind": "schema",
-        "name": "Resource"
+        "name": "Resource",
+        "type": "object"
       },
       {
+        "description": "The SKU of the EnterpriseKnowledgeGraph service account.",
         "id": "schema:Sku",
         "kind": "schema",
-        "name": "Sku"
+        "name": "Sku",
+        "type": "object"
       },
       {
+        "description": "The name of SKU.",
         "id": "schema:SkuName",
         "kind": "schema",
-        "name": "SkuName"
+        "name": "SkuName",
+        "type": "string"
       }
     ]
   },

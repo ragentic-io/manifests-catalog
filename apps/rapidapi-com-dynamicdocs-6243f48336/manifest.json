@@ -17,12 +17,86 @@
       },
       {
         "deprecated": false,
+        "description": "Compile a PDF document from a specific template",
         "id": "operation:post:/templates/{template-token}/compile",
         "kind": "operation",
         "method": "post",
         "name": "compile",
+        "parameters": [
+          {
+            "description": "The template-token is available in your template settings after publishing your template.",
+            "in": "path",
+            "name": "template-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "application/json",
+            "description": "Should be set to \"application/json\"",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The doc-url-expires-in is a numerical parameter which takes integers and describes after how many seconds the provided URL is available to download the documen…",
+            "in": "query",
+            "name": "doc-url-expires-in",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The latex-compiler parameter can take the following values: pdflatex lualatex",
+            "enum": [
+              "pdflatex",
+              "lualatex"
+            ],
+            "in": "query",
+            "name": "latex-compiler",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The latex-runs is a numerical parameter and can take values of 1, 2 and 3.",
+            "in": "query",
+            "name": "latex-runs ",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The main-file-name is a string parameter which identifies the main file to compile.",
+            "in": "query",
+            "name": "main-file-name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The doc-file-name is a string parameter which determines the name of the file.",
+            "in": "query",
+            "name": "doc-file-name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template-token}/compile",
         "pointer": "#/paths/~1templates~1{template-token}~1compile/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Adv-Security-Token": []
@@ -31,7 +105,10 @@
             "X-RapidAPI-Key": []
           }
         ],
-        "summary": "Compile New Document PDF"
+        "summary": "Compile New Document PDF",
+        "tags": [
+          "PDF Generation"
+        ]
       }
     ]
   },

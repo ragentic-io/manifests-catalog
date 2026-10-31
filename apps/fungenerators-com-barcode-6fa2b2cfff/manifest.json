@@ -32,63 +32,159 @@
       },
       {
         "deprecated": false,
+        "description": "Decode a Barcode image and return the cotents if successful",
         "id": "operation:post:/barcode/decode",
         "kind": "operation",
         "method": "post",
         "name": "post /barcode/decode",
         "path": "/barcode/decode",
         "pointer": "#/paths/~1barcode~1decode/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-Fungenerators-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Barcode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the supported barcode types for the decoding process.",
         "id": "operation:get:/barcode/decode/types",
         "kind": "operation",
         "method": "get",
         "name": "get /barcode/decode/types",
         "path": "/barcode/decode/types",
         "pointer": "#/paths/~1barcode~1decode~1types/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Fungenerators-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Barcode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a Bar Code image for the given barcode number",
         "id": "operation:get:/barcode/encode",
         "kind": "operation",
         "method": "get",
         "name": "get /barcode/encode",
+        "parameters": [
+          {
+            "description": "Barcode number",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Barcode format default C39.",
+            "in": "query",
+            "name": "barcodeformat",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Output image format.",
+            "in": "query",
+            "name": "outputformat",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Width factor of the image",
+            "in": "query",
+            "name": "widthfactor",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Total height of the image",
+            "in": "query",
+            "name": "totalheight",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/barcode/encode",
         "pointer": "#/paths/~1barcode~1encode/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Fungenerators-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Barcode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the supported barcode types for encoding / image generation.",
         "id": "operation:get:/barcode/encode/types",
         "kind": "operation",
         "method": "get",
         "name": "get /barcode/encode/types",
         "path": "/barcode/encode/types",
         "pointer": "#/paths/~1barcode~1encode~1types/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Fungenerators-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Barcode"
+        ]
       }
     ]
   },

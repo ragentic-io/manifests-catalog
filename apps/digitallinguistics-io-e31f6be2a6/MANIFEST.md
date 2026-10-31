@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars3.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `b39d30794821c907f85cc24d8f4d9978473da4f56497ed6adca0d2c76eec2a55` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,23 +32,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars3.githubusercontent.com_
 
 ## Operations (18)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/languages` | getLanguages | Get all Languages |
-| POST | `/languages` | addLanguage | Add a new Language |
-| PUT | `/languages` | upsertLanguage | Upsert (create or replace) a Language |
-| DELETE | `/languages/{languageID}` | deleteLanguage | Delete a Language by ID |
-| GET | `/languages/{languageID}` | getLanguage | Retrieve a Language by ID |
-| PATCH | `/languages/{languageID}` | updateLanguage | Perform a partial update on a Language |
-| GET | `/languages/{languageID}/lexemes` | getLexemesByLanguage | Get all Lexemes for a Language |
-| POST | `/languages/{languageID}/lexemes` | addLexemeByLanguage | Add a new Lexeme to a Language |
-| PUT | `/languages/{languageID}/lexemes` | upsertLexemeByLanguage | Upsert (add or replace) a Lexeme |
-| DELETE | `/languages/{languageID}/lexemes/{lexemeID}` | deleteLexemeByLanguage | Delete a Lexeme by ID |
-| GET | `/languages/{languageID}/lexemes/{lexemeID}` | getLexemeByLanguage | Get a Lexeme by ID |
-| PATCH | `/languages/{languageID}/lexemes/{lexemeID}` | updateLexemeByLanguage | Perform a partial update on a Lexeme |
-| GET | `/lexemes` | getLexemes | Get all Lexemes |
-| POST | `/lexemes` | addLexeme | Add a new Lexeme |
-| PUT | `/lexemes` | upsertLexeme | Upsert (add or replace) a Lexeme |
-| DELETE | `/lexemes/{lexemeID}` | deleteLexeme | Delete a Lexeme by ID |
-| GET | `/lexemes/{lexemeID}` | getLexeme | Get a Lexeme by ID |
-| PATCH | `/lexemes/{lexemeID}` | updateLexeme | Perform a partial update on a Lexeme |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/languages` | getLanguages | `continuation`, `deleted`, `ifModifiedSince`, `maxItemCount`, `public` | — | yes | Get all Languages |
+| PUT | `/languages` | upsertLanguage | `ifMatch`, body*: object | — |  | Upsert (create or replace) a Language |
+| POST | `/languages` | addLanguage | body*: object | — |  | Add a new Language |
+| GET | `/languages/{languageID}` | getLanguage | `languageID`*, `deleted`, `ifNoneMatch` | — | yes | Retrieve a Language by ID |
+| DELETE | `/languages/{languageID}` | deleteLanguage | `languageID`*, `ifMatch` | — |  | Delete a Language by ID |
+| PATCH | `/languages/{languageID}` | updateLanguage | `languageID`*, `ifMatch`, body*: object | — |  | Perform a partial update on a Language |
+| GET | `/languages/{languageID}/lexemes` | getLexemesByLanguage | `languageID`*, `continuation`, `deleted`, `ifModifiedSince`, `maxItemCount`, `public` | — | yes | Get all Lexemes for a Language |
+| PUT | `/languages/{languageID}/lexemes` | upsertLexemeByLanguage | `languageID`*, `ifMatch` | — |  | Upsert (add or replace) a Lexeme |
+| POST | `/languages/{languageID}/lexemes` | addLexemeByLanguage | `languageID`* | — |  | Add a new Lexeme to a Language |
+| GET | `/languages/{languageID}/lexemes/{lexemeID}` | getLexemeByLanguage | `languageID`*, `lexemeID`*, `deleted`, `ifNoneMatch` | — | yes | Get a Lexeme by ID |
+| DELETE | `/languages/{languageID}/lexemes/{lexemeID}` | deleteLexemeByLanguage | `languageID`*, `lexemeID`*, `ifMatch` | — |  | Delete a Lexeme by ID |
+| PATCH | `/languages/{languageID}/lexemes/{lexemeID}` | updateLexemeByLanguage | `languageID`*, `lexemeID`*, `ifMatch` | — |  | Perform a partial update on a Lexeme |
+| GET | `/lexemes` | getLexemes | `continuation`, `deleted`, `ifModifiedSince`, `languageID`, `maxItemCount`, `public` | — | yes | Get all Lexemes |
+| PUT | `/lexemes` | upsertLexeme | `ifMatch`, `languageID` | — |  | Upsert (add or replace) a Lexeme |
+| POST | `/lexemes` | addLexeme | `languageID` | — |  | Add a new Lexeme |
+| GET | `/lexemes/{lexemeID}` | getLexeme | `lexemeID`*, `deleted`, `ifNoneMatch` | — | yes | Get a Lexeme by ID |
+| DELETE | `/lexemes/{lexemeID}` | deleteLexeme | `lexemeID`*, `ifMatch` | — |  | Delete a Lexeme by ID |
+| PATCH | `/lexemes/{lexemeID}` | updateLexeme | `lexemeID`*, `ifMatch` | — |  | Perform a partial update on a Lexeme |

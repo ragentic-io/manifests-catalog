@@ -27,12 +27,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/connections/{connection_id}"
+        "to": "operation:get:/connections/{connection_id}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/connections/{connection_id}"
+        "to": "operation:delete:/connections/{connection_id}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -62,12 +62,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/dags/{dag_id}"
+        "to": "operation:get:/dags/{dag_id}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/dags/{dag_id}"
+        "to": "operation:delete:/dags/{dag_id}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -92,12 +92,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/dags/{dag_id}/dagRuns/{dag_run_id}"
+        "to": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}"
+        "to": "operation:delete:/dags/{dag_id}/dagRuns/{dag_run_id}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -272,12 +272,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/pools/{pool_name}"
+        "to": "operation:get:/pools/{pool_name}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/pools/{pool_name}"
+        "to": "operation:delete:/pools/{pool_name}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -302,12 +302,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/roles/{role_name}"
+        "to": "operation:get:/roles/{role_name}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/roles/{role_name}"
+        "to": "operation:delete:/roles/{role_name}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -327,12 +327,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{username}"
+        "to": "operation:get:/users/{username}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/users/{username}"
+        "to": "operation:delete:/users/{username}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -352,12 +352,12 @@
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:delete:/variables/{variable_key}"
+        "to": "operation:get:/variables/{variable_key}"
       },
       {
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
-        "to": "operation:get:/variables/{variable_key}"
+        "to": "operation:delete:/variables/{variable_key}"
       },
       {
         "from": "apache-org-87f12485ac",
@@ -368,6 +368,826 @@
         "from": "apache-org-87f12485ac",
         "kind": "EXPOSES",
         "to": "operation:get:/version"
+      },
+      {
+        "from": "operation:get:/config",
+        "kind": "RETURNS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:get:/connections",
+        "kind": "RETURNS",
+        "to": "schema:ConnectionCollection"
+      },
+      {
+        "from": "operation:post:/connections",
+        "kind": "ACCEPTS",
+        "to": "schema:Connection"
+      },
+      {
+        "from": "operation:post:/connections",
+        "kind": "RETURNS",
+        "to": "schema:Connection"
+      },
+      {
+        "from": "operation:post:/connections/test",
+        "kind": "ACCEPTS",
+        "to": "schema:Connection"
+      },
+      {
+        "from": "operation:post:/connections/test",
+        "kind": "RETURNS",
+        "to": "schema:ConnectionTest"
+      },
+      {
+        "from": "operation:get:/connections/{connection_id}",
+        "kind": "RETURNS",
+        "to": "schema:Connection"
+      },
+      {
+        "from": "operation:patch:/connections/{connection_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Connection"
+      },
+      {
+        "from": "operation:patch:/connections/{connection_id}",
+        "kind": "RETURNS",
+        "to": "schema:Connection"
+      },
+      {
+        "from": "operation:get:/dagWarnings",
+        "kind": "RETURNS",
+        "to": "schema:DagWarningCollection"
+      },
+      {
+        "from": "operation:get:/dags",
+        "kind": "RETURNS",
+        "to": "schema:DAGCollection"
+      },
+      {
+        "from": "operation:patch:/dags",
+        "kind": "ACCEPTS",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "operation:patch:/dags",
+        "kind": "RETURNS",
+        "to": "schema:DAGCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}",
+        "kind": "RETURNS",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}",
+        "kind": "RETURNS",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/clearTaskInstances",
+        "kind": "ACCEPTS",
+        "to": "schema:ClearTaskInstances"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/clearTaskInstances",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceReferenceCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns",
+        "kind": "RETURNS",
+        "to": "schema:DAGRunCollection"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/dagRuns",
+        "kind": "ACCEPTS",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/dagRuns",
+        "kind": "RETURNS",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}",
+        "kind": "RETURNS",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateDagRunState"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}",
+        "kind": "RETURNS",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/dagRuns/{dag_run_id}/clear",
+        "kind": "ACCEPTS",
+        "to": "schema:ClearDagRun"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/dagRuns/{dag_run_id}/clear",
+        "kind": "RETURNS",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/setNote",
+        "kind": "ACCEPTS",
+        "to": "schema:SetDagRunNote"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/setNote",
+        "kind": "RETURNS",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstance"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTaskInstance"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceReference"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links",
+        "kind": "RETURNS",
+        "to": "schema:ExtraLinkCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/listMapped",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceCollection"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/setNote",
+        "kind": "ACCEPTS",
+        "to": "schema:SetTaskInstanceNote"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/setNote",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstance"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries",
+        "kind": "RETURNS",
+        "to": "schema:XComCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries/{xcom_key}",
+        "kind": "RETURNS",
+        "to": "schema:XCom"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstance"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTaskInstance"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceReference"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/setNote",
+        "kind": "ACCEPTS",
+        "to": "schema:SetTaskInstanceNote"
+      },
+      {
+        "from": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/setNote",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstance"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/upstreamDatasetEvents",
+        "kind": "RETURNS",
+        "to": "schema:DatasetEventCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/details",
+        "kind": "RETURNS",
+        "to": "schema:DAGDetail"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/tasks",
+        "kind": "RETURNS",
+        "to": "schema:TaskCollection"
+      },
+      {
+        "from": "operation:get:/dags/{dag_id}/tasks/{task_id}",
+        "kind": "RETURNS",
+        "to": "schema:Task"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/updateTaskInstancesState",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTaskInstancesState"
+      },
+      {
+        "from": "operation:post:/dags/{dag_id}/updateTaskInstancesState",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceReferenceCollection"
+      },
+      {
+        "from": "operation:post:/dags/~/dagRuns/list",
+        "kind": "ACCEPTS",
+        "to": "schema:ListDagRunsForm"
+      },
+      {
+        "from": "operation:post:/dags/~/dagRuns/list",
+        "kind": "RETURNS",
+        "to": "schema:DAGRunCollection"
+      },
+      {
+        "from": "operation:post:/dags/~/dagRuns/~/taskInstances/list",
+        "kind": "ACCEPTS",
+        "to": "schema:ListTaskInstanceForm"
+      },
+      {
+        "from": "operation:post:/dags/~/dagRuns/~/taskInstances/list",
+        "kind": "RETURNS",
+        "to": "schema:TaskInstanceCollection"
+      },
+      {
+        "from": "operation:get:/datasets",
+        "kind": "RETURNS",
+        "to": "schema:DatasetCollection"
+      },
+      {
+        "from": "operation:get:/datasets/events",
+        "kind": "RETURNS",
+        "to": "schema:DatasetEventCollection"
+      },
+      {
+        "from": "operation:get:/datasets/{uri}",
+        "kind": "RETURNS",
+        "to": "schema:Dataset"
+      },
+      {
+        "from": "operation:get:/eventLogs",
+        "kind": "RETURNS",
+        "to": "schema:EventLogCollection"
+      },
+      {
+        "from": "operation:get:/eventLogs/{event_log_id}",
+        "kind": "RETURNS",
+        "to": "schema:EventLog"
+      },
+      {
+        "from": "operation:get:/health",
+        "kind": "RETURNS",
+        "to": "schema:HealthInfo"
+      },
+      {
+        "from": "operation:get:/importErrors",
+        "kind": "RETURNS",
+        "to": "schema:ImportErrorCollection"
+      },
+      {
+        "from": "operation:get:/importErrors/{import_error_id}",
+        "kind": "RETURNS",
+        "to": "schema:ImportError"
+      },
+      {
+        "from": "operation:get:/permissions",
+        "kind": "RETURNS",
+        "to": "schema:ActionCollection"
+      },
+      {
+        "from": "operation:get:/plugins",
+        "kind": "RETURNS",
+        "to": "schema:PluginCollection"
+      },
+      {
+        "from": "operation:get:/pools",
+        "kind": "RETURNS",
+        "to": "schema:PoolCollection"
+      },
+      {
+        "from": "operation:post:/pools",
+        "kind": "ACCEPTS",
+        "to": "schema:Pool"
+      },
+      {
+        "from": "operation:post:/pools",
+        "kind": "RETURNS",
+        "to": "schema:Pool"
+      },
+      {
+        "from": "operation:get:/pools/{pool_name}",
+        "kind": "RETURNS",
+        "to": "schema:Pool"
+      },
+      {
+        "from": "operation:patch:/pools/{pool_name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Pool"
+      },
+      {
+        "from": "operation:patch:/pools/{pool_name}",
+        "kind": "RETURNS",
+        "to": "schema:Pool"
+      },
+      {
+        "from": "operation:get:/providers",
+        "kind": "RETURNS",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "operation:get:/providers",
+        "kind": "RETURNS",
+        "to": "schema:ProviderCollection"
+      },
+      {
+        "from": "operation:get:/roles",
+        "kind": "RETURNS",
+        "to": "schema:RoleCollection"
+      },
+      {
+        "from": "operation:post:/roles",
+        "kind": "ACCEPTS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:post:/roles",
+        "kind": "RETURNS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:get:/roles/{role_name}",
+        "kind": "RETURNS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:patch:/roles/{role_name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:patch:/roles/{role_name}",
+        "kind": "RETURNS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:UserCollection"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "ACCEPTS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/users/{username}",
+        "kind": "RETURNS",
+        "to": "schema:UserCollectionItem"
+      },
+      {
+        "from": "operation:patch:/users/{username}",
+        "kind": "ACCEPTS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:patch:/users/{username}",
+        "kind": "RETURNS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:get:/variables",
+        "kind": "RETURNS",
+        "to": "schema:VariableCollection"
+      },
+      {
+        "from": "operation:post:/variables",
+        "kind": "ACCEPTS",
+        "to": "schema:Variable"
+      },
+      {
+        "from": "operation:post:/variables",
+        "kind": "RETURNS",
+        "to": "schema:Variable"
+      },
+      {
+        "from": "operation:get:/variables/{variable_key}",
+        "kind": "RETURNS",
+        "to": "schema:Variable"
+      },
+      {
+        "from": "operation:patch:/variables/{variable_key}",
+        "kind": "ACCEPTS",
+        "to": "schema:Variable"
+      },
+      {
+        "from": "operation:patch:/variables/{variable_key}",
+        "kind": "RETURNS",
+        "to": "schema:Variable"
+      },
+      {
+        "from": "operation:get:/version",
+        "kind": "RETURNS",
+        "to": "schema:VersionInfo"
+      },
+      {
+        "from": "schema:ActionCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:ActionCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:ActionResource",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:ActionResource",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:BasicDAGRun",
+        "kind": "REFERENCES",
+        "to": "schema:DagState"
+      },
+      {
+        "from": "schema:Config",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigSection"
+      },
+      {
+        "from": "schema:ConfigSection",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigOption"
+      },
+      {
+        "from": "schema:Connection",
+        "kind": "REFERENCES",
+        "to": "schema:ConnectionCollectionItem"
+      },
+      {
+        "from": "schema:ConnectionCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:ConnectionCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ConnectionCollectionItem"
+      },
+      {
+        "from": "schema:DAG",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduleInterval"
+      },
+      {
+        "from": "schema:DAG",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:DAGCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:DAGCollection",
+        "kind": "REFERENCES",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "schema:DAGDetail",
+        "kind": "REFERENCES",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "schema:DAGDetail",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDelta"
+      },
+      {
+        "from": "schema:DAGDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Timezone"
+      },
+      {
+        "from": "schema:DAGRun",
+        "kind": "REFERENCES",
+        "to": "schema:DagState"
+      },
+      {
+        "from": "schema:DAGRunCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:DAGRunCollection",
+        "kind": "REFERENCES",
+        "to": "schema:DAGRun"
+      },
+      {
+        "from": "schema:DagWarningCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:DagWarningCollection",
+        "kind": "REFERENCES",
+        "to": "schema:DagWarning"
+      },
+      {
+        "from": "schema:Dataset",
+        "kind": "REFERENCES",
+        "to": "schema:DagScheduleDatasetReference"
+      },
+      {
+        "from": "schema:Dataset",
+        "kind": "REFERENCES",
+        "to": "schema:TaskOutletDatasetReference"
+      },
+      {
+        "from": "schema:DatasetCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:DatasetCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Dataset"
+      },
+      {
+        "from": "schema:DatasetEvent",
+        "kind": "REFERENCES",
+        "to": "schema:BasicDAGRun"
+      },
+      {
+        "from": "schema:DatasetEventCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:DatasetEventCollection",
+        "kind": "REFERENCES",
+        "to": "schema:DatasetEvent"
+      },
+      {
+        "from": "schema:EventLogCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:EventLogCollection",
+        "kind": "REFERENCES",
+        "to": "schema:EventLog"
+      },
+      {
+        "from": "schema:ExtraLink",
+        "kind": "REFERENCES",
+        "to": "schema:ClassReference"
+      },
+      {
+        "from": "schema:ExtraLinkCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ExtraLink"
+      },
+      {
+        "from": "schema:HealthInfo",
+        "kind": "REFERENCES",
+        "to": "schema:MetadatabaseStatus"
+      },
+      {
+        "from": "schema:HealthInfo",
+        "kind": "REFERENCES",
+        "to": "schema:SchedulerStatus"
+      },
+      {
+        "from": "schema:ImportErrorCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:ImportErrorCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ImportError"
+      },
+      {
+        "from": "schema:ListTaskInstanceForm",
+        "kind": "REFERENCES",
+        "to": "schema:TaskState"
+      },
+      {
+        "from": "schema:MetadatabaseStatus",
+        "kind": "REFERENCES",
+        "to": "schema:HealthStatus"
+      },
+      {
+        "from": "schema:PluginCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:PluginCollection",
+        "kind": "REFERENCES",
+        "to": "schema:PluginCollectionItem"
+      },
+      {
+        "from": "schema:PoolCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:PoolCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Pool"
+      },
+      {
+        "from": "schema:ProviderCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Provider"
+      },
+      {
+        "from": "schema:Role",
+        "kind": "REFERENCES",
+        "to": "schema:ActionResource"
+      },
+      {
+        "from": "schema:RoleCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:RoleCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Role"
+      },
+      {
+        "from": "schema:ScheduleInterval",
+        "kind": "REFERENCES",
+        "to": "schema:CronExpression"
+      },
+      {
+        "from": "schema:ScheduleInterval",
+        "kind": "REFERENCES",
+        "to": "schema:RelativeDelta"
+      },
+      {
+        "from": "schema:ScheduleInterval",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDelta"
+      },
+      {
+        "from": "schema:SchedulerStatus",
+        "kind": "REFERENCES",
+        "to": "schema:HealthStatus"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:ClassReference"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:Color"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:DAG"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDelta"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:TriggerRule"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:WeightRule"
+      },
+      {
+        "from": "schema:TaskCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:TaskInstance",
+        "kind": "REFERENCES",
+        "to": "schema:Job"
+      },
+      {
+        "from": "schema:TaskInstance",
+        "kind": "REFERENCES",
+        "to": "schema:SLAMiss"
+      },
+      {
+        "from": "schema:TaskInstance",
+        "kind": "REFERENCES",
+        "to": "schema:TaskState"
+      },
+      {
+        "from": "schema:TaskInstance",
+        "kind": "REFERENCES",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "schema:TaskInstanceCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:TaskInstanceCollection",
+        "kind": "REFERENCES",
+        "to": "schema:TaskInstance"
+      },
+      {
+        "from": "schema:TaskInstanceReferenceCollection",
+        "kind": "REFERENCES",
+        "to": "schema:TaskInstanceReference"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UserCollectionItem"
+      },
+      {
+        "from": "schema:UserCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:UserCollection",
+        "kind": "REFERENCES",
+        "to": "schema:UserCollectionItem"
+      },
+      {
+        "from": "schema:Variable",
+        "kind": "REFERENCES",
+        "to": "schema:VariableCollectionItem"
+      },
+      {
+        "from": "schema:VariableCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:VariableCollection",
+        "kind": "REFERENCES",
+        "to": "schema:VariableCollectionItem"
+      },
+      {
+        "from": "schema:XCom",
+        "kind": "REFERENCES",
+        "to": "schema:XComCollectionItem"
+      },
+      {
+        "from": "schema:XComCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionInfo"
+      },
+      {
+        "from": "schema:XComCollection",
+        "kind": "REFERENCES",
+        "to": "schema:XComCollectionItem"
       }
     ],
     "nodes": [
@@ -383,8 +1203,26 @@
         "name": "get_config",
         "path": "/config",
         "pointer": "#/paths/~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Config"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get current configuration"
+        "summary": "Get current configuration",
+        "tags": [
+          "Config"
+        ]
       },
       {
         "deprecated": false,
@@ -392,10 +1230,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get_connections",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/connections",
         "pointer": "#/paths/~1connections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConnectionCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List connections"
+        "summary": "List connections",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
@@ -405,30 +1285,82 @@
         "name": "post_connection",
         "path": "/connections",
         "pointer": "#/paths/~1connections/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Connection"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Connection"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a connection"
+        "summary": "Create a connection",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Test a connection.",
         "id": "operation:post:/connections/test",
         "kind": "operation",
         "method": "post",
         "name": "test_connection",
         "path": "/connections/test",
         "pointer": "#/paths/~1connections~1test/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Connection"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConnectionTest"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test a connection"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/connections/{connection_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_connection",
-        "path": "/connections/{connection_id}",
-        "pointer": "#/paths/~1connections~1{connection_id}/delete",
-        "security": [],
-        "summary": "Delete a connection"
+        "summary": "Test a connection",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
@@ -436,10 +1368,86 @@
         "kind": "operation",
         "method": "get",
         "name": "get_connection",
+        "parameters": [
+          {
+            "description": "The connection ID.",
+            "in": "path",
+            "name": "connection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/connections/{connection_id}",
         "pointer": "#/paths/~1connections~1{connection_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Connection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a connection"
+        "summary": "Get a connection",
+        "tags": [
+          "Connection"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/connections/{connection_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_connection",
+        "parameters": [
+          {
+            "description": "The connection ID.",
+            "in": "path",
+            "name": "connection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/connections/{connection_id}",
+        "pointer": "#/paths/~1connections~1{connection_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a connection",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
@@ -447,21 +1455,106 @@
         "kind": "operation",
         "method": "patch",
         "name": "patch_connection",
+        "parameters": [
+          {
+            "description": "The connection ID.",
+            "in": "path",
+            "name": "connection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/connections/{connection_id}",
         "pointer": "#/paths/~1connections~1{connection_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Connection"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Connection"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a connection"
+        "summary": "Update a connection",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a source code using file token.",
         "id": "operation:get:/dagSources/{file_token}",
         "kind": "operation",
         "method": "get",
         "name": "get_dag_source",
+        "parameters": [
+          {
+            "description": "The key containing the encrypted path to the file.",
+            "in": "path",
+            "name": "file_token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dagSources/{file_token}",
         "pointer": "#/paths/~1dagSources~1{file_token}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "406",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a source code"
+        "summary": "Get a source code",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
@@ -469,54 +1562,318 @@
         "kind": "operation",
         "method": "get",
         "name": "get_dag_warnings",
+        "parameters": [
+          {
+            "description": "If set, only return DAG warnings with this dag_id.",
+            "in": "query",
+            "name": "dag_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If set, only return DAG warnings with this type.",
+            "in": "query",
+            "name": "warning_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dagWarnings",
         "pointer": "#/paths/~1dagWarnings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DagWarningCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List dag warnings"
+        "summary": "List dag warnings",
+        "tags": [
+          "DagWarning"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List DAGs in the database.",
         "id": "operation:get:/dags",
         "kind": "operation",
         "method": "get",
         "name": "get_dags",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "List of tags to filter results.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": true,
+            "description": "Only filter active DAGs.",
+            "in": "query",
+            "name": "only_active",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set, only return DAGs with dag_ids matching this pattern.",
+            "in": "query",
+            "name": "dag_id_pattern",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dags",
         "pointer": "#/paths/~1dags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List DAGs"
+        "summary": "List DAGs",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update DAGs of a given dag_id_pattern using UpdateMask.",
         "id": "operation:patch:/dags",
         "kind": "operation",
         "method": "patch",
         "name": "patch_dags",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "List of tags to filter results.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": true,
+            "description": "Only filter active DAGs.",
+            "in": "query",
+            "name": "only_active",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set, only update DAGs with dag_ids matching this pattern.",
+            "in": "query",
+            "name": "dag_id_pattern",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags",
         "pointer": "#/paths/~1dags/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DAG"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update DAGs"
+        "summary": "Update DAGs",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/dags/{dag_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_dag",
-        "path": "/dags/{dag_id}",
-        "pointer": "#/paths/~1dags~1{dag_id}/delete",
-        "security": [],
-        "summary": "Delete a DAG"
-      },
-      {
-        "deprecated": false,
+        "description": "Presents only information available in database (DAGModel).",
         "id": "operation:get:/dags/{dag_id}",
         "kind": "operation",
         "method": "get",
         "name": "get_dag",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}",
         "pointer": "#/paths/~1dags~1{dag_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAG"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get basic information about a DAG"
+        "summary": "Get basic information about a DAG",
+        "tags": [
+          "DAG"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Deletes all metadata related to the DAG, including finished DAG Runs and Tasks.",
+        "id": "operation:delete:/dags/{dag_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_dag",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/dags/{dag_id}",
+        "pointer": "#/paths/~1dags~1{dag_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a DAG",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
@@ -524,32 +1881,211 @@
         "kind": "operation",
         "method": "patch",
         "name": "patch_dag",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/dags/{dag_id}",
         "pointer": "#/paths/~1dags~1{dag_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DAG"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAG"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a DAG"
+        "summary": "Update a DAG",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Clears a set of task instances associated with the DAG for a specified date range.",
         "id": "operation:post:/dags/{dag_id}/clearTaskInstances",
         "kind": "operation",
         "method": "post",
         "name": "post_clear_task_instances",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/clearTaskInstances",
         "pointer": "#/paths/~1dags~1{dag_id}~1clearTaskInstances/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ClearTaskInstances"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceReferenceCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clear a set of task instances"
+        "summary": "Clear a set of task instances",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows specifying `~` as the dag_id to retrieve DAG runs for all DAGs.",
         "id": "operation:get:/dags/{dag_id}/dagRuns",
         "kind": "operation",
         "method": "get",
         "name": "get_dag_runs",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Returns objects greater or equal to the specified date.",
+            "in": "query",
+            "name": "execution_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified date.",
+            "in": "query",
+            "name": "execution_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater or equal the specified date.",
+            "in": "query",
+            "name": "start_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less or equal the specified date.",
+            "in": "query",
+            "name": "start_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater or equal the specified date.",
+            "in": "query",
+            "name": "end_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified date.",
+            "in": "query",
+            "name": "end_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRunCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List DAG runs"
+        "summary": "List DAG runs",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
@@ -557,21 +2093,56 @@
         "kind": "operation",
         "method": "post",
         "name": "post_dag_run",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DAGRun"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRun"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Trigger a new DAG run"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/dags/{dag_id}/dagRuns/{dag_run_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_dag_run",
-        "path": "/dags/{dag_id}/dagRuns/{dag_run_id}",
-        "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}/delete",
-        "security": [],
-        "summary": "Delete a DAG run"
+        "summary": "Trigger a new DAG run",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
@@ -579,54 +2150,421 @@
         "kind": "operation",
         "method": "get",
         "name": "get_dag_run",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRun"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a DAG run"
+        "summary": "Get a DAG run",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/dags/{dag_id}/dagRuns/{dag_run_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_dag_run",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/dags/{dag_id}/dagRuns/{dag_run_id}",
+        "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a DAG run",
+        "tags": [
+          "DAGRun"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Modify a DAG run.",
         "id": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}",
         "kind": "operation",
         "method": "patch",
         "name": "update_dag_run_state",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateDagRunState"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRun"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Modify a DAG run"
+        "summary": "Modify a DAG run",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Clear a DAG run.",
         "id": "operation:post:/dags/{dag_id}/dagRuns/{dag_run_id}/clear",
         "kind": "operation",
         "method": "post",
         "name": "clear_dag_run",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/clear",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1clear/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ClearDagRun"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRun"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clear a DAG run"
+        "summary": "Clear a DAG run",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the manual user note of a DagRun.",
         "id": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/setNote",
         "kind": "operation",
         "method": "patch",
         "name": "set_dag_run_note",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/setNote",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1setNote/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetDagRunNote"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRun"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update the DagRun note."
+        "summary": "Update the DagRun note.",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows specifying `~` as the dag_id, dag_run_id to retrieve DAG runs for all DAGs and DAG runs.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances",
         "kind": "operation",
         "method": "get",
         "name": "get_task_instances",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Returns objects greater or equal to the specified date.",
+            "in": "query",
+            "name": "execution_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified date.",
+            "in": "query",
+            "name": "execution_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater or equal the specified date.",
+            "in": "query",
+            "name": "start_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less or equal the specified date.",
+            "in": "query",
+            "name": "start_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater or equal the specified date.",
+            "in": "query",
+            "name": "end_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified date.",
+            "in": "query",
+            "name": "end_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater than or equal to the specified values.",
+            "in": "query",
+            "name": "duration_gte",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified values.",
+            "in": "query",
+            "name": "duration_lte",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "pool",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "queue",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List task instances"
+        "summary": "List task instances",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
@@ -634,76 +2572,557 @@
         "kind": "operation",
         "method": "get",
         "name": "get_task_instance",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstance"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a task instance"
+        "summary": "Get a task instance",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the state for single task instance.",
         "id": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}",
         "kind": "operation",
         "method": "patch",
         "name": "patch_task_instance",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateTaskInstance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceReference"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates the state of a task instance"
+        "summary": "Updates the state of a task instance",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List extra links for task instance.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links",
         "kind": "operation",
         "method": "get",
         "name": "get_extra_links",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1links/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExtraLinkCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List extra links"
+        "summary": "List extra links",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details of all mapped task instances.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/listMapped",
         "kind": "operation",
         "method": "get",
         "name": "get_mapped_task_instances",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Returns objects greater or equal to the specified date.",
+            "in": "query",
+            "name": "execution_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified date.",
+            "in": "query",
+            "name": "execution_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater or equal the specified date.",
+            "in": "query",
+            "name": "start_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less or equal the specified date.",
+            "in": "query",
+            "name": "start_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater or equal the specified date.",
+            "in": "query",
+            "name": "end_date_gte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified date.",
+            "in": "query",
+            "name": "end_date_lte",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Returns objects greater than or equal to the specified values.",
+            "in": "query",
+            "name": "duration_gte",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Returns objects less than or equal to the specified values.",
+            "in": "query",
+            "name": "duration_lte",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "pool",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The value can be repeated to retrieve multiple matching values (OR condition).",
+            "in": "query",
+            "name": "queue",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/listMapped",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1listMapped/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List mapped task instances"
+        "summary": "List mapped task instances",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get logs for a specific task instance and its try number.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/logs/{task_try_number}",
         "kind": "operation",
         "method": "get",
         "name": "get_log",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task try number.",
+            "in": "path",
+            "name": "task_try_number",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "A full content will be returned.",
+            "in": "query",
+            "name": "full_content",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter on map index for mapped task.",
+            "in": "query",
+            "name": "map_index",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A token that allows you to continue fetching logs.",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/logs/{task_try_number}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1logs~1{task_try_number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get logs"
+        "summary": "Get logs",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the manual user note of a non-mapped Task Instance.",
         "id": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/setNote",
         "kind": "operation",
         "method": "patch",
         "name": "set_task_instance_note",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/setNote",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1setNote/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetTaskInstanceNote"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstance"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update the TaskInstance note."
+        "summary": "Update the TaskInstance note.",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows specifying `~` as the dag_id, dag_run_id, task_id to retrieve XCOM entries for for all DAGs, DAG runs and task instances.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries",
         "kind": "operation",
         "method": "get",
         "name": "get_xcom_entries",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1xcomEntries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "XComCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List XCom entries"
+        "summary": "List XCom entries",
+        "tags": [
+          "XCom"
+        ]
       },
       {
         "deprecated": false,
@@ -711,65 +3130,374 @@
         "kind": "operation",
         "method": "get",
         "name": "get_xcom_entry",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The XCom key.",
+            "in": "path",
+            "name": "xcom_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Whether to deserialize an XCom value when using a custom XCom backend.",
+            "in": "query",
+            "name": "deserialize",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries/{xcom_key}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1xcomEntries~1{xcom_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "XCom"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an XCom entry"
+        "summary": "Get an XCom entry",
+        "tags": [
+          "XCom"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details of a mapped task instance.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
         "kind": "operation",
         "method": "get",
         "name": "get_mapped_task_instance",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The map index.",
+            "in": "path",
+            "name": "map_index",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1{map_index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstance"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a mapped task instance"
+        "summary": "Get a mapped task instance",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the state for single mapped task instance.",
         "id": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
         "kind": "operation",
         "method": "patch",
         "name": "patch_mapped_task_instance",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The map index.",
+            "in": "path",
+            "name": "map_index",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1{map_index}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateTaskInstance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceReference"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates the state of a mapped task instance"
+        "summary": "Updates the state of a mapped task instance",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the manual user note of a mapped Task Instance.",
         "id": "operation:patch:/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/setNote",
         "kind": "operation",
         "method": "patch",
         "name": "set_mapped_task_instance_note",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The map index.",
+            "in": "path",
+            "name": "map_index",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/setNote",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1taskInstances~1{task_id}~1{map_index}~1setNote/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetTaskInstanceNote"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstance"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update the TaskInstance note."
+        "summary": "Update the TaskInstance note.",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get datasets for a dag run.",
         "id": "operation:get:/dags/{dag_id}/dagRuns/{dag_run_id}/upstreamDatasetEvents",
         "kind": "operation",
         "method": "get",
         "name": "get_upstream_dataset_events",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID.",
+            "in": "path",
+            "name": "dag_run_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/dagRuns/{dag_run_id}/upstreamDatasetEvents",
         "pointer": "#/paths/~1dags~1{dag_id}~1dagRuns~1{dag_run_id}~1upstreamDatasetEvents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatasetEventCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get dataset events for a DAG run"
+        "summary": "Get dataset events for a DAG run",
+        "tags": [
+          "DAGRun",
+          "Dataset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The response contains many DAG attributes, so the response can be large.",
         "id": "operation:get:/dags/{dag_id}/details",
         "kind": "operation",
         "method": "get",
         "name": "get_dag_details",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/details",
         "pointer": "#/paths/~1dags~1{dag_id}~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGDetail"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a simplified representation of DAG"
+        "summary": "Get a simplified representation of DAG",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
@@ -777,10 +3505,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get_tasks",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/tasks",
         "pointer": "#/paths/~1dags~1{dag_id}~1tasks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get tasks for DAG"
+        "summary": "Get tasks for DAG",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
@@ -788,43 +3554,180 @@
         "kind": "operation",
         "method": "get",
         "name": "get_task",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The task ID.",
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/tasks/{task_id}",
         "pointer": "#/paths/~1dags~1{dag_id}~1tasks~1{task_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Task"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get simplified representation of a task"
+        "summary": "Get simplified representation of a task",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the state for multiple task instances simultaneously.",
         "id": "operation:post:/dags/{dag_id}/updateTaskInstancesState",
         "kind": "operation",
         "method": "post",
         "name": "post_set_task_instances_state",
+        "parameters": [
+          {
+            "description": "The DAG ID.",
+            "in": "path",
+            "name": "dag_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dags/{dag_id}/updateTaskInstancesState",
         "pointer": "#/paths/~1dags~1{dag_id}~1updateTaskInstancesState/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateTaskInstancesState"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceReferenceCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set a state of task instances"
+        "summary": "Set a state of task instances",
+        "tags": [
+          "DAG"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint is a POST to allow filtering across a large number of DAG IDs, where as a GET it would run in to maximum HTTP request URL length limit.",
         "id": "operation:post:/dags/~/dagRuns/list",
         "kind": "operation",
         "method": "post",
         "name": "get_dag_runs_batch",
         "path": "/dags/~/dagRuns/list",
         "pointer": "#/paths/~1dags~1~0~1dagRuns~1list/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListDagRunsForm"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DAGRunCollection"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List DAG runs (batch)"
+        "summary": "List DAG runs (batch)",
+        "tags": [
+          "DAGRun"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List task instances from all DAGs and DAG runs.",
         "id": "operation:post:/dags/~/dagRuns/~/taskInstances/list",
         "kind": "operation",
         "method": "post",
         "name": "get_task_instances_batch",
         "path": "/dags/~/dagRuns/~/taskInstances/list",
         "pointer": "#/paths/~1dags~1~0~1dagRuns~1~0~1taskInstances~1list/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListTaskInstanceForm"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskInstanceCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List task instances (batch)"
+        "summary": "List task instances (batch)",
+        "tags": [
+          "TaskInstance"
+        ]
       },
       {
         "deprecated": false,
@@ -832,10 +3735,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get_datasets",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If set, only return datasets with uris matching this pattern.",
+            "in": "query",
+            "name": "uri_pattern",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/datasets",
         "pointer": "#/paths/~1datasets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatasetCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List datasets"
+        "summary": "List datasets",
+        "tags": [
+          "Dataset"
+        ]
       },
       {
         "deprecated": false,
@@ -843,32 +3795,188 @@
         "kind": "operation",
         "method": "get",
         "name": "get_dataset_events",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The Dataset ID that updated the dataset.",
+            "in": "query",
+            "name": "dataset_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The DAG ID that updated the dataset.",
+            "in": "query",
+            "name": "source_dag_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The task ID that updated the dataset.",
+            "in": "query",
+            "name": "source_task_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The DAG run ID that updated the dataset.",
+            "in": "query",
+            "name": "source_run_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The map index that updated the dataset.",
+            "in": "query",
+            "name": "source_map_index",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/datasets/events",
         "pointer": "#/paths/~1datasets~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatasetEventCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get dataset events"
+        "summary": "Get dataset events",
+        "tags": [
+          "Dataset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a dataset by uri.",
         "id": "operation:get:/datasets/{uri}",
         "kind": "operation",
         "method": "get",
         "name": "get_dataset",
+        "parameters": [
+          {
+            "description": "The encoded Dataset URI",
+            "in": "path",
+            "name": "uri",
+            "required": true,
+            "type": "string:path"
+          }
+        ],
         "path": "/datasets/{uri}",
         "pointer": "#/paths/~1datasets~1{uri}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Dataset"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a dataset"
+        "summary": "Get a dataset",
+        "tags": [
+          "Dataset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List log entries from event log.",
         "id": "operation:get:/eventLogs",
         "kind": "operation",
         "method": "get",
         "name": "get_event_logs",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/eventLogs",
         "pointer": "#/paths/~1eventLogs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventLogCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List log entries"
+        "summary": "List log entries",
+        "tags": [
+          "EventLog"
+        ]
       },
       {
         "deprecated": false,
@@ -876,21 +3984,63 @@
         "kind": "operation",
         "method": "get",
         "name": "get_event_log",
+        "parameters": [
+          {
+            "description": "The event log ID.",
+            "in": "path",
+            "name": "event_log_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/eventLogs/{event_log_id}",
         "pointer": "#/paths/~1eventLogs~1{event_log_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventLog"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a log entry"
+        "summary": "Get a log entry",
+        "tags": [
+          "EventLog"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the status of Airflow's metadatabase and scheduler.",
         "id": "operation:get:/health",
         "kind": "operation",
         "method": "get",
         "name": "get_health",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HealthInfo"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get instance status"
+        "summary": "Get instance status",
+        "tags": [
+          "Monitoring"
+        ]
       },
       {
         "deprecated": false,
@@ -898,10 +4048,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get_import_errors",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/importErrors",
         "pointer": "#/paths/~1importErrors/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportErrorCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List import errors"
+        "summary": "List import errors",
+        "tags": [
+          "ImportError"
+        ]
       },
       {
         "deprecated": false,
@@ -909,32 +4101,139 @@
         "kind": "operation",
         "method": "get",
         "name": "get_import_error",
+        "parameters": [
+          {
+            "description": "The import error ID.",
+            "in": "path",
+            "name": "import_error_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/importErrors/{import_error_id}",
         "pointer": "#/paths/~1importErrors~1{import_error_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportError"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an import error"
+        "summary": "Get an import error",
+        "tags": [
+          "ImportError"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of permissions.",
         "id": "operation:get:/permissions",
         "kind": "operation",
         "method": "get",
         "name": "get_permissions",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/permissions",
         "pointer": "#/paths/~1permissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActionCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List permissions"
+        "summary": "List permissions",
+        "tags": [
+          "Permission"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of loaded plugins.",
         "id": "operation:get:/plugins",
         "kind": "operation",
         "method": "get",
         "name": "get_plugins",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/plugins",
         "pointer": "#/paths/~1plugins/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PluginCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of loaded plugins"
+        "summary": "Get a list of loaded plugins",
+        "tags": [
+          "Plugin"
+        ]
       },
       {
         "deprecated": false,
@@ -942,10 +4241,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get_pools",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pools",
         "pointer": "#/paths/~1pools/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PoolCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List pools"
+        "summary": "List pools",
+        "tags": [
+          "Pool"
+        ]
       },
       {
         "deprecated": false,
@@ -955,19 +4296,37 @@
         "name": "post_pool",
         "path": "/pools",
         "pointer": "#/paths/~1pools/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Pool"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Pool"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a pool"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/pools/{pool_name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_pool",
-        "path": "/pools/{pool_name}",
-        "pointer": "#/paths/~1pools~1{pool_name}/delete",
-        "security": [],
-        "summary": "Delete a pool"
+        "summary": "Create a pool",
+        "tags": [
+          "Pool"
+        ]
       },
       {
         "deprecated": false,
@@ -975,10 +4334,86 @@
         "kind": "operation",
         "method": "get",
         "name": "get_pool",
+        "parameters": [
+          {
+            "description": "The pool name.",
+            "in": "path",
+            "name": "pool_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/pools/{pool_name}",
         "pointer": "#/paths/~1pools~1{pool_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Pool"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a pool"
+        "summary": "Get a pool",
+        "tags": [
+          "Pool"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/pools/{pool_name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_pool",
+        "parameters": [
+          {
+            "description": "The pool name.",
+            "in": "path",
+            "name": "pool_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/pools/{pool_name}",
+        "pointer": "#/paths/~1pools~1{pool_name}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a pool",
+        "tags": [
+          "Pool"
+        ]
       },
       {
         "deprecated": false,
@@ -986,142 +4421,641 @@
         "kind": "operation",
         "method": "patch",
         "name": "patch_pool",
+        "parameters": [
+          {
+            "description": "The pool name.",
+            "in": "path",
+            "name": "pool_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/pools/{pool_name}",
         "pointer": "#/paths/~1pools~1{pool_name}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Pool"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Pool"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a pool"
+        "summary": "Update a pool",
+        "tags": [
+          "Pool"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of providers.",
         "id": "operation:get:/providers",
         "kind": "operation",
         "method": "get",
         "name": "get_providers",
         "path": "/providers",
         "pointer": "#/paths/~1providers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProviderCollection|CollectionInfo"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List providers"
+        "summary": "List providers",
+        "tags": [
+          "Provider"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of roles.",
         "id": "operation:get:/roles",
         "kind": "operation",
         "method": "get",
         "name": "get_roles",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/roles",
         "pointer": "#/paths/~1roles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoleCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List roles"
+        "summary": "List roles",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new role.",
         "id": "operation:post:/roles",
         "kind": "operation",
         "method": "post",
         "name": "post_role",
         "path": "/roles",
         "pointer": "#/paths/~1roles/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Role"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Role"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a role"
+        "summary": "Create a role",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/roles/{role_name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_role",
-        "path": "/roles/{role_name}",
-        "pointer": "#/paths/~1roles~1{role_name}/delete",
-        "security": [],
-        "summary": "Delete a role"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a role.",
         "id": "operation:get:/roles/{role_name}",
         "kind": "operation",
         "method": "get",
         "name": "get_role",
+        "parameters": [
+          {
+            "description": "The role name",
+            "in": "path",
+            "name": "role_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/roles/{role_name}",
         "pointer": "#/paths/~1roles~1{role_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Role"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a role"
+        "summary": "Get a role",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a role.",
+        "id": "operation:delete:/roles/{role_name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_role",
+        "parameters": [
+          {
+            "description": "The role name",
+            "in": "path",
+            "name": "role_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/roles/{role_name}",
+        "pointer": "#/paths/~1roles~1{role_name}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a role",
+        "tags": [
+          "Role"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a role.",
         "id": "operation:patch:/roles/{role_name}",
         "kind": "operation",
         "method": "patch",
         "name": "patch_role",
+        "parameters": [
+          {
+            "description": "The role name",
+            "in": "path",
+            "name": "role_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/roles/{role_name}",
         "pointer": "#/paths/~1roles~1{role_name}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Role"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Role"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a role"
+        "summary": "Update a role",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of users.",
         "id": "operation:get:/users",
         "kind": "operation",
         "method": "get",
         "name": "get_users",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List users"
+        "summary": "List users",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new user with unique username and email.",
         "id": "operation:post:/users",
         "kind": "operation",
         "method": "post",
         "name": "post_user",
         "path": "/users",
         "pointer": "#/paths/~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "User"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a user"
+        "summary": "Create a user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/users/{username}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_user",
-        "path": "/users/{username}",
-        "pointer": "#/paths/~1users~1{username}/delete",
-        "security": [],
-        "summary": "Delete a user"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a user with a specific username.",
         "id": "operation:get:/users/{username}",
         "kind": "operation",
         "method": "get",
         "name": "get_user",
+        "parameters": [
+          {
+            "description": "The username of the user.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{username}",
         "pointer": "#/paths/~1users~1{username}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserCollectionItem"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a user"
+        "summary": "Get a user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a user with a specific username.",
+        "id": "operation:delete:/users/{username}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_user",
+        "parameters": [
+          {
+            "description": "The username of the user.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/users/{username}",
+        "pointer": "#/paths/~1users~1{username}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a user",
+        "tags": [
+          "User"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update fields for a user.",
         "id": "operation:patch:/users/{username}",
         "kind": "operation",
         "method": "patch",
         "name": "patch_user",
+        "parameters": [
+          {
+            "description": "The username of the user.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/users/{username}",
         "pointer": "#/paths/~1users~1{username}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "User"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Role"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a user"
+        "summary": "Update a user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The collection does not contain data.",
         "id": "operation:get:/variables",
         "kind": "operation",
         "method": "get",
         "name": "get_variables",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The name of the field to order the results by.",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/variables",
         "pointer": "#/paths/~1variables/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VariableCollection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List variables"
+        "summary": "List variables",
+        "tags": [
+          "Variable"
+        ]
       },
       {
         "deprecated": false,
@@ -1131,8 +5065,80 @@
         "name": "post_variables",
         "path": "/variables",
         "pointer": "#/paths/~1variables/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Variable"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Variable"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a variable"
+        "summary": "Create a variable",
+        "tags": [
+          "Variable"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get a variable by key.",
+        "id": "operation:get:/variables/{variable_key}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_variable",
+        "parameters": [
+          {
+            "description": "The variable Key.",
+            "in": "path",
+            "name": "variable_key",
+            "required": true,
+            "type": "string:path"
+          }
+        ],
+        "path": "/variables/{variable_key}",
+        "pointer": "#/paths/~1variables~1{variable_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Variable"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": "Get a variable",
+        "tags": [
+          "Variable"
+        ]
       },
       {
         "deprecated": false,
@@ -1140,32 +5146,105 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete_variable",
+        "parameters": [
+          {
+            "description": "The variable Key.",
+            "in": "path",
+            "name": "variable_key",
+            "required": true,
+            "type": "string:path"
+          }
+        ],
         "path": "/variables/{variable_key}",
         "pointer": "#/paths/~1variables~1{variable_key}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a variable"
+        "summary": "Delete a variable",
+        "tags": [
+          "Variable"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/variables/{variable_key}",
-        "kind": "operation",
-        "method": "get",
-        "name": "get_variable",
-        "path": "/variables/{variable_key}",
-        "pointer": "#/paths/~1variables~1{variable_key}/get",
-        "security": [],
-        "summary": "Get a variable"
-      },
-      {
-        "deprecated": false,
+        "description": "Update a variable by key.",
         "id": "operation:patch:/variables/{variable_key}",
         "kind": "operation",
         "method": "patch",
         "name": "patch_variable",
+        "parameters": [
+          {
+            "description": "The variable Key.",
+            "in": "path",
+            "name": "variable_key",
+            "required": true,
+            "type": "string:path"
+          },
+          {
+            "description": "The fields to update on the resource.",
+            "in": "query",
+            "name": "update_mask",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/variables/{variable_key}",
         "pointer": "#/paths/~1variables~1{variable_key}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Variable"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Variable"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a variable"
+        "summary": "Update a variable",
+        "tags": [
+          "Variable"
+        ]
       },
       {
         "deprecated": false,
@@ -1175,433 +5254,594 @@
         "name": "get_version",
         "path": "/version",
         "pointer": "#/paths/~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VersionInfo"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get version information"
+        "summary": "Get version information",
+        "tags": [
+          "Monitoring"
+        ]
       },
       {
+        "description": "An action Item.",
         "id": "schema:Action",
         "kind": "schema",
-        "name": "Action"
+        "name": "Action",
+        "type": "object"
       },
       {
+        "description": "A collection of actions.",
         "id": "schema:ActionCollection",
         "kind": "schema",
-        "name": "ActionCollection"
+        "name": "ActionCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "The Action-Resource item.",
         "id": "schema:ActionResource",
         "kind": "schema",
-        "name": "ActionResource"
+        "name": "ActionResource",
+        "type": "object"
       },
       {
         "id": "schema:BasicDAGRun",
         "kind": "schema",
-        "name": "BasicDAGRun"
+        "name": "BasicDAGRun",
+        "type": "object"
       },
       {
+        "description": "Class reference",
         "id": "schema:ClassReference",
         "kind": "schema",
-        "name": "ClassReference"
+        "name": "ClassReference",
+        "type": "object"
       },
       {
         "id": "schema:ClearDagRun",
         "kind": "schema",
-        "name": "ClearDagRun"
+        "name": "ClearDagRun",
+        "type": "object"
       },
       {
         "id": "schema:ClearTaskInstances",
         "kind": "schema",
-        "name": "ClearTaskInstances"
+        "name": "ClearTaskInstances",
+        "type": "object"
       },
       {
+        "description": "Metadata about collection.",
         "id": "schema:CollectionInfo",
         "kind": "schema",
-        "name": "CollectionInfo"
+        "name": "CollectionInfo",
+        "type": "object"
       },
       {
+        "description": "Color in hexadecimal notation.",
         "id": "schema:Color",
         "kind": "schema",
-        "name": "Color"
+        "name": "Color",
+        "type": "string"
       },
       {
+        "description": "The configuration.",
         "id": "schema:Config",
         "kind": "schema",
-        "name": "Config"
+        "name": "Config",
+        "type": "object"
       },
       {
+        "description": "The option of configuration.",
         "id": "schema:ConfigOption",
         "kind": "schema",
-        "name": "ConfigOption"
+        "name": "ConfigOption",
+        "type": "object"
       },
       {
+        "description": "The section of configuration.",
         "id": "schema:ConfigSection",
         "kind": "schema",
-        "name": "ConfigSection"
+        "name": "ConfigSection",
+        "type": "object"
       },
       {
+        "description": "Full representation of the connection.",
         "id": "schema:Connection",
         "kind": "schema",
-        "name": "Connection"
+        "name": "Connection",
+        "type": "ConnectionCollectionItem|object"
       },
       {
+        "description": "Collection of connections.",
         "id": "schema:ConnectionCollection",
         "kind": "schema",
-        "name": "ConnectionCollection"
+        "name": "ConnectionCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "Connection collection item.",
         "id": "schema:ConnectionCollectionItem",
         "kind": "schema",
-        "name": "ConnectionCollectionItem"
+        "name": "ConnectionCollectionItem",
+        "type": "object"
       },
       {
+        "description": "Connection test results.",
         "id": "schema:ConnectionTest",
         "kind": "schema",
-        "name": "ConnectionTest"
+        "name": "ConnectionTest",
+        "type": "object"
       },
       {
+        "description": "Cron expression",
         "id": "schema:CronExpression",
         "kind": "schema",
-        "name": "CronExpression"
+        "name": "CronExpression",
+        "type": "object"
       },
       {
+        "description": "DAG",
         "id": "schema:DAG",
         "kind": "schema",
-        "name": "DAG"
+        "name": "DAG",
+        "type": "object"
       },
       {
+        "description": "Collection of DAGs.",
         "id": "schema:DAGCollection",
         "kind": "schema",
-        "name": "DAGCollection"
+        "name": "DAGCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "DAG details.",
         "id": "schema:DAGDetail",
         "kind": "schema",
-        "name": "DAGDetail"
+        "name": "DAGDetail",
+        "type": "DAG|object"
       },
       {
         "id": "schema:DAGRun",
         "kind": "schema",
-        "name": "DAGRun"
+        "name": "DAGRun",
+        "type": "object"
       },
       {
+        "description": "Collection of DAG runs.",
         "id": "schema:DAGRunCollection",
         "kind": "schema",
-        "name": "DAGRunCollection"
+        "name": "DAGRunCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "A datasets reference to a downstream DAG.",
         "id": "schema:DagScheduleDatasetReference",
         "kind": "schema",
-        "name": "DagScheduleDatasetReference"
+        "name": "DagScheduleDatasetReference",
+        "type": "object"
       },
       {
+        "description": "DAG State.",
         "id": "schema:DagState",
         "kind": "schema",
-        "name": "DagState"
+        "name": "DagState",
+        "type": "string"
       },
       {
         "id": "schema:DagWarning",
         "kind": "schema",
-        "name": "DagWarning"
+        "name": "DagWarning",
+        "type": "object"
       },
       {
+        "description": "Collection of DAG warnings.",
         "id": "schema:DagWarningCollection",
         "kind": "schema",
-        "name": "DagWarningCollection"
+        "name": "DagWarningCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "A dataset item.",
         "id": "schema:Dataset",
         "kind": "schema",
-        "name": "Dataset"
+        "name": "Dataset",
+        "type": "object"
       },
       {
+        "description": "A collection of datasets.",
         "id": "schema:DatasetCollection",
         "kind": "schema",
-        "name": "DatasetCollection"
+        "name": "DatasetCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "A dataset event.",
         "id": "schema:DatasetEvent",
         "kind": "schema",
-        "name": "DatasetEvent"
+        "name": "DatasetEvent",
+        "type": "object"
       },
       {
+        "description": "A collection of dataset events.",
         "id": "schema:DatasetEventCollection",
         "kind": "schema",
-        "name": "DatasetEventCollection"
+        "name": "DatasetEventCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "[RFC7807](https://tools.ietf.org/html/rfc7807) compliant response.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "Log of user operations via CLI or Web UI.",
         "id": "schema:EventLog",
         "kind": "schema",
-        "name": "EventLog"
+        "name": "EventLog",
+        "type": "object"
       },
       {
+        "description": "Collection of event logs.",
         "id": "schema:EventLogCollection",
         "kind": "schema",
-        "name": "EventLogCollection"
+        "name": "EventLogCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "Additional links containing additional information about the task.",
         "id": "schema:ExtraLink",
         "kind": "schema",
-        "name": "ExtraLink"
+        "name": "ExtraLink",
+        "type": "object"
       },
       {
+        "description": "The collection of extra links.",
         "id": "schema:ExtraLinkCollection",
         "kind": "schema",
-        "name": "ExtraLinkCollection"
+        "name": "ExtraLinkCollection",
+        "type": "object"
       },
       {
+        "description": "Instance status information.",
         "id": "schema:HealthInfo",
         "kind": "schema",
-        "name": "HealthInfo"
+        "name": "HealthInfo",
+        "type": "object"
       },
       {
+        "description": "Health status",
         "id": "schema:HealthStatus",
         "kind": "schema",
-        "name": "HealthStatus"
+        "name": "HealthStatus",
+        "type": "string"
       },
       {
         "id": "schema:ImportError",
         "kind": "schema",
-        "name": "ImportError"
+        "name": "ImportError",
+        "type": "object"
       },
       {
+        "description": "Collection of import errors.",
         "id": "schema:ImportErrorCollection",
         "kind": "schema",
-        "name": "ImportErrorCollection"
+        "name": "ImportErrorCollection",
+        "type": "object|CollectionInfo"
       },
       {
         "id": "schema:Job",
         "kind": "schema",
-        "name": "Job"
+        "name": "Job",
+        "type": "object"
       },
       {
         "id": "schema:ListDagRunsForm",
         "kind": "schema",
-        "name": "ListDagRunsForm"
+        "name": "ListDagRunsForm",
+        "type": "object"
       },
       {
         "id": "schema:ListTaskInstanceForm",
         "kind": "schema",
-        "name": "ListTaskInstanceForm"
+        "name": "ListTaskInstanceForm",
+        "type": "object"
       },
       {
+        "description": "The status of the metadatabase.",
         "id": "schema:MetadatabaseStatus",
         "kind": "schema",
-        "name": "MetadatabaseStatus"
+        "name": "MetadatabaseStatus",
+        "type": "object"
       },
       {
+        "description": "A collection of plugin.",
         "id": "schema:PluginCollection",
         "kind": "schema",
-        "name": "PluginCollection"
+        "name": "PluginCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "A plugin Item.",
         "id": "schema:PluginCollectionItem",
         "kind": "schema",
-        "name": "PluginCollectionItem"
+        "name": "PluginCollectionItem",
+        "type": "object"
       },
       {
+        "description": "The pool",
         "id": "schema:Pool",
         "kind": "schema",
-        "name": "Pool"
+        "name": "Pool",
+        "type": "object"
       },
       {
+        "description": "Collection of pools.",
         "id": "schema:PoolCollection",
         "kind": "schema",
-        "name": "PoolCollection"
+        "name": "PoolCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "The provider *New in version 2.1.0*",
         "id": "schema:Provider",
         "kind": "schema",
-        "name": "Provider"
+        "name": "Provider",
+        "type": "object"
       },
       {
+        "description": "Collection of providers.",
         "id": "schema:ProviderCollection",
         "kind": "schema",
-        "name": "ProviderCollection"
+        "name": "ProviderCollection",
+        "type": "object"
       },
       {
+        "description": "Relative delta",
         "id": "schema:RelativeDelta",
         "kind": "schema",
-        "name": "RelativeDelta"
+        "name": "RelativeDelta",
+        "type": "object"
       },
       {
+        "description": "A resource on which permissions are granted.",
         "id": "schema:Resource",
         "kind": "schema",
-        "name": "Resource"
+        "name": "Resource",
+        "type": "object"
       },
       {
+        "description": "a role item.",
         "id": "schema:Role",
         "kind": "schema",
-        "name": "Role"
+        "name": "Role",
+        "type": "object"
       },
       {
+        "description": "A collection of roles.",
         "id": "schema:RoleCollection",
         "kind": "schema",
-        "name": "RoleCollection"
+        "name": "RoleCollection",
+        "type": "object|CollectionInfo"
       },
       {
         "id": "schema:SLAMiss",
         "kind": "schema",
-        "name": "SLAMiss"
+        "name": "SLAMiss",
+        "type": "object"
       },
       {
+        "description": "Schedule interval.",
         "id": "schema:ScheduleInterval",
         "kind": "schema",
-        "name": "ScheduleInterval"
+        "name": "ScheduleInterval",
+        "type": "TimeDelta|RelativeDelta|CronExpression"
       },
       {
+        "description": "The status and the latest scheduler heartbeat.",
         "id": "schema:SchedulerStatus",
         "kind": "schema",
-        "name": "SchedulerStatus"
+        "name": "SchedulerStatus",
+        "type": "object"
       },
       {
         "id": "schema:SetDagRunNote",
         "kind": "schema",
-        "name": "SetDagRunNote"
+        "name": "SetDagRunNote",
+        "type": "object"
       },
       {
         "id": "schema:SetTaskInstanceNote",
         "kind": "schema",
-        "name": "SetTaskInstanceNote"
+        "name": "SetTaskInstanceNote",
+        "type": "object"
       },
       {
+        "description": "Tag",
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
+        "description": "For details see: [airflow.models.BaseOperator](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/index.html#airflow.models.BaseOperator)",
         "id": "schema:Task",
         "kind": "schema",
-        "name": "Task"
+        "name": "Task",
+        "type": "object"
       },
       {
+        "description": "Collection of tasks.",
         "id": "schema:TaskCollection",
         "kind": "schema",
-        "name": "TaskCollection"
+        "name": "TaskCollection",
+        "type": "object"
       },
       {
         "id": "schema:TaskInstance",
         "kind": "schema",
-        "name": "TaskInstance"
+        "name": "TaskInstance",
+        "type": "object"
       },
       {
+        "description": "Collection of task instances.",
         "id": "schema:TaskInstanceCollection",
         "kind": "schema",
-        "name": "TaskInstanceCollection"
+        "name": "TaskInstanceCollection",
+        "type": "object|CollectionInfo"
       },
       {
         "id": "schema:TaskInstanceReference",
         "kind": "schema",
-        "name": "TaskInstanceReference"
+        "name": "TaskInstanceReference",
+        "type": "object"
       },
       {
         "id": "schema:TaskInstanceReferenceCollection",
         "kind": "schema",
-        "name": "TaskInstanceReferenceCollection"
+        "name": "TaskInstanceReferenceCollection",
+        "type": "object"
       },
       {
+        "description": "A datasets reference to an upstream task.",
         "id": "schema:TaskOutletDatasetReference",
         "kind": "schema",
-        "name": "TaskOutletDatasetReference"
+        "name": "TaskOutletDatasetReference",
+        "type": "object"
       },
       {
+        "description": "Task state.",
         "id": "schema:TaskState",
         "kind": "schema",
-        "name": "TaskState"
+        "name": "TaskState",
+        "type": "string"
       },
       {
+        "description": "Time delta",
         "id": "schema:TimeDelta",
         "kind": "schema",
-        "name": "TimeDelta"
+        "name": "TimeDelta",
+        "type": "object"
       },
       {
         "id": "schema:Timezone",
         "kind": "schema",
-        "name": "Timezone"
+        "name": "Timezone",
+        "type": "string"
       },
       {
         "id": "schema:Trigger",
         "kind": "schema",
-        "name": "Trigger"
+        "name": "Trigger",
+        "type": "object"
       },
       {
+        "description": "Trigger rule.",
         "id": "schema:TriggerRule",
         "kind": "schema",
-        "name": "TriggerRule"
+        "name": "TriggerRule",
+        "type": "string"
       },
       {
+        "description": "Modify the state of a DAG run.",
         "id": "schema:UpdateDagRunState",
         "kind": "schema",
-        "name": "UpdateDagRunState"
+        "name": "UpdateDagRunState",
+        "type": "object"
       },
       {
         "id": "schema:UpdateTaskInstance",
         "kind": "schema",
-        "name": "UpdateTaskInstance"
+        "name": "UpdateTaskInstance",
+        "type": "object"
       },
       {
         "id": "schema:UpdateTaskInstancesState",
         "kind": "schema",
-        "name": "UpdateTaskInstancesState"
+        "name": "UpdateTaskInstancesState",
+        "type": "object"
       },
       {
+        "description": "A user object with sensitive data.",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "UserCollectionItem|object"
       },
       {
+        "description": "Collection of users.",
         "id": "schema:UserCollection",
         "kind": "schema",
-        "name": "UserCollection"
+        "name": "UserCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "A user object.",
         "id": "schema:UserCollectionItem",
         "kind": "schema",
-        "name": "UserCollectionItem"
+        "name": "UserCollectionItem",
+        "type": "object"
       },
       {
+        "description": "Full representation of Variable",
         "id": "schema:Variable",
         "kind": "schema",
-        "name": "Variable"
+        "name": "Variable",
+        "type": "VariableCollectionItem|object"
       },
       {
+        "description": "Collection of variables.",
         "id": "schema:VariableCollection",
         "kind": "schema",
-        "name": "VariableCollection"
+        "name": "VariableCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "XCom entry collection item.",
         "id": "schema:VariableCollectionItem",
         "kind": "schema",
-        "name": "VariableCollectionItem"
+        "name": "VariableCollectionItem",
+        "type": "object"
       },
       {
+        "description": "Version information.",
         "id": "schema:VersionInfo",
         "kind": "schema",
-        "name": "VersionInfo"
+        "name": "VersionInfo",
+        "type": "object"
       },
       {
+        "description": "Weight rule.",
         "id": "schema:WeightRule",
         "kind": "schema",
-        "name": "WeightRule"
+        "name": "WeightRule",
+        "type": "string"
       },
       {
+        "description": "Full representations of XCom entry.",
         "id": "schema:XCom",
         "kind": "schema",
-        "name": "XCom"
+        "name": "XCom",
+        "type": "XComCollectionItem|object"
       },
       {
+        "description": "Collection of XCom entries.",
         "id": "schema:XComCollection",
         "kind": "schema",
-        "name": "XComCollection"
+        "name": "XComCollection",
+        "type": "object|CollectionInfo"
       },
       {
+        "description": "XCom entry collection item.",
         "id": "schema:XComCollectionItem",
         "kind": "schema",
-        "name": "XComCollectionItem"
+        "name": "XComCollectionItem",
+        "type": "object"
       }
     ]
   },

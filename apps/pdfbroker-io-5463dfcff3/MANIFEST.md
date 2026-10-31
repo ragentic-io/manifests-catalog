@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `624499f4950daf8f46dce04ce42145abb61324054251740f6875d0ac0c1b7d42` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 17 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/pdf` | get /api/pdf | Basic method to verify api is up and running |
-| POST | `/api/pdf/pdfconcat` | post /api/pdf/pdfconcat | Concatenate multiple pdf files into single pdf file.. |
-| POST | `/api/pdf/pdftoimage` | post /api/pdf/pdftoimage | Generate an image of to provided pdf file |
-| POST | `/api/pdf/pdfwritestring` | post /api/pdf/pdfwritestring | Write text on a page in a pdf document. |
-| POST | `/api/pdf/wkhtmltopdf` | post /api/pdf/wkhtmltopdf | Generate pdf file from url using the excellent tool wkhtmltopdf. |
-| POST | `/api/pdf/xslfo` | post /api/pdf/xslfo | Create pdf-file from complete XSL-FO document. |
-| POST | `/api/pdf/xslfowithtransform` | post /api/pdf/xslfowithtransform | Create pdf-file from transforming xml document with Xsl-Fo transform document. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/pdf` | get /api/pdf | — | — | yes | Basic method to verify api is up and running |
+| POST | `/api/pdf/pdfconcat` | post /api/pdf/pdfconcat | body: PdfConcatenationRequestDto | PdfResponseDto |  | Concatenate multiple pdf files into single pdf file.. |
+| POST | `/api/pdf/pdftoimage` | post /api/pdf/pdftoimage | body: PdfToImageRequestDto | ImageResponseDto |  | Generate an image of to provided pdf file |
+| POST | `/api/pdf/pdfwritestring` | post /api/pdf/pdfwritestring | body: PdfWriteStringRequestDto | PdfResponseDto |  | Write text on a page in a pdf document. |
+| POST | `/api/pdf/wkhtmltopdf` | post /api/pdf/wkhtmltopdf | body: WkHtmlToPdfRequestDto | PdfResponseDto |  | Generate pdf file from url using the excellent tool wkhtmltopdf. |
+| POST | `/api/pdf/xslfo` | post /api/pdf/xslfo | body: FoRequestDto | PdfResponseDto |  | Create pdf-file from complete XSL-FO document. |
+| POST | `/api/pdf/xslfowithtransform` | post /api/pdf/xslfowithtransform | body: FoTransformRequestDto | PdfResponseDto |  | Create pdf-file from transforming xml document with Xsl-Fo transform document. |

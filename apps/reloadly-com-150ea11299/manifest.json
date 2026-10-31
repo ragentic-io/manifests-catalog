@@ -28,17 +28,37 @@
         "name": "List All Questions",
         "path": "/questions",
         "pointer": "#/paths/~1questions/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "List All Questions"
       },
       {
         "deprecated": false,
+        "description": "You may create your own question using this action.",
         "id": "operation:post:/questions",
         "kind": "operation",
         "method": "post",
         "name": "Create a New Question",
         "path": "/questions",
         "pointer": "#/paths/~1questions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Create a New Question"
       },

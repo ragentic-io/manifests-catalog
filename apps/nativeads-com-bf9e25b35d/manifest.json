@@ -23,6 +23,56 @@
         "from": "nativeads-com-bf9e25b35d",
         "kind": "EXPOSES",
         "to": "operation:get:/publisher/reports/widget"
+      },
+      {
+        "from": "operation:post:/auth/default/login",
+        "kind": "RETURNS",
+        "to": "schema:authResponse"
+      },
+      {
+        "from": "operation:get:/publisher/reports/daily",
+        "kind": "RETURNS",
+        "to": "schema:reportsDailyResponse"
+      },
+      {
+        "from": "operation:get:/publisher/reports/website",
+        "kind": "RETURNS",
+        "to": "schema:reportsWebsiteResponse"
+      },
+      {
+        "from": "operation:get:/publisher/reports/widget",
+        "kind": "RETURNS",
+        "to": "schema:reportsWidgetResponse"
+      },
+      {
+        "from": "schema:reportsDailyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:reportsDailyItem"
+      },
+      {
+        "from": "schema:reportsDailyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:totals"
+      },
+      {
+        "from": "schema:reportsWebsiteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:reportsWebsiteItem"
+      },
+      {
+        "from": "schema:reportsWebsiteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:totals"
+      },
+      {
+        "from": "schema:reportsWidgetResponse",
+        "kind": "REFERENCES",
+        "to": "schema:reportsWidgetItem"
+      },
+      {
+        "from": "schema:reportsWidgetResponse",
+        "kind": "REFERENCES",
+        "to": "schema:totals"
       }
     ],
     "nodes": [
@@ -32,92 +82,294 @@
       },
       {
         "deprecated": false,
+        "description": "Returns Native Ads Publisher API token",
         "id": "operation:post:/auth/default/login",
         "kind": "operation",
         "method": "post",
         "name": "post /auth/default/login",
+        "parameters": [
+          {
+            "description": "Native Ads Publisher username",
+            "in": "formData",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Native Ads Publisher password",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/auth/default/login",
         "pointer": "#/paths/~1auth~1default~1login/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "authResponse"
+          },
+          {
+            "status": "400",
+            "type": "modelError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns publisher statistics split by date",
         "id": "operation:get:/publisher/reports/daily",
         "kind": "operation",
         "method": "get",
         "name": "get /publisher/reports/daily",
+        "parameters": [
+          {
+            "description": "Native Ads Publisher API authentication token",
+            "in": "query",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "start date in format YYYY-MM-DD",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "end date in format YYYY-MM-DD",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "default": 100,
+            "description": "maximum number of results per page",
+            "in": "query",
+            "name": "limit",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "page number",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/publisher/reports/daily",
         "pointer": "#/paths/~1publisher~1reports~1daily/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "reportsDailyResponse"
+          },
+          {
+            "status": "400",
+            "type": "modelError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns publisher statistics split by website",
         "id": "operation:get:/publisher/reports/website",
         "kind": "operation",
         "method": "get",
         "name": "get /publisher/reports/website",
+        "parameters": [
+          {
+            "description": "Native Ads Publisher API authentication token",
+            "in": "query",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "start date in format YYYY-MM-DD",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "end date in format YYYY-MM-DD",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "default": 100,
+            "description": "maximum number of results per page",
+            "in": "query",
+            "name": "limit",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "page number",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/publisher/reports/website",
         "pointer": "#/paths/~1publisher~1reports~1website/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "reportsWebsiteResponse"
+          },
+          {
+            "status": "400",
+            "type": "modelError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns publisher statistics split by widget",
         "id": "operation:get:/publisher/reports/widget",
         "kind": "operation",
         "method": "get",
         "name": "get /publisher/reports/widget",
+        "parameters": [
+          {
+            "description": "Native Ads Publisher API authentication token",
+            "in": "query",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "start date in format YYYY-MM-DD",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "end date in format YYYY-MM-DD",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "default": 100,
+            "description": "maximum number of results per page",
+            "in": "query",
+            "name": "limit",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "page number",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/publisher/reports/widget",
         "pointer": "#/paths/~1publisher~1reports~1widget/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "reportsWidgetResponse"
+          },
+          {
+            "status": "400",
+            "type": "modelError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "reports"
+        ]
       },
       {
         "id": "schema:authResponse",
         "kind": "schema",
-        "name": "authResponse"
+        "name": "authResponse",
+        "type": "object"
       },
       {
         "id": "schema:modelError",
         "kind": "schema",
-        "name": "modelError"
+        "name": "modelError",
+        "type": "object"
       },
       {
         "id": "schema:reportsDailyItem",
         "kind": "schema",
-        "name": "reportsDailyItem"
+        "name": "reportsDailyItem",
+        "type": "object"
       },
       {
         "id": "schema:reportsDailyResponse",
         "kind": "schema",
-        "name": "reportsDailyResponse"
+        "name": "reportsDailyResponse",
+        "type": "object"
       },
       {
         "id": "schema:reportsWebsiteItem",
         "kind": "schema",
-        "name": "reportsWebsiteItem"
+        "name": "reportsWebsiteItem",
+        "type": "object"
       },
       {
         "id": "schema:reportsWebsiteResponse",
         "kind": "schema",
-        "name": "reportsWebsiteResponse"
+        "name": "reportsWebsiteResponse",
+        "type": "object"
       },
       {
         "id": "schema:reportsWidgetItem",
         "kind": "schema",
-        "name": "reportsWidgetItem"
+        "name": "reportsWidgetItem",
+        "type": "object"
       },
       {
         "id": "schema:reportsWidgetResponse",
         "kind": "schema",
-        "name": "reportsWidgetResponse"
+        "name": "reportsWidgetResponse",
+        "type": "object"
       },
       {
         "id": "schema:totals",
         "kind": "schema",
-        "name": "totals"
+        "name": "totals",
+        "type": "object"
       }
     ]
   },

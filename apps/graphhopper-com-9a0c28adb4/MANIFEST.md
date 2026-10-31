@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_graphhopper_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `6da1c8010cd5590c7daf952ed43c4a5b397f8c97c56396b4531630b1cc9ccc16` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_graphhopper_profile
 
 56 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/cluster` | solveClusteringProblem | POST Cluster Endpoint |
-| POST | `/cluster/calculate` | asyncClusteringProblem | Batch Cluster Endpoint |
-| GET | `/cluster/solution/{jobId}` | getClusterSolution | GET Batch Solution Endpoint |
-| GET | `/geocode` | getGeocode | Geocoding Endpoint |
-| GET | `/isochrone` | getIsochrone | Isochrone Endpoint |
-| POST | `/match` | postGPX | Map-match a GPX file |
-| GET | `/matrix` | getMatrix | GET Matrix Endpoint |
-| POST | `/matrix` | postMatrix | POST Matrix Endpoint |
-| POST | `/matrix/calculate` | calculateMatrix | Batch Matrix Endpoint |
-| GET | `/matrix/solution/{jobId}` | getMatrixSolution | GET Batch Matrix Endpoint |
-| GET | `/route` | getRoute | GET Route Endpoint |
-| POST | `/route` | postRoute | POST Route Endpoint |
-| GET | `/route/info` | get /route/info | Coverage information |
-| POST | `/vrp` | solveVRP | POST route optimization problem |
-| POST | `/vrp/optimize` | asyncVRP | POST route optimization problem (batch mode) |
-| GET | `/vrp/solution/{jobId}` | getSolution | GET the solution (batch mode) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/cluster` | solveClusteringProblem | body*: ClusterRequest | ClusterResponse |  | POST Cluster Endpoint |
+| POST | `/cluster/calculate` | asyncClusteringProblem | body*: ClusterRequest | JobId |  | Batch Cluster Endpoint |
+| GET | `/cluster/solution/{jobId}` | getClusterSolution | `jobId`* | ClusterResponse | yes | GET Batch Solution Endpoint |
+| GET | `/geocode` | getGeocode | `q`, `locale`, `limit`, `reverse`, `debug`, `point`, `provider` | GeocodingResponse | yes | Geocoding Endpoint |
+| GET | `/isochrone` | getIsochrone | `point`*, `time_limit`, `distance_limit`, `vehicle`, `buckets`, `reverse_flow`, `weighting` | IsochroneResponse | yes | Isochrone Endpoint |
+| POST | `/match` | postGPX | `gps_accuracy`, `vehicle` | RouteResponse |  | Map-match a GPX file |
+| GET | `/matrix` | getMatrix | `point`, `from_point`, `to_point`, `point_hint`, `from_point_hint`, `to_point_hint`, `snap_prevention`, `curbside`, `from_curbside`, `to_curbside`, `out_array`, `vehicle`, `fail_fast`, `turn_costs` | MatrixResponse | yes | GET Matrix Endpoint |
+| POST | `/matrix` | postMatrix | body: MatrixRequest\|SymmetricalMatrixRequest | MatrixResponse |  | POST Matrix Endpoint |
+| POST | `/matrix/calculate` | calculateMatrix | body: MatrixRequest\|SymmetricalMatrixRequest | JobId |  | Batch Matrix Endpoint |
+| GET | `/matrix/solution/{jobId}` | getMatrixSolution | `jobId`* | MatrixResponse | yes | GET Batch Matrix Endpoint |
+| GET | `/route` | getRoute | `point`*, `point_hint`, `snap_prevention`, `vehicle`, `curbside`, `turn_costs`, `locale`, `elevation`, `details`, `optimize`, `instructions`, `calc_points`, `debug`, `points_encoded`, `ch.disable`, `weighting`, `heading`, `heading_penalty`, `pass_through`, `block_area`, `avoid`, `algorithm`, `round_trip.distance`, `round_trip.seed`, `alternative_route.max_paths`, `alternative_route.max_weight_factor`, `alternative_route.max_share_factor` | RouteResponse | yes | GET Route Endpoint |
+| POST | `/route` | postRoute | body: RouteRequest | RouteResponse |  | POST Route Endpoint |
+| GET | `/route/info` | get /route/info | — | InfoResponse | yes | Coverage information |
+| POST | `/vrp` | solveVRP | body*: Request | Response |  | POST route optimization problem |
+| POST | `/vrp/optimize` | asyncVRP | body*: Request | JobId |  | POST route optimization problem (batch mode) |
+| GET | `/vrp/solution/{jobId}` | getSolution | `jobId`* | Response | yes | GET the solution (batch mode) |

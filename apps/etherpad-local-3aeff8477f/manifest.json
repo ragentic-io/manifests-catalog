@@ -496,14 +496,62 @@
         "kind": "operation",
         "method": "get",
         "name": "appendChatMessageUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "time",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/appendChatMessage",
         "pointer": "#/paths/~1appendChatMessage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "appends a chat message"
+        "summary": "appends a chat message",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -511,14 +559,62 @@
         "kind": "operation",
         "method": "post",
         "name": "appendChatMessageUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "time",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/appendChatMessage",
         "pointer": "#/paths/~1appendChatMessage/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "appends a chat message"
+        "summary": "appends a chat message",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -526,8 +622,41 @@
         "kind": "operation",
         "method": "get",
         "name": "appendTextUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/appendText",
         "pointer": "#/paths/~1appendText/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -541,8 +670,41 @@
         "kind": "operation",
         "method": "post",
         "name": "appendTextUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/appendText",
         "pointer": "#/paths/~1appendText/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -558,12 +720,34 @@
         "name": "checkTokenUsingGET",
         "path": "/checkToken",
         "pointer": "#/paths/~1checkToken/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns ok when the current api token is valid"
+        "summary": "returns ok when the current api token is valid",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -573,12 +757,34 @@
         "name": "checkTokenUsingPOST",
         "path": "/checkToken",
         "pointer": "#/paths/~1checkToken/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns ok when the current api token is valid"
+        "summary": "returns ok when the current api token is valid",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -586,8 +792,47 @@
         "kind": "operation",
         "method": "get",
         "name": "copyPadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sourceID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "destinationID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/copyPad",
         "pointer": "#/paths/~1copyPad/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -601,8 +846,47 @@
         "kind": "operation",
         "method": "post",
         "name": "copyPadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sourceID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "destinationID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/copyPad",
         "pointer": "#/paths/~1copyPad/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -616,8 +900,47 @@
         "kind": "operation",
         "method": "get",
         "name": "copyPadWithoutHistoryUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sourceID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "destinationID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/copyPadWithoutHistory",
         "pointer": "#/paths/~1copyPadWithoutHistory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -631,8 +954,47 @@
         "kind": "operation",
         "method": "post",
         "name": "copyPadWithoutHistoryUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sourceID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "destinationID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/copyPadWithoutHistory",
         "pointer": "#/paths/~1copyPadWithoutHistory/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -646,14 +1008,44 @@
         "kind": "operation",
         "method": "get",
         "name": "createAuthorUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createAuthor",
         "pointer": "#/paths/~1createAuthor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new author"
+        "summary": "creates a new author",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -661,14 +1053,44 @@
         "kind": "operation",
         "method": "post",
         "name": "createAuthorUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createAuthor",
         "pointer": "#/paths/~1createAuthor/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new author"
+        "summary": "creates a new author",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -676,14 +1098,50 @@
         "kind": "operation",
         "method": "get",
         "name": "createAuthorIfNotExistsForUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorMapper",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createAuthorIfNotExistsFor",
         "pointer": "#/paths/~1createAuthorIfNotExistsFor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "this functions helps you to map your application author ids to Etherpad author ids"
+        "summary": "this functions helps you to map your application author ids to Etherpad author ids",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -691,14 +1149,50 @@
         "kind": "operation",
         "method": "post",
         "name": "createAuthorIfNotExistsForUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorMapper",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createAuthorIfNotExistsFor",
         "pointer": "#/paths/~1createAuthorIfNotExistsFor/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "this functions helps you to map your application author ids to Etherpad author ids"
+        "summary": "this functions helps you to map your application author ids to Etherpad author ids",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -706,14 +1200,56 @@
         "kind": "operation",
         "method": "get",
         "name": "createDiffHTMLUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startRev",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endRev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createDiffHTML",
         "pointer": "#/paths/~1createDiffHTML/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -721,14 +1257,56 @@
         "kind": "operation",
         "method": "post",
         "name": "createDiffHTMLUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startRev",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endRev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createDiffHTML",
         "pointer": "#/paths/~1createDiffHTML/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -738,12 +1316,34 @@
         "name": "createGroupUsingGET",
         "path": "/createGroup",
         "pointer": "#/paths/~1createGroup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new group"
+        "summary": "creates a new group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -753,12 +1353,34 @@
         "name": "createGroupUsingPOST",
         "path": "/createGroup",
         "pointer": "#/paths/~1createGroup/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new group"
+        "summary": "creates a new group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -766,14 +1388,44 @@
         "kind": "operation",
         "method": "get",
         "name": "createGroupIfNotExistsForUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupMapper",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createGroupIfNotExistsFor",
         "pointer": "#/paths/~1createGroupIfNotExistsFor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "this functions helps you to map your application group ids to Etherpad group ids"
+        "summary": "this functions helps you to map your application group ids to Etherpad group ids",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -781,14 +1433,44 @@
         "kind": "operation",
         "method": "post",
         "name": "createGroupIfNotExistsForUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupMapper",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createGroupIfNotExistsFor",
         "pointer": "#/paths/~1createGroupIfNotExistsFor/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "this functions helps you to map your application group ids to Etherpad group ids"
+        "summary": "this functions helps you to map your application group ids to Etherpad group ids",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -796,14 +1478,56 @@
         "kind": "operation",
         "method": "get",
         "name": "createGroupPadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "padName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createGroupPad",
         "pointer": "#/paths/~1createGroupPad/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new pad in this group"
+        "summary": "creates a new pad in this group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -811,44 +1535,160 @@
         "kind": "operation",
         "method": "post",
         "name": "createGroupPadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "padName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createGroupPad",
         "pointer": "#/paths/~1createGroupPad/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new pad in this group"
+        "summary": "creates a new pad in this group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
+        "description": "creates a new (non-group) pad.",
         "id": "operation:get:/createPad",
         "kind": "operation",
         "method": "get",
         "name": "createPadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createPad",
         "pointer": "#/paths/~1createPad/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
+        "description": "creates a new (non-group) pad.",
         "id": "operation:post:/createPad",
         "kind": "operation",
         "method": "post",
         "name": "createPadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createPad",
         "pointer": "#/paths/~1createPad/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -856,14 +1696,56 @@
         "kind": "operation",
         "method": "get",
         "name": "createSessionUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "validUntil",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createSession",
         "pointer": "#/paths/~1createSession/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new session. validUntil is an unix timestamp in seconds"
+        "summary": "creates a new session. validUntil is an unix timestamp in seconds",
+        "tags": [
+          "session"
+        ]
       },
       {
         "deprecated": false,
@@ -871,14 +1753,56 @@
         "kind": "operation",
         "method": "post",
         "name": "createSessionUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "validUntil",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/createSession",
         "pointer": "#/paths/~1createSession/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "creates a new session. validUntil is an unix timestamp in seconds"
+        "summary": "creates a new session. validUntil is an unix timestamp in seconds",
+        "tags": [
+          "session"
+        ]
       },
       {
         "deprecated": false,
@@ -886,14 +1810,44 @@
         "kind": "operation",
         "method": "get",
         "name": "deleteGroupUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/deleteGroup",
         "pointer": "#/paths/~1deleteGroup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "deletes a group"
+        "summary": "deletes a group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -901,14 +1855,44 @@
         "kind": "operation",
         "method": "post",
         "name": "deleteGroupUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/deleteGroup",
         "pointer": "#/paths/~1deleteGroup/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "deletes a group"
+        "summary": "deletes a group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -916,14 +1900,44 @@
         "kind": "operation",
         "method": "get",
         "name": "deletePadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/deletePad",
         "pointer": "#/paths/~1deletePad/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "deletes a pad"
+        "summary": "deletes a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -931,14 +1945,44 @@
         "kind": "operation",
         "method": "post",
         "name": "deletePadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/deletePad",
         "pointer": "#/paths/~1deletePad/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "deletes a pad"
+        "summary": "deletes a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -946,14 +1990,44 @@
         "kind": "operation",
         "method": "get",
         "name": "deleteSessionUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sessionID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/deleteSession",
         "pointer": "#/paths/~1deleteSession/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "deletes a session"
+        "summary": "deletes a session",
+        "tags": [
+          "session"
+        ]
       },
       {
         "deprecated": false,
@@ -961,14 +2035,44 @@
         "kind": "operation",
         "method": "post",
         "name": "deleteSessionUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sessionID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/deleteSession",
         "pointer": "#/paths/~1deleteSession/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "deletes a session"
+        "summary": "deletes a session",
+        "tags": [
+          "session"
+        ]
       },
       {
         "deprecated": false,
@@ -976,8 +2080,35 @@
         "kind": "operation",
         "method": "get",
         "name": "getAttributePoolUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getAttributePool",
         "pointer": "#/paths/~1getAttributePool/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -991,8 +2122,35 @@
         "kind": "operation",
         "method": "post",
         "name": "getAttributePoolUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getAttributePool",
         "pointer": "#/paths/~1getAttributePool/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1006,14 +2164,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getAuthorNameUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getAuthorName",
         "pointer": "#/paths/~1getAuthorName/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Returns the Author Name of the author"
+        "summary": "Returns the Author Name of the author",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -1021,14 +2209,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getAuthorNameUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getAuthorName",
         "pointer": "#/paths/~1getAuthorName/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "Returns the Author Name of the author"
+        "summary": "Returns the Author Name of the author",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -1036,14 +2254,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getChatHeadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getChatHead",
         "pointer": "#/paths/~1getChatHead/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the chatHead (chat-message) of the pad"
+        "summary": "returns the chatHead (chat-message) of the pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1051,14 +2299,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getChatHeadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getChatHead",
         "pointer": "#/paths/~1getChatHead/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the chatHead (chat-message) of the pad"
+        "summary": "returns the chatHead (chat-message) of the pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1066,14 +2344,56 @@
         "kind": "operation",
         "method": "get",
         "name": "getChatHistoryUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getChatHistory",
         "pointer": "#/paths/~1getChatHistory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the chat history"
+        "summary": "returns the chat history",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1081,14 +2401,56 @@
         "kind": "operation",
         "method": "post",
         "name": "getChatHistoryUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getChatHistory",
         "pointer": "#/paths/~1getChatHistory/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the chat history"
+        "summary": "returns the chat history",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1096,14 +2458,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getHTMLUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getHTML",
         "pointer": "#/paths/~1getHTML/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the text of a pad formatted as HTML"
+        "summary": "returns the text of a pad formatted as HTML",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1111,14 +2509,50 @@
         "kind": "operation",
         "method": "post",
         "name": "getHTMLUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getHTML",
         "pointer": "#/paths/~1getHTML/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the text of a pad formatted as HTML"
+        "summary": "returns the text of a pad formatted as HTML",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1126,14 +2560,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getLastEditedUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getLastEdited",
         "pointer": "#/paths/~1getLastEdited/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the timestamp of the last revision of the pad"
+        "summary": "returns the timestamp of the last revision of the pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1141,14 +2605,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getLastEditedUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getLastEdited",
         "pointer": "#/paths/~1getLastEdited/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the timestamp of the last revision of the pad"
+        "summary": "returns the timestamp of the last revision of the pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1156,8 +2650,35 @@
         "kind": "operation",
         "method": "get",
         "name": "getPadIDUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "roID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getPadID",
         "pointer": "#/paths/~1getPadID/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1171,8 +2692,35 @@
         "kind": "operation",
         "method": "post",
         "name": "getPadIDUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "roID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getPadID",
         "pointer": "#/paths/~1getPadID/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1186,14 +2734,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getPublicStatusUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getPublicStatus",
         "pointer": "#/paths/~1getPublicStatus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "return true of false"
+        "summary": "return true of false",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1201,14 +2779,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getPublicStatusUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getPublicStatus",
         "pointer": "#/paths/~1getPublicStatus/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "return true of false"
+        "summary": "return true of false",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1216,14 +2824,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getReadOnlyIDUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getReadOnlyID",
         "pointer": "#/paths/~1getReadOnlyID/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the read only link of a pad"
+        "summary": "returns the read only link of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1231,14 +2869,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getReadOnlyIDUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getReadOnlyID",
         "pointer": "#/paths/~1getReadOnlyID/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the read only link of a pad"
+        "summary": "returns the read only link of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1246,8 +2914,41 @@
         "kind": "operation",
         "method": "get",
         "name": "getRevisionChangesetUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getRevisionChangeset",
         "pointer": "#/paths/~1getRevisionChangeset/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1261,8 +2962,41 @@
         "kind": "operation",
         "method": "post",
         "name": "getRevisionChangesetUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getRevisionChangeset",
         "pointer": "#/paths/~1getRevisionChangeset/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1276,14 +3010,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getRevisionsCountUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getRevisionsCount",
         "pointer": "#/paths/~1getRevisionsCount/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the number of revisions of this pad"
+        "summary": "returns the number of revisions of this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1291,14 +3055,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getRevisionsCountUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getRevisionsCount",
         "pointer": "#/paths/~1getRevisionsCount/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the number of revisions of this pad"
+        "summary": "returns the number of revisions of this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1306,8 +3100,35 @@
         "kind": "operation",
         "method": "get",
         "name": "getSavedRevisionsCountUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getSavedRevisionsCount",
         "pointer": "#/paths/~1getSavedRevisionsCount/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1321,8 +3142,35 @@
         "kind": "operation",
         "method": "post",
         "name": "getSavedRevisionsCountUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getSavedRevisionsCount",
         "pointer": "#/paths/~1getSavedRevisionsCount/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1336,14 +3184,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getSessionInfoUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sessionID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getSessionInfo",
         "pointer": "#/paths/~1getSessionInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns informations about a session"
+        "summary": "returns informations about a session",
+        "tags": [
+          "session"
+        ]
       },
       {
         "deprecated": false,
@@ -1351,14 +3229,44 @@
         "kind": "operation",
         "method": "post",
         "name": "getSessionInfoUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sessionID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getSessionInfo",
         "pointer": "#/paths/~1getSessionInfo/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns informations about a session"
+        "summary": "returns informations about a session",
+        "tags": [
+          "session"
+        ]
       },
       {
         "deprecated": false,
@@ -1368,6 +3276,25 @@
         "name": "getStatsUsingGET",
         "path": "/getStats",
         "pointer": "#/paths/~1getStats/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1383,6 +3310,25 @@
         "name": "getStatsUsingPOST",
         "path": "/getStats",
         "pointer": "#/paths/~1getStats/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1396,14 +3342,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getTextUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getText",
         "pointer": "#/paths/~1getText/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the text of a pad"
+        "summary": "returns the text of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1411,14 +3393,50 @@
         "kind": "operation",
         "method": "post",
         "name": "getTextUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getText",
         "pointer": "#/paths/~1getText/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the text of a pad"
+        "summary": "returns the text of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1428,12 +3446,34 @@
         "name": "listAllGroupsUsingGET",
         "path": "/listAllGroups",
         "pointer": "#/paths/~1listAllGroups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -1443,12 +3483,34 @@
         "name": "listAllGroupsUsingPOST",
         "path": "/listAllGroups",
         "pointer": "#/paths/~1listAllGroups/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -1458,12 +3520,34 @@
         "name": "listAllPadsUsingGET",
         "path": "/listAllPads",
         "pointer": "#/paths/~1listAllPads/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "list all the pads"
+        "summary": "list all the pads",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1473,12 +3557,34 @@
         "name": "listAllPadsUsingPOST",
         "path": "/listAllPads",
         "pointer": "#/paths/~1listAllPads/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "list all the pads"
+        "summary": "list all the pads",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1486,14 +3592,44 @@
         "kind": "operation",
         "method": "get",
         "name": "listAuthorsOfPadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listAuthorsOfPad",
         "pointer": "#/paths/~1listAuthorsOfPad/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns an array of authors who contributed to this pad"
+        "summary": "returns an array of authors who contributed to this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1501,14 +3637,44 @@
         "kind": "operation",
         "method": "post",
         "name": "listAuthorsOfPadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listAuthorsOfPad",
         "pointer": "#/paths/~1listAuthorsOfPad/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns an array of authors who contributed to this pad"
+        "summary": "returns an array of authors who contributed to this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1516,14 +3682,44 @@
         "kind": "operation",
         "method": "get",
         "name": "listPadsUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listPads",
         "pointer": "#/paths/~1listPads/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns all pads of this group"
+        "summary": "returns all pads of this group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -1531,14 +3727,44 @@
         "kind": "operation",
         "method": "post",
         "name": "listPadsUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listPads",
         "pointer": "#/paths/~1listPads/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns all pads of this group"
+        "summary": "returns all pads of this group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -1546,14 +3772,44 @@
         "kind": "operation",
         "method": "get",
         "name": "listPadsOfAuthorUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listPadsOfAuthor",
         "pointer": "#/paths/~1listPadsOfAuthor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns an array of all pads this author contributed to"
+        "summary": "returns an array of all pads this author contributed to",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -1561,14 +3817,44 @@
         "kind": "operation",
         "method": "post",
         "name": "listPadsOfAuthorUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listPadsOfAuthor",
         "pointer": "#/paths/~1listPadsOfAuthor/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns an array of all pads this author contributed to"
+        "summary": "returns an array of all pads this author contributed to",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -1576,8 +3862,35 @@
         "kind": "operation",
         "method": "get",
         "name": "listSavedRevisionsUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listSavedRevisions",
         "pointer": "#/paths/~1listSavedRevisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1591,8 +3904,35 @@
         "kind": "operation",
         "method": "post",
         "name": "listSavedRevisionsUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listSavedRevisions",
         "pointer": "#/paths/~1listSavedRevisions/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1606,14 +3946,44 @@
         "kind": "operation",
         "method": "get",
         "name": "listSessionsOfAuthorUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listSessionsOfAuthor",
         "pointer": "#/paths/~1listSessionsOfAuthor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns all sessions of an author"
+        "summary": "returns all sessions of an author",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -1621,14 +3991,44 @@
         "kind": "operation",
         "method": "post",
         "name": "listSessionsOfAuthorUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listSessionsOfAuthor",
         "pointer": "#/paths/~1listSessionsOfAuthor/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns all sessions of an author"
+        "summary": "returns all sessions of an author",
+        "tags": [
+          "author"
+        ]
       },
       {
         "deprecated": false,
@@ -1636,14 +4036,44 @@
         "kind": "operation",
         "method": "get",
         "name": "listSessionsOfGroupUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listSessionsOfGroup",
         "pointer": "#/paths/~1listSessionsOfGroup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -1651,14 +4081,44 @@
         "kind": "operation",
         "method": "post",
         "name": "listSessionsOfGroupUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listSessionsOfGroup",
         "pointer": "#/paths/~1listSessionsOfGroup/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
@@ -1666,8 +4126,47 @@
         "kind": "operation",
         "method": "get",
         "name": "movePadUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sourceID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "destinationID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/movePad",
         "pointer": "#/paths/~1movePad/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1681,8 +4180,47 @@
         "kind": "operation",
         "method": "post",
         "name": "movePadUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sourceID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "destinationID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/movePad",
         "pointer": "#/paths/~1movePad/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1696,14 +4234,44 @@
         "kind": "operation",
         "method": "get",
         "name": "padUsersUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/padUsers",
         "pointer": "#/paths/~1padUsers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the list of users that are currently editing this pad"
+        "summary": "returns the list of users that are currently editing this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1711,14 +4279,44 @@
         "kind": "operation",
         "method": "post",
         "name": "padUsersUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/padUsers",
         "pointer": "#/paths/~1padUsers/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the list of users that are currently editing this pad"
+        "summary": "returns the list of users that are currently editing this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1726,14 +4324,44 @@
         "kind": "operation",
         "method": "get",
         "name": "padUsersCountUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/padUsersCount",
         "pointer": "#/paths/~1padUsersCount/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the number of user that are currently editing this pad"
+        "summary": "returns the number of user that are currently editing this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1741,14 +4369,44 @@
         "kind": "operation",
         "method": "post",
         "name": "padUsersCountUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/padUsersCount",
         "pointer": "#/paths/~1padUsersCount/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "returns the number of user that are currently editing this pad"
+        "summary": "returns the number of user that are currently editing this pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1756,8 +4414,41 @@
         "kind": "operation",
         "method": "get",
         "name": "restoreRevisionUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/restoreRevision",
         "pointer": "#/paths/~1restoreRevision/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1771,8 +4462,41 @@
         "kind": "operation",
         "method": "post",
         "name": "restoreRevisionUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/restoreRevision",
         "pointer": "#/paths/~1restoreRevision/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1786,8 +4510,41 @@
         "kind": "operation",
         "method": "get",
         "name": "saveRevisionUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/saveRevision",
         "pointer": "#/paths/~1saveRevision/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
@@ -1801,8 +4558,41 @@
         "kind": "operation",
         "method": "post",
         "name": "saveRevisionUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rev",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/saveRevision",
         "pointer": "#/paths/~1saveRevision/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
@@ -1816,14 +4606,50 @@
         "kind": "operation",
         "method": "get",
         "name": "sendClientsMessageUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "msg",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sendClientsMessage",
         "pointer": "#/paths/~1sendClientsMessage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sends a custom message of type msg to the pad"
+        "summary": "sends a custom message of type msg to the pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1831,14 +4657,50 @@
         "kind": "operation",
         "method": "post",
         "name": "sendClientsMessageUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "msg",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sendClientsMessage",
         "pointer": "#/paths/~1sendClientsMessage/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sends a custom message of type msg to the pad"
+        "summary": "sends a custom message of type msg to the pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1846,14 +4708,50 @@
         "kind": "operation",
         "method": "get",
         "name": "setHTMLUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "html",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setHTML",
         "pointer": "#/paths/~1setHTML/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sets the text of a pad with HTML"
+        "summary": "sets the text of a pad with HTML",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1861,14 +4759,50 @@
         "kind": "operation",
         "method": "post",
         "name": "setHTMLUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "html",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setHTML",
         "pointer": "#/paths/~1setHTML/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sets the text of a pad with HTML"
+        "summary": "sets the text of a pad with HTML",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1876,14 +4810,50 @@
         "kind": "operation",
         "method": "get",
         "name": "setPublicStatusUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "publicStatus",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setPublicStatus",
         "pointer": "#/paths/~1setPublicStatus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sets a boolean for the public status of a pad"
+        "summary": "sets a boolean for the public status of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1891,14 +4861,50 @@
         "kind": "operation",
         "method": "post",
         "name": "setPublicStatusUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "publicStatus",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setPublicStatus",
         "pointer": "#/paths/~1setPublicStatus/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sets a boolean for the public status of a pad"
+        "summary": "sets a boolean for the public status of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1906,14 +4912,50 @@
         "kind": "operation",
         "method": "get",
         "name": "setTextUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setText",
         "pointer": "#/paths/~1setText/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sets the text of a pad"
+        "summary": "sets the text of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "deprecated": false,
@@ -1921,29 +4963,68 @@
         "kind": "operation",
         "method": "post",
         "name": "setTextUsingPOST",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "padID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setText",
         "pointer": "#/paths/~1setText/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKey": []
           }
         ],
-        "summary": "sets the text of a pad"
+        "summary": "sets the text of a pad",
+        "tags": [
+          "pad"
+        ]
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:SessionInfo",
         "kind": "schema",
-        "name": "SessionInfo"
+        "name": "SessionInfo",
+        "type": "object"
       },
       {
         "id": "schema:UserInfo",
         "kind": "schema",
-        "name": "UserInfo"
+        "name": "UserInfo",
+        "type": "object"
       }
     ]
   },

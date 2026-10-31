@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_50
 
 | | |
 | --- | --- |
-| Signed bundle | `b5fbbba2159554940b073678234d495f6b2bfa601d718eab337b663e354c7931` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,34 +34,36 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_50
 
 20 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | get /account | Account Resource |
-| GET | `/buckets` | get /buckets | Returns a list of buckets. |
-| POST | `/buckets` | post /buckets | Create a new bucket |
-| DELETE | `/buckets/{bucketKey}` | delete /buckets/{bucketKey} | Delete a single bucket resource. |
-| GET | `/buckets/{bucketKey}` | get /buckets/{bucketKey} | Returns a single bucket resource. |
-| GET | `/buckets/{bucketKey}/environments` | get /buckets/{bucketKey}/environments | Returns list of shared environments for a specified bucket. |
-| POST | `/buckets/{bucketKey}/environments` | post /buckets/{bucketKey}/environments | Create new shared environment. |
-| PUT | `/buckets/{bucketKey}/environments/{environmentId}` | put /buckets/{bucketKey}/environments/{environmentId} | Update the details of a shared environment. |
-| GET | `/buckets/{bucketKey}/errors` | get /buckets/{bucketKey}/errors | Retrieve a list of error messages in a bucket |
-| DELETE | `/buckets/{bucketKey}/messages` | delete /buckets/{bucketKey}/messages | Clear a bucket (remove all messages). |
-| GET | `/buckets/{bucketKey}/messages` | get /buckets/{bucketKey}/messages | Retrieve a list of messages in a bucket |
-| POST | `/buckets/{bucketKey}/messages` | post /buckets/{bucketKey}/messages | Create a message |
-| GET | `/buckets/{bucketKey}/messages/{messageId}` | get /buckets/{bucketKey}/messages/{messageId} | Retrieve the details for a single message. |
-| GET | `/buckets/{bucketKey}/tests` | get /buckets/{bucketKey}/tests | Returns a list of tests. |
-| POST | `/buckets/{bucketKey}/tests` | post /buckets/{bucketKey}/tests | Create a test. |
-| DELETE | `/buckets/{bucketKey}/tests/{testId}` | delete /buckets/{bucketKey}/tests/{testId} | Delete a test, including all steps, schedules, test-specific environments and results. |
-| GET | `/buckets/{bucketKey}/tests/{testId}` | get /buckets/{bucketKey}/tests/{testId} | Retrieve the details of a given test by ID. |
-| PUT | `/buckets/{bucketKey}/tests/{testId}` | put /buckets/{bucketKey}/tests/{testId} | Modify a test's name, description, default environment and its steps. To modify other individual properties of a test, make requests to the steps, environments, and schedules subresources of the test. |
-| GET | `/buckets/{bucketKey}/tests/{testId}/environments` | get /buckets/{bucketKey}/tests/{testId}/environments | Return details of the test's environments (only those that belong to the specified test) |
-| POST | `/buckets/{bucketKey}/tests/{testId}/environments` | post /buckets/{bucketKey}/tests/{testId}/environments | Create new test environment. |
-| PUT | `/buckets/{bucketKey}/tests/{testId}/environments/{environmentId}` | put /buckets/{bucketKey}/tests/{testId}/environments/{environmentId} | Update the details of a test environment. |
-| GET | `/buckets/{bucketKey}/tests/{testId}/metrics` | get /buckets/{bucketKey}/tests/{testId}/metrics | Return details of the test metrics for the specified timeframe. |
-| GET | `/buckets/{bucketKey}/tests/{testId}/steps` | get /buckets/{bucketKey}/tests/{testId}/steps | List test steps for a test. |
-| POST | `/buckets/{bucketKey}/tests/{testId}/steps` | post /buckets/{bucketKey}/tests/{testId}/steps | Add new test step. |
-| DELETE | `/buckets/{bucketKey}/tests/{testId}/steps/{stepId}` | delete /buckets/{bucketKey}/tests/{testId}/steps/{stepId} | Delete a step from a test. |
-| PUT | `/buckets/{bucketKey}/tests/{testId}/steps/{stepId}` | put /buckets/{bucketKey}/tests/{testId}/steps/{stepId} | Update the details of a single test step. |
-| GET | `/teams/{teamId}/agents` | get /teams/{teamId}/agents | Team agents list |
-| GET | `/teams/{teamId}/integrations` | get /teams/{teamId}/integrations | Team integrations list |
-| GET | `/teams/{teamId}/people` | get /teams/{teamId}/people | Teams Resource |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | get /account | — | object | yes | Account Resource |
+| GET | `/buckets` | get /buckets | — | object | yes | Returns a list of buckets. |
+| POST | `/buckets` | post /buckets | body*: NewBucket | Bucket |  | Create a new bucket |
+| GET | `/buckets/{bucketKey}` | get /buckets/{bucketKey} | `bucketKey`* | Bucket | yes | Returns a single bucket resource. |
+| DELETE | `/buckets/{bucketKey}` | delete /buckets/{bucketKey} | `bucketKey`* | — |  | Delete a single bucket resource. |
+| GET | `/buckets/{bucketKey}/environments` | get /buckets/{bucketKey}/environments | `bucketKey`* | — | yes | Returns list of shared environments for a specified bucket. |
+| POST | `/buckets/{bucketKey}/environments` | post /buckets/{bucketKey}/environments | `bucketKey`*, body*: Environment | — |  | Create new shared environment. |
+| PUT | `/buckets/{bucketKey}/environments/{environmentId}` | put /buckets/{bucketKey}/environments/{environmentId} | `bucketKey`*, `environmentId`*, body*: Environment | — |  | Update the details of a shared environment. |
+| GET | `/buckets/{bucketKey}/errors` | get /buckets/{bucketKey}/errors | `bucketKey`*, `count`, `since`, `before` | — | yes | Retrieve a list of error messages in a bucket |
+| GET | `/buckets/{bucketKey}/messages` | get /buckets/{bucketKey}/messages | `bucketKey`*, `count`, `since`, `before` | — | yes | Retrieve a list of messages in a bucket |
+| POST | `/buckets/{bucketKey}/messages` | post /buckets/{bucketKey}/messages | `bucketKey`*, body*: NewMessage | object |  | Create a message |
+| DELETE | `/buckets/{bucketKey}/messages` | delete /buckets/{bucketKey}/messages | `bucketKey`* | — |  | Clear a bucket (remove all messages). |
+| GET | `/buckets/{bucketKey}/messages/{messageId}` | get /buckets/{bucketKey}/messages/{messageId} | `bucketKey`*, `messageId`* | — | yes | Retrieve the details for a single message. |
+| GET | `/buckets/{bucketKey}/tests` | get /buckets/{bucketKey}/tests | `bucketKey`* | object | yes | Returns a list of tests. |
+| POST | `/buckets/{bucketKey}/tests` | post /buckets/{bucketKey}/tests | `bucketKey`*, body*: Test | object |  | Create a test. |
+| GET | `/buckets/{bucketKey}/tests/{testId}` | get /buckets/{bucketKey}/tests/{testId} | `bucketKey`*, `testId`* | TestDetail | yes | Retrieve the details of a given test by ID. |
+| PUT | `/buckets/{bucketKey}/tests/{testId}` | put /buckets/{bucketKey}/tests/{testId} | `bucketKey`*, `testId`* | TestDetail |  | Modify a test's name, description, default environment and its steps. To modify other individual properties of a test, make requests to the steps, environments, and schedules subresources of the test. |
+| DELETE | `/buckets/{bucketKey}/tests/{testId}` | delete /buckets/{bucketKey}/tests/{testId} | `bucketKey`*, `testId`* | — |  | Delete a test, including all steps, schedules, test-specific environments and results. |
+| GET | `/buckets/{bucketKey}/tests/{testId}/environments` | get /buckets/{bucketKey}/tests/{testId}/environments | `bucketKey`*, `testId`* | object | yes | Return details of the test's environments (only those that belong to the specified test) |
+| POST | `/buckets/{bucketKey}/tests/{testId}/environments` | post /buckets/{bucketKey}/tests/{testId}/environments | `bucketKey`*, `testId`*, body*: Environment | — |  | Create new test environment. |
+| PUT | `/buckets/{bucketKey}/tests/{testId}/environments/{environmentId}` | put /buckets/{bucketKey}/tests/{testId}/environments/{environmentId} | `bucketKey`*, `testId`*, `environmentId`*, body*: Environment | — |  | Update the details of a test environment. |
+| GET | `/buckets/{bucketKey}/tests/{testId}/metrics` | get /buckets/{bucketKey}/tests/{testId}/metrics | `bucketKey`*, `testId`* | Metrics | yes | Return details of the test metrics for the specified timeframe. |
+| GET | `/buckets/{bucketKey}/tests/{testId}/steps` | get /buckets/{bucketKey}/tests/{testId}/steps | `bucketKey`*, `testId`* | — | yes | List test steps for a test. |
+| POST | `/buckets/{bucketKey}/tests/{testId}/steps` | post /buckets/{bucketKey}/tests/{testId}/steps | `bucketKey`*, `testId`*, body*: TestStep | — |  | Add new test step. |
+| PUT | `/buckets/{bucketKey}/tests/{testId}/steps/{stepId}` | put /buckets/{bucketKey}/tests/{testId}/steps/{stepId} | `bucketKey`*, `testId`*, `stepId`*, body*: TestStep | — |  | Update the details of a single test step. |
+| DELETE | `/buckets/{bucketKey}/tests/{testId}/steps/{stepId}` | delete /buckets/{bucketKey}/tests/{testId}/steps/{stepId} | `bucketKey`*, `testId`*, `stepId`* | — |  | Delete a step from a test. |
+| GET | `/teams/{teamId}/agents` | get /teams/{teamId}/agents | `teamId`* | Agent[] | yes | Team agents list |
+| GET | `/teams/{teamId}/integrations` | get /teams/{teamId}/integrations | `teamId`* | object | yes | Team integrations list |
+| GET | `/teams/{teamId}/people` | get /teams/{teamId}/people | `teamId`* | Account[] | yes | Teams Resource |

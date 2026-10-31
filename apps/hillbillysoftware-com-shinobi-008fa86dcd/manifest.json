@@ -293,6 +293,351 @@
         "from": "hillbillysoftware-com-shinobi-008fa86dcd",
         "kind": "EXPOSES",
         "to": "operation:get:/Trailers/Search/{AccessToken}/{Phrase}"
+      },
+      {
+        "from": "operation:get:/Actors/Search/{accesstoken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:Actor"
+      },
+      {
+        "from": "operation:post:/AddActor",
+        "kind": "ACCEPTS",
+        "to": "schema:ActorPost"
+      },
+      {
+        "from": "operation:post:/AddActor",
+        "kind": "RETURNS",
+        "to": "schema:PostResult"
+      },
+      {
+        "from": "operation:post:/AddTVShow",
+        "kind": "ACCEPTS",
+        "to": "schema:TVInformationPost"
+      },
+      {
+        "from": "operation:post:/AddTVShow",
+        "kind": "RETURNS",
+        "to": "schema:PostResult"
+      },
+      {
+        "from": "operation:get:/Aliases/ByID/{AccessToken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:Aliases"
+      },
+      {
+        "from": "operation:get:/Aliases/ByName/{AccessToken}/{Title}",
+        "kind": "RETURNS",
+        "to": "schema:Aliases"
+      },
+      {
+        "from": "operation:get:/Awards/ByWinner/{AccessToken}/{Nominee}",
+        "kind": "RETURNS",
+        "to": "schema:_Awards"
+      },
+      {
+        "from": "operation:get:/Awards/ByYear/{Year}",
+        "kind": "RETURNS",
+        "to": "schema:_Awards"
+      },
+      {
+        "from": "operation:get:/Calendar/ByDate/{AccessToken}/{Date}/{Country}",
+        "kind": "RETURNS",
+        "to": "schema:schedule"
+      },
+      {
+        "from": "operation:get:/Calendar/Countries/{AccessToken}",
+        "kind": "RETURNS",
+        "to": "schema:Country"
+      },
+      {
+        "from": "operation:get:/Calendar/Networks/{AccessToken}",
+        "kind": "RETURNS",
+        "to": "schema:Networks"
+      },
+      {
+        "from": "operation:get:/Calendar/Seasons/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:ShowSeasons"
+      },
+      {
+        "from": "operation:get:/Calendar/Show/Season/{AccessToken}/{Name}/{Season}",
+        "kind": "RETURNS",
+        "to": "schema:schedule"
+      },
+      {
+        "from": "operation:get:/Calendar/Show/{AccessToken}/{Name}/{Year}",
+        "kind": "RETURNS",
+        "to": "schema:schedule"
+      },
+      {
+        "from": "operation:get:/Calendar/Today/{AccessToken}",
+        "kind": "RETURNS",
+        "to": "schema:schedule"
+      },
+      {
+        "from": "operation:get:/Cast/ActorBySearch/{AccessToken}/{Actor}",
+        "kind": "RETURNS",
+        "to": "schema:TVShowActor"
+      },
+      {
+        "from": "operation:get:/Cast/ByActor/{AccessToken}/{Actor}",
+        "kind": "RETURNS",
+        "to": "schema:TVShowActor"
+      },
+      {
+        "from": "operation:get:/Cast/ByTVShow/{accesstoken}/{ShowName}",
+        "kind": "RETURNS",
+        "to": "schema:TVShowActor"
+      },
+      {
+        "from": "operation:get:/Crew/ByID/{AccessToken}/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Crew"
+      },
+      {
+        "from": "operation:get:/Crew/ByPerson/{AccessToken}/{PersonName}",
+        "kind": "RETURNS",
+        "to": "schema:Crew"
+      },
+      {
+        "from": "operation:get:/Crew/ByShowName/{AccessToken}/{ShowName}",
+        "kind": "RETURNS",
+        "to": "schema:Crew"
+      },
+      {
+        "from": "operation:get:/Crew/Search/{AccessToken}/{Phrase}",
+        "kind": "RETURNS",
+        "to": "schema:Crew"
+      },
+      {
+        "from": "operation:get:/Episodes/ByID/{AccessToken}/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "operation:get:/Episodes/BySeason/{AccessToken}/{ID}/{Season}",
+        "kind": "RETURNS",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "operation:get:/Episodes/ByShowName/{AccessToken}/{Showname}",
+        "kind": "RETURNS",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "operation:get:/Episodes/LatestSeason/Show/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:LastAvailableSeason"
+      },
+      {
+        "from": "operation:get:/Episodes/LatestSeason/{AccessToken}/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:LastAvailableSeason"
+      },
+      {
+        "from": "operation:get:/Episodes/SeasonCount/{AccessToken}/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:TVShowSeasons"
+      },
+      {
+        "from": "operation:get:/GetIMDBid/ByID/{AccessToken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:imdbID"
+      },
+      {
+        "from": "operation:get:/Images/ByID/{AccessToken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:imdbImages"
+      },
+      {
+        "from": "operation:get:/Images/Search/{Accesstoken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:imdbImages"
+      },
+      {
+        "from": "operation:get:/Magnets/ByDate/{AccessToken}/{Date}",
+        "kind": "RETURNS",
+        "to": "schema:Magnets"
+      },
+      {
+        "from": "operation:get:/Magnets/ByIMDB/{AccessToken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:Magnets"
+      },
+      {
+        "from": "operation:get:/Magnets/Search/{AccessToken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:Magnets"
+      },
+      {
+        "from": "operation:get:/Magnets/TVShow/{AccessToken}/{TVShow}",
+        "kind": "RETURNS",
+        "to": "schema:Magnets"
+      },
+      {
+        "from": "operation:get:/Movie/ByID/{accesstoken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:MovieInformation"
+      },
+      {
+        "from": "operation:get:/Movie/Search/{AccessToken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:MovieInformation"
+      },
+      {
+        "from": "operation:get:/Music/Albums/Art/{AccessToken}/{AlbumID}",
+        "kind": "RETURNS",
+        "to": "schema:AlbumArt"
+      },
+      {
+        "from": "operation:get:/Music/Albums/CoverArt/{AccessToken}/{MBID}",
+        "kind": "RETURNS",
+        "to": "schema:CDCoverArt"
+      },
+      {
+        "from": "operation:get:/Music/Albums/MusicBrainzID/{AccessToken}/{MBID}",
+        "kind": "RETURNS",
+        "to": "schema:BandInfo"
+      },
+      {
+        "from": "operation:get:/Music/Albums/{AccessToken}/{ArtistID}",
+        "kind": "RETURNS",
+        "to": "schema:BandAlbums"
+      },
+      {
+        "from": "operation:get:/Music/Artist/Art/ID/{AccessToken}/{ArtistID}",
+        "kind": "RETURNS",
+        "to": "schema:ArtistArt"
+      },
+      {
+        "from": "operation:get:/Music/Artist/Art/Name/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:ArtistArt"
+      },
+      {
+        "from": "operation:get:/Music/Artist/Extended/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:BandInfoExtended"
+      },
+      {
+        "from": "operation:get:/Music/Artist/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:BandInfo"
+      },
+      {
+        "from": "operation:get:/Music/Lyrics/AlbumID/{AccessToken}/{AlbumID}",
+        "kind": "RETURNS",
+        "to": "schema:Lyric"
+      },
+      {
+        "from": "operation:get:/Music/Lyrics/ByName/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:Lyric"
+      },
+      {
+        "from": "operation:get:/Music/Lyrics/BySong/{AccessToken}/{Song}",
+        "kind": "RETURNS",
+        "to": "schema:Lyric"
+      },
+      {
+        "from": "operation:get:/Music/Tracks/{AccessToken}/{AlbumID}",
+        "kind": "RETURNS",
+        "to": "schema:AlbumTracks"
+      },
+      {
+        "from": "operation:get:/Music/Videos/{AccessToken}/{ArtistID}",
+        "kind": "RETURNS",
+        "to": "schema:MusicVideo"
+      },
+      {
+        "from": "operation:get:/Rating/ByID/{AccessToken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:RatingItem"
+      },
+      {
+        "from": "operation:get:/Rating/ByName/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:RatingItem"
+      },
+      {
+        "from": "operation:get:/Status/{AccessToken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:_ShowStatus"
+      },
+      {
+        "from": "operation:get:/TV/ByID/{accesstoken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:TVInformation"
+      },
+      {
+        "from": "operation:get:/TV/ByName/{AccessToken}/{Query}",
+        "kind": "RETURNS",
+        "to": "schema:TVInformation"
+      },
+      {
+        "from": "operation:get:/Trailers/ByID/{AccessToken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:Trailer"
+      },
+      {
+        "from": "operation:get:/Trailers/CountByID/{AccessToken}/{imdbID}",
+        "kind": "RETURNS",
+        "to": "schema:TrailerCount"
+      },
+      {
+        "from": "operation:get:/Trailers/CountByName/{AccessToken}/{Name}",
+        "kind": "RETURNS",
+        "to": "schema:TrailerCount"
+      },
+      {
+        "from": "operation:get:/Trailers/Search/{AccessToken}/{Phrase}",
+        "kind": "RETURNS",
+        "to": "schema:Trailer"
+      },
+      {
+        "from": "schema:Aliases",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
+      },
+      {
+        "from": "schema:BandInfoExtended",
+        "kind": "REFERENCES",
+        "to": "schema:BandAlbums"
+      },
+      {
+        "from": "schema:BandInfoExtended",
+        "kind": "REFERENCES",
+        "to": "schema:MusicVideo"
+      },
+      {
+        "from": "schema:Crew",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
+      },
+      {
+        "from": "schema:Episode",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
+      },
+      {
+        "from": "schema:Magnets",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
+      },
+      {
+        "from": "schema:TVInformation",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
+      },
+      {
+        "from": "schema:TVShowActor",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
+      },
+      {
+        "from": "schema:TVShowSeasons",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIDs"
       }
     ],
     "nodes": [
@@ -306,10 +651,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Actor_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accesstoken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Actors/Search/{accesstoken}/{Query}",
         "pointer": "#/paths/~1Actors~1Search~1{accesstoken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Actor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns data on queried actor/actress. Result set limited to 5 records"
+        "summary": "Returns data on queried actor/actress. Result set limited to 5 records",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -319,8 +688,33 @@
         "name": "AddActor_Post",
         "path": "/AddActor",
         "pointer": "#/paths/~1AddActor/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "ActorPost"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PostResult"
+          },
+          {
+            "status": "204",
+            "type": "PostResult"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add new actor or actress to database"
+        "summary": "Add new actor or actress to database",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -330,8 +724,33 @@
         "name": "AddTVShow_Post",
         "path": "/AddTVShow",
         "pointer": "#/paths/~1AddTVShow/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "TVInformationPost"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PostResult"
+          },
+          {
+            "status": "204",
+            "type": "PostResult"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add new show to database"
+        "summary": "Add new show to database",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -339,10 +758,34 @@
         "kind": "operation",
         "method": "get",
         "name": "AliasesByID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Aliases/ByID/{AccessToken}/{imdbID}",
         "pointer": "#/paths/~1Aliases~1ByID~1{AccessToken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Aliases[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get known aliases for Movies or Television shows from passed imdbID"
+        "summary": "Get known aliases for Movies or Television shows from passed imdbID",
+        "tags": [
+          "Aliases (Movie & Television Show Aliases)"
+        ]
       },
       {
         "deprecated": false,
@@ -350,10 +793,35 @@
         "kind": "operation",
         "method": "get",
         "name": "Aliases_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Title of movie or television show",
+            "in": "path",
+            "name": "Title",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Aliases/ByName/{AccessToken}/{Title}",
         "pointer": "#/paths/~1Aliases~1ByName~1{AccessToken}~1{Title}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Aliases[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get known aliases for Movies or Television shows"
+        "summary": "Get known aliases for Movies or Television shows",
+        "tags": [
+          "Aliases (Movie & Television Show Aliases)"
+        ]
       },
       {
         "deprecated": false,
@@ -361,10 +829,34 @@
         "kind": "operation",
         "method": "get",
         "name": "AwardsbyWinner_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Nominee",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Awards/ByWinner/{AccessToken}/{Nominee}",
         "pointer": "#/paths/~1Awards~1ByWinner~1{AccessToken}~1{Nominee}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "_Awards[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all awards by nominiee"
+        "summary": "Gets all awards by nominiee",
+        "tags": [
+          "Awards (Television & Movies)"
+        ]
       },
       {
         "deprecated": false,
@@ -372,10 +864,28 @@
         "kind": "operation",
         "method": "get",
         "name": "awards_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Year",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Awards/ByYear/{Year}",
         "pointer": "#/paths/~1Awards~1ByYear~1{Year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "_Awards[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all awards for requested year"
+        "summary": "Gets all awards for requested year",
+        "tags": [
+          "Awards (Television & Movies)"
+        ]
       },
       {
         "deprecated": false,
@@ -383,10 +893,42 @@
         "kind": "operation",
         "method": "get",
         "name": "ScheduleByDate_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "date format year-month-day",
+            "in": "path",
+            "name": "Date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "US / CA / NL / BE / DE / GB or FR",
+            "in": "path",
+            "name": "Country",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/ByDate/{AccessToken}/{Date}/{Country}",
         "pointer": "#/paths/~1Calendar~1ByDate~1{AccessToken}~1{Date}~1{Country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedule[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets TV Schedule for selected data"
+        "summary": "Gets TV Schedule for selected data",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -394,10 +936,28 @@
         "kind": "operation",
         "method": "get",
         "name": "CalendarCountries_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/Countries/{AccessToken}",
         "pointer": "#/paths/~1Calendar~1Countries~1{AccessToken}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Country[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns list of available countries in calendar database"
+        "summary": "Returns list of available countries in calendar database",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -405,10 +965,28 @@
         "kind": "operation",
         "method": "get",
         "name": "CalendarNetworks_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/Networks/{AccessToken}",
         "pointer": "#/paths/~1Calendar~1Networks~1{AccessToken}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Networks[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of available networks"
+        "summary": "Gets a list of available networks",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -416,10 +994,34 @@
         "kind": "operation",
         "method": "get",
         "name": "CalendarShowSeasons_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/Seasons/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Calendar~1Seasons~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowSeasons[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns list of seasons available in the calendar for show"
+        "summary": "Returns list of seasons available in the calendar for show",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -427,10 +1029,40 @@
         "kind": "operation",
         "method": "get",
         "name": "CalendarbyShownameSeason_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Season",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/Show/Season/{AccessToken}/{Name}/{Season}",
         "pointer": "#/paths/~1Calendar~1Show~1Season~1{AccessToken}~1{Name}~1{Season}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedule[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Calendar by showname and season"
+        "summary": "Get Calendar by showname and season",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -438,10 +1070,40 @@
         "kind": "operation",
         "method": "get",
         "name": "CalendarByShowName_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Year",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/Show/{AccessToken}/{Name}/{Year}",
         "pointer": "#/paths/~1Calendar~1Show~1{AccessToken}~1{Name}~1{Year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedule[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Will return show schedule for queried showname and year"
+        "summary": "Will return show schedule for queried showname and year",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -449,10 +1111,28 @@
         "kind": "operation",
         "method": "get",
         "name": "CalendarToday_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Calendar/Today/{AccessToken}",
         "pointer": "#/paths/~1Calendar~1Today~1{AccessToken}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedule[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Will return show schedule for today for all countries in database"
+        "summary": "Will return show schedule for today for all countries in database",
+        "tags": [
+          "Calendar (Television Show Schedules)"
+        ]
       },
       {
         "deprecated": false,
@@ -460,10 +1140,35 @@
         "kind": "operation",
         "method": "get",
         "name": "ActorInShows_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Part of, or full name of actor",
+            "in": "path",
+            "name": "Actor",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Cast/ActorBySearch/{AccessToken}/{Actor}",
         "pointer": "#/paths/~1Cast~1ActorBySearch~1{AccessToken}~1{Actor}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TVShowActor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all shows queried actor/actress is or has been in"
+        "summary": "Returns all shows queried actor/actress is or has been in",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -471,10 +1176,35 @@
         "kind": "operation",
         "method": "get",
         "name": "CastByActor_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Full name of actor",
+            "in": "path",
+            "name": "Actor",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Cast/ByActor/{AccessToken}/{Actor}",
         "pointer": "#/paths/~1Cast~1ByActor~1{AccessToken}~1{Actor}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TVShowActor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns list of show actor is appearing in"
+        "summary": "Returns list of show actor is appearing in",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -482,10 +1212,34 @@
         "kind": "operation",
         "method": "get",
         "name": "ActorsInTVShow_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accesstoken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "ShowName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Cast/ByTVShow/{accesstoken}/{ShowName}",
         "pointer": "#/paths/~1Cast~1ByTVShow~1{accesstoken}~1{ShowName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TVShowActor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all actors in queried tvshow"
+        "summary": "Returns all actors in queried tvshow",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -493,10 +1247,35 @@
         "kind": "operation",
         "method": "get",
         "name": "CrewByID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IMDBID, TVmazeID, or TVDBID",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Crew/ByID/{AccessToken}/{ID}",
         "pointer": "#/paths/~1Crew~1ByID~1{AccessToken}~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Crew[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get crew list by ID"
+        "summary": "Get crew list by ID",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -504,10 +1283,34 @@
         "kind": "operation",
         "method": "get",
         "name": "CrewByPerson_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "PersonName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Crew/ByPerson/{AccessToken}/{PersonName}",
         "pointer": "#/paths/~1Crew~1ByPerson~1{AccessToken}~1{PersonName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Crew[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets list of productions searched person is/was involved in."
+        "summary": "Gets list of productions searched person is/was involved in.",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -515,10 +1318,35 @@
         "kind": "operation",
         "method": "get",
         "name": "CrewbyShowname_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Full exact showname",
+            "in": "path",
+            "name": "ShowName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Crew/ByShowName/{AccessToken}/{ShowName}",
         "pointer": "#/paths/~1Crew~1ByShowName~1{AccessToken}~1{ShowName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Crew[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get crew list by showname"
+        "summary": "Get crew list by showname",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -526,10 +1354,35 @@
         "kind": "operation",
         "method": "get",
         "name": "Crew_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Part of, or full showname to search for",
+            "in": "path",
+            "name": "Phrase",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Crew/Search/{AccessToken}/{Phrase}",
         "pointer": "#/paths/~1Crew~1Search~1{AccessToken}~1{Phrase}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Crew[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns crew for queried show."
+        "summary": "Returns crew for queried show.",
+        "tags": [
+          "Cast & Crew (Cast & Crew in Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -537,10 +1390,35 @@
         "kind": "operation",
         "method": "get",
         "name": "EpisodesByID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "imdbID",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Episodes/ByID/{AccessToken}/{ID}",
         "pointer": "#/paths/~1Episodes~1ByID~1{AccessToken}~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Episode[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all episodes for selected ID"
+        "summary": "Gets all episodes for selected ID",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -548,10 +1426,42 @@
         "kind": "operation",
         "method": "get",
         "name": "EpisodesBySeason_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "imdbID",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Season number",
+            "in": "path",
+            "name": "Season",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Episodes/BySeason/{AccessToken}/{ID}/{Season}",
         "pointer": "#/paths/~1Episodes~1BySeason~1{AccessToken}~1{ID}~1{Season}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Episode[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets list of episodes for specified imdbID and Season number"
+        "summary": "Gets list of episodes for specified imdbID and Season number",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -559,10 +1469,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Episodes_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Showname",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Episodes/ByShowName/{AccessToken}/{Showname}",
         "pointer": "#/paths/~1Episodes~1ByShowName~1{AccessToken}~1{Showname}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Episode[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all episodes for selected show"
+        "summary": "Gets all episodes for selected show",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -570,10 +1504,34 @@
         "kind": "operation",
         "method": "get",
         "name": "EpisodesLastAvailableSeasonbyName_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Episodes/LatestSeason/Show/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Episodes~1LatestSeason~1Show~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LastAvailableSeason"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets latest season number based on show name"
+        "summary": "Gets latest season number based on show name",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -581,10 +1539,35 @@
         "kind": "operation",
         "method": "get",
         "name": "EpisodesLastAvailableSeason_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "imdbID",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Episodes/LatestSeason/{AccessToken}/{ID}",
         "pointer": "#/paths/~1Episodes~1LatestSeason~1{AccessToken}~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LastAvailableSeason"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns last available season number in database, based on passed imdbID"
+        "summary": "Returns last available season number in database, based on passed imdbID",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -592,10 +1575,35 @@
         "kind": "operation",
         "method": "get",
         "name": "EpisodesSeasonCount_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "imdbID",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Episodes/SeasonCount/{AccessToken}/{ID}",
         "pointer": "#/paths/~1Episodes~1SeasonCount~1{AccessToken}~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TVShowSeasons"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns number of available seasons and episodes"
+        "summary": "Returns number of available seasons and episodes",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -603,10 +1611,34 @@
         "kind": "operation",
         "method": "get",
         "name": "GetIMDBid_GetAsync",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/GetIMDBid/ByID/{AccessToken}/{Query}",
         "pointer": "#/paths/~1GetIMDBid~1ByID~1{AccessToken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "imdbID[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets list of avaiable IMDB ids from Movies and TV Show databases, you can use those to query other end points that need ID's"
+        "summary": "Gets list of avaiable IMDB ids from Movies and TV Show databases, you can use those to query other end points that need ID's",
+        "tags": [
+          "Miscellaneous (Conversion & other Utilities)"
+        ]
       },
       {
         "deprecated": false,
@@ -614,10 +1646,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Images_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Images/ByID/{AccessToken}/{imdbID}",
         "pointer": "#/paths/~1Images~1ByID~1{AccessToken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "imdbImages[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get images available for movie/tv show with passed imdbID"
+        "summary": "Get images available for movie/tv show with passed imdbID",
+        "tags": [
+          "Images (Movie & Television Show Images)"
+        ]
       },
       {
         "deprecated": false,
@@ -625,10 +1681,41 @@
         "kind": "operation",
         "method": "get",
         "name": "ImageSearch_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Accesstoken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name or part of name from Movie or Show",
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Strictmatch",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Images/Search/{Accesstoken}/{Query}",
         "pointer": "#/paths/~1Images~1Search~1{Accesstoken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "imdbImages[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get images available for movie/tv show with passed query"
+        "summary": "Get images available for movie/tv show with passed query",
+        "tags": [
+          "Images (Movie & Television Show Images)"
+        ]
       },
       {
         "deprecated": false,
@@ -636,10 +1723,34 @@
         "kind": "operation",
         "method": "get",
         "name": "MagnetsByDate_GetAsync",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Date",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Magnets/ByDate/{AccessToken}/{Date}",
         "pointer": "#/paths/~1Magnets~1ByDate~1{AccessToken}~1{Date}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Magnets[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets available magnet hashes on passed date (yyyy-mm-dd).  Feature not available on free plan, please donate to be able to use this feature."
+        "summary": "Gets available magnet hashes on passed date (yyyy-mm-dd).  Feature not available on free plan, please donate to be able to use this feature.",
+        "tags": [
+          "Magnets (Magnet hashes of Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -647,10 +1758,35 @@
         "kind": "operation",
         "method": "get",
         "name": "MagnetsByimdbID_GetAsync",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID with or without tt prefix",
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Magnets/ByIMDB/{AccessToken}/{imdbID}",
         "pointer": "#/paths/~1Magnets~1ByIMDB~1{AccessToken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Magnets[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns list of magnet hashes for passed IMDBID.  Feature not available on free plan, please donate to be able to use this feature."
+        "summary": "Returns list of magnet hashes for passed IMDBID.  Feature not available on free plan, please donate to be able to use this feature.",
+        "tags": [
+          "Magnets (Magnet hashes of Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -658,10 +1794,35 @@
         "kind": "operation",
         "method": "get",
         "name": "magnetsMovieByID_GetAsync",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name or part of name of movie or tv show",
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Magnets/Search/{AccessToken}/{Query}",
         "pointer": "#/paths/~1Magnets~1Search~1{AccessToken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Magnets[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Try and find magnet links for queried movie.  Feature not available on free plan, please donate to be able to use this feature"
+        "summary": "Try and find magnet links for queried movie.  Feature not available on free plan, please donate to be able to use this feature",
+        "tags": [
+          "Magnets (Magnet hashes of Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -669,10 +1830,34 @@
         "kind": "operation",
         "method": "get",
         "name": "TVShowsearch_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "TVShow",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Magnets/TVShow/{AccessToken}/{TVShow}",
         "pointer": "#/paths/~1Magnets~1TVShow~1{AccessToken}~1{TVShow}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Magnets[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns results based on query, Feature not available on free plan, please donate to be able to use this feature."
+        "summary": "Returns results based on query, Feature not available on free plan, please donate to be able to use this feature.",
+        "tags": [
+          "Magnets (Magnet hashes of Movies & Television Shows)"
+        ]
       },
       {
         "deprecated": false,
@@ -680,10 +1865,34 @@
         "kind": "operation",
         "method": "get",
         "name": "MovieID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accesstoken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Movie/ByID/{accesstoken}/{imdbID}",
         "pointer": "#/paths/~1Movie~1ByID~1{accesstoken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MovieInformation"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Movies (Movies, Documentaries, & made for Television Movies)"
+        ]
       },
       {
         "deprecated": false,
@@ -691,10 +1900,34 @@
         "kind": "operation",
         "method": "get",
         "name": "MovieSearch_GetAsync",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Movie/Search/{AccessToken}/{Query}",
         "pointer": "#/paths/~1Movie~1Search~1{AccessToken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MovieInformation[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Searches for movies, result set limited to 5 records"
+        "summary": "Searches for movies, result set limited to 5 records",
+        "tags": [
+          "Movies (Movies, Documentaries, & made for Television Movies)"
+        ]
       },
       {
         "deprecated": false,
@@ -702,10 +1935,34 @@
         "kind": "operation",
         "method": "get",
         "name": "musicAlbumArt_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "AlbumID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Albums/Art/{AccessToken}/{AlbumID}",
         "pointer": "#/paths/~1Music~1Albums~1Art~1{AccessToken}~1{AlbumID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AlbumArt"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Albumart for passed AlbumID"
+        "summary": "Returns Albumart for passed AlbumID",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -713,10 +1970,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicCDCovers_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "MusicBrainzID",
+            "in": "path",
+            "name": "MBID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Albums/CoverArt/{AccessToken}/{MBID}",
         "pointer": "#/paths/~1Music~1Albums~1CoverArt~1{AccessToken}~1{MBID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CDCoverArt[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets CD art for passed MusicBrainzID"
+        "summary": "Gets CD art for passed MusicBrainzID",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -724,10 +2006,35 @@
         "kind": "operation",
         "method": "get",
         "name": "MusicByMusicBrainz_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "MusicBrainzID",
+            "in": "path",
+            "name": "MBID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Albums/MusicBrainzID/{AccessToken}/{MBID}",
         "pointer": "#/paths/~1Music~1Albums~1MusicBrainzID~1{AccessToken}~1{MBID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BandInfo[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Artist / Band information on MusicBrainzID"
+        "summary": "Get Artist / Band information on MusicBrainzID",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -735,10 +2042,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicAlbums_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of artist or band to retrieve albums from",
+            "in": "path",
+            "name": "ArtistID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Albums/{AccessToken}/{ArtistID}",
         "pointer": "#/paths/~1Music~1Albums~1{AccessToken}~1{ArtistID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BandAlbums[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get albums from passed ArtistID"
+        "summary": "Get albums from passed ArtistID",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -746,10 +2078,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicCoverArt_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ArtistID of artist or band",
+            "in": "path",
+            "name": "ArtistID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Artist/Art/ID/{AccessToken}/{ArtistID}",
         "pointer": "#/paths/~1Music~1Artist~1Art~1ID~1{AccessToken}~1{ArtistID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtistArt"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves artist / band Banner and logo based on ArtistID"
+        "summary": "Retrieves artist / band Banner and logo based on ArtistID",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -757,10 +2114,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicCoverArtByName_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of artist or band",
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Artist/Art/Name/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Music~1Artist~1Art~1Name~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtistArt"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves artist / band Banner and logo based on artist or bandname"
+        "summary": "Retrieves artist / band Banner and logo based on artist or bandname",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -768,10 +2150,34 @@
         "kind": "operation",
         "method": "get",
         "name": "musicArtistExtended_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Artist/Extended/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Music~1Artist~1Extended~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BandInfoExtended[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Provides extended information, which includes all known albums and music videos of artist / band"
+        "summary": "Provides extended information, which includes all known albums and music videos of artist / band",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -779,10 +2185,35 @@
         "kind": "operation",
         "method": "get",
         "name": "Music_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name (or part) of band or artist name",
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Artist/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Music~1Artist~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BandInfo[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get information about passed band name or artist"
+        "summary": "Get information about passed band name or artist",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -790,10 +2221,34 @@
         "kind": "operation",
         "method": "get",
         "name": "musicLyricsbyAlbumID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "AlbumID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Lyrics/AlbumID/{AccessToken}/{AlbumID}",
         "pointer": "#/paths/~1Music~1Lyrics~1AlbumID~1{AccessToken}~1{AlbumID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Lyric[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all lyrics for requested AlbumID"
+        "summary": "Returns all lyrics for requested AlbumID",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -801,10 +2256,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicLyrics_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name (or partial) of band or artist (record set limited to 25)",
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Lyrics/ByName/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Music~1Lyrics~1ByName~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Lyric[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get lyrics for band or artist (record set limited to 25)"
+        "summary": "Get lyrics for band or artist (record set limited to 25)",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -812,10 +2292,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicLyricsBySong_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name or part of song name",
+            "in": "path",
+            "name": "Song",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Lyrics/BySong/{AccessToken}/{Song}",
         "pointer": "#/paths/~1Music~1Lyrics~1BySong~1{AccessToken}~1{Song}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Lyric[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get lyrics on song title"
+        "summary": "Get lyrics on song title",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -823,10 +2328,35 @@
         "kind": "operation",
         "method": "get",
         "name": "musicTracks_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "AlbumID (can be retrieved via album endpoint)",
+            "in": "path",
+            "name": "AlbumID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Tracks/{AccessToken}/{AlbumID}",
         "pointer": "#/paths/~1Music~1Tracks~1{AccessToken}~1{AlbumID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AlbumTracks[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all tracks from requested album"
+        "summary": "Get all tracks from requested album",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -834,10 +2364,34 @@
         "kind": "operation",
         "method": "get",
         "name": "MusiVideos_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "ArtistID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Music/Videos/{AccessToken}/{ArtistID}",
         "pointer": "#/paths/~1Music~1Videos~1{AccessToken}~1{ArtistID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MusicVideo[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists all videos available for this Artist / Band"
+        "summary": "Lists all videos available for this Artist / Band",
+        "tags": [
+          "Music (Artists ,Bands, Tracks, AlbumArt, CoverArt, & Videos)"
+        ]
       },
       {
         "deprecated": false,
@@ -845,10 +2399,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Rating_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Rating/ByID/{AccessToken}/{imdbID}",
         "pointer": "#/paths/~1Rating~1ByID~1{AccessToken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RatingItem"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns ratings from various resources(IMDB,Rotten Tomatoes, metaCritics, TVMaze etc) of passed IMDBid"
+        "summary": "Returns ratings from various resources(IMDB,Rotten Tomatoes, metaCritics, TVMaze etc) of passed IMDBid",
+        "tags": [
+          "Ratings  (Movie & Television Show Ratings)"
+        ]
       },
       {
         "deprecated": false,
@@ -856,10 +2434,34 @@
         "kind": "operation",
         "method": "get",
         "name": "RatingByName_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Rating/ByName/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Rating~1ByName~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RatingItem[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Ratings  (Movie & Television Show Ratings)"
+        ]
       },
       {
         "deprecated": false,
@@ -867,10 +2469,35 @@
         "kind": "operation",
         "method": "get",
         "name": "ShowStatus_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Query can be IMDB, TVDB, or Show name",
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Status/{AccessToken}/{Query}",
         "pointer": "#/paths/~1Status~1{AccessToken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "_ShowStatus[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns status of queried show (query can be IMDB, TVDB, or showname)"
+        "summary": "Returns status of queried show (query can be IMDB, TVDB, or showname)",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -878,10 +2505,41 @@
         "kind": "operation",
         "method": "get",
         "name": "TVShowID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accesstoken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "imdbID of show you want info on",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/TV/ByID/{accesstoken}/{imdbID}",
         "pointer": "#/paths/~1TV~1ByID~1{accesstoken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TVInformation"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns TVShow information based on IMDBid"
+        "summary": "Returns TVShow information based on IMDBid",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -889,10 +2547,34 @@
         "kind": "operation",
         "method": "get",
         "name": "TVShowByName_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/TV/ByName/{AccessToken}/{Query}",
         "pointer": "#/paths/~1TV~1ByName~1{AccessToken}~1{Query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TVInformation[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns results based on query, result set limited to 5 records"
+        "summary": "Returns results based on query, result set limited to 5 records",
+        "tags": [
+          "Television (Shows, Episodes, & Statuses)"
+        ]
       },
       {
         "deprecated": false,
@@ -900,10 +2582,34 @@
         "kind": "operation",
         "method": "get",
         "name": "TrailersbyID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Trailers/ByID/{AccessToken}/{imdbID}",
         "pointer": "#/paths/~1Trailers~1ByID~1{AccessToken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trailer[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Trailers for passed imdbID"
+        "summary": "Get Trailers for passed imdbID",
+        "tags": [
+          "Trailers (Movie & Television Show Trailers)"
+        ]
       },
       {
         "deprecated": false,
@@ -911,10 +2617,34 @@
         "kind": "operation",
         "method": "get",
         "name": "TrailerCountByID_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "imdbID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Trailers/CountByID/{AccessToken}/{imdbID}",
         "pointer": "#/paths/~1Trailers~1CountByID~1{AccessToken}~1{imdbID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TrailerCount"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get trailer count for passed ID"
+        "summary": "Get trailer count for passed ID",
+        "tags": [
+          "Trailers (Movie & Television Show Trailers)"
+        ]
       },
       {
         "deprecated": false,
@@ -922,10 +2652,34 @@
         "kind": "operation",
         "method": "get",
         "name": "TrailerCountByName_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Trailers/CountByName/{AccessToken}/{Name}",
         "pointer": "#/paths/~1Trailers~1CountByName~1{AccessToken}~1{Name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TrailerCount"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get trailer count for passed name (Movie title or TVShow name)"
+        "summary": "Get trailer count for passed name (Movie title or TVShow name)",
+        "tags": [
+          "Trailers (Movie & Television Show Trailers)"
+        ]
       },
       {
         "deprecated": false,
@@ -933,180 +2687,239 @@
         "kind": "operation",
         "method": "get",
         "name": "TrailerSearch_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccessToken",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Trailer you like to search for",
+            "in": "path",
+            "name": "Phrase",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Trailers/Search/{AccessToken}/{Phrase}",
         "pointer": "#/paths/~1Trailers~1Search~1{AccessToken}~1{Phrase}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trailer[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets trailers by search phrase (limited to 10 records)"
+        "summary": "Gets trailers by search phrase (limited to 10 records)",
+        "tags": [
+          "Trailers (Movie & Television Show Trailers)"
+        ]
       },
       {
         "id": "schema:Actor",
         "kind": "schema",
-        "name": "Actor"
+        "name": "Actor",
+        "type": "object"
       },
       {
         "id": "schema:ActorPost",
         "kind": "schema",
-        "name": "ActorPost"
+        "name": "ActorPost",
+        "type": "object"
       },
       {
         "id": "schema:AlbumArt",
         "kind": "schema",
-        "name": "AlbumArt"
+        "name": "AlbumArt",
+        "type": "object"
       },
       {
         "id": "schema:AlbumTracks",
         "kind": "schema",
-        "name": "AlbumTracks"
+        "name": "AlbumTracks",
+        "type": "object"
       },
       {
         "id": "schema:Aliases",
         "kind": "schema",
-        "name": "Aliases"
+        "name": "Aliases",
+        "type": "object"
       },
       {
         "id": "schema:ArtistArt",
         "kind": "schema",
-        "name": "ArtistArt"
+        "name": "ArtistArt",
+        "type": "object"
       },
       {
         "id": "schema:BandAlbums",
         "kind": "schema",
-        "name": "BandAlbums"
+        "name": "BandAlbums",
+        "type": "object"
       },
       {
         "id": "schema:BandInfo",
         "kind": "schema",
-        "name": "BandInfo"
+        "name": "BandInfo",
+        "type": "object"
       },
       {
         "id": "schema:BandInfoExtended",
         "kind": "schema",
-        "name": "BandInfoExtended"
+        "name": "BandInfoExtended",
+        "type": "object"
       },
       {
         "id": "schema:CDCoverArt",
         "kind": "schema",
-        "name": "CDCoverArt"
+        "name": "CDCoverArt",
+        "type": "object"
       },
       {
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "object"
       },
       {
         "id": "schema:Crew",
         "kind": "schema",
-        "name": "Crew"
+        "name": "Crew",
+        "type": "object"
       },
       {
         "id": "schema:Episode",
         "kind": "schema",
-        "name": "Episode"
+        "name": "Episode",
+        "type": "object"
       },
       {
         "id": "schema:ExternalIDs",
         "kind": "schema",
-        "name": "ExternalIDs"
+        "name": "ExternalIDs",
+        "type": "object"
       },
       {
         "id": "schema:LastAvailableSeason",
         "kind": "schema",
-        "name": "LastAvailableSeason"
+        "name": "LastAvailableSeason",
+        "type": "object"
       },
       {
         "id": "schema:Lyric",
         "kind": "schema",
-        "name": "Lyric"
+        "name": "Lyric",
+        "type": "object"
       },
       {
         "id": "schema:Magnets",
         "kind": "schema",
-        "name": "Magnets"
+        "name": "Magnets",
+        "type": "object"
       },
       {
         "id": "schema:MovieInformation",
         "kind": "schema",
-        "name": "MovieInformation"
+        "name": "MovieInformation",
+        "type": "object"
       },
       {
         "id": "schema:MusicVideo",
         "kind": "schema",
-        "name": "MusicVideo"
+        "name": "MusicVideo",
+        "type": "object"
       },
       {
         "id": "schema:Networks",
         "kind": "schema",
-        "name": "Networks"
+        "name": "Networks",
+        "type": "object"
       },
       {
         "id": "schema:PostResult",
         "kind": "schema",
-        "name": "PostResult"
+        "name": "PostResult",
+        "type": "object"
       },
       {
         "id": "schema:RatingItem",
         "kind": "schema",
-        "name": "RatingItem"
+        "name": "RatingItem",
+        "type": "object"
       },
       {
         "id": "schema:ShowSeasons",
         "kind": "schema",
-        "name": "ShowSeasons"
+        "name": "ShowSeasons",
+        "type": "object"
       },
       {
         "id": "schema:TVInformation",
         "kind": "schema",
-        "name": "TVInformation"
+        "name": "TVInformation",
+        "type": "object"
       },
       {
         "id": "schema:TVInformationPost",
         "kind": "schema",
-        "name": "TVInformationPost"
+        "name": "TVInformationPost",
+        "type": "object"
       },
       {
         "id": "schema:TVShowActor",
         "kind": "schema",
-        "name": "TVShowActor"
+        "name": "TVShowActor",
+        "type": "object"
       },
       {
         "id": "schema:TVShowSeasons",
         "kind": "schema",
-        "name": "TVShowSeasons"
+        "name": "TVShowSeasons",
+        "type": "object"
       },
       {
         "id": "schema:Trailer",
         "kind": "schema",
-        "name": "Trailer"
+        "name": "Trailer",
+        "type": "object"
       },
       {
         "id": "schema:TrailerCount",
         "kind": "schema",
-        "name": "TrailerCount"
+        "name": "TrailerCount",
+        "type": "object"
       },
       {
         "id": "schema:_Awards",
         "kind": "schema",
-        "name": "_Awards"
+        "name": "_Awards",
+        "type": "object"
       },
       {
         "id": "schema:_ShowStatus",
         "kind": "schema",
-        "name": "_ShowStatus"
+        "name": "_ShowStatus",
+        "type": "object"
       },
       {
         "id": "schema:imdbID",
         "kind": "schema",
-        "name": "imdbID"
+        "name": "imdbID",
+        "type": "object"
       },
       {
         "id": "schema:imdbImages",
         "kind": "schema",
-        "name": "imdbImages"
+        "name": "imdbImages",
+        "type": "object"
       },
       {
         "id": "schema:schedule",
         "kind": "schema",
-        "name": "schedule"
+        "name": "schedule",
+        "type": "object"
       }
     ]
   },

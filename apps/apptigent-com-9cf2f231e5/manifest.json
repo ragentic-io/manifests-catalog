@@ -443,6 +443,781 @@
         "from": "apptigent-com-9cf2f231e5",
         "kind": "EXPOSES",
         "to": "operation:post:/XMLtoJSON"
+      },
+      {
+        "from": "operation:post:/AddToCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionModify"
+      },
+      {
+        "from": "operation:post:/AddToCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionResult"
+      },
+      {
+        "from": "operation:post:/CSVtoJSON",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCsvConversionJSON"
+      },
+      {
+        "from": "operation:post:/CSVtoJSON",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/CalculateAbsolute",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/CalculateAbsolute",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateAddition",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumbers"
+      },
+      {
+        "from": "operation:post:/CalculateAddition",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateAverage",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateSeries"
+      },
+      {
+        "from": "operation:post:/CalculateAverage",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateCosine",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/CalculateCosine",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateDivision",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumbers"
+      },
+      {
+        "from": "operation:post:/CalculateDivision",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateLogarithm",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/CalculateLogarithm",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateMedian",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateSeries"
+      },
+      {
+        "from": "operation:post:/CalculateMedian",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateMinMax",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateMinMax"
+      },
+      {
+        "from": "operation:post:/CalculateMinMax",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateModulo",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumbers"
+      },
+      {
+        "from": "operation:post:/CalculateModulo",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateMultiplication",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumbers"
+      },
+      {
+        "from": "operation:post:/CalculateMultiplication",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateNthRoot",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumbers"
+      },
+      {
+        "from": "operation:post:/CalculateNthRoot",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculatePower",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculatePower"
+      },
+      {
+        "from": "operation:post:/CalculatePower",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateSine",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/CalculateSine",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateSquareRoot",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/CalculateSquareRoot",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateSubtraction",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumbers"
+      },
+      {
+        "from": "operation:post:/CalculateSubtraction",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateSum",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateSeries"
+      },
+      {
+        "from": "operation:post:/CalculateSum",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateTangent",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/CalculateTangent",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CalculateVariance",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateSeries"
+      },
+      {
+        "from": "operation:post:/CalculateVariance",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CollectionContainsNumber",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionSearchNumeric"
+      },
+      {
+        "from": "operation:post:/CollectionContainsNumber",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionNumber"
+      },
+      {
+        "from": "operation:post:/CollectionContainsString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionSearch"
+      },
+      {
+        "from": "operation:post:/CollectionContainsString",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionString"
+      },
+      {
+        "from": "operation:post:/CollectionEndsWithString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionSearch"
+      },
+      {
+        "from": "operation:post:/CollectionEndsWithString",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionString"
+      },
+      {
+        "from": "operation:post:/CollectionStartsWithString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionSearch"
+      },
+      {
+        "from": "operation:post:/CollectionStartsWithString",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionString"
+      },
+      {
+        "from": "operation:post:/CollectionToJSON",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionConversion"
+      },
+      {
+        "from": "operation:post:/CollectionToJSON",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/CollectionToXML",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionConversionXML"
+      },
+      {
+        "from": "operation:post:/CollectionToXML",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/CompareStrings",
+        "kind": "ACCEPTS",
+        "to": "schema:inputStringComparison"
+      },
+      {
+        "from": "operation:post:/CompareStrings",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/ContainsString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputStringContains"
+      },
+      {
+        "from": "operation:post:/ContainsString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/ConvertAngle",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertAngle"
+      },
+      {
+        "from": "operation:post:/ConvertAngle",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertArea",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertArea"
+      },
+      {
+        "from": "operation:post:/ConvertArea",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertCase",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCaseConversion"
+      },
+      {
+        "from": "operation:post:/ConvertCase",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/ConvertCurrency",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCurrencyConversion"
+      },
+      {
+        "from": "operation:post:/ConvertCurrency",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertDistance",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertDistance"
+      },
+      {
+        "from": "operation:post:/ConvertDistance",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertDuration",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertDuration"
+      },
+      {
+        "from": "operation:post:/ConvertDuration",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertEnergy",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertEnergy"
+      },
+      {
+        "from": "operation:post:/ConvertEnergy",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertPower",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertPower"
+      },
+      {
+        "from": "operation:post:/ConvertPower",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertSpeed",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertSpeed"
+      },
+      {
+        "from": "operation:post:/ConvertSpeed",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertTemperature",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertTemperature"
+      },
+      {
+        "from": "operation:post:/ConvertTemperature",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertVolume",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertVolume"
+      },
+      {
+        "from": "operation:post:/ConvertVolume",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ConvertWeight",
+        "kind": "ACCEPTS",
+        "to": "schema:inputConvertWeight"
+      },
+      {
+        "from": "operation:post:/ConvertWeight",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/CountCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionCount"
+      },
+      {
+        "from": "operation:post:/CountCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/DateTimeDifference",
+        "kind": "ACCEPTS",
+        "to": "schema:inputDateTimeDifference"
+      },
+      {
+        "from": "operation:post:/DateTimeDifference",
+        "kind": "RETURNS",
+        "to": "schema:outputDateDifference"
+      },
+      {
+        "from": "operation:post:/DateTimeInfo",
+        "kind": "ACCEPTS",
+        "to": "schema:inputDateTimeInfo"
+      },
+      {
+        "from": "operation:post:/DateTimeInfo",
+        "kind": "RETURNS",
+        "to": "schema:outputDateInfo"
+      },
+      {
+        "from": "operation:post:/DecodeString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/EncodeString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputString"
+      },
+      {
+        "from": "operation:post:/EncodeString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/FileToString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/FilterCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionFilter"
+      },
+      {
+        "from": "operation:post:/FilterCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionResult"
+      },
+      {
+        "from": "operation:post:/FormatCurrency",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCurrencyFormat"
+      },
+      {
+        "from": "operation:post:/FormatCurrency",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/FormatDateTime",
+        "kind": "ACCEPTS",
+        "to": "schema:inputDateTimeFormat"
+      },
+      {
+        "from": "operation:post:/FormatDateTime",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/GenerateGuid",
+        "kind": "ACCEPTS",
+        "to": "schema:inputGenerateUniqueID"
+      },
+      {
+        "from": "operation:post:/GenerateGuid",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/GenerateHash",
+        "kind": "ACCEPTS",
+        "to": "schema:inputGenerateHash"
+      },
+      {
+        "from": "operation:post:/GenerateHash",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/GenerateQRCode",
+        "kind": "ACCEPTS",
+        "to": "schema:inputQRCode"
+      },
+      {
+        "from": "operation:post:/JSONtoCSV",
+        "kind": "ACCEPTS",
+        "to": "schema:inputJsonConversionCSV"
+      },
+      {
+        "from": "operation:post:/JSONtoCSV",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/JSONtoHTML",
+        "kind": "ACCEPTS",
+        "to": "schema:inputJsonConversionHTML"
+      },
+      {
+        "from": "operation:post:/JSONtoHTML",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/JSONtoXML",
+        "kind": "ACCEPTS",
+        "to": "schema:inputJsonConversionXML"
+      },
+      {
+        "from": "operation:post:/JSONtoXML",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/JoinStrings",
+        "kind": "ACCEPTS",
+        "to": "schema:inputJoinStrings"
+      },
+      {
+        "from": "operation:post:/JoinStrings",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/MarketIndex",
+        "kind": "ACCEPTS",
+        "to": "schema:inputMarketIndex"
+      },
+      {
+        "from": "operation:post:/MarketIndex",
+        "kind": "RETURNS",
+        "to": "schema:outputMarketIndex"
+      },
+      {
+        "from": "operation:post:/QueryJSON",
+        "kind": "ACCEPTS",
+        "to": "schema:inputDataQuery"
+      },
+      {
+        "from": "operation:post:/QueryJSON",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/QueryXML",
+        "kind": "ACCEPTS",
+        "to": "schema:inputDataQuery"
+      },
+      {
+        "from": "operation:post:/QueryXML",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/RandomNumber",
+        "kind": "ACCEPTS",
+        "to": "schema:inputNumberRange"
+      },
+      {
+        "from": "operation:post:/RandomNumber",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/RedactString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputRedactString"
+      },
+      {
+        "from": "operation:post:/RedactString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/RemoveFromCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionModify"
+      },
+      {
+        "from": "operation:post:/RemoveFromCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionResult"
+      },
+      {
+        "from": "operation:post:/ReplaceString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputReplaceString"
+      },
+      {
+        "from": "operation:post:/ReplaceString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/ReplaceValuesInCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionReplace"
+      },
+      {
+        "from": "operation:post:/ReplaceValuesInCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionResult"
+      },
+      {
+        "from": "operation:post:/RoundNumber",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateNumber"
+      },
+      {
+        "from": "operation:post:/RoundNumber",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/ShortenLink",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/SortCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionSort"
+      },
+      {
+        "from": "operation:post:/SortCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputCollectionResult"
+      },
+      {
+        "from": "operation:post:/SpeechToText",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/SplitCollection",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCollectionSplit"
+      },
+      {
+        "from": "operation:post:/SplitCollection",
+        "kind": "RETURNS",
+        "to": "schema:outputMultiCollection"
+      },
+      {
+        "from": "operation:post:/SplitString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputSplitString"
+      },
+      {
+        "from": "operation:post:/SplitString",
+        "kind": "RETURNS",
+        "to": "schema:outputStringArray"
+      },
+      {
+        "from": "operation:post:/StandardDeviation",
+        "kind": "ACCEPTS",
+        "to": "schema:inputCalculateSeries"
+      },
+      {
+        "from": "operation:post:/StandardDeviation",
+        "kind": "RETURNS",
+        "to": "schema:outputNumber"
+      },
+      {
+        "from": "operation:post:/StockPrices",
+        "kind": "ACCEPTS",
+        "to": "schema:inputStockPrices"
+      },
+      {
+        "from": "operation:post:/StockPrices",
+        "kind": "RETURNS",
+        "to": "schema:outputStockPrice"
+      },
+      {
+        "from": "operation:post:/StringToFile",
+        "kind": "ACCEPTS",
+        "to": "schema:inputStringToFile"
+      },
+      {
+        "from": "operation:post:/TextToSpeech",
+        "kind": "ACCEPTS",
+        "to": "schema:inputTextToSpeech"
+      },
+      {
+        "from": "operation:post:/TranslateString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputTranslateString"
+      },
+      {
+        "from": "operation:post:/TranslateString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/TrimString",
+        "kind": "ACCEPTS",
+        "to": "schema:inputTrimString"
+      },
+      {
+        "from": "operation:post:/TrimString",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/URLDecode",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/URLEncode",
+        "kind": "ACCEPTS",
+        "to": "schema:inputString"
+      },
+      {
+        "from": "operation:post:/URLEncode",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/ValidateEmail",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/VerifyHash",
+        "kind": "ACCEPTS",
+        "to": "schema:inputVerifyHash"
+      },
+      {
+        "from": "operation:post:/VerifyHash",
+        "kind": "RETURNS",
+        "to": "schema:outputBoolean"
+      },
+      {
+        "from": "operation:post:/WorldTime",
+        "kind": "ACCEPTS",
+        "to": "schema:inputDateTimeConversion"
+      },
+      {
+        "from": "operation:post:/WorldTime",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
+      },
+      {
+        "from": "operation:post:/XMLtoJSON",
+        "kind": "ACCEPTS",
+        "to": "schema:inputXmlConversionJSON"
+      },
+      {
+        "from": "operation:post:/XMLtoJSON",
+        "kind": "RETURNS",
+        "to": "schema:outputString"
       }
     ],
     "nodes": [
@@ -452,1668 +1227,3673 @@
       },
       {
         "deprecated": false,
+        "description": "Add an item to a collection",
         "id": "operation:post:/AddToCollection",
         "kind": "operation",
         "method": "post",
         "name": "AddToCollection",
         "path": "/AddToCollection",
         "pointer": "#/paths/~1AddToCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionModify"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionResult"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Add to collection"
+        "summary": "Collections - Add to collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a CSV string to a JSON array",
         "id": "operation:post:/CSVtoJSON",
         "kind": "operation",
         "method": "post",
         "name": "CsvToJson",
         "path": "/CSVtoJSON",
         "pointer": "#/paths/~1CSVtoJSON/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCsvConversionJSON"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - CSV to JSON"
+        "summary": "Data - CSV to JSON",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the absolute value of a number",
         "id": "operation:post:/CalculateAbsolute",
         "kind": "operation",
         "method": "post",
         "name": "CalculateAbsolute",
         "path": "/CalculateAbsolute",
         "pointer": "#/paths/~1CalculateAbsolute/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Absolute"
+        "summary": "Math - Calculate Absolute",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the sum of two numbers",
         "id": "operation:post:/CalculateAddition",
         "kind": "operation",
         "method": "post",
         "name": "CalculateAddition",
         "path": "/CalculateAddition",
         "pointer": "#/paths/~1CalculateAddition/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumbers"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Addition"
+        "summary": "Math - Calculate Addition",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the average of two or more numbers",
         "id": "operation:post:/CalculateAverage",
         "kind": "operation",
         "method": "post",
         "name": "CalculateAverage",
         "path": "/CalculateAverage",
         "pointer": "#/paths/~1CalculateAverage/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateSeries"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate average"
+        "summary": "Math - Calculate average",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the cosine value of an angle",
         "id": "operation:post:/CalculateCosine",
         "kind": "operation",
         "method": "post",
         "name": "CalculateCosine",
         "path": "/CalculateCosine",
         "pointer": "#/paths/~1CalculateCosine/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Cosine"
+        "summary": "Math - Calculate Cosine",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the quotient of two numbers",
         "id": "operation:post:/CalculateDivision",
         "kind": "operation",
         "method": "post",
         "name": "CalculateDivision",
         "path": "/CalculateDivision",
         "pointer": "#/paths/~1CalculateDivision/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumbers"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Division"
+        "summary": "Math - Calculate Division",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the logarithm of a number",
         "id": "operation:post:/CalculateLogarithm",
         "kind": "operation",
         "method": "post",
         "name": "CalculateLogarithm",
         "path": "/CalculateLogarithm",
         "pointer": "#/paths/~1CalculateLogarithm/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Logarithm"
+        "summary": "Math - Calculate Logarithm",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the median of two or more numbers",
         "id": "operation:post:/CalculateMedian",
         "kind": "operation",
         "method": "post",
         "name": "CalculateMedian",
         "path": "/CalculateMedian",
         "pointer": "#/paths/~1CalculateMedian/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateSeries"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate median"
+        "summary": "Math - Calculate median",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the minimum or maximum value in a sequence of numbers",
         "id": "operation:post:/CalculateMinMax",
         "kind": "operation",
         "method": "post",
         "name": "CalculateMinMax",
         "path": "/CalculateMinMax",
         "pointer": "#/paths/~1CalculateMinMax/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateMinMax"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate minimum or maximum"
+        "summary": "Math - Calculate minimum or maximum",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the remainder of dividing two numbers",
         "id": "operation:post:/CalculateModulo",
         "kind": "operation",
         "method": "post",
         "name": "CalculateModulo",
         "path": "/CalculateModulo",
         "pointer": "#/paths/~1CalculateModulo/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumbers"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Modulo"
+        "summary": "Math - Calculate Modulo",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the product of two numbers",
         "id": "operation:post:/CalculateMultiplication",
         "kind": "operation",
         "method": "post",
         "name": "CalculateMultiplication",
         "path": "/CalculateMultiplication",
         "pointer": "#/paths/~1CalculateMultiplication/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumbers"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Multiplication"
+        "summary": "Math - Calculate Multiplication",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the n-th root of a number",
         "id": "operation:post:/CalculateNthRoot",
         "kind": "operation",
         "method": "post",
         "name": "CalculateNthRoot",
         "path": "/CalculateNthRoot",
         "pointer": "#/paths/~1CalculateNthRoot/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumbers"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Nth Root"
+        "summary": "Math - Calculate Nth Root",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Raise number to a specified power",
         "id": "operation:post:/CalculatePower",
         "kind": "operation",
         "method": "post",
         "name": "CalculatePower",
         "path": "/CalculatePower",
         "pointer": "#/paths/~1CalculatePower/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculatePower"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate power"
+        "summary": "Math - Calculate power",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the sine value of an angle",
         "id": "operation:post:/CalculateSine",
         "kind": "operation",
         "method": "post",
         "name": "CalculateSine",
         "path": "/CalculateSine",
         "pointer": "#/paths/~1CalculateSine/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Sine"
+        "summary": "Math - Calculate Sine",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the square root of a number",
         "id": "operation:post:/CalculateSquareRoot",
         "kind": "operation",
         "method": "post",
         "name": "CalculateSquareRoot",
         "path": "/CalculateSquareRoot",
         "pointer": "#/paths/~1CalculateSquareRoot/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Square Root"
+        "summary": "Math - Calculate Square Root",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the difference between two numbers",
         "id": "operation:post:/CalculateSubtraction",
         "kind": "operation",
         "method": "post",
         "name": "CalculateSubtraction",
         "path": "/CalculateSubtraction",
         "pointer": "#/paths/~1CalculateSubtraction/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumbers"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Subtraction"
+        "summary": "Math - Calculate Subtraction",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the sum of two or more numbers",
         "id": "operation:post:/CalculateSum",
         "kind": "operation",
         "method": "post",
         "name": "CalculateSum",
         "path": "/CalculateSum",
         "pointer": "#/paths/~1CalculateSum/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateSeries"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate sum"
+        "summary": "Math - Calculate sum",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the tangent value of an angle",
         "id": "operation:post:/CalculateTangent",
         "kind": "operation",
         "method": "post",
         "name": "CalculateTangent",
         "path": "/CalculateTangent",
         "pointer": "#/paths/~1CalculateTangent/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate Tangent"
+        "summary": "Math - Calculate Tangent",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the statistical variance of two or more numbers",
         "id": "operation:post:/CalculateVariance",
         "kind": "operation",
         "method": "post",
         "name": "CalculateVariance",
         "path": "/CalculateVariance",
         "pointer": "#/paths/~1CalculateVariance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateSeries"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate variance"
+        "summary": "Math - Calculate variance",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine if a collection contains a specific number",
         "id": "operation:post:/CollectionContainsNumber",
         "kind": "operation",
         "method": "post",
         "name": "CollectionContainsNumber",
         "path": "/CollectionContainsNumber",
         "pointer": "#/paths/~1CollectionContainsNumber/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionSearchNumeric"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Contains number"
+        "summary": "Collections - Contains number",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine if any items in a collection contain a specific string",
         "id": "operation:post:/CollectionContainsString",
         "kind": "operation",
         "method": "post",
         "name": "CollectionContainsString",
         "path": "/CollectionContainsString",
         "pointer": "#/paths/~1CollectionContainsString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionSearch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Contains string"
+        "summary": "Collections - Contains string",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine if any items in a collection end with a specific string",
         "id": "operation:post:/CollectionEndsWithString",
         "kind": "operation",
         "method": "post",
         "name": "CollectionEndsWithString",
         "path": "/CollectionEndsWithString",
         "pointer": "#/paths/~1CollectionEndsWithString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionSearch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Ends with string"
+        "summary": "Collections - Ends with string",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine if any items in a collection start with a specific string",
         "id": "operation:post:/CollectionStartsWithString",
         "kind": "operation",
         "method": "post",
         "name": "CollectionStartsWithString",
         "path": "/CollectionStartsWithString",
         "pointer": "#/paths/~1CollectionStartsWithString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionSearch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Starts with string"
+        "summary": "Collections - Starts with string",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a collection to a named JSON object",
         "id": "operation:post:/CollectionToJSON",
         "kind": "operation",
         "method": "post",
         "name": "CollectionToJSON",
         "path": "/CollectionToJSON",
         "pointer": "#/paths/~1CollectionToJSON/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionConversion"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Collection to JSON"
+        "summary": "Collections - Collection to JSON",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a collection to an XML string",
         "id": "operation:post:/CollectionToXML",
         "kind": "operation",
         "method": "post",
         "name": "CollectionToXml",
         "path": "/CollectionToXML",
         "pointer": "#/paths/~1CollectionToXML/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionConversionXML"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Collection to XML"
+        "summary": "Collections - Collection to XML",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Perform a comparison of two strings",
         "id": "operation:post:/CompareStrings",
         "kind": "operation",
         "method": "post",
         "name": "CompareStrings",
         "path": "/CompareStrings",
         "pointer": "#/paths/~1CompareStrings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputStringComparison"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Compare strings"
+        "summary": "Text - Compare strings",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine if a string contains another string",
         "id": "operation:post:/ContainsString",
         "kind": "operation",
         "method": "post",
         "name": "ContainsString",
         "path": "/ContainsString",
         "pointer": "#/paths/~1ContainsString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputStringContains"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Contains string"
+        "summary": "Text - Contains string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one angle measurement to another",
         "id": "operation:post:/ConvertAngle",
         "kind": "operation",
         "method": "post",
         "name": "ConvertAngle",
         "path": "/ConvertAngle",
         "pointer": "#/paths/~1ConvertAngle/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertAngle"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert angle"
+        "summary": "Math - Convert angle",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one area measurement to another",
         "id": "operation:post:/ConvertArea",
         "kind": "operation",
         "method": "post",
         "name": "ConvertArea",
         "path": "/ConvertArea",
         "pointer": "#/paths/~1ConvertArea/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertArea"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert area"
+        "summary": "Math - Convert area",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert string to upper, lower or title case",
         "id": "operation:post:/ConvertCase",
         "kind": "operation",
         "method": "post",
         "name": "ConvertCase",
         "path": "/ConvertCase",
         "pointer": "#/paths/~1ConvertCase/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCaseConversion"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Convert case"
+        "summary": "Text - Convert case",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate monetary value in a different currency",
         "id": "operation:post:/ConvertCurrency",
         "kind": "operation",
         "method": "post",
         "name": "ConvertCurrency",
         "path": "/ConvertCurrency",
         "pointer": "#/paths/~1ConvertCurrency/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCurrencyConversion"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Currency - Convert currency"
+        "summary": "Currency - Convert currency",
+        "tags": [
+          "Finance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one distance measurement to another",
         "id": "operation:post:/ConvertDistance",
         "kind": "operation",
         "method": "post",
         "name": "ConvertDistance",
         "path": "/ConvertDistance",
         "pointer": "#/paths/~1ConvertDistance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert distance"
+        "summary": "Math - Convert distance",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one duration measurement to another",
         "id": "operation:post:/ConvertDuration",
         "kind": "operation",
         "method": "post",
         "name": "ConvertDuration",
         "path": "/ConvertDuration",
         "pointer": "#/paths/~1ConvertDuration/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertDuration"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert duration"
+        "summary": "Math - Convert duration",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one energy measurement to another",
         "id": "operation:post:/ConvertEnergy",
         "kind": "operation",
         "method": "post",
         "name": "ConvertEnergy",
         "path": "/ConvertEnergy",
         "pointer": "#/paths/~1ConvertEnergy/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertEnergy"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert energy"
+        "summary": "Math - Convert energy",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert an image from one format to another",
         "id": "operation:post:/ConvertImage",
         "kind": "operation",
         "method": "post",
         "name": "ConvertImage",
         "path": "/ConvertImage",
         "pointer": "#/paths/~1ConvertImage/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Convert Image"
+        "summary": "Files - Convert Image",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one power measurement to another",
         "id": "operation:post:/ConvertPower",
         "kind": "operation",
         "method": "post",
         "name": "ConvertPower",
         "path": "/ConvertPower",
         "pointer": "#/paths/~1ConvertPower/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertPower"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert power"
+        "summary": "Math - Convert power",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one speed measurement to another",
         "id": "operation:post:/ConvertSpeed",
         "kind": "operation",
         "method": "post",
         "name": "ConvertSpeed",
         "path": "/ConvertSpeed",
         "pointer": "#/paths/~1ConvertSpeed/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertSpeed"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert speed"
+        "summary": "Math - Convert speed",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one temperature measurement to another",
         "id": "operation:post:/ConvertTemperature",
         "kind": "operation",
         "method": "post",
         "name": "ConvertTemperature",
         "path": "/ConvertTemperature",
         "pointer": "#/paths/~1ConvertTemperature/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertTemperature"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert temperature"
+        "summary": "Math - Convert temperature",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one volume measurement to another",
         "id": "operation:post:/ConvertVolume",
         "kind": "operation",
         "method": "post",
         "name": "ConvertVolume",
         "path": "/ConvertVolume",
         "pointer": "#/paths/~1ConvertVolume/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertVolume"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert volume"
+        "summary": "Math - Convert volume",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert value from one weight measurement to another",
         "id": "operation:post:/ConvertWeight",
         "kind": "operation",
         "method": "post",
         "name": "ConvertWeight",
         "path": "/ConvertWeight",
         "pointer": "#/paths/~1ConvertWeight/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputConvertWeight"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Convert weight"
+        "summary": "Math - Convert weight",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Count a collection of items",
         "id": "operation:post:/CountCollection",
         "kind": "operation",
         "method": "post",
         "name": "CountCollection",
         "path": "/CountCollection",
         "pointer": "#/paths/~1CountCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionCount"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Count collection"
+        "summary": "Collections - Count collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Crop an image",
         "id": "operation:post:/CropImage",
         "kind": "operation",
         "method": "post",
         "name": "CropImage",
         "path": "/CropImage",
         "pointer": "#/paths/~1CropImage/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Crop Image"
+        "summary": "Files - Crop Image",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the difference between two dates",
         "id": "operation:post:/DateTimeDifference",
         "kind": "operation",
         "method": "post",
         "name": "DateTimeDifference",
         "path": "/DateTimeDifference",
         "pointer": "#/paths/~1DateTimeDifference/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputDateTimeDifference"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputDateDifference"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "DateTime - DateTime difference"
+        "summary": "DateTime - DateTime difference",
+        "tags": [
+          "DateTime"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve useful date and time information, such as day of year, total seconds and ticks",
         "id": "operation:post:/DateTimeInfo",
         "kind": "operation",
         "method": "post",
         "name": "DateTimeInfo",
         "path": "/DateTimeInfo",
         "pointer": "#/paths/~1DateTimeInfo/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputDateTimeInfo"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputDateInfo"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "DateTime - Get date and time information"
+        "summary": "DateTime - Get date and time information",
+        "tags": [
+          "DateTime"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Decode a string encoded with Base64 encoding",
         "id": "operation:post:/DecodeString",
         "kind": "operation",
         "method": "post",
         "name": "DecodeString",
         "path": "/DecodeString",
         "pointer": "#/paths/~1DecodeString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Decode string"
+        "summary": "Text - Decode string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Encode a string using Base64 encoding",
         "id": "operation:post:/EncodeString",
         "kind": "operation",
         "method": "post",
         "name": "EncodeString",
         "path": "/EncodeString",
         "pointer": "#/paths/~1EncodeString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Encode string"
+        "summary": "Text - Encode string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a file to a Base64 string",
         "id": "operation:post:/FileToString",
         "kind": "operation",
         "method": "post",
         "name": "FileToString",
         "path": "/FileToString",
         "pointer": "#/paths/~1FileToString/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - File to string"
+        "summary": "Files - File to string",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Filter a collection of strings by keyword",
         "id": "operation:post:/FilterCollection",
         "kind": "operation",
         "method": "post",
         "name": "FilterCollection",
         "path": "/FilterCollection",
         "pointer": "#/paths/~1FilterCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionFilter"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionResult"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Filter collection"
+        "summary": "Collections - Filter collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Flip an image (horizontal or vertical)",
         "id": "operation:post:/FlipImage",
         "kind": "operation",
         "method": "post",
         "name": "FlipImage",
         "path": "/FlipImage",
         "pointer": "#/paths/~1FlipImage/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Flip Image"
+        "summary": "Files - Flip Image",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Apply currency symbol to a numeric value",
         "id": "operation:post:/FormatCurrency",
         "kind": "operation",
         "method": "post",
         "name": "FormatCurrency",
         "path": "/FormatCurrency",
         "pointer": "#/paths/~1FormatCurrency/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCurrencyFormat"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Currency - Format currency"
+        "summary": "Currency - Format currency",
+        "tags": [
+          "Finance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a date/time string in a specific format",
         "id": "operation:post:/FormatDateTime",
         "kind": "operation",
         "method": "post",
         "name": "FormatDateTime",
         "path": "/FormatDateTime",
         "pointer": "#/paths/~1FormatDateTime/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputDateTimeFormat"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "DateTime - Format date and time"
+        "summary": "DateTime - Format date and time",
+        "tags": [
+          "DateTime"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a globally unique identifier",
         "id": "operation:post:/GenerateGuid",
         "kind": "operation",
         "method": "post",
         "name": "GenerateGuid",
         "path": "/GenerateGuid",
         "pointer": "#/paths/~1GenerateGuid/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputGenerateUniqueID"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Generate GUID"
+        "summary": "Text - Generate GUID",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a hash value from a string",
         "id": "operation:post:/GenerateHash",
         "kind": "operation",
         "method": "post",
         "name": "GenerateHash",
         "path": "/GenerateHash",
         "pointer": "#/paths/~1GenerateHash/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputGenerateHash"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Generate hash"
+        "summary": "Text - Generate hash",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a QR code image",
         "id": "operation:post:/GenerateQRCode",
         "kind": "operation",
         "method": "post",
         "name": "GenerateQRCode",
         "path": "/GenerateQRCode",
         "pointer": "#/paths/~1GenerateQRCode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Generate QR code"
+        "summary": "Files - Generate QR code",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a JSON array to CSV string",
         "id": "operation:post:/JSONtoCSV",
         "kind": "operation",
         "method": "post",
         "name": "JsonToCsv",
         "path": "/JSONtoCSV",
         "pointer": "#/paths/~1JSONtoCSV/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputJsonConversionCSV"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - JSON to CSV"
+        "summary": "Data - JSON to CSV",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a JSON array to an HTML table",
         "id": "operation:post:/JSONtoHTML",
         "kind": "operation",
         "method": "post",
         "name": "JsonToHtml",
         "path": "/JSONtoHTML",
         "pointer": "#/paths/~1JSONtoHTML/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputJsonConversionHTML"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - JSON to HTML Table"
+        "summary": "Data - JSON to HTML Table",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a JSON object to an XML string",
         "id": "operation:post:/JSONtoXML",
         "kind": "operation",
         "method": "post",
         "name": "JsonToXml",
         "path": "/JSONtoXML",
         "pointer": "#/paths/~1JSONtoXML/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputJsonConversionXML"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - JSON to XML"
+        "summary": "Data - JSON to XML",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Join a collection of strings",
         "id": "operation:post:/JoinStrings",
         "kind": "operation",
         "method": "post",
         "name": "JoinStrings",
         "path": "/JoinStrings",
         "pointer": "#/paths/~1JoinStrings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputJoinStrings"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Join strings"
+        "summary": "Text - Join strings",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current and historical market index information",
         "id": "operation:post:/MarketIndex",
         "kind": "operation",
         "method": "post",
         "name": "MarketIndex",
         "path": "/MarketIndex",
         "pointer": "#/paths/~1MarketIndex/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputMarketIndex"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputMarketIndex"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Finance - Market index"
+        "summary": "Finance - Market index",
+        "tags": [
+          "Finance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query a JSON object using a JSONPath expression",
         "id": "operation:post:/QueryJSON",
         "kind": "operation",
         "method": "post",
         "name": "QueryJson",
         "path": "/QueryJSON",
         "pointer": "#/paths/~1QueryJSON/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputDataQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - Query JSON"
+        "summary": "Data - Query JSON",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query an XML string using an XPath expression",
         "id": "operation:post:/QueryXML",
         "kind": "operation",
         "method": "post",
         "name": "QueryXml",
         "path": "/QueryXML",
         "pointer": "#/paths/~1QueryXML/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputDataQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - Query XML"
+        "summary": "Data - Query XML",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a random number within a specified range",
         "id": "operation:post:/RandomNumber",
         "kind": "operation",
         "method": "post",
         "name": "RandomNumber",
         "path": "/RandomNumber",
         "pointer": "#/paths/~1RandomNumber/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputNumberRange"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Random number"
+        "summary": "Math - Random number",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Redact a strng containing sensitive content",
         "id": "operation:post:/RedactString",
         "kind": "operation",
         "method": "post",
         "name": "RedactString",
         "path": "/RedactString",
         "pointer": "#/paths/~1RedactString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputRedactString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Redact string"
+        "summary": "Text - Redact string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove an item from a collection",
         "id": "operation:post:/RemoveFromCollection",
         "kind": "operation",
         "method": "post",
         "name": "RemoveFromCollection",
         "path": "/RemoveFromCollection",
         "pointer": "#/paths/~1RemoveFromCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionModify"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionResult"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Remove from collection"
+        "summary": "Collections - Remove from collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Replace one value with another in a string",
         "id": "operation:post:/ReplaceString",
         "kind": "operation",
         "method": "post",
         "name": "ReplaceString",
         "path": "/ReplaceString",
         "pointer": "#/paths/~1ReplaceString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputReplaceString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Replace string"
+        "summary": "Text - Replace string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Replace whole or partial strings in a collection",
         "id": "operation:post:/ReplaceValuesInCollection",
         "kind": "operation",
         "method": "post",
         "name": "ReplaceValuesInCollection",
         "path": "/ReplaceValuesInCollection",
         "pointer": "#/paths/~1ReplaceValuesInCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionReplace"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionResult"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Replace values in collection"
+        "summary": "Collections - Replace values in collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resize an image",
         "id": "operation:post:/ResizeImage",
         "kind": "operation",
         "method": "post",
         "name": "ResizeImage",
         "path": "/ResizeImage",
         "pointer": "#/paths/~1ResizeImage/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Resize Image"
+        "summary": "Files - Resize Image",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Rotate an image by specified number of degrees",
         "id": "operation:post:/RotateImage",
         "kind": "operation",
         "method": "post",
         "name": "RotateImage",
         "path": "/RotateImage",
         "pointer": "#/paths/~1RotateImage/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Rotate Image"
+        "summary": "Files - Rotate Image",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Round a numeric value up or down",
         "id": "operation:post:/RoundNumber",
         "kind": "operation",
         "method": "post",
         "name": "RoundNumber",
         "path": "/RoundNumber",
         "pointer": "#/paths/~1RoundNumber/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateNumber"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Round number"
+        "summary": "Math - Round number",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a simple, short URL from a complex URL",
         "id": "operation:post:/ShortenLink",
         "kind": "operation",
         "method": "post",
         "name": "ShortenLink",
         "path": "/ShortenLink",
         "pointer": "#/paths/~1ShortenLink/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Shorten hyperlink"
+        "summary": "Text - Shorten hyperlink",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sort a collection of strings",
         "id": "operation:post:/SortCollection",
         "kind": "operation",
         "method": "post",
         "name": "SortCollection",
         "path": "/SortCollection",
         "pointer": "#/paths/~1SortCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionSort"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputCollectionResult"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Sort collection"
+        "summary": "Collections - Sort collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert audio file to text (10MB limit)",
         "id": "operation:post:/SpeechToText",
         "kind": "operation",
         "method": "post",
         "name": "SpeechToText",
         "path": "/SpeechToText",
         "pointer": "#/paths/~1SpeechToText/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Speech to Text"
+        "summary": "Text - Speech to Text",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Split a collection of items by matching value or index",
         "id": "operation:post:/SplitCollection",
         "kind": "operation",
         "method": "post",
         "name": "SplitCollection",
         "path": "/SplitCollection",
         "pointer": "#/paths/~1SplitCollection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCollectionSplit"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputMultiCollection"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Collections - Split collection"
+        "summary": "Collections - Split collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Split a string based upon one or more characters",
         "id": "operation:post:/SplitString",
         "kind": "operation",
         "method": "post",
         "name": "SplitString",
         "path": "/SplitString",
         "pointer": "#/paths/~1SplitString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputSplitString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputStringArray"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Split string"
+        "summary": "Text - Split string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate the standard deviation of two or more numbers",
         "id": "operation:post:/StandardDeviation",
         "kind": "operation",
         "method": "post",
         "name": "StandardDeviation",
         "path": "/StandardDeviation",
         "pointer": "#/paths/~1StandardDeviation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputCalculateSeries"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputNumber"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Math - Calculate standard deviation"
+        "summary": "Math - Calculate standard deviation",
+        "tags": [
+          "Math"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current and historical stock price information",
         "id": "operation:post:/StockPrices",
         "kind": "operation",
         "method": "post",
         "name": "StockPrices",
         "path": "/StockPrices",
         "pointer": "#/paths/~1StockPrices/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputStockPrices"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputStockPrice"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Finance - Stock prices"
+        "summary": "Finance - Stock prices",
+        "tags": [
+          "Finance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert text string to file",
         "id": "operation:post:/StringToFile",
         "kind": "operation",
         "method": "post",
         "name": "StringToFile",
         "path": "/StringToFile",
         "pointer": "#/paths/~1StringToFile/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputStringToFile"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - String to File"
+        "summary": "Text - String to File",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert text to an audio file using AI-driven speech synthesis.",
         "id": "operation:post:/TextToSpeech",
         "kind": "operation",
         "method": "post",
         "name": "TextToSpeech",
         "path": "/TextToSpeech",
         "pointer": "#/paths/~1TextToSpeech/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputTextToSpeech"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Text to Speech"
+        "summary": "Text - Text to Speech",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Translate a string into a different language",
         "id": "operation:post:/TranslateString",
         "kind": "operation",
         "method": "post",
         "name": "TranslateString",
         "path": "/TranslateString",
         "pointer": "#/paths/~1TranslateString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputTranslateString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Translate string"
+        "summary": "Text - Translate string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Trim leading or trailing whitespace from a string",
         "id": "operation:post:/TrimString",
         "kind": "operation",
         "method": "post",
         "name": "TrimString",
         "path": "/TrimString",
         "pointer": "#/paths/~1TrimString/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputTrimString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Trim string"
+        "summary": "Text - Trim string",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Decode an encoded URL",
         "id": "operation:post:/URLDecode",
         "kind": "operation",
         "method": "post",
         "name": "UrlDecode",
         "path": "/URLDecode",
         "pointer": "#/paths/~1URLDecode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Decode URL"
+        "summary": "Text - Decode URL",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate an encoded string from a complex hyperlink",
         "id": "operation:post:/URLEncode",
         "kind": "operation",
         "method": "post",
         "name": "UrlEncode",
         "path": "/URLEncode",
         "pointer": "#/paths/~1URLEncode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputString"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Encode URL"
+        "summary": "Text - Encode URL",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine if an email address is valid",
         "id": "operation:post:/ValidateEmail",
         "kind": "operation",
         "method": "post",
         "name": "ValidateEmail",
         "path": "/ValidateEmail",
         "pointer": "#/paths/~1ValidateEmail/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Validate email"
+        "summary": "Text - Validate email",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Verify a hashed value against the original source string",
         "id": "operation:post:/VerifyHash",
         "kind": "operation",
         "method": "post",
         "name": "VerifyHash",
         "path": "/VerifyHash",
         "pointer": "#/paths/~1VerifyHash/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputVerifyHash"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputBoolean"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Text - Verify hash"
+        "summary": "Text - Verify hash",
+        "tags": [
+          "Text"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add watermark text to an image",
         "id": "operation:post:/WatermarkImage",
         "kind": "operation",
         "method": "post",
         "name": "WatermarkImage",
         "path": "/WatermarkImage",
         "pointer": "#/paths/~1WatermarkImage/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Files - Watermark Image"
+        "summary": "Files - Watermark Image",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert date and time from one time zone to another",
         "id": "operation:post:/WorldTime",
         "kind": "operation",
         "method": "post",
         "name": "WorldTime",
         "path": "/WorldTime",
         "pointer": "#/paths/~1WorldTime/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputDateTimeConversion"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "DateTime - Get world time"
+        "summary": "DateTime - Get world time",
+        "tags": [
+          "DateTime"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert an XML string to a JSON object",
         "id": "operation:post:/XMLtoJSON",
         "kind": "operation",
         "method": "post",
         "name": "XmlToJson",
         "path": "/XMLtoJSON",
         "pointer": "#/paths/~1XMLtoJSON/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "inputXmlConversionJSON"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "outputString"
+          },
+          {
+            "status": "400",
+            "type": "outputString"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "Data - XML to JSON"
+        "summary": "Data - XML to JSON",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "id": "schema:inputCalculateMinMax",
         "kind": "schema",
-        "name": "inputCalculateMinMax"
+        "name": "inputCalculateMinMax",
+        "type": "object"
       },
       {
         "id": "schema:inputCalculateNumber",
         "kind": "schema",
-        "name": "inputCalculateNumber"
+        "name": "inputCalculateNumber",
+        "type": "object"
       },
       {
         "id": "schema:inputCalculateNumbers",
         "kind": "schema",
-        "name": "inputCalculateNumbers"
+        "name": "inputCalculateNumbers",
+        "type": "object"
       },
       {
         "id": "schema:inputCalculatePower",
         "kind": "schema",
-        "name": "inputCalculatePower"
+        "name": "inputCalculatePower",
+        "type": "object"
       },
       {
         "id": "schema:inputCalculateSeries",
         "kind": "schema",
-        "name": "inputCalculateSeries"
+        "name": "inputCalculateSeries",
+        "type": "object"
       },
       {
         "id": "schema:inputCaseConversion",
         "kind": "schema",
-        "name": "inputCaseConversion"
+        "name": "inputCaseConversion",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionConversion",
         "kind": "schema",
-        "name": "inputCollectionConversion"
+        "name": "inputCollectionConversion",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionConversionXML",
         "kind": "schema",
-        "name": "inputCollectionConversionXML"
+        "name": "inputCollectionConversionXML",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionCount",
         "kind": "schema",
-        "name": "inputCollectionCount"
+        "name": "inputCollectionCount",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionFilter",
         "kind": "schema",
-        "name": "inputCollectionFilter"
+        "name": "inputCollectionFilter",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionModify",
         "kind": "schema",
-        "name": "inputCollectionModify"
+        "name": "inputCollectionModify",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionReplace",
         "kind": "schema",
-        "name": "inputCollectionReplace"
+        "name": "inputCollectionReplace",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionSearch",
         "kind": "schema",
-        "name": "inputCollectionSearch"
+        "name": "inputCollectionSearch",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionSearchNumeric",
         "kind": "schema",
-        "name": "inputCollectionSearchNumeric"
+        "name": "inputCollectionSearchNumeric",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionSort",
         "kind": "schema",
-        "name": "inputCollectionSort"
+        "name": "inputCollectionSort",
+        "type": "object"
       },
       {
         "id": "schema:inputCollectionSplit",
         "kind": "schema",
-        "name": "inputCollectionSplit"
+        "name": "inputCollectionSplit",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertAngle",
         "kind": "schema",
-        "name": "inputConvertAngle"
+        "name": "inputConvertAngle",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertArea",
         "kind": "schema",
-        "name": "inputConvertArea"
+        "name": "inputConvertArea",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertDistance",
         "kind": "schema",
-        "name": "inputConvertDistance"
+        "name": "inputConvertDistance",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertDuration",
         "kind": "schema",
-        "name": "inputConvertDuration"
+        "name": "inputConvertDuration",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertEnergy",
         "kind": "schema",
-        "name": "inputConvertEnergy"
+        "name": "inputConvertEnergy",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertPower",
         "kind": "schema",
-        "name": "inputConvertPower"
+        "name": "inputConvertPower",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertSpeed",
         "kind": "schema",
-        "name": "inputConvertSpeed"
+        "name": "inputConvertSpeed",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertTemperature",
         "kind": "schema",
-        "name": "inputConvertTemperature"
+        "name": "inputConvertTemperature",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertVolume",
         "kind": "schema",
-        "name": "inputConvertVolume"
+        "name": "inputConvertVolume",
+        "type": "object"
       },
       {
         "id": "schema:inputConvertWeight",
         "kind": "schema",
-        "name": "inputConvertWeight"
+        "name": "inputConvertWeight",
+        "type": "object"
       },
       {
         "id": "schema:inputCsvConversionJSON",
         "kind": "schema",
-        "name": "inputCsvConversionJSON"
+        "name": "inputCsvConversionJSON",
+        "type": "object"
       },
       {
         "id": "schema:inputCurrencyConversion",
         "kind": "schema",
-        "name": "inputCurrencyConversion"
+        "name": "inputCurrencyConversion",
+        "type": "object"
       },
       {
         "id": "schema:inputCurrencyFormat",
         "kind": "schema",
-        "name": "inputCurrencyFormat"
+        "name": "inputCurrencyFormat",
+        "type": "object"
       },
       {
         "id": "schema:inputDataQuery",
         "kind": "schema",
-        "name": "inputDataQuery"
+        "name": "inputDataQuery",
+        "type": "object"
       },
       {
         "id": "schema:inputDateTimeConversion",
         "kind": "schema",
-        "name": "inputDateTimeConversion"
+        "name": "inputDateTimeConversion",
+        "type": "object"
       },
       {
         "id": "schema:inputDateTimeDifference",
         "kind": "schema",
-        "name": "inputDateTimeDifference"
+        "name": "inputDateTimeDifference",
+        "type": "object"
       },
       {
         "id": "schema:inputDateTimeFormat",
         "kind": "schema",
-        "name": "inputDateTimeFormat"
+        "name": "inputDateTimeFormat",
+        "type": "object"
       },
       {
         "id": "schema:inputDateTimeInfo",
         "kind": "schema",
-        "name": "inputDateTimeInfo"
+        "name": "inputDateTimeInfo",
+        "type": "object"
       },
       {
         "id": "schema:inputGenerateHash",
         "kind": "schema",
-        "name": "inputGenerateHash"
+        "name": "inputGenerateHash",
+        "type": "object"
       },
       {
         "id": "schema:inputGenerateUniqueID",
         "kind": "schema",
-        "name": "inputGenerateUniqueID"
+        "name": "inputGenerateUniqueID",
+        "type": "object"
       },
       {
         "id": "schema:inputJoinStrings",
         "kind": "schema",
-        "name": "inputJoinStrings"
+        "name": "inputJoinStrings",
+        "type": "object"
       },
       {
         "id": "schema:inputJsonConversionCSV",
         "kind": "schema",
-        "name": "inputJsonConversionCSV"
+        "name": "inputJsonConversionCSV",
+        "type": "object"
       },
       {
         "id": "schema:inputJsonConversionHTML",
         "kind": "schema",
-        "name": "inputJsonConversionHTML"
+        "name": "inputJsonConversionHTML",
+        "type": "object"
       },
       {
         "id": "schema:inputJsonConversionXML",
         "kind": "schema",
-        "name": "inputJsonConversionXML"
+        "name": "inputJsonConversionXML",
+        "type": "object"
       },
       {
         "id": "schema:inputMarketIndex",
         "kind": "schema",
-        "name": "inputMarketIndex"
+        "name": "inputMarketIndex",
+        "type": "object"
       },
       {
         "id": "schema:inputNumberRange",
         "kind": "schema",
-        "name": "inputNumberRange"
+        "name": "inputNumberRange",
+        "type": "object"
       },
       {
         "id": "schema:inputQRCode",
         "kind": "schema",
-        "name": "inputQRCode"
+        "name": "inputQRCode",
+        "type": "object"
       },
       {
         "id": "schema:inputRedactString",
         "kind": "schema",
-        "name": "inputRedactString"
+        "name": "inputRedactString",
+        "type": "object"
       },
       {
         "id": "schema:inputReplaceString",
         "kind": "schema",
-        "name": "inputReplaceString"
+        "name": "inputReplaceString",
+        "type": "object"
       },
       {
         "id": "schema:inputSplitString",
         "kind": "schema",
-        "name": "inputSplitString"
+        "name": "inputSplitString",
+        "type": "object"
       },
       {
         "id": "schema:inputStockPrices",
         "kind": "schema",
-        "name": "inputStockPrices"
+        "name": "inputStockPrices",
+        "type": "object"
       },
       {
         "id": "schema:inputString",
         "kind": "schema",
-        "name": "inputString"
+        "name": "inputString",
+        "type": "object"
       },
       {
         "id": "schema:inputStringComparison",
         "kind": "schema",
-        "name": "inputStringComparison"
+        "name": "inputStringComparison",
+        "type": "object"
       },
       {
         "id": "schema:inputStringContains",
         "kind": "schema",
-        "name": "inputStringContains"
+        "name": "inputStringContains",
+        "type": "object"
       },
       {
         "id": "schema:inputStringToFile",
         "kind": "schema",
-        "name": "inputStringToFile"
+        "name": "inputStringToFile",
+        "type": "object"
       },
       {
         "id": "schema:inputTextToSpeech",
         "kind": "schema",
-        "name": "inputTextToSpeech"
+        "name": "inputTextToSpeech",
+        "type": "object"
       },
       {
         "id": "schema:inputTranslateString",
         "kind": "schema",
-        "name": "inputTranslateString"
+        "name": "inputTranslateString",
+        "type": "object"
       },
       {
         "id": "schema:inputTrimString",
         "kind": "schema",
-        "name": "inputTrimString"
+        "name": "inputTrimString",
+        "type": "object"
       },
       {
         "id": "schema:inputVerifyHash",
         "kind": "schema",
-        "name": "inputVerifyHash"
+        "name": "inputVerifyHash",
+        "type": "object"
       },
       {
         "id": "schema:inputXmlConversionJSON",
         "kind": "schema",
-        "name": "inputXmlConversionJSON"
+        "name": "inputXmlConversionJSON",
+        "type": "object"
       },
       {
         "id": "schema:outputBoolean",
         "kind": "schema",
-        "name": "outputBoolean"
+        "name": "outputBoolean",
+        "type": "object"
       },
       {
         "id": "schema:outputCollectionNumber",
         "kind": "schema",
-        "name": "outputCollectionNumber"
+        "name": "outputCollectionNumber",
+        "type": "object"
       },
       {
         "id": "schema:outputCollectionResult",
         "kind": "schema",
-        "name": "outputCollectionResult"
+        "name": "outputCollectionResult",
+        "type": "object"
       },
       {
         "id": "schema:outputCollectionString",
         "kind": "schema",
-        "name": "outputCollectionString"
+        "name": "outputCollectionString",
+        "type": "object"
       },
       {
         "id": "schema:outputDateDifference",
         "kind": "schema",
-        "name": "outputDateDifference"
+        "name": "outputDateDifference",
+        "type": "object"
       },
       {
         "id": "schema:outputDateInfo",
         "kind": "schema",
-        "name": "outputDateInfo"
+        "name": "outputDateInfo",
+        "type": "object"
       },
       {
         "id": "schema:outputFileByte",
         "kind": "schema",
-        "name": "outputFileByte"
+        "name": "outputFileByte",
+        "type": "object"
       },
       {
         "id": "schema:outputMarketIndex",
         "kind": "schema",
-        "name": "outputMarketIndex"
+        "name": "outputMarketIndex",
+        "type": "object"
       },
       {
         "id": "schema:outputMultiCollection",
         "kind": "schema",
-        "name": "outputMultiCollection"
+        "name": "outputMultiCollection",
+        "type": "object"
       },
       {
         "id": "schema:outputNumber",
         "kind": "schema",
-        "name": "outputNumber"
+        "name": "outputNumber",
+        "type": "object"
       },
       {
         "id": "schema:outputStockPrice",
         "kind": "schema",
-        "name": "outputStockPrice"
+        "name": "outputStockPrice",
+        "type": "object"
       },
       {
         "id": "schema:outputString",
         "kind": "schema",
-        "name": "outputString"
+        "name": "outputString",
+        "type": "object"
       },
       {
         "id": "schema:outputStringArray",
         "kind": "schema",
-        "name": "outputStringArray"
+        "name": "outputStringArray",
+        "type": "object"
       }
     ]
   },

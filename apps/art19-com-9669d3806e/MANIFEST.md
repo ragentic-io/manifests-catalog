@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_art19co_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `5211fac2b46b2426a71ca9a264569d928861858d76de8b22391d8f3a7af5e9da` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_art19co_profile_ima
 
 13 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/classification_inclusions` | get /classification_inclusions | Get ClassificationInclusion records |
-| GET | `/classification_inclusions/{id}` | get /classification_inclusions/{id} | Get a specific classification inclusion |
-| GET | `/classifications` | get /classifications | Get a list of classifications |
-| GET | `/classifications/{id}` | get /classifications/{id} | Get a specific classification |
-| GET | `/credits` | get /credits | Get a list of credits |
-| GET | `/credits/{id}` | get /credits/{id} | Get a specific credit |
-| GET | `/episodes` | get /episodes | Get a list of episodes |
-| GET | `/episodes/{id}` | get /episodes/{id} | Get a specific episode |
-| GET | `/episodes/{id}/next_sibling` | get /episodes/{id}/next_sibling | Get the episode released right after the specified one |
-| GET | `/episodes/{id}/previous_sibling` | get /episodes/{id}/previous_sibling | Get the episode released right before the specified one |
-| GET | `/images` | get /images | Get a list of images |
-| GET | `/images/{id}` | get /images/{id} | Get a specific image |
-| GET | `/media_assets` | get /media_assets | Get a list of media assets |
-| GET | `/media_assets/{id}` | get /media_assets/{id} | Get a specific media asset |
-| GET | `/networks` | get /networks | Get a list of networks |
-| GET | `/networks/{id}` | get /networks/{id} | Get a specific network |
-| GET | `/people` | get /people | Get a list of people |
-| GET | `/people/{id}` | get /people/{id} | Get a specific person |
-| GET | `/seasons` | get /seasons | Get a list of seasons |
-| GET | `/seasons/{id}` | get /seasons/{id} | Get a specific season |
-| GET | `/series` | get /series | Get a list of series |
-| GET | `/series/{id}` | get /series/{id} | Get a specific series |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/classification_inclusions` | get /classification_inclusions | `ids[]`, `page[number]`, `page[size]`, `classification_id`, `classification_type`, `classified_id`, `classified_type`, `q`, `sort` | object | yes | Get ClassificationInclusion records |
+| GET | `/classification_inclusions/{id}` | get /classification_inclusions/{id} | `id`* | object | yes | Get a specific classification inclusion |
+| GET | `/classifications` | get /classifications | `ids[]`, `page[number]`, `page[size]`, `type`, `q`, `is_country`, `sort` | object | yes | Get a list of classifications |
+| GET | `/classifications/{id}` | get /classifications/{id} | `id`* | object | yes | Get a specific classification |
+| GET | `/credits` | get /credits | `ids[]`, `page[number]`, `page[size]`, `creditable_id`, `creditable_type`, `sort` | object | yes | Get a list of credits |
+| GET | `/credits/{id}` | get /credits/{id} | `id`* | object | yes | Get a specific credit |
+| GET | `/episodes` | get /episodes | `ids[]`, `page[number]`*, `page[size]`*, `included_in_inventory_calendar`, `month`, `published`, `q`, `released_after`, `released_before`, `rss`, `season_id`, `series_id`, `sort`, `year` | object | yes | Get a list of episodes |
+| GET | `/episodes/{id}` | get /episodes/{id} | `id`* | object | yes | Get a specific episode |
+| GET | `/episodes/{id}/next_sibling` | get /episodes/{id}/next_sibling | `id`*, `rss` | object | yes | Get the episode released right after the specified one |
+| GET | `/episodes/{id}/previous_sibling` | get /episodes/{id}/previous_sibling | `id`*, `rss` | object | yes | Get the episode released right before the specified one |
+| GET | `/images` | get /images | `ids[]`* | object | yes | Get a list of images |
+| GET | `/images/{id}` | get /images/{id} | `id`* | object | yes | Get a specific image |
+| GET | `/media_assets` | get /media_assets | `ids[]`* | object | yes | Get a list of media assets |
+| GET | `/media_assets/{id}` | get /media_assets/{id} | `id`* | object | yes | Get a specific media asset |
+| GET | `/networks` | get /networks | `ids[]`, `page[number]`, `page[size]`, `q`, `ad_rep_account_id`, `ad_deal_status`, `sort` | object | yes | Get a list of networks |
+| GET | `/networks/{id}` | get /networks/{id} | `id`* | object | yes | Get a specific network |
+| GET | `/people` | get /people | `ids[]`, `page[number]`, `page[size]`, `q`, `sort` | object | yes | Get a list of people |
+| GET | `/people/{id}` | get /people/{id} | `id`* | object | yes | Get a specific person |
+| GET | `/seasons` | get /seasons | `ids[]`, `page[number]`, `page[size]`, `series_id`, `q`, `sort` | object | yes | Get a list of seasons |
+| GET | `/seasons/{id}` | get /seasons/{id} | `id`* | object | yes | Get a specific season |
+| GET | `/series` | get /series | `ids[]`, `page[number]`, `page[size]`, `ad_rep_account_id`, `network_id`, `q`, `sort` | object | yes | Get a list of series |
+| GET | `/series/{id}` | get /series/{id} | `id`* | object | yes | Get a specific series |

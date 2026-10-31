@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_rebilly-core.redoc.ly_rb_apiLog
 
 | | |
 | --- | --- |
-| Signed bundle | `ff7d04d94ab85f5b04b04fc85587b5365b695b3fc259c10b00ba1ffbf94c726b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,189 +34,191 @@ logo: "https://api.apis.guru/v2/cache/logo/https_rebilly-core.redoc.ly_rb_apiLog
 
 490 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/3dsecure` | Get3DSecureCollection | Retrieve a list of ThreeDSecure entries |
-| POST | `/3dsecure` | Post3DSecure | Create a ThreeDSecure entry |
-| GET | `/3dsecure/{id}` | Get3DSecure | Retrieve a ThreeDSecure entry |
-| GET | `/aml` | GetAmlEntry | Search PEP/Sanctions/Adverse Media lists |
-| GET | `/attachments` | GetAttachmentCollection | Retrieve a list of Attachments |
-| POST | `/attachments` | PostAttachment | Create an Attachment |
-| DELETE | `/attachments/{id}` | DeleteAttachment | Delete an Attachment |
-| GET | `/attachments/{id}` | GetAttachment | Retrieve an Attachment |
-| PUT | `/attachments/{id}` | PutAttachment | Update the Attachment with predefined ID |
-| GET | `/authentication-options` | GetAuthenticationOption | Read current authentication options |
-| PUT | `/authentication-options` | PutAuthenticationOption | Change authentication options |
-| GET | `/authentication-tokens` | GetAuthenticationTokenCollection | Retrieve a list of auth tokens |
-| POST | `/authentication-tokens` | PostAuthenticationToken | Login |
-| DELETE | `/authentication-tokens/{token}` | DeleteAuthenticationToken | Logout a customer |
-| GET | `/authentication-tokens/{token}` | GetAuthenticationTokenVerification | Verify |
-| POST | `/authentication-tokens/{token}/exchange` | PostAuthenticationTokenExchange | Exchange |
-| GET | `/bank-accounts` | GetBankAccountCollection | Retrieve a list of bank accounts |
-| POST | `/bank-accounts` | PostBankAccount | Create a Bank Account |
-| GET | `/bank-accounts/{id}` | GetBankAccount | Retrieve a Bank Account |
-| PATCH | `/bank-accounts/{id}` | PatchBankAccount | Update a bank account's values |
-| PUT | `/bank-accounts/{id}` | PutBankAccount | Create a Bank Account with predefined ID |
-| POST | `/bank-accounts/{id}/deactivation` | PostBankAccountDeactivation | Deactivate a Bank Account |
-| GET | `/blocklists` | GetBlocklistCollection | Retrieve a list of blocklists |
-| POST | `/blocklists` | PostBlocklist | Create a blocklist |
-| DELETE | `/blocklists/{id}` | DeleteBlocklist | Delete a blocklist |
-| GET | `/blocklists/{id}` | GetBlocklist | Retrieve a blocklist |
-| PUT | `/blocklists/{id}` | PutBlocklist | Create a blocklist with predefined ID |
-| GET | `/coupons` | GetCouponCollection | Retrieve a list of coupons |
-| POST | `/coupons` | PostCoupon | Create a coupon |
-| GET | `/coupons-redemptions` | GetCouponRedemptionCollection | Retrieve a list of coupon redemptions |
-| POST | `/coupons-redemptions` | PostCouponRedemption | Redeem a coupon |
-| GET | `/coupons-redemptions/{id}` | GetCouponRedemption | Retrieve a coupon redemption with specified identifier string |
-| POST | `/coupons-redemptions/{id}/cancel` | PostCouponRedemptionCancellation | Cancel a coupon redemption |
-| GET | `/coupons/{id}` | GetCoupon | Retrieve a coupon |
-| PUT | `/coupons/{id}` | PutCoupon | Create or update a coupon with predefined coupon ID |
-| POST | `/coupons/{id}/expiration` | PostCouponExpiration | Set a coupon's expiration time |
-| GET | `/credentials` | GetCredentialCollection | Retrieve a list of credentials |
-| POST | `/credentials` | PostCredential | Create a credential |
-| DELETE | `/credentials/{id}` | DeleteCredential | Delete a credential |
-| GET | `/credentials/{id}` | GetCredential | Retrieve a credential |
-| PUT | `/credentials/{id}` | PutCredential | Create or update a credential with predefined ID |
-| GET | `/custom-fields/{resource}` | GetCustomFieldCollection | Retrieve Custom Fields |
-| GET | `/custom-fields/{resource}/{name}` | GetCustomField | Retrieve a Custom Field |
-| PUT | `/custom-fields/{resource}/{name}` | PutCustomField | Create or alter a Custom Field |
-| GET | `/customer-timeline-custom-events` | GetCustomerTimelineCustomEventTypeCollection | Retrieve a list of customer timeline custom event types |
-| POST | `/customer-timeline-custom-events` | PostCustomerTimelineCustomEventType | Create Customer Timeline custom event type |
-| GET | `/customer-timeline-custom-events/{id}` | GetCustomerTimelineCustomEventType | Retrieve customer timeline custom event type with specified identifier string |
-| GET | `/customer-timeline-events` | GetCustomerTimelineEventCollection | Retrieve a list of customer timeline messages for all customers |
-| GET | `/customers` | GetCustomerCollection | Retrieve a list of customers |
-| POST | `/customers` | PostCustomer | Create a customer (without an ID) |
-| DELETE | `/customers/{id}` | DeleteCustomer | Merge and delete a customer |
-| GET | `/customers/{id}` | GetCustomer | Retrieve a customer |
-| PUT | `/customers/{id}` | PutCustomer | Upsert a customer with predefined ID |
-| DELETE | `/customers/{id}/lead-source` | DeleteCustomerLeadSource | Delete a Lead Source for a customer |
-| GET | `/customers/{id}/lead-source` | GetCustomerLeadSource | Retrieve a customer's Lead Source |
-| PUT | `/customers/{id}/lead-source` | PutCustomerLeadSource | Create a Lead Source for a customer |
-| GET | `/customers/{id}/timeline` | GetCustomerTimelineCollection | Retrieve a list of customer timeline messages |
-| POST | `/customers/{id}/timeline` | PostCustomerTimeline | Create a customer Timeline comment or custom defined event |
-| DELETE | `/customers/{id}/timeline/{messageId}` | DeleteCustomerTimeline | Delete a Customer Timeline message |
-| GET | `/customers/{id}/timeline/{messageId}` | GetCustomerTimeline | Retrieve a customer Timeline message |
-| GET | `/customers/{id}/upcoming-invoices` | GetCustomerUpcomingInvoiceCollection | Retrieve customer's upcoming invoices |
-| POST | `/digital-wallets/validation` | PostDigitalWalletValidation | Validate a digital wallet session |
-| GET | `/disputes` | GetDisputeCollection | Retrieve a list of disputes |
-| POST | `/disputes` | PostDispute | Create a dispute |
-| GET | `/disputes/{id}` | GetDispute | Retrieve a dispute |
-| PUT | `/disputes/{id}` | PutDispute | Create or update a Dispute with predefined ID |
-| GET | `/files` | GetFileCollection | Retrieve a list of files |
-| POST | `/files` | PostFile | Create a file |
-| DELETE | `/files/{id}` | DeleteFile | Delete a File |
-| GET | `/files/{id}` | GetFile | Retrieve a File Record |
-| PUT | `/files/{id}` | PutFile | Update the File with predefined ID |
-| GET | `/files/{id}/download` | GetFileDownload | Download a file |
-| GET | `/files/{id}/download{extension}` | GetFileDownloadExtension | Download image in specific format |
-| GET | `/invoices` | GetInvoiceCollection | Retrieve a list of invoices |
-| POST | `/invoices` | PostInvoice | Create an invoice |
-| GET | `/invoices/{id}` | GetInvoice | Retrieve an invoice |
-| PUT | `/invoices/{id}` | PutInvoice | Create or update an invoice with predefined ID |
-| POST | `/invoices/{id}/abandon` | PostInvoiceAbandonment | Abandon an invoice |
-| POST | `/invoices/{id}/issue` | PostInvoiceIssuance | Issue an invoice |
-| GET | `/invoices/{id}/items` | GetInvoiceItemCollection | Retrieve invoice items |
-| POST | `/invoices/{id}/items` | PostInvoiceItem | Create an invoice item |
-| POST | `/invoices/{id}/recalculate` | PostInvoiceRecalculation | Recalculate an invoice |
-| POST | `/invoices/{id}/reissue` | PostInvoiceReissuance | Reissue an invoice |
-| GET | `/invoices/{id}/timeline` | GetInvoiceTimelineCollection | Retrieve a list of invoice timeline messages |
-| POST | `/invoices/{id}/timeline` | PostInvoiceTimeline | Create an invoice Timeline comment |
-| DELETE | `/invoices/{id}/timeline/{messageId}` | DeleteInvoiceTimeline | Delete an Invoice Timeline message |
-| GET | `/invoices/{id}/timeline/{messageId}` | GetInvoiceTimeline | Retrieve an Invoice Timeline message |
-| POST | `/invoices/{id}/transaction` | PostInvoiceTransaction | Apply a transaction to an invoice |
-| GET | `/invoices/{id}/transaction-allocations` | GetInvoiceTransactionAllocationCollection | Get transaction amounts allocated to an invoice |
-| POST | `/invoices/{id}/void` | PostInvoiceVoid | Void an invoice |
-| GET | `/kyc-documents` | GetKycDocumentCollection | Retrieve a list of KYC documents |
-| POST | `/kyc-documents` | PostKycDocument | Create a KYC Document |
-| GET | `/kyc-documents/{id}` | GetKycDocument | Retrieve a KYC Document |
-| PUT | `/kyc-documents/{id}` | PutKycDocument | Create or update a KYC document with predefined ID |
-| POST | `/kyc-documents/{id}/acceptance` | PostKycDocumentAcceptance | Accept a KYC document |
-| POST | `/kyc-documents/{id}/matches` | PostKycDocumentMatches | Update a KYC document's documentMatches |
-| POST | `/kyc-documents/{id}/rejection` | PostKycDocumentRejection | Reject a KYC document |
-| POST | `/kyc-documents/{id}/review` | PostKycDocumentReview | Review a KYC document |
-| GET | `/kyc-requests` | GetKycRequestCollection | Retrieve a list of KYC requests |
-| POST | `/kyc-requests` | PostKycRequest | Create a KYC Request |
-| DELETE | `/kyc-requests/{id}` | DeleteKycRequest | Delete the KYC request |
-| GET | `/kyc-requests/{id}` | GetKycRequest | Retrieve a KYC request |
-| PATCH | `/kyc-requests/{id}` | PatchKycRequest | Update a KYC request |
-| GET | `/password-tokens` | GetPasswordTokenCollection | Retrieve a list of tokens |
-| POST | `/password-tokens` | PostPasswordToken | Create a Reset Password Token |
-| DELETE | `/password-tokens/{id}` | DeletePasswordToken | Delete a Reset Password Token |
-| GET | `/password-tokens/{id}` | GetPasswordToken | Retrieve a Reset Password Token |
-| GET | `/payment-cards` | GetPaymentCardCollection | Retrieve a list of Payment Cards |
-| POST | `/payment-cards` | PostPaymentCard | Create a Payment Card |
-| GET | `/payment-cards/{id}` | GetPaymentCard | Retrieve a Payment Card |
-| PATCH | `/payment-cards/{id}` | PatchPaymentCard | Update a payment card's values |
-| PUT | `/payment-cards/{id}` | PutPaymentCard | Create a payment card with predefined ID |
-| POST | `/payment-cards/{id}/deactivation` | PostPaymentCardDeactivation | Deactivate a Payment Card |
-| GET | `/payment-instruments` | GetPaymentInstrumentCollection | Retrieve a list of payment instruments |
-| POST | `/payment-instruments` | PostPaymentInstrument | Create a Payment Instrument |
-| GET | `/payment-instruments/{id}` | GetPaymentInstrument | Retrieve a Payment Instrument |
-| PATCH | `/payment-instruments/{id}` | PatchPaymentInstrument | Update a Payment Instrument's values |
-| POST | `/payment-instruments/{id}/deactivation` | PostPaymentInstrumentDeactivation | Deactivate a payment instrument |
-| POST | `/payouts` | PostPayout | Create a credit transaction |
-| GET | `/paypal-accounts` | GetPayPalAccountCollection | Retrieve a list of PayPal accounts |
-| POST | `/paypal-accounts` | PostPayPalAccount | Create a PayPal Account |
-| GET | `/paypal-accounts/{id}` | GetPayPalAccount | Retrieve a PayPal Account |
-| PUT | `/paypal-accounts/{id}` | PutPayPalAccount | Create a PayPal account with predefined ID |
-| POST | `/paypal-accounts/{id}/deactivation` | PostPayPalAccountDeactivation | Deactivate a PayPal Account |
-| GET | `/plans` | GetPlanCollection | Retrieve a list of plans |
-| POST | `/plans` | PostPlan | Create a plan |
-| DELETE | `/plans/{id}` | DeletePlan | Delete a Plan |
-| GET | `/plans/{id}` | GetPlan | Retrieve a plan |
-| PUT | `/plans/{id}` | PutPlan | Create or update a Plan with predefined ID |
-| GET | `/products` | GetProductCollection | Retrieve a list of products |
-| POST | `/products` | PostProduct | Create a Product |
-| DELETE | `/products/{id}` | DeleteProduct | Delete a product |
-| GET | `/products/{id}` | GetProduct | Retrieve a product |
-| PUT | `/products/{id}` | PutProduct | Create a product with predefined ID |
-| POST | `/ready-to-pay` | PostReadyToPay | Ready to Pay |
-| GET | `/search` | GetSearch | Search merchant data |
-| GET | `/shipping-zones` | GetShippingZoneCollection | Retrieve a list of shipping zones |
-| POST | `/shipping-zones` | PostShippingZone | Create a Shipping Zone |
-| DELETE | `/shipping-zones/{id}` | DeleteShippingZone | Delete a shipping zone |
-| GET | `/shipping-zones/{id}` | GetShippingZone | Retrieve a shipping zone |
-| PUT | `/shipping-zones/{id}` | PutShippingZone | Create a shipping zone with predefined ID |
-| GET | `/subscription-cancellations` | GetSubscriptionCancellationCollection | Retrieve a list of cancellations |
-| POST | `/subscription-cancellations` | PostSubscriptionCancellation | Cancel an order |
-| DELETE | `/subscription-cancellations/{id}` | DeleteSubscriptionCancellation | Delete a cancellation |
-| GET | `/subscription-cancellations/{id}` | GetSubscriptionCancellation | Retrieve an order сancellation |
-| PUT | `/subscription-cancellations/{id}` | PutSubscriptionCancellation | Cancel an order |
-| GET | `/subscription-reactivations` | GetSubscriptionReactivationCollection | Retrieve a list of reactivations |
-| POST | `/subscription-reactivations` | PostSubscriptionReactivation | Reactivate an order |
-| GET | `/subscription-reactivations/{id}` | GetSubscriptionReactivation | Retrieve an order reactivation |
-| GET | `/subscriptions` | GetSubscriptionCollection | Retrieve a list of orders |
-| POST | `/subscriptions` | PostSubscription | Create an order |
-| GET | `/subscriptions/{id}` | GetSubscription | Retrieve an order |
-| PUT | `/subscriptions/{id}` | PutSubscription | Upsert an order with predefined ID |
-| POST | `/subscriptions/{id}/change-items` | PostSubscriptionItemsChange | Change an order's items |
-| POST | `/subscriptions/{id}/interim-invoice` | PostSubscriptionInterimInvoice | Issue an interim invoice for a subscription order |
-| GET | `/subscriptions/{id}/timeline` | GetSubscriptionTimelineCollection | Retrieve a list of order timeline messages |
-| POST | `/subscriptions/{id}/timeline` | PostSubscriptionTimeline | Create an order Timeline comment |
-| DELETE | `/subscriptions/{id}/timeline/{messageId}` | DeleteSubscriptionTimeline | Delete an Order Timeline message |
-| GET | `/subscriptions/{id}/timeline/{messageId}` | GetSubscriptionTimeline | Retrieve an Order Timeline message |
-| GET | `/subscriptions/{id}/upcoming-invoices` | GetSubscriptionUpcomingInvoiceCollection | Retrieve subscription order's upcoming invoice |
-| POST | `/subscriptions/{id}/upcoming-invoices/{invoiceId}/issue` | PostUpcomingInvoiceIssuance | Issue an upcoming invoice for early pay |
-| GET | `/tags` | GetTagCollection | Retrieve a list of tags |
-| POST | `/tags` | PostTag | Create a tag |
-| DELETE | `/tags/{tag}` | DeleteTag | Delete a tag |
-| GET | `/tags/{tag}` | GetTag | Retrieve a tag |
-| PATCH | `/tags/{tag}` | PatchTag | Update a tag |
-| DELETE | `/tags/{tag}/customers` | DeleteTagCustomerCollection | Untag a list of customers |
-| POST | `/tags/{tag}/customers` | PostTagCustomerCollection | Tag a list of customers |
-| DELETE | `/tags/{tag}/customers/{customerId}` | DeleteTagCustomer | Untag a customer |
-| POST | `/tags/{tag}/customers/{customerId}` | PostTagCustomer | Tag a customer |
-| GET | `/tokens` | GetTokenCollection | Retrieve a list of tokens |
-| POST | `/tokens` | PostToken | Create a payment token |
-| GET | `/tokens/{token}` | GetToken | Retrieve a token |
-| GET | `/transactions` | GetTransactionCollection | Retrieve a list of transactions |
-| POST | `/transactions` | PostTransaction | Create a transaction |
-| GET | `/transactions/{id}` | GetTransaction | Retrieve a Transaction |
-| PATCH | `/transactions/{id}` | PatchTransaction | Update a transaction |
-| POST | `/transactions/{id}/query` | PostTransactionQuery | Query a Transaction |
-| POST | `/transactions/{id}/refund` | PostTransactionRefund | Refund a Transaction |
-| GET | `/transactions/{id}/timeline` | GetTransactionTimelineCollection | Retrieve a list of transaction timeline messages |
-| POST | `/transactions/{id}/timeline` | PostTransactionTimeline | Create a transaction Timeline comment |
-| DELETE | `/transactions/{id}/timeline/{messageId}` | DeleteTransactionTimeline | Delete a Transaction Timeline message |
-| GET | `/transactions/{id}/timeline/{messageId}` | GetTransactionTimeline | Retrieve a transaction Timeline message |
-| POST | `/transactions/{id}/update` | PostTransactionUpdate | Update a Transaction status |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/3dsecure` | Get3DSecureCollection | `Organization-Id`, `limit`, `offset` | ThreeDSecure[] | yes | Retrieve a list of ThreeDSecure entries |
+| POST | `/3dsecure` | Post3DSecure | `Organization-Id`, body*: ThreeDSecure | ThreeDSecure |  | Create a ThreeDSecure entry |
+| GET | `/3dsecure/{id}` | Get3DSecure | `id`*, `Organization-Id` | ThreeDSecure | yes | Retrieve a ThreeDSecure entry |
+| GET | `/aml` | GetAmlEntry | `Organization-Id`, `firstName`*, `lastName`*, `dob`, `country` | AML[] | yes | Search PEP/Sanctions/Adverse Media lists |
+| GET | `/attachments` | GetAttachmentCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `expand`, `fields`, `sort` | Attachment[] | yes | Retrieve a list of Attachments |
+| POST | `/attachments` | PostAttachment | `Organization-Id`, body*: Attachment | Attachment |  | Create an Attachment |
+| GET | `/attachments/{id}` | GetAttachment | `id`*, `Organization-Id` | Attachment | yes | Retrieve an Attachment |
+| PUT | `/attachments/{id}` | PutAttachment | `id`*, `Organization-Id`, body*: Attachment | Attachment |  | Update the Attachment with predefined ID |
+| DELETE | `/attachments/{id}` | DeleteAttachment | `id`*, `Organization-Id` | — |  | Delete an Attachment |
+| GET | `/authentication-options` | GetAuthenticationOption | `Organization-Id` | AuthenticationOptions[] | yes | Read current authentication options |
+| PUT | `/authentication-options` | PutAuthenticationOption | `Organization-Id`, body*: AuthenticationOptions | AuthenticationOptions |  | Change authentication options |
+| GET | `/authentication-tokens` | GetAuthenticationTokenCollection | `Organization-Id`, `limit`, `offset` | AuthenticationToken[] | yes | Retrieve a list of auth tokens |
+| POST | `/authentication-tokens` | PostAuthenticationToken | `Organization-Id`, body*: AuthenticationToken | AuthenticationToken |  | Login |
+| GET | `/authentication-tokens/{token}` | GetAuthenticationTokenVerification | `token`*, `Organization-Id` | AuthenticationToken | yes | Verify |
+| DELETE | `/authentication-tokens/{token}` | DeleteAuthenticationToken | `token`*, `Organization-Id` | — |  | Logout a customer |
+| POST | `/authentication-tokens/{token}/exchange` | PostAuthenticationTokenExchange | `token`*, `Organization-Id`, body*: CustomerJWT | CustomerJWT |  | Exchange |
+| GET | `/bank-accounts` | GetBankAccountCollection | `Organization-Id`, `limit`, `offset`, `q`, `sort`, `filter`, `expand` | BankAccount[] | yes | Retrieve a list of bank accounts |
+| POST | `/bank-accounts` | PostBankAccount | `Organization-Id`, body*: BankAccountCreateToken\|BankAccountCreatePlain | BankAccount |  | Create a Bank Account |
+| GET | `/bank-accounts/{id}` | GetBankAccount | `id`*, `Organization-Id` | BankAccount | yes | Retrieve a Bank Account |
+| PUT | `/bank-accounts/{id}` | PutBankAccount | `id`*, `Organization-Id`, body*: BankAccountCreateToken\|BankAccountCreatePlain | BankAccount |  | Create a Bank Account with predefined ID |
+| PATCH | `/bank-accounts/{id}` | PatchBankAccount | `id`*, `Organization-Id`, body: BankAccountUpdatePlain | BankAccount |  | Update a bank account's values |
+| POST | `/bank-accounts/{id}/deactivation` | PostBankAccountDeactivation | `id`*, `Organization-Id` | BankAccount |  | Deactivate a Bank Account |
+| GET | `/blocklists` | GetBlocklistCollection | `Organization-Id`, `limit`, `offset`, `sort`, `filter`, `q` | Blocklist[] | yes | Retrieve a list of blocklists |
+| POST | `/blocklists` | PostBlocklist | `Organization-Id`, body*: Blocklist | Blocklist |  | Create a blocklist |
+| GET | `/blocklists/{id}` | GetBlocklist | `id`*, `Organization-Id` | Blocklist | yes | Retrieve a blocklist |
+| PUT | `/blocklists/{id}` | PutBlocklist | `id`*, `Organization-Id`, body*: Blocklist | Blocklist |  | Create a blocklist with predefined ID |
+| DELETE | `/blocklists/{id}` | DeleteBlocklist | `id`*, `Organization-Id` | — |  | Delete a blocklist |
+| GET | `/coupons` | GetCouponCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `sort` | Coupon[] | yes | Retrieve a list of coupons |
+| POST | `/coupons` | PostCoupon | `Organization-Id`, body*: Coupon | Coupon |  | Create a coupon |
+| GET | `/coupons-redemptions` | GetCouponRedemptionCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `sort` | CouponRedemption[] | yes | Retrieve a list of coupon redemptions |
+| POST | `/coupons-redemptions` | PostCouponRedemption | `Organization-Id`, body*: CouponRedemption | CouponRedemption |  | Redeem a coupon |
+| GET | `/coupons-redemptions/{id}` | GetCouponRedemption | `id`*, `Organization-Id` | CouponRedemption | yes | Retrieve a coupon redemption with specified identifier string |
+| POST | `/coupons-redemptions/{id}/cancel` | PostCouponRedemptionCancellation | `id`*, `Organization-Id` | — |  | Cancel a coupon redemption |
+| GET | `/coupons/{id}` | GetCoupon | `id`*, `Organization-Id` | Coupon | yes | Retrieve a coupon |
+| PUT | `/coupons/{id}` | PutCoupon | `id`*, `Organization-Id`, body*: Coupon | Coupon |  | Create or update a coupon with predefined coupon ID |
+| POST | `/coupons/{id}/expiration` | PostCouponExpiration | `id`*, `Organization-Id`, body: CouponExpiration | Coupon |  | Set a coupon's expiration time |
+| GET | `/credentials` | GetCredentialCollection | `Organization-Id`, `limit`, `offset` | Credential[] | yes | Retrieve a list of credentials |
+| POST | `/credentials` | PostCredential | `Organization-Id`, body*: Credential | Credential |  | Create a credential |
+| GET | `/credentials/{id}` | GetCredential | `id`*, `Organization-Id` | Credential | yes | Retrieve a credential |
+| PUT | `/credentials/{id}` | PutCredential | `id`*, `Organization-Id`, body*: Credential | Credential |  | Create or update a credential with predefined ID |
+| DELETE | `/credentials/{id}` | DeleteCredential | `id`*, `Organization-Id` | — |  | Delete a credential |
+| GET | `/custom-fields/{resource}` | GetCustomFieldCollection | `resource`*, `Organization-Id`, `limit`, `offset` | CustomField[] | yes | Retrieve Custom Fields |
+| GET | `/custom-fields/{resource}/{name}` | GetCustomField | `resource`*, `name`*, `Organization-Id` | CustomField | yes | Retrieve a Custom Field |
+| PUT | `/custom-fields/{resource}/{name}` | PutCustomField | `resource`*, `name`*, `Organization-Id`, body*: CustomField | CustomField |  | Create or alter a Custom Field |
+| GET | `/customer-timeline-custom-events` | GetCustomerTimelineCustomEventTypeCollection | `Organization-Id`, `limit`, `offset`, `filter` | CustomerTimelineCustomEvent[] | yes | Retrieve a list of customer timeline custom event types |
+| POST | `/customer-timeline-custom-events` | PostCustomerTimelineCustomEventType | `Organization-Id`, body*: CustomerTimelineCustomEvent | CustomerTimelineCustomEvent |  | Create Customer Timeline custom event type |
+| GET | `/customer-timeline-custom-events/{id}` | GetCustomerTimelineCustomEventType | `id`*, `Organization-Id` | CustomerTimelineCustomEvent | yes | Retrieve customer timeline custom event type with specified identifier string |
+| GET | `/customer-timeline-events` | GetCustomerTimelineEventCollection | `Organization-Id`, `limit`, `offset`, `filter` | CustomerTimeline[] | yes | Retrieve a list of customer timeline messages for all customers |
+| GET | `/customers` | GetCustomerCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `expand`, `fields`, `sort` | Customer[] | yes | Retrieve a list of customers |
+| POST | `/customers` | PostCustomer | `Organization-Id`, body*: Customer | Customer |  | Create a customer (without an ID) |
+| GET | `/customers/{id}` | GetCustomer | `id`*, `Organization-Id`, `expand`, `fields` | Customer | yes | Retrieve a customer |
+| PUT | `/customers/{id}` | PutCustomer | `id`*, `Organization-Id`, body*: Customer | Customer |  | Upsert a customer with predefined ID |
+| DELETE | `/customers/{id}` | DeleteCustomer | `id`*, `Organization-Id`, `targetCustomerId`* | — |  | Merge and delete a customer |
+| GET | `/customers/{id}/lead-source` | GetCustomerLeadSource | `id`*, `Organization-Id` | LeadSource | yes | Retrieve a customer's Lead Source |
+| PUT | `/customers/{id}/lead-source` | PutCustomerLeadSource | `id`*, `Organization-Id`, body*: LeadSource | LeadSource |  | Create a Lead Source for a customer |
+| DELETE | `/customers/{id}/lead-source` | DeleteCustomerLeadSource | `id`*, `Organization-Id` | — |  | Delete a Lead Source for a customer |
+| GET | `/customers/{id}/timeline` | GetCustomerTimelineCollection | `id`*, `Organization-Id`, `limit`, `offset`, `filter`, `sort`, `q` | CustomerTimeline[] | yes | Retrieve a list of customer timeline messages |
+| POST | `/customers/{id}/timeline` | PostCustomerTimeline | `id`*, `Organization-Id`, body*: CustomerTimeline | CustomerTimeline |  | Create a customer Timeline comment or custom defined event |
+| GET | `/customers/{id}/timeline/{messageId}` | GetCustomerTimeline | `id`*, `messageId`*, `Organization-Id` | CustomerTimeline | yes | Retrieve a customer Timeline message |
+| DELETE | `/customers/{id}/timeline/{messageId}` | DeleteCustomerTimeline | `id`*, `messageId`*, `Organization-Id` | — |  | Delete a Customer Timeline message |
+| GET | `/customers/{id}/upcoming-invoices` | GetCustomerUpcomingInvoiceCollection | `id`*, `Organization-Id`, `expand` | Invoice[] | yes | Retrieve customer's upcoming invoices |
+| POST | `/digital-wallets/validation` | PostDigitalWalletValidation | body*: DigitalWalletValidation | DigitalWalletValidation |  | Validate a digital wallet session |
+| GET | `/disputes` | GetDisputeCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q`, `expand` | Dispute[] | yes | Retrieve a list of disputes |
+| POST | `/disputes` | PostDispute | `Organization-Id`, body*: Dispute | Dispute |  | Create a dispute |
+| GET | `/disputes/{id}` | GetDispute | `id`*, `Organization-Id` | Dispute | yes | Retrieve a dispute |
+| PUT | `/disputes/{id}` | PutDispute | `id`*, `Organization-Id`, body*: Dispute | Dispute |  | Create or update a Dispute with predefined ID |
+| GET | `/files` | GetFileCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `expand`, `fields`, `sort` | File[] | yes | Retrieve a list of files |
+| POST | `/files` | PostFile | `Organization-Id`, body*: FileCreateFromInline\|FileCreateFromUrl | File |  | Create a file |
+| GET | `/files/{id}` | GetFile | `id`*, `Organization-Id` | File | yes | Retrieve a File Record |
+| PUT | `/files/{id}` | PutFile | `id`*, `Organization-Id`, body*: File | File |  | Update the File with predefined ID |
+| DELETE | `/files/{id}` | DeleteFile | `id`*, `Organization-Id` | — |  | Delete a File |
+| GET | `/files/{id}/download` | GetFileDownload | `id`*, `Organization-Id`, `imageSize` | string | yes | Download a file |
+| GET | `/files/{id}/download{extension}` | GetFileDownloadExtension | `id`*, `extension`*, `Organization-Id` | string | yes | Download image in specific format |
+| GET | `/invoices` | GetInvoiceCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q`, `expand` | Invoice[] | yes | Retrieve a list of invoices |
+| POST | `/invoices` | PostInvoice | `Organization-Id`, body*: Invoice | Invoice |  | Create an invoice |
+| GET | `/invoices/{id}` | GetInvoice | `id`*, `Organization-Id`, `Accept`, `expand` | Invoice | yes | Retrieve an invoice |
+| PUT | `/invoices/{id}` | PutInvoice | `id`*, `Organization-Id`, body*: Invoice | Invoice |  | Create or update an invoice with predefined ID |
+| POST | `/invoices/{id}/abandon` | PostInvoiceAbandonment | `id`*, `Organization-Id` | Invoice |  | Abandon an invoice |
+| POST | `/invoices/{id}/issue` | PostInvoiceIssuance | `id`*, `Organization-Id`, body*: InvoiceIssue | Invoice |  | Issue an invoice |
+| GET | `/invoices/{id}/items` | GetInvoiceItemCollection | `id`*, `Organization-Id`, `limit`, `offset`, `expand` | InvoiceItem[] | yes | Retrieve invoice items |
+| POST | `/invoices/{id}/items` | PostInvoiceItem | `id`*, `Organization-Id`, body*: InvoiceItem | InvoiceItem |  | Create an invoice item |
+| POST | `/invoices/{id}/recalculate` | PostInvoiceRecalculation | `id`*, `Organization-Id` | Invoice |  | Recalculate an invoice |
+| POST | `/invoices/{id}/reissue` | PostInvoiceReissuance | `id`*, `Organization-Id`, body*: InvoiceReissue | Invoice |  | Reissue an invoice |
+| GET | `/invoices/{id}/timeline` | GetInvoiceTimelineCollection | `id`*, `Organization-Id`, `limit`, `offset`, `filter`, `sort`, `q` | InvoiceTimeline[] | yes | Retrieve a list of invoice timeline messages |
+| POST | `/invoices/{id}/timeline` | PostInvoiceTimeline | `id`*, `Organization-Id`, body*: InvoiceTimeline | InvoiceTimeline |  | Create an invoice Timeline comment |
+| GET | `/invoices/{id}/timeline/{messageId}` | GetInvoiceTimeline | `id`*, `messageId`*, `Organization-Id` | InvoiceTimeline | yes | Retrieve an Invoice Timeline message |
+| DELETE | `/invoices/{id}/timeline/{messageId}` | DeleteInvoiceTimeline | `id`*, `messageId`*, `Organization-Id` | — |  | Delete an Invoice Timeline message |
+| POST | `/invoices/{id}/transaction` | PostInvoiceTransaction | `id`*, `Organization-Id`, body*: InvoiceTransaction | Invoice |  | Apply a transaction to an invoice |
+| GET | `/invoices/{id}/transaction-allocations` | GetInvoiceTransactionAllocationCollection | `id`*, `Organization-Id`, `limit`, `offset` | InvoiceTransactionAllocation[] | yes | Get transaction amounts allocated to an invoice |
+| POST | `/invoices/{id}/void` | PostInvoiceVoid | `id`*, `Organization-Id` | Invoice |  | Void an invoice |
+| GET | `/kyc-documents` | GetKycDocumentCollection | `Organization-Id`, `limit`, `offset`, `filter`, `sort` | KycDocument-2[] | yes | Retrieve a list of KYC documents |
+| POST | `/kyc-documents` | PostKycDocument | `Organization-Id`, body*: KycDocument-2 | KycDocument-2 |  | Create a KYC Document |
+| GET | `/kyc-documents/{id}` | GetKycDocument | `id`*, `Organization-Id` | KycDocument-2 | yes | Retrieve a KYC Document |
+| PUT | `/kyc-documents/{id}` | PutKycDocument | `id`*, `Organization-Id`, body*: KycDocument-2 | KycDocument-2 |  | Create or update a KYC document with predefined ID |
+| POST | `/kyc-documents/{id}/acceptance` | PostKycDocumentAcceptance | `id`*, `Organization-Id` | KycDocument-2 |  | Accept a KYC document |
+| POST | `/kyc-documents/{id}/matches` | PostKycDocumentMatches | `id`*, `Organization-Id`, body*: IdentityMatches\|AddressMatches | — |  | Update a KYC document's documentMatches |
+| POST | `/kyc-documents/{id}/rejection` | PostKycDocumentRejection | `id`*, `Organization-Id`, body*: KycDocumentRejection | KycDocument-2 |  | Reject a KYC document |
+| POST | `/kyc-documents/{id}/review` | PostKycDocumentReview | `id`*, `Organization-Id` | KycDocument-2 |  | Review a KYC document |
+| GET | `/kyc-requests` | GetKycRequestCollection | `Organization-Id`, `limit`, `offset`, `filter`, `sort` | KycRequest[] | yes | Retrieve a list of KYC requests |
+| POST | `/kyc-requests` | PostKycRequest | `Organization-Id`, body*: KycRequest | KycRequest |  | Create a KYC Request |
+| GET | `/kyc-requests/{id}` | GetKycRequest | `id`*, `Organization-Id` | KycRequest | yes | Retrieve a KYC request |
+| DELETE | `/kyc-requests/{id}` | DeleteKycRequest | `id`*, `Organization-Id` | — |  | Delete the KYC request |
+| PATCH | `/kyc-requests/{id}` | PatchKycRequest | `id`*, `Organization-Id`, body: object\|KycRequest | KycRequest |  | Update a KYC request |
+| GET | `/password-tokens` | GetPasswordTokenCollection | `Organization-Id`, `limit`, `offset` | ResetPasswordToken[] | yes | Retrieve a list of tokens |
+| POST | `/password-tokens` | PostPasswordToken | `Organization-Id`, body*: ResetPasswordToken | ResetPasswordToken |  | Create a Reset Password Token |
+| GET | `/password-tokens/{id}` | GetPasswordToken | `id`*, `Organization-Id` | ResetPasswordToken | yes | Retrieve a Reset Password Token |
+| DELETE | `/password-tokens/{id}` | DeletePasswordToken | `id`*, `Organization-Id` | — |  | Delete a Reset Password Token |
+| GET | `/payment-cards` | GetPaymentCardCollection | `Organization-Id`, `limit`, `offset`, `filter`, `sort`, `q`, `expand` | PaymentCard[] | yes | Retrieve a list of Payment Cards |
+| POST | `/payment-cards` | PostPaymentCard | `Organization-Id`, body*: PaymentCardCreateToken\|PaymentCardCreatePlain | PaymentCard |  | Create a Payment Card |
+| GET | `/payment-cards/{id}` | GetPaymentCard | `id`*, `Organization-Id` | PaymentCard | yes | Retrieve a Payment Card |
+| PUT | `/payment-cards/{id}` | PutPaymentCard | `id`*, `Organization-Id`, body: PaymentCardCreateToken\|PaymentCardCreatePlain | PaymentCard |  | Create a payment card with predefined ID |
+| PATCH | `/payment-cards/{id}` | PatchPaymentCard | `id`*, `Organization-Id`, body: PaymentCardUpdatePlain | PaymentCard |  | Update a payment card's values |
+| POST | `/payment-cards/{id}/deactivation` | PostPaymentCardDeactivation | `id`*, `Organization-Id` | PaymentCard |  | Deactivate a Payment Card |
+| GET | `/payment-instruments` | GetPaymentInstrumentCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q`, `expand` | PaymentInstrument-2[] | yes | Retrieve a list of payment instruments |
+| POST | `/payment-instruments` | PostPaymentInstrument | `Organization-Id`, body*: PaymentInstrumentCreateToken\|PaymentCardCreatePlain\|BankAccountCreatePlain\|PayPalAccount | PaymentInstrument-2 |  | Create a Payment Instrument |
+| GET | `/payment-instruments/{id}` | GetPaymentInstrument | `id`*, `Organization-Id` | PaymentInstrument-2 | yes | Retrieve a Payment Instrument |
+| PATCH | `/payment-instruments/{id}` | PatchPaymentInstrument | `id`*, `Organization-Id`, body*: PaymentInstrumentUpdateToken\|PaymentCardUpdatePlain\|BankAccountUpdatePlain | PaymentInstrument-2 |  | Update a Payment Instrument's values |
+| POST | `/payment-instruments/{id}/deactivation` | PostPaymentInstrumentDeactivation | `id`*, `Organization-Id` | PaymentInstrument-2 |  | Deactivate a payment instrument |
+| POST | `/payouts` | PostPayout | `Organization-Id`, body*: PayoutRequest | Transaction |  | Create a credit transaction |
+| GET | `/paypal-accounts` | GetPayPalAccountCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q`, `expand` | PayPalAccount[] | yes | Retrieve a list of PayPal accounts |
+| POST | `/paypal-accounts` | PostPayPalAccount | `Organization-Id`, body*: PayPalAccount | PayPalAccount |  | Create a PayPal Account |
+| GET | `/paypal-accounts/{id}` | GetPayPalAccount | `id`*, `Organization-Id` | PayPalAccount | yes | Retrieve a PayPal Account |
+| PUT | `/paypal-accounts/{id}` | PutPayPalAccount | `id`*, `Organization-Id`, body*: PayPalAccount | PayPalAccount |  | Create a PayPal account with predefined ID |
+| POST | `/paypal-accounts/{id}/deactivation` | PostPayPalAccountDeactivation | `id`*, `Organization-Id` | PayPalAccount |  | Deactivate a PayPal Account |
+| GET | `/plans` | GetPlanCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q` | Plan[] | yes | Retrieve a list of plans |
+| POST | `/plans` | PostPlan | `Organization-Id`, body*: Plan | Plan |  | Create a plan |
+| GET | `/plans/{id}` | GetPlan | `id`*, `Organization-Id` | Plan | yes | Retrieve a plan |
+| PUT | `/plans/{id}` | PutPlan | `id`*, `Organization-Id`, body*: Plan | Plan |  | Create or update a Plan with predefined ID |
+| DELETE | `/plans/{id}` | DeletePlan | `id`*, `Organization-Id` | — |  | Delete a Plan |
+| GET | `/products` | GetProductCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q` | Product[] | yes | Retrieve a list of products |
+| POST | `/products` | PostProduct | `Organization-Id`, body*: Product | Product |  | Create a Product |
+| GET | `/products/{id}` | GetProduct | `id`*, `Organization-Id` | Product | yes | Retrieve a product |
+| PUT | `/products/{id}` | PutProduct | `id`*, `Organization-Id`, body*: Product | Product |  | Create a product with predefined ID |
+| DELETE | `/products/{id}` | DeleteProduct | `id`*, `Organization-Id` | — |  | Delete a product |
+| POST | `/ready-to-pay` | PostReadyToPay | `Organization-Id`, body: CoreReadyToPay | ReadyToPayMethods |  | Ready to Pay |
+| GET | `/search` | GetSearch | `Organization-Id`, `sort`, `limit`, `offset`, `q` | Search[] | yes | Search merchant data |
+| GET | `/shipping-zones` | GetShippingZoneCollection | `Organization-Id`, `limit`, `offset`, `filter`, `sort`, `q` | ShippingZone[] | yes | Retrieve a list of shipping zones |
+| POST | `/shipping-zones` | PostShippingZone | `Organization-Id`, body*: ShippingZone | ShippingZone |  | Create a Shipping Zone |
+| GET | `/shipping-zones/{id}` | GetShippingZone | `id`*, `Organization-Id` | ShippingZone | yes | Retrieve a shipping zone |
+| PUT | `/shipping-zones/{id}` | PutShippingZone | `id`*, `Organization-Id`, body*: ShippingZone | ShippingZone |  | Create a shipping zone with predefined ID |
+| DELETE | `/shipping-zones/{id}` | DeleteShippingZone | `id`*, `Organization-Id` | — |  | Delete a shipping zone |
+| GET | `/subscription-cancellations` | GetSubscriptionCancellationCollection | `Organization-Id`, `limit`, `offset`, `filter`, `sort` | SubscriptionCancellation[] | yes | Retrieve a list of cancellations |
+| POST | `/subscription-cancellations` | PostSubscriptionCancellation | `Organization-Id`, body*: SubscriptionCancellation | SubscriptionCancellation |  | Cancel an order |
+| GET | `/subscription-cancellations/{id}` | GetSubscriptionCancellation | `id`*, `Organization-Id` | SubscriptionCancellation | yes | Retrieve an order сancellation |
+| PUT | `/subscription-cancellations/{id}` | PutSubscriptionCancellation | `id`*, `Organization-Id`, body*: SubscriptionCancellation | SubscriptionCancellation |  | Cancel an order |
+| DELETE | `/subscription-cancellations/{id}` | DeleteSubscriptionCancellation | `id`*, `Organization-Id` | — |  | Delete a cancellation |
+| GET | `/subscription-reactivations` | GetSubscriptionReactivationCollection | `Organization-Id`, `limit`, `offset`, `filter`, `sort` | SubscriptionReactivation[] | yes | Retrieve a list of reactivations |
+| POST | `/subscription-reactivations` | PostSubscriptionReactivation | `Organization-Id`, body*: SubscriptionReactivation | SubscriptionReactivation |  | Reactivate an order |
+| GET | `/subscription-reactivations/{id}` | GetSubscriptionReactivation | `id`*, `Organization-Id` | SubscriptionReactivation | yes | Retrieve an order reactivation |
+| GET | `/subscriptions` | GetSubscriptionCollection | `Organization-Id`, `filter`, `sort`, `limit`, `offset`, `q`, `expand` | Subscription[] | yes | Retrieve a list of orders |
+| POST | `/subscriptions` | PostSubscription | `Organization-Id`, `expand`, body*: Subscription | Subscription |  | Create an order |
+| GET | `/subscriptions/{id}` | GetSubscription | `id`*, `Organization-Id`, `expand` | Subscription | yes | Retrieve an order |
+| PUT | `/subscriptions/{id}` | PutSubscription | `id`*, `Organization-Id`, `expand`, body*: Subscription | Subscription |  | Upsert an order with predefined ID |
+| POST | `/subscriptions/{id}/change-items` | PostSubscriptionItemsChange | `id`*, `Organization-Id`, body*: SubscriptionChange | Subscription |  | Change an order's items |
+| POST | `/subscriptions/{id}/interim-invoice` | PostSubscriptionInterimInvoice | `id`*, `Organization-Id`, body*: SubscriptionInvoice | Invoice |  | Issue an interim invoice for a subscription order |
+| GET | `/subscriptions/{id}/timeline` | GetSubscriptionTimelineCollection | `id`*, `Organization-Id`, `limit`, `offset`, `filter`, `sort`, `q` | OrderTimeline[] | yes | Retrieve a list of order timeline messages |
+| POST | `/subscriptions/{id}/timeline` | PostSubscriptionTimeline | `id`*, `Organization-Id`, body*: OrderTimeline | OrderTimeline |  | Create an order Timeline comment |
+| GET | `/subscriptions/{id}/timeline/{messageId}` | GetSubscriptionTimeline | `id`*, `messageId`*, `Organization-Id` | OrderTimeline | yes | Retrieve an Order Timeline message |
+| DELETE | `/subscriptions/{id}/timeline/{messageId}` | DeleteSubscriptionTimeline | `id`*, `messageId`*, `Organization-Id` | — |  | Delete an Order Timeline message |
+| GET | `/subscriptions/{id}/upcoming-invoices` | GetSubscriptionUpcomingInvoiceCollection | `id`*, `Organization-Id`, `expand` | Invoice[] | yes | Retrieve subscription order's upcoming invoice |
+| POST | `/subscriptions/{id}/upcoming-invoices/{invoiceId}/issue` | PostUpcomingInvoiceIssuance | `id`*, `invoiceId`*, `Organization-Id`, body*: InvoiceIssue | Invoice |  | Issue an upcoming invoice for early pay |
+| GET | `/tags` | GetTagCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `sort` | Tag[] | yes | Retrieve a list of tags |
+| POST | `/tags` | PostTag | `Organization-Id`, body*: Tag | Tag |  | Create a tag |
+| GET | `/tags/{tag}` | GetTag | `tag`*, `Organization-Id` | Tag | yes | Retrieve a tag |
+| DELETE | `/tags/{tag}` | DeleteTag | `tag`*, `Organization-Id` | — |  | Delete a tag |
+| PATCH | `/tags/{tag}` | PatchTag | `tag`*, `Organization-Id`, body*: Tag | Tag |  | Update a tag |
+| POST | `/tags/{tag}/customers` | PostTagCustomerCollection | `tag`*, `Organization-Id`, body*: object | — |  | Tag a list of customers |
+| DELETE | `/tags/{tag}/customers` | DeleteTagCustomerCollection | `tag`*, `Organization-Id`, body*: object | — |  | Untag a list of customers |
+| POST | `/tags/{tag}/customers/{customerId}` | PostTagCustomer | `tag`*, `customerId`*, `Organization-Id` | — |  | Tag a customer |
+| DELETE | `/tags/{tag}/customers/{customerId}` | DeleteTagCustomer | `tag`*, `customerId`*, `Organization-Id` | — |  | Untag a customer |
+| GET | `/tokens` | GetTokenCollection | `Organization-Id`, `limit`, `offset` | CompositeToken[] | yes | Retrieve a list of tokens |
+| POST | `/tokens` | PostToken | `Organization-Id`, body*: CompositeToken | CompositeToken |  | Create a payment token |
+| GET | `/tokens/{token}` | GetToken | `token`*, `Organization-Id` | CompositeToken | yes | Retrieve a token |
+| GET | `/transactions` | GetTransactionCollection | `Organization-Id`, `limit`, `offset`, `filter`, `q`, `sort`, `expand` | Transaction[] | yes | Retrieve a list of transactions |
+| POST | `/transactions` | PostTransaction | `Organization-Id`, `expand`, body*: TransactionRequest | Transaction |  | Create a transaction |
+| GET | `/transactions/{id}` | GetTransaction | `id`*, `Organization-Id`, `expand` | Transaction | yes | Retrieve a Transaction |
+| PATCH | `/transactions/{id}` | PatchTransaction | `id`*, `Organization-Id`, body*: object | Transaction |  | Update a transaction |
+| POST | `/transactions/{id}/query` | PostTransactionQuery | `id`*, `Organization-Id` | TransactionQuery |  | Query a Transaction |
+| POST | `/transactions/{id}/refund` | PostTransactionRefund | `id`*, `Organization-Id`, body*: TransactionRefund | Transaction |  | Refund a Transaction |
+| GET | `/transactions/{id}/timeline` | GetTransactionTimelineCollection | `id`*, `Organization-Id`, `limit`, `offset`, `filter` | TransactionTimeline[] | yes | Retrieve a list of transaction timeline messages |
+| POST | `/transactions/{id}/timeline` | PostTransactionTimeline | `id`*, `Organization-Id`, body*: TransactionTimeline | TransactionTimeline |  | Create a transaction Timeline comment |
+| GET | `/transactions/{id}/timeline/{messageId}` | GetTransactionTimeline | `id`*, `messageId`*, `Organization-Id` | TransactionTimeline | yes | Retrieve a transaction Timeline message |
+| DELETE | `/transactions/{id}/timeline/{messageId}` | DeleteTransactionTimeline | `id`*, `messageId`*, `Organization-Id` | — |  | Delete a Transaction Timeline message |
+| POST | `/transactions/{id}/update` | PostTransactionUpdate | `id`*, `Organization-Id`, body*: TransactionUpdate | Transaction |  | Update a Transaction status |

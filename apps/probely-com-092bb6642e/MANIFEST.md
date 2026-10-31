@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.probely.com_assets_l
 
 | | |
 | --- | --- |
-| Signed bundle | `cce2aba9080770f6a2d558ecf318e6d08329bee7c1a8e3c7cfdc1830140bcad4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,152 +34,154 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.probely.com_assets_l
 
 148 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account/` | get /account/ | Retrieve account information |
-| POST | `/auth/obtain/` | post /auth/obtain/ | Authenticate user |
-| POST | `/auth/refresh/` | post /auth/refresh/ | Replace token with a new one |
-| POST | `/auth/revoke/` | post /auth/revoke/ | Revoke a token |
-| POST | `/auth/verify/` | post /auth/verify/ | Verify a token |
-| GET | `/billing/` | get /billing/ | Retrieve billing information |
-| PATCH | `/billing/` | patch /billing/ | Partial update billing information |
-| PUT | `/billing/` | put /billing/ | Update billing information |
-| POST | `/billing/actions/` | post /billing/actions/ | Action that should be taken to enable the selected targets |
-| POST | `/billing/estimate/` | post /billing/estimate/ | Estimate costs of updating a subscription |
-| POST | `/billing/subscribe/` | post /billing/subscribe/ | Update a subscription |
-| POST | `/check/` | post /check/ | Check validity of password reset token |
-| POST | `/enterprise/auth/obtain/` | post /enterprise/auth/obtain/ | Enterprise user authentication |
-| POST | `/enterprise/auth/refresh/` | post /enterprise/auth/refresh/ | Enterprise token refresh |
-| POST | `/enterprise/auth/revoke/` | post /enterprise/auth/revoke/ | Enterprise token revokation |
-| POST | `/enterprise/auth/verify/` | post /enterprise/auth/verify/ | Enterprise token verification |
-| GET | `/events/` | get /events/ | List account events |
-| GET | `/events/{id}/` | get /events/{id}/ | Retrieve account event |
-| GET | `/frameworks/` | get /frameworks/ | List frameworks |
-| GET | `/frameworks/{id}/` | get /frameworks/{id}/ | Retrieve framework |
-| GET | `/integrations/` | get /integrations/ | Integrations available and installed in the account |
-| GET | `/integrations/jira-cloud/projects/` | get /integrations/jira-cloud/projects/ | List Jira Projects |
-| GET | `/integrations/jira-cloud/projects/{project_id}/issue_types/` | get /integrations/jira-cloud/projects/{project_id}/issue_types/ | Retrieve project issue types |
-| GET | `/integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/priorities/` | get /integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/priorities/ | Retrieve issue priorities |
-| GET | `/integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/status/` | get /integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/status/ | Retrieve issue statuses |
-| GET | `/integrations/jira-server/projects/` | get /integrations/jira-server/projects/ | List Jira Projects |
-| GET | `/integrations/jira-server/projects/{project_id}/issue_types/` | get /integrations/jira-server/projects/{project_id}/issue_types/ | Retrieve project issue types |
-| GET | `/integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/priorities/` | get /integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/priorities/ | Retrieve issue priorities |
-| GET | `/integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/status/` | get /integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/status/ | Retrieve issue statuses |
-| GET | `/keys/` | get /keys/ | List API keys allowed to operate on account |
-| POST | `/keys/` | post /keys/ | Create account API key |
-| DELETE | `/keys/{id}/` | delete /keys/{id}/ | Delete account API key |
-| GET | `/keys/{id}/` | get /keys/{id}/ | Retrieve account API key |
-| GET | `/labels/` | get /labels/ | List labels |
-| POST | `/labels/` | post /labels/ | Create label |
-| DELETE | `/labels/{id}/` | delete /labels/{id}/ | Delete label |
-| GET | `/labels/{id}/` | get /labels/{id}/ | Retrieve framework |
-| PATCH | `/labels/{id}/` | patch /labels/{id}/ | Partial update |
-| PUT | `/labels/{id}/` | put /labels/{id}/ | Update label |
-| GET | `/plans/` | get /plans/ | Subscription plans |
-| GET | `/profile/` | get /profile/ | User data |
-| POST | `/profile/change_password/` | post /profile/change_password/ | Change user password |
-| POST | `/reset/` | post /reset/ | Send reset password email |
-| POST | `/setpassword/` | post /setpassword/ | Reset password after asking for a reset (with the token sent by email). |
-| POST | `/target-actions/` | post /target-actions/ | Available actions for the selected targets |
-| GET | `/targets/` | get /targets/ | List targets |
-| POST | `/targets/` | post /targets/ | Create target |
-| POST | `/targets/activate/` | post /targets/activate/ | Activate targets |
-| GET | `/targets/all/average_fix_time/` | get /targets/all/average_fix_time/ | Average fix time graph data (all targets) |
-| GET | `/targets/all/needs_attention_pie/` | get /targets/all/needs_attention_pie/ | Targets with open vulnerabilities pie chart data |
-| GET | `/targets/all/needs_attention_top/` | get /targets/all/needs_attention_top/ | Targets with open vulnerabilities |
-| GET | `/targets/all/risk_trend/` | get /targets/all/risk_trend/ | Risk trend graph data (all targets) |
-| GET | `/targets/all/scans/` | get /targets/all/scans/ | List scans for all targets |
-| GET | `/targets/all/scheduledscans/expanded/` | get /targets/all/scheduledscans/expanded/ | List scheduled scans for all targets expanding recurrence |
-| GET | `/targets/all/severity_trend/` | get /targets/all/severity_trend/ | Severity trend graph data (all targets) |
-| GET | `/targets/all/top_vulns/` | get /targets/all/top_vulns/ | Top 5 vulnerabilities (all targets). |
-| POST | `/targets/archive/` | post /targets/archive/ | Archive targets |
-| POST | `/targets/archived/` | post /targets/archived/ | List archived targets |
-| DELETE | `/targets/{id}/` | delete /targets/{id}/ | Delete target |
-| GET | `/targets/{id}/` | get /targets/{id}/ | Retrieve target |
-| PATCH | `/targets/{id}/` | patch /targets/{id}/ | Partial update target |
-| PUT | `/targets/{id}/` | put /targets/{id}/ | Update target |
-| GET | `/targets/{target_id}/assets/` | get /targets/{target_id}/assets/ | List target's assets |
-| POST | `/targets/{target_id}/assets/` | post /targets/{target_id}/assets/ | Create new asset |
-| DELETE | `/targets/{target_id}/assets/{id}/` | delete /targets/{target_id}/assets/{id}/ | Delete asset |
-| GET | `/targets/{target_id}/assets/{id}/` | get /targets/{target_id}/assets/{id}/ | Retrieve asset |
-| PATCH | `/targets/{target_id}/assets/{id}/` | patch /targets/{target_id}/assets/{id}/ | Partial update assets |
-| PUT | `/targets/{target_id}/assets/{id}/` | put /targets/{target_id}/assets/{id}/ | Update asset |
-| POST | `/targets/{target_id}/assets/{id}/verify/` | post /targets/{target_id}/assets/{id}/verify/ | Verify asset ownership |
-| GET | `/targets/{target_id}/average_fix_time/` | get /targets/{target_id}/average_fix_time/ | Average vulnerability trend graph data |
-| GET | `/targets/{target_id}/events/` | get /targets/{target_id}/events/ | List target events |
-| GET | `/targets/{target_id}/events/{id}/` | get /targets/{target_id}/events/{id}/ | Retrieve target event |
-| GET | `/targets/{target_id}/findings/` | get /targets/{target_id}/findings/ | List target findings |
-| POST | `/targets/{target_id}/findings/bulk/report/` | post /targets/{target_id}/findings/bulk/report/ | Finding report |
-| POST | `/targets/{target_id}/findings/bulk/retest/` | post /targets/{target_id}/findings/bulk/retest/ | Bulk retest findings |
-| PATCH | `/targets/{target_id}/findings/bulk/update/` | patch /targets/{target_id}/findings/bulk/update/ | Bulk update findings |
-| GET | `/targets/{target_id}/findings/report/` | get /targets/{target_id}/findings/report/ | Retrieve finding report PDF format |
-| GET | `/targets/{target_id}/findings/{id}/` | get /targets/{target_id}/findings/{id}/ | Retrieve finding |
-| PATCH | `/targets/{target_id}/findings/{id}/` | patch /targets/{target_id}/findings/{id}/ | Partial update finding |
-| PUT | `/targets/{target_id}/findings/{id}/` | put /targets/{target_id}/findings/{id}/ | Update finding |
-| GET | `/targets/{target_id}/findings/{id}/integrations/jira-cloud/` | get /targets/{target_id}/findings/{id}/integrations/jira-cloud/ | Retrieve Jira Cloud finding configuration |
-| PATCH | `/targets/{target_id}/findings/{id}/integrations/jira-cloud/` | patch /targets/{target_id}/findings/{id}/integrations/jira-cloud/ | Update Jira Cloud finding configuration |
-| PUT | `/targets/{target_id}/findings/{id}/integrations/jira-cloud/` | put /targets/{target_id}/findings/{id}/integrations/jira-cloud/ | Update Jira Cloud finding configuration |
-| GET | `/targets/{target_id}/findings/{id}/integrations/jira-server/` | get /targets/{target_id}/findings/{id}/integrations/jira-server/ | Retrieve Jira Server finding configuration |
-| PATCH | `/targets/{target_id}/findings/{id}/integrations/jira-server/` | patch /targets/{target_id}/findings/{id}/integrations/jira-server/ | Update Jira Server finding configuration |
-| PUT | `/targets/{target_id}/findings/{id}/integrations/jira-server/` | put /targets/{target_id}/findings/{id}/integrations/jira-server/ | Update Jira Server finding configuration |
-| GET | `/targets/{target_id}/findings/{id}/log/` | get /targets/{target_id}/findings/{id}/log/ | Finding activity log. |
-| POST | `/targets/{target_id}/findings/{id}/retest/` | post /targets/{target_id}/findings/{id}/retest/ | Retest finding |
-| GET | `/targets/{target_id}/integrations/` | get /targets/{target_id}/integrations/ | Integrations available and installed for the target |
-| GET | `/targets/{target_id}/integrations/jira-cloud/` | get /targets/{target_id}/integrations/jira-cloud/ | Retrieve Jira Cloud Target configuration |
-| PATCH | `/targets/{target_id}/integrations/jira-cloud/` | patch /targets/{target_id}/integrations/jira-cloud/ | Update Jira Cloud target configuration |
-| PUT | `/targets/{target_id}/integrations/jira-cloud/` | put /targets/{target_id}/integrations/jira-cloud/ | Update Jira Cloud target configuration |
-| GET | `/targets/{target_id}/integrations/jira-server/` | get /targets/{target_id}/integrations/jira-server/ | Retrieve Jira Server Target configuration |
-| PATCH | `/targets/{target_id}/integrations/jira-server/` | patch /targets/{target_id}/integrations/jira-server/ | Update Jira Server target configuration |
-| PUT | `/targets/{target_id}/integrations/jira-server/` | put /targets/{target_id}/integrations/jira-server/ | Update Jira Server target configuration |
-| GET | `/targets/{target_id}/integrations/slack/` | get /targets/{target_id}/integrations/slack/ | Retrieve slack integration data |
-| PATCH | `/targets/{target_id}/integrations/slack/` | patch /targets/{target_id}/integrations/slack/ | Update slack integration data |
-| PUT | `/targets/{target_id}/integrations/slack/` | put /targets/{target_id}/integrations/slack/ | Update slack integration data |
-| GET | `/targets/{target_id}/keys/` | get /targets/{target_id}/keys/ | List target specific API keys |
-| POST | `/targets/{target_id}/keys/` | post /targets/{target_id}/keys/ | Create target API key |
-| DELETE | `/targets/{target_id}/keys/{id}/` | delete /targets/{target_id}/keys/{id}/ | Delete target API key |
-| GET | `/targets/{target_id}/keys/{id}/` | get /targets/{target_id}/keys/{id}/ | Retrieve target API key |
-| GET | `/targets/{target_id}/risk_trend/` | get /targets/{target_id}/risk_trend/ | Risk trend graph data |
-| POST | `/targets/{target_id}/scan_now/` | post /targets/{target_id}/scan_now/ | Start a scan on the target |
-| GET | `/targets/{target_id}/scans/` | get /targets/{target_id}/scans/ | List scans |
-| GET | `/targets/{target_id}/scans/dates/` | get /targets/{target_id}/scans/dates/ | Dates where scans have ocurred |
-| GET | `/targets/{target_id}/scans/retrieve_page/` | get /targets/{target_id}/scans/retrieve_page/ | Scan page |
-| GET | `/targets/{target_id}/scans/{id}/` | get /targets/{target_id}/scans/{id}/ | Retrieve scan |
-| POST | `/targets/{target_id}/scans/{id}/cancel/` | post /targets/{target_id}/scans/{id}/cancel/ | Cancel running scan |
-| GET | `/targets/{target_id}/scans/{id}/endpoints/` | get /targets/{target_id}/scans/{id}/endpoints/ | Scan endpoints file |
-| GET | `/targets/{target_id}/scans/{id}/report/` | get /targets/{target_id}/scans/{id}/report/ | Scan report PDF, using the report type specified for the target |
-| GET | `/targets/{target_id}/scans/{id}/report/default/` | get /targets/{target_id}/scans/{id}/report/default/ | Scan report PDF, using the default report type |
-| GET | `/targets/{target_id}/scans/{id}/report/owasp/` | get /targets/{target_id}/scans/{id}/report/owasp/ | Scan report PDF, using the OWASP report type |
-| GET | `/targets/{target_id}/scans/{id}/report/pci/` | get /targets/{target_id}/scans/{id}/report/pci/ | Scan report PDF, using the PCI report type |
-| GET | `/targets/{target_id}/scheduledscans/` | get /targets/{target_id}/scheduledscans/ | List scheduled scans |
-| POST | `/targets/{target_id}/scheduledscans/` | post /targets/{target_id}/scheduledscans/ | Create new scheduled scan |
-| GET | `/targets/{target_id}/scheduledscans/expanded/` | get /targets/{target_id}/scheduledscans/expanded/ | List scheduled scans expanding recurrence |
-| DELETE | `/targets/{target_id}/scheduledscans/{id}/` | delete /targets/{target_id}/scheduledscans/{id}/ | Delete |
-| GET | `/targets/{target_id}/scheduledscans/{id}/` | get /targets/{target_id}/scheduledscans/{id}/ | Retrieve a scheduled scan |
-| PATCH | `/targets/{target_id}/scheduledscans/{id}/` | patch /targets/{target_id}/scheduledscans/{id}/ | Partial update |
-| PUT | `/targets/{target_id}/scheduledscans/{id}/` | put /targets/{target_id}/scheduledscans/{id}/ | Update a scheduled scan |
-| GET | `/targets/{target_id}/severity_trend/` | get /targets/{target_id}/severity_trend/ | Severity trend graph data. |
-| GET | `/targets/{target_id}/site/` | get /targets/{target_id}/site/ | Retrieve target's site |
-| PATCH | `/targets/{target_id}/site/` | patch /targets/{target_id}/site/ | Partial update target's site |
-| PUT | `/targets/{target_id}/site/` | put /targets/{target_id}/site/ | Update target's site |
-| POST | `/targets/{target_id}/site/verify/` | post /targets/{target_id}/site/verify/ | Verify site ownership |
-| GET | `/targets/{target_id}/top_vulns/` | get /targets/{target_id}/top_vulns/ | Top 5 vulnerabilities |
-| GET | `/targets/{target_id}/webhooks/` | get /targets/{target_id}/webhooks/ | List target webhooks |
-| POST | `/targets/{target_id}/webhooks/` | post /targets/{target_id}/webhooks/ | Create new target webhook |
-| DELETE | `/targets/{target_id}/webhooks/{id}/` | delete /targets/{target_id}/webhooks/{id}/ | Delete target webhook |
-| GET | `/targets/{target_id}/webhooks/{id}/` | get /targets/{target_id}/webhooks/{id}/ | Retrieve target webhook |
-| PATCH | `/targets/{target_id}/webhooks/{id}/` | patch /targets/{target_id}/webhooks/{id}/ | Partial update target webhook |
-| PUT | `/targets/{target_id}/webhooks/{id}/` | put /targets/{target_id}/webhooks/{id}/ | Update target webhook |
-| GET | `/users/` | get /users/ | List users |
-| POST | `/users/` | post /users/ | Create/Reactivate a user. |
-| DELETE | `/users/{id}/` | delete /users/{id}/ | Deactivate a user |
-| GET | `/users/{id}/` | get /users/{id}/ | Retrieve user |
-| PATCH | `/users/{id}/` | patch /users/{id}/ | Partial update user |
-| PUT | `/users/{id}/` | put /users/{id}/ | Update user |
-| GET | `/vulnerability_definitions/` | get /vulnerability_definitions/ | List vulnerability definitions |
-| GET | `/vulnerability_definitions/{id}/` | get /vulnerability_definitions/{id}/ | Retrieve vulnerability definition |
-| GET | `/webhooks/` | get /webhooks/ | List account webhooks |
-| POST | `/webhooks/` | post /webhooks/ | Create new account webhook |
-| DELETE | `/webhooks/{id}/` | delete /webhooks/{id}/ | Delete account webhook |
-| GET | `/webhooks/{id}/` | get /webhooks/{id}/ | Retrieve account webhook |
-| PATCH | `/webhooks/{id}/` | patch /webhooks/{id}/ | Partial update account webhook |
-| PUT | `/webhooks/{id}/` | put /webhooks/{id}/ | Update account webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account/` | get /account/ | — | Account | yes | Retrieve account information |
+| POST | `/auth/obtain/` | post /auth/obtain/ | body*: Login | object |  | Authenticate user |
+| POST | `/auth/refresh/` | post /auth/refresh/ | body*: object | object |  | Replace token with a new one |
+| POST | `/auth/revoke/` | post /auth/revoke/ | body*: object | object |  | Revoke a token |
+| POST | `/auth/verify/` | post /auth/verify/ | body*: object | object |  | Verify a token |
+| GET | `/billing/` | get /billing/ | — | Billing | yes | Retrieve billing information |
+| PUT | `/billing/` | put /billing/ | body*: Billing | Billing |  | Update billing information |
+| PATCH | `/billing/` | patch /billing/ | body*: Billing | Billing |  | Partial update billing information |
+| POST | `/billing/actions/` | post /billing/actions/ | body*: targetIds | Action |  | Action that should be taken to enable the selected targets |
+| POST | `/billing/estimate/` | post /billing/estimate/ | body*: Subscription | Invoice |  | Estimate costs of updating a subscription |
+| POST | `/billing/subscribe/` | post /billing/subscribe/ | body*: Subscription | Invoice |  | Update a subscription |
+| POST | `/check/` | post /check/ | body*: object | object |  | Check validity of password reset token |
+| POST | `/enterprise/auth/obtain/` | post /enterprise/auth/obtain/ | body*: Login | object |  | Enterprise user authentication |
+| POST | `/enterprise/auth/refresh/` | post /enterprise/auth/refresh/ | body*: object | object |  | Enterprise token refresh |
+| POST | `/enterprise/auth/revoke/` | post /enterprise/auth/revoke/ | body*: object | object |  | Enterprise token revokation |
+| POST | `/enterprise/auth/verify/` | post /enterprise/auth/verify/ | body*: object | object |  | Enterprise token verification |
+| GET | `/events/` | get /events/ | — | object | yes | List account events |
+| GET | `/events/{id}/` | get /events/{id}/ | `id`* | Event | yes | Retrieve account event |
+| GET | `/frameworks/` | get /frameworks/ | `page`, `length`, `ordering`, `search` | object | yes | List frameworks |
+| GET | `/frameworks/{id}/` | get /frameworks/{id}/ | `id`* | Framework | yes | Retrieve framework |
+| GET | `/integrations/` | get /integrations/ | — | Integrations | yes | Integrations available and installed in the account |
+| GET | `/integrations/jira-cloud/projects/` | get /integrations/jira-cloud/projects/ | — | JiraProject[] | yes | List Jira Projects |
+| GET | `/integrations/jira-cloud/projects/{project_id}/issue_types/` | get /integrations/jira-cloud/projects/{project_id}/issue_types/ | `project_id`* | JiraIssueType[] | yes | Retrieve project issue types |
+| GET | `/integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/priorities/` | get /integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/priorities/ | `project_id`*, `issue_type_id`* | JiraIssuePriority[] | yes | Retrieve issue priorities |
+| GET | `/integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/status/` | get /integrations/jira-cloud/projects/{project_id}/issue_types/{issue_type_id}/status/ | `project_id`*, `issue_type_id`* | JiraIssueStatus[] | yes | Retrieve issue statuses |
+| GET | `/integrations/jira-server/projects/` | get /integrations/jira-server/projects/ | — | JiraProject[] | yes | List Jira Projects |
+| GET | `/integrations/jira-server/projects/{project_id}/issue_types/` | get /integrations/jira-server/projects/{project_id}/issue_types/ | `project_id`* | JiraIssueType[] | yes | Retrieve project issue types |
+| GET | `/integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/priorities/` | get /integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/priorities/ | `project_id`*, `issue_type_id`* | JiraIssuePriority[] | yes | Retrieve issue priorities |
+| GET | `/integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/status/` | get /integrations/jira-server/projects/{project_id}/issue_types/{issue_type_id}/status/ | `project_id`*, `issue_type_id`* | JiraIssueStatus[] | yes | Retrieve issue statuses |
+| GET | `/keys/` | get /keys/ | `page`, `length`, `ordering`, `search` | object | yes | List API keys allowed to operate on account |
+| POST | `/keys/` | post /keys/ | body*: APIKey | APIKey |  | Create account API key |
+| GET | `/keys/{id}/` | get /keys/{id}/ | `id`* | APIKey | yes | Retrieve account API key |
+| DELETE | `/keys/{id}/` | delete /keys/{id}/ | `id`* | — |  | Delete account API key |
+| GET | `/labels/` | get /labels/ | `page`, `length`, `ordering`, `search` | object | yes | List labels |
+| POST | `/labels/` | post /labels/ | body*: Label | Label |  | Create label |
+| GET | `/labels/{id}/` | get /labels/{id}/ | `id`* | Label | yes | Retrieve framework |
+| PUT | `/labels/{id}/` | put /labels/{id}/ | `id`*, body*: Label | Label |  | Update label |
+| DELETE | `/labels/{id}/` | delete /labels/{id}/ | `id`* | — |  | Delete label |
+| PATCH | `/labels/{id}/` | patch /labels/{id}/ | `id`*, body*: Label | Label |  | Partial update |
+| GET | `/plans/` | get /plans/ | — | Plan[] | yes | Subscription plans |
+| GET | `/profile/` | get /profile/ | `page`, `length`, `ordering`, `search` | User | yes | User data |
+| POST | `/profile/change_password/` | post /profile/change_password/ | body*: object | object |  | Change user password |
+| POST | `/reset/` | post /reset/ | body*: object | object |  | Send reset password email |
+| POST | `/setpassword/` | post /setpassword/ | body*: object | object |  | Reset password after asking for a reset (with the token sent by email). |
+| POST | `/target-actions/` | post /target-actions/ | body*: targetIds | Actions |  | Available actions for the selected targets |
+| GET | `/targets/` | get /targets/ | `page`, `length`, `ordering`, `search` | object | yes | List targets |
+| POST | `/targets/` | post /targets/ | body: Target | Target |  | Create target |
+| POST | `/targets/activate/` | post /targets/activate/ | body*: targetIds | targetIds |  | Activate targets |
+| GET | `/targets/all/average_fix_time/` | get /targets/all/average_fix_time/ | — | object | yes | Average fix time graph data (all targets) |
+| GET | `/targets/all/needs_attention_pie/` | get /targets/all/needs_attention_pie/ | — | object | yes | Targets with open vulnerabilities pie chart data |
+| GET | `/targets/all/needs_attention_top/` | get /targets/all/needs_attention_top/ | — | object[] | yes | Targets with open vulnerabilities |
+| GET | `/targets/all/risk_trend/` | get /targets/all/risk_trend/ | — | object[] | yes | Risk trend graph data (all targets) |
+| GET | `/targets/all/scans/` | get /targets/all/scans/ | `page`, `length`, `ordering`, `search`, `started`, `status` | object | yes | List scans for all targets |
+| GET | `/targets/all/scheduledscans/expanded/` | get /targets/all/scheduledscans/expanded/ | `length` | object | yes | List scheduled scans for all targets expanding recurrence |
+| GET | `/targets/all/severity_trend/` | get /targets/all/severity_trend/ | — | object | yes | Severity trend graph data (all targets) |
+| GET | `/targets/all/top_vulns/` | get /targets/all/top_vulns/ | — | object[] | yes | Top 5 vulnerabilities (all targets). |
+| POST | `/targets/archive/` | post /targets/archive/ | body*: targetIds | targetIds |  | Archive targets |
+| POST | `/targets/archived/` | post /targets/archived/ | body*: targetIds | object |  | List archived targets |
+| GET | `/targets/{id}/` | get /targets/{id}/ | `id`* | Target | yes | Retrieve target |
+| PUT | `/targets/{id}/` | put /targets/{id}/ | `id`*, body: Target | Target |  | Update target |
+| DELETE | `/targets/{id}/` | delete /targets/{id}/ | `id`* | — |  | Delete target |
+| PATCH | `/targets/{id}/` | patch /targets/{id}/ | `id`*, body: Target | Target |  | Partial update target |
+| GET | `/targets/{target_id}/assets/` | get /targets/{target_id}/assets/ | `target_id`*, `page`, `length`, `ordering`, `search` | object | yes | List target's assets |
+| POST | `/targets/{target_id}/assets/` | post /targets/{target_id}/assets/ | `target_id`*, body*: Asset | Asset |  | Create new asset |
+| GET | `/targets/{target_id}/assets/{id}/` | get /targets/{target_id}/assets/{id}/ | `target_id`*, `id`* | Asset | yes | Retrieve asset |
+| PUT | `/targets/{target_id}/assets/{id}/` | put /targets/{target_id}/assets/{id}/ | `target_id`*, `id`*, body*: Asset | Asset |  | Update asset |
+| DELETE | `/targets/{target_id}/assets/{id}/` | delete /targets/{target_id}/assets/{id}/ | `target_id`*, `id`* | — |  | Delete asset |
+| PATCH | `/targets/{target_id}/assets/{id}/` | patch /targets/{target_id}/assets/{id}/ | `target_id`*, `id`*, body*: Asset | Asset |  | Partial update assets |
+| POST | `/targets/{target_id}/assets/{id}/verify/` | post /targets/{target_id}/assets/{id}/verify/ | `target_id`*, `id`*, body*: object | object |  | Verify asset ownership |
+| GET | `/targets/{target_id}/average_fix_time/` | get /targets/{target_id}/average_fix_time/ | `target_id`* | object | yes | Average vulnerability trend graph data |
+| GET | `/targets/{target_id}/events/` | get /targets/{target_id}/events/ | `target_id`* | object | yes | List target events |
+| GET | `/targets/{target_id}/events/{id}/` | get /targets/{target_id}/events/{id}/ | `target_id`*, `id`* | Event | yes | Retrieve target event |
+| GET | `/targets/{target_id}/findings/` | get /targets/{target_id}/findings/ | `target_id`*, `scan`, `severity`, `state`, `assignee`, `label`, `page`, `length`, `ordering`, `search` | object | yes | List target findings |
+| POST | `/targets/{target_id}/findings/bulk/report/` | post /targets/{target_id}/findings/bulk/report/ | `target_id`*, body*: FindingBulkIds | — |  | Finding report |
+| POST | `/targets/{target_id}/findings/bulk/retest/` | post /targets/{target_id}/findings/bulk/retest/ | `target_id`*, body*: FindingBulkRetest | — |  | Bulk retest findings |
+| PATCH | `/targets/{target_id}/findings/bulk/update/` | patch /targets/{target_id}/findings/bulk/update/ | `target_id`*, body*: FindingBulkUpdate | — |  | Bulk update findings |
+| GET | `/targets/{target_id}/findings/report/` | get /targets/{target_id}/findings/report/ | `target_id`*, `token`* | string:binary | yes | Retrieve finding report PDF format |
+| GET | `/targets/{target_id}/findings/{id}/` | get /targets/{target_id}/findings/{id}/ | `target_id`*, `id`* | Finding | yes | Retrieve finding |
+| PUT | `/targets/{target_id}/findings/{id}/` | put /targets/{target_id}/findings/{id}/ | `target_id`*, `id`*, body*: FindingUpdate | Finding |  | Update finding |
+| PATCH | `/targets/{target_id}/findings/{id}/` | patch /targets/{target_id}/findings/{id}/ | `target_id`*, `id`*, body*: FindingUpdate | Finding |  | Partial update finding |
+| GET | `/targets/{target_id}/findings/{id}/integrations/jira-cloud/` | get /targets/{target_id}/findings/{id}/integrations/jira-cloud/ | `target_id`*, `id`* | JiraFinding | yes | Retrieve Jira Cloud finding configuration |
+| PUT | `/targets/{target_id}/findings/{id}/integrations/jira-cloud/` | put /targets/{target_id}/findings/{id}/integrations/jira-cloud/ | `target_id`*, `id`*, body*: JiraFinding | JiraFinding |  | Update Jira Cloud finding configuration |
+| PATCH | `/targets/{target_id}/findings/{id}/integrations/jira-cloud/` | patch /targets/{target_id}/findings/{id}/integrations/jira-cloud/ | `target_id`*, `id`*, body*: JiraFinding | JiraFinding |  | Update Jira Cloud finding configuration |
+| GET | `/targets/{target_id}/findings/{id}/integrations/jira-server/` | get /targets/{target_id}/findings/{id}/integrations/jira-server/ | `target_id`*, `id`* | JiraFinding | yes | Retrieve Jira Server finding configuration |
+| PUT | `/targets/{target_id}/findings/{id}/integrations/jira-server/` | put /targets/{target_id}/findings/{id}/integrations/jira-server/ | `target_id`*, `id`*, body*: JiraFinding | JiraFinding |  | Update Jira Server finding configuration |
+| PATCH | `/targets/{target_id}/findings/{id}/integrations/jira-server/` | patch /targets/{target_id}/findings/{id}/integrations/jira-server/ | `target_id`*, `id`*, body*: JiraFinding | JiraFinding |  | Update Jira Server finding configuration |
+| GET | `/targets/{target_id}/findings/{id}/log/` | get /targets/{target_id}/findings/{id}/log/ | `target_id`*, `id`* | Activity[] | yes | Finding activity log. |
+| POST | `/targets/{target_id}/findings/{id}/retest/` | post /targets/{target_id}/findings/{id}/retest/ | `target_id`*, `id`* | Scan |  | Retest finding |
+| GET | `/targets/{target_id}/integrations/` | get /targets/{target_id}/integrations/ | `target_id`* | Integrations | yes | Integrations available and installed for the target |
+| GET | `/targets/{target_id}/integrations/jira-cloud/` | get /targets/{target_id}/integrations/jira-cloud/ | `target_id`* | JiraScope | yes | Retrieve Jira Cloud Target configuration |
+| PUT | `/targets/{target_id}/integrations/jira-cloud/` | put /targets/{target_id}/integrations/jira-cloud/ | `target_id`*, body*: JiraScope | JiraScope |  | Update Jira Cloud target configuration |
+| PATCH | `/targets/{target_id}/integrations/jira-cloud/` | patch /targets/{target_id}/integrations/jira-cloud/ | `target_id`*, body*: JiraScope | JiraScope |  | Update Jira Cloud target configuration |
+| GET | `/targets/{target_id}/integrations/jira-server/` | get /targets/{target_id}/integrations/jira-server/ | `target_id`* | JiraScope | yes | Retrieve Jira Server Target configuration |
+| PUT | `/targets/{target_id}/integrations/jira-server/` | put /targets/{target_id}/integrations/jira-server/ | `target_id`*, body*: JiraScope | JiraScope |  | Update Jira Server target configuration |
+| PATCH | `/targets/{target_id}/integrations/jira-server/` | patch /targets/{target_id}/integrations/jira-server/ | `target_id`*, body*: JiraScope | JiraScope |  | Update Jira Server target configuration |
+| GET | `/targets/{target_id}/integrations/slack/` | get /targets/{target_id}/integrations/slack/ | `target_id`* | Slack | yes | Retrieve slack integration data |
+| PUT | `/targets/{target_id}/integrations/slack/` | put /targets/{target_id}/integrations/slack/ | `target_id`*, body*: Slack | Slack |  | Update slack integration data |
+| PATCH | `/targets/{target_id}/integrations/slack/` | patch /targets/{target_id}/integrations/slack/ | `target_id`*, body*: Slack | Slack |  | Update slack integration data |
+| GET | `/targets/{target_id}/keys/` | get /targets/{target_id}/keys/ | `target_id`*, `page`, `length`, `ordering`, `search` | object | yes | List target specific API keys |
+| POST | `/targets/{target_id}/keys/` | post /targets/{target_id}/keys/ | `target_id`*, body*: APIKey | APIKey |  | Create target API key |
+| GET | `/targets/{target_id}/keys/{id}/` | get /targets/{target_id}/keys/{id}/ | `target_id`*, `id`* | APIKey | yes | Retrieve target API key |
+| DELETE | `/targets/{target_id}/keys/{id}/` | delete /targets/{target_id}/keys/{id}/ | `target_id`*, `id`* | — |  | Delete target API key |
+| GET | `/targets/{target_id}/risk_trend/` | get /targets/{target_id}/risk_trend/ | `target_id`* | object[] | yes | Risk trend graph data |
+| POST | `/targets/{target_id}/scan_now/` | post /targets/{target_id}/scan_now/ | `target_id`*, body: object | Scan |  | Start a scan on the target |
+| GET | `/targets/{target_id}/scans/` | get /targets/{target_id}/scans/ | `target_id`*, `page`, `length`, `ordering`, `search`, `started`, `status` | object | yes | List scans |
+| GET | `/targets/{target_id}/scans/dates/` | get /targets/{target_id}/scans/dates/ | `target_id`* | string:date[] | yes | Dates where scans have ocurred |
+| GET | `/targets/{target_id}/scans/retrieve_page/` | get /targets/{target_id}/scans/retrieve_page/ | `target_id`*, `length`, `date`* | object | yes | Scan page |
+| GET | `/targets/{target_id}/scans/{id}/` | get /targets/{target_id}/scans/{id}/ | `target_id`*, `id`* | Scan | yes | Retrieve scan |
+| POST | `/targets/{target_id}/scans/{id}/cancel/` | post /targets/{target_id}/scans/{id}/cancel/ | `target_id`*, `id`* | Scan |  | Cancel running scan |
+| GET | `/targets/{target_id}/scans/{id}/endpoints/` | get /targets/{target_id}/scans/{id}/endpoints/ | `target_id`*, `id`* | string:binary | yes | Scan endpoints file |
+| GET | `/targets/{target_id}/scans/{id}/report/` | get /targets/{target_id}/scans/{id}/report/ | `target_id`*, `id`* | string:binary | yes | Scan report PDF, using the report type specified for the target |
+| GET | `/targets/{target_id}/scans/{id}/report/default/` | get /targets/{target_id}/scans/{id}/report/default/ | `target_id`*, `id`* | string:binary | yes | Scan report PDF, using the default report type |
+| GET | `/targets/{target_id}/scans/{id}/report/owasp/` | get /targets/{target_id}/scans/{id}/report/owasp/ | `target_id`*, `id`* | string:binary | yes | Scan report PDF, using the OWASP report type |
+| GET | `/targets/{target_id}/scans/{id}/report/pci/` | get /targets/{target_id}/scans/{id}/report/pci/ | `target_id`*, `id`* | string:binary | yes | Scan report PDF, using the PCI report type |
+| GET | `/targets/{target_id}/scheduledscans/` | get /targets/{target_id}/scheduledscans/ | `target_id`*, `page`, `length`, `ordering`, `search` | object | yes | List scheduled scans |
+| POST | `/targets/{target_id}/scheduledscans/` | post /targets/{target_id}/scheduledscans/ | `target_id`*, body*: object | Scheduled |  | Create new scheduled scan |
+| GET | `/targets/{target_id}/scheduledscans/expanded/` | get /targets/{target_id}/scheduledscans/expanded/ | `target_id`*, `length` | object | yes | List scheduled scans expanding recurrence |
+| GET | `/targets/{target_id}/scheduledscans/{id}/` | get /targets/{target_id}/scheduledscans/{id}/ | `target_id`*, `id`* | Scheduled | yes | Retrieve a scheduled scan |
+| PUT | `/targets/{target_id}/scheduledscans/{id}/` | put /targets/{target_id}/scheduledscans/{id}/ | `target_id`*, `id`*, body*: object | Scheduled |  | Update a scheduled scan |
+| DELETE | `/targets/{target_id}/scheduledscans/{id}/` | delete /targets/{target_id}/scheduledscans/{id}/ | `target_id`*, `id`* | — |  | Delete |
+| PATCH | `/targets/{target_id}/scheduledscans/{id}/` | patch /targets/{target_id}/scheduledscans/{id}/ | `target_id`*, `id`*, body*: object | Scheduled |  | Partial update |
+| GET | `/targets/{target_id}/severity_trend/` | get /targets/{target_id}/severity_trend/ | `target_id`* | object | yes | Severity trend graph data. |
+| GET | `/targets/{target_id}/site/` | get /targets/{target_id}/site/ | `target_id`* | Site | yes | Retrieve target's site |
+| PUT | `/targets/{target_id}/site/` | put /targets/{target_id}/site/ | `target_id`*, body*: Site | Site |  | Update target's site |
+| PATCH | `/targets/{target_id}/site/` | patch /targets/{target_id}/site/ | `target_id`*, body*: Site | Site |  | Partial update target's site |
+| POST | `/targets/{target_id}/site/verify/` | post /targets/{target_id}/site/verify/ | `target_id`*, body*: object | object |  | Verify site ownership |
+| GET | `/targets/{target_id}/top_vulns/` | get /targets/{target_id}/top_vulns/ | `target_id`* | object[] | yes | Top 5 vulnerabilities |
+| GET | `/targets/{target_id}/webhooks/` | get /targets/{target_id}/webhooks/ | `target_id`* | object | yes | List target webhooks |
+| POST | `/targets/{target_id}/webhooks/` | post /targets/{target_id}/webhooks/ | `target_id`*, body*: Webhook | Webhook |  | Create new target webhook |
+| GET | `/targets/{target_id}/webhooks/{id}/` | get /targets/{target_id}/webhooks/{id}/ | `target_id`*, `id`* | Webhook | yes | Retrieve target webhook |
+| PUT | `/targets/{target_id}/webhooks/{id}/` | put /targets/{target_id}/webhooks/{id}/ | `target_id`*, `id`*, body*: Webhook | Webhook |  | Update target webhook |
+| DELETE | `/targets/{target_id}/webhooks/{id}/` | delete /targets/{target_id}/webhooks/{id}/ | `target_id`*, `id`* | — |  | Delete target webhook |
+| PATCH | `/targets/{target_id}/webhooks/{id}/` | patch /targets/{target_id}/webhooks/{id}/ | `target_id`*, `id`*, body*: Webhook | Webhook |  | Partial update target webhook |
+| GET | `/users/` | get /users/ | `page`, `length`, `ordering`, `search` | object | yes | List users |
+| POST | `/users/` | post /users/ | body*: object | User |  | Create/Reactivate a user. |
+| GET | `/users/{id}/` | get /users/{id}/ | `id`* | User | yes | Retrieve user |
+| PUT | `/users/{id}/` | put /users/{id}/ | `id`*, body*: object | User |  | Update user |
+| DELETE | `/users/{id}/` | delete /users/{id}/ | `id`* | — |  | Deactivate a user |
+| PATCH | `/users/{id}/` | patch /users/{id}/ | `id`*, body*: object | User |  | Partial update user |
+| GET | `/vulnerability_definitions/` | get /vulnerability_definitions/ | `page`, `length`, `ordering`, `search` | object | yes | List vulnerability definitions |
+| GET | `/vulnerability_definitions/{id}/` | get /vulnerability_definitions/{id}/ | `id`* | VulnerabilityDefinition | yes | Retrieve vulnerability definition |
+| GET | `/webhooks/` | get /webhooks/ | — | object | yes | List account webhooks |
+| POST | `/webhooks/` | post /webhooks/ | body*: Webhook | Webhook |  | Create new account webhook |
+| GET | `/webhooks/{id}/` | get /webhooks/{id}/ | `id`* | Webhook | yes | Retrieve account webhook |
+| PUT | `/webhooks/{id}/` | put /webhooks/{id}/ | `id`*, body*: Webhook | Webhook |  | Update account webhook |
+| DELETE | `/webhooks/{id}/` | delete /webhooks/{id}/ | `id`* | — |  | Delete account webhook |
+| PATCH | `/webhooks/{id}/` | patch /webhooks/{id}/ | `id`*, body*: Webhook | Webhook |  | Partial update account webhook |

@@ -17,29 +17,76 @@
       },
       {
         "deprecated": false,
+        "description": "API to verify Ration Card.",
         "id": "operation:post:/ratcr/certificate",
         "kind": "operation",
         "method": "post",
         "name": "ratcr",
         "path": "/ratcr/certificate",
         "pointer": "#/paths/~1ratcr~1certificate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "502",
+            "type": "object"
+          },
+          {
+            "status": "503",
+            "type": "object"
+          },
+          {
+            "status": "504",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": [],
             "clientId": []
           }
         ],
-        "summary": "Ration Card"
+        "summary": "Ration Card",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "id": "schema:AcademicCertificateSchema",
         "kind": "schema",
-        "name": "AcademicCertificateSchema"
+        "name": "AcademicCertificateSchema",
+        "type": "object"
       },
       {
         "id": "schema:ConsentArtifactSchema",
         "kind": "schema",
-        "name": "ConsentArtifactSchema"
+        "name": "ConsentArtifactSchema",
+        "type": "object"
       }
     ]
   },

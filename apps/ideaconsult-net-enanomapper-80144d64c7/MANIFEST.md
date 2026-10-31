@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.ideaconsult.net_portal_them
 
 | | |
 | --- | --- |
-| Signed bundle | `08372bdf72a01fbdf898dcd7cea7f6db938a4f156b9c44a6eac160e3c347e8c9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,18 +34,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.ideaconsult.net_portal_them
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/enm/{db}/investigation` | getInvestigationResults | Details of multiple studies |
-| GET | `/enm/{db}/query/compound/{term}/{representation}` | searchByIdentifier | Exact chemical structure search |
-| GET | `/enm/{db}/query/similarity` | searchBySimilarity | Exact similarity search |
-| GET | `/enm/{db}/query/smarts` | searchBySmarts | Substructure search |
-| GET | `/enm/{db}/query/study` | getEndpointSummary | Search endpoint summary |
-| GET | `/enm/{db}/substance` | getSubstances | List substances |
-| GET | `/enm/{db}/substance/{uuid}` | getSubstanceByUUID | Get a substance |
-| GET | `/enm/{db}/substance/{uuid}/composition` | getSubstanceComposition | Substance composition |
-| GET | `/enm/{db}/substance/{uuid}/structures` | getSubstanceStructures | Get substance composition as a dataset |
-| GET | `/enm/{db}/substance/{uuid}/study` | getSubstanceStudy | get substance study |
-| GET | `/enm/{db}/substance/{uuid}/studySummary` | getSubstanceStudySummary | Get study summary for the substance |
-| GET | `/select` | solrquery_get | Apache Solr powered search |
-| POST | `/select` | solrquery_post | Apache Solr powered search |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/enm/{db}/investigation` | getInvestigationResults | `db`*, `type`*, `search`*, `inchikey`, `id`, `page`, `pagesize` | Investigation | yes | Details of multiple studies |
+| GET | `/enm/{db}/query/compound/{term}/{representation}` | searchByIdentifier | `db`*, `term`*, `representation`*, `search`, `b64search`, `casesens`, `bundle_uri`, `sameas`, `page`, `pagesize` | Dataset | yes | Exact chemical structure search |
+| GET | `/enm/{db}/query/similarity` | searchBySimilarity | `db`*, `search`, `b64search`, `type`, `threshold`, `dataset_uri`, `filterBySubstance`, `bundle_uri`, `sameas`, `mol`, `page`, `pagesize` | Dataset | yes | Exact similarity search |
+| GET | `/enm/{db}/query/smarts` | searchBySmarts | `db`*, `search`, `b64search`, `type`, `dataset_uri`, `filterBySubstance`, `bundle_uri`, `sameas`, `mol`, `page`, `pagesize` | Dataset | yes | Substructure search |
+| GET | `/enm/{db}/query/study` | getEndpointSummary | `db`*, `top`, `category` | Facet | yes | Search endpoint summary |
+| GET | `/enm/{db}/substance` | getSubstances | `db`*, `search`, `type`, `compound_uri`, `bundle_uri`, `addDummySubstance`, `studysummary`, `page`, `pagesize` | Substance | yes | List substances |
+| GET | `/enm/{db}/substance/{uuid}` | getSubstanceByUUID | `db`*, `uuid`*, `property_uris[]`, `page`, `pagesize` | Substance | yes | Get a substance |
+| GET | `/enm/{db}/substance/{uuid}/composition` | getSubstanceComposition | `db`*, `uuid`*, `all`, `page`, `pagesize` | SubstanceComposition | yes | Substance composition |
+| GET | `/enm/{db}/substance/{uuid}/structures` | getSubstanceStructures | `db`*, `uuid`*, `page`, `pagesize` | Dataset | yes | Get substance composition as a dataset |
+| GET | `/enm/{db}/substance/{uuid}/study` | getSubstanceStudy | `db`*, `uuid`*, `top`, `category`, `property_uri`, `property`, `investigation_uuid`, `page`, `pagesize` | SubstanceStudy | yes | get substance study |
+| GET | `/enm/{db}/substance/{uuid}/studySummary` | getSubstanceStudySummary | `db`*, `uuid`*, `top`, `category`, `property_uri`, `property`, `result`, `page`, `pagesize` | SubstanceStudySummary | yes | Get study summary for the substance |
+| GET | `/select` | solrquery_get | `q`, `fq`, `fl`, `start`, `rows`, `wt` | SolrResponse | yes | Apache Solr powered search |
+| POST | `/select` | solrquery_post | `wt`, body: object | SolrResponse |  | Apache Solr powered search |

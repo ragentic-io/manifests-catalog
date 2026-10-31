@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2383badc9b58dfc09282cd8d17aacb8e8616f1c1043a6b26ff602ec4a94482ab` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,101 +34,103 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/appendChatMessage` | appendChatMessageUsingGET | appends a chat message |
-| POST | `/appendChatMessage` | appendChatMessageUsingPOST | appends a chat message |
-| GET | `/appendText` | appendTextUsingGET | — |
-| POST | `/appendText` | appendTextUsingPOST | — |
-| GET | `/checkToken` | checkTokenUsingGET | returns ok when the current api token is valid |
-| POST | `/checkToken` | checkTokenUsingPOST | returns ok when the current api token is valid |
-| GET | `/copyPad` | copyPadUsingGET | — |
-| POST | `/copyPad` | copyPadUsingPOST | — |
-| GET | `/copyPadWithoutHistory` | copyPadWithoutHistoryUsingGET | — |
-| POST | `/copyPadWithoutHistory` | copyPadWithoutHistoryUsingPOST | — |
-| GET | `/createAuthor` | createAuthorUsingGET | creates a new author |
-| POST | `/createAuthor` | createAuthorUsingPOST | creates a new author |
-| GET | `/createAuthorIfNotExistsFor` | createAuthorIfNotExistsForUsingGET | this functions helps you to map your application author ids to Etherpad author ids |
-| POST | `/createAuthorIfNotExistsFor` | createAuthorIfNotExistsForUsingPOST | this functions helps you to map your application author ids to Etherpad author ids |
-| GET | `/createDiffHTML` | createDiffHTMLUsingGET | — |
-| POST | `/createDiffHTML` | createDiffHTMLUsingPOST | — |
-| GET | `/createGroup` | createGroupUsingGET | creates a new group |
-| POST | `/createGroup` | createGroupUsingPOST | creates a new group |
-| GET | `/createGroupIfNotExistsFor` | createGroupIfNotExistsForUsingGET | this functions helps you to map your application group ids to Etherpad group ids |
-| POST | `/createGroupIfNotExistsFor` | createGroupIfNotExistsForUsingPOST | this functions helps you to map your application group ids to Etherpad group ids |
-| GET | `/createGroupPad` | createGroupPadUsingGET | creates a new pad in this group |
-| POST | `/createGroupPad` | createGroupPadUsingPOST | creates a new pad in this group |
-| GET | `/createPad` | createPadUsingGET | — |
-| POST | `/createPad` | createPadUsingPOST | — |
-| GET | `/createSession` | createSessionUsingGET | creates a new session. validUntil is an unix timestamp in seconds |
-| POST | `/createSession` | createSessionUsingPOST | creates a new session. validUntil is an unix timestamp in seconds |
-| GET | `/deleteGroup` | deleteGroupUsingGET | deletes a group |
-| POST | `/deleteGroup` | deleteGroupUsingPOST | deletes a group |
-| GET | `/deletePad` | deletePadUsingGET | deletes a pad |
-| POST | `/deletePad` | deletePadUsingPOST | deletes a pad |
-| GET | `/deleteSession` | deleteSessionUsingGET | deletes a session |
-| POST | `/deleteSession` | deleteSessionUsingPOST | deletes a session |
-| GET | `/getAttributePool` | getAttributePoolUsingGET | — |
-| POST | `/getAttributePool` | getAttributePoolUsingPOST | — |
-| GET | `/getAuthorName` | getAuthorNameUsingGET | Returns the Author Name of the author |
-| POST | `/getAuthorName` | getAuthorNameUsingPOST | Returns the Author Name of the author |
-| GET | `/getChatHead` | getChatHeadUsingGET | returns the chatHead (chat-message) of the pad |
-| POST | `/getChatHead` | getChatHeadUsingPOST | returns the chatHead (chat-message) of the pad |
-| GET | `/getChatHistory` | getChatHistoryUsingGET | returns the chat history |
-| POST | `/getChatHistory` | getChatHistoryUsingPOST | returns the chat history |
-| GET | `/getHTML` | getHTMLUsingGET | returns the text of a pad formatted as HTML |
-| POST | `/getHTML` | getHTMLUsingPOST | returns the text of a pad formatted as HTML |
-| GET | `/getLastEdited` | getLastEditedUsingGET | returns the timestamp of the last revision of the pad |
-| POST | `/getLastEdited` | getLastEditedUsingPOST | returns the timestamp of the last revision of the pad |
-| GET | `/getPadID` | getPadIDUsingGET | — |
-| POST | `/getPadID` | getPadIDUsingPOST | — |
-| GET | `/getPublicStatus` | getPublicStatusUsingGET | return true of false |
-| POST | `/getPublicStatus` | getPublicStatusUsingPOST | return true of false |
-| GET | `/getReadOnlyID` | getReadOnlyIDUsingGET | returns the read only link of a pad |
-| POST | `/getReadOnlyID` | getReadOnlyIDUsingPOST | returns the read only link of a pad |
-| GET | `/getRevisionChangeset` | getRevisionChangesetUsingGET | — |
-| POST | `/getRevisionChangeset` | getRevisionChangesetUsingPOST | — |
-| GET | `/getRevisionsCount` | getRevisionsCountUsingGET | returns the number of revisions of this pad |
-| POST | `/getRevisionsCount` | getRevisionsCountUsingPOST | returns the number of revisions of this pad |
-| GET | `/getSavedRevisionsCount` | getSavedRevisionsCountUsingGET | — |
-| POST | `/getSavedRevisionsCount` | getSavedRevisionsCountUsingPOST | — |
-| GET | `/getSessionInfo` | getSessionInfoUsingGET | returns informations about a session |
-| POST | `/getSessionInfo` | getSessionInfoUsingPOST | returns informations about a session |
-| GET | `/getStats` | getStatsUsingGET | — |
-| POST | `/getStats` | getStatsUsingPOST | — |
-| GET | `/getText` | getTextUsingGET | returns the text of a pad |
-| POST | `/getText` | getTextUsingPOST | returns the text of a pad |
-| GET | `/listAllGroups` | listAllGroupsUsingGET | — |
-| POST | `/listAllGroups` | listAllGroupsUsingPOST | — |
-| GET | `/listAllPads` | listAllPadsUsingGET | list all the pads |
-| POST | `/listAllPads` | listAllPadsUsingPOST | list all the pads |
-| GET | `/listAuthorsOfPad` | listAuthorsOfPadUsingGET | returns an array of authors who contributed to this pad |
-| POST | `/listAuthorsOfPad` | listAuthorsOfPadUsingPOST | returns an array of authors who contributed to this pad |
-| GET | `/listPads` | listPadsUsingGET | returns all pads of this group |
-| POST | `/listPads` | listPadsUsingPOST | returns all pads of this group |
-| GET | `/listPadsOfAuthor` | listPadsOfAuthorUsingGET | returns an array of all pads this author contributed to |
-| POST | `/listPadsOfAuthor` | listPadsOfAuthorUsingPOST | returns an array of all pads this author contributed to |
-| GET | `/listSavedRevisions` | listSavedRevisionsUsingGET | — |
-| POST | `/listSavedRevisions` | listSavedRevisionsUsingPOST | — |
-| GET | `/listSessionsOfAuthor` | listSessionsOfAuthorUsingGET | returns all sessions of an author |
-| POST | `/listSessionsOfAuthor` | listSessionsOfAuthorUsingPOST | returns all sessions of an author |
-| GET | `/listSessionsOfGroup` | listSessionsOfGroupUsingGET | — |
-| POST | `/listSessionsOfGroup` | listSessionsOfGroupUsingPOST | — |
-| GET | `/movePad` | movePadUsingGET | — |
-| POST | `/movePad` | movePadUsingPOST | — |
-| GET | `/padUsers` | padUsersUsingGET | returns the list of users that are currently editing this pad |
-| POST | `/padUsers` | padUsersUsingPOST | returns the list of users that are currently editing this pad |
-| GET | `/padUsersCount` | padUsersCountUsingGET | returns the number of user that are currently editing this pad |
-| POST | `/padUsersCount` | padUsersCountUsingPOST | returns the number of user that are currently editing this pad |
-| GET | `/restoreRevision` | restoreRevisionUsingGET | — |
-| POST | `/restoreRevision` | restoreRevisionUsingPOST | — |
-| GET | `/saveRevision` | saveRevisionUsingGET | — |
-| POST | `/saveRevision` | saveRevisionUsingPOST | — |
-| GET | `/sendClientsMessage` | sendClientsMessageUsingGET | sends a custom message of type msg to the pad |
-| POST | `/sendClientsMessage` | sendClientsMessageUsingPOST | sends a custom message of type msg to the pad |
-| GET | `/setHTML` | setHTMLUsingGET | sets the text of a pad with HTML |
-| POST | `/setHTML` | setHTMLUsingPOST | sets the text of a pad with HTML |
-| GET | `/setPublicStatus` | setPublicStatusUsingGET | sets a boolean for the public status of a pad |
-| POST | `/setPublicStatus` | setPublicStatusUsingPOST | sets a boolean for the public status of a pad |
-| GET | `/setText` | setTextUsingGET | sets the text of a pad |
-| POST | `/setText` | setTextUsingPOST | sets the text of a pad |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/appendChatMessage` | appendChatMessageUsingGET | `padID`, `text`, `authorID`, `time` | object | yes | appends a chat message |
+| POST | `/appendChatMessage` | appendChatMessageUsingPOST | `padID`, `text`, `authorID`, `time` | object |  | appends a chat message |
+| GET | `/appendText` | appendTextUsingGET | `padID`, `text` | object | yes | — |
+| POST | `/appendText` | appendTextUsingPOST | `padID`, `text` | object |  | — |
+| GET | `/checkToken` | checkTokenUsingGET | — | object | yes | returns ok when the current api token is valid |
+| POST | `/checkToken` | checkTokenUsingPOST | — | object |  | returns ok when the current api token is valid |
+| GET | `/copyPad` | copyPadUsingGET | `sourceID`, `destinationID`, `force` | object | yes | — |
+| POST | `/copyPad` | copyPadUsingPOST | `sourceID`, `destinationID`, `force` | object |  | — |
+| GET | `/copyPadWithoutHistory` | copyPadWithoutHistoryUsingGET | `sourceID`, `destinationID`, `force` | object | yes | — |
+| POST | `/copyPadWithoutHistory` | copyPadWithoutHistoryUsingPOST | `sourceID`, `destinationID`, `force` | object |  | — |
+| GET | `/createAuthor` | createAuthorUsingGET | `name` | object | yes | creates a new author |
+| POST | `/createAuthor` | createAuthorUsingPOST | `name` | object |  | creates a new author |
+| GET | `/createAuthorIfNotExistsFor` | createAuthorIfNotExistsForUsingGET | `authorMapper`, `name` | object | yes | this functions helps you to map your application author ids to Etherpad author ids |
+| POST | `/createAuthorIfNotExistsFor` | createAuthorIfNotExistsForUsingPOST | `authorMapper`, `name` | object |  | this functions helps you to map your application author ids to Etherpad author ids |
+| GET | `/createDiffHTML` | createDiffHTMLUsingGET | `padID`, `startRev`, `endRev` | object | yes | — |
+| POST | `/createDiffHTML` | createDiffHTMLUsingPOST | `padID`, `startRev`, `endRev` | object |  | — |
+| GET | `/createGroup` | createGroupUsingGET | — | object | yes | creates a new group |
+| POST | `/createGroup` | createGroupUsingPOST | — | object |  | creates a new group |
+| GET | `/createGroupIfNotExistsFor` | createGroupIfNotExistsForUsingGET | `groupMapper` | object | yes | this functions helps you to map your application group ids to Etherpad group ids |
+| POST | `/createGroupIfNotExistsFor` | createGroupIfNotExistsForUsingPOST | `groupMapper` | object |  | this functions helps you to map your application group ids to Etherpad group ids |
+| GET | `/createGroupPad` | createGroupPadUsingGET | `groupID`, `padName`, `text` | object | yes | creates a new pad in this group |
+| POST | `/createGroupPad` | createGroupPadUsingPOST | `groupID`, `padName`, `text` | object |  | creates a new pad in this group |
+| GET | `/createPad` | createPadUsingGET | `padID`, `text` | object | yes | — |
+| POST | `/createPad` | createPadUsingPOST | `padID`, `text` | object |  | — |
+| GET | `/createSession` | createSessionUsingGET | `groupID`, `authorID`, `validUntil` | object | yes | creates a new session. validUntil is an unix timestamp in seconds |
+| POST | `/createSession` | createSessionUsingPOST | `groupID`, `authorID`, `validUntil` | object |  | creates a new session. validUntil is an unix timestamp in seconds |
+| GET | `/deleteGroup` | deleteGroupUsingGET | `groupID` | object | yes | deletes a group |
+| POST | `/deleteGroup` | deleteGroupUsingPOST | `groupID` | object |  | deletes a group |
+| GET | `/deletePad` | deletePadUsingGET | `padID` | object | yes | deletes a pad |
+| POST | `/deletePad` | deletePadUsingPOST | `padID` | object |  | deletes a pad |
+| GET | `/deleteSession` | deleteSessionUsingGET | `sessionID` | object | yes | deletes a session |
+| POST | `/deleteSession` | deleteSessionUsingPOST | `sessionID` | object |  | deletes a session |
+| GET | `/getAttributePool` | getAttributePoolUsingGET | `padID` | object | yes | — |
+| POST | `/getAttributePool` | getAttributePoolUsingPOST | `padID` | object |  | — |
+| GET | `/getAuthorName` | getAuthorNameUsingGET | `authorID` | object | yes | Returns the Author Name of the author |
+| POST | `/getAuthorName` | getAuthorNameUsingPOST | `authorID` | object |  | Returns the Author Name of the author |
+| GET | `/getChatHead` | getChatHeadUsingGET | `padID` | object | yes | returns the chatHead (chat-message) of the pad |
+| POST | `/getChatHead` | getChatHeadUsingPOST | `padID` | object |  | returns the chatHead (chat-message) of the pad |
+| GET | `/getChatHistory` | getChatHistoryUsingGET | `padID`, `start`, `end` | object | yes | returns the chat history |
+| POST | `/getChatHistory` | getChatHistoryUsingPOST | `padID`, `start`, `end` | object |  | returns the chat history |
+| GET | `/getHTML` | getHTMLUsingGET | `padID`, `rev` | object | yes | returns the text of a pad formatted as HTML |
+| POST | `/getHTML` | getHTMLUsingPOST | `padID`, `rev` | object |  | returns the text of a pad formatted as HTML |
+| GET | `/getLastEdited` | getLastEditedUsingGET | `padID` | object | yes | returns the timestamp of the last revision of the pad |
+| POST | `/getLastEdited` | getLastEditedUsingPOST | `padID` | object |  | returns the timestamp of the last revision of the pad |
+| GET | `/getPadID` | getPadIDUsingGET | `roID` | object | yes | — |
+| POST | `/getPadID` | getPadIDUsingPOST | `roID` | object |  | — |
+| GET | `/getPublicStatus` | getPublicStatusUsingGET | `padID` | object | yes | return true of false |
+| POST | `/getPublicStatus` | getPublicStatusUsingPOST | `padID` | object |  | return true of false |
+| GET | `/getReadOnlyID` | getReadOnlyIDUsingGET | `padID` | object | yes | returns the read only link of a pad |
+| POST | `/getReadOnlyID` | getReadOnlyIDUsingPOST | `padID` | object |  | returns the read only link of a pad |
+| GET | `/getRevisionChangeset` | getRevisionChangesetUsingGET | `padID`, `rev` | object | yes | — |
+| POST | `/getRevisionChangeset` | getRevisionChangesetUsingPOST | `padID`, `rev` | object |  | — |
+| GET | `/getRevisionsCount` | getRevisionsCountUsingGET | `padID` | object | yes | returns the number of revisions of this pad |
+| POST | `/getRevisionsCount` | getRevisionsCountUsingPOST | `padID` | object |  | returns the number of revisions of this pad |
+| GET | `/getSavedRevisionsCount` | getSavedRevisionsCountUsingGET | `padID` | object | yes | — |
+| POST | `/getSavedRevisionsCount` | getSavedRevisionsCountUsingPOST | `padID` | object |  | — |
+| GET | `/getSessionInfo` | getSessionInfoUsingGET | `sessionID` | object | yes | returns informations about a session |
+| POST | `/getSessionInfo` | getSessionInfoUsingPOST | `sessionID` | object |  | returns informations about a session |
+| GET | `/getStats` | getStatsUsingGET | — | object | yes | — |
+| POST | `/getStats` | getStatsUsingPOST | — | object |  | — |
+| GET | `/getText` | getTextUsingGET | `padID`, `rev` | object | yes | returns the text of a pad |
+| POST | `/getText` | getTextUsingPOST | `padID`, `rev` | object |  | returns the text of a pad |
+| GET | `/listAllGroups` | listAllGroupsUsingGET | — | object | yes | — |
+| POST | `/listAllGroups` | listAllGroupsUsingPOST | — | object |  | — |
+| GET | `/listAllPads` | listAllPadsUsingGET | — | object | yes | list all the pads |
+| POST | `/listAllPads` | listAllPadsUsingPOST | — | object |  | list all the pads |
+| GET | `/listAuthorsOfPad` | listAuthorsOfPadUsingGET | `padID` | object | yes | returns an array of authors who contributed to this pad |
+| POST | `/listAuthorsOfPad` | listAuthorsOfPadUsingPOST | `padID` | object |  | returns an array of authors who contributed to this pad |
+| GET | `/listPads` | listPadsUsingGET | `groupID` | object | yes | returns all pads of this group |
+| POST | `/listPads` | listPadsUsingPOST | `groupID` | object |  | returns all pads of this group |
+| GET | `/listPadsOfAuthor` | listPadsOfAuthorUsingGET | `authorID` | object | yes | returns an array of all pads this author contributed to |
+| POST | `/listPadsOfAuthor` | listPadsOfAuthorUsingPOST | `authorID` | object |  | returns an array of all pads this author contributed to |
+| GET | `/listSavedRevisions` | listSavedRevisionsUsingGET | `padID` | object | yes | — |
+| POST | `/listSavedRevisions` | listSavedRevisionsUsingPOST | `padID` | object |  | — |
+| GET | `/listSessionsOfAuthor` | listSessionsOfAuthorUsingGET | `authorID` | object | yes | returns all sessions of an author |
+| POST | `/listSessionsOfAuthor` | listSessionsOfAuthorUsingPOST | `authorID` | object |  | returns all sessions of an author |
+| GET | `/listSessionsOfGroup` | listSessionsOfGroupUsingGET | `groupID` | object | yes | — |
+| POST | `/listSessionsOfGroup` | listSessionsOfGroupUsingPOST | `groupID` | object |  | — |
+| GET | `/movePad` | movePadUsingGET | `sourceID`, `destinationID`, `force` | object | yes | — |
+| POST | `/movePad` | movePadUsingPOST | `sourceID`, `destinationID`, `force` | object |  | — |
+| GET | `/padUsers` | padUsersUsingGET | `padID` | object | yes | returns the list of users that are currently editing this pad |
+| POST | `/padUsers` | padUsersUsingPOST | `padID` | object |  | returns the list of users that are currently editing this pad |
+| GET | `/padUsersCount` | padUsersCountUsingGET | `padID` | object | yes | returns the number of user that are currently editing this pad |
+| POST | `/padUsersCount` | padUsersCountUsingPOST | `padID` | object |  | returns the number of user that are currently editing this pad |
+| GET | `/restoreRevision` | restoreRevisionUsingGET | `padID`, `rev` | object | yes | — |
+| POST | `/restoreRevision` | restoreRevisionUsingPOST | `padID`, `rev` | object |  | — |
+| GET | `/saveRevision` | saveRevisionUsingGET | `padID`, `rev` | object | yes | — |
+| POST | `/saveRevision` | saveRevisionUsingPOST | `padID`, `rev` | object |  | — |
+| GET | `/sendClientsMessage` | sendClientsMessageUsingGET | `padID`, `msg` | object | yes | sends a custom message of type msg to the pad |
+| POST | `/sendClientsMessage` | sendClientsMessageUsingPOST | `padID`, `msg` | object |  | sends a custom message of type msg to the pad |
+| GET | `/setHTML` | setHTMLUsingGET | `padID`, `html` | object | yes | sets the text of a pad with HTML |
+| POST | `/setHTML` | setHTMLUsingPOST | `padID`, `html` | object |  | sets the text of a pad with HTML |
+| GET | `/setPublicStatus` | setPublicStatusUsingGET | `padID`, `publicStatus` | object | yes | sets a boolean for the public status of a pad |
+| POST | `/setPublicStatus` | setPublicStatusUsingPOST | `padID`, `publicStatus` | object |  | sets a boolean for the public status of a pad |
+| GET | `/setText` | setTextUsingGET | `padID`, `text` | object | yes | sets the text of a pad |
+| POST | `/setText` | setTextUsingPOST | `padID`, `text` | object |  | sets the text of a pad |

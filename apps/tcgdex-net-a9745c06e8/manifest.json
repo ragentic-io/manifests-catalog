@@ -168,6 +168,131 @@
         "from": "tcgdex-net-a9745c06e8",
         "kind": "EXPOSES",
         "to": "operation:get:/variants/{variant}"
+      },
+      {
+        "from": "operation:get:/cards",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/cards/{cardId}",
+        "kind": "RETURNS",
+        "to": "schema:Card"
+      },
+      {
+        "from": "operation:get:/categories/{category}",
+        "kind": "RETURNS",
+        "to": "schema:StringEndpoint"
+      },
+      {
+        "from": "operation:get:/dex-ids/{dexId}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/energy-types/{energy-type}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/hp/{hp}",
+        "kind": "RETURNS",
+        "to": "schema:StringEndpoint"
+      },
+      {
+        "from": "operation:get:/illustrators/{illustrator}",
+        "kind": "RETURNS",
+        "to": "schema:StringEndpoint"
+      },
+      {
+        "from": "operation:get:/rarities/{rarity}",
+        "kind": "RETURNS",
+        "to": "schema:StringEndpoint"
+      },
+      {
+        "from": "operation:get:/regulation-marks/{regulation-mark}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/retreats/{retreat}",
+        "kind": "RETURNS",
+        "to": "schema:StringEndpoint"
+      },
+      {
+        "from": "operation:get:/series",
+        "kind": "RETURNS",
+        "to": "schema:SerieResume"
+      },
+      {
+        "from": "operation:get:/series/{serie}",
+        "kind": "RETURNS",
+        "to": "schema:Serie"
+      },
+      {
+        "from": "operation:get:/sets",
+        "kind": "RETURNS",
+        "to": "schema:SetResume"
+      },
+      {
+        "from": "operation:get:/sets/{set}",
+        "kind": "RETURNS",
+        "to": "schema:Set"
+      },
+      {
+        "from": "operation:get:/sets/{set}/{cardLocalId}",
+        "kind": "RETURNS",
+        "to": "schema:Card"
+      },
+      {
+        "from": "operation:get:/stages/{stage}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/suffixes/{suffix}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/trainer-types/{trainer-type}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/types/{type}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "operation:get:/variants/{variant}",
+        "kind": "RETURNS",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "schema:Card",
+        "kind": "REFERENCES",
+        "to": "schema:SetResume"
+      },
+      {
+        "from": "schema:Card",
+        "kind": "REFERENCES",
+        "to": "schema:WeakRes"
+      },
+      {
+        "from": "schema:Serie",
+        "kind": "REFERENCES",
+        "to": "schema:SetResume"
+      },
+      {
+        "from": "schema:Set",
+        "kind": "REFERENCES",
+        "to": "schema:CardResume"
+      },
+      {
+        "from": "schema:StringEndpoint",
+        "kind": "REFERENCES",
+        "to": "schema:CardResume"
       }
     ],
     "nodes": [
@@ -177,25 +302,59 @@
       },
       {
         "deprecated": false,
+        "description": "desc",
         "id": "operation:get:/cards",
         "kind": "operation",
         "method": "get",
         "name": "cards",
         "path": "/cards",
         "pointer": "#/paths/~1cards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "fetch the list of cards"
+        "summary": "fetch the list of cards",
+        "tags": [
+          "cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find a defined card thatusing its global id",
         "id": "operation:get:/cards/{cardId}",
         "kind": "operation",
         "method": "get",
         "name": "findPetsByTags",
+        "parameters": [
+          {
+            "description": "Tags to filter by",
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cards/{cardId}",
         "pointer": "#/paths/~1cards~1{cardId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Card"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds Card by Global ID"
+        "summary": "Finds Card by Global ID",
+        "tags": [
+          "cards"
+        ]
       },
       {
         "deprecated": false,
@@ -205,8 +364,18 @@
         "name": "get /categories",
         "path": "/categories",
         "pointer": "#/paths/~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -214,10 +383,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /categories/{category}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/categories/{category}",
         "pointer": "#/paths/~1categories~1{category}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StringEndpoint"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -227,8 +417,18 @@
         "name": "get /dex-ids",
         "path": "/dex-ids",
         "pointer": "#/paths/~1dex-ids/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -236,10 +436,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /dex-ids/{dexId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dexId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dex-ids/{dexId}",
         "pointer": "#/paths/~1dex-ids~1{dexId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -249,8 +470,18 @@
         "name": "get /energy-types",
         "path": "/energy-types",
         "pointer": "#/paths/~1energy-types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -258,10 +489,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /energy-types/{energy-type}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "energy-type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/energy-types/{energy-type}",
         "pointer": "#/paths/~1energy-types~1{energy-type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -271,8 +523,18 @@
         "name": "get /hp",
         "path": "/hp",
         "pointer": "#/paths/~1hp/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -280,10 +542,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /hp/{hp}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hp",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hp/{hp}",
         "pointer": "#/paths/~1hp~1{hp}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StringEndpoint"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -293,8 +576,18 @@
         "name": "get /illustrators",
         "path": "/illustrators",
         "pointer": "#/paths/~1illustrators/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -302,10 +595,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /illustrators/{illustrator}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "illustrator",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/illustrators/{illustrator}",
         "pointer": "#/paths/~1illustrators~1{illustrator}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StringEndpoint"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -315,8 +629,18 @@
         "name": "get /rarities",
         "path": "/rarities",
         "pointer": "#/paths/~1rarities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -324,10 +648,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /rarities/{rarity}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "rarity",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/rarities/{rarity}",
         "pointer": "#/paths/~1rarities~1{rarity}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StringEndpoint"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -337,8 +682,18 @@
         "name": "get /regulation-marks",
         "path": "/regulation-marks",
         "pointer": "#/paths/~1regulation-marks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -346,10 +701,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /regulation-marks/{regulation-mark}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "regulation-mark",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/regulation-marks/{regulation-mark}",
         "pointer": "#/paths/~1regulation-marks~1{regulation-mark}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -359,8 +735,18 @@
         "name": "get /retreats",
         "path": "/retreats",
         "pointer": "#/paths/~1retreats/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -368,10 +754,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /retreats/{retreat}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "retreat",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/retreats/{retreat}",
         "pointer": "#/paths/~1retreats~1{retreat}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StringEndpoint"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -381,8 +788,18 @@
         "name": "get /series",
         "path": "/series",
         "pointer": "#/paths/~1series/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SerieResume[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -390,10 +807,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /series/{serie}",
+        "parameters": [
+          {
+            "description": "the serie ID or name",
+            "in": "path",
+            "name": "serie",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/series/{serie}",
         "pointer": "#/paths/~1series~1{serie}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Serie"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -403,8 +842,18 @@
         "name": "get /sets",
         "path": "/sets",
         "pointer": "#/paths/~1sets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SetResume[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -412,10 +861,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /sets/{set}",
+        "parameters": [
+          {
+            "description": "the set ID or the set name",
+            "in": "path",
+            "name": "set",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sets/{set}",
         "pointer": "#/paths/~1sets~1{set}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Set"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -423,10 +894,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /sets/{set}/{cardLocalId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "set",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "cardLocalId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sets/{set}/{cardLocalId}",
         "pointer": "#/paths/~1sets~1{set}~1{cardLocalId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Card"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "cards"
+        ]
       },
       {
         "deprecated": false,
@@ -436,8 +934,18 @@
         "name": "get /stages",
         "path": "/stages",
         "pointer": "#/paths/~1stages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -445,10 +953,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /stages/{stage}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stage",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stages/{stage}",
         "pointer": "#/paths/~1stages~1{stage}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -458,8 +987,18 @@
         "name": "get /suffixes",
         "path": "/suffixes",
         "pointer": "#/paths/~1suffixes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -467,10 +1006,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /suffixes/{suffix}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "suffix",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/suffixes/{suffix}",
         "pointer": "#/paths/~1suffixes~1{suffix}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -480,8 +1040,18 @@
         "name": "get /trainer-types",
         "path": "/trainer-types",
         "pointer": "#/paths/~1trainer-types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -489,10 +1059,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /trainer-types/{trainer-type}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "trainer-type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/trainer-types/{trainer-type}",
         "pointer": "#/paths/~1trainer-types~1{trainer-type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -502,8 +1093,18 @@
         "name": "get /types",
         "path": "/types",
         "pointer": "#/paths/~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -511,10 +1112,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /types/{type}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/types/{type}",
         "pointer": "#/paths/~1types~1{type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -524,8 +1146,18 @@
         "name": "get /variants",
         "path": "/variants",
         "pointer": "#/paths/~1variants/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "deprecated": false,
@@ -533,50 +1165,79 @@
         "kind": "operation",
         "method": "get",
         "name": "get /variants/{variant}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "variant",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/variants/{variant}",
         "pointer": "#/paths/~1variants~1{variant}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardResume[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "filters"
+        ]
       },
       {
         "id": "schema:Card",
         "kind": "schema",
-        "name": "Card"
+        "name": "Card",
+        "type": "object"
       },
       {
         "id": "schema:CardResume",
         "kind": "schema",
-        "name": "CardResume"
+        "name": "CardResume",
+        "type": "object"
       },
       {
         "id": "schema:Serie",
         "kind": "schema",
-        "name": "Serie"
+        "name": "Serie",
+        "type": "object"
       },
       {
         "id": "schema:SerieResume",
         "kind": "schema",
-        "name": "SerieResume"
+        "name": "SerieResume",
+        "type": "object"
       },
       {
         "id": "schema:Set",
         "kind": "schema",
-        "name": "Set"
+        "name": "Set",
+        "type": "object"
       },
       {
         "id": "schema:SetResume",
         "kind": "schema",
-        "name": "SetResume"
+        "name": "SetResume",
+        "type": "object"
       },
       {
         "id": "schema:StringEndpoint",
         "kind": "schema",
-        "name": "StringEndpoint"
+        "name": "StringEndpoint",
+        "type": "object"
       },
       {
         "id": "schema:WeakRes",
         "kind": "schema",
-        "name": "WeakRes"
+        "name": "WeakRes",
+        "type": "object[]"
       }
     ]
   },

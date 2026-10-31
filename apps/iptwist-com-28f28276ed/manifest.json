@@ -8,6 +8,16 @@
         "from": "iptwist-com-28f28276ed",
         "kind": "EXPOSES",
         "to": "operation:post:/"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "ACCEPTS",
+        "to": "schema:Request"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "RETURNS",
+        "to": "schema:Response"
       }
     ],
     "nodes": [
@@ -23,22 +33,47 @@
         "name": "post /",
         "path": "/",
         "pointer": "#/paths/~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Request"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Response"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Geolocate a given IP address"
+        "summary": "Geolocate a given IP address",
+        "tags": [
+          "Main"
+        ]
       },
       {
         "id": "schema:Request",
         "kind": "schema",
-        "name": "Request"
+        "name": "Request",
+        "type": "object"
       },
       {
         "id": "schema:Response",
         "kind": "schema",
-        "name": "Response"
+        "name": "Response",
+        "type": "object"
       }
     ]
   },

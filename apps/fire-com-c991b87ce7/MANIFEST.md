@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.fire.com_wp-content_uploads
 
 | | |
 | --- | --- |
-| Signed bundle | `1c75bdb20ae4ddd6af85b99155c72e86b0e9c0d5923f98810858b36d837d7cdc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,44 +32,46 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.fire.com_wp-content_uploads
 
 ## Operations (39)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/accounts` | getAccounts | List all fire.com Accounts |
-| POST | `/v1/accounts` | addAccount | Add a new account |
-| GET | `/v1/accounts/{ican}` | getAccountById | Retrieve the details of a fire.com Account |
-| GET | `/v1/accounts/{ican}/transactions` | getTransactionsByIdv1 | List transactions for an account (v1) |
-| GET | `/v1/accounts/{ican}/transactions/filter` | getTransactionsFilteredById | Filtered list of transactions for an account (v1) |
-| POST | `/v1/apps` | createApiApplication | Create a new API Application |
-| POST | `/v1/apps/accesstokens` | authenticate | Authenticate with the API. |
-| GET | `/v1/aspsps` | getListOfAspsps | Get list of ASPSPs / Banks |
-| GET | `/v1/batches` | getBatches | List batches |
-| POST | `/v1/batches` | createBatchPayment | Create a new batch of payments |
-| DELETE | `/v1/batches/{batchUuid}` | cancelBatchPayment | Cancel a batch |
-| GET | `/v1/batches/{batchUuid}` | getDetailsSingleBatch | Get details of a single Batch |
-| PUT | `/v1/batches/{batchUuid}` | submitBatch | Submit a batch for approval |
-| GET | `/v1/batches/{batchUuid}/approvals` | getListofApproversForBatch | List Approvers for a Batch |
-| GET | `/v1/batches/{batchUuid}/banktransfers` | getItemsBatchBankTransfer | List items in a Batch |
-| POST | `/v1/batches/{batchUuid}/banktransfers` | addBankTransferBatchPayment | Add a bank transfer payment to the batch. |
-| DELETE | `/v1/batches/{batchUuid}/banktransfers/{itemUuid}` | deleteBankTransferBatchPayment | Remove a Payment from the Batch (Bank Transfers) |
-| GET | `/v1/batches/{batchUuid}/internaltransfers` | getItemsBatchInternalTrasnfer | List items in a Batch |
-| POST | `/v1/batches/{batchUuid}/internaltransfers` | addInternalTransferBatchPayment | Add an internal transfer payment to the batch |
-| DELETE | `/v1/batches/{batchUuid}/internaltransfers/{itemUuid}` | deleteInternalTransferBatchPayment | Remove a Payment from the Batch (Internal Transfer) |
-| GET | `/v1/cards` | getListofCards | View List of Cards. |
-| POST | `/v1/cards` | createNewCard | Create a new debit card. |
-| POST | `/v1/cards/{cardId}/block` | blockCard | Block a card |
-| GET | `/v1/cards/{cardId}/transactions` | getListofCardTransactions | List Card Transactions. |
-| POST | `/v1/cards/{cardId}/unblock` | unblockCard | Unblock a card |
-| GET | `/v1/directdebits` | getDirectDebitsForMandateUuid | Get all DD payments associated with a direct debit mandate |
-| GET | `/v1/directdebits/{directDebitUuid}` | getDirectDebitByUuid | Get the details of a direct debit |
-| POST | `/v1/directdebits/{directDebitUuid}/reject` | rejectDirectDebit | Reject a direct debit payment |
-| GET | `/v1/mandates` | getDirectDebitMandates | List all direct debit mandates |
-| GET | `/v1/mandates/{mandateUuid}` | getMandate | Get direct debit mandate details |
-| POST | `/v1/mandates/{mandateUuid}` | updateMandateAlias | Update a direct debit mandate alias |
-| POST | `/v1/mandates/{mandateUuid}/activate` | activateMandate | Activate a direct debit mandate |
-| POST | `/v1/mandates/{mandateUuid}/cancel` | cancelMandateByUuid | Cancel a direct debit mandate |
-| GET | `/v1/payees` | getPayees | List all Payee Bank Accounts |
-| POST | `/v1/paymentrequests` | newPaymentRequest | Create a Fire Open Payment request |
-| GET | `/v1/payments/{paymentUuid}` | getPaymentDetails | Get Payment Details |
-| GET | `/v1/user/{userId}` | getUser | Returns details of a specific fire.com user. |
-| GET | `/v1/users` | getUsers | Returns list of all users on your fire.com account |
-| GET | `/v3/accounts/{ican}/transactions` | getTransactionsByIdv3 | List transactions for an account (v3) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/accounts` | getAccounts | — | object | yes | List all fire.com Accounts |
+| POST | `/v1/accounts` | addAccount | body*: object | object |  | Add a new account |
+| GET | `/v1/accounts/{ican}` | getAccountById | `ican`* | object | yes | Retrieve the details of a fire.com Account |
+| GET | `/v1/accounts/{ican}/transactions` | getTransactionsByIdv1 | `ican`*, `limit`*, `offset`* | object | yes | List transactions for an account (v1) |
+| GET | `/v1/accounts/{ican}/transactions/filter` | getTransactionsFilteredById | `ican`*, `dateRangeFrom`*, `dateRangeTo`*, `searchKeyword`*, `transactionTypes`*, `offset`* | object | yes | Filtered list of transactions for an account (v1) |
+| POST | `/v1/apps` | createApiApplication | body*: object | object |  | Create a new API Application |
+| POST | `/v1/apps/accesstokens` | authenticate | body*: object | object |  | Authenticate with the API. |
+| GET | `/v1/aspsps` | getListOfAspsps | `currency` | object | yes | Get list of ASPSPs / Banks |
+| GET | `/v1/batches` | getBatches | `batchStatus`, `batchTypes`, `orderBy`, `order` | object | yes | List batches |
+| POST | `/v1/batches` | createBatchPayment | body*: object | object |  | Create a new batch of payments |
+| GET | `/v1/batches/{batchUuid}` | getDetailsSingleBatch | `batchUuid`* | object | yes | Get details of a single Batch |
+| PUT | `/v1/batches/{batchUuid}` | submitBatch | `batchUuid`* | — |  | Submit a batch for approval |
+| DELETE | `/v1/batches/{batchUuid}` | cancelBatchPayment | `batchUuid`* | — |  | Cancel a batch |
+| GET | `/v1/batches/{batchUuid}/approvals` | getListofApproversForBatch | `batchUuid`* | object | yes | List Approvers for a Batch |
+| GET | `/v1/batches/{batchUuid}/banktransfers` | getItemsBatchBankTransfer | `batchUuid`*, `offset`, `limit` | object | yes | List items in a Batch |
+| POST | `/v1/batches/{batchUuid}/banktransfers` | addBankTransferBatchPayment | `batchUuid`*, body*: object | object |  | Add a bank transfer payment to the batch. |
+| DELETE | `/v1/batches/{batchUuid}/banktransfers/{itemUuid}` | deleteBankTransferBatchPayment | `batchUuid`*, `itemUuid`* | — |  | Remove a Payment from the Batch (Bank Transfers) |
+| GET | `/v1/batches/{batchUuid}/internaltransfers` | getItemsBatchInternalTrasnfer | `batchUuid`*, `offset`, `limit` | object | yes | List items in a Batch |
+| POST | `/v1/batches/{batchUuid}/internaltransfers` | addInternalTransferBatchPayment | `batchUuid`*, body*: object | object |  | Add an internal transfer payment to the batch |
+| DELETE | `/v1/batches/{batchUuid}/internaltransfers/{itemUuid}` | deleteInternalTransferBatchPayment | `batchUuid`*, `itemUuid`* | — |  | Remove a Payment from the Batch (Internal Transfer) |
+| GET | `/v1/cards` | getListofCards | — | object | yes | View List of Cards. |
+| POST | `/v1/cards` | createNewCard | body*: object | object |  | Create a new debit card. |
+| POST | `/v1/cards/{cardId}/block` | blockCard | `cardId`* | — |  | Block a card |
+| GET | `/v1/cards/{cardId}/transactions` | getListofCardTransactions | `cardId`*, `limit`, `offset` | object[] | yes | List Card Transactions. |
+| POST | `/v1/cards/{cardId}/unblock` | unblockCard | `cardId`* | — |  | Unblock a card |
+| GET | `/v1/directdebits` | getDirectDebitsForMandateUuid | `mandateUuid`* | object | yes | Get all DD payments associated with a direct debit mandate |
+| GET | `/v1/directdebits/{directDebitUuid}` | getDirectDebitByUuid | `directDebitUuid`* | object | yes | Get the details of a direct debit |
+| POST | `/v1/directdebits/{directDebitUuid}/reject` | rejectDirectDebit | `directDebitUuid`* | — |  | Reject a direct debit payment |
+| GET | `/v1/mandates` | getDirectDebitMandates | — | object | yes | List all direct debit mandates |
+| GET | `/v1/mandates/{mandateUuid}` | getMandate | `mandateUuid`* | object | yes | Get direct debit mandate details |
+| POST | `/v1/mandates/{mandateUuid}` | updateMandateAlias | `mandateUuid`* | — |  | Update a direct debit mandate alias |
+| POST | `/v1/mandates/{mandateUuid}/activate` | activateMandate | `mandateUuid`* | — |  | Activate a direct debit mandate |
+| POST | `/v1/mandates/{mandateUuid}/cancel` | cancelMandateByUuid | `mandateUuid`* | — |  | Cancel a direct debit mandate |
+| GET | `/v1/payees` | getPayees | — | object | yes | List all Payee Bank Accounts |
+| POST | `/v1/paymentrequests` | newPaymentRequest | body*: object | object |  | Create a Fire Open Payment request |
+| GET | `/v1/payments/{paymentUuid}` | getPaymentDetails | `paymentUuid`* | object | yes | Get Payment Details |
+| GET | `/v1/user/{userId}` | getUser | `userId`* | object | yes | Returns details of a specific fire.com user. |
+| GET | `/v1/users` | getUsers | — | object[] | yes | Returns list of all users on your fire.com account |
+| GET | `/v3/accounts/{ican}/transactions` | getTransactionsByIdv3 | `ican`*, `limit`, `dateRangeFrom`, `dateRangeTo`, `startAfter` | object | yes | List transactions for an account (v3) |

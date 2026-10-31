@@ -42,12 +42,12 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection_id}/"
+        "to": "operation:get:/collections/{collection_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:get:/collections/{collection_id}/"
+        "to": "operation:delete:/collections/{collection_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -62,17 +62,17 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection_id}/collected_metadata/{cgm_id}"
-      },
-      {
-        "from": "osf-io-6b10e45113",
-        "kind": "EXPOSES",
         "to": "operation:get:/collections/{collection_id}/collected_metadata/{cgm_id}"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
         "to": "operation:post:/collections/{collection_id}/collected_metadata/{cgm_id}"
+      },
+      {
+        "from": "osf-io-6b10e45113",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/collections/{collection_id}/collected_metadata/{cgm_id}"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -97,17 +97,17 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection_id}/linked_nodes/relationships/"
-      },
-      {
-        "from": "osf-io-6b10e45113",
-        "kind": "EXPOSES",
         "to": "operation:get:/collections/{collection_id}/linked_nodes/relationships/"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
         "to": "operation:post:/collections/{collection_id}/linked_nodes/relationships/"
+      },
+      {
+        "from": "osf-io-6b10e45113",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/collections/{collection_id}/linked_nodes/relationships/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -122,11 +122,6 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection_id}/linked_registrations/relationships/"
-      },
-      {
-        "from": "osf-io-6b10e45113",
-        "kind": "EXPOSES",
         "to": "operation:get:/collections/{collection_id}/linked_registrations/relationships/"
       },
       {
@@ -137,7 +132,7 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/comments/{comment_id}/"
+        "to": "operation:delete:/collections/{collection_id}/linked_registrations/relationships/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -152,6 +147,11 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
+        "to": "operation:delete:/comments/{comment_id}/"
+      },
+      {
+        "from": "osf-io-6b10e45113",
+        "kind": "EXPOSES",
         "to": "operation:get:/draft_registrations/"
       },
       {
@@ -162,12 +162,12 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/draft_registrations/{draft_id}/"
+        "to": "operation:get:/draft_registrations/{draft_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:get:/draft_registrations/{draft_id}/"
+        "to": "operation:delete:/draft_registrations/{draft_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -272,12 +272,12 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/nodes/{node_id}/"
+        "to": "operation:get:/nodes/{node_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:get:/nodes/{node_id}/"
+        "to": "operation:delete:/nodes/{node_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -347,12 +347,12 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/nodes/{node_id}/contributors/{user_id}/"
+        "to": "operation:get:/nodes/{node_id}/contributors/{user_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:get:/nodes/{node_id}/contributors/{user_id}/"
+        "to": "operation:delete:/nodes/{node_id}/contributors/{user_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -372,12 +372,12 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/nodes/{node_id}/draft_registrations/{draft_id}/"
+        "to": "operation:get:/nodes/{node_id}/draft_registrations/{draft_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:get:/nodes/{node_id}/draft_registrations/{draft_id}/"
+        "to": "operation:delete:/nodes/{node_id}/draft_registrations/{draft_id}/"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -652,12 +652,12 @@
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:delete:/schema_responses/{schema_response_id}"
+        "to": "operation:get:/schema_responses/{schema_response_id}"
       },
       {
         "from": "osf-io-6b10e45113",
         "kind": "EXPOSES",
-        "to": "operation:get:/schema_responses/{schema_response_id}"
+        "to": "operation:delete:/schema_responses/{schema_response_id}"
       },
       {
         "from": "osf-io-6b10e45113",
@@ -792,1719 +792,4972 @@
       },
       {
         "deprecated": false,
+        "description": "#### Returns A JSON object with `meta` and `links` keys.",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "base_read",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Root"
+        "summary": "Root",
+        "tags": [
+          "Base"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A log can have one of many actions.",
         "id": "operation:get:/actions/",
         "kind": "operation",
         "method": "get",
         "name": "logs_actions",
         "path": "/actions/",
         "pointer": "#/paths/~1actions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Actions"
+        "summary": "Actions",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of addons configurable with the OSF, for read purposes only.",
         "id": "operation:get:/addons/",
         "kind": "operation",
         "method": "get",
         "name": "addons_list",
         "path": "/addons/",
         "pointer": "#/paths/~1addons~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all addons"
+        "summary": "List all addons",
+        "tags": [
+          "Addons"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all standard citation styles available for rendering citations.",
         "id": "operation:get:/citations/styles/",
         "kind": "operation",
         "method": "get",
         "name": "citations_styles_list",
         "path": "/citations/styles/",
         "pointer": "#/paths/~1citations~1styles~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all citation styles"
+        "summary": "List all citation styles",
+        "tags": [
+          "Citations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a citation style.",
         "id": "operation:get:/citations/styles/{style_id}/",
         "kind": "operation",
         "method": "get",
         "name": "citations_styles_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the citation style.",
+            "in": "path",
+            "name": "style_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/citations/styles/{style_id}/",
         "pointer": "#/paths/~1citations~1styles~1{style_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a citation style"
+        "summary": "Retrieve a citation style",
+        "tags": [
+          "Citations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list collections, either public or related to the user #### Permissions Anonymous users are able to see all public collections at this endpoint.",
         "id": "operation:get:/collections/",
         "kind": "operation",
         "method": "get",
         "name": "collections_list",
         "path": "/collections/",
         "pointer": "#/paths/~1collections~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all Collections"
+        "summary": "List all Collections",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list collections, either public or related to the user #### Permissions Anonymous users are able to see all public collections at this endpoint.",
         "id": "operation:post:/collections/",
         "kind": "operation",
         "method": "post",
         "name": "collections_create",
         "path": "/collections/",
         "pointer": "#/paths/~1collections~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Collection"
+        "summary": "Create a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collection_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "collections_delete",
-        "path": "/collections/{collection_id}/",
-        "pointer": "#/paths/~1collections~1{collection_id}~1/delete",
-        "security": [],
-        "summary": "Delete a Collection"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves a collection, if the user has appropriate permissions.",
         "id": "operation:get:/collections/{collection_id}/",
         "kind": "operation",
         "method": "get",
         "name": "collections_detail",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/",
         "pointer": "#/paths/~1collections~1{collection_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Collection"
+        "summary": "Retrieve a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a collection, if the user has appropriate permissions.",
+        "id": "operation:delete:/collections/{collection_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "collections_delete",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection_id}/",
+        "pointer": "#/paths/~1collections~1{collection_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Collection",
+        "tags": [
+          "Collections"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List of user created metadata for entities within a collection.",
         "id": "operation:get:/collections/{collection_id}/collected_metadata/",
         "kind": "operation",
         "method": "get",
         "name": "collections_metadata_registrations_list",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of collected metadata for a collection"
+        "summary": "Retrieve a list of collected metadata for a collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of user created metadata for entities within a collection.",
         "id": "operation:post:/collections/{collection_id}/collected_metadata/",
         "kind": "operation",
         "method": "post",
         "name": "collections_add_metadata",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add Metadata or Subjects to a Entity in a Collection"
+        "summary": "Add Metadata or Subjects to a Entity in a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collection_id}/collected_metadata/{cgm_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "collections_metadata_delete",
-        "path": "/collections/{collection_id}/collected_metadata/{cgm_id}",
-        "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}/delete",
-        "security": [],
-        "summary": "Delete Collection Metadata from entitiy"
-      },
-      {
-        "deprecated": false,
+        "description": "#### Permissions In order to view this metadata it must be public or a user must have read permissions for collection.",
         "id": "operation:get:/collections/{collection_id}/collected_metadata/{cgm_id}",
         "kind": "operation",
         "method": "get",
         "name": "collections_metadata_registrations_detail",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A short id for that piece of metadata",
+            "in": "path",
+            "name": "cgm_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/{cgm_id}",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve Specific Metadata for a Collection"
+        "summary": "Retrieve Specific Metadata for a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of user created metadata for entities within a collection.",
         "id": "operation:post:/collections/{collection_id}/collected_metadata/{cgm_id}",
         "kind": "operation",
         "method": "post",
         "name": "collections_metadata_detail",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A short id for that piece of metadata",
+            "in": "path",
+            "name": "cgm_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/{cgm_id}",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add Metadata or Subjects to an Entity in a Collection"
+        "summary": "Add Metadata or Subjects to an Entity in a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "#### Permissions Only a user with collection admin permissions can delete collected metadata #### Returns Returns a JSON object containing `data` and `links` k…",
+        "id": "operation:delete:/collections/{collection_id}/collected_metadata/{cgm_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "collections_metadata_delete",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A short id for that piece of metadata",
+            "in": "path",
+            "name": "cgm_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection_id}/collected_metadata/{cgm_id}",
+        "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Collection Metadata from entitiy",
+        "tags": [
+          "Collections"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "#### Permissions This is public for a logged out user when an entity is public.",
         "id": "operation:get:/collections/{collection_id}/collected_metadata/{cgm_id}/relationships/subjects/",
         "kind": "operation",
         "method": "get",
         "name": "collections_metadata_subjects_relationships",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A short id for that piece of metadata",
+            "in": "path",
+            "name": "cgm_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/{cgm_id}/relationships/subjects/",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}~1relationships~1subjects~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve subject metadata for a specific piece of metadata in a collection"
+        "summary": "Retrieve subject metadata for a specific piece of metadata in a collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "#### Permissions This is editable for a user with a write permission for this collection.",
         "id": "operation:post:/collections/{collection_id}/collected_metadata/{cgm_id}/relationships/subjects/",
         "kind": "operation",
         "method": "post",
         "name": "collections_metadata_subjects_relationships_update",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A short id for that piece of metadata",
+            "in": "path",
+            "name": "cgm_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/{cgm_id}/relationships/subjects/",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}~1relationships~1subjects~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update subjects for a specific piece of metadata in a collection"
+        "summary": "Update subjects for a specific piece of metadata in a collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "#### Permissions In order to view these subject it must be a public collection or a user must have read permissions for collection.",
         "id": "operation:get:/collections/{collection_id}/collected_metadata/{cgm_id}/subjects/",
         "kind": "operation",
         "method": "get",
         "name": "collections_collected_metadata",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A short id for that piece of metadata",
+            "in": "path",
+            "name": "cgm_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/collected_metadata/{cgm_id}/subjects/",
         "pointer": "#/paths/~1collections~1{collection_id}~1collected_metadata~1{cgm_id}~1subjects~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve subject data for a specific piece of metadata info for a collection"
+        "summary": "Retrieve subject data for a specific piece of metadata info for a collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all nodes linked to the given collection.",
         "id": "operation:get:/collections/{collection_id}/linked_nodes",
         "kind": "operation",
         "method": "get",
         "name": "collections_linked_nodes_list",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_nodes",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_nodes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List All Linked Nodes for a Collection"
+        "summary": "List All Linked Nodes for a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collection_id}/linked_nodes/relationships/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "collections_linked_nodes_relationships_delete",
-        "path": "/collections/{collection_id}/linked_nodes/relationships/",
-        "pointer": "#/paths/~1collections~1{collection_id}~1linked_nodes~1relationships~1/delete",
-        "security": [],
-        "summary": "Remove Nodes From Collection"
-      },
-      {
-        "deprecated": false,
+        "description": "List of all the node ids linked to the given collection.",
         "id": "operation:get:/collections/{collection_id}/linked_nodes/relationships/",
         "kind": "operation",
         "method": "get",
         "name": "collections_linked_nodes_relationships_create",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_nodes/relationships/",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_nodes~1relationships~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Give a Sparse List of Node Ids"
+        "summary": "Give a Sparse List of Node Ids",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allow users to a add a node to a collection by issuing a POST request.",
         "id": "operation:post:/collections/{collection_id}/linked_nodes/relationships/",
         "kind": "operation",
         "method": "post",
         "name": "collections_linked_nodes_relationships",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_nodes/relationships/",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_nodes~1relationships~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Link Nodes to Collection"
+        "summary": "Link Nodes to Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This removes associated nodes from a collection #### Permissions Any user with write permissions on this collection should be to remove nodes from this collect…",
+        "id": "operation:delete:/collections/{collection_id}/linked_nodes/relationships/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "collections_linked_nodes_relationships_delete",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection_id}/linked_nodes/relationships/",
+        "pointer": "#/paths/~1collections~1{collection_id}~1linked_nodes~1relationships~1/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Remove Nodes From Collection",
+        "tags": [
+          "Collections"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List of all preprints linked to the given collection.",
         "id": "operation:get:/collections/{collection_id}/linked_preprints/",
         "kind": "operation",
         "method": "get",
         "name": "collections_linked_preprints_list",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_preprints/",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_preprints~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List All Linked Preprints for a Collection"
+        "summary": "List All Linked Preprints for a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all registrations linked to the given collection.",
         "id": "operation:get:/collections/{collection_id}/linked_registrations/",
         "kind": "operation",
         "method": "get",
         "name": "collections_linked_registrations_list",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_registrations/",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List All Linked Registrations for a Collection"
+        "summary": "List All Linked Registrations for a Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collection_id}/linked_registrations/relationships/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "collections_linked_registrations_relationships_delete",
-        "path": "/collections/{collection_id}/linked_registrations/relationships/",
-        "pointer": "#/paths/~1collections~1{collection_id}~1linked_registrations~1relationships~1/delete",
-        "security": [],
-        "summary": "Remove Registrations From Collection"
-      },
-      {
-        "deprecated": false,
+        "description": "List of all the registration ids linked to the given collection.",
         "id": "operation:get:/collections/{collection_id}/linked_registrations/relationships/",
         "kind": "operation",
         "method": "get",
         "name": "collections_linked_registrations_relationships_create",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_registrations/relationships/",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_registrations~1relationships~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Give a Sparse List of Registrations Ids"
+        "summary": "Give a Sparse List of Registrations Ids",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allow users to a add a registration to a collection by issuing a POST request.",
         "id": "operation:post:/collections/{collection_id}/linked_registrations/relationships/",
         "kind": "operation",
         "method": "post",
         "name": "collections_linked_registrations_relationships",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_id}/linked_registrations/relationships/",
         "pointer": "#/paths/~1collections~1{collection_id}~1linked_registrations~1relationships~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Link Registrations to Collection"
+        "summary": "Link Registrations to Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/comments/{comment_id}/",
+        "description": "This removes associated registrations from a collection #### Permissions Any user with write permissions on this collection should be to remove registrations f…",
+        "id": "operation:delete:/collections/{collection_id}/linked_registrations/relationships/",
         "kind": "operation",
         "method": "delete",
-        "name": "comments_delete",
-        "path": "/comments/{comment_id}/",
-        "pointer": "#/paths/~1comments~1{comment_id}~1/delete",
+        "name": "collections_linked_registrations_relationships_delete",
+        "parameters": [
+          {
+            "description": "A short id for that collection",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection_id}/linked_registrations/relationships/",
+        "pointer": "#/paths/~1collections~1{collection_id}~1linked_registrations~1relationships~1/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a comment"
+        "summary": "Remove Registrations From Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a comment #### Returns Returns a JSON object with a `data` key containing the representation of the requested comment, if the request…",
         "id": "operation:get:/comments/{comment_id}/",
         "kind": "operation",
         "method": "get",
         "name": "comments_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the comment you wish to retrieve.",
+            "in": "path",
+            "name": "comment_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/comments/{comment_id}/",
         "pointer": "#/paths/~1comments~1{comment_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a comment"
+        "summary": "Retrieve a comment",
+        "tags": [
+          "Comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the specified comment by setting the values of the parameters passed.",
         "id": "operation:put:/comments/{comment_id}/",
         "kind": "operation",
         "method": "put",
         "name": "comments_put",
+        "parameters": [
+          {
+            "description": "The unique identifier of the comment you wish to update.",
+            "in": "path",
+            "name": "comment_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/comments/{comment_id}/",
         "pointer": "#/paths/~1comments~1{comment_id}~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a comment"
+        "summary": "Update a comment",
+        "tags": [
+          "Comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a comment.",
+        "id": "operation:delete:/comments/{comment_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "comments_delete",
+        "parameters": [
+          {
+            "description": "The unique identifier of the comment you wish to delete.",
+            "in": "path",
+            "name": "comment_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/comments/{comment_id}/",
+        "pointer": "#/paths/~1comments~1{comment_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a comment",
+        "tags": [
+          "Comments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve a list of all currently available Draft Registrations for that user.",
         "id": "operation:get:/draft_registrations/",
         "kind": "operation",
         "method": "get",
         "name": "draft_registrations_read",
         "path": "/draft_registrations/",
         "pointer": "#/paths/~1draft_registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of Draft Registrations"
+        "summary": "Retrieve a list of Draft Registrations",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This creates a Draft Registration that can be used to edit and register research.",
         "id": "operation:post:/draft_registrations/",
         "kind": "operation",
         "method": "post",
         "name": "draft_registrations_create",
         "path": "/draft_registrations/",
         "pointer": "#/paths/~1draft_registrations~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Draft Registration"
+        "summary": "Create a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/draft_registrations/{draft_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /draft_registrations/{draft_id}/",
-        "path": "/draft_registrations/{draft_id}/",
-        "pointer": "#/paths/~1draft_registrations~1{draft_id}~1/delete",
-        "security": [],
-        "summary": "Delete a draft registration"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve the details of a given Draft Registration Draft Registrations contain Registration questions that will become part of the Registration.",
         "id": "operation:get:/draft_registrations/{draft_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get /draft_registrations/{draft_id}/",
+        "parameters": [
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Draft Registration"
+        "summary": "Retrieve a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Permanently deletes a draft registration.",
+        "id": "operation:delete:/draft_registrations/{draft_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /draft_registrations/{draft_id}/",
+        "parameters": [
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/draft_registrations/{draft_id}/",
+        "pointer": "#/paths/~1draft_registrations~1{draft_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a draft registration",
+        "tags": [
+          "Draft Registrations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a Draft Registration by setting the values of the attributes specified in the request body.",
         "id": "operation:patch:/draft_registrations/{draft_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "patch /draft_registrations/{draft_id}/",
+        "parameters": [
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a Draft Registration"
+        "summary": "Update a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of all given Contributors for a Draft Registration.",
         "id": "operation:get:/draft_registrations/{draft_id}/contributors/",
         "kind": "operation",
         "method": "get",
         "name": "draft_registration_contributors_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Draft Registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/contributors/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1contributors~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retreive a list Contributors from a Draft Registration"
+        "summary": "Retreive a list Contributors from a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a contributor to a Draft Registration, contributors can view, edit, register or delete a Draft Registration depending on their permissions.",
         "id": "operation:post:/draft_registrations/{draft_id}/contributors/",
         "kind": "operation",
         "method": "post",
         "name": "draft_registration_contributors_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Draft Registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/contributors/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1contributors~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a contributor to a Draft Registration"
+        "summary": "Add a contributor to a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a given contributor.",
         "id": "operation:get:/draft_registrations/{draft_id}/contributors/{user_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get /draft_registrations/{draft_id}/contributors/{user_id}/",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Draft Registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the Contributor.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/contributors/{user_id}/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1contributors~1{user_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retreive a Contributor from a Draft Registration"
+        "summary": "Retreive a Contributor from a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Once a properly authenticated user has marked their registration as affiliated with an institution, that institution and any others added will appear in this l…",
         "id": "operation:get:/draft_registrations/{draft_id}/institutions/",
         "kind": "operation",
         "method": "get",
         "name": "get /draft_registrations/{draft_id}/institutions/",
+        "parameters": [
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/institutions/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1institutions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve Institutions afilliated with a Draft Registration"
+        "summary": "Retrieve Institutions afilliated with a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This retrieves a list of subjects associated with a Draft Registration.",
         "id": "operation:get:/draft_registrations/{draft_id}/subjects/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_draft_registrations_subjects",
+        "parameters": [
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/draft_registrations/{draft_id}/subjects/",
         "pointer": "#/paths/~1draft_registrations~1{draft_id}~1subjects~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve Subjects associated with a Draft Registration"
+        "summary": "Retrieve Subjects associated with a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a file (or folder) #### Returns Returns a JSON object with a `data` key containing the representation of the requested file, if the re…",
         "id": "operation:get:/files/{file_id}/",
         "kind": "operation",
         "method": "get",
         "name": "files_detail",
+        "parameters": [
+          {
+            "description": "The unique identifier of the file you wish to retrieve.",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}/",
         "pointer": "#/paths/~1files~1{file_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a file"
+        "summary": "Retrieve a file",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the specified file by setting the values of the parameters passed.",
         "id": "operation:patch:/files/{file_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "files_patch",
+        "parameters": [
+          {
+            "description": "The unique identifier of the file you wish to update.",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}/",
         "pointer": "#/paths/~1files~1{file_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a file"
+        "summary": "Update a file",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all file versions.",
         "id": "operation:get:/files/{file_id}/versions/",
         "kind": "operation",
         "method": "get",
         "name": "files_versions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the file from which you want to retrieve versions.",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}/versions/",
         "pointer": "#/paths/~1files~1{file_id}~1versions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all file versions"
+        "summary": "List all file versions",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a file version #### Returns Returns a JSON object with a `data` key containing the representation of the requested file, if the reques…",
         "id": "operation:get:/files/{file_id}/versions/{version_id}/",
         "kind": "operation",
         "method": "get",
         "name": "files_version_detail",
+        "parameters": [
+          {
+            "description": "The unique identifier of the file from which you want to retrieve versions.",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The file version number you want to retrieve.",
+            "in": "path",
+            "name": "version_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}/versions/{version_id}/",
         "pointer": "#/paths/~1files~1{file_id}~1versions~1{version_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a file version"
+        "summary": "Retrieve a file version",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all verified institutions.",
         "id": "operation:get:/institutions/",
         "kind": "operation",
         "method": "get",
         "name": "institutions_list",
         "path": "/institutions/",
         "pointer": "#/paths/~1institutions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all institutions"
+        "summary": "List all institutions",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of an institution #### Returns Returns a JSON object with a `data` key containing the representation of the requested institution, if the…",
         "id": "operation:get:/institutions/{institution_id}/",
         "kind": "operation",
         "method": "get",
         "name": "institutions_detail",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution you wish to retrieve.",
+            "in": "path",
+            "name": "institution_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/institutions/{institution_id}/",
         "pointer": "#/paths/~1institutions~1{institution_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve an institution"
+        "summary": "Retrieve an institution",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all nodes affiliated with an institution.",
         "id": "operation:get:/institutions/{institution_id}/nodes/",
         "kind": "operation",
         "method": "get",
         "name": "institutions_node_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution you wish to retrieve.",
+            "in": "path",
+            "name": "institution_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/institutions/{institution_id}/nodes/",
         "pointer": "#/paths/~1institutions~1{institution_id}~1nodes~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all affiliated nodes"
+        "summary": "List all affiliated nodes",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all registrations affiliated with an institution.",
         "id": "operation:get:/institutions/{institution_id}/registrations/",
         "kind": "operation",
         "method": "get",
         "name": "institutions_registration_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution you wish to retrieve.",
+            "in": "path",
+            "name": "institution_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/institutions/{institution_id}/registrations/",
         "pointer": "#/paths/~1institutions~1{institution_id}~1registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all affiliated registrations"
+        "summary": "List all affiliated registrations",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all users affiliated with an institution.",
         "id": "operation:get:/institutions/{institution_id}/users/",
         "kind": "operation",
         "method": "get",
         "name": "institutions_users_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution you wish to retrieve.",
+            "in": "path",
+            "name": "institution_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/institutions/{institution_id}/users/",
         "pointer": "#/paths/~1institutions~1{institution_id}~1users~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all affiliated users"
+        "summary": "List all affiliated users",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a license.",
         "id": "operation:get:/license/{license_id}/",
         "kind": "operation",
         "method": "get",
         "name": "licenses_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the license.",
+            "in": "path",
+            "name": "license_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/license/{license_id}/",
         "pointer": "#/paths/~1license~1{license_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a license"
+        "summary": "Retrieve a license",
+        "tags": [
+          "Licenses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of licenses.",
         "id": "operation:get:/licenses/",
         "kind": "operation",
         "method": "get",
         "name": "license_list",
         "path": "/licenses/",
         "pointer": "#/paths/~1licenses~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all licenses"
+        "summary": "List all licenses",
+        "tags": [
+          "Licenses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a log.",
         "id": "operation:get:/logs/{log_id}/",
         "kind": "operation",
         "method": "get",
         "name": "logs_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the log you wish to retrieve.",
+            "in": "path",
+            "name": "log_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/logs/{log_id}/",
         "pointer": "#/paths/~1logs~1{log_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a log"
+        "summary": "Retrieve a log",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of nodes, representing projects and components, on the OSF.",
         "id": "operation:get:/nodes/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_list",
         "path": "/nodes/",
         "pointer": "#/paths/~1nodes~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all nodes"
+        "summary": "List all nodes",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new node.",
         "id": "operation:post:/nodes/",
         "kind": "operation",
         "method": "post",
         "name": "nodes_create",
         "path": "/nodes/",
         "pointer": "#/paths/~1nodes~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a node"
+        "summary": "Create a node",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/nodes/{node_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "nodes_delete",
-        "path": "/nodes/{node_id}/",
-        "pointer": "#/paths/~1nodes~1{node_id}~1/delete",
-        "security": [],
-        "summary": "Delete a node"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of a given node (project or component).",
         "id": "operation:get:/nodes/{node_id}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a node"
+        "summary": "Retrieve a node",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Permanently deletes a node.",
+        "id": "operation:delete:/nodes/{node_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "nodes_delete",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/nodes/{node_id}/",
+        "pointer": "#/paths/~1nodes~1{node_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a node",
+        "tags": [
+          "Nodes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a node by setting the values of the attributes specified in the request body.",
         "id": "operation:patch:/nodes/{node_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "nodes_partial_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a node"
+        "summary": "Update a node",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of addons connected to the given node or project.",
         "id": "operation:get:/nodes/{node_id}/addons/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_addons_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/addons/",
         "pointer": "#/paths/~1nodes~1{node_id}~1addons~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all addons"
+        "summary": "List all addons",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve details of an individual addon connected to this node.",
         "id": "operation:get:/nodes/{node_id}/addons/{provider}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_addon_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the addon.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/addons/{provider}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1addons~1{provider}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve an addon"
+        "summary": "Retrieve an addon",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a node addon by setting the values of the attributes specified in the request body.",
         "id": "operation:patch:/nodes/{node_id}/addons/{provider}/",
         "kind": "operation",
         "method": "patch",
         "name": "nodes_node_addon_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the addon.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/addons/{provider}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1addons~1{provider}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an addon"
+        "summary": "Update an addon",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of folders retrieved from the associated third-party (provider) service.",
         "id": "operation:get:/nodes/{node_id}/addons/{provider}/folders/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_addons_folders_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the provider",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/addons/{provider}/folders/",
         "pointer": "#/paths/~1nodes~1{node_id}~1addons~1{provider}~1folders~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all addon folders"
+        "summary": "List all addon folders",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the next level child nodes for the given node.",
         "id": "operation:get:/nodes/{node_id}/children/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_children_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/children/",
         "pointer": "#/paths/~1nodes~1{node_id}~1children~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all child nodes"
+        "summary": "List all child nodes",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new child node.",
         "id": "operation:post:/nodes/{node_id}/children/",
         "kind": "operation",
         "method": "post",
         "name": "nodes_children_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/children/",
         "pointer": "#/paths/~1nodes~1{node_id}~1children~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a child node"
+        "summary": "Create a child node",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The citation details for a node, in CSL format.",
         "id": "operation:get:/nodes/{node_id}/citation/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_citation_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/citation/",
         "pointer": "#/paths/~1nodes~1{node_id}~1citation~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve citation details"
+        "summary": "Retrieve citation details",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The citation for a node in a specific style.",
         "id": "operation:get:/nodes/{node_id}/citation/{style_id}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_citation_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the citation style.",
+            "in": "path",
+            "name": "style_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/citation/{style_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1citation~1{style_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a styled citation"
+        "summary": "Retrieve a styled citation",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of comments related to a given node.",
         "id": "operation:get:/nodes/{node_id}/comments/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_comments_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/comments/",
         "pointer": "#/paths/~1nodes~1{node_id}~1comments~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all comments"
+        "summary": "List all comments",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a comment on a given node overview page or a reply to a comment on that node.",
         "id": "operation:post:/nodes/{node_id}/comments/",
         "kind": "operation",
         "method": "post",
         "name": "nodes_comment_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node you want to comment on.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/comments/",
         "pointer": "#/paths/~1nodes~1{node_id}~1comments~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a comment"
+        "summary": "Create a comment",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the node's contributors, sorted by their index.",
         "id": "operation:get:/nodes/{node_id}/contributors/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_contributors_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/contributors/",
         "pointer": "#/paths/~1nodes~1{node_id}~1contributors~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all contributors"
+        "summary": "List all contributors",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a contributor to a node, effectively creating a relationship between the node and a user.",
         "id": "operation:post:/nodes/{node_id}/contributors/",
         "kind": "operation",
         "method": "post",
         "name": "nodes_contributors_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/contributors/",
         "pointer": "#/paths/~1nodes~1{node_id}~1contributors~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a contributor"
+        "summary": "Create a contributor",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/nodes/{node_id}/contributors/{user_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "nodes_contributors_delete",
-        "path": "/nodes/{node_id}/contributors/{user_id}/",
-        "pointer": "#/paths/~1nodes~1{node_id}~1contributors~1{user_id}~1/delete",
-        "security": [],
-        "summary": "Delete a contributor"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of a given contributor.",
         "id": "operation:get:/nodes/{node_id}/contributors/{user_id}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_contributors_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/contributors/{user_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1contributors~1{user_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a contributor"
+        "summary": "Retrieve a contributor",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes a contributor from a node.",
+        "id": "operation:delete:/nodes/{node_id}/contributors/{user_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "nodes_contributors_delete",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/nodes/{node_id}/contributors/{user_id}/",
+        "pointer": "#/paths/~1nodes~1{node_id}~1contributors~1{user_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a contributor",
+        "tags": [
+          "Nodes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a contributor by setting the values of the attributes specified in the request body.",
         "id": "operation:patch:/nodes/{node_id}/contributors/{user_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "nodes_contributors_partial_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/contributors/{user_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1contributors~1{user_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a contributor"
+        "summary": "Update a contributor",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all of the draft registrations of a given node.",
         "id": "operation:get:/nodes/{node_id}/draft_registrations/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_draft_registrations_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/draft_registrations/",
         "pointer": "#/paths/~1nodes~1{node_id}~1draft_registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all draft registrations"
+        "summary": "List all draft registrations",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Initiate a draft registration of the current node.",
         "id": "operation:post:/nodes/{node_id}/draft_registrations/",
         "kind": "operation",
         "method": "post",
         "name": "nodes_draft_registrations_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/draft_registrations/",
         "pointer": "#/paths/~1nodes~1{node_id}~1draft_registrations~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a draft registration based on your current project Node."
+        "summary": "Create a draft registration based on your current project Node.",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/nodes/{node_id}/draft_registrations/{draft_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "nodes_draft_registrations_delete",
-        "path": "/nodes/{node_id}/draft_registrations/{draft_id}/",
-        "pointer": "#/paths/~1nodes~1{node_id}~1draft_registrations~1{draft_id}~1/delete",
-        "security": [],
-        "summary": "Delete a draft registration"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve the details of a given draft registration.",
         "id": "operation:get:/nodes/{node_id}/draft_registrations/{draft_id}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_draft_registrations_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/draft_registrations/{draft_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1draft_registrations~1{draft_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Draft Registration"
+        "summary": "Retrieve a Draft Registration",
+        "tags": [
+          "Draft Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Permanently deletes a draft registration.",
+        "id": "operation:delete:/nodes/{node_id}/draft_registrations/{draft_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "nodes_draft_registrations_delete",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/nodes/{node_id}/draft_registrations/{draft_id}/",
+        "pointer": "#/paths/~1nodes~1{node_id}~1draft_registrations~1{draft_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a draft registration",
+        "tags": [
+          "Nodes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a draft registration by setting the values of the attributes specified in the request body.",
         "id": "operation:patch:/nodes/{node_id}/draft_registrations/{draft_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "nodes_draft_registrations_partial_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the draft registration.",
+            "in": "path",
+            "name": "draft_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/draft_registrations/{draft_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1draft_registrations~1{draft_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a draft registration"
+        "summary": "Update a draft registration",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all storage providers that are configured for this node Users of the OSF may access their data on a [number of cloud-storage services](https://api.osf.…",
         "id": "operation:get:/nodes/{node_id}/files/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_providers_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/files/",
         "pointer": "#/paths/~1nodes~1{node_id}~1files~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all storage providers"
+        "summary": "List all storage providers",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a storage provider enabled on this node.",
         "id": "operation:get:/nodes/{node_id}/files/providers/{provider}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_providers_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the storage provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/files/providers/{provider}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1files~1providers~1{provider}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a storage provider"
+        "summary": "Retrieve a storage provider",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all the files/folders that are attached to your project for a given storage provider.",
         "id": "operation:get:/nodes/{node_id}/files/{provider}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_files_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the storage provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/files/{provider}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1files~1{provider}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all node files"
+        "summary": "List all node files",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a file attached to given node (project or component) for the given storage provider.",
         "id": "operation:get:/nodes/{node_id}/files/{provider}/{path}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_files_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the storage provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the file path.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/files/{provider}/{path}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1files~1{provider}~1{path}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a file"
+        "summary": "Retrieve a file",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the current node's forks.",
         "id": "operation:get:/nodes/{node_id}/forks/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_forks_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/forks/",
         "pointer": "#/paths/~1nodes~1{node_id}~1forks~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all forks of this node"
+        "summary": "List all forks of this node",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a fork of the given node.",
         "id": "operation:post:/nodes/{node_id}/forks/",
         "kind": "operation",
         "method": "post",
         "name": "nodes_forks_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/forks/",
         "pointer": "#/paths/~1nodes~1{node_id}~1forks~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a fork of this node"
+        "summary": "Create a fork of this node",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all identifiers associated with a given node.",
         "id": "operation:get:/nodes/{node_id}/identifiers/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_identifiers_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/identifiers/",
         "pointer": "#/paths/~1nodes~1{node_id}~1identifiers~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all identifiers"
+        "summary": "List all identifiers",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all institutions affiliated with this node.",
         "id": "operation:get:/nodes/{node_id}/institutions/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_institutions_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/institutions/",
         "pointer": "#/paths/~1nodes~1{node_id}~1institutions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all institutions"
+        "summary": "List all institutions",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all nodes linked to the given node.",
         "id": "operation:get:/nodes/{node_id}/linked_nodes/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_linked_nodes_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/linked_nodes/",
         "pointer": "#/paths/~1nodes~1{node_id}~1linked_nodes~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all linked nodes"
+        "summary": "List all linked nodes",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all logs associated with a given node.",
         "id": "operation:get:/nodes/{node_id}/logs/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_logs_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/logs/",
         "pointer": "#/paths/~1nodes~1{node_id}~1logs~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all logs"
+        "summary": "List all logs",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of preprints related to a given node.",
         "id": "operation:get:/nodes/{node_id}/preprints/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_preprints_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/preprints/",
         "pointer": "#/paths/~1nodes~1{node_id}~1preprints~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all preprints"
+        "summary": "List all preprints",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all registrations of the given node.",
         "id": "operation:get:/nodes/{node_id}/registrations/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_registrations_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/registrations/",
         "pointer": "#/paths/~1nodes~1{node_id}~1registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all registrations"
+        "summary": "List all registrations",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of view only links on a node.",
         "id": "operation:get:/nodes/{node_id}/view_only_links/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_view_only_links_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/view_only_links/",
         "pointer": "#/paths/~1nodes~1{node_id}~1view_only_links~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all view only links"
+        "summary": "List all view only links",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a view only link on a node.",
         "id": "operation:get:/nodes/{node_id}/view_only_links/{link_id}/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_view_only_links_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the view only link.",
+            "in": "path",
+            "name": "link_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/view_only_links/{link_id}/",
         "pointer": "#/paths/~1nodes~1{node_id}~1view_only_links~1{link_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a view only link"
+        "summary": "Retrieve a view only link",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of wiki pages on a node.",
         "id": "operation:get:/nodes/{node_id}/wikis/",
         "kind": "operation",
         "method": "get",
         "name": "nodes_wikis_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the node.",
+            "in": "path",
+            "name": "node_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/nodes/{node_id}/wikis/",
         "pointer": "#/paths/~1nodes~1{node_id}~1wikis~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all wikis"
+        "summary": "List all wikis",
+        "tags": [
+          "Nodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all preprint providers.",
         "id": "operation:get:/preprint_providers/",
         "kind": "operation",
         "method": "get",
         "name": "preprint_provider_list",
         "path": "/preprint_providers/",
         "pointer": "#/paths/~1preprint_providers~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all preprint providers"
+        "summary": "List all preprint providers",
+        "tags": [
+          "Preprint Providers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a preprint provider.",
         "id": "operation:get:/preprint_providers/{preprint_provider_id}/",
         "kind": "operation",
         "method": "get",
         "name": "preprint_provider_detail",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint provider.",
+            "in": "path",
+            "name": "preprint_provider_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprint_providers/{preprint_provider_id}/",
         "pointer": "#/paths/~1preprint_providers~1{preprint_provider_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a preprint provider"
+        "summary": "Retrieve a preprint provider",
+        "tags": [
+          "Preprint Providers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the licenses allowed by a preprint provider.",
         "id": "operation:get:/preprint_providers/{preprint_provider_id}/licenses/",
         "kind": "operation",
         "method": "get",
         "name": "preprint_provider_licenses_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint provider.",
+            "in": "path",
+            "name": "preprint_provider_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprint_providers/{preprint_provider_id}/licenses/",
         "pointer": "#/paths/~1preprint_providers~1{preprint_provider_id}~1licenses~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all licenses"
+        "summary": "List all licenses",
+        "tags": [
+          "Preprint Providers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of preprints from the specified preprint provider.",
         "id": "operation:get:/preprint_providers/{preprint_provider_id}/preprints/",
         "kind": "operation",
         "method": "get",
         "name": "preprint_providers_preprints_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint provider.",
+            "in": "path",
+            "name": "preprint_provider_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprint_providers/{preprint_provider_id}/preprints/",
         "pointer": "#/paths/~1preprint_providers~1{preprint_provider_id}~1preprints~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all preprints"
+        "summary": "List all preprints",
+        "tags": [
+          "Preprint Providers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the taxonomies for a preprint provider.",
         "id": "operation:get:/preprint_providers/{preprint_provider_id}/taxonomies/",
         "kind": "operation",
         "method": "get",
         "name": "preprint_provider_taxonomies_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint provider.",
+            "in": "path",
+            "name": "preprint_provider_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprint_providers/{preprint_provider_id}/taxonomies/",
         "pointer": "#/paths/~1preprint_providers~1{preprint_provider_id}~1taxonomies~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all taxonomies"
+        "summary": "List all taxonomies",
+        "tags": [
+          "Preprint Providers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of preprints from all preprint providers.",
         "id": "operation:get:/preprints/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_list",
         "path": "/preprints/",
         "pointer": "#/paths/~1preprints~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all preprints"
+        "summary": "List all preprints",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new preprint.",
         "id": "operation:post:/preprints/",
         "kind": "operation",
         "method": "post",
         "name": "preprints_create",
         "path": "/preprints/",
         "pointer": "#/paths/~1preprints~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a preprint"
+        "summary": "Create a preprint",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a preprint.",
         "id": "operation:get:/preprints/{preprint_id}/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a preprint"
+        "summary": "Retrieve a preprint",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the specified preprint by setting the values of the parameters passed.",
         "id": "operation:patch:/preprints/{preprint_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "preprints_partial_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a preprint"
+        "summary": "Update a preprint",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the Preprint's Bibliographic Contributors, sorted by their index.",
         "id": "operation:get:/preprints/{preprint_id}/bibliographic_contributors/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_bibliographic_contributors_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/bibliographic_contributors/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1bibliographic_contributors~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all Bibliographic Contributors"
+        "summary": "List all Bibliographic Contributors",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The citation details for a preprint, in CSL format.",
         "id": "operation:get:/preprints/{preprint_id}/citation/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_citation_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint whose citation you wish to retrieve.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/citation/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1citation~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve citation details"
+        "summary": "Retrieve citation details",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The citation for a preprint in a specific style.",
         "id": "operation:get:/preprints/{preprint_id}/citation/{style_id}/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_citation_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the citation style.",
+            "in": "path",
+            "name": "style_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/citation/{style_id}/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1citation~1{style_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a styled citation"
+        "summary": "Retrieve a styled citation",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the Preprint's Contributors, sorted by their index.",
         "id": "operation:get:/preprints/{preprint_id}/contributors/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_contributors_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/contributors/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1contributors~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all Contributors for a Preprint"
+        "summary": "List all Contributors for a Preprint",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a contributor to a Preprint, effectively creating a relationship between the Preprint and a user.",
         "id": "operation:post:/preprints/{preprint_id}/contributors/",
         "kind": "operation",
         "method": "post",
         "name": "preprints_contributors_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/contributors/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1contributors~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Contributor"
+        "summary": "Create a Contributor",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a contributor on this Preprint.",
         "id": "operation:get:/preprints/{preprint_id}/contributors/{user_id}/",
         "kind": "operation",
         "method": "get",
         "name": "preprints_contributor_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Preprint.",
+            "in": "path",
+            "name": "preprint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preprints/{preprint_id}/contributors/{user_id}/",
         "pointer": "#/paths/~1preprints~1{preprint_id}~1contributors~1{user_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a contributor"
+        "summary": "Retrieve a contributor",
+        "tags": [
+          "Preprints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of registrations on the OSF to which the user has access.",
         "id": "operation:get:/registrations/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_list",
         "path": "/registrations/",
         "pointer": "#/paths/~1registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all registrations"
+        "summary": "List all registrations",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the details of a given registration.",
         "id": "operation:get:/registrations/{registration_id}/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a registration"
+        "summary": "Retrieve a registration",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a registration's privacy from **private** to **public**.",
         "id": "operation:patch:/registrations/{registration_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "registrations_partial_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a registration"
+        "summary": "Update a registration",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of children of a registration.",
         "id": "operation:get:/registrations/{registration_id}/children/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_children_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/children/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1children~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all child registrations"
+        "summary": "List all child registrations",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the registration's alternative citation styles #### Returns Returns a JSON object containing `data` and `links` keys.",
         "id": "operation:get:/registrations/{registration_id}/citations/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_citations_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/citations/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1citations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all citation styles"
+        "summary": "List all citation styles",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the citation style details for a registration, in CSL format.",
         "id": "operation:get:/registrations/{registration_id}/citations/{citation_id}/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_citation_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the citation.",
+            "in": "path",
+            "name": "citation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/citations/{citation_id}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1citations~1{citation_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a citation"
+        "summary": "Retrieve a citation",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the registration's comments.",
         "id": "operation:get:/registrations/{registration_id}/comments/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_comments_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/comments/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1comments~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all comments"
+        "summary": "List all comments",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all contributors on this registration.",
         "id": "operation:get:/registrations/{registration_id}/contributors/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_contributors_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/contributors/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1contributors~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all contributors"
+        "summary": "List all contributors",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a contributor on this registration.",
         "id": "operation:get:/registrations/{registration_id}/contributors/{user_id}/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_contributors_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/contributors/{user_id}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1contributors~1{user_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a contributor"
+        "summary": "Retrieve a contributor",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of storage providers enabled on the registration Users of the OSF may access their data on a [number of cloud-storage services](https://api.os…",
         "id": "operation:get:/registrations/{registration_id}/files/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_providers_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/files/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1files~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all storage providers"
+        "summary": "List all storage providers",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all the registration's files/folders for a given storage provider.",
         "id": "operation:get:/registrations/{registration_id}/files/{provider}/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_files_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the storage provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/files/{provider}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1files~1{provider}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all files"
+        "summary": "List all files",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a registration file for the given storage provider.",
         "id": "operation:get:/registrations/{registration_id}/files/{provider}/{path}/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_files_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the storage provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the file path.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/files/{provider}/{path}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1files~1{provider}~1{path}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a file"
+        "summary": "Retrieve a file",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the registration’s forks The returned forks are sorted by their `forked_date`, with the most recent forks appearing first.",
         "id": "operation:get:/registrations/{registration_id}/forks/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_forks_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/forks/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1forks~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all forks"
+        "summary": "List all forks",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a fork of the given registration.",
         "id": "operation:post:/registrations/{registration_id}/forks/",
         "kind": "operation",
         "method": "post",
         "name": "registrations_forks_create",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/forks/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1forks~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a fork"
+        "summary": "Create a fork",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the registration's identifiers.",
         "id": "operation:get:/registrations/{registration_id}/identifiers/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_identifiers_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/identifiers/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1identifiers~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all identifiers"
+        "summary": "List all identifiers",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of institutions affiliated with the registration.",
         "id": "operation:get:/registrations/{registration_id}/institutions/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_institutions_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/institutions/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1institutions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all institutions"
+        "summary": "List all institutions",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all nodes linked to the registration.",
         "id": "operation:get:/registrations/{registration_id}/linked_nodes/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_linked_nodes_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/linked_nodes/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1linked_nodes~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all linked nodes"
+        "summary": "List all linked nodes",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the registration's logs.",
         "id": "operation:get:/registrations/{registration_id}/logs/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_logs_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/logs/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1logs~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all logs"
+        "summary": "List all logs",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of view only links created for this registration.",
         "id": "operation:get:/registrations/{registration_id}/view_only_links/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_view_only_links_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/view_only_links/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1view_only_links~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all view only links"
+        "summary": "List all view only links",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a view only link created from this registration.",
         "id": "operation:get:/registrations/{registration_id}/view_only_links/{link_id}/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_view_only_links_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the view only link.",
+            "in": "path",
+            "name": "link_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/view_only_links/{link_id}/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1view_only_links~1{link_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a view only link"
+        "summary": "Retrieve a view only link",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of the registration's wiki pages #### Returns A list of all registration's current wiki page versions ordered by their date_modified.",
         "id": "operation:get:/registrations/{registration_id}/wikis/",
         "kind": "operation",
         "method": "get",
         "name": "registrations_wikis_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the registration.",
+            "in": "path",
+            "name": "registration_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrations/{registration_id}/wikis/",
         "pointer": "#/paths/~1registrations~1{registration_id}~1wikis~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all wikis"
+        "summary": "List all wikis",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This retrieves a paginated list of all active Schema Responses that are public.",
         "id": "operation:get:/schema_responses/",
         "kind": "operation",
         "method": "get",
         "name": "schema_responses_list",
         "path": "/schema_responses/",
         "pointer": "#/paths/~1schema_responses~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all Schema Responses"
+        "summary": "List all Schema Responses",
+        "tags": [
+          "Schema Responses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Schema Response with an `in_progress` state.",
         "id": "operation:post:/schema_responses/",
         "kind": "operation",
         "method": "post",
         "name": "schema_response_ppost",
         "path": "/schema_responses/",
         "pointer": "#/paths/~1schema_responses~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new Schema Response"
+        "summary": "Create a new Schema Response",
+        "tags": [
+          "Schema Responses"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/schema_responses/{schema_response_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "schema_response_delete",
-        "path": "/schema_responses/{schema_response_id}",
-        "pointer": "#/paths/~1schema_responses~1{schema_response_id}/delete",
-        "security": [],
-        "summary": "Delete a Incomplete Schema Response"
-      },
-      {
-        "deprecated": false,
+        "description": "This retrieves a single Schema response using it's id.",
         "id": "operation:get:/schema_responses/{schema_response_id}",
         "kind": "operation",
         "method": "get",
         "name": "schema_responses_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Schema Response"
+        "summary": "Retrieve a Schema Response",
+        "tags": [
+          "Schema Responses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint deletes a new Schema Response.",
+        "id": "operation:delete:/schema_responses/{schema_response_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "schema_response_delete",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/schema_responses/{schema_response_id}",
+        "pointer": "#/paths/~1schema_responses~1{schema_response_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Incomplete Schema Response",
+        "tags": [
+          "Schema Responses"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Patching to this endpoint allows one to directly edit the revision responses on the Schema Response of a Registration if that Schema Response is in an `in_prog…",
         "id": "operation:patch:/schema_responses/{schema_response_id}",
         "kind": "operation",
         "method": "patch",
         "name": "schema_response_patch",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a Registration's Schema Response"
+        "summary": "Update a Registration's Schema Response",
+        "tags": [
+          "Schema Responses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This retrieves a paginated list of all Schema Response Actions created for a Schema Response.",
         "id": "operation:get:/schema_responses/{schema_response_id}/actions/",
         "kind": "operation",
         "method": "get",
         "name": "schema_response_action_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}/actions/",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}~1actions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of Schema Response Actions for a Schema Response"
+        "summary": "Retrieve a list of Schema Response Actions for a Schema Response",
+        "tags": [
+          "Schema Response Actions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This creates a new Schema Response Action in order to trigger a state transition for a Schema Response.",
         "id": "operation:post:/schema_responses/{schema_response_id}/actions/",
         "kind": "operation",
         "method": "post",
         "name": "post /schema_responses/{schema_response_id}/actions/",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}/actions/",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}~1actions~1/post",
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new Schema Response Action"
+        "summary": "Create a new Schema Response Action",
+        "tags": [
+          "Schema Response Actions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a Schema Response Action by it's ID.",
         "id": "operation:get:/schema_responses/{schema_response_id}/actions/{schema_response_action_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /schema_responses/{schema_response_id}/actions/{schema_response_action_id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Schema Response example `61b9cd62eb66180215222669`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the Schema Response Action example `61b9eae1a7d8ac025c4c46d3`.",
+            "in": "path",
+            "name": "schema_response_action_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}/actions/{schema_response_action_id}",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}~1actions~1{schema_response_action_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "A Schema Response Action from a Schema Response"
+        "summary": "A Schema Response Action from a Schema Response",
+        "tags": [
+          "Schema Response Actions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns a list of all the Registration Schema Blocks are contained in Registration Schema.",
         "id": "operation:get:/schema_responses/{schema_response_id}/schema_blocks/",
         "kind": "operation",
         "method": "get",
         "name": "schema_response_blocks_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}/schema_blocks/",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}~1schema_blocks~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of Registration Schema Blocks for a Schema Response"
+        "summary": "Retrieve a list of Registration Schema Blocks for a Schema Response",
+        "tags": [
+          "Registration Schema Blocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns a Registration Schema Block by it's ID.",
         "id": "operation:get:/schema_responses/{schema_response_id}/schema_blocks/{schema_response_block_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /schema_responses/{schema_response_id}/schema_blocks/{schema_response_block_id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "schema_response_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the Schema Response Block example `61b79f9eadbb5701424a2d5e`.",
+            "in": "path",
+            "name": "schema_response_block_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schema_responses/{schema_response_id}/schema_blocks/{schema_response_block_id}",
         "pointer": "#/paths/~1schema_responses~1{schema_response_id}~1schema_blocks~1{schema_response_block_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Registration Schema Block"
+        "summary": "Retrieve a Registration Schema Block",
+        "tags": [
+          "Registration Schema Blocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a paginated list of all active Registration Schemas.",
         "id": "operation:get:/schemas/registrations/",
         "kind": "operation",
         "method": "get",
         "name": "registration_schemas_list",
         "path": "/schemas/registrations/",
         "pointer": "#/paths/~1schemas~1registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of Registration Schemas"
+        "summary": "Retrieve a list of Registration Schemas",
+        "tags": [
+          "Registration Schemas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a given Registration Schema.",
         "id": "operation:get:/schemas/registrations/{registration_schema_id}",
         "kind": "operation",
         "method": "get",
         "name": "registration_schema_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the Registration Schema example `6176c9d45e01f100091d4f94`.",
+            "in": "path",
+            "name": "registration_schema_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/schemas/registrations/{registration_schema_id}",
         "pointer": "#/paths/~1schemas~1registrations~1{registration_schema_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Registration Schema"
+        "summary": "Retrieve a Registration Schema",
+        "tags": [
+          "Registration Schemas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all [bepress disciplines taxonomies](https://www.bepress.com/wp-content/uploads/2016/12/Digital-Commons-Disciplines-taxonomy-2017-01.pdf).",
         "id": "operation:get:/taxonomies/",
         "kind": "operation",
         "method": "get",
         "name": "taxonomies_list",
         "path": "/taxonomies/",
         "pointer": "#/paths/~1taxonomies~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all taxonomies"
+        "summary": "List all taxonomies",
+        "tags": [
+          "Taxonomies"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a taxonomy.",
         "id": "operation:get:/taxonomies/{taxonomy_id}/",
         "kind": "operation",
         "method": "get",
         "name": "taxonomies_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the taxonomy.",
+            "in": "path",
+            "name": "taxonomy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/taxonomies/{taxonomy_id}/",
         "pointer": "#/paths/~1taxonomies~1{taxonomy_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a taxonomy"
+        "summary": "Retrieve a taxonomy",
+        "tags": [
+          "Taxonomies"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of all users registered on the OSF.",
         "id": "operation:get:/users/",
         "kind": "operation",
         "method": "get",
         "name": "users_list",
         "path": "/users/",
         "pointer": "#/paths/~1users~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all users"
+        "summary": "List all users",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of a given users.",
         "id": "operation:get:/users/{user_id}/",
         "kind": "operation",
         "method": "get",
         "name": "users_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/",
         "pointer": "#/paths/~1users~1{user_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a user"
+        "summary": "Retrieve a user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a user by setting the values of the attributes specified in the request body.",
         "id": "operation:patch:/users/{user_id}/",
         "kind": "operation",
         "method": "patch",
         "name": "users_partial_update",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/",
         "pointer": "#/paths/~1users~1{user_id}~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a user"
+        "summary": "Update a user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of authorized user addons #### Permissions User addons are visible only to the user that authorized the addon.",
         "id": "operation:get:/users/{user_id}/addons/",
         "kind": "operation",
         "method": "get",
         "name": "users_addons_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/addons/",
         "pointer": "#/paths/~1users~1{user_id}~1addons~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all user addons"
+        "summary": "List all user addons",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of an authorized user addon #### Permissions User addons are visible only to the user that authorized the addon.",
         "id": "operation:get:/users/{user_id}/addons/{provider}/",
         "kind": "operation",
         "method": "get",
         "name": "users_addons_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the addon provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/addons/{provider}/",
         "pointer": "#/paths/~1users~1{user_id}~1addons~1{provider}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a user addon"
+        "summary": "Retrieve a user addon",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of addon accounts authorized by this user.",
         "id": "operation:get:/users/{user_id}/addons/{provider}/accounts/",
         "kind": "operation",
         "method": "get",
         "name": "Users_addon_accounts_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the addon provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/addons/{provider}/accounts/",
         "pointer": "#/paths/~1users~1{user_id}~1addons~1{provider}~1accounts~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all addon accounts"
+        "summary": "List all addon accounts",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of an addon account #### Permissions Addon accounts are visible only to the user that authorized the account.",
         "id": "operation:get:/users/{user_id}/addons/{provider}/accounts/{account_id}/",
         "kind": "operation",
         "method": "get",
         "name": "Users_addon_accounts_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the addon provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the addon account.",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/addons/{provider}/accounts/{account_id}/",
         "pointer": "#/paths/~1users~1{user_id}~1addons~1{provider}~1accounts~1{account_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve an addon account"
+        "summary": "Retrieve an addon account",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of institutions that the user is affiliated with.",
         "id": "operation:get:/users/{user_id}/institutions/",
         "kind": "operation",
         "method": "get",
         "name": "users_institutions_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/institutions/",
         "pointer": "#/paths/~1users~1{user_id}~1institutions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all institutions"
+        "summary": "List all institutions",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of nodes that the user is a contributor to.",
         "id": "operation:get:/users/{user_id}/nodes/",
         "kind": "operation",
         "method": "get",
         "name": "users_nodes_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/nodes/",
         "pointer": "#/paths/~1users~1{user_id}~1nodes~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all nodes"
+        "summary": "List all nodes",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of preprints that the user contributes to.",
         "id": "operation:get:/users/{user_id}/preprints/",
         "kind": "operation",
         "method": "get",
         "name": "users_preprints_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/preprints/",
         "pointer": "#/paths/~1users~1{user_id}~1preprints~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all preprints"
+        "summary": "List all preprints",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A paginated list of registrations that the user is a contributor to.",
         "id": "operation:get:/users/{user_id}/registrations/",
         "kind": "operation",
         "method": "get",
         "name": "users_registrations_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/registrations/",
         "pointer": "#/paths/~1users~1{user_id}~1registrations~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all registrations"
+        "summary": "List all registrations",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves details about a specific view only link.",
         "id": "operation:get:/view_only_links/{link_id}/",
         "kind": "operation",
         "method": "get",
         "name": "view_only_links_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the view only link.",
+            "in": "path",
+            "name": "link_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/view_only_links/{link_id}/",
         "pointer": "#/paths/~1view_only_links~1{link_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a view only link"
+        "summary": "Retrieve a view only link",
+        "tags": [
+          "View Only Links"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The list of nodes which this view only link gives read-only access to.",
         "id": "operation:get:/view_only_links/{link_id}/nodes/",
         "kind": "operation",
         "method": "get",
         "name": "view_only_links_node_list",
+        "parameters": [
+          {
+            "description": "The unique identifier of the view only link.",
+            "in": "path",
+            "name": "link_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/view_only_links/{link_id}/nodes/",
         "pointer": "#/paths/~1view_only_links~1{link_id}~1nodes~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all nodes"
+        "summary": "List all nodes",
+        "tags": [
+          "View Only Links"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details about a specific wiki.",
         "id": "operation:get:/wikis/{wiki_id}/",
         "kind": "operation",
         "method": "get",
         "name": "wiki_read",
+        "parameters": [
+          {
+            "description": "The unique identifier of the wiki.",
+            "in": "path",
+            "name": "wiki_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wikis/{wiki_id}/",
         "pointer": "#/paths/~1wikis~1{wiki_id}~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Wiki"
+        "summary": "Retrieve a Wiki",
+        "tags": [
+          "Wikis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the plaintext content of a wiki in markdown format.",
         "id": "operation:get:/wikis/{wiki_id}/content/",
         "kind": "operation",
         "method": "get",
         "name": "wiki_content",
+        "parameters": [
+          {
+            "description": "The unique identifier of the wiki.",
+            "in": "path",
+            "name": "wiki_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wikis/{wiki_id}/content/",
         "pointer": "#/paths/~1wikis~1{wiki_id}~1content~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the Content of a Wiki"
+        "summary": "Retrieve the Content of a Wiki",
+        "tags": [
+          "Wikis"
+        ]
       }
     ]
   },

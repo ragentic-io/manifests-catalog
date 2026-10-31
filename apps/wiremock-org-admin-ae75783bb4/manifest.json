@@ -7,17 +7,17 @@
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/__admin/mappings"
-      },
-      {
-        "from": "wiremock-org-admin-ae75783bb4",
-        "kind": "EXPOSES",
         "to": "operation:get:/__admin/mappings"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
         "to": "operation:post:/__admin/mappings"
+      },
+      {
+        "from": "wiremock-org-admin-ae75783bb4",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/__admin/mappings"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
@@ -47,17 +47,17 @@
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/__admin/mappings/{stubMappingId}"
-      },
-      {
-        "from": "wiremock-org-admin-ae75783bb4",
-        "kind": "EXPOSES",
         "to": "operation:get:/__admin/mappings/{stubMappingId}"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
         "to": "operation:put:/__admin/mappings/{stubMappingId}"
+      },
+      {
+        "from": "wiremock-org-admin-ae75783bb4",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/__admin/mappings/{stubMappingId}"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
@@ -92,12 +92,12 @@
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/__admin/requests"
+        "to": "operation:get:/__admin/requests"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
-        "to": "operation:get:/__admin/requests"
+        "to": "operation:delete:/__admin/requests"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
@@ -137,12 +137,12 @@
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/__admin/requests/{requestId}"
+        "to": "operation:get:/__admin/requests/{requestId}"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
         "kind": "EXPOSES",
-        "to": "operation:get:/__admin/requests/{requestId}"
+        "to": "operation:delete:/__admin/requests/{requestId}"
       },
       {
         "from": "wiremock-org-admin-ae75783bb4",
@@ -177,25 +177,40 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/__admin/mappings",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /__admin/mappings",
-        "path": "/__admin/mappings",
-        "pointer": "#/paths/~1__admin~1mappings/delete",
-        "security": [],
-        "summary": "Delete all stub mappings"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/__admin/mappings",
         "kind": "operation",
         "method": "get",
         "name": "get /__admin/mappings",
+        "parameters": [
+          {
+            "description": "The maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The start index of the results to return",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/__admin/mappings",
         "pointer": "#/paths/~1__admin~1mappings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all stub mappings"
+        "summary": "Get all stub mappings",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
@@ -205,30 +220,95 @@
         "name": "post /__admin/mappings",
         "path": "/__admin/mappings",
         "pointer": "#/paths/~1__admin~1mappings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new stub mapping"
+        "summary": "Create a new stub mapping",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/__admin/mappings",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /__admin/mappings",
+        "path": "/__admin/mappings",
+        "pointer": "#/paths/~1__admin~1mappings/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete all stub mappings",
+        "tags": [
+          "Stub Mappings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Find stubs by matching on their metadata",
         "id": "operation:post:/__admin/mappings/find-by-metadata",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/mappings/find-by-metadata",
         "path": "/__admin/mappings/find-by-metadata",
         "pointer": "#/paths/~1__admin~1mappings~1find-by-metadata/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Import given stub mappings to the backing store",
         "id": "operation:post:/__admin/mappings/import",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/mappings/import",
         "path": "/__admin/mappings/import",
         "pointer": "#/paths/~1__admin~1mappings~1import/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Import stub mappings"
+        "summary": "Import stub mappings",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
@@ -238,41 +318,66 @@
         "name": "post /__admin/mappings/remove-by-metadata",
         "path": "/__admin/mappings/remove-by-metadata",
         "pointer": "#/paths/~1__admin~1mappings~1remove-by-metadata/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete stub mappings matching metadata"
+        "summary": "Delete stub mappings matching metadata",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Restores stub mappings to the defaults defined back in the backing store",
         "id": "operation:post:/__admin/mappings/reset",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/mappings/reset",
         "path": "/__admin/mappings/reset",
         "pointer": "#/paths/~1__admin~1mappings~1reset/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset stub mappings"
+        "summary": "Reset stub mappings",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save all persistent stub mappings to the backing store",
         "id": "operation:post:/__admin/mappings/save",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/mappings/save",
         "path": "/__admin/mappings/save",
         "pointer": "#/paths/~1__admin~1mappings~1save/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Persist stub mappings"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/__admin/mappings/{stubMappingId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /__admin/mappings/{stubMappingId}",
-        "path": "/__admin/mappings/{stubMappingId}",
-        "pointer": "#/paths/~1__admin~1mappings~1{stubMappingId}/delete",
-        "security": [],
-        "summary": "Delete a stub mapping"
+        "summary": "Persist stub mappings",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
@@ -280,10 +385,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /__admin/mappings/{stubMappingId}",
+        "parameters": [
+          {
+            "description": "The UUID of stub mapping",
+            "in": "path",
+            "name": "stubMappingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/__admin/mappings/{stubMappingId}",
         "pointer": "#/paths/~1__admin~1mappings~1{stubMappingId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get stub mapping by ID"
+        "summary": "Get stub mapping by ID",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
@@ -291,32 +418,129 @@
         "kind": "operation",
         "method": "put",
         "name": "put /__admin/mappings/{stubMappingId}",
+        "parameters": [
+          {
+            "description": "The UUID of stub mapping",
+            "in": "path",
+            "name": "stubMappingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/__admin/mappings/{stubMappingId}",
         "pointer": "#/paths/~1__admin~1mappings~1{stubMappingId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a stub mapping"
+        "summary": "Update a stub mapping",
+        "tags": [
+          "Stub Mappings"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/__admin/mappings/{stubMappingId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /__admin/mappings/{stubMappingId}",
+        "parameters": [
+          {
+            "description": "The UUID of stub mapping",
+            "in": "path",
+            "name": "stubMappingId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/__admin/mappings/{stubMappingId}",
+        "pointer": "#/paths/~1__admin~1mappings~1{stubMappingId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a stub mapping",
+        "tags": [
+          "Stub Mappings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Find at most 3 near misses for closest stub mappings to the specified request",
         "id": "operation:post:/__admin/near-misses/request",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/near-misses/request",
         "path": "/__admin/near-misses/request",
         "pointer": "#/paths/~1__admin~1near-misses~1request/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find near misses matching specific request"
+        "summary": "Find near misses matching specific request",
+        "tags": [
+          "Near Misses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find at most 3 near misses for closest logged requests to the specified request pattern",
         "id": "operation:post:/__admin/near-misses/request-pattern",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/near-misses/request-pattern",
         "path": "/__admin/near-misses/request-pattern",
         "pointer": "#/paths/~1__admin~1near-misses~1request-pattern/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find near misses matching request pattern"
+        "summary": "Find near misses matching request pattern",
+        "tags": [
+          "Near Misses"
+        ]
       },
       {
         "deprecated": false,
@@ -326,19 +550,53 @@
         "name": "post /__admin/recordings/snapshot",
         "path": "/__admin/recordings/snapshot",
         "pointer": "#/paths/~1__admin~1recordings~1snapshot/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Take a snapshot recording"
+        "summary": "Take a snapshot recording",
+        "tags": [
+          "Recordings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Begin recording stub mappings",
         "id": "operation:post:/__admin/recordings/start",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/recordings/start",
         "path": "/__admin/recordings/start",
         "pointer": "#/paths/~1__admin~1recordings~1start/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Start recording"
+        "summary": "Start recording",
+        "tags": [
+          "Recordings"
+        ]
       },
       {
         "deprecated": false,
@@ -348,19 +606,76 @@
         "name": "get /__admin/recordings/status",
         "path": "/__admin/recordings/status",
         "pointer": "#/paths/~1__admin~1recordings~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get recording status"
+        "summary": "Get recording status",
+        "tags": [
+          "Recordings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "End recording of stub mappings",
         "id": "operation:post:/__admin/recordings/stop",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/recordings/stop",
         "path": "/__admin/recordings/stop",
         "pointer": "#/paths/~1__admin~1recordings~1stop/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Stop recording"
+        "summary": "Stop recording",
+        "tags": [
+          "Recordings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/__admin/requests",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /__admin/requests",
+        "parameters": [
+          {
+            "description": "The maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return logged requests after this date",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/__admin/requests",
+        "pointer": "#/paths/~1__admin~1requests/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": "Get all requests in journal",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
@@ -370,52 +685,102 @@
         "name": "delete /__admin/requests",
         "path": "/__admin/requests",
         "pointer": "#/paths/~1__admin~1requests/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete all requests in journal"
+        "summary": "Delete all requests in journal",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/__admin/requests",
-        "kind": "operation",
-        "method": "get",
-        "name": "get /__admin/requests",
-        "path": "/__admin/requests",
-        "pointer": "#/paths/~1__admin~1requests/get",
-        "security": [],
-        "summary": "Get all requests in journal"
-      },
-      {
-        "deprecated": false,
+        "description": "Count requests logged in the journal matching the specified criteria",
         "id": "operation:post:/__admin/requests/count",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/requests/count",
         "path": "/__admin/requests/count",
         "pointer": "#/paths/~1__admin~1requests~1count/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Count requests by criteria"
+        "summary": "Count requests by criteria",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve details of requests logged in the journal matching the specified criteria",
         "id": "operation:post:/__admin/requests/find",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/requests/find",
         "path": "/__admin/requests/find",
         "pointer": "#/paths/~1__admin~1requests~1find/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find requests by criteria"
+        "summary": "Find requests by criteria",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removed requests logged in the journal matching the specified criteria",
         "id": "operation:post:/__admin/requests/remove",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/requests/remove",
         "path": "/__admin/requests/remove",
         "pointer": "#/paths/~1__admin~1requests~1remove/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Remove requests by criteria"
+        "summary": "Remove requests by criteria",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
@@ -425,8 +790,24 @@
         "name": "post /__admin/requests/remove-by-metadata",
         "path": "/__admin/requests/remove-by-metadata",
         "pointer": "#/paths/~1__admin~1requests~1remove-by-metadata/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete requests mappings matching metadata"
+        "summary": "Delete requests mappings matching metadata",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": true,
@@ -436,41 +817,60 @@
         "name": "post /__admin/requests/reset",
         "path": "/__admin/requests/reset",
         "pointer": "#/paths/~1__admin~1requests~1reset/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Empty the request journal"
+        "summary": "Empty the request journal",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details of logged requests that weren't matched by any stub mapping",
         "id": "operation:get:/__admin/requests/unmatched",
         "kind": "operation",
         "method": "get",
         "name": "get /__admin/requests/unmatched",
         "path": "/__admin/requests/unmatched",
         "pointer": "#/paths/~1__admin~1requests~1unmatched/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find unmatched requests"
+        "summary": "Find unmatched requests",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve near-misses for all unmatched requests",
         "id": "operation:get:/__admin/requests/unmatched/near-misses",
         "kind": "operation",
         "method": "get",
         "name": "get /__admin/requests/unmatched/near-misses",
         "path": "/__admin/requests/unmatched/near-misses",
         "pointer": "#/paths/~1__admin~1requests~1unmatched~1near-misses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/__admin/requests/{requestId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /__admin/requests/{requestId}",
-        "path": "/__admin/requests/{requestId}",
-        "pointer": "#/paths/~1__admin~1requests~1{requestId}/delete",
-        "security": [],
-        "summary": "Delete request by ID"
+        "summary": null,
+        "tags": [
+          "Near Misses"
+        ]
       },
       {
         "deprecated": false,
@@ -478,21 +878,81 @@
         "kind": "operation",
         "method": "get",
         "name": "get /__admin/requests/{requestId}",
+        "parameters": [
+          {
+            "description": "The UUID of the logged request",
+            "in": "path",
+            "name": "requestId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/__admin/requests/{requestId}",
         "pointer": "#/paths/~1__admin~1requests~1{requestId}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get request by ID"
+        "summary": "Get request by ID",
+        "tags": [
+          "Requests"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/__admin/requests/{requestId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /__admin/requests/{requestId}",
+        "parameters": [
+          {
+            "description": "The UUID of the logged request",
+            "in": "path",
+            "name": "requestId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/__admin/requests/{requestId}",
+        "pointer": "#/paths/~1__admin~1requests~1{requestId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete request by ID",
+        "tags": [
+          "Requests"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Reset mappings to the default state and reset the request journal",
         "id": "operation:post:/__admin/reset",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/reset",
         "path": "/__admin/reset",
         "pointer": "#/paths/~1__admin~1reset/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset mappings and request journal"
+        "summary": "Reset mappings and request journal",
+        "tags": [
+          "System"
+        ]
       },
       {
         "deprecated": false,
@@ -502,8 +962,18 @@
         "name": "get /__admin/scenarios",
         "path": "/__admin/scenarios",
         "pointer": "#/paths/~1__admin~1scenarios/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all scenarios"
+        "summary": "Get all scenarios",
+        "tags": [
+          "Scenarios"
+        ]
       },
       {
         "deprecated": false,
@@ -513,8 +983,17 @@
         "name": "post /__admin/scenarios/reset",
         "path": "/__admin/scenarios/reset",
         "pointer": "#/paths/~1__admin~1scenarios~1reset/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset the state of all scenarios"
+        "summary": "Reset the state of all scenarios",
+        "tags": [
+          "Scenarios"
+        ]
       },
       {
         "deprecated": false,
@@ -524,19 +1003,45 @@
         "name": "post /__admin/settings",
         "path": "/__admin/settings",
         "pointer": "#/paths/~1__admin~1settings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update global settings"
+        "summary": "Update global settings",
+        "tags": [
+          "System"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Shutdown the WireMock server",
         "id": "operation:post:/__admin/shutdown",
         "kind": "operation",
         "method": "post",
         "name": "post /__admin/shutdown",
         "path": "/__admin/shutdown",
         "pointer": "#/paths/~1__admin~1shutdown/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "System"
+        ]
       }
     ]
   },

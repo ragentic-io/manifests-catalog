@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.izettle.com_favicons_favico
 
 | | |
 | --- | --- |
-| Signed bundle | `db9144ab443b2afa05e4f52fd97395071a5743550291b303eff279db3f2326df` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,37 +34,39 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.izettle.com_favicons_favico
 
 42 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/organizations/{organizationUuid}/categories/v2` | getProductTypes | Retrieve all categories |
-| POST | `/organizations/{organizationUuid}/categories/v2` | createCategories | Create a new category |
-| DELETE | `/organizations/{organizationUuid}/categories/v2/{categoryUuid}` | deleteCategory | Delete a category |
-| PATCH | `/organizations/{organizationUuid}/categories/v2/{categoryUuid}` | renameCategory | Rename a category |
-| GET | `/organizations/{organizationUuid}/discounts` | getAllDiscounts | Retrieve all discounts |
-| POST | `/organizations/{organizationUuid}/discounts` | createDiscount | Create a discount |
-| DELETE | `/organizations/{organizationUuid}/discounts/{discountUuid}` | deleteDiscount | Delete a single discount |
-| GET | `/organizations/{organizationUuid}/discounts/{discountUuid}` | getDiscount | Retrieve a single discount |
-| PUT | `/organizations/{organizationUuid}/discounts/{discountUuid}` | updateDiscount | Update a single discount |
-| GET | `/organizations/{organizationUuid}/images` | getAllImageUrls | Retrieve all library item images |
-| GET | `/organizations/{organizationUuid}/import/status` | getLatestImportStatus | Get status for latest import |
-| GET | `/organizations/{organizationUuid}/import/status/{importUuid}` | getStatusByUuid | Get status for an import |
-| POST | `/organizations/{organizationUuid}/import/v2` | importLibraryV2 | Import library items |
-| GET | `/organizations/{organizationUuid}/library` | getLibrary | Retrieve the entire library |
-| DELETE | `/organizations/{organizationUuid}/products` | deleteProducts | Delete a list of products |
-| GET | `/organizations/{organizationUuid}/products` | getAllProductsInPos | Retrieve all products visible in POS |
-| POST | `/organizations/{organizationUuid}/products` | createProduct | Create a new product |
-| POST | `/organizations/{organizationUuid}/products/online/slug` | createProductSlug | Create a product identifier |
-| GET | `/organizations/{organizationUuid}/products/options` | getAllOptions | Retrieve an aggregate of active Options in the library |
-| GET | `/organizations/{organizationUuid}/products/v2` | getAllProductsV2 | Retrieve all products visible in POS – v2 |
-| GET | `/organizations/{organizationUuid}/products/v2/count` | countAllProducts | Retrieve the count of existing products |
-| PUT | `/organizations/{organizationUuid}/products/v2/{productUuid}` | updateProduct | Update a single product |
-| DELETE | `/organizations/{organizationUuid}/products/{productUuid}` | deleteProduct | Delete a single product |
-| GET | `/organizations/{organizationUuid}/products/{productUuid}` | getProduct | Retrieve a single product |
-| GET | `/v1/taxes` | getTaxRates | Get all available tax rates |
-| POST | `/v1/taxes` | createTaxRates | Create new tax rates |
-| GET | `/v1/taxes/count` | getProductCountForAllTaxes | Get all tax rates and a count of products associated with each |
-| GET | `/v1/taxes/settings` | getTaxSettings | Get the organization tax settings |
-| PUT | `/v1/taxes/settings` | setTaxationMode | Update the organization tax settings |
-| DELETE | `/v1/taxes/{taxRateUuid}` | deleteTaxRate | Delete a single tax rate |
-| GET | `/v1/taxes/{taxRateUuid}` | getTaxRate | Get a single tax rate |
-| PUT | `/v1/taxes/{taxRateUuid}` | updateTaxRate | Update a single tax rate |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/organizations/{organizationUuid}/categories/v2` | getProductTypes | `organizationUuid`* | CategoryResponse | yes | Retrieve all categories |
+| POST | `/organizations/{organizationUuid}/categories/v2` | createCategories | `organizationUuid`*, body*: CreateCategoriesRequest | — |  | Create a new category |
+| DELETE | `/organizations/{organizationUuid}/categories/v2/{categoryUuid}` | deleteCategory | `organizationUuid`*, `categoryUuid`* | — |  | Delete a category |
+| PATCH | `/organizations/{organizationUuid}/categories/v2/{categoryUuid}` | renameCategory | `organizationUuid`*, `categoryUuid`*, body*: RenameCategoryRequest | — |  | Rename a category |
+| GET | `/organizations/{organizationUuid}/discounts` | getAllDiscounts | `organizationUuid`* | DiscountResponse[] | yes | Retrieve all discounts |
+| POST | `/organizations/{organizationUuid}/discounts` | createDiscount | `organizationUuid`*, body: DiscountRequest | — |  | Create a discount |
+| GET | `/organizations/{organizationUuid}/discounts/{discountUuid}` | getDiscount | `If-None-Match`, `organizationUuid`*, `discountUuid`* | DiscountResponse | yes | Retrieve a single discount |
+| PUT | `/organizations/{organizationUuid}/discounts/{discountUuid}` | updateDiscount | `If-Match`, `organizationUuid`*, `discountUuid`*, body*: DiscountRequest | — |  | Update a single discount |
+| DELETE | `/organizations/{organizationUuid}/discounts/{discountUuid}` | deleteDiscount | `organizationUuid`*, `discountUuid`* | — |  | Delete a single discount |
+| GET | `/organizations/{organizationUuid}/images` | getAllImageUrls | `organizationUuid`* | LibraryImagesResponse | yes | Retrieve all library item images |
+| GET | `/organizations/{organizationUuid}/import/status` | getLatestImportStatus | `organizationUuid`* | ImportResponse | yes | Get status for latest import |
+| GET | `/organizations/{organizationUuid}/import/status/{importUuid}` | getStatusByUuid | `organizationUuid`*, `importUuid`* | ImportResponse | yes | Get status for an import |
+| POST | `/organizations/{organizationUuid}/import/v2` | importLibraryV2 | `organizationUuid`*, body*: BulkImportRequest | ImportResponse |  | Import library items |
+| GET | `/organizations/{organizationUuid}/library` | getLibrary | `organizationUuid`*, `eventLogUuid`, `limit`, `offset`, `all` | LibraryResponse | yes | Retrieve the entire library |
+| GET | `/organizations/{organizationUuid}/products` | getAllProductsInPos | `organizationUuid`* | ProductResponse[] | yes | Retrieve all products visible in POS |
+| POST | `/organizations/{organizationUuid}/products` | createProduct | `organizationUuid`*, `returnEntity`, body*: ProductCreateRequest | ProductResponse |  | Create a new product |
+| DELETE | `/organizations/{organizationUuid}/products` | deleteProducts | `organizationUuid`*, `uuid`* | — |  | Delete a list of products |
+| POST | `/organizations/{organizationUuid}/products/online/slug` | createProductSlug | `organizationUuid`*, body*: CreateSlugRequest | SlugResponse |  | Create a product identifier |
+| GET | `/organizations/{organizationUuid}/products/options` | getAllOptions | `organizationUuid`* | VariantOptionsResponse[] | yes | Retrieve an aggregate of active Options in the library |
+| GET | `/organizations/{organizationUuid}/products/v2` | getAllProductsV2 | `organizationUuid`*, `sort` | ProductResponse[] | yes | Retrieve all products visible in POS – v2 |
+| GET | `/organizations/{organizationUuid}/products/v2/count` | countAllProducts | `organizationUuid`* | ProductCountResponse[] | yes | Retrieve the count of existing products |
+| PUT | `/organizations/{organizationUuid}/products/v2/{productUuid}` | updateProduct | `If-Match`, `organizationUuid`*, `productUuid`*, body*: FullProductUpdateRequest | — |  | Update a single product |
+| GET | `/organizations/{organizationUuid}/products/{productUuid}` | getProduct | `If-None-Match`, `organizationUuid`*, `productUuid`* | ProductResponse | yes | Retrieve a single product |
+| DELETE | `/organizations/{organizationUuid}/products/{productUuid}` | deleteProduct | `organizationUuid`*, `productUuid`* | — |  | Delete a single product |
+| GET | `/v1/taxes` | getTaxRates | — | TaxRatesResponse[] | yes | Get all available tax rates |
+| POST | `/v1/taxes` | createTaxRates | body*: TaxRatesCreateRequest | TaxRatesResponse |  | Create new tax rates |
+| GET | `/v1/taxes/count` | getProductCountForAllTaxes | — | TaxRateProductCountResponse | yes | Get all tax rates and a count of products associated with each |
+| GET | `/v1/taxes/settings` | getTaxSettings | — | TaxSettingsResponse | yes | Get the organization tax settings |
+| PUT | `/v1/taxes/settings` | setTaxationMode | body*: TaxSettingsUpdateRequest | TaxSettingsResponse |  | Update the organization tax settings |
+| GET | `/v1/taxes/{taxRateUuid}` | getTaxRate | `taxRateUuid`* | TaxRate | yes | Get a single tax rate |
+| PUT | `/v1/taxes/{taxRateUuid}` | updateTaxRate | `taxRateUuid`*, body*: TaxRateUpdateRequest | TaxRate |  | Update a single tax rate |
+| DELETE | `/v1/taxes/{taxRateUuid}` | deleteTaxRate | `taxRateUuid`* | — |  | Delete a single tax rate |

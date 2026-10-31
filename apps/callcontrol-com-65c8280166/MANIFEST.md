@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_CallControlLLC_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `d9655c8ac100413fe1c48a4e42c863463b1698978a91d2ed4920f22599008918` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_CallControlLLC_prof
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/2015-11-01/Complaints/{phoneNumber}` | Complaints_Complaints | Complaints: Free service (with registration), providing community and government complaint lookup by phone number for up to 2,000 queries per month. Details include number complaint rates from (FTC, FCC, IRS, Indiana Attorney General) and key entity tag extractions from complaints. |
-| GET | `/api/2015-11-01/Enterprise/GetUser/{phoneNumber}` | EnterpriseApi_GetUser | Enterprise GET: GetUser Returns the current information from the user; try 12066194123 as demo |
-| GET | `/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}` | EnterpriseApi_ShouldBlock | Enterprise GET: ShouldBlock Simple Enteprise which returns a call block proceed decision. |
-| POST | `/api/2015-11-01/Enterprise/UpsertUser` | EnterpriseApi_UpsertUser | UpsertUser: insert or update all properties from a user PhoneNumber WhiteList (list of phone numbers to whitelist) BlackList (list of phone numbers to blacklist) QuietHourList (list of quiet hour objects) UseCommunityBlacklist (enable / disable community blacklist) default true BreakThroughQhWithMultipleCalls (break through quiet hours with two calls in 3 minutes) WhiteListBreaksQh (break through quiet hours for whitelist) |
-| POST | `/api/2015-11-01/Report` | Reputation_Report | Report: report spam calls received to better tune our algorithms based upon spam calls you receive |
-| GET | `/api/2015-11-01/Reputation/{phoneNumber}` | Reputation_Reputation | Reputation: Premium service which returns a reputation informaiton of a phone number via API. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/2015-11-01/Complaints/{phoneNumber}` | Complaints_Complaints | `phoneNumber`* | Complaints | yes | Complaints: Free service (with registration), providing community and government complaint lookup by phone number for up to 2,000 queries per month. Details include number complaint rates from (FTC, FCC, IRS, Indiana Attorney General) and key entity tag extractions from complaints. |
+| GET | `/api/2015-11-01/Enterprise/GetUser/{phoneNumber}` | EnterpriseApi_GetUser | `phoneNumber`* | CallControlUser | yes | Enterprise GET: GetUser Returns the current information from the user; try 12066194123 as demo |
+| GET | `/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}` | EnterpriseApi_ShouldBlock | `phoneNumber`*, `userPhoneNumber`* | string | yes | Enterprise GET: ShouldBlock Simple Enteprise which returns a call block proceed decision. |
+| POST | `/api/2015-11-01/Enterprise/UpsertUser` | EnterpriseApi_UpsertUser | body*: CallControlUser | object |  | UpsertUser: insert or update all properties from a user PhoneNumber WhiteList (list of phone numbers to whitelist) BlackList (list of phone numbers to blacklist) QuietHourList (list of quiet hour objects) UseCommunityBlacklist (enable / disable community blacklist) default true BreakThroughQhWithMultipleCalls (break through quiet hours with two calls in 3 minutes) WhiteListBreaksQh (break through quiet hours for whitelist) |
+| POST | `/api/2015-11-01/Report` | Reputation_Report | body*: CallReport | — |  | Report: report spam calls received to better tune our algorithms based upon spam calls you receive |
+| GET | `/api/2015-11-01/Reputation/{phoneNumber}` | Reputation_Reputation | `phoneNumber`* | Reputation | yes | Reputation: Premium service which returns a reputation informaiton of a phone number via API. |

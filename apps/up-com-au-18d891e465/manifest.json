@@ -52,12 +52,12 @@
       {
         "from": "up-com-au-18d891e465",
         "kind": "EXPOSES",
-        "to": "operation:delete:/transactions/{transactionId}/relationships/tags"
+        "to": "operation:post:/transactions/{transactionId}/relationships/tags"
       },
       {
         "from": "up-com-au-18d891e465",
         "kind": "EXPOSES",
-        "to": "operation:post:/transactions/{transactionId}/relationships/tags"
+        "to": "operation:delete:/transactions/{transactionId}/relationships/tags"
       },
       {
         "from": "up-com-au-18d891e465",
@@ -77,12 +77,12 @@
       {
         "from": "up-com-au-18d891e465",
         "kind": "EXPOSES",
-        "to": "operation:delete:/webhooks/{id}"
+        "to": "operation:get:/webhooks/{id}"
       },
       {
         "from": "up-com-au-18d891e465",
         "kind": "EXPOSES",
-        "to": "operation:get:/webhooks/{id}"
+        "to": "operation:delete:/webhooks/{id}"
       },
       {
         "from": "up-com-au-18d891e465",
@@ -93,6 +93,241 @@
         "from": "up-com-au-18d891e465",
         "kind": "EXPOSES",
         "to": "operation:post:/webhooks/{webhookId}/ping"
+      },
+      {
+        "from": "operation:get:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:ListAccountsResponse"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:ListTransactionsResponse"
+      },
+      {
+        "from": "operation:get:/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GetAccountResponse"
+      },
+      {
+        "from": "operation:get:/categories",
+        "kind": "RETURNS",
+        "to": "schema:ListCategoriesResponse"
+      },
+      {
+        "from": "operation:get:/categories/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GetCategoryResponse"
+      },
+      {
+        "from": "operation:get:/tags",
+        "kind": "RETURNS",
+        "to": "schema:ListTagsResponse"
+      },
+      {
+        "from": "operation:get:/transactions",
+        "kind": "RETURNS",
+        "to": "schema:ListTransactionsResponse"
+      },
+      {
+        "from": "operation:get:/transactions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GetTransactionResponse"
+      },
+      {
+        "from": "operation:patch:/transactions/{transactionId}/relationships/category",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTransactionCategoryRequest"
+      },
+      {
+        "from": "operation:post:/transactions/{transactionId}/relationships/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTransactionTagsRequest"
+      },
+      {
+        "from": "operation:delete:/transactions/{transactionId}/relationships/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTransactionTagsRequest"
+      },
+      {
+        "from": "operation:get:/util/ping",
+        "kind": "RETURNS",
+        "to": "schema:PingResponse"
+      },
+      {
+        "from": "operation:get:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:ListWebhooksResponse"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateWebhookRequest"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:CreateWebhookResponse"
+      },
+      {
+        "from": "operation:get:/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GetWebhookResponse"
+      },
+      {
+        "from": "operation:get:/webhooks/{webhookId}/logs",
+        "kind": "RETURNS",
+        "to": "schema:ListWebhookDeliveryLogsResponse"
+      },
+      {
+        "from": "operation:post:/webhooks/{webhookId}/ping",
+        "kind": "RETURNS",
+        "to": "schema:WebhookEventCallback"
+      },
+      {
+        "from": "schema:AccountResource",
+        "kind": "REFERENCES",
+        "to": "schema:AccountTypeEnum"
+      },
+      {
+        "from": "schema:AccountResource",
+        "kind": "REFERENCES",
+        "to": "schema:MoneyObject"
+      },
+      {
+        "from": "schema:AccountResource",
+        "kind": "REFERENCES",
+        "to": "schema:OwnershipTypeEnum"
+      },
+      {
+        "from": "schema:CashbackObject",
+        "kind": "REFERENCES",
+        "to": "schema:MoneyObject"
+      },
+      {
+        "from": "schema:CreateWebhookRequest",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookInputResource"
+      },
+      {
+        "from": "schema:CreateWebhookResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookResource"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorObject"
+      },
+      {
+        "from": "schema:GetAccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountResource"
+      },
+      {
+        "from": "schema:GetCategoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryResource"
+      },
+      {
+        "from": "schema:GetTransactionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionResource"
+      },
+      {
+        "from": "schema:GetWebhookResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookResource"
+      },
+      {
+        "from": "schema:HoldInfoObject",
+        "kind": "REFERENCES",
+        "to": "schema:MoneyObject"
+      },
+      {
+        "from": "schema:ListAccountsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountResource"
+      },
+      {
+        "from": "schema:ListCategoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryResource"
+      },
+      {
+        "from": "schema:ListTagsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TagResource"
+      },
+      {
+        "from": "schema:ListTransactionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionResource"
+      },
+      {
+        "from": "schema:ListWebhookDeliveryLogsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookDeliveryLogResource"
+      },
+      {
+        "from": "schema:ListWebhooksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookResource"
+      },
+      {
+        "from": "schema:RoundUpObject",
+        "kind": "REFERENCES",
+        "to": "schema:MoneyObject"
+      },
+      {
+        "from": "schema:TransactionResource",
+        "kind": "REFERENCES",
+        "to": "schema:CashbackObject"
+      },
+      {
+        "from": "schema:TransactionResource",
+        "kind": "REFERENCES",
+        "to": "schema:HoldInfoObject"
+      },
+      {
+        "from": "schema:TransactionResource",
+        "kind": "REFERENCES",
+        "to": "schema:MoneyObject"
+      },
+      {
+        "from": "schema:TransactionResource",
+        "kind": "REFERENCES",
+        "to": "schema:RoundUpObject"
+      },
+      {
+        "from": "schema:TransactionResource",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionStatusEnum"
+      },
+      {
+        "from": "schema:UpdateTransactionCategoryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryInputResourceIdentifier"
+      },
+      {
+        "from": "schema:UpdateTransactionTagsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TagInputResourceIdentifier"
+      },
+      {
+        "from": "schema:WebhookDeliveryLogResource",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookDeliveryStatusEnum"
+      },
+      {
+        "from": "schema:WebhookEventCallback",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookEventResource"
+      },
+      {
+        "from": "schema:WebhookEventResource",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookEventTypeEnum"
       }
     ],
     "nodes": [
@@ -102,458 +337,994 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieve a paginated list of all accounts for the currently authenticated user.",
         "id": "operation:get:/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts",
+        "parameters": [
+          {
+            "description": "The number of records to return in each page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The type of account for which to return records.",
+            "in": "query",
+            "name": "filter[accountType]",
+            "required": false,
+            "type": "AccountTypeEnum"
+          },
+          {
+            "description": "The account ownership structure for which to return records.",
+            "in": "query",
+            "name": "filter[ownershipType]",
+            "required": false,
+            "type": "OwnershipTypeEnum"
+          }
+        ],
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListAccountsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List accounts"
+        "summary": "List accounts",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of all transactions for a specific account.",
         "id": "operation:get:/accounts/{accountId}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/transactions",
+        "parameters": [
+          {
+            "description": "The unique identifier for the account.",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of records to return in each page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The transaction status for which to return records.",
+            "in": "query",
+            "name": "filter[status]",
+            "required": false,
+            "type": "TransactionStatusEnum"
+          },
+          {
+            "description": "The start date-time from which to return records, formatted according to rfc-3339.",
+            "in": "query",
+            "name": "filter[since]",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The end date-time up to which to return records, formatted according to rfc-3339.",
+            "in": "query",
+            "name": "filter[until]",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The category identifier for which to filter transactions.",
+            "in": "query",
+            "name": "filter[category]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A transaction tag to filter for which to return records.",
+            "in": "query",
+            "name": "filter[tag]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/transactions",
         "pointer": "#/paths/~1accounts~1{accountId}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListTransactionsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List transactions by account"
+        "summary": "List transactions by account",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a specific account by providing its unique identifier.",
         "id": "operation:get:/accounts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier for the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{id}",
         "pointer": "#/paths/~1accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAccountResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Retrieve account"
+        "summary": "Retrieve account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of all categories and their ancestry.",
         "id": "operation:get:/categories",
         "kind": "operation",
         "method": "get",
         "name": "get /categories",
+        "parameters": [
+          {
+            "description": "The unique identifier of a parent category for which to return only its children.",
+            "in": "query",
+            "name": "filter[parent]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/categories",
         "pointer": "#/paths/~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListCategoriesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List categories"
+        "summary": "List categories",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a specific category by providing its unique identifier.",
         "id": "operation:get:/categories/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /categories/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier for the category.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/categories/{id}",
         "pointer": "#/paths/~1categories~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetCategoryResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Retrieve category"
+        "summary": "Retrieve category",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of all tags currently in use.",
         "id": "operation:get:/tags",
         "kind": "operation",
         "method": "get",
         "name": "get /tags",
+        "parameters": [
+          {
+            "description": "The number of records to return in each page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/tags",
         "pointer": "#/paths/~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListTagsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List tags"
+        "summary": "List tags",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of all transactions across all accounts for the currently authenticated user.",
         "id": "operation:get:/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /transactions",
+        "parameters": [
+          {
+            "description": "The number of records to return in each page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The transaction status for which to return records.",
+            "in": "query",
+            "name": "filter[status]",
+            "required": false,
+            "type": "TransactionStatusEnum"
+          },
+          {
+            "description": "The start date-time from which to return records, formatted according to rfc-3339.",
+            "in": "query",
+            "name": "filter[since]",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The end date-time up to which to return records, formatted according to rfc-3339.",
+            "in": "query",
+            "name": "filter[until]",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The category identifier for which to filter transactions.",
+            "in": "query",
+            "name": "filter[category]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A transaction tag to filter for which to return records.",
+            "in": "query",
+            "name": "filter[tag]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/transactions",
         "pointer": "#/paths/~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListTransactionsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List transactions"
+        "summary": "List transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a specific transaction by providing its unique identifier.",
         "id": "operation:get:/transactions/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /transactions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier for the transaction.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transactions/{id}",
         "pointer": "#/paths/~1transactions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetTransactionResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Retrieve transaction"
+        "summary": "Retrieve transaction",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the category associated with a transaction.",
         "id": "operation:patch:/transactions/{transactionId}/relationships/category",
         "kind": "operation",
         "method": "patch",
         "name": "patch /transactions/{transactionId}/relationships/category",
+        "parameters": [
+          {
+            "description": "The unique identifier for the transaction.",
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transactions/{transactionId}/relationships/category",
         "pointer": "#/paths/~1transactions~1{transactionId}~1relationships~1category/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateTransactionCategoryRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Categorize transaction"
+        "summary": "Categorize transaction",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/transactions/{transactionId}/relationships/tags",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /transactions/{transactionId}/relationships/tags",
-        "path": "/transactions/{transactionId}/relationships/tags",
-        "pointer": "#/paths/~1transactions~1{transactionId}~1relationships~1tags/delete",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "summary": "Remove tags from transaction"
-      },
-      {
-        "deprecated": false,
+        "description": "Associates one or more tags with a specific transaction.",
         "id": "operation:post:/transactions/{transactionId}/relationships/tags",
         "kind": "operation",
         "method": "post",
         "name": "post /transactions/{transactionId}/relationships/tags",
+        "parameters": [
+          {
+            "description": "The unique identifier for the transaction.",
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transactions/{transactionId}/relationships/tags",
         "pointer": "#/paths/~1transactions~1{transactionId}~1relationships~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateTransactionTagsRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Add tags to transaction"
+        "summary": "Add tags to transaction",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Disassociates one or more tags from a specific transaction.",
+        "id": "operation:delete:/transactions/{transactionId}/relationships/tags",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /transactions/{transactionId}/relationships/tags",
+        "parameters": [
+          {
+            "description": "The unique identifier for the transaction.",
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/transactions/{transactionId}/relationships/tags",
+        "pointer": "#/paths/~1transactions~1{transactionId}~1relationships~1tags/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateTransactionTagsRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Remove tags from transaction",
+        "tags": [
+          "Tags"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Make a basic ping request to the API.",
         "id": "operation:get:/util/ping",
         "kind": "operation",
         "method": "get",
         "name": "get /util/ping",
         "path": "/util/ping",
         "pointer": "#/paths/~1util~1ping/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PingResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Ping"
+        "summary": "Ping",
+        "tags": [
+          "Utility endpoints"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of configured webhooks.",
         "id": "operation:get:/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "get /webhooks",
+        "parameters": [
+          {
+            "description": "The number of records to return in each page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListWebhooksResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List webhooks"
+        "summary": "List webhooks",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new webhook with a given URL.",
         "id": "operation:post:/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks",
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateWebhookRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateWebhookResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Create webhook"
+        "summary": "Create webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/webhooks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /webhooks/{id}",
-        "path": "/webhooks/{id}",
-        "pointer": "#/paths/~1webhooks~1{id}/delete",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "summary": "Delete webhook"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve a specific webhook by providing its unique identifier.",
         "id": "operation:get:/webhooks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /webhooks/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier for the webhook.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{id}",
         "pointer": "#/paths/~1webhooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetWebhookResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Retrieve webhook"
+        "summary": "Retrieve webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a specific webhook by providing its unique identifier.",
+        "id": "operation:delete:/webhooks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /webhooks/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier for the webhook.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/webhooks/{id}",
+        "pointer": "#/paths/~1webhooks~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Delete webhook",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve a list of delivery logs for a webhook by providing its unique identifier.",
         "id": "operation:get:/webhooks/{webhookId}/logs",
         "kind": "operation",
         "method": "get",
         "name": "get /webhooks/{webhookId}/logs",
+        "parameters": [
+          {
+            "description": "The unique identifier for the webhook.",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of records to return in each page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/webhooks/{webhookId}/logs",
         "pointer": "#/paths/~1webhooks~1{webhookId}~1logs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListWebhookDeliveryLogsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "List webhook logs"
+        "summary": "List webhook logs",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send a `PING` event to a webhook by providing its unique identifier.",
         "id": "operation:post:/webhooks/{webhookId}/ping",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/{webhookId}/ping",
+        "parameters": [
+          {
+            "description": "The unique identifier for the webhook.",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{webhookId}/ping",
         "pointer": "#/paths/~1webhooks~1{webhookId}~1ping/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "WebhookEventCallback"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Ping webhook"
+        "summary": "Ping webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
+        "description": "Provides information about an Up bank account.",
         "id": "schema:AccountResource",
         "kind": "schema",
-        "name": "AccountResource"
+        "name": "AccountResource",
+        "type": "object"
       },
       {
+        "description": "Specifies the type of bank account.",
         "id": "schema:AccountTypeEnum",
         "kind": "schema",
         "name": "AccountTypeEnum"
       },
       {
+        "description": "Provides information about an instant reimbursement in the form of cashback.",
         "id": "schema:CashbackObject",
         "kind": "schema",
-        "name": "CashbackObject"
+        "name": "CashbackObject",
+        "type": "object"
       },
       {
+        "description": "Uniquely identifies a category in the API.",
         "id": "schema:CategoryInputResourceIdentifier",
         "kind": "schema",
-        "name": "CategoryInputResourceIdentifier"
+        "name": "CategoryInputResourceIdentifier",
+        "type": "object"
       },
       {
+        "description": "Provides information about a category and its ancestry.",
         "id": "schema:CategoryResource",
         "kind": "schema",
-        "name": "CategoryResource"
+        "name": "CategoryResource",
+        "type": "object"
       },
       {
+        "description": "Request to create a new webhook.",
         "id": "schema:CreateWebhookRequest",
         "kind": "schema",
-        "name": "CreateWebhookRequest"
+        "name": "CreateWebhookRequest",
+        "type": "object"
       },
       {
+        "description": "Successful response after creating a webhook.",
         "id": "schema:CreateWebhookResponse",
         "kind": "schema",
-        "name": "CreateWebhookResponse"
+        "name": "CreateWebhookResponse",
+        "type": "object"
       },
       {
+        "description": "Provides information about an error processing a request.",
         "id": "schema:ErrorObject",
         "kind": "schema",
-        "name": "ErrorObject"
+        "name": "ErrorObject",
+        "type": "object"
       },
       {
+        "description": "Generic error response that returns one or more errors.",
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get a single account.",
         "id": "schema:GetAccountResponse",
         "kind": "schema",
-        "name": "GetAccountResponse"
+        "name": "GetAccountResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get a single category and its ancestry.",
         "id": "schema:GetCategoryResponse",
         "kind": "schema",
-        "name": "GetCategoryResponse"
+        "name": "GetCategoryResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get a single transaction.",
         "id": "schema:GetTransactionResponse",
         "kind": "schema",
-        "name": "GetTransactionResponse"
+        "name": "GetTransactionResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get a single webhook.",
         "id": "schema:GetWebhookResponse",
         "kind": "schema",
-        "name": "GetWebhookResponse"
+        "name": "GetWebhookResponse",
+        "type": "object"
       },
       {
+        "description": "Provides information about the amount at which a transaction was in the `HELD` status.",
         "id": "schema:HoldInfoObject",
         "kind": "schema",
-        "name": "HoldInfoObject"
+        "name": "HoldInfoObject",
+        "type": "object"
       },
       {
+        "description": "Successful response to get all accounts.",
         "id": "schema:ListAccountsResponse",
         "kind": "schema",
-        "name": "ListAccountsResponse"
+        "name": "ListAccountsResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get all categories and their ancestry.",
         "id": "schema:ListCategoriesResponse",
         "kind": "schema",
-        "name": "ListCategoriesResponse"
+        "name": "ListCategoriesResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get all tags.",
         "id": "schema:ListTagsResponse",
         "kind": "schema",
-        "name": "ListTagsResponse"
+        "name": "ListTagsResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get all transactions.",
         "id": "schema:ListTransactionsResponse",
         "kind": "schema",
-        "name": "ListTransactionsResponse"
+        "name": "ListTransactionsResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get all delivery logs for a webhook.",
         "id": "schema:ListWebhookDeliveryLogsResponse",
         "kind": "schema",
-        "name": "ListWebhookDeliveryLogsResponse"
+        "name": "ListWebhookDeliveryLogsResponse",
+        "type": "object"
       },
       {
+        "description": "Successful response to get all webhooks.",
         "id": "schema:ListWebhooksResponse",
         "kind": "schema",
-        "name": "ListWebhooksResponse"
+        "name": "ListWebhooksResponse",
+        "type": "object"
       },
       {
+        "description": "Provides information about a value of money.",
         "id": "schema:MoneyObject",
         "kind": "schema",
-        "name": "MoneyObject"
+        "name": "MoneyObject",
+        "type": "object"
       },
       {
+        "description": "Specifies the structure under which a bank account is owned.",
         "id": "schema:OwnershipTypeEnum",
         "kind": "schema",
         "name": "OwnershipTypeEnum"
       },
       {
+        "description": "Basic ping response to verify authentication.",
         "id": "schema:PingResponse",
         "kind": "schema",
-        "name": "PingResponse"
+        "name": "PingResponse",
+        "type": "object"
       },
       {
+        "description": "Provides information about how a Round Up was applied, such as whether or not a boost was included in the Round Up.",
         "id": "schema:RoundUpObject",
         "kind": "schema",
-        "name": "RoundUpObject"
+        "name": "RoundUpObject",
+        "type": "object"
       },
       {
+        "description": "Uniquely identifies a single tag in the API.",
         "id": "schema:TagInputResourceIdentifier",
         "kind": "schema",
-        "name": "TagInputResourceIdentifier"
+        "name": "TagInputResourceIdentifier",
+        "type": "object"
       },
       {
+        "description": "Provides information about a tag.",
         "id": "schema:TagResource",
         "kind": "schema",
-        "name": "TagResource"
+        "name": "TagResource",
+        "type": "object"
       },
       {
         "id": "schema:TransactionResource",
         "kind": "schema",
-        "name": "TransactionResource"
+        "name": "TransactionResource",
+        "type": "object"
       },
       {
+        "description": "Specifies which stage of processing a transaction is currently at.",
         "id": "schema:TransactionStatusEnum",
         "kind": "schema",
         "name": "TransactionStatusEnum"
       },
       {
+        "description": "Request to update the category associated with a transaction.",
         "id": "schema:UpdateTransactionCategoryRequest",
         "kind": "schema",
-        "name": "UpdateTransactionCategoryRequest"
+        "name": "UpdateTransactionCategoryRequest",
+        "type": "object"
       },
       {
+        "description": "Request to add or remove tags associated with a transaction.",
         "id": "schema:UpdateTransactionTagsRequest",
         "kind": "schema",
-        "name": "UpdateTransactionTagsRequest"
+        "name": "UpdateTransactionTagsRequest",
+        "type": "object"
       },
       {
+        "description": "Provides historical webhook event delivery information for analysis and debugging purposes.",
         "id": "schema:WebhookDeliveryLogResource",
         "kind": "schema",
-        "name": "WebhookDeliveryLogResource"
+        "name": "WebhookDeliveryLogResource",
+        "type": "object"
       },
       {
+        "description": "Specifies the nature of the success or failure of a webhook delivery attempt to the subscribed webhook URL.",
         "id": "schema:WebhookDeliveryStatusEnum",
         "kind": "schema",
         "name": "WebhookDeliveryStatusEnum"
       },
       {
+        "description": "Asynchronous callback request used for webhook event delivery.",
         "id": "schema:WebhookEventCallback",
         "kind": "schema",
-        "name": "WebhookEventCallback"
+        "name": "WebhookEventCallback",
+        "type": "object"
       },
       {
+        "description": "Provides the event data used in asynchronous webhook event callbacks to subscribed endpoints.",
         "id": "schema:WebhookEventResource",
         "kind": "schema",
-        "name": "WebhookEventResource"
+        "name": "WebhookEventResource",
+        "type": "object"
       },
       {
+        "description": "Specifies the type of a webhook event.",
         "id": "schema:WebhookEventTypeEnum",
         "kind": "schema",
         "name": "WebhookEventTypeEnum"
       },
       {
+        "description": "Represents a webhook specified as request input.",
         "id": "schema:WebhookInputResource",
         "kind": "schema",
-        "name": "WebhookInputResource"
+        "name": "WebhookInputResource",
+        "type": "object"
       },
       {
+        "description": "Provides information about a webhook.",
         "id": "schema:WebhookResource",
         "kind": "schema",
-        "name": "WebhookResource"
+        "name": "WebhookResource",
+        "type": "object"
       }
     ]
   },

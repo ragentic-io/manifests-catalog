@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_res.cloudinary.com_bigdatacloud
 
 | | |
 | --- | --- |
-| Signed bundle | `db41e30b62c8becce42c8a5ec7a396fa568cce9f47b1e7a26ddccb2c154ed021` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_res.cloudinary.com_bigdatacloud
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/data/ip-geolocation-full` | ipGeolocationWithConfidenceAreaAndHazardReportApi | IP Geolocation with Confidence Area and Hazard Report API |
-| GET | `/data/ip-geolocation-with-confidence` | ipGeolocationWithConfidenceAreaApi | IP Geolocation with Confidence Area API |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/data/ip-geolocation-full` | ipGeolocationWithConfidenceAreaAndHazardReportApi | `ip`, `localityLanguage`, `key` | — | yes | IP Geolocation with Confidence Area and Hazard Report API |
+| GET | `/data/ip-geolocation-with-confidence` | ipGeolocationWithConfidenceAreaApi | `ip`, `localityLanguage`, `key` | — | yes | IP Geolocation with Confidence Area API |

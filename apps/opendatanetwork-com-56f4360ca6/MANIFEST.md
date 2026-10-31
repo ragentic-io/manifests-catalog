@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `3e735ef4f7b7fefc77da3aecde21f10049ef72f1f2d0ca2919c85316a4b24908` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/data/v1/availability/` | Find all available data for some entities | Find all available data for some entities |
-| GET | `/data/v1/constraint/{variable}` | Get constraint permutations for entities | Get constraint permutations for entities |
-| GET | `/data/v1/map/new` | Create a map | Create a map |
-| GET | `/data/v1/values` | Get values for variables | Get values for variables |
-| GET | `/entity/v1` | Get Entities | Get Entities |
-| GET | `/entity/v1/{relation}` | Find the relatives of an entity | Find the relatives of an entity |
-| GET | `/search/v1/dataset` | Get datasets | Get datasets |
-| GET | `/search/v1/question` | Get questions | Get questions |
-| GET | `/suggest/v1/{type}` | Get suggestions | Get suggestions |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/data/v1/availability/` | Find all available data for some entities | `entity_id`*, `app_token`, `X-App-Token` | — | yes | Find all available data for some entities |
+| GET | `/data/v1/constraint/{variable}` | Get constraint permutations for entities | `variable`*, `entity_id`*, `constraint`*, `app_token`, `X-App-Token` | — | yes | Get constraint permutations for entities |
+| GET | `/data/v1/map/new` | Create a map | `variable`*, `entity_id`*, `constraint`, `app_token`, `X-App-Token` | — | yes | Create a map |
+| GET | `/data/v1/values` | Get values for variables | `variable`*, `entity_id`, `forecast`, `describe`, `format`, `app_token`, `X-App-Token` | — | yes | Get values for variables |
+| GET | `/entity/v1` | Get Entities | `entity_id`, `entity_name`, `entity_type`, `app_token`, `X-App-Token` | — | yes | Get Entities |
+| GET | `/entity/v1/{relation}` | Find the relatives of an entity | `relation`*, `entity_id`*, `variable_id`, `limit`, `app_token`, `X-App-Token` | — | yes | Find the relatives of an entity |
+| GET | `/search/v1/dataset` | Get datasets | `entity_id`, `dataset_id`, `limit`, `offset`, `app_token`, `X-App-Token` | — | yes | Get datasets |
+| GET | `/search/v1/question` | Get questions | `query`*, `limit`, `offset`, `app_token`, `X-App-Token` | — | yes | Get questions |
+| GET | `/suggest/v1/{type}` | Get suggestions | `type`*, `query`*, `limit`, `variable_id`, `app_token`, `X-App-Token` | — | yes | Get suggestions |

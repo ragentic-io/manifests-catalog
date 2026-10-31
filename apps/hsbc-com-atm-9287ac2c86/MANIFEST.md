@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HSBC_UK_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `4a07eac7d4432dd45eb11c339762fbb277d7063f9c0d9cf8236224e9f66e0b11` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HSBC_UK_profile_ima
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/open-banking/v2.2/atms` | get /open-banking/v2.2/atms | — |
-| GET | `/x-open-banking/v2.2/atms/country/{country}` | get /x-open-banking/v2.2/atms/country/{country} | — |
-| GET | `/x-open-banking/v2.2/atms/country/{country}/town/{town}` | get /x-open-banking/v2.2/atms/country/{country}/town/{town} | — |
-| GET | `/x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude}` | get /x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude} | — |
-| GET | `/x-open-banking/v2.2/atms/postcode/{postcode}` | get /x-open-banking/v2.2/atms/postcode/{postcode} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/open-banking/v2.2/atms` | get /open-banking/v2.2/atms | — | ATMDefinitionMeta | yes | — |
+| GET | `/x-open-banking/v2.2/atms/country/{country}` | get /x-open-banking/v2.2/atms/country/{country} | `country`* | ATMDefinitionMeta | yes | — |
+| GET | `/x-open-banking/v2.2/atms/country/{country}/town/{town}` | get /x-open-banking/v2.2/atms/country/{country}/town/{town} | `country`*, `town`* | ATMDefinitionMeta | yes | — |
+| GET | `/x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude}` | get /x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude} | `latitude`*, `longitude`*, `radius`* | ATMDefinitionMeta | yes | — |
+| GET | `/x-open-banking/v2.2/atms/postcode/{postcode}` | get /x-open-banking/v2.2/atms/postcode/{postcode} | `postcode`* | ATMDefinitionMeta | yes | — |

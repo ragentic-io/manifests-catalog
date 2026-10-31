@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_isbndb.com_sites_default_files_
 
 | | |
 | --- | --- |
-| Signed bundle | `64e891cdcde7a476c9e27fb1b5439daa67d5b145680d79aeae0c72ff1f638282` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_isbndb.com_sites_default_files_
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/author/{name}` | get /author/{name} | Gets author details |
-| GET | `/authors/{query}` | get /authors/{query} | Search authors |
-| GET | `/book/{isbn}` | get /book/{isbn} | Gets book details |
-| GET | `/books/{query}` | get /books/{query} | Search books |
-| GET | `/publisher/{name}` | get /publisher/{name} | Gets publisher details |
-| GET | `/publishers/{query}` | get /publishers/{query} | Search publishers |
-| GET | `/search` | get /search | Search all ISBNDB databases |
-| GET | `/stats` | get /stats | Gets status on the ISBNDB Database |
-| GET | `/subject/{name}` | get /subject/{name} | Gets subject details |
-| GET | `/subjects/{query}` | get /subjects/{query} | Search subjects |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/author/{name}` | get /author/{name} | `name`*, `page`, `pageSize` | Author | yes | Gets author details |
+| GET | `/authors/{query}` | get /authors/{query} | `pageSize`, `query`*, `page` | AuthorQueryResults | yes | Search authors |
+| GET | `/book/{isbn}` | get /book/{isbn} | `isbn`* | Book | yes | Gets book details |
+| GET | `/books/{query}` | get /books/{query} | `query`*, `page`, `author`, `pageSize` | — | yes | Search books |
+| GET | `/publisher/{name}` | get /publisher/{name} | `name`*, `page`, `pageSize` | Publisher | yes | Gets publisher details |
+| GET | `/publishers/{query}` | get /publishers/{query} | `pageSize`, `query`*, `page` | — | yes | Search publishers |
+| GET | `/search` | get /search | `q` | — | yes | Search all ISBNDB databases |
+| GET | `/stats` | get /stats | — | — | yes | Gets status on the ISBNDB Database |
+| GET | `/subject/{name}` | get /subject/{name} | `name`* | Subject | yes | Gets subject details |
+| GET | `/subjects/{query}` | get /subjects/{query} | `pageSize`, `query`*, `page` | — | yes | Search subjects |

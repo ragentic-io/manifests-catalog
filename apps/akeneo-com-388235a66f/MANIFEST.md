@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_akeneopim_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `1f6e908763bb6df65b4b91880fb3c7647e0e0ceec7b7c1284d4c460a86cf9330` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,145 +34,147 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_akeneopim_profile_i
 
 70 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/api/oauth/v1/token` | post_token | Get authentication token |
-| GET | `/api/rest/v1` | get_endpoints | Get list of all endpoints |
-| GET | `/api/rest/v1/asset-categories` | get_asset_categories | Get list of PAM asset categories |
-| PATCH | `/api/rest/v1/asset-categories` | patch_asset_categories | Update/create several PAM asset categories |
-| POST | `/api/rest/v1/asset-categories` | post_asset_categories | Create a new PAM asset category |
-| GET | `/api/rest/v1/asset-categories/{code}` | get_asset_categories__code_ | Get a PAM asset category |
-| PATCH | `/api/rest/v1/asset-categories/{code}` | patch_asset_categories__code_ | Update/create a PAM asset category |
-| GET | `/api/rest/v1/asset-families` | get_asset_families | Get list of asset families |
-| GET | `/api/rest/v1/asset-families/{asset_family_code}/assets` | get_assets | Get the list of the assets of a given asset family |
-| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/assets` | patch_assets | Update/create several assets |
-| DELETE | `/api/rest/v1/asset-families/{asset_family_code}/assets/{code}` | delete_assets__code_ | Delete an asset |
-| GET | `/api/rest/v1/asset-families/{asset_family_code}/assets/{code}` | get_assets__code_ | Get an asset of a given asset family |
-| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/assets/{code}` | patch_asset__code_ | Update/create an asset |
-| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes` | get_asset_families__code__attributes | Get the list of attributes of a given asset family |
-| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{attribute_code}/options` | get_asset_family_attributes__attribute_code__options | Get a list of attribute options of a given attribute for a given asset family |
-| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{attribute_code}/options/{code}` | get_asset_attributes__attribute_code__options__code_ | Get an attribute option for a given attribute of a given asset family |
-| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{attribute_code}/options/{code}` | patch_asset_attributes__attribute_code__options__code_ | Update/create an asset attribute option for a given asset family |
-| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{code}` | get_asset_family_attributes__code_ | Get an attribute of a given asset family |
-| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{code}` | patch_asset_family_attributes__code_ | Update/create an attribute of a given asset family |
-| GET | `/api/rest/v1/asset-families/{code}` | get_asset_family__code_ | Get an asset family |
-| PATCH | `/api/rest/v1/asset-families/{code}` | patch_asset_family__code_ | Update/create an asset family |
-| POST | `/api/rest/v1/asset-media-files` | post_asset_media_files | Create a new media file for an asset |
-| GET | `/api/rest/v1/asset-media-files/{code}` | get_asset_media_files__code | Download the media file associated to an asset |
-| GET | `/api/rest/v1/asset-tags` | get_asset_tags | Get list of PAM asset tags |
-| GET | `/api/rest/v1/asset-tags/{code}` | get_asset_tags__code_ | Get a PAM asset tag |
-| PATCH | `/api/rest/v1/asset-tags/{code}` | patch_asset_tags__code_ | Update/create a PAM asset tag |
-| GET | `/api/rest/v1/assets` | get_pam_assets | Get list of PAM assets |
-| PATCH | `/api/rest/v1/assets` | patch_pam_assets | Update/create several PAM assets |
-| POST | `/api/rest/v1/assets` | post_pam_assets | Create a new PAM asset |
-| GET | `/api/rest/v1/assets/{asset_code}/reference-files/{locale_code}` | get_reference_files__locale_code_ | Get a reference file |
-| POST | `/api/rest/v1/assets/{asset_code}/reference-files/{locale_code}` | post_reference_files__locale_code_ | Upload a new reference file |
-| GET | `/api/rest/v1/assets/{asset_code}/reference-files/{locale_code}/download` | get_reference_files__channel_code__locale_code__download | Download a reference file |
-| GET | `/api/rest/v1/assets/{asset_code}/variation-files/{channel_code}/{locale_code}` | get_variation_files__channel_code__locale_code | Get a variation file |
-| POST | `/api/rest/v1/assets/{asset_code}/variation-files/{channel_code}/{locale_code}` | post_variation_files__channel_code__locale_code_ | Upload a new variation file |
-| GET | `/api/rest/v1/assets/{asset_code}/variation-files/{channel_code}/{locale_code}/download` | get_variation_files__channel_code__locale_code__download | Download a variation file |
-| GET | `/api/rest/v1/assets/{code}` | get_pam_assets__code_ | Get a PAM asset |
-| PATCH | `/api/rest/v1/assets/{code}` | patch_pam_assets__code_ | Update/create a PAM asset |
-| GET | `/api/rest/v1/association-types` | association_types_get_list | Get a list of association types |
-| PATCH | `/api/rest/v1/association-types` | several_association_types_patch | Update/create several association types |
-| POST | `/api/rest/v1/association-types` | association_types_post | Create a new association type |
-| GET | `/api/rest/v1/association-types/{code}` | association_types_get | Get an association type |
-| PATCH | `/api/rest/v1/association-types/{code}` | association_types_patch | Update/create an association type |
-| GET | `/api/rest/v1/attribute-groups` | attribute_groups_get_list | Get list of attribute groups |
-| PATCH | `/api/rest/v1/attribute-groups` | several_attribute_groups_patch | Update/create several attribute groups |
-| POST | `/api/rest/v1/attribute-groups` | attribute_groups_post | Create a new attribute group |
-| GET | `/api/rest/v1/attribute-groups/{code}` | attribute_groups_get | Get an attribute group |
-| PATCH | `/api/rest/v1/attribute-groups/{code}` | attribute_groups_patch | Update/create an attribute group |
-| GET | `/api/rest/v1/attributes` | get_attributes | Get list of attributes |
-| PATCH | `/api/rest/v1/attributes` | patch_attributes | Update/create several attributes |
-| POST | `/api/rest/v1/attributes` | post_attributes | Create a new attribute |
-| GET | `/api/rest/v1/attributes/{attribute_code}/options` | get_attributes__attribute_code__options | Get list of attribute options |
-| PATCH | `/api/rest/v1/attributes/{attribute_code}/options` | patch_attributes__attribute_code__options | Update/create several attribute options |
-| POST | `/api/rest/v1/attributes/{attribute_code}/options` | post_attributes__attribute_code__options | Create a new attribute option |
-| GET | `/api/rest/v1/attributes/{attribute_code}/options/{code}` | get_attributes__attribute_code__options__code_ | Get an attribute option |
-| PATCH | `/api/rest/v1/attributes/{attribute_code}/options/{code}` | patch_attributes__attribute_code__options__code_ | Update/create an attribute option |
-| GET | `/api/rest/v1/attributes/{code}` | get_attributes__code_ | Get an attribute |
-| PATCH | `/api/rest/v1/attributes/{code}` | patch_attributes__code_ | Update/create an attribute |
-| GET | `/api/rest/v1/catalogs` | get_app_catalogs | Get the list of owned catalogs |
-| POST | `/api/rest/v1/catalogs` | post_app_catalog | Create a new catalog |
-| DELETE | `/api/rest/v1/catalogs/{id}` | delete_app_catalog | Delete a catalog |
-| GET | `/api/rest/v1/catalogs/{id}` | get_app_catalog | Get a catalog |
-| PATCH | `/api/rest/v1/catalogs/{id}` | patch_app_catalog | Update a catalog |
-| GET | `/api/rest/v1/catalogs/{id}/product-uuids` | get_app_catalog_product_uuids | Get the list of product uuids |
-| GET | `/api/rest/v1/catalogs/{id}/products` | get_app_catalog_products | Get the list of products related to a catalog |
-| GET | `/api/rest/v1/catalogs/{id}/products/{uuid}` | get_app_catalog_products_uuid | Get a product related to a catalog |
-| GET | `/api/rest/v1/categories` | get_categories | Get list of categories |
-| PATCH | `/api/rest/v1/categories` | patch_categories | Update/create several categories |
-| POST | `/api/rest/v1/categories` | post_categories | Create a new category |
-| GET | `/api/rest/v1/categories/{code}` | get_categories__code_ | Get a category |
-| PATCH | `/api/rest/v1/categories/{code}` | patch_categories__code_ | Update/create a category |
-| GET | `/api/rest/v1/category-media-files/{code}/download` | get_category_media_files__code__download | Download a category media file [COMING SOON] |
-| GET | `/api/rest/v1/channels` | get_channels | Get a list of channels |
-| PATCH | `/api/rest/v1/channels` | several_channels_patch | Update/create several channels |
-| POST | `/api/rest/v1/channels` | channels_post | Create a new channel |
-| GET | `/api/rest/v1/channels/{code}` | get_channels__code_ | Get a channel |
-| PATCH | `/api/rest/v1/channels/{code}` | channels_patch | Update/create a channel |
-| GET | `/api/rest/v1/currencies` | currencies_get_list | Get a list of currencies |
-| GET | `/api/rest/v1/currencies/{code}` | currencies_get | Get a currency |
-| GET | `/api/rest/v1/families` | get_families | Get list of families |
-| PATCH | `/api/rest/v1/families` | patch_families | Update/create several families |
-| POST | `/api/rest/v1/families` | post_families | Create a new family |
-| GET | `/api/rest/v1/families/{code}` | get_families__code_ | Get a family |
-| PATCH | `/api/rest/v1/families/{code}` | patch_families__code_ | Update/create a family |
-| GET | `/api/rest/v1/families/{family_code}/variants` | get_families__family_code__variants | Get list of family variants |
-| PATCH | `/api/rest/v1/families/{family_code}/variants` | patch_families__family_code__variants | Update/create several family variants |
-| POST | `/api/rest/v1/families/{family_code}/variants` | post_families__family_code__variants | Create a new family variant |
-| GET | `/api/rest/v1/families/{family_code}/variants/{code}` | get_families__family_code__variants__code__ | Get a family variant |
-| PATCH | `/api/rest/v1/families/{family_code}/variants/{code}` | patch_families__family_code__variants__code__ | Update/create a family variant |
-| GET | `/api/rest/v1/locales` | get_locales | Get a list of locales |
-| GET | `/api/rest/v1/locales/{code}` | get_locales__code_ | Get a locale |
-| GET | `/api/rest/v1/measure-families` | measure_families_get_list | Get list of measure familiy |
-| GET | `/api/rest/v1/measure-families/{code}` | measure_families_get | Get a measure family |
-| GET | `/api/rest/v1/measurement-families` | measurement_families_get_list | Get list of measurement families |
-| PATCH | `/api/rest/v1/measurement-families` | patch_measurement_families | Update/create several measurement families |
-| GET | `/api/rest/v1/media-files` | get_media_files | Get a list of product media files |
-| POST | `/api/rest/v1/media-files` | post_media_files | Create a new product media file |
-| GET | `/api/rest/v1/media-files/{code}` | get_media_files__code_ | Get a product media file |
-| GET | `/api/rest/v1/media-files/{code}/download` | get_media_files__code__download | Download a product media file |
-| GET | `/api/rest/v1/product-models` | get_product_models | Get list of product models |
-| PATCH | `/api/rest/v1/product-models` | patch_product_models | Update/create several product models |
-| POST | `/api/rest/v1/product-models` | post_product_models | Create a new product model |
-| DELETE | `/api/rest/v1/product-models/{code}` | delete_product_models__code_ | Delete a product model |
-| GET | `/api/rest/v1/product-models/{code}` | get_product_models__code_ | Get a product model |
-| PATCH | `/api/rest/v1/product-models/{code}` | patch_product_models__code_ | Update/create a product model |
-| GET | `/api/rest/v1/product-models/{code}/draft` | get_product_model_draft__code_ | Get a draft |
-| POST | `/api/rest/v1/product-models/{code}/proposal` | post_product_model_proposal | Submit a draft for approval |
-| GET | `/api/rest/v1/products` | get_products | Get list of products |
-| PATCH | `/api/rest/v1/products` | patch_products | Update/create several products |
-| POST | `/api/rest/v1/products` | post_products | Create a new product |
-| GET | `/api/rest/v1/products-uuid` | get_products_uuid | Get list of products |
-| PATCH | `/api/rest/v1/products-uuid` | patch_products_uuid | Update/create several products |
-| POST | `/api/rest/v1/products-uuid` | post_products_uuid | Create a new product |
-| DELETE | `/api/rest/v1/products-uuid/{uuid}` | delete_products_uuid__uuid_ | Delete a product |
-| GET | `/api/rest/v1/products-uuid/{uuid}` | get_products_uuid__uuid_ | Get a product |
-| PATCH | `/api/rest/v1/products-uuid/{uuid}` | patch_products_uuid__uuid_ | Update/create a product |
-| GET | `/api/rest/v1/products-uuid/{uuid}/draft` | get_draft_uuid__uuid_ | Get a draft |
-| POST | `/api/rest/v1/products-uuid/{uuid}/proposal` | post_proposal_uuid | Submit a draft for approval |
-| DELETE | `/api/rest/v1/products/{code}` | delete_products__code_ | Delete a product |
-| GET | `/api/rest/v1/products/{code}` | get_products__code_ | Get a product |
-| PATCH | `/api/rest/v1/products/{code}` | patch_products__code_ | Update/create a product |
-| GET | `/api/rest/v1/products/{code}/draft` | get_draft__code_ | Get a draft |
-| POST | `/api/rest/v1/products/{code}/proposal` | post_proposal | Submit a draft for approval |
-| GET | `/api/rest/v1/published-products` | get_published_products | Get list of published products |
-| GET | `/api/rest/v1/published-products/{code}` | get_published_products__code_ | Get a published product |
-| GET | `/api/rest/v1/reference-entities` | get_reference_entities | Get list of reference entities |
-| POST | `/api/rest/v1/reference-entities-media-files` | post_reference_entity_media_files | Create a new media file for a reference entity or a record |
-| GET | `/api/rest/v1/reference-entities-media-files/{code}` | get_reference_entity_media_files__code | Download the media file associated to a reference entity or a record |
-| GET | `/api/rest/v1/reference-entities/{code}` | get_reference_entities__code_ | Get a reference entity |
-| PATCH | `/api/rest/v1/reference-entities/{code}` | patch_reference_entity__code_ | Update/create a reference entity |
-| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes` | get_reference_entities__code__attributes | Get the list of attributes of a given reference entity |
-| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{attribute_code}/options` | get_reference_entity_attributes__attribute_code__options | Get a list of attribute options of a given attribute for a given reference entity |
-| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{attribute_code}/options/{code}` | get_reference_entity_attributes__attribute_code__options__code_ | Get an attribute option for a given attribute of a given reference entity |
-| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{attribute_code}/options/{code}` | patch_reference_entity_attributes__attribute_code__options__code_ | Update/create a reference entity attribute option |
-| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{code}` | get_reference_entity_attributes__code_ | Get an attribute of a given reference entity |
-| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{code}` | patch_reference_entity_attributes__code_ | Update/create an attribute of a given reference entity |
-| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/records` | get_reference_entity_records | Get the list of the records of a reference entity |
-| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/records` | patch_reference_entity_records | Update/create several reference entity records |
-| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/records/{code}` | get_reference_entity_records__code_ | Get a record of a given reference entity |
-| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/records/{code}` | patch_reference_entity_records__code_ | Update/create a record of a given reference entity |
-| GET | `/api/rest/v1/system-information` | get_system_information | Get system information |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/api/oauth/v1/token` | post_token | `Content-type`*, `Authorization`*, body: object | object |  | Get authentication token |
+| GET | `/api/rest/v1` | get_endpoints | — | object | yes | Get list of all endpoints |
+| GET | `/api/rest/v1/asset-categories` | get_asset_categories | `page`, `limit`, `with_count` | object | yes | Get list of PAM asset categories |
+| POST | `/api/rest/v1/asset-categories` | post_asset_categories | body: object | — |  | Create a new PAM asset category |
+| PATCH | `/api/rest/v1/asset-categories` | patch_asset_categories | body: object | object |  | Update/create several PAM asset categories |
+| GET | `/api/rest/v1/asset-categories/{code}` | get_asset_categories__code_ | `code`* | object | yes | Get a PAM asset category |
+| PATCH | `/api/rest/v1/asset-categories/{code}` | patch_asset_categories__code_ | `code`*, body*: object | — |  | Update/create a PAM asset category |
+| GET | `/api/rest/v1/asset-families` | get_asset_families | `search_after` | object | yes | Get list of asset families |
+| GET | `/api/rest/v1/asset-families/{asset_family_code}/assets` | get_assets | `search`, `channel`, `locales`, `asset_family_code`*, `search_after` | object | yes | Get the list of the assets of a given asset family |
+| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/assets` | patch_assets | `asset_family_code`*, body*: object[] | object[] |  | Update/create several assets |
+| GET | `/api/rest/v1/asset-families/{asset_family_code}/assets/{code}` | get_assets__code_ | `asset_family_code`*, `code`* | object | yes | Get an asset of a given asset family |
+| DELETE | `/api/rest/v1/asset-families/{asset_family_code}/assets/{code}` | delete_assets__code_ | `asset_family_code`*, `code`* | — |  | Delete an asset |
+| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/assets/{code}` | patch_asset__code_ | `asset_family_code`*, `code`*, body*: object | — |  | Update/create an asset |
+| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes` | get_asset_families__code__attributes | `asset_family_code`* | object[] | yes | Get the list of attributes of a given asset family |
+| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{attribute_code}/options` | get_asset_family_attributes__attribute_code__options | `asset_family_code`*, `attribute_code`* | object[] | yes | Get a list of attribute options of a given attribute for a given asset family |
+| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{attribute_code}/options/{code}` | get_asset_attributes__attribute_code__options__code_ | `asset_family_code`*, `attribute_code`*, `code`* | object | yes | Get an attribute option for a given attribute of a given asset family |
+| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{attribute_code}/options/{code}` | patch_asset_attributes__attribute_code__options__code_ | `asset_family_code`*, `attribute_code`*, `code`*, body*: object | — |  | Update/create an asset attribute option for a given asset family |
+| GET | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{code}` | get_asset_family_attributes__code_ | `asset_family_code`*, `code`* | object | yes | Get an attribute of a given asset family |
+| PATCH | `/api/rest/v1/asset-families/{asset_family_code}/attributes/{code}` | patch_asset_family_attributes__code_ | `asset_family_code`*, `code`*, body*: object | — |  | Update/create an attribute of a given asset family |
+| GET | `/api/rest/v1/asset-families/{code}` | get_asset_family__code_ | `code`* | object | yes | Get an asset family |
+| PATCH | `/api/rest/v1/asset-families/{code}` | patch_asset_family__code_ | `code`*, body*: object | — |  | Update/create an asset family |
+| POST | `/api/rest/v1/asset-media-files` | post_asset_media_files | `Content-type`*, body: object | — |  | Create a new media file for an asset |
+| GET | `/api/rest/v1/asset-media-files/{code}` | get_asset_media_files__code | `code`* | — | yes | Download the media file associated to an asset |
+| GET | `/api/rest/v1/asset-tags` | get_asset_tags | `page`, `limit`, `with_count` | object | yes | Get list of PAM asset tags |
+| GET | `/api/rest/v1/asset-tags/{code}` | get_asset_tags__code_ | `code`* | object | yes | Get a PAM asset tag |
+| PATCH | `/api/rest/v1/asset-tags/{code}` | patch_asset_tags__code_ | `code`*, body*: object | — |  | Update/create a PAM asset tag |
+| GET | `/api/rest/v1/assets` | get_pam_assets | `pagination_type`, `page`, `search_after`, `limit`, `with_count` | object | yes | Get list of PAM assets |
+| POST | `/api/rest/v1/assets` | post_pam_assets | body: object | — |  | Create a new PAM asset |
+| PATCH | `/api/rest/v1/assets` | patch_pam_assets | body: object | object |  | Update/create several PAM assets |
+| GET | `/api/rest/v1/assets/{asset_code}/reference-files/{locale_code}` | get_reference_files__locale_code_ | `asset_code`*, `locale_code`* | object | yes | Get a reference file |
+| POST | `/api/rest/v1/assets/{asset_code}/reference-files/{locale_code}` | post_reference_files__locale_code_ | `asset_code`*, `locale_code`*, `Content-type`*, body: object | object |  | Upload a new reference file |
+| GET | `/api/rest/v1/assets/{asset_code}/reference-files/{locale_code}/download` | get_reference_files__channel_code__locale_code__download | `asset_code`*, `locale_code`* | — | yes | Download a reference file |
+| GET | `/api/rest/v1/assets/{asset_code}/variation-files/{channel_code}/{locale_code}` | get_variation_files__channel_code__locale_code | `asset_code`*, `channel_code`*, `locale_code`* | object | yes | Get a variation file |
+| POST | `/api/rest/v1/assets/{asset_code}/variation-files/{channel_code}/{locale_code}` | post_variation_files__channel_code__locale_code_ | `asset_code`*, `channel_code`*, `locale_code`*, `Content-type`*, body: object | — |  | Upload a new variation file |
+| GET | `/api/rest/v1/assets/{asset_code}/variation-files/{channel_code}/{locale_code}/download` | get_variation_files__channel_code__locale_code__download | `asset_code`*, `channel_code`*, `locale_code`* | — | yes | Download a variation file |
+| GET | `/api/rest/v1/assets/{code}` | get_pam_assets__code_ | `code`* | object | yes | Get a PAM asset |
+| PATCH | `/api/rest/v1/assets/{code}` | patch_pam_assets__code_ | `code`*, body*: object | — |  | Update/create a PAM asset |
+| GET | `/api/rest/v1/association-types` | association_types_get_list | `page`, `limit`, `with_count` | object | yes | Get a list of association types |
+| POST | `/api/rest/v1/association-types` | association_types_post | body: object | — |  | Create a new association type |
+| PATCH | `/api/rest/v1/association-types` | several_association_types_patch | body: object | object |  | Update/create several association types |
+| GET | `/api/rest/v1/association-types/{code}` | association_types_get | `code`* | object | yes | Get an association type |
+| PATCH | `/api/rest/v1/association-types/{code}` | association_types_patch | `code`*, body*: object | — |  | Update/create an association type |
+| GET | `/api/rest/v1/attribute-groups` | attribute_groups_get_list | `search`, `page`, `limit`, `with_count` | object | yes | Get list of attribute groups |
+| POST | `/api/rest/v1/attribute-groups` | attribute_groups_post | body: object | — |  | Create a new attribute group |
+| PATCH | `/api/rest/v1/attribute-groups` | several_attribute_groups_patch | body: object | object |  | Update/create several attribute groups |
+| GET | `/api/rest/v1/attribute-groups/{code}` | attribute_groups_get | `code`* | object | yes | Get an attribute group |
+| PATCH | `/api/rest/v1/attribute-groups/{code}` | attribute_groups_patch | `code`*, body*: object | — |  | Update/create an attribute group |
+| GET | `/api/rest/v1/attributes` | get_attributes | `search`, `page`, `limit`, `with_count`, `with_table_select_options` | object | yes | Get list of attributes |
+| POST | `/api/rest/v1/attributes` | post_attributes | body: object | — |  | Create a new attribute |
+| PATCH | `/api/rest/v1/attributes` | patch_attributes | body: object | object |  | Update/create several attributes |
+| GET | `/api/rest/v1/attributes/{attribute_code}/options` | get_attributes__attribute_code__options | `attribute_code`*, `page`, `limit`, `with_count` | object | yes | Get list of attribute options |
+| POST | `/api/rest/v1/attributes/{attribute_code}/options` | post_attributes__attribute_code__options | `attribute_code`*, body: object | — |  | Create a new attribute option |
+| PATCH | `/api/rest/v1/attributes/{attribute_code}/options` | patch_attributes__attribute_code__options | `attribute_code`*, body: object | object |  | Update/create several attribute options |
+| GET | `/api/rest/v1/attributes/{attribute_code}/options/{code}` | get_attributes__attribute_code__options__code_ | `attribute_code`*, `code`* | object | yes | Get an attribute option |
+| PATCH | `/api/rest/v1/attributes/{attribute_code}/options/{code}` | patch_attributes__attribute_code__options__code_ | `attribute_code`*, `code`*, body*: object | — |  | Update/create an attribute option |
+| GET | `/api/rest/v1/attributes/{code}` | get_attributes__code_ | `code`*, `with_table_select_options` | object | yes | Get an attribute |
+| PATCH | `/api/rest/v1/attributes/{code}` | patch_attributes__code_ | `code`*, body*: object | — |  | Update/create an attribute |
+| GET | `/api/rest/v1/catalogs` | get_app_catalogs | `page`, `limit` | object | yes | Get the list of owned catalogs |
+| POST | `/api/rest/v1/catalogs` | post_app_catalog | body: object | object |  | Create a new catalog |
+| GET | `/api/rest/v1/catalogs/{id}` | get_app_catalog | `id`* | object | yes | Get a catalog |
+| DELETE | `/api/rest/v1/catalogs/{id}` | delete_app_catalog | `id`* | — |  | Delete a catalog |
+| PATCH | `/api/rest/v1/catalogs/{id}` | patch_app_catalog | `id`*, body: object | object |  | Update a catalog |
+| GET | `/api/rest/v1/catalogs/{id}/product-uuids` | get_app_catalog_product_uuids | `id`*, `search_after`, `limit`, `updated_before`, `updated_after` | object | yes | Get the list of product uuids |
+| GET | `/api/rest/v1/catalogs/{id}/products` | get_app_catalog_products | `id`*, `search_after`, `limit`, `updated_before`, `updated_after` | object | yes | Get the list of products related to a catalog |
+| GET | `/api/rest/v1/catalogs/{id}/products/{uuid}` | get_app_catalog_products_uuid | `id`*, `uuid`* | — | yes | Get a product related to a catalog |
+| GET | `/api/rest/v1/categories` | get_categories | `search`, `page`, `limit`, `with_count`, `with_position`, `with_enriched_attributes` | object | yes | Get list of categories |
+| POST | `/api/rest/v1/categories` | post_categories | body: object | — |  | Create a new category |
+| PATCH | `/api/rest/v1/categories` | patch_categories | body: object | object |  | Update/create several categories |
+| GET | `/api/rest/v1/categories/{code}` | get_categories__code_ | `code`*, `with_position`, `with_enriched_attributes` | object | yes | Get a category |
+| PATCH | `/api/rest/v1/categories/{code}` | patch_categories__code_ | `code`*, body*: object | — |  | Update/create a category |
+| GET | `/api/rest/v1/category-media-files/{code}/download` | get_category_media_files__code__download | `code`* | — | yes | Download a category media file [COMING SOON] |
+| GET | `/api/rest/v1/channels` | get_channels | `page`, `limit`, `with_count` | object | yes | Get a list of channels |
+| POST | `/api/rest/v1/channels` | channels_post | body: object | — |  | Create a new channel |
+| PATCH | `/api/rest/v1/channels` | several_channels_patch | body: object | object |  | Update/create several channels |
+| GET | `/api/rest/v1/channels/{code}` | get_channels__code_ | `code`* | object | yes | Get a channel |
+| PATCH | `/api/rest/v1/channels/{code}` | channels_patch | `code`*, body*: object | — |  | Update/create a channel |
+| GET | `/api/rest/v1/currencies` | currencies_get_list | `page`, `limit`, `with_count` | object | yes | Get a list of currencies |
+| GET | `/api/rest/v1/currencies/{code}` | currencies_get | `code`* | object | yes | Get a currency |
+| GET | `/api/rest/v1/families` | get_families | `search`, `page`, `limit`, `with_count` | object | yes | Get list of families |
+| POST | `/api/rest/v1/families` | post_families | body: object | — |  | Create a new family |
+| PATCH | `/api/rest/v1/families` | patch_families | body: object | object |  | Update/create several families |
+| GET | `/api/rest/v1/families/{code}` | get_families__code_ | `code`* | object | yes | Get a family |
+| PATCH | `/api/rest/v1/families/{code}` | patch_families__code_ | `code`*, body*: object | — |  | Update/create a family |
+| GET | `/api/rest/v1/families/{family_code}/variants` | get_families__family_code__variants | `family_code`*, `page`, `limit`, `with_count` | object | yes | Get list of family variants |
+| POST | `/api/rest/v1/families/{family_code}/variants` | post_families__family_code__variants | `family_code`*, body: object | — |  | Create a new family variant |
+| PATCH | `/api/rest/v1/families/{family_code}/variants` | patch_families__family_code__variants | `family_code`*, body: object | object |  | Update/create several family variants |
+| GET | `/api/rest/v1/families/{family_code}/variants/{code}` | get_families__family_code__variants__code__ | `family_code`*, `code`* | object | yes | Get a family variant |
+| PATCH | `/api/rest/v1/families/{family_code}/variants/{code}` | patch_families__family_code__variants__code__ | `family_code`*, `code`*, body*: object | — |  | Update/create a family variant |
+| GET | `/api/rest/v1/locales` | get_locales | `search`, `page`, `limit`, `with_count` | object | yes | Get a list of locales |
+| GET | `/api/rest/v1/locales/{code}` | get_locales__code_ | `code`* | object | yes | Get a locale |
+| GET | `/api/rest/v1/measure-families` | measure_families_get_list | — | object | yes | Get list of measure familiy |
+| GET | `/api/rest/v1/measure-families/{code}` | measure_families_get | `code`* | object | yes | Get a measure family |
+| GET | `/api/rest/v1/measurement-families` | measurement_families_get_list | — | object | yes | Get list of measurement families |
+| PATCH | `/api/rest/v1/measurement-families` | patch_measurement_families | body: object[] | object[] |  | Update/create several measurement families |
+| GET | `/api/rest/v1/media-files` | get_media_files | `page`, `limit`, `with_count` | object | yes | Get a list of product media files |
+| POST | `/api/rest/v1/media-files` | post_media_files | `Content-type`*, body: object | — |  | Create a new product media file |
+| GET | `/api/rest/v1/media-files/{code}` | get_media_files__code_ | `code`* | object | yes | Get a product media file |
+| GET | `/api/rest/v1/media-files/{code}/download` | get_media_files__code__download | `code`* | — | yes | Download a product media file |
+| GET | `/api/rest/v1/product-models` | get_product_models | `search`, `scope`, `locales`, `attributes`, `pagination_type`, `page`, `search_after`, `limit`, `with_count`, `with_quality_scores` | object | yes | Get list of product models |
+| POST | `/api/rest/v1/product-models` | post_product_models | body: object | — |  | Create a new product model |
+| PATCH | `/api/rest/v1/product-models` | patch_product_models | body: object | object |  | Update/create several product models |
+| GET | `/api/rest/v1/product-models/{code}` | get_product_models__code_ | `code`*, `with_quality_scores` | object | yes | Get a product model |
+| DELETE | `/api/rest/v1/product-models/{code}` | delete_product_models__code_ | `code`* | — |  | Delete a product model |
+| PATCH | `/api/rest/v1/product-models/{code}` | patch_product_models__code_ | `code`*, body*: object | — |  | Update/create a product model |
+| GET | `/api/rest/v1/product-models/{code}/draft` | get_product_model_draft__code_ | `code`* | object | yes | Get a draft |
+| POST | `/api/rest/v1/product-models/{code}/proposal` | post_product_model_proposal | `code`* | — |  | Submit a draft for approval |
+| GET | `/api/rest/v1/products` | get_products | `search`, `scope`, `locales`, `attributes`, `pagination_type`, `page`, `search_after`, `limit`, `with_count`, `with_attribute_options`, `with_quality_scores`, `with_completenesses` | object | yes | Get list of products |
+| POST | `/api/rest/v1/products` | post_products | body: object | — |  | Create a new product |
+| PATCH | `/api/rest/v1/products` | patch_products | body: object | object |  | Update/create several products |
+| GET | `/api/rest/v1/products-uuid` | get_products_uuid | `search`, `scope`, `locales`, `attributes`, `pagination_type`, `page`, `search_after`, `limit`, `with_count`, `with_attribute_options`, `with_quality_scores`, `with_completenesses` | object | yes | Get list of products |
+| POST | `/api/rest/v1/products-uuid` | post_products_uuid | body: object | — |  | Create a new product |
+| PATCH | `/api/rest/v1/products-uuid` | patch_products_uuid | body: object | object |  | Update/create several products |
+| GET | `/api/rest/v1/products-uuid/{uuid}` | get_products_uuid__uuid_ | `uuid`*, `with_attribute_options`, `with_quality_scores`, `with_completenesses` | object | yes | Get a product |
+| DELETE | `/api/rest/v1/products-uuid/{uuid}` | delete_products_uuid__uuid_ | `uuid`* | — |  | Delete a product |
+| PATCH | `/api/rest/v1/products-uuid/{uuid}` | patch_products_uuid__uuid_ | `uuid`*, body*: object | — |  | Update/create a product |
+| GET | `/api/rest/v1/products-uuid/{uuid}/draft` | get_draft_uuid__uuid_ | `uuid`* | object | yes | Get a draft |
+| POST | `/api/rest/v1/products-uuid/{uuid}/proposal` | post_proposal_uuid | `uuid`* | — |  | Submit a draft for approval |
+| GET | `/api/rest/v1/products/{code}` | get_products__code_ | `code`*, `with_attribute_options`, `with_quality_scores`, `with_completenesses` | object | yes | Get a product |
+| DELETE | `/api/rest/v1/products/{code}` | delete_products__code_ | `code`* | — |  | Delete a product |
+| PATCH | `/api/rest/v1/products/{code}` | patch_products__code_ | `code`*, body*: object | — |  | Update/create a product |
+| GET | `/api/rest/v1/products/{code}/draft` | get_draft__code_ | `code`* | object | yes | Get a draft |
+| POST | `/api/rest/v1/products/{code}/proposal` | post_proposal | `code`* | — |  | Submit a draft for approval |
+| GET | `/api/rest/v1/published-products` | get_published_products | `search`, `scope`, `locales`, `attributes`, `pagination_type`, `page`, `search_after`, `limit`, `with_count` | object | yes | Get list of published products |
+| GET | `/api/rest/v1/published-products/{code}` | get_published_products__code_ | `code`* | object | yes | Get a published product |
+| GET | `/api/rest/v1/reference-entities` | get_reference_entities | `search_after` | object | yes | Get list of reference entities |
+| POST | `/api/rest/v1/reference-entities-media-files` | post_reference_entity_media_files | `Content-type`*, body: object | — |  | Create a new media file for a reference entity or a record |
+| GET | `/api/rest/v1/reference-entities-media-files/{code}` | get_reference_entity_media_files__code | `code`* | — | yes | Download the media file associated to a reference entity or a record |
+| GET | `/api/rest/v1/reference-entities/{code}` | get_reference_entities__code_ | `code`* | object | yes | Get a reference entity |
+| PATCH | `/api/rest/v1/reference-entities/{code}` | patch_reference_entity__code_ | `code`*, body*: object | — |  | Update/create a reference entity |
+| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes` | get_reference_entities__code__attributes | `reference_entity_code`* | object[] | yes | Get the list of attributes of a given reference entity |
+| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{attribute_code}/options` | get_reference_entity_attributes__attribute_code__options | `reference_entity_code`*, `attribute_code`* | object[] | yes | Get a list of attribute options of a given attribute for a given reference entity |
+| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{attribute_code}/options/{code}` | get_reference_entity_attributes__attribute_code__options__code_ | `reference_entity_code`*, `attribute_code`*, `code`* | object | yes | Get an attribute option for a given attribute of a given reference entity |
+| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{attribute_code}/options/{code}` | patch_reference_entity_attributes__attribute_code__options__code_ | `reference_entity_code`*, `attribute_code`*, `code`*, body*: object | — |  | Update/create a reference entity attribute option |
+| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{code}` | get_reference_entity_attributes__code_ | `reference_entity_code`*, `code`* | object | yes | Get an attribute of a given reference entity |
+| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/attributes/{code}` | patch_reference_entity_attributes__code_ | `reference_entity_code`*, `code`*, body*: object | — |  | Update/create an attribute of a given reference entity |
+| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/records` | get_reference_entity_records | `search`, `channel`, `locales`, `reference_entity_code`*, `search_after` | object | yes | Get the list of the records of a reference entity |
+| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/records` | patch_reference_entity_records | `reference_entity_code`*, body*: object[] | object[] |  | Update/create several reference entity records |
+| GET | `/api/rest/v1/reference-entities/{reference_entity_code}/records/{code}` | get_reference_entity_records__code_ | `reference_entity_code`*, `code`* | object | yes | Get a record of a given reference entity |
+| PATCH | `/api/rest/v1/reference-entities/{reference_entity_code}/records/{code}` | patch_reference_entity_records__code_ | `reference_entity_code`*, `code`*, body*: object | — |  | Update/create a record of a given reference entity |
+| GET | `/api/rest/v1/system-information` | get_system_information | — | object | yes | Get system information |

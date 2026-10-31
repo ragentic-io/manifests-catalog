@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_adafruit_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `3b4d5e80af9782901ba8c48a2fc059d2ca15a399f71a68cca0e99f0735158648` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,76 +34,78 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_adafruit_profile_im
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/user` | currentUser | Get information about the current user |
-| POST | `/webhooks/feed/:token` | createWebhookFeedData | Send data to a feed via webhook URL. |
-| POST | `/webhooks/feed/:token/raw` | createRawWebhookFeedData | Send arbitrary data to a feed via webhook URL. |
-| DELETE | `/{username}/activities` | destroyActivities | All activities for current user |
-| GET | `/{username}/activities` | allActivities | All activities for current user |
-| GET | `/{username}/activities/{type}` | getActivity | Get activities by type for current user |
-| GET | `/{username}/dashboards` | allDashboards | All dashboards for current user |
-| POST | `/{username}/dashboards` | createDashboard | Create a new Dashboard |
-| GET | `/{username}/dashboards/{dashboard_id}/blocks` | allBlocks | All blocks for current user |
-| POST | `/{username}/dashboards/{dashboard_id}/blocks` | createBlock | Create a new Block |
-| DELETE | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | destroyBlock | Delete an existing Block |
-| GET | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | getBlock | Returns Block based on ID |
-| PATCH | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | updateBlock | Update properties of an existing Block |
-| PUT | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | replaceBlock | Replace an existing Block |
-| DELETE | `/{username}/dashboards/{id}` | destroyDashboard | Delete an existing Dashboard |
-| GET | `/{username}/dashboards/{id}` | getDashboard | Returns Dashboard based on ID |
-| PATCH | `/{username}/dashboards/{id}` | updateDashboard | Update properties of an existing Dashboard |
-| PUT | `/{username}/dashboards/{id}` | replaceDashboard | Replace an existing Dashboard |
-| GET | `/{username}/feeds` | allFeeds | All feeds for current user |
-| POST | `/{username}/feeds` | createFeed | Create a new Feed |
-| DELETE | `/{username}/feeds/{feed_key}` | destroyFeed | Delete an existing Feed |
-| GET | `/{username}/feeds/{feed_key}` | getFeed | Get feed by feed key |
-| PATCH | `/{username}/feeds/{feed_key}` | updateFeed | Update properties of an existing Feed |
-| PUT | `/{username}/feeds/{feed_key}` | replaceFeed | Replace an existing Feed |
-| GET | `/{username}/feeds/{feed_key}/data` | allData | Get all data for the given feed |
-| POST | `/{username}/feeds/{feed_key}/data` | createData | Create new Data |
-| POST | `/{username}/feeds/{feed_key}/data/batch` | batchCreateData | Create multiple new Data records |
-| GET | `/{username}/feeds/{feed_key}/data/chart` | chartData | Chart data for current feed |
-| GET | `/{username}/feeds/{feed_key}/data/first` | firstData | First Data in Queue |
-| GET | `/{username}/feeds/{feed_key}/data/last` | lastData | Last Data in Queue |
-| GET | `/{username}/feeds/{feed_key}/data/next` | nextData | Next Data in Queue |
-| GET | `/{username}/feeds/{feed_key}/data/previous` | previousData | Previous Data in Queue |
-| GET | `/{username}/feeds/{feed_key}/data/retain` | retainData | Last Data in MQTT CSV format |
-| DELETE | `/{username}/feeds/{feed_key}/data/{id}` | destroyData | Delete existing Data |
-| GET | `/{username}/feeds/{feed_key}/data/{id}` | getData | Returns data based on feed key |
-| PATCH | `/{username}/feeds/{feed_key}/data/{id}` | updateData | Update properties of existing Data |
-| PUT | `/{username}/feeds/{feed_key}/data/{id}` | replaceData | Replace existing Data |
-| GET | `/{username}/feeds/{feed_key}/details` | getFeedDetails | Get detailed feed by feed key |
-| GET | `/{username}/groups` | allGroups | All groups for current user |
-| POST | `/{username}/groups` | createGroup | Create a new Group |
-| DELETE | `/{username}/groups/{group_key}` | destroyGroup | Delete an existing Group |
-| GET | `/{username}/groups/{group_key}` | getGroup | Returns Group based on ID |
-| PATCH | `/{username}/groups/{group_key}` | updateGroup | Update properties of an existing Group |
-| PUT | `/{username}/groups/{group_key}` | replaceGroup | Replace an existing Group |
-| POST | `/{username}/groups/{group_key}/add` | addFeedToGroup | Add an existing Feed to a Group |
-| POST | `/{username}/groups/{group_key}/data` | createGroupData | Create new data for multiple feeds in a group |
-| GET | `/{username}/groups/{group_key}/feeds` | allGroupFeeds | All feeds for current user in a given group |
-| POST | `/{username}/groups/{group_key}/feeds` | createGroupFeed | Create a new Feed in a Group |
-| GET | `/{username}/groups/{group_key}/feeds/{feed_key}/data` | allGroupFeedData | All data for current feed in a specific group |
-| POST | `/{username}/groups/{group_key}/feeds/{feed_key}/data` | createGroupFeedData | Create new Data in a feed belonging to a particular group |
-| POST | `/{username}/groups/{group_key}/feeds/{feed_key}/data/batch` | batchCreateGroupFeedData | Create multiple new Data records in a feed belonging to a particular group |
-| POST | `/{username}/groups/{group_key}/remove` | removeFeedFromGroup | Remove a Feed from a Group |
-| GET | `/{username}/throttle` | getCurrentUserThrottle | Get the user's data rate limit and current activity level. |
-| GET | `/{username}/tokens` | allTokens | All tokens for current user |
-| POST | `/{username}/tokens` | createToken | Create a new Token |
-| DELETE | `/{username}/tokens/{id}` | destroyToken | Delete an existing Token |
-| GET | `/{username}/tokens/{id}` | getToken | Returns Token based on ID |
-| PATCH | `/{username}/tokens/{id}` | updateToken | Update properties of an existing Token |
-| PUT | `/{username}/tokens/{id}` | replaceToken | Replace an existing Token |
-| GET | `/{username}/triggers` | allTriggers | All triggers for current user |
-| POST | `/{username}/triggers` | createTrigger | Create a new Trigger |
-| DELETE | `/{username}/triggers/{id}` | destroyTrigger | Delete an existing Trigger |
-| GET | `/{username}/triggers/{id}` | getTrigger | Returns Trigger based on ID |
-| PATCH | `/{username}/triggers/{id}` | updateTrigger | Update properties of an existing Trigger |
-| PUT | `/{username}/triggers/{id}` | replaceTrigger | Replace an existing Trigger |
-| GET | `/{username}/{type}/{type_id}/acl` | allPermissions | All permissions for current user and type |
-| POST | `/{username}/{type}/{type_id}/acl` | createPermission | Create a new Permission |
-| DELETE | `/{username}/{type}/{type_id}/acl/{id}` | destroyPermission | Delete an existing Permission |
-| GET | `/{username}/{type}/{type_id}/acl/{id}` | getPermission | Returns Permission based on ID |
-| PATCH | `/{username}/{type}/{type_id}/acl/{id}` | updatePermission | Update properties of an existing Permission |
-| PUT | `/{username}/{type}/{type_id}/acl/{id}` | replacePermission | Replace an existing Permission |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/user` | currentUser | — | User | yes | Get information about the current user |
+| POST | `/webhooks/feed/:token` | createWebhookFeedData | body*: object | Data |  | Send data to a feed via webhook URL. |
+| POST | `/webhooks/feed/:token/raw` | createRawWebhookFeedData | — | Data |  | Send arbitrary data to a feed via webhook URL. |
+| GET | `/{username}/activities` | allActivities | `username`*, `start_time`, `end_time`, `limit` | Activity[] | yes | All activities for current user |
+| DELETE | `/{username}/activities` | destroyActivities | `username`* | — |  | All activities for current user |
+| GET | `/{username}/activities/{type}` | getActivity | `username`*, `type`*, `start_time`, `end_time`, `limit` | Activity[] | yes | Get activities by type for current user |
+| GET | `/{username}/dashboards` | allDashboards | `username`* | Dashboard[] | yes | All dashboards for current user |
+| POST | `/{username}/dashboards` | createDashboard | `username`*, body*: object | Dashboard |  | Create a new Dashboard |
+| GET | `/{username}/dashboards/{dashboard_id}/blocks` | allBlocks | `username`*, `dashboard_id`* | Block[] | yes | All blocks for current user |
+| POST | `/{username}/dashboards/{dashboard_id}/blocks` | createBlock | `username`*, `dashboard_id`*, body*: object | Block |  | Create a new Block |
+| GET | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | getBlock | `username`*, `dashboard_id`*, `id`* | Block | yes | Returns Block based on ID |
+| PUT | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | replaceBlock | `username`*, `dashboard_id`*, `id`*, body*: object | Block |  | Replace an existing Block |
+| DELETE | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | destroyBlock | `username`*, `dashboard_id`*, `id`* | string |  | Delete an existing Block |
+| PATCH | `/{username}/dashboards/{dashboard_id}/blocks/{id}` | updateBlock | `username`*, `dashboard_id`*, `id`*, body*: object | Block |  | Update properties of an existing Block |
+| GET | `/{username}/dashboards/{id}` | getDashboard | `username`*, `id`* | Dashboard | yes | Returns Dashboard based on ID |
+| PUT | `/{username}/dashboards/{id}` | replaceDashboard | `username`*, `id`*, body*: object | Dashboard |  | Replace an existing Dashboard |
+| DELETE | `/{username}/dashboards/{id}` | destroyDashboard | `username`*, `id`* | string |  | Delete an existing Dashboard |
+| PATCH | `/{username}/dashboards/{id}` | updateDashboard | `username`*, `id`*, body*: object | Dashboard |  | Update properties of an existing Dashboard |
+| GET | `/{username}/feeds` | allFeeds | `username`* | Feed[] | yes | All feeds for current user |
+| POST | `/{username}/feeds` | createFeed | `username`*, `group_key`, body*: object | Feed |  | Create a new Feed |
+| GET | `/{username}/feeds/{feed_key}` | getFeed | `username`*, `feed_key`* | Feed | yes | Get feed by feed key |
+| PUT | `/{username}/feeds/{feed_key}` | replaceFeed | `username`*, `feed_key`*, body*: object | Feed |  | Replace an existing Feed |
+| DELETE | `/{username}/feeds/{feed_key}` | destroyFeed | `username`*, `feed_key`* | — |  | Delete an existing Feed |
+| PATCH | `/{username}/feeds/{feed_key}` | updateFeed | `username`*, `feed_key`*, body*: object | Feed |  | Update properties of an existing Feed |
+| GET | `/{username}/feeds/{feed_key}/data` | allData | `username`*, `feed_key`*, `start_time`, `end_time`, `limit`, `include` | DataResponse[] | yes | Get all data for the given feed |
+| POST | `/{username}/feeds/{feed_key}/data` | createData | `username`*, `feed_key`*, body*: object | Data |  | Create new Data |
+| POST | `/{username}/feeds/{feed_key}/data/batch` | batchCreateData | `username`*, `feed_key`*, body*: object[] | DataResponse[] |  | Create multiple new Data records |
+| GET | `/{username}/feeds/{feed_key}/data/chart` | chartData | `username`*, `feed_key`*, `start_time`, `end_time`, `resolution`, `hours` | object | yes | Chart data for current feed |
+| GET | `/{username}/feeds/{feed_key}/data/first` | firstData | `username`*, `feed_key`*, `include` | DataResponse | yes | First Data in Queue |
+| GET | `/{username}/feeds/{feed_key}/data/last` | lastData | `username`*, `feed_key`*, `include` | DataResponse | yes | Last Data in Queue |
+| GET | `/{username}/feeds/{feed_key}/data/next` | nextData | `username`*, `feed_key`*, `include` | DataResponse | yes | Next Data in Queue |
+| GET | `/{username}/feeds/{feed_key}/data/previous` | previousData | `username`*, `feed_key`*, `include` | DataResponse | yes | Previous Data in Queue |
+| GET | `/{username}/feeds/{feed_key}/data/retain` | retainData | `username`*, `feed_key`* | string | yes | Last Data in MQTT CSV format |
+| GET | `/{username}/feeds/{feed_key}/data/{id}` | getData | `username`*, `feed_key`*, `id`*, `include` | DataResponse | yes | Returns data based on feed key |
+| PUT | `/{username}/feeds/{feed_key}/data/{id}` | replaceData | `username`*, `feed_key`*, `id`*, body*: object | DataResponse |  | Replace existing Data |
+| DELETE | `/{username}/feeds/{feed_key}/data/{id}` | destroyData | `username`*, `feed_key`*, `id`* | string |  | Delete existing Data |
+| PATCH | `/{username}/feeds/{feed_key}/data/{id}` | updateData | `username`*, `feed_key`*, `id`*, body*: object | DataResponse |  | Update properties of existing Data |
+| GET | `/{username}/feeds/{feed_key}/details` | getFeedDetails | `username`*, `feed_key`* | Feed | yes | Get detailed feed by feed key |
+| GET | `/{username}/groups` | allGroups | `username`* | Group[] | yes | All groups for current user |
+| POST | `/{username}/groups` | createGroup | `username`*, body*: object | Group |  | Create a new Group |
+| GET | `/{username}/groups/{group_key}` | getGroup | `username`*, `group_key`* | Group | yes | Returns Group based on ID |
+| PUT | `/{username}/groups/{group_key}` | replaceGroup | `username`*, `group_key`*, body*: object | Group |  | Replace an existing Group |
+| DELETE | `/{username}/groups/{group_key}` | destroyGroup | `username`*, `group_key`* | string |  | Delete an existing Group |
+| PATCH | `/{username}/groups/{group_key}` | updateGroup | `username`*, `group_key`*, body*: object | Group |  | Update properties of an existing Group |
+| POST | `/{username}/groups/{group_key}/add` | addFeedToGroup | `group_key`*, `username`*, `feed_key` | Group |  | Add an existing Feed to a Group |
+| POST | `/{username}/groups/{group_key}/data` | createGroupData | `username`*, `group_key`*, body*: object | DataResponse[] |  | Create new data for multiple feeds in a group |
+| GET | `/{username}/groups/{group_key}/feeds` | allGroupFeeds | `group_key`*, `username`* | Feed[] | yes | All feeds for current user in a given group |
+| POST | `/{username}/groups/{group_key}/feeds` | createGroupFeed | `username`*, `group_key`*, body*: object | Feed |  | Create a new Feed in a Group |
+| GET | `/{username}/groups/{group_key}/feeds/{feed_key}/data` | allGroupFeedData | `username`*, `group_key`*, `feed_key`*, `start_time`, `end_time`, `limit` | DataResponse[] | yes | All data for current feed in a specific group |
+| POST | `/{username}/groups/{group_key}/feeds/{feed_key}/data` | createGroupFeedData | `username`*, `group_key`*, `feed_key`*, body*: object | DataResponse |  | Create new Data in a feed belonging to a particular group |
+| POST | `/{username}/groups/{group_key}/feeds/{feed_key}/data/batch` | batchCreateGroupFeedData | `username`*, `group_key`*, `feed_key`*, body*: object[] | DataResponse[] |  | Create multiple new Data records in a feed belonging to a particular group |
+| POST | `/{username}/groups/{group_key}/remove` | removeFeedFromGroup | `group_key`*, `username`*, `feed_key` | Group |  | Remove a Feed from a Group |
+| GET | `/{username}/throttle` | getCurrentUserThrottle | `username`* | object | yes | Get the user's data rate limit and current activity level. |
+| GET | `/{username}/tokens` | allTokens | `username`* | Token[] | yes | All tokens for current user |
+| POST | `/{username}/tokens` | createToken | `username`*, body*: object | Token |  | Create a new Token |
+| GET | `/{username}/tokens/{id}` | getToken | `username`*, `id`* | Token | yes | Returns Token based on ID |
+| PUT | `/{username}/tokens/{id}` | replaceToken | `username`*, `id`*, body*: object | Token |  | Replace an existing Token |
+| DELETE | `/{username}/tokens/{id}` | destroyToken | `username`*, `id`* | string |  | Delete an existing Token |
+| PATCH | `/{username}/tokens/{id}` | updateToken | `username`*, `id`*, body*: object | Token |  | Update properties of an existing Token |
+| GET | `/{username}/triggers` | allTriggers | `username`* | Trigger[] | yes | All triggers for current user |
+| POST | `/{username}/triggers` | createTrigger | `username`*, body*: object | Trigger |  | Create a new Trigger |
+| GET | `/{username}/triggers/{id}` | getTrigger | `username`*, `id`* | Trigger | yes | Returns Trigger based on ID |
+| PUT | `/{username}/triggers/{id}` | replaceTrigger | `username`*, `id`*, body*: object | Trigger |  | Replace an existing Trigger |
+| DELETE | `/{username}/triggers/{id}` | destroyTrigger | `username`*, `id`* | string |  | Delete an existing Trigger |
+| PATCH | `/{username}/triggers/{id}` | updateTrigger | `username`*, `id`*, body*: object | Trigger |  | Update properties of an existing Trigger |
+| GET | `/{username}/{type}/{type_id}/acl` | allPermissions | `username`*, `type`*, `type_id`* | Permission[] | yes | All permissions for current user and type |
+| POST | `/{username}/{type}/{type_id}/acl` | createPermission | `username`*, `type`*, `type_id`*, body*: object | Permission |  | Create a new Permission |
+| GET | `/{username}/{type}/{type_id}/acl/{id}` | getPermission | `username`*, `type`*, `type_id`*, `id`* | Permission | yes | Returns Permission based on ID |
+| PUT | `/{username}/{type}/{type_id}/acl/{id}` | replacePermission | `username`*, `type`*, `type_id`*, `id`*, body*: object | Permission |  | Replace an existing Permission |
+| DELETE | `/{username}/{type}/{type_id}/acl/{id}` | destroyPermission | `username`*, `type`*, `type_id`*, `id`* | string |  | Delete an existing Permission |
+| PATCH | `/{username}/{type}/{type_id}/acl/{id}` | updatePermission | `username`*, `type`*, `type_id`*, `id`*, body*: object | Permission |  | Update properties of an existing Permission |

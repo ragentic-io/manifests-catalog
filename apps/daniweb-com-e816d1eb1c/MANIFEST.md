@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_DaniWeb_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `5193b67bf6cd2e0b50bc4c6457305437fe8723eecf97b4b1a44eae460a7259f6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,72 +34,74 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_DaniWeb_profile_ima
 
 82 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/apps` | get /apps | — |
-| GET | `/apps/{ID}` | get /apps/{ID} | — |
-| GET | `/audiences` | get /audiences | — |
-| GET | `/audiences/{ID}` | get /audiences/{ID} | — |
-| POST | `/audiences/{ID}/memberships` | post /audiences/{ID}/memberships | — |
-| GET | `/autocompletes` | get /autocompletes | — |
-| POST | `/conversations/schedules` | post /conversations/schedules | — |
-| POST | `/conversations/searches` | post /conversations/searches | — |
-| GET | `/conversations/statuses` | get /conversations/statuses | — |
-| GET | `/conversations/{ID}` | get /conversations/{ID} | — |
-| GET | `/conversations/{ID}/messages` | get /conversations/{ID}/messages | — |
-| POST | `/conversations/{ID}/messages` | post /conversations/{ID}/messages | — |
-| POST | `/conversations/{ID}/schedules` | post /conversations/{ID}/schedules | — |
-| POST | `/conversations/{ID}/searches` | post /conversations/{ID}/searches | — |
-| GET | `/conversations/{ID}/statuses` | get /conversations/{ID}/statuses | — |
-| PATCH | `/conversations/{ID}/statuses` | patch /conversations/{ID}/statuses | — |
-| GET | `/groups` | get /groups | — |
-| POST | `/groups` | post /groups | — |
-| POST | `/groups/messages/metadata/filters` | post /groups/messages/metadata/filters | — |
-| DELETE | `/groups/messages/{ID}` | delete /groups/messages/{ID} | — |
-| GET | `/groups/messages/{ID}` | get /groups/messages/{ID} | — |
-| GET | `/groups/messages/{ID}/metadata` | get /groups/messages/{ID}/metadata | — |
-| POST | `/groups/messages/{ID}/metadata` | post /groups/messages/{ID}/metadata | — |
-| GET | `/groups/messages/{ID}/metadata/collections` | get /groups/messages/{ID}/metadata/collections | — |
-| POST | `/groups/schedules` | post /groups/schedules | — |
-| GET | `/groups/statuses` | get /groups/statuses | — |
-| GET | `/groups/{ID}` | get /groups/{ID} | — |
-| PATCH | `/groups/{ID}` | patch /groups/{ID} | — |
-| DELETE | `/groups/{ID}/memberships` | delete /groups/{ID}/memberships | — |
-| GET | `/groups/{ID}/memberships` | get /groups/{ID}/memberships | — |
-| PATCH | `/groups/{ID}/memberships` | patch /groups/{ID}/memberships | — |
-| POST | `/groups/{ID}/memberships` | post /groups/{ID}/memberships | — |
-| GET | `/groups/{ID}/messages` | get /groups/{ID}/messages | — |
-| POST | `/groups/{ID}/messages` | post /groups/{ID}/messages | — |
-| POST | `/groups/{ID}/schedules` | post /groups/{ID}/schedules | — |
-| GET | `/groups/{ID}/statuses` | get /groups/{ID}/statuses | — |
-| GET | `/industries` | get /industries | — |
-| POST | `/markdown` | post /markdown | — |
-| GET | `/markdown/emoticons` | get /markdown/emoticons | — |
-| POST | `/messages/metadata/filters` | post /messages/metadata/filters | — |
-| GET | `/messages/{ID}` | get /messages/{ID} | — |
-| GET | `/messages/{ID}/metadata` | get /messages/{ID}/metadata | — |
-| POST | `/messages/{ID}/metadata` | post /messages/{ID}/metadata | — |
-| GET | `/messages/{ID}/metadata/collections` | get /messages/{ID}/metadata/collections | — |
-| POST | `/positions` | post /positions | — |
-| DELETE | `/positions/{ID}` | delete /positions/{ID} | — |
-| PATCH | `/positions/{ID}` | patch /positions/{ID} | — |
-| GET | `/users` | get /users | — |
-| POST | `/users/invites` | post /users/invites | — |
-| POST | `/users/metadata/filters` | post /users/metadata/filters | — |
-| GET | `/users/nearby` | get /users/nearby | — |
-| POST | `/users/searches` | post /users/searches | — |
-| GET | `/users/{ID}` | get /users/{ID} | — |
-| GET | `/users/{ID}/groups` | get /users/{ID}/groups | — |
-| GET | `/users/{ID}/groups/messages` | get /users/{ID}/groups/messages | — |
-| POST | `/users/{ID}/messages` | post /users/{ID}/messages | — |
-| GET | `/users/{ID}/metadata` | get /users/{ID}/metadata | — |
-| POST | `/users/{ID}/metadata` | post /users/{ID}/metadata | — |
-| GET | `/users/{ID}/metadata/collections` | get /users/{ID}/metadata/collections | — |
-| GET | `/users/{ID}/positions` | get /users/{ID}/positions | — |
-| GET | `/users/{ID}/synergies` | get /users/{ID}/synergies | — |
-| PATCH | `/users/{ID}/synergies` | patch /users/{ID}/synergies | — |
-| GET | `/users/~` | get /users/~ | — |
-| PATCH | `/users/~` | patch /users/~ | — |
-| GET | `/webhooks` | get /webhooks | — |
-| POST | `/webhooks` | post /webhooks | — |
-| DELETE | `/webhooks/{ID}` | delete /webhooks/{ID} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/apps` | get /apps | `offset`, `limit` | Endpoint-get-apps | yes | — |
+| GET | `/apps/{ID}` | get /apps/{ID} | `ID`* | Endpoint-get-apps-ID | yes | — |
+| GET | `/audiences` | get /audiences | `offset`, `limit` | Endpoint-get-audiences | yes | — |
+| GET | `/audiences/{ID}` | get /audiences/{ID} | `ID`* | Endpoint-get-audiences-ID | yes | — |
+| POST | `/audiences/{ID}/memberships` | post /audiences/{ID}/memberships | `ID`* | Endpoint-post-audiences-ID-memberships |  | — |
+| GET | `/autocompletes` | get /autocompletes | `query` | Endpoint-get-autocompletes | yes | — |
+| POST | `/conversations/schedules` | post /conversations/schedules | body: object | Endpoint-post-conversations-schedules |  | — |
+| POST | `/conversations/searches` | post /conversations/searches | body*: object | Endpoint-post-conversations-searches |  | — |
+| GET | `/conversations/statuses` | get /conversations/statuses | `filter`, `include_archived`, `bubbled`, `offset`, `limit` | Endpoint-get-conversations-statuses | yes | — |
+| GET | `/conversations/{ID}` | get /conversations/{ID} | `ID`* | Endpoint-get-conversations-ID | yes | — |
+| GET | `/conversations/{ID}/messages` | get /conversations/{ID}/messages | `ID`*, `gt_message_id`, `exclude_self`, `date`, `bubbled`, `record_seen`, `timeout`, `offset`, `limit` | Endpoint-get-conversations-ID-messages | yes | — |
+| POST | `/conversations/{ID}/messages` | post /conversations/{ID}/messages | `ID`*, body*: object | Endpoint-post-conversations-ID-messages |  | — |
+| POST | `/conversations/{ID}/schedules` | post /conversations/{ID}/schedules | `ID`*, body: object | Endpoint-post-conversations-ID-schedules |  | — |
+| POST | `/conversations/{ID}/searches` | post /conversations/{ID}/searches | `ID`*, body*: object | Endpoint-post-conversations-ID-searches |  | — |
+| GET | `/conversations/{ID}/statuses` | get /conversations/{ID}/statuses | `ID`* | Endpoint-get-conversations-ID-statuses | yes | — |
+| PATCH | `/conversations/{ID}/statuses` | patch /conversations/{ID}/statuses | `ID`*, body*: object | Endpoint-patch-conversations-ID-statuses |  | — |
+| GET | `/groups` | get /groups | `offset`, `limit` | Endpoint-get-groups | yes | — |
+| POST | `/groups` | post /groups | body*: object | Endpoint-post-groups |  | — |
+| POST | `/groups/messages/metadata/filters` | post /groups/messages/metadata/filters | body: object | Endpoint-post-groups-messages-metadata-filters |  | — |
+| GET | `/groups/messages/{ID}` | get /groups/messages/{ID} | `ID`* | Endpoint-get-groups-messages-ID | yes | — |
+| DELETE | `/groups/messages/{ID}` | delete /groups/messages/{ID} | `ID`* | Endpoint-delete-groups-messages-ID |  | — |
+| GET | `/groups/messages/{ID}/metadata` | get /groups/messages/{ID}/metadata | `ID`*, `offset`, `limit` | Endpoint-get-groups-messages-ID-metadata | yes | — |
+| POST | `/groups/messages/{ID}/metadata` | post /groups/messages/{ID}/metadata | `ID`*, body: object | Endpoint-post-groups-messages-ID-metadata |  | — |
+| GET | `/groups/messages/{ID}/metadata/collections` | get /groups/messages/{ID}/metadata/collections | `ID`* | Endpoint-get-groups-messages-ID-metadata-collections | yes | — |
+| POST | `/groups/schedules` | post /groups/schedules | body: object | Endpoint-post-groups-schedules |  | — |
+| GET | `/groups/statuses` | get /groups/statuses | `existing_membership`, `offset`, `limit` | Endpoint-get-groups-statuses | yes | — |
+| GET | `/groups/{ID}` | get /groups/{ID} | `ID`* | Endpoint-get-groups-ID | yes | — |
+| PATCH | `/groups/{ID}` | patch /groups/{ID} | `ID`*, body: object | Endpoint-patch-groups-ID |  | — |
+| GET | `/groups/{ID}/memberships` | get /groups/{ID}/memberships | `ID`*, `moderators_only`, `offset` | Endpoint-get-groups-ID-memberships | yes | — |
+| POST | `/groups/{ID}/memberships` | post /groups/{ID}/memberships | `ID`*, body: object | Endpoint-post-groups-ID-memberships |  | — |
+| DELETE | `/groups/{ID}/memberships` | delete /groups/{ID}/memberships | `ID`* | Endpoint-delete-groups-ID-memberships |  | — |
+| PATCH | `/groups/{ID}/memberships` | patch /groups/{ID}/memberships | `ID`*, body*: object | Endpoint-patch-groups-ID-memberships |  | — |
+| GET | `/groups/{ID}/messages` | get /groups/{ID}/messages | `ID`*, `gt_message_id`, `exclude_self`, `include_deleted`, `date`, `bubbled`, `record_seen`, `timeout`, `offset`, `limit` | Endpoint-get-groups-ID-messages | yes | — |
+| POST | `/groups/{ID}/messages` | post /groups/{ID}/messages | `ID`*, body*: object | Endpoint-post-groups-ID-messages |  | — |
+| POST | `/groups/{ID}/schedules` | post /groups/{ID}/schedules | `ID`*, body: object | Endpoint-post-groups-ID-schedules |  | — |
+| GET | `/groups/{ID}/statuses` | get /groups/{ID}/statuses | `ID`* | Endpoint-get-groups-ID-statuses | yes | — |
+| GET | `/industries` | get /industries | — | Endpoint-get-industries | yes | — |
+| POST | `/markdown` | post /markdown | body*: object | Endpoint-post-markdown |  | — |
+| GET | `/markdown/emoticons` | get /markdown/emoticons | — | Endpoint-get-markdown-emoticons | yes | — |
+| POST | `/messages/metadata/filters` | post /messages/metadata/filters | body: object | Endpoint-post-messages-metadata-filters |  | — |
+| GET | `/messages/{ID}` | get /messages/{ID} | `ID`* | Endpoint-get-messages-ID | yes | — |
+| GET | `/messages/{ID}/metadata` | get /messages/{ID}/metadata | `ID`*, `offset`, `limit` | Endpoint-get-messages-ID-metadata | yes | — |
+| POST | `/messages/{ID}/metadata` | post /messages/{ID}/metadata | `ID`*, body: object | Endpoint-post-messages-ID-metadata |  | — |
+| GET | `/messages/{ID}/metadata/collections` | get /messages/{ID}/metadata/collections | `ID`* | Endpoint-get-messages-ID-metadata-collections | yes | — |
+| POST | `/positions` | post /positions | body*: object | Endpoint-post-positions |  | — |
+| DELETE | `/positions/{ID}` | delete /positions/{ID} | `ID`* | Endpoint-delete-positions-ID |  | — |
+| PATCH | `/positions/{ID}` | patch /positions/{ID} | `ID`*, body*: object | Endpoint-patch-positions-ID |  | — |
+| GET | `/users` | get /users | `filter`, `order_by`, `bubbled`, `offset`, `limit` | Endpoint-get-users | yes | — |
+| POST | `/users/invites` | post /users/invites | body: object | Endpoint-post-users-invites |  | — |
+| POST | `/users/metadata/filters` | post /users/metadata/filters | body: object | Endpoint-post-users-metadata-filters |  | — |
+| GET | `/users/nearby` | get /users/nearby | `latitude`, `longitude`, `offset`, `limit` | Endpoint-get-users-nearby | yes | — |
+| POST | `/users/searches` | post /users/searches | body: object | Endpoint-post-users-searches |  | — |
+| GET | `/users/{ID}` | get /users/{ID} | `ID`* | Endpoint-get-users-ID | yes | — |
+| GET | `/users/{ID}/groups` | get /users/{ID}/groups | `ID`* | Endpoint-get-users-ID-groups | yes | — |
+| GET | `/users/{ID}/groups/messages` | get /users/{ID}/groups/messages | `ID`*, `offset`, `limit` | Endpoint-get-users-ID-groups-messages | yes | — |
+| POST | `/users/{ID}/messages` | post /users/{ID}/messages | `ID`*, body: object | Endpoint-post-users-ID-messages |  | — |
+| GET | `/users/{ID}/metadata` | get /users/{ID}/metadata | `ID`*, `offset`, `limit` | Endpoint-get-users-ID-metadata | yes | — |
+| POST | `/users/{ID}/metadata` | post /users/{ID}/metadata | `ID`*, body: object | Endpoint-post-users-ID-metadata |  | — |
+| GET | `/users/{ID}/metadata/collections` | get /users/{ID}/metadata/collections | `ID`* | Endpoint-get-users-ID-metadata-collections | yes | — |
+| GET | `/users/{ID}/positions` | get /users/{ID}/positions | `ID`*, `bubbled` | Endpoint-get-users-ID-positions | yes | — |
+| GET | `/users/{ID}/synergies` | get /users/{ID}/synergies | `ID`* | Endpoint-get-users-ID-synergies | yes | — |
+| PATCH | `/users/{ID}/synergies` | patch /users/{ID}/synergies | `ID`*, body: object | Endpoint-patch-users-ID-synergies |  | — |
+| GET | `/users/~` | get /users/~ | — | Endpoint-get-users-- | yes | — |
+| PATCH | `/users/~` | patch /users/~ | body: object | Endpoint-patch-users-- |  | — |
+| GET | `/webhooks` | get /webhooks | — | Endpoint-get-webhooks | yes | — |
+| POST | `/webhooks` | post /webhooks | body*: object | Endpoint-post-webhooks |  | — |
+| DELETE | `/webhooks/{ID}` | delete /webhooks/{ID} | `ID`* | Endpoint-delete-webhooks-ID |  | — |

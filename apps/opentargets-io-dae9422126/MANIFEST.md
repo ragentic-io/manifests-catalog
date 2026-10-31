@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.targetvalidation.org_imgs_l
 
 | | |
 | --- | --- |
-| Signed bundle | `769fa5a1a667f485ddda58abb099f66e23d6ec2fb44f413ccb798964d1710c3a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,36 +32,38 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.targetvalidation.org_imgs_l
 
 ## Operations (31)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/platform/docs` | getApiDocs | Browse API documentation |
-| GET | `/platform/docs/swagger-ui` | getApiSwaggerUI | Browse interactive API documentation |
-| GET | `/platform/private/autocomplete` | getAutocomplete | Get `autocomplete` objects. |
-| POST | `/platform/private/besthitsearch` | postBestHitSearch | Find the best hit |
-| POST | `/platform/private/disease` | postDiseaseById | Find information about a list of diseases |
-| GET | `/platform/private/disease/{disease}` | getDiseaseById | Find information about a disease |
-| GET | `/platform/private/drug/{DRUG_ID}` | getDrugByID | Get drug by ID |
-| GET | `/platform/private/eco/{ECO_ID}` | getECObyID | Get evidence code by ID |
-| POST | `/platform/private/enrichment/targets` | postEnrichmentTarget | Enrichment analysis |
-| GET | `/platform/private/quicksearch` | getQuickSearch | Search most relevant results |
-| POST | `/platform/private/relation` | postRelation | Find related entities |
-| GET | `/platform/private/relation/disease/{disease}` | getRelationByEFOID | Find related entities by disease |
-| GET | `/platform/private/relation/target/{target}` | getRelationByENSGID | Find related entities by target |
-| POST | `/platform/private/target` | postTargetByENSGID | Find information about a list of targets |
-| GET | `/platform/private/target/expression` | getTargetExpressionByENSGID | Query expression levels |
-| POST | `/platform/private/target/expression` | postTargetExpressionByENSGID | Batch query expression levels |
-| GET | `/platform/private/target/{target}` | getTargetByENSGID | Find information about a target |
-| GET | `/platform/public/association` | getAssociationById | Get association by id |
-| GET | `/platform/public/association/filter` | getAssociationFilter | Filter available associations |
-| POST | `/platform/public/association/filter` | postAssociationFilter | Batch query available associations |
-| GET | `/platform/public/evidence` | getEvidenceById | Get evidence by ID |
-| POST | `/platform/public/evidence` | postEvidenceById | Get evidence for a list of IDs |
-| GET | `/platform/public/evidence/filter` | getEvidenceFilter | Filter available evidence |
-| POST | `/platform/public/evidence/filter` | postEvidenceFilter | Batch filter available evidence |
-| GET | `/platform/public/search` | getSearch | Search for a disease or a target |
-| GET | `/platform/public/utils/metrics` | getDataMetrics | Get metrics about the current data release |
-| GET | `/platform/public/utils/ping` | getPing | Ping service |
-| GET | `/platform/public/utils/stats` | getDataStats | Get statistics about the current data release |
-| GET | `/platform/public/utils/therapeuticareas` | getTherapeuticAreas | Get the list of therapeutic areas about the current data release |
-| GET | `/platform/public/utils/version` | getVersion | Get API version |
-| GET | `/platform/swagger` | getSwagger | Get OpenAPI schema |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/platform/docs` | getApiDocs | — | — | yes | Browse API documentation |
+| GET | `/platform/docs/swagger-ui` | getApiSwaggerUI | — | — | yes | Browse interactive API documentation |
+| GET | `/platform/private/autocomplete` | getAutocomplete | `q`*, `size` | — | yes | Get `autocomplete` objects. |
+| POST | `/platform/private/besthitsearch` | postBestHitSearch | body*: string | — |  | Find the best hit |
+| POST | `/platform/private/disease` | postDiseaseById | body*: string | — |  | Find information about a list of diseases |
+| GET | `/platform/private/disease/{disease}` | getDiseaseById | `disease`* | — | yes | Find information about a disease |
+| GET | `/platform/private/drug/{DRUG_ID}` | getDrugByID | `drug_id`*, `DRUG_ID`* | — | yes | Get drug by ID |
+| GET | `/platform/private/eco/{ECO_ID}` | getECObyID | `ECO_ID`* | — | yes | Get evidence code by ID |
+| POST | `/platform/private/enrichment/targets` | postEnrichmentTarget | body*: string | — |  | Enrichment analysis |
+| GET | `/platform/private/quicksearch` | getQuickSearch | `q`*, `size` | — | yes | Search most relevant results |
+| POST | `/platform/private/relation` | postRelation | body*: string | — |  | Find related entities |
+| GET | `/platform/private/relation/disease/{disease}` | getRelationByEFOID | `disease`* | — | yes | Find related entities by disease |
+| GET | `/platform/private/relation/target/{target}` | getRelationByENSGID | `target`* | — | yes | Find related entities by target |
+| POST | `/platform/private/target` | postTargetByENSGID | body*: string | — |  | Find information about a list of targets |
+| GET | `/platform/private/target/expression` | getTargetExpressionByENSGID | `gene`* | — | yes | Query expression levels |
+| POST | `/platform/private/target/expression` | postTargetExpressionByENSGID | body*: string | — |  | Batch query expression levels |
+| GET | `/platform/private/target/{target}` | getTargetByENSGID | `target`* | — | yes | Find information about a target |
+| GET | `/platform/public/association` | getAssociationById | `id`* | — | yes | Get association by id |
+| GET | `/platform/public/association/filter` | getAssociationFilter | `target`, `disease`, `therapeutic_area`, `datasource`, `datatype`, `pathway`, `target_class`, `uniprotkw`, `direct`, `datastructure`, `fields`, `facets`, `scorevalue_min`, `scorevalue_max`, `scorevalue_types`, `size`, `from`, `format`, `sort`, `search` | — | yes | Filter available associations |
+| POST | `/platform/public/association/filter` | postAssociationFilter | body*: string | — |  | Batch query available associations |
+| GET | `/platform/public/evidence` | getEvidenceById | `id`* | — | yes | Get evidence by ID |
+| POST | `/platform/public/evidence` | postEvidenceById | body*: string | — |  | Get evidence for a list of IDs |
+| GET | `/platform/public/evidence/filter` | getEvidenceFilter | `target`, `disease`, `data source`, `datatype`, `pathway`, `uniprotkw`, `datastructure`, `fields`, `scorevalue_min`, `scorevalue_max`, `sort`, `size`, `from`, `format` | — | yes | Filter available evidence |
+| POST | `/platform/public/evidence/filter` | postEvidenceFilter | body*: string | — |  | Batch filter available evidence |
+| GET | `/platform/public/search` | getSearch | `q`*, `size`, `from`, `filter` | — | yes | Search for a disease or a target |
+| GET | `/platform/public/utils/metrics` | getDataMetrics | — | — | yes | Get metrics about the current data release |
+| GET | `/platform/public/utils/ping` | getPing | — | — | yes | Ping service |
+| GET | `/platform/public/utils/stats` | getDataStats | — | — | yes | Get statistics about the current data release |
+| GET | `/platform/public/utils/therapeuticareas` | getTherapeuticAreas | — | — | yes | Get the list of therapeutic areas about the current data release |
+| GET | `/platform/public/utils/version` | getVersion | — | — | yes | Get API version |
+| GET | `/platform/swagger` | getSwagger | — | — | yes | Get OpenAPI schema |

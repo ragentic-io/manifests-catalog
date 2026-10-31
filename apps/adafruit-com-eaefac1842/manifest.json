@@ -22,12 +22,12 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/activities"
+        "to": "operation:get:/{username}/activities"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:get:/{username}/activities"
+        "to": "operation:delete:/{username}/activities"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -57,17 +57,7 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/dashboards/{dashboard_id}/blocks/{id}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
         "to": "operation:get:/{username}/dashboards/{dashboard_id}/blocks/{id}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/dashboards/{dashboard_id}/blocks/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -77,7 +67,12 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/dashboards/{id}"
+        "to": "operation:delete:/{username}/dashboards/{dashboard_id}/blocks/{id}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/dashboards/{dashboard_id}/blocks/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -87,12 +82,17 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/dashboards/{id}"
+        "to": "operation:put:/{username}/dashboards/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:put:/{username}/dashboards/{id}"
+        "to": "operation:delete:/{username}/dashboards/{id}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/dashboards/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -107,22 +107,22 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/feeds/{feed_key}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
         "to": "operation:get:/{username}/feeds/{feed_key}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/feeds/{feed_key}"
+        "to": "operation:put:/{username}/feeds/{feed_key}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:put:/{username}/feeds/{feed_key}"
+        "to": "operation:delete:/{username}/feeds/{feed_key}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/feeds/{feed_key}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -172,22 +172,22 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/feeds/{feed_key}/data/{id}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
         "to": "operation:get:/{username}/feeds/{feed_key}/data/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/feeds/{feed_key}/data/{id}"
+        "to": "operation:put:/{username}/feeds/{feed_key}/data/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:put:/{username}/feeds/{feed_key}/data/{id}"
+        "to": "operation:delete:/{username}/feeds/{feed_key}/data/{id}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/feeds/{feed_key}/data/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -207,22 +207,22 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/groups/{group_key}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
         "to": "operation:get:/{username}/groups/{group_key}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/groups/{group_key}"
+        "to": "operation:put:/{username}/groups/{group_key}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:put:/{username}/groups/{group_key}"
+        "to": "operation:delete:/{username}/groups/{group_key}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/groups/{group_key}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -282,22 +282,22 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/tokens/{id}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
         "to": "operation:get:/{username}/tokens/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/tokens/{id}"
+        "to": "operation:put:/{username}/tokens/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:put:/{username}/tokens/{id}"
+        "to": "operation:delete:/{username}/tokens/{id}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/tokens/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -312,22 +312,22 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/triggers/{id}"
-      },
-      {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
         "to": "operation:get:/{username}/triggers/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:patch:/{username}/triggers/{id}"
+        "to": "operation:put:/{username}/triggers/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:put:/{username}/triggers/{id}"
+        "to": "operation:delete:/{username}/triggers/{id}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/{username}/triggers/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -342,12 +342,17 @@
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{username}/{type}/{type_id}/acl/{id}"
+        "to": "operation:get:/{username}/{type}/{type_id}/acl/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
         "kind": "EXPOSES",
-        "to": "operation:get:/{username}/{type}/{type_id}/acl/{id}"
+        "to": "operation:put:/{username}/{type}/{type_id}/acl/{id}"
+      },
+      {
+        "from": "adafruit-com-eaefac1842",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/{username}/{type}/{type_id}/acl/{id}"
       },
       {
         "from": "adafruit-com-eaefac1842",
@@ -355,9 +360,334 @@
         "to": "operation:patch:/{username}/{type}/{type_id}/acl/{id}"
       },
       {
-        "from": "adafruit-com-eaefac1842",
-        "kind": "EXPOSES",
-        "to": "operation:put:/{username}/{type}/{type_id}/acl/{id}"
+        "from": "operation:get:/user",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/webhooks/feed/:token",
+        "kind": "RETURNS",
+        "to": "schema:Data"
+      },
+      {
+        "from": "operation:post:/webhooks/feed/:token/raw",
+        "kind": "RETURNS",
+        "to": "schema:Data"
+      },
+      {
+        "from": "operation:get:/{username}/activities",
+        "kind": "RETURNS",
+        "to": "schema:Activity"
+      },
+      {
+        "from": "operation:get:/{username}/activities/{type}",
+        "kind": "RETURNS",
+        "to": "schema:Activity"
+      },
+      {
+        "from": "operation:get:/{username}/dashboards",
+        "kind": "RETURNS",
+        "to": "schema:Dashboard"
+      },
+      {
+        "from": "operation:post:/{username}/dashboards",
+        "kind": "RETURNS",
+        "to": "schema:Dashboard"
+      },
+      {
+        "from": "operation:get:/{username}/dashboards/{dashboard_id}/blocks",
+        "kind": "RETURNS",
+        "to": "schema:Block"
+      },
+      {
+        "from": "operation:post:/{username}/dashboards/{dashboard_id}/blocks",
+        "kind": "RETURNS",
+        "to": "schema:Block"
+      },
+      {
+        "from": "operation:get:/{username}/dashboards/{dashboard_id}/blocks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Block"
+      },
+      {
+        "from": "operation:put:/{username}/dashboards/{dashboard_id}/blocks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Block"
+      },
+      {
+        "from": "operation:patch:/{username}/dashboards/{dashboard_id}/blocks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Block"
+      },
+      {
+        "from": "operation:get:/{username}/dashboards/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Dashboard"
+      },
+      {
+        "from": "operation:put:/{username}/dashboards/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Dashboard"
+      },
+      {
+        "from": "operation:patch:/{username}/dashboards/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Dashboard"
+      },
+      {
+        "from": "operation:get:/{username}/feeds",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:post:/{username}/feeds",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:put:/{username}/feeds/{feed_key}",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:patch:/{username}/feeds/{feed_key}",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/data",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:post:/{username}/feeds/{feed_key}/data",
+        "kind": "RETURNS",
+        "to": "schema:Data"
+      },
+      {
+        "from": "operation:post:/{username}/feeds/{feed_key}/data/batch",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/data/first",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/data/last",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/data/next",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/data/previous",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/data/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:put:/{username}/feeds/{feed_key}/data/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:patch:/{username}/feeds/{feed_key}/data/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/feeds/{feed_key}/details",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:get:/{username}/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/{username}/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/{username}/groups/{group_key}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/{username}/groups/{group_key}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:patch:/{username}/groups/{group_key}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/{username}/groups/{group_key}/add",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/{username}/groups/{group_key}/data",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:get:/{username}/groups/{group_key}/feeds",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:post:/{username}/groups/{group_key}/feeds",
+        "kind": "RETURNS",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "operation:get:/{username}/groups/{group_key}/feeds/{feed_key}/data",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:post:/{username}/groups/{group_key}/feeds/{feed_key}/data",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:post:/{username}/groups/{group_key}/feeds/{feed_key}/data/batch",
+        "kind": "RETURNS",
+        "to": "schema:DataResponse"
+      },
+      {
+        "from": "operation:post:/{username}/groups/{group_key}/remove",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/{username}/tokens",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:post:/{username}/tokens",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:get:/{username}/tokens/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:put:/{username}/tokens/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:patch:/{username}/tokens/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:get:/{username}/triggers",
+        "kind": "RETURNS",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "operation:post:/{username}/triggers",
+        "kind": "RETURNS",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "operation:get:/{username}/triggers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "operation:put:/{username}/triggers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "operation:patch:/{username}/triggers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "operation:get:/{username}/{type}/{type_id}/acl",
+        "kind": "RETURNS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:post:/{username}/{type}/{type_id}/acl",
+        "kind": "RETURNS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:get:/{username}/{type}/{type_id}/acl/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:put:/{username}/{type}/{type_id}/acl/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:patch:/{username}/{type}/{type_id}/acl/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "schema:Block",
+        "kind": "REFERENCES",
+        "to": "schema:BlockFeed"
+      },
+      {
+        "from": "schema:BlockFeed",
+        "kind": "REFERENCES",
+        "to": "schema:Feed"
+      },
+      {
+        "from": "schema:BlockFeed",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Dashboard",
+        "kind": "REFERENCES",
+        "to": "schema:Block"
+      },
+      {
+        "from": "schema:Feed",
+        "kind": "REFERENCES",
+        "to": "schema:Data"
+      },
+      {
+        "from": "schema:Feed",
+        "kind": "REFERENCES",
+        "to": "schema:ShallowGroup"
+      },
+      {
+        "from": "schema:Group",
+        "kind": "REFERENCES",
+        "to": "schema:Feed"
       }
     ],
     "nodes": [
@@ -373,6 +703,25 @@
         "name": "currentUser",
         "path": "/user",
         "pointer": "#/paths/~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -384,7 +733,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Get information about the current user"
+        "summary": "Get information about the current user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -394,6 +746,33 @@
         "name": "createWebhookFeedData",
         "path": "/webhooks/feed/:token",
         "pointer": "#/paths/~1webhooks~1feed~1:token/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Data"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -405,16 +784,40 @@
             "QueryKey": []
           }
         ],
-        "summary": "Send data to a feed via webhook URL."
+        "summary": "Send data to a feed via webhook URL.",
+        "tags": [
+          "Webhooks",
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The raw data webhook receiver accepts POST requests and stores the raw request body on your feed.",
         "id": "operation:post:/webhooks/feed/:token/raw",
         "kind": "operation",
         "method": "post",
         "name": "createRawWebhookFeedData",
         "path": "/webhooks/feed/:token/raw",
         "pointer": "#/paths/~1webhooks~1feed~1:token~1raw/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Data"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -426,37 +829,70 @@
             "QueryKey": []
           }
         ],
-        "summary": "Send arbitrary data to a feed via webhook URL."
+        "summary": "Send arbitrary data to a feed via webhook URL.",
+        "tags": [
+          "Webhooks",
+          "Data"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/{username}/activities",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyActivities",
-        "path": "/{username}/activities",
-        "pointer": "#/paths/~1{username}~1activities/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "All activities for current user"
-      },
-      {
-        "deprecated": false,
+        "description": "The Activities endpoint returns information about the user's activities.",
         "id": "operation:get:/{username}/activities",
         "kind": "operation",
         "method": "get",
         "name": "allActivities",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start time for filtering, returns records created after given time.",
+            "in": "query",
+            "name": "start_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "End time for filtering, returns records created before give time.",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit the number of records returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/{username}/activities",
         "pointer": "#/paths/~1{username}~1activities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Activity[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -468,16 +904,127 @@
             "QueryKey": []
           }
         ],
-        "summary": "All activities for current user"
+        "summary": "All activities for current user",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete all your activities.",
+        "id": "operation:delete:/{username}/activities",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyActivities",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/activities",
+        "pointer": "#/paths/~1{username}~1activities/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "All activities for current user",
+        "tags": [
+          "Activities"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The Activities endpoint returns information about the user's activities.",
         "id": "operation:get:/{username}/activities/{type}",
         "kind": "operation",
         "method": "get",
         "name": "getActivity",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start time for filtering, returns records created after given time.",
+            "in": "query",
+            "name": "start_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "End time for filtering, returns records created before give time.",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit the number of records returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/{username}/activities/{type}",
         "pointer": "#/paths/~1{username}~1activities~1{type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Activity[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -489,16 +1036,48 @@
             "QueryKey": []
           }
         ],
-        "summary": "Get activities by type for current user"
+        "summary": "Get activities by type for current user",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Dashboards endpoint returns information about the user's dashboards.",
         "id": "operation:get:/{username}/dashboards",
         "kind": "operation",
         "method": "get",
         "name": "allDashboards",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards",
         "pointer": "#/paths/~1{username}~1dashboards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Dashboard[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -510,7 +1089,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All dashboards for current user"
+        "summary": "All dashboards for current user",
+        "tags": [
+          "Dashboards"
+        ]
       },
       {
         "deprecated": false,
@@ -518,8 +1100,44 @@
         "kind": "operation",
         "method": "post",
         "name": "createDashboard",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards",
         "pointer": "#/paths/~1{username}~1dashboards/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Dashboard"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -531,16 +1149,54 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Dashboard"
+        "summary": "Create a new Dashboard",
+        "tags": [
+          "Dashboards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Blocks endpoint returns information about the user's blocks.",
         "id": "operation:get:/{username}/dashboards/{dashboard_id}/blocks",
         "kind": "operation",
         "method": "get",
         "name": "allBlocks",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dashboard_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards/{dashboard_id}/blocks",
         "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Block[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -552,7 +1208,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All blocks for current user"
+        "summary": "All blocks for current user",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
@@ -560,8 +1219,50 @@
         "kind": "operation",
         "method": "post",
         "name": "createBlock",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dashboard_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards/{dashboard_id}/blocks",
         "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Block"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -573,28 +1274,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Block"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{username}/dashboards/{dashboard_id}/blocks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyBlock",
-        "path": "/{username}/dashboards/{dashboard_id}/blocks/{id}",
-        "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks~1{id}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete an existing Block"
+        "summary": "Create a new Block",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
@@ -602,8 +1285,48 @@
         "kind": "operation",
         "method": "get",
         "name": "getBlock",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dashboard_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards/{dashboard_id}/blocks/{id}",
         "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Block"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -615,28 +1338,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns Block based on ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/dashboards/{dashboard_id}/blocks/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateBlock",
-        "path": "/{username}/dashboards/{dashboard_id}/blocks/{id}",
-        "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks~1{id}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Block"
+        "summary": "Returns Block based on ID",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
@@ -644,8 +1349,56 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceBlock",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dashboard_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards/{dashboard_id}/blocks/{id}",
         "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Block"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -657,16 +1410,59 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Block"
+        "summary": "Replace an existing Block",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/{username}/dashboards/{id}",
+        "id": "operation:delete:/{username}/dashboards/{dashboard_id}/blocks/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "destroyDashboard",
-        "path": "/{username}/dashboards/{id}",
-        "pointer": "#/paths/~1{username}~1dashboards~1{id}/delete",
+        "name": "destroyBlock",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dashboard_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/dashboards/{dashboard_id}/blocks/{id}",
+        "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -678,7 +1474,82 @@
             "QueryKey": []
           }
         ],
-        "summary": "Delete an existing Dashboard"
+        "summary": "Delete an existing Block",
+        "tags": [
+          "Blocks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/dashboards/{dashboard_id}/blocks/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateBlock",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dashboard_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/dashboards/{dashboard_id}/blocks/{id}",
+        "pointer": "#/paths/~1{username}~1dashboards~1{dashboard_id}~1blocks~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Block"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Block",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
@@ -686,8 +1557,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getDashboard",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards/{id}",
         "pointer": "#/paths/~1{username}~1dashboards~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Dashboard"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -699,28 +1604,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns Dashboard based on ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/dashboards/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateDashboard",
-        "path": "/{username}/dashboards/{id}",
-        "pointer": "#/paths/~1{username}~1dashboards~1{id}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Dashboard"
+        "summary": "Returns Dashboard based on ID",
+        "tags": [
+          "Dashboards"
+        ]
       },
       {
         "deprecated": false,
@@ -728,8 +1615,50 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceDashboard",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/dashboards/{id}",
         "pointer": "#/paths/~1{username}~1dashboards~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Dashboard"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -741,16 +1670,172 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Dashboard"
+        "summary": "Replace an existing Dashboard",
+        "tags": [
+          "Dashboards"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/{username}/dashboards/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyDashboard",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/dashboards/{id}",
+        "pointer": "#/paths/~1{username}~1dashboards~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete an existing Dashboard",
+        "tags": [
+          "Dashboards"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/dashboards/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateDashboard",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/dashboards/{id}",
+        "pointer": "#/paths/~1{username}~1dashboards~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Dashboard"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Dashboard",
+        "tags": [
+          "Dashboards"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The Feeds endpoint returns information about the user's feeds.",
         "id": "operation:get:/{username}/feeds",
         "kind": "operation",
         "method": "get",
         "name": "allFeeds",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds",
         "pointer": "#/paths/~1{username}~1feeds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -762,7 +1847,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All feeds for current user"
+        "summary": "All feeds for current user",
+        "tags": [
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -770,8 +1858,50 @@
         "kind": "operation",
         "method": "post",
         "name": "createFeed",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "group_key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds",
         "pointer": "#/paths/~1{username}~1feeds/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -783,37 +1913,55 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Feed"
+        "summary": "Create a new Feed",
+        "tags": [
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/{username}/feeds/{feed_key}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyFeed",
-        "path": "/{username}/feeds/{feed_key}",
-        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete an existing Feed"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns feed based on the feed key",
         "id": "operation:get:/{username}/feeds/{feed_key}",
         "kind": "operation",
         "method": "get",
         "name": "getFeed",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -825,28 +1973,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Get feed by feed key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/feeds/{feed_key}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateFeed",
-        "path": "/{username}/feeds/{feed_key}",
-        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Feed"
+        "summary": "Get feed by feed key",
+        "tags": [
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -854,8 +1984,51 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceFeed",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -867,7 +2040,135 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Feed"
+        "summary": "Replace an existing Feed",
+        "tags": [
+          "Feeds"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{username}/feeds/{feed_key}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyFeed",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/feeds/{feed_key}",
+        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete an existing Feed",
+        "tags": [
+          "Feeds"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/feeds/{feed_key}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateFeed",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/feeds/{feed_key}",
+        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Feed",
+        "tags": [
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -875,8 +2176,71 @@
         "kind": "operation",
         "method": "get",
         "name": "allData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start time for filtering, returns records created after given time.",
+            "in": "query",
+            "name": "start_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "End time for filtering, returns records created before give time.",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit the number of records returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "List of Data record fields to include in response as comma separated list.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -888,16 +2252,63 @@
             "QueryKey": []
           }
         ],
-        "summary": "Get all data for the given feed"
+        "summary": "Get all data for the given feed",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create new data records on the given feed.",
         "id": "operation:post:/{username}/feeds/{feed_key}/data",
         "kind": "operation",
         "method": "post",
         "name": "createData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Data"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -909,7 +2320,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create new Data"
+        "summary": "Create new Data",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
@@ -917,8 +2331,51 @@
         "kind": "operation",
         "method": "post",
         "name": "batchCreateData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/batch",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -930,16 +2387,83 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create multiple new Data records"
+        "summary": "Create multiple new Data records",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Chart API is what we use on io.adafruit.com to populate charts over varying timespans with a consistent number of data points.",
         "id": "operation:get:/{username}/feeds/{feed_key}/data/chart",
         "kind": "operation",
         "method": "get",
         "name": "chartData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start time for filtering, returns records created after given time.",
+            "in": "query",
+            "name": "start_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "End time for filtering, returns records created before give time.",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A resolution size in minutes.",
+            "in": "query",
+            "name": "resolution",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of hours the chart should cover.",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/chart",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1chart/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -951,16 +2475,62 @@
             "QueryKey": []
           }
         ],
-        "summary": "Chart data for current feed"
+        "summary": "Chart data for current feed",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the oldest data point in the feed.",
         "id": "operation:get:/{username}/feeds/{feed_key}/data/first",
         "kind": "operation",
         "method": "get",
         "name": "firstData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of Data record fields to include in response as comma separated list.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/first",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1first/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -972,16 +2542,62 @@
             "QueryKey": []
           }
         ],
-        "summary": "First Data in Queue"
+        "summary": "First Data in Queue",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the most recent data point in the feed.",
         "id": "operation:get:/{username}/feeds/{feed_key}/data/last",
         "kind": "operation",
         "method": "get",
         "name": "lastData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of Data record fields to include in response as comma separated list.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/last",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1last/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -993,16 +2609,62 @@
             "QueryKey": []
           }
         ],
-        "summary": "Last Data in Queue"
+        "summary": "Last Data in Queue",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the next newest data point in the feed.",
         "id": "operation:get:/{username}/feeds/{feed_key}/data/next",
         "kind": "operation",
         "method": "get",
         "name": "nextData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of Data record fields to include in response as comma separated list.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/next",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1next/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1014,16 +2676,62 @@
             "QueryKey": []
           }
         ],
-        "summary": "Next Data in Queue"
+        "summary": "Next Data in Queue",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the previously processed data point in the feed.",
         "id": "operation:get:/{username}/feeds/{feed_key}/data/previous",
         "kind": "operation",
         "method": "get",
         "name": "previousData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of Data record fields to include in response as comma separated list.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/previous",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1previous/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1035,16 +2743,55 @@
             "QueryKey": []
           }
         ],
-        "summary": "Previous Data in Queue"
+        "summary": "Previous Data in Queue",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the most recent data point in the feed in an MQTT compatible CSV format: `value,lat,lon,ele`",
         "id": "operation:get:/{username}/feeds/{feed_key}/data/retain",
         "kind": "operation",
         "method": "get",
         "name": "retainData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/retain",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1retain/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1056,28 +2803,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Last Data in MQTT CSV format"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{username}/feeds/{feed_key}/data/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyData",
-        "path": "/{username}/feeds/{feed_key}/data/{id}",
-        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1{id}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete existing Data"
+        "summary": "Last Data in MQTT CSV format",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
@@ -1085,8 +2814,56 @@
         "kind": "operation",
         "method": "get",
         "name": "getData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of Data record fields to include in response as comma separated list.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/{id}",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1098,28 +2875,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns data based on feed key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/feeds/{feed_key}/data/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateData",
-        "path": "/{username}/feeds/{feed_key}/data/{id}",
-        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1{id}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of existing Data"
+        "summary": "Returns data based on feed key",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
@@ -1127,8 +2886,57 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/data/{id}",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1140,16 +2948,193 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace existing Data"
+        "summary": "Replace existing Data",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/{username}/feeds/{feed_key}/data/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/feeds/{feed_key}/data/{id}",
+        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete existing Data",
+        "tags": [
+          "Data"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/feeds/{feed_key}/data/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/feeds/{feed_key}/data/{id}",
+        "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1data~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of existing Data",
+        "tags": [
+          "Data"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns more detailed feed record based on the feed key",
         "id": "operation:get:/{username}/feeds/{feed_key}/details",
         "kind": "operation",
         "method": "get",
         "name": "getFeedDetails",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/feeds/{feed_key}/details",
         "pointer": "#/paths/~1{username}~1feeds~1{feed_key}~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1161,16 +3146,48 @@
             "QueryKey": []
           }
         ],
-        "summary": "Get detailed feed by feed key"
+        "summary": "Get detailed feed by feed key",
+        "tags": [
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Groups endpoint returns information about the user's groups.",
         "id": "operation:get:/{username}/groups",
         "kind": "operation",
         "method": "get",
         "name": "allGroups",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups",
         "pointer": "#/paths/~1{username}~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1182,7 +3199,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All groups for current user"
+        "summary": "All groups for current user",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1190,8 +3210,44 @@
         "kind": "operation",
         "method": "post",
         "name": "createGroup",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups",
         "pointer": "#/paths/~1{username}~1groups/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1203,28 +3259,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Group"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{username}/groups/{group_key}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyGroup",
-        "path": "/{username}/groups/{group_key}",
-        "pointer": "#/paths/~1{username}~1groups~1{group_key}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete an existing Group"
+        "summary": "Create a new Group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1232,8 +3270,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getGroup",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1245,28 +3317,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns Group based on ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/groups/{group_key}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateGroup",
-        "path": "/{username}/groups/{group_key}",
-        "pointer": "#/paths/~1{username}~1groups~1{group_key}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Group"
+        "summary": "Returns Group based on ID",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1274,8 +3328,50 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceGroup",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1287,7 +3383,134 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Group"
+        "summary": "Replace an existing Group",
+        "tags": [
+          "Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{username}/groups/{group_key}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyGroup",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/groups/{group_key}",
+        "pointer": "#/paths/~1{username}~1groups~1{group_key}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete an existing Group",
+        "tags": [
+          "Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/groups/{group_key}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateGroup",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/groups/{group_key}",
+        "pointer": "#/paths/~1{username}~1groups~1{group_key}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1295,8 +3518,48 @@
         "kind": "operation",
         "method": "post",
         "name": "addFeedToGroup",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "feed_key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/add",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1add/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1308,7 +3571,11 @@
             "QueryKey": []
           }
         ],
-        "summary": "Add an existing Feed to a Group"
+        "summary": "Add an existing Feed to a Group",
+        "tags": [
+          "Groups",
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -1316,8 +3583,50 @@
         "kind": "operation",
         "method": "post",
         "name": "createGroupData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/data",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1data/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1329,16 +3638,54 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create new data for multiple feeds in a group"
+        "summary": "Create new data for multiple feeds in a group",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Group Feeds endpoint returns information about the user's feeds.",
         "id": "operation:get:/{username}/groups/{group_key}/feeds",
         "kind": "operation",
         "method": "get",
         "name": "allGroupFeeds",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/feeds",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1feeds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1350,7 +3697,11 @@
             "QueryKey": []
           }
         ],
-        "summary": "All feeds for current user in a given group"
+        "summary": "All feeds for current user in a given group",
+        "tags": [
+          "Groups",
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -1358,8 +3709,50 @@
         "kind": "operation",
         "method": "post",
         "name": "createGroupFeed",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/feeds",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1feeds/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feed"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1371,7 +3764,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Feed in a Group"
+        "summary": "Create a new Feed in a Group",
+        "tags": [
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -1379,8 +3775,70 @@
         "kind": "operation",
         "method": "get",
         "name": "allGroupFeedData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start time for filtering data.",
+            "in": "query",
+            "name": "start_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "End time for filtering data.",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit the number of records returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/feeds/{feed_key}/data",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1feeds~1{feed_key}~1data/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1392,7 +3850,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All data for current feed in a specific group"
+        "summary": "All data for current feed in a specific group",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
@@ -1400,8 +3861,57 @@
         "kind": "operation",
         "method": "post",
         "name": "createGroupFeedData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/feeds/{feed_key}/data",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1feeds~1{feed_key}~1data/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1413,7 +3923,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create new Data in a feed belonging to a particular group"
+        "summary": "Create new Data in a feed belonging to a particular group",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
@@ -1421,8 +3934,57 @@
         "kind": "operation",
         "method": "post",
         "name": "batchCreateGroupFeedData",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid feed key",
+            "in": "path",
+            "name": "feed_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/feeds/{feed_key}/data/batch",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1feeds~1{feed_key}~1data~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1434,7 +3996,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create multiple new Data records in a feed belonging to a particular group"
+        "summary": "Create multiple new Data records in a feed belonging to a particular group",
+        "tags": [
+          "Data"
+        ]
       },
       {
         "deprecated": false,
@@ -1442,8 +4007,48 @@
         "kind": "operation",
         "method": "post",
         "name": "removeFeedFromGroup",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "group_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "feed_key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/groups/{group_key}/remove",
         "pointer": "#/paths/~1{username}~1groups~1{group_key}~1remove/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1455,7 +4060,11 @@
             "QueryKey": []
           }
         ],
-        "summary": "Remove a Feed from a Group"
+        "summary": "Remove a Feed from a Group",
+        "tags": [
+          "Groups",
+          "Feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -1463,8 +4072,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getCurrentUserThrottle",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/throttle",
         "pointer": "#/paths/~1{username}~1throttle/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1476,16 +4113,48 @@
             "QueryKey": []
           }
         ],
-        "summary": "Get the user's data rate limit and current activity level."
+        "summary": "Get the user's data rate limit and current activity level.",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Tokens endpoint returns information about the user's tokens.",
         "id": "operation:get:/{username}/tokens",
         "kind": "operation",
         "method": "get",
         "name": "allTokens",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/tokens",
         "pointer": "#/paths/~1{username}~1tokens/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Token[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1497,7 +4166,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All tokens for current user"
+        "summary": "All tokens for current user",
+        "tags": [
+          "Tokens"
+        ]
       },
       {
         "deprecated": false,
@@ -1505,8 +4177,44 @@
         "kind": "operation",
         "method": "post",
         "name": "createToken",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/tokens",
         "pointer": "#/paths/~1{username}~1tokens/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Token"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1518,28 +4226,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Token"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{username}/tokens/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyToken",
-        "path": "/{username}/tokens/{id}",
-        "pointer": "#/paths/~1{username}~1tokens~1{id}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete an existing Token"
+        "summary": "Create a new Token",
+        "tags": [
+          "Tokens"
+        ]
       },
       {
         "deprecated": false,
@@ -1547,8 +4237,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getToken",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/tokens/{id}",
         "pointer": "#/paths/~1{username}~1tokens~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Token"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1560,28 +4284,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns Token based on ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/tokens/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateToken",
-        "path": "/{username}/tokens/{id}",
-        "pointer": "#/paths/~1{username}~1tokens~1{id}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Token"
+        "summary": "Returns Token based on ID",
+        "tags": [
+          "Tokens"
+        ]
       },
       {
         "deprecated": false,
@@ -1589,8 +4295,50 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceToken",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/tokens/{id}",
         "pointer": "#/paths/~1{username}~1tokens~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Token"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1602,16 +4350,172 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Token"
+        "summary": "Replace an existing Token",
+        "tags": [
+          "Tokens"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/{username}/tokens/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyToken",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/tokens/{id}",
+        "pointer": "#/paths/~1{username}~1tokens~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete an existing Token",
+        "tags": [
+          "Tokens"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/tokens/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateToken",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/tokens/{id}",
+        "pointer": "#/paths/~1{username}~1tokens~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Token"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Token",
+        "tags": [
+          "Tokens"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The Triggers endpoint returns information about the user's triggers.",
         "id": "operation:get:/{username}/triggers",
         "kind": "operation",
         "method": "get",
         "name": "allTriggers",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/triggers",
         "pointer": "#/paths/~1{username}~1triggers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trigger[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1623,7 +4527,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All triggers for current user"
+        "summary": "All triggers for current user",
+        "tags": [
+          "Triggers"
+        ]
       },
       {
         "deprecated": false,
@@ -1631,8 +4538,44 @@
         "kind": "operation",
         "method": "post",
         "name": "createTrigger",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/triggers",
         "pointer": "#/paths/~1{username}~1triggers/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trigger"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1644,28 +4587,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Trigger"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{username}/triggers/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyTrigger",
-        "path": "/{username}/triggers/{id}",
-        "pointer": "#/paths/~1{username}~1triggers~1{id}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete an existing Trigger"
+        "summary": "Create a new Trigger",
+        "tags": [
+          "Triggers"
+        ]
       },
       {
         "deprecated": false,
@@ -1673,8 +4598,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getTrigger",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/triggers/{id}",
         "pointer": "#/paths/~1{username}~1triggers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trigger"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1686,28 +4645,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns Trigger based on ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/triggers/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateTrigger",
-        "path": "/{username}/triggers/{id}",
-        "pointer": "#/paths/~1{username}~1triggers~1{id}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Trigger"
+        "summary": "Returns Trigger based on ID",
+        "tags": [
+          "Triggers"
+        ]
       },
       {
         "deprecated": false,
@@ -1715,8 +4656,50 @@
         "kind": "operation",
         "method": "put",
         "name": "replaceTrigger",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/triggers/{id}",
         "pointer": "#/paths/~1{username}~1triggers~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trigger"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1728,16 +4711,184 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Trigger"
+        "summary": "Replace an existing Trigger",
+        "tags": [
+          "Triggers"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/{username}/triggers/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyTrigger",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/triggers/{id}",
+        "pointer": "#/paths/~1{username}~1triggers~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete an existing Trigger",
+        "tags": [
+          "Triggers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/triggers/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateTrigger",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/triggers/{id}",
+        "pointer": "#/paths/~1{username}~1triggers~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trigger"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Trigger",
+        "tags": [
+          "Triggers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The Permissions endpoint returns information about the user's permissions.",
         "id": "operation:get:/{username}/{type}/{type_id}/acl",
         "kind": "operation",
         "method": "get",
         "name": "allPermissions",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/{type}/{type_id}/acl",
         "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permission[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1749,7 +4900,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "All permissions for current user and type"
+        "summary": "All permissions for current user and type",
+        "tags": [
+          "Permissions"
+        ]
       },
       {
         "deprecated": false,
@@ -1757,8 +4911,56 @@
         "kind": "operation",
         "method": "post",
         "name": "createPermission",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/{type}/{type_id}/acl",
         "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permission"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1770,28 +4972,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Create a new Permission"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{username}/{type}/{type_id}/acl/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "destroyPermission",
-        "path": "/{username}/{type}/{type_id}/acl/{id}",
-        "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl~1{id}/delete",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Delete an existing Permission"
+        "summary": "Create a new Permission",
+        "tags": [
+          "Permissions"
+        ]
       },
       {
         "deprecated": false,
@@ -1799,8 +4983,54 @@
         "kind": "operation",
         "method": "get",
         "name": "getPermission",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/{type}/{type_id}/acl/{id}",
         "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permission"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HeaderKey": []
@@ -1812,28 +5042,10 @@
             "QueryKey": []
           }
         ],
-        "summary": "Returns Permission based on ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/{username}/{type}/{type_id}/acl/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updatePermission",
-        "path": "/{username}/{type}/{type_id}/acl/{id}",
-        "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl~1{id}/patch",
-        "security": [
-          {
-            "HeaderKey": []
-          },
-          {
-            "HeaderSignature": []
-          },
-          {
-            "QueryKey": []
-          }
-        ],
-        "summary": "Update properties of an existing Permission"
+        "summary": "Returns Permission based on ID",
+        "tags": [
+          "Permissions"
+        ]
       },
       {
         "deprecated": false,
@@ -1841,8 +5053,62 @@
         "kind": "operation",
         "method": "put",
         "name": "replacePermission",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{username}/{type}/{type_id}/acl/{id}",
         "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permission"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HeaderKey": []
@@ -1854,77 +5120,242 @@
             "QueryKey": []
           }
         ],
-        "summary": "Replace an existing Permission"
+        "summary": "Replace an existing Permission",
+        "tags": [
+          "Permissions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{username}/{type}/{type_id}/acl/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "destroyPermission",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/{type}/{type_id}/acl/{id}",
+        "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Delete an existing Permission",
+        "tags": [
+          "Permissions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/{username}/{type}/{type_id}/acl/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updatePermission",
+        "parameters": [
+          {
+            "description": "a valid username string",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{username}/{type}/{type_id}/acl/{id}",
+        "pointer": "#/paths/~1{username}~1{type}~1{type_id}~1acl~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permission"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HeaderKey": []
+          },
+          {
+            "HeaderSignature": []
+          },
+          {
+            "QueryKey": []
+          }
+        ],
+        "summary": "Update properties of an existing Permission",
+        "tags": [
+          "Permissions"
+        ]
       },
       {
         "id": "schema:Activity",
         "kind": "schema",
-        "name": "Activity"
+        "name": "Activity",
+        "type": "object"
       },
       {
         "id": "schema:Block",
         "kind": "schema",
-        "name": "Block"
+        "name": "Block",
+        "type": "object"
       },
       {
         "id": "schema:BlockFeed",
         "kind": "schema",
-        "name": "BlockFeed"
+        "name": "BlockFeed",
+        "type": "object"
       },
       {
         "id": "schema:Dashboard",
         "kind": "schema",
-        "name": "Dashboard"
+        "name": "Dashboard",
+        "type": "object"
       },
       {
         "id": "schema:Data",
         "kind": "schema",
-        "name": "Data"
+        "name": "Data",
+        "type": "object"
       },
       {
         "id": "schema:DataResponse",
         "kind": "schema",
-        "name": "DataResponse"
+        "name": "DataResponse",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Feed",
         "kind": "schema",
-        "name": "Feed"
+        "name": "Feed",
+        "type": "object"
       },
       {
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
         "id": "schema:Permission",
         "kind": "schema",
-        "name": "Permission"
+        "name": "Permission",
+        "type": "object"
       },
       {
         "id": "schema:ShallowGroup",
         "kind": "schema",
-        "name": "ShallowGroup"
+        "name": "ShallowGroup",
+        "type": "object"
       },
       {
         "id": "schema:Token",
         "kind": "schema",
-        "name": "Token"
+        "name": "Token",
+        "type": "object"
       },
       {
         "id": "schema:Trigger",
         "kind": "schema",
-        "name": "Trigger"
+        "name": "Trigger",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

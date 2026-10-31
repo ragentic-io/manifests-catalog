@@ -8,6 +8,11 @@
         "from": "airport-web-appspot-com-4e1eee65bb",
         "kind": "EXPOSES",
         "to": "operation:get:/airportsapi/v1/airports/{icao_code}"
+      },
+      {
+        "from": "operation:get:/airportsapi/v1/airports/{icao_code}",
+        "kind": "RETURNS",
+        "to": "schema:ApiEndpointsAirportResponse"
       }
     ],
     "nodes": [
@@ -21,15 +26,31 @@
         "kind": "operation",
         "method": "get",
         "name": "AirportApi_getAirport",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "icao_code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/airportsapi/v1/airports/{icao_code}",
         "pointer": "#/paths/~1airportsapi~1v1~1airports~1{icao_code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiEndpointsAirportResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:ApiEndpointsAirportResponse",
         "kind": "schema",
-        "name": "ApiEndpointsAirportResponse"
+        "name": "ApiEndpointsAirportResponse",
+        "type": "object"
       }
     ]
   },

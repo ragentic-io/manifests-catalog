@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Bandsintown_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `6da085d4bd0bee531193b19b5f947917dc4676457781c9c655072c038ed655e3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Bandsintown_profile
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/artists/{artistname}` | artist | Get artist information |
-| GET | `/artists/{artistname}/events` | artistEvents | Get upcoming, past, or all artist events, or events within a date range |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/artists/{artistname}` | artist | `artistname`*, `app_id`* | ArtistData | yes | Get artist information |
+| GET | `/artists/{artistname}/events` | artistEvents | `artistname`*, `app_id`*, `date` | EventData[] | yes | Get upcoming, past, or all artist events, or events within a date range |

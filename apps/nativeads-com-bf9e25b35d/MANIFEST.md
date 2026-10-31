@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.nativeads.com_docs_publishe
 
 | | |
 | --- | --- |
-| Signed bundle | `bd654b899253257499be629996fa8aece5442fd52c5d7912ee3aca967fc21f18` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.nativeads.com_docs_publishe
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/auth/default/login` | post /auth/default/login | — |
-| GET | `/publisher/reports/daily` | get /publisher/reports/daily | — |
-| GET | `/publisher/reports/website` | get /publisher/reports/website | — |
-| GET | `/publisher/reports/widget` | get /publisher/reports/widget | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/auth/default/login` | post /auth/default/login | `username`*, `password`* | authResponse |  | — |
+| GET | `/publisher/reports/daily` | get /publisher/reports/daily | `token`*, `startDate`*, `endDate`*, `limit`*, `page`* | reportsDailyResponse | yes | — |
+| GET | `/publisher/reports/website` | get /publisher/reports/website | `token`*, `startDate`*, `endDate`*, `limit`*, `page`* | reportsWebsiteResponse | yes | — |
+| GET | `/publisher/reports/widget` | get /publisher/reports/widget | `token`*, `startDate`*, `endDate`*, `limit`*, `page`* | reportsWidgetResponse | yes | — |

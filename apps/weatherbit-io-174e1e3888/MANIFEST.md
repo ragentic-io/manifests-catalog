@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_weatherbitio_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `5067917ad2efadd378e7574eb577ccf8e7eec47080ef0212c2b32bc10ef8aadd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,52 +34,54 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_weatherbitio_profil
 
 25 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/alerts?lat={lat}&lon={lon}` | get /alerts?lat={lat}&lon={lon} | Returns severe weather alerts issued by meteorological agencies - Given a lat/lon. |
-| GET | `/bulk/files/{file}` | get /bulk/files/{file} | Download pre-generated bulk datasets |
-| GET | `/current/airquality?city={city}&country={country}` | get /current/airquality?city={city}&country={country} | Returns current air quality conditions - Given City and/or State, Country. |
-| GET | `/current/airquality?city_id={city_id}` | get /current/airquality?city_id={city_id} | Returns current air quality conditions - Given a City ID. |
-| GET | `/current/airquality?lat={lat}&lon={lon}` | get /current/airquality?lat={lat}&lon={lon} | Returns current air quality conditions - Given a lat/lon. |
-| GET | `/current/airquality?postal_code={postal_code}` | get /current/airquality?postal_code={postal_code} | Returns current air quality conditions - Given a Postal Code. |
-| GET | `/current?cities={cities}` | get /current?cities={cities} | Returns a group of observations given a list of cities |
-| GET | `/current?city={city}&country={country}` | get /current?city={city}&country={country} | Returns a Current Observation - Given City and/or State, Country. |
-| GET | `/current?city_id={city_id}` | get /current?city_id={city_id} | Returns a current observation by city id. |
-| GET | `/current?lat={lat}&lon={lon}` | get /current?lat={lat}&lon={lon} | Returns a Current Observation - Given a lat/lon. |
-| GET | `/current?points={points}` | get /current?points={points} | Returns a group of observations given a list of points in the format (lat1, lon1), (lat2, lon2), (latN, lonN), ... |
-| GET | `/current?postal_code={postal_code}` | get /current?postal_code={postal_code} | Returns a current observation by postal code. |
-| GET | `/current?station={station}` | get /current?station={station} | Returns a Current Observation. - Given a station ID. |
-| GET | `/current?stations={stations}` | get /current?stations={stations} | Returns a group of observations given a list of stations |
-| GET | `/forecast/airquality?city={city}&country={country}` | get /forecast/airquality?city={city}&country={country} | Returns 72 hour (hourly) Air Quality forecast - Given City and/or State, Country. |
-| GET | `/forecast/airquality?city_id={city_id}` | get /forecast/airquality?city_id={city_id} | Returns 72 hour (hourly) Air Quality forecast - Given a City ID. |
-| GET | `/forecast/airquality?lat={lat}&lon={lon}` | get /forecast/airquality?lat={lat}&lon={lon} | Returns 72 hour (hourly) Air Quality forecast - Given a lat/lon. |
-| GET | `/forecast/airquality?postal_code={postal_code}` | get /forecast/airquality?postal_code={postal_code} | Returns 72 hour (hourly) Air Quality forecast - Given a Postal Code. |
-| GET | `/forecast/daily?city={city}&country={country}` | get /forecast/daily?city={city}&country={country} | Returns a daily forecast - Given City and/or State, Country. |
-| GET | `/forecast/daily?city_id={city_id}` | get /forecast/daily?city_id={city_id} | Returns a daily forecast - Given a City ID. |
-| GET | `/forecast/daily?lat={lat}&lon={lon}` | get /forecast/daily?lat={lat}&lon={lon} | Returns a daily forecast - Given Lat/Lon. |
-| GET | `/forecast/daily?postal_code={postal_code}` | get /forecast/daily?postal_code={postal_code} | Returns a daily forecast - Given a Postal Code. |
-| GET | `/forecast/energy?lat={lat}&lon={lon}` | get /forecast/energy?lat={lat}&lon={lon} | Returns Energy Forecast API response - Given a single lat/lon. |
-| GET | `/forecast/hourly?city={city}&country={country}` | get /forecast/hourly?city={city}&country={country} | Returns an hourly forecast - Given City and/or State, Country. |
-| GET | `/forecast/hourly?city_id={city_id}` | get /forecast/hourly?city_id={city_id} | Returns an hourly forecast - Given a City ID. |
-| GET | `/forecast/hourly?lat={lat}&lon={lon}` | get /forecast/hourly?lat={lat}&lon={lon} | Returns an hourly forecast - Given a lat/lon. |
-| GET | `/forecast/hourly?postal_code={postal_code}` | get /forecast/hourly?postal_code={postal_code} | Returns an hourly forecast - Given a Postal Code. |
-| GET | `/history/airquality?city={city}&country={country}` | get /history/airquality?city={city}&country={country} | Returns 72 hours of historical quality conditions - Given City and/or State, Country. |
-| GET | `/history/airquality?city_id={city_id}` | get /history/airquality?city_id={city_id} | Returns 72 hours of historical air quality conditions - Given a City ID. |
-| GET | `/history/airquality?lat={lat}&lon={lon}` | get /history/airquality?lat={lat}&lon={lon} | Returns 72 hours of historical air quality conditions - Given a lat/lon. |
-| GET | `/history/airquality?postal_code={postal_code}` | get /history/airquality?postal_code={postal_code} | Returns 72 hours of historical air quality conditions - Given a Postal Code. |
-| GET | `/history/daily?city={city}&country={country}` | get /history/daily?city={city}&country={country} | Returns Historical Observations - Given City and/or State, Country. |
-| GET | `/history/daily?city_id={city_id}` | get /history/daily?city_id={city_id} | Returns Historical Observations - Given a City ID |
-| GET | `/history/daily?lat={lat}&lon={lon}` | get /history/daily?lat={lat}&lon={lon} | Returns Historical Observations - Given a lat/lon. |
-| GET | `/history/daily?postal_code={postal_code}` | get /history/daily?postal_code={postal_code} | Returns Historical Observations - Given a Postal Code |
-| GET | `/history/daily?station={station}` | get /history/daily?station={station} | Returns Historical Observations - Given a station ID. |
-| GET | `/history/energy?lat={lat}&lon={lon}` | get /history/energy?lat={lat}&lon={lon} | Returns Energy API response - Given a single lat/lon. |
-| GET | `/history/hourly?city={city}&country={country}` | get /history/hourly?city={city}&country={country} | Returns Historical Observations - Given City and/or State, Country. |
-| GET | `/history/hourly?city_id={city_id}` | get /history/hourly?city_id={city_id} | Returns Historical Observations - Given a City ID |
-| GET | `/history/hourly?lat={lat}&lon={lon}` | get /history/hourly?lat={lat}&lon={lon} | Returns Historical Observations - Given a lat/lon. |
-| GET | `/history/hourly?postal_code={postal_code}` | get /history/hourly?postal_code={postal_code} | Returns Historical Observations - Given a Postal Code |
-| GET | `/history/hourly?station={station}` | get /history/hourly?station={station} | Returns Historical Observations - Given a station ID. |
-| GET | `/history/subhourly?city={city}&country={country}` | get /history/subhourly?city={city}&country={country} | Returns Historical Observations - Given City and/or State, Country. |
-| GET | `/history/subhourly?city_id={city_id}` | get /history/subhourly?city_id={city_id} | Returns Historical Observations - Given a City ID |
-| GET | `/history/subhourly?lat={lat}&lon={lon}` | get /history/subhourly?lat={lat}&lon={lon} | Returns Historical Observations - Given a lat/lon. |
-| GET | `/history/subhourly?postal_code={postal_code}` | get /history/subhourly?postal_code={postal_code} | Returns Historical Observations - Given a Postal Code |
-| GET | `/history/subhourly?station={station}` | get /history/subhourly?station={station} | Returns Historical Observations - Given a station ID. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/alerts?lat={lat}&lon={lon}` | get /alerts?lat={lat}&lon={lon} | `lat`*, `lon`*, `callback`, `key`* | WeatherAlert | yes | Returns severe weather alerts issued by meteorological agencies - Given a lat/lon. |
+| GET | `/bulk/files/{file}` | get /bulk/files/{file} | `file`*, `key`* | — | yes | Download pre-generated bulk datasets |
+| GET | `/current/airquality?city={city}&country={country}` | get /current/airquality?city={city}&country={country} | `city`*, `state`, `country`*, `callback`, `key`* | AQCurrentGroup | yes | Returns current air quality conditions - Given City and/or State, Country. |
+| GET | `/current/airquality?city_id={city_id}` | get /current/airquality?city_id={city_id} | `city_id`*, `callback`, `key`* | AQCurrentGroup | yes | Returns current air quality conditions - Given a City ID. |
+| GET | `/current/airquality?lat={lat}&lon={lon}` | get /current/airquality?lat={lat}&lon={lon} | `lat`*, `lon`*, `callback`, `key`* | AQCurrentGroup | yes | Returns current air quality conditions - Given a lat/lon. |
+| GET | `/current/airquality?postal_code={postal_code}` | get /current/airquality?postal_code={postal_code} | `postal_code`*, `country`, `callback`, `key`* | AQCurrentGroup | yes | Returns current air quality conditions - Given a Postal Code. |
+| GET | `/current?cities={cities}` | get /current?cities={cities} | `cities`*, `units`, `marine`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a group of observations given a list of cities |
+| GET | `/current?city={city}&country={country}` | get /current?city={city}&country={country} | `city`*, `include`, `state`, `country`*, `marine`, `units`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a Current Observation - Given City and/or State, Country. |
+| GET | `/current?city_id={city_id}` | get /current?city_id={city_id} | `city_id`*, `units`, `include`, `marine`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a current observation by city id. |
+| GET | `/current?lat={lat}&lon={lon}` | get /current?lat={lat}&lon={lon} | `lat`*, `lon`*, `include`, `marine`, `units`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a Current Observation - Given a lat/lon. |
+| GET | `/current?points={points}` | get /current?points={points} | `points`*, `units`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a group of observations given a list of points in the format (lat1, lon1), (lat2, lon2), (latN, lonN), ... |
+| GET | `/current?postal_code={postal_code}` | get /current?postal_code={postal_code} | `postal_code`*, `country`, `include`, `marine`, `units`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a current observation by postal code. |
+| GET | `/current?station={station}` | get /current?station={station} | `station`*, `include`, `units`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a Current Observation. - Given a station ID. |
+| GET | `/current?stations={stations}` | get /current?stations={stations} | `stations`*, `units`, `lang`, `callback`, `key`* | CurrentObsGroup | yes | Returns a group of observations given a list of stations |
+| GET | `/forecast/airquality?city={city}&country={country}` | get /forecast/airquality?city={city}&country={country} | `city`*, `state`, `country`*, `callback`, `hours`, `key`* | AQHourly | yes | Returns 72 hour (hourly) Air Quality forecast - Given City and/or State, Country. |
+| GET | `/forecast/airquality?city_id={city_id}` | get /forecast/airquality?city_id={city_id} | `city_id`*, `callback`, `hours`, `key`* | AQHourly | yes | Returns 72 hour (hourly) Air Quality forecast - Given a City ID. |
+| GET | `/forecast/airquality?lat={lat}&lon={lon}` | get /forecast/airquality?lat={lat}&lon={lon} | `lat`*, `lon`*, `callback`, `key`*, `hours` | AQHourly | yes | Returns 72 hour (hourly) Air Quality forecast - Given a lat/lon. |
+| GET | `/forecast/airquality?postal_code={postal_code}` | get /forecast/airquality?postal_code={postal_code} | `postal_code`*, `country`, `callback`, `hours`, `key`* | AQHourly | yes | Returns 72 hour (hourly) Air Quality forecast - Given a Postal Code. |
+| GET | `/forecast/daily?city={city}&country={country}` | get /forecast/daily?city={city}&country={country} | `city`*, `state`, `country`*, `days`, `units`, `lang`, `callback`, `key`* | ForecastDay | yes | Returns a daily forecast - Given City and/or State, Country. |
+| GET | `/forecast/daily?city_id={city_id}` | get /forecast/daily?city_id={city_id} | `city_id`*, `days`, `units`, `lang`, `callback`, `key`* | ForecastDay | yes | Returns a daily forecast - Given a City ID. |
+| GET | `/forecast/daily?lat={lat}&lon={lon}` | get /forecast/daily?lat={lat}&lon={lon} | `lat`*, `lon`*, `days`, `units`, `lang`, `callback`, `key`* | ForecastDay | yes | Returns a daily forecast - Given Lat/Lon. |
+| GET | `/forecast/daily?postal_code={postal_code}` | get /forecast/daily?postal_code={postal_code} | `postal_code`*, `country`, `days`, `units`, `lang`, `callback`, `key`* | ForecastDay | yes | Returns a daily forecast - Given a Postal Code. |
+| GET | `/forecast/energy?lat={lat}&lon={lon}` | get /forecast/energy?lat={lat}&lon={lon} | `lat`*, `lon`*, `threshold`, `units`, `tp`, `callback`, `key`* | EnergyObsGroupForecast | yes | Returns Energy Forecast API response - Given a single lat/lon. |
+| GET | `/forecast/hourly?city={city}&country={country}` | get /forecast/hourly?city={city}&country={country} | `city`*, `state`, `country`*, `units`, `lang`, `callback`, `hours`, `key`* | ForecastHourly | yes | Returns an hourly forecast - Given City and/or State, Country. |
+| GET | `/forecast/hourly?city_id={city_id}` | get /forecast/hourly?city_id={city_id} | `city_id`*, `units`, `lang`, `callback`, `hours`, `key`* | ForecastHourly | yes | Returns an hourly forecast - Given a City ID. |
+| GET | `/forecast/hourly?lat={lat}&lon={lon}` | get /forecast/hourly?lat={lat}&lon={lon} | `lat`*, `lon`*, `units`, `lang`, `callback`, `key`*, `hours` | ForecastHourly | yes | Returns an hourly forecast - Given a lat/lon. |
+| GET | `/forecast/hourly?postal_code={postal_code}` | get /forecast/hourly?postal_code={postal_code} | `postal_code`*, `country`, `units`, `lang`, `callback`, `hours`, `key`* | ForecastHourly | yes | Returns an hourly forecast - Given a Postal Code. |
+| GET | `/history/airquality?city={city}&country={country}` | get /history/airquality?city={city}&country={country} | `city`*, `state`, `country`*, `callback`, `key`* | AQCurrentGroup | yes | Returns 72 hours of historical quality conditions - Given City and/or State, Country. |
+| GET | `/history/airquality?city_id={city_id}` | get /history/airquality?city_id={city_id} | `city_id`*, `callback`, `key`* | AQCurrentGroup | yes | Returns 72 hours of historical air quality conditions - Given a City ID. |
+| GET | `/history/airquality?lat={lat}&lon={lon}` | get /history/airquality?lat={lat}&lon={lon} | `lat`*, `lon`*, `callback`, `key`* | AQCurrentGroup | yes | Returns 72 hours of historical air quality conditions - Given a lat/lon. |
+| GET | `/history/airquality?postal_code={postal_code}` | get /history/airquality?postal_code={postal_code} | `postal_code`*, `country`, `callback`, `key`* | AQCurrentGroup | yes | Returns 72 hours of historical air quality conditions - Given a Postal Code. |
+| GET | `/history/daily?city={city}&country={country}` | get /history/daily?city={city}&country={country} | `city`*, `state`, `country`*, `start_date`*, `end_date`*, `units`, `lang`, `callback`, `key`* | HistoryDay | yes | Returns Historical Observations - Given City and/or State, Country. |
+| GET | `/history/daily?city_id={city_id}` | get /history/daily?city_id={city_id} | `city_id`*, `start_date`*, `end_date`*, `units`, `lang`, `callback`, `key`* | HistoryDay | yes | Returns Historical Observations - Given a City ID |
+| GET | `/history/daily?lat={lat}&lon={lon}` | get /history/daily?lat={lat}&lon={lon} | `lat`*, `lon`*, `start_date`*, `end_date`*, `units`, `lang`, `callback`, `key`* | HistoryDay | yes | Returns Historical Observations - Given a lat/lon. |
+| GET | `/history/daily?postal_code={postal_code}` | get /history/daily?postal_code={postal_code} | `postal_code`*, `country`, `start_date`*, `end_date`*, `units`, `lang`, `callback`, `key`* | HistoryDay | yes | Returns Historical Observations - Given a Postal Code |
+| GET | `/history/daily?station={station}` | get /history/daily?station={station} | `station`*, `start_date`*, `end_date`*, `units`, `lang`, `callback`, `key`* | HistoryDay | yes | Returns Historical Observations - Given a station ID. |
+| GET | `/history/energy?lat={lat}&lon={lon}` | get /history/energy?lat={lat}&lon={lon} | `lat`*, `lon`*, `start_date`*, `end_date`*, `tp`, `threshold`, `units`, `callback`, `key`* | EnergyObsGroup | yes | Returns Energy API response - Given a single lat/lon. |
+| GET | `/history/hourly?city={city}&country={country}` | get /history/hourly?city={city}&country={country} | `city`*, `state`, `country`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | History | yes | Returns Historical Observations - Given City and/or State, Country. |
+| GET | `/history/hourly?city_id={city_id}` | get /history/hourly?city_id={city_id} | `city_id`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | History | yes | Returns Historical Observations - Given a City ID |
+| GET | `/history/hourly?lat={lat}&lon={lon}` | get /history/hourly?lat={lat}&lon={lon} | `lat`*, `lon`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | History | yes | Returns Historical Observations - Given a lat/lon. |
+| GET | `/history/hourly?postal_code={postal_code}` | get /history/hourly?postal_code={postal_code} | `postal_code`*, `country`, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | History | yes | Returns Historical Observations - Given a Postal Code |
+| GET | `/history/hourly?station={station}` | get /history/hourly?station={station} | `station`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | History | yes | Returns Historical Observations - Given a station ID. |
+| GET | `/history/subhourly?city={city}&country={country}` | get /history/subhourly?city={city}&country={country} | `city`*, `state`, `country`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | History | yes | Returns Historical Observations - Given City and/or State, Country. |
+| GET | `/history/subhourly?city_id={city_id}` | get /history/subhourly?city_id={city_id} | `city_id`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | HistorySubhourly | yes | Returns Historical Observations - Given a City ID |
+| GET | `/history/subhourly?lat={lat}&lon={lon}` | get /history/subhourly?lat={lat}&lon={lon} | `lat`*, `lon`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | HistorySubhourly | yes | Returns Historical Observations - Given a lat/lon. |
+| GET | `/history/subhourly?postal_code={postal_code}` | get /history/subhourly?postal_code={postal_code} | `postal_code`*, `country`, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | HistorySubhourly | yes | Returns Historical Observations - Given a Postal Code |
+| GET | `/history/subhourly?station={station}` | get /history/subhourly?station={station} | `station`*, `start_date`*, `end_date`*, `units`, `lang`, `tz`, `callback`, `key`* | HistorySubhourly | yes | Returns Historical Observations - Given a station ID. |

@@ -12,7 +12,7 @@ Independent connector for Gitea.com. Not affiliated with or endorsed by Gitea.
 
 | | |
 | --- | --- |
-| Signed bundle | `0f08606c5be0275c43a5a339034aef809be8e882a62df8730c8dc83106bf5b5d` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://gitea.com/api/v1` |
 | Credential | api_key_header (`Authorization` 'token') |
 | Connection test | GET `https://gitea.com/api/v1/user` |
@@ -40,559 +40,561 @@ Independent connector for Gitea.com. Not affiliated with or endorsed by Gitea.
 
 241 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/admin/actions/jobs` | listAdminWorkflowJobs | Lists all jobs |
-| GET | `/admin/actions/runners` | getAdminRunners | Get all runners |
-| POST | `/admin/actions/runners/registration-token` | adminCreateRunnerRegistrationToken | Get a global actions runner registration token |
-| DELETE | `/admin/actions/runners/{runner_id}` | deleteAdminRunner | Delete a global runner |
-| GET | `/admin/actions/runners/{runner_id}` | getAdminRunner | Get a global runner |
-| PATCH | `/admin/actions/runners/{runner_id}` | updateAdminRunner | Update a global runner |
-| GET | `/admin/actions/runs` | listAdminWorkflowRuns | Lists all runs |
-| GET | `/admin/cron` | adminCronList | List cron tasks |
-| POST | `/admin/cron/{task}` | adminCronRun | Run cron task |
-| GET | `/admin/emails` | adminGetAllEmails | List all emails |
-| GET | `/admin/emails/search` | adminSearchEmails | Search all emails |
-| GET | `/admin/hooks` | adminListHooks | List system's webhooks |
-| POST | `/admin/hooks` | adminCreateHook | Create a hook |
-| DELETE | `/admin/hooks/{id}` | adminDeleteHook | Delete a hook |
-| GET | `/admin/hooks/{id}` | adminGetHook | Get a hook |
-| PATCH | `/admin/hooks/{id}` | adminEditHook | Update a hook |
-| GET | `/admin/orgs` | adminGetAllOrgs | List all organizations |
-| GET | `/admin/packages` | adminListPackages | List all packages |
-| GET | `/admin/unadopted` | adminUnadoptedList | List unadopted repositories |
-| DELETE | `/admin/unadopted/{owner}/{repo}` | adminDeleteUnadoptedRepository | Delete unadopted files |
-| POST | `/admin/unadopted/{owner}/{repo}` | adminAdoptRepository | Adopt unadopted files as a repository |
-| GET | `/admin/users` | adminSearchUsers | Search users according filter conditions |
-| POST | `/admin/users` | adminCreateUser | Create a user |
-| DELETE | `/admin/users/{username}` | adminDeleteUser | Delete a user |
-| PATCH | `/admin/users/{username}` | adminEditUser | Edit an existing user |
-| DELETE | `/admin/users/{username}/badges` | adminDeleteUserBadges | Remove a badge from a user |
-| GET | `/admin/users/{username}/badges` | adminListUserBadges | List a user's badges |
-| POST | `/admin/users/{username}/badges` | adminAddUserBadges | Add a badge to a user |
-| POST | `/admin/users/{username}/keys` | adminCreatePublicKey | Add a public key on behalf of a user |
-| DELETE | `/admin/users/{username}/keys/{id}` | adminDeleteUserPublicKey | Delete a user's public key |
-| POST | `/admin/users/{username}/orgs` | adminCreateOrg | Create an organization |
-| POST | `/admin/users/{username}/rename` | adminRenameUser | Rename a user |
-| POST | `/admin/users/{username}/repos` | adminCreateRepo | Create a repository on behalf of a user |
-| GET | `/gitignore/templates` | listGitignoresTemplates | Returns a list of all gitignore templates |
-| GET | `/gitignore/templates/{name}` | getGitignoreTemplateInfo | Returns information about a gitignore template |
-| GET | `/label/templates` | listLabelTemplates | Returns a list of all label templates |
-| GET | `/label/templates/{name}` | getLabelTemplateInfo | Returns all labels in a template |
-| GET | `/licenses` | listLicenseTemplates | Returns a list of all license templates |
-| GET | `/licenses/{name}` | getLicenseTemplateInfo | Returns information about a license template |
-| POST | `/markdown` | renderMarkdown | Render a markdown document as HTML |
-| POST | `/markdown/raw` | renderMarkdownRaw | Render raw markdown as HTML |
-| POST | `/markup` | renderMarkup | Render a markup document as HTML |
-| GET | `/notifications` | notifyGetList | List users's notification threads |
-| PUT | `/notifications` | notifyReadList | Mark notification threads as read, pinned or unread |
-| GET | `/notifications/new` | notifyNewAvailable | Check if unread notifications exist |
-| GET | `/notifications/threads/{id}` | notifyGetThread | Get notification thread by ID |
-| PATCH | `/notifications/threads/{id}` | notifyReadThread | Mark notification thread as read by ID |
-| POST | `/org/{org}/repos` | createOrgRepoDeprecated | Create a repository in an organization |
-| GET | `/orgs` | orgGetAll | Get list of organizations |
-| POST | `/orgs` | orgCreate | Create an organization |
-| DELETE | `/orgs/{org}` | orgDelete | Delete an organization |
-| GET | `/orgs/{org}` | orgGet | Get an organization |
-| PATCH | `/orgs/{org}` | orgEdit | Edit an organization |
-| GET | `/orgs/{org}/actions/jobs` | getOrgWorkflowJobs | Get org-level workflow jobs |
-| GET | `/orgs/{org}/actions/runners` | getOrgRunners | Get org-level runners |
-| POST | `/orgs/{org}/actions/runners/registration-token` | orgCreateRunnerRegistrationToken | Get an organization's actions runner registration token |
-| DELETE | `/orgs/{org}/actions/runners/{runner_id}` | deleteOrgRunner | Delete an org-level runner |
-| GET | `/orgs/{org}/actions/runners/{runner_id}` | getOrgRunner | Get an org-level runner |
-| PATCH | `/orgs/{org}/actions/runners/{runner_id}` | updateOrgRunner | Update an org-level runner |
-| GET | `/orgs/{org}/actions/runs` | getOrgWorkflowRuns | Get org-level workflow runs |
-| GET | `/orgs/{org}/actions/secrets` | orgListActionsSecrets | List an organization's actions secrets |
-| DELETE | `/orgs/{org}/actions/secrets/{secretname}` | deleteOrgSecret | Delete a secret in an organization |
-| PUT | `/orgs/{org}/actions/secrets/{secretname}` | updateOrgSecret | Create or Update a secret value in an organization |
-| GET | `/orgs/{org}/actions/variables` | getOrgVariablesList | Get an org-level variables list |
-| DELETE | `/orgs/{org}/actions/variables/{variablename}` | deleteOrgVariable | Delete an org-level variable |
-| GET | `/orgs/{org}/actions/variables/{variablename}` | getOrgVariable | Get an org-level variable |
-| POST | `/orgs/{org}/actions/variables/{variablename}` | createOrgVariable | Create an org-level variable |
-| PUT | `/orgs/{org}/actions/variables/{variablename}` | updateOrgVariable | Update an org-level variable |
-| GET | `/orgs/{org}/activities/feeds` | orgListActivityFeeds | List an organization's activity feeds |
-| DELETE | `/orgs/{org}/avatar` | orgDeleteAvatar | Delete Avatar |
-| POST | `/orgs/{org}/avatar` | orgUpdateAvatar | Update Avatar |
-| GET | `/orgs/{org}/blocks` | organizationListBlocks | List users blocked by the organization |
-| DELETE | `/orgs/{org}/blocks/{username}` | organizationUnblockUser | Unblock a user |
-| GET | `/orgs/{org}/blocks/{username}` | organizationCheckUserBlock | Check if a user is blocked by the organization |
-| PUT | `/orgs/{org}/blocks/{username}` | organizationBlockUser | Block a user |
-| GET | `/orgs/{org}/hooks` | orgListHooks | List an organization's webhooks |
-| POST | `/orgs/{org}/hooks` | orgCreateHook | Create a hook |
-| DELETE | `/orgs/{org}/hooks/{id}` | orgDeleteHook | Delete a hook |
-| GET | `/orgs/{org}/hooks/{id}` | orgGetHook | Get a hook |
-| PATCH | `/orgs/{org}/hooks/{id}` | orgEditHook | Update a hook |
-| GET | `/orgs/{org}/labels` | orgListLabels | List an organization's labels |
-| POST | `/orgs/{org}/labels` | orgCreateLabel | Create a label for an organization |
-| DELETE | `/orgs/{org}/labels/{id}` | orgDeleteLabel | Delete a label |
-| GET | `/orgs/{org}/labels/{id}` | orgGetLabel | Get a single label |
-| PATCH | `/orgs/{org}/labels/{id}` | orgEditLabel | Update a label |
-| GET | `/orgs/{org}/members` | orgListMembers | List an organization's members |
-| DELETE | `/orgs/{org}/members/{username}` | orgDeleteMember | Remove a member from an organization |
-| GET | `/orgs/{org}/members/{username}` | orgIsMember | Check if a user is a member of an organization |
-| GET | `/orgs/{org}/projects` | orgListProjects | List an organization's projects |
-| POST | `/orgs/{org}/projects` | orgCreateProject | Create a project owned by an organization |
-| DELETE | `/orgs/{org}/projects/{id}` | orgDeleteProject | Delete a project |
-| GET | `/orgs/{org}/projects/{id}` | orgGetProject | Get a project |
-| PATCH | `/orgs/{org}/projects/{id}` | orgEditProject | Edit a project |
-| GET | `/orgs/{org}/projects/{id}/columns` | orgListProjectColumns | List a project's columns |
-| POST | `/orgs/{org}/projects/{id}/columns` | orgCreateProjectColumn | Create a column in a project |
-| POST | `/orgs/{org}/projects/{id}/columns/move` | orgMoveProjectColumns | Reorder a project's columns |
-| DELETE | `/orgs/{org}/projects/{id}/columns/{column_id}` | orgDeleteProjectColumn | Delete a project column |
-| GET | `/orgs/{org}/projects/{id}/columns/{column_id}` | orgGetProjectColumn | Get a project column |
-| PATCH | `/orgs/{org}/projects/{id}/columns/{column_id}` | orgEditProjectColumn | Edit a project column |
-| POST | `/orgs/{org}/projects/{id}/columns/{column_id}/default` | orgSetDefaultProjectColumn | Set a project's default column |
-| GET | `/orgs/{org}/projects/{id}/columns/{column_id}/issues` | orgListProjectColumnIssues | List the issues in a project column |
-| DELETE | `/orgs/{org}/projects/{id}/columns/{column_id}/issues/{issue_id}` | orgRemoveIssueFromProjectColumn | Remove an issue from a project column |
-| POST | `/orgs/{org}/projects/{id}/columns/{column_id}/issues/{issue_id}` | orgAddIssueToProjectColumn | Add an issue to a project column |
-| POST | `/orgs/{org}/projects/{id}/issues/{issue_id}/move` | orgMoveProjectIssue | Move an issue between a project's columns |
-| GET | `/orgs/{org}/projects/{id}/workflows` | orgListProjectWorkflows | List a project's workflows |
-| POST | `/orgs/{org}/projects/{id}/workflows` | orgCreateProjectWorkflow | Create a project workflow |
-| DELETE | `/orgs/{org}/projects/{id}/workflows/{workflow_id}` | orgDeleteProjectWorkflow | Delete a project workflow |
-| GET | `/orgs/{org}/projects/{id}/workflows/{workflow_id}` | orgGetProjectWorkflow | Get a project workflow |
-| PATCH | `/orgs/{org}/projects/{id}/workflows/{workflow_id}` | orgEditProjectWorkflow | Edit a project workflow |
-| GET | `/orgs/{org}/public_members` | orgListPublicMembers | List an organization's public members |
-| DELETE | `/orgs/{org}/public_members/{username}` | orgConcealMember | Conceal a user's membership |
-| GET | `/orgs/{org}/public_members/{username}` | orgIsPublicMember | Check if a user is a public member of an organization |
-| PUT | `/orgs/{org}/public_members/{username}` | orgPublicizeMember | Publicize a user's membership |
-| POST | `/orgs/{org}/rename` | renameOrg | Rename an organization |
-| DELETE | `/orgs/{org}/repos` | orgDeleteRepos | Delete all repositories in an organization |
-| GET | `/orgs/{org}/repos` | orgListRepos | List an organization's repos |
-| POST | `/orgs/{org}/repos` | createOrgRepo | Create a repository in an organization |
-| GET | `/orgs/{org}/teams` | orgListTeams | List an organization's teams |
-| POST | `/orgs/{org}/teams` | orgCreateTeam | Create a team |
-| GET | `/orgs/{org}/teams/search` | teamSearch | Search for teams within an organization |
-| GET | `/packages/{owner}` | listPackages | Gets all packages of an owner |
-| DELETE | `/packages/{owner}/{type}/{name}` | deletePackage | Delete a package |
-| GET | `/packages/{owner}/{type}/{name}` | listPackageVersions | Gets all versions of a package |
-| GET | `/packages/{owner}/{type}/{name}/-/latest` | getLatestPackageVersion | Gets the latest version of a package |
-| POST | `/packages/{owner}/{type}/{name}/-/link/{repo_name}` | linkPackage | Link a package to a repository |
-| POST | `/packages/{owner}/{type}/{name}/-/unlink` | unlinkPackage | Unlink a package from a repository |
-| DELETE | `/packages/{owner}/{type}/{name}/{version}` | deletePackageVersion | Delete a package version |
-| GET | `/packages/{owner}/{type}/{name}/{version}` | getPackage | Gets a package |
-| GET | `/packages/{owner}/{type}/{name}/{version}/files` | listPackageFiles | Gets all files of a package |
-| GET | `/repos/issues/search` | issueSearchIssues | Search for issues across the repositories that the user has access to |
-| POST | `/repos/migrate` | repoMigrate | Migrate a remote git repository |
-| GET | `/repos/search` | repoSearch | Search for repositories |
-| DELETE | `/repos/{owner}/{repo}` | repoDelete | Delete a repository |
-| GET | `/repos/{owner}/{repo}` | repoGet | Get a repository |
-| PATCH | `/repos/{owner}/{repo}` | repoEdit | Edit a repository's properties. Only fields that are set will be changed. |
-| GET | `/repos/{owner}/{repo}/actions/artifacts` | getArtifacts | Lists all artifacts for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | deleteArtifact | Deletes a specific artifact for a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | getArtifact | Gets a specific artifact for a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/zip` | downloadArtifact | Downloads a specific artifact for a workflow run redirects to blob url |
-| GET | `/repos/{owner}/{repo}/actions/jobs` | listWorkflowJobs | Lists all jobs for a repository |
-| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}` | getWorkflowJob | Gets a specific workflow job for a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}/logs` | downloadActionsRunJobLogs | Downloads the job logs for a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runners` | getRepoRunners | Get repo-level runners |
-| POST | `/repos/{owner}/{repo}/actions/runners/registration-token` | repoCreateRunnerRegistrationToken | Get a repository's actions runner registration token |
-| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | deleteRepoRunner | Delete a repo-level runner |
-| GET | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | getRepoRunner | Get a repo-level runner |
-| PATCH | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | updateRepoRunner | Update a repo-level runner |
-| GET | `/repos/{owner}/{repo}/actions/runs` | getWorkflowRuns | Lists all runs for a repository run |
-| DELETE | `/repos/{owner}/{repo}/actions/runs/{run}` | deleteActionRun | Delete a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run}` | GetWorkflowRun | Gets a specific workflow run |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run}/approve` | approveWorkflowRun | Approve a workflow run that requires approval |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run}/artifacts` | getArtifactsOfRun | Lists all artifacts for a repository run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt}` | getWorkflowRunAttempt | Gets a specific workflow run attempt |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt}/jobs` | listWorkflowRunAttemptJobs | Lists all jobs for a workflow run attempt |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run}/cancel` | cancelWorkflowRun | Cancel a workflow run and its jobs |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run}/force-cancel` | forceCancelWorkflowRun | Force-cancel a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run}/jobs` | listWorkflowRunJobs | Lists all jobs for a workflow run |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run}/jobs/{job_id}/rerun` | rerunWorkflowJob | Reruns a specific workflow job in a run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run}/logs` | getWorkflowRunLogs | Download workflow run logs as archive |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run}/rerun` | rerunWorkflowRun | Reruns an entire workflow run |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run}/rerun-failed-jobs` | rerunFailedWorkflowRun | Reruns all failed jobs in a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/secrets` | repoListActionsSecrets | List a repo's actions secrets |
-| DELETE | `/repos/{owner}/{repo}/actions/secrets/{secretname}` | deleteRepoSecret | Delete a secret in a repository |
-| PUT | `/repos/{owner}/{repo}/actions/secrets/{secretname}` | updateRepoSecret | Create or Update a secret value in a repository |
-| GET | `/repos/{owner}/{repo}/actions/tasks` | ListActionTasks | List a repository's action tasks |
-| GET | `/repos/{owner}/{repo}/actions/variables` | getRepoVariablesList | Get repo-level variables list |
-| DELETE | `/repos/{owner}/{repo}/actions/variables/{variablename}` | deleteRepoVariable | Delete a repo-level variable |
-| GET | `/repos/{owner}/{repo}/actions/variables/{variablename}` | getRepoVariable | Get a repo-level variable |
-| POST | `/repos/{owner}/{repo}/actions/variables/{variablename}` | createRepoVariable | Create a repo-level variable |
-| PUT | `/repos/{owner}/{repo}/actions/variables/{variablename}` | updateRepoVariable | Update a repo-level variable |
-| GET | `/repos/{owner}/{repo}/actions/workflows` | ActionsListRepositoryWorkflows | List repository workflows |
-| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}` | ActionsGetWorkflow | Get a workflow |
-| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable` | ActionsDisableWorkflow | Disable a workflow |
-| POST | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches` | ActionsDispatchWorkflow | Create a workflow dispatch event |
-| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable` | ActionsEnableWorkflow | Enable a workflow |
-| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs` | ActionsListWorkflowRuns | List runs for a workflow |
-| GET | `/repos/{owner}/{repo}/activities/feeds` | repoListActivityFeeds | List a repository's activity feeds |
-| GET | `/repos/{owner}/{repo}/archive/{archive}` | repoGetArchive | Get an archive of a repository |
-| GET | `/repos/{owner}/{repo}/assignees` | repoGetAssignees | Return all users that have write access and can be assigned to issues |
-| GET | `/repos/{owner}/{repo}/assignees/{assignee}` | repoCheckAssignee | Check if a user can be assigned to issues in a repository |
-| DELETE | `/repos/{owner}/{repo}/avatar` | repoDeleteAvatar | Delete avatar |
-| POST | `/repos/{owner}/{repo}/avatar` | repoUpdateAvatar | Update avatar |
-| GET | `/repos/{owner}/{repo}/branch_protections` | repoListBranchProtection | List branch protections for a repository |
-| POST | `/repos/{owner}/{repo}/branch_protections` | repoCreateBranchProtection | Create a branch protections for a repository |
-| POST | `/repos/{owner}/{repo}/branch_protections/priority` | repoUpdateBranchProtectionPriories | Update the priorities of branch protections for a repository. |
-| DELETE | `/repos/{owner}/{repo}/branch_protections/{name}` | repoDeleteBranchProtection | Delete a specific branch protection for the repository |
-| GET | `/repos/{owner}/{repo}/branch_protections/{name}` | repoGetBranchProtection | Get a specific branch protection for the repository |
-| PATCH | `/repos/{owner}/{repo}/branch_protections/{name}` | repoEditBranchProtection | Edit a branch protections for a repository. Only fields that are set will be changed |
-| GET | `/repos/{owner}/{repo}/branches` | repoListBranches | List a repository's branches |
-| POST | `/repos/{owner}/{repo}/branches` | repoCreateBranch | Create a branch |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}` | repoDeleteBranch | Delete a specific branch from a repository |
-| GET | `/repos/{owner}/{repo}/branches/{branch}` | repoGetBranch | Retrieve a specific branch from a repository, including its effective branch protection |
-| PATCH | `/repos/{owner}/{repo}/branches/{branch}` | repoRenameBranch | Rename a branch |
-| PUT | `/repos/{owner}/{repo}/branches/{branch}` | repoUpdateBranch | Update a branch reference to a new commit |
-| GET | `/repos/{owner}/{repo}/collaborators` | repoListCollaborators | List a repository's collaborators |
-| DELETE | `/repos/{owner}/{repo}/collaborators/{collaborator}` | repoDeleteCollaborator | Delete a collaborator from a repository |
-| GET | `/repos/{owner}/{repo}/collaborators/{collaborator}` | repoCheckCollaborator | Check if a user is a collaborator of a repository |
-| PUT | `/repos/{owner}/{repo}/collaborators/{collaborator}` | repoAddCollaborator | Add or Update a collaborator to a repository |
-| GET | `/repos/{owner}/{repo}/collaborators/{collaborator}/permission` | repoGetRepoPermissions | Get repository permissions for a user |
-| GET | `/repos/{owner}/{repo}/commits` | repoGetAllCommits | Get a list of all commits from a repository |
-| GET | `/repos/{owner}/{repo}/commits/{ref}/status` | repoGetCombinedStatusByRef | Get a commit's combined status, by branch/tag/commit reference |
-| GET | `/repos/{owner}/{repo}/commits/{ref}/statuses` | repoListStatusesByRef | Get a commit's statuses, by branch/tag/commit reference |
-| GET | `/repos/{owner}/{repo}/commits/{sha}/pull` | repoGetCommitPullRequest | Get the merged pull request of the commit |
-| GET | `/repos/{owner}/{repo}/compare/{basehead}` | repoCompareDiff | Get commit comparison information |
-| GET | `/repos/{owner}/{repo}/contents` | repoGetContentsList | Gets the metadata of all the entries of the root dir. |
-| POST | `/repos/{owner}/{repo}/contents` | repoChangeFiles | Modify multiple files in a repository |
-| GET | `/repos/{owner}/{repo}/contents-ext/{filepath}` | repoGetContentsExt | The extended "contents" API, to get file metadata and/or content, or list a directory. |
-| DELETE | `/repos/{owner}/{repo}/contents/{filepath}` | repoDeleteFile | Delete a file in a repository |
-| GET | `/repos/{owner}/{repo}/contents/{filepath}` | repoGetContents | Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir. |
-| POST | `/repos/{owner}/{repo}/contents/{filepath}` | repoCreateFile | Create a file in a repository |
-| PUT | `/repos/{owner}/{repo}/contents/{filepath}` | repoUpdateFile | Update a file in a repository if SHA is set, or create the file if SHA is not set |
-| POST | `/repos/{owner}/{repo}/diffpatch` | repoApplyDiffPatch | Apply diff patch to repository |
-| GET | `/repos/{owner}/{repo}/editorconfig/{filepath}` | repoGetEditorConfig | Get the EditorConfig definitions of a file in a repository |
-| GET | `/repos/{owner}/{repo}/file-contents` | repoGetFileContents | Get the metadata and contents of requested files |
-| POST | `/repos/{owner}/{repo}/file-contents` | repoGetFileContentsPost | Get the metadata and contents of requested files |
-| GET | `/repos/{owner}/{repo}/forks` | listForks | List a repository's forks |
-| POST | `/repos/{owner}/{repo}/forks` | createFork | Fork a repository |
-| GET | `/repos/{owner}/{repo}/git/blobs/{sha}` | GetBlob | Gets the blob of a repository. |
-| GET | `/repos/{owner}/{repo}/git/commits/{sha}` | repoGetSingleCommit | Get a single commit from a repository, it has a GitHub-compatible alias "/repos/{owner}/{repo}/commits/{ref}" |
-| GET | `/repos/{owner}/{repo}/git/commits/{sha}.{diffType}` | repoDownloadCommitDiffOrPatch | Get a commit's diff or patch |
-| GET | `/repos/{owner}/{repo}/git/notes/{sha}` | repoGetNote | Get a note corresponding to a single commit from a repository |
-| GET | `/repos/{owner}/{repo}/git/refs` | repoListAllGitRefs | Get specified ref or filtered repository's refs |
-| GET | `/repos/{owner}/{repo}/git/refs/{ref}` | repoListGitRefs | Get specified ref or filtered repository's refs |
-| GET | `/repos/{owner}/{repo}/git/tags/{sha}` | GetAnnotatedTag | Gets the tag object of an annotated tag (not lightweight tags) |
-| GET | `/repos/{owner}/{repo}/git/trees/{sha}` | GetTree | Gets the tree of a repository. |
-| GET | `/repos/{owner}/{repo}/hooks` | repoListHooks | List the hooks in a repository |
-| POST | `/repos/{owner}/{repo}/hooks` | repoCreateHook | Create a hook |
-| GET | `/repos/{owner}/{repo}/hooks/git` | repoListGitHooks | List the Git hooks in a repository |
-| DELETE | `/repos/{owner}/{repo}/hooks/git/{id}` | repoDeleteGitHook | Delete a Git hook in a repository |
-| GET | `/repos/{owner}/{repo}/hooks/git/{id}` | repoGetGitHook | Get a Git hook |
-| PATCH | `/repos/{owner}/{repo}/hooks/git/{id}` | repoEditGitHook | Edit a Git hook in a repository |
-| DELETE | `/repos/{owner}/{repo}/hooks/{id}` | repoDeleteHook | Delete a hook in a repository |
-| GET | `/repos/{owner}/{repo}/hooks/{id}` | repoGetHook | Get a hook |
-| PATCH | `/repos/{owner}/{repo}/hooks/{id}` | repoEditHook | Edit a hook in a repository |
-| GET | `/repos/{owner}/{repo}/hooks/{id}/deliveries` | repoListHookDeliveries | List the deliveries of a hook in a repository |
-| GET | `/repos/{owner}/{repo}/hooks/{id}/deliveries/{uuid}` | repoGetHookDelivery | Get a delivery of a hook in a repository |
-| POST | `/repos/{owner}/{repo}/hooks/{id}/tests` | repoTestHook | Test a push webhook |
-| GET | `/repos/{owner}/{repo}/issue_config` | repoGetIssueConfig | Returns the issue config for a repo |
-| GET | `/repos/{owner}/{repo}/issue_config/validate` | repoValidateIssueConfig | Returns the validation information for a issue config |
-| GET | `/repos/{owner}/{repo}/issue_templates` | repoGetIssueTemplates | Get available issue templates for a repository |
-| GET | `/repos/{owner}/{repo}/issues` | issueListIssues | List a repository's issues |
-| POST | `/repos/{owner}/{repo}/issues` | issueCreateIssue | Create an issue. If using deadline only the date will be taken into account, and time of day ignored. |
-| GET | `/repos/{owner}/{repo}/issues/comments` | issueGetRepoComments | List all comments in a repository |
-| DELETE | `/repos/{owner}/{repo}/issues/comments/{id}` | issueDeleteComment | Delete a comment |
-| GET | `/repos/{owner}/{repo}/issues/comments/{id}` | issueGetComment | Get a comment |
-| PATCH | `/repos/{owner}/{repo}/issues/comments/{id}` | issueEditComment | Edit a comment |
-| GET | `/repos/{owner}/{repo}/issues/comments/{id}/assets` | issueListIssueCommentAttachments | List comment's attachments |
-| POST | `/repos/{owner}/{repo}/issues/comments/{id}/assets` | issueCreateIssueCommentAttachment | Create a comment attachment |
-| DELETE | `/repos/{owner}/{repo}/issues/comments/{id}/assets/{attachment_id}` | issueDeleteIssueCommentAttachment | Delete a comment attachment |
-| GET | `/repos/{owner}/{repo}/issues/comments/{id}/assets/{attachment_id}` | issueGetIssueCommentAttachment | Get a comment attachment |
-| PATCH | `/repos/{owner}/{repo}/issues/comments/{id}/assets/{attachment_id}` | issueEditIssueCommentAttachment | Edit a comment attachment |
-| DELETE | `/repos/{owner}/{repo}/issues/comments/{id}/reactions` | issueDeleteCommentReaction | Remove a reaction from a comment of an issue |
-| GET | `/repos/{owner}/{repo}/issues/comments/{id}/reactions` | issueGetCommentReactions | Get a list of reactions from a comment of an issue |
-| POST | `/repos/{owner}/{repo}/issues/comments/{id}/reactions` | issuePostCommentReaction | Add a reaction to a comment of an issue |
-| GET | `/repos/{owner}/{repo}/issues/pinned` | repoListPinnedIssues | List a repo's pinned issues |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}` | issueDelete | Delete an issue |
-| GET | `/repos/{owner}/{repo}/issues/{index}` | issueGetIssue | Get an issue |
-| PATCH | `/repos/{owner}/{repo}/issues/{index}` | issueEditIssue | Edit an issue. If using deadline only the date will be taken into account, and time of day ignored. |
-| GET | `/repos/{owner}/{repo}/issues/{index}/assets` | issueListIssueAttachments | List issue's attachments |
-| POST | `/repos/{owner}/{repo}/issues/{index}/assets` | issueCreateIssueAttachment | Create an issue attachment |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/assets/{attachment_id}` | issueDeleteIssueAttachment | Delete an issue attachment |
-| GET | `/repos/{owner}/{repo}/issues/{index}/assets/{attachment_id}` | issueGetIssueAttachment | Get an issue attachment |
-| PATCH | `/repos/{owner}/{repo}/issues/{index}/assets/{attachment_id}` | issueEditIssueAttachment | Edit an issue attachment |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/assignees` | issueRemoveAssignees | Remove assignees from an issue |
-| POST | `/repos/{owner}/{repo}/issues/{index}/assignees` | issueAddAssignees | Add assignees to an issue |
-| GET | `/repos/{owner}/{repo}/issues/{index}/assignees/{assignee}` | issueCheckAssignee | Check if a user can be assigned to an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/blocks` | issueRemoveIssueBlocking | Unblock the issue given in the body by the issue in path |
-| GET | `/repos/{owner}/{repo}/issues/{index}/blocks` | issueListBlocks | List issues that are blocked by this issue |
-| POST | `/repos/{owner}/{repo}/issues/{index}/blocks` | issueCreateIssueBlocking | Block the issue given in the body by the issue in path |
-| GET | `/repos/{owner}/{repo}/issues/{index}/comments` | issueGetComments | List all comments on an issue |
-| POST | `/repos/{owner}/{repo}/issues/{index}/comments` | issueCreateComment | Add a comment to an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/comments/{id}` | issueDeleteCommentDeprecated | Delete a comment |
-| PATCH | `/repos/{owner}/{repo}/issues/{index}/comments/{id}` | issueEditCommentDeprecated | Edit a comment |
-| POST | `/repos/{owner}/{repo}/issues/{index}/deadline` | issueEditIssueDeadline | Set an issue deadline. If set to null, the deadline is deleted. If using deadline only the date will be taken into account, and time of day ignored. |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/dependencies` | issueRemoveIssueDependencies | Remove an issue dependency |
-| GET | `/repos/{owner}/{repo}/issues/{index}/dependencies` | issueListIssueDependencies | List an issue's dependencies, i.e all issues that block this issue. |
-| POST | `/repos/{owner}/{repo}/issues/{index}/dependencies` | issueCreateIssueDependencies | Make the issue in the url depend on the issue in the form. |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/labels` | issueClearLabels | Remove all labels from an issue |
-| GET | `/repos/{owner}/{repo}/issues/{index}/labels` | issueGetLabels | Get an issue's labels |
-| POST | `/repos/{owner}/{repo}/issues/{index}/labels` | issueAddLabel | Add a label to an issue |
-| PUT | `/repos/{owner}/{repo}/issues/{index}/labels` | issueReplaceLabels | Replace an issue's labels |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/labels/{id}` | issueRemoveLabel | Remove a label from an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/lock` | issueUnlockIssue | Unlock an issue |
-| PUT | `/repos/{owner}/{repo}/issues/{index}/lock` | issueLockIssue | Lock an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/pin` | unpinIssue | Unpin an Issue |
-| POST | `/repos/{owner}/{repo}/issues/{index}/pin` | pinIssue | Pin an Issue |
-| PATCH | `/repos/{owner}/{repo}/issues/{index}/pin/{position}` | moveIssuePin | Moves the Pin to the given Position |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/reactions` | issueDeleteIssueReaction | Remove a reaction from an issue |
-| GET | `/repos/{owner}/{repo}/issues/{index}/reactions` | issueGetIssueReactions | Get a list reactions of an issue |
-| POST | `/repos/{owner}/{repo}/issues/{index}/reactions` | issuePostIssueReaction | Add a reaction to an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/stopwatch/delete` | issueDeleteStopWatch | Delete an issue's existing stopwatch. |
-| POST | `/repos/{owner}/{repo}/issues/{index}/stopwatch/start` | issueStartStopWatch | Start stopwatch on an issue. |
-| POST | `/repos/{owner}/{repo}/issues/{index}/stopwatch/stop` | issueStopStopWatch | Stop an issue's existing stopwatch. |
-| GET | `/repos/{owner}/{repo}/issues/{index}/subscriptions` | issueSubscriptions | Get users who subscribed on an issue. |
-| GET | `/repos/{owner}/{repo}/issues/{index}/subscriptions/check` | issueCheckSubscription | Check if user is subscribed to an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/subscriptions/{user}` | issueDeleteSubscription | Unsubscribe user from issue |
-| PUT | `/repos/{owner}/{repo}/issues/{index}/subscriptions/{user}` | issueAddSubscription | Subscribe user to issue |
-| GET | `/repos/{owner}/{repo}/issues/{index}/timeline` | issueGetCommentsAndTimeline | List all comments and events on an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/times` | issueResetTime | Reset a tracked time of an issue |
-| GET | `/repos/{owner}/{repo}/issues/{index}/times` | issueTrackedTimes | List an issue's tracked times |
-| POST | `/repos/{owner}/{repo}/issues/{index}/times` | issueAddTime | Add tracked time to a issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{index}/times/{id}` | issueDeleteTime | Delete specific tracked time |
-| GET | `/repos/{owner}/{repo}/keys` | repoListKeys | List a repository's keys |
-| POST | `/repos/{owner}/{repo}/keys` | repoCreateKey | Add a key to a repository |
-| POST | `/repos/{owner}/{repo}/keys/tokens` | repoCreateDeployToken | Add a deploy token to a repository, it authenticates git over HTTPS |
-| DELETE | `/repos/{owner}/{repo}/keys/{id}` | repoDeleteKey | Delete a key from a repository |
-| GET | `/repos/{owner}/{repo}/keys/{id}` | repoGetKey | Get a repository's key by id |
-| GET | `/repos/{owner}/{repo}/labels` | issueListLabels | Get all of a repository's labels |
-| POST | `/repos/{owner}/{repo}/labels` | issueCreateLabel | Create a label |
-| DELETE | `/repos/{owner}/{repo}/labels/{id}` | issueDeleteLabel | Delete a label |
-| GET | `/repos/{owner}/{repo}/labels/{id}` | issueGetLabel | Get a single label |
-| PATCH | `/repos/{owner}/{repo}/labels/{id}` | issueEditLabel | Update a label |
-| GET | `/repos/{owner}/{repo}/languages` | repoGetLanguages | Get languages and number of bytes of code written |
-| GET | `/repos/{owner}/{repo}/licenses` | repoGetLicenses | Get repo licenses |
-| GET | `/repos/{owner}/{repo}/media/{filepath}` | repoGetRawFileOrLFS | Get a file or it's LFS object from a repository |
-| POST | `/repos/{owner}/{repo}/merge-upstream` | repoMergeUpstream | Merge a branch from upstream |
-| GET | `/repos/{owner}/{repo}/milestones` | issueGetMilestonesList | Get all of a repository's opened milestones |
-| POST | `/repos/{owner}/{repo}/milestones` | issueCreateMilestone | Create a milestone |
-| DELETE | `/repos/{owner}/{repo}/milestones/{id}` | issueDeleteMilestone | Delete a milestone |
-| GET | `/repos/{owner}/{repo}/milestones/{id}` | issueGetMilestone | Get a milestone |
-| PATCH | `/repos/{owner}/{repo}/milestones/{id}` | issueEditMilestone | Update a milestone |
-| POST | `/repos/{owner}/{repo}/mirror-sync` | repoMirrorSync | Sync a mirrored repository |
-| GET | `/repos/{owner}/{repo}/new_pin_allowed` | repoNewPinAllowed | Returns if new Issue Pins are allowed |
-| GET | `/repos/{owner}/{repo}/notifications` | notifyGetRepoList | List users's notification threads on a specific repo |
-| PUT | `/repos/{owner}/{repo}/notifications` | notifyReadRepoList | Mark notification threads as read, pinned or unread on a specific repo |
-| GET | `/repos/{owner}/{repo}/projects` | repoListProjects | List a repository's projects |
-| POST | `/repos/{owner}/{repo}/projects` | repoCreateProject | Create a project owned by a repository |
-| DELETE | `/repos/{owner}/{repo}/projects/{id}` | repoDeleteProject | Delete a project |
-| GET | `/repos/{owner}/{repo}/projects/{id}` | repoGetProject | Get a project |
-| PATCH | `/repos/{owner}/{repo}/projects/{id}` | repoEditProject | Edit a project |
-| GET | `/repos/{owner}/{repo}/projects/{id}/columns` | repoListProjectColumns | List a project's columns |
-| POST | `/repos/{owner}/{repo}/projects/{id}/columns` | repoCreateProjectColumn | Create a column in a project |
-| POST | `/repos/{owner}/{repo}/projects/{id}/columns/move` | repoMoveProjectColumns | Reorder a project's columns |
-| DELETE | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}` | repoDeleteProjectColumn | Delete a project column |
-| GET | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}` | repoGetProjectColumn | Get a project column |
-| PATCH | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}` | repoEditProjectColumn | Edit a project column |
-| POST | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/default` | repoSetDefaultProjectColumn | Set a project's default column |
-| GET | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues` | repoListProjectColumnIssues | List the issues in a project column |
-| DELETE | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id}` | repoRemoveIssueFromProjectColumn | Remove an issue from a project column |
-| POST | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id}` | repoAddIssueToProjectColumn | Add an issue to a project column |
-| POST | `/repos/{owner}/{repo}/projects/{id}/issues/{issue_id}/move` | repoMoveProjectIssue | Move an issue between a project's columns |
-| GET | `/repos/{owner}/{repo}/projects/{id}/workflows` | repoListProjectWorkflows | List a project's workflows |
-| POST | `/repos/{owner}/{repo}/projects/{id}/workflows` | repoCreateProjectWorkflow | Create a project workflow |
-| DELETE | `/repos/{owner}/{repo}/projects/{id}/workflows/{workflow_id}` | repoDeleteProjectWorkflow | Delete a project workflow |
-| GET | `/repos/{owner}/{repo}/projects/{id}/workflows/{workflow_id}` | repoGetProjectWorkflow | Get a project workflow |
-| PATCH | `/repos/{owner}/{repo}/projects/{id}/workflows/{workflow_id}` | repoEditProjectWorkflow | Edit a project workflow |
-| GET | `/repos/{owner}/{repo}/pulls` | repoListPullRequests | List a repo's pull requests |
-| POST | `/repos/{owner}/{repo}/pulls` | repoCreatePullRequest | Create a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/comments/{id}/resolve` | repoResolvePullReviewComment | Resolve a pull request review comment |
-| POST | `/repos/{owner}/{repo}/pulls/comments/{id}/unresolve` | repoUnresolvePullReviewComment | Unresolve a pull request review comment |
-| GET | `/repos/{owner}/{repo}/pulls/pinned` | repoListPinnedPullRequests | List a repo's pinned pull requests |
-| GET | `/repos/{owner}/{repo}/pulls/{base}/{head}` | repoGetPullRequestByBaseHead | Get a pull request by base and head |
-| GET | `/repos/{owner}/{repo}/pulls/{index}` | repoGetPullRequest | Get a pull request |
-| PATCH | `/repos/{owner}/{repo}/pulls/{index}` | repoEditPullRequest | Update a pull request. If using deadline only the date will be taken into account, and time of day ignored. |
-| GET | `/repos/{owner}/{repo}/pulls/{index}.{diffType}` | repoDownloadPullDiffOrPatch | Get a pull request diff or patch |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/comments/{id}/replies` | repoCreatePullReviewCommentReply | Reply to a pull request review comment |
-| GET | `/repos/{owner}/{repo}/pulls/{index}/commits` | repoGetPullRequestCommits | Get commits for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{index}/files` | repoGetPullRequestFiles | Get changed files for a pull request |
-| DELETE | `/repos/{owner}/{repo}/pulls/{index}/merge` | repoCancelScheduledAutoMerge | Cancel the scheduled auto merge for the given pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{index}/merge` | repoPullRequestIsMerged | Check if a pull request has been merged |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/merge` | repoMergePullRequest | Merge a pull request |
-| DELETE | `/repos/{owner}/{repo}/pulls/{index}/requested_reviewers` | repoDeletePullReviewRequests | cancel review requests for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/requested_reviewers` | repoCreatePullReviewRequests | create review requests for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{index}/reviews` | repoListPullReviews | List all reviews for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews` | repoCreatePullReview | Create a review to a pull request |
-| DELETE | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}` | repoDeletePullReview | Delete a specific review from a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}` | repoGetPullReview | Get a specific review for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}` | repoSubmitPullReview | Submit a pending review to a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}/comments` | repoGetPullReviewComments | Get a specific review for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}/dismissals` | repoDismissPullReview | Dismiss a review for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}/undismissals` | repoUnDismissPullReview | Cancel to dismiss a review for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{index}/update` | repoUpdatePullRequest | Merge PR's baseBranch into headBranch |
-| GET | `/repos/{owner}/{repo}/push_mirrors` | repoListPushMirrors | Get all push mirrors of the repository |
-| POST | `/repos/{owner}/{repo}/push_mirrors` | repoAddPushMirror | add a push mirror to the repository |
-| POST | `/repos/{owner}/{repo}/push_mirrors-sync` | repoPushMirrorSync | Sync all push mirrored repository |
-| DELETE | `/repos/{owner}/{repo}/push_mirrors/{name}` | repoDeletePushMirror | deletes a push mirror from a repository by remoteName |
-| GET | `/repos/{owner}/{repo}/push_mirrors/{name}` | repoGetPushMirrorByRemoteName | Get push mirror of the repository by remoteName |
-| GET | `/repos/{owner}/{repo}/raw/{filepath}` | repoGetRawFile | Get a file from a repository |
-| GET | `/repos/{owner}/{repo}/releases` | repoListReleases | List a repo's releases |
-| POST | `/repos/{owner}/{repo}/releases` | repoCreateRelease | Create a release |
-| GET | `/repos/{owner}/{repo}/releases/latest` | repoGetLatestRelease | Gets the most recent non-prerelease, non-draft release of a repository, sorted by created_at |
-| DELETE | `/repos/{owner}/{repo}/releases/tags/{tag}` | repoDeleteReleaseByTag | Delete a release by tag name |
-| GET | `/repos/{owner}/{repo}/releases/tags/{tag}` | repoGetReleaseByTag | Get a release by tag name |
-| DELETE | `/repos/{owner}/{repo}/releases/{id}` | repoDeleteRelease | Delete a release |
-| GET | `/repos/{owner}/{repo}/releases/{id}` | repoGetRelease | Get a release |
-| PATCH | `/repos/{owner}/{repo}/releases/{id}` | repoEditRelease | Update a release |
-| GET | `/repos/{owner}/{repo}/releases/{id}/assets` | repoListReleaseAttachments | List release's attachments |
-| POST | `/repos/{owner}/{repo}/releases/{id}/assets` | repoCreateReleaseAttachment | Create a release attachment |
-| DELETE | `/repos/{owner}/{repo}/releases/{id}/assets/{attachment_id}` | repoDeleteReleaseAttachment | Delete a release attachment |
-| GET | `/repos/{owner}/{repo}/releases/{id}/assets/{attachment_id}` | repoGetReleaseAttachment | Get a release attachment |
-| PATCH | `/repos/{owner}/{repo}/releases/{id}/assets/{attachment_id}` | repoEditReleaseAttachment | Edit a release attachment |
-| GET | `/repos/{owner}/{repo}/reviewers` | repoGetReviewers | Return all users that can be requested to review in this repo |
-| GET | `/repos/{owner}/{repo}/signing-key.gpg` | repoSigningKey | Get signing-key.gpg for given repository |
-| GET | `/repos/{owner}/{repo}/signing-key.pub` | repoSigningKeySSH | Get signing-key.pub for given repository |
-| GET | `/repos/{owner}/{repo}/stargazers` | repoListStargazers | List a repo's stargazers |
-| GET | `/repos/{owner}/{repo}/statuses/{sha}` | repoListStatuses | Get a commit's statuses |
-| POST | `/repos/{owner}/{repo}/statuses/{sha}` | repoCreateStatus | Create a commit status |
-| GET | `/repos/{owner}/{repo}/subscribers` | repoListSubscribers | List a repo's watchers |
-| DELETE | `/repos/{owner}/{repo}/subscription` | userCurrentDeleteSubscription | Unwatch a repo |
-| GET | `/repos/{owner}/{repo}/subscription` | userCurrentCheckSubscription | Check if the current user is watching a repo |
-| PUT | `/repos/{owner}/{repo}/subscription` | userCurrentPutSubscription | Watch a repo |
-| GET | `/repos/{owner}/{repo}/tag_protections` | repoListTagProtection | List tag protections for a repository |
-| POST | `/repos/{owner}/{repo}/tag_protections` | repoCreateTagProtection | Create a tag protections for a repository |
-| DELETE | `/repos/{owner}/{repo}/tag_protections/{id}` | repoDeleteTagProtection | Delete a specific tag protection for the repository |
-| GET | `/repos/{owner}/{repo}/tag_protections/{id}` | repoGetTagProtection | Get a specific tag protection for the repository |
-| PATCH | `/repos/{owner}/{repo}/tag_protections/{id}` | repoEditTagProtection | Edit a tag protections for a repository. Only fields that are set will be changed |
-| GET | `/repos/{owner}/{repo}/tags` | repoListTags | List a repository's tags |
-| POST | `/repos/{owner}/{repo}/tags` | repoCreateTag | Create a new git tag in a repository |
-| DELETE | `/repos/{owner}/{repo}/tags/{tag}` | repoDeleteTag | Delete a repository's tag by name |
-| GET | `/repos/{owner}/{repo}/tags/{tag}` | repoGetTag | Get the tag of a repository by tag name |
-| GET | `/repos/{owner}/{repo}/teams` | repoListTeams | List a repository's teams |
-| DELETE | `/repos/{owner}/{repo}/teams/{team}` | repoDeleteTeam | Delete a team from a repository |
-| GET | `/repos/{owner}/{repo}/teams/{team}` | repoCheckTeam | Check if a team is assigned to a repository |
-| PUT | `/repos/{owner}/{repo}/teams/{team}` | repoAddTeam | Add a team to a repository |
-| GET | `/repos/{owner}/{repo}/times` | repoTrackedTimes | List a repo's tracked times |
-| GET | `/repos/{owner}/{repo}/times/{user}` | userTrackedTimes | List a user's tracked times in a repo |
-| GET | `/repos/{owner}/{repo}/topics` | repoListTopics | Get list of topics that a repository has |
-| PUT | `/repos/{owner}/{repo}/topics` | repoUpdateTopics | Replace list of topics for a repository |
-| DELETE | `/repos/{owner}/{repo}/topics/{topic}` | repoDeleteTopic | Delete a topic from a repository |
-| PUT | `/repos/{owner}/{repo}/topics/{topic}` | repoAddTopic | Add a topic to a repository |
-| POST | `/repos/{owner}/{repo}/transfer` | repoTransfer | Transfer a repo ownership |
-| POST | `/repos/{owner}/{repo}/transfer/accept` | acceptRepoTransfer | Accept a repo transfer |
-| POST | `/repos/{owner}/{repo}/transfer/reject` | rejectRepoTransfer | Reject a repo transfer |
-| POST | `/repos/{owner}/{repo}/wiki/new` | repoCreateWikiPage | Create a wiki page |
-| DELETE | `/repos/{owner}/{repo}/wiki/page/{pageName}` | repoDeleteWikiPage | Delete a wiki page |
-| GET | `/repos/{owner}/{repo}/wiki/page/{pageName}` | repoGetWikiPage | Get a wiki page |
-| PATCH | `/repos/{owner}/{repo}/wiki/page/{pageName}` | repoEditWikiPage | Edit a wiki page |
-| GET | `/repos/{owner}/{repo}/wiki/pages` | repoGetWikiPages | Get all wiki pages |
-| GET | `/repos/{owner}/{repo}/wiki/revisions/{pageName}` | repoGetWikiPageRevisions | Get revisions of a wiki page |
-| POST | `/repos/{template_owner}/{template_repo}/generate` | generateRepo | Create a repository using a template |
-| GET | `/repositories/{id}` | repoGetByID | Get a repository by id |
-| GET | `/settings/api` | getGeneralAPISettings | Get instance's global settings for api |
-| GET | `/settings/attachment` | getGeneralAttachmentSettings | Get instance's global settings for Attachment |
-| GET | `/settings/repository` | getGeneralRepositorySettings | Get instance's global settings for repositories |
-| GET | `/settings/ui` | getGeneralUISettings | Get instance's global settings for ui |
-| GET | `/signing-key.gpg` | getSigningKey | Get default signing-key.gpg |
-| GET | `/signing-key.pub` | getSigningKeySSH | Get default signing-key.pub |
-| DELETE | `/teams/{id}` | orgDeleteTeam | Delete a team |
-| GET | `/teams/{id}` | orgGetTeam | Get a team |
-| PATCH | `/teams/{id}` | orgEditTeam | Edit a team |
-| GET | `/teams/{id}/activities/feeds` | orgListTeamActivityFeeds | List a team's activity feeds |
-| GET | `/teams/{id}/members` | orgListTeamMembers | List a team's members |
-| DELETE | `/teams/{id}/members/{username}` | orgRemoveTeamMember | Remove a team member |
-| GET | `/teams/{id}/members/{username}` | orgListTeamMember | List a particular member of team |
-| PUT | `/teams/{id}/members/{username}` | orgAddTeamMember | Add a team member |
-| GET | `/teams/{id}/repos` | orgListTeamRepos | List a team's repos |
-| DELETE | `/teams/{id}/repos/{org}/{repo}` | orgRemoveTeamRepository | Remove a repository from a team |
-| GET | `/teams/{id}/repos/{org}/{repo}` | orgListTeamRepo | List a particular repo of team |
-| PUT | `/teams/{id}/repos/{org}/{repo}` | orgAddTeamRepository | Add a repository to a team |
-| DELETE | `/token` | deleteCurrentToken | Delete the currently authenticated token |
-| GET | `/token` | getCurrentToken | Get the currently authenticated token |
-| GET | `/topics/search` | topicSearch | search topics via keyword |
-| GET | `/user` | userGetCurrent | Get the authenticated user |
-| GET | `/user/actions/jobs` | getUserWorkflowJobs | Get workflow jobs |
-| GET | `/user/actions/runners` | getUserRunners | Get user-level runners |
-| POST | `/user/actions/runners/registration-token` | userCreateRunnerRegistrationToken | Get a user's actions runner registration token |
-| DELETE | `/user/actions/runners/{runner_id}` | deleteUserRunner | Delete a user-level runner |
-| GET | `/user/actions/runners/{runner_id}` | getUserRunner | Get a user-level runner |
-| PATCH | `/user/actions/runners/{runner_id}` | updateUserRunner | Update a user-level runner |
-| GET | `/user/actions/runs` | getUserWorkflowRuns | Get workflow runs |
-| DELETE | `/user/actions/secrets/{secretname}` | deleteUserSecret | Delete a secret in a user scope |
-| PUT | `/user/actions/secrets/{secretname}` | updateUserSecret | Create or Update a secret value in a user scope |
-| GET | `/user/actions/variables` | getUserVariablesList | Get the user-level list of variables which is created by current doer |
-| DELETE | `/user/actions/variables/{variablename}` | deleteUserVariable | Delete a user-level variable which is created by current doer |
-| GET | `/user/actions/variables/{variablename}` | getUserVariable | Get a user-level variable which is created by current doer |
-| POST | `/user/actions/variables/{variablename}` | createUserVariable | Create a user-level variable |
-| PUT | `/user/actions/variables/{variablename}` | updateUserVariable | Update a user-level variable which is created by current doer |
-| GET | `/user/applications/oauth2` | userGetOauth2Application | List the authenticated user's oauth2 applications |
-| POST | `/user/applications/oauth2` | userCreateOAuth2Application | creates a new OAuth2 application |
-| DELETE | `/user/applications/oauth2/{id}` | userDeleteOAuth2Application | delete an OAuth2 Application |
-| GET | `/user/applications/oauth2/{id}` | userGetOAuth2Application | get an OAuth2 Application |
-| PATCH | `/user/applications/oauth2/{id}` | userUpdateOAuth2Application | update an OAuth2 Application, this includes regenerating the client secret |
-| DELETE | `/user/avatar` | userDeleteAvatar | Delete Avatar |
-| POST | `/user/avatar` | userUpdateAvatar | Update Avatar |
-| GET | `/user/blocks` | userListBlocks | List users blocked by the authenticated user |
-| DELETE | `/user/blocks/{username}` | userUnblockUser | Unblock a user |
-| GET | `/user/blocks/{username}` | userCheckUserBlock | Check if a user is blocked by the authenticated user |
-| PUT | `/user/blocks/{username}` | userBlockUser | Block a user |
-| DELETE | `/user/emails` | userDeleteEmail | Delete email addresses |
-| GET | `/user/emails` | userListEmails | List the authenticated user's email addresses |
-| POST | `/user/emails` | userAddEmail | Add email addresses |
-| GET | `/user/followers` | userCurrentListFollowers | List the authenticated user's followers |
-| GET | `/user/following` | userCurrentListFollowing | List the users that the authenticated user is following |
-| DELETE | `/user/following/{username}` | userCurrentDeleteFollow | Unfollow a user |
-| GET | `/user/following/{username}` | userCurrentCheckFollowing | Check whether a user is followed by the authenticated user |
-| PUT | `/user/following/{username}` | userCurrentPutFollow | Follow a user |
-| GET | `/user/gpg_key_token` | getVerificationToken | Get a Token to verify |
-| POST | `/user/gpg_key_verify` | userVerifyGPGKey | Verify a GPG key |
-| GET | `/user/gpg_keys` | userCurrentListGPGKeys | List the authenticated user's GPG keys |
-| POST | `/user/gpg_keys` | userCurrentPostGPGKey | Create a GPG key |
-| DELETE | `/user/gpg_keys/{id}` | userCurrentDeleteGPGKey | Remove a GPG key |
-| GET | `/user/gpg_keys/{id}` | userCurrentGetGPGKey | Get a GPG key |
-| GET | `/user/hooks` | userListHooks | List the authenticated user's webhooks |
-| POST | `/user/hooks` | userCreateHook | Create a hook |
-| DELETE | `/user/hooks/{id}` | userDeleteHook | Delete a hook |
-| GET | `/user/hooks/{id}` | userGetHook | Get a hook |
-| PATCH | `/user/hooks/{id}` | userEditHook | Update a hook |
-| GET | `/user/keys` | userCurrentListKeys | List the authenticated user's public keys |
-| POST | `/user/keys` | userCurrentPostKey | Create a public key |
-| DELETE | `/user/keys/{id}` | userCurrentDeleteKey | Delete a public key |
-| GET | `/user/keys/{id}` | userCurrentGetKey | Get a public key |
-| GET | `/user/orgs` | orgListCurrentUserOrgs | List the current user's organizations |
-| GET | `/user/projects` | userCurrentListProjects | List your projects |
-| POST | `/user/projects` | userCurrentCreateProject | Create a project owned by the authenticated user |
-| DELETE | `/user/projects/{id}` | userCurrentDeleteProject | Delete a project |
-| GET | `/user/projects/{id}` | userCurrentGetProject | Get a project |
-| PATCH | `/user/projects/{id}` | userCurrentEditProject | Edit a project |
-| GET | `/user/projects/{id}/columns` | userCurrentListProjectColumns | List a project's columns |
-| POST | `/user/projects/{id}/columns` | userCurrentCreateProjectColumn | Create a column in a project |
-| POST | `/user/projects/{id}/columns/move` | userCurrentMoveProjectColumns | Reorder a project's columns |
-| DELETE | `/user/projects/{id}/columns/{column_id}` | userCurrentDeleteProjectColumn | Delete a project column |
-| GET | `/user/projects/{id}/columns/{column_id}` | userCurrentGetProjectColumn | Get a project column |
-| PATCH | `/user/projects/{id}/columns/{column_id}` | userCurrentEditProjectColumn | Edit a project column |
-| POST | `/user/projects/{id}/columns/{column_id}/default` | userCurrentSetDefaultProjectColumn | Set a project's default column |
-| GET | `/user/projects/{id}/columns/{column_id}/issues` | userCurrentListProjectColumnIssues | List the issues in a project column |
-| DELETE | `/user/projects/{id}/columns/{column_id}/issues/{issue_id}` | userCurrentRemoveIssueFromProjectColumn | Remove an issue from a project column |
-| POST | `/user/projects/{id}/columns/{column_id}/issues/{issue_id}` | userCurrentAddIssueToProjectColumn | Add an issue to a project column |
-| POST | `/user/projects/{id}/issues/{issue_id}/move` | userCurrentMoveProjectIssue | Move an issue between a project's columns |
-| GET | `/user/projects/{id}/workflows` | userCurrentListProjectWorkflows | List a project's workflows |
-| POST | `/user/projects/{id}/workflows` | userCurrentCreateProjectWorkflow | Create a project workflow |
-| DELETE | `/user/projects/{id}/workflows/{workflow_id}` | userCurrentDeleteProjectWorkflow | Delete a project workflow |
-| GET | `/user/projects/{id}/workflows/{workflow_id}` | userCurrentGetProjectWorkflow | Get a project workflow |
-| PATCH | `/user/projects/{id}/workflows/{workflow_id}` | userCurrentEditProjectWorkflow | Edit a project workflow |
-| GET | `/user/repos` | userCurrentListRepos | List the repos that the authenticated user owns |
-| POST | `/user/repos` | createCurrentUserRepo | Create a repository |
-| GET | `/user/settings` | getUserSettings | Get user settings |
-| PATCH | `/user/settings` | updateUserSettings | Update user settings |
-| GET | `/user/starred` | userCurrentListStarred | The repos that the authenticated user has starred |
-| DELETE | `/user/starred/{owner}/{repo}` | userCurrentDeleteStar | Unstar the given repo |
-| GET | `/user/starred/{owner}/{repo}` | userCurrentCheckStarring | Whether the authenticated is starring the repo |
-| PUT | `/user/starred/{owner}/{repo}` | userCurrentPutStar | Star the given repo |
-| GET | `/user/stopwatches` | userGetStopWatches | Get list of all existing stopwatches |
-| GET | `/user/subscriptions` | userCurrentListSubscriptions | List repositories watched by the authenticated user |
-| GET | `/user/teams` | userListTeams | List all the teams a user belongs to |
-| GET | `/user/times` | userCurrentTrackedTimes | List the current user's tracked times |
-| GET | `/users/search` | userSearch | Search for users |
-| GET | `/users/{username}` | userGet | Get a user |
-| GET | `/users/{username}/activities/feeds` | userListActivityFeeds | List a user's activity feeds |
-| GET | `/users/{username}/followers` | userListFollowers | List the given user's followers |
-| GET | `/users/{username}/following` | userListFollowing | List the users that the given user is following |
-| GET | `/users/{username}/following/{target}` | userCheckFollowing | Check if one user is following another user |
-| GET | `/users/{username}/gpg_keys` | userListGPGKeys | List the given user's GPG keys |
-| GET | `/users/{username}/heatmap` | userGetHeatmapData | Get a user's heatmap |
-| GET | `/users/{username}/keys` | userListKeys | List the given user's public keys |
-| GET | `/users/{username}/orgs` | orgListUserOrgs | List a user's organizations |
-| GET | `/users/{username}/orgs/{org}/permissions` | orgGetUserPermissions | Get user permissions in organization |
-| GET | `/users/{username}/projects` | userListProjects | List a user's projects |
-| GET | `/users/{username}/repos` | userListRepos | List the repos owned by the given user |
-| GET | `/users/{username}/starred` | userListStarred | The repos that the given user has starred |
-| GET | `/users/{username}/subscriptions` | userListSubscriptions | List the repositories watched by a user |
-| GET | `/users/{username}/tokens` | userGetTokens | List the authenticated user's access tokens |
-| POST | `/users/{username}/tokens` | userCreateToken | Create an access token |
-| DELETE | `/users/{username}/tokens/{token}` | userDeleteAccessToken | delete an access token |
-| GET | `/version` | getVersion | Returns the version of the Gitea application |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/admin/actions/jobs` | listAdminWorkflowJobs | `status`, `page`, `limit`, `sort`, `order` | ActionWorkflowJobsResponse | yes | Lists all jobs |
+| GET | `/admin/actions/runners` | getAdminRunners | `disabled` | ActionRunnersResponse | yes | Get all runners |
+| POST | `/admin/actions/runners/registration-token` | adminCreateRunnerRegistrationToken | — | — |  | Get a global actions runner registration token |
+| GET | `/admin/actions/runners/{runner_id}` | getAdminRunner | `runner_id`* | ActionRunner | yes | Get a global runner |
+| DELETE | `/admin/actions/runners/{runner_id}` | deleteAdminRunner | `runner_id`* | — |  | Delete a global runner |
+| PATCH | `/admin/actions/runners/{runner_id}` | updateAdminRunner | `runner_id`*, body: EditActionRunnerOption | ActionRunner |  | Update a global runner |
+| GET | `/admin/actions/runs` | listAdminWorkflowRuns | `event`, `branch`, `status`, `actor`, `head_sha`, `page`, `limit` | ActionWorkflowRunsResponse | yes | Lists all runs |
+| GET | `/admin/cron` | adminCronList | `page`, `limit` | Cron[] | yes | List cron tasks |
+| POST | `/admin/cron/{task}` | adminCronRun | `task`* | — |  | Run cron task |
+| GET | `/admin/emails` | adminGetAllEmails | `page`, `limit` | Email[] | yes | List all emails |
+| GET | `/admin/emails/search` | adminSearchEmails | `q`, `page`, `limit` | Email[] | yes | Search all emails |
+| GET | `/admin/hooks` | adminListHooks | `page`, `limit`, `type` | Hook[] | yes | List system's webhooks |
+| POST | `/admin/hooks` | adminCreateHook | body*: CreateHookOption | Hook |  | Create a hook |
+| GET | `/admin/hooks/{id}` | adminGetHook | `id`* | Hook | yes | Get a hook |
+| DELETE | `/admin/hooks/{id}` | adminDeleteHook | `id`* | — |  | Delete a hook |
+| PATCH | `/admin/hooks/{id}` | adminEditHook | `id`*, body: EditHookOption | Hook |  | Update a hook |
+| GET | `/admin/orgs` | adminGetAllOrgs | `page`, `limit` | Organization[] | yes | List all organizations |
+| GET | `/admin/packages` | adminListPackages | `page`, `limit`, `type`, `q` | Package[] | yes | List all packages |
+| GET | `/admin/unadopted` | adminUnadoptedList | `page`, `limit`, `query` | string[] | yes | List unadopted repositories |
+| POST | `/admin/unadopted/{owner}/{repo}` | adminAdoptRepository | `owner`*, `repo`* | — |  | Adopt unadopted files as a repository |
+| DELETE | `/admin/unadopted/{owner}/{repo}` | adminDeleteUnadoptedRepository | `owner`*, `repo`* | — |  | Delete unadopted files |
+| GET | `/admin/users` | adminSearchUsers | `source_id`, `login_name`, `page`, `limit`, `sort`, `order`, `q`, `visibility`, `is_active`, `is_admin`, `is_restricted`, `is_2fa_enabled`, `is_prohibit_login` | User[] | yes | Search users according filter conditions |
+| POST | `/admin/users` | adminCreateUser | body: CreateUserOption | User |  | Create a user |
+| DELETE | `/admin/users/{username}` | adminDeleteUser | `username`*, `purge` | — |  | Delete a user |
+| PATCH | `/admin/users/{username}` | adminEditUser | `username`*, body: EditUserOption | User |  | Edit an existing user |
+| GET | `/admin/users/{username}/badges` | adminListUserBadges | `username`* | Badge[] | yes | List a user's badges |
+| POST | `/admin/users/{username}/badges` | adminAddUserBadges | `username`*, body: UserBadgeOption | — |  | Add a badge to a user |
+| DELETE | `/admin/users/{username}/badges` | adminDeleteUserBadges | `username`*, body: UserBadgeOption | — |  | Remove a badge from a user |
+| POST | `/admin/users/{username}/keys` | adminCreatePublicKey | `username`*, body: CreateKeyOption | PublicKey |  | Add a public key on behalf of a user |
+| DELETE | `/admin/users/{username}/keys/{id}` | adminDeleteUserPublicKey | `username`*, `id`* | — |  | Delete a user's public key |
+| POST | `/admin/users/{username}/orgs` | adminCreateOrg | `username`*, body*: CreateOrgOption | Organization |  | Create an organization |
+| POST | `/admin/users/{username}/rename` | adminRenameUser | `username`*, body*: RenameUserOption | — |  | Rename a user |
+| POST | `/admin/users/{username}/repos` | adminCreateRepo | `username`*, body*: CreateRepoOption | Repository |  | Create a repository on behalf of a user |
+| GET | `/gitignore/templates` | listGitignoresTemplates | — | string[] | yes | Returns a list of all gitignore templates |
+| GET | `/gitignore/templates/{name}` | getGitignoreTemplateInfo | `name`* | GitignoreTemplateInfo | yes | Returns information about a gitignore template |
+| GET | `/label/templates` | listLabelTemplates | — | string[] | yes | Returns a list of all label templates |
+| GET | `/label/templates/{name}` | getLabelTemplateInfo | `name`* | LabelTemplate[] | yes | Returns all labels in a template |
+| GET | `/licenses` | listLicenseTemplates | — | LicensesTemplateListEntry[] | yes | Returns a list of all license templates |
+| GET | `/licenses/{name}` | getLicenseTemplateInfo | `name`* | LicenseTemplateInfo | yes | Returns information about a license template |
+| POST | `/markdown` | renderMarkdown | body: MarkdownOption | string |  | Render a markdown document as HTML |
+| POST | `/markdown/raw` | renderMarkdownRaw | body*: string | string |  | Render raw markdown as HTML |
+| POST | `/markup` | renderMarkup | body: MarkupOption | string |  | Render a markup document as HTML |
+| GET | `/notifications` | notifyGetList | `all`, `status-types`, `subject-type`, `since`, `before`, `page`, `limit` | NotificationThread[] | yes | List users's notification threads |
+| PUT | `/notifications` | notifyReadList | `last_read_at`, `all`, `status-types`, `to-status` | NotificationThread[] |  | Mark notification threads as read, pinned or unread |
+| GET | `/notifications/new` | notifyNewAvailable | — | NotificationCount | yes | Check if unread notifications exist |
+| GET | `/notifications/threads/{id}` | notifyGetThread | `id`* | NotificationThread | yes | Get notification thread by ID |
+| PATCH | `/notifications/threads/{id}` | notifyReadThread | `id`*, `to-status` | NotificationThread |  | Mark notification thread as read by ID |
+| POST | `/org/{org}/repos` | createOrgRepoDeprecated | `org`*, body: CreateRepoOption | Repository |  | Create a repository in an organization |
+| GET | `/orgs` | orgGetAll | `page`, `limit` | Organization[] | yes | Get list of organizations |
+| POST | `/orgs` | orgCreate | body*: CreateOrgOption | Organization |  | Create an organization |
+| GET | `/orgs/{org}` | orgGet | `org`* | Organization | yes | Get an organization |
+| DELETE | `/orgs/{org}` | orgDelete | `org`* | — |  | Delete an organization |
+| PATCH | `/orgs/{org}` | orgEdit | `org`*, body*: EditOrgOption | Organization |  | Edit an organization |
+| GET | `/orgs/{org}/actions/jobs` | getOrgWorkflowJobs | `org`*, `status`, `page`, `limit` | ActionWorkflowJobsResponse | yes | Get org-level workflow jobs |
+| GET | `/orgs/{org}/actions/runners` | getOrgRunners | `org`*, `disabled` | ActionRunnersResponse | yes | Get org-level runners |
+| POST | `/orgs/{org}/actions/runners/registration-token` | orgCreateRunnerRegistrationToken | `org`* | — |  | Get an organization's actions runner registration token |
+| GET | `/orgs/{org}/actions/runners/{runner_id}` | getOrgRunner | `org`*, `runner_id`* | ActionRunner | yes | Get an org-level runner |
+| DELETE | `/orgs/{org}/actions/runners/{runner_id}` | deleteOrgRunner | `org`*, `runner_id`* | — |  | Delete an org-level runner |
+| PATCH | `/orgs/{org}/actions/runners/{runner_id}` | updateOrgRunner | `org`*, `runner_id`*, body: EditActionRunnerOption | ActionRunner |  | Update an org-level runner |
+| GET | `/orgs/{org}/actions/runs` | getOrgWorkflowRuns | `org`*, `event`, `branch`, `status`, `actor`, `head_sha`, `page`, `limit` | ActionWorkflowRunsResponse | yes | Get org-level workflow runs |
+| GET | `/orgs/{org}/actions/secrets` | orgListActionsSecrets | `org`*, `page`, `limit` | Secret[] | yes | List an organization's actions secrets |
+| PUT | `/orgs/{org}/actions/secrets/{secretname}` | updateOrgSecret | `org`*, `secretname`*, body: CreateOrUpdateSecretOption | — |  | Create or Update a secret value in an organization |
+| DELETE | `/orgs/{org}/actions/secrets/{secretname}` | deleteOrgSecret | `org`*, `secretname`* | — |  | Delete a secret in an organization |
+| GET | `/orgs/{org}/actions/variables` | getOrgVariablesList | `org`*, `page`, `limit` | ActionVariable[] | yes | Get an org-level variables list |
+| GET | `/orgs/{org}/actions/variables/{variablename}` | getOrgVariable | `org`*, `variablename`* | ActionVariable | yes | Get an org-level variable |
+| PUT | `/orgs/{org}/actions/variables/{variablename}` | updateOrgVariable | `org`*, `variablename`*, body: UpdateVariableOption | — |  | Update an org-level variable |
+| POST | `/orgs/{org}/actions/variables/{variablename}` | createOrgVariable | `org`*, `variablename`*, body: CreateVariableOption | — |  | Create an org-level variable |
+| DELETE | `/orgs/{org}/actions/variables/{variablename}` | deleteOrgVariable | `org`*, `variablename`* | ActionVariable |  | Delete an org-level variable |
+| GET | `/orgs/{org}/activities/feeds` | orgListActivityFeeds | `org`*, `date`, `page`, `limit` | Activity[] | yes | List an organization's activity feeds |
+| POST | `/orgs/{org}/avatar` | orgUpdateAvatar | `org`*, body: UpdateUserAvatarOption | — |  | Update Avatar |
+| DELETE | `/orgs/{org}/avatar` | orgDeleteAvatar | `org`* | — |  | Delete Avatar |
+| GET | `/orgs/{org}/blocks` | organizationListBlocks | `org`*, `page`, `limit` | User[] | yes | List users blocked by the organization |
+| GET | `/orgs/{org}/blocks/{username}` | organizationCheckUserBlock | `org`*, `username`* | — | yes | Check if a user is blocked by the organization |
+| PUT | `/orgs/{org}/blocks/{username}` | organizationBlockUser | `org`*, `username`*, `note` | — |  | Block a user |
+| DELETE | `/orgs/{org}/blocks/{username}` | organizationUnblockUser | `org`*, `username`* | — |  | Unblock a user |
+| GET | `/orgs/{org}/hooks` | orgListHooks | `org`*, `page`, `limit` | Hook[] | yes | List an organization's webhooks |
+| POST | `/orgs/{org}/hooks` | orgCreateHook | `org`*, body*: CreateHookOption | Hook |  | Create a hook |
+| GET | `/orgs/{org}/hooks/{id}` | orgGetHook | `org`*, `id`* | Hook | yes | Get a hook |
+| DELETE | `/orgs/{org}/hooks/{id}` | orgDeleteHook | `org`*, `id`* | — |  | Delete a hook |
+| PATCH | `/orgs/{org}/hooks/{id}` | orgEditHook | `org`*, `id`*, body: EditHookOption | Hook |  | Update a hook |
+| GET | `/orgs/{org}/labels` | orgListLabels | `org`*, `page`, `limit` | Label[] | yes | List an organization's labels |
+| POST | `/orgs/{org}/labels` | orgCreateLabel | `org`*, body: CreateLabelOption | Label |  | Create a label for an organization |
+| GET | `/orgs/{org}/labels/{id}` | orgGetLabel | `org`*, `id`* | Label | yes | Get a single label |
+| DELETE | `/orgs/{org}/labels/{id}` | orgDeleteLabel | `org`*, `id`* | — |  | Delete a label |
+| PATCH | `/orgs/{org}/labels/{id}` | orgEditLabel | `org`*, `id`*, body: EditLabelOption | Label |  | Update a label |
+| GET | `/orgs/{org}/members` | orgListMembers | `org`*, `page`, `limit` | User[] | yes | List an organization's members |
+| GET | `/orgs/{org}/members/{username}` | orgIsMember | `org`*, `username`* | — | yes | Check if a user is a member of an organization |
+| DELETE | `/orgs/{org}/members/{username}` | orgDeleteMember | `org`*, `username`* | — |  | Remove a member from an organization |
+| GET | `/orgs/{org}/projects` | orgListProjects | `org`*, `state`, `page`, `limit` | Project[] | yes | List an organization's projects |
+| POST | `/orgs/{org}/projects` | orgCreateProject | `org`*, body: CreateProjectOption | Project |  | Create a project owned by an organization |
+| GET | `/orgs/{org}/projects/{id}` | orgGetProject | `org`*, `id`* | Project | yes | Get a project |
+| DELETE | `/orgs/{org}/projects/{id}` | orgDeleteProject | `org`*, `id`* | — |  | Delete a project |
+| PATCH | `/orgs/{org}/projects/{id}` | orgEditProject | `org`*, `id`*, body: EditProjectOption | Project |  | Edit a project |
+| GET | `/orgs/{org}/projects/{id}/columns` | orgListProjectColumns | `org`*, `id`*, `page`, `limit` | ProjectColumn[] | yes | List a project's columns |
+| POST | `/orgs/{org}/projects/{id}/columns` | orgCreateProjectColumn | `org`*, `id`*, body: CreateProjectColumnOption | ProjectColumn |  | Create a column in a project |
+| POST | `/orgs/{org}/projects/{id}/columns/move` | orgMoveProjectColumns | `org`*, `id`*, body: MoveProjectColumnsOption | — |  | Reorder a project's columns |
+| GET | `/orgs/{org}/projects/{id}/columns/{column_id}` | orgGetProjectColumn | `org`*, `id`*, `column_id`* | ProjectColumn | yes | Get a project column |
+| DELETE | `/orgs/{org}/projects/{id}/columns/{column_id}` | orgDeleteProjectColumn | `org`*, `id`*, `column_id`* | — |  | Delete a project column |
+| PATCH | `/orgs/{org}/projects/{id}/columns/{column_id}` | orgEditProjectColumn | `org`*, `id`*, `column_id`*, body: EditProjectColumnOption | ProjectColumn |  | Edit a project column |
+| POST | `/orgs/{org}/projects/{id}/columns/{column_id}/default` | orgSetDefaultProjectColumn | `org`*, `id`*, `column_id`* | — |  | Set a project's default column |
+| GET | `/orgs/{org}/projects/{id}/columns/{column_id}/issues` | orgListProjectColumnIssues | `org`*, `id`*, `column_id`*, `page`, `limit` | Issue[] | yes | List the issues in a project column |
+| POST | `/orgs/{org}/projects/{id}/columns/{column_id}/issues/{issue_id}` | orgAddIssueToProjectColumn | `org`*, `id`*, `column_id`*, `issue_id`* | — |  | Add an issue to a project column |
+| DELETE | `/orgs/{org}/projects/{id}/columns/{column_id}/issues/{issue_id}` | orgRemoveIssueFromProjectColumn | `org`*, `id`*, `column_id`*, `issue_id`* | — |  | Remove an issue from a project column |
+| POST | `/orgs/{org}/projects/{id}/issues/{issue_id}/move` | orgMoveProjectIssue | `org`*, `id`*, `issue_id`*, body: MoveProjectIssueOption | — |  | Move an issue between a project's columns |
+| GET | `/orgs/{org}/projects/{id}/workflows` | orgListProjectWorkflows | `org`*, `id`*, `page`, `limit` | ProjectWorkflow[] | yes | List a project's workflows |
+| POST | `/orgs/{org}/projects/{id}/workflows` | orgCreateProjectWorkflow | `org`*, `id`*, body: CreateProjectWorkflowOption | ProjectWorkflow |  | Create a project workflow |
+| GET | `/orgs/{org}/projects/{id}/workflows/{workflow_id}` | orgGetProjectWorkflow | `org`*, `id`*, `workflow_id`* | ProjectWorkflow | yes | Get a project workflow |
+| DELETE | `/orgs/{org}/projects/{id}/workflows/{workflow_id}` | orgDeleteProjectWorkflow | `org`*, `id`*, `workflow_id`* | — |  | Delete a project workflow |
+| PATCH | `/orgs/{org}/projects/{id}/workflows/{workflow_id}` | orgEditProjectWorkflow | `org`*, `id`*, `workflow_id`*, body: EditProjectWorkflowOption | ProjectWorkflow |  | Edit a project workflow |
+| GET | `/orgs/{org}/public_members` | orgListPublicMembers | `org`*, `page`, `limit` | User[] | yes | List an organization's public members |
+| GET | `/orgs/{org}/public_members/{username}` | orgIsPublicMember | `org`*, `username`* | — | yes | Check if a user is a public member of an organization |
+| PUT | `/orgs/{org}/public_members/{username}` | orgPublicizeMember | `org`*, `username`* | — |  | Publicize a user's membership |
+| DELETE | `/orgs/{org}/public_members/{username}` | orgConcealMember | `org`*, `username`* | — |  | Conceal a user's membership |
+| POST | `/orgs/{org}/rename` | renameOrg | `org`*, body*: RenameOrgOption | — |  | Rename an organization |
+| GET | `/orgs/{org}/repos` | orgListRepos | `org`*, `page`, `limit` | Repository[] | yes | List an organization's repos |
+| POST | `/orgs/{org}/repos` | createOrgRepo | `org`*, body: CreateRepoOption | Repository |  | Create a repository in an organization |
+| DELETE | `/orgs/{org}/repos` | orgDeleteRepos | `org`* | — |  | Delete all repositories in an organization |
+| GET | `/orgs/{org}/teams` | orgListTeams | `org`*, `page`, `limit` | Team[] | yes | List an organization's teams |
+| POST | `/orgs/{org}/teams` | orgCreateTeam | `org`*, body: CreateTeamOption | Team |  | Create a team |
+| GET | `/orgs/{org}/teams/search` | teamSearch | `org`*, `q`, `include_desc`, `page`, `limit` | object | yes | Search for teams within an organization |
+| GET | `/packages/{owner}` | listPackages | `owner`*, `page`, `limit`, `type`, `q` | Package[] | yes | Gets all packages of an owner |
+| GET | `/packages/{owner}/{type}/{name}` | listPackageVersions | `owner`*, `type`*, `name`*, `page`, `limit` | Package[] | yes | Gets all versions of a package |
+| DELETE | `/packages/{owner}/{type}/{name}` | deletePackage | `owner`*, `type`*, `name`* | — |  | Delete a package |
+| GET | `/packages/{owner}/{type}/{name}/-/latest` | getLatestPackageVersion | `owner`*, `type`*, `name`* | Package | yes | Gets the latest version of a package |
+| POST | `/packages/{owner}/{type}/{name}/-/link/{repo_name}` | linkPackage | `owner`*, `type`*, `name`*, `repo_name`* | — |  | Link a package to a repository |
+| POST | `/packages/{owner}/{type}/{name}/-/unlink` | unlinkPackage | `owner`*, `type`*, `name`* | — |  | Unlink a package from a repository |
+| GET | `/packages/{owner}/{type}/{name}/{version}` | getPackage | `owner`*, `type`*, `name`*, `version`* | Package | yes | Gets a package |
+| DELETE | `/packages/{owner}/{type}/{name}/{version}` | deletePackageVersion | `owner`*, `type`*, `name`*, `version`* | — |  | Delete a package version |
+| GET | `/packages/{owner}/{type}/{name}/{version}/files` | listPackageFiles | `owner`*, `type`*, `name`*, `version`* | PackageFile[] | yes | Gets all files of a package |
+| GET | `/repos/issues/search` | issueSearchIssues | `state`, `labels`, `milestones`, `q`, `type`, `since`, `before`, `assigned`, `created`, `mentioned`, `review_requested`, `reviewed`, `owner`, `created_by`, `team`, `page`, `limit` | Issue[] | yes | Search for issues across the repositories that the user has access to |
+| POST | `/repos/migrate` | repoMigrate | body: MigrateRepoOptions | Repository |  | Migrate a remote git repository |
+| GET | `/repos/search` | repoSearch | `q`, `topic`, `includeDesc`, `uid`, `priority_owner_id`, `team_id`, `starredBy`, `private`, `is_private`, `template`, `archived`, `mode`, `exclusive`, `sort`, `order`, `page`, `limit` | SearchResults | yes | Search for repositories |
+| GET | `/repos/{owner}/{repo}` | repoGet | `owner`*, `repo`* | Repository | yes | Get a repository |
+| DELETE | `/repos/{owner}/{repo}` | repoDelete | `owner`*, `repo`* | — |  | Delete a repository |
+| PATCH | `/repos/{owner}/{repo}` | repoEdit | `owner`*, `repo`*, body: EditRepoOption | Repository |  | Edit a repository's properties. Only fields that are set will be changed. |
+| GET | `/repos/{owner}/{repo}/actions/artifacts` | getArtifacts | `owner`*, `repo`*, `name` | ActionArtifactsResponse | yes | Lists all artifacts for a repository |
+| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | getArtifact | `owner`*, `repo`*, `artifact_id`* | ActionArtifact | yes | Gets a specific artifact for a workflow run |
+| DELETE | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | deleteArtifact | `owner`*, `repo`*, `artifact_id`* | — |  | Deletes a specific artifact for a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/zip` | downloadArtifact | `owner`*, `repo`*, `artifact_id`* | — | yes | Downloads a specific artifact for a workflow run redirects to blob url |
+| GET | `/repos/{owner}/{repo}/actions/jobs` | listWorkflowJobs | `owner`*, `repo`*, `status`, `page`, `limit`, `sort`, `order` | ActionWorkflowJobsResponse | yes | Lists all jobs for a repository |
+| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}` | getWorkflowJob | `owner`*, `repo`*, `job_id`* | ActionWorkflowJob | yes | Gets a specific workflow job for a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}/logs` | downloadActionsRunJobLogs | `owner`*, `repo`*, `job_id`* | — | yes | Downloads the job logs for a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/runners` | getRepoRunners | `owner`*, `repo`*, `disabled` | ActionRunnersResponse | yes | Get repo-level runners |
+| POST | `/repos/{owner}/{repo}/actions/runners/registration-token` | repoCreateRunnerRegistrationToken | `owner`*, `repo`* | — |  | Get a repository's actions runner registration token |
+| GET | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | getRepoRunner | `owner`*, `repo`*, `runner_id`* | ActionRunner | yes | Get a repo-level runner |
+| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | deleteRepoRunner | `owner`*, `repo`*, `runner_id`* | — |  | Delete a repo-level runner |
+| PATCH | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | updateRepoRunner | `owner`*, `repo`*, `runner_id`*, body: EditActionRunnerOption | ActionRunner |  | Update a repo-level runner |
+| GET | `/repos/{owner}/{repo}/actions/runs` | getWorkflowRuns | `owner`*, `repo`*, `event`, `branch`, `status`, `actor`, `head_sha`, `exclude_pull_requests`, `page`, `limit` | ActionWorkflowRunsResponse | yes | Lists all runs for a repository run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run}` | GetWorkflowRun | `owner`*, `repo`*, `run`* | ActionWorkflowRun | yes | Gets a specific workflow run |
+| DELETE | `/repos/{owner}/{repo}/actions/runs/{run}` | deleteActionRun | `owner`*, `repo`*, `run`* | — |  | Delete a workflow run |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run}/approve` | approveWorkflowRun | `owner`*, `repo`*, `run`* | ActionWorkflowRun |  | Approve a workflow run that requires approval |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run}/artifacts` | getArtifactsOfRun | `owner`*, `repo`*, `run`*, `name` | ActionArtifactsResponse | yes | Lists all artifacts for a repository run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt}` | getWorkflowRunAttempt | `owner`*, `repo`*, `run`*, `attempt`* | ActionWorkflowRun | yes | Gets a specific workflow run attempt |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt}/jobs` | listWorkflowRunAttemptJobs | `owner`*, `repo`*, `run`*, `attempt`*, `status`, `page`, `limit` | ActionWorkflowJobsResponse | yes | Lists all jobs for a workflow run attempt |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run}/cancel` | cancelWorkflowRun | `owner`*, `repo`*, `run`* | ActionWorkflowRun |  | Cancel a workflow run and its jobs |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run}/force-cancel` | forceCancelWorkflowRun | `owner`*, `repo`*, `run`* | ActionWorkflowRun |  | Force-cancel a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run}/jobs` | listWorkflowRunJobs | `owner`*, `repo`*, `run`*, `status`, `page`, `limit`, `sort`, `order` | ActionWorkflowJobsResponse | yes | Lists all jobs for a workflow run |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run}/jobs/{job_id}/rerun` | rerunWorkflowJob | `owner`*, `repo`*, `run`*, `job_id`* | ActionWorkflowJob |  | Reruns a specific workflow job in a run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run}/logs` | getWorkflowRunLogs | `owner`*, `repo`*, `run`* | — | yes | Download workflow run logs as archive |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run}/rerun` | rerunWorkflowRun | `owner`*, `repo`*, `run`* | ActionWorkflowRun |  | Reruns an entire workflow run |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run}/rerun-failed-jobs` | rerunFailedWorkflowRun | `owner`*, `repo`*, `run`* | — |  | Reruns all failed jobs in a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/secrets` | repoListActionsSecrets | `owner`*, `repo`*, `page`, `limit` | Secret[] | yes | List a repo's actions secrets |
+| PUT | `/repos/{owner}/{repo}/actions/secrets/{secretname}` | updateRepoSecret | `owner`*, `repo`*, `secretname`*, body: CreateOrUpdateSecretOption | — |  | Create or Update a secret value in a repository |
+| DELETE | `/repos/{owner}/{repo}/actions/secrets/{secretname}` | deleteRepoSecret | `owner`*, `repo`*, `secretname`* | — |  | Delete a secret in a repository |
+| GET | `/repos/{owner}/{repo}/actions/tasks` | ListActionTasks | `owner`*, `repo`*, `page`, `limit` | ActionTaskResponse | yes | List a repository's action tasks |
+| GET | `/repos/{owner}/{repo}/actions/variables` | getRepoVariablesList | `owner`*, `repo`*, `page`, `limit` | ActionVariable[] | yes | Get repo-level variables list |
+| GET | `/repos/{owner}/{repo}/actions/variables/{variablename}` | getRepoVariable | `owner`*, `repo`*, `variablename`* | ActionVariable | yes | Get a repo-level variable |
+| PUT | `/repos/{owner}/{repo}/actions/variables/{variablename}` | updateRepoVariable | `owner`*, `repo`*, `variablename`*, body: UpdateVariableOption | — |  | Update a repo-level variable |
+| POST | `/repos/{owner}/{repo}/actions/variables/{variablename}` | createRepoVariable | `owner`*, `repo`*, `variablename`*, body: CreateVariableOption | — |  | Create a repo-level variable |
+| DELETE | `/repos/{owner}/{repo}/actions/variables/{variablename}` | deleteRepoVariable | `owner`*, `repo`*, `variablename`* | ActionVariable |  | Delete a repo-level variable |
+| GET | `/repos/{owner}/{repo}/actions/workflows` | ActionsListRepositoryWorkflows | `owner`*, `repo`* | ActionWorkflowResponse | yes | List repository workflows |
+| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}` | ActionsGetWorkflow | `owner`*, `repo`*, `workflow_id`* | ActionWorkflow | yes | Get a workflow |
+| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable` | ActionsDisableWorkflow | `owner`*, `repo`*, `workflow_id`* | — |  | Disable a workflow |
+| POST | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches` | ActionsDispatchWorkflow | `owner`*, `repo`*, `workflow_id`*, `return_run_details`, `scoped_workflow_source_repo_id`, body: CreateActionWorkflowDispatch | RunDetails |  | Create a workflow dispatch event |
+| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable` | ActionsEnableWorkflow | `owner`*, `repo`*, `workflow_id`* | — |  | Enable a workflow |
+| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs` | ActionsListWorkflowRuns | `owner`*, `repo`*, `workflow_id`*, `event`, `branch`, `status`, `actor`, `head_sha`, `exclude_pull_requests`, `scoped_workflow_source_repo_id`, `page`, `limit` | ActionWorkflowRunsResponse | yes | List runs for a workflow |
+| GET | `/repos/{owner}/{repo}/activities/feeds` | repoListActivityFeeds | `owner`*, `repo`*, `date`, `page`, `limit` | Activity[] | yes | List a repository's activity feeds |
+| GET | `/repos/{owner}/{repo}/archive/{archive}` | repoGetArchive | `owner`*, `repo`*, `archive`*, `path` | — | yes | Get an archive of a repository |
+| GET | `/repos/{owner}/{repo}/assignees` | repoGetAssignees | `owner`*, `repo`* | User[] | yes | Return all users that have write access and can be assigned to issues |
+| GET | `/repos/{owner}/{repo}/assignees/{assignee}` | repoCheckAssignee | `owner`*, `repo`*, `assignee`* | — | yes | Check if a user can be assigned to issues in a repository |
+| POST | `/repos/{owner}/{repo}/avatar` | repoUpdateAvatar | `owner`*, `repo`*, body: UpdateRepoAvatarOption | — |  | Update avatar |
+| DELETE | `/repos/{owner}/{repo}/avatar` | repoDeleteAvatar | `owner`*, `repo`* | — |  | Delete avatar |
+| GET | `/repos/{owner}/{repo}/branch_protections` | repoListBranchProtection | `owner`*, `repo`* | BranchProtection[] | yes | List branch protections for a repository |
+| POST | `/repos/{owner}/{repo}/branch_protections` | repoCreateBranchProtection | `owner`*, `repo`*, body: CreateBranchProtectionOption | BranchProtection |  | Create a branch protections for a repository |
+| POST | `/repos/{owner}/{repo}/branch_protections/priority` | repoUpdateBranchProtectionPriories | `owner`*, `repo`*, body: UpdateBranchProtectionPriories | — |  | Update the priorities of branch protections for a repository. |
+| GET | `/repos/{owner}/{repo}/branch_protections/{name}` | repoGetBranchProtection | `owner`*, `repo`*, `name`* | BranchProtection | yes | Get a specific branch protection for the repository |
+| DELETE | `/repos/{owner}/{repo}/branch_protections/{name}` | repoDeleteBranchProtection | `owner`*, `repo`*, `name`* | — |  | Delete a specific branch protection for the repository |
+| PATCH | `/repos/{owner}/{repo}/branch_protections/{name}` | repoEditBranchProtection | `owner`*, `repo`*, `name`*, body: EditBranchProtectionOption | BranchProtection |  | Edit a branch protections for a repository. Only fields that are set will be changed |
+| GET | `/repos/{owner}/{repo}/branches` | repoListBranches | `owner`*, `repo`*, `page`, `limit`, `q` | Branch[] | yes | List a repository's branches |
+| POST | `/repos/{owner}/{repo}/branches` | repoCreateBranch | `owner`*, `repo`*, body: CreateBranchRepoOption | Branch |  | Create a branch |
+| GET | `/repos/{owner}/{repo}/branches/{branch}` | repoGetBranch | `owner`*, `repo`*, `branch`* | Branch | yes | Retrieve a specific branch from a repository, including its effective branch protection |
+| PUT | `/repos/{owner}/{repo}/branches/{branch}` | repoUpdateBranch | `owner`*, `repo`*, `branch`*, body: UpdateBranchRepoOption | — |  | Update a branch reference to a new commit |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}` | repoDeleteBranch | `owner`*, `repo`*, `branch`* | — |  | Delete a specific branch from a repository |
+| PATCH | `/repos/{owner}/{repo}/branches/{branch}` | repoRenameBranch | `owner`*, `repo`*, `branch`*, body: RenameBranchRepoOption | — |  | Rename a branch |
+| GET | `/repos/{owner}/{repo}/collaborators` | repoListCollaborators | `owner`*, `repo`*, `page`, `limit` | User[] | yes | List a repository's collaborators |
+| GET | `/repos/{owner}/{repo}/collaborators/{collaborator}` | repoCheckCollaborator | `owner`*, `repo`*, `collaborator`* | — | yes | Check if a user is a collaborator of a repository |
+| PUT | `/repos/{owner}/{repo}/collaborators/{collaborator}` | repoAddCollaborator | `owner`*, `repo`*, `collaborator`*, body: AddCollaboratorOption | — |  | Add or Update a collaborator to a repository |
+| DELETE | `/repos/{owner}/{repo}/collaborators/{collaborator}` | repoDeleteCollaborator | `owner`*, `repo`*, `collaborator`* | — |  | Delete a collaborator from a repository |
+| GET | `/repos/{owner}/{repo}/collaborators/{collaborator}/permission` | repoGetRepoPermissions | `owner`*, `repo`*, `collaborator`* | RepoCollaboratorPermission | yes | Get repository permissions for a user |
+| GET | `/repos/{owner}/{repo}/commits` | repoGetAllCommits | `owner`*, `repo`*, `sha`, `path`, `since`, `until`, `stat`, `verification`, `files`, `page`, `limit`, `not` | Commit[] | yes | Get a list of all commits from a repository |
+| GET | `/repos/{owner}/{repo}/commits/{ref}/status` | repoGetCombinedStatusByRef | `owner`*, `repo`*, `ref`*, `page`, `limit` | CombinedStatus | yes | Get a commit's combined status, by branch/tag/commit reference |
+| GET | `/repos/{owner}/{repo}/commits/{ref}/statuses` | repoListStatusesByRef | `owner`*, `repo`*, `ref`*, `sort`, `state`, `page`, `limit` | CommitStatus[] | yes | Get a commit's statuses, by branch/tag/commit reference |
+| GET | `/repos/{owner}/{repo}/commits/{sha}/pull` | repoGetCommitPullRequest | `owner`*, `repo`*, `sha`* | PullRequest | yes | Get the merged pull request of the commit |
+| GET | `/repos/{owner}/{repo}/compare/{basehead}` | repoCompareDiff | `owner`*, `repo`*, `basehead`*, `output`, `verification`, `files` | Compare | yes | Get commit comparison information |
+| GET | `/repos/{owner}/{repo}/contents` | repoGetContentsList | `owner`*, `repo`*, `ref` | ContentsResponse[] | yes | Gets the metadata of all the entries of the root dir. |
+| POST | `/repos/{owner}/{repo}/contents` | repoChangeFiles | `owner`*, `repo`*, body*: ChangeFilesOptions | FilesResponse |  | Modify multiple files in a repository |
+| GET | `/repos/{owner}/{repo}/contents-ext/{filepath}` | repoGetContentsExt | `owner`*, `repo`*, `filepath`*, `ref`, `includes` | ContentsExtResponse | yes | The extended "contents" API, to get file metadata and/or content, or list a directory. |
+| GET | `/repos/{owner}/{repo}/contents/{filepath}` | repoGetContents | `owner`*, `repo`*, `filepath`*, `ref` | ContentsResponse | yes | Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir. |
+| PUT | `/repos/{owner}/{repo}/contents/{filepath}` | repoUpdateFile | `owner`*, `repo`*, `filepath`*, body*: UpdateFileOptions | FileResponse |  | Update a file in a repository if SHA is set, or create the file if SHA is not set |
+| POST | `/repos/{owner}/{repo}/contents/{filepath}` | repoCreateFile | `owner`*, `repo`*, `filepath`*, body*: CreateFileOptions | FileResponse |  | Create a file in a repository |
+| DELETE | `/repos/{owner}/{repo}/contents/{filepath}` | repoDeleteFile | `owner`*, `repo`*, `filepath`*, body*: DeleteFileOptions | FileDeleteResponse |  | Delete a file in a repository |
+| POST | `/repos/{owner}/{repo}/diffpatch` | repoApplyDiffPatch | `owner`*, `repo`*, body*: ApplyDiffPatchFileOptions | FileResponse |  | Apply diff patch to repository |
+| GET | `/repos/{owner}/{repo}/editorconfig/{filepath}` | repoGetEditorConfig | `owner`*, `repo`*, `filepath`*, `ref` | — | yes | Get the EditorConfig definitions of a file in a repository |
+| GET | `/repos/{owner}/{repo}/file-contents` | repoGetFileContents | `owner`*, `repo`*, `ref`, `body`* | ContentsResponse[] | yes | Get the metadata and contents of requested files |
+| POST | `/repos/{owner}/{repo}/file-contents` | repoGetFileContentsPost | `owner`*, `repo`*, `ref`, body*: GetFilesOptions | ContentsResponse[] |  | Get the metadata and contents of requested files |
+| GET | `/repos/{owner}/{repo}/forks` | listForks | `owner`*, `repo`*, `page`, `limit` | Repository[] | yes | List a repository's forks |
+| POST | `/repos/{owner}/{repo}/forks` | createFork | `owner`*, `repo`*, body: CreateForkOption | Repository |  | Fork a repository |
+| GET | `/repos/{owner}/{repo}/git/blobs/{sha}` | GetBlob | `owner`*, `repo`*, `sha`* | GitBlobResponse | yes | Gets the blob of a repository. |
+| GET | `/repos/{owner}/{repo}/git/commits/{sha}` | repoGetSingleCommit | `owner`*, `repo`*, `sha`*, `stat`, `verification`, `files` | Commit | yes | Get a single commit from a repository, it has a GitHub-compatible alias "/repos/{owner}/{repo}/commits/{ref}" |
+| GET | `/repos/{owner}/{repo}/git/commits/{sha}.{diffType}` | repoDownloadCommitDiffOrPatch | `owner`*, `repo`*, `sha`*, `diffType`* | string | yes | Get a commit's diff or patch |
+| GET | `/repos/{owner}/{repo}/git/notes/{sha}` | repoGetNote | `owner`*, `repo`*, `sha`*, `verification`, `files` | Note | yes | Get a note corresponding to a single commit from a repository |
+| GET | `/repos/{owner}/{repo}/git/refs` | repoListAllGitRefs | `owner`*, `repo`* | Reference[] | yes | Get specified ref or filtered repository's refs |
+| GET | `/repos/{owner}/{repo}/git/refs/{ref}` | repoListGitRefs | `owner`*, `repo`*, `ref`* | Reference[] | yes | Get specified ref or filtered repository's refs |
+| GET | `/repos/{owner}/{repo}/git/tags/{sha}` | GetAnnotatedTag | `owner`*, `repo`*, `sha`* | AnnotatedTag | yes | Gets the tag object of an annotated tag (not lightweight tags) |
+| GET | `/repos/{owner}/{repo}/git/trees/{sha}` | GetTree | `owner`*, `repo`*, `sha`*, `recursive`, `page`, `per_page` | GitTreeResponse | yes | Gets the tree of a repository. |
+| GET | `/repos/{owner}/{repo}/hooks` | repoListHooks | `owner`*, `repo`*, `page`, `limit` | Hook[] | yes | List the hooks in a repository |
+| POST | `/repos/{owner}/{repo}/hooks` | repoCreateHook | `owner`*, `repo`*, body: CreateHookOption | Hook |  | Create a hook |
+| GET | `/repos/{owner}/{repo}/hooks/git` | repoListGitHooks | `owner`*, `repo`* | GitHook[] | yes | List the Git hooks in a repository |
+| GET | `/repos/{owner}/{repo}/hooks/git/{id}` | repoGetGitHook | `owner`*, `repo`*, `id`* | GitHook | yes | Get a Git hook |
+| DELETE | `/repos/{owner}/{repo}/hooks/git/{id}` | repoDeleteGitHook | `owner`*, `repo`*, `id`* | — |  | Delete a Git hook in a repository |
+| PATCH | `/repos/{owner}/{repo}/hooks/git/{id}` | repoEditGitHook | `owner`*, `repo`*, `id`*, body: EditGitHookOption | GitHook |  | Edit a Git hook in a repository |
+| GET | `/repos/{owner}/{repo}/hooks/{id}` | repoGetHook | `owner`*, `repo`*, `id`* | Hook | yes | Get a hook |
+| DELETE | `/repos/{owner}/{repo}/hooks/{id}` | repoDeleteHook | `owner`*, `repo`*, `id`* | — |  | Delete a hook in a repository |
+| PATCH | `/repos/{owner}/{repo}/hooks/{id}` | repoEditHook | `owner`*, `repo`*, `id`*, body: EditHookOption | Hook |  | Edit a hook in a repository |
+| GET | `/repos/{owner}/{repo}/hooks/{id}/deliveries` | repoListHookDeliveries | `owner`*, `repo`*, `id`*, `page`, `limit` | HookDelivery[] | yes | List the deliveries of a hook in a repository |
+| GET | `/repos/{owner}/{repo}/hooks/{id}/deliveries/{uuid}` | repoGetHookDelivery | `owner`*, `repo`*, `id`*, `uuid`* | HookDelivery | yes | Get a delivery of a hook in a repository |
+| POST | `/repos/{owner}/{repo}/hooks/{id}/tests` | repoTestHook | `owner`*, `repo`*, `id`*, `ref` | — |  | Test a push webhook |
+| GET | `/repos/{owner}/{repo}/issue_config` | repoGetIssueConfig | `owner`*, `repo`* | IssueConfig | yes | Returns the issue config for a repo |
+| GET | `/repos/{owner}/{repo}/issue_config/validate` | repoValidateIssueConfig | `owner`*, `repo`* | IssueConfigValidation | yes | Returns the validation information for a issue config |
+| GET | `/repos/{owner}/{repo}/issue_templates` | repoGetIssueTemplates | `owner`*, `repo`* | IssueTemplate[] | yes | Get available issue templates for a repository |
+| GET | `/repos/{owner}/{repo}/issues` | issueListIssues | `owner`*, `repo`*, `state`, `labels`, `q`, `type`, `milestones`, `since`, `before`, `created_by`, `assigned_by`, `mentioned_by`, `page`, `limit` | Issue[] | yes | List a repository's issues |
+| POST | `/repos/{owner}/{repo}/issues` | issueCreateIssue | `owner`*, `repo`*, body: CreateIssueOption | Issue |  | Create an issue. If using deadline only the date will be taken into account, and time of day ignored. |
+| GET | `/repos/{owner}/{repo}/issues/comments` | issueGetRepoComments | `owner`*, `repo`*, `since`, `before`, `page`, `limit` | Comment[] | yes | List all comments in a repository |
+| GET | `/repos/{owner}/{repo}/issues/comments/{id}` | issueGetComment | `owner`*, `repo`*, `id`* | Comment | yes | Get a comment |
+| DELETE | `/repos/{owner}/{repo}/issues/comments/{id}` | issueDeleteComment | `owner`*, `repo`*, `id`* | — |  | Delete a comment |
+| PATCH | `/repos/{owner}/{repo}/issues/comments/{id}` | issueEditComment | `owner`*, `repo`*, `id`*, body: EditIssueCommentOption | Comment |  | Edit a comment |
+| GET | `/repos/{owner}/{repo}/issues/comments/{id}/assets` | issueListIssueCommentAttachments | `owner`*, `repo`*, `id`* | Attachment[] | yes | List comment's attachments |
+| POST | `/repos/{owner}/{repo}/issues/comments/{id}/assets` | issueCreateIssueCommentAttachment | `owner`*, `repo`*, `id`*, `name`, body: object | Attachment |  | Create a comment attachment |
+| GET | `/repos/{owner}/{repo}/issues/comments/{id}/assets/{attachment_id}` | issueGetIssueCommentAttachment | `owner`*, `repo`*, `id`*, `attachment_id`* | Attachment | yes | Get a comment attachment |
+| DELETE | `/repos/{owner}/{repo}/issues/comments/{id}/assets/{attachment_id}` | issueDeleteIssueCommentAttachment | `owner`*, `repo`*, `id`*, `attachment_id`* | — |  | Delete a comment attachment |
+| PATCH | `/repos/{owner}/{repo}/issues/comments/{id}/assets/{attachment_id}` | issueEditIssueCommentAttachment | `owner`*, `repo`*, `id`*, `attachment_id`*, body: EditAttachmentOptions | Attachment |  | Edit a comment attachment |
+| GET | `/repos/{owner}/{repo}/issues/comments/{id}/reactions` | issueGetCommentReactions | `owner`*, `repo`*, `id`* | Reaction[] | yes | Get a list of reactions from a comment of an issue |
+| POST | `/repos/{owner}/{repo}/issues/comments/{id}/reactions` | issuePostCommentReaction | `owner`*, `repo`*, `id`*, body: EditReactionOption | Reaction |  | Add a reaction to a comment of an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/comments/{id}/reactions` | issueDeleteCommentReaction | `owner`*, `repo`*, `id`*, body: EditReactionOption | — |  | Remove a reaction from a comment of an issue |
+| GET | `/repos/{owner}/{repo}/issues/pinned` | repoListPinnedIssues | `owner`*, `repo`* | Issue[] | yes | List a repo's pinned issues |
+| GET | `/repos/{owner}/{repo}/issues/{index}` | issueGetIssue | `owner`*, `repo`*, `index`* | Issue | yes | Get an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}` | issueDelete | `owner`*, `repo`*, `index`* | — |  | Delete an issue |
+| PATCH | `/repos/{owner}/{repo}/issues/{index}` | issueEditIssue | `owner`*, `repo`*, `index`*, body: EditIssueOption | Issue |  | Edit an issue. If using deadline only the date will be taken into account, and time of day ignored. |
+| GET | `/repos/{owner}/{repo}/issues/{index}/assets` | issueListIssueAttachments | `owner`*, `repo`*, `index`* | Attachment[] | yes | List issue's attachments |
+| POST | `/repos/{owner}/{repo}/issues/{index}/assets` | issueCreateIssueAttachment | `owner`*, `repo`*, `index`*, `name`, body: object | Attachment |  | Create an issue attachment |
+| GET | `/repos/{owner}/{repo}/issues/{index}/assets/{attachment_id}` | issueGetIssueAttachment | `owner`*, `repo`*, `index`*, `attachment_id`* | Attachment | yes | Get an issue attachment |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/assets/{attachment_id}` | issueDeleteIssueAttachment | `owner`*, `repo`*, `index`*, `attachment_id`* | — |  | Delete an issue attachment |
+| PATCH | `/repos/{owner}/{repo}/issues/{index}/assets/{attachment_id}` | issueEditIssueAttachment | `owner`*, `repo`*, `index`*, `attachment_id`*, body: EditAttachmentOptions | Attachment |  | Edit an issue attachment |
+| POST | `/repos/{owner}/{repo}/issues/{index}/assignees` | issueAddAssignees | `owner`*, `repo`*, `index`*, body*: IssueAssigneesOption | Issue |  | Add assignees to an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/assignees` | issueRemoveAssignees | `owner`*, `repo`*, `index`*, body*: IssueAssigneesOption | Issue |  | Remove assignees from an issue |
+| GET | `/repos/{owner}/{repo}/issues/{index}/assignees/{assignee}` | issueCheckAssignee | `owner`*, `repo`*, `index`*, `assignee`* | — | yes | Check if a user can be assigned to an issue |
+| GET | `/repos/{owner}/{repo}/issues/{index}/blocks` | issueListBlocks | `owner`*, `repo`*, `index`*, `page`, `limit` | Issue[] | yes | List issues that are blocked by this issue |
+| POST | `/repos/{owner}/{repo}/issues/{index}/blocks` | issueCreateIssueBlocking | `owner`*, `repo`*, `index`*, body: IssueMeta | Issue |  | Block the issue given in the body by the issue in path |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/blocks` | issueRemoveIssueBlocking | `owner`*, `repo`*, `index`*, body: IssueMeta | Issue |  | Unblock the issue given in the body by the issue in path |
+| GET | `/repos/{owner}/{repo}/issues/{index}/comments` | issueGetComments | `owner`*, `repo`*, `index`*, `since`, `before` | Comment[] | yes | List all comments on an issue |
+| POST | `/repos/{owner}/{repo}/issues/{index}/comments` | issueCreateComment | `owner`*, `repo`*, `index`*, body: CreateIssueCommentOption | Comment |  | Add a comment to an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/comments/{id}` | issueDeleteCommentDeprecated | `owner`*, `repo`*, `index`*, `id`* | — |  | Delete a comment |
+| PATCH | `/repos/{owner}/{repo}/issues/{index}/comments/{id}` | issueEditCommentDeprecated | `owner`*, `repo`*, `index`*, `id`*, body: EditIssueCommentOption | Comment |  | Edit a comment |
+| POST | `/repos/{owner}/{repo}/issues/{index}/deadline` | issueEditIssueDeadline | `owner`*, `repo`*, `index`*, body: EditDeadlineOption | IssueDeadline |  | Set an issue deadline. If set to null, the deadline is deleted. If using deadline only the date will be taken into account, and time of day ignored. |
+| GET | `/repos/{owner}/{repo}/issues/{index}/dependencies` | issueListIssueDependencies | `owner`*, `repo`*, `index`*, `page`, `limit` | Issue[] | yes | List an issue's dependencies, i.e all issues that block this issue. |
+| POST | `/repos/{owner}/{repo}/issues/{index}/dependencies` | issueCreateIssueDependencies | `owner`*, `repo`*, `index`*, body: IssueMeta | Issue |  | Make the issue in the url depend on the issue in the form. |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/dependencies` | issueRemoveIssueDependencies | `owner`*, `repo`*, `index`*, body: IssueMeta | Issue |  | Remove an issue dependency |
+| GET | `/repos/{owner}/{repo}/issues/{index}/labels` | issueGetLabels | `owner`*, `repo`*, `index`* | Label[] | yes | Get an issue's labels |
+| PUT | `/repos/{owner}/{repo}/issues/{index}/labels` | issueReplaceLabels | `owner`*, `repo`*, `index`*, body: IssueLabelsOption | Label[] |  | Replace an issue's labels |
+| POST | `/repos/{owner}/{repo}/issues/{index}/labels` | issueAddLabel | `owner`*, `repo`*, `index`*, body: IssueLabelsOption | Label[] |  | Add a label to an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/labels` | issueClearLabels | `owner`*, `repo`*, `index`* | — |  | Remove all labels from an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/labels/{id}` | issueRemoveLabel | `owner`*, `repo`*, `index`*, `id`* | — |  | Remove a label from an issue |
+| PUT | `/repos/{owner}/{repo}/issues/{index}/lock` | issueLockIssue | `owner`*, `repo`*, `index`*, body: LockIssueOption | — |  | Lock an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/lock` | issueUnlockIssue | `owner`*, `repo`*, `index`* | — |  | Unlock an issue |
+| POST | `/repos/{owner}/{repo}/issues/{index}/pin` | pinIssue | `owner`*, `repo`*, `index`* | — |  | Pin an Issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/pin` | unpinIssue | `owner`*, `repo`*, `index`* | — |  | Unpin an Issue |
+| PATCH | `/repos/{owner}/{repo}/issues/{index}/pin/{position}` | moveIssuePin | `owner`*, `repo`*, `index`*, `position`* | — |  | Moves the Pin to the given Position |
+| GET | `/repos/{owner}/{repo}/issues/{index}/reactions` | issueGetIssueReactions | `owner`*, `repo`*, `index`*, `page`, `limit` | Reaction[] | yes | Get a list reactions of an issue |
+| POST | `/repos/{owner}/{repo}/issues/{index}/reactions` | issuePostIssueReaction | `owner`*, `repo`*, `index`*, body: EditReactionOption | Reaction |  | Add a reaction to an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/reactions` | issueDeleteIssueReaction | `owner`*, `repo`*, `index`*, body: EditReactionOption | — |  | Remove a reaction from an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/stopwatch/delete` | issueDeleteStopWatch | `owner`*, `repo`*, `index`* | — |  | Delete an issue's existing stopwatch. |
+| POST | `/repos/{owner}/{repo}/issues/{index}/stopwatch/start` | issueStartStopWatch | `owner`*, `repo`*, `index`* | — |  | Start stopwatch on an issue. |
+| POST | `/repos/{owner}/{repo}/issues/{index}/stopwatch/stop` | issueStopStopWatch | `owner`*, `repo`*, `index`* | — |  | Stop an issue's existing stopwatch. |
+| GET | `/repos/{owner}/{repo}/issues/{index}/subscriptions` | issueSubscriptions | `owner`*, `repo`*, `index`*, `page`, `limit` | User[] | yes | Get users who subscribed on an issue. |
+| GET | `/repos/{owner}/{repo}/issues/{index}/subscriptions/check` | issueCheckSubscription | `owner`*, `repo`*, `index`* | WatchInfo | yes | Check if user is subscribed to an issue |
+| PUT | `/repos/{owner}/{repo}/issues/{index}/subscriptions/{user}` | issueAddSubscription | `owner`*, `repo`*, `index`*, `user`* | — |  | Subscribe user to issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/subscriptions/{user}` | issueDeleteSubscription | `owner`*, `repo`*, `index`*, `user`* | — |  | Unsubscribe user from issue |
+| GET | `/repos/{owner}/{repo}/issues/{index}/timeline` | issueGetCommentsAndTimeline | `owner`*, `repo`*, `index`*, `since`, `page`, `limit`, `before` | TimelineComment[] | yes | List all comments and events on an issue |
+| GET | `/repos/{owner}/{repo}/issues/{index}/times` | issueTrackedTimes | `owner`*, `repo`*, `index`*, `user`, `since`, `before`, `page`, `limit` | TrackedTime[] | yes | List an issue's tracked times |
+| POST | `/repos/{owner}/{repo}/issues/{index}/times` | issueAddTime | `owner`*, `repo`*, `index`*, body: AddTimeOption | TrackedTime |  | Add tracked time to a issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/times` | issueResetTime | `owner`*, `repo`*, `index`* | — |  | Reset a tracked time of an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{index}/times/{id}` | issueDeleteTime | `owner`*, `repo`*, `index`*, `id`* | — |  | Delete specific tracked time |
+| GET | `/repos/{owner}/{repo}/keys` | repoListKeys | `owner`*, `repo`*, `key_id`, `fingerprint`, `page`, `limit` | DeployKey[] | yes | List a repository's keys |
+| POST | `/repos/{owner}/{repo}/keys` | repoCreateKey | `owner`*, `repo`*, body: CreateKeyOption | DeployKey |  | Add a key to a repository |
+| POST | `/repos/{owner}/{repo}/keys/tokens` | repoCreateDeployToken | `owner`*, `repo`*, body: CreateDeployKeyTokenOption | DeployKey |  | Add a deploy token to a repository, it authenticates git over HTTPS |
+| GET | `/repos/{owner}/{repo}/keys/{id}` | repoGetKey | `owner`*, `repo`*, `id`* | DeployKey | yes | Get a repository's key by id |
+| DELETE | `/repos/{owner}/{repo}/keys/{id}` | repoDeleteKey | `owner`*, `repo`*, `id`* | — |  | Delete a key from a repository |
+| GET | `/repos/{owner}/{repo}/labels` | issueListLabels | `owner`*, `repo`*, `page`, `limit` | Label[] | yes | Get all of a repository's labels |
+| POST | `/repos/{owner}/{repo}/labels` | issueCreateLabel | `owner`*, `repo`*, body: CreateLabelOption | Label |  | Create a label |
+| GET | `/repos/{owner}/{repo}/labels/{id}` | issueGetLabel | `owner`*, `repo`*, `id`* | Label | yes | Get a single label |
+| DELETE | `/repos/{owner}/{repo}/labels/{id}` | issueDeleteLabel | `owner`*, `repo`*, `id`* | — |  | Delete a label |
+| PATCH | `/repos/{owner}/{repo}/labels/{id}` | issueEditLabel | `owner`*, `repo`*, `id`*, body: EditLabelOption | Label |  | Update a label |
+| GET | `/repos/{owner}/{repo}/languages` | repoGetLanguages | `owner`*, `repo`* | object | yes | Get languages and number of bytes of code written |
+| GET | `/repos/{owner}/{repo}/licenses` | repoGetLicenses | `owner`*, `repo`* | string[] | yes | Get repo licenses |
+| GET | `/repos/{owner}/{repo}/media/{filepath}` | repoGetRawFileOrLFS | `owner`*, `repo`*, `filepath`*, `ref` | string:binary | yes | Get a file or it's LFS object from a repository |
+| POST | `/repos/{owner}/{repo}/merge-upstream` | repoMergeUpstream | `owner`*, `repo`*, body: MergeUpstreamRequest | MergeUpstreamResponse |  | Merge a branch from upstream |
+| GET | `/repos/{owner}/{repo}/milestones` | issueGetMilestonesList | `owner`*, `repo`*, `state`, `name`, `page`, `limit` | Milestone[] | yes | Get all of a repository's opened milestones |
+| POST | `/repos/{owner}/{repo}/milestones` | issueCreateMilestone | `owner`*, `repo`*, body: CreateMilestoneOption | Milestone |  | Create a milestone |
+| GET | `/repos/{owner}/{repo}/milestones/{id}` | issueGetMilestone | `owner`*, `repo`*, `id`* | Milestone | yes | Get a milestone |
+| DELETE | `/repos/{owner}/{repo}/milestones/{id}` | issueDeleteMilestone | `owner`*, `repo`*, `id`* | — |  | Delete a milestone |
+| PATCH | `/repos/{owner}/{repo}/milestones/{id}` | issueEditMilestone | `owner`*, `repo`*, `id`*, body: EditMilestoneOption | Milestone |  | Update a milestone |
+| POST | `/repos/{owner}/{repo}/mirror-sync` | repoMirrorSync | `owner`*, `repo`* | — |  | Sync a mirrored repository |
+| GET | `/repos/{owner}/{repo}/new_pin_allowed` | repoNewPinAllowed | `owner`*, `repo`* | NewIssuePinsAllowed | yes | Returns if new Issue Pins are allowed |
+| GET | `/repos/{owner}/{repo}/notifications` | notifyGetRepoList | `owner`*, `repo`*, `all`, `status-types`, `subject-type`, `since`, `before`, `page`, `limit` | NotificationThread[] | yes | List users's notification threads on a specific repo |
+| PUT | `/repos/{owner}/{repo}/notifications` | notifyReadRepoList | `owner`*, `repo`*, `all`, `status-types`, `to-status`, `last_read_at` | NotificationThread[] |  | Mark notification threads as read, pinned or unread on a specific repo |
+| GET | `/repos/{owner}/{repo}/projects` | repoListProjects | `owner`*, `repo`*, `state`, `page`, `limit` | Project[] | yes | List a repository's projects |
+| POST | `/repos/{owner}/{repo}/projects` | repoCreateProject | `owner`*, `repo`*, body: CreateProjectOption | Project |  | Create a project owned by a repository |
+| GET | `/repos/{owner}/{repo}/projects/{id}` | repoGetProject | `owner`*, `repo`*, `id`* | Project | yes | Get a project |
+| DELETE | `/repos/{owner}/{repo}/projects/{id}` | repoDeleteProject | `owner`*, `repo`*, `id`* | — |  | Delete a project |
+| PATCH | `/repos/{owner}/{repo}/projects/{id}` | repoEditProject | `owner`*, `repo`*, `id`*, body: EditProjectOption | Project |  | Edit a project |
+| GET | `/repos/{owner}/{repo}/projects/{id}/columns` | repoListProjectColumns | `owner`*, `repo`*, `id`*, `page`, `limit` | ProjectColumn[] | yes | List a project's columns |
+| POST | `/repos/{owner}/{repo}/projects/{id}/columns` | repoCreateProjectColumn | `owner`*, `repo`*, `id`*, body: CreateProjectColumnOption | ProjectColumn |  | Create a column in a project |
+| POST | `/repos/{owner}/{repo}/projects/{id}/columns/move` | repoMoveProjectColumns | `owner`*, `repo`*, `id`*, body: MoveProjectColumnsOption | — |  | Reorder a project's columns |
+| GET | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}` | repoGetProjectColumn | `owner`*, `repo`*, `id`*, `column_id`* | ProjectColumn | yes | Get a project column |
+| DELETE | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}` | repoDeleteProjectColumn | `owner`*, `repo`*, `id`*, `column_id`* | — |  | Delete a project column |
+| PATCH | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}` | repoEditProjectColumn | `owner`*, `repo`*, `id`*, `column_id`*, body: EditProjectColumnOption | ProjectColumn |  | Edit a project column |
+| POST | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/default` | repoSetDefaultProjectColumn | `owner`*, `repo`*, `id`*, `column_id`* | — |  | Set a project's default column |
+| GET | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues` | repoListProjectColumnIssues | `owner`*, `repo`*, `id`*, `column_id`*, `page`, `limit` | Issue[] | yes | List the issues in a project column |
+| POST | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id}` | repoAddIssueToProjectColumn | `owner`*, `repo`*, `id`*, `column_id`*, `issue_id`* | — |  | Add an issue to a project column |
+| DELETE | `/repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id}` | repoRemoveIssueFromProjectColumn | `owner`*, `repo`*, `id`*, `column_id`*, `issue_id`* | — |  | Remove an issue from a project column |
+| POST | `/repos/{owner}/{repo}/projects/{id}/issues/{issue_id}/move` | repoMoveProjectIssue | `owner`*, `repo`*, `id`*, `issue_id`*, body: MoveProjectIssueOption | — |  | Move an issue between a project's columns |
+| GET | `/repos/{owner}/{repo}/projects/{id}/workflows` | repoListProjectWorkflows | `owner`*, `repo`*, `id`*, `page`, `limit` | ProjectWorkflow[] | yes | List a project's workflows |
+| POST | `/repos/{owner}/{repo}/projects/{id}/workflows` | repoCreateProjectWorkflow | `owner`*, `repo`*, `id`*, body: CreateProjectWorkflowOption | ProjectWorkflow |  | Create a project workflow |
+| GET | `/repos/{owner}/{repo}/projects/{id}/workflows/{workflow_id}` | repoGetProjectWorkflow | `owner`*, `repo`*, `id`*, `workflow_id`* | ProjectWorkflow | yes | Get a project workflow |
+| DELETE | `/repos/{owner}/{repo}/projects/{id}/workflows/{workflow_id}` | repoDeleteProjectWorkflow | `owner`*, `repo`*, `id`*, `workflow_id`* | — |  | Delete a project workflow |
+| PATCH | `/repos/{owner}/{repo}/projects/{id}/workflows/{workflow_id}` | repoEditProjectWorkflow | `owner`*, `repo`*, `id`*, `workflow_id`*, body: EditProjectWorkflowOption | ProjectWorkflow |  | Edit a project workflow |
+| GET | `/repos/{owner}/{repo}/pulls` | repoListPullRequests | `owner`*, `repo`*, `base_branch`, `state`, `sort`, `milestone`, `labels`, `poster`, `page`, `limit` | PullRequest[] | yes | List a repo's pull requests |
+| POST | `/repos/{owner}/{repo}/pulls` | repoCreatePullRequest | `owner`*, `repo`*, body: CreatePullRequestOption | PullRequest |  | Create a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/comments/{id}/resolve` | repoResolvePullReviewComment | `owner`*, `repo`*, `id`* | — |  | Resolve a pull request review comment |
+| POST | `/repos/{owner}/{repo}/pulls/comments/{id}/unresolve` | repoUnresolvePullReviewComment | `owner`*, `repo`*, `id`* | — |  | Unresolve a pull request review comment |
+| GET | `/repos/{owner}/{repo}/pulls/pinned` | repoListPinnedPullRequests | `owner`*, `repo`* | PullRequest[] | yes | List a repo's pinned pull requests |
+| GET | `/repos/{owner}/{repo}/pulls/{base}/{head}` | repoGetPullRequestByBaseHead | `owner`*, `repo`*, `base`*, `head`* | PullRequest | yes | Get a pull request by base and head |
+| GET | `/repos/{owner}/{repo}/pulls/{index}` | repoGetPullRequest | `owner`*, `repo`*, `index`* | PullRequest | yes | Get a pull request |
+| PATCH | `/repos/{owner}/{repo}/pulls/{index}` | repoEditPullRequest | `owner`*, `repo`*, `index`*, body: EditPullRequestOption | PullRequest |  | Update a pull request. If using deadline only the date will be taken into account, and time of day ignored. |
+| GET | `/repos/{owner}/{repo}/pulls/{index}.{diffType}` | repoDownloadPullDiffOrPatch | `owner`*, `repo`*, `index`*, `diffType`*, `binary` | string | yes | Get a pull request diff or patch |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/comments/{id}/replies` | repoCreatePullReviewCommentReply | `owner`*, `repo`*, `index`*, `id`*, body*: CreatePullReviewCommentReplyOptions | PullReviewComment |  | Reply to a pull request review comment |
+| GET | `/repos/{owner}/{repo}/pulls/{index}/commits` | repoGetPullRequestCommits | `owner`*, `repo`*, `index`*, `page`, `limit`, `verification`, `files` | Commit[] | yes | Get commits for a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{index}/files` | repoGetPullRequestFiles | `owner`*, `repo`*, `index`*, `skip-to`, `whitespace`, `page`, `limit` | ChangedFile[] | yes | Get changed files for a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{index}/merge` | repoPullRequestIsMerged | `owner`*, `repo`*, `index`* | — | yes | Check if a pull request has been merged |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/merge` | repoMergePullRequest | `owner`*, `repo`*, `index`*, body: MergePullRequestOption | — |  | Merge a pull request |
+| DELETE | `/repos/{owner}/{repo}/pulls/{index}/merge` | repoCancelScheduledAutoMerge | `owner`*, `repo`*, `index`* | — |  | Cancel the scheduled auto merge for the given pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/requested_reviewers` | repoCreatePullReviewRequests | `owner`*, `repo`*, `index`*, body*: PullReviewRequestOptions | PullReview[] |  | create review requests for a pull request |
+| DELETE | `/repos/{owner}/{repo}/pulls/{index}/requested_reviewers` | repoDeletePullReviewRequests | `owner`*, `repo`*, `index`*, body*: PullReviewRequestOptions | — |  | cancel review requests for a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{index}/reviews` | repoListPullReviews | `owner`*, `repo`*, `index`*, `page`, `limit` | PullReview[] | yes | List all reviews for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews` | repoCreatePullReview | `owner`*, `repo`*, `index`*, body*: CreatePullReviewOptions | PullReview |  | Create a review to a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}` | repoGetPullReview | `owner`*, `repo`*, `index`*, `id`* | PullReview | yes | Get a specific review for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}` | repoSubmitPullReview | `owner`*, `repo`*, `index`*, `id`*, body*: SubmitPullReviewOptions | PullReview |  | Submit a pending review to a pull request |
+| DELETE | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}` | repoDeletePullReview | `owner`*, `repo`*, `index`*, `id`* | — |  | Delete a specific review from a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}/comments` | repoGetPullReviewComments | `owner`*, `repo`*, `index`*, `id`* | PullReviewComment[] | yes | Get a specific review for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}/dismissals` | repoDismissPullReview | `owner`*, `repo`*, `index`*, `id`*, body*: DismissPullReviewOptions | PullReview |  | Dismiss a review for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/reviews/{id}/undismissals` | repoUnDismissPullReview | `owner`*, `repo`*, `index`*, `id`* | PullReview |  | Cancel to dismiss a review for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{index}/update` | repoUpdatePullRequest | `owner`*, `repo`*, `index`*, `style` | — |  | Merge PR's baseBranch into headBranch |
+| GET | `/repos/{owner}/{repo}/push_mirrors` | repoListPushMirrors | `owner`*, `repo`*, `page`, `limit` | PushMirror[] | yes | Get all push mirrors of the repository |
+| POST | `/repos/{owner}/{repo}/push_mirrors` | repoAddPushMirror | `owner`*, `repo`*, body: CreatePushMirrorOption | PushMirror |  | add a push mirror to the repository |
+| POST | `/repos/{owner}/{repo}/push_mirrors-sync` | repoPushMirrorSync | `owner`*, `repo`* | — |  | Sync all push mirrored repository |
+| GET | `/repos/{owner}/{repo}/push_mirrors/{name}` | repoGetPushMirrorByRemoteName | `owner`*, `repo`*, `name`* | PushMirror | yes | Get push mirror of the repository by remoteName |
+| DELETE | `/repos/{owner}/{repo}/push_mirrors/{name}` | repoDeletePushMirror | `owner`*, `repo`*, `name`* | — |  | deletes a push mirror from a repository by remoteName |
+| GET | `/repos/{owner}/{repo}/raw/{filepath}` | repoGetRawFile | `owner`*, `repo`*, `filepath`*, `ref` | string:binary | yes | Get a file from a repository |
+| GET | `/repos/{owner}/{repo}/releases` | repoListReleases | `owner`*, `repo`*, `draft`, `pre-release`, `tag_filter`, `page`, `limit` | Release[] | yes | List a repo's releases |
+| POST | `/repos/{owner}/{repo}/releases` | repoCreateRelease | `owner`*, `repo`*, body: CreateReleaseOption | Release |  | Create a release |
+| GET | `/repos/{owner}/{repo}/releases/latest` | repoGetLatestRelease | `owner`*, `repo`* | Release | yes | Gets the most recent non-prerelease, non-draft release of a repository, sorted by created_at |
+| GET | `/repos/{owner}/{repo}/releases/tags/{tag}` | repoGetReleaseByTag | `owner`*, `repo`*, `tag`* | Release | yes | Get a release by tag name |
+| DELETE | `/repos/{owner}/{repo}/releases/tags/{tag}` | repoDeleteReleaseByTag | `owner`*, `repo`*, `tag`* | — |  | Delete a release by tag name |
+| GET | `/repos/{owner}/{repo}/releases/{id}` | repoGetRelease | `owner`*, `repo`*, `id`* | Release | yes | Get a release |
+| DELETE | `/repos/{owner}/{repo}/releases/{id}` | repoDeleteRelease | `owner`*, `repo`*, `id`* | — |  | Delete a release |
+| PATCH | `/repos/{owner}/{repo}/releases/{id}` | repoEditRelease | `owner`*, `repo`*, `id`*, body: EditReleaseOption | Release |  | Update a release |
+| GET | `/repos/{owner}/{repo}/releases/{id}/assets` | repoListReleaseAttachments | `owner`*, `repo`*, `id`* | Attachment[] | yes | List release's attachments |
+| POST | `/repos/{owner}/{repo}/releases/{id}/assets` | repoCreateReleaseAttachment | `owner`*, `repo`*, `id`*, `name`, body: object | Attachment |  | Create a release attachment |
+| GET | `/repos/{owner}/{repo}/releases/{id}/assets/{attachment_id}` | repoGetReleaseAttachment | `owner`*, `repo`*, `id`*, `attachment_id`* | Attachment | yes | Get a release attachment |
+| DELETE | `/repos/{owner}/{repo}/releases/{id}/assets/{attachment_id}` | repoDeleteReleaseAttachment | `owner`*, `repo`*, `id`*, `attachment_id`* | — |  | Delete a release attachment |
+| PATCH | `/repos/{owner}/{repo}/releases/{id}/assets/{attachment_id}` | repoEditReleaseAttachment | `owner`*, `repo`*, `id`*, `attachment_id`*, body: EditAttachmentOptions | Attachment |  | Edit a release attachment |
+| GET | `/repos/{owner}/{repo}/reviewers` | repoGetReviewers | `owner`*, `repo`* | User[] | yes | Return all users that can be requested to review in this repo |
+| GET | `/repos/{owner}/{repo}/signing-key.gpg` | repoSigningKey | `owner`*, `repo`* | string | yes | Get signing-key.gpg for given repository |
+| GET | `/repos/{owner}/{repo}/signing-key.pub` | repoSigningKeySSH | `owner`*, `repo`* | string | yes | Get signing-key.pub for given repository |
+| GET | `/repos/{owner}/{repo}/stargazers` | repoListStargazers | `owner`*, `repo`*, `page`, `limit` | User[] | yes | List a repo's stargazers |
+| GET | `/repos/{owner}/{repo}/statuses/{sha}` | repoListStatuses | `owner`*, `repo`*, `sha`*, `sort`, `state`, `page`, `limit` | CommitStatus[] | yes | Get a commit's statuses |
+| POST | `/repos/{owner}/{repo}/statuses/{sha}` | repoCreateStatus | `owner`*, `repo`*, `sha`*, body: CreateStatusOption | CommitStatus |  | Create a commit status |
+| GET | `/repos/{owner}/{repo}/subscribers` | repoListSubscribers | `owner`*, `repo`*, `page`, `limit` | User[] | yes | List a repo's watchers |
+| GET | `/repos/{owner}/{repo}/subscription` | userCurrentCheckSubscription | `owner`*, `repo`* | WatchInfo | yes | Check if the current user is watching a repo |
+| PUT | `/repos/{owner}/{repo}/subscription` | userCurrentPutSubscription | `owner`*, `repo`* | WatchInfo |  | Watch a repo |
+| DELETE | `/repos/{owner}/{repo}/subscription` | userCurrentDeleteSubscription | `owner`*, `repo`* | — |  | Unwatch a repo |
+| GET | `/repos/{owner}/{repo}/tag_protections` | repoListTagProtection | `owner`*, `repo`* | TagProtection[] | yes | List tag protections for a repository |
+| POST | `/repos/{owner}/{repo}/tag_protections` | repoCreateTagProtection | `owner`*, `repo`*, body: CreateTagProtectionOption | TagProtection |  | Create a tag protections for a repository |
+| GET | `/repos/{owner}/{repo}/tag_protections/{id}` | repoGetTagProtection | `owner`*, `repo`*, `id`* | TagProtection | yes | Get a specific tag protection for the repository |
+| DELETE | `/repos/{owner}/{repo}/tag_protections/{id}` | repoDeleteTagProtection | `owner`*, `repo`*, `id`* | — |  | Delete a specific tag protection for the repository |
+| PATCH | `/repos/{owner}/{repo}/tag_protections/{id}` | repoEditTagProtection | `owner`*, `repo`*, `id`*, body: EditTagProtectionOption | TagProtection |  | Edit a tag protections for a repository. Only fields that are set will be changed |
+| GET | `/repos/{owner}/{repo}/tags` | repoListTags | `owner`*, `repo`*, `page`, `limit` | Tag[] | yes | List a repository's tags |
+| POST | `/repos/{owner}/{repo}/tags` | repoCreateTag | `owner`*, `repo`*, body: CreateTagOption | Tag |  | Create a new git tag in a repository |
+| GET | `/repos/{owner}/{repo}/tags/{tag}` | repoGetTag | `owner`*, `repo`*, `tag`* | Tag | yes | Get the tag of a repository by tag name |
+| DELETE | `/repos/{owner}/{repo}/tags/{tag}` | repoDeleteTag | `owner`*, `repo`*, `tag`* | — |  | Delete a repository's tag by name |
+| GET | `/repos/{owner}/{repo}/teams` | repoListTeams | `owner`*, `repo`* | Team[] | yes | List a repository's teams |
+| GET | `/repos/{owner}/{repo}/teams/{team}` | repoCheckTeam | `owner`*, `repo`*, `team`* | Team | yes | Check if a team is assigned to a repository |
+| PUT | `/repos/{owner}/{repo}/teams/{team}` | repoAddTeam | `owner`*, `repo`*, `team`* | — |  | Add a team to a repository |
+| DELETE | `/repos/{owner}/{repo}/teams/{team}` | repoDeleteTeam | `owner`*, `repo`*, `team`* | — |  | Delete a team from a repository |
+| GET | `/repos/{owner}/{repo}/times` | repoTrackedTimes | `owner`*, `repo`*, `user`, `since`, `before`, `page`, `limit` | TrackedTime[] | yes | List a repo's tracked times |
+| GET | `/repos/{owner}/{repo}/times/{user}` | userTrackedTimes | `owner`*, `repo`*, `user`* | TrackedTime[] | yes | List a user's tracked times in a repo |
+| GET | `/repos/{owner}/{repo}/topics` | repoListTopics | `owner`*, `repo`*, `page`, `limit` | TopicName | yes | Get list of topics that a repository has |
+| PUT | `/repos/{owner}/{repo}/topics` | repoUpdateTopics | `owner`*, `repo`*, body: RepoTopicOptions | — |  | Replace list of topics for a repository |
+| PUT | `/repos/{owner}/{repo}/topics/{topic}` | repoAddTopic | `owner`*, `repo`*, `topic`* | — |  | Add a topic to a repository |
+| DELETE | `/repos/{owner}/{repo}/topics/{topic}` | repoDeleteTopic | `owner`*, `repo`*, `topic`* | — |  | Delete a topic from a repository |
+| POST | `/repos/{owner}/{repo}/transfer` | repoTransfer | `owner`*, `repo`*, body*: TransferRepoOption | Repository |  | Transfer a repo ownership |
+| POST | `/repos/{owner}/{repo}/transfer/accept` | acceptRepoTransfer | `owner`*, `repo`* | Repository |  | Accept a repo transfer |
+| POST | `/repos/{owner}/{repo}/transfer/reject` | rejectRepoTransfer | `owner`*, `repo`* | Repository |  | Reject a repo transfer |
+| POST | `/repos/{owner}/{repo}/wiki/new` | repoCreateWikiPage | `owner`*, `repo`*, body: CreateWikiPageOptions | WikiPage |  | Create a wiki page |
+| GET | `/repos/{owner}/{repo}/wiki/page/{pageName}` | repoGetWikiPage | `owner`*, `repo`*, `pageName`* | WikiPage | yes | Get a wiki page |
+| DELETE | `/repos/{owner}/{repo}/wiki/page/{pageName}` | repoDeleteWikiPage | `owner`*, `repo`*, `pageName`* | — |  | Delete a wiki page |
+| PATCH | `/repos/{owner}/{repo}/wiki/page/{pageName}` | repoEditWikiPage | `owner`*, `repo`*, `pageName`*, body: CreateWikiPageOptions | WikiPage |  | Edit a wiki page |
+| GET | `/repos/{owner}/{repo}/wiki/pages` | repoGetWikiPages | `owner`*, `repo`*, `page`, `limit` | WikiPageMetaData[] | yes | Get all wiki pages |
+| GET | `/repos/{owner}/{repo}/wiki/revisions/{pageName}` | repoGetWikiPageRevisions | `owner`*, `repo`*, `pageName`*, `page` | WikiCommitList | yes | Get revisions of a wiki page |
+| POST | `/repos/{template_owner}/{template_repo}/generate` | generateRepo | `template_owner`*, `template_repo`*, body: GenerateRepoOption | Repository |  | Create a repository using a template |
+| GET | `/repositories/{id}` | repoGetByID | `id`* | Repository | yes | Get a repository by id |
+| GET | `/settings/api` | getGeneralAPISettings | — | GeneralAPISettings | yes | Get instance's global settings for api |
+| GET | `/settings/attachment` | getGeneralAttachmentSettings | — | GeneralAttachmentSettings | yes | Get instance's global settings for Attachment |
+| GET | `/settings/repository` | getGeneralRepositorySettings | — | GeneralRepoSettings | yes | Get instance's global settings for repositories |
+| GET | `/settings/ui` | getGeneralUISettings | — | GeneralUISettings | yes | Get instance's global settings for ui |
+| GET | `/signing-key.gpg` | getSigningKey | — | string | yes | Get default signing-key.gpg |
+| GET | `/signing-key.pub` | getSigningKeySSH | — | string | yes | Get default signing-key.pub |
+| GET | `/teams/{id}` | orgGetTeam | `id`* | Team | yes | Get a team |
+| DELETE | `/teams/{id}` | orgDeleteTeam | `id`* | — |  | Delete a team |
+| PATCH | `/teams/{id}` | orgEditTeam | `id`*, body: EditTeamOption | Team |  | Edit a team |
+| GET | `/teams/{id}/activities/feeds` | orgListTeamActivityFeeds | `id`*, `date`, `page`, `limit` | Activity[] | yes | List a team's activity feeds |
+| GET | `/teams/{id}/members` | orgListTeamMembers | `id`*, `page`, `limit` | User[] | yes | List a team's members |
+| GET | `/teams/{id}/members/{username}` | orgListTeamMember | `id`*, `username`* | User | yes | List a particular member of team |
+| PUT | `/teams/{id}/members/{username}` | orgAddTeamMember | `id`*, `username`* | — |  | Add a team member |
+| DELETE | `/teams/{id}/members/{username}` | orgRemoveTeamMember | `id`*, `username`* | — |  | Remove a team member |
+| GET | `/teams/{id}/repos` | orgListTeamRepos | `id`*, `page`, `limit` | Repository[] | yes | List a team's repos |
+| GET | `/teams/{id}/repos/{org}/{repo}` | orgListTeamRepo | `id`*, `org`*, `repo`* | Repository | yes | List a particular repo of team |
+| PUT | `/teams/{id}/repos/{org}/{repo}` | orgAddTeamRepository | `id`*, `org`*, `repo`* | — |  | Add a repository to a team |
+| DELETE | `/teams/{id}/repos/{org}/{repo}` | orgRemoveTeamRepository | `id`*, `org`*, `repo`* | — |  | Remove a repository from a team |
+| GET | `/token` | getCurrentToken | — | CurrentAccessToken | yes | Get the currently authenticated token |
+| DELETE | `/token` | deleteCurrentToken | — | — |  | Delete the currently authenticated token |
+| GET | `/topics/search` | topicSearch | `q`*, `page`, `limit` | TopicListResponse | yes | search topics via keyword |
+| GET | `/user` | userGetCurrent | — | User | yes | Get the authenticated user |
+| GET | `/user/actions/jobs` | getUserWorkflowJobs | `status`, `page`, `limit`, `sort`, `order` | ActionWorkflowJobsResponse | yes | Get workflow jobs |
+| GET | `/user/actions/runners` | getUserRunners | `disabled` | ActionRunnersResponse | yes | Get user-level runners |
+| POST | `/user/actions/runners/registration-token` | userCreateRunnerRegistrationToken | — | — |  | Get a user's actions runner registration token |
+| GET | `/user/actions/runners/{runner_id}` | getUserRunner | `runner_id`* | ActionRunner | yes | Get a user-level runner |
+| DELETE | `/user/actions/runners/{runner_id}` | deleteUserRunner | `runner_id`* | — |  | Delete a user-level runner |
+| PATCH | `/user/actions/runners/{runner_id}` | updateUserRunner | `runner_id`*, body: EditActionRunnerOption | ActionRunner |  | Update a user-level runner |
+| GET | `/user/actions/runs` | getUserWorkflowRuns | `event`, `branch`, `status`, `actor`, `head_sha`, `page`, `limit` | ActionWorkflowRunsResponse | yes | Get workflow runs |
+| PUT | `/user/actions/secrets/{secretname}` | updateUserSecret | `secretname`*, body: CreateOrUpdateSecretOption | — |  | Create or Update a secret value in a user scope |
+| DELETE | `/user/actions/secrets/{secretname}` | deleteUserSecret | `secretname`* | — |  | Delete a secret in a user scope |
+| GET | `/user/actions/variables` | getUserVariablesList | `page`, `limit` | ActionVariable[] | yes | Get the user-level list of variables which is created by current doer |
+| GET | `/user/actions/variables/{variablename}` | getUserVariable | `variablename`* | ActionVariable | yes | Get a user-level variable which is created by current doer |
+| PUT | `/user/actions/variables/{variablename}` | updateUserVariable | `variablename`*, body: UpdateVariableOption | — |  | Update a user-level variable which is created by current doer |
+| POST | `/user/actions/variables/{variablename}` | createUserVariable | `variablename`*, body: CreateVariableOption | — |  | Create a user-level variable |
+| DELETE | `/user/actions/variables/{variablename}` | deleteUserVariable | `variablename`* | — |  | Delete a user-level variable which is created by current doer |
+| GET | `/user/applications/oauth2` | userGetOauth2Application | `page`, `limit` | OAuth2Application[] | yes | List the authenticated user's oauth2 applications |
+| POST | `/user/applications/oauth2` | userCreateOAuth2Application | body*: CreateOAuth2ApplicationOptions | OAuth2Application |  | creates a new OAuth2 application |
+| GET | `/user/applications/oauth2/{id}` | userGetOAuth2Application | `id`* | OAuth2Application | yes | get an OAuth2 Application |
+| DELETE | `/user/applications/oauth2/{id}` | userDeleteOAuth2Application | `id`* | — |  | delete an OAuth2 Application |
+| PATCH | `/user/applications/oauth2/{id}` | userUpdateOAuth2Application | `id`*, body*: CreateOAuth2ApplicationOptions | OAuth2Application |  | update an OAuth2 Application, this includes regenerating the client secret |
+| POST | `/user/avatar` | userUpdateAvatar | body: UpdateUserAvatarOption | — |  | Update Avatar |
+| DELETE | `/user/avatar` | userDeleteAvatar | — | — |  | Delete Avatar |
+| GET | `/user/blocks` | userListBlocks | `page`, `limit` | User[] | yes | List users blocked by the authenticated user |
+| GET | `/user/blocks/{username}` | userCheckUserBlock | `username`* | — | yes | Check if a user is blocked by the authenticated user |
+| PUT | `/user/blocks/{username}` | userBlockUser | `username`*, `note` | — |  | Block a user |
+| DELETE | `/user/blocks/{username}` | userUnblockUser | `username`* | — |  | Unblock a user |
+| GET | `/user/emails` | userListEmails | — | Email[] | yes | List the authenticated user's email addresses |
+| POST | `/user/emails` | userAddEmail | body: CreateEmailOption | Email[] |  | Add email addresses |
+| DELETE | `/user/emails` | userDeleteEmail | body: DeleteEmailOption | — |  | Delete email addresses |
+| GET | `/user/followers` | userCurrentListFollowers | `page`, `limit` | User[] | yes | List the authenticated user's followers |
+| GET | `/user/following` | userCurrentListFollowing | `page`, `limit` | User[] | yes | List the users that the authenticated user is following |
+| GET | `/user/following/{username}` | userCurrentCheckFollowing | `username`* | — | yes | Check whether a user is followed by the authenticated user |
+| PUT | `/user/following/{username}` | userCurrentPutFollow | `username`* | — |  | Follow a user |
+| DELETE | `/user/following/{username}` | userCurrentDeleteFollow | `username`* | — |  | Unfollow a user |
+| GET | `/user/gpg_key_token` | getVerificationToken | — | string | yes | Get a Token to verify |
+| POST | `/user/gpg_key_verify` | userVerifyGPGKey | — | GPGKey |  | Verify a GPG key |
+| GET | `/user/gpg_keys` | userCurrentListGPGKeys | `page`, `limit` | GPGKey[] | yes | List the authenticated user's GPG keys |
+| POST | `/user/gpg_keys` | userCurrentPostGPGKey | body: CreateGPGKeyOption | GPGKey |  | Create a GPG key |
+| GET | `/user/gpg_keys/{id}` | userCurrentGetGPGKey | `id`* | GPGKey | yes | Get a GPG key |
+| DELETE | `/user/gpg_keys/{id}` | userCurrentDeleteGPGKey | `id`* | — |  | Remove a GPG key |
+| GET | `/user/hooks` | userListHooks | `page`, `limit` | Hook[] | yes | List the authenticated user's webhooks |
+| POST | `/user/hooks` | userCreateHook | body*: CreateHookOption | Hook |  | Create a hook |
+| GET | `/user/hooks/{id}` | userGetHook | `id`* | Hook | yes | Get a hook |
+| DELETE | `/user/hooks/{id}` | userDeleteHook | `id`* | — |  | Delete a hook |
+| PATCH | `/user/hooks/{id}` | userEditHook | `id`*, body: EditHookOption | Hook |  | Update a hook |
+| GET | `/user/keys` | userCurrentListKeys | `fingerprint`, `page`, `limit` | PublicKey[] | yes | List the authenticated user's public keys |
+| POST | `/user/keys` | userCurrentPostKey | body: CreateKeyOption | PublicKey |  | Create a public key |
+| GET | `/user/keys/{id}` | userCurrentGetKey | `id`* | PublicKey | yes | Get a public key |
+| DELETE | `/user/keys/{id}` | userCurrentDeleteKey | `id`* | — |  | Delete a public key |
+| GET | `/user/orgs` | orgListCurrentUserOrgs | `page`, `limit` | Organization[] | yes | List the current user's organizations |
+| GET | `/user/projects` | userCurrentListProjects | `state`, `page`, `limit` | Project[] | yes | List your projects |
+| POST | `/user/projects` | userCurrentCreateProject | body: CreateProjectOption | Project |  | Create a project owned by the authenticated user |
+| GET | `/user/projects/{id}` | userCurrentGetProject | `id`* | Project | yes | Get a project |
+| DELETE | `/user/projects/{id}` | userCurrentDeleteProject | `id`* | — |  | Delete a project |
+| PATCH | `/user/projects/{id}` | userCurrentEditProject | `id`*, body: EditProjectOption | Project |  | Edit a project |
+| GET | `/user/projects/{id}/columns` | userCurrentListProjectColumns | `id`*, `page`, `limit` | ProjectColumn[] | yes | List a project's columns |
+| POST | `/user/projects/{id}/columns` | userCurrentCreateProjectColumn | `id`*, body: CreateProjectColumnOption | ProjectColumn |  | Create a column in a project |
+| POST | `/user/projects/{id}/columns/move` | userCurrentMoveProjectColumns | `id`*, body: MoveProjectColumnsOption | — |  | Reorder a project's columns |
+| GET | `/user/projects/{id}/columns/{column_id}` | userCurrentGetProjectColumn | `id`*, `column_id`* | ProjectColumn | yes | Get a project column |
+| DELETE | `/user/projects/{id}/columns/{column_id}` | userCurrentDeleteProjectColumn | `id`*, `column_id`* | — |  | Delete a project column |
+| PATCH | `/user/projects/{id}/columns/{column_id}` | userCurrentEditProjectColumn | `id`*, `column_id`*, body: EditProjectColumnOption | ProjectColumn |  | Edit a project column |
+| POST | `/user/projects/{id}/columns/{column_id}/default` | userCurrentSetDefaultProjectColumn | `id`*, `column_id`* | — |  | Set a project's default column |
+| GET | `/user/projects/{id}/columns/{column_id}/issues` | userCurrentListProjectColumnIssues | `id`*, `column_id`*, `page`, `limit` | Issue[] | yes | List the issues in a project column |
+| POST | `/user/projects/{id}/columns/{column_id}/issues/{issue_id}` | userCurrentAddIssueToProjectColumn | `id`*, `column_id`*, `issue_id`* | — |  | Add an issue to a project column |
+| DELETE | `/user/projects/{id}/columns/{column_id}/issues/{issue_id}` | userCurrentRemoveIssueFromProjectColumn | `id`*, `column_id`*, `issue_id`* | — |  | Remove an issue from a project column |
+| POST | `/user/projects/{id}/issues/{issue_id}/move` | userCurrentMoveProjectIssue | `id`*, `issue_id`*, body: MoveProjectIssueOption | — |  | Move an issue between a project's columns |
+| GET | `/user/projects/{id}/workflows` | userCurrentListProjectWorkflows | `id`*, `page`, `limit` | ProjectWorkflow[] | yes | List a project's workflows |
+| POST | `/user/projects/{id}/workflows` | userCurrentCreateProjectWorkflow | `id`*, body: CreateProjectWorkflowOption | ProjectWorkflow |  | Create a project workflow |
+| GET | `/user/projects/{id}/workflows/{workflow_id}` | userCurrentGetProjectWorkflow | `id`*, `workflow_id`* | ProjectWorkflow | yes | Get a project workflow |
+| DELETE | `/user/projects/{id}/workflows/{workflow_id}` | userCurrentDeleteProjectWorkflow | `id`*, `workflow_id`* | — |  | Delete a project workflow |
+| PATCH | `/user/projects/{id}/workflows/{workflow_id}` | userCurrentEditProjectWorkflow | `id`*, `workflow_id`*, body: EditProjectWorkflowOption | ProjectWorkflow |  | Edit a project workflow |
+| GET | `/user/repos` | userCurrentListRepos | `page`, `limit` | Repository[] | yes | List the repos that the authenticated user owns |
+| POST | `/user/repos` | createCurrentUserRepo | body: CreateRepoOption | Repository |  | Create a repository |
+| GET | `/user/settings` | getUserSettings | — | UserSettings | yes | Get user settings |
+| PATCH | `/user/settings` | updateUserSettings | body: UserSettingsOptions | UserSettings |  | Update user settings |
+| GET | `/user/starred` | userCurrentListStarred | `page`, `limit` | Repository[] | yes | The repos that the authenticated user has starred |
+| GET | `/user/starred/{owner}/{repo}` | userCurrentCheckStarring | `owner`*, `repo`* | — | yes | Whether the authenticated is starring the repo |
+| PUT | `/user/starred/{owner}/{repo}` | userCurrentPutStar | `owner`*, `repo`* | — |  | Star the given repo |
+| DELETE | `/user/starred/{owner}/{repo}` | userCurrentDeleteStar | `owner`*, `repo`* | — |  | Unstar the given repo |
+| GET | `/user/stopwatches` | userGetStopWatches | `page`, `limit` | StopWatch[] | yes | Get list of all existing stopwatches |
+| GET | `/user/subscriptions` | userCurrentListSubscriptions | `page`, `limit` | Repository[] | yes | List repositories watched by the authenticated user |
+| GET | `/user/teams` | userListTeams | `page`, `limit` | Team[] | yes | List all the teams a user belongs to |
+| GET | `/user/times` | userCurrentTrackedTimes | `page`, `limit`, `since`, `before` | TrackedTime[] | yes | List the current user's tracked times |
+| GET | `/users/search` | userSearch | `q`, `uid`, `page`, `limit` | object | yes | Search for users |
+| GET | `/users/{username}` | userGet | `username`* | User | yes | Get a user |
+| GET | `/users/{username}/activities/feeds` | userListActivityFeeds | `username`*, `only-performed-by`, `date`, `page`, `limit` | Activity[] | yes | List a user's activity feeds |
+| GET | `/users/{username}/followers` | userListFollowers | `username`*, `page`, `limit` | User[] | yes | List the given user's followers |
+| GET | `/users/{username}/following` | userListFollowing | `username`*, `page`, `limit` | User[] | yes | List the users that the given user is following |
+| GET | `/users/{username}/following/{target}` | userCheckFollowing | `username`*, `target`* | — | yes | Check if one user is following another user |
+| GET | `/users/{username}/gpg_keys` | userListGPGKeys | `username`*, `page`, `limit` | GPGKey[] | yes | List the given user's GPG keys |
+| GET | `/users/{username}/heatmap` | userGetHeatmapData | `username`* | UserHeatmapData[] | yes | Get a user's heatmap |
+| GET | `/users/{username}/keys` | userListKeys | `username`*, `fingerprint`, `page`, `limit` | PublicKey[] | yes | List the given user's public keys |
+| GET | `/users/{username}/orgs` | orgListUserOrgs | `username`*, `page`, `limit` | Organization[] | yes | List a user's organizations |
+| GET | `/users/{username}/orgs/{org}/permissions` | orgGetUserPermissions | `username`*, `org`* | OrganizationPermissions | yes | Get user permissions in organization |
+| GET | `/users/{username}/projects` | userListProjects | `username`*, `state`, `page`, `limit` | Project[] | yes | List a user's projects |
+| GET | `/users/{username}/repos` | userListRepos | `username`*, `page`, `limit` | Repository[] | yes | List the repos owned by the given user |
+| GET | `/users/{username}/starred` | userListStarred | `username`*, `page`, `limit` | Repository[] | yes | The repos that the given user has starred |
+| GET | `/users/{username}/subscriptions` | userListSubscriptions | `username`*, `page`, `limit` | Repository[] | yes | List the repositories watched by a user |
+| GET | `/users/{username}/tokens` | userGetTokens | `username`*, `page`, `limit` | AccessToken[] | yes | List the authenticated user's access tokens |
+| POST | `/users/{username}/tokens` | userCreateToken | `username`*, body: CreateAccessTokenOption | AccessToken |  | Create an access token |
+| DELETE | `/users/{username}/tokens/{token}` | userDeleteAccessToken | `username`*, `token`* | — |  | delete an access token |
+| GET | `/version` | getVersion | — | ServerVersion | yes | Returns the version of the Gitea application |

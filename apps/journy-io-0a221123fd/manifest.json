@@ -92,179 +92,739 @@
       },
       {
         "deprecated": false,
+        "description": "Endpoint used to delete an account.",
         "id": "operation:delete:/accounts",
         "kind": "operation",
         "method": "delete",
         "name": "deleteAccount",
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete account"
+        "summary": "Delete account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint used to create or update an account.",
         "id": "operation:post:/accounts/upsert",
         "kind": "operation",
         "method": "post",
         "name": "upsertAccount",
         "path": "/accounts/upsert",
         "pointer": "#/paths/~1accounts~1upsert/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create or update account"
+        "summary": "Create or update account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can add up to 100 users to an account.",
         "id": "operation:post:/accounts/users/add",
         "kind": "operation",
         "method": "post",
         "name": "addUserToAccount",
         "path": "/accounts/users/add",
         "pointer": "#/paths/~1accounts~1users~1add/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add users to an account"
+        "summary": "Add users to an account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can remove up to 100 users from an account.",
         "id": "operation:post:/accounts/users/remove",
         "kind": "operation",
         "method": "post",
         "name": "removeUserFromAccount",
         "path": "/accounts/users/remove",
         "pointer": "#/paths/~1accounts~1users~1remove/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Remove user from account"
+        "summary": "Remove user from account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to list events.",
         "id": "operation:get:/events",
         "kind": "operation",
         "method": "get",
         "name": "getEvents",
         "path": "/events",
         "pointer": "#/paths/~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get events"
+        "summary": "Get events",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Endpoint used to track an event for a user or an account.",
         "id": "operation:post:/events",
         "kind": "operation",
         "method": "post",
         "name": "trackJourneyEvent",
         "path": "/events",
         "pointer": "#/paths/~1events/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Track event"
+        "summary": "Track event",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "💡 You don't need to use this endpoint if you use our JavaScript snippet in your application.",
         "id": "operation:post:/link",
         "kind": "operation",
         "method": "post",
         "name": "link",
         "path": "/link",
         "pointer": "#/paths/~1link/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Link web activity to user"
+        "summary": "Link web activity to user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to list account properties.",
         "id": "operation:get:/properties/accounts",
         "kind": "operation",
         "method": "get",
         "name": "getAccountProperties",
         "path": "/properties/accounts",
         "pointer": "#/paths/~1properties~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get account properties"
+        "summary": "Get account properties",
+        "tags": [
+          "Properties"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to list user properties.",
         "id": "operation:get:/properties/users",
         "kind": "operation",
         "method": "get",
         "name": "getUserProperties",
         "path": "/properties/users",
         "pointer": "#/paths/~1properties~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get user properties"
+        "summary": "Get user properties",
+        "tags": [
+          "Properties"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to list account segments.",
         "id": "operation:get:/segments/accounts",
         "kind": "operation",
         "method": "get",
         "name": "getAccountSegments",
         "path": "/segments/accounts",
         "pointer": "#/paths/~1segments~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get account segments"
+        "summary": "Get account segments",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to list user segments.",
         "id": "operation:get:/segments/users",
         "kind": "operation",
         "method": "get",
         "name": "getUserSegments",
         "path": "/segments/users",
         "pointer": "#/paths/~1segments~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get user segments"
+        "summary": "Get user segments",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint used to track an event for a user or an account.",
         "id": "operation:post:/track",
         "kind": "operation",
         "method": "post",
         "name": "trackEvent",
         "path": "/track",
         "pointer": "#/paths/~1track/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Track event"
+        "summary": "Track event",
+        "tags": [
+          "Track"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint used to get a snippet for a website.",
         "id": "operation:get:/tracking/snippet",
         "kind": "operation",
         "method": "get",
         "name": "getTrackingSnippet",
+        "parameters": [
+          {
+            "description": "The domain you want to receive a snippet for",
+            "in": "query",
+            "name": "domain",
+            "required": true,
+            "type": "string:domain"
+          }
+        ],
         "path": "/tracking/snippet",
         "pointer": "#/paths/~1tracking~1snippet/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get snippet for a website"
+        "summary": "Get snippet for a website",
+        "tags": [
+          "Websites"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to delete a user.",
         "id": "operation:delete:/users",
         "kind": "operation",
         "method": "delete",
         "name": "deleteUser",
         "path": "/users",
         "pointer": "#/paths/~1users/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete user"
+        "summary": "Delete user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint to create or update a user.",
         "id": "operation:post:/users/upsert",
         "kind": "operation",
         "method": "post",
         "name": "upsertUser",
         "path": "/users/upsert",
         "pointer": "#/paths/~1users~1upsert/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create or update user"
+        "summary": "Create or update user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint used to test the validity and some basic information about a specific API Key.",
         "id": "operation:get:/validate",
         "kind": "operation",
         "method": "get",
         "name": "getValidity",
         "path": "/validate",
         "pointer": "#/paths/~1validate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Validate API key"
+        "summary": "Validate API key",
+        "tags": [
+          "Validation"
+        ]
       }
     ]
   },

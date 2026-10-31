@@ -13,6 +13,16 @@
         "from": "bintable-com-f91c06de36",
         "kind": "EXPOSES",
         "to": "operation:get:/{bin}"
+      },
+      {
+        "from": "operation:get:/balance",
+        "kind": "RETURNS",
+        "to": "schema:ResponseItem"
+      },
+      {
+        "from": "operation:get:/{bin}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseItem"
       }
     ],
     "nodes": [
@@ -22,30 +32,96 @@
       },
       {
         "deprecated": false,
+        "description": "Get Account balance and expiry",
         "id": "operation:get:/balance",
         "kind": "operation",
         "method": "get",
         "name": "balanceLookup",
+        "parameters": [
+          {
+            "description": "The API key, which you can get from bintable.com website.",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/balance",
         "pointer": "#/paths/~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseItem[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check Balance"
+        "summary": "Check Balance",
+        "tags": [
+          "Balance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "By passing in the appropriate BIN, you can lookup for card meta data in bintable.com API",
         "id": "operation:get:/{bin}",
         "kind": "operation",
         "method": "get",
         "name": "binLookup",
+        "parameters": [
+          {
+            "description": "pass the required BIN code",
+            "in": "path",
+            "name": "bin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The API key, which you can get from bintable.com website.",
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{bin}",
         "pointer": "#/paths/~1{bin}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseItem[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lookup for bin"
+        "summary": "Lookup for bin",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "id": "schema:ResponseItem",
         "kind": "schema",
-        "name": "ResponseItem"
+        "name": "ResponseItem",
+        "type": "object"
       }
     ]
   },

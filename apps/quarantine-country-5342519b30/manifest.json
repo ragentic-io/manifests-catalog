@@ -33,6 +33,46 @@
         "from": "quarantine-country-5342519b30",
         "kind": "EXPOSES",
         "to": "operation:get:/summary/region"
+      },
+      {
+        "from": "operation:get:/spots/day",
+        "kind": "RETURNS",
+        "to": "schema:SpotsResponse"
+      },
+      {
+        "from": "operation:get:/spots/month",
+        "kind": "RETURNS",
+        "to": "schema:SpotsResponse"
+      },
+      {
+        "from": "operation:get:/spots/week",
+        "kind": "RETURNS",
+        "to": "schema:SpotsResponse"
+      },
+      {
+        "from": "operation:get:/spots/year",
+        "kind": "RETURNS",
+        "to": "schema:SpotsResponse"
+      },
+      {
+        "from": "operation:get:/summary/latest",
+        "kind": "RETURNS",
+        "to": "schema:ReportResponse"
+      },
+      {
+        "from": "operation:get:/summary/region",
+        "kind": "RETURNS",
+        "to": "schema:ReportResponse"
+      },
+      {
+        "from": "schema:ReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Report"
+      },
+      {
+        "from": "schema:SpotsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Report"
       }
     ],
     "nodes": [
@@ -46,10 +86,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /spots/day",
+        "parameters": [
+          {
+            "description": "Region short name",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "Today",
+            "description": "Date to query spots on",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/spots/day",
         "pointer": "#/paths/~1spots~1day/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpotsResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve change chart by day"
+        "summary": "Resolve change chart by day",
+        "tags": [
+          "spot"
+        ]
       },
       {
         "deprecated": false,
@@ -57,10 +127,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /spots/month",
+        "parameters": [
+          {
+            "description": "Region short name",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "Today",
+            "description": "Date to query spots on",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/spots/month",
         "pointer": "#/paths/~1spots~1month/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpotsResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve change chart for week"
+        "summary": "Resolve change chart for week",
+        "tags": [
+          "spot"
+        ]
       },
       {
         "deprecated": false,
@@ -68,10 +168,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /spots/week",
+        "parameters": [
+          {
+            "description": "Region short name",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "Today",
+            "description": "Date to query spots on",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/spots/week",
         "pointer": "#/paths/~1spots~1week/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpotsResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve change chart for week"
+        "summary": "Resolve change chart for week",
+        "tags": [
+          "spot"
+        ]
       },
       {
         "deprecated": false,
@@ -79,10 +209,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /spots/year",
+        "parameters": [
+          {
+            "description": "Region short name",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "Today",
+            "description": "Date to query spots on",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/spots/year",
         "pointer": "#/paths/~1spots~1year/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpotsResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve change chart for week"
+        "summary": "Resolve change chart for week",
+        "tags": [
+          "spot"
+        ]
       },
       {
         "deprecated": false,
@@ -90,10 +250,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get /summary/latest",
+        "parameters": [
+          {
+            "default": "today",
+            "description": "Date of the report",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/summary/latest",
         "pointer": "#/paths/~1summary~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get latest coronavirus situation report"
+        "summary": "Get latest coronavirus situation report",
+        "tags": [
+          "summary"
+        ]
       },
       {
         "deprecated": false,
@@ -101,25 +281,58 @@
         "kind": "operation",
         "method": "get",
         "name": "get /summary/region",
+        "parameters": [
+          {
+            "description": "Region short name",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "today",
+            "description": "Date of the report",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/summary/region",
         "pointer": "#/paths/~1summary~1region/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Resolve report for region"
+        "summary": "Resolve report for region",
+        "tags": [
+          "summary"
+        ]
       },
       {
         "id": "schema:Report",
         "kind": "schema",
-        "name": "Report"
+        "name": "Report",
+        "type": "object"
       },
       {
         "id": "schema:ReportResponse",
         "kind": "schema",
-        "name": "ReportResponse"
+        "name": "ReportResponse",
+        "type": "object"
       },
       {
         "id": "schema:SpotsResponse",
         "kind": "schema",
-        "name": "SpotsResponse"
+        "name": "SpotsResponse",
+        "type": "object"
       }
     ]
   },

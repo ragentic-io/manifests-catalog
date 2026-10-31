@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.braze.com_assets_favicon_ap
 
 | | |
 | --- | --- |
-| Signed bundle | `539952ab8f1c9d7dcf17801a35d7d3668d384156b5d1a213dcb7a1fa5da64094` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,36 +32,38 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.braze.com_assets_favicon_ap
 
 ## Operations (31)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/campaigns/data_series` | campaignAnalytics | Campaign Analytics |
-| GET | `/campaigns/details` | campaignDetails | Campaign Details |
-| GET | `/campaigns/list` | campaignList | Campaign List |
-| GET | `/canvas/data_series` | canvasDataSeriesAnalytics | Canvas Data Series Analytics |
-| GET | `/canvas/data_summary` | canvasDataAnalyticsSummary | Canvas Data Analytics Summary |
-| GET | `/canvas/details` | canvasDetails | Canvas Details |
-| GET | `/canvas/list` | canvasList | Canvas List |
-| POST | `/canvas/trigger/schedule/create` | scheduleApiTriggeredCanvases | Schedule API Triggered Canvases |
-| GET | `/content_blocks/info` | seeContentBlockInformation | See Content Block Information |
-| GET | `/content_blocks/list` | listAvailableContentBlocks | List Available Content Blocks |
-| GET | `/email/hard_bounces` | queryHardBouncedEmails | Query Hard Bounced Emails |
-| GET | `/email/unsubscribes` | queryListOfUnsubscribedEmailAddresses | Query List of Unsubscribed Email Addresses |
-| GET | `/events/data_series` | customEventsAnalytics | Custom Events Analytics |
-| GET | `/events/list` | customEventsList | Custom Events List |
-| GET | `/feed/data_series` | newsFeedCardAnalytics | News Feed Card Analytics |
-| GET | `/feed/details` | newsFeedCardsDetails | News Feed Cards Details |
-| GET | `/feed/list` | newsFeedCardsList | News Feed Cards List |
-| GET | `/kpi/dau/data_series` | dailyActiveUsersByDate | Daily Active Users by Date |
-| GET | `/kpi/mau/data_series` | monthlyActiveUsersForLast30Days | Monthly Active Users for Last 30 Days |
-| GET | `/kpi/new_users/data_series` | dailyNewUsersByDate | Daily New Users by Date |
-| GET | `/kpi/uninstalls/data_series` | kpIsForDailyAppUninstallsByDate | KPIs for Daily App Uninstalls by Date |
-| GET | `/messages/scheduled_broadcasts` | getUpcomingScheduledCampaignsAndCanvases | Get Upcoming Scheduled Campaigns and Canvases |
-| GET | `/segments/data_series` | segmentAnalytics | Segment Analytics |
-| GET | `/segments/details` | segmentDetails | Segment Details |
-| GET | `/segments/list` | segmentList | Segment List |
-| GET | `/sends/data_series` | sendAnalytics | Send Analytics |
-| GET | `/sessions/data_series` | appSessionsByTime | App Sessions by Time |
-| GET | `/subscription/status/get` | listUser'sSubscriptionGroupStatusSms | List User's Subscription Group Status - SMS |
-| GET | `/subscription/user/status` | listUser'sSubscriptionGroupSms | List User's Subscription Group - SMS |
-| GET | `/templates/email/info` | seeEmailTemplateInformation | See Email Template Information |
-| GET | `/templates/email/list` | listAvailableEmailTemplates | List Available Email Templates |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/campaigns/data_series` | campaignAnalytics | `campaign_id`, `length`, `ending_at` | — | yes | Campaign Analytics |
+| GET | `/campaigns/details` | campaignDetails | `campaign_id` | — | yes | Campaign Details |
+| GET | `/campaigns/list` | campaignList | `page`, `include_archived`, `sort_direction`, `last_edit.time[gt]` | — | yes | Campaign List |
+| GET | `/canvas/data_series` | canvasDataSeriesAnalytics | `canvas_id`, `ending_at`, `starting_at`, `length`, `include_variant_breakdown`, `include_step_breakdown`, `include_deleted_step_data` | — | yes | Canvas Data Series Analytics |
+| GET | `/canvas/data_summary` | canvasDataAnalyticsSummary | `canvas_id`, `ending_at`, `starting_at`, `length`, `include_variant_breakdown`, `include_step_breakdown`, `include_deleted_step_data` | — | yes | Canvas Data Analytics Summary |
+| GET | `/canvas/details` | canvasDetails | `canvas_id` | — | yes | Canvas Details |
+| GET | `/canvas/list` | canvasList | `page`, `include_archived`, `sort_direction`, `last_edit.time[gt]` | — | yes | Canvas List |
+| POST | `/canvas/trigger/schedule/create` | scheduleApiTriggeredCanvases | body: object | — |  | Schedule API Triggered Canvases |
+| GET | `/content_blocks/info` | seeContentBlockInformation | `content_block_id`, `include_inclusion_data` | — | yes | See Content Block Information |
+| GET | `/content_blocks/list` | listAvailableContentBlocks | `modified_after`, `modified_before`, `limit`, `offset` | — | yes | List Available Content Blocks |
+| GET | `/email/hard_bounces` | queryHardBouncedEmails | `start_date`, `end_date`, `limit`, `offset`, `email` | — | yes | Query Hard Bounced Emails |
+| GET | `/email/unsubscribes` | queryListOfUnsubscribedEmailAddresses | `start_date`, `end_date`, `limit`, `offset`, `sort_direction`, `email` | — | yes | Query List of Unsubscribed Email Addresses |
+| GET | `/events/data_series` | customEventsAnalytics | `event`, `length`, `unit`, `ending_at`, `app_id`, `segment_id` | — | yes | Custom Events Analytics |
+| GET | `/events/list` | customEventsList | `page` | — | yes | Custom Events List |
+| GET | `/feed/data_series` | newsFeedCardAnalytics | `card_id`, `length`, `unit`, `ending_at` | — | yes | News Feed Card Analytics |
+| GET | `/feed/details` | newsFeedCardsDetails | `card_id` | — | yes | News Feed Cards Details |
+| GET | `/feed/list` | newsFeedCardsList | `page`, `include_archived`, `sort_direction` | — | yes | News Feed Cards List |
+| GET | `/kpi/dau/data_series` | dailyActiveUsersByDate | `length`, `ending_at`, `app_id` | — | yes | Daily Active Users by Date |
+| GET | `/kpi/mau/data_series` | monthlyActiveUsersForLast30Days | `length`, `ending_at`, `app_id` | — | yes | Monthly Active Users for Last 30 Days |
+| GET | `/kpi/new_users/data_series` | dailyNewUsersByDate | `length`, `ending_at`, `app_id` | — | yes | Daily New Users by Date |
+| GET | `/kpi/uninstalls/data_series` | kpIsForDailyAppUninstallsByDate | `length`, `ending_at`, `app_id` | — | yes | KPIs for Daily App Uninstalls by Date |
+| GET | `/messages/scheduled_broadcasts` | getUpcomingScheduledCampaignsAndCanvases | `end_time` | — | yes | Get Upcoming Scheduled Campaigns and Canvases |
+| GET | `/segments/data_series` | segmentAnalytics | `segment_id`, `length`, `ending_at` | — | yes | Segment Analytics |
+| GET | `/segments/details` | segmentDetails | `segment_id` | — | yes | Segment Details |
+| GET | `/segments/list` | segmentList | `page`, `sort_direction` | — | yes | Segment List |
+| GET | `/sends/data_series` | sendAnalytics | `campaign_id`, `send_id`, `length`, `ending_at` | — | yes | Send Analytics |
+| GET | `/sessions/data_series` | appSessionsByTime | `length`, `unit`, `ending_at`, `app_id`, `segment_id` | — | yes | App Sessions by Time |
+| GET | `/subscription/status/get` | listUser'sSubscriptionGroupStatusSms | `subscription_group_id`, `external_id`, `phone` | — | yes | List User's Subscription Group Status - SMS |
+| GET | `/subscription/user/status` | listUser'sSubscriptionGroupSms | `external_id`, `limit`, `offset`, `phone` | — | yes | List User's Subscription Group - SMS |
+| GET | `/templates/email/info` | seeEmailTemplateInformation | `email_template_id` | — | yes | See Email Template Information |
+| GET | `/templates/email/list` | listAvailableEmailTemplates | `modified_after`, `modified_before`, `limit`, `offset` | — | yes | List Available Email Templates |

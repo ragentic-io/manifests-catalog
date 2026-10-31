@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `f5966df565bd61d57b6d8e9b62c65a689160a93b6d38b652dbefa5f4d5049301` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,105 +34,107 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 273 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/authenticate` | veloAuth | Authentication endpoint |
-| GET | `/v1/deltas/fundings` | listFundingAuditDeltas | Get Funding Audit Delta |
-| GET | `/v1/deltas/payments` | listPaymentChanges | V1 List Payment Changes |
-| GET | `/v1/fundings/{fundingId}` | getFundingByIdV1 | Get Funding |
-| POST | `/v1/logout` | logout | Logout |
-| POST | `/v1/password/reset` | resetPassword | Reset password |
-| GET | `/v1/paymentChannelRules` | listPaymentChannelRulesV1 | List Payment Channel Country Rules |
-| GET | `/v1/paymentaudit/fundings` | getFundingsV1 | V1 Get Fundings for Payor |
-| GET | `/v1/paymentaudit/payoutStatistics` | getPayoutStatsV1 | V1 Get Payout Statistics |
-| POST | `/v1/payments/{paymentId}/withdraw` | withdrawPayment | Withdraw a Payment |
-| GET | `/v1/payorLinks` | payorLinksV1 | List Payor Links |
-| POST | `/v1/payorLinks` | createPayorLinks | Create a Payor Link |
-| GET | `/v1/payors/{payorId}` | getPayorByIdV1 | Get Payor |
-| POST | `/v1/payors/{payorId}/applications` | payorCreateApplicationV1 | Create Application |
-| POST | `/v1/payors/{payorId}/applications/{applicationId}/keys` | payorCreateApiKeyV1 | Create API Key |
-| GET | `/v1/payors/{payorId}/branding` | payorGetBranding | Get Branding |
-| POST | `/v1/payors/{payorId}/branding/logos` | payorAddPayorLogoV1 | Add Logo |
-| POST | `/v1/payors/{payorId}/reminderEmailsUpdate` | payorEmailOptOut | Reminder Email Opt-Out |
-| POST | `/v1/sourceAccounts/{sourceAccountId}/notifications` | setNotificationsRequest | Set notifications |
-| GET | `/v1/supportedCountries` | listSupportedCountriesV1 | List Supported Countries |
-| POST | `/v1/validate` | validateAccessToken | validate |
-| GET | `/v1/webhooks` | listWebhooksV1 | List the details about the webhooks for the given payor. |
-| POST | `/v1/webhooks` | createWebhookV1 | Create Webhook |
-| GET | `/v1/webhooks/{webhookId}` | getWebhookV1 | Get details about the given webhook. |
-| POST | `/v1/webhooks/{webhookId}` | updateWebhookV1 | Update Webhook |
-| POST | `/v1/webhooks/{webhookId}/ping` | pingWebhookV1 | — |
-| GET | `/v2/currencies` | listSupportedCurrenciesV2 | List Supported Currencies |
-| GET | `/v2/fundingAccounts` | getFundingAccountsV2 | Get Funding Accounts |
-| POST | `/v2/fundingAccounts` | createFundingAccountV2 | Create Funding Account |
-| GET | `/v2/fundingAccounts/{fundingAccountId}` | getFundingAccountV2 | Get Funding Account |
-| GET | `/v2/payors/{payorId}` | getPayorByIdV2 | Get Payor |
-| GET | `/v2/sourceAccounts` | getSourceAccountsV2 | Get list of source accounts |
-| GET | `/v2/sourceAccounts/{sourceAccountId}` | getSourceAccountV2 | Get Source Account |
-| POST | `/v2/sourceAccounts/{sourceAccountId}/fundingRequest` | createFundingRequestV2 | Create Funding Request |
-| POST | `/v2/sourceAccounts/{sourceAccountId}/transfers` | transferFundsV2 | Transfer Funds between source accounts |
-| GET | `/v2/supportedCountries` | listSupportedCountriesV2 | List Supported Countries |
-| GET | `/v2/users` | listUsers | List Users |
-| POST | `/v2/users/invite` | inviteUser | Invite a User |
-| POST | `/v2/users/registration/sms` | registerSms | Register SMS Number |
-| GET | `/v2/users/self` | getSelf | Get Self |
-| POST | `/v2/users/self/mfa/unregister` | unregisterMFAForSelf | Unregister MFA for Self |
-| POST | `/v2/users/self/password` | updatePasswordSelf | Update Password for self |
-| POST | `/v2/users/self/password/validate` | validatePasswordSelf | Validate the proposed password |
-| POST | `/v2/users/self/userDetailsUpdate` | userDetailsUpdateForSelf | Update User Details for self |
-| DELETE | `/v2/users/{userId}` | deleteUserByIdV2 | Delete a User |
-| GET | `/v2/users/{userId}` | getUserByIdV2 | Get User |
-| POST | `/v2/users/{userId}/disable` | disableUserV2 | Disable a User |
-| POST | `/v2/users/{userId}/enable` | enableUserV2 | Enable a User |
-| POST | `/v2/users/{userId}/mfa/unregister` | unregisterMFA | Unregister MFA for the user |
-| POST | `/v2/users/{userId}/roleUpdate` | roleUpdate | Update User Role |
-| POST | `/v2/users/{userId}/tokens` | resendToken | Resend a token |
-| POST | `/v2/users/{userId}/unlock` | unlockUserV2 | Unlock a User |
-| POST | `/v2/users/{userId}/userDetailsUpdate` | userDetailsUpdate | Update User Details |
-| GET | `/v3/payees` | listPayeesV3 | List Payees |
-| POST | `/v3/payees` | createPayeeV3 | Initiate Payee Creation |
-| GET | `/v3/payees/batch/{batchId}` | queryBatchStatusV3 | Query Batch Status |
-| GET | `/v3/payees/deltas` | listPayeeChangesV3 | List Payee Changes |
-| GET | `/v3/payees/payors/{payorId}/invitationStatus` | getPayeesInvitationStatusV3 | Get Payee Invitation Status |
-| DELETE | `/v3/payees/{payeeId}` | deletePayeeByIdV3 | Delete Payee by Id |
-| GET | `/v3/payees/{payeeId}` | getPayeeByIdV3 | Get Payee by Id |
-| POST | `/v3/payees/{payeeId}/invite` | resendPayeeInviteV3 | Resend Payee Invite |
-| POST | `/v3/payees/{payeeId}/payeeDetailsUpdate` | payeeDetailsUpdateV3 | Update Payee Details |
-| POST | `/v3/payees/{payeeId}/remoteIdUpdate` | post /v3/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id |
-| GET | `/v3/paymentaudit/payments` | listPaymentsAuditV3 | V3 Get List of Payments |
-| GET | `/v3/paymentaudit/payments/{paymentId}` | getPaymentDetailsV3 | V3 Get Payment |
-| GET | `/v3/paymentaudit/payouts` | getPayoutsForPayorV3 | V3 Get Payouts for Payor |
-| GET | `/v3/paymentaudit/payouts/{payoutId}` | getPaymentsForPayout_PA_V3 | V3 Get Payments for Payout |
-| GET | `/v3/paymentaudit/transactions` | exportTransactionsCSVV3 | V3 Export Transactions |
-| POST | `/v3/payouts` | submitPayoutV3 | Submit Payout |
-| DELETE | `/v3/payouts/{payoutId}` | withdrawPayoutV3 | Withdraw Payout |
-| GET | `/v3/payouts/{payoutId}` | getPayoutSummaryV3 | Get Payout Summary |
-| POST | `/v3/payouts/{payoutId}` | instructPayoutV3 | Instruct Payout |
-| GET | `/v3/payouts/{payoutId}/payments` | getPaymentsForPayoutV3 | Retrieve payments for a payout |
-| POST | `/v3/payouts/{payoutId}/quote` | createQuoteForPayoutV3 | Create a quote for the payout |
-| DELETE | `/v3/payouts/{payoutId}/schedule` | deschedulePayout | Deschedule a payout |
-| POST | `/v3/payouts/{payoutId}/schedule` | scheduleForPayout | Schedule a payout |
-| GET | `/v3/sourceAccounts` | getSourceAccountsV3 | Get list of source accounts |
-| DELETE | `/v3/sourceAccounts/{sourceAccountId}` | deleteSourceAccountV3 | Delete a source account by ID |
-| GET | `/v3/sourceAccounts/{sourceAccountId}` | getSourceAccountV3 | Get details about given source account. |
-| POST | `/v3/sourceAccounts/{sourceAccountId}/fundingRequest` | createFundingRequestV3 | Create Funding Request |
-| POST | `/v3/sourceAccounts/{sourceAccountId}/notifications` | setNotificationsRequestV3 | Set notifications |
-| POST | `/v3/sourceAccounts/{sourceAccountId}/transfers` | transferFundsV3 | Transfer Funds between source accounts |
-| GET | `/v4/payees` | listPayeesV4 | List Payees |
-| POST | `/v4/payees` | v4CreatePayee | Initiate Payee Creation |
-| GET | `/v4/payees/batch/{batchId}` | queryBatchStatusV4 | Query Batch Status |
-| GET | `/v4/payees/deltas` | listPayeeChangesV4 | List Payee Changes |
-| GET | `/v4/payees/payors/{payorId}/invitationStatus` | getPayeesInvitationStatusV4 | Get Payee Invitation Status |
-| DELETE | `/v4/payees/{payeeId}` | deletePayeeByIdV4 | Delete Payee by Id |
-| GET | `/v4/payees/{payeeId}` | getPayeeByIdV4 | Get Payee by Id |
-| POST | `/v4/payees/{payeeId}/invite` | resendPayeeInviteV4 | Resend Payee Invite |
-| POST | `/v4/payees/{payeeId}/payeeDetailsUpdate` | payeeDetailsUpdateV4 | Update Payee Details |
-| POST | `/v4/payees/{payeeId}/remoteIdUpdate` | post /v4/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id |
-| GET | `/v4/paymentaudit/fundings` | getFundingsV4 | Get Fundings for Payor |
-| GET | `/v4/paymentaudit/payments` | listPaymentsAuditV4 | Get List of Payments |
-| GET | `/v4/paymentaudit/payments/{paymentId}` | getPaymentDetailsV4 | Get Payment |
-| GET | `/v4/paymentaudit/payoutStatistics` | getPayoutStatsV4 | Get Payout Statistics |
-| GET | `/v4/paymentaudit/payouts` | getPayoutsForPayorV4 | Get Payouts for Payor |
-| GET | `/v4/paymentaudit/payouts/{payoutId}` | getPaymentsForPayoutV4 | Get Payments for Payout |
-| GET | `/v4/paymentaudit/transactions` | exportTransactionsCSVV4 | Export Transactions |
-| GET | `/v4/payments/deltas` | listPaymentChangesV4 | List Payment Changes |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/authenticate` | veloAuth | `grant_type` | AuthResponse |  | Authentication endpoint |
+| GET | `/v1/deltas/fundings` | listFundingAuditDeltas | `payorId`*, `updatedSince`*, `page`, `pageSize` | PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse | yes | Get Funding Audit Delta |
+| GET | `/v1/deltas/payments` | listPaymentChanges | `payorId`*, `updatedSince`*, `page`, `pageSize` | PaymentDeltaResponseV1 | yes | V1 List Payment Changes |
+| GET | `/v1/fundings/{fundingId}` | getFundingByIdV1 | `fundingId`* | FundingResponse | yes | Get Funding |
+| POST | `/v1/logout` | logout | — | — |  | Logout |
+| POST | `/v1/password/reset` | resetPassword | body*: ResetPasswordRequest | — |  | Reset password |
+| GET | `/v1/paymentChannelRules` | listPaymentChannelRulesV1 | — | PaymentChannelRulesResponse | yes | List Payment Channel Country Rules |
+| GET | `/v1/paymentaudit/fundings` | getFundingsV1 | `payorId`*, `page`, `pageSize`, `sort` | GetFundingsResponse | yes | V1 Get Fundings for Payor |
+| GET | `/v1/paymentaudit/payoutStatistics` | getPayoutStatsV1 | `payorId` | GetPayoutStatistics | yes | V1 Get Payout Statistics |
+| POST | `/v1/payments/{paymentId}/withdraw` | withdrawPayment | `paymentId`*, body*: WithdrawPaymentRequest | — |  | Withdraw a Payment |
+| GET | `/v1/payorLinks` | payorLinksV1 | `descendantsOfPayor`, `parentOfPayor`, `fields` | PayorLinksResponse | yes | List Payor Links |
+| POST | `/v1/payorLinks` | createPayorLinks | body*: CreatePayorLinkRequest | — |  | Create a Payor Link |
+| GET | `/v1/payors/{payorId}` | getPayorByIdV1 | `payorId`* | PayorV1 | yes | Get Payor |
+| POST | `/v1/payors/{payorId}/applications` | payorCreateApplicationV1 | `payorId`*, body*: PayorCreateApplicationRequest | — |  | Create Application |
+| POST | `/v1/payors/{payorId}/applications/{applicationId}/keys` | payorCreateApiKeyV1 | `payorId`*, `applicationId`*, body*: PayorCreateApiKeyRequest | PayorCreateApiKeyResponse |  | Create API Key |
+| GET | `/v1/payors/{payorId}/branding` | payorGetBranding | `payorId`* | PayorBrandingResponse | yes | Get Branding |
+| POST | `/v1/payors/{payorId}/branding/logos` | payorAddPayorLogoV1 | `payorId`*, body*: PayorLogoRequest | — |  | Add Logo |
+| POST | `/v1/payors/{payorId}/reminderEmailsUpdate` | payorEmailOptOut | `payorId`*, body*: PayorEmailOptOutRequest | — |  | Reminder Email Opt-Out |
+| POST | `/v1/sourceAccounts/{sourceAccountId}/notifications` | setNotificationsRequest | `sourceAccountId`*, body*: SetNotificationsRequest | — |  | Set notifications |
+| GET | `/v1/supportedCountries` | listSupportedCountriesV1 | — | SupportedCountriesResponse | yes | List Supported Countries |
+| POST | `/v1/validate` | validateAccessToken | `Authorization`, body*: AccessTokenValidationRequest | AccessTokenResponse |  | validate |
+| GET | `/v1/webhooks` | listWebhooksV1 | `page`, `pageSize`, `payorId`* | WebhooksResponse | yes | List the details about the webhooks for the given payor. |
+| POST | `/v1/webhooks` | createWebhookV1 | body: CreateWebhookRequest | — |  | Create Webhook |
+| GET | `/v1/webhooks/{webhookId}` | getWebhookV1 | `webhookId`* | WebhookResponse | yes | Get details about the given webhook. |
+| POST | `/v1/webhooks/{webhookId}` | updateWebhookV1 | `webhookId`*, body: UpdateWebhookRequest | — |  | Update Webhook |
+| POST | `/v1/webhooks/{webhookId}/ping` | pingWebhookV1 | `webhookId`* | PingResponse |  | — |
+| GET | `/v2/currencies` | listSupportedCurrenciesV2 | — | SupportedCurrencyResponseV2 | yes | List Supported Currencies |
+| GET | `/v2/fundingAccounts` | getFundingAccountsV2 | `payorId`, `name`, `country`, `currency`, `type`, `page`, `pageSize`, `sort`, `sensitive` | ListFundingAccountsResponseV2 | yes | Get Funding Accounts |
+| POST | `/v2/fundingAccounts` | createFundingAccountV2 | body: CreateFundingAccountRequestV2 | — |  | Create Funding Account |
+| GET | `/v2/fundingAccounts/{fundingAccountId}` | getFundingAccountV2 | `fundingAccountId`*, `sensitive` | FundingAccountResponseV2 | yes | Get Funding Account |
+| GET | `/v2/payors/{payorId}` | getPayorByIdV2 | `payorId`* | PayorV2 | yes | Get Payor |
+| GET | `/v2/sourceAccounts` | getSourceAccountsV2 | `physicalAccountName`, `physicalAccountId`, `payorId`, `fundingAccountId`, `page`, `pageSize`, `sort` | ListSourceAccountResponseV2 | yes | Get list of source accounts |
+| GET | `/v2/sourceAccounts/{sourceAccountId}` | getSourceAccountV2 | `sourceAccountId`* | SourceAccountResponseV2 | yes | Get Source Account |
+| POST | `/v2/sourceAccounts/{sourceAccountId}/fundingRequest` | createFundingRequestV2 | `sourceAccountId`*, body*: FundingRequestV2 | — |  | Create Funding Request |
+| POST | `/v2/sourceAccounts/{sourceAccountId}/transfers` | transferFundsV2 | `sourceAccountId`*, body*: TransferRequestV2 | — |  | Transfer Funds between source accounts |
+| GET | `/v2/supportedCountries` | listSupportedCountriesV2 | — | SupportedCountriesResponseV2 | yes | List Supported Countries |
+| GET | `/v2/users` | listUsers | `type`, `status`, `entityId`, `payeeType`, `page`, `pageSize`, `sort` | PagedUserResponse | yes | List Users |
+| POST | `/v2/users/invite` | inviteUser | body*: InviteUserRequest | — |  | Invite a User |
+| POST | `/v2/users/registration/sms` | registerSms | body*: RegisterSmsRequest | — |  | Register SMS Number |
+| GET | `/v2/users/self` | getSelf | — | UserResponse | yes | Get Self |
+| POST | `/v2/users/self/mfa/unregister` | unregisterMFAForSelf | `Authorization`, body*: SelfMFATypeUnregisterRequest | — |  | Unregister MFA for Self |
+| POST | `/v2/users/self/password` | updatePasswordSelf | body*: SelfUpdatePasswordRequest | — |  | Update Password for self |
+| POST | `/v2/users/self/password/validate` | validatePasswordSelf | body*: PasswordRequest | ValidatePasswordResponse |  | Validate the proposed password |
+| POST | `/v2/users/self/userDetailsUpdate` | userDetailsUpdateForSelf | body*: PayeeUserSelfUpdateRequest | — |  | Update User Details for self |
+| GET | `/v2/users/{userId}` | getUserByIdV2 | `userId`* | UserResponse | yes | Get User |
+| DELETE | `/v2/users/{userId}` | deleteUserByIdV2 | `userId`* | — |  | Delete a User |
+| POST | `/v2/users/{userId}/disable` | disableUserV2 | `userId`* | — |  | Disable a User |
+| POST | `/v2/users/{userId}/enable` | enableUserV2 | `userId`* | — |  | Enable a User |
+| POST | `/v2/users/{userId}/mfa/unregister` | unregisterMFA | `userId`*, body*: UnregisterMFARequest | — |  | Unregister MFA for the user |
+| POST | `/v2/users/{userId}/roleUpdate` | roleUpdate | `userId`*, body*: RoleUpdateRequest | — |  | Update User Role |
+| POST | `/v2/users/{userId}/tokens` | resendToken | `userId`*, body*: ResendTokenRequest | — |  | Resend a token |
+| POST | `/v2/users/{userId}/unlock` | unlockUserV2 | `userId`* | — |  | Unlock a User |
+| POST | `/v2/users/{userId}/userDetailsUpdate` | userDetailsUpdate | `userId`*, body*: UserDetailsUpdateRequest | — |  | Update User Details |
+| GET | `/v3/payees` | listPayeesV3 | `payorId`*, `watchlistStatus`, `disabled`, `onboardedStatus`, `email`, `displayName`, `remoteId`, `payeeType`, `payeeCountry`, `page`, `pageSize`, `sort` | PagedPayeeResponseV3 | yes | List Payees |
+| POST | `/v3/payees` | createPayeeV3 | body: CreatePayeesRequestV3 | CreatePayeesCSVResponseV3 |  | Initiate Payee Creation |
+| GET | `/v3/payees/batch/{batchId}` | queryBatchStatusV3 | `batchId`* | QueryBatchResponseV3 | yes | Query Batch Status |
+| GET | `/v3/payees/deltas` | listPayeeChangesV3 | `payorId`*, `updatedSince`*, `page`, `pageSize` | PayeeDeltaResponseV3 | yes | List Payee Changes |
+| GET | `/v3/payees/payors/{payorId}/invitationStatus` | getPayeesInvitationStatusV3 | `payorId`*, `payeeId`, `invitationStatus`, `page`, `pageSize` | PagedPayeeInvitationStatusResponseV3 | yes | Get Payee Invitation Status |
+| GET | `/v3/payees/{payeeId}` | getPayeeByIdV3 | `payeeId`*, `sensitive` | PayeeDetailResponseV3 | yes | Get Payee by Id |
+| DELETE | `/v3/payees/{payeeId}` | deletePayeeByIdV3 | `payeeId`* | — |  | Delete Payee by Id |
+| POST | `/v3/payees/{payeeId}/invite` | resendPayeeInviteV3 | `payeeId`*, body*: InvitePayeeRequestV3 | — |  | Resend Payee Invite |
+| POST | `/v3/payees/{payeeId}/payeeDetailsUpdate` | payeeDetailsUpdateV3 | `payeeId`*, body*: UpdatePayeeDetailsRequestV3 | — |  | Update Payee Details |
+| POST | `/v3/payees/{payeeId}/remoteIdUpdate` | post /v3/payees/{payeeId}/remoteIdUpdate | `payeeId`*, body*: UpdateRemoteIdRequestV3 | — |  | Update Payee Remote Id |
+| GET | `/v3/paymentaudit/payments` | listPaymentsAuditV3 | `payeeId`, `payorId`, `payorName`, `remoteId`, `status`, `sourceAccountName`, `sourceAmountFrom`, `sourceAmountTo`, `sourceCurrency`, `paymentAmountFrom`, `paymentAmountTo`, `paymentCurrency`, `submittedDateFrom`, `submittedDateTo`, `paymentMemo`, `page`, `pageSize`, `sort`, `sensitive` | ListPaymentsResponseV3 | yes | V3 Get List of Payments |
+| GET | `/v3/paymentaudit/payments/{paymentId}` | getPaymentDetailsV3 | `paymentId`*, `sensitive` | PaymentResponseV3 | yes | V3 Get Payment |
+| GET | `/v3/paymentaudit/payouts` | getPayoutsForPayorV3 | `payorId`*, `payoutMemo`, `status`, `submittedDateFrom`, `submittedDateTo`, `page`, `pageSize`, `sort` | GetPayoutsResponseV3 | yes | V3 Get Payouts for Payor |
+| GET | `/v3/paymentaudit/payouts/{payoutId}` | getPaymentsForPayout_PA_V3 | `payoutId`*, `remoteId`, `status`, `sourceAmountFrom`, `sourceAmountTo`, `paymentAmountFrom`, `paymentAmountTo`, `submittedDateFrom`, `submittedDateTo`, `page`, `pageSize`, `sort`, `sensitive` | GetPaymentsForPayoutResponseV3 | yes | V3 Get Payments for Payout |
+| GET | `/v3/paymentaudit/transactions` | exportTransactionsCSVV3 | `payorId`, `startDate`, `endDate` | PayorAmlTransactionV3 | yes | V3 Export Transactions |
+| POST | `/v3/payouts` | submitPayoutV3 | body*: CreatePayoutRequestV3 | — |  | Submit Payout |
+| GET | `/v3/payouts/{payoutId}` | getPayoutSummaryV3 | `payoutId`* | PayoutSummaryResponseV3 | yes | Get Payout Summary |
+| POST | `/v3/payouts/{payoutId}` | instructPayoutV3 | `payoutId`*, body: InstructPayoutRequestV3 | — |  | Instruct Payout |
+| DELETE | `/v3/payouts/{payoutId}` | withdrawPayoutV3 | `payoutId`* | — |  | Withdraw Payout |
+| GET | `/v3/payouts/{payoutId}/payments` | getPaymentsForPayoutV3 | `payoutId`*, `status`, `remoteId`, `payorPaymentId`, `sourceAccountName`, `transmissionType`, `paymentMemo`, `pageSize`, `page` | PagedPaymentsResponseV3 | yes | Retrieve payments for a payout |
+| POST | `/v3/payouts/{payoutId}/quote` | createQuoteForPayoutV3 | `payoutId`* | QuoteResponseV3 |  | Create a quote for the payout |
+| POST | `/v3/payouts/{payoutId}/schedule` | scheduleForPayout | `payoutId`*, body: SchedulePayoutRequestV3 | — |  | Schedule a payout |
+| DELETE | `/v3/payouts/{payoutId}/schedule` | deschedulePayout | `payoutId`* | — |  | Deschedule a payout |
+| GET | `/v3/sourceAccounts` | getSourceAccountsV3 | `physicalAccountName`, `physicalAccountId`, `payorId`, `fundingAccountId`, `includeUserDeleted`, `type`, `page`, `pageSize`, `sort` | ListSourceAccountResponseV3 | yes | Get list of source accounts |
+| GET | `/v3/sourceAccounts/{sourceAccountId}` | getSourceAccountV3 | `sourceAccountId`* | SourceAccountResponseV3 | yes | Get details about given source account. |
+| DELETE | `/v3/sourceAccounts/{sourceAccountId}` | deleteSourceAccountV3 | `sourceAccountId`* | — |  | Delete a source account by ID |
+| POST | `/v3/sourceAccounts/{sourceAccountId}/fundingRequest` | createFundingRequestV3 | `sourceAccountId`*, body*: FundingRequestV3 | — |  | Create Funding Request |
+| POST | `/v3/sourceAccounts/{sourceAccountId}/notifications` | setNotificationsRequestV3 | `sourceAccountId`*, body*: SetNotificationsRequest_2 | — |  | Set notifications |
+| POST | `/v3/sourceAccounts/{sourceAccountId}/transfers` | transferFundsV3 | `sourceAccountId`*, body*: TransferRequestV3 | — |  | Transfer Funds between source accounts |
+| GET | `/v4/payees` | listPayeesV4 | `payorId`*, `watchlistStatus`, `disabled`, `onboardedStatus`, `email`, `displayName`, `remoteId`, `payeeType`, `payeeCountry`, `ofacStatus`, `page`, `pageSize`, `sort` | PagedPayeeResponseV4 | yes | List Payees |
+| POST | `/v4/payees` | v4CreatePayee | body: CreatePayeesRequestV4 | CreatePayeesCSVResponseV4 |  | Initiate Payee Creation |
+| GET | `/v4/payees/batch/{batchId}` | queryBatchStatusV4 | `batchId`* | QueryBatchResponseV4 | yes | Query Batch Status |
+| GET | `/v4/payees/deltas` | listPayeeChangesV4 | `payorId`*, `updatedSince`*, `page`, `pageSize` | PayeeDeltaResponseV4 | yes | List Payee Changes |
+| GET | `/v4/payees/payors/{payorId}/invitationStatus` | getPayeesInvitationStatusV4 | `payorId`*, `payeeId`, `invitationStatus`, `page`, `pageSize` | PagedPayeeInvitationStatusResponseV4 | yes | Get Payee Invitation Status |
+| GET | `/v4/payees/{payeeId}` | getPayeeByIdV4 | `payeeId`*, `sensitive` | PayeeDetailResponseV4 | yes | Get Payee by Id |
+| DELETE | `/v4/payees/{payeeId}` | deletePayeeByIdV4 | `payeeId`* | — |  | Delete Payee by Id |
+| POST | `/v4/payees/{payeeId}/invite` | resendPayeeInviteV4 | `payeeId`*, body*: InvitePayeeRequestV4 | — |  | Resend Payee Invite |
+| POST | `/v4/payees/{payeeId}/payeeDetailsUpdate` | payeeDetailsUpdateV4 | `payeeId`*, body*: UpdatePayeeDetailsRequestV4 | — |  | Update Payee Details |
+| POST | `/v4/payees/{payeeId}/remoteIdUpdate` | post /v4/payees/{payeeId}/remoteIdUpdate | `payeeId`*, body*: UpdateRemoteIdRequestV4 | — |  | Update Payee Remote Id |
+| GET | `/v4/paymentaudit/fundings` | getFundingsV4 | `payorId`*, `sourceAccountName`, `page`, `pageSize`, `sort` | GetFundingsResponse | yes | Get Fundings for Payor |
+| GET | `/v4/paymentaudit/payments` | listPaymentsAuditV4 | `payeeId`, `payorId`, `payorName`, `remoteId`, `remoteSystemId`, `status`, `transmissionType`, `sourceAccountName`, `sourceAmountFrom`, `sourceAmountTo`, `sourceCurrency`, `paymentAmountFrom`, `paymentAmountTo`, `paymentCurrency`, `submittedDateFrom`, `submittedDateTo`, `paymentMemo`, `railsId`, `scheduledForDateFrom`, `scheduledForDateTo`, `scheduleStatus`, `postInstructFxStatus`, `page`, `pageSize`, `sort`, `sensitive` | ListPaymentsResponseV4 | yes | Get List of Payments |
+| GET | `/v4/paymentaudit/payments/{paymentId}` | getPaymentDetailsV4 | `paymentId`*, `sensitive` | PaymentResponseV4 | yes | Get Payment |
+| GET | `/v4/paymentaudit/payoutStatistics` | getPayoutStatsV4 | `payorId` | GetPayoutStatistics | yes | Get Payout Statistics |
+| GET | `/v4/paymentaudit/payouts` | getPayoutsForPayorV4 | `payorId`, `payoutMemo`, `status`, `submittedDateFrom`, `submittedDateTo`, `fromPayorName`, `scheduledForDateFrom`, `scheduledForDateTo`, `scheduleStatus`, `page`, `pageSize`, `sort` | GetPayoutsResponse | yes | Get Payouts for Payor |
+| GET | `/v4/paymentaudit/payouts/{payoutId}` | getPaymentsForPayoutV4 | `payoutId`*, `remoteId`, `remoteSystemId`, `status`, `sourceAmountFrom`, `sourceAmountTo`, `paymentAmountFrom`, `paymentAmountTo`, `submittedDateFrom`, `submittedDateTo`, `transmissionType`, `page`, `pageSize`, `sort`, `sensitive` | GetPaymentsForPayoutResponseV4 | yes | Get Payments for Payout |
+| GET | `/v4/paymentaudit/transactions` | exportTransactionsCSVV4 | `payorId`, `startDate`, `endDate`, `include` | PayorAmlTransaction | yes | Export Transactions |
+| GET | `/v4/payments/deltas` | listPaymentChangesV4 | `payorId`*, `updatedSince`*, `page`, `pageSize` | PaymentDeltaResponse | yes | List Payment Changes |

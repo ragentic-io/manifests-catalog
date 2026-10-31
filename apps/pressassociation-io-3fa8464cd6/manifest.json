@@ -102,273 +102,844 @@
       },
       {
         "deprecated": false,
+        "description": "Return a collection of Assets.",
         "id": "operation:get:/asset",
         "kind": "operation",
         "method": "get",
         "name": "listAssets",
+        "parameters": [
+          {
+            "default": "2015-05-05T00:00:00.000Z",
+            "description": "Updated After",
+            "in": "query",
+            "name": "updatedAfter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Limit the the number of items to be returned per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/asset",
         "pointer": "#/paths/~1asset/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Asset Collection"
+        "summary": "Asset Collection",
+        "tags": [
+          "Asset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected asset.",
         "id": "operation:get:/asset/{assetId}",
         "kind": "operation",
         "method": "get",
         "name": "getAsset",
+        "parameters": [
+          {
+            "description": "A asset ID filter for the schedule collection.",
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/asset/{assetId}",
         "pointer": "#/paths/~1asset~1{assetId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Asset Detail"
+        "summary": "Asset Detail",
+        "tags": [
+          "Asset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the contributors of the selected asset.",
         "id": "operation:get:/asset/{assetId}/contributor",
         "kind": "operation",
         "method": "get",
         "name": "getAssetContributors",
+        "parameters": [
+          {
+            "description": "A asset ID filter for the schedule collection.",
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/asset/{assetId}/contributor",
         "pointer": "#/paths/~1asset~1{assetId}~1contributor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Asset Contributors"
+        "summary": "Asset Contributors",
+        "tags": [
+          "Asset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a collection of Catalogues.",
         "id": "operation:get:/catalogue",
         "kind": "operation",
         "method": "get",
         "name": "listCatalogues",
         "path": "/catalogue",
         "pointer": "#/paths/~1catalogue/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Catalogue Collection"
+        "summary": "Catalogue Collection",
+        "tags": [
+          "Catalogue"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected catalogue.",
         "id": "operation:get:/catalogue/{catalogueId}",
         "kind": "operation",
         "method": "get",
         "name": "getCatalogue",
+        "parameters": [
+          {
+            "description": "The identifier for the selected catalogue.",
+            "in": "path",
+            "name": "catalogueId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/catalogue/{catalogueId}",
         "pointer": "#/paths/~1catalogue~1{catalogueId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Catalogue Detail"
+        "summary": "Catalogue Detail",
+        "tags": [
+          "Catalogue"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected catalogue.",
         "id": "operation:get:/catalogue/{catalogueId}/asset",
         "kind": "operation",
         "method": "get",
         "name": "getCatalogueAsset",
+        "parameters": [
+          {
+            "description": "The identifier for the selected catalogue.",
+            "in": "path",
+            "name": "catalogueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The query string for a title search",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-05T00:00:00",
+            "description": "The Start Date for the catalogue date range.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-06T00:00:00",
+            "description": "The End Date for the catalogue date range.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-06T00:00:00",
+            "description": "Retrieve items only that have been updated after this point.",
+            "in": "query",
+            "name": "updatedAfter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 500,
+            "description": "Restrict number of returned items Min = 1, Max = 500.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/catalogue/{catalogueId}/asset",
         "pointer": "#/paths/~1catalogue~1{catalogueId}~1asset/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Catalogue Asset Collection"
+        "summary": "Catalogue Asset Collection",
+        "tags": [
+          "Catalogue"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected catalogue asset.",
         "id": "operation:get:/catalogue/{catalogueId}/asset/{assetId}",
         "kind": "operation",
         "method": "get",
         "name": "getCatalogueAssetDetail",
+        "parameters": [
+          {
+            "description": "The identifier for the selected catalogue.",
+            "in": "path",
+            "name": "catalogueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The identifier for the selected catalogue asset.",
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/catalogue/{catalogueId}/asset/{assetId}",
         "pointer": "#/paths/~1catalogue~1{catalogueId}~1asset~1{assetId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Catalogue Asset Detail"
+        "summary": "Catalogue Asset Detail",
+        "tags": [
+          "Catalogue"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If you are interested in a list of channels that have had there schedule updated you can filter by the following query params.",
         "id": "operation:get:/channel",
         "kind": "operation",
         "method": "get",
         "name": "listChannels",
+        "parameters": [
+          {
+            "default": "d3b26caa-8c7d-5f97-9eff-40fcf1a6f8d3",
+            "description": "The identifier for the selected platform.",
+            "in": "query",
+            "name": "platformId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "afa4f624-da9b-54ce-b514-570345dbbdce",
+            "description": "The platform region ID for the channel selection.",
+            "in": "query",
+            "name": "regionId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "2018-09-15",
+            "description": "Date of the Channel State to select, this will display channel names and attributes in the future or past.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-05T00:00:00",
+            "description": "The Start Date for the schedule.",
+            "in": "query",
+            "name": "scheduleStart",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-06T00:00:00",
+            "description": "The End Date for the schedule.",
+            "in": "query",
+            "name": "scheduleEnd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-05T00:00:00",
+            "description": "Schedule Updated Since",
+            "in": "query",
+            "name": "scheduleUpdatedSince",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/channel",
         "pointer": "#/paths/~1channel/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Channel Collection"
+        "summary": "Channel Collection",
+        "tags": [
+          "Channel"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected channel.",
         "id": "operation:get:/channel/{channelId}",
         "kind": "operation",
         "method": "get",
         "name": "getChannel",
+        "parameters": [
+          {
+            "description": "The identifier for the selected channel.",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/channel/{channelId}",
         "pointer": "#/paths/~1channel~1{channelId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Channel Detail"
+        "summary": "Channel Detail",
+        "tags": [
+          "Channel"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a collection of Contributors.",
         "id": "operation:get:/contributor",
         "kind": "operation",
         "method": "get",
         "name": "listContributor",
+        "parameters": [
+          {
+            "default": "2015-05-05T00:00:00.000Z",
+            "description": "Updated After",
+            "in": "query",
+            "name": "updatedAfter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Limit the the number of items to be returned per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/contributor",
         "pointer": "#/paths/~1contributor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Contributor Collection"
+        "summary": "Contributor Collection",
+        "tags": [
+          "Contributor"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected contributor.",
         "id": "operation:get:/contributor/{contributorId}",
         "kind": "operation",
         "method": "get",
         "name": "getContributor",
+        "parameters": [
+          {
+            "description": "Filter the schedule items by contributor ID",
+            "in": "path",
+            "name": "contributorId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/contributor/{contributorId}",
         "pointer": "#/paths/~1contributor~1{contributorId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Contributor Detail"
+        "summary": "Contributor Detail",
+        "tags": [
+          "Contributor"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a collection of Feature.",
         "id": "operation:get:/feature",
         "kind": "operation",
         "method": "get",
         "name": "listFeatures",
+        "parameters": [
+          {
+            "default": "netflix-monthly",
+            "description": "The namespace of the feature type.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2018-09-15",
+            "description": "Date of the collection of feature items.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2018-09-15",
+            "description": "Start date for a range of features.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2018-10-15",
+            "description": "End date for a range of features.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/feature",
         "pointer": "#/paths/~1feature/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Feature Collection"
+        "summary": "Feature Collection",
+        "tags": [
+          "Feature"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a collection of Feature Types.",
         "id": "operation:get:/feature-type",
         "kind": "operation",
         "method": "get",
         "name": "listFeatureTypes",
         "path": "/feature-type",
         "pointer": "#/paths/~1feature-type/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Feature Type Collection"
+        "summary": "Feature Type Collection",
+        "tags": [
+          "Feature"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected feature.",
         "id": "operation:get:/feature/{featureId}",
         "kind": "operation",
         "method": "get",
         "name": "getFeature",
+        "parameters": [
+          {
+            "description": "The identifier for the selected feature.",
+            "in": "path",
+            "name": "featureId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/feature/{featureId}",
         "pointer": "#/paths/~1feature~1{featureId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Feature Detail"
+        "summary": "Feature Detail",
+        "tags": [
+          "Feature"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of available platforms.",
         "id": "operation:get:/platform",
         "kind": "operation",
         "method": "get",
         "name": "listPlatforms",
+        "parameters": [
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/platform",
         "pointer": "#/paths/~1platform/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Platform Collection"
+        "summary": "Platform Collection",
+        "tags": [
+          "Platform"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the content of the selected platform.",
         "id": "operation:get:/platform/{platformId}",
         "kind": "operation",
         "method": "get",
         "name": "getPlatform",
+        "parameters": [
+          {
+            "default": "d3b26caa-8c7d-5f97-9eff-40fcf1a6f8d3",
+            "description": "The identifier for the selected platform.",
+            "in": "path",
+            "name": "platformId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/{platformId}",
         "pointer": "#/paths/~1platform~1{platformId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Platform Detail"
+        "summary": "Platform Detail",
+        "tags": [
+          "Platform"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of regions for a platform.",
         "id": "operation:get:/platform/{platformId}/region",
         "kind": "operation",
         "method": "get",
         "name": "listPlatformRegions",
+        "parameters": [
+          {
+            "default": "d3b26caa-8c7d-5f97-9eff-40fcf1a6f8d3",
+            "description": "The identifier for the selected platform.",
+            "in": "path",
+            "name": "platformId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/platform/{platformId}/region",
         "pointer": "#/paths/~1platform~1{platformId}~1region/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Platform Region Collection"
+        "summary": "Platform Region Collection",
+        "tags": [
+          "Platform"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The schedule endpoint produces a linear TV schedule for a given channel and date range.",
         "id": "operation:get:/schedule",
         "kind": "operation",
         "method": "get",
         "name": "listSchedule",
+        "parameters": [
+          {
+            "description": "The identifier for the selected channel.",
+            "in": "query",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-05T00:00:00",
+            "description": "The Start Date for the schedule.",
+            "in": "query",
+            "name": "start",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "2015-05-06T00:00:00",
+            "description": "The End Date for the schedule.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Flag to display Legacy and Provider Ids.",
+            "in": "query",
+            "name": "aliases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/schedule",
         "pointer": "#/paths/~1schedule/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Schedule Collection"
+        "summary": "Schedule Collection",
+        "tags": [
+          "Schedule"
+        ]
       }
     ]
   },

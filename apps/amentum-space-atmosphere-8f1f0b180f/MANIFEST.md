@@ -11,7 +11,7 @@ logo: "https://www.amentum.io/static/img/favicon-32x32.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `7ef4169ac8db696d10bca50583ac00e3388d0d4a29c6936512a2d91002e2eb66` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,8 +32,10 @@ logo: "https://www.amentum.io/static/img/favicon-32x32.png"
 
 ## Operations (3)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/jb2008` | app.api.endpoints.JB2008.sample_atmosphere | Compute atmospheric density and temperatures |
-| GET | `/nrlmsise00` | app.api.endpoints.NRLMSISE00.sample_atmosphere | Compute atmospheric composition, density, and temperatures |
-| GET | `/wam-ipe` | app.api_wfs.endpoints.WFS.get_values | Forecast winds, ion and molecular densities, and temperatures in the atmosphere |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/jb2008` | app.api.endpoints.JB2008.sample_atmosphere | `year`*, `month`*, `day`*, `altitude`*, `geodetic_latitude`*, `geodetic_longitude`*, `utc`* | object | yes | Compute atmospheric density and temperatures |
+| GET | `/nrlmsise00` | app.api.endpoints.NRLMSISE00.sample_atmosphere | `year`*, `month`*, `day`*, `altitude`*, `geodetic_latitude`*, `geodetic_longitude`*, `utc`*, `f107a`, `f107`, `ap` | object | yes | Compute atmospheric composition, density, and temperatures |
+| GET | `/wam-ipe` | app.api_wfs.endpoints.WFS.get_values | `latitude`*, `longitude`*, `altitude`*, `year`*, `month`*, `day`*, `hour`*, `minute`* | object | yes | Forecast winds, ion and molecular densities, and temperatures in the atmosphere |

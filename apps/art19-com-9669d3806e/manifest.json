@@ -113,6 +113,46 @@
         "from": "art19-com-9669d3806e",
         "kind": "EXPOSES",
         "to": "operation:get:/series/{id}"
+      },
+      {
+        "from": "schema:ClassificationInclusion",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Credit",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Episode",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Network",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Season",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceIdentifier"
       }
     ],
     "nodes": [
@@ -122,18 +162,123 @@
       },
       {
         "deprecated": false,
+        "description": "Classification Inclusions connect classifications with entities like series, episodes, or campaigns, amongst others.",
         "id": "operation:get:/classification_inclusions",
         "kind": "operation",
         "method": "get",
         "name": "get /classification_inclusions",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to classification inclusions linked to a classification with this ID.",
+            "in": "query",
+            "name": "classification_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The type of classification that the classification inclusions are linked to.",
+            "enum": [
+              "AlternateFeedType",
+              "Genre",
+              "Industry",
+              "Language",
+              "MediaRating"
+            ],
+            "in": "query",
+            "name": "classification_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the result to classification inclusions linked to a resource with this ID.",
+            "in": "query",
+            "name": "classified_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to classification inclusions linked to this type of entity.",
+            "enum": [
+              "Series",
+              "Season",
+              "Episode"
+            ],
+            "in": "query",
+            "name": "classified_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the result to classification inclusions linked to a classification containing the parameter value disregarding case.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "created_at",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/classification_inclusions",
         "pointer": "#/paths/~1classification_inclusions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get ClassificationInclusion records"
+        "summary": "Get ClassificationInclusion records",
+        "tags": [
+          "ClassificationInclusion"
+        ]
       },
       {
         "deprecated": false,
@@ -141,14 +286,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /classification_inclusions/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the classification inclusion resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/classification_inclusions/{id}",
         "pointer": "#/paths/~1classification_inclusions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific classification inclusion"
+        "summary": "Get a specific classification inclusion",
+        "tags": [
+          "ClassificationInclusion"
+        ]
       },
       {
         "deprecated": false,
@@ -156,14 +335,99 @@
         "kind": "operation",
         "method": "get",
         "name": "get /classifications",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to classifications of this type.",
+            "enum": [
+              "AlternateFeedType",
+              "Genre",
+              "Industry",
+              "Language",
+              "MediaRating"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the result to classifications with a value containing the parameter value disregarding case.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If this parameter is provided and not empty, limit the result to classifications of type `Geography` representing countries.",
+            "in": "query",
+            "name": "is_country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "value",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/classifications",
         "pointer": "#/paths/~1classifications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of classifications"
+        "summary": "Get a list of classifications",
+        "tags": [
+          "Classification"
+        ]
       },
       {
         "deprecated": false,
@@ -171,14 +435,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /classifications/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the classification resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/classifications/{id}",
         "pointer": "#/paths/~1classifications~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific classification"
+        "summary": "Get a specific classification",
+        "tags": [
+          "Classification"
+        ]
       },
       {
         "deprecated": false,
@@ -186,14 +484,90 @@
         "kind": "operation",
         "method": "get",
         "name": "get /credits",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to credits for the entity with this ID only.",
+            "in": "query",
+            "name": "creditable_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to credits linked to this type of entity only.",
+            "enum": [
+              "Series",
+              "Season",
+              "Episode"
+            ],
+            "in": "query",
+            "name": "creditable_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "position",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/credits",
         "pointer": "#/paths/~1credits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of credits"
+        "summary": "Get a list of credits",
+        "tags": [
+          "Credit"
+        ]
       },
       {
         "deprecated": false,
@@ -201,29 +575,191 @@
         "kind": "operation",
         "method": "get",
         "name": "get /credits/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the credit resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/credits/{id}",
         "pointer": "#/paths/~1credits~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific credit"
+        "summary": "Get a specific credit",
+        "tags": [
+          "Credit"
+        ]
       },
       {
         "deprecated": false,
+        "description": "One initial filter must be provided (`ids`, `series_id`, or `season_id`), otherwise a `400 Bad Request` response will be returned.",
         "id": "operation:get:/episodes",
         "kind": "operation",
         "method": "get",
         "name": "get /episodes",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to episodes usable with an inventory management calendar for the provided AdDeal ID.",
+            "in": "query",
+            "name": "included_in_inventory_calendar",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to episodes released in this month.",
+            "in": "query",
+            "name": "month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If `true`, limit the result to published episodes only.",
+            "in": "query",
+            "name": "published",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit the result to episodes with a title containing this parameter in a case-insensitive way.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the result to episodes released after this timestamp.",
+            "in": "query",
+            "name": "released_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit the result to episodes released before this timestamp.",
+            "in": "query",
+            "name": "released_before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "If `true`, limit the result to published and released episodes holding an available media file.",
+            "in": "query",
+            "name": "rss",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit result to episodes linked to this season.",
+            "in": "query",
+            "name": "season_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to episodes linked to this series.",
+            "in": "query",
+            "name": "series_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "default": "sort_title",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit the result to episodes released in this year.",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/episodes",
         "pointer": "#/paths/~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of episodes"
+        "summary": "Get a list of episodes",
+        "tags": [
+          "Episode"
+        ]
       },
       {
         "deprecated": false,
@@ -231,14 +767,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /episodes/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the episode resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/episodes/{id}",
         "pointer": "#/paths/~1episodes~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific episode"
+        "summary": "Get a specific episode",
+        "tags": [
+          "Episode"
+        ]
       },
       {
         "deprecated": false,
@@ -246,14 +816,55 @@
         "kind": "operation",
         "method": "get",
         "name": "get /episodes/{id}/next_sibling",
+        "parameters": [
+          {
+            "description": "The ID of the episode to find the one episode released right after it.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "If `true`, get the next released and published episode with an available media file.",
+            "in": "query",
+            "name": "rss",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/episodes/{id}/next_sibling",
         "pointer": "#/paths/~1episodes~1{id}~1next_sibling/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get the episode released right after the specified one"
+        "summary": "Get the episode released right after the specified one",
+        "tags": [
+          "Episode"
+        ]
       },
       {
         "deprecated": false,
@@ -261,149 +872,618 @@
         "kind": "operation",
         "method": "get",
         "name": "get /episodes/{id}/previous_sibling",
+        "parameters": [
+          {
+            "description": "The ID of the episode to find the one episode released right before it.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "If `true`, get the previously released and published episode with an available media file.",
+            "in": "query",
+            "name": "rss",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/episodes/{id}/previous_sibling",
         "pointer": "#/paths/~1episodes~1{id}~1previous_sibling/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get the episode released right before the specified one"
+        "summary": "Get the episode released right before the specified one",
+        "tags": [
+          "Episode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "An image represents a piece of artwork attached to some entity like a series, season, or episode, and is _owned_ by an entity called the `bucket`.",
         "id": "operation:get:/images",
         "kind": "operation",
         "method": "get",
         "name": "get /images",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": true,
+            "type": "string:uuid[]"
+          }
+        ],
         "path": "/images",
         "pointer": "#/paths/~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of images"
+        "summary": "Get a list of images",
+        "tags": [
+          "Image"
+        ]
       },
       {
         "deprecated": false,
+        "description": "An image represents a piece of artwork attached to some entity like a series, season, or episode, and is _owned_ by an entity called the `bucket`.",
         "id": "operation:get:/images/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /images/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the image resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/images/{id}",
         "pointer": "#/paths/~1images~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific image"
+        "summary": "Get a specific image",
+        "tags": [
+          "Image"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A media asset is part of a collection of assets or files representing an image or a piece of audio content like an episode or an ad.",
         "id": "operation:get:/media_assets",
         "kind": "operation",
         "method": "get",
         "name": "get /media_assets",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": true,
+            "type": "string:uuid[]"
+          }
+        ],
         "path": "/media_assets",
         "pointer": "#/paths/~1media_assets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of media assets"
+        "summary": "Get a list of media assets",
+        "tags": [
+          "MediaAsset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A media asset is part of a collection of assets or files representing an image or a piece of audio content like an episode or an ad.",
         "id": "operation:get:/media_assets/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /media_assets/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the media asset resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/media_assets/{id}",
         "pointer": "#/paths/~1media_assets~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific media asset"
+        "summary": "Get a specific media asset",
+        "tags": [
+          "MediaAsset"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### Deprecations - The attribute `cover_image_id` has been replaced with the relationship `cover_image` and will be removed from the response in a future relea…",
         "id": "operation:get:/networks",
         "kind": "operation",
         "method": "get",
         "name": "get /networks",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to networks with a name containing this parameter in a case-insensitive way.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the result to networks containing at least one series with an ad deal of this Ad Ops profile.",
+            "in": "query",
+            "name": "ad_rep_account_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to networks containing at least one series with an ad deal matching one of the values in this parameter.",
+            "in": "query",
+            "name": "ad_deal_status",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "name",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/networks",
         "pointer": "#/paths/~1networks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of networks"
+        "summary": "Get a list of networks",
+        "tags": [
+          "Network"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### Deprecations - The attribute `cover_image_id` has been replaced with the relationship `cover_image` and will be removed from the response in a future relea…",
         "id": "operation:get:/networks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /networks/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the network resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/networks/{id}",
         "pointer": "#/paths/~1networks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific network"
+        "summary": "Get a specific network",
+        "tags": [
+          "Network"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Each series, season, and episode has a Credits section where you may add people and roles.",
         "id": "operation:get:/people",
         "kind": "operation",
         "method": "get",
         "name": "get /people",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to people with a full name containing this parameter in a case-insensitive way.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "last_name,first_name",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/people",
         "pointer": "#/paths/~1people/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of people"
+        "summary": "Get a list of people",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Each series, season, and episode has a Credits section where you may add people and roles.",
         "id": "operation:get:/people/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /people/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the person resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/people/{id}",
         "pointer": "#/paths/~1people~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific person"
+        "summary": "Get a specific person",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When retrieving a list of seasons, the result is automatically filtered depending on the privileges the used credential holds.",
         "id": "operation:get:/seasons",
         "kind": "operation",
         "method": "get",
         "name": "get /seasons",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to seasons owned by this series.",
+            "in": "query",
+            "name": "series_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to seasons with a title containing this parameter in a case-insensitive way.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "sort_title",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/seasons",
         "pointer": "#/paths/~1seasons/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of seasons"
+        "summary": "Get a list of seasons",
+        "tags": [
+          "Season"
+        ]
       },
       {
         "deprecated": false,
@@ -411,29 +1491,142 @@
         "kind": "operation",
         "method": "get",
         "name": "get /seasons/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the season resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/seasons/{id}",
         "pointer": "#/paths/~1seasons~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific season"
+        "summary": "Get a specific season",
+        "tags": [
+          "Season"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When retrieving a list of series, the result is automatically filtered depending on the privileges the used credential holds.",
         "id": "operation:get:/series",
         "kind": "operation",
         "method": "get",
         "name": "get /series",
+        "parameters": [
+          {
+            "description": "The list of IDs to filter by.",
+            "in": "query",
+            "name": "ids[]",
+            "required": false,
+            "type": "string:uuid[]"
+          },
+          {
+            "description": "Select which page number to receive results for.",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicate how many records to return per page.",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to series with an ad deal of this Ad Ops profile.",
+            "in": "query",
+            "name": "ad_rep_account_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to series owned by this network.",
+            "in": "query",
+            "name": "network_id",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Limit the result to series with a title or slug containing this parameter in a case-insensitive way.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "sort_title",
+            "description": "Specify how to sort the result.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/series",
         "pointer": "#/paths/~1series/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a list of series"
+        "summary": "Get a list of series",
+        "tags": [
+          "Series"
+        ]
       },
       {
         "deprecated": false,
@@ -441,79 +1634,130 @@
         "kind": "operation",
         "method": "get",
         "name": "get /series/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the series resource to load.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/series/{id}",
         "pointer": "#/paths/~1series~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get a specific series"
+        "summary": "Get a specific series",
+        "tags": [
+          "Series"
+        ]
       },
       {
+        "description": "A classification, in general, is something that can describe other resources, such as countries, genres or languages.",
         "id": "schema:Classification",
         "kind": "schema",
-        "name": "Classification"
+        "name": "Classification",
+        "type": "object"
       },
       {
+        "description": "Connects a Classification with a classified item like a Series, Season or Episode.",
         "id": "schema:ClassificationInclusion",
         "kind": "schema",
-        "name": "ClassificationInclusion"
+        "name": "ClassificationInclusion",
+        "type": "object"
       },
       {
+        "description": "A credit links a specific person to a series, season, or episode in a specific role.",
         "id": "schema:Credit",
         "kind": "schema",
-        "name": "Credit"
+        "name": "Credit",
+        "type": "object"
       },
       {
         "id": "schema:Episode",
         "kind": "schema",
-        "name": "Episode"
+        "name": "Episode",
+        "type": "object"
       },
       {
         "id": "schema:Image",
         "kind": "schema",
-        "name": "Image"
+        "name": "Image",
+        "type": "object"
       },
       {
         "id": "schema:Links",
         "kind": "schema",
-        "name": "Links"
+        "name": "Links",
+        "type": "object"
       },
       {
         "id": "schema:MediaAsset",
         "kind": "schema",
-        "name": "MediaAsset"
+        "name": "MediaAsset",
+        "type": "object"
       },
       {
         "id": "schema:Network",
         "kind": "schema",
-        "name": "Network"
+        "name": "Network",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
         "id": "schema:ResourceIdentifier",
         "kind": "schema",
-        "name": "ResourceIdentifier"
+        "name": "ResourceIdentifier",
+        "type": "object"
       },
       {
+        "description": "Links related to the retrieved resource",
         "id": "schema:ResourceLink",
         "kind": "schema",
-        "name": "ResourceLink"
+        "name": "ResourceLink",
+        "type": "object"
       },
       {
         "id": "schema:Season",
         "kind": "schema",
-        "name": "Season"
+        "name": "Season",
+        "type": "object"
       },
       {
         "id": "schema:Series",
         "kind": "schema",
-        "name": "Series"
+        "name": "Series",
+        "type": "object"
       }
     ]
   },

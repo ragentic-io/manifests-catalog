@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `49cb0a4599c751a747678a98b21c10dd3fc51d3b9e23ee704eb144a8a1f1b8c4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,46 +32,48 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (41)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/call_phone_number_auth` | post /call_phone_number_auth | Call phone number auth. |
-| GET | `/check_for_update` | get /check_for_update | Clubhouse uses this to check for updates when app is not installed from App Store (eg TestFlight) |
-| POST | `/check_waitlist_status` | post /check_waitlist_status | checks waitlist status. |
-| POST | `/complete_phone_number_auth` | post /complete_phone_number_auth | Call phone number auth. |
-| POST | `/create_channel` | post /create_channel | creates a channel |
-| POST | `/follow` | post /follow | follows a user |
-| GET | `/get_actionable_notifications` | get /get_actionable_notifications | get actionable notifications (the bell again) |
-| GET | `/get_all_topics` | get /get_all_topics | gets all topics. |
-| GET | `/get_channels` | get /get_channels | get all channels |
-| POST | `/get_club` | post /get_club | gets club by id |
-| POST | `/get_clubs_for_topic` | post /get_clubs_for_topic | looks up clubs by topic. |
-| POST | `/get_create_channel_targets` | post /get_create_channel_targets | is fetched when you tap Create Room |
-| GET | `/get_events` | get /get_events | the Upcoming for You page |
-| POST | `/get_following` | post /get_following | get a list of the users and clubs that this user is following. Returned users have bios truncated to ~80 characters. |
-| GET | `/get_notifications` | get /get_notifications | get notifications (the bell icon) |
-| POST | `/get_online_friends` | post /get_online_friends | gets online friends on the app homepage. |
-| POST | `/get_profile` | post /get_profile | looks up user profile by ID. |
-| POST | `/get_release_notes` | post /get_release_notes | gets release notes. |
-| GET | `/get_settings` | get /get_settings | get notification settings |
-| POST | `/get_suggested_club_invites` | post /get_suggested_club_invites | find users to invite to clubs based on phone number |
-| GET | `/get_suggested_follows_all` | get /get_suggested_follows_all | gets suggested follows during signup |
-| POST | `/get_suggested_follows_friends_only` | post /get_suggested_follows_friends_only | find people to follow by uploading contacts during signup |
-| POST | `/get_suggested_follows_similar` | post /get_suggested_follows_similar | find similar users. (The Sparkles button on Clubhouse's profile page) |
-| POST | `/get_suggested_invites` | post /get_suggested_invites | find users to invite based on phone number. |
-| POST | `/get_suggested_speakers` | post /get_suggested_speakers | gets suggested users when you start a private room |
-| POST | `/get_topic` | post /get_topic | looks up topic by ID. |
-| GET | `/get_users_for_topic` | get /get_users_for_topic | looks up users by topic. |
-| GET | `/get_welcome_channel` | get /get_welcome_channel | called during signup |
-| POST | `/invite_from_waitlist` | post /invite_from_waitlist | wave to another user on the waitlist to give them access |
-| POST | `/invite_to_app` | post /invite_to_app | invite a user to the app, using one of your invites |
-| POST | `/join_channel` | post /join_channel | join a channel. |
-| POST | `/leave_channel` | post /leave_channel | leave a channel. |
-| POST | `/me` | post /me | gets user |
-| POST | `/record_action_trails` | post /record_action_trails | analytics |
-| POST | `/refresh_token` | post /refresh_token | gets an access_token from a refresh_token. |
-| POST | `/resend_phone_number_auth` | post /resend_phone_number_auth | Resend phone number auth. |
-| POST | `/search_clubs` | post /search_clubs | search clubs. |
-| POST | `/search_users` | post /search_users | search for users |
-| POST | `/start_phone_number_auth` | post /start_phone_number_auth | Starts phone number auth. |
-| POST | `/update_notifications` | post /update_notifications | updates notification during signup. |
-| POST | `/update_username` | post /update_username | edits username. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/call_phone_number_auth` | post /call_phone_number_auth | body: object | — |  | Call phone number auth. |
+| GET | `/check_for_update` | get /check_for_update | `is_testflight` | — | yes | Clubhouse uses this to check for updates when app is not installed from App Store (eg TestFlight) |
+| POST | `/check_waitlist_status` | post /check_waitlist_status | — | — |  | checks waitlist status. |
+| POST | `/complete_phone_number_auth` | post /complete_phone_number_auth | body: object | — |  | Call phone number auth. |
+| POST | `/create_channel` | post /create_channel | body: object | — |  | creates a channel |
+| POST | `/follow` | post /follow | body: object | — |  | follows a user |
+| GET | `/get_actionable_notifications` | get /get_actionable_notifications | — | — | yes | get actionable notifications (the bell again) |
+| GET | `/get_all_topics` | get /get_all_topics | — | — | yes | gets all topics. |
+| GET | `/get_channels` | get /get_channels | — | — | yes | get all channels |
+| POST | `/get_club` | post /get_club | body: object | — |  | gets club by id |
+| POST | `/get_clubs_for_topic` | post /get_clubs_for_topic | body: object | — |  | looks up clubs by topic. |
+| POST | `/get_create_channel_targets` | post /get_create_channel_targets | body: object | — |  | is fetched when you tap Create Room |
+| GET | `/get_events` | get /get_events | `is_filtered`, `page_size`, `page` | — | yes | the Upcoming for You page |
+| POST | `/get_following` | post /get_following | body: object | — |  | get a list of the users and clubs that this user is following. Returned users have bios truncated to ~80 characters. |
+| GET | `/get_notifications` | get /get_notifications | `page_size`, `page` | — | yes | get notifications (the bell icon) |
+| POST | `/get_online_friends` | post /get_online_friends | body: object | — |  | gets online friends on the app homepage. |
+| POST | `/get_profile` | post /get_profile | body: object | — |  | looks up user profile by ID. |
+| POST | `/get_release_notes` | post /get_release_notes | — | — |  | gets release notes. |
+| GET | `/get_settings` | get /get_settings | — | — | yes | get notification settings |
+| POST | `/get_suggested_club_invites` | post /get_suggested_club_invites | body: object | — |  | find users to invite to clubs based on phone number |
+| GET | `/get_suggested_follows_all` | get /get_suggested_follows_all | `in_onboarding`, `page_size`, `page` | — | yes | gets suggested follows during signup |
+| POST | `/get_suggested_follows_friends_only` | post /get_suggested_follows_friends_only | body: object | — |  | find people to follow by uploading contacts during signup |
+| POST | `/get_suggested_follows_similar` | post /get_suggested_follows_similar | body: object | — |  | find similar users. (The Sparkles button on Clubhouse's profile page) |
+| POST | `/get_suggested_invites` | post /get_suggested_invites | body: object | — |  | find users to invite based on phone number. |
+| POST | `/get_suggested_speakers` | post /get_suggested_speakers | body: object | — |  | gets suggested users when you start a private room |
+| POST | `/get_topic` | post /get_topic | body: object | — |  | looks up topic by ID. |
+| GET | `/get_users_for_topic` | get /get_users_for_topic | `topic_id`, `page_size`, `page` | — | yes | looks up users by topic. |
+| GET | `/get_welcome_channel` | get /get_welcome_channel | — | — | yes | called during signup |
+| POST | `/invite_from_waitlist` | post /invite_from_waitlist | body: object | — |  | wave to another user on the waitlist to give them access |
+| POST | `/invite_to_app` | post /invite_to_app | body: object | — |  | invite a user to the app, using one of your invites |
+| POST | `/join_channel` | post /join_channel | body: object | — |  | join a channel. |
+| POST | `/leave_channel` | post /leave_channel | body: object | — |  | leave a channel. |
+| POST | `/me` | post /me | body: object | — |  | gets user |
+| POST | `/record_action_trails` | post /record_action_trails | body: object | — |  | analytics |
+| POST | `/refresh_token` | post /refresh_token | body: object | — |  | gets an access_token from a refresh_token. |
+| POST | `/resend_phone_number_auth` | post /resend_phone_number_auth | body: object | — |  | Resend phone number auth. |
+| POST | `/search_clubs` | post /search_clubs | body: object | — |  | search clubs. |
+| POST | `/search_users` | post /search_users | body: object | — |  | search for users |
+| POST | `/start_phone_number_auth` | post /start_phone_number_auth | body: object | — |  | Starts phone number auth. |
+| POST | `/update_notifications` | post /update_notifications | body: object | — |  | updates notification during signup. |
+| POST | `/update_username` | post /update_username | body: object | — |  | edits username. |

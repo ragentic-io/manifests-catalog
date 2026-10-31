@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_portal.apptigent.com_sites_port
 
 | | |
 | --- | --- |
-| Signed bundle | `969377ed383906e1f55ecd67a125013b089afcbbf83fb4ab30d1666a8226c1de` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,93 +34,95 @@ logo: "https://api.apis.guru/v2/cache/logo/https_portal.apptigent.com_sites_port
 
 69 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/AddToCollection` | AddToCollection | Collections - Add to collection |
-| POST | `/CSVtoJSON` | CsvToJson | Data - CSV to JSON |
-| POST | `/CalculateAbsolute` | CalculateAbsolute | Math - Calculate Absolute |
-| POST | `/CalculateAddition` | CalculateAddition | Math - Calculate Addition |
-| POST | `/CalculateAverage` | CalculateAverage | Math - Calculate average |
-| POST | `/CalculateCosine` | CalculateCosine | Math - Calculate Cosine |
-| POST | `/CalculateDivision` | CalculateDivision | Math - Calculate Division |
-| POST | `/CalculateLogarithm` | CalculateLogarithm | Math - Calculate Logarithm |
-| POST | `/CalculateMedian` | CalculateMedian | Math - Calculate median |
-| POST | `/CalculateMinMax` | CalculateMinMax | Math - Calculate minimum or maximum |
-| POST | `/CalculateModulo` | CalculateModulo | Math - Calculate Modulo |
-| POST | `/CalculateMultiplication` | CalculateMultiplication | Math - Calculate Multiplication |
-| POST | `/CalculateNthRoot` | CalculateNthRoot | Math - Calculate Nth Root |
-| POST | `/CalculatePower` | CalculatePower | Math - Calculate power |
-| POST | `/CalculateSine` | CalculateSine | Math - Calculate Sine |
-| POST | `/CalculateSquareRoot` | CalculateSquareRoot | Math - Calculate Square Root |
-| POST | `/CalculateSubtraction` | CalculateSubtraction | Math - Calculate Subtraction |
-| POST | `/CalculateSum` | CalculateSum | Math - Calculate sum |
-| POST | `/CalculateTangent` | CalculateTangent | Math - Calculate Tangent |
-| POST | `/CalculateVariance` | CalculateVariance | Math - Calculate variance |
-| POST | `/CollectionContainsNumber` | CollectionContainsNumber | Collections - Contains number |
-| POST | `/CollectionContainsString` | CollectionContainsString | Collections - Contains string |
-| POST | `/CollectionEndsWithString` | CollectionEndsWithString | Collections - Ends with string |
-| POST | `/CollectionStartsWithString` | CollectionStartsWithString | Collections - Starts with string |
-| POST | `/CollectionToJSON` | CollectionToJSON | Collections - Collection to JSON |
-| POST | `/CollectionToXML` | CollectionToXml | Collections - Collection to XML |
-| POST | `/CompareStrings` | CompareStrings | Text - Compare strings |
-| POST | `/ContainsString` | ContainsString | Text - Contains string |
-| POST | `/ConvertAngle` | ConvertAngle | Math - Convert angle |
-| POST | `/ConvertArea` | ConvertArea | Math - Convert area |
-| POST | `/ConvertCase` | ConvertCase | Text - Convert case |
-| POST | `/ConvertCurrency` | ConvertCurrency | Currency - Convert currency |
-| POST | `/ConvertDistance` | ConvertDistance | Math - Convert distance |
-| POST | `/ConvertDuration` | ConvertDuration | Math - Convert duration |
-| POST | `/ConvertEnergy` | ConvertEnergy | Math - Convert energy |
-| POST | `/ConvertImage` | ConvertImage | Files - Convert Image |
-| POST | `/ConvertPower` | ConvertPower | Math - Convert power |
-| POST | `/ConvertSpeed` | ConvertSpeed | Math - Convert speed |
-| POST | `/ConvertTemperature` | ConvertTemperature | Math - Convert temperature |
-| POST | `/ConvertVolume` | ConvertVolume | Math - Convert volume |
-| POST | `/ConvertWeight` | ConvertWeight | Math - Convert weight |
-| POST | `/CountCollection` | CountCollection | Collections - Count collection |
-| POST | `/CropImage` | CropImage | Files - Crop Image |
-| POST | `/DateTimeDifference` | DateTimeDifference | DateTime - DateTime difference |
-| POST | `/DateTimeInfo` | DateTimeInfo | DateTime - Get date and time information |
-| POST | `/DecodeString` | DecodeString | Text - Decode string |
-| POST | `/EncodeString` | EncodeString | Text - Encode string |
-| POST | `/FileToString` | FileToString | Files - File to string |
-| POST | `/FilterCollection` | FilterCollection | Collections - Filter collection |
-| POST | `/FlipImage` | FlipImage | Files - Flip Image |
-| POST | `/FormatCurrency` | FormatCurrency | Currency - Format currency |
-| POST | `/FormatDateTime` | FormatDateTime | DateTime - Format date and time |
-| POST | `/GenerateGuid` | GenerateGuid | Text - Generate GUID |
-| POST | `/GenerateHash` | GenerateHash | Text - Generate hash |
-| POST | `/GenerateQRCode` | GenerateQRCode | Files - Generate QR code |
-| POST | `/JSONtoCSV` | JsonToCsv | Data - JSON to CSV |
-| POST | `/JSONtoHTML` | JsonToHtml | Data - JSON to HTML Table |
-| POST | `/JSONtoXML` | JsonToXml | Data - JSON to XML |
-| POST | `/JoinStrings` | JoinStrings | Text - Join strings |
-| POST | `/MarketIndex` | MarketIndex | Finance - Market index |
-| POST | `/QueryJSON` | QueryJson | Data - Query JSON |
-| POST | `/QueryXML` | QueryXml | Data - Query XML |
-| POST | `/RandomNumber` | RandomNumber | Math - Random number |
-| POST | `/RedactString` | RedactString | Text - Redact string |
-| POST | `/RemoveFromCollection` | RemoveFromCollection | Collections - Remove from collection |
-| POST | `/ReplaceString` | ReplaceString | Text - Replace string |
-| POST | `/ReplaceValuesInCollection` | ReplaceValuesInCollection | Collections - Replace values in collection |
-| POST | `/ResizeImage` | ResizeImage | Files - Resize Image |
-| POST | `/RotateImage` | RotateImage | Files - Rotate Image |
-| POST | `/RoundNumber` | RoundNumber | Math - Round number |
-| POST | `/ShortenLink` | ShortenLink | Text - Shorten hyperlink |
-| POST | `/SortCollection` | SortCollection | Collections - Sort collection |
-| POST | `/SpeechToText` | SpeechToText | Text - Speech to Text |
-| POST | `/SplitCollection` | SplitCollection | Collections - Split collection |
-| POST | `/SplitString` | SplitString | Text - Split string |
-| POST | `/StandardDeviation` | StandardDeviation | Math - Calculate standard deviation |
-| POST | `/StockPrices` | StockPrices | Finance - Stock prices |
-| POST | `/StringToFile` | StringToFile | Text - String to File |
-| POST | `/TextToSpeech` | TextToSpeech | Text - Text to Speech |
-| POST | `/TranslateString` | TranslateString | Text - Translate string |
-| POST | `/TrimString` | TrimString | Text - Trim string |
-| POST | `/URLDecode` | UrlDecode | Text - Decode URL |
-| POST | `/URLEncode` | UrlEncode | Text - Encode URL |
-| POST | `/ValidateEmail` | ValidateEmail | Text - Validate email |
-| POST | `/VerifyHash` | VerifyHash | Text - Verify hash |
-| POST | `/WatermarkImage` | WatermarkImage | Files - Watermark Image |
-| POST | `/WorldTime` | WorldTime | DateTime - Get world time |
-| POST | `/XMLtoJSON` | XmlToJson | Data - XML to JSON |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/AddToCollection` | AddToCollection | body: inputCollectionModify | outputCollectionResult |  | Collections - Add to collection |
+| POST | `/CSVtoJSON` | CsvToJson | body: inputCsvConversionJSON | outputString |  | Data - CSV to JSON |
+| POST | `/CalculateAbsolute` | CalculateAbsolute | body: inputCalculateNumber | outputNumber |  | Math - Calculate Absolute |
+| POST | `/CalculateAddition` | CalculateAddition | body: inputCalculateNumbers | outputNumber |  | Math - Calculate Addition |
+| POST | `/CalculateAverage` | CalculateAverage | body: inputCalculateSeries | outputNumber |  | Math - Calculate average |
+| POST | `/CalculateCosine` | CalculateCosine | body: inputCalculateNumber | outputNumber |  | Math - Calculate Cosine |
+| POST | `/CalculateDivision` | CalculateDivision | body: inputCalculateNumbers | outputNumber |  | Math - Calculate Division |
+| POST | `/CalculateLogarithm` | CalculateLogarithm | body: inputCalculateNumber | outputNumber |  | Math - Calculate Logarithm |
+| POST | `/CalculateMedian` | CalculateMedian | body: inputCalculateSeries | outputNumber |  | Math - Calculate median |
+| POST | `/CalculateMinMax` | CalculateMinMax | body: inputCalculateMinMax | outputNumber |  | Math - Calculate minimum or maximum |
+| POST | `/CalculateModulo` | CalculateModulo | body: inputCalculateNumbers | outputNumber |  | Math - Calculate Modulo |
+| POST | `/CalculateMultiplication` | CalculateMultiplication | body: inputCalculateNumbers | outputNumber |  | Math - Calculate Multiplication |
+| POST | `/CalculateNthRoot` | CalculateNthRoot | body: inputCalculateNumbers | outputNumber |  | Math - Calculate Nth Root |
+| POST | `/CalculatePower` | CalculatePower | body: inputCalculatePower | outputNumber |  | Math - Calculate power |
+| POST | `/CalculateSine` | CalculateSine | body: inputCalculateNumber | outputNumber |  | Math - Calculate Sine |
+| POST | `/CalculateSquareRoot` | CalculateSquareRoot | body: inputCalculateNumber | outputNumber |  | Math - Calculate Square Root |
+| POST | `/CalculateSubtraction` | CalculateSubtraction | body: inputCalculateNumbers | outputNumber |  | Math - Calculate Subtraction |
+| POST | `/CalculateSum` | CalculateSum | body: inputCalculateSeries | outputNumber |  | Math - Calculate sum |
+| POST | `/CalculateTangent` | CalculateTangent | body: inputCalculateNumber | outputNumber |  | Math - Calculate Tangent |
+| POST | `/CalculateVariance` | CalculateVariance | body: inputCalculateSeries | outputNumber |  | Math - Calculate variance |
+| POST | `/CollectionContainsNumber` | CollectionContainsNumber | body: inputCollectionSearchNumeric | outputCollectionNumber |  | Collections - Contains number |
+| POST | `/CollectionContainsString` | CollectionContainsString | body: inputCollectionSearch | outputCollectionString |  | Collections - Contains string |
+| POST | `/CollectionEndsWithString` | CollectionEndsWithString | body: inputCollectionSearch | outputCollectionString |  | Collections - Ends with string |
+| POST | `/CollectionStartsWithString` | CollectionStartsWithString | body: inputCollectionSearch | outputCollectionString |  | Collections - Starts with string |
+| POST | `/CollectionToJSON` | CollectionToJSON | body: inputCollectionConversion | outputString |  | Collections - Collection to JSON |
+| POST | `/CollectionToXML` | CollectionToXml | body: inputCollectionConversionXML | outputString |  | Collections - Collection to XML |
+| POST | `/CompareStrings` | CompareStrings | body: inputStringComparison | outputString |  | Text - Compare strings |
+| POST | `/ContainsString` | ContainsString | body: inputStringContains | outputString |  | Text - Contains string |
+| POST | `/ConvertAngle` | ConvertAngle | body: inputConvertAngle | outputNumber |  | Math - Convert angle |
+| POST | `/ConvertArea` | ConvertArea | body: inputConvertArea | outputNumber |  | Math - Convert area |
+| POST | `/ConvertCase` | ConvertCase | body: inputCaseConversion | outputString |  | Text - Convert case |
+| POST | `/ConvertCurrency` | ConvertCurrency | body: inputCurrencyConversion | outputNumber |  | Currency - Convert currency |
+| POST | `/ConvertDistance` | ConvertDistance | body: inputConvertDistance | outputNumber |  | Math - Convert distance |
+| POST | `/ConvertDuration` | ConvertDuration | body: inputConvertDuration | outputNumber |  | Math - Convert duration |
+| POST | `/ConvertEnergy` | ConvertEnergy | body: inputConvertEnergy | outputNumber |  | Math - Convert energy |
+| POST | `/ConvertImage` | ConvertImage | body*: object | string:binary |  | Files - Convert Image |
+| POST | `/ConvertPower` | ConvertPower | body: inputConvertPower | outputNumber |  | Math - Convert power |
+| POST | `/ConvertSpeed` | ConvertSpeed | body: inputConvertSpeed | outputNumber |  | Math - Convert speed |
+| POST | `/ConvertTemperature` | ConvertTemperature | body: inputConvertTemperature | outputNumber |  | Math - Convert temperature |
+| POST | `/ConvertVolume` | ConvertVolume | body: inputConvertVolume | outputNumber |  | Math - Convert volume |
+| POST | `/ConvertWeight` | ConvertWeight | body: inputConvertWeight | outputNumber |  | Math - Convert weight |
+| POST | `/CountCollection` | CountCollection | body: inputCollectionCount | outputNumber |  | Collections - Count collection |
+| POST | `/CropImage` | CropImage | body*: object | string:binary |  | Files - Crop Image |
+| POST | `/DateTimeDifference` | DateTimeDifference | body: inputDateTimeDifference | outputDateDifference |  | DateTime - DateTime difference |
+| POST | `/DateTimeInfo` | DateTimeInfo | body: inputDateTimeInfo | outputDateInfo |  | DateTime - Get date and time information |
+| POST | `/DecodeString` | DecodeString | body: object | outputString |  | Text - Decode string |
+| POST | `/EncodeString` | EncodeString | body: inputString | outputString |  | Text - Encode string |
+| POST | `/FileToString` | FileToString | body*: object | outputString |  | Files - File to string |
+| POST | `/FilterCollection` | FilterCollection | body: inputCollectionFilter | outputCollectionResult |  | Collections - Filter collection |
+| POST | `/FlipImage` | FlipImage | body*: object | string:binary |  | Files - Flip Image |
+| POST | `/FormatCurrency` | FormatCurrency | body: inputCurrencyFormat | outputString |  | Currency - Format currency |
+| POST | `/FormatDateTime` | FormatDateTime | body: inputDateTimeFormat | outputString |  | DateTime - Format date and time |
+| POST | `/GenerateGuid` | GenerateGuid | body: inputGenerateUniqueID | outputString |  | Text - Generate GUID |
+| POST | `/GenerateHash` | GenerateHash | body: inputGenerateHash | outputString |  | Text - Generate hash |
+| POST | `/GenerateQRCode` | GenerateQRCode | body: inputQRCode | string:binary |  | Files - Generate QR code |
+| POST | `/JSONtoCSV` | JsonToCsv | body: inputJsonConversionCSV | outputString |  | Data - JSON to CSV |
+| POST | `/JSONtoHTML` | JsonToHtml | body: inputJsonConversionHTML | outputString |  | Data - JSON to HTML Table |
+| POST | `/JSONtoXML` | JsonToXml | body: inputJsonConversionXML | outputString |  | Data - JSON to XML |
+| POST | `/JoinStrings` | JoinStrings | body: inputJoinStrings | outputString |  | Text - Join strings |
+| POST | `/MarketIndex` | MarketIndex | body: inputMarketIndex | outputMarketIndex |  | Finance - Market index |
+| POST | `/QueryJSON` | QueryJson | body: inputDataQuery | outputString |  | Data - Query JSON |
+| POST | `/QueryXML` | QueryXml | body: inputDataQuery | outputString |  | Data - Query XML |
+| POST | `/RandomNumber` | RandomNumber | body: inputNumberRange | outputNumber |  | Math - Random number |
+| POST | `/RedactString` | RedactString | body: inputRedactString | outputString |  | Text - Redact string |
+| POST | `/RemoveFromCollection` | RemoveFromCollection | body: inputCollectionModify | outputCollectionResult |  | Collections - Remove from collection |
+| POST | `/ReplaceString` | ReplaceString | body: inputReplaceString | outputString |  | Text - Replace string |
+| POST | `/ReplaceValuesInCollection` | ReplaceValuesInCollection | body: inputCollectionReplace | outputCollectionResult |  | Collections - Replace values in collection |
+| POST | `/ResizeImage` | ResizeImage | body*: object | string:binary |  | Files - Resize Image |
+| POST | `/RotateImage` | RotateImage | body*: object | string:binary |  | Files - Rotate Image |
+| POST | `/RoundNumber` | RoundNumber | body: inputCalculateNumber | outputNumber |  | Math - Round number |
+| POST | `/ShortenLink` | ShortenLink | body: object | outputString |  | Text - Shorten hyperlink |
+| POST | `/SortCollection` | SortCollection | body: inputCollectionSort | outputCollectionResult |  | Collections - Sort collection |
+| POST | `/SpeechToText` | SpeechToText | body*: object | outputString |  | Text - Speech to Text |
+| POST | `/SplitCollection` | SplitCollection | body: inputCollectionSplit | outputMultiCollection |  | Collections - Split collection |
+| POST | `/SplitString` | SplitString | body: inputSplitString | outputStringArray |  | Text - Split string |
+| POST | `/StandardDeviation` | StandardDeviation | body: inputCalculateSeries | outputNumber |  | Math - Calculate standard deviation |
+| POST | `/StockPrices` | StockPrices | body: inputStockPrices | outputStockPrice |  | Finance - Stock prices |
+| POST | `/StringToFile` | StringToFile | body: inputStringToFile | string:binary |  | Text - String to File |
+| POST | `/TextToSpeech` | TextToSpeech | body: inputTextToSpeech | string:binary |  | Text - Text to Speech |
+| POST | `/TranslateString` | TranslateString | body: inputTranslateString | outputString |  | Text - Translate string |
+| POST | `/TrimString` | TrimString | body: inputTrimString | outputString |  | Text - Trim string |
+| POST | `/URLDecode` | UrlDecode | body: object | outputString |  | Text - Decode URL |
+| POST | `/URLEncode` | UrlEncode | body: inputString | outputString |  | Text - Encode URL |
+| POST | `/ValidateEmail` | ValidateEmail | body: object | outputString |  | Text - Validate email |
+| POST | `/VerifyHash` | VerifyHash | body: inputVerifyHash | outputBoolean |  | Text - Verify hash |
+| POST | `/WatermarkImage` | WatermarkImage | body*: object | string:binary |  | Files - Watermark Image |
+| POST | `/WorldTime` | WorldTime | body: inputDateTimeConversion | outputString |  | DateTime - Get world time |
+| POST | `/XMLtoJSON` | XmlToJson | body: inputXmlConversionJSON | outputString |  | Data - XML to JSON |

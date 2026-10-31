@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_thebluealliance.com_icons_apple
 
 | | |
 | --- | --- |
-| Signed bundle | `deac8408035c6ad0c4b23a0f464e83686f654381bf03e610d7b8bfd9c0e9e041` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,70 +34,72 @@ logo: "https://api.apis.guru/v2/cache/logo/https_thebluealliance.com_icons_apple
 
 48 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/district/{district_key}/events` | getDistrictEvents | — |
-| GET | `/district/{district_key}/events/keys` | getDistrictEventsKeys | — |
-| GET | `/district/{district_key}/events/simple` | getDistrictEventsSimple | — |
-| GET | `/district/{district_key}/rankings` | getDistrictRankings | — |
-| GET | `/district/{district_key}/teams` | getDistrictTeams | — |
-| GET | `/district/{district_key}/teams/keys` | getDistrictTeamsKeys | — |
-| GET | `/district/{district_key}/teams/simple` | getDistrictTeamsSimple | — |
-| GET | `/districts/{year}` | getDistrictsByYear | — |
-| GET | `/event/{event_key}` | getEvent | — |
-| GET | `/event/{event_key}/alliances` | getEventAlliances | — |
-| GET | `/event/{event_key}/awards` | getEventAwards | — |
-| GET | `/event/{event_key}/district_points` | getEventDistrictPoints | — |
-| GET | `/event/{event_key}/insights` | getEventInsights | — |
-| GET | `/event/{event_key}/matches` | getEventMatches | — |
-| GET | `/event/{event_key}/matches/keys` | getEventMatchesKeys | — |
-| GET | `/event/{event_key}/matches/simple` | getEventMatchesSimple | — |
-| GET | `/event/{event_key}/matches/timeseries` | getEventMatchTimeseries | — |
-| GET | `/event/{event_key}/oprs` | getEventOPRs | — |
-| GET | `/event/{event_key}/predictions` | getEventPredictions | — |
-| GET | `/event/{event_key}/rankings` | getEventRankings | — |
-| GET | `/event/{event_key}/simple` | getEventSimple | — |
-| GET | `/event/{event_key}/teams` | getEventTeams | — |
-| GET | `/event/{event_key}/teams/keys` | getEventTeamsKeys | — |
-| GET | `/event/{event_key}/teams/simple` | getEventTeamsSimple | — |
-| GET | `/event/{event_key}/teams/statuses` | getEventTeamsStatuses | — |
-| GET | `/events/{year}` | getEventsByYear | — |
-| GET | `/events/{year}/keys` | getEventsByYearKeys | — |
-| GET | `/events/{year}/simple` | getEventsByYearSimple | — |
-| GET | `/match/{match_key}` | getMatch | — |
-| GET | `/match/{match_key}/simple` | getMatchSimple | — |
-| GET | `/match/{match_key}/timeseries` | getMatchTimeseries | — |
-| GET | `/match/{match_key}/zebra_motionworks` | getMatchZebra | — |
-| GET | `/status` | getStatus | — |
-| GET | `/team/{team_key}` | getTeam | — |
-| GET | `/team/{team_key}/awards` | getTeamAwards | — |
-| GET | `/team/{team_key}/awards/{year}` | getTeamAwardsByYear | — |
-| GET | `/team/{team_key}/districts` | getTeamDistricts | — |
-| GET | `/team/{team_key}/event/{event_key}/awards` | getTeamEventAwards | — |
-| GET | `/team/{team_key}/event/{event_key}/matches` | getTeamEventMatches | — |
-| GET | `/team/{team_key}/event/{event_key}/matches/keys` | getTeamEventMatchesKeys | — |
-| GET | `/team/{team_key}/event/{event_key}/matches/simple` | getTeamEventMatchesSimple | — |
-| GET | `/team/{team_key}/event/{event_key}/status` | getTeamEventStatus | — |
-| GET | `/team/{team_key}/events` | getTeamEvents | — |
-| GET | `/team/{team_key}/events/keys` | getTeamEventsKeys | — |
-| GET | `/team/{team_key}/events/simple` | getTeamEventsSimple | — |
-| GET | `/team/{team_key}/events/{year}` | getTeamEventsByYear | — |
-| GET | `/team/{team_key}/events/{year}/keys` | getTeamEventsByYearKeys | — |
-| GET | `/team/{team_key}/events/{year}/simple` | getTeamEventsByYearSimple | — |
-| GET | `/team/{team_key}/events/{year}/statuses` | getTeamEventsStatusesByYear | — |
-| GET | `/team/{team_key}/matches/{year}` | getTeamMatchesByYear | — |
-| GET | `/team/{team_key}/matches/{year}/keys` | getTeamMatchesByYearKeys | — |
-| GET | `/team/{team_key}/matches/{year}/simple` | getTeamMatchesByYearSimple | — |
-| GET | `/team/{team_key}/media/tag/{media_tag}` | getTeamMediaByTag | — |
-| GET | `/team/{team_key}/media/tag/{media_tag}/{year}` | getTeamMediaByTagYear | — |
-| GET | `/team/{team_key}/media/{year}` | getTeamMediaByYear | — |
-| GET | `/team/{team_key}/robots` | getTeamRobots | — |
-| GET | `/team/{team_key}/simple` | getTeamSimple | — |
-| GET | `/team/{team_key}/social_media` | getTeamSocialMedia | — |
-| GET | `/team/{team_key}/years_participated` | getTeamYearsParticipated | — |
-| GET | `/teams/{page_num}` | getTeams | — |
-| GET | `/teams/{page_num}/keys` | getTeamsKeys | — |
-| GET | `/teams/{page_num}/simple` | getTeamsSimple | — |
-| GET | `/teams/{year}/{page_num}` | getTeamsByYear | — |
-| GET | `/teams/{year}/{page_num}/keys` | getTeamsByYearKeys | — |
-| GET | `/teams/{year}/{page_num}/simple` | getTeamsByYearSimple | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/district/{district_key}/events` | getDistrictEvents | `If-None-Match`, `district_key`* | Event[] | yes | — |
+| GET | `/district/{district_key}/events/keys` | getDistrictEventsKeys | `If-None-Match`, `district_key`* | string[] | yes | — |
+| GET | `/district/{district_key}/events/simple` | getDistrictEventsSimple | `If-None-Match`, `district_key`* | Event_Simple[] | yes | — |
+| GET | `/district/{district_key}/rankings` | getDistrictRankings | `If-None-Match`, `district_key`* | District_Ranking[] | yes | — |
+| GET | `/district/{district_key}/teams` | getDistrictTeams | `If-None-Match`, `district_key`* | Team[] | yes | — |
+| GET | `/district/{district_key}/teams/keys` | getDistrictTeamsKeys | `If-None-Match`, `district_key`* | string[] | yes | — |
+| GET | `/district/{district_key}/teams/simple` | getDistrictTeamsSimple | `If-None-Match`, `district_key`* | Team_Simple[] | yes | — |
+| GET | `/districts/{year}` | getDistrictsByYear | `If-None-Match`, `year`* | District_List[] | yes | — |
+| GET | `/event/{event_key}` | getEvent | `If-None-Match`, `event_key`* | Event | yes | — |
+| GET | `/event/{event_key}/alliances` | getEventAlliances | `If-None-Match`, `event_key`* | Elimination_Alliance[] | yes | — |
+| GET | `/event/{event_key}/awards` | getEventAwards | `If-None-Match`, `event_key`* | Award[] | yes | — |
+| GET | `/event/{event_key}/district_points` | getEventDistrictPoints | `If-None-Match`, `event_key`* | Event_District_Points | yes | — |
+| GET | `/event/{event_key}/insights` | getEventInsights | `If-None-Match`, `event_key`* | Event_Insights | yes | — |
+| GET | `/event/{event_key}/matches` | getEventMatches | `If-None-Match`, `event_key`* | Match[] | yes | — |
+| GET | `/event/{event_key}/matches/keys` | getEventMatchesKeys | `If-None-Match`, `event_key`* | string[] | yes | — |
+| GET | `/event/{event_key}/matches/simple` | getEventMatchesSimple | `If-None-Match`, `event_key`* | Match_Simple[] | yes | — |
+| GET | `/event/{event_key}/matches/timeseries` | getEventMatchTimeseries | `If-None-Match`, `event_key`* | string[] | yes | — |
+| GET | `/event/{event_key}/oprs` | getEventOPRs | `If-None-Match`, `event_key`* | Event_OPRs | yes | — |
+| GET | `/event/{event_key}/predictions` | getEventPredictions | `If-None-Match`, `event_key`* | Event_Predictions | yes | — |
+| GET | `/event/{event_key}/rankings` | getEventRankings | `If-None-Match`, `event_key`* | Event_Ranking | yes | — |
+| GET | `/event/{event_key}/simple` | getEventSimple | `If-None-Match`, `event_key`* | Event_Simple | yes | — |
+| GET | `/event/{event_key}/teams` | getEventTeams | `If-None-Match`, `event_key`* | Team[] | yes | — |
+| GET | `/event/{event_key}/teams/keys` | getEventTeamsKeys | `If-None-Match`, `event_key`* | string[] | yes | — |
+| GET | `/event/{event_key}/teams/simple` | getEventTeamsSimple | `If-None-Match`, `event_key`* | Team_Simple[] | yes | — |
+| GET | `/event/{event_key}/teams/statuses` | getEventTeamsStatuses | `If-None-Match`, `event_key`* | object | yes | — |
+| GET | `/events/{year}` | getEventsByYear | `If-None-Match`, `year`* | Event[] | yes | — |
+| GET | `/events/{year}/keys` | getEventsByYearKeys | `If-None-Match`, `year`* | string[] | yes | — |
+| GET | `/events/{year}/simple` | getEventsByYearSimple | `If-None-Match`, `year`* | Event_Simple[] | yes | — |
+| GET | `/match/{match_key}` | getMatch | `If-None-Match`, `match_key`* | Match | yes | — |
+| GET | `/match/{match_key}/simple` | getMatchSimple | `If-None-Match`, `match_key`* | Match_Simple | yes | — |
+| GET | `/match/{match_key}/timeseries` | getMatchTimeseries | `If-None-Match`, `match_key`* | object[] | yes | — |
+| GET | `/match/{match_key}/zebra_motionworks` | getMatchZebra | `If-None-Match`, `match_key`* | Zebra | yes | — |
+| GET | `/status` | getStatus | `If-None-Match` | API_Status | yes | — |
+| GET | `/team/{team_key}` | getTeam | `If-None-Match`, `team_key`* | Team | yes | — |
+| GET | `/team/{team_key}/awards` | getTeamAwards | `If-None-Match`, `team_key`* | Award[] | yes | — |
+| GET | `/team/{team_key}/awards/{year}` | getTeamAwardsByYear | `If-None-Match`, `team_key`*, `year`* | Award[] | yes | — |
+| GET | `/team/{team_key}/districts` | getTeamDistricts | `If-None-Match`, `team_key`* | District_List[] | yes | — |
+| GET | `/team/{team_key}/event/{event_key}/awards` | getTeamEventAwards | `If-None-Match`, `team_key`*, `event_key`* | Award[] | yes | — |
+| GET | `/team/{team_key}/event/{event_key}/matches` | getTeamEventMatches | `If-None-Match`, `team_key`*, `event_key`* | Match[] | yes | — |
+| GET | `/team/{team_key}/event/{event_key}/matches/keys` | getTeamEventMatchesKeys | `If-None-Match`, `team_key`*, `event_key`* | string[] | yes | — |
+| GET | `/team/{team_key}/event/{event_key}/matches/simple` | getTeamEventMatchesSimple | `If-None-Match`, `team_key`*, `event_key`* | Match[] | yes | — |
+| GET | `/team/{team_key}/event/{event_key}/status` | getTeamEventStatus | `If-None-Match`, `team_key`*, `event_key`* | Team_Event_Status | yes | — |
+| GET | `/team/{team_key}/events` | getTeamEvents | `If-None-Match`, `team_key`* | Event[] | yes | — |
+| GET | `/team/{team_key}/events/keys` | getTeamEventsKeys | `If-None-Match`, `team_key`* | string[] | yes | — |
+| GET | `/team/{team_key}/events/simple` | getTeamEventsSimple | `If-None-Match`, `team_key`* | Event_Simple[] | yes | — |
+| GET | `/team/{team_key}/events/{year}` | getTeamEventsByYear | `If-None-Match`, `team_key`*, `year`* | Event[] | yes | — |
+| GET | `/team/{team_key}/events/{year}/keys` | getTeamEventsByYearKeys | `If-None-Match`, `team_key`*, `year`* | string[] | yes | — |
+| GET | `/team/{team_key}/events/{year}/simple` | getTeamEventsByYearSimple | `If-None-Match`, `team_key`*, `year`* | Event_Simple[] | yes | — |
+| GET | `/team/{team_key}/events/{year}/statuses` | getTeamEventsStatusesByYear | `If-None-Match`, `team_key`*, `year`* | object | yes | — |
+| GET | `/team/{team_key}/matches/{year}` | getTeamMatchesByYear | `If-None-Match`, `team_key`*, `year`* | Match[] | yes | — |
+| GET | `/team/{team_key}/matches/{year}/keys` | getTeamMatchesByYearKeys | `If-None-Match`, `team_key`*, `year`* | string[] | yes | — |
+| GET | `/team/{team_key}/matches/{year}/simple` | getTeamMatchesByYearSimple | `If-None-Match`, `team_key`*, `year`* | Match_Simple[] | yes | — |
+| GET | `/team/{team_key}/media/tag/{media_tag}` | getTeamMediaByTag | `If-None-Match`, `team_key`*, `media_tag`* | Media[] | yes | — |
+| GET | `/team/{team_key}/media/tag/{media_tag}/{year}` | getTeamMediaByTagYear | `If-None-Match`, `team_key`*, `media_tag`*, `year`* | Media[] | yes | — |
+| GET | `/team/{team_key}/media/{year}` | getTeamMediaByYear | `If-None-Match`, `team_key`*, `year`* | Media[] | yes | — |
+| GET | `/team/{team_key}/robots` | getTeamRobots | `If-None-Match`, `team_key`* | Team_Robot[] | yes | — |
+| GET | `/team/{team_key}/simple` | getTeamSimple | `If-None-Match`, `team_key`* | Team_Simple | yes | — |
+| GET | `/team/{team_key}/social_media` | getTeamSocialMedia | `If-None-Match`, `team_key`* | Media[] | yes | — |
+| GET | `/team/{team_key}/years_participated` | getTeamYearsParticipated | `If-None-Match`, `team_key`* | integer[] | yes | — |
+| GET | `/teams/{page_num}` | getTeams | `If-None-Match`, `page_num`* | Team[] | yes | — |
+| GET | `/teams/{page_num}/keys` | getTeamsKeys | `If-None-Match`, `page_num`* | string[] | yes | — |
+| GET | `/teams/{page_num}/simple` | getTeamsSimple | `If-None-Match`, `page_num`* | Team_Simple[] | yes | — |
+| GET | `/teams/{year}/{page_num}` | getTeamsByYear | `If-None-Match`, `year`*, `page_num`* | Team[] | yes | — |
+| GET | `/teams/{year}/{page_num}/keys` | getTeamsByYearKeys | `If-None-Match`, `year`*, `page_num`* | string[] | yes | — |
+| GET | `/teams/{year}/{page_num}/simple` | getTeamsByYearSimple | `If-None-Match`, `year`*, `page_num`* | Team_Simple[] | yes | — |

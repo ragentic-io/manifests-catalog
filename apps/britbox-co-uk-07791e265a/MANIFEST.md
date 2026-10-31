@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `510e591bdb61d1b01567de68ef984b7df46cad6f6defddb3e136cf2a85700703` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,126 +34,128 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 153 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | getAccount | — |
-| PATCH | `/account` | updateAccount | — |
-| GET | `/account/billing/methods` | getPaymentMethods | — |
-| POST | `/account/billing/methods` | addPaymentMethod | — |
-| DELETE | `/account/billing/methods/{id}` | removePaymentMethod | — |
-| GET | `/account/billing/methods/{id}` | getPaymentMethod | — |
-| GET | `/account/billing/purchases` | getPurchases | — |
-| POST | `/account/billing/purchases` | makePurchase | — |
-| DELETE | `/account/billing/subscriptions/{id}` | cancelSubscription | — |
-| PUT | `/account/billing/subscriptions/{id}` | updateSubscription | — |
-| GET | `/account/devices` | getDevices | — |
-| POST | `/account/devices` | registerDevice | — |
-| POST | `/account/devices/authorization` | authorizeDevice | — |
-| DELETE | `/account/devices/{id}` | deregisterDevice | — |
-| GET | `/account/devices/{id}` | getDevice | — |
-| PUT | `/account/devices/{id}/name` | renameDevice | — |
-| GET | `/account/entitlements` | getEntitlements | — |
-| GET | `/account/items/{id}/videos` | getItemMediaFiles | — |
-| GET | `/account/items/{id}/videos-guarded` | getItemMediaFilesGuarded | — |
-| GET | `/account/nonce` | generateNonce | — |
-| PUT | `/account/password` | changePassword | — |
-| PUT | `/account/pin` | changePin | — |
-| GET | `/account/profile` | getProfile | — |
-| GET | `/account/profile/bookmarks` | getBookmarks | — |
-| GET | `/account/profile/bookmarks/list` | getBookmarkList | — |
-| DELETE | `/account/profile/bookmarks/{itemId}` | deleteItemBookmark | — |
-| GET | `/account/profile/bookmarks/{itemId}` | getItemBookmark | — |
-| PUT | `/account/profile/bookmarks/{itemId}` | bookmarkItem | — |
-| GET | `/account/profile/continue-watching/list` | getContinueWatchingList | — |
-| GET | `/account/profile/items/{itemId}/next` | getNextPlaybackItem | — |
-| GET | `/account/profile/ratings` | getRatings | — |
-| GET | `/account/profile/ratings/list` | getRatingsList | — |
-| GET | `/account/profile/ratings/{itemId}` | getItemRating | — |
-| PUT | `/account/profile/ratings/{itemId}` | rateItem | — |
-| DELETE | `/account/profile/watched` | deleteWatched | — |
-| GET | `/account/profile/watched` | getWatched | — |
-| GET | `/account/profile/watched/list` | getWatchedList | — |
-| GET | `/account/profile/watched/{itemId}` | getItemWatchedStatus | — |
-| PUT | `/account/profile/watched/{itemId}` | setItemWatchedStatus | — |
-| POST | `/account/profiles` | createProfile | — |
-| DELETE | `/account/profiles/{id}` | deleteProfileWithId | — |
-| GET | `/account/profiles/{id}` | getProfileWithId | — |
-| PATCH | `/account/profiles/{id}` | updateProfileWithId | — |
-| POST | `/account/request-email-verification` | requestEmailVerification | — |
-| DELETE | `/authorization` | signOut | — |
-| POST | `/authorization` | getAccountToken | — |
-| POST | `/authorization/device` | getAccountTokenByCode | — |
-| POST | `/authorization/device/code` | generateDeviceAuthorizationCode | — |
-| POST | `/authorization/profile` | getProfileToken | — |
-| POST | `/authorization/refresh` | refreshToken | — |
-| POST | `/authorization/sso` | singleSignOn | — |
-| GET | `/bt/plan/{token}` | getPlanByToken | — |
-| GET | `/bt/plans` | getPlans | — |
-| POST | `/bt/token/assign` | assignToken | — |
-| GET | `/bt/token/validate` | checkUserToken | — |
-| GET | `/check-subscription/{id}` | getSubscriptionData | — |
-| GET | `/config` | getAppConfig | — |
-| GET | `/ee-bt/eligibility` | checkEeBtEligibility | — |
-| POST | `/ee/msisdn` | assignMsisdn | — |
-| POST | `/ee/offers` | getEligibleOffers | — |
-| POST | `/ee/pin` | validatePinRequest | — |
-| PUT | `/ee/pin` | createPinRequest | — |
-| GET | `/ee/plans` | get /ee/plans | — |
-| GET | `/ee/plans/{id}` | getPlan | — |
-| GET | `/ee/token/create` | createToken | — |
-| GET | `/items/{id}` | getItem | — |
-| GET | `/items/{id}/children` | getItemChildrenList | — |
-| GET | `/items/{id}/related` | getItemRelatedList | — |
-| GET | `/items/{id}/videos` | getPublicItemMediaFiles | — |
-| GET | `/items/{itemId}/next` | getAnonNextPlaybackItem | — |
-| POST | `/itv/billinghistory/{platform}` | getBillingHistory | — |
-| POST | `/itv/cards/{platform}` | getCardDetails | — |
-| PUT | `/itv/cards/{platform}` | changeCardDetails | — |
-| POST | `/itv/changeemail` | changeEmail | — |
-| POST | `/itv/changemarketing` | changeMarketing | — |
-| POST | `/itv/deleteaccount` | deleteAccount | — |
-| GET | `/itv/entitlements/current` | getCurrentEntitlement | — |
-| GET | `/itv/entitlements/history` | getEntitlementsHistory | — |
-| GET | `/itv/featureFlag/{feature}` | getFeatureFlag | — |
-| POST | `/itv/googlepay/subscription` | googlePaySubscription | — |
-| GET | `/itv/had/entitlements` | checkPreviousEntitlements | — |
-| POST | `/itv/items/clips` | getItemsMediaClipFiles | — |
-| POST | `/itv/items/downloadable` | getItemDownloadables | — |
-| GET | `/itv/itemsummary/{externalId}` | get /itv/itemsummary/{externalId} | — |
-| GET | `/itv/page` | getItvPage | — |
-| POST | `/itv/pinauthorization` | getAccountTokenWithPin | — |
-| POST | `/itv/plan/{platform}` | upgradePlan | — |
-| GET | `/itv/plans/{platform}` | get /itv/plans/{platform} | — |
-| GET | `/itv/profile` | get /itv/profile | — |
-| PUT | `/itv/profile` | updateProfile | — |
-| GET | `/itv/profile/recommendation/list` | getRecommendedList | — |
-| POST | `/itv/profiletoken` | getItvProfileToken | — |
-| DELETE | `/itv/purchase/{platform}` | delete /itv/purchase/{platform} | — |
-| GET | `/itv/purchase/{platform}` | getCurrentSubscription | — |
-| POST | `/itv/purchase/{platform}` | confirmPurchase | — |
-| POST | `/itv/purchase/{platform}/strong` | confirmPurchaseStrong | — |
-| POST | `/itv/purchase/{platform}/withoffer` | confirmPurchaseWithOffer | — |
-| POST | `/itv/resubscribe/{platform}` | resubscribe | — |
-| GET | `/itv/roku/plans` | get /itv/roku/plans | — |
-| POST | `/itv/roku/transaction/{transactionid}` | executeTransaction | — |
-| GET | `/itv/save-offer` | getSaveOffer | — |
-| POST | `/itv/save-offer` | activateSaveOffer | — |
-| GET | `/itv/subscription/fullpricerenewal` | getFullPriceRenewal | — |
-| GET | `/itv/subscription/status/{platform}` | getSubscriptionStatus | — |
-| GET | `/itv/subscriptionstate` | getSubscriptionState | — |
-| GET | `/itv/upcominginvoice` | getUpcomingInvoice | — |
-| PUT | `/itv/updateIntent/strong/{platform}` | updatePaymentIntentStrong | — |
-| PUT | `/itv/updatePayment/strong/{platform}` | updatePaymentMethodStrong | — |
-| GET | `/itv/voucher/{planId}/{voucherId}` | getVoucherById | — |
-| POST | `/itv/voucher/{platform}` | checkVoucher | — |
-| GET | `/lists` | getLists | — |
-| GET | `/lists/{id}` | getList | — |
-| GET | `/page` | getPage | — |
-| GET | `/plans/{id}` | get /plans/{id} | — |
-| POST | `/register` | register | — |
-| POST | `/request-password-reset` | forgotPassword | — |
-| POST | `/reset-password` | resetPassword | — |
-| GET | `/samsung-preview` | getPublicPreview | — |
-| GET | `/schedules` | getSchedules | — |
-| GET | `/search` | search | — |
-| POST | `/verify-email` | verifyEmail | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | getAccount | `ff`, `lang` | Account | yes | — |
+| PATCH | `/account` | updateAccount | `ff`, `lang`, body*: AccountUpdateRequest | — |  | — |
+| GET | `/account/billing/methods` | getPaymentMethods | `ff`, `lang` | PaymentMethod[] | yes | — |
+| POST | `/account/billing/methods` | addPaymentMethod | `ff`, `lang`, body*: AddPaymentMethodRequest | PaymentMethod |  | — |
+| GET | `/account/billing/methods/{id}` | getPaymentMethod | `id`*, `ff`, `lang` | PaymentMethod | yes | — |
+| DELETE | `/account/billing/methods/{id}` | removePaymentMethod | `id`*, `ff`, `lang` | — |  | — |
+| GET | `/account/billing/purchases` | getPurchases | `ff`, `lang` | Purchase[] | yes | — |
+| POST | `/account/billing/purchases` | makePurchase | `ff`, `lang`, body*: PurchaseRequest | Entitlement |  | — |
+| PUT | `/account/billing/subscriptions/{id}` | updateSubscription | `id`*, `planId`, `ff`, `lang` | — |  | — |
+| DELETE | `/account/billing/subscriptions/{id}` | cancelSubscription | `id`*, `ff`, `lang` | — |  | — |
+| GET | `/account/devices` | getDevices | `ff`, `lang` | AccountDevices | yes | — |
+| POST | `/account/devices` | registerDevice | `ff`, `lang`, body*: DeviceRegistrationRequest | Device |  | — |
+| POST | `/account/devices/authorization` | authorizeDevice | `ff`, `lang`, body*: DeviceAuthorizationCode | — |  | — |
+| GET | `/account/devices/{id}` | getDevice | `id`*, `ff`, `lang` | Device | yes | — |
+| DELETE | `/account/devices/{id}` | deregisterDevice | `id`*, `ff`, `lang` | — |  | — |
+| PUT | `/account/devices/{id}/name` | renameDevice | `id`*, `name`*, `ff`, `lang` | — |  | — |
+| GET | `/account/entitlements` | getEntitlements | `ff`, `lang` | Entitlement[] | yes | — |
+| GET | `/account/items/{id}/videos` | getItemMediaFiles | `id`*, `delivery`*, `resolution`*, `formats`, `device`, `sub`, `segments`, `ff`, `lang` | MediaFile[] | yes | — |
+| GET | `/account/items/{id}/videos-guarded` | getItemMediaFilesGuarded | `id`*, `delivery`*, `resolution`*, `formats`, `device`, `sub`, `segments`, `ff`, `lang` | MediaFile[] | yes | — |
+| GET | `/account/nonce` | generateNonce | `ff`, `lang` | AccountNonce | yes | — |
+| PUT | `/account/password` | changePassword | `ff`, `lang`, body*: ChangePasswordRequest | — |  | — |
+| PUT | `/account/pin` | changePin | `ff`, `lang`, body*: ChangePinRequest | — |  | — |
+| GET | `/account/profile` | getProfile | `ff`, `lang` | ProfileDetail | yes | — |
+| GET | `/account/profile/bookmarks` | getBookmarks | `ff`, `lang` | object | yes | — |
+| GET | `/account/profile/bookmarks/list` | getBookmarkList | `page`, `page_size`, `order`, `item_type`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/account/profile/bookmarks/{itemId}` | getItemBookmark | `itemId`*, `ff`, `lang` | Bookmark | yes | — |
+| PUT | `/account/profile/bookmarks/{itemId}` | bookmarkItem | `itemId`*, `ff`, `lang` | Bookmark |  | — |
+| DELETE | `/account/profile/bookmarks/{itemId}` | deleteItemBookmark | `itemId`*, `ff`, `lang` | — |  | — |
+| GET | `/account/profile/continue-watching/list` | getContinueWatchingList | `show_item_type`, `include`, `page`, `page_size`, `max_rating`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/account/profile/items/{itemId}/next` | getNextPlaybackItem | `itemId`*, `max_rating`, `expand`, `device`, `sub`, `segments`, `ff`, `lang` | NextPlaybackItem | yes | — |
+| GET | `/account/profile/ratings` | getRatings | `ff`, `lang` | object | yes | — |
+| GET | `/account/profile/ratings/list` | getRatingsList | `page`, `page_size`, `order`, `order_by`, `item_type`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/account/profile/ratings/{itemId}` | getItemRating | `itemId`*, `ff`, `lang` | UserRating | yes | — |
+| PUT | `/account/profile/ratings/{itemId}` | rateItem | `itemId`*, `rating`*, `ff`, `lang` | UserRating |  | — |
+| GET | `/account/profile/watched` | getWatched | `ff`, `lang` | object | yes | — |
+| DELETE | `/account/profile/watched` | deleteWatched | `item_ids`, `ff`, `lang` | — |  | — |
+| GET | `/account/profile/watched/list` | getWatchedList | `page`, `page_size`, `completed`, `order`, `order_by`, `item_type`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/account/profile/watched/{itemId}` | getItemWatchedStatus | `itemId`*, `ff`, `lang` | Watched | yes | — |
+| PUT | `/account/profile/watched/{itemId}` | setItemWatchedStatus | `itemId`*, `position`*, `ff`, `lang` | Watched |  | — |
+| POST | `/account/profiles` | createProfile | `ff`, `lang`, body*: ProfileCreationRequest | ProfileDetail |  | — |
+| GET | `/account/profiles/{id}` | getProfileWithId | `id`*, `ff`, `lang` | ProfileSummary | yes | — |
+| DELETE | `/account/profiles/{id}` | deleteProfileWithId | `id`*, `ff`, `lang` | — |  | — |
+| PATCH | `/account/profiles/{id}` | updateProfileWithId | `id`*, `ff`, `lang`, body*: ProfileUpdateRequest | — |  | — |
+| POST | `/account/request-email-verification` | requestEmailVerification | `ff`, `lang` | — |  | — |
+| POST | `/authorization` | getAccountToken | `ff`, `lang`, body*: AccountTokenRequest | AccessToken[] |  | — |
+| DELETE | `/authorization` | signOut | `ff`, `lang` | — |  | — |
+| POST | `/authorization/device` | getAccountTokenByCode | `ff`, `lang`, body*: AccountTokenByCodeRequest | AccessToken[] |  | — |
+| POST | `/authorization/device/code` | generateDeviceAuthorizationCode | `ff`, `lang`, body*: DeviceRegistrationRequest | DeviceAuthorizationCode |  | — |
+| POST | `/authorization/profile` | getProfileToken | `ff`, `lang`, body*: ProfileTokenRequest | AccessToken[] |  | — |
+| POST | `/authorization/refresh` | refreshToken | `ff`, `lang`, body*: TokenRefreshRequest | AccessToken |  | — |
+| POST | `/authorization/sso` | singleSignOn | `ff`, `lang`, body*: SingleSignOnRequest | AccessToken[] |  | — |
+| GET | `/bt/plan/{token}` | getPlanByToken | `token`*, `lang` | BtPlanListItem | yes | — |
+| GET | `/bt/plans` | getPlans | `lang` | BtPlans | yes | — |
+| POST | `/bt/token/assign` | assignToken | `lang`, body*: ItvAssignBtTokenRequest | — |  | — |
+| GET | `/bt/token/validate` | checkUserToken | `id`*, `ff`, `lang` | — | yes | — |
+| GET | `/check-subscription/{id}` | getSubscriptionData | `id`* | SubscriptionDetails | yes | — |
+| GET | `/config` | getAppConfig | `include`, `system`, `device`, `sub`, `segments`, `ff`, `lang` | AppConfig | yes | — |
+| GET | `/ee-bt/eligibility` | checkEeBtEligibility | `lang` | EeBtEligibility | yes | — |
+| POST | `/ee/msisdn` | assignMsisdn | `lang`, body*: ItvAssignMsisdnRequest | — |  | — |
+| POST | `/ee/offers` | getEligibleOffers | `ff`, `lang`, body*: EeOffersRequest | EeOffersResponse |  | — |
+| PUT | `/ee/pin` | createPinRequest | `ff`, `lang`, body*: EeCreatePinRequest | EeCreatePinResponse |  | — |
+| POST | `/ee/pin` | validatePinRequest | `ff`, `lang`, body*: EeValidatePinRequest | EeValidatePinResponse |  | — |
+| GET | `/ee/plans` | get /ee/plans | `lang` | EePlans | yes | — |
+| GET | `/ee/plans/{id}` | getPlan | `id`*, `lang` | EePlanListItem | yes | — |
+| GET | `/ee/token/create` | createToken | — | EeCreateTokenResponse | yes | — |
+| GET | `/items/{id}` | getItem | `id`*, `max_rating`, `expand`, `select_season`, `use_custom_id`, `device`, `sub`, `segments`, `ff`, `lang` | ItemDetail | yes | — |
+| GET | `/items/{id}/children` | getItemChildrenList | `id`*, `page`, `page_size`, `max_rating`, `order`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/items/{id}/related` | getItemRelatedList | `id`*, `page`, `page_size`, `max_rating`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/items/{id}/videos` | getPublicItemMediaFiles | `id`*, `delivery`*, `resolution`*, `formats`, `device`, `sub`, `segments`, `ff`, `lang` | MediaFile[] | yes | — |
+| GET | `/items/{itemId}/next` | getAnonNextPlaybackItem | `itemId`*, `max_rating`, `expand`, `device`, `segments`, `ff`, `lang` | NextPlaybackItem | yes | — |
+| POST | `/itv/billinghistory/{platform}` | getBillingHistory | `platform`*, `lang`, body*: ItvBillingHistoryRequest | ItvBillingHistory |  | — |
+| PUT | `/itv/cards/{platform}` | changeCardDetails | `platform`*, `lang`, body*: ItvChangeCardDetailsRequest | — |  | — |
+| POST | `/itv/cards/{platform}` | getCardDetails | `platform`*, `lang`, body*: ItvGetCardDetailsRequest | ItvCardDetails |  | — |
+| POST | `/itv/changeemail` | changeEmail | `ff`, `lang`, body*: ItvChangeEmailRequest | — |  | — |
+| POST | `/itv/changemarketing` | changeMarketing | `ff`, `lang`, body*: ItvChangeMarketingRequest | — |  | — |
+| POST | `/itv/deleteaccount` | deleteAccount | `ff`, `lang`, body*: ItvDeleteAccountRequest | — |  | — |
+| GET | `/itv/entitlements/current` | getCurrentEntitlement | `lang` | ItvEntitlementCurrent | yes | — |
+| GET | `/itv/entitlements/history` | getEntitlementsHistory | `lang` | ItvEntitlementsHistory | yes | — |
+| GET | `/itv/featureFlag/{feature}` | getFeatureFlag | `feature`*, `lang` | ItvFeatureFlag | yes | — |
+| POST | `/itv/googlepay/subscription` | googlePaySubscription | `lang`, body*: ItvGooglePaySubscriptionRequest | — |  | — |
+| GET | `/itv/had/entitlements` | checkPreviousEntitlements | `lang` | ItvHadEntitlement | yes | — |
+| POST | `/itv/items/clips` | getItemsMediaClipFiles | `ff`, `lang`, body*: ItemDownloadableRequest | ItemClipFilesList |  | — |
+| POST | `/itv/items/downloadable` | getItemDownloadables | `ff`, `lang`, body*: ItemDownloadableRequest | ItemDownloadableList |  | — |
+| GET | `/itv/itemsummary/{externalId}` | get /itv/itemsummary/{externalId} | `externalId`* | — | yes | — |
+| GET | `/itv/page` | getItvPage | `path`*, `list_page_size`, `list_page_size_large`, `max_list_prefetch`, `item_detail_expand`, `item_detail_select_season`, `text_entry_format`, `max_rating`, `device`, `sub`, `segments`, `ff`, `lang` | Page | yes | — |
+| POST | `/itv/pinauthorization` | getAccountTokenWithPin | `ff`, `lang`, body*: ItvPinAuthRequest | AccessToken[] |  | — |
+| POST | `/itv/plan/{platform}` | upgradePlan | `platform`*, `lang`, body*: ItvUpgradePlanRequest | — |  | — |
+| GET | `/itv/plans/{platform}` | get /itv/plans/{platform} | `platform`*, `lang` | ItvPlans | yes | — |
+| GET | `/itv/profile` | get /itv/profile | `lang` | object | yes | — |
+| PUT | `/itv/profile` | updateProfile | `ff`, `lang`, body*: ItvUpdateProfileRequest | — |  | — |
+| GET | `/itv/profile/recommendation/list` | getRecommendedList | `item_types`, `page`, `page_size`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| POST | `/itv/profiletoken` | getItvProfileToken | `lang`, body*: ItvProfileTokenRequest | ItvProfileToken |  | — |
+| GET | `/itv/purchase/{platform}` | getCurrentSubscription | `platform`*, `lang` | ItvCurrentSubscription | yes | — |
+| POST | `/itv/purchase/{platform}` | confirmPurchase | `platform`*, `lang`, body*: ItvPurchaseRequest | ItvPurchase |  | — |
+| DELETE | `/itv/purchase/{platform}` | delete /itv/purchase/{platform} | `platform`*, `lang`, body*: ItvCancelSubscriptionRequest | — |  | — |
+| POST | `/itv/purchase/{platform}/strong` | confirmPurchaseStrong | `platform`*, `lang`, body*: ItvPurchaseStrongRequest | ItvPurchaseStrongResponse |  | — |
+| POST | `/itv/purchase/{platform}/withoffer` | confirmPurchaseWithOffer | `platform`*, `lang`, body*: ItvPurchaseWithOfferRequest | ItvPurchaseWithOfferResponse |  | — |
+| POST | `/itv/resubscribe/{platform}` | resubscribe | `planId`*, `platform`*, `lang` | object |  | — |
+| GET | `/itv/roku/plans` | get /itv/roku/plans | `lang` | RokuPlans | yes | — |
+| POST | `/itv/roku/transaction/{transactionid}` | executeTransaction | `transactionid`*, `lang`, body*: ItvRokuTransactionRequest | — |  | — |
+| GET | `/itv/save-offer` | getSaveOffer | `lang` | ItvGetDiscountResponse | yes | — |
+| POST | `/itv/save-offer` | activateSaveOffer | `lang`, body*: string | — |  | — |
+| GET | `/itv/subscription/fullpricerenewal` | getFullPriceRenewal | `lang` | ItvSubscriptionFullPriceRenewal | yes | — |
+| GET | `/itv/subscription/status/{platform}` | getSubscriptionStatus | `platform`*, `lang` | ItvSubscriptionStatusResponse | yes | — |
+| GET | `/itv/subscriptionstate` | getSubscriptionState | `lang` | ItvSubscriptionState | yes | — |
+| GET | `/itv/upcominginvoice` | getUpcomingInvoice | `lang` | ItvGetDiscountResponse | yes | — |
+| PUT | `/itv/updateIntent/strong/{platform}` | updatePaymentIntentStrong | `platform`*, `lang`, body*: ItvUpdateIntentStrongRequest | ItvUpdateIntentStrongResponse |  | — |
+| PUT | `/itv/updatePayment/strong/{platform}` | updatePaymentMethodStrong | `platform`*, `lang`, body*: ItvUpdatePaymentStrongRequest | — |  | — |
+| GET | `/itv/voucher/{planId}/{voucherId}` | getVoucherById | `voucherId`*, `planId`*, `lang` | ItvVoucher | yes | — |
+| POST | `/itv/voucher/{platform}` | checkVoucher | `platform`*, `lang`, body*: ItvVoucherRequest | ItvVoucher |  | — |
+| GET | `/lists` | getLists | `ids`*, `page_size`, `max_rating`, `order`, `order_by`, `item_type`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList[] | yes | — |
+| GET | `/lists/{id}` | getList | `id`*, `page`, `page_size`, `max_rating`, `order`, `order_by`, `param`, `item_type`, `device`, `sub`, `segments`, `ff`, `lang` | ItemList | yes | — |
+| GET | `/page` | getPage | `path`*, `list_page_size`, `list_page_size_large`, `max_list_prefetch`, `item_detail_expand`, `item_detail_select_season`, `text_entry_format`, `max_rating`, `device`, `sub`, `segments`, `ff`, `lang` | Page | yes | — |
+| GET | `/plans/{id}` | get /plans/{id} | `id`*, `device`, `sub`, `segments`, `ff`, `lang` | Plan | yes | — |
+| POST | `/register` | register | `ff`, `lang`, body*: RegistrationRequest | AccessToken[] |  | — |
+| POST | `/request-password-reset` | forgotPassword | `ff`, `lang`, body*: PasswordResetEmailRequest | — |  | — |
+| POST | `/reset-password` | resetPassword | `ff`, `lang`, body*: PasswordResetRequest | — |  | — |
+| GET | `/samsung-preview` | getPublicPreview | — | SamsungPreview | yes | — |
+| GET | `/schedules` | getSchedules | `channels`*, `date`*, `hour`*, `duration`*, `intersect`, `device`, `sub`, `segments`, `ff`, `lang` | ItemScheduleList[] | yes | — |
+| GET | `/search` | search | `term`*, `include`, `group`, `max_results`, `max_rating`, `device`, `sub`, `segments`, `ff`, `lang` | SearchResults | yes | — |
+| POST | `/verify-email` | verifyEmail | `ff`, `lang` | — |  | — |

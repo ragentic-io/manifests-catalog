@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_sakari.io_wp-content_uploads_cr
 
 | | |
 | --- | --- |
-| Signed bundle | `bfa564e9ab6c51743a3e25e1d0c458eb0e9cd36b24369f44ebb636b3e635efc4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_sakari.io_wp-content_uploads_cr
 
 41 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/oauth2/token` | auth.token | Get token for accessing APIs |
-| GET | `/v1/accounts/{accountId}/campaigns` | campaigns.fetchAll | Fetch campaigns |
-| POST | `/v1/accounts/{accountId}/campaigns` | campaigns.create | Create campaign |
-| DELETE | `/v1/accounts/{accountId}/campaigns/{campaignId}` | campaigns.remove | Deletes a campaign |
-| GET | `/v1/accounts/{accountId}/campaigns/{campaignId}` | campaigns.fetch | Fetch campaign by ID |
-| PUT | `/v1/accounts/{accountId}/campaigns/{campaignId}` | campaigns.update | Updates a campaign |
-| GET | `/v1/accounts/{accountId}/contacts` | contacts.fetchAll | Fetch contacts |
-| POST | `/v1/accounts/{accountId}/contacts` | contacts.create | Create contact |
-| DELETE | `/v1/accounts/{accountId}/contacts/{contactId}` | contacts.remove | Deletes a contact |
-| GET | `/v1/accounts/{accountId}/contacts/{contactId}` | contacts.fetch | Fetch contact by ID |
-| PUT | `/v1/accounts/{accountId}/contacts/{contactId}` | contacts.update | Updates a contact |
-| GET | `/v1/accounts/{accountId}/conversations` | conversations.fetchAll | Fetch conversations |
-| GET | `/v1/accounts/{accountId}/conversations/{conversationId}` | conversations.fetch | Fetch conversation by ID |
-| PUT | `/v1/accounts/{accountId}/conversations/{conversationId}/close` | conversations.close | Closes a conversation |
-| GET | `/v1/accounts/{accountId}/messages` | messages.fetchAll | Fetch messages |
-| POST | `/v1/accounts/{accountId}/messages` | messages.send | Send Messages |
-| GET | `/v1/accounts/{accountId}/messages/{messageId}` | messages.fetch | Fetch message by id |
-| GET | `/v1/accounts/{accountId}/templates` | templates.fetchAll | Fetch templates |
-| POST | `/v1/accounts/{accountId}/templates` | templates.create | Create template |
-| DELETE | `/v1/accounts/{accountId}/templates/{templateId}` | templates.remove | Deletes a template |
-| GET | `/v1/accounts/{accountId}/templates/{templateId}` | templates.fetch | Fetch template by ID |
-| PUT | `/v1/accounts/{accountId}/templates/{templateId}` | templates.update | Updates a template |
-| GET | `/v1/accounts/{accountId}/webhooks` | webhooks.fetchAll | Fetch active webhooks |
-| POST | `/v1/accounts/{accountId}/webhooks` | webhooks.subscribe | Subscribe to message events |
-| DELETE | `/v1/accounts/{accountId}/webhooks/{url}` | webhooks.unsubscribe | Unsubscribe to message events |
-| POST | `/v1/tools/sharefile` | tools.shareFile | Share file - use to host a file and generate a short link to be used directly in a message or as a link to media for a MMS |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/oauth2/token` | auth.token | body: TokenRequest | TokenResponse |  | Get token for accessing APIs |
+| GET | `/v1/accounts/{accountId}/campaigns` | campaigns.fetchAll | `accountId`*, `offset`, `limit`, `name` | CampaignsResponse | yes | Fetch campaigns |
+| POST | `/v1/accounts/{accountId}/campaigns` | campaigns.create | `accountId`*, body: CampaignRequest | CampaignResponse |  | Create campaign |
+| GET | `/v1/accounts/{accountId}/campaigns/{campaignId}` | campaigns.fetch | `accountId`*, `campaignId`* | CampaignResponse | yes | Fetch campaign by ID |
+| PUT | `/v1/accounts/{accountId}/campaigns/{campaignId}` | campaigns.update | `accountId`*, `campaignId`* | CampaignResponse |  | Updates a campaign |
+| DELETE | `/v1/accounts/{accountId}/campaigns/{campaignId}` | campaigns.remove | `accountId`*, `campaignId`* | object |  | Deletes a campaign |
+| GET | `/v1/accounts/{accountId}/contacts` | contacts.fetchAll | `accountId`*, `offset`, `limit`, `firstName`, `lastName`, `mobile`, `email`, `tags` | ContactsResponse | yes | Fetch contacts |
+| POST | `/v1/accounts/{accountId}/contacts` | contacts.create | `accountId`*, `mergeStrategy`, body: ContactRequest | ContactsResponse\|ContactUploadResponse |  | Create contact |
+| GET | `/v1/accounts/{accountId}/contacts/{contactId}` | contacts.fetch | `accountId`*, `contactId`* | ContactResponse | yes | Fetch contact by ID |
+| PUT | `/v1/accounts/{accountId}/contacts/{contactId}` | contacts.update | `accountId`*, `contactId`* | ContactResponse |  | Updates a contact |
+| DELETE | `/v1/accounts/{accountId}/contacts/{contactId}` | contacts.remove | `accountId`*, `contactId`* | object |  | Deletes a contact |
+| GET | `/v1/accounts/{accountId}/conversations` | conversations.fetchAll | `accountId`*, `offset`, `limit` | ConversationsResponse | yes | Fetch conversations |
+| GET | `/v1/accounts/{accountId}/conversations/{conversationId}` | conversations.fetch | `accountId`*, `conversationId`* | ConversationResponse | yes | Fetch conversation by ID |
+| PUT | `/v1/accounts/{accountId}/conversations/{conversationId}/close` | conversations.close | `accountId`*, `conversationId`* | ConversationResponse |  | Closes a conversation |
+| GET | `/v1/accounts/{accountId}/messages` | messages.fetchAll | `accountId`*, `offset`, `limit`, `contactId`, `conversationId` | MessagesResponse | yes | Fetch messages |
+| POST | `/v1/accounts/{accountId}/messages` | messages.send | `accountId`*, body: SendMessagesRequest | SendMessagesResponse |  | Send Messages |
+| GET | `/v1/accounts/{accountId}/messages/{messageId}` | messages.fetch | `accountId`*, `messageId`* | MessageResponse | yes | Fetch message by id |
+| GET | `/v1/accounts/{accountId}/templates` | templates.fetchAll | `accountId`*, `offset`, `limit`, `name` | TemplatesResponse | yes | Fetch templates |
+| POST | `/v1/accounts/{accountId}/templates` | templates.create | `accountId`*, body: TemplateRequest | TemplatesResponse |  | Create template |
+| GET | `/v1/accounts/{accountId}/templates/{templateId}` | templates.fetch | `accountId`*, `templateId`* | TemplateResponse | yes | Fetch template by ID |
+| PUT | `/v1/accounts/{accountId}/templates/{templateId}` | templates.update | `accountId`*, `templateId`* | TemplateResponse |  | Updates a template |
+| DELETE | `/v1/accounts/{accountId}/templates/{templateId}` | templates.remove | `accountId`*, `templateId`* | object |  | Deletes a template |
+| GET | `/v1/accounts/{accountId}/webhooks` | webhooks.fetchAll | `accountId`* | WebhooksResponse | yes | Fetch active webhooks |
+| POST | `/v1/accounts/{accountId}/webhooks` | webhooks.subscribe | `accountId`*, body*: object | WebhookResponse |  | Subscribe to message events |
+| DELETE | `/v1/accounts/{accountId}/webhooks/{url}` | webhooks.unsubscribe | `accountId`*, `url`* | — |  | Unsubscribe to message events |
+| POST | `/v1/tools/sharefile` | tools.shareFile | body*: string:binary | ShareFileResponse |  | Share file - use to host a file and generate a short link to be used directly in a message or as a link to media for a MMS |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NASAEarthData_profi
 
 | | |
 | --- | --- |
-| Signed bundle | `5fd4a6cbb1dfa203524f3146ccd50da9014276b95aa0851773035a43d3d9a0b3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,9 +32,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NASAEarthData_profi
 
 ## Operations (4)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/data` | get /api/data | Download Daymet Data |
-| GET | `/preview` | get /preview | Preview Daymet Data in a web browser |
-| GET | `/send/saveData` | get /send/saveData | Download Daymet Data |
-| GET | `/visualize` | get /visualize | Visualize Daymet Data in a web browser |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/data` | get /api/data | `lat`*, `lon`*, `vars`, `years`, `start`, `end`, `format`* | — | yes | Download Daymet Data |
+| GET | `/preview` | get /preview | `lat`*, `lon`*, `vars`, `years`, `start`, `end`, `format`* | — | yes | Preview Daymet Data in a web browser |
+| GET | `/send/saveData` | get /send/saveData | `lat`*, `lon`*, `vars`, `years`, `start`, `end`, `format`* | — | yes | Download Daymet Data |
+| GET | `/visualize` | get /visualize | `lat`*, `lon`*, `vars`, `years`, `start`, `end`, `format`* | — | yes | Visualize Daymet Data in a web browser |

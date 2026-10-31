@@ -17,12 +17,54 @@
       },
       {
         "deprecated": false,
+        "description": "Check if an IP address is proxy",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "get /",
+        "parameters": [
+          {
+            "description": "Package name from PX1 to PX11.",
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "IP address (IPv4) for lookup purpose.",
+            "in": "query",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If not present, json format will be returned as the search result.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       }

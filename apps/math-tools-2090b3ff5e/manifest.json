@@ -142,393 +142,1033 @@
       },
       {
         "deprecated": false,
+        "description": "Convert a given number from one base to another base",
         "id": "operation:get:/numbers/base",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/base",
+        "parameters": [
+          {
+            "description": "Number to convert to the target base",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Base of the supplied number (Optional base 10 assumed by default)",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Target base to convert to",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/base",
         "pointer": "#/paths/~1numbers~1base/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Base Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a given number to binary",
         "id": "operation:get:/numbers/base/binary",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/base/binary",
+        "parameters": [
+          {
+            "description": "Number to convert to binary",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Base of the supplied number (Optional base 10 assumed by default)",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/base/binary",
         "pointer": "#/paths/~1numbers~1base~1binary/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Base Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a given number to hexadecimal",
         "id": "operation:get:/numbers/base/hex",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/base/hex",
+        "parameters": [
+          {
+            "description": "Number to convert to hex",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Base of the supplied number (Optional base 10 assumed by default)",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/base/hex",
         "pointer": "#/paths/~1numbers~1base~1hex/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Base Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a given number to octal",
         "id": "operation:get:/numbers/base/octal",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/base/octal",
+        "parameters": [
+          {
+            "description": "Number to convert to octal",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Base of the supplied number (Optional base 10 assumed by default)",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/base/octal",
         "pointer": "#/paths/~1numbers~1base~1octal/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Base Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the cardinal of the given number",
         "id": "operation:get:/numbers/cardinal",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/cardinal",
+        "parameters": [
+          {
+            "description": "Number value",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Language to use",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/numbers/cardinal",
         "pointer": "#/paths/~1numbers~1cardinal/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Spell"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Spells out the number as a currency",
         "id": "operation:get:/numbers/currency",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/currency",
+        "parameters": [
+          {
+            "description": "Number to spell",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Language to use",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/numbers/currency",
         "pointer": "#/paths/~1numbers~1currency/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Spell"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a random fact about a number",
         "id": "operation:get:/numbers/fact",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/fact",
+        "parameters": [
+          {
+            "description": "Number value",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/fact",
         "pointer": "#/paths/~1numbers~1fact/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Facts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a cube number or not.",
         "id": "operation:get:/numbers/is-cube",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/is-cube",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/is-cube",
         "pointer": "#/paths/~1numbers~1is-cube/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a palindrome number or not.",
         "id": "operation:get:/numbers/is-palindrome",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/is-palindrome",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/is-palindrome",
         "pointer": "#/paths/~1numbers~1is-palindrome/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a square number or not.",
         "id": "operation:get:/numbers/is-square",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/is-square",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/is-square",
         "pointer": "#/paths/~1numbers~1is-square/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a triangle number or not.",
         "id": "operation:get:/numbers/is-triangle",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/is-triangle",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/is-triangle",
         "pointer": "#/paths/~1numbers~1is-triangle/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the number of the day for current day",
         "id": "operation:get:/numbers/nod",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/nod",
         "path": "/numbers/nod",
         "pointer": "#/paths/~1numbers~1nod/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number of the day"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert base 10 representation of a given number to chinese numeral.",
         "id": "operation:get:/numbers/numeral/chinese",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/numeral/chinese",
+        "parameters": [
+          {
+            "description": "Number to convert",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/numeral/chinese",
         "pointer": "#/paths/~1numbers~1numeral~1chinese/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Systems Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert base 10 representation of a given number to egyptian numeral.",
         "id": "operation:get:/numbers/numeral/egyptian",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/numeral/egyptian",
+        "parameters": [
+          {
+            "description": "Number to convert",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/numeral/egyptian",
         "pointer": "#/paths/~1numbers~1numeral~1egyptian/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Systems Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert base 10 representation of a given number to roman numeral.",
         "id": "operation:get:/numbers/numeral/roman",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/numeral/roman",
+        "parameters": [
+          {
+            "description": "Number to convert",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/numeral/roman",
         "pointer": "#/paths/~1numbers~1numeral~1roman/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Systems Conversion"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the ordinal of the given number",
         "id": "operation:get:/numbers/ordinal",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/ordinal",
+        "parameters": [
+          {
+            "description": "Number value",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/ordinal",
         "pointer": "#/paths/~1numbers~1ordinal/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Spell"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get digits of pi (Ï€)",
         "id": "operation:get:/numbers/pi",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/pi",
+        "parameters": [
+          {
+            "description": "Optional start position",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Optional start position",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/pi",
         "pointer": "#/paths/~1numbers~1pi/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "PI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the prime factors of a given number.",
         "id": "operation:get:/numbers/prime/factors",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/factors",
+        "parameters": [
+          {
+            "description": "Number to get the factors",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/factors",
         "pointer": "#/paths/~1numbers~1prime~1factors/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a known fermat prime number or not.",
         "id": "operation:get:/numbers/prime/is-fermat-prime",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-fermat-prime",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-fermat-prime",
         "pointer": "#/paths/~1numbers~1prime~1is-fermat-prime/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a known fibonacci prime number or not.",
         "id": "operation:get:/numbers/prime/is-fibonacci-prime",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-fibonacci-prime",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-fibonacci-prime",
         "pointer": "#/paths/~1numbers~1prime~1is-fibonacci-prime/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a known mersenne prime number or not.",
         "id": "operation:get:/numbers/prime/is-mersenne-prime",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-mersenne-prime",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-mersenne-prime",
         "pointer": "#/paths/~1numbers~1prime~1is-mersenne-prime/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a known partition prime number or not.",
         "id": "operation:get:/numbers/prime/is-partition-prime",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-partition-prime",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-partition-prime",
         "pointer": "#/paths/~1numbers~1prime~1is-partition-prime/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a known pell prime number or not.",
         "id": "operation:get:/numbers/prime/is-pell-prime",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-pell-prime",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-pell-prime",
         "pointer": "#/paths/~1numbers~1prime~1is-pell-prime/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a perfect number or not.",
         "id": "operation:get:/numbers/prime/is-perfect",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-perfect",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-perfect",
         "pointer": "#/paths/~1numbers~1prime~1is-perfect/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks whether a given number is a known prime number or not.",
         "id": "operation:get:/numbers/prime/is-prime",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/prime/is-prime",
+        "parameters": [
+          {
+            "description": "Number to check",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/prime/is-prime",
         "pointer": "#/paths/~1numbers~1prime~1is-prime/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Prime",
+          "Number Checks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate random number(s)",
         "id": "operation:get:/numbers/random",
         "kind": "operation",
         "method": "get",
         "name": "get /numbers/random",
+        "parameters": [
+          {
+            "description": "Minimum Number value in the range",
+            "in": "query",
+            "name": "min",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Maximum Number value",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Total number of random numbers to generate.",
+            "in": "query",
+            "name": "total",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/numbers/random",
         "pointer": "#/paths/~1numbers~1random/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Mathtools-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Number Generation"
+        ]
       }
     ]
   },

@@ -12,7 +12,7 @@ Independent integration for Color Name API. Not affiliated with or endorsed by C
 
 | | |
 | --- | --- |
-| Signed bundle | `813b0e7aec0cfddb702f2878531895ab79628bc2d1e47bf0e9902c8d75b01966` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.color.pizza/` |
 | Credential | none |
 | Connection test | GET `https://api.color.pizza/` |
@@ -39,12 +39,14 @@ Independent integration for Color Name API. Not affiliated with or endorsed by C
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getApiMetadata | Get API metadata and discovery information |
-| GET | `/health` | healthCheck | Health check endpoint |
-| GET | `/v1/` | getColorNames | Get color names for specific hex values |
-| GET | `/v1/docs/` | getDocumentation | Get API Documentation |
-| GET | `/v1/lists/` | getColorLists | Get available color name lists |
-| GET | `/v1/names/` | searchColorsByName | Search for colors by name |
-| GET | `/v1/swatch/` | getColorSwatch | Generate a color swatch for any color |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getApiMetadata | — | object | yes | Get API metadata and discovery information |
+| GET | `/health` | healthCheck | — | object | yes | Health check endpoint |
+| GET | `/v1/` | getColorNames | `list`, `values`, `noduplicates`, `goodnamesonly`, `description`, `X-Referrer` | object | yes | Get color names for specific hex values |
+| GET | `/v1/docs/` | getDocumentation | — | string:html | yes | Get API Documentation |
+| GET | `/v1/lists/` | getColorLists | `list` | object\|listDescription | yes | Get available color name lists |
+| GET | `/v1/names/` | searchColorsByName | `name`, `list` | object | yes | Search for colors by name |
+| GET | `/v1/swatch/` | getColorSwatch | `color`*, `name` | string:svg | yes | Generate a color swatch for any color |

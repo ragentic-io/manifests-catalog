@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_github.com_Mermade_bbcparse_blo
 
 | | |
 | --- | --- |
-| Signed bundle | `52af54c9b39151dd131562d2b3a629c8d25626a664d0ecd5df6068da45e6e53f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,30 +34,32 @@ logo: "https://api.apis.guru/v2/cache/logo/https_github.com_Mermade_bbcparse_blo
 
 219 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getAPI | Get API definition |
-| GET | `/availabilities` | listAvailability | Discover details of on-demand availability for programmes and their versions |
-| GET | `/broadcasts` | listBroadcasts | Build schedules and find metadata for TV and radio broadcasts |
-| GET | `/groups` | listGroups | Find metadata for curated groups: seasons, collections, galleries or franchises |
-| GET | `/images` | listImages | Find metadata for images |
-| GET | `/items` | listItems | Look inside programmes to find segments: chapters, tracks and more |
-| GET | `/master_brands` | listMasterbrands | List all Master Brands |
-| GET | `/people` | listPeople | Find the people behind and in programmes: cast, crew, guests and more |
-| GET | `/pips` | listPips | Look inside pips entities |
-| GET | `/programme_details` | listProgrammeDetails | Exposes programme information for a single pid |
-| GET | `/programmes` | listProgrammes | Start here for programmes metadata: Brands, Series, Episodes and Clips |
-| GET | `/promotions` | listPromotions | Discover metadata for content promotions |
-| GET | `/schedules` | listSchedules | Build schedules and find metadata for TV and radio broadcasts and webcasts |
-| GET | `/schema` | getXSD | Get Schema definition |
-| GET | `/services` | listServices | Information about the linear services used for broadcast transmissions |
-| GET | `/v1/brands/{pid}` | Get_Raw_brand | Get raw brand |
-| GET | `/v1/brands/{pid}/franchises/` | Get_Raw_brand franchises | Get raw brand franchise |
-| GET | `/v1/episodes/{pid}` | Get_Raw_episode | Get raw episode |
-| GET | `/v1/episodes/{pid}/ancestors/` | Get_Raw_ancestors | Get raw ancestors |
-| GET | `/v1/episodes/{pid}/formats/` | Get_Raw_formats | Get raw formats |
-| GET | `/v1/episodes/{pid}/genre_groups/` | Get_Raw_genre_groups | Get raw genre groups |
-| GET | `/v1/images/{pid}` | Get_Raw_image | Get raw image |
-| GET | `/v1/master_brands/{mbid}` | Get_Raw_masterbrand | Get raw masterbrand |
-| GET | `/v1/promotions/{pid}` | Get_Raw_promotion | Get raw promotion |
-| GET | `/versions` | listVersions | Metadata on editorial programme versions: original, signed, audio-described, etc |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getAPI | — | — | yes | Get API definition |
+| GET | `/availabilities` | listAvailability | `sort`, `sort_direction`, `availability`, `descendants_of`, `media_set`, `page`, `page_size`, `territory`, `debug` | nitro | yes | Discover details of on-demand availability for programmes and their versions |
+| GET | `/broadcasts` | listBroadcasts | `sort`, `sort_direction`, `mixin`, `authority`, `descendants_of`, `end_from`, `end_to`, `format`, `genre`, `id`, `item`, `page`, `page_size`, `people`, `pid`, `q`, `schedule_day`, `schedule_day_from`, `schedule_day_to`, `service_master_brand`, `sid`, `start_from`, `start_to`, `version` | nitro | yes | Build schedules and find metadata for TV and radio broadcasts |
+| GET | `/groups` | listGroups | `sort`, `sort_direction`, `mixin`, `for_descendants_of`, `for_programme`, `group`, `group_type`, `member`, `page`, `page_size`, `partner_id`, `partner_pid`, `pid`, `q`, `embargoed` | nitro | yes | Find metadata for curated groups: seasons, collections, galleries or franchises |
+| GET | `/images` | listImages | `sort`, `sort_direction`, `group`, `image_type`, `is_alternate_image_for`, `is_image_for`, `page`, `page_size`, `partner_id`, `partner_pid`, `pid`, `q`, `embargoed` | nitro | yes | Find metadata for images |
+| GET | `/items` | listItems | `sort`, `sort_direction`, `mixin`, `authority`, `id`, `id_type`, `item_type`, `page`, `page_size`, `partner_id`, `partner_pid`, `people`, `pid`, `programme`, `q`, `segment_event` | nitro | yes | Look inside programmes to find segments: chapters, tracks and more |
+| GET | `/master_brands` | listMasterbrands | `sort`, `sort_direction`, `mixin`, `mid`, `page`, `page_size`, `partner_id`, `partner_pid`, `q` | nitro | yes | List all Master Brands |
+| GET | `/people` | listPeople | `authority`, `has_external_id`, `id`, `id_type`, `page`, `page_size`, `partner_id`, `partner_pid`, `pid`, `programme`, `q` | nitro | yes | Find the people behind and in programmes: cast, crew, guests and more |
+| GET | `/pips` | listPips | `page`, `page_size`, `q` | nitro | yes | Look inside pips entities |
+| GET | `/programme_details` | listProgrammeDetails | `page`, `page_size`, `partner_pid`, `pid` | nitro | yes | Exposes programme information for a single pid |
+| GET | `/programmes` | listProgrammes | `sort`, `sort_direction`, `mixin`, `audio_described`, `availability`, `availability_entity_type`, `availability_from`, `availability_type`, `children_of`, `descendants_of`, `duration`, `entity_type`, `format`, `genre`, `group`, `initial_letter`, `initial_letter_end`, `initial_letter_start`, `initial_letter_strict`, `item`, `master_brand`, `media_set`, `media_type`, `page`, `page_size`, `partner_id`, `partner_pid`, `payment_type`, `people`, `pid`, `promoted_for`, `q`, `signed`, `tag_name`, `tag_scheme`, `tleo`, `version`, `embargoed` | nitro | yes | Start here for programmes metadata: Brands, Series, Episodes and Clips |
+| GET | `/promotions` | listPromotions | `mixin`, `context`, `page`, `page_size`, `partner_id`, `partner_pid`, `pid`, `promoted_by`, `promoted_for`, `q`, `status` | nitro | yes | Discover metadata for content promotions |
+| GET | `/schedules` | listSchedules | `sort`, `sort_direction`, `mixin`, `authority`, `descendants_of`, `end_from`, `end_to`, `format`, `genre`, `group`, `id`, `id_type`, `item`, `page`, `page_size`, `partner_id`, `partner_pid`, `people`, `pid`, `q`, `repeat`, `schedule_day`, `schedule_day_from`, `schedule_day_to`, `service_master_brand`, `sid`, `start_from`, `start_to`, `version` | nitro | yes | Build schedules and find metadata for TV and radio broadcasts and webcasts |
+| GET | `/schema` | getXSD | — | — | yes | Get Schema definition |
+| GET | `/services` | listServices | `end_from`, `end_to`, `mid`, `page`, `page_size`, `partner_id`, `partner_pid`, `q`, `service_type`, `sid`, `start_from`, `start_to` | nitro | yes | Information about the linear services used for broadcast transmissions |
+| GET | `/v1/brands/{pid}` | Get_Raw_brand | `pid`* | nitro | yes | Get raw brand |
+| GET | `/v1/brands/{pid}/franchises/` | Get_Raw_brand franchises | `pid`* | nitro | yes | Get raw brand franchise |
+| GET | `/v1/episodes/{pid}` | Get_Raw_episode | `pid`* | nitro | yes | Get raw episode |
+| GET | `/v1/episodes/{pid}/ancestors/` | Get_Raw_ancestors | `pid`* | nitro | yes | Get raw ancestors |
+| GET | `/v1/episodes/{pid}/formats/` | Get_Raw_formats | `pid`* | nitro | yes | Get raw formats |
+| GET | `/v1/episodes/{pid}/genre_groups/` | Get_Raw_genre_groups | `pid`* | nitro | yes | Get raw genre groups |
+| GET | `/v1/images/{pid}` | Get_Raw_image | `pid`* | nitro | yes | Get raw image |
+| GET | `/v1/master_brands/{mbid}` | Get_Raw_masterbrand | `mbid`* | nitro | yes | Get raw masterbrand |
+| GET | `/v1/promotions/{pid}` | Get_Raw_promotion | `pid`* | nitro | yes | Get raw promotion |
+| GET | `/versions` | listVersions | `availability`, `descendants_of`, `media_set`, `page`, `page_size`, `partner_id`, `partner_pid`, `payment_type`, `pid`, `embargoed` | nitro | yes | Metadata on editorial programme versions: original, signed, audio-described, etc |

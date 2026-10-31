@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_elevenlabs.io_assets_icons_appl
 
 | | |
 | --- | --- |
-| Signed bundle | `d15a9abdc3fe4eaf8b1185fc1d848940f165741e9aa811c89a7dd800d28529f8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,24 +34,26 @@ logo: "https://api.apis.guru/v2/cache/logo/https_elevenlabs.io_assets_icons_appl
 
 25 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/history` | Get_generated_items_v1_history_get | Get Generated Items |
-| POST | `/v1/history/delete` | Delete_history_items_v1_history_delete_post | Delete History Items |
-| POST | `/v1/history/download` | Download_history_items_v1_history_download_post | Download History Items |
-| DELETE | `/v1/history/{history_item_id}` | Delete_history_item_v1_history__history_item_id__delete | Delete History Item |
-| GET | `/v1/history/{history_item_id}/audio` | Get_audio_from_history_item_v1_history__history_item_id__audio_get | Get Audio From History Item |
-| POST | `/v1/text-to-speech/{voice_id}` | Text_to_speech_v1_text_to_speech__voice_id__post | Text To Speech |
-| POST | `/v1/text-to-speech/{voice_id}/stream` | Text_to_speech_v1_text_to_speech__voice_id__stream_post | Text To Speech |
-| GET | `/v1/user` | Get_user_info_v1_user_get | Get User Info |
-| GET | `/v1/user/subscription` | Get_user_subscription_info_v1_user_subscription_get | Get User Subscription Info |
-| GET | `/v1/voices` | Get_voices_v1_voices_get | Get Voices |
-| POST | `/v1/voices/add` | Add_voice_v1_voices_add_post | Add Voice |
-| GET | `/v1/voices/settings/default` | Get_default_voice_settings__v1_voices_settings_default_get | Get Default Voice Settings. |
-| DELETE | `/v1/voices/{voice_id}` | Delete_voice_v1_voices__voice_id__delete | Delete Voice |
-| GET | `/v1/voices/{voice_id}` | Get_voice_v1_voices__voice_id__get | Get Voice |
-| POST | `/v1/voices/{voice_id}/edit` | Edit_voice_v1_voices__voice_id__edit_post | Edit Voice |
-| DELETE | `/v1/voices/{voice_id}/samples/{sample_id}` | Delete_sample_v1_voices__voice_id__samples__sample_id__delete | Delete Sample |
-| GET | `/v1/voices/{voice_id}/samples/{sample_id}/audio` | Get_audio_from_sample_v1_voices__voice_id__samples__sample_id__audio_get | Get Audio From Sample |
-| GET | `/v1/voices/{voice_id}/settings` | Get_voice_settings_v1_voices__voice_id__settings_get | Get Voice Settings |
-| POST | `/v1/voices/{voice_id}/settings/edit` | Edit_voice_settings_v1_voices__voice_id__settings_edit_post | Edit Voice Settings |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/history` | Get_generated_items_v1_history_get | `xi-api-key` | GetHistoryResponseModel | yes | Get Generated Items |
+| POST | `/v1/history/delete` | Delete_history_items_v1_history_delete_post | `xi-api-key`, body*: Body_Delete_history_items_v1_history_delete_post | — |  | Delete History Items |
+| POST | `/v1/history/download` | Download_history_items_v1_history_download_post | `xi-api-key`, body*: Body_Download_history_items_v1_history_download_post | — |  | Download History Items |
+| DELETE | `/v1/history/{history_item_id}` | Delete_history_item_v1_history__history_item_id__delete | `history_item_id`*, `xi-api-key` | — |  | Delete History Item |
+| GET | `/v1/history/{history_item_id}/audio` | Get_audio_from_history_item_v1_history__history_item_id__audio_get | `history_item_id`*, `xi-api-key` | — | yes | Get Audio From History Item |
+| POST | `/v1/text-to-speech/{voice_id}` | Text_to_speech_v1_text_to_speech__voice_id__post | `voice_id`*, `xi-api-key`, body*: Body_Text_to_speech_v1_text_to_speech__voice_id__post | — |  | Text To Speech |
+| POST | `/v1/text-to-speech/{voice_id}/stream` | Text_to_speech_v1_text_to_speech__voice_id__stream_post | `voice_id`*, `xi-api-key`, body*: Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post | — |  | Text To Speech |
+| GET | `/v1/user` | Get_user_info_v1_user_get | `xi-api-key` | UserResponseModel | yes | Get User Info |
+| GET | `/v1/user/subscription` | Get_user_subscription_info_v1_user_subscription_get | `xi-api-key` | ExtendedSubscriptionResponseModel | yes | Get User Subscription Info |
+| GET | `/v1/voices` | Get_voices_v1_voices_get | `xi-api-key` | GetVoicesResponseModel | yes | Get Voices |
+| POST | `/v1/voices/add` | Add_voice_v1_voices_add_post | `xi-api-key`, body*: Body_Add_voice_v1_voices_add_post | AddVoiceResponseModel |  | Add Voice |
+| GET | `/v1/voices/settings/default` | Get_default_voice_settings__v1_voices_settings_default_get | — | VoiceSettingsResponseModel | yes | Get Default Voice Settings. |
+| GET | `/v1/voices/{voice_id}` | Get_voice_v1_voices__voice_id__get | `voice_id`*, `with_settings`, `xi-api-key` | VoiceResponseModel | yes | Get Voice |
+| DELETE | `/v1/voices/{voice_id}` | Delete_voice_v1_voices__voice_id__delete | `voice_id`*, `xi-api-key` | — |  | Delete Voice |
+| POST | `/v1/voices/{voice_id}/edit` | Edit_voice_v1_voices__voice_id__edit_post | `voice_id`*, `xi-api-key`, body*: Body_Edit_voice_v1_voices__voice_id__edit_post | — |  | Edit Voice |
+| DELETE | `/v1/voices/{voice_id}/samples/{sample_id}` | Delete_sample_v1_voices__voice_id__samples__sample_id__delete | `voice_id`*, `sample_id`*, `xi-api-key` | — |  | Delete Sample |
+| GET | `/v1/voices/{voice_id}/samples/{sample_id}/audio` | Get_audio_from_sample_v1_voices__voice_id__samples__sample_id__audio_get | `voice_id`*, `sample_id`*, `xi-api-key` | — | yes | Get Audio From Sample |
+| GET | `/v1/voices/{voice_id}/settings` | Get_voice_settings_v1_voices__voice_id__settings_get | `voice_id`*, `xi-api-key` | VoiceSettingsResponseModel | yes | Get Voice Settings |
+| POST | `/v1/voices/{voice_id}/settings/edit` | Edit_voice_settings_v1_voices__voice_id__settings_edit_post | `voice_id`*, `xi-api-key`, body*: VoiceSettingsResponseModel | — |  | Edit Voice Settings |

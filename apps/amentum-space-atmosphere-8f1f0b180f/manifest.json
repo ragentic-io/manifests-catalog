@@ -27,36 +27,250 @@
       },
       {
         "deprecated": false,
+        "description": "under given conditions.",
         "id": "operation:get:/jb2008",
         "kind": "operation",
         "method": "get",
         "name": "app.api.endpoints.JB2008.sample_atmosphere",
+        "parameters": [
+          {
+            "description": "Year in YYYY format",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Month in MM format",
+            "in": "query",
+            "name": "month",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Day in DD format",
+            "in": "query",
+            "name": "day",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Altitude in (km)",
+            "in": "query",
+            "name": "altitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "GeodeticLatitude (deg) -90 to 90 deg",
+            "in": "query",
+            "name": "geodetic_latitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "GeodeticLongitude (deg) 0 to 360 deg",
+            "in": "query",
+            "name": "geodetic_longitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Coordinated Universal Time (hrs)",
+            "in": "query",
+            "name": "utc",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/jb2008",
         "pointer": "#/paths/~1jb2008/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Compute atmospheric density and temperatures\n"
+        "summary": "Compute atmospheric density and temperatures\n",
+        "tags": [
+          "jb2008"
+        ]
       },
       {
         "deprecated": false,
+        "description": "at specified conditions.",
         "id": "operation:get:/nrlmsise00",
         "kind": "operation",
         "method": "get",
         "name": "app.api.endpoints.NRLMSISE00.sample_atmosphere",
+        "parameters": [
+          {
+            "description": "Year in YYYY format",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Month in MM format",
+            "in": "query",
+            "name": "month",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Day in DD format",
+            "in": "query",
+            "name": "day",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Altitude in (km)",
+            "in": "query",
+            "name": "altitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "GeodeticLatitude (deg) -90 to 90 deg",
+            "in": "query",
+            "name": "geodetic_latitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "GeodeticLongitude (deg) 0 to 360 deg",
+            "in": "query",
+            "name": "geodetic_longitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Coordinated Universal Time (hrs)",
+            "in": "query",
+            "name": "utc",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "(Optional) 81 day average of F10.7 flux (SFU) centered on the specified day.",
+            "in": "query",
+            "name": "f107a",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "(Optional) Daily F10.7 cm radio flux for previous day (SFU).",
+            "in": "query",
+            "name": "f107",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "(Optional) The Ap-index provides a daily average level for geomagnetic activity F107, F107A, AP effects can be neglected below 80 km.",
+            "in": "query",
+            "name": "ap",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/nrlmsise00",
         "pointer": "#/paths/~1nrlmsise00/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Compute atmospheric composition, density, and temperatures\n"
+        "summary": "Compute atmospheric composition, density, and temperatures\n",
+        "tags": [
+          "nrlmsise00"
+        ]
       },
       {
         "deprecated": false,
+        "description": "at a given position and time on 42-48 hour forecast horizon (10 minute resolution).",
         "id": "operation:get:/wam-ipe",
         "kind": "operation",
         "method": "get",
         "name": "app.api_wfs.endpoints.WFS.get_values",
+        "parameters": [
+          {
+            "description": "Latitude (deg) -90 to 90 deg",
+            "in": "query",
+            "name": "latitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Longitude (deg) 0 to 360 deg or -180 to 180 deg",
+            "in": "query",
+            "name": "longitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Altitude in (km)",
+            "in": "query",
+            "name": "altitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Year in YYYY format",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Month in MM format",
+            "in": "query",
+            "name": "month",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Day in DD format",
+            "in": "query",
+            "name": "day",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "UTC Hour of the day in 24 hour format",
+            "in": "query",
+            "name": "hour",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Minute of the given hour",
+            "in": "query",
+            "name": "minute",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/wam-ipe",
         "pointer": "#/paths/~1wam-ipe/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Forecast winds, ion and molecular densities, and temperatures in the atmosphere\n"
+        "summary": "Forecast winds, ion and molecular densities, and temperatures in the atmosphere\n",
+        "tags": [
+          "wam-ipe"
+        ]
       }
     ]
   },

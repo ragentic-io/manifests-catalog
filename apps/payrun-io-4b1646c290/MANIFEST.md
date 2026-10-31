@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_PayRun_io_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `dadf0d295f409ffbb070a9c8dfe338200a553d6c57a18aec18421402dca9b8bc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,394 +34,396 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_PayRun_io_profile_i
 
 48 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/Employer/{EmployerId}` | DeleteEmployer | Delete an Employer |
-| GET | `/Employer/{EmployerId}` | GetEmployer | Gets the employer |
-| PATCH | `/Employer/{EmployerId}` | PatchEmployer | Patches the employer |
-| PUT | `/Employer/{EmployerId}` | PutEmployer | Updates the Employer |
-| DELETE | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}` | DeleteCisLineType | Delete an CIS line type |
-| GET | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}` | GetCisLineTypeFromEmployer | Get CIS line type from employer |
-| PUT | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}` | PutCisLineTypeIntoEmployer | Updates the CIS line type |
-| DELETE | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tag/{TagId}` | DeleteCisLineTypeTag | Delete CIS line type tag |
-| GET | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tag/{TagId}` | GetTagFromCisLineType | Get CIS line type tag |
-| PUT | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tag/{TagId}` | PutCisLineTypeTag | Insert CIS line type tag |
-| GET | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tags` | GetTagsFromCisLineType | Get all tags from the CIS line type |
-| GET | `/Employer/{EmployerId}/CisLineTypes` | GetCisLineTypesFromEmployer | Get CIS line types from employer. |
-| POST | `/Employer/{EmployerId}/CisLineTypes` | PostCisLineTypeIntoEmployer | Create a new CIS line type |
-| GET | `/Employer/{EmployerId}/CisLineTypes/Tag/{TagId}` | GetCisLineTypesWithTag | Get CIS line types with tag |
-| GET | `/Employer/{EmployerId}/CisLineTypes/Tags` | GetAllCisLineTypeTags | Get all CIS line type tags |
-| DELETE | `/Employer/{EmployerId}/CisTransaction/{CisTransactionId}` | DeleteCisTransaction | Delete the CIS transaction |
-| GET | `/Employer/{EmployerId}/CisTransaction/{CisTransactionId}` | GetCisTransactionFromEmployer | Get the CIS transaction |
-| GET | `/Employer/{EmployerId}/CisTransactions` | GetCisTransactionsFromEmployer | Get all CIS transactions for the employer |
-| DELETE | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | DeleteDpsMessage | Deletes the DPS message |
-| GET | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | GetDpsMessageFromEmployer | Gets the DPS message |
-| PATCH | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | PatchDpsMessage | Patches the DPS message |
-| PUT | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | PutDpsMessage | Puts the DPS message |
-| GET | `/Employer/{EmployerId}/DpsMessages` | GetDpsMessagesFromEmployer | Gets the DPS messages |
-| POST | `/Employer/{EmployerId}/DpsMessages` | PostDpsMessage | Posta the DPS message |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}` | DeleteEmployee | Delete an Employee |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}` | GetEmployeeFromEmployer | Get employee from employer |
-| PATCH | `/Employer/{EmployerId}/Employee/{EmployeeId}` | PatchEmployee | Patches the employee |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}` | PutEmployeeIntoEmployer | Updates the Employee |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessment/{AEAssessmentId}` | DeleteAEAssessment | Delete auto enrolment assessment |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessment/{AEAssessmentId}` | GetAEAssessmentFromEmployee | Get the auto enrolment assessment |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessment/{AEAssessmentId}` | PutNewAEAssessment | Insert new auto enrolment assessment |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessments` | GetAEAssessmentsFromEmployee | Get the auto enrolment assessments |
-| POST | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessments` | PostNewAEAssessment | Insert new auto enrolment assessment |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Commentaries` | GetCommentariesFromEmployee | Get links to all commentaries for the specified employee |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Commentary/{CommentaryId}` | GetCommentaryFromEmployee | Get commentary from employee |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/JournalLines` | GetJournalLinesFromEmployee | Gets the journal Lines from the specified employee |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | DeletePayInstruction | Deletes a pay instruction |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | GetPayInstructionFromEmployee | Gets the specified pay instruction from the employee |
-| PATCH | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | PatchPayInstruction | Sparse Update of a Pay Instruction |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | PutPayInstruction | Update a Pay Instruction |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tag/{TagId}` | DeletePayInstructionTag | Delete pay instruction tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tag/{TagId}` | GetTagFromPayInstruction | Get pay instruction tag |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tag/{TagId}` | PutPayInstructionTag | Insert pay instruction tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tags` | GetTagsFromPayInstruction | Get all tags from the pay instruction |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions` | GetPayInstructionsFromEmployee | Gets the pay instructions from the specified employee |
-| POST | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions` | PostPayInstruction | Creates a new Pay Instruction |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions/Tag/{TagId}` | GetPayInstructionsWithTag | Get pay instructions with tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions/Tags` | GetAllPayInstructionTags | Get all pay instruction tags |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}` | GetPayLineFromEmployee | Gets the specified pay line from the employee |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tag/{TagId}` | DeletePayLineTag | Delete pay line tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tag/{TagId}` | GetTagFromPayLine | Get pay line tag |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tag/{TagId}` | PutPayLineTag | Insert pay line tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tags` | GetTagsFromPayLine | Get all tags from the pay line |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLines` | GetPayLinesFromEmployee | Gets the pay lines from the specified employee |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLines/Tag/{TagId}` | GetPayLinesWithTag | Get pay lines with tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLines/Tags` | GetAllPayLineTags | Get all pay line tags |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayRuns` | GetPayRunsFromEmployee | Gets the pay runs from the employee |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revision/{RevisionNumber}` | DeleteEmployeeRevisionByNumber | Delete an Employee revision matching the specified revision number. |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revision/{RevisionNumber}` | GetEmployeeRevisionByNumber | Gets the employee by revision number |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revision/{RevisionNumber}/Summary` | GetEmployeeRevisionSummaryByNumber | Gets the employee summary by revision number |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revisions` | GetEmployeeRevisions | Get all employee revisions |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revisions/Summary` | GetEmployeeRevisionSummaries | Get all employee revision summaries |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secret/{SecretId}` | DeleteEmployeeSecret | Deletes employee secret |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secret/{SecretId}` | GetEmployeeSecret | Get employee secret |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secret/{SecretId}` | PutEmployeeSecret | Create a new employee secret |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secrets` | GetEmployeeSecrets | Get all employee secret links |
-| POST | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secrets` | PostEmployeeSecret | Create a new employee secret |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Summary` | GetEmployeeSummaryFromEmployer | Get employee summary from employer |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}` | DeleteEmployeeTag | Delete employee tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}` | GetTagFromEmployee | Get employee tag |
-| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}` | PutEmployeeTag | Insert employee tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromEmployeeRevision | Get employee revision tag |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tags` | GetTagsFromEmployee | Get all employee tags |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tags/{EffectiveDate}` | GetTagsFromEmployeeRevision | Get all employee revision tags |
-| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/{EffectiveDate}` | DeleteEmployeeRevision | Delete an Employee revision matching the specified revision date. |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/{EffectiveDate}` | GetEmployeeByEffectiveDate | Get employee by effective date. |
-| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/{EffectiveDate}/Summary` | GetEmployeeSummaryByEffectiveDate | Get employee summary by effective date. |
-| GET | `/Employer/{EmployerId}/Employees` | GetEmployeesFromEmployer | Get employees from employer. |
-| POST | `/Employer/{EmployerId}/Employees` | PostEmployeeIntoEmployer | Create a new Employee |
-| GET | `/Employer/{EmployerId}/Employees/Summary` | GetEmployeeSummariesFromEmployer | Get employee summaries from employer. |
-| GET | `/Employer/{EmployerId}/Employees/Tag/{TagId}` | GetEmployeesWithTag | Get employees with tag |
-| GET | `/Employer/{EmployerId}/Employees/Tags` | GetAllEmployeeTags | Get all employee tags |
-| GET | `/Employer/{EmployerId}/Employees/{EffectiveDate}` | GetEmployeesByEffectiveDate | Get employees from employer at a given effective date. |
-| GET | `/Employer/{EmployerId}/Employees/{EffectiveDate}/Summary` | GetEmployeeSummariesByEffectiveDate | Get employee summaries from employer at a given effective date. |
-| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | DeleteHolidayScheme | Delete an holiday scheme |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | GetHolidaySchemeFromEmployer | Get holiday scheme from employer |
-| PATCH | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | PatchHolidayScheme | Patches the holiday scheme |
-| PUT | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | PutHolidaySchemeIntoEmployer | Updates the holiday scheme |
-| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Revision/{RevisionNumber}` | DeleteHolidaySchemeRevisionByNumber | Delete an HolidayScheme revision matching the specified revision number. |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Revision/{RevisionNumber}` | GetHolidaySchemeRevisionByNumber | Gets the holiday scheme revision by revision number |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Revisions` | GetHolidaySchemeRevisions | Get all holiday scheme revisions |
-| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}` | DeleteHolidaySchemeTag | Delete holiday scheme tag |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}` | GetTagFromHolidayScheme | Get holiday scheme tag |
-| PUT | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}` | PutHolidaySchemeTag | Insert holiday scheme tag |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromHolidaySchemeRevision | Get holiday scheme revision tag |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tags` | GetTagsFromHolidayScheme | Get all tags from the holiday scheme |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tags/{EffectiveDate}` | GetTagsFromHolidaySchemeRevision | Get all holiday scheme revision tags |
-| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/{EffectiveDate}` | DeleteHolidaySchemeRevision | Delete an holiday scheme revision matching the specified revision date. |
-| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/{EffectiveDate}` | GetHolidaySchemeByEffectiveDate | Get holiday scheme by effective date. |
-| GET | `/Employer/{EmployerId}/HolidaySchemes` | GetHolidaySchemesFromEmployer | Get holiday schemes from employer. |
-| POST | `/Employer/{EmployerId}/HolidaySchemes` | PostHolidaySchemeIntoEmployer | Create a new holiday scheme |
-| GET | `/Employer/{EmployerId}/HolidaySchemes/Tag/{TagId}` | GetHolidaySchemesWithTag | Get holiday schemes with tag |
-| GET | `/Employer/{EmployerId}/HolidaySchemes/Tags` | GetAllHolidaySchemeTags | Get all holiday scheme tags |
-| GET | `/Employer/{EmployerId}/HolidaySchemes/{EffectiveDate}` | GetHolidaySchemesByEffectiveDate | Get holiday schemes from employer at a given effective date. |
-| DELETE | `/Employer/{EmployerId}/JournalInstruction/{JournalInstructionId}` | DeleteJournalInstruction | Deletes a Journal instruction |
-| GET | `/Employer/{EmployerId}/JournalInstruction/{JournalInstructionId}` | GetJournalInstructionFromEmployer | Gets the specified journal instruction from the employer |
-| PUT | `/Employer/{EmployerId}/JournalInstruction/{JournalInstructionId}` | PutJournalInstruction | Update a Journal Instruction |
-| GET | `/Employer/{EmployerId}/JournalInstructions` | GetJournalInstructionsFromEmployer | Gets the Journal instructions from the specified employer |
-| POST | `/Employer/{EmployerId}/JournalInstructions` | PostJournalInstruction | Creates a new Journal Instruction |
-| GET | `/Employer/{EmployerId}/JournalLine/{JournalLineId}` | GetJournalLineFromEmployer | Gets the specified journal Line from the employer |
-| DELETE | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tag/{TagId}` | DeleteJournalLineTag | Delete journal line tag |
-| GET | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tag/{TagId}` | GetTagFromJournalLine | Get journal line tag |
-| PUT | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tag/{TagId}` | PutJournalLineTag | Insert journal line tag |
-| GET | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tags` | GetTagsFromJournalLine | Get tags from journal line |
-| GET | `/Employer/{EmployerId}/JournalLines` | GetJournalLinesFromEmployer | Gets the Journal Lines from the specified employer |
-| GET | `/Employer/{EmployerId}/JournalLines/Tag/{TagId}` | GetAllJournalLinesWithTag | Get links to tagged journal lines |
-| GET | `/Employer/{EmployerId}/JournalLines/Tags` | GetAllJournalLineTags | Get all journal line tags |
-| DELETE | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}` | DeleteNominalCode | Deletes the nominal codes |
-| GET | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}` | GetNominalCodeFromEmployer | Gets the nominal code |
-| PUT | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}` | PutNominalCode | Insert nominal code |
-| GET | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}/PayCodes` | GetPayCodesFromNominalCode | Gets the pay codes by nominal code |
-| GET | `/Employer/{EmployerId}/NominalCodes` | GetNominalCodesFromEmployer | Gets the nominal codes |
-| POST | `/Employer/{EmployerId}/NominalCodes` | PostNominalCode | Insert nominal code |
-| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | DeletePayCode | Deletes a pay code |
-| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | GetPayCodeFromEmployer | Gets the specified pay code from the employer |
-| PATCH | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | PatchPayCode | Patches the pay code |
-| PUT | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | PutPayCode | Updates a pay code |
-| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Revision/{RevisionNumber}` | DeletePayCodeRevisionByNumber | Delete an PayCode revision matching the specified revision number. |
-| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Revision/{RevisionNumber}` | GetPayCodeRevisionByNumber | Gets the pay code by revision number |
-| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Revisions` | GetPayCodeRevisions | Get all revisions of the Pay Code |
-| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tag/{TagId}` | DeletePayCodeTag | Delete pay code tag |
-| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tag/{TagId}` | GetTagFromPayCode | Get pay code tag |
-| PUT | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tag/{TagId}` | PutPayCodeTag | Insert pay code tag |
-| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tags` | GetTagsFromPayCode | Get all pay code tags |
-| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}/{EffectiveDate}` | DeletePayCodeRevision | Deletes a pay code revision |
-| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/{EffectiveDate}` | GetPayCodeByEffectiveDate | Gets pay code for specified date |
-| GET | `/Employer/{EmployerId}/PayCodes` | GetPayCodesFromEmployer | Gets the pay codes from the employer |
-| POST | `/Employer/{EmployerId}/PayCodes` | PostPayCode | Create a new pay code |
-| GET | `/Employer/{EmployerId}/PayCodes/Tag/{TagId}` | GetPayCodesWithTag | Get pay codes with tag |
-| GET | `/Employer/{EmployerId}/PayCodes/Tags` | GetAllPayCodeTags | Get all pay code tags |
-| GET | `/Employer/{EmployerId}/PayCodes/{EffectiveDate}` | GetPayCodesByEffectiveDate | Gets all pay codes for specified date |
-| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}` | DeletePaySchedule | Deletes a pay schedule |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}` | GetPayScheduleFromEmployer | Gets the specified pay schedule from the employer |
-| PUT | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}` | PutPaySchedule | Updates a pay schedule |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Employees` | GetEmployeesFromPaySchedule | Get all employees revisions from a pay schedule. |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Employees/{EffectiveDate}` | GetEmployeesFromPayScheduleOnEffectiveDate | Get employees from a pay schedule on effective date. |
-| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}` | DeletePayRun | Deletes a pay run |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}` | GetPayRunFromPaySchedule | Gets the pay run from the pay schedule |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/AEAssessments` | GetAEAssessmentsFromPayRun | Get the auto enrolment assessments |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Commentaries` | GetCommentariesFromPayRun | Get links to all commentaries for the specified pay run |
-| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Employee/{EmployeeId}` | DeletePayRunEmployee | Deletes a pay run employee |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Employee/{EmployeeId}/Commentary` | GetCommentaryFromPayRunByEmployee | Get commentary from payrun by specified employee. |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Employees` | GetEmployeesFromPayRun | Get employees from the pay run |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/JournalLines` | GetJournalLinesFromPayRun | Gets the journal Lines from the specified pay run |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/PayLines` | GetPayLinesFromPayRun | Gets the pay lines from the specified pay run |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/ReportLines` | GetReportLinesFromPayRun | Gets the report lines from the specified pay run |
-| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tag/{TagId}` | DeletePayRunTag | Delete pay run tag |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tag/{TagId}` | GetTagFromPayRun | Get pay run tag |
-| PUT | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tag/{TagId}` | PutPayRunTag | Insert pay run tag |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tags` | GetTagsFromPayRun | Get all pay run tags |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRuns` | GetPayRunsFromPaySchedule | Gets the pay runs from the pay schedule |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRuns/Tag/{TagId}` | GetPayRunsWithTag | Get pay runs with tag |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRuns/Tags` | GetAllPayRunTags | Get all pay run tags |
-| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tag/{TagId}` | DeletePayScheduleTag | Delete pay schedule tag |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tag/{TagId}` | GetTagFromPaySchedule | Get pay schedule tag |
-| PUT | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tag/{TagId}` | PutPayScheduleTag | Insert pay schedule tag |
-| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tags` | GetTagsFromPaySchedule | Get all pay schedule tags |
-| GET | `/Employer/{EmployerId}/PaySchedules` | GetPaySchedulesFromEmployer | Gets the pay schedule from the specified employer |
-| POST | `/Employer/{EmployerId}/PaySchedules` | PostPaySchedule | Create a new pay schedule |
-| GET | `/Employer/{EmployerId}/PaySchedules/Tag/{TagId}` | GetPaySchedulesWithTag | Get pay schedule with tag |
-| GET | `/Employer/{EmployerId}/PaySchedules/Tags` | GetAllPayScheduleTags | Get all pay schedule tags |
-| DELETE | `/Employer/{EmployerId}/Pension/{PensionId}` | DeletePension | Delete a Pension |
-| GET | `/Employer/{EmployerId}/Pension/{PensionId}` | GetPensionFromEmployer | Get pension from employer |
-| PATCH | `/Employer/{EmployerId}/Pension/{PensionId}` | PatchPension | Patches the pension |
-| PUT | `/Employer/{EmployerId}/Pension/{PensionId}` | PutPensionIntoEmployer | Updates the Pension |
-| DELETE | `/Employer/{EmployerId}/Pension/{PensionId}/Revision/{RevisionNumber}` | DeletePensionRevisionByNumber | Delete an Pension revision matching the specified revision number. |
-| GET | `/Employer/{EmployerId}/Pension/{PensionId}/Revision/{RevisionNumber}` | GetPensionRevisionByNumber | Gets the pension by revision number |
-| GET | `/Employer/{EmployerId}/Pension/{PensionId}/Revisions` | GetPensionRevisions | Get all pension revisions |
-| DELETE | `/Employer/{EmployerId}/Pension/{PensionId}/{EffectiveDate}` | DeletePensionRevision | Delete an Pension revision matching the specified revision date. |
-| GET | `/Employer/{EmployerId}/Pension/{PensionId}/{EffectiveDate}` | GetPensionByEffectiveDate | Get pension by effective date. |
-| GET | `/Employer/{EmployerId}/Pensions` | GetPensionsFromEmployer | Get pensions from employer. |
-| POST | `/Employer/{EmployerId}/Pensions` | PostPensionIntoEmployer | Create a new Pension |
-| GET | `/Employer/{EmployerId}/Pensions/{EffectiveDate}` | GetPensionsByEffectiveDate | Get pensions from employer at a given effective date. |
-| GET | `/Employer/{EmployerId}/ReportLine/{ReportLineId}` | GetReportLineFromEmployer | Gets the specified report line from the employer |
-| GET | `/Employer/{EmployerId}/ReportLines` | GetReportLinesFromEmployer | Gets the report lines from the specified employer |
-| DELETE | `/Employer/{EmployerId}/ReportingInstruction/{ReportingInstructionId}` | DeleteReportingInstruction | Deletes a reporting instruction |
-| GET | `/Employer/{EmployerId}/ReportingInstruction/{ReportingInstructionId}` | GetReportingInstructionFromEmployer | Gets the specified reporting instruction from the employer |
-| PUT | `/Employer/{EmployerId}/ReportingInstruction/{ReportingInstructionId}` | PutReportingInstruction | Update a reporting Instruction |
-| GET | `/Employer/{EmployerId}/ReportingInstructions` | GetReportingInstructionsFromEmployer | Gets the reporting instructions from the specified employer |
-| POST | `/Employer/{EmployerId}/ReportingInstructions` | PostReportingInstruction | Creates a new Reporting Instruction |
-| DELETE | `/Employer/{EmployerId}/Revision/{RevisionNumber}` | DeleteEmployerRevisionByNumber | Delete an Employer revision matching the specified revision number. |
-| GET | `/Employer/{EmployerId}/Revision/{RevisionNumber}` | GetEmployerRevisionByNumber | Gets the employer by revision number |
-| GET | `/Employer/{EmployerId}/Revision/{RevisionNumber}/Summary` | GetEmployerRevisionSummaryByNumber | Gets the employer summary by revision number |
-| GET | `/Employer/{EmployerId}/Revisions` | GetEmployerRevisions | Gets the employer revisions |
-| GET | `/Employer/{EmployerId}/Revisions/Summary` | GetEmployerRevisionSummaries | Get all employer revision summaries |
-| DELETE | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}` | DeleteRtiTransaction | Delete the RTI transaction |
-| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}` | GetRtiTransactionFromEmployer | Get the RTI transaction |
-| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Summary` | GetRtiTransactionSummaryFromEmployer | Get the RTI transaction summary |
-| DELETE | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tag/{TagId}` | DeleteRtiTransactionTag | Delete RTI transaction tag |
-| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tag/{TagId}` | GetTagFromRtiTransaction | Get RTI transaction tag |
-| PUT | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tag/{TagId}` | PutRtiTransactionTag | Insert RTI transaction tag |
-| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tags` | GetTagsFromRtiTransaction | Get all tags from RTI transaction |
-| GET | `/Employer/{EmployerId}/RtiTransactions` | GetRtiTransactionsFromEmployer | Get all RTI transactions for the employer |
-| GET | `/Employer/{EmployerId}/RtiTransactions/Summary` | GetRtiTransactionSummariesFromEmployer | Get all RTI transaction summaries for the employer |
-| GET | `/Employer/{EmployerId}/RtiTransactions/Tag/{TagId}` | GetRtiTransactionsWithTag | Get RTI transactions with tag |
-| GET | `/Employer/{EmployerId}/RtiTransactions/Tags` | GetAllRtiTransactionTags | Get all RTI transaction tags |
-| DELETE | `/Employer/{EmployerId}/Secret/{SecretId}` | DeleteEmployerSecret | Deletes employer secret |
-| GET | `/Employer/{EmployerId}/Secret/{SecretId}` | GetEmployerSecret | Get employer secret |
-| PUT | `/Employer/{EmployerId}/Secret/{SecretId}` | PutEmployerSecret | Create a new employer secret |
-| GET | `/Employer/{EmployerId}/Secrets` | GetEmployerSecrets | Get all employer secret links |
-| POST | `/Employer/{EmployerId}/Secrets` | PostEmployerSecret | Create a new employer secret |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | DeleteSubContractor | Delete an sub contractor |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | GetSubContractorFromEmployer | Get sub contractor from employer |
-| PATCH | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | PatchSubContractor | Patches the sub contractor |
-| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | PutSubContractorIntoEmployer | Updates the sub contractor |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | DeleteCisInstruction | Delete a CIS instruction |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | GetCisInstructionFromSubContractor | Get CIS instruction from sub contractor |
-| PATCH | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | PatchCisInstruction | Patches the CIS instruction |
-| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | PutCisInstructionIntoSubContractor | Updates the CIS instruction |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tag/{TagId}` | DeleteCisInstructionTag | Delete CIS instruction tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tag/{TagId}` | GetTagFromCisInstruction | Get CIS instruction tag |
-| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tag/{TagId}` | PutCisInstructionTag | Insert CIS instruction tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tags` | GetTagsFromCisInstruction | Get all tags from the CIS instruction |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions` | GetCisInstructionsFromSubContractor | Get CIS instructions from sub contractor. |
-| POST | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions` | PostCisInstructionIntoSubContractor | Create a new CIS instruction |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions/Tag/{TagId}` | GetCisInstructionsWithTag | Get CIS instructions with tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions/Tags` | GetAllCisInstructionTags | Get all CIS instruction tags |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}` | DeleteCisLine | Delete a CIS line |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}` | GetCisLineFromSubContractor | Get CIS line from sub contractor |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tag/{TagId}` | DeleteCisLineTag | Delete CIS line tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tag/{TagId}` | GetTagFromCisLine | Get CIS line tag |
-| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tag/{TagId}` | PutCisLineTag | Insert CIS line tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tags` | GetTagsFromCisLine | Get all tags from the CIS line |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLines` | GetCisLinesFromSubContractor | Get CIS lines from sub contractor. |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLines/Tag/{TagId}` | GetCisLinesWithTag | Get CIS lines with tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLines/Tags` | GetAllCisLineTags | Get all CIS line tags |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/JournalLines` | GetJournalLinesFromSubContractor | Gets the journal Lines from the specified sub contractor |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Revision/{RevisionNumber}` | DeleteSubContractorRevisionByNumber | Delete an SubContractor revision matching the specified revision number. |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Revision/{RevisionNumber}` | GetSubContractorRevisionByNumber | Gets the sub contractor by revision number |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Revisions` | GetSubContractorRevisions | Get all sub contractor revisions |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}` | DeleteSubContractorTag | Delete sub contractor tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}` | GetTagFromSubContractor | Get sub contractor tag |
-| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}` | PutSubContractorTag | Insert sub contractor tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromSubContractorRevision | Get sub contractor revision tag |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tags` | GetTagsFromSubContractor | Get all tags from the sub contractor |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tags/{EffectiveDate}` | GetTagsFromSubContractorRevision | Get all sub contractor revision tags |
-| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/{EffectiveDate}` | DeleteSubContractorRevision | Delete an sub contractor revision matching the specified revision date. |
-| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/{EffectiveDate}` | GetSubContractorByEffectiveDate | Get sub contractor by effective date. |
-| GET | `/Employer/{EmployerId}/SubContractors` | GetSubContractorsFromEmployer | Get sub contractors from employer. |
-| POST | `/Employer/{EmployerId}/SubContractors` | PostSubContractorIntoEmployer | Create a new sub contractor |
-| GET | `/Employer/{EmployerId}/SubContractors/Tag/{TagId}` | GetSubContractorsWithTag | Get sub contractors with tag |
-| GET | `/Employer/{EmployerId}/SubContractors/Tags` | GetAllSubContractorTags | Get all sub contractor tags |
-| GET | `/Employer/{EmployerId}/SubContractors/{EffectiveDate}` | GetSubContractorsByEffectiveDate | Get sub contractors from employer at a given effective date. |
-| GET | `/Employer/{EmployerId}/Summary` | GetEmployerSummary | Get employer summary |
-| DELETE | `/Employer/{EmployerId}/Tag/{TagId}` | DeleteEmployerTag | Delete employer tag |
-| GET | `/Employer/{EmployerId}/Tag/{TagId}` | GetTagFromEmployer | Get employer tag |
-| PUT | `/Employer/{EmployerId}/Tag/{TagId}` | PutEmployerTag | Insert employer tag |
-| GET | `/Employer/{EmployerId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromEmployerRevision | Get employer revision tag |
-| GET | `/Employer/{EmployerId}/Tags` | GetTagsFromEmployer | Get all employer tags |
-| GET | `/Employer/{EmployerId}/Tags/{EffectiveDate}` | GetTagsFromEmployerRevision | Get all employer revision tags |
-| DELETE | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}` | DeleteThirdPartyTransaction | Delete third party transaction |
-| GET | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}` | GetThirdPartyTransaction | Get a third party transaction |
-| DELETE | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tag/{TagId}` | DeleteThirdPartyTransactionTag | Delete third party transaction tag |
-| GET | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tag/{TagId}` | GetTagFromThirdPartyTransaction | Get third party transaction tag |
-| PUT | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tag/{TagId}` | PutThirdPartyTransactionTag | insert third party transaction tag |
-| GET | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tags` | GetTagsFromThirdPartyTransaction | Get tags from third party transaction |
-| GET | `/Employer/{EmployerId}/ThirdPartyTransactions` | GetThirdPartyTransactions | Get all third party transaction links |
-| GET | `/Employer/{EmployerId}/ThirdPartyTransactions/Tag/{TagId}` | GetAllThirdPartyTransactionsWithTag | Get links to tagged third party transactions |
-| GET | `/Employer/{EmployerId}/ThirdPartyTransactions/Tags` | GetAllThirdPartyTransactionTags | Get all third party transaction tags |
-| DELETE | `/Employer/{EmployerId}/{EffectiveDate}` | DeleteEmployerRevision | Delete an Employer revision matching the specified revision date. |
-| GET | `/Employer/{EmployerId}/{EffectiveDate}` | GetEmployerByEffectiveDate | Gets the employer at the specified effective |
-| GET | `/Employer/{EmployerId}/{EffectiveDate}/Summary` | GetEmployerSummaryByEffectiveDate | Get employer summary by effective date. |
-| GET | `/Employers` | GetEmployers | Gets all employers |
-| POST | `/Employers` | PostEmployer | Create a new Employer |
-| GET | `/Employers/Summary` | GetEmployerSummaries | Get employer summaries. |
-| GET | `/Employers/Tag/{TagId}` | GetEmployersWithTag | Get employers with tag |
-| GET | `/Employers/Tags` | GetAllEmployerTags | Get all employer tags |
-| GET | `/Employers/{EffectiveDate}` | GetEmployersByEffectiveDate | Gets all employers at the specified effective date |
-| GET | `/Employers/{EffectiveDate}/Summary` | GetEmployerSummariesByEffectiveDate | Get employer summaries at a given effective date. |
-| GET | `/Healthcheck` | GetHealthCheck | Get health check status |
-| GET | `/Jobs/Batch` | GetBatchJobs | Get all Batch jobs |
-| POST | `/Jobs/Batch` | PostNewBatchJob | Create new Batch job |
-| DELETE | `/Jobs/Batch/{JobId}` | DeleteBatchJob | Delete the Batch job |
-| GET | `/Jobs/Batch/{JobId}/Info` | GetBatchJobInfo | Get the Batch job information |
-| GET | `/Jobs/Batch/{JobId}/Progress` | GetBatchJobProgress | Get the Batch job progress |
-| GET | `/Jobs/Batch/{JobId}/Status` | GetBatchJobStatus | Get the Batch job status |
-| GET | `/Jobs/Cis` | GetCisJobs | Get all CIS jobs |
-| POST | `/Jobs/Cis` | PostNewCisJob | Create new CIS job |
-| DELETE | `/Jobs/Cis/{JobId}` | DeleteCisJob | Delete the CIS job |
-| GET | `/Jobs/Cis/{JobId}/Info` | GetCisJobInfo | Get the CIS job information |
-| GET | `/Jobs/Cis/{JobId}/Progress` | GetCisJobProgress | Get the CIS job progress |
-| GET | `/Jobs/Cis/{JobId}/Status` | GetCisJobStatus | Get the CIS job status |
-| GET | `/Jobs/Dps` | GetDpsJobs | Get all DPS jobs |
-| POST | `/Jobs/Dps` | PostNewDpsJob | Create new DPS job |
-| DELETE | `/Jobs/Dps/{JobId}` | DeleteDpsJob | Delete the DPS job |
-| GET | `/Jobs/Dps/{JobId}/Info` | GetDpsJobInfo | Get the DPS job information |
-| GET | `/Jobs/Dps/{JobId}/Progress` | GetDpsJobProgress | Get the DPS job progress |
-| GET | `/Jobs/Dps/{JobId}/Status` | GetDpsJobStatus | Get the DPS job status |
-| GET | `/Jobs/Employer/{EmployerId}` | GetEmployerJobs | Gets all jobs relating to the employer. |
-| GET | `/Jobs/PayRuns` | GetPayRunJobs | Get all PayRun jobs |
-| POST | `/Jobs/PayRuns` | PostNewPayRunJob | Create new PayRun job |
-| DELETE | `/Jobs/PayRuns/{JobId}` | DeletePayRunJob | Delete the pay run job |
-| GET | `/Jobs/PayRuns/{JobId}/Info` | GetPayRunJobInfo | Get the pay run job information |
-| GET | `/Jobs/PayRuns/{JobId}/Progress` | GetPayRunJobProgress | Get the pay run job progress |
-| GET | `/Jobs/PayRuns/{JobId}/Status` | GetPayRunJobStatus | Get the pay run job status |
-| GET | `/Jobs/Rti` | GetRtiJobs | Get all RTI jobs |
-| POST | `/Jobs/Rti` | PostNewRtiJob | Create new RTI job |
-| DELETE | `/Jobs/Rti/{JobId}` | DeleteRtiJob | Delete the RTI job |
-| GET | `/Jobs/Rti/{JobId}/Info` | GetRtiJobInfo | Get the RTI job information |
-| GET | `/Jobs/Rti/{JobId}/Progress` | GetRtiJobProgress | Get the RTI job progress |
-| GET | `/Jobs/Rti/{JobId}/Status` | GetRtiJobStatus | Get the RTI job status |
-| GET | `/Jobs/ThirdParty` | GetThirdPartyJobs | Get all Third Party jobs |
-| POST | `/Jobs/ThirdParty` | PostNewThirdPartyJob | Create new Third Party job |
-| DELETE | `/Jobs/ThirdParty/{JobId}` | DeleteThirdPartyJob | Delete the Third Party job |
-| GET | `/Jobs/ThirdParty/{JobId}/Info` | GetThirdPartyJobInfo | Get the Third Party job information |
-| GET | `/Jobs/ThirdParty/{JobId}/Progress` | GetThirdPartyJobProgress | Get the Third Party job progress |
-| GET | `/Jobs/ThirdParty/{JobId}/Status` | GetThirdPartyJobStatus | Get the Third Party job status |
-| DELETE | `/JournalInstruction/{JournalInstructionId}` | DeleteJournalInstructionTemplate | Deletes a Journal instruction template |
-| GET | `/JournalInstruction/{JournalInstructionId}` | GetJournalInstructionTemplate | Gets the Journal instructions template for the application |
-| PUT | `/JournalInstruction/{JournalInstructionId}` | PutJournalInstructionTemplate | Update a Journal Instruction template |
-| GET | `/JournalInstructions` | GetJournalInstructionTemplates | Gets the Journal instructions templates for the application |
-| POST | `/JournalInstructions` | PostJournalInstructionTemplate | Creates a new Journal Instruction template |
-| DELETE | `/Permission/{PermissionId}` | DeletePermission | Deletes the permission object |
-| GET | `/Permission/{PermissionId}` | GetPermission | Gets the permission object |
-| PATCH | `/Permission/{PermissionId}` | PatchPermission | Patch permission object |
-| PUT | `/Permission/{PermissionId}` | PutPermission | Puts permisson object |
-| DELETE | `/Permission/{PermissionId}/Tag/{TagId}` | DeletePermissionTag | Delete Permission tag |
-| GET | `/Permission/{PermissionId}/Tag/{TagId}` | GetTagFromPermission | Get Permission tag |
-| PUT | `/Permission/{PermissionId}/Tag/{TagId}` | PutPermissionTag | Insert Permission tag |
-| GET | `/Permission/{PermissionId}/Tags` | GetTagsFromPermission | Get tags from Permission |
-| GET | `/Permissions` | GetPermissions | Gets all permission objects |
-| POST | `/Permissions` | PostPermission | Post permisson object |
-| GET | `/Permissions/Tag/{TagId}` | GetAllPermissionsWithTag | Get links to tagged Permissions |
-| GET | `/Permissions/Tags` | GetAllPermissionTags | Get all Permission tags |
-| POST | `/Query` | GetQueryResponse | Get the query result |
-| GET | `/ReferenceData/JournalExpressionDataTable` | GetJournalExpressionSchema | Gets the journal expression data schema |
-| GET | `/Report/ACTPAYINS/run` | GetActivePayInstructionsReportOutput | Runs the active pay instructions report |
-| GET | `/Report/AOELIABILITY/run` | GetAoeLiabilityReportOuput | Runs the AOE liability report |
-| GET | `/Report/DPSMSG/run` | GetDpsMessageReportOutput | Runs the DPS message report |
-| GET | `/Report/EMPSUM/run` | GetEmployerSummaryReportOuput | Runs the employer summary report |
-| GET | `/Report/GRO2NET/run` | GetGrossToNetReportOutput | Runs the gross to net report |
-| GET | `/Report/HOLBAL/run` | GetHolidayBalanceReportOutput | Runs the holiday balance report |
-| GET | `/Report/JOURNAL/run` | GetJournalReportOuput | Runs the journal report |
-| GET | `/Report/LASTPAYDATE/run` | GetLastPayDateReportOuput | Runs the last pay date report |
-| GET | `/Report/NETPAY/run` | GetNetPayReportOutput | Runs the net pay report |
-| GET | `/Report/NEXTPERIOD/run` | GetNextPayPeriodDatesReportOutput | Runs the next pay period report |
-| GET | `/Report/P11SUM/run` | GetP11SummaryReportOutput | Runs the P11 summary report |
-| GET | `/Report/P32/run` | GetP32NetReportOutput | Runs the P32 report |
-| GET | `/Report/P32SUM/run` | GetP32SummaryNetReportOutput | Runs the P32 summary report |
-| GET | `/Report/P45/run` | GetP45ReportOutput | Runs the P45 report |
-| GET | `/Report/P60/run` | GetP60ReportOutput | Runs the P60 report |
-| GET | `/Report/PAPDIS/run` | GetPapdisReportOuput | Runs the PAPDIS report |
-| GET | `/Report/PASS/run` | GetPassReportOuput | Runs the PASS report |
-| GET | `/Report/PAYDASHBOARD/run` | GetPayDashboardPayslipReportOuput | Runs the Pay Dashboard payslips report |
-| GET | `/Report/PAYSLIP3/run` | GetPayslip3ReportOutput | Runs the verbose payslip report |
-| GET | `/Report/PENLIABILITY/run` | GetPensionLiabilityReportOutput | Runs the pension liability report |
-| DELETE | `/Report/{ReportDefinitionId}` | DeleteReportDefinition | Deletes a report definition |
-| GET | `/Report/{ReportDefinitionId}` | GetReportDefinitionFromApplication | Get the report definition |
-| PUT | `/Report/{ReportDefinitionId}` | PutReportDefinition | Updates a report definition |
-| GET | `/Report/{ReportDefinitionId}/run` | GetReportOutput | Runs the specified report definition |
-| GET | `/Reports` | GetReportDefinitionsFromApplication | Gets all reports |
-| POST | `/Reports` | PostReportDefinition | Create a new report definition |
-| GET | `/Schemas` | GetSchemas | Get a list of all available schemas |
-| GET | `/Schemas/{DtoDataType}` | GetSchema | Get XSD schema |
-| DELETE | `/Secret/{SecretId}` | DeleteApplicationSecret | Deletes Application secret |
-| GET | `/Secret/{SecretId}` | GetApplicationSecret | Get Application secret |
-| PUT | `/Secret/{SecretId}` | PutApplicationSecret | Create a new Application secret |
-| GET | `/Secrets` | GetApplicationSecrets | Get all Application secret links |
-| POST | `/Secrets` | PostApplicationSecret | Create a new Application secret |
-| GET | `/Template/{DtoDataType}` | GetTemplateModel | Get the object template |
-| GET | `/Templates` | GetTemplates | Get a list of all available data object tempaltes |
-| DELETE | `/Transform/{TransformDefinitionId}` | DeleteTransformDefinition | Deletes a transform definition |
-| GET | `/Transform/{TransformDefinitionId}` | GetTransformDefinitionFromApplication | Get the transform definition |
-| PUT | `/Transform/{TransformDefinitionId}` | PutTransformDefinition | Updates a transform definition |
-| GET | `/Transforms` | GetTransformDefinitionsFromApplication | Gets all transform definitions |
-| POST | `/Transforms` | PostTransformDefinition | Create a new transform definition |
-| DELETE | `/User/{UserId}` | DeleteUser | Deletes the user object |
-| GET | `/User/{UserId}` | GetUser | Gets the user object |
-| PATCH | `/User/{UserId}` | PatchUser | Patch user object |
-| PUT | `/User/{UserId}` | PutUser | Puts user object |
-| GET | `/User/{UserId}/Permissions` | GetUserPermissions | Gets the user permissions |
-| DELETE | `/User/{UserId}/Tag/{TagId}` | DeleteUserTag | Delete user tag |
-| GET | `/User/{UserId}/Tag/{TagId}` | GetTagFromUser | Get user tag |
-| PUT | `/User/{UserId}/Tag/{TagId}` | PutUserTag | Insert user tag |
-| GET | `/User/{UserId}/Tags` | GetTagsFromUser | Get tags from user |
-| GET | `/Users` | GetUsers | Gets all user objects |
-| POST | `/Users` | PostUser | Post user object |
-| GET | `/Users/Tag/{TagId}` | GetAllUsersWithTag | Get links to tagged users |
-| GET | `/Users/Tags` | GetAllUserTags | Get all user tags |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/Employer/{EmployerId}` | GetEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | Employer | yes | Gets the employer |
+| PUT | `/Employer/{EmployerId}` | PutEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: Employer | Employer |  | Updates the Employer |
+| DELETE | `/Employer/{EmployerId}` | DeleteEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | — |  | Delete an Employer |
+| PATCH | `/Employer/{EmployerId}` | PatchEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: Employer | Employer |  | Patches the employer |
+| GET | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}` | GetCisLineTypeFromEmployer | `EmployerId`*, `CisLineTypeId`*, `Authorization`*, `Api-Version`* | CisLineType | yes | Get CIS line type from employer |
+| PUT | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}` | PutCisLineTypeIntoEmployer | `EmployerId`*, `CisLineTypeId`*, `Authorization`*, `Api-Version`*, body*: CisLineType | CisLineType |  | Updates the CIS line type |
+| DELETE | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}` | DeleteCisLineType | `EmployerId`*, `CisLineTypeId`*, `Authorization`*, `Api-Version`* | — |  | Delete an CIS line type |
+| GET | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tag/{TagId}` | GetTagFromCisLineType | `EmployerId`*, `CisLineTypeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get CIS line type tag |
+| PUT | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tag/{TagId}` | PutCisLineTypeTag | `EmployerId`*, `CisLineTypeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert CIS line type tag |
+| DELETE | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tag/{TagId}` | DeleteCisLineTypeTag | `EmployerId`*, `CisLineTypeId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete CIS line type tag |
+| GET | `/Employer/{EmployerId}/CisLineType/{CisLineTypeId}/Tags` | GetTagsFromCisLineType | `EmployerId`*, `CisLineTypeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the CIS line type |
+| GET | `/Employer/{EmployerId}/CisLineTypes` | GetCisLineTypesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get CIS line types from employer. |
+| POST | `/Employer/{EmployerId}/CisLineTypes` | PostCisLineTypeIntoEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: CisLineType | Link |  | Create a new CIS line type |
+| GET | `/Employer/{EmployerId}/CisLineTypes/Tag/{TagId}` | GetCisLineTypesWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get CIS line types with tag |
+| GET | `/Employer/{EmployerId}/CisLineTypes/Tags` | GetAllCisLineTypeTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all CIS line type tags |
+| GET | `/Employer/{EmployerId}/CisTransaction/{CisTransactionId}` | GetCisTransactionFromEmployer | `EmployerId`*, `CisTransactionId`*, `Authorization`*, `Api-Version`* | CisTransaction | yes | Get the CIS transaction |
+| DELETE | `/Employer/{EmployerId}/CisTransaction/{CisTransactionId}` | DeleteCisTransaction | `EmployerId`*, `CisTransactionId`*, `Authorization`*, `Api-Version`* | — |  | Delete the CIS transaction |
+| GET | `/Employer/{EmployerId}/CisTransactions` | GetCisTransactionsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all CIS transactions for the employer |
+| GET | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | GetDpsMessageFromEmployer | `EmployerId`*, `DpsMessageId`*, `Authorization`*, `Api-Version`* | DpsMessage | yes | Gets the DPS message |
+| PUT | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | PutDpsMessage | `EmployerId`*, `DpsMessageId`*, `Authorization`*, `Api-Version`* | DpsMessage |  | Puts the DPS message |
+| DELETE | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | DeleteDpsMessage | `EmployerId`*, `DpsMessageId`*, `Authorization`*, `Api-Version`* | — |  | Deletes the DPS message |
+| PATCH | `/Employer/{EmployerId}/DpsMessage/{DpsMessageId}` | PatchDpsMessage | `EmployerId`*, `DpsMessageId`*, `Authorization`*, `Api-Version`* | DpsMessage |  | Patches the DPS message |
+| GET | `/Employer/{EmployerId}/DpsMessages` | GetDpsMessagesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the DPS messages |
+| POST | `/Employer/{EmployerId}/DpsMessages` | PostDpsMessage | `EmployerId`*, `Authorization`*, `Api-Version`* | Link |  | Posta the DPS message |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}` | GetEmployeeFromEmployer | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | Employee | yes | Get employee from employer |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}` | PutEmployeeIntoEmployer | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`*, body*: Employee | Employee |  | Updates the Employee |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}` | DeleteEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | — |  | Delete an Employee |
+| PATCH | `/Employer/{EmployerId}/Employee/{EmployeeId}` | PatchEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`*, body*: Employee | Employee |  | Patches the employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessment/{AEAssessmentId}` | GetAEAssessmentFromEmployee | `EmployerId`*, `EmployeeId`*, `AEAssessmentId`*, `Authorization`*, `Api-Version`* | AEAssessment | yes | Get the auto enrolment assessment |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessment/{AEAssessmentId}` | PutNewAEAssessment | `EmployerId`*, `EmployeeId`*, `AEAssessmentId`*, `Authorization`*, `Api-Version`*, body*: AEAssessment | AEAssessment |  | Insert new auto enrolment assessment |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessment/{AEAssessmentId}` | DeleteAEAssessment | `EmployerId`*, `EmployeeId`*, `AEAssessmentId`*, `Authorization`*, `Api-Version`* | — |  | Delete auto enrolment assessment |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessments` | GetAEAssessmentsFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get the auto enrolment assessments |
+| POST | `/Employer/{EmployerId}/Employee/{EmployeeId}/AEAssessments` | PostNewAEAssessment | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`*, body*: AEAssessment | Link |  | Insert new auto enrolment assessment |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Commentaries` | GetCommentariesFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get links to all commentaries for the specified employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Commentary/{CommentaryId}` | GetCommentaryFromEmployee | `EmployerId`*, `EmployeeId`*, `CommentaryId`*, `Authorization`*, `Api-Version`* | Commentary | yes | Get commentary from employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/JournalLines` | GetJournalLinesFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the journal Lines from the specified employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | GetPayInstructionFromEmployee | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `Authorization`*, `Api-Version`* | PayInstruction | yes | Gets the specified pay instruction from the employee |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | PutPayInstruction | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `Authorization`*, `Api-Version`*, body*: PayInstruction | PayInstruction |  | Update a Pay Instruction |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | DeletePayInstruction | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a pay instruction |
+| PATCH | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}` | PatchPayInstruction | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `Authorization`*, `Api-Version`*, body*: PayInstruction | PayInstruction |  | Sparse Update of a Pay Instruction |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tag/{TagId}` | GetTagFromPayInstruction | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get pay instruction tag |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tag/{TagId}` | PutPayInstructionTag | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert pay instruction tag |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tag/{TagId}` | DeletePayInstructionTag | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete pay instruction tag |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstruction/{PayInstructionId}/Tags` | GetTagsFromPayInstruction | `EmployerId`*, `EmployeeId`*, `PayInstructionId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the pay instruction |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions` | GetPayInstructionsFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay instructions from the specified employee |
+| POST | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions` | PostPayInstruction | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`*, body*: PayInstruction | Link |  | Creates a new Pay Instruction |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions/Tag/{TagId}` | GetPayInstructionsWithTag | `EmployerId`*, `EmployeeId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pay instructions with tag |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayInstructions/Tags` | GetAllPayInstructionTags | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay instruction tags |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}` | GetPayLineFromEmployee | `EmployerId`*, `EmployeeId`*, `PayLineId`*, `Authorization`*, `Api-Version`* | PayLine | yes | Gets the specified pay line from the employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tag/{TagId}` | GetTagFromPayLine | `EmployerId`*, `EmployeeId`*, `PayLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get pay line tag |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tag/{TagId}` | PutPayLineTag | `EmployerId`*, `EmployeeId`*, `PayLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert pay line tag |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tag/{TagId}` | DeletePayLineTag | `EmployerId`*, `EmployeeId`*, `PayLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete pay line tag |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLine/{PayLineId}/Tags` | GetTagsFromPayLine | `EmployerId`*, `EmployeeId`*, `PayLineId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the pay line |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLines` | GetPayLinesFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay lines from the specified employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLines/Tag/{TagId}` | GetPayLinesWithTag | `EmployerId`*, `EmployeeId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pay lines with tag |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayLines/Tags` | GetAllPayLineTags | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay line tags |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/PayRuns` | GetPayRunsFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay runs from the employee |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revision/{RevisionNumber}` | GetEmployeeRevisionByNumber | `EmployerId`*, `EmployeeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | Employee | yes | Gets the employee by revision number |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revision/{RevisionNumber}` | DeleteEmployeeRevisionByNumber | `EmployerId`*, `EmployeeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | — |  | Delete an Employee revision matching the specified revision number. |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revision/{RevisionNumber}/Summary` | GetEmployeeRevisionSummaryByNumber | `EmployerId`*, `EmployeeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | EmployeeSummary | yes | Gets the employee summary by revision number |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revisions` | GetEmployeeRevisions | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employee revisions |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Revisions/Summary` | GetEmployeeRevisionSummaries | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employee revision summaries |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secret/{SecretId}` | GetEmployeeSecret | `EmployerId`*, `EmployeeId`*, `SecretId`*, `Authorization`*, `Api-Version`* | EmployeeSecret | yes | Get employee secret |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secret/{SecretId}` | PutEmployeeSecret | `EmployerId`*, `EmployeeId`*, `SecretId`*, `Authorization`*, `Api-Version`* | EmployeeSecret |  | Create a new employee secret |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secret/{SecretId}` | DeleteEmployeeSecret | `EmployerId`*, `EmployeeId`*, `SecretId`*, `Authorization`*, `Api-Version`* | — |  | Deletes employee secret |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secrets` | GetEmployeeSecrets | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employee secret links |
+| POST | `/Employer/{EmployerId}/Employee/{EmployeeId}/Secrets` | PostEmployeeSecret | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | Link |  | Create a new employee secret |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Summary` | GetEmployeeSummaryFromEmployer | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | EmployeeSummary | yes | Get employee summary from employer |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}` | GetTagFromEmployee | `EmployerId`*, `EmployeeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get employee tag |
+| PUT | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}` | PutEmployeeTag | `EmployerId`*, `EmployeeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert employee tag |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}` | DeleteEmployeeTag | `EmployerId`*, `EmployeeId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete employee tag |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromEmployeeRevision | `EmployerId`*, `EmployeeId`*, `TagId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Tag | yes | Get employee revision tag |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tags` | GetTagsFromEmployee | `EmployerId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employee tags |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/Tags/{EffectiveDate}` | GetTagsFromEmployeeRevision | `EmployerId`*, `EmployeeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employee revision tags |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/{EffectiveDate}` | GetEmployeeByEffectiveDate | `EmployerId`*, `EmployeeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Employee | yes | Get employee by effective date. |
+| DELETE | `/Employer/{EmployerId}/Employee/{EmployeeId}/{EffectiveDate}` | DeleteEmployeeRevision | `EmployerId`*, `EmployeeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | — |  | Delete an Employee revision matching the specified revision date. |
+| GET | `/Employer/{EmployerId}/Employee/{EmployeeId}/{EffectiveDate}/Summary` | GetEmployeeSummaryByEffectiveDate | `EmployerId`*, `EmployeeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | EmployeeSummary | yes | Get employee summary by effective date. |
+| GET | `/Employer/{EmployerId}/Employees` | GetEmployeesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employees from employer. |
+| POST | `/Employer/{EmployerId}/Employees` | PostEmployeeIntoEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: Employee | Link |  | Create a new Employee |
+| GET | `/Employer/{EmployerId}/Employees/Summary` | GetEmployeeSummariesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employee summaries from employer. |
+| GET | `/Employer/{EmployerId}/Employees/Tag/{TagId}` | GetEmployeesWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employees with tag |
+| GET | `/Employer/{EmployerId}/Employees/Tags` | GetAllEmployeeTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employee tags |
+| GET | `/Employer/{EmployerId}/Employees/{EffectiveDate}` | GetEmployeesByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employees from employer at a given effective date. |
+| GET | `/Employer/{EmployerId}/Employees/{EffectiveDate}/Summary` | GetEmployeeSummariesByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employee summaries from employer at a given effective date. |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | GetHolidaySchemeFromEmployer | `EmployerId`*, `HolidaySchemeId`*, `Authorization`*, `Api-Version`* | HolidayScheme | yes | Get holiday scheme from employer |
+| PUT | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | PutHolidaySchemeIntoEmployer | `EmployerId`*, `HolidaySchemeId`*, `Authorization`*, `Api-Version`*, body*: HolidayScheme | HolidayScheme |  | Updates the holiday scheme |
+| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | DeleteHolidayScheme | `EmployerId`*, `HolidaySchemeId`*, `Authorization`*, `Api-Version`* | — |  | Delete an holiday scheme |
+| PATCH | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}` | PatchHolidayScheme | `EmployerId`*, `HolidaySchemeId`*, `Authorization`*, `Api-Version`*, body*: HolidayScheme | HolidayScheme |  | Patches the holiday scheme |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Revision/{RevisionNumber}` | GetHolidaySchemeRevisionByNumber | `EmployerId`*, `HolidaySchemeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | HolidayScheme | yes | Gets the holiday scheme revision by revision number |
+| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Revision/{RevisionNumber}` | DeleteHolidaySchemeRevisionByNumber | `EmployerId`*, `HolidaySchemeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | — |  | Delete an HolidayScheme revision matching the specified revision number. |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Revisions` | GetHolidaySchemeRevisions | `EmployerId`*, `HolidaySchemeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all holiday scheme revisions |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}` | GetTagFromHolidayScheme | `EmployerId`*, `HolidaySchemeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get holiday scheme tag |
+| PUT | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}` | PutHolidaySchemeTag | `EmployerId`*, `HolidaySchemeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert holiday scheme tag |
+| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}` | DeleteHolidaySchemeTag | `EmployerId`*, `HolidaySchemeId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete holiday scheme tag |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromHolidaySchemeRevision | `EmployerId`*, `HolidaySchemeId`*, `TagId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Tag | yes | Get holiday scheme revision tag |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tags` | GetTagsFromHolidayScheme | `EmployerId`*, `HolidaySchemeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the holiday scheme |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/Tags/{EffectiveDate}` | GetTagsFromHolidaySchemeRevision | `EmployerId`*, `HolidaySchemeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all holiday scheme revision tags |
+| GET | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/{EffectiveDate}` | GetHolidaySchemeByEffectiveDate | `EmployerId`*, `HolidaySchemeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | HolidayScheme | yes | Get holiday scheme by effective date. |
+| DELETE | `/Employer/{EmployerId}/HolidayScheme/{HolidaySchemeId}/{EffectiveDate}` | DeleteHolidaySchemeRevision | `EmployerId`*, `HolidaySchemeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | — |  | Delete an holiday scheme revision matching the specified revision date. |
+| GET | `/Employer/{EmployerId}/HolidaySchemes` | GetHolidaySchemesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get holiday schemes from employer. |
+| POST | `/Employer/{EmployerId}/HolidaySchemes` | PostHolidaySchemeIntoEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: HolidayScheme | Link |  | Create a new holiday scheme |
+| GET | `/Employer/{EmployerId}/HolidaySchemes/Tag/{TagId}` | GetHolidaySchemesWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get holiday schemes with tag |
+| GET | `/Employer/{EmployerId}/HolidaySchemes/Tags` | GetAllHolidaySchemeTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all holiday scheme tags |
+| GET | `/Employer/{EmployerId}/HolidaySchemes/{EffectiveDate}` | GetHolidaySchemesByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get holiday schemes from employer at a given effective date. |
+| GET | `/Employer/{EmployerId}/JournalInstruction/{JournalInstructionId}` | GetJournalInstructionFromEmployer | `EmployerId`*, `JournalInstructionId`*, `Authorization`*, `Api-Version`* | JournalInstruction | yes | Gets the specified journal instruction from the employer |
+| PUT | `/Employer/{EmployerId}/JournalInstruction/{JournalInstructionId}` | PutJournalInstruction | `EmployerId`*, `JournalInstructionId`*, `Authorization`*, `Api-Version`* | JournalInstruction |  | Update a Journal Instruction |
+| DELETE | `/Employer/{EmployerId}/JournalInstruction/{JournalInstructionId}` | DeleteJournalInstruction | `EmployerId`*, `JournalInstructionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a Journal instruction |
+| GET | `/Employer/{EmployerId}/JournalInstructions` | GetJournalInstructionsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the Journal instructions from the specified employer |
+| POST | `/Employer/{EmployerId}/JournalInstructions` | PostJournalInstruction | `EmployerId`*, `Authorization`*, `Api-Version`* | Link |  | Creates a new Journal Instruction |
+| GET | `/Employer/{EmployerId}/JournalLine/{JournalLineId}` | GetJournalLineFromEmployer | `EmployerId`*, `JournalLineId`*, `Authorization`*, `Api-Version`* | JournalLine | yes | Gets the specified journal Line from the employer |
+| GET | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tag/{TagId}` | GetTagFromJournalLine | `EmployerId`*, `JournalLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get journal line tag |
+| PUT | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tag/{TagId}` | PutJournalLineTag | `EmployerId`*, `JournalLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert journal line tag |
+| DELETE | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tag/{TagId}` | DeleteJournalLineTag | `EmployerId`*, `JournalLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete journal line tag |
+| GET | `/Employer/{EmployerId}/JournalLine/{JournalLineId}/Tags` | GetTagsFromJournalLine | `EmployerId`*, `JournalLineId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get tags from journal line |
+| GET | `/Employer/{EmployerId}/JournalLines` | GetJournalLinesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the Journal Lines from the specified employer |
+| GET | `/Employer/{EmployerId}/JournalLines/Tag/{TagId}` | GetAllJournalLinesWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get links to tagged journal lines |
+| GET | `/Employer/{EmployerId}/JournalLines/Tags` | GetAllJournalLineTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all journal line tags |
+| GET | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}` | GetNominalCodeFromEmployer | `EmployerId`*, `NominalCodeId`*, `Authorization`*, `Api-Version`* | NominalCode | yes | Gets the nominal code |
+| PUT | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}` | PutNominalCode | `EmployerId`*, `NominalCodeId`*, `Authorization`*, `Api-Version`*, body*: NominalCode | NominalCode |  | Insert nominal code |
+| DELETE | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}` | DeleteNominalCode | `EmployerId`*, `NominalCodeId`*, `Authorization`*, `Api-Version`* | — |  | Deletes the nominal codes |
+| GET | `/Employer/{EmployerId}/NominalCode/{NominalCodeId}/PayCodes` | GetPayCodesFromNominalCode | `EmployerId`*, `NominalCodeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay codes by nominal code |
+| GET | `/Employer/{EmployerId}/NominalCodes` | GetNominalCodesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the nominal codes |
+| POST | `/Employer/{EmployerId}/NominalCodes` | PostNominalCode | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: NominalCode | Link |  | Insert nominal code |
+| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | GetPayCodeFromEmployer | `EmployerId`*, `PayCodeId`*, `Authorization`*, `Api-Version`* | PayCode | yes | Gets the specified pay code from the employer |
+| PUT | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | PutPayCode | `EmployerId`*, `PayCodeId`*, `Authorization`*, `Api-Version`*, body*: PayCode | PayCode |  | Updates a pay code |
+| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | DeletePayCode | `EmployerId`*, `PayCodeId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a pay code |
+| PATCH | `/Employer/{EmployerId}/PayCode/{PayCodeId}` | PatchPayCode | `EmployerId`*, `PayCodeId`*, `Authorization`*, `Api-Version`*, body*: PayCode | PayCode |  | Patches the pay code |
+| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Revision/{RevisionNumber}` | GetPayCodeRevisionByNumber | `EmployerId`*, `PayCodeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | PayCode | yes | Gets the pay code by revision number |
+| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Revision/{RevisionNumber}` | DeletePayCodeRevisionByNumber | `EmployerId`*, `PayCodeId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | — |  | Delete an PayCode revision matching the specified revision number. |
+| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Revisions` | GetPayCodeRevisions | `EmployerId`*, `PayCodeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all revisions of the Pay Code |
+| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tag/{TagId}` | GetTagFromPayCode | `EmployerId`*, `PayCodeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get pay code tag |
+| PUT | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tag/{TagId}` | PutPayCodeTag | `EmployerId`*, `PayCodeId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert pay code tag |
+| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tag/{TagId}` | DeletePayCodeTag | `EmployerId`*, `PayCodeId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete pay code tag |
+| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/Tags` | GetTagsFromPayCode | `EmployerId`*, `PayCodeId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay code tags |
+| GET | `/Employer/{EmployerId}/PayCode/{PayCodeId}/{EffectiveDate}` | GetPayCodeByEffectiveDate | `EmployerId`*, `PayCodeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | PayCode | yes | Gets pay code for specified date |
+| DELETE | `/Employer/{EmployerId}/PayCode/{PayCodeId}/{EffectiveDate}` | DeletePayCodeRevision | `EmployerId`*, `PayCodeId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | — |  | Deletes a pay code revision |
+| GET | `/Employer/{EmployerId}/PayCodes` | GetPayCodesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay codes from the employer |
+| POST | `/Employer/{EmployerId}/PayCodes` | PostPayCode | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: PayCode | Link |  | Create a new pay code |
+| GET | `/Employer/{EmployerId}/PayCodes/Tag/{TagId}` | GetPayCodesWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pay codes with tag |
+| GET | `/Employer/{EmployerId}/PayCodes/Tags` | GetAllPayCodeTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay code tags |
+| GET | `/Employer/{EmployerId}/PayCodes/{EffectiveDate}` | GetPayCodesByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all pay codes for specified date |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}` | GetPayScheduleFromEmployer | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`* | PaySchedule | yes | Gets the specified pay schedule from the employer |
+| PUT | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}` | PutPaySchedule | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`*, body*: PaySchedule | PaySchedule |  | Updates a pay schedule |
+| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}` | DeletePaySchedule | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a pay schedule |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Employees` | GetEmployeesFromPaySchedule | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employees revisions from a pay schedule. |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Employees/{EffectiveDate}` | GetEmployeesFromPayScheduleOnEffectiveDate | `EmployerId`*, `PayScheduleId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employees from a pay schedule on effective date. |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}` | GetPayRunFromPaySchedule | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | PayRun | yes | Gets the pay run from the pay schedule |
+| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}` | DeletePayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a pay run |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/AEAssessments` | GetAEAssessmentsFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get the auto enrolment assessments |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Commentaries` | GetCommentariesFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get links to all commentaries for the specified pay run |
+| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Employee/{EmployeeId}` | DeletePayRunEmployee | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a pay run employee |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Employee/{EmployeeId}/Commentary` | GetCommentaryFromPayRunByEmployee | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `EmployeeId`*, `Authorization`*, `Api-Version`* | Commentary | yes | Get commentary from payrun by specified employee. |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Employees` | GetEmployeesFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employees from the pay run |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/JournalLines` | GetJournalLinesFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the journal Lines from the specified pay run |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/PayLines` | GetPayLinesFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay lines from the specified pay run |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/ReportLines` | GetReportLinesFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the report lines from the specified pay run |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tag/{TagId}` | GetTagFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get pay run tag |
+| PUT | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tag/{TagId}` | PutPayRunTag | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert pay run tag |
+| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tag/{TagId}` | DeletePayRunTag | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete pay run tag |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRun/{PayRunId}/Tags` | GetTagsFromPayRun | `EmployerId`*, `PayScheduleId`*, `PayRunId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay run tags |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRuns` | GetPayRunsFromPaySchedule | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay runs from the pay schedule |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRuns/Tag/{TagId}` | GetPayRunsWithTag | `EmployerId`*, `PayScheduleId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pay runs with tag |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/PayRuns/Tags` | GetAllPayRunTags | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay run tags |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tag/{TagId}` | GetTagFromPaySchedule | `EmployerId`*, `PayScheduleId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get pay schedule tag |
+| PUT | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tag/{TagId}` | PutPayScheduleTag | `EmployerId`*, `PayScheduleId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert pay schedule tag |
+| DELETE | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tag/{TagId}` | DeletePayScheduleTag | `EmployerId`*, `PayScheduleId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete pay schedule tag |
+| GET | `/Employer/{EmployerId}/PaySchedule/{PayScheduleId}/Tags` | GetTagsFromPaySchedule | `EmployerId`*, `PayScheduleId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay schedule tags |
+| GET | `/Employer/{EmployerId}/PaySchedules` | GetPaySchedulesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the pay schedule from the specified employer |
+| POST | `/Employer/{EmployerId}/PaySchedules` | PostPaySchedule | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: PaySchedule | Link |  | Create a new pay schedule |
+| GET | `/Employer/{EmployerId}/PaySchedules/Tag/{TagId}` | GetPaySchedulesWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pay schedule with tag |
+| GET | `/Employer/{EmployerId}/PaySchedules/Tags` | GetAllPayScheduleTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pay schedule tags |
+| GET | `/Employer/{EmployerId}/Pension/{PensionId}` | GetPensionFromEmployer | `EmployerId`*, `PensionId`*, `Authorization`*, `Api-Version`* | Pension | yes | Get pension from employer |
+| PUT | `/Employer/{EmployerId}/Pension/{PensionId}` | PutPensionIntoEmployer | `EmployerId`*, `PensionId`*, `Authorization`*, `Api-Version`*, body*: Pension | Pension |  | Updates the Pension |
+| DELETE | `/Employer/{EmployerId}/Pension/{PensionId}` | DeletePension | `EmployerId`*, `PensionId`*, `Authorization`*, `Api-Version`* | — |  | Delete a Pension |
+| PATCH | `/Employer/{EmployerId}/Pension/{PensionId}` | PatchPension | `EmployerId`*, `PensionId`*, `Authorization`*, `Api-Version`*, body*: Pension | Pension |  | Patches the pension |
+| GET | `/Employer/{EmployerId}/Pension/{PensionId}/Revision/{RevisionNumber}` | GetPensionRevisionByNumber | `EmployerId`*, `PensionId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | Pension | yes | Gets the pension by revision number |
+| DELETE | `/Employer/{EmployerId}/Pension/{PensionId}/Revision/{RevisionNumber}` | DeletePensionRevisionByNumber | `EmployerId`*, `PensionId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | — |  | Delete an Pension revision matching the specified revision number. |
+| GET | `/Employer/{EmployerId}/Pension/{PensionId}/Revisions` | GetPensionRevisions | `EmployerId`*, `PensionId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all pension revisions |
+| GET | `/Employer/{EmployerId}/Pension/{PensionId}/{EffectiveDate}` | GetPensionByEffectiveDate | `EmployerId`*, `PensionId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Pension | yes | Get pension by effective date. |
+| DELETE | `/Employer/{EmployerId}/Pension/{PensionId}/{EffectiveDate}` | DeletePensionRevision | `EmployerId`*, `PensionId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | — |  | Delete an Pension revision matching the specified revision date. |
+| GET | `/Employer/{EmployerId}/Pensions` | GetPensionsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pensions from employer. |
+| POST | `/Employer/{EmployerId}/Pensions` | PostPensionIntoEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: Pension | Link |  | Create a new Pension |
+| GET | `/Employer/{EmployerId}/Pensions/{EffectiveDate}` | GetPensionsByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get pensions from employer at a given effective date. |
+| GET | `/Employer/{EmployerId}/ReportLine/{ReportLineId}` | GetReportLineFromEmployer | `EmployerId`*, `ReportLineId`*, `Authorization`*, `Api-Version`* | ReportLine | yes | Gets the specified report line from the employer |
+| GET | `/Employer/{EmployerId}/ReportLines` | GetReportLinesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the report lines from the specified employer |
+| GET | `/Employer/{EmployerId}/ReportingInstruction/{ReportingInstructionId}` | GetReportingInstructionFromEmployer | `EmployerId`*, `ReportingInstructionId`*, `Authorization`*, `Api-Version`* | ReportingInstruction | yes | Gets the specified reporting instruction from the employer |
+| PUT | `/Employer/{EmployerId}/ReportingInstruction/{ReportingInstructionId}` | PutReportingInstruction | `EmployerId`*, `ReportingInstructionId`*, `Authorization`*, `Api-Version`*, body*: ReportingInstruction | ReportingInstruction |  | Update a reporting Instruction |
+| DELETE | `/Employer/{EmployerId}/ReportingInstruction/{ReportingInstructionId}` | DeleteReportingInstruction | `EmployerId`*, `ReportingInstructionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a reporting instruction |
+| GET | `/Employer/{EmployerId}/ReportingInstructions` | GetReportingInstructionsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the reporting instructions from the specified employer |
+| POST | `/Employer/{EmployerId}/ReportingInstructions` | PostReportingInstruction | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: ReportingInstruction | Link |  | Creates a new Reporting Instruction |
+| GET | `/Employer/{EmployerId}/Revision/{RevisionNumber}` | GetEmployerRevisionByNumber | `EmployerId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | Employer | yes | Gets the employer by revision number |
+| DELETE | `/Employer/{EmployerId}/Revision/{RevisionNumber}` | DeleteEmployerRevisionByNumber | `EmployerId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | — |  | Delete an Employer revision matching the specified revision number. |
+| GET | `/Employer/{EmployerId}/Revision/{RevisionNumber}/Summary` | GetEmployerRevisionSummaryByNumber | `EmployerId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | EmployerSummary | yes | Gets the employer summary by revision number |
+| GET | `/Employer/{EmployerId}/Revisions` | GetEmployerRevisions | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the employer revisions |
+| GET | `/Employer/{EmployerId}/Revisions/Summary` | GetEmployerRevisionSummaries | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employer revision summaries |
+| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}` | GetRtiTransactionFromEmployer | `EmployerId`*, `RtiTransactionId`*, `Authorization`*, `Api-Version`* | RtiTransactionBase | yes | Get the RTI transaction |
+| DELETE | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}` | DeleteRtiTransaction | `EmployerId`*, `RtiTransactionId`*, `Authorization`*, `Api-Version`* | — |  | Delete the RTI transaction |
+| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Summary` | GetRtiTransactionSummaryFromEmployer | `EmployerId`*, `RtiTransactionId`*, `Authorization`*, `Api-Version`* | RtiTransactionBase | yes | Get the RTI transaction summary |
+| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tag/{TagId}` | GetTagFromRtiTransaction | `EmployerId`*, `RtiTransactionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get RTI transaction tag |
+| PUT | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tag/{TagId}` | PutRtiTransactionTag | `EmployerId`*, `RtiTransactionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert RTI transaction tag |
+| DELETE | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tag/{TagId}` | DeleteRtiTransactionTag | `EmployerId`*, `RtiTransactionId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete RTI transaction tag |
+| GET | `/Employer/{EmployerId}/RtiTransaction/{RtiTransactionId}/Tags` | GetTagsFromRtiTransaction | `EmployerId`*, `RtiTransactionId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from RTI transaction |
+| GET | `/Employer/{EmployerId}/RtiTransactions` | GetRtiTransactionsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all RTI transactions for the employer |
+| GET | `/Employer/{EmployerId}/RtiTransactions/Summary` | GetRtiTransactionSummariesFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all RTI transaction summaries for the employer |
+| GET | `/Employer/{EmployerId}/RtiTransactions/Tag/{TagId}` | GetRtiTransactionsWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get RTI transactions with tag |
+| GET | `/Employer/{EmployerId}/RtiTransactions/Tags` | GetAllRtiTransactionTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all RTI transaction tags |
+| GET | `/Employer/{EmployerId}/Secret/{SecretId}` | GetEmployerSecret | `EmployerId`*, `SecretId`*, `Authorization`*, `Api-Version`* | EmployerSecret | yes | Get employer secret |
+| PUT | `/Employer/{EmployerId}/Secret/{SecretId}` | PutEmployerSecret | `EmployerId`*, `SecretId`*, `Authorization`*, `Api-Version`* | EmployerSecret |  | Create a new employer secret |
+| DELETE | `/Employer/{EmployerId}/Secret/{SecretId}` | DeleteEmployerSecret | `EmployerId`*, `SecretId`*, `Authorization`*, `Api-Version`* | — |  | Deletes employer secret |
+| GET | `/Employer/{EmployerId}/Secrets` | GetEmployerSecrets | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employer secret links |
+| POST | `/Employer/{EmployerId}/Secrets` | PostEmployerSecret | `EmployerId`*, `Authorization`*, `Api-Version`* | Link |  | Create a new employer secret |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | GetSubContractorFromEmployer | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | SubContractor | yes | Get sub contractor from employer |
+| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | PutSubContractorIntoEmployer | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`*, body*: SubContractor | SubContractor |  | Updates the sub contractor |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | DeleteSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | — |  | Delete an sub contractor |
+| PATCH | `/Employer/{EmployerId}/SubContractor/{SubContractorId}` | PatchSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`*, body*: SubContractor | SubContractor |  | Patches the sub contractor |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | GetCisInstructionFromSubContractor | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `Authorization`*, `Api-Version`* | CisInstruction | yes | Get CIS instruction from sub contractor |
+| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | PutCisInstructionIntoSubContractor | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `Authorization`*, `Api-Version`*, body*: CisInstruction | CisInstruction |  | Updates the CIS instruction |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | DeleteCisInstruction | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `Authorization`*, `Api-Version`* | — |  | Delete a CIS instruction |
+| PATCH | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}` | PatchCisInstruction | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `Authorization`*, `Api-Version`* | CisInstruction |  | Patches the CIS instruction |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tag/{TagId}` | GetTagFromCisInstruction | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get CIS instruction tag |
+| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tag/{TagId}` | PutCisInstructionTag | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert CIS instruction tag |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tag/{TagId}` | DeleteCisInstructionTag | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete CIS instruction tag |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstruction/{CisInstructionId}/Tags` | GetTagsFromCisInstruction | `EmployerId`*, `SubContractorId`*, `CisInstructionId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the CIS instruction |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions` | GetCisInstructionsFromSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get CIS instructions from sub contractor. |
+| POST | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions` | PostCisInstructionIntoSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`*, body*: CisInstruction | Link |  | Create a new CIS instruction |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions/Tag/{TagId}` | GetCisInstructionsWithTag | `EmployerId`*, `SubContractorId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get CIS instructions with tag |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisInstructions/Tags` | GetAllCisInstructionTags | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all CIS instruction tags |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}` | GetCisLineFromSubContractor | `EmployerId`*, `SubContractorId`*, `CisLineId`*, `Authorization`*, `Api-Version`* | CisLine | yes | Get CIS line from sub contractor |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}` | DeleteCisLine | `EmployerId`*, `SubContractorId`*, `CisLineId`*, `Authorization`*, `Api-Version`* | — |  | Delete a CIS line |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tag/{TagId}` | GetTagFromCisLine | `EmployerId`*, `SubContractorId`*, `CisLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get CIS line tag |
+| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tag/{TagId}` | PutCisLineTag | `EmployerId`*, `SubContractorId`*, `CisLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert CIS line tag |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tag/{TagId}` | DeleteCisLineTag | `EmployerId`*, `SubContractorId`*, `CisLineId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete CIS line tag |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLine/{CisLineId}/Tags` | GetTagsFromCisLine | `EmployerId`*, `SubContractorId`*, `CisLineId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the CIS line |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLines` | GetCisLinesFromSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get CIS lines from sub contractor. |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLines/Tag/{TagId}` | GetCisLinesWithTag | `EmployerId`*, `SubContractorId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get CIS lines with tag |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/CisLines/Tags` | GetAllCisLineTags | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all CIS line tags |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/JournalLines` | GetJournalLinesFromSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the journal Lines from the specified sub contractor |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Revision/{RevisionNumber}` | GetSubContractorRevisionByNumber | `EmployerId`*, `SubContractorId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | SubContractor | yes | Gets the sub contractor by revision number |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Revision/{RevisionNumber}` | DeleteSubContractorRevisionByNumber | `EmployerId`*, `SubContractorId`*, `RevisionNumber`*, `Authorization`*, `Api-Version`* | — |  | Delete an SubContractor revision matching the specified revision number. |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Revisions` | GetSubContractorRevisions | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all sub contractor revisions |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}` | GetTagFromSubContractor | `EmployerId`*, `SubContractorId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get sub contractor tag |
+| PUT | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}` | PutSubContractorTag | `EmployerId`*, `SubContractorId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert sub contractor tag |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}` | DeleteSubContractorTag | `EmployerId`*, `SubContractorId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete sub contractor tag |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromSubContractorRevision | `EmployerId`*, `SubContractorId`*, `TagId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Tag | yes | Get sub contractor revision tag |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tags` | GetTagsFromSubContractor | `EmployerId`*, `SubContractorId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all tags from the sub contractor |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/Tags/{EffectiveDate}` | GetTagsFromSubContractorRevision | `EmployerId`*, `SubContractorId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all sub contractor revision tags |
+| GET | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/{EffectiveDate}` | GetSubContractorByEffectiveDate | `EmployerId`*, `SubContractorId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | SubContractor | yes | Get sub contractor by effective date. |
+| DELETE | `/Employer/{EmployerId}/SubContractor/{SubContractorId}/{EffectiveDate}` | DeleteSubContractorRevision | `EmployerId`*, `SubContractorId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | — |  | Delete an sub contractor revision matching the specified revision date. |
+| GET | `/Employer/{EmployerId}/SubContractors` | GetSubContractorsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get sub contractors from employer. |
+| POST | `/Employer/{EmployerId}/SubContractors` | PostSubContractorIntoEmployer | `EmployerId`*, `Authorization`*, `Api-Version`*, body*: SubContractor | Link |  | Create a new sub contractor |
+| GET | `/Employer/{EmployerId}/SubContractors/Tag/{TagId}` | GetSubContractorsWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get sub contractors with tag |
+| GET | `/Employer/{EmployerId}/SubContractors/Tags` | GetAllSubContractorTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all sub contractor tags |
+| GET | `/Employer/{EmployerId}/SubContractors/{EffectiveDate}` | GetSubContractorsByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get sub contractors from employer at a given effective date. |
+| GET | `/Employer/{EmployerId}/Summary` | GetEmployerSummary | `EmployerId`*, `Authorization`*, `Api-Version`* | EmployerSummary | yes | Get employer summary |
+| GET | `/Employer/{EmployerId}/Tag/{TagId}` | GetTagFromEmployer | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get employer tag |
+| PUT | `/Employer/{EmployerId}/Tag/{TagId}` | PutEmployerTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert employer tag |
+| DELETE | `/Employer/{EmployerId}/Tag/{TagId}` | DeleteEmployerTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete employer tag |
+| GET | `/Employer/{EmployerId}/Tag/{TagId}/{EffectiveDate}` | GetTagFromEmployerRevision | `EmployerId`*, `TagId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Tag | yes | Get employer revision tag |
+| GET | `/Employer/{EmployerId}/Tags` | GetTagsFromEmployer | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employer tags |
+| GET | `/Employer/{EmployerId}/Tags/{EffectiveDate}` | GetTagsFromEmployerRevision | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employer revision tags |
+| GET | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}` | GetThirdPartyTransaction | `EmployerId`*, `ThirdPartyTransactionId`*, `Authorization`*, `Api-Version`* | ThirdPartyTransaction | yes | Get a third party transaction |
+| DELETE | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}` | DeleteThirdPartyTransaction | `EmployerId`*, `ThirdPartyTransactionId`*, `Authorization`*, `Api-Version`* | — |  | Delete third party transaction |
+| GET | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tag/{TagId}` | GetTagFromThirdPartyTransaction | `EmployerId`*, `ThirdPartyTransactionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get third party transaction tag |
+| PUT | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tag/{TagId}` | PutThirdPartyTransactionTag | `EmployerId`*, `ThirdPartyTransactionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | insert third party transaction tag |
+| DELETE | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tag/{TagId}` | DeleteThirdPartyTransactionTag | `EmployerId`*, `ThirdPartyTransactionId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete third party transaction tag |
+| GET | `/Employer/{EmployerId}/ThirdPartyTransaction/{ThirdPartyTransactionId}/Tags` | GetTagsFromThirdPartyTransaction | `EmployerId`*, `ThirdPartyTransactionId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get tags from third party transaction |
+| GET | `/Employer/{EmployerId}/ThirdPartyTransactions` | GetThirdPartyTransactions | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all third party transaction links |
+| GET | `/Employer/{EmployerId}/ThirdPartyTransactions/Tag/{TagId}` | GetAllThirdPartyTransactionsWithTag | `EmployerId`*, `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get links to tagged third party transactions |
+| GET | `/Employer/{EmployerId}/ThirdPartyTransactions/Tags` | GetAllThirdPartyTransactionTags | `EmployerId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all third party transaction tags |
+| GET | `/Employer/{EmployerId}/{EffectiveDate}` | GetEmployerByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | Employer | yes | Gets the employer at the specified effective |
+| DELETE | `/Employer/{EmployerId}/{EffectiveDate}` | DeleteEmployerRevision | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | — |  | Delete an Employer revision matching the specified revision date. |
+| GET | `/Employer/{EmployerId}/{EffectiveDate}/Summary` | GetEmployerSummaryByEffectiveDate | `EmployerId`*, `EffectiveDate`*, `Authorization`*, `Api-Version`* | EmployerSummary | yes | Get employer summary by effective date. |
+| GET | `/Employers` | GetEmployers | `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all employers |
+| POST | `/Employers` | PostEmployer | `Authorization`*, `Api-Version`*, body*: Employer | Link |  | Create a new Employer |
+| GET | `/Employers/Summary` | GetEmployerSummaries | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employer summaries. |
+| GET | `/Employers/Tag/{TagId}` | GetEmployersWithTag | `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employers with tag |
+| GET | `/Employers/Tags` | GetAllEmployerTags | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all employer tags |
+| GET | `/Employers/{EffectiveDate}` | GetEmployersByEffectiveDate | `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all employers at the specified effective date |
+| GET | `/Employers/{EffectiveDate}/Summary` | GetEmployerSummariesByEffectiveDate | `EffectiveDate`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get employer summaries at a given effective date. |
+| GET | `/Healthcheck` | GetHealthCheck | — | HealthCheck | yes | Get health check status |
+| GET | `/Jobs/Batch` | GetBatchJobs | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all Batch jobs |
+| POST | `/Jobs/Batch` | PostNewBatchJob | `Authorization`*, `Api-Version`*, body*: BatchJobInstruction | Link |  | Create new Batch job |
+| DELETE | `/Jobs/Batch/{JobId}` | DeleteBatchJob | `JobId`*, `Authorization`*, `Api-Version`* | — |  | Delete the Batch job |
+| GET | `/Jobs/Batch/{JobId}/Info` | GetBatchJobInfo | `JobId`*, `Authorization`*, `Api-Version`* | JobInfo | yes | Get the Batch job information |
+| GET | `/Jobs/Batch/{JobId}/Progress` | GetBatchJobProgress | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the Batch job progress |
+| GET | `/Jobs/Batch/{JobId}/Status` | GetBatchJobStatus | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the Batch job status |
+| GET | `/Jobs/Cis` | GetCisJobs | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all CIS jobs |
+| POST | `/Jobs/Cis` | PostNewCisJob | `Authorization`*, `Api-Version`*, body*: CisJobInstructionBase | Link |  | Create new CIS job |
+| DELETE | `/Jobs/Cis/{JobId}` | DeleteCisJob | `JobId`*, `Authorization`*, `Api-Version`* | — |  | Delete the CIS job |
+| GET | `/Jobs/Cis/{JobId}/Info` | GetCisJobInfo | `JobId`*, `Authorization`*, `Api-Version`* | JobInfo | yes | Get the CIS job information |
+| GET | `/Jobs/Cis/{JobId}/Progress` | GetCisJobProgress | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the CIS job progress |
+| GET | `/Jobs/Cis/{JobId}/Status` | GetCisJobStatus | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the CIS job status |
+| GET | `/Jobs/Dps` | GetDpsJobs | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all DPS jobs |
+| POST | `/Jobs/Dps` | PostNewDpsJob | `Authorization`*, `Api-Version`*, body*: DpsJobInstruction | Link |  | Create new DPS job |
+| DELETE | `/Jobs/Dps/{JobId}` | DeleteDpsJob | `JobId`*, `Authorization`*, `Api-Version`* | — |  | Delete the DPS job |
+| GET | `/Jobs/Dps/{JobId}/Info` | GetDpsJobInfo | `JobId`*, `Authorization`*, `Api-Version`* | JobInfo | yes | Get the DPS job information |
+| GET | `/Jobs/Dps/{JobId}/Progress` | GetDpsJobProgress | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the DPS job progress |
+| GET | `/Jobs/Dps/{JobId}/Status` | GetDpsJobStatus | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the DPS job status |
+| GET | `/Jobs/Employer/{EmployerId}` | GetEmployerJobs | `EmployerId`*, `Authorization`*, `Api-Version`* | string:binary | yes | Gets all jobs relating to the employer. |
+| GET | `/Jobs/PayRuns` | GetPayRunJobs | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all PayRun jobs |
+| POST | `/Jobs/PayRuns` | PostNewPayRunJob | `Authorization`*, `Api-Version`*, body*: PayRunJobInstruction | Link |  | Create new PayRun job |
+| DELETE | `/Jobs/PayRuns/{JobId}` | DeletePayRunJob | `JobId`*, `Authorization`*, `Api-Version`* | — |  | Delete the pay run job |
+| GET | `/Jobs/PayRuns/{JobId}/Info` | GetPayRunJobInfo | `JobId`*, `Authorization`*, `Api-Version`* | JobInfo | yes | Get the pay run job information |
+| GET | `/Jobs/PayRuns/{JobId}/Progress` | GetPayRunJobProgress | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the pay run job progress |
+| GET | `/Jobs/PayRuns/{JobId}/Status` | GetPayRunJobStatus | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the pay run job status |
+| GET | `/Jobs/Rti` | GetRtiJobs | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all RTI jobs |
+| POST | `/Jobs/Rti` | PostNewRtiJob | `Authorization`*, `Api-Version`*, body*: RtiJobInstruction | Link |  | Create new RTI job |
+| DELETE | `/Jobs/Rti/{JobId}` | DeleteRtiJob | `JobId`*, `Authorization`*, `Api-Version`* | — |  | Delete the RTI job |
+| GET | `/Jobs/Rti/{JobId}/Info` | GetRtiJobInfo | `JobId`*, `Authorization`*, `Api-Version`* | JobInfo | yes | Get the RTI job information |
+| GET | `/Jobs/Rti/{JobId}/Progress` | GetRtiJobProgress | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the RTI job progress |
+| GET | `/Jobs/Rti/{JobId}/Status` | GetRtiJobStatus | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the RTI job status |
+| GET | `/Jobs/ThirdParty` | GetThirdPartyJobs | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all Third Party jobs |
+| POST | `/Jobs/ThirdParty` | PostNewThirdPartyJob | `Authorization`*, `Api-Version`*, body*: ThirdPartyJobInstruction | Link |  | Create new Third Party job |
+| DELETE | `/Jobs/ThirdParty/{JobId}` | DeleteThirdPartyJob | `JobId`*, `Authorization`*, `Api-Version`* | — |  | Delete the Third Party job |
+| GET | `/Jobs/ThirdParty/{JobId}/Info` | GetThirdPartyJobInfo | `JobId`*, `Authorization`*, `Api-Version`* | JobInfo | yes | Get the Third Party job information |
+| GET | `/Jobs/ThirdParty/{JobId}/Progress` | GetThirdPartyJobProgress | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the Third Party job progress |
+| GET | `/Jobs/ThirdParty/{JobId}/Status` | GetThirdPartyJobStatus | `JobId`*, `Authorization`*, `Api-Version`* | — | yes | Get the Third Party job status |
+| GET | `/JournalInstruction/{JournalInstructionId}` | GetJournalInstructionTemplate | `JournalInstructionId`*, `Authorization`*, `Api-Version`* | JournalInstruction | yes | Gets the Journal instructions template for the application |
+| PUT | `/JournalInstruction/{JournalInstructionId}` | PutJournalInstructionTemplate | `JournalInstructionId`*, `Authorization`*, `Api-Version`* | JournalInstruction |  | Update a Journal Instruction template |
+| DELETE | `/JournalInstruction/{JournalInstructionId}` | DeleteJournalInstructionTemplate | `JournalInstructionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a Journal instruction template |
+| GET | `/JournalInstructions` | GetJournalInstructionTemplates | `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the Journal instructions templates for the application |
+| POST | `/JournalInstructions` | PostJournalInstructionTemplate | `Authorization`*, `Api-Version`* | Link |  | Creates a new Journal Instruction template |
+| GET | `/Permission/{PermissionId}` | GetPermission | `PermissionId`*, `Authorization`*, `Api-Version`* | Permission | yes | Gets the permission object |
+| PUT | `/Permission/{PermissionId}` | PutPermission | `PermissionId`*, `Authorization`*, `Api-Version`* | Permission |  | Puts permisson object |
+| DELETE | `/Permission/{PermissionId}` | DeletePermission | `PermissionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes the permission object |
+| PATCH | `/Permission/{PermissionId}` | PatchPermission | `PermissionId`*, `Authorization`*, `Api-Version`* | Permission |  | Patch permission object |
+| GET | `/Permission/{PermissionId}/Tag/{TagId}` | GetTagFromPermission | `PermissionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get Permission tag |
+| PUT | `/Permission/{PermissionId}/Tag/{TagId}` | PutPermissionTag | `PermissionId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert Permission tag |
+| DELETE | `/Permission/{PermissionId}/Tag/{TagId}` | DeletePermissionTag | `PermissionId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete Permission tag |
+| GET | `/Permission/{PermissionId}/Tags` | GetTagsFromPermission | `PermissionId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get tags from Permission |
+| GET | `/Permissions` | GetPermissions | `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all permission objects |
+| POST | `/Permissions` | PostPermission | `Authorization`*, `Api-Version`* | Link |  | Post permisson object |
+| GET | `/Permissions/Tag/{TagId}` | GetAllPermissionsWithTag | `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get links to tagged Permissions |
+| GET | `/Permissions/Tags` | GetAllPermissionTags | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all Permission tags |
+| POST | `/Query` | GetQueryResponse | `Authorization`*, `Api-Version`*, body*: Query | string:binary |  | Get the query result |
+| GET | `/ReferenceData/JournalExpressionDataTable` | GetJournalExpressionSchema | `Authorization`*, `Api-Version`* | JournalExpressionDataTable | yes | Gets the journal expression data schema |
+| GET | `/Report/ACTPAYINS/run` | GetActivePayInstructionsReportOutput | `EmployerKey`*, `EmployeeKey`*, `ActiveOn`, `FromDate`*, `ToDate`, `Type`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the active pay instructions report |
+| GET | `/Report/AOELIABILITY/run` | GetAoeLiabilityReportOuput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `TaxPeriod`, `TransformDefinitionKey`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the AOE liability report |
+| GET | `/Report/DPSMSG/run` | GetDpsMessageReportOutput | `EmployerKey`*, `FromDate`*, `ToDate`, `MessageTypes`, `MessageStatuses`, `StartIndex`, `MaxIndex`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the DPS message report |
+| GET | `/Report/EMPSUM/run` | GetEmployerSummaryReportOuput | `EmployerKey`*, `ContextDate`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the employer summary report |
+| GET | `/Report/GRO2NET/run` | GetGrossToNetReportOutput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `TaxPeriod`, `StartIndex`, `MaxIndex`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the gross to net report |
+| GET | `/Report/HOLBAL/run` | GetHolidayBalanceReportOutput | `EmployerKey`*, `HolidayYearEnd`*, `EmployeeCodes`, `StartIndex`, `MaxIndex`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the holiday balance report |
+| GET | `/Report/JOURNAL/run` | GetJournalReportOuput | `EmployerKey`*, `PayFrequency`*, `TaxYear`*, `TaxPeriod`, `LedgerTarget`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the journal report |
+| GET | `/Report/LASTPAYDATE/run` | GetLastPayDateReportOuput | `EmployerKey`*, `EmployeeKey`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the last pay date report |
+| GET | `/Report/NETPAY/run` | GetNetPayReportOutput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `TaxPeriod`, `StartIndex`, `MaxIndex`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the net pay report |
+| GET | `/Report/NEXTPERIOD/run` | GetNextPayPeriodDatesReportOutput | `EmployerKey`*, `PayScheduleKey`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the next pay period report |
+| GET | `/Report/P11SUM/run` | GetP11SummaryReportOutput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `StartIndex`, `MaxIndex`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the P11 summary report |
+| GET | `/Report/P32/run` | GetP32NetReportOutput | `EmployerKey`*, `TaxYear`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the P32 report |
+| GET | `/Report/P32SUM/run` | GetP32SummaryNetReportOutput | `EmployerKey`*, `TaxYear`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the P32 summary report |
+| GET | `/Report/P45/run` | GetP45ReportOutput | `EmployerKey`*, `EmployeeKey`*, `TransformDefinitionKey`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the P45 report |
+| GET | `/Report/P60/run` | GetP60ReportOutput | `EmployerKey`*, `TaxYear`*, `EmployeeCodes`, `TransformDefinitionKey`, `StartIndex`, `MaxIndex`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the P60 report |
+| GET | `/Report/PAPDIS/run` | GetPapdisReportOuput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `PaymentDate`, `PensionKey`*, `MessageFunctionCode`*, `TransformDefinitionKey`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the PAPDIS report |
+| GET | `/Report/PASS/run` | GetPassReportOuput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `PaymentDate`, `PensionKey`*, `MessageFunctionCode`*, `IntermediaryId`*, `DocumentId`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the PASS report |
+| GET | `/Report/PAYDASHBOARD/run` | GetPayDashboardPayslipReportOuput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `EmployeeCodes`, `TransformDefinitionKey`, `StartIndex`, `MaxIndex`, `PaymentDate`, `PublicationDate`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the Pay Dashboard payslips report |
+| GET | `/Report/PAYSLIP3/run` | GetPayslip3ReportOutput | `EmployerKey`*, `PayScheduleKey`*, `TaxYear`*, `EmployeeCodes`, `TransformDefinitionKey`, `StartIndex`, `MaxIndex`, `PaymentDate`, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the verbose payslip report |
+| GET | `/Report/PENLIABILITY/run` | GetPensionLiabilityReportOutput | `EmployerKey`*, `TaxYear`*, `PensionKey`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the pension liability report |
+| GET | `/Report/{ReportDefinitionId}` | GetReportDefinitionFromApplication | `ReportDefinitionId`*, `Authorization`*, `Api-Version`* | ReportDefinition | yes | Get the report definition |
+| PUT | `/Report/{ReportDefinitionId}` | PutReportDefinition | `ReportDefinitionId`*, `Authorization`*, `Api-Version`*, body*: ReportDefinition | ReportDefinition |  | Updates a report definition |
+| DELETE | `/Report/{ReportDefinitionId}` | DeleteReportDefinition | `ReportDefinitionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a report definition |
+| GET | `/Report/{ReportDefinitionId}/run` | GetReportOutput | `ReportDefinitionId`*, `Authorization`*, `Api-Version`* | string:binary | yes | Runs the specified report definition |
+| GET | `/Reports` | GetReportDefinitionsFromApplication | `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all reports |
+| POST | `/Reports` | PostReportDefinition | `Authorization`*, `Api-Version`*, body*: ReportDefinition | Link |  | Create a new report definition |
+| GET | `/Schemas` | GetSchemas | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get a list of all available schemas |
+| GET | `/Schemas/{DtoDataType}` | GetSchema | `DtoDataType`*, `Authorization`*, `Api-Version`* | string:binary | yes | Get XSD schema |
+| GET | `/Secret/{SecretId}` | GetApplicationSecret | `SecretId`*, `Authorization`*, `Api-Version`* | ApplicationSecret | yes | Get Application secret |
+| PUT | `/Secret/{SecretId}` | PutApplicationSecret | `SecretId`*, `Authorization`*, `Api-Version`* | ApplicationSecret |  | Create a new Application secret |
+| DELETE | `/Secret/{SecretId}` | DeleteApplicationSecret | `SecretId`*, `Authorization`*, `Api-Version`* | — |  | Deletes Application secret |
+| GET | `/Secrets` | GetApplicationSecrets | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all Application secret links |
+| POST | `/Secrets` | PostApplicationSecret | `Authorization`*, `Api-Version`* | Link |  | Create a new Application secret |
+| GET | `/Template/{DtoDataType}` | GetTemplateModel | `DtoDataType`*, `Authorization`*, `Api-Version`* | string:binary | yes | Get the object template |
+| GET | `/Templates` | GetTemplates | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get a list of all available data object tempaltes |
+| GET | `/Transform/{TransformDefinitionId}` | GetTransformDefinitionFromApplication | `TransformDefinitionId`*, `Authorization`*, `Api-Version`* | TransformDefinition | yes | Get the transform definition |
+| PUT | `/Transform/{TransformDefinitionId}` | PutTransformDefinition | `TransformDefinitionId`*, `Authorization`*, `Api-Version`*, body*: TransformDefinition | TransformDefinition |  | Updates a transform definition |
+| DELETE | `/Transform/{TransformDefinitionId}` | DeleteTransformDefinition | `TransformDefinitionId`*, `Authorization`*, `Api-Version`* | — |  | Deletes a transform definition |
+| GET | `/Transforms` | GetTransformDefinitionsFromApplication | `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all transform definitions |
+| POST | `/Transforms` | PostTransformDefinition | `Authorization`*, `Api-Version`*, body*: TransformDefinition | Link |  | Create a new transform definition |
+| GET | `/User/{UserId}` | GetUser | `UserId`*, `Authorization`*, `Api-Version`* | User | yes | Gets the user object |
+| PUT | `/User/{UserId}` | PutUser | `UserId`*, `Authorization`*, `Api-Version`* | User |  | Puts user object |
+| DELETE | `/User/{UserId}` | DeleteUser | `UserId`*, `Authorization`*, `Api-Version`* | — |  | Deletes the user object |
+| PATCH | `/User/{UserId}` | PatchUser | `UserId`*, `Authorization`*, `Api-Version`* | User |  | Patch user object |
+| GET | `/User/{UserId}/Permissions` | GetUserPermissions | `UserId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets the user permissions |
+| GET | `/User/{UserId}/Tag/{TagId}` | GetTagFromUser | `UserId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag | yes | Get user tag |
+| PUT | `/User/{UserId}/Tag/{TagId}` | PutUserTag | `UserId`*, `TagId`*, `Authorization`*, `Api-Version`* | Tag |  | Insert user tag |
+| DELETE | `/User/{UserId}/Tag/{TagId}` | DeleteUserTag | `UserId`*, `TagId`*, `Authorization`*, `Api-Version`* | — |  | Delete user tag |
+| GET | `/User/{UserId}/Tags` | GetTagsFromUser | `UserId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get tags from user |
+| GET | `/Users` | GetUsers | `Authorization`*, `Api-Version`* | LinkCollection | yes | Gets all user objects |
+| POST | `/Users` | PostUser | `Authorization`*, `Api-Version`* | Link |  | Post user object |
+| GET | `/Users/Tag/{TagId}` | GetAllUsersWithTag | `TagId`*, `Authorization`*, `Api-Version`* | LinkCollection | yes | Get links to tagged users |
+| GET | `/Users/Tags` | GetAllUserTags | `Authorization`*, `Api-Version`* | LinkCollection | yes | Get all user tags |

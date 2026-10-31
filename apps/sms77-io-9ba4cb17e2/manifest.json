@@ -96,14 +96,67 @@
         "kind": "operation",
         "method": "get",
         "name": "Analytics",
+        "parameters": [
+          {
+            "description": "Start date of the statistics in the format YYYY-MM-DD.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End date of the statistics in the format YYYY-MM-DD.",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Shows only data of a specific label.",
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive the data only for the main account, all your (sub-)accounts or only for specific subaccounts.",
+            "in": "query",
+            "name": "subaccounts",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defines the grouping of the data.",
+            "enum": [
+              "date",
+              "label",
+              "subaccount",
+              "country"
+            ],
+            "in": "query",
+            "name": "group_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/analytics",
         "pointer": "#/paths/~1analytics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "analytics"
+        ]
       },
       {
         "deprecated": false,
@@ -113,12 +166,22 @@
         "name": "Balance",
         "path": "/balance",
         "pointer": "#/paths/~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:float"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "balance"
+        ]
       },
       {
         "deprecated": false,
@@ -126,14 +189,48 @@
         "kind": "operation",
         "method": "get",
         "name": "ContactsGet",
+        "parameters": [
+          {
+            "description": "Determines the action to execute.",
+            "enum": [
+              "read"
+            ],
+            "in": "query",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Defines whether to return the response as JSON or CSV separated by semicolon.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "json",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/contacts",
         "pointer": "#/paths/~1contacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "contacts"
+        ]
       },
       {
         "deprecated": false,
@@ -141,14 +238,77 @@
         "kind": "operation",
         "method": "post",
         "name": "ContactsPOST",
+        "parameters": [
+          {
+            "description": "Determines the action to execute.",
+            "enum": [
+              "del",
+              "write"
+            ],
+            "in": "query",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Defines whether to return the response as JSON or CSV separated by semicolon.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "json",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The contact ID for editing/deletion.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The contacts name.",
+            "in": "query",
+            "name": "nick",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The contacts phone number.",
+            "in": "query",
+            "name": "empfaenger",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The contacts email address.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/contacts",
         "pointer": "#/paths/~1contacts/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "contacts"
+        ]
       },
       {
         "deprecated": false,
@@ -156,14 +316,36 @@
         "kind": "operation",
         "method": "get",
         "name": "HooksGet",
+        "parameters": [
+          {
+            "description": "Determines the action to execute.",
+            "enum": [
+              "read"
+            ],
+            "in": "query",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hooks",
         "pointer": "#/paths/~1hooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hooks"
+        ]
       },
       {
         "deprecated": false,
@@ -171,14 +353,77 @@
         "kind": "operation",
         "method": "post",
         "name": "HooksPOST",
+        "parameters": [
+          {
+            "description": "Determines the action to execute.",
+            "enum": [
+              "subscribe",
+              "unsubscribe"
+            ],
+            "in": "query",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Webhook ID you wish to unsubscribe.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Target URL of your Webhook.",
+            "in": "query",
+            "name": "target_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Type of event for which you would like to receive a webhook.",
+            "enum": [
+              "all",
+              "sms_mo",
+              "dlr",
+              "voice_status"
+            ],
+            "in": "query",
+            "name": "event_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "POST",
+            "description": "Request method in which you want to receive the webhook.",
+            "enum": [
+              "POST",
+              "JSON",
+              "GET"
+            ],
+            "in": "query",
+            "name": "request_method",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/hooks",
         "pointer": "#/paths/~1hooks/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hooks"
+        ]
       },
       {
         "deprecated": false,
@@ -186,14 +431,46 @@
         "kind": "operation",
         "method": "post",
         "name": "Lookup",
+        "parameters": [
+          {
+            "description": "Allowed values are \"cnam\", \"format\", \"hlr\" and \"mnp\".",
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The phone number to look up.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Determines whether the response shall be returned in JSON format.",
+            "in": "query",
+            "name": "json",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lookup",
         "pointer": "#/paths/~1lookup/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -201,14 +478,32 @@
         "kind": "operation",
         "method": "post",
         "name": "LookupCnam",
+        "parameters": [
+          {
+            "description": "The phone number to look up.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/lookup/cnam",
         "pointer": "#/paths/~1lookup~1cnam/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -216,14 +511,32 @@
         "kind": "operation",
         "method": "post",
         "name": "LookupFormat",
+        "parameters": [
+          {
+            "description": "The phone number to look up.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/lookup/format",
         "pointer": "#/paths/~1lookup~1format/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -231,14 +544,32 @@
         "kind": "operation",
         "method": "post",
         "name": "LookupHlr",
+        "parameters": [
+          {
+            "description": "The phone number to look up.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/lookup/hlr",
         "pointer": "#/paths/~1lookup~1hlr/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -246,14 +577,39 @@
         "kind": "operation",
         "method": "post",
         "name": "LookupMnp",
+        "parameters": [
+          {
+            "description": "The phone number to look up.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Determines whether the response shall be returned in JSON format.",
+            "in": "query",
+            "name": "json",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lookup/mnp",
         "pointer": "#/paths/~1lookup~1mnp/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -261,14 +617,39 @@
         "kind": "operation",
         "method": "get",
         "name": "Pricing",
+        "parameters": [
+          {
+            "description": "The countries ISO code to get pricings for.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Determines the response format.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing",
         "pointer": "#/paths/~1pricing/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -276,14 +657,183 @@
         "kind": "operation",
         "method": "post",
         "name": "Sms",
+        "parameters": [
+          {
+            "description": "The actual text message to send.",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The recipient number or group name.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set a custom sender name.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Identifier to return in callbacks.",
+            "in": "query",
+            "name": "foreign_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom label.",
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom User Data Header.",
+            "in": "query",
+            "name": "udh",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Date/Time for delayed dispatch.",
+            "in": "query",
+            "name": "delay",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Disable message sending.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "debug",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Enable sending of duplicated messages within 180 seconds.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "no_reload",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Force unicode encoding.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "unicode",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Send as flash.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "flash",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Force UTF8 encoding.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "utf8",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Attach message details to response.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "details",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Attach message ID to second row in a text response.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "return_msg_id",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Return a detailed JSON response.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "json",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "Enable performance tracking for found URLs.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "performance_tracking",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/sms",
         "pointer": "#/paths/~1sms/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
@@ -291,14 +841,33 @@
         "kind": "operation",
         "method": "get",
         "name": "Status",
+        "parameters": [
+          {
+            "description": "The ID from the SMS.",
+            "in": "query",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/status",
         "pointer": "#/paths/~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
@@ -306,14 +875,40 @@
         "kind": "operation",
         "method": "post",
         "name": "ValidateForVoice",
+        "parameters": [
+          {
+            "description": "Determines the recipient.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The callback URL which gets queried right after validation.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string:uri"
+          }
+        ],
         "path": "/validate_for_voice",
         "pointer": "#/paths/~1validate_for_voice/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "validate_for_voice"
+        ]
       },
       {
         "deprecated": false,
@@ -321,29 +916,76 @@
         "kind": "operation",
         "method": "post",
         "name": "Voice",
+        "parameters": [
+          {
+            "description": "Determines the receiver.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The text to convert to a voice message.",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Decides whether the parameter \"text\" is plain text or XML.",
+            "enum": [
+              1,
+              0
+            ],
+            "in": "query",
+            "name": "xml",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Sets the sender.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/voice",
         "pointer": "#/paths/~1voice/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "voice"
+        ]
       },
       {
         "id": "schema:Carrier",
         "kind": "schema",
-        "name": "Carrier"
+        "name": "Carrier",
+        "type": "object"
       },
       {
         "id": "schema:Mnp",
         "kind": "schema",
-        "name": "Mnp"
+        "name": "Mnp",
+        "type": "object"
       },
       {
         "id": "schema:Roaming",
         "kind": "schema",
-        "name": "Roaming"
+        "name": "Roaming",
+        "type": "object"
       }
     ]
   },

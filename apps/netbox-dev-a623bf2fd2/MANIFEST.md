@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `aa4bbf49acec0062fef0d0204da4d5d6bf98105d8151b6a6078b9faaad492d3d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,849 +34,851 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 233 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/circuits/circuit-terminations/` | circuits_circuit-terminations_bulk_delete | — |
-| GET | `/circuits/circuit-terminations/` | circuits_circuit-terminations_list | — |
-| PATCH | `/circuits/circuit-terminations/` | circuits_circuit-terminations_bulk_partial_update | — |
-| POST | `/circuits/circuit-terminations/` | circuits_circuit-terminations_create | — |
-| PUT | `/circuits/circuit-terminations/` | circuits_circuit-terminations_bulk_update | — |
-| DELETE | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_delete | — |
-| GET | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_read | — |
-| PATCH | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_partial_update | — |
-| PUT | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_update | — |
-| GET | `/circuits/circuit-terminations/{id}/paths/` | circuits_circuit-terminations_paths | — |
-| DELETE | `/circuits/circuit-types/` | circuits_circuit-types_bulk_delete | — |
-| GET | `/circuits/circuit-types/` | circuits_circuit-types_list | — |
-| PATCH | `/circuits/circuit-types/` | circuits_circuit-types_bulk_partial_update | — |
-| POST | `/circuits/circuit-types/` | circuits_circuit-types_create | — |
-| PUT | `/circuits/circuit-types/` | circuits_circuit-types_bulk_update | — |
-| DELETE | `/circuits/circuit-types/{id}/` | circuits_circuit-types_delete | — |
-| GET | `/circuits/circuit-types/{id}/` | circuits_circuit-types_read | — |
-| PATCH | `/circuits/circuit-types/{id}/` | circuits_circuit-types_partial_update | — |
-| PUT | `/circuits/circuit-types/{id}/` | circuits_circuit-types_update | — |
-| DELETE | `/circuits/circuits/` | circuits_circuits_bulk_delete | — |
-| GET | `/circuits/circuits/` | circuits_circuits_list | — |
-| PATCH | `/circuits/circuits/` | circuits_circuits_bulk_partial_update | — |
-| POST | `/circuits/circuits/` | circuits_circuits_create | — |
-| PUT | `/circuits/circuits/` | circuits_circuits_bulk_update | — |
-| DELETE | `/circuits/circuits/{id}/` | circuits_circuits_delete | — |
-| GET | `/circuits/circuits/{id}/` | circuits_circuits_read | — |
-| PATCH | `/circuits/circuits/{id}/` | circuits_circuits_partial_update | — |
-| PUT | `/circuits/circuits/{id}/` | circuits_circuits_update | — |
-| DELETE | `/circuits/provider-networks/` | circuits_provider-networks_bulk_delete | — |
-| GET | `/circuits/provider-networks/` | circuits_provider-networks_list | — |
-| PATCH | `/circuits/provider-networks/` | circuits_provider-networks_bulk_partial_update | — |
-| POST | `/circuits/provider-networks/` | circuits_provider-networks_create | — |
-| PUT | `/circuits/provider-networks/` | circuits_provider-networks_bulk_update | — |
-| DELETE | `/circuits/provider-networks/{id}/` | circuits_provider-networks_delete | — |
-| GET | `/circuits/provider-networks/{id}/` | circuits_provider-networks_read | — |
-| PATCH | `/circuits/provider-networks/{id}/` | circuits_provider-networks_partial_update | — |
-| PUT | `/circuits/provider-networks/{id}/` | circuits_provider-networks_update | — |
-| DELETE | `/circuits/providers/` | circuits_providers_bulk_delete | — |
-| GET | `/circuits/providers/` | circuits_providers_list | — |
-| PATCH | `/circuits/providers/` | circuits_providers_bulk_partial_update | — |
-| POST | `/circuits/providers/` | circuits_providers_create | — |
-| PUT | `/circuits/providers/` | circuits_providers_bulk_update | — |
-| DELETE | `/circuits/providers/{id}/` | circuits_providers_delete | — |
-| GET | `/circuits/providers/{id}/` | circuits_providers_read | — |
-| PATCH | `/circuits/providers/{id}/` | circuits_providers_partial_update | — |
-| PUT | `/circuits/providers/{id}/` | circuits_providers_update | — |
-| DELETE | `/dcim/cable-terminations/` | dcim_cable-terminations_bulk_delete | — |
-| GET | `/dcim/cable-terminations/` | dcim_cable-terminations_list | — |
-| PATCH | `/dcim/cable-terminations/` | dcim_cable-terminations_bulk_partial_update | — |
-| POST | `/dcim/cable-terminations/` | dcim_cable-terminations_create | — |
-| PUT | `/dcim/cable-terminations/` | dcim_cable-terminations_bulk_update | — |
-| DELETE | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_delete | — |
-| GET | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_read | — |
-| PATCH | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_partial_update | — |
-| PUT | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_update | — |
-| DELETE | `/dcim/cables/` | dcim_cables_bulk_delete | — |
-| GET | `/dcim/cables/` | dcim_cables_list | — |
-| PATCH | `/dcim/cables/` | dcim_cables_bulk_partial_update | — |
-| POST | `/dcim/cables/` | dcim_cables_create | — |
-| PUT | `/dcim/cables/` | dcim_cables_bulk_update | — |
-| DELETE | `/dcim/cables/{id}/` | dcim_cables_delete | — |
-| GET | `/dcim/cables/{id}/` | dcim_cables_read | — |
-| PATCH | `/dcim/cables/{id}/` | dcim_cables_partial_update | — |
-| PUT | `/dcim/cables/{id}/` | dcim_cables_update | — |
-| GET | `/dcim/connected-device/` | dcim_connected-device_list | — |
-| DELETE | `/dcim/console-port-templates/` | dcim_console-port-templates_bulk_delete | — |
-| GET | `/dcim/console-port-templates/` | dcim_console-port-templates_list | — |
-| PATCH | `/dcim/console-port-templates/` | dcim_console-port-templates_bulk_partial_update | — |
-| POST | `/dcim/console-port-templates/` | dcim_console-port-templates_create | — |
-| PUT | `/dcim/console-port-templates/` | dcim_console-port-templates_bulk_update | — |
-| DELETE | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_delete | — |
-| GET | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_read | — |
-| PATCH | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_partial_update | — |
-| PUT | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_update | — |
-| DELETE | `/dcim/console-ports/` | dcim_console-ports_bulk_delete | — |
-| GET | `/dcim/console-ports/` | dcim_console-ports_list | — |
-| PATCH | `/dcim/console-ports/` | dcim_console-ports_bulk_partial_update | — |
-| POST | `/dcim/console-ports/` | dcim_console-ports_create | — |
-| PUT | `/dcim/console-ports/` | dcim_console-ports_bulk_update | — |
-| DELETE | `/dcim/console-ports/{id}/` | dcim_console-ports_delete | — |
-| GET | `/dcim/console-ports/{id}/` | dcim_console-ports_read | — |
-| PATCH | `/dcim/console-ports/{id}/` | dcim_console-ports_partial_update | — |
-| PUT | `/dcim/console-ports/{id}/` | dcim_console-ports_update | — |
-| GET | `/dcim/console-ports/{id}/trace/` | dcim_console-ports_trace | — |
-| DELETE | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_bulk_delete | — |
-| GET | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_list | — |
-| PATCH | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_bulk_partial_update | — |
-| POST | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_create | — |
-| PUT | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_bulk_update | — |
-| DELETE | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_delete | — |
-| GET | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_read | — |
-| PATCH | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_partial_update | — |
-| PUT | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_update | — |
-| DELETE | `/dcim/console-server-ports/` | dcim_console-server-ports_bulk_delete | — |
-| GET | `/dcim/console-server-ports/` | dcim_console-server-ports_list | — |
-| PATCH | `/dcim/console-server-ports/` | dcim_console-server-ports_bulk_partial_update | — |
-| POST | `/dcim/console-server-ports/` | dcim_console-server-ports_create | — |
-| PUT | `/dcim/console-server-ports/` | dcim_console-server-ports_bulk_update | — |
-| DELETE | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_delete | — |
-| GET | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_read | — |
-| PATCH | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_partial_update | — |
-| PUT | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_update | — |
-| GET | `/dcim/console-server-ports/{id}/trace/` | dcim_console-server-ports_trace | — |
-| DELETE | `/dcim/device-bay-templates/` | dcim_device-bay-templates_bulk_delete | — |
-| GET | `/dcim/device-bay-templates/` | dcim_device-bay-templates_list | — |
-| PATCH | `/dcim/device-bay-templates/` | dcim_device-bay-templates_bulk_partial_update | — |
-| POST | `/dcim/device-bay-templates/` | dcim_device-bay-templates_create | — |
-| PUT | `/dcim/device-bay-templates/` | dcim_device-bay-templates_bulk_update | — |
-| DELETE | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_delete | — |
-| GET | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_read | — |
-| PATCH | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_partial_update | — |
-| PUT | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_update | — |
-| DELETE | `/dcim/device-bays/` | dcim_device-bays_bulk_delete | — |
-| GET | `/dcim/device-bays/` | dcim_device-bays_list | — |
-| PATCH | `/dcim/device-bays/` | dcim_device-bays_bulk_partial_update | — |
-| POST | `/dcim/device-bays/` | dcim_device-bays_create | — |
-| PUT | `/dcim/device-bays/` | dcim_device-bays_bulk_update | — |
-| DELETE | `/dcim/device-bays/{id}/` | dcim_device-bays_delete | — |
-| GET | `/dcim/device-bays/{id}/` | dcim_device-bays_read | — |
-| PATCH | `/dcim/device-bays/{id}/` | dcim_device-bays_partial_update | — |
-| PUT | `/dcim/device-bays/{id}/` | dcim_device-bays_update | — |
-| DELETE | `/dcim/device-roles/` | dcim_device-roles_bulk_delete | — |
-| GET | `/dcim/device-roles/` | dcim_device-roles_list | — |
-| PATCH | `/dcim/device-roles/` | dcim_device-roles_bulk_partial_update | — |
-| POST | `/dcim/device-roles/` | dcim_device-roles_create | — |
-| PUT | `/dcim/device-roles/` | dcim_device-roles_bulk_update | — |
-| DELETE | `/dcim/device-roles/{id}/` | dcim_device-roles_delete | — |
-| GET | `/dcim/device-roles/{id}/` | dcim_device-roles_read | — |
-| PATCH | `/dcim/device-roles/{id}/` | dcim_device-roles_partial_update | — |
-| PUT | `/dcim/device-roles/{id}/` | dcim_device-roles_update | — |
-| DELETE | `/dcim/device-types/` | dcim_device-types_bulk_delete | — |
-| GET | `/dcim/device-types/` | dcim_device-types_list | — |
-| PATCH | `/dcim/device-types/` | dcim_device-types_bulk_partial_update | — |
-| POST | `/dcim/device-types/` | dcim_device-types_create | — |
-| PUT | `/dcim/device-types/` | dcim_device-types_bulk_update | — |
-| DELETE | `/dcim/device-types/{id}/` | dcim_device-types_delete | — |
-| GET | `/dcim/device-types/{id}/` | dcim_device-types_read | — |
-| PATCH | `/dcim/device-types/{id}/` | dcim_device-types_partial_update | — |
-| PUT | `/dcim/device-types/{id}/` | dcim_device-types_update | — |
-| DELETE | `/dcim/devices/` | dcim_devices_bulk_delete | — |
-| GET | `/dcim/devices/` | dcim_devices_list | — |
-| PATCH | `/dcim/devices/` | dcim_devices_bulk_partial_update | — |
-| POST | `/dcim/devices/` | dcim_devices_create | — |
-| PUT | `/dcim/devices/` | dcim_devices_bulk_update | — |
-| DELETE | `/dcim/devices/{id}/` | dcim_devices_delete | — |
-| GET | `/dcim/devices/{id}/` | dcim_devices_read | — |
-| PATCH | `/dcim/devices/{id}/` | dcim_devices_partial_update | — |
-| PUT | `/dcim/devices/{id}/` | dcim_devices_update | — |
-| GET | `/dcim/devices/{id}/napalm/` | dcim_devices_napalm | — |
-| DELETE | `/dcim/front-port-templates/` | dcim_front-port-templates_bulk_delete | — |
-| GET | `/dcim/front-port-templates/` | dcim_front-port-templates_list | — |
-| PATCH | `/dcim/front-port-templates/` | dcim_front-port-templates_bulk_partial_update | — |
-| POST | `/dcim/front-port-templates/` | dcim_front-port-templates_create | — |
-| PUT | `/dcim/front-port-templates/` | dcim_front-port-templates_bulk_update | — |
-| DELETE | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_delete | — |
-| GET | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_read | — |
-| PATCH | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_partial_update | — |
-| PUT | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_update | — |
-| DELETE | `/dcim/front-ports/` | dcim_front-ports_bulk_delete | — |
-| GET | `/dcim/front-ports/` | dcim_front-ports_list | — |
-| PATCH | `/dcim/front-ports/` | dcim_front-ports_bulk_partial_update | — |
-| POST | `/dcim/front-ports/` | dcim_front-ports_create | — |
-| PUT | `/dcim/front-ports/` | dcim_front-ports_bulk_update | — |
-| DELETE | `/dcim/front-ports/{id}/` | dcim_front-ports_delete | — |
-| GET | `/dcim/front-ports/{id}/` | dcim_front-ports_read | — |
-| PATCH | `/dcim/front-ports/{id}/` | dcim_front-ports_partial_update | — |
-| PUT | `/dcim/front-ports/{id}/` | dcim_front-ports_update | — |
-| GET | `/dcim/front-ports/{id}/paths/` | dcim_front-ports_paths | — |
-| DELETE | `/dcim/interface-templates/` | dcim_interface-templates_bulk_delete | — |
-| GET | `/dcim/interface-templates/` | dcim_interface-templates_list | — |
-| PATCH | `/dcim/interface-templates/` | dcim_interface-templates_bulk_partial_update | — |
-| POST | `/dcim/interface-templates/` | dcim_interface-templates_create | — |
-| PUT | `/dcim/interface-templates/` | dcim_interface-templates_bulk_update | — |
-| DELETE | `/dcim/interface-templates/{id}/` | dcim_interface-templates_delete | — |
-| GET | `/dcim/interface-templates/{id}/` | dcim_interface-templates_read | — |
-| PATCH | `/dcim/interface-templates/{id}/` | dcim_interface-templates_partial_update | — |
-| PUT | `/dcim/interface-templates/{id}/` | dcim_interface-templates_update | — |
-| DELETE | `/dcim/interfaces/` | dcim_interfaces_bulk_delete | — |
-| GET | `/dcim/interfaces/` | dcim_interfaces_list | — |
-| PATCH | `/dcim/interfaces/` | dcim_interfaces_bulk_partial_update | — |
-| POST | `/dcim/interfaces/` | dcim_interfaces_create | — |
-| PUT | `/dcim/interfaces/` | dcim_interfaces_bulk_update | — |
-| DELETE | `/dcim/interfaces/{id}/` | dcim_interfaces_delete | — |
-| GET | `/dcim/interfaces/{id}/` | dcim_interfaces_read | — |
-| PATCH | `/dcim/interfaces/{id}/` | dcim_interfaces_partial_update | — |
-| PUT | `/dcim/interfaces/{id}/` | dcim_interfaces_update | — |
-| GET | `/dcim/interfaces/{id}/trace/` | dcim_interfaces_trace | — |
-| DELETE | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_bulk_delete | — |
-| GET | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_list | — |
-| PATCH | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_bulk_partial_update | — |
-| POST | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_create | — |
-| PUT | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_bulk_update | — |
-| DELETE | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_delete | — |
-| GET | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_read | — |
-| PATCH | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_partial_update | — |
-| PUT | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_update | — |
-| DELETE | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_bulk_delete | — |
-| GET | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_list | — |
-| PATCH | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_bulk_partial_update | — |
-| POST | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_create | — |
-| PUT | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_bulk_update | — |
-| DELETE | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_delete | — |
-| GET | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_read | — |
-| PATCH | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_partial_update | — |
-| PUT | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_update | — |
-| DELETE | `/dcim/inventory-items/` | dcim_inventory-items_bulk_delete | — |
-| GET | `/dcim/inventory-items/` | dcim_inventory-items_list | — |
-| PATCH | `/dcim/inventory-items/` | dcim_inventory-items_bulk_partial_update | — |
-| POST | `/dcim/inventory-items/` | dcim_inventory-items_create | — |
-| PUT | `/dcim/inventory-items/` | dcim_inventory-items_bulk_update | — |
-| DELETE | `/dcim/inventory-items/{id}/` | dcim_inventory-items_delete | — |
-| GET | `/dcim/inventory-items/{id}/` | dcim_inventory-items_read | — |
-| PATCH | `/dcim/inventory-items/{id}/` | dcim_inventory-items_partial_update | — |
-| PUT | `/dcim/inventory-items/{id}/` | dcim_inventory-items_update | — |
-| DELETE | `/dcim/locations/` | dcim_locations_bulk_delete | — |
-| GET | `/dcim/locations/` | dcim_locations_list | — |
-| PATCH | `/dcim/locations/` | dcim_locations_bulk_partial_update | — |
-| POST | `/dcim/locations/` | dcim_locations_create | — |
-| PUT | `/dcim/locations/` | dcim_locations_bulk_update | — |
-| DELETE | `/dcim/locations/{id}/` | dcim_locations_delete | — |
-| GET | `/dcim/locations/{id}/` | dcim_locations_read | — |
-| PATCH | `/dcim/locations/{id}/` | dcim_locations_partial_update | — |
-| PUT | `/dcim/locations/{id}/` | dcim_locations_update | — |
-| DELETE | `/dcim/manufacturers/` | dcim_manufacturers_bulk_delete | — |
-| GET | `/dcim/manufacturers/` | dcim_manufacturers_list | — |
-| PATCH | `/dcim/manufacturers/` | dcim_manufacturers_bulk_partial_update | — |
-| POST | `/dcim/manufacturers/` | dcim_manufacturers_create | — |
-| PUT | `/dcim/manufacturers/` | dcim_manufacturers_bulk_update | — |
-| DELETE | `/dcim/manufacturers/{id}/` | dcim_manufacturers_delete | — |
-| GET | `/dcim/manufacturers/{id}/` | dcim_manufacturers_read | — |
-| PATCH | `/dcim/manufacturers/{id}/` | dcim_manufacturers_partial_update | — |
-| PUT | `/dcim/manufacturers/{id}/` | dcim_manufacturers_update | — |
-| DELETE | `/dcim/module-bay-templates/` | dcim_module-bay-templates_bulk_delete | — |
-| GET | `/dcim/module-bay-templates/` | dcim_module-bay-templates_list | — |
-| PATCH | `/dcim/module-bay-templates/` | dcim_module-bay-templates_bulk_partial_update | — |
-| POST | `/dcim/module-bay-templates/` | dcim_module-bay-templates_create | — |
-| PUT | `/dcim/module-bay-templates/` | dcim_module-bay-templates_bulk_update | — |
-| DELETE | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_delete | — |
-| GET | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_read | — |
-| PATCH | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_partial_update | — |
-| PUT | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_update | — |
-| DELETE | `/dcim/module-bays/` | dcim_module-bays_bulk_delete | — |
-| GET | `/dcim/module-bays/` | dcim_module-bays_list | — |
-| PATCH | `/dcim/module-bays/` | dcim_module-bays_bulk_partial_update | — |
-| POST | `/dcim/module-bays/` | dcim_module-bays_create | — |
-| PUT | `/dcim/module-bays/` | dcim_module-bays_bulk_update | — |
-| DELETE | `/dcim/module-bays/{id}/` | dcim_module-bays_delete | — |
-| GET | `/dcim/module-bays/{id}/` | dcim_module-bays_read | — |
-| PATCH | `/dcim/module-bays/{id}/` | dcim_module-bays_partial_update | — |
-| PUT | `/dcim/module-bays/{id}/` | dcim_module-bays_update | — |
-| DELETE | `/dcim/module-types/` | dcim_module-types_bulk_delete | — |
-| GET | `/dcim/module-types/` | dcim_module-types_list | — |
-| PATCH | `/dcim/module-types/` | dcim_module-types_bulk_partial_update | — |
-| POST | `/dcim/module-types/` | dcim_module-types_create | — |
-| PUT | `/dcim/module-types/` | dcim_module-types_bulk_update | — |
-| DELETE | `/dcim/module-types/{id}/` | dcim_module-types_delete | — |
-| GET | `/dcim/module-types/{id}/` | dcim_module-types_read | — |
-| PATCH | `/dcim/module-types/{id}/` | dcim_module-types_partial_update | — |
-| PUT | `/dcim/module-types/{id}/` | dcim_module-types_update | — |
-| DELETE | `/dcim/modules/` | dcim_modules_bulk_delete | — |
-| GET | `/dcim/modules/` | dcim_modules_list | — |
-| PATCH | `/dcim/modules/` | dcim_modules_bulk_partial_update | — |
-| POST | `/dcim/modules/` | dcim_modules_create | — |
-| PUT | `/dcim/modules/` | dcim_modules_bulk_update | — |
-| DELETE | `/dcim/modules/{id}/` | dcim_modules_delete | — |
-| GET | `/dcim/modules/{id}/` | dcim_modules_read | — |
-| PATCH | `/dcim/modules/{id}/` | dcim_modules_partial_update | — |
-| PUT | `/dcim/modules/{id}/` | dcim_modules_update | — |
-| DELETE | `/dcim/platforms/` | dcim_platforms_bulk_delete | — |
-| GET | `/dcim/platforms/` | dcim_platforms_list | — |
-| PATCH | `/dcim/platforms/` | dcim_platforms_bulk_partial_update | — |
-| POST | `/dcim/platforms/` | dcim_platforms_create | — |
-| PUT | `/dcim/platforms/` | dcim_platforms_bulk_update | — |
-| DELETE | `/dcim/platforms/{id}/` | dcim_platforms_delete | — |
-| GET | `/dcim/platforms/{id}/` | dcim_platforms_read | — |
-| PATCH | `/dcim/platforms/{id}/` | dcim_platforms_partial_update | — |
-| PUT | `/dcim/platforms/{id}/` | dcim_platforms_update | — |
-| DELETE | `/dcim/power-feeds/` | dcim_power-feeds_bulk_delete | — |
-| GET | `/dcim/power-feeds/` | dcim_power-feeds_list | — |
-| PATCH | `/dcim/power-feeds/` | dcim_power-feeds_bulk_partial_update | — |
-| POST | `/dcim/power-feeds/` | dcim_power-feeds_create | — |
-| PUT | `/dcim/power-feeds/` | dcim_power-feeds_bulk_update | — |
-| DELETE | `/dcim/power-feeds/{id}/` | dcim_power-feeds_delete | — |
-| GET | `/dcim/power-feeds/{id}/` | dcim_power-feeds_read | — |
-| PATCH | `/dcim/power-feeds/{id}/` | dcim_power-feeds_partial_update | — |
-| PUT | `/dcim/power-feeds/{id}/` | dcim_power-feeds_update | — |
-| GET | `/dcim/power-feeds/{id}/trace/` | dcim_power-feeds_trace | — |
-| DELETE | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_bulk_delete | — |
-| GET | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_list | — |
-| PATCH | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_bulk_partial_update | — |
-| POST | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_create | — |
-| PUT | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_bulk_update | — |
-| DELETE | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_delete | — |
-| GET | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_read | — |
-| PATCH | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_partial_update | — |
-| PUT | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_update | — |
-| DELETE | `/dcim/power-outlets/` | dcim_power-outlets_bulk_delete | — |
-| GET | `/dcim/power-outlets/` | dcim_power-outlets_list | — |
-| PATCH | `/dcim/power-outlets/` | dcim_power-outlets_bulk_partial_update | — |
-| POST | `/dcim/power-outlets/` | dcim_power-outlets_create | — |
-| PUT | `/dcim/power-outlets/` | dcim_power-outlets_bulk_update | — |
-| DELETE | `/dcim/power-outlets/{id}/` | dcim_power-outlets_delete | — |
-| GET | `/dcim/power-outlets/{id}/` | dcim_power-outlets_read | — |
-| PATCH | `/dcim/power-outlets/{id}/` | dcim_power-outlets_partial_update | — |
-| PUT | `/dcim/power-outlets/{id}/` | dcim_power-outlets_update | — |
-| GET | `/dcim/power-outlets/{id}/trace/` | dcim_power-outlets_trace | — |
-| DELETE | `/dcim/power-panels/` | dcim_power-panels_bulk_delete | — |
-| GET | `/dcim/power-panels/` | dcim_power-panels_list | — |
-| PATCH | `/dcim/power-panels/` | dcim_power-panels_bulk_partial_update | — |
-| POST | `/dcim/power-panels/` | dcim_power-panels_create | — |
-| PUT | `/dcim/power-panels/` | dcim_power-panels_bulk_update | — |
-| DELETE | `/dcim/power-panels/{id}/` | dcim_power-panels_delete | — |
-| GET | `/dcim/power-panels/{id}/` | dcim_power-panels_read | — |
-| PATCH | `/dcim/power-panels/{id}/` | dcim_power-panels_partial_update | — |
-| PUT | `/dcim/power-panels/{id}/` | dcim_power-panels_update | — |
-| DELETE | `/dcim/power-port-templates/` | dcim_power-port-templates_bulk_delete | — |
-| GET | `/dcim/power-port-templates/` | dcim_power-port-templates_list | — |
-| PATCH | `/dcim/power-port-templates/` | dcim_power-port-templates_bulk_partial_update | — |
-| POST | `/dcim/power-port-templates/` | dcim_power-port-templates_create | — |
-| PUT | `/dcim/power-port-templates/` | dcim_power-port-templates_bulk_update | — |
-| DELETE | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_delete | — |
-| GET | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_read | — |
-| PATCH | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_partial_update | — |
-| PUT | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_update | — |
-| DELETE | `/dcim/power-ports/` | dcim_power-ports_bulk_delete | — |
-| GET | `/dcim/power-ports/` | dcim_power-ports_list | — |
-| PATCH | `/dcim/power-ports/` | dcim_power-ports_bulk_partial_update | — |
-| POST | `/dcim/power-ports/` | dcim_power-ports_create | — |
-| PUT | `/dcim/power-ports/` | dcim_power-ports_bulk_update | — |
-| DELETE | `/dcim/power-ports/{id}/` | dcim_power-ports_delete | — |
-| GET | `/dcim/power-ports/{id}/` | dcim_power-ports_read | — |
-| PATCH | `/dcim/power-ports/{id}/` | dcim_power-ports_partial_update | — |
-| PUT | `/dcim/power-ports/{id}/` | dcim_power-ports_update | — |
-| GET | `/dcim/power-ports/{id}/trace/` | dcim_power-ports_trace | — |
-| DELETE | `/dcim/rack-reservations/` | dcim_rack-reservations_bulk_delete | — |
-| GET | `/dcim/rack-reservations/` | dcim_rack-reservations_list | — |
-| PATCH | `/dcim/rack-reservations/` | dcim_rack-reservations_bulk_partial_update | — |
-| POST | `/dcim/rack-reservations/` | dcim_rack-reservations_create | — |
-| PUT | `/dcim/rack-reservations/` | dcim_rack-reservations_bulk_update | — |
-| DELETE | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_delete | — |
-| GET | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_read | — |
-| PATCH | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_partial_update | — |
-| PUT | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_update | — |
-| DELETE | `/dcim/rack-roles/` | dcim_rack-roles_bulk_delete | — |
-| GET | `/dcim/rack-roles/` | dcim_rack-roles_list | — |
-| PATCH | `/dcim/rack-roles/` | dcim_rack-roles_bulk_partial_update | — |
-| POST | `/dcim/rack-roles/` | dcim_rack-roles_create | — |
-| PUT | `/dcim/rack-roles/` | dcim_rack-roles_bulk_update | — |
-| DELETE | `/dcim/rack-roles/{id}/` | dcim_rack-roles_delete | — |
-| GET | `/dcim/rack-roles/{id}/` | dcim_rack-roles_read | — |
-| PATCH | `/dcim/rack-roles/{id}/` | dcim_rack-roles_partial_update | — |
-| PUT | `/dcim/rack-roles/{id}/` | dcim_rack-roles_update | — |
-| DELETE | `/dcim/racks/` | dcim_racks_bulk_delete | — |
-| GET | `/dcim/racks/` | dcim_racks_list | — |
-| PATCH | `/dcim/racks/` | dcim_racks_bulk_partial_update | — |
-| POST | `/dcim/racks/` | dcim_racks_create | — |
-| PUT | `/dcim/racks/` | dcim_racks_bulk_update | — |
-| DELETE | `/dcim/racks/{id}/` | dcim_racks_delete | — |
-| GET | `/dcim/racks/{id}/` | dcim_racks_read | — |
-| PATCH | `/dcim/racks/{id}/` | dcim_racks_partial_update | — |
-| PUT | `/dcim/racks/{id}/` | dcim_racks_update | — |
-| GET | `/dcim/racks/{id}/elevation/` | dcim_racks_elevation | — |
-| DELETE | `/dcim/rear-port-templates/` | dcim_rear-port-templates_bulk_delete | — |
-| GET | `/dcim/rear-port-templates/` | dcim_rear-port-templates_list | — |
-| PATCH | `/dcim/rear-port-templates/` | dcim_rear-port-templates_bulk_partial_update | — |
-| POST | `/dcim/rear-port-templates/` | dcim_rear-port-templates_create | — |
-| PUT | `/dcim/rear-port-templates/` | dcim_rear-port-templates_bulk_update | — |
-| DELETE | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_delete | — |
-| GET | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_read | — |
-| PATCH | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_partial_update | — |
-| PUT | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_update | — |
-| DELETE | `/dcim/rear-ports/` | dcim_rear-ports_bulk_delete | — |
-| GET | `/dcim/rear-ports/` | dcim_rear-ports_list | — |
-| PATCH | `/dcim/rear-ports/` | dcim_rear-ports_bulk_partial_update | — |
-| POST | `/dcim/rear-ports/` | dcim_rear-ports_create | — |
-| PUT | `/dcim/rear-ports/` | dcim_rear-ports_bulk_update | — |
-| DELETE | `/dcim/rear-ports/{id}/` | dcim_rear-ports_delete | — |
-| GET | `/dcim/rear-ports/{id}/` | dcim_rear-ports_read | — |
-| PATCH | `/dcim/rear-ports/{id}/` | dcim_rear-ports_partial_update | — |
-| PUT | `/dcim/rear-ports/{id}/` | dcim_rear-ports_update | — |
-| GET | `/dcim/rear-ports/{id}/paths/` | dcim_rear-ports_paths | — |
-| DELETE | `/dcim/regions/` | dcim_regions_bulk_delete | — |
-| GET | `/dcim/regions/` | dcim_regions_list | — |
-| PATCH | `/dcim/regions/` | dcim_regions_bulk_partial_update | — |
-| POST | `/dcim/regions/` | dcim_regions_create | — |
-| PUT | `/dcim/regions/` | dcim_regions_bulk_update | — |
-| DELETE | `/dcim/regions/{id}/` | dcim_regions_delete | — |
-| GET | `/dcim/regions/{id}/` | dcim_regions_read | — |
-| PATCH | `/dcim/regions/{id}/` | dcim_regions_partial_update | — |
-| PUT | `/dcim/regions/{id}/` | dcim_regions_update | — |
-| DELETE | `/dcim/site-groups/` | dcim_site-groups_bulk_delete | — |
-| GET | `/dcim/site-groups/` | dcim_site-groups_list | — |
-| PATCH | `/dcim/site-groups/` | dcim_site-groups_bulk_partial_update | — |
-| POST | `/dcim/site-groups/` | dcim_site-groups_create | — |
-| PUT | `/dcim/site-groups/` | dcim_site-groups_bulk_update | — |
-| DELETE | `/dcim/site-groups/{id}/` | dcim_site-groups_delete | — |
-| GET | `/dcim/site-groups/{id}/` | dcim_site-groups_read | — |
-| PATCH | `/dcim/site-groups/{id}/` | dcim_site-groups_partial_update | — |
-| PUT | `/dcim/site-groups/{id}/` | dcim_site-groups_update | — |
-| DELETE | `/dcim/sites/` | dcim_sites_bulk_delete | — |
-| GET | `/dcim/sites/` | dcim_sites_list | — |
-| PATCH | `/dcim/sites/` | dcim_sites_bulk_partial_update | — |
-| POST | `/dcim/sites/` | dcim_sites_create | — |
-| PUT | `/dcim/sites/` | dcim_sites_bulk_update | — |
-| DELETE | `/dcim/sites/{id}/` | dcim_sites_delete | — |
-| GET | `/dcim/sites/{id}/` | dcim_sites_read | — |
-| PATCH | `/dcim/sites/{id}/` | dcim_sites_partial_update | — |
-| PUT | `/dcim/sites/{id}/` | dcim_sites_update | — |
-| DELETE | `/dcim/virtual-chassis/` | dcim_virtual-chassis_bulk_delete | — |
-| GET | `/dcim/virtual-chassis/` | dcim_virtual-chassis_list | — |
-| PATCH | `/dcim/virtual-chassis/` | dcim_virtual-chassis_bulk_partial_update | — |
-| POST | `/dcim/virtual-chassis/` | dcim_virtual-chassis_create | — |
-| PUT | `/dcim/virtual-chassis/` | dcim_virtual-chassis_bulk_update | — |
-| DELETE | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_delete | — |
-| GET | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_read | — |
-| PATCH | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_partial_update | — |
-| PUT | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_update | — |
-| DELETE | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_bulk_delete | — |
-| GET | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_list | — |
-| PATCH | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_bulk_partial_update | — |
-| POST | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_create | — |
-| PUT | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_bulk_update | — |
-| DELETE | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_delete | — |
-| GET | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_read | — |
-| PATCH | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_partial_update | — |
-| PUT | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_update | — |
-| DELETE | `/extras/config-contexts/` | extras_config-contexts_bulk_delete | — |
-| GET | `/extras/config-contexts/` | extras_config-contexts_list | — |
-| PATCH | `/extras/config-contexts/` | extras_config-contexts_bulk_partial_update | — |
-| POST | `/extras/config-contexts/` | extras_config-contexts_create | — |
-| PUT | `/extras/config-contexts/` | extras_config-contexts_bulk_update | — |
-| DELETE | `/extras/config-contexts/{id}/` | extras_config-contexts_delete | — |
-| GET | `/extras/config-contexts/{id}/` | extras_config-contexts_read | — |
-| PATCH | `/extras/config-contexts/{id}/` | extras_config-contexts_partial_update | — |
-| PUT | `/extras/config-contexts/{id}/` | extras_config-contexts_update | — |
-| GET | `/extras/content-types/` | extras_content-types_list | — |
-| GET | `/extras/content-types/{id}/` | extras_content-types_read | — |
-| DELETE | `/extras/custom-fields/` | extras_custom-fields_bulk_delete | — |
-| GET | `/extras/custom-fields/` | extras_custom-fields_list | — |
-| PATCH | `/extras/custom-fields/` | extras_custom-fields_bulk_partial_update | — |
-| POST | `/extras/custom-fields/` | extras_custom-fields_create | — |
-| PUT | `/extras/custom-fields/` | extras_custom-fields_bulk_update | — |
-| DELETE | `/extras/custom-fields/{id}/` | extras_custom-fields_delete | — |
-| GET | `/extras/custom-fields/{id}/` | extras_custom-fields_read | — |
-| PATCH | `/extras/custom-fields/{id}/` | extras_custom-fields_partial_update | — |
-| PUT | `/extras/custom-fields/{id}/` | extras_custom-fields_update | — |
-| DELETE | `/extras/custom-links/` | extras_custom-links_bulk_delete | — |
-| GET | `/extras/custom-links/` | extras_custom-links_list | — |
-| PATCH | `/extras/custom-links/` | extras_custom-links_bulk_partial_update | — |
-| POST | `/extras/custom-links/` | extras_custom-links_create | — |
-| PUT | `/extras/custom-links/` | extras_custom-links_bulk_update | — |
-| DELETE | `/extras/custom-links/{id}/` | extras_custom-links_delete | — |
-| GET | `/extras/custom-links/{id}/` | extras_custom-links_read | — |
-| PATCH | `/extras/custom-links/{id}/` | extras_custom-links_partial_update | — |
-| PUT | `/extras/custom-links/{id}/` | extras_custom-links_update | — |
-| DELETE | `/extras/export-templates/` | extras_export-templates_bulk_delete | — |
-| GET | `/extras/export-templates/` | extras_export-templates_list | — |
-| PATCH | `/extras/export-templates/` | extras_export-templates_bulk_partial_update | — |
-| POST | `/extras/export-templates/` | extras_export-templates_create | — |
-| PUT | `/extras/export-templates/` | extras_export-templates_bulk_update | — |
-| DELETE | `/extras/export-templates/{id}/` | extras_export-templates_delete | — |
-| GET | `/extras/export-templates/{id}/` | extras_export-templates_read | — |
-| PATCH | `/extras/export-templates/{id}/` | extras_export-templates_partial_update | — |
-| PUT | `/extras/export-templates/{id}/` | extras_export-templates_update | — |
-| DELETE | `/extras/image-attachments/` | extras_image-attachments_bulk_delete | — |
-| GET | `/extras/image-attachments/` | extras_image-attachments_list | — |
-| PATCH | `/extras/image-attachments/` | extras_image-attachments_bulk_partial_update | — |
-| POST | `/extras/image-attachments/` | extras_image-attachments_create | — |
-| PUT | `/extras/image-attachments/` | extras_image-attachments_bulk_update | — |
-| DELETE | `/extras/image-attachments/{id}/` | extras_image-attachments_delete | — |
-| GET | `/extras/image-attachments/{id}/` | extras_image-attachments_read | — |
-| PATCH | `/extras/image-attachments/{id}/` | extras_image-attachments_partial_update | — |
-| PUT | `/extras/image-attachments/{id}/` | extras_image-attachments_update | — |
-| GET | `/extras/job-results/` | extras_job-results_list | — |
-| GET | `/extras/job-results/{id}/` | extras_job-results_read | — |
-| DELETE | `/extras/journal-entries/` | extras_journal-entries_bulk_delete | — |
-| GET | `/extras/journal-entries/` | extras_journal-entries_list | — |
-| PATCH | `/extras/journal-entries/` | extras_journal-entries_bulk_partial_update | — |
-| POST | `/extras/journal-entries/` | extras_journal-entries_create | — |
-| PUT | `/extras/journal-entries/` | extras_journal-entries_bulk_update | — |
-| DELETE | `/extras/journal-entries/{id}/` | extras_journal-entries_delete | — |
-| GET | `/extras/journal-entries/{id}/` | extras_journal-entries_read | — |
-| PATCH | `/extras/journal-entries/{id}/` | extras_journal-entries_partial_update | — |
-| PUT | `/extras/journal-entries/{id}/` | extras_journal-entries_update | — |
-| GET | `/extras/object-changes/` | extras_object-changes_list | — |
-| GET | `/extras/object-changes/{id}/` | extras_object-changes_read | — |
-| GET | `/extras/reports/` | extras_reports_list | — |
-| GET | `/extras/reports/{id}/` | extras_reports_read | — |
-| POST | `/extras/reports/{id}/run/` | extras_reports_run | — |
-| DELETE | `/extras/saved-filters/` | extras_saved-filters_bulk_delete | — |
-| GET | `/extras/saved-filters/` | extras_saved-filters_list | — |
-| PATCH | `/extras/saved-filters/` | extras_saved-filters_bulk_partial_update | — |
-| POST | `/extras/saved-filters/` | extras_saved-filters_create | — |
-| PUT | `/extras/saved-filters/` | extras_saved-filters_bulk_update | — |
-| DELETE | `/extras/saved-filters/{id}/` | extras_saved-filters_delete | — |
-| GET | `/extras/saved-filters/{id}/` | extras_saved-filters_read | — |
-| PATCH | `/extras/saved-filters/{id}/` | extras_saved-filters_partial_update | — |
-| PUT | `/extras/saved-filters/{id}/` | extras_saved-filters_update | — |
-| GET | `/extras/scripts/` | extras_scripts_list | — |
-| GET | `/extras/scripts/{id}/` | extras_scripts_read | — |
-| DELETE | `/extras/tags/` | extras_tags_bulk_delete | — |
-| GET | `/extras/tags/` | extras_tags_list | — |
-| PATCH | `/extras/tags/` | extras_tags_bulk_partial_update | — |
-| POST | `/extras/tags/` | extras_tags_create | — |
-| PUT | `/extras/tags/` | extras_tags_bulk_update | — |
-| DELETE | `/extras/tags/{id}/` | extras_tags_delete | — |
-| GET | `/extras/tags/{id}/` | extras_tags_read | — |
-| PATCH | `/extras/tags/{id}/` | extras_tags_partial_update | — |
-| PUT | `/extras/tags/{id}/` | extras_tags_update | — |
-| DELETE | `/extras/webhooks/` | extras_webhooks_bulk_delete | — |
-| GET | `/extras/webhooks/` | extras_webhooks_list | — |
-| PATCH | `/extras/webhooks/` | extras_webhooks_bulk_partial_update | — |
-| POST | `/extras/webhooks/` | extras_webhooks_create | — |
-| PUT | `/extras/webhooks/` | extras_webhooks_bulk_update | — |
-| DELETE | `/extras/webhooks/{id}/` | extras_webhooks_delete | — |
-| GET | `/extras/webhooks/{id}/` | extras_webhooks_read | — |
-| PATCH | `/extras/webhooks/{id}/` | extras_webhooks_partial_update | — |
-| PUT | `/extras/webhooks/{id}/` | extras_webhooks_update | — |
-| DELETE | `/ipam/aggregates/` | ipam_aggregates_bulk_delete | — |
-| GET | `/ipam/aggregates/` | ipam_aggregates_list | — |
-| PATCH | `/ipam/aggregates/` | ipam_aggregates_bulk_partial_update | — |
-| POST | `/ipam/aggregates/` | ipam_aggregates_create | — |
-| PUT | `/ipam/aggregates/` | ipam_aggregates_bulk_update | — |
-| DELETE | `/ipam/aggregates/{id}/` | ipam_aggregates_delete | — |
-| GET | `/ipam/aggregates/{id}/` | ipam_aggregates_read | — |
-| PATCH | `/ipam/aggregates/{id}/` | ipam_aggregates_partial_update | — |
-| PUT | `/ipam/aggregates/{id}/` | ipam_aggregates_update | — |
-| DELETE | `/ipam/asns/` | ipam_asns_bulk_delete | — |
-| GET | `/ipam/asns/` | ipam_asns_list | — |
-| PATCH | `/ipam/asns/` | ipam_asns_bulk_partial_update | — |
-| POST | `/ipam/asns/` | ipam_asns_create | — |
-| PUT | `/ipam/asns/` | ipam_asns_bulk_update | — |
-| DELETE | `/ipam/asns/{id}/` | ipam_asns_delete | — |
-| GET | `/ipam/asns/{id}/` | ipam_asns_read | — |
-| PATCH | `/ipam/asns/{id}/` | ipam_asns_partial_update | — |
-| PUT | `/ipam/asns/{id}/` | ipam_asns_update | — |
-| DELETE | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_bulk_delete | — |
-| GET | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_list | — |
-| PATCH | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_bulk_partial_update | — |
-| POST | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_create | — |
-| PUT | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_bulk_update | — |
-| DELETE | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_delete | — |
-| GET | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_read | — |
-| PATCH | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_partial_update | — |
-| PUT | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_update | — |
-| DELETE | `/ipam/fhrp-groups/` | ipam_fhrp-groups_bulk_delete | — |
-| GET | `/ipam/fhrp-groups/` | ipam_fhrp-groups_list | — |
-| PATCH | `/ipam/fhrp-groups/` | ipam_fhrp-groups_bulk_partial_update | — |
-| POST | `/ipam/fhrp-groups/` | ipam_fhrp-groups_create | — |
-| PUT | `/ipam/fhrp-groups/` | ipam_fhrp-groups_bulk_update | — |
-| DELETE | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_delete | — |
-| GET | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_read | — |
-| PATCH | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_partial_update | — |
-| PUT | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_update | — |
-| DELETE | `/ipam/ip-addresses/` | ipam_ip-addresses_bulk_delete | — |
-| GET | `/ipam/ip-addresses/` | ipam_ip-addresses_list | — |
-| PATCH | `/ipam/ip-addresses/` | ipam_ip-addresses_bulk_partial_update | — |
-| POST | `/ipam/ip-addresses/` | ipam_ip-addresses_create | — |
-| PUT | `/ipam/ip-addresses/` | ipam_ip-addresses_bulk_update | — |
-| DELETE | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_delete | — |
-| GET | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_read | — |
-| PATCH | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_partial_update | — |
-| PUT | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_update | — |
-| DELETE | `/ipam/ip-ranges/` | ipam_ip-ranges_bulk_delete | — |
-| GET | `/ipam/ip-ranges/` | ipam_ip-ranges_list | — |
-| PATCH | `/ipam/ip-ranges/` | ipam_ip-ranges_bulk_partial_update | — |
-| POST | `/ipam/ip-ranges/` | ipam_ip-ranges_create | — |
-| PUT | `/ipam/ip-ranges/` | ipam_ip-ranges_bulk_update | — |
-| DELETE | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_delete | — |
-| GET | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_read | — |
-| PATCH | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_partial_update | — |
-| PUT | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_update | — |
-| GET | `/ipam/ip-ranges/{id}/available-ips/` | ipam_ip-ranges_available-ips_list | — |
-| POST | `/ipam/ip-ranges/{id}/available-ips/` | ipam_ip-ranges_available-ips_create | — |
-| DELETE | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_bulk_delete | — |
-| GET | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_list | — |
-| PATCH | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_bulk_partial_update | — |
-| POST | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_create | — |
-| PUT | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_bulk_update | — |
-| DELETE | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_delete | — |
-| GET | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_read | — |
-| PATCH | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_partial_update | — |
-| PUT | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_update | — |
-| DELETE | `/ipam/l2vpns/` | ipam_l2vpns_bulk_delete | — |
-| GET | `/ipam/l2vpns/` | ipam_l2vpns_list | — |
-| PATCH | `/ipam/l2vpns/` | ipam_l2vpns_bulk_partial_update | — |
-| POST | `/ipam/l2vpns/` | ipam_l2vpns_create | — |
-| PUT | `/ipam/l2vpns/` | ipam_l2vpns_bulk_update | — |
-| DELETE | `/ipam/l2vpns/{id}/` | ipam_l2vpns_delete | — |
-| GET | `/ipam/l2vpns/{id}/` | ipam_l2vpns_read | — |
-| PATCH | `/ipam/l2vpns/{id}/` | ipam_l2vpns_partial_update | — |
-| PUT | `/ipam/l2vpns/{id}/` | ipam_l2vpns_update | — |
-| DELETE | `/ipam/prefixes/` | ipam_prefixes_bulk_delete | — |
-| GET | `/ipam/prefixes/` | ipam_prefixes_list | — |
-| PATCH | `/ipam/prefixes/` | ipam_prefixes_bulk_partial_update | — |
-| POST | `/ipam/prefixes/` | ipam_prefixes_create | — |
-| PUT | `/ipam/prefixes/` | ipam_prefixes_bulk_update | — |
-| DELETE | `/ipam/prefixes/{id}/` | ipam_prefixes_delete | — |
-| GET | `/ipam/prefixes/{id}/` | ipam_prefixes_read | — |
-| PATCH | `/ipam/prefixes/{id}/` | ipam_prefixes_partial_update | — |
-| PUT | `/ipam/prefixes/{id}/` | ipam_prefixes_update | — |
-| GET | `/ipam/prefixes/{id}/available-ips/` | ipam_prefixes_available-ips_list | — |
-| POST | `/ipam/prefixes/{id}/available-ips/` | ipam_prefixes_available-ips_create | — |
-| GET | `/ipam/prefixes/{id}/available-prefixes/` | ipam_prefixes_available-prefixes_list | — |
-| POST | `/ipam/prefixes/{id}/available-prefixes/` | ipam_prefixes_available-prefixes_create | — |
-| DELETE | `/ipam/rirs/` | ipam_rirs_bulk_delete | — |
-| GET | `/ipam/rirs/` | ipam_rirs_list | — |
-| PATCH | `/ipam/rirs/` | ipam_rirs_bulk_partial_update | — |
-| POST | `/ipam/rirs/` | ipam_rirs_create | — |
-| PUT | `/ipam/rirs/` | ipam_rirs_bulk_update | — |
-| DELETE | `/ipam/rirs/{id}/` | ipam_rirs_delete | — |
-| GET | `/ipam/rirs/{id}/` | ipam_rirs_read | — |
-| PATCH | `/ipam/rirs/{id}/` | ipam_rirs_partial_update | — |
-| PUT | `/ipam/rirs/{id}/` | ipam_rirs_update | — |
-| DELETE | `/ipam/roles/` | ipam_roles_bulk_delete | — |
-| GET | `/ipam/roles/` | ipam_roles_list | — |
-| PATCH | `/ipam/roles/` | ipam_roles_bulk_partial_update | — |
-| POST | `/ipam/roles/` | ipam_roles_create | — |
-| PUT | `/ipam/roles/` | ipam_roles_bulk_update | — |
-| DELETE | `/ipam/roles/{id}/` | ipam_roles_delete | — |
-| GET | `/ipam/roles/{id}/` | ipam_roles_read | — |
-| PATCH | `/ipam/roles/{id}/` | ipam_roles_partial_update | — |
-| PUT | `/ipam/roles/{id}/` | ipam_roles_update | — |
-| DELETE | `/ipam/route-targets/` | ipam_route-targets_bulk_delete | — |
-| GET | `/ipam/route-targets/` | ipam_route-targets_list | — |
-| PATCH | `/ipam/route-targets/` | ipam_route-targets_bulk_partial_update | — |
-| POST | `/ipam/route-targets/` | ipam_route-targets_create | — |
-| PUT | `/ipam/route-targets/` | ipam_route-targets_bulk_update | — |
-| DELETE | `/ipam/route-targets/{id}/` | ipam_route-targets_delete | — |
-| GET | `/ipam/route-targets/{id}/` | ipam_route-targets_read | — |
-| PATCH | `/ipam/route-targets/{id}/` | ipam_route-targets_partial_update | — |
-| PUT | `/ipam/route-targets/{id}/` | ipam_route-targets_update | — |
-| DELETE | `/ipam/service-templates/` | ipam_service-templates_bulk_delete | — |
-| GET | `/ipam/service-templates/` | ipam_service-templates_list | — |
-| PATCH | `/ipam/service-templates/` | ipam_service-templates_bulk_partial_update | — |
-| POST | `/ipam/service-templates/` | ipam_service-templates_create | — |
-| PUT | `/ipam/service-templates/` | ipam_service-templates_bulk_update | — |
-| DELETE | `/ipam/service-templates/{id}/` | ipam_service-templates_delete | — |
-| GET | `/ipam/service-templates/{id}/` | ipam_service-templates_read | — |
-| PATCH | `/ipam/service-templates/{id}/` | ipam_service-templates_partial_update | — |
-| PUT | `/ipam/service-templates/{id}/` | ipam_service-templates_update | — |
-| DELETE | `/ipam/services/` | ipam_services_bulk_delete | — |
-| GET | `/ipam/services/` | ipam_services_list | — |
-| PATCH | `/ipam/services/` | ipam_services_bulk_partial_update | — |
-| POST | `/ipam/services/` | ipam_services_create | — |
-| PUT | `/ipam/services/` | ipam_services_bulk_update | — |
-| DELETE | `/ipam/services/{id}/` | ipam_services_delete | — |
-| GET | `/ipam/services/{id}/` | ipam_services_read | — |
-| PATCH | `/ipam/services/{id}/` | ipam_services_partial_update | — |
-| PUT | `/ipam/services/{id}/` | ipam_services_update | — |
-| DELETE | `/ipam/vlan-groups/` | ipam_vlan-groups_bulk_delete | — |
-| GET | `/ipam/vlan-groups/` | ipam_vlan-groups_list | — |
-| PATCH | `/ipam/vlan-groups/` | ipam_vlan-groups_bulk_partial_update | — |
-| POST | `/ipam/vlan-groups/` | ipam_vlan-groups_create | — |
-| PUT | `/ipam/vlan-groups/` | ipam_vlan-groups_bulk_update | — |
-| DELETE | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_delete | — |
-| GET | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_read | — |
-| PATCH | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_partial_update | — |
-| PUT | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_update | — |
-| GET | `/ipam/vlan-groups/{id}/available-vlans/` | ipam_vlan-groups_available-vlans_list | — |
-| POST | `/ipam/vlan-groups/{id}/available-vlans/` | ipam_vlan-groups_available-vlans_create | — |
-| DELETE | `/ipam/vlans/` | ipam_vlans_bulk_delete | — |
-| GET | `/ipam/vlans/` | ipam_vlans_list | — |
-| PATCH | `/ipam/vlans/` | ipam_vlans_bulk_partial_update | — |
-| POST | `/ipam/vlans/` | ipam_vlans_create | — |
-| PUT | `/ipam/vlans/` | ipam_vlans_bulk_update | — |
-| DELETE | `/ipam/vlans/{id}/` | ipam_vlans_delete | — |
-| GET | `/ipam/vlans/{id}/` | ipam_vlans_read | — |
-| PATCH | `/ipam/vlans/{id}/` | ipam_vlans_partial_update | — |
-| PUT | `/ipam/vlans/{id}/` | ipam_vlans_update | — |
-| DELETE | `/ipam/vrfs/` | ipam_vrfs_bulk_delete | — |
-| GET | `/ipam/vrfs/` | ipam_vrfs_list | — |
-| PATCH | `/ipam/vrfs/` | ipam_vrfs_bulk_partial_update | — |
-| POST | `/ipam/vrfs/` | ipam_vrfs_create | — |
-| PUT | `/ipam/vrfs/` | ipam_vrfs_bulk_update | — |
-| DELETE | `/ipam/vrfs/{id}/` | ipam_vrfs_delete | — |
-| GET | `/ipam/vrfs/{id}/` | ipam_vrfs_read | — |
-| PATCH | `/ipam/vrfs/{id}/` | ipam_vrfs_partial_update | — |
-| PUT | `/ipam/vrfs/{id}/` | ipam_vrfs_update | — |
-| GET | `/status/` | status_list | — |
-| DELETE | `/tenancy/contact-assignments/` | tenancy_contact-assignments_bulk_delete | — |
-| GET | `/tenancy/contact-assignments/` | tenancy_contact-assignments_list | — |
-| PATCH | `/tenancy/contact-assignments/` | tenancy_contact-assignments_bulk_partial_update | — |
-| POST | `/tenancy/contact-assignments/` | tenancy_contact-assignments_create | — |
-| PUT | `/tenancy/contact-assignments/` | tenancy_contact-assignments_bulk_update | — |
-| DELETE | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_delete | — |
-| GET | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_read | — |
-| PATCH | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_partial_update | — |
-| PUT | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_update | — |
-| DELETE | `/tenancy/contact-groups/` | tenancy_contact-groups_bulk_delete | — |
-| GET | `/tenancy/contact-groups/` | tenancy_contact-groups_list | — |
-| PATCH | `/tenancy/contact-groups/` | tenancy_contact-groups_bulk_partial_update | — |
-| POST | `/tenancy/contact-groups/` | tenancy_contact-groups_create | — |
-| PUT | `/tenancy/contact-groups/` | tenancy_contact-groups_bulk_update | — |
-| DELETE | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_delete | — |
-| GET | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_read | — |
-| PATCH | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_partial_update | — |
-| PUT | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_update | — |
-| DELETE | `/tenancy/contact-roles/` | tenancy_contact-roles_bulk_delete | — |
-| GET | `/tenancy/contact-roles/` | tenancy_contact-roles_list | — |
-| PATCH | `/tenancy/contact-roles/` | tenancy_contact-roles_bulk_partial_update | — |
-| POST | `/tenancy/contact-roles/` | tenancy_contact-roles_create | — |
-| PUT | `/tenancy/contact-roles/` | tenancy_contact-roles_bulk_update | — |
-| DELETE | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_delete | — |
-| GET | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_read | — |
-| PATCH | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_partial_update | — |
-| PUT | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_update | — |
-| DELETE | `/tenancy/contacts/` | tenancy_contacts_bulk_delete | — |
-| GET | `/tenancy/contacts/` | tenancy_contacts_list | — |
-| PATCH | `/tenancy/contacts/` | tenancy_contacts_bulk_partial_update | — |
-| POST | `/tenancy/contacts/` | tenancy_contacts_create | — |
-| PUT | `/tenancy/contacts/` | tenancy_contacts_bulk_update | — |
-| DELETE | `/tenancy/contacts/{id}/` | tenancy_contacts_delete | — |
-| GET | `/tenancy/contacts/{id}/` | tenancy_contacts_read | — |
-| PATCH | `/tenancy/contacts/{id}/` | tenancy_contacts_partial_update | — |
-| PUT | `/tenancy/contacts/{id}/` | tenancy_contacts_update | — |
-| DELETE | `/tenancy/tenant-groups/` | tenancy_tenant-groups_bulk_delete | — |
-| GET | `/tenancy/tenant-groups/` | tenancy_tenant-groups_list | — |
-| PATCH | `/tenancy/tenant-groups/` | tenancy_tenant-groups_bulk_partial_update | — |
-| POST | `/tenancy/tenant-groups/` | tenancy_tenant-groups_create | — |
-| PUT | `/tenancy/tenant-groups/` | tenancy_tenant-groups_bulk_update | — |
-| DELETE | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_delete | — |
-| GET | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_read | — |
-| PATCH | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_partial_update | — |
-| PUT | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_update | — |
-| DELETE | `/tenancy/tenants/` | tenancy_tenants_bulk_delete | — |
-| GET | `/tenancy/tenants/` | tenancy_tenants_list | — |
-| PATCH | `/tenancy/tenants/` | tenancy_tenants_bulk_partial_update | — |
-| POST | `/tenancy/tenants/` | tenancy_tenants_create | — |
-| PUT | `/tenancy/tenants/` | tenancy_tenants_bulk_update | — |
-| DELETE | `/tenancy/tenants/{id}/` | tenancy_tenants_delete | — |
-| GET | `/tenancy/tenants/{id}/` | tenancy_tenants_read | — |
-| PATCH | `/tenancy/tenants/{id}/` | tenancy_tenants_partial_update | — |
-| PUT | `/tenancy/tenants/{id}/` | tenancy_tenants_update | — |
-| GET | `/users/config/` | users_config_list | — |
-| DELETE | `/users/groups/` | users_groups_bulk_delete | — |
-| GET | `/users/groups/` | users_groups_list | — |
-| PATCH | `/users/groups/` | users_groups_bulk_partial_update | — |
-| POST | `/users/groups/` | users_groups_create | — |
-| PUT | `/users/groups/` | users_groups_bulk_update | — |
-| DELETE | `/users/groups/{id}/` | users_groups_delete | — |
-| GET | `/users/groups/{id}/` | users_groups_read | — |
-| PATCH | `/users/groups/{id}/` | users_groups_partial_update | — |
-| PUT | `/users/groups/{id}/` | users_groups_update | — |
-| DELETE | `/users/permissions/` | users_permissions_bulk_delete | — |
-| GET | `/users/permissions/` | users_permissions_list | — |
-| PATCH | `/users/permissions/` | users_permissions_bulk_partial_update | — |
-| POST | `/users/permissions/` | users_permissions_create | — |
-| PUT | `/users/permissions/` | users_permissions_bulk_update | — |
-| DELETE | `/users/permissions/{id}/` | users_permissions_delete | — |
-| GET | `/users/permissions/{id}/` | users_permissions_read | — |
-| PATCH | `/users/permissions/{id}/` | users_permissions_partial_update | — |
-| PUT | `/users/permissions/{id}/` | users_permissions_update | — |
-| DELETE | `/users/tokens/` | users_tokens_bulk_delete | — |
-| GET | `/users/tokens/` | users_tokens_list | — |
-| PATCH | `/users/tokens/` | users_tokens_bulk_partial_update | — |
-| POST | `/users/tokens/` | users_tokens_create | — |
-| PUT | `/users/tokens/` | users_tokens_bulk_update | — |
-| POST | `/users/tokens/provision/` | users_tokens_provision_create | — |
-| DELETE | `/users/tokens/{id}/` | users_tokens_delete | — |
-| GET | `/users/tokens/{id}/` | users_tokens_read | — |
-| PATCH | `/users/tokens/{id}/` | users_tokens_partial_update | — |
-| PUT | `/users/tokens/{id}/` | users_tokens_update | — |
-| DELETE | `/users/users/` | users_users_bulk_delete | — |
-| GET | `/users/users/` | users_users_list | — |
-| PATCH | `/users/users/` | users_users_bulk_partial_update | — |
-| POST | `/users/users/` | users_users_create | — |
-| PUT | `/users/users/` | users_users_bulk_update | — |
-| DELETE | `/users/users/{id}/` | users_users_delete | — |
-| GET | `/users/users/{id}/` | users_users_read | — |
-| PATCH | `/users/users/{id}/` | users_users_partial_update | — |
-| PUT | `/users/users/{id}/` | users_users_update | — |
-| DELETE | `/virtualization/cluster-groups/` | virtualization_cluster-groups_bulk_delete | — |
-| GET | `/virtualization/cluster-groups/` | virtualization_cluster-groups_list | — |
-| PATCH | `/virtualization/cluster-groups/` | virtualization_cluster-groups_bulk_partial_update | — |
-| POST | `/virtualization/cluster-groups/` | virtualization_cluster-groups_create | — |
-| PUT | `/virtualization/cluster-groups/` | virtualization_cluster-groups_bulk_update | — |
-| DELETE | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_delete | — |
-| GET | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_read | — |
-| PATCH | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_partial_update | — |
-| PUT | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_update | — |
-| DELETE | `/virtualization/cluster-types/` | virtualization_cluster-types_bulk_delete | — |
-| GET | `/virtualization/cluster-types/` | virtualization_cluster-types_list | — |
-| PATCH | `/virtualization/cluster-types/` | virtualization_cluster-types_bulk_partial_update | — |
-| POST | `/virtualization/cluster-types/` | virtualization_cluster-types_create | — |
-| PUT | `/virtualization/cluster-types/` | virtualization_cluster-types_bulk_update | — |
-| DELETE | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_delete | — |
-| GET | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_read | — |
-| PATCH | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_partial_update | — |
-| PUT | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_update | — |
-| DELETE | `/virtualization/clusters/` | virtualization_clusters_bulk_delete | — |
-| GET | `/virtualization/clusters/` | virtualization_clusters_list | — |
-| PATCH | `/virtualization/clusters/` | virtualization_clusters_bulk_partial_update | — |
-| POST | `/virtualization/clusters/` | virtualization_clusters_create | — |
-| PUT | `/virtualization/clusters/` | virtualization_clusters_bulk_update | — |
-| DELETE | `/virtualization/clusters/{id}/` | virtualization_clusters_delete | — |
-| GET | `/virtualization/clusters/{id}/` | virtualization_clusters_read | — |
-| PATCH | `/virtualization/clusters/{id}/` | virtualization_clusters_partial_update | — |
-| PUT | `/virtualization/clusters/{id}/` | virtualization_clusters_update | — |
-| DELETE | `/virtualization/interfaces/` | virtualization_interfaces_bulk_delete | — |
-| GET | `/virtualization/interfaces/` | virtualization_interfaces_list | — |
-| PATCH | `/virtualization/interfaces/` | virtualization_interfaces_bulk_partial_update | — |
-| POST | `/virtualization/interfaces/` | virtualization_interfaces_create | — |
-| PUT | `/virtualization/interfaces/` | virtualization_interfaces_bulk_update | — |
-| DELETE | `/virtualization/interfaces/{id}/` | virtualization_interfaces_delete | — |
-| GET | `/virtualization/interfaces/{id}/` | virtualization_interfaces_read | — |
-| PATCH | `/virtualization/interfaces/{id}/` | virtualization_interfaces_partial_update | — |
-| PUT | `/virtualization/interfaces/{id}/` | virtualization_interfaces_update | — |
-| DELETE | `/virtualization/virtual-machines/` | virtualization_virtual-machines_bulk_delete | — |
-| GET | `/virtualization/virtual-machines/` | virtualization_virtual-machines_list | — |
-| PATCH | `/virtualization/virtual-machines/` | virtualization_virtual-machines_bulk_partial_update | — |
-| POST | `/virtualization/virtual-machines/` | virtualization_virtual-machines_create | — |
-| PUT | `/virtualization/virtual-machines/` | virtualization_virtual-machines_bulk_update | — |
-| DELETE | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_delete | — |
-| GET | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_read | — |
-| PATCH | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_partial_update | — |
-| PUT | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_update | — |
-| DELETE | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_bulk_delete | — |
-| GET | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_list | — |
-| PATCH | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_bulk_partial_update | — |
-| POST | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_create | — |
-| PUT | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_bulk_update | — |
-| DELETE | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_delete | — |
-| GET | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_read | — |
-| PATCH | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_partial_update | — |
-| PUT | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_update | — |
-| DELETE | `/wireless/wireless-lans/` | wireless_wireless-lans_bulk_delete | — |
-| GET | `/wireless/wireless-lans/` | wireless_wireless-lans_list | — |
-| PATCH | `/wireless/wireless-lans/` | wireless_wireless-lans_bulk_partial_update | — |
-| POST | `/wireless/wireless-lans/` | wireless_wireless-lans_create | — |
-| PUT | `/wireless/wireless-lans/` | wireless_wireless-lans_bulk_update | — |
-| DELETE | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_delete | — |
-| GET | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_read | — |
-| PATCH | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_partial_update | — |
-| PUT | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_update | — |
-| DELETE | `/wireless/wireless-links/` | wireless_wireless-links_bulk_delete | — |
-| GET | `/wireless/wireless-links/` | wireless_wireless-links_list | — |
-| PATCH | `/wireless/wireless-links/` | wireless_wireless-links_bulk_partial_update | — |
-| POST | `/wireless/wireless-links/` | wireless_wireless-links_create | — |
-| PUT | `/wireless/wireless-links/` | wireless_wireless-links_bulk_update | — |
-| DELETE | `/wireless/wireless-links/{id}/` | wireless_wireless-links_delete | — |
-| GET | `/wireless/wireless-links/{id}/` | wireless_wireless-links_read | — |
-| PATCH | `/wireless/wireless-links/{id}/` | wireless_wireless-links_partial_update | — |
-| PUT | `/wireless/wireless-links/{id}/` | wireless_wireless-links_update | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/circuits/circuit-terminations/` | circuits_circuit-terminations_list | `id`, `term_side`, `port_speed`, `upstream_speed`, `xconnect_id`, `description`, `cable_end`, `created`, `last_updated`, `q`, `tag`, `cabled`, `occupied`, `circuit_id`, `site_id`, `site`, `provider_network_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `term_side__n`, `port_speed__n`, `port_speed__lte`, `port_speed__lt`, `port_speed__gte`, `port_speed__gt`, `upstream_speed__n`, `upstream_speed__lte`, `upstream_speed__lt`, `upstream_speed__gte`, `upstream_speed__gt`, `xconnect_id__n`, `xconnect_id__ic`, `xconnect_id__nic`, `xconnect_id__iew`, `xconnect_id__niew`, `xconnect_id__isw`, `xconnect_id__nisw`, `xconnect_id__ie`, `xconnect_id__nie`, `xconnect_id__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `circuit_id__n`, `site_id__n`, `site__n`, `provider_network_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/circuits/circuit-terminations/` | circuits_circuit-terminations_bulk_update | body*: WritableCircuitTermination | CircuitTermination |  | — |
+| POST | `/circuits/circuit-terminations/` | circuits_circuit-terminations_create | body*: WritableCircuitTermination | CircuitTermination |  | — |
+| DELETE | `/circuits/circuit-terminations/` | circuits_circuit-terminations_bulk_delete | — | — |  | — |
+| PATCH | `/circuits/circuit-terminations/` | circuits_circuit-terminations_bulk_partial_update | body*: WritableCircuitTermination | CircuitTermination |  | — |
+| GET | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_read | `id`* | CircuitTermination | yes | — |
+| PUT | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_update | `id`*, body*: WritableCircuitTermination | CircuitTermination |  | — |
+| DELETE | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_delete | `id`* | — |  | — |
+| PATCH | `/circuits/circuit-terminations/{id}/` | circuits_circuit-terminations_partial_update | `id`*, body*: WritableCircuitTermination | CircuitTermination |  | — |
+| GET | `/circuits/circuit-terminations/{id}/paths/` | circuits_circuit-terminations_paths | `id`* | CircuitTermination | yes | — |
+| GET | `/circuits/circuit-types/` | circuits_circuit-types_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/circuits/circuit-types/` | circuits_circuit-types_bulk_update | body*: CircuitType | CircuitType |  | — |
+| POST | `/circuits/circuit-types/` | circuits_circuit-types_create | body*: CircuitType | CircuitType |  | — |
+| DELETE | `/circuits/circuit-types/` | circuits_circuit-types_bulk_delete | — | — |  | — |
+| PATCH | `/circuits/circuit-types/` | circuits_circuit-types_bulk_partial_update | body*: CircuitType | CircuitType |  | — |
+| GET | `/circuits/circuit-types/{id}/` | circuits_circuit-types_read | `id`* | CircuitType | yes | — |
+| PUT | `/circuits/circuit-types/{id}/` | circuits_circuit-types_update | `id`*, body*: CircuitType | CircuitType |  | — |
+| DELETE | `/circuits/circuit-types/{id}/` | circuits_circuit-types_delete | `id`* | — |  | — |
+| PATCH | `/circuits/circuit-types/{id}/` | circuits_circuit-types_partial_update | `id`*, body*: CircuitType | CircuitType |  | — |
+| GET | `/circuits/circuits/` | circuits_circuits_list | `id`, `cid`, `description`, `install_date`, `termination_date`, `commit_rate`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `provider_id`, `provider`, `provider_network_id`, `type_id`, `type`, `status`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `cid__n`, `cid__ic`, `cid__nic`, `cid__iew`, `cid__niew`, `cid__isw`, `cid__nisw`, `cid__ie`, `cid__nie`, `cid__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `install_date__n`, `install_date__lte`, `install_date__lt`, `install_date__gte`, `install_date__gt`, `termination_date__n`, `termination_date__lte`, `termination_date__lt`, `termination_date__gte`, `termination_date__gt`, `commit_rate__n`, `commit_rate__lte`, `commit_rate__lt`, `commit_rate__gte`, `commit_rate__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `provider_id__n`, `provider__n`, `provider_network_id__n`, `type_id__n`, `type__n`, `status__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/circuits/circuits/` | circuits_circuits_bulk_update | body*: WritableCircuit | Circuit |  | — |
+| POST | `/circuits/circuits/` | circuits_circuits_create | body*: WritableCircuit | Circuit |  | — |
+| DELETE | `/circuits/circuits/` | circuits_circuits_bulk_delete | — | — |  | — |
+| PATCH | `/circuits/circuits/` | circuits_circuits_bulk_partial_update | body*: WritableCircuit | Circuit |  | — |
+| GET | `/circuits/circuits/{id}/` | circuits_circuits_read | `id`* | Circuit | yes | — |
+| PUT | `/circuits/circuits/{id}/` | circuits_circuits_update | `id`*, body*: WritableCircuit | Circuit |  | — |
+| DELETE | `/circuits/circuits/{id}/` | circuits_circuits_delete | `id`* | — |  | — |
+| PATCH | `/circuits/circuits/{id}/` | circuits_circuits_partial_update | `id`*, body*: WritableCircuit | Circuit |  | — |
+| GET | `/circuits/provider-networks/` | circuits_provider-networks_list | `id`, `name`, `service_id`, `description`, `created`, `last_updated`, `q`, `tag`, `provider_id`, `provider`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `service_id__n`, `service_id__ic`, `service_id__nic`, `service_id__iew`, `service_id__niew`, `service_id__isw`, `service_id__nisw`, `service_id__ie`, `service_id__nie`, `service_id__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `provider_id__n`, `provider__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/circuits/provider-networks/` | circuits_provider-networks_bulk_update | body*: WritableProviderNetwork | ProviderNetwork |  | — |
+| POST | `/circuits/provider-networks/` | circuits_provider-networks_create | body*: WritableProviderNetwork | ProviderNetwork |  | — |
+| DELETE | `/circuits/provider-networks/` | circuits_provider-networks_bulk_delete | — | — |  | — |
+| PATCH | `/circuits/provider-networks/` | circuits_provider-networks_bulk_partial_update | body*: WritableProviderNetwork | ProviderNetwork |  | — |
+| GET | `/circuits/provider-networks/{id}/` | circuits_provider-networks_read | `id`* | ProviderNetwork | yes | — |
+| PUT | `/circuits/provider-networks/{id}/` | circuits_provider-networks_update | `id`*, body*: WritableProviderNetwork | ProviderNetwork |  | — |
+| DELETE | `/circuits/provider-networks/{id}/` | circuits_provider-networks_delete | `id`* | — |  | — |
+| PATCH | `/circuits/provider-networks/{id}/` | circuits_provider-networks_partial_update | `id`*, body*: WritableProviderNetwork | ProviderNetwork |  | — |
+| GET | `/circuits/providers/` | circuits_providers_list | `id`, `name`, `slug`, `account`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `asn_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `account__n`, `account__ic`, `account__nic`, `account__iew`, `account__niew`, `account__isw`, `account__nisw`, `account__ie`, `account__nie`, `account__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `asn_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/circuits/providers/` | circuits_providers_bulk_update | body*: WritableProvider | Provider |  | — |
+| POST | `/circuits/providers/` | circuits_providers_create | body*: WritableProvider | Provider |  | — |
+| DELETE | `/circuits/providers/` | circuits_providers_bulk_delete | — | — |  | — |
+| PATCH | `/circuits/providers/` | circuits_providers_bulk_partial_update | body*: WritableProvider | Provider |  | — |
+| GET | `/circuits/providers/{id}/` | circuits_providers_read | `id`* | Provider | yes | — |
+| PUT | `/circuits/providers/{id}/` | circuits_providers_update | `id`*, body*: WritableProvider | Provider |  | — |
+| DELETE | `/circuits/providers/{id}/` | circuits_providers_delete | `id`* | — |  | — |
+| PATCH | `/circuits/providers/{id}/` | circuits_providers_partial_update | `id`*, body*: WritableProvider | Provider |  | — |
+| GET | `/dcim/cable-terminations/` | dcim_cable-terminations_list | `id`, `cable`, `cable_end`, `termination_type`, `termination_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `cable__n`, `cable_end__n`, `termination_type__n`, `termination_id__n`, `termination_id__lte`, `termination_id__lt`, `termination_id__gte`, `termination_id__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/cable-terminations/` | dcim_cable-terminations_bulk_update | body*: CableTermination | CableTermination |  | — |
+| POST | `/dcim/cable-terminations/` | dcim_cable-terminations_create | body*: CableTermination | CableTermination |  | — |
+| DELETE | `/dcim/cable-terminations/` | dcim_cable-terminations_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/cable-terminations/` | dcim_cable-terminations_bulk_partial_update | body*: CableTermination | CableTermination |  | — |
+| GET | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_read | `id`* | CableTermination | yes | — |
+| PUT | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_update | `id`*, body*: CableTermination | CableTermination |  | — |
+| DELETE | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_delete | `id`* | — |  | — |
+| PATCH | `/dcim/cable-terminations/{id}/` | dcim_cable-terminations_partial_update | `id`*, body*: CableTermination | CableTermination |  | — |
+| GET | `/dcim/cables/` | dcim_cables_list | `id`, `label`, `length`, `length_unit`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `created`, `last_updated`, `q`, `tag`, `termination_a_type`, `termination_a_id`, `termination_b_type`, `termination_b_id`, `type`, `status`, `color`, `device_id`, `device`, `rack_id`, `rack`, `location_id`, `location`, `site_id`, `site`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `length__n`, `length__lte`, `length__lt`, `length__gte`, `length__gt`, `length_unit__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `termination_a_type__n`, `termination_a_id__n`, `termination_a_id__lte`, `termination_a_id__lt`, `termination_a_id__gte`, `termination_a_id__gt`, `termination_b_type__n`, `termination_b_id__n`, `termination_b_id__lte`, `termination_b_id__lt`, `termination_b_id__gte`, `termination_b_id__gt`, `type__n`, `status__n`, `color__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/cables/` | dcim_cables_bulk_update | body*: WritableCable | Cable |  | — |
+| POST | `/dcim/cables/` | dcim_cables_create | body*: WritableCable | Cable |  | — |
+| DELETE | `/dcim/cables/` | dcim_cables_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/cables/` | dcim_cables_bulk_partial_update | body*: WritableCable | Cable |  | — |
+| GET | `/dcim/cables/{id}/` | dcim_cables_read | `id`* | Cable | yes | — |
+| PUT | `/dcim/cables/{id}/` | dcim_cables_update | `id`*, body*: WritableCable | Cable |  | — |
+| DELETE | `/dcim/cables/{id}/` | dcim_cables_delete | `id`* | — |  | — |
+| PATCH | `/dcim/cables/{id}/` | dcim_cables_partial_update | `id`*, body*: WritableCable | Cable |  | — |
+| GET | `/dcim/connected-device/` | dcim_connected-device_list | `peer_device`*, `peer_interface`* | Device | yes | — |
+| GET | `/dcim/console-port-templates/` | dcim_console-port-templates_list | `id`, `name`, `type`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/console-port-templates/` | dcim_console-port-templates_bulk_update | body*: WritableConsolePortTemplate | ConsolePortTemplate |  | — |
+| POST | `/dcim/console-port-templates/` | dcim_console-port-templates_create | body*: WritableConsolePortTemplate | ConsolePortTemplate |  | — |
+| DELETE | `/dcim/console-port-templates/` | dcim_console-port-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/console-port-templates/` | dcim_console-port-templates_bulk_partial_update | body*: WritableConsolePortTemplate | ConsolePortTemplate |  | — |
+| GET | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_read | `id`* | ConsolePortTemplate | yes | — |
+| PUT | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_update | `id`*, body*: WritableConsolePortTemplate | ConsolePortTemplate |  | — |
+| DELETE | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/console-port-templates/{id}/` | dcim_console-port-templates_partial_update | `id`*, body*: WritableConsolePortTemplate | ConsolePortTemplate |  | — |
+| GET | `/dcim/console-ports/` | dcim_console-ports_list | `id`, `name`, `label`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `connected`, `type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/console-ports/` | dcim_console-ports_bulk_update | body*: WritableConsolePort | ConsolePort |  | — |
+| POST | `/dcim/console-ports/` | dcim_console-ports_create | body*: WritableConsolePort | ConsolePort |  | — |
+| DELETE | `/dcim/console-ports/` | dcim_console-ports_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/console-ports/` | dcim_console-ports_bulk_partial_update | body*: WritableConsolePort | ConsolePort |  | — |
+| GET | `/dcim/console-ports/{id}/` | dcim_console-ports_read | `id`* | ConsolePort | yes | — |
+| PUT | `/dcim/console-ports/{id}/` | dcim_console-ports_update | `id`*, body*: WritableConsolePort | ConsolePort |  | — |
+| DELETE | `/dcim/console-ports/{id}/` | dcim_console-ports_delete | `id`* | — |  | — |
+| PATCH | `/dcim/console-ports/{id}/` | dcim_console-ports_partial_update | `id`*, body*: WritableConsolePort | ConsolePort |  | — |
+| GET | `/dcim/console-ports/{id}/trace/` | dcim_console-ports_trace | `id`* | ConsolePort | yes | — |
+| GET | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_list | `id`, `name`, `type`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_bulk_update | body*: WritableConsoleServerPortTemplate | ConsoleServerPortTemplate |  | — |
+| POST | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_create | body*: WritableConsoleServerPortTemplate | ConsoleServerPortTemplate |  | — |
+| DELETE | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/console-server-port-templates/` | dcim_console-server-port-templates_bulk_partial_update | body*: WritableConsoleServerPortTemplate | ConsoleServerPortTemplate |  | — |
+| GET | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_read | `id`* | ConsoleServerPortTemplate | yes | — |
+| PUT | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_update | `id`*, body*: WritableConsoleServerPortTemplate | ConsoleServerPortTemplate |  | — |
+| DELETE | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/console-server-port-templates/{id}/` | dcim_console-server-port-templates_partial_update | `id`*, body*: WritableConsoleServerPortTemplate | ConsoleServerPortTemplate |  | — |
+| GET | `/dcim/console-server-ports/` | dcim_console-server-ports_list | `id`, `name`, `label`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `connected`, `type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/console-server-ports/` | dcim_console-server-ports_bulk_update | body*: WritableConsoleServerPort | ConsoleServerPort |  | — |
+| POST | `/dcim/console-server-ports/` | dcim_console-server-ports_create | body*: WritableConsoleServerPort | ConsoleServerPort |  | — |
+| DELETE | `/dcim/console-server-ports/` | dcim_console-server-ports_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/console-server-ports/` | dcim_console-server-ports_bulk_partial_update | body*: WritableConsoleServerPort | ConsoleServerPort |  | — |
+| GET | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_read | `id`* | ConsoleServerPort | yes | — |
+| PUT | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_update | `id`*, body*: WritableConsoleServerPort | ConsoleServerPort |  | — |
+| DELETE | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_delete | `id`* | — |  | — |
+| PATCH | `/dcim/console-server-ports/{id}/` | dcim_console-server-ports_partial_update | `id`*, body*: WritableConsoleServerPort | ConsoleServerPort |  | — |
+| GET | `/dcim/console-server-ports/{id}/trace/` | dcim_console-server-ports_trace | `id`* | ConsoleServerPort | yes | — |
+| GET | `/dcim/device-bay-templates/` | dcim_device-bay-templates_list | `id`, `name`, `created`, `last_updated`, `q`, `devicetype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/device-bay-templates/` | dcim_device-bay-templates_bulk_update | body*: WritableDeviceBayTemplate | DeviceBayTemplate |  | — |
+| POST | `/dcim/device-bay-templates/` | dcim_device-bay-templates_create | body*: WritableDeviceBayTemplate | DeviceBayTemplate |  | — |
+| DELETE | `/dcim/device-bay-templates/` | dcim_device-bay-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/device-bay-templates/` | dcim_device-bay-templates_bulk_partial_update | body*: WritableDeviceBayTemplate | DeviceBayTemplate |  | — |
+| GET | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_read | `id`* | DeviceBayTemplate | yes | — |
+| PUT | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_update | `id`*, body*: WritableDeviceBayTemplate | DeviceBayTemplate |  | — |
+| DELETE | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/device-bay-templates/{id}/` | dcim_device-bay-templates_partial_update | `id`*, body*: WritableDeviceBayTemplate | DeviceBayTemplate |  | — |
+| GET | `/dcim/device-bays/` | dcim_device-bays_list | `id`, `name`, `label`, `description`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `created`, `last_updated`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/device-bays/` | dcim_device-bays_bulk_update | body*: WritableDeviceBay | DeviceBay |  | — |
+| POST | `/dcim/device-bays/` | dcim_device-bays_create | body*: WritableDeviceBay | DeviceBay |  | — |
+| DELETE | `/dcim/device-bays/` | dcim_device-bays_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/device-bays/` | dcim_device-bays_bulk_partial_update | body*: WritableDeviceBay | DeviceBay |  | — |
+| GET | `/dcim/device-bays/{id}/` | dcim_device-bays_read | `id`* | DeviceBay | yes | — |
+| PUT | `/dcim/device-bays/{id}/` | dcim_device-bays_update | `id`*, body*: WritableDeviceBay | DeviceBay |  | — |
+| DELETE | `/dcim/device-bays/{id}/` | dcim_device-bays_delete | `id`* | — |  | — |
+| PATCH | `/dcim/device-bays/{id}/` | dcim_device-bays_partial_update | `id`*, body*: WritableDeviceBay | DeviceBay |  | — |
+| GET | `/dcim/device-roles/` | dcim_device-roles_list | `id`, `name`, `slug`, `color`, `vm_role`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/device-roles/` | dcim_device-roles_bulk_update | body*: DeviceRole | DeviceRole |  | — |
+| POST | `/dcim/device-roles/` | dcim_device-roles_create | body*: DeviceRole | DeviceRole |  | — |
+| DELETE | `/dcim/device-roles/` | dcim_device-roles_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/device-roles/` | dcim_device-roles_bulk_partial_update | body*: DeviceRole | DeviceRole |  | — |
+| GET | `/dcim/device-roles/{id}/` | dcim_device-roles_read | `id`* | DeviceRole | yes | — |
+| PUT | `/dcim/device-roles/{id}/` | dcim_device-roles_update | `id`*, body*: DeviceRole | DeviceRole |  | — |
+| DELETE | `/dcim/device-roles/{id}/` | dcim_device-roles_delete | `id`* | — |  | — |
+| PATCH | `/dcim/device-roles/{id}/` | dcim_device-roles_partial_update | `id`*, body*: DeviceRole | DeviceRole |  | — |
+| GET | `/dcim/device-types/` | dcim_device-types_list | `id`, `model`, `slug`, `part_number`, `u_height`, `is_full_depth`, `subdevice_role`, `airflow`, `weight`, `weight_unit`, `created`, `last_updated`, `q`, `tag`, `manufacturer_id`, `manufacturer`, `has_front_image`, `has_rear_image`, `console_ports`, `console_server_ports`, `power_ports`, `power_outlets`, `interfaces`, `pass_through_ports`, `module_bays`, `device_bays`, `inventory_items`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `model__n`, `model__ic`, `model__nic`, `model__iew`, `model__niew`, `model__isw`, `model__nisw`, `model__ie`, `model__nie`, `model__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `part_number__n`, `part_number__ic`, `part_number__nic`, `part_number__iew`, `part_number__niew`, `part_number__isw`, `part_number__nisw`, `part_number__ie`, `part_number__nie`, `part_number__empty`, `u_height__n`, `u_height__lte`, `u_height__lt`, `u_height__gte`, `u_height__gt`, `subdevice_role__n`, `airflow__n`, `weight__n`, `weight__lte`, `weight__lt`, `weight__gte`, `weight__gt`, `weight_unit__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `manufacturer_id__n`, `manufacturer__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/device-types/` | dcim_device-types_bulk_update | body*: WritableDeviceType | DeviceType |  | — |
+| POST | `/dcim/device-types/` | dcim_device-types_create | body*: WritableDeviceType | DeviceType |  | — |
+| DELETE | `/dcim/device-types/` | dcim_device-types_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/device-types/` | dcim_device-types_bulk_partial_update | body*: WritableDeviceType | DeviceType |  | — |
+| GET | `/dcim/device-types/{id}/` | dcim_device-types_read | `id`* | DeviceType | yes | — |
+| PUT | `/dcim/device-types/{id}/` | dcim_device-types_update | `id`*, body*: WritableDeviceType | DeviceType |  | — |
+| DELETE | `/dcim/device-types/{id}/` | dcim_device-types_delete | `id`* | — |  | — |
+| PATCH | `/dcim/device-types/{id}/` | dcim_device-types_partial_update | `id`*, body*: WritableDeviceType | DeviceType |  | — |
+| GET | `/dcim/devices/` | dcim_devices_list | `id`, `asset_tag`, `face`, `position`, `airflow`, `vc_position`, `vc_priority`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `local_context_data`, `manufacturer_id`, `manufacturer`, `device_type`, `device_type_id`, `role_id`, `role`, `parent_device_id`, `platform_id`, `platform`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `rack_id`, `cluster_id`, `model`, `name`, `status`, `is_full_depth`, `mac_address`, `serial`, `has_primary_ip`, `virtual_chassis_id`, `virtual_chassis_member`, `console_ports`, `console_server_ports`, `power_ports`, `power_outlets`, `interfaces`, `pass_through_ports`, `module_bays`, `device_bays`, `primary_ip4_id`, `primary_ip6_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `asset_tag__n`, `asset_tag__ic`, `asset_tag__nic`, `asset_tag__iew`, `asset_tag__niew`, `asset_tag__isw`, `asset_tag__nisw`, `asset_tag__ie`, `asset_tag__nie`, `asset_tag__empty`, `face__n`, `position__n`, `position__lte`, `position__lt`, `position__gte`, `position__gt`, `airflow__n`, `vc_position__n`, `vc_position__lte`, `vc_position__lt`, `vc_position__gte`, `vc_position__gt`, `vc_priority__n`, `vc_priority__lte`, `vc_priority__lt`, `vc_priority__gte`, `vc_priority__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `manufacturer_id__n`, `manufacturer__n`, `device_type__n`, `device_type_id__n`, `role_id__n`, `role__n`, `parent_device_id__n`, `platform_id__n`, `platform__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `rack_id__n`, `cluster_id__n`, `model__n`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `status__n`, `mac_address__n`, `mac_address__ic`, `mac_address__nic`, `mac_address__iew`, `mac_address__niew`, `mac_address__isw`, `mac_address__nisw`, `mac_address__ie`, `mac_address__nie`, `serial__n`, `serial__ic`, `serial__nic`, `serial__iew`, `serial__niew`, `serial__isw`, `serial__nisw`, `serial__ie`, `serial__nie`, `serial__empty`, `virtual_chassis_id__n`, `primary_ip4_id__n`, `primary_ip6_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/devices/` | dcim_devices_bulk_update | body*: WritableDeviceWithConfigContext | DeviceWithConfigContext |  | — |
+| POST | `/dcim/devices/` | dcim_devices_create | body*: WritableDeviceWithConfigContext | DeviceWithConfigContext |  | — |
+| DELETE | `/dcim/devices/` | dcim_devices_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/devices/` | dcim_devices_bulk_partial_update | body*: WritableDeviceWithConfigContext | DeviceWithConfigContext |  | — |
+| GET | `/dcim/devices/{id}/` | dcim_devices_read | `id`* | DeviceWithConfigContext | yes | — |
+| PUT | `/dcim/devices/{id}/` | dcim_devices_update | `id`*, body*: WritableDeviceWithConfigContext | DeviceWithConfigContext |  | — |
+| DELETE | `/dcim/devices/{id}/` | dcim_devices_delete | `id`* | — |  | — |
+| PATCH | `/dcim/devices/{id}/` | dcim_devices_partial_update | `id`*, body*: WritableDeviceWithConfigContext | DeviceWithConfigContext |  | — |
+| GET | `/dcim/devices/{id}/napalm/` | dcim_devices_napalm | `id`*, `method`* | DeviceNAPALM | yes | — |
+| GET | `/dcim/front-port-templates/` | dcim_front-port-templates_list | `id`, `name`, `type`, `color`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/front-port-templates/` | dcim_front-port-templates_bulk_update | body*: WritableFrontPortTemplate | FrontPortTemplate |  | — |
+| POST | `/dcim/front-port-templates/` | dcim_front-port-templates_create | body*: WritableFrontPortTemplate | FrontPortTemplate |  | — |
+| DELETE | `/dcim/front-port-templates/` | dcim_front-port-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/front-port-templates/` | dcim_front-port-templates_bulk_partial_update | body*: WritableFrontPortTemplate | FrontPortTemplate |  | — |
+| GET | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_read | `id`* | FrontPortTemplate | yes | — |
+| PUT | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_update | `id`*, body*: WritableFrontPortTemplate | FrontPortTemplate |  | — |
+| DELETE | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/front-port-templates/{id}/` | dcim_front-port-templates_partial_update | `id`*, body*: WritableFrontPortTemplate | FrontPortTemplate |  | — |
+| GET | `/dcim/front-ports/` | dcim_front-ports_list | `id`, `name`, `label`, `type`, `color`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `type__n`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/front-ports/` | dcim_front-ports_bulk_update | body*: WritableFrontPort | FrontPort |  | — |
+| POST | `/dcim/front-ports/` | dcim_front-ports_create | body*: WritableFrontPort | FrontPort |  | — |
+| DELETE | `/dcim/front-ports/` | dcim_front-ports_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/front-ports/` | dcim_front-ports_bulk_partial_update | body*: WritableFrontPort | FrontPort |  | — |
+| GET | `/dcim/front-ports/{id}/` | dcim_front-ports_read | `id`* | FrontPort | yes | — |
+| PUT | `/dcim/front-ports/{id}/` | dcim_front-ports_update | `id`*, body*: WritableFrontPort | FrontPort |  | — |
+| DELETE | `/dcim/front-ports/{id}/` | dcim_front-ports_delete | `id`* | — |  | — |
+| PATCH | `/dcim/front-ports/{id}/` | dcim_front-ports_partial_update | `id`*, body*: WritableFrontPort | FrontPort |  | — |
+| GET | `/dcim/front-ports/{id}/paths/` | dcim_front-ports_paths | `id`* | FrontPort | yes | — |
+| GET | `/dcim/interface-templates/` | dcim_interface-templates_list | `id`, `name`, `type`, `mgmt_only`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `poe_mode`, `poe_type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `poe_mode__n`, `poe_type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/interface-templates/` | dcim_interface-templates_bulk_update | body*: WritableInterfaceTemplate | InterfaceTemplate |  | — |
+| POST | `/dcim/interface-templates/` | dcim_interface-templates_create | body*: WritableInterfaceTemplate | InterfaceTemplate |  | — |
+| DELETE | `/dcim/interface-templates/` | dcim_interface-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/interface-templates/` | dcim_interface-templates_bulk_partial_update | body*: WritableInterfaceTemplate | InterfaceTemplate |  | — |
+| GET | `/dcim/interface-templates/{id}/` | dcim_interface-templates_read | `id`* | InterfaceTemplate | yes | — |
+| PUT | `/dcim/interface-templates/{id}/` | dcim_interface-templates_update | `id`*, body*: WritableInterfaceTemplate | InterfaceTemplate |  | — |
+| DELETE | `/dcim/interface-templates/{id}/` | dcim_interface-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/interface-templates/{id}/` | dcim_interface-templates_partial_update | `id`*, body*: WritableInterfaceTemplate | InterfaceTemplate |  | — |
+| GET | `/dcim/interfaces/` | dcim_interfaces_list | `id`, `name`, `label`, `type`, `enabled`, `mtu`, `mgmt_only`, `poe_mode`, `poe_type`, `mode`, `rf_role`, `rf_channel`, `rf_channel_frequency`, `rf_channel_width`, `tx_power`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `connected`, `kind`, `parent_id`, `bridge_id`, `lag_id`, `speed`, `duplex`, `mac_address`, `wwn`, `vlan_id`, `vlan`, `vrf_id`, `vrf`, `vdc_id`, `vdc_identifier`, `vdc`, `l2vpn_id`, `l2vpn`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `type__n`, `mtu__n`, `mtu__lte`, `mtu__lt`, `mtu__gte`, `mtu__gt`, `poe_mode__n`, `poe_type__n`, `mode__n`, `rf_role__n`, `rf_channel__n`, `rf_channel_frequency__n`, `rf_channel_frequency__lte`, `rf_channel_frequency__lt`, `rf_channel_frequency__gte`, `rf_channel_frequency__gt`, `rf_channel_width__n`, `rf_channel_width__lte`, `rf_channel_width__lt`, `rf_channel_width__gte`, `rf_channel_width__gt`, `tx_power__n`, `tx_power__lte`, `tx_power__lt`, `tx_power__gte`, `tx_power__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `parent_id__n`, `bridge_id__n`, `lag_id__n`, `speed__n`, `speed__lte`, `speed__lt`, `speed__gte`, `speed__gt`, `duplex__n`, `mac_address__n`, `mac_address__ic`, `mac_address__nic`, `mac_address__iew`, `mac_address__niew`, `mac_address__isw`, `mac_address__nisw`, `mac_address__ie`, `mac_address__nie`, `wwn__n`, `wwn__ic`, `wwn__nic`, `wwn__iew`, `wwn__niew`, `wwn__isw`, `wwn__nisw`, `wwn__ie`, `wwn__nie`, `vrf_id__n`, `vrf__n`, `vdc_id__n`, `vdc_identifier__n`, `vdc__n`, `l2vpn_id__n`, `l2vpn__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/interfaces/` | dcim_interfaces_bulk_update | body*: WritableInterface | Interface |  | — |
+| POST | `/dcim/interfaces/` | dcim_interfaces_create | body*: WritableInterface | Interface |  | — |
+| DELETE | `/dcim/interfaces/` | dcim_interfaces_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/interfaces/` | dcim_interfaces_bulk_partial_update | body*: WritableInterface | Interface |  | — |
+| GET | `/dcim/interfaces/{id}/` | dcim_interfaces_read | `id`* | Interface | yes | — |
+| PUT | `/dcim/interfaces/{id}/` | dcim_interfaces_update | `id`*, body*: WritableInterface | Interface |  | — |
+| DELETE | `/dcim/interfaces/{id}/` | dcim_interfaces_delete | `id`* | — |  | — |
+| PATCH | `/dcim/interfaces/{id}/` | dcim_interfaces_partial_update | `id`*, body*: WritableInterface | Interface |  | — |
+| GET | `/dcim/interfaces/{id}/trace/` | dcim_interfaces_trace | `id`* | Interface | yes | — |
+| GET | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_list | `id`, `name`, `slug`, `color`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_bulk_update | body*: InventoryItemRole | InventoryItemRole |  | — |
+| POST | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_create | body*: InventoryItemRole | InventoryItemRole |  | — |
+| DELETE | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/inventory-item-roles/` | dcim_inventory-item-roles_bulk_partial_update | body*: InventoryItemRole | InventoryItemRole |  | — |
+| GET | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_read | `id`* | InventoryItemRole | yes | — |
+| PUT | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_update | `id`*, body*: InventoryItemRole | InventoryItemRole |  | — |
+| DELETE | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_delete | `id`* | — |  | — |
+| PATCH | `/dcim/inventory-item-roles/{id}/` | dcim_inventory-item-roles_partial_update | `id`*, body*: InventoryItemRole | InventoryItemRole |  | — |
+| GET | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_list | `id`, `name`, `label`, `part_id`, `created`, `last_updated`, `q`, `devicetype_id`, `parent_id`, `manufacturer_id`, `manufacturer`, `role_id`, `role`, `component_type`, `component_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `part_id__n`, `part_id__ic`, `part_id__nic`, `part_id__iew`, `part_id__niew`, `part_id__isw`, `part_id__nisw`, `part_id__ie`, `part_id__nie`, `part_id__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `parent_id__n`, `manufacturer_id__n`, `manufacturer__n`, `role_id__n`, `role__n`, `component_type__n`, `component_id__n`, `component_id__lte`, `component_id__lt`, `component_id__gte`, `component_id__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_bulk_update | body*: WritableInventoryItemTemplate | InventoryItemTemplate |  | — |
+| POST | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_create | body*: WritableInventoryItemTemplate | InventoryItemTemplate |  | — |
+| DELETE | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/inventory-item-templates/` | dcim_inventory-item-templates_bulk_partial_update | body*: WritableInventoryItemTemplate | InventoryItemTemplate |  | — |
+| GET | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_read | `id`* | InventoryItemTemplate | yes | — |
+| PUT | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_update | `id`*, body*: WritableInventoryItemTemplate | InventoryItemTemplate |  | — |
+| DELETE | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/inventory-item-templates/{id}/` | dcim_inventory-item-templates_partial_update | `id`*, body*: WritableInventoryItemTemplate | InventoryItemTemplate |  | — |
+| GET | `/dcim/inventory-items/` | dcim_inventory-items_list | `id`, `name`, `label`, `part_id`, `asset_tag`, `discovered`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `created`, `last_updated`, `tag`, `parent_id`, `manufacturer_id`, `manufacturer`, `role_id`, `role`, `component_type`, `component_id`, `serial`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `part_id__n`, `part_id__ic`, `part_id__nic`, `part_id__iew`, `part_id__niew`, `part_id__isw`, `part_id__nisw`, `part_id__ie`, `part_id__nie`, `part_id__empty`, `asset_tag__n`, `asset_tag__ic`, `asset_tag__nic`, `asset_tag__iew`, `asset_tag__niew`, `asset_tag__isw`, `asset_tag__nisw`, `asset_tag__ie`, `asset_tag__nie`, `asset_tag__empty`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `parent_id__n`, `manufacturer_id__n`, `manufacturer__n`, `role_id__n`, `role__n`, `component_type__n`, `component_id__n`, `component_id__lte`, `component_id__lt`, `component_id__gte`, `component_id__gt`, `serial__n`, `serial__ic`, `serial__nic`, `serial__iew`, `serial__niew`, `serial__isw`, `serial__nisw`, `serial__ie`, `serial__nie`, `serial__empty`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/inventory-items/` | dcim_inventory-items_bulk_update | body*: WritableInventoryItem | InventoryItem |  | — |
+| POST | `/dcim/inventory-items/` | dcim_inventory-items_create | body*: WritableInventoryItem | InventoryItem |  | — |
+| DELETE | `/dcim/inventory-items/` | dcim_inventory-items_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/inventory-items/` | dcim_inventory-items_bulk_partial_update | body*: WritableInventoryItem | InventoryItem |  | — |
+| GET | `/dcim/inventory-items/{id}/` | dcim_inventory-items_read | `id`* | InventoryItem | yes | — |
+| PUT | `/dcim/inventory-items/{id}/` | dcim_inventory-items_update | `id`*, body*: WritableInventoryItem | InventoryItem |  | — |
+| DELETE | `/dcim/inventory-items/{id}/` | dcim_inventory-items_delete | `id`* | — |  | — |
+| PATCH | `/dcim/inventory-items/{id}/` | dcim_inventory-items_partial_update | `id`*, body*: WritableInventoryItem | InventoryItem |  | — |
+| GET | `/dcim/locations/` | dcim_locations_list | `id`, `name`, `slug`, `status`, `description`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `created`, `last_updated`, `q`, `tag`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `parent_id`, `parent`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `status__n`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `parent_id__n`, `parent__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/locations/` | dcim_locations_bulk_update | body*: WritableLocation | Location |  | — |
+| POST | `/dcim/locations/` | dcim_locations_create | body*: WritableLocation | Location |  | — |
+| DELETE | `/dcim/locations/` | dcim_locations_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/locations/` | dcim_locations_bulk_partial_update | body*: WritableLocation | Location |  | — |
+| GET | `/dcim/locations/{id}/` | dcim_locations_read | `id`* | Location | yes | — |
+| PUT | `/dcim/locations/{id}/` | dcim_locations_update | `id`*, body*: WritableLocation | Location |  | — |
+| DELETE | `/dcim/locations/{id}/` | dcim_locations_delete | `id`* | — |  | — |
+| PATCH | `/dcim/locations/{id}/` | dcim_locations_partial_update | `id`*, body*: WritableLocation | Location |  | — |
+| GET | `/dcim/manufacturers/` | dcim_manufacturers_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/manufacturers/` | dcim_manufacturers_bulk_update | body*: Manufacturer | Manufacturer |  | — |
+| POST | `/dcim/manufacturers/` | dcim_manufacturers_create | body*: Manufacturer | Manufacturer |  | — |
+| DELETE | `/dcim/manufacturers/` | dcim_manufacturers_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/manufacturers/` | dcim_manufacturers_bulk_partial_update | body*: Manufacturer | Manufacturer |  | — |
+| GET | `/dcim/manufacturers/{id}/` | dcim_manufacturers_read | `id`* | Manufacturer | yes | — |
+| PUT | `/dcim/manufacturers/{id}/` | dcim_manufacturers_update | `id`*, body*: Manufacturer | Manufacturer |  | — |
+| DELETE | `/dcim/manufacturers/{id}/` | dcim_manufacturers_delete | `id`* | — |  | — |
+| PATCH | `/dcim/manufacturers/{id}/` | dcim_manufacturers_partial_update | `id`*, body*: Manufacturer | Manufacturer |  | — |
+| GET | `/dcim/module-bay-templates/` | dcim_module-bay-templates_list | `id`, `name`, `created`, `last_updated`, `q`, `devicetype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/module-bay-templates/` | dcim_module-bay-templates_bulk_update | body*: WritableModuleBayTemplate | ModuleBayTemplate |  | — |
+| POST | `/dcim/module-bay-templates/` | dcim_module-bay-templates_create | body*: WritableModuleBayTemplate | ModuleBayTemplate |  | — |
+| DELETE | `/dcim/module-bay-templates/` | dcim_module-bay-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/module-bay-templates/` | dcim_module-bay-templates_bulk_partial_update | body*: WritableModuleBayTemplate | ModuleBayTemplate |  | — |
+| GET | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_read | `id`* | ModuleBayTemplate | yes | — |
+| PUT | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_update | `id`*, body*: WritableModuleBayTemplate | ModuleBayTemplate |  | — |
+| DELETE | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/module-bay-templates/{id}/` | dcim_module-bay-templates_partial_update | `id`*, body*: WritableModuleBayTemplate | ModuleBayTemplate |  | — |
+| GET | `/dcim/module-bays/` | dcim_module-bays_list | `id`, `name`, `label`, `description`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `created`, `last_updated`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/module-bays/` | dcim_module-bays_bulk_update | body*: WritableModuleBay | ModuleBay |  | — |
+| POST | `/dcim/module-bays/` | dcim_module-bays_create | body*: WritableModuleBay | ModuleBay |  | — |
+| DELETE | `/dcim/module-bays/` | dcim_module-bays_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/module-bays/` | dcim_module-bays_bulk_partial_update | body*: WritableModuleBay | ModuleBay |  | — |
+| GET | `/dcim/module-bays/{id}/` | dcim_module-bays_read | `id`* | ModuleBay | yes | — |
+| PUT | `/dcim/module-bays/{id}/` | dcim_module-bays_update | `id`*, body*: WritableModuleBay | ModuleBay |  | — |
+| DELETE | `/dcim/module-bays/{id}/` | dcim_module-bays_delete | `id`* | — |  | — |
+| PATCH | `/dcim/module-bays/{id}/` | dcim_module-bays_partial_update | `id`*, body*: WritableModuleBay | ModuleBay |  | — |
+| GET | `/dcim/module-types/` | dcim_module-types_list | `id`, `model`, `part_number`, `weight`, `weight_unit`, `created`, `last_updated`, `q`, `tag`, `manufacturer_id`, `manufacturer`, `console_ports`, `console_server_ports`, `power_ports`, `power_outlets`, `interfaces`, `pass_through_ports`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `model__n`, `model__ic`, `model__nic`, `model__iew`, `model__niew`, `model__isw`, `model__nisw`, `model__ie`, `model__nie`, `model__empty`, `part_number__n`, `part_number__ic`, `part_number__nic`, `part_number__iew`, `part_number__niew`, `part_number__isw`, `part_number__nisw`, `part_number__ie`, `part_number__nie`, `part_number__empty`, `weight__n`, `weight__lte`, `weight__lt`, `weight__gte`, `weight__gt`, `weight_unit__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `manufacturer_id__n`, `manufacturer__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/module-types/` | dcim_module-types_bulk_update | body*: WritableModuleType | ModuleType |  | — |
+| POST | `/dcim/module-types/` | dcim_module-types_create | body*: WritableModuleType | ModuleType |  | — |
+| DELETE | `/dcim/module-types/` | dcim_module-types_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/module-types/` | dcim_module-types_bulk_partial_update | body*: WritableModuleType | ModuleType |  | — |
+| GET | `/dcim/module-types/{id}/` | dcim_module-types_read | `id`* | ModuleType | yes | — |
+| PUT | `/dcim/module-types/{id}/` | dcim_module-types_update | `id`*, body*: WritableModuleType | ModuleType |  | — |
+| DELETE | `/dcim/module-types/{id}/` | dcim_module-types_delete | `id`* | — |  | — |
+| PATCH | `/dcim/module-types/{id}/` | dcim_module-types_partial_update | `id`*, body*: WritableModuleType | ModuleType |  | — |
+| GET | `/dcim/modules/` | dcim_modules_list | `id`, `status`, `asset_tag`, `created`, `last_updated`, `q`, `tag`, `manufacturer_id`, `manufacturer`, `module_type_id`, `module_type`, `module_bay_id`, `device_id`, `serial`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `status__n`, `asset_tag__n`, `asset_tag__ic`, `asset_tag__nic`, `asset_tag__iew`, `asset_tag__niew`, `asset_tag__isw`, `asset_tag__nisw`, `asset_tag__ie`, `asset_tag__nie`, `asset_tag__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `manufacturer_id__n`, `manufacturer__n`, `module_type_id__n`, `module_type__n`, `module_bay_id__n`, `device_id__n`, `serial__n`, `serial__ic`, `serial__nic`, `serial__iew`, `serial__niew`, `serial__isw`, `serial__nisw`, `serial__ie`, `serial__nie`, `serial__empty`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/modules/` | dcim_modules_bulk_update | body*: WritableModule | Module |  | — |
+| POST | `/dcim/modules/` | dcim_modules_create | body*: WritableModule | Module |  | — |
+| DELETE | `/dcim/modules/` | dcim_modules_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/modules/` | dcim_modules_bulk_partial_update | body*: WritableModule | Module |  | — |
+| GET | `/dcim/modules/{id}/` | dcim_modules_read | `id`* | Module | yes | — |
+| PUT | `/dcim/modules/{id}/` | dcim_modules_update | `id`*, body*: WritableModule | Module |  | — |
+| DELETE | `/dcim/modules/{id}/` | dcim_modules_delete | `id`* | — |  | — |
+| PATCH | `/dcim/modules/{id}/` | dcim_modules_partial_update | `id`*, body*: WritableModule | Module |  | — |
+| GET | `/dcim/platforms/` | dcim_platforms_list | `id`, `name`, `slug`, `napalm_driver`, `description`, `created`, `last_updated`, `q`, `tag`, `manufacturer_id`, `manufacturer`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `napalm_driver__n`, `napalm_driver__ic`, `napalm_driver__nic`, `napalm_driver__iew`, `napalm_driver__niew`, `napalm_driver__isw`, `napalm_driver__nisw`, `napalm_driver__ie`, `napalm_driver__nie`, `napalm_driver__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `manufacturer_id__n`, `manufacturer__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/platforms/` | dcim_platforms_bulk_update | body*: WritablePlatform | Platform |  | — |
+| POST | `/dcim/platforms/` | dcim_platforms_create | body*: WritablePlatform | Platform |  | — |
+| DELETE | `/dcim/platforms/` | dcim_platforms_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/platforms/` | dcim_platforms_bulk_partial_update | body*: WritablePlatform | Platform |  | — |
+| GET | `/dcim/platforms/{id}/` | dcim_platforms_read | `id`* | Platform | yes | — |
+| PUT | `/dcim/platforms/{id}/` | dcim_platforms_update | `id`*, body*: WritablePlatform | Platform |  | — |
+| DELETE | `/dcim/platforms/{id}/` | dcim_platforms_delete | `id`* | — |  | — |
+| PATCH | `/dcim/platforms/{id}/` | dcim_platforms_partial_update | `id`*, body*: WritablePlatform | Platform |  | — |
+| GET | `/dcim/power-feeds/` | dcim_power-feeds_list | `id`, `name`, `status`, `type`, `supply`, `phase`, `voltage`, `amperage`, `max_utilization`, `cable_end`, `created`, `last_updated`, `q`, `tag`, `cabled`, `occupied`, `connected`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `power_panel_id`, `rack_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `status__n`, `type__n`, `supply__n`, `phase__n`, `voltage__n`, `voltage__lte`, `voltage__lt`, `voltage__gte`, `voltage__gt`, `amperage__n`, `amperage__lte`, `amperage__lt`, `amperage__gte`, `amperage__gt`, `max_utilization__n`, `max_utilization__lte`, `max_utilization__lt`, `max_utilization__gte`, `max_utilization__gt`, `cable_end__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `power_panel_id__n`, `rack_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/power-feeds/` | dcim_power-feeds_bulk_update | body*: WritablePowerFeed | PowerFeed |  | — |
+| POST | `/dcim/power-feeds/` | dcim_power-feeds_create | body*: WritablePowerFeed | PowerFeed |  | — |
+| DELETE | `/dcim/power-feeds/` | dcim_power-feeds_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/power-feeds/` | dcim_power-feeds_bulk_partial_update | body*: WritablePowerFeed | PowerFeed |  | — |
+| GET | `/dcim/power-feeds/{id}/` | dcim_power-feeds_read | `id`* | PowerFeed | yes | — |
+| PUT | `/dcim/power-feeds/{id}/` | dcim_power-feeds_update | `id`*, body*: WritablePowerFeed | PowerFeed |  | — |
+| DELETE | `/dcim/power-feeds/{id}/` | dcim_power-feeds_delete | `id`* | — |  | — |
+| PATCH | `/dcim/power-feeds/{id}/` | dcim_power-feeds_partial_update | `id`*, body*: WritablePowerFeed | PowerFeed |  | — |
+| GET | `/dcim/power-feeds/{id}/trace/` | dcim_power-feeds_trace | `id`* | PowerFeed | yes | — |
+| GET | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_list | `id`, `name`, `type`, `feed_leg`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `feed_leg__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_bulk_update | body*: WritablePowerOutletTemplate | PowerOutletTemplate |  | — |
+| POST | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_create | body*: WritablePowerOutletTemplate | PowerOutletTemplate |  | — |
+| DELETE | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/power-outlet-templates/` | dcim_power-outlet-templates_bulk_partial_update | body*: WritablePowerOutletTemplate | PowerOutletTemplate |  | — |
+| GET | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_read | `id`* | PowerOutletTemplate | yes | — |
+| PUT | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_update | `id`*, body*: WritablePowerOutletTemplate | PowerOutletTemplate |  | — |
+| DELETE | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/power-outlet-templates/{id}/` | dcim_power-outlet-templates_partial_update | `id`*, body*: WritablePowerOutletTemplate | PowerOutletTemplate |  | — |
+| GET | `/dcim/power-outlets/` | dcim_power-outlets_list | `id`, `name`, `label`, `feed_leg`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `connected`, `type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `feed_leg__n`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/power-outlets/` | dcim_power-outlets_bulk_update | body*: WritablePowerOutlet | PowerOutlet |  | — |
+| POST | `/dcim/power-outlets/` | dcim_power-outlets_create | body*: WritablePowerOutlet | PowerOutlet |  | — |
+| DELETE | `/dcim/power-outlets/` | dcim_power-outlets_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/power-outlets/` | dcim_power-outlets_bulk_partial_update | body*: WritablePowerOutlet | PowerOutlet |  | — |
+| GET | `/dcim/power-outlets/{id}/` | dcim_power-outlets_read | `id`* | PowerOutlet | yes | — |
+| PUT | `/dcim/power-outlets/{id}/` | dcim_power-outlets_update | `id`*, body*: WritablePowerOutlet | PowerOutlet |  | — |
+| DELETE | `/dcim/power-outlets/{id}/` | dcim_power-outlets_delete | `id`* | — |  | — |
+| PATCH | `/dcim/power-outlets/{id}/` | dcim_power-outlets_partial_update | `id`*, body*: WritablePowerOutlet | PowerOutlet |  | — |
+| GET | `/dcim/power-outlets/{id}/trace/` | dcim_power-outlets_trace | `id`* | PowerOutlet | yes | — |
+| GET | `/dcim/power-panels/` | dcim_power-panels_list | `id`, `name`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/power-panels/` | dcim_power-panels_bulk_update | body*: WritablePowerPanel | PowerPanel |  | — |
+| POST | `/dcim/power-panels/` | dcim_power-panels_create | body*: WritablePowerPanel | PowerPanel |  | — |
+| DELETE | `/dcim/power-panels/` | dcim_power-panels_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/power-panels/` | dcim_power-panels_bulk_partial_update | body*: WritablePowerPanel | PowerPanel |  | — |
+| GET | `/dcim/power-panels/{id}/` | dcim_power-panels_read | `id`* | PowerPanel | yes | — |
+| PUT | `/dcim/power-panels/{id}/` | dcim_power-panels_update | `id`*, body*: WritablePowerPanel | PowerPanel |  | — |
+| DELETE | `/dcim/power-panels/{id}/` | dcim_power-panels_delete | `id`* | — |  | — |
+| PATCH | `/dcim/power-panels/{id}/` | dcim_power-panels_partial_update | `id`*, body*: WritablePowerPanel | PowerPanel |  | — |
+| GET | `/dcim/power-port-templates/` | dcim_power-port-templates_list | `id`, `name`, `type`, `maximum_draw`, `allocated_draw`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `maximum_draw__n`, `maximum_draw__lte`, `maximum_draw__lt`, `maximum_draw__gte`, `maximum_draw__gt`, `allocated_draw__n`, `allocated_draw__lte`, `allocated_draw__lt`, `allocated_draw__gte`, `allocated_draw__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/power-port-templates/` | dcim_power-port-templates_bulk_update | body*: WritablePowerPortTemplate | PowerPortTemplate |  | — |
+| POST | `/dcim/power-port-templates/` | dcim_power-port-templates_create | body*: WritablePowerPortTemplate | PowerPortTemplate |  | — |
+| DELETE | `/dcim/power-port-templates/` | dcim_power-port-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/power-port-templates/` | dcim_power-port-templates_bulk_partial_update | body*: WritablePowerPortTemplate | PowerPortTemplate |  | — |
+| GET | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_read | `id`* | PowerPortTemplate | yes | — |
+| PUT | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_update | `id`*, body*: WritablePowerPortTemplate | PowerPortTemplate |  | — |
+| DELETE | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/power-port-templates/{id}/` | dcim_power-port-templates_partial_update | `id`*, body*: WritablePowerPortTemplate | PowerPortTemplate |  | — |
+| GET | `/dcim/power-ports/` | dcim_power-ports_list | `id`, `name`, `label`, `maximum_draw`, `allocated_draw`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `connected`, `type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `maximum_draw__n`, `maximum_draw__lte`, `maximum_draw__lt`, `maximum_draw__gte`, `maximum_draw__gt`, `allocated_draw__n`, `allocated_draw__lte`, `allocated_draw__lt`, `allocated_draw__gte`, `allocated_draw__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/power-ports/` | dcim_power-ports_bulk_update | body*: WritablePowerPort | PowerPort |  | — |
+| POST | `/dcim/power-ports/` | dcim_power-ports_create | body*: WritablePowerPort | PowerPort |  | — |
+| DELETE | `/dcim/power-ports/` | dcim_power-ports_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/power-ports/` | dcim_power-ports_bulk_partial_update | body*: WritablePowerPort | PowerPort |  | — |
+| GET | `/dcim/power-ports/{id}/` | dcim_power-ports_read | `id`* | PowerPort | yes | — |
+| PUT | `/dcim/power-ports/{id}/` | dcim_power-ports_update | `id`*, body*: WritablePowerPort | PowerPort |  | — |
+| DELETE | `/dcim/power-ports/{id}/` | dcim_power-ports_delete | `id`* | — |  | — |
+| PATCH | `/dcim/power-ports/{id}/` | dcim_power-ports_partial_update | `id`*, body*: WritablePowerPort | PowerPort |  | — |
+| GET | `/dcim/power-ports/{id}/trace/` | dcim_power-ports_trace | `id`* | PowerPort | yes | — |
+| GET | `/dcim/rack-reservations/` | dcim_rack-reservations_list | `id`, `created`, `description`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `rack_id`, `site_id`, `site`, `region_id`, `region`, `site_group_id`, `site_group`, `location_id`, `location`, `user_id`, `user`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `rack_id__n`, `site_id__n`, `site__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `location_id__n`, `location__n`, `user_id__n`, `user__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/rack-reservations/` | dcim_rack-reservations_bulk_update | body*: WritableRackReservation | RackReservation |  | — |
+| POST | `/dcim/rack-reservations/` | dcim_rack-reservations_create | body*: WritableRackReservation | RackReservation |  | — |
+| DELETE | `/dcim/rack-reservations/` | dcim_rack-reservations_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/rack-reservations/` | dcim_rack-reservations_bulk_partial_update | body*: WritableRackReservation | RackReservation |  | — |
+| GET | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_read | `id`* | RackReservation | yes | — |
+| PUT | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_update | `id`*, body*: WritableRackReservation | RackReservation |  | — |
+| DELETE | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_delete | `id`* | — |  | — |
+| PATCH | `/dcim/rack-reservations/{id}/` | dcim_rack-reservations_partial_update | `id`*, body*: WritableRackReservation | RackReservation |  | — |
+| GET | `/dcim/rack-roles/` | dcim_rack-roles_list | `id`, `name`, `slug`, `color`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/rack-roles/` | dcim_rack-roles_bulk_update | body*: RackRole | RackRole |  | — |
+| POST | `/dcim/rack-roles/` | dcim_rack-roles_create | body*: RackRole | RackRole |  | — |
+| DELETE | `/dcim/rack-roles/` | dcim_rack-roles_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/rack-roles/` | dcim_rack-roles_bulk_partial_update | body*: RackRole | RackRole |  | — |
+| GET | `/dcim/rack-roles/{id}/` | dcim_rack-roles_read | `id`* | RackRole | yes | — |
+| PUT | `/dcim/rack-roles/{id}/` | dcim_rack-roles_update | `id`*, body*: RackRole | RackRole |  | — |
+| DELETE | `/dcim/rack-roles/{id}/` | dcim_rack-roles_delete | `id`* | — |  | — |
+| PATCH | `/dcim/rack-roles/{id}/` | dcim_rack-roles_partial_update | `id`*, body*: RackRole | RackRole |  | — |
+| GET | `/dcim/racks/` | dcim_racks_list | `id`, `name`, `facility_id`, `asset_tag`, `u_height`, `desc_units`, `outer_width`, `outer_depth`, `outer_unit`, `mounting_depth`, `weight`, `max_weight`, `weight_unit`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `status`, `type`, `width`, `role_id`, `role`, `serial`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `facility_id__n`, `facility_id__ic`, `facility_id__nic`, `facility_id__iew`, `facility_id__niew`, `facility_id__isw`, `facility_id__nisw`, `facility_id__ie`, `facility_id__nie`, `facility_id__empty`, `asset_tag__n`, `asset_tag__ic`, `asset_tag__nic`, `asset_tag__iew`, `asset_tag__niew`, `asset_tag__isw`, `asset_tag__nisw`, `asset_tag__ie`, `asset_tag__nie`, `asset_tag__empty`, `u_height__n`, `u_height__lte`, `u_height__lt`, `u_height__gte`, `u_height__gt`, `outer_width__n`, `outer_width__lte`, `outer_width__lt`, `outer_width__gte`, `outer_width__gt`, `outer_depth__n`, `outer_depth__lte`, `outer_depth__lt`, `outer_depth__gte`, `outer_depth__gt`, `outer_unit__n`, `mounting_depth__n`, `mounting_depth__lte`, `mounting_depth__lt`, `mounting_depth__gte`, `mounting_depth__gt`, `weight__n`, `weight__lte`, `weight__lt`, `weight__gte`, `weight__gt`, `max_weight__n`, `max_weight__lte`, `max_weight__lt`, `max_weight__gte`, `max_weight__gt`, `weight_unit__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `status__n`, `type__n`, `width__n`, `role_id__n`, `role__n`, `serial__n`, `serial__ic`, `serial__nic`, `serial__iew`, `serial__niew`, `serial__isw`, `serial__nisw`, `serial__ie`, `serial__nie`, `serial__empty`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/racks/` | dcim_racks_bulk_update | body*: WritableRack | Rack |  | — |
+| POST | `/dcim/racks/` | dcim_racks_create | body*: WritableRack | Rack |  | — |
+| DELETE | `/dcim/racks/` | dcim_racks_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/racks/` | dcim_racks_bulk_partial_update | body*: WritableRack | Rack |  | — |
+| GET | `/dcim/racks/{id}/` | dcim_racks_read | `id`* | Rack | yes | — |
+| PUT | `/dcim/racks/{id}/` | dcim_racks_update | `id`*, body*: WritableRack | Rack |  | — |
+| DELETE | `/dcim/racks/{id}/` | dcim_racks_delete | `id`* | — |  | — |
+| PATCH | `/dcim/racks/{id}/` | dcim_racks_partial_update | `id`*, body*: WritableRack | Rack |  | — |
+| GET | `/dcim/racks/{id}/elevation/` | dcim_racks_elevation | `id`*, `q`, `face`, `render`, `unit_width`, `unit_height`, `legend_width`, `margin_width`, `exclude`, `expand_devices`, `include_images` | RackUnit[] | yes | — |
+| GET | `/dcim/rear-port-templates/` | dcim_rear-port-templates_list | `id`, `name`, `type`, `color`, `positions`, `created`, `last_updated`, `q`, `devicetype_id`, `moduletype_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `type__n`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `positions__n`, `positions__lte`, `positions__lt`, `positions__gte`, `positions__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `devicetype_id__n`, `moduletype_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/rear-port-templates/` | dcim_rear-port-templates_bulk_update | body*: WritableRearPortTemplate | RearPortTemplate |  | — |
+| POST | `/dcim/rear-port-templates/` | dcim_rear-port-templates_create | body*: WritableRearPortTemplate | RearPortTemplate |  | — |
+| DELETE | `/dcim/rear-port-templates/` | dcim_rear-port-templates_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/rear-port-templates/` | dcim_rear-port-templates_bulk_partial_update | body*: WritableRearPortTemplate | RearPortTemplate |  | — |
+| GET | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_read | `id`* | RearPortTemplate | yes | — |
+| PUT | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_update | `id`*, body*: WritableRearPortTemplate | RearPortTemplate |  | — |
+| DELETE | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_delete | `id`* | — |  | — |
+| PATCH | `/dcim/rear-port-templates/{id}/` | dcim_rear-port-templates_partial_update | `id`*, body*: WritableRearPortTemplate | RearPortTemplate |  | — |
+| GET | `/dcim/rear-ports/` | dcim_rear-ports_list | `id`, `name`, `label`, `type`, `color`, `positions`, `description`, `cable_end`, `q`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `location_id`, `location`, `rack_id`, `rack`, `device_id`, `device`, `virtual_chassis_id`, `virtual_chassis`, `module_id`, `created`, `last_updated`, `tag`, `cabled`, `occupied`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `label__n`, `label__ic`, `label__nic`, `label__iew`, `label__niew`, `label__isw`, `label__nisw`, `label__ie`, `label__nie`, `label__empty`, `type__n`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `positions__n`, `positions__lte`, `positions__lt`, `positions__gte`, `positions__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `cable_end__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `rack_id__n`, `rack__n`, `device_id__n`, `device__n`, `virtual_chassis_id__n`, `virtual_chassis__n`, `module_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/rear-ports/` | dcim_rear-ports_bulk_update | body*: WritableRearPort | RearPort |  | — |
+| POST | `/dcim/rear-ports/` | dcim_rear-ports_create | body*: WritableRearPort | RearPort |  | — |
+| DELETE | `/dcim/rear-ports/` | dcim_rear-ports_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/rear-ports/` | dcim_rear-ports_bulk_partial_update | body*: WritableRearPort | RearPort |  | — |
+| GET | `/dcim/rear-ports/{id}/` | dcim_rear-ports_read | `id`* | RearPort | yes | — |
+| PUT | `/dcim/rear-ports/{id}/` | dcim_rear-ports_update | `id`*, body*: WritableRearPort | RearPort |  | — |
+| DELETE | `/dcim/rear-ports/{id}/` | dcim_rear-ports_delete | `id`* | — |  | — |
+| PATCH | `/dcim/rear-ports/{id}/` | dcim_rear-ports_partial_update | `id`*, body*: WritableRearPort | RearPort |  | — |
+| GET | `/dcim/rear-ports/{id}/paths/` | dcim_rear-ports_paths | `id`* | RearPort | yes | — |
+| GET | `/dcim/regions/` | dcim_regions_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `parent_id`, `parent`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `parent_id__n`, `parent__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/regions/` | dcim_regions_bulk_update | body*: WritableRegion | Region |  | — |
+| POST | `/dcim/regions/` | dcim_regions_create | body*: WritableRegion | Region |  | — |
+| DELETE | `/dcim/regions/` | dcim_regions_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/regions/` | dcim_regions_bulk_partial_update | body*: WritableRegion | Region |  | — |
+| GET | `/dcim/regions/{id}/` | dcim_regions_read | `id`* | Region | yes | — |
+| PUT | `/dcim/regions/{id}/` | dcim_regions_update | `id`*, body*: WritableRegion | Region |  | — |
+| DELETE | `/dcim/regions/{id}/` | dcim_regions_delete | `id`* | — |  | — |
+| PATCH | `/dcim/regions/{id}/` | dcim_regions_partial_update | `id`*, body*: WritableRegion | Region |  | — |
+| GET | `/dcim/site-groups/` | dcim_site-groups_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `parent_id`, `parent`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `parent_id__n`, `parent__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/site-groups/` | dcim_site-groups_bulk_update | body*: WritableSiteGroup | SiteGroup |  | — |
+| POST | `/dcim/site-groups/` | dcim_site-groups_create | body*: WritableSiteGroup | SiteGroup |  | — |
+| DELETE | `/dcim/site-groups/` | dcim_site-groups_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/site-groups/` | dcim_site-groups_bulk_partial_update | body*: WritableSiteGroup | SiteGroup |  | — |
+| GET | `/dcim/site-groups/{id}/` | dcim_site-groups_read | `id`* | SiteGroup | yes | — |
+| PUT | `/dcim/site-groups/{id}/` | dcim_site-groups_update | `id`*, body*: WritableSiteGroup | SiteGroup |  | — |
+| DELETE | `/dcim/site-groups/{id}/` | dcim_site-groups_delete | `id`* | — |  | — |
+| PATCH | `/dcim/site-groups/{id}/` | dcim_site-groups_partial_update | `id`*, body*: WritableSiteGroup | SiteGroup |  | — |
+| GET | `/dcim/sites/` | dcim_sites_list | `id`, `name`, `slug`, `facility`, `latitude`, `longitude`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `status`, `region_id`, `region`, `group_id`, `group`, `asn`, `asn_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `facility__n`, `facility__ic`, `facility__nic`, `facility__iew`, `facility__niew`, `facility__isw`, `facility__nisw`, `facility__ie`, `facility__nie`, `facility__empty`, `latitude__n`, `latitude__lte`, `latitude__lt`, `latitude__gte`, `latitude__gt`, `longitude__n`, `longitude__lte`, `longitude__lt`, `longitude__gte`, `longitude__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `status__n`, `region_id__n`, `region__n`, `group_id__n`, `group__n`, `asn__n`, `asn_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/sites/` | dcim_sites_bulk_update | body*: WritableSite | Site |  | — |
+| POST | `/dcim/sites/` | dcim_sites_create | body*: WritableSite | Site |  | — |
+| DELETE | `/dcim/sites/` | dcim_sites_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/sites/` | dcim_sites_bulk_partial_update | body*: WritableSite | Site |  | — |
+| GET | `/dcim/sites/{id}/` | dcim_sites_read | `id`* | Site | yes | — |
+| PUT | `/dcim/sites/{id}/` | dcim_sites_update | `id`*, body*: WritableSite | Site |  | — |
+| DELETE | `/dcim/sites/{id}/` | dcim_sites_delete | `id`* | — |  | — |
+| PATCH | `/dcim/sites/{id}/` | dcim_sites_partial_update | `id`*, body*: WritableSite | Site |  | — |
+| GET | `/dcim/virtual-chassis/` | dcim_virtual-chassis_list | `id`, `domain`, `name`, `created`, `last_updated`, `q`, `tag`, `master_id`, `master`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `tenant_id`, `tenant`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `domain__n`, `domain__ic`, `domain__nic`, `domain__iew`, `domain__niew`, `domain__isw`, `domain__nisw`, `domain__ie`, `domain__nie`, `domain__empty`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `master_id__n`, `master__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `tenant_id__n`, `tenant__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/virtual-chassis/` | dcim_virtual-chassis_bulk_update | body*: WritableVirtualChassis | VirtualChassis |  | — |
+| POST | `/dcim/virtual-chassis/` | dcim_virtual-chassis_create | body*: WritableVirtualChassis | VirtualChassis |  | — |
+| DELETE | `/dcim/virtual-chassis/` | dcim_virtual-chassis_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/virtual-chassis/` | dcim_virtual-chassis_bulk_partial_update | body*: WritableVirtualChassis | VirtualChassis |  | — |
+| GET | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_read | `id`* | VirtualChassis | yes | — |
+| PUT | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_update | `id`*, body*: WritableVirtualChassis | VirtualChassis |  | — |
+| DELETE | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_delete | `id`* | — |  | — |
+| PATCH | `/dcim/virtual-chassis/{id}/` | dcim_virtual-chassis_partial_update | `id`*, body*: WritableVirtualChassis | VirtualChassis |  | — |
+| GET | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_list | `id`, `device`, `name`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `device_id`, `status`, `has_primary_ip`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `device__n`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `device_id__n`, `status__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_bulk_update | body*: WritableVirtualDeviceContext | VirtualDeviceContext |  | — |
+| POST | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_create | body*: WritableVirtualDeviceContext | VirtualDeviceContext |  | — |
+| DELETE | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_bulk_delete | — | — |  | — |
+| PATCH | `/dcim/virtual-device-contexts/` | dcim_virtual-device-contexts_bulk_partial_update | body*: WritableVirtualDeviceContext | VirtualDeviceContext |  | — |
+| GET | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_read | `id`* | VirtualDeviceContext | yes | — |
+| PUT | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_update | `id`*, body*: WritableVirtualDeviceContext | VirtualDeviceContext |  | — |
+| DELETE | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_delete | `id`* | — |  | — |
+| PATCH | `/dcim/virtual-device-contexts/{id}/` | dcim_virtual-device-contexts_partial_update | `id`*, body*: WritableVirtualDeviceContext | VirtualDeviceContext |  | — |
+| GET | `/extras/config-contexts/` | extras_config-contexts_list | `id`, `name`, `is_active`, `created`, `last_updated`, `q`, `region_id`, `region`, `site_group`, `site_group_id`, `site_id`, `site`, `location_id`, `location`, `device_type_id`, `role_id`, `role`, `platform_id`, `platform`, `cluster_type_id`, `cluster_type`, `cluster_group_id`, `cluster_group`, `cluster_id`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `tag_id`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `region_id__n`, `region__n`, `site_group__n`, `site_group_id__n`, `site_id__n`, `site__n`, `location_id__n`, `location__n`, `device_type_id__n`, `role_id__n`, `role__n`, `platform_id__n`, `platform__n`, `cluster_type_id__n`, `cluster_type__n`, `cluster_group_id__n`, `cluster_group__n`, `cluster_id__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `tag_id__n`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/config-contexts/` | extras_config-contexts_bulk_update | body*: WritableConfigContext | ConfigContext |  | — |
+| POST | `/extras/config-contexts/` | extras_config-contexts_create | body*: WritableConfigContext | ConfigContext |  | — |
+| DELETE | `/extras/config-contexts/` | extras_config-contexts_bulk_delete | — | — |  | — |
+| PATCH | `/extras/config-contexts/` | extras_config-contexts_bulk_partial_update | body*: WritableConfigContext | ConfigContext |  | — |
+| GET | `/extras/config-contexts/{id}/` | extras_config-contexts_read | `id`* | ConfigContext | yes | — |
+| PUT | `/extras/config-contexts/{id}/` | extras_config-contexts_update | `id`*, body*: WritableConfigContext | ConfigContext |  | — |
+| DELETE | `/extras/config-contexts/{id}/` | extras_config-contexts_delete | `id`* | — |  | — |
+| PATCH | `/extras/config-contexts/{id}/` | extras_config-contexts_partial_update | `id`*, body*: WritableConfigContext | ConfigContext |  | — |
+| GET | `/extras/content-types/` | extras_content-types_list | `id`, `app_label`, `model`, `q`, `ordering`, `limit`, `offset` | object | yes | — |
+| GET | `/extras/content-types/{id}/` | extras_content-types_read | `id`* | ContentType | yes | — |
+| GET | `/extras/custom-fields/` | extras_custom-fields_list | `id`, `content_types`, `name`, `group_name`, `required`, `search_weight`, `filter_logic`, `ui_visibility`, `weight`, `description`, `q`, `type`, `content_type_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `content_types__n`, `content_types__ic`, `content_types__nic`, `content_types__iew`, `content_types__niew`, `content_types__isw`, `content_types__nisw`, `content_types__ie`, `content_types__nie`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `group_name__n`, `group_name__ic`, `group_name__nic`, `group_name__iew`, `group_name__niew`, `group_name__isw`, `group_name__nisw`, `group_name__ie`, `group_name__nie`, `group_name__empty`, `search_weight__n`, `search_weight__lte`, `search_weight__lt`, `search_weight__gte`, `search_weight__gt`, `filter_logic__n`, `ui_visibility__n`, `weight__n`, `weight__lte`, `weight__lt`, `weight__gte`, `weight__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `type__n`, `content_type_id__n`, `content_type_id__lte`, `content_type_id__lt`, `content_type_id__gte`, `content_type_id__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/custom-fields/` | extras_custom-fields_bulk_update | body*: WritableCustomField | CustomField |  | — |
+| POST | `/extras/custom-fields/` | extras_custom-fields_create | body*: WritableCustomField | CustomField |  | — |
+| DELETE | `/extras/custom-fields/` | extras_custom-fields_bulk_delete | — | — |  | — |
+| PATCH | `/extras/custom-fields/` | extras_custom-fields_bulk_partial_update | body*: WritableCustomField | CustomField |  | — |
+| GET | `/extras/custom-fields/{id}/` | extras_custom-fields_read | `id`* | CustomField | yes | — |
+| PUT | `/extras/custom-fields/{id}/` | extras_custom-fields_update | `id`*, body*: WritableCustomField | CustomField |  | — |
+| DELETE | `/extras/custom-fields/{id}/` | extras_custom-fields_delete | `id`* | — |  | — |
+| PATCH | `/extras/custom-fields/{id}/` | extras_custom-fields_partial_update | `id`*, body*: WritableCustomField | CustomField |  | — |
+| GET | `/extras/custom-links/` | extras_custom-links_list | `id`, `content_types`, `name`, `enabled`, `link_text`, `link_url`, `weight`, `group_name`, `new_window`, `q`, `content_type_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `content_types__n`, `content_types__ic`, `content_types__nic`, `content_types__iew`, `content_types__niew`, `content_types__isw`, `content_types__nisw`, `content_types__ie`, `content_types__nie`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `link_text__n`, `link_text__ic`, `link_text__nic`, `link_text__iew`, `link_text__niew`, `link_text__isw`, `link_text__nisw`, `link_text__ie`, `link_text__nie`, `link_url__n`, `link_url__ic`, `link_url__nic`, `link_url__iew`, `link_url__niew`, `link_url__isw`, `link_url__nisw`, `link_url__ie`, `link_url__nie`, `weight__n`, `weight__lte`, `weight__lt`, `weight__gte`, `weight__gt`, `group_name__n`, `group_name__ic`, `group_name__nic`, `group_name__iew`, `group_name__niew`, `group_name__isw`, `group_name__nisw`, `group_name__ie`, `group_name__nie`, `group_name__empty`, `content_type_id__n`, `content_type_id__lte`, `content_type_id__lt`, `content_type_id__gte`, `content_type_id__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/custom-links/` | extras_custom-links_bulk_update | body*: CustomLink | CustomLink |  | — |
+| POST | `/extras/custom-links/` | extras_custom-links_create | body*: CustomLink | CustomLink |  | — |
+| DELETE | `/extras/custom-links/` | extras_custom-links_bulk_delete | — | — |  | — |
+| PATCH | `/extras/custom-links/` | extras_custom-links_bulk_partial_update | body*: CustomLink | CustomLink |  | — |
+| GET | `/extras/custom-links/{id}/` | extras_custom-links_read | `id`* | CustomLink | yes | — |
+| PUT | `/extras/custom-links/{id}/` | extras_custom-links_update | `id`*, body*: CustomLink | CustomLink |  | — |
+| DELETE | `/extras/custom-links/{id}/` | extras_custom-links_delete | `id`* | — |  | — |
+| PATCH | `/extras/custom-links/{id}/` | extras_custom-links_partial_update | `id`*, body*: CustomLink | CustomLink |  | — |
+| GET | `/extras/export-templates/` | extras_export-templates_list | `id`, `content_types`, `name`, `description`, `q`, `content_type_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `content_types__n`, `content_types__ic`, `content_types__nic`, `content_types__iew`, `content_types__niew`, `content_types__isw`, `content_types__nisw`, `content_types__ie`, `content_types__nie`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `content_type_id__n`, `content_type_id__lte`, `content_type_id__lt`, `content_type_id__gte`, `content_type_id__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/export-templates/` | extras_export-templates_bulk_update | body*: ExportTemplate | ExportTemplate |  | — |
+| POST | `/extras/export-templates/` | extras_export-templates_create | body*: ExportTemplate | ExportTemplate |  | — |
+| DELETE | `/extras/export-templates/` | extras_export-templates_bulk_delete | — | — |  | — |
+| PATCH | `/extras/export-templates/` | extras_export-templates_bulk_partial_update | body*: ExportTemplate | ExportTemplate |  | — |
+| GET | `/extras/export-templates/{id}/` | extras_export-templates_read | `id`* | ExportTemplate | yes | — |
+| PUT | `/extras/export-templates/{id}/` | extras_export-templates_update | `id`*, body*: ExportTemplate | ExportTemplate |  | — |
+| DELETE | `/extras/export-templates/{id}/` | extras_export-templates_delete | `id`* | — |  | — |
+| PATCH | `/extras/export-templates/{id}/` | extras_export-templates_partial_update | `id`*, body*: ExportTemplate | ExportTemplate |  | — |
+| GET | `/extras/image-attachments/` | extras_image-attachments_list | `id`, `content_type_id`, `object_id`, `name`, `q`, `created`, `content_type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `content_type_id__n`, `object_id__n`, `object_id__lte`, `object_id__lt`, `object_id__gte`, `object_id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `content_type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/image-attachments/` | extras_image-attachments_bulk_update | body*: ImageAttachment | ImageAttachment |  | — |
+| POST | `/extras/image-attachments/` | extras_image-attachments_create | body*: ImageAttachment | ImageAttachment |  | — |
+| DELETE | `/extras/image-attachments/` | extras_image-attachments_bulk_delete | — | — |  | — |
+| PATCH | `/extras/image-attachments/` | extras_image-attachments_bulk_partial_update | body*: ImageAttachment | ImageAttachment |  | — |
+| GET | `/extras/image-attachments/{id}/` | extras_image-attachments_read | `id`* | ImageAttachment | yes | — |
+| PUT | `/extras/image-attachments/{id}/` | extras_image-attachments_update | `id`*, body*: ImageAttachment | ImageAttachment |  | — |
+| DELETE | `/extras/image-attachments/{id}/` | extras_image-attachments_delete | `id`* | — |  | — |
+| PATCH | `/extras/image-attachments/{id}/` | extras_image-attachments_partial_update | `id`*, body*: ImageAttachment | ImageAttachment |  | — |
+| GET | `/extras/job-results/` | extras_job-results_list | `id`, `interval`, `status`, `user`, `obj_type`, `name`, `q`, `created`, `created__before`, `created__after`, `scheduled`, `scheduled__before`, `scheduled__after`, `started`, `started__before`, `started__after`, `completed`, `completed__before`, `completed__after`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `interval__n`, `interval__lte`, `interval__lt`, `interval__gte`, `interval__gt`, `status__n`, `user__n`, `obj_type__n`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `ordering`, `limit`, `offset` | object | yes | — |
+| GET | `/extras/job-results/{id}/` | extras_job-results_read | `id`* | JobResult | yes | — |
+| GET | `/extras/journal-entries/` | extras_journal-entries_list | `id`, `assigned_object_type_id`, `assigned_object_id`, `created`, `kind`, `last_updated`, `q`, `tag`, `assigned_object_type`, `created_by_id`, `created_by`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `assigned_object_type_id__n`, `assigned_object_id__n`, `assigned_object_id__lte`, `assigned_object_id__lt`, `assigned_object_id__gte`, `assigned_object_id__gt`, `kind__n`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `assigned_object_type__n`, `created_by_id__n`, `created_by__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/journal-entries/` | extras_journal-entries_bulk_update | body*: WritableJournalEntry | JournalEntry |  | — |
+| POST | `/extras/journal-entries/` | extras_journal-entries_create | body*: WritableJournalEntry | JournalEntry |  | — |
+| DELETE | `/extras/journal-entries/` | extras_journal-entries_bulk_delete | — | — |  | — |
+| PATCH | `/extras/journal-entries/` | extras_journal-entries_bulk_partial_update | body*: WritableJournalEntry | JournalEntry |  | — |
+| GET | `/extras/journal-entries/{id}/` | extras_journal-entries_read | `id`* | JournalEntry | yes | — |
+| PUT | `/extras/journal-entries/{id}/` | extras_journal-entries_update | `id`*, body*: WritableJournalEntry | JournalEntry |  | — |
+| DELETE | `/extras/journal-entries/{id}/` | extras_journal-entries_delete | `id`* | — |  | — |
+| PATCH | `/extras/journal-entries/{id}/` | extras_journal-entries_partial_update | `id`*, body*: WritableJournalEntry | JournalEntry |  | — |
+| GET | `/extras/object-changes/` | extras_object-changes_list | `id`, `user`, `user_name`, `request_id`, `action`, `changed_object_type_id`, `changed_object_id`, `object_repr`, `q`, `time`, `changed_object_type`, `user_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `user__n`, `user_name__n`, `user_name__ic`, `user_name__nic`, `user_name__iew`, `user_name__niew`, `user_name__isw`, `user_name__nisw`, `user_name__ie`, `user_name__nie`, `user_name__empty`, `action__n`, `changed_object_type_id__n`, `changed_object_id__n`, `changed_object_id__lte`, `changed_object_id__lt`, `changed_object_id__gte`, `changed_object_id__gt`, `object_repr__n`, `object_repr__ic`, `object_repr__nic`, `object_repr__iew`, `object_repr__niew`, `object_repr__isw`, `object_repr__nisw`, `object_repr__ie`, `object_repr__nie`, `object_repr__empty`, `changed_object_type__n`, `user_id__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| GET | `/extras/object-changes/{id}/` | extras_object-changes_read | `id`* | ObjectChange | yes | — |
+| GET | `/extras/reports/` | extras_reports_list | — | — | yes | — |
+| GET | `/extras/reports/{id}/` | extras_reports_read | `id`* | — | yes | — |
+| POST | `/extras/reports/{id}/run/` | extras_reports_run | `id`* | — |  | — |
+| GET | `/extras/saved-filters/` | extras_saved-filters_list | `id`, `content_types`, `name`, `slug`, `description`, `enabled`, `shared`, `weight`, `q`, `content_type_id`, `user_id`, `user`, `usable`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `content_types__n`, `content_types__ic`, `content_types__nic`, `content_types__iew`, `content_types__niew`, `content_types__isw`, `content_types__nisw`, `content_types__ie`, `content_types__nie`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `weight__n`, `weight__lte`, `weight__lt`, `weight__gte`, `weight__gt`, `content_type_id__n`, `content_type_id__lte`, `content_type_id__lt`, `content_type_id__gte`, `content_type_id__gt`, `user_id__n`, `user__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/saved-filters/` | extras_saved-filters_bulk_update | body*: SavedFilter | SavedFilter |  | — |
+| POST | `/extras/saved-filters/` | extras_saved-filters_create | body*: SavedFilter | SavedFilter |  | — |
+| DELETE | `/extras/saved-filters/` | extras_saved-filters_bulk_delete | — | — |  | — |
+| PATCH | `/extras/saved-filters/` | extras_saved-filters_bulk_partial_update | body*: SavedFilter | SavedFilter |  | — |
+| GET | `/extras/saved-filters/{id}/` | extras_saved-filters_read | `id`* | SavedFilter | yes | — |
+| PUT | `/extras/saved-filters/{id}/` | extras_saved-filters_update | `id`*, body*: SavedFilter | SavedFilter |  | — |
+| DELETE | `/extras/saved-filters/{id}/` | extras_saved-filters_delete | `id`* | — |  | — |
+| PATCH | `/extras/saved-filters/{id}/` | extras_saved-filters_partial_update | `id`*, body*: SavedFilter | SavedFilter |  | — |
+| GET | `/extras/scripts/` | extras_scripts_list | — | — | yes | — |
+| GET | `/extras/scripts/{id}/` | extras_scripts_read | `id`* | — | yes | — |
+| GET | `/extras/tags/` | extras_tags_list | `id`, `name`, `slug`, `color`, `description`, `created`, `last_updated`, `q`, `content_type`, `content_type_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `color__n`, `color__ic`, `color__nic`, `color__iew`, `color__niew`, `color__isw`, `color__nisw`, `color__ie`, `color__nie`, `color__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/tags/` | extras_tags_bulk_update | body*: Tag | Tag |  | — |
+| POST | `/extras/tags/` | extras_tags_create | body*: Tag | Tag |  | — |
+| DELETE | `/extras/tags/` | extras_tags_bulk_delete | — | — |  | — |
+| PATCH | `/extras/tags/` | extras_tags_bulk_partial_update | body*: Tag | Tag |  | — |
+| GET | `/extras/tags/{id}/` | extras_tags_read | `id`* | Tag | yes | — |
+| PUT | `/extras/tags/{id}/` | extras_tags_update | `id`*, body*: Tag | Tag |  | — |
+| DELETE | `/extras/tags/{id}/` | extras_tags_delete | `id`* | — |  | — |
+| PATCH | `/extras/tags/{id}/` | extras_tags_partial_update | `id`*, body*: Tag | Tag |  | — |
+| GET | `/extras/webhooks/` | extras_webhooks_list | `id`, `name`, `type_create`, `type_update`, `type_delete`, `payload_url`, `enabled`, `http_method`, `http_content_type`, `secret`, `ssl_verification`, `ca_file_path`, `q`, `content_type_id`, `content_types`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `payload_url__n`, `payload_url__ic`, `payload_url__nic`, `payload_url__iew`, `payload_url__niew`, `payload_url__isw`, `payload_url__nisw`, `payload_url__ie`, `payload_url__nie`, `payload_url__empty`, `http_method__n`, `http_content_type__n`, `http_content_type__ic`, `http_content_type__nic`, `http_content_type__iew`, `http_content_type__niew`, `http_content_type__isw`, `http_content_type__nisw`, `http_content_type__ie`, `http_content_type__nie`, `http_content_type__empty`, `secret__n`, `secret__ic`, `secret__nic`, `secret__iew`, `secret__niew`, `secret__isw`, `secret__nisw`, `secret__ie`, `secret__nie`, `secret__empty`, `ca_file_path__n`, `ca_file_path__ic`, `ca_file_path__nic`, `ca_file_path__iew`, `ca_file_path__niew`, `ca_file_path__isw`, `ca_file_path__nisw`, `ca_file_path__ie`, `ca_file_path__nie`, `ca_file_path__empty`, `content_type_id__n`, `content_type_id__lte`, `content_type_id__lt`, `content_type_id__gte`, `content_type_id__gt`, `content_types__n`, `content_types__ic`, `content_types__nic`, `content_types__iew`, `content_types__niew`, `content_types__isw`, `content_types__nisw`, `content_types__ie`, `content_types__nie`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/extras/webhooks/` | extras_webhooks_bulk_update | body*: Webhook | Webhook |  | — |
+| POST | `/extras/webhooks/` | extras_webhooks_create | body*: Webhook | Webhook |  | — |
+| DELETE | `/extras/webhooks/` | extras_webhooks_bulk_delete | — | — |  | — |
+| PATCH | `/extras/webhooks/` | extras_webhooks_bulk_partial_update | body*: Webhook | Webhook |  | — |
+| GET | `/extras/webhooks/{id}/` | extras_webhooks_read | `id`* | Webhook | yes | — |
+| PUT | `/extras/webhooks/{id}/` | extras_webhooks_update | `id`*, body*: Webhook | Webhook |  | — |
+| DELETE | `/extras/webhooks/{id}/` | extras_webhooks_delete | `id`* | — |  | — |
+| PATCH | `/extras/webhooks/{id}/` | extras_webhooks_partial_update | `id`*, body*: Webhook | Webhook |  | — |
+| GET | `/ipam/aggregates/` | ipam_aggregates_list | `id`, `date_added`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `family`, `prefix`, `rir_id`, `rir`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `date_added__n`, `date_added__lte`, `date_added__lt`, `date_added__gte`, `date_added__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `rir_id__n`, `rir__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/aggregates/` | ipam_aggregates_bulk_update | body*: WritableAggregate | Aggregate |  | — |
+| POST | `/ipam/aggregates/` | ipam_aggregates_create | body*: WritableAggregate | Aggregate |  | — |
+| DELETE | `/ipam/aggregates/` | ipam_aggregates_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/aggregates/` | ipam_aggregates_bulk_partial_update | body*: WritableAggregate | Aggregate |  | — |
+| GET | `/ipam/aggregates/{id}/` | ipam_aggregates_read | `id`* | Aggregate | yes | — |
+| PUT | `/ipam/aggregates/{id}/` | ipam_aggregates_update | `id`*, body*: WritableAggregate | Aggregate |  | — |
+| DELETE | `/ipam/aggregates/{id}/` | ipam_aggregates_delete | `id`* | — |  | — |
+| PATCH | `/ipam/aggregates/{id}/` | ipam_aggregates_partial_update | `id`*, body*: WritableAggregate | Aggregate |  | — |
+| GET | `/ipam/asns/` | ipam_asns_list | `id`, `asn`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `rir_id`, `rir`, `site_id`, `site`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `asn__n`, `asn__lte`, `asn__lt`, `asn__gte`, `asn__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `rir_id__n`, `rir__n`, `site_id__n`, `site__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/asns/` | ipam_asns_bulk_update | body*: WritableASN | ASN |  | — |
+| POST | `/ipam/asns/` | ipam_asns_create | body*: WritableASN | ASN |  | — |
+| DELETE | `/ipam/asns/` | ipam_asns_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/asns/` | ipam_asns_bulk_partial_update | body*: WritableASN | ASN |  | — |
+| GET | `/ipam/asns/{id}/` | ipam_asns_read | `id`* | ASN | yes | — |
+| PUT | `/ipam/asns/{id}/` | ipam_asns_update | `id`*, body*: WritableASN | ASN |  | — |
+| DELETE | `/ipam/asns/{id}/` | ipam_asns_delete | `id`* | — |  | — |
+| PATCH | `/ipam/asns/{id}/` | ipam_asns_partial_update | `id`*, body*: WritableASN | ASN |  | — |
+| GET | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_list | `id`, `group_id`, `interface_type`, `interface_id`, `priority`, `created`, `last_updated`, `device`, `device_id`, `virtual_machine`, `virtual_machine_id`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `group_id__n`, `interface_type__n`, `interface_id__n`, `interface_id__lte`, `interface_id__lt`, `interface_id__gte`, `interface_id__gt`, `priority__n`, `priority__lte`, `priority__lt`, `priority__gte`, `priority__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_bulk_update | body*: WritableFHRPGroupAssignment | FHRPGroupAssignment |  | — |
+| POST | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_create | body*: WritableFHRPGroupAssignment | FHRPGroupAssignment |  | — |
+| DELETE | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/fhrp-group-assignments/` | ipam_fhrp-group-assignments_bulk_partial_update | body*: WritableFHRPGroupAssignment | FHRPGroupAssignment |  | — |
+| GET | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_read | `id`* | FHRPGroupAssignment | yes | — |
+| PUT | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_update | `id`*, body*: WritableFHRPGroupAssignment | FHRPGroupAssignment |  | — |
+| DELETE | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_delete | `id`* | — |  | — |
+| PATCH | `/ipam/fhrp-group-assignments/{id}/` | ipam_fhrp-group-assignments_partial_update | `id`*, body*: WritableFHRPGroupAssignment | FHRPGroupAssignment |  | — |
+| GET | `/ipam/fhrp-groups/` | ipam_fhrp-groups_list | `id`, `group_id`, `name`, `auth_key`, `created`, `last_updated`, `q`, `tag`, `protocol`, `auth_type`, `related_ip`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `group_id__n`, `group_id__lte`, `group_id__lt`, `group_id__gte`, `group_id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `auth_key__n`, `auth_key__ic`, `auth_key__nic`, `auth_key__iew`, `auth_key__niew`, `auth_key__isw`, `auth_key__nisw`, `auth_key__ie`, `auth_key__nie`, `auth_key__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `protocol__n`, `auth_type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/fhrp-groups/` | ipam_fhrp-groups_bulk_update | body*: FHRPGroup | FHRPGroup |  | — |
+| POST | `/ipam/fhrp-groups/` | ipam_fhrp-groups_create | body*: FHRPGroup | FHRPGroup |  | — |
+| DELETE | `/ipam/fhrp-groups/` | ipam_fhrp-groups_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/fhrp-groups/` | ipam_fhrp-groups_bulk_partial_update | body*: FHRPGroup | FHRPGroup |  | — |
+| GET | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_read | `id`* | FHRPGroup | yes | — |
+| PUT | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_update | `id`*, body*: FHRPGroup | FHRPGroup |  | — |
+| DELETE | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_delete | `id`* | — |  | — |
+| PATCH | `/ipam/fhrp-groups/{id}/` | ipam_fhrp-groups_partial_update | `id`*, body*: FHRPGroup | FHRPGroup |  | — |
+| GET | `/ipam/ip-addresses/` | ipam_ip-addresses_list | `id`, `dns_name`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `family`, `parent`, `address`, `mask_length`, `vrf_id`, `vrf`, `present_in_vrf_id`, `present_in_vrf`, `device`, `device_id`, `virtual_machine`, `virtual_machine_id`, `interface`, `interface_id`, `vminterface`, `vminterface_id`, `fhrpgroup_id`, `assigned_to_interface`, `status`, `role`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `dns_name__n`, `dns_name__ic`, `dns_name__nic`, `dns_name__iew`, `dns_name__niew`, `dns_name__isw`, `dns_name__nisw`, `dns_name__ie`, `dns_name__nie`, `dns_name__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `vrf_id__n`, `vrf__n`, `interface__n`, `interface_id__n`, `vminterface__n`, `vminterface_id__n`, `fhrpgroup_id__n`, `status__n`, `role__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/ip-addresses/` | ipam_ip-addresses_bulk_update | body*: WritableIPAddress | IPAddress |  | — |
+| POST | `/ipam/ip-addresses/` | ipam_ip-addresses_create | body*: WritableIPAddress | IPAddress |  | — |
+| DELETE | `/ipam/ip-addresses/` | ipam_ip-addresses_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/ip-addresses/` | ipam_ip-addresses_bulk_partial_update | body*: WritableIPAddress | IPAddress |  | — |
+| GET | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_read | `id`* | IPAddress | yes | — |
+| PUT | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_update | `id`*, body*: WritableIPAddress | IPAddress |  | — |
+| DELETE | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_delete | `id`* | — |  | — |
+| PATCH | `/ipam/ip-addresses/{id}/` | ipam_ip-addresses_partial_update | `id`*, body*: WritableIPAddress | IPAddress |  | — |
+| GET | `/ipam/ip-ranges/` | ipam_ip-ranges_list | `id`, `description`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `created`, `last_updated`, `q`, `tag`, `family`, `start_address`, `end_address`, `contains`, `vrf_id`, `vrf`, `role_id`, `role`, `status`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `vrf_id__n`, `vrf__n`, `role_id__n`, `role__n`, `status__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/ip-ranges/` | ipam_ip-ranges_bulk_update | body*: WritableIPRange | IPRange |  | — |
+| POST | `/ipam/ip-ranges/` | ipam_ip-ranges_create | body*: WritableIPRange | IPRange |  | — |
+| DELETE | `/ipam/ip-ranges/` | ipam_ip-ranges_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/ip-ranges/` | ipam_ip-ranges_bulk_partial_update | body*: WritableIPRange | IPRange |  | — |
+| GET | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_read | `id`* | IPRange | yes | — |
+| PUT | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_update | `id`*, body*: WritableIPRange | IPRange |  | — |
+| DELETE | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_delete | `id`* | — |  | — |
+| PATCH | `/ipam/ip-ranges/{id}/` | ipam_ip-ranges_partial_update | `id`*, body*: WritableIPRange | IPRange |  | — |
+| GET | `/ipam/ip-ranges/{id}/available-ips/` | ipam_ip-ranges_available-ips_list | `id`* | AvailableIP[] | yes | — |
+| POST | `/ipam/ip-ranges/{id}/available-ips/` | ipam_ip-ranges_available-ips_create | `id`*, body*: WritableAvailableIP | IPAddress[] |  | — |
+| GET | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_list | `id`, `assigned_object_type_id`, `created`, `last_updated`, `q`, `tag`, `l2vpn_id`, `l2vpn`, `region`, `region_id`, `site`, `site_id`, `device`, `device_id`, `virtual_machine`, `virtual_machine_id`, `interface`, `interface_id`, `vminterface`, `vminterface_id`, `vlan`, `vlan_vid`, `vlan_id`, `assigned_object_type`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `assigned_object_type_id__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `l2vpn_id__n`, `l2vpn__n`, `device__n`, `device_id__n`, `virtual_machine__n`, `virtual_machine_id__n`, `interface__n`, `interface_id__n`, `vminterface__n`, `vminterface_id__n`, `vlan__n`, `vlan_vid__n`, `vlan_vid__lte`, `vlan_vid__lt`, `vlan_vid__gte`, `vlan_vid__gt`, `vlan_id__n`, `assigned_object_type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_bulk_update | body*: WritableL2VPNTermination | L2VPNTermination |  | — |
+| POST | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_create | body*: WritableL2VPNTermination | L2VPNTermination |  | — |
+| DELETE | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/l2vpn-terminations/` | ipam_l2vpn-terminations_bulk_partial_update | body*: WritableL2VPNTermination | L2VPNTermination |  | — |
+| GET | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_read | `id`* | L2VPNTermination | yes | — |
+| PUT | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_update | `id`*, body*: WritableL2VPNTermination | L2VPNTermination |  | — |
+| DELETE | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_delete | `id`* | — |  | — |
+| PATCH | `/ipam/l2vpn-terminations/{id}/` | ipam_l2vpn-terminations_partial_update | `id`*, body*: WritableL2VPNTermination | L2VPNTermination |  | — |
+| GET | `/ipam/l2vpns/` | ipam_l2vpns_list | `id`, `identifier`, `name`, `slug`, `type`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `import_target_id`, `import_target`, `export_target_id`, `export_target`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `identifier__n`, `identifier__lte`, `identifier__lt`, `identifier__gte`, `identifier__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `type__n`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `import_target_id__n`, `import_target__n`, `export_target_id__n`, `export_target__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/l2vpns/` | ipam_l2vpns_bulk_update | body*: WritableL2VPN | L2VPN |  | — |
+| POST | `/ipam/l2vpns/` | ipam_l2vpns_create | body*: WritableL2VPN | L2VPN |  | — |
+| DELETE | `/ipam/l2vpns/` | ipam_l2vpns_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/l2vpns/` | ipam_l2vpns_bulk_partial_update | body*: WritableL2VPN | L2VPN |  | — |
+| GET | `/ipam/l2vpns/{id}/` | ipam_l2vpns_read | `id`* | L2VPN | yes | — |
+| PUT | `/ipam/l2vpns/{id}/` | ipam_l2vpns_update | `id`*, body*: WritableL2VPN | L2VPN |  | — |
+| DELETE | `/ipam/l2vpns/{id}/` | ipam_l2vpns_delete | `id`* | — |  | — |
+| PATCH | `/ipam/l2vpns/{id}/` | ipam_l2vpns_partial_update | `id`*, body*: WritableL2VPN | L2VPN |  | — |
+| GET | `/ipam/prefixes/` | ipam_prefixes_list | `id`, `is_pool`, `mark_utilized`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `family`, `prefix`, `within`, `within_include`, `contains`, `depth`, `children`, `mask_length`, `mask_length__gte`, `mask_length__lte`, `vrf_id`, `vrf`, `present_in_vrf_id`, `present_in_vrf`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `vlan_id`, `vlan_vid`, `role_id`, `role`, `status`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `depth__n`, `depth__lte`, `depth__lt`, `depth__gte`, `depth__gt`, `children__n`, `children__lte`, `children__lt`, `children__gte`, `children__gt`, `vrf_id__n`, `vrf__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `vlan_id__n`, `vlan_vid__n`, `vlan_vid__lte`, `vlan_vid__lt`, `vlan_vid__gte`, `vlan_vid__gt`, `role_id__n`, `role__n`, `status__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/prefixes/` | ipam_prefixes_bulk_update | body*: WritablePrefix | Prefix |  | — |
+| POST | `/ipam/prefixes/` | ipam_prefixes_create | body*: WritablePrefix | Prefix |  | — |
+| DELETE | `/ipam/prefixes/` | ipam_prefixes_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/prefixes/` | ipam_prefixes_bulk_partial_update | body*: WritablePrefix | Prefix |  | — |
+| GET | `/ipam/prefixes/{id}/` | ipam_prefixes_read | `id`* | Prefix | yes | — |
+| PUT | `/ipam/prefixes/{id}/` | ipam_prefixes_update | `id`*, body*: WritablePrefix | Prefix |  | — |
+| DELETE | `/ipam/prefixes/{id}/` | ipam_prefixes_delete | `id`* | — |  | — |
+| PATCH | `/ipam/prefixes/{id}/` | ipam_prefixes_partial_update | `id`*, body*: WritablePrefix | Prefix |  | — |
+| GET | `/ipam/prefixes/{id}/available-ips/` | ipam_prefixes_available-ips_list | `id`* | AvailableIP[] | yes | — |
+| POST | `/ipam/prefixes/{id}/available-ips/` | ipam_prefixes_available-ips_create | `id`*, body*: WritableAvailableIP | IPAddress[] |  | — |
+| GET | `/ipam/prefixes/{id}/available-prefixes/` | ipam_prefixes_available-prefixes_list | `id`* | AvailablePrefix[] | yes | — |
+| POST | `/ipam/prefixes/{id}/available-prefixes/` | ipam_prefixes_available-prefixes_create | `id`*, body*: PrefixLength | Prefix[] |  | — |
+| GET | `/ipam/rirs/` | ipam_rirs_list | `id`, `name`, `slug`, `is_private`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/rirs/` | ipam_rirs_bulk_update | body*: RIR | RIR |  | — |
+| POST | `/ipam/rirs/` | ipam_rirs_create | body*: RIR | RIR |  | — |
+| DELETE | `/ipam/rirs/` | ipam_rirs_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/rirs/` | ipam_rirs_bulk_partial_update | body*: RIR | RIR |  | — |
+| GET | `/ipam/rirs/{id}/` | ipam_rirs_read | `id`* | RIR | yes | — |
+| PUT | `/ipam/rirs/{id}/` | ipam_rirs_update | `id`*, body*: RIR | RIR |  | — |
+| DELETE | `/ipam/rirs/{id}/` | ipam_rirs_delete | `id`* | — |  | — |
+| PATCH | `/ipam/rirs/{id}/` | ipam_rirs_partial_update | `id`*, body*: RIR | RIR |  | — |
+| GET | `/ipam/roles/` | ipam_roles_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/roles/` | ipam_roles_bulk_update | body*: Role | Role |  | — |
+| POST | `/ipam/roles/` | ipam_roles_create | body*: Role | Role |  | — |
+| DELETE | `/ipam/roles/` | ipam_roles_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/roles/` | ipam_roles_bulk_partial_update | body*: Role | Role |  | — |
+| GET | `/ipam/roles/{id}/` | ipam_roles_read | `id`* | Role | yes | — |
+| PUT | `/ipam/roles/{id}/` | ipam_roles_update | `id`*, body*: Role | Role |  | — |
+| DELETE | `/ipam/roles/{id}/` | ipam_roles_delete | `id`* | — |  | — |
+| PATCH | `/ipam/roles/{id}/` | ipam_roles_partial_update | `id`*, body*: Role | Role |  | — |
+| GET | `/ipam/route-targets/` | ipam_route-targets_list | `id`, `name`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `importing_vrf_id`, `importing_vrf`, `exporting_vrf_id`, `exporting_vrf`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `importing_vrf_id__n`, `importing_vrf__n`, `exporting_vrf_id__n`, `exporting_vrf__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/route-targets/` | ipam_route-targets_bulk_update | body*: WritableRouteTarget | RouteTarget |  | — |
+| POST | `/ipam/route-targets/` | ipam_route-targets_create | body*: WritableRouteTarget | RouteTarget |  | — |
+| DELETE | `/ipam/route-targets/` | ipam_route-targets_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/route-targets/` | ipam_route-targets_bulk_partial_update | body*: WritableRouteTarget | RouteTarget |  | — |
+| GET | `/ipam/route-targets/{id}/` | ipam_route-targets_read | `id`* | RouteTarget | yes | — |
+| PUT | `/ipam/route-targets/{id}/` | ipam_route-targets_update | `id`*, body*: WritableRouteTarget | RouteTarget |  | — |
+| DELETE | `/ipam/route-targets/{id}/` | ipam_route-targets_delete | `id`* | — |  | — |
+| PATCH | `/ipam/route-targets/{id}/` | ipam_route-targets_partial_update | `id`*, body*: WritableRouteTarget | RouteTarget |  | — |
+| GET | `/ipam/service-templates/` | ipam_service-templates_list | `id`, `name`, `protocol`, `created`, `last_updated`, `q`, `tag`, `port`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `protocol__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/service-templates/` | ipam_service-templates_bulk_update | body*: WritableServiceTemplate | ServiceTemplate |  | — |
+| POST | `/ipam/service-templates/` | ipam_service-templates_create | body*: WritableServiceTemplate | ServiceTemplate |  | — |
+| DELETE | `/ipam/service-templates/` | ipam_service-templates_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/service-templates/` | ipam_service-templates_bulk_partial_update | body*: WritableServiceTemplate | ServiceTemplate |  | — |
+| GET | `/ipam/service-templates/{id}/` | ipam_service-templates_read | `id`* | ServiceTemplate | yes | — |
+| PUT | `/ipam/service-templates/{id}/` | ipam_service-templates_update | `id`*, body*: WritableServiceTemplate | ServiceTemplate |  | — |
+| DELETE | `/ipam/service-templates/{id}/` | ipam_service-templates_delete | `id`* | — |  | — |
+| PATCH | `/ipam/service-templates/{id}/` | ipam_service-templates_partial_update | `id`*, body*: WritableServiceTemplate | ServiceTemplate |  | — |
+| GET | `/ipam/services/` | ipam_services_list | `id`, `name`, `protocol`, `description`, `created`, `last_updated`, `q`, `tag`, `device_id`, `device`, `virtual_machine_id`, `virtual_machine`, `ipaddress_id`, `ipaddress`, `port`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `protocol__n`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `device_id__n`, `device__n`, `virtual_machine_id__n`, `virtual_machine__n`, `ipaddress_id__n`, `ipaddress__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/services/` | ipam_services_bulk_update | body*: WritableService | Service |  | — |
+| POST | `/ipam/services/` | ipam_services_create | body*: WritableService | Service |  | — |
+| DELETE | `/ipam/services/` | ipam_services_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/services/` | ipam_services_bulk_partial_update | body*: WritableService | Service |  | — |
+| GET | `/ipam/services/{id}/` | ipam_services_read | `id`* | Service | yes | — |
+| PUT | `/ipam/services/{id}/` | ipam_services_update | `id`*, body*: WritableService | Service |  | — |
+| DELETE | `/ipam/services/{id}/` | ipam_services_delete | `id`* | — |  | — |
+| PATCH | `/ipam/services/{id}/` | ipam_services_partial_update | `id`*, body*: WritableService | Service |  | — |
+| GET | `/ipam/vlan-groups/` | ipam_vlan-groups_list | `id`, `name`, `slug`, `min_vid`, `max_vid`, `description`, `scope_id`, `created`, `last_updated`, `q`, `tag`, `scope_type`, `region`, `sitegroup`, `site`, `location`, `rack`, `clustergroup`, `cluster`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `min_vid__n`, `min_vid__lte`, `min_vid__lt`, `min_vid__gte`, `min_vid__gt`, `max_vid__n`, `max_vid__lte`, `max_vid__lt`, `max_vid__gte`, `max_vid__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `scope_id__n`, `scope_id__lte`, `scope_id__lt`, `scope_id__gte`, `scope_id__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `scope_type__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/vlan-groups/` | ipam_vlan-groups_bulk_update | body*: VLANGroup | VLANGroup |  | — |
+| POST | `/ipam/vlan-groups/` | ipam_vlan-groups_create | body*: VLANGroup | VLANGroup |  | — |
+| DELETE | `/ipam/vlan-groups/` | ipam_vlan-groups_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/vlan-groups/` | ipam_vlan-groups_bulk_partial_update | body*: VLANGroup | VLANGroup |  | — |
+| GET | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_read | `id`* | VLANGroup | yes | — |
+| PUT | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_update | `id`*, body*: VLANGroup | VLANGroup |  | — |
+| DELETE | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_delete | `id`* | — |  | — |
+| PATCH | `/ipam/vlan-groups/{id}/` | ipam_vlan-groups_partial_update | `id`*, body*: VLANGroup | VLANGroup |  | — |
+| GET | `/ipam/vlan-groups/{id}/available-vlans/` | ipam_vlan-groups_available-vlans_list | `id`* | AvailableVLAN[] | yes | — |
+| POST | `/ipam/vlan-groups/{id}/available-vlans/` | ipam_vlan-groups_available-vlans_create | `id`*, body*: WritableCreateAvailableVLAN | VLAN[] |  | — |
+| GET | `/ipam/vlans/` | ipam_vlans_list | `id`, `vid`, `name`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `group_id`, `group`, `role_id`, `role`, `status`, `available_on_device`, `available_on_virtualmachine`, `l2vpn_id`, `l2vpn`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `vid__n`, `vid__lte`, `vid__lt`, `vid__gte`, `vid__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `group_id__n`, `group__n`, `role_id__n`, `role__n`, `status__n`, `l2vpn_id__n`, `l2vpn__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/vlans/` | ipam_vlans_bulk_update | body*: WritableVLAN | VLAN |  | — |
+| POST | `/ipam/vlans/` | ipam_vlans_create | body*: WritableVLAN | VLAN |  | — |
+| DELETE | `/ipam/vlans/` | ipam_vlans_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/vlans/` | ipam_vlans_bulk_partial_update | body*: WritableVLAN | VLAN |  | — |
+| GET | `/ipam/vlans/{id}/` | ipam_vlans_read | `id`* | VLAN | yes | — |
+| PUT | `/ipam/vlans/{id}/` | ipam_vlans_update | `id`*, body*: WritableVLAN | VLAN |  | — |
+| DELETE | `/ipam/vlans/{id}/` | ipam_vlans_delete | `id`* | — |  | — |
+| PATCH | `/ipam/vlans/{id}/` | ipam_vlans_partial_update | `id`*, body*: WritableVLAN | VLAN |  | — |
+| GET | `/ipam/vrfs/` | ipam_vrfs_list | `id`, `name`, `rd`, `enforce_unique`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `import_target_id`, `import_target`, `export_target_id`, `export_target`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `rd__n`, `rd__ic`, `rd__nic`, `rd__iew`, `rd__niew`, `rd__isw`, `rd__nisw`, `rd__ie`, `rd__nie`, `rd__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `import_target_id__n`, `import_target__n`, `export_target_id__n`, `export_target__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/ipam/vrfs/` | ipam_vrfs_bulk_update | body*: WritableVRF | VRF |  | — |
+| POST | `/ipam/vrfs/` | ipam_vrfs_create | body*: WritableVRF | VRF |  | — |
+| DELETE | `/ipam/vrfs/` | ipam_vrfs_bulk_delete | — | — |  | — |
+| PATCH | `/ipam/vrfs/` | ipam_vrfs_bulk_partial_update | body*: WritableVRF | VRF |  | — |
+| GET | `/ipam/vrfs/{id}/` | ipam_vrfs_read | `id`* | VRF | yes | — |
+| PUT | `/ipam/vrfs/{id}/` | ipam_vrfs_update | `id`*, body*: WritableVRF | VRF |  | — |
+| DELETE | `/ipam/vrfs/{id}/` | ipam_vrfs_delete | `id`* | — |  | — |
+| PATCH | `/ipam/vrfs/{id}/` | ipam_vrfs_partial_update | `id`*, body*: WritableVRF | VRF |  | — |
+| GET | `/status/` | status_list | — | — | yes | — |
+| GET | `/tenancy/contact-assignments/` | tenancy_contact-assignments_list | `id`, `content_type_id`, `object_id`, `priority`, `created`, `last_updated`, `content_type`, `contact_id`, `role_id`, `role`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `content_type_id__n`, `object_id__n`, `object_id__lte`, `object_id__lt`, `object_id__gte`, `object_id__gt`, `priority__n`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `content_type__n`, `contact_id__n`, `role_id__n`, `role__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/tenancy/contact-assignments/` | tenancy_contact-assignments_bulk_update | body*: WritableContactAssignment | ContactAssignment |  | — |
+| POST | `/tenancy/contact-assignments/` | tenancy_contact-assignments_create | body*: WritableContactAssignment | ContactAssignment |  | — |
+| DELETE | `/tenancy/contact-assignments/` | tenancy_contact-assignments_bulk_delete | — | — |  | — |
+| PATCH | `/tenancy/contact-assignments/` | tenancy_contact-assignments_bulk_partial_update | body*: WritableContactAssignment | ContactAssignment |  | — |
+| GET | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_read | `id`* | ContactAssignment | yes | — |
+| PUT | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_update | `id`*, body*: WritableContactAssignment | ContactAssignment |  | — |
+| DELETE | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_delete | `id`* | — |  | — |
+| PATCH | `/tenancy/contact-assignments/{id}/` | tenancy_contact-assignments_partial_update | `id`*, body*: WritableContactAssignment | ContactAssignment |  | — |
+| GET | `/tenancy/contact-groups/` | tenancy_contact-groups_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `parent_id`, `parent`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `parent_id__n`, `parent__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/tenancy/contact-groups/` | tenancy_contact-groups_bulk_update | body*: WritableContactGroup | ContactGroup |  | — |
+| POST | `/tenancy/contact-groups/` | tenancy_contact-groups_create | body*: WritableContactGroup | ContactGroup |  | — |
+| DELETE | `/tenancy/contact-groups/` | tenancy_contact-groups_bulk_delete | — | — |  | — |
+| PATCH | `/tenancy/contact-groups/` | tenancy_contact-groups_bulk_partial_update | body*: WritableContactGroup | ContactGroup |  | — |
+| GET | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_read | `id`* | ContactGroup | yes | — |
+| PUT | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_update | `id`*, body*: WritableContactGroup | ContactGroup |  | — |
+| DELETE | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_delete | `id`* | — |  | — |
+| PATCH | `/tenancy/contact-groups/{id}/` | tenancy_contact-groups_partial_update | `id`*, body*: WritableContactGroup | ContactGroup |  | — |
+| GET | `/tenancy/contact-roles/` | tenancy_contact-roles_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/tenancy/contact-roles/` | tenancy_contact-roles_bulk_update | body*: ContactRole | ContactRole |  | — |
+| POST | `/tenancy/contact-roles/` | tenancy_contact-roles_create | body*: ContactRole | ContactRole |  | — |
+| DELETE | `/tenancy/contact-roles/` | tenancy_contact-roles_bulk_delete | — | — |  | — |
+| PATCH | `/tenancy/contact-roles/` | tenancy_contact-roles_bulk_partial_update | body*: ContactRole | ContactRole |  | — |
+| GET | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_read | `id`* | ContactRole | yes | — |
+| PUT | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_update | `id`*, body*: ContactRole | ContactRole |  | — |
+| DELETE | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_delete | `id`* | — |  | — |
+| PATCH | `/tenancy/contact-roles/{id}/` | tenancy_contact-roles_partial_update | `id`*, body*: ContactRole | ContactRole |  | — |
+| GET | `/tenancy/contacts/` | tenancy_contacts_list | `id`, `name`, `title`, `phone`, `email`, `address`, `link`, `created`, `last_updated`, `q`, `tag`, `group_id`, `group`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `title__n`, `title__ic`, `title__nic`, `title__iew`, `title__niew`, `title__isw`, `title__nisw`, `title__ie`, `title__nie`, `title__empty`, `phone__n`, `phone__ic`, `phone__nic`, `phone__iew`, `phone__niew`, `phone__isw`, `phone__nisw`, `phone__ie`, `phone__nie`, `phone__empty`, `email__n`, `email__ic`, `email__nic`, `email__iew`, `email__niew`, `email__isw`, `email__nisw`, `email__ie`, `email__nie`, `email__empty`, `address__n`, `address__ic`, `address__nic`, `address__iew`, `address__niew`, `address__isw`, `address__nisw`, `address__ie`, `address__nie`, `address__empty`, `link__n`, `link__ic`, `link__nic`, `link__iew`, `link__niew`, `link__isw`, `link__nisw`, `link__ie`, `link__nie`, `link__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `group_id__n`, `group__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/tenancy/contacts/` | tenancy_contacts_bulk_update | body*: WritableContact | Contact |  | — |
+| POST | `/tenancy/contacts/` | tenancy_contacts_create | body*: WritableContact | Contact |  | — |
+| DELETE | `/tenancy/contacts/` | tenancy_contacts_bulk_delete | — | — |  | — |
+| PATCH | `/tenancy/contacts/` | tenancy_contacts_bulk_partial_update | body*: WritableContact | Contact |  | — |
+| GET | `/tenancy/contacts/{id}/` | tenancy_contacts_read | `id`* | Contact | yes | — |
+| PUT | `/tenancy/contacts/{id}/` | tenancy_contacts_update | `id`*, body*: WritableContact | Contact |  | — |
+| DELETE | `/tenancy/contacts/{id}/` | tenancy_contacts_delete | `id`* | — |  | — |
+| PATCH | `/tenancy/contacts/{id}/` | tenancy_contacts_partial_update | `id`*, body*: WritableContact | Contact |  | — |
+| GET | `/tenancy/tenant-groups/` | tenancy_tenant-groups_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `parent_id`, `parent`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `parent_id__n`, `parent__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/tenancy/tenant-groups/` | tenancy_tenant-groups_bulk_update | body*: WritableTenantGroup | TenantGroup |  | — |
+| POST | `/tenancy/tenant-groups/` | tenancy_tenant-groups_create | body*: WritableTenantGroup | TenantGroup |  | — |
+| DELETE | `/tenancy/tenant-groups/` | tenancy_tenant-groups_bulk_delete | — | — |  | — |
+| PATCH | `/tenancy/tenant-groups/` | tenancy_tenant-groups_bulk_partial_update | body*: WritableTenantGroup | TenantGroup |  | — |
+| GET | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_read | `id`* | TenantGroup | yes | — |
+| PUT | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_update | `id`*, body*: WritableTenantGroup | TenantGroup |  | — |
+| DELETE | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_delete | `id`* | — |  | — |
+| PATCH | `/tenancy/tenant-groups/{id}/` | tenancy_tenant-groups_partial_update | `id`*, body*: WritableTenantGroup | TenantGroup |  | — |
+| GET | `/tenancy/tenants/` | tenancy_tenants_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `group_id`, `group`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `group_id__n`, `group__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/tenancy/tenants/` | tenancy_tenants_bulk_update | body*: WritableTenant | Tenant |  | — |
+| POST | `/tenancy/tenants/` | tenancy_tenants_create | body*: WritableTenant | Tenant |  | — |
+| DELETE | `/tenancy/tenants/` | tenancy_tenants_bulk_delete | — | — |  | — |
+| PATCH | `/tenancy/tenants/` | tenancy_tenants_bulk_partial_update | body*: WritableTenant | Tenant |  | — |
+| GET | `/tenancy/tenants/{id}/` | tenancy_tenants_read | `id`* | Tenant | yes | — |
+| PUT | `/tenancy/tenants/{id}/` | tenancy_tenants_update | `id`*, body*: WritableTenant | Tenant |  | — |
+| DELETE | `/tenancy/tenants/{id}/` | tenancy_tenants_delete | `id`* | — |  | — |
+| PATCH | `/tenancy/tenants/{id}/` | tenancy_tenants_partial_update | `id`*, body*: WritableTenant | Tenant |  | — |
+| GET | `/users/config/` | users_config_list | — | — | yes | — |
+| GET | `/users/groups/` | users_groups_list | `id`, `name`, `q`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/users/groups/` | users_groups_bulk_update | body*: Group | Group |  | — |
+| POST | `/users/groups/` | users_groups_create | body*: Group | Group |  | — |
+| DELETE | `/users/groups/` | users_groups_bulk_delete | — | — |  | — |
+| PATCH | `/users/groups/` | users_groups_bulk_partial_update | body*: Group | Group |  | — |
+| GET | `/users/groups/{id}/` | users_groups_read | `id`* | Group | yes | — |
+| PUT | `/users/groups/{id}/` | users_groups_update | `id`*, body*: Group | Group |  | — |
+| DELETE | `/users/groups/{id}/` | users_groups_delete | `id`* | — |  | — |
+| PATCH | `/users/groups/{id}/` | users_groups_partial_update | `id`*, body*: Group | Group |  | — |
+| GET | `/users/permissions/` | users_permissions_list | `id`, `name`, `enabled`, `object_types`, `description`, `q`, `user_id`, `user`, `group_id`, `group`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `object_types__n`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `user_id__n`, `user__n`, `group_id__n`, `group__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/users/permissions/` | users_permissions_bulk_update | body*: WritableObjectPermission | ObjectPermission |  | — |
+| POST | `/users/permissions/` | users_permissions_create | body*: WritableObjectPermission | ObjectPermission |  | — |
+| DELETE | `/users/permissions/` | users_permissions_bulk_delete | — | — |  | — |
+| PATCH | `/users/permissions/` | users_permissions_bulk_partial_update | body*: WritableObjectPermission | ObjectPermission |  | — |
+| GET | `/users/permissions/{id}/` | users_permissions_read | `id`* | ObjectPermission | yes | — |
+| PUT | `/users/permissions/{id}/` | users_permissions_update | `id`*, body*: WritableObjectPermission | ObjectPermission |  | — |
+| DELETE | `/users/permissions/{id}/` | users_permissions_delete | `id`* | — |  | — |
+| PATCH | `/users/permissions/{id}/` | users_permissions_partial_update | `id`*, body*: WritableObjectPermission | ObjectPermission |  | — |
+| GET | `/users/tokens/` | users_tokens_list | `id`, `key`, `write_enabled`, `description`, `q`, `user_id`, `user`, `created`, `created__gte`, `created__lte`, `expires`, `expires__gte`, `expires__lte`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `key__n`, `key__ic`, `key__nic`, `key__iew`, `key__niew`, `key__isw`, `key__nisw`, `key__ie`, `key__nie`, `key__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `user_id__n`, `user__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/users/tokens/` | users_tokens_bulk_update | body*: WritableToken | Token |  | — |
+| POST | `/users/tokens/` | users_tokens_create | body*: WritableToken | Token |  | — |
+| DELETE | `/users/tokens/` | users_tokens_bulk_delete | — | — |  | — |
+| PATCH | `/users/tokens/` | users_tokens_bulk_partial_update | body*: WritableToken | Token |  | — |
+| POST | `/users/tokens/provision/` | users_tokens_provision_create | — | — |  | — |
+| GET | `/users/tokens/{id}/` | users_tokens_read | `id`* | Token | yes | — |
+| PUT | `/users/tokens/{id}/` | users_tokens_update | `id`*, body*: WritableToken | Token |  | — |
+| DELETE | `/users/tokens/{id}/` | users_tokens_delete | `id`* | — |  | — |
+| PATCH | `/users/tokens/{id}/` | users_tokens_partial_update | `id`*, body*: WritableToken | Token |  | — |
+| GET | `/users/users/` | users_users_list | `id`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `q`, `group_id`, `group`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `username__n`, `username__ic`, `username__nic`, `username__iew`, `username__niew`, `username__isw`, `username__nisw`, `username__ie`, `username__nie`, `username__empty`, `first_name__n`, `first_name__ic`, `first_name__nic`, `first_name__iew`, `first_name__niew`, `first_name__isw`, `first_name__nisw`, `first_name__ie`, `first_name__nie`, `first_name__empty`, `last_name__n`, `last_name__ic`, `last_name__nic`, `last_name__iew`, `last_name__niew`, `last_name__isw`, `last_name__nisw`, `last_name__ie`, `last_name__nie`, `last_name__empty`, `email__n`, `email__ic`, `email__nic`, `email__iew`, `email__niew`, `email__isw`, `email__nisw`, `email__ie`, `email__nie`, `email__empty`, `group_id__n`, `group__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/users/users/` | users_users_bulk_update | body*: WritableUser | User |  | — |
+| POST | `/users/users/` | users_users_create | body*: WritableUser | User |  | — |
+| DELETE | `/users/users/` | users_users_bulk_delete | — | — |  | — |
+| PATCH | `/users/users/` | users_users_bulk_partial_update | body*: WritableUser | User |  | — |
+| GET | `/users/users/{id}/` | users_users_read | `id`* | User | yes | — |
+| PUT | `/users/users/{id}/` | users_users_update | `id`*, body*: WritableUser | User |  | — |
+| DELETE | `/users/users/{id}/` | users_users_delete | `id`* | — |  | — |
+| PATCH | `/users/users/{id}/` | users_users_partial_update | `id`*, body*: WritableUser | User |  | — |
+| GET | `/virtualization/cluster-groups/` | virtualization_cluster-groups_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `contact`, `contact_role`, `contact_group`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/virtualization/cluster-groups/` | virtualization_cluster-groups_bulk_update | body*: ClusterGroup | ClusterGroup |  | — |
+| POST | `/virtualization/cluster-groups/` | virtualization_cluster-groups_create | body*: ClusterGroup | ClusterGroup |  | — |
+| DELETE | `/virtualization/cluster-groups/` | virtualization_cluster-groups_bulk_delete | — | — |  | — |
+| PATCH | `/virtualization/cluster-groups/` | virtualization_cluster-groups_bulk_partial_update | body*: ClusterGroup | ClusterGroup |  | — |
+| GET | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_read | `id`* | ClusterGroup | yes | — |
+| PUT | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_update | `id`*, body*: ClusterGroup | ClusterGroup |  | — |
+| DELETE | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_delete | `id`* | — |  | — |
+| PATCH | `/virtualization/cluster-groups/{id}/` | virtualization_cluster-groups_partial_update | `id`*, body*: ClusterGroup | ClusterGroup |  | — |
+| GET | `/virtualization/cluster-types/` | virtualization_cluster-types_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/virtualization/cluster-types/` | virtualization_cluster-types_bulk_update | body*: ClusterType | ClusterType |  | — |
+| POST | `/virtualization/cluster-types/` | virtualization_cluster-types_create | body*: ClusterType | ClusterType |  | — |
+| DELETE | `/virtualization/cluster-types/` | virtualization_cluster-types_bulk_delete | — | — |  | — |
+| PATCH | `/virtualization/cluster-types/` | virtualization_cluster-types_bulk_partial_update | body*: ClusterType | ClusterType |  | — |
+| GET | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_read | `id`* | ClusterType | yes | — |
+| PUT | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_update | `id`*, body*: ClusterType | ClusterType |  | — |
+| DELETE | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_delete | `id`* | — |  | — |
+| PATCH | `/virtualization/cluster-types/{id}/` | virtualization_cluster-types_partial_update | `id`*, body*: ClusterType | ClusterType |  | — |
+| GET | `/virtualization/clusters/` | virtualization_clusters_list | `id`, `name`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `group_id`, `group`, `type_id`, `type`, `status`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `group_id__n`, `group__n`, `type_id__n`, `type__n`, `status__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/virtualization/clusters/` | virtualization_clusters_bulk_update | body*: WritableCluster | Cluster |  | — |
+| POST | `/virtualization/clusters/` | virtualization_clusters_create | body*: WritableCluster | Cluster |  | — |
+| DELETE | `/virtualization/clusters/` | virtualization_clusters_bulk_delete | — | — |  | — |
+| PATCH | `/virtualization/clusters/` | virtualization_clusters_bulk_partial_update | body*: WritableCluster | Cluster |  | — |
+| GET | `/virtualization/clusters/{id}/` | virtualization_clusters_read | `id`* | Cluster | yes | — |
+| PUT | `/virtualization/clusters/{id}/` | virtualization_clusters_update | `id`*, body*: WritableCluster | Cluster |  | — |
+| DELETE | `/virtualization/clusters/{id}/` | virtualization_clusters_delete | `id`* | — |  | — |
+| PATCH | `/virtualization/clusters/{id}/` | virtualization_clusters_partial_update | `id`*, body*: WritableCluster | Cluster |  | — |
+| GET | `/virtualization/interfaces/` | virtualization_interfaces_list | `id`, `name`, `enabled`, `mtu`, `description`, `created`, `last_updated`, `q`, `tag`, `cluster_id`, `cluster`, `virtual_machine_id`, `virtual_machine`, `parent_id`, `bridge_id`, `mac_address`, `vrf_id`, `vrf`, `l2vpn_id`, `l2vpn`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `mtu__n`, `mtu__lte`, `mtu__lt`, `mtu__gte`, `mtu__gt`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `cluster_id__n`, `cluster__n`, `virtual_machine_id__n`, `virtual_machine__n`, `parent_id__n`, `bridge_id__n`, `mac_address__n`, `mac_address__ic`, `mac_address__nic`, `mac_address__iew`, `mac_address__niew`, `mac_address__isw`, `mac_address__nisw`, `mac_address__ie`, `mac_address__nie`, `vrf_id__n`, `vrf__n`, `l2vpn_id__n`, `l2vpn__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/virtualization/interfaces/` | virtualization_interfaces_bulk_update | body*: WritableVMInterface | VMInterface |  | — |
+| POST | `/virtualization/interfaces/` | virtualization_interfaces_create | body*: WritableVMInterface | VMInterface |  | — |
+| DELETE | `/virtualization/interfaces/` | virtualization_interfaces_bulk_delete | — | — |  | — |
+| PATCH | `/virtualization/interfaces/` | virtualization_interfaces_bulk_partial_update | body*: WritableVMInterface | VMInterface |  | — |
+| GET | `/virtualization/interfaces/{id}/` | virtualization_interfaces_read | `id`* | VMInterface | yes | — |
+| PUT | `/virtualization/interfaces/{id}/` | virtualization_interfaces_update | `id`*, body*: WritableVMInterface | VMInterface |  | — |
+| DELETE | `/virtualization/interfaces/{id}/` | virtualization_interfaces_delete | `id`* | — |  | — |
+| PATCH | `/virtualization/interfaces/{id}/` | virtualization_interfaces_partial_update | `id`*, body*: WritableVMInterface | VMInterface |  | — |
+| GET | `/virtualization/virtual-machines/` | virtualization_virtual-machines_list | `id`, `cluster`, `vcpus`, `memory`, `disk`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `contact`, `contact_role`, `contact_group`, `local_context_data`, `status`, `cluster_group_id`, `cluster_group`, `cluster_type_id`, `cluster_type`, `cluster_id`, `device_id`, `device`, `region_id`, `region`, `site_group_id`, `site_group`, `site_id`, `site`, `name`, `role_id`, `role`, `platform_id`, `platform`, `mac_address`, `has_primary_ip`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `cluster__n`, `vcpus__n`, `vcpus__lte`, `vcpus__lt`, `vcpus__gte`, `vcpus__gt`, `memory__n`, `memory__lte`, `memory__lt`, `memory__gte`, `memory__gt`, `disk__n`, `disk__lte`, `disk__lt`, `disk__gte`, `disk__gt`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `contact__n`, `contact_role__n`, `contact_group__n`, `status__n`, `cluster_group_id__n`, `cluster_group__n`, `cluster_type_id__n`, `cluster_type__n`, `cluster_id__n`, `device_id__n`, `device__n`, `region_id__n`, `region__n`, `site_group_id__n`, `site_group__n`, `site_id__n`, `site__n`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `role_id__n`, `role__n`, `platform_id__n`, `platform__n`, `mac_address__n`, `mac_address__ic`, `mac_address__nic`, `mac_address__iew`, `mac_address__niew`, `mac_address__isw`, `mac_address__nisw`, `mac_address__ie`, `mac_address__nie`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/virtualization/virtual-machines/` | virtualization_virtual-machines_bulk_update | body*: WritableVirtualMachineWithConfigContext | VirtualMachineWithConfigContext |  | — |
+| POST | `/virtualization/virtual-machines/` | virtualization_virtual-machines_create | body*: WritableVirtualMachineWithConfigContext | VirtualMachineWithConfigContext |  | — |
+| DELETE | `/virtualization/virtual-machines/` | virtualization_virtual-machines_bulk_delete | — | — |  | — |
+| PATCH | `/virtualization/virtual-machines/` | virtualization_virtual-machines_bulk_partial_update | body*: WritableVirtualMachineWithConfigContext | VirtualMachineWithConfigContext |  | — |
+| GET | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_read | `id`* | VirtualMachineWithConfigContext | yes | — |
+| PUT | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_update | `id`*, body*: WritableVirtualMachineWithConfigContext | VirtualMachineWithConfigContext |  | — |
+| DELETE | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_delete | `id`* | — |  | — |
+| PATCH | `/virtualization/virtual-machines/{id}/` | virtualization_virtual-machines_partial_update | `id`*, body*: WritableVirtualMachineWithConfigContext | VirtualMachineWithConfigContext |  | — |
+| GET | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_list | `id`, `name`, `slug`, `description`, `created`, `last_updated`, `q`, `tag`, `parent_id`, `parent`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `name__n`, `name__ic`, `name__nic`, `name__iew`, `name__niew`, `name__isw`, `name__nisw`, `name__ie`, `name__nie`, `name__empty`, `slug__n`, `slug__ic`, `slug__nic`, `slug__iew`, `slug__niew`, `slug__isw`, `slug__nisw`, `slug__ie`, `slug__nie`, `slug__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `parent_id__n`, `parent__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_bulk_update | body*: WritableWirelessLANGroup | WirelessLANGroup |  | — |
+| POST | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_create | body*: WritableWirelessLANGroup | WirelessLANGroup |  | — |
+| DELETE | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_bulk_delete | — | — |  | — |
+| PATCH | `/wireless/wireless-lan-groups/` | wireless_wireless-lan-groups_bulk_partial_update | body*: WritableWirelessLANGroup | WirelessLANGroup |  | — |
+| GET | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_read | `id`* | WirelessLANGroup | yes | — |
+| PUT | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_update | `id`*, body*: WritableWirelessLANGroup | WirelessLANGroup |  | — |
+| DELETE | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_delete | `id`* | — |  | — |
+| PATCH | `/wireless/wireless-lan-groups/{id}/` | wireless_wireless-lan-groups_partial_update | `id`*, body*: WritableWirelessLANGroup | WirelessLANGroup |  | — |
+| GET | `/wireless/wireless-lans/` | wireless_wireless-lans_list | `id`, `ssid`, `auth_psk`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `group_id`, `group`, `status`, `vlan_id`, `auth_type`, `auth_cipher`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `ssid__n`, `ssid__ic`, `ssid__nic`, `ssid__iew`, `ssid__niew`, `ssid__isw`, `ssid__nisw`, `ssid__ie`, `ssid__nie`, `ssid__empty`, `auth_psk__n`, `auth_psk__ic`, `auth_psk__nic`, `auth_psk__iew`, `auth_psk__niew`, `auth_psk__isw`, `auth_psk__nisw`, `auth_psk__ie`, `auth_psk__nie`, `auth_psk__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `group_id__n`, `group__n`, `status__n`, `vlan_id__n`, `auth_type__n`, `auth_cipher__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/wireless/wireless-lans/` | wireless_wireless-lans_bulk_update | body*: WritableWirelessLAN | WirelessLAN |  | — |
+| POST | `/wireless/wireless-lans/` | wireless_wireless-lans_create | body*: WritableWirelessLAN | WirelessLAN |  | — |
+| DELETE | `/wireless/wireless-lans/` | wireless_wireless-lans_bulk_delete | — | — |  | — |
+| PATCH | `/wireless/wireless-lans/` | wireless_wireless-lans_bulk_partial_update | body*: WritableWirelessLAN | WirelessLAN |  | — |
+| GET | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_read | `id`* | WirelessLAN | yes | — |
+| PUT | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_update | `id`*, body*: WritableWirelessLAN | WirelessLAN |  | — |
+| DELETE | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_delete | `id`* | — |  | — |
+| PATCH | `/wireless/wireless-lans/{id}/` | wireless_wireless-lans_partial_update | `id`*, body*: WritableWirelessLAN | WirelessLAN |  | — |
+| GET | `/wireless/wireless-links/` | wireless_wireless-links_list | `id`, `ssid`, `auth_psk`, `description`, `created`, `last_updated`, `q`, `tag`, `tenant_group_id`, `tenant_group`, `tenant_id`, `tenant`, `interface_a_id`, `interface_b_id`, `status`, `auth_type`, `auth_cipher`, `id__n`, `id__lte`, `id__lt`, `id__gte`, `id__gt`, `ssid__n`, `ssid__ic`, `ssid__nic`, `ssid__iew`, `ssid__niew`, `ssid__isw`, `ssid__nisw`, `ssid__ie`, `ssid__nie`, `ssid__empty`, `auth_psk__n`, `auth_psk__ic`, `auth_psk__nic`, `auth_psk__iew`, `auth_psk__niew`, `auth_psk__isw`, `auth_psk__nisw`, `auth_psk__ie`, `auth_psk__nie`, `auth_psk__empty`, `description__n`, `description__ic`, `description__nic`, `description__iew`, `description__niew`, `description__isw`, `description__nisw`, `description__ie`, `description__nie`, `description__empty`, `created__n`, `created__lte`, `created__lt`, `created__gte`, `created__gt`, `last_updated__n`, `last_updated__lte`, `last_updated__lt`, `last_updated__gte`, `last_updated__gt`, `tag__n`, `tenant_group_id__n`, `tenant_group__n`, `tenant_id__n`, `tenant__n`, `interface_a_id__n`, `interface_a_id__lte`, `interface_a_id__lt`, `interface_a_id__gte`, `interface_a_id__gt`, `interface_b_id__n`, `interface_b_id__lte`, `interface_b_id__lt`, `interface_b_id__gte`, `interface_b_id__gt`, `status__n`, `auth_type__n`, `auth_cipher__n`, `ordering`, `limit`, `offset` | object | yes | — |
+| PUT | `/wireless/wireless-links/` | wireless_wireless-links_bulk_update | body*: WritableWirelessLink | WirelessLink |  | — |
+| POST | `/wireless/wireless-links/` | wireless_wireless-links_create | body*: WritableWirelessLink | WirelessLink |  | — |
+| DELETE | `/wireless/wireless-links/` | wireless_wireless-links_bulk_delete | — | — |  | — |
+| PATCH | `/wireless/wireless-links/` | wireless_wireless-links_bulk_partial_update | body*: WritableWirelessLink | WirelessLink |  | — |
+| GET | `/wireless/wireless-links/{id}/` | wireless_wireless-links_read | `id`* | WirelessLink | yes | — |
+| PUT | `/wireless/wireless-links/{id}/` | wireless_wireless-links_update | `id`*, body*: WritableWirelessLink | WirelessLink |  | — |
+| DELETE | `/wireless/wireless-links/{id}/` | wireless_wireless-links_delete | `id`* | — |  | — |
+| PATCH | `/wireless/wireless-links/{id}/` | wireless_wireless-links_partial_update | `id`*, body*: WritableWirelessLink | WirelessLink |  | — |

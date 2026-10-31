@@ -138,6 +138,166 @@
         "from": "tokenjay-app-db8a58094e",
         "kind": "EXPOSES",
         "to": "operation:get:/tokens/prices/{tokenId}"
+      },
+      {
+        "from": "operation:get:/ageusd/info",
+        "kind": "RETURNS",
+        "to": "schema:AgeUsdInfo"
+      },
+      {
+        "from": "operation:get:/cancelbabel/{boxId}",
+        "kind": "RETURNS",
+        "to": "schema:ErgoPayResponse"
+      },
+      {
+        "from": "operation:get:/createbabel/{address}",
+        "kind": "RETURNS",
+        "to": "schema:ErgoPayResponse"
+      },
+      {
+        "from": "operation:get:/mosaik/babelfee/",
+        "kind": "RETURNS",
+        "to": "schema:MosaikApp"
+      },
+      {
+        "from": "operation:get:/mosaik/babelfee/newoffer",
+        "kind": "RETURNS",
+        "to": "schema:MosaikApp"
+      },
+      {
+        "from": "operation:post:/mosaik/babelfee/newoffer/doit",
+        "kind": "RETURNS",
+        "to": "schema:FetchActionResponse"
+      },
+      {
+        "from": "operation:post:/mosaik/babelfee/newoffer/new-input",
+        "kind": "RETURNS",
+        "to": "schema:FetchActionResponse"
+      },
+      {
+        "from": "operation:get:/mosaik/babelfee/notificationcheck",
+        "kind": "RETURNS",
+        "to": "schema:NotificationCheckResponse"
+      },
+      {
+        "from": "operation:get:/mosaik/boxconsolidation/",
+        "kind": "RETURNS",
+        "to": "schema:MosaikApp"
+      },
+      {
+        "from": "operation:get:/mosaik/boxconsolidation/consolidate/{p2pkaddress}",
+        "kind": "RETURNS",
+        "to": "schema:ErgoPayResponse"
+      },
+      {
+        "from": "operation:get:/mosaik/tokenburn",
+        "kind": "RETURNS",
+        "to": "schema:MosaikApp"
+      },
+      {
+        "from": "operation:get:/mosaik/tokenburn/get/{uuid}",
+        "kind": "RETURNS",
+        "to": "schema:ErgoPayResponse"
+      },
+      {
+        "from": "operation:post:/mosaik/tokenburn/prepare",
+        "kind": "RETURNS",
+        "to": "schema:FetchActionResponse"
+      },
+      {
+        "from": "operation:post:/payment/addrequest",
+        "kind": "ACCEPTS",
+        "to": "schema:CreatePaymentRequest"
+      },
+      {
+        "from": "operation:post:/payment/addrequest",
+        "kind": "RETURNS",
+        "to": "schema:AddRequestResponse"
+      },
+      {
+        "from": "operation:get:/payment/state/{requestId}",
+        "kind": "RETURNS",
+        "to": "schema:PaymentRequestStateResponse"
+      },
+      {
+        "from": "operation:get:/peers/list",
+        "kind": "RETURNS",
+        "to": "schema:NodePeer"
+      },
+      {
+        "from": "operation:get:/sigrsv/exchange/",
+        "kind": "RETURNS",
+        "to": "schema:ErgoPayResponse"
+      },
+      {
+        "from": "operation:get:/sigrsv/exchange/{amount}/info",
+        "kind": "RETURNS",
+        "to": "schema:AgeUsdExchangeInfo"
+      },
+      {
+        "from": "operation:get:/sigrsv/price",
+        "kind": "RETURNS",
+        "to": "schema:TokenPrice"
+      },
+      {
+        "from": "operation:get:/sigusd/exchange/",
+        "kind": "RETURNS",
+        "to": "schema:ErgoPayResponse"
+      },
+      {
+        "from": "operation:get:/sigusd/exchange/{amount}/info",
+        "kind": "RETURNS",
+        "to": "schema:AgeUsdExchangeInfo"
+      },
+      {
+        "from": "operation:get:/sigusd/price",
+        "kind": "RETURNS",
+        "to": "schema:TokenPrice"
+      },
+      {
+        "from": "operation:get:/tokens/check/{tokenId}/{tokenName}",
+        "kind": "RETURNS",
+        "to": "schema:CheckResponse"
+      },
+      {
+        "from": "operation:get:/tokens/listGenuine",
+        "kind": "RETURNS",
+        "to": "schema:GenuineToken"
+      },
+      {
+        "from": "operation:get:/tokens/prices/all",
+        "kind": "RETURNS",
+        "to": "schema:TokenPrice"
+      },
+      {
+        "from": "operation:get:/tokens/prices/{tokenId}",
+        "kind": "RETURNS",
+        "to": "schema:TokenPrice"
+      },
+      {
+        "from": "schema:CheckResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GenuineToken"
+      },
+      {
+        "from": "schema:FetchActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:MosaikApp",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:MosaikApp",
+        "kind": "REFERENCES",
+        "to": "schema:MosaikManifest"
+      },
+      {
+        "from": "schema:MosaikApp",
+        "kind": "REFERENCES",
+        "to": "schema:ViewElement"
       }
     ],
     "nodes": [
@@ -153,8 +313,34 @@
         "name": "getAgeUsdInfo",
         "path": "/ageusd/info",
         "pointer": "#/paths/~1ageusd~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AgeUsdInfo"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns state of AgeUSD at this moment"
+        "summary": "Returns state of AgeUSD at this moment",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -162,10 +348,44 @@
         "kind": "operation",
         "method": "get",
         "name": "ergoPayCreateBabelBox_1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "boxId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cancelbabel/{boxId}",
         "pointer": "#/paths/~1cancelbabel~1{boxId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErgoPayResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -173,10 +393,62 @@
         "kind": "operation",
         "method": "get",
         "name": "ergoPayCreateBabelBox",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tokenId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ergAmount",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "tokenAmount",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/createbabel/{address}",
         "pointer": "#/paths/~1createbabel~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErgoPayResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-new-offer-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -186,8 +458,34 @@
         "name": "getBabelFeeOverview",
         "path": "/mosaik/babelfee/",
         "pointer": "#/paths/~1mosaik~1babelfee~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MosaikApp"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -197,8 +495,34 @@
         "name": "getBabelFeeNewOffer",
         "path": "/mosaik/babelfee/newoffer",
         "pointer": "#/paths/~1mosaik~1babelfee~1newoffer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MosaikApp"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-new-offer-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -208,8 +532,41 @@
         "name": "doCreateBabelBox",
         "path": "/mosaik/babelfee/newoffer/doit",
         "pointer": "#/paths/~1mosaik~1babelfee~1newoffer~1doit/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchActionResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-new-offer-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -219,8 +576,41 @@
         "name": "replaceTokenAmountInputFields",
         "path": "/mosaik/babelfee/newoffer/new-input",
         "pointer": "#/paths/~1mosaik~1babelfee~1newoffer~1new-input/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchActionResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-new-offer-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -230,8 +620,34 @@
         "name": "checkForNotifications",
         "path": "/mosaik/babelfee/notificationcheck",
         "pointer": "#/paths/~1mosaik~1babelfee~1notificationcheck/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotificationCheckResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "babel-fee-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -241,8 +657,34 @@
         "name": "mainApp_1",
         "path": "/mosaik/boxconsolidation/",
         "pointer": "#/paths/~1mosaik~1boxconsolidation~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MosaikApp"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "box-consolidation-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -250,10 +692,44 @@
         "kind": "operation",
         "method": "get",
         "name": "epConsolidate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "p2pkaddress",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mosaik/boxconsolidation/consolidate/{p2pkaddress}",
         "pointer": "#/paths/~1mosaik~1boxconsolidation~1consolidate~1{p2pkaddress}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErgoPayResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "box-consolidation-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -263,8 +739,34 @@
         "name": "mainApp",
         "path": "/mosaik/tokenburn",
         "pointer": "#/paths/~1mosaik~1tokenburn/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MosaikApp"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "token-burn-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -272,10 +774,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getBurningTransaction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mosaik/tokenburn/get/{uuid}",
         "pointer": "#/paths/~1mosaik~1tokenburn~1get~1{uuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErgoPayResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "token-burn-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -285,8 +821,41 @@
         "name": "prepareTransaction",
         "path": "/mosaik/tokenburn/prepare",
         "pointer": "#/paths/~1mosaik~1tokenburn~1prepare/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchActionResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "token-burn-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -296,8 +865,41 @@
         "name": "addPaymentRequest",
         "path": "/payment/addrequest",
         "pointer": "#/paths/~1payment~1addrequest/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreatePaymentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AddRequestResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new payment request. Will return request id to check for transaction state and ergopay url to show the user as QR code"
+        "summary": "Creates a new payment request. Will return request id to check for transaction state and ergopay url to show the user as QR code",
+        "tags": [
+          "paymentPortal"
+        ]
       },
       {
         "deprecated": false,
@@ -305,10 +907,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getPaymentState",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "requestId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payment/state/{requestId}",
         "pointer": "#/paths/~1payment~1state~1{requestId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentRequestStateResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the state of a payment request. Please note that payment requests are purged after some time, so persist the state at your side when needed"
+        "summary": "Returns the state of a payment request. Please note that payment requests are purged after some time, so persist the state at your side when needed",
+        "tags": [
+          "paymentPortal"
+        ]
       },
       {
         "deprecated": false,
@@ -316,10 +952,61 @@
         "kind": "operation",
         "method": "get",
         "name": "getPeersList",
+        "parameters": [
+          {
+            "default": false,
+            "description": "Set to true to show unreachable peers in the list",
+            "in": "query",
+            "name": "unreachable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Set to true to show peers not open to be connected",
+            "in": "query",
+            "name": "closedApi",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/peers/list",
         "pointer": "#/paths/~1peers~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NodePeer[]"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists known peers sorted by block height"
+        "summary": "Lists known peers sorted by block height",
+        "tags": [
+          "peerDetection"
+        ]
       },
       {
         "deprecated": false,
@@ -327,10 +1014,64 @@
         "kind": "operation",
         "method": "get",
         "name": "doSigmaRsvExchange",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "checkRate",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "executionFee",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/sigrsv/exchange/",
         "pointer": "#/paths/~1sigrsv~1exchange~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErgoPayResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Builds ErgoPayRequest for SigRSV exchange"
+        "summary": "Builds ErgoPayRequest for SigRSV exchange",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -338,10 +1079,44 @@
         "kind": "operation",
         "method": "get",
         "name": "calcSigmaRsvExchange",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "amount",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/sigrsv/exchange/{amount}/info",
         "pointer": "#/paths/~1sigrsv~1exchange~1{amount}~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AgeUsdExchangeInfo"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Calculates SigRSV exchange"
+        "summary": "Calculates SigRSV exchange",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -351,8 +1126,34 @@
         "name": "getSigmaRsvPrice",
         "path": "/sigrsv/price",
         "pointer": "#/paths/~1sigrsv~1price/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TokenPrice"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists price and available volume for SigmaRSV"
+        "summary": "Lists price and available volume for SigmaRSV",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -360,10 +1161,64 @@
         "kind": "operation",
         "method": "get",
         "name": "doSigmaUsdExchange",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "checkRate",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "executionFee",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/sigusd/exchange/",
         "pointer": "#/paths/~1sigusd~1exchange~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErgoPayResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Builds ErgoPayRequest for SigUSD exchange"
+        "summary": "Builds ErgoPayRequest for SigUSD exchange",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -371,10 +1226,44 @@
         "kind": "operation",
         "method": "get",
         "name": "calcSigmaUsdExchange",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "amount",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/sigusd/exchange/{amount}/info",
         "pointer": "#/paths/~1sigusd~1exchange~1{amount}~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AgeUsdExchangeInfo"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Calculates SigUSD exchange"
+        "summary": "Calculates SigUSD exchange",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -384,8 +1273,34 @@
         "name": "getSigmaUsdPrice",
         "path": "/sigusd/price",
         "pointer": "#/paths/~1sigusd~1price/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TokenPrice"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists price and available volume for SigmaUSD"
+        "summary": "Lists price and available volume for SigmaUSD",
+        "tags": [
+          "ageUsd"
+        ]
       },
       {
         "deprecated": false,
@@ -393,10 +1308,50 @@
         "kind": "operation",
         "method": "get",
         "name": "checkToken",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tokenId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "tokenName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tokens/check/{tokenId}/{tokenName}",
         "pointer": "#/paths/~1tokens~1check~1{tokenId}~1{tokenName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CheckResponse"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check a token verification"
+        "summary": "Check a token verification",
+        "tags": [
+          "tokenVerification"
+        ]
       },
       {
         "deprecated": false,
@@ -406,8 +1361,34 @@
         "name": "listBlocked",
         "path": "/tokens/listBlocked",
         "pointer": "#/paths/~1tokens~1listBlocked/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists all blocked tokens"
+        "summary": "Lists all blocked tokens",
+        "tags": [
+          "tokenVerification"
+        ]
       },
       {
         "deprecated": false,
@@ -417,8 +1398,34 @@
         "name": "listGenuine",
         "path": "/tokens/listGenuine",
         "pointer": "#/paths/~1tokens~1listGenuine/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenuineToken[]"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists all genuine tokens known"
+        "summary": "Lists all genuine tokens known",
+        "tags": [
+          "tokenVerification"
+        ]
       },
       {
         "deprecated": false,
@@ -428,8 +1435,34 @@
         "name": "getTokenPrices",
         "path": "/tokens/prices/all",
         "pointer": "#/paths/~1tokens~1prices~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TokenPrice[]"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists all token prices and available volume"
+        "summary": "Lists all token prices and available volume",
+        "tags": [
+          "tokenPrices"
+        ]
       },
       {
         "deprecated": false,
@@ -437,90 +1470,140 @@
         "kind": "operation",
         "method": "get",
         "name": "getTokenPrice",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tokenId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tokens/prices/{tokenId}",
         "pointer": "#/paths/~1tokens~1prices~1{tokenId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TokenPrice"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "409",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists price and available volume for a certain token"
+        "summary": "Lists price and available volume for a certain token",
+        "tags": [
+          "tokenPrices"
+        ]
       },
       {
         "id": "schema:Action",
         "kind": "schema",
-        "name": "Action"
+        "name": "Action",
+        "type": "object"
       },
       {
         "id": "schema:AddRequestResponse",
         "kind": "schema",
-        "name": "AddRequestResponse"
+        "name": "AddRequestResponse",
+        "type": "object"
       },
       {
         "id": "schema:AgeUsdExchangeInfo",
         "kind": "schema",
-        "name": "AgeUsdExchangeInfo"
+        "name": "AgeUsdExchangeInfo",
+        "type": "object"
       },
       {
         "id": "schema:AgeUsdInfo",
         "kind": "schema",
-        "name": "AgeUsdInfo"
+        "name": "AgeUsdInfo",
+        "type": "object"
       },
       {
         "id": "schema:CheckResponse",
         "kind": "schema",
-        "name": "CheckResponse"
+        "name": "CheckResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreatePaymentRequest",
         "kind": "schema",
-        "name": "CreatePaymentRequest"
+        "name": "CreatePaymentRequest",
+        "type": "object"
       },
       {
         "id": "schema:ErgoPayResponse",
         "kind": "schema",
-        "name": "ErgoPayResponse"
+        "name": "ErgoPayResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchActionResponse",
         "kind": "schema",
-        "name": "FetchActionResponse"
+        "name": "FetchActionResponse",
+        "type": "object"
       },
       {
         "id": "schema:GenuineToken",
         "kind": "schema",
-        "name": "GenuineToken"
+        "name": "GenuineToken",
+        "type": "object"
       },
       {
         "id": "schema:MosaikApp",
         "kind": "schema",
-        "name": "MosaikApp"
+        "name": "MosaikApp",
+        "type": "object"
       },
       {
         "id": "schema:MosaikManifest",
         "kind": "schema",
-        "name": "MosaikManifest"
+        "name": "MosaikManifest",
+        "type": "object"
       },
       {
         "id": "schema:NodePeer",
         "kind": "schema",
-        "name": "NodePeer"
+        "name": "NodePeer",
+        "type": "object"
       },
       {
         "id": "schema:NotificationCheckResponse",
         "kind": "schema",
-        "name": "NotificationCheckResponse"
+        "name": "NotificationCheckResponse",
+        "type": "object"
       },
       {
         "id": "schema:PaymentRequestStateResponse",
         "kind": "schema",
-        "name": "PaymentRequestStateResponse"
+        "name": "PaymentRequestStateResponse",
+        "type": "object"
       },
       {
         "id": "schema:TokenPrice",
         "kind": "schema",
-        "name": "TokenPrice"
+        "name": "TokenPrice",
+        "type": "object"
       },
       {
         "id": "schema:ViewElement",
         "kind": "schema",
-        "name": "ViewElement"
+        "name": "ViewElement",
+        "type": "object"
       }
     ]
   },

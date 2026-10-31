@@ -86,8 +86,28 @@
         "kind": "operation",
         "method": "get",
         "name": "correlation",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/correlation",
         "pointer": "#/paths/~1v1~1correlation/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Correlation"
       },
@@ -97,8 +117,52 @@
         "kind": "operation",
         "method": "get",
         "name": "indices",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "exchanges",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "timeHorizon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "lowCap",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/indices",
         "pointer": "#/paths/~1v1~1indices/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Indices"
       },
@@ -108,8 +172,40 @@
         "kind": "operation",
         "method": "get",
         "name": "investorGrades",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/investor-grades",
         "pointer": "#/paths/~1v1~1investor-grades/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Investor Grades"
       },
@@ -119,8 +215,34 @@
         "kind": "operation",
         "method": "get",
         "name": "marketIndicator",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/market-indicator",
         "pointer": "#/paths/~1v1~1market-indicator/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Market Indicator"
       },
@@ -130,8 +252,46 @@
         "kind": "operation",
         "method": "get",
         "name": "price",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/price",
         "pointer": "#/paths/~1v1~1price/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Price"
       },
@@ -141,8 +301,34 @@
         "kind": "operation",
         "method": "get",
         "name": "pricePrediction",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/price-prediction",
         "pointer": "#/paths/~1v1~1price-prediction/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Price Prediction"
       },
@@ -152,8 +338,34 @@
         "kind": "operation",
         "method": "get",
         "name": "quantmetricsTier1",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/quantmetrics-tier-1",
         "pointer": "#/paths/~1v1~1quantmetrics-tier-1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Quantmetrics Tier 1"
       },
@@ -163,8 +375,34 @@
         "kind": "operation",
         "method": "get",
         "name": "quantmetricsTier2",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/quantmetrics-tier-2",
         "pointer": "#/paths/~1v1~1quantmetrics-tier-2/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Quantmetrics Tier 2"
       },
@@ -174,8 +412,40 @@
         "kind": "operation",
         "method": "get",
         "name": "resistanceSupport",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/resistance-support",
         "pointer": "#/paths/~1v1~1resistance-support/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Resistance & Support"
       },
@@ -185,8 +455,28 @@
         "kind": "operation",
         "method": "get",
         "name": "scenarioAnalysis",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/scenario-analysis",
         "pointer": "#/paths/~1v1~1scenario-analysis/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Scenario Analysis"
       },
@@ -196,8 +486,40 @@
         "kind": "operation",
         "method": "get",
         "name": "sentiments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/sentiments",
         "pointer": "#/paths/~1v1~1sentiments/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Sentiments"
       },
@@ -207,8 +529,34 @@
         "kind": "operation",
         "method": "get",
         "name": "tokens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "token_names",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "token_symbols",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/tokens",
         "pointer": "#/paths/~1v1~1tokens/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Tokens"
       },
@@ -218,8 +566,40 @@
         "kind": "operation",
         "method": "get",
         "name": "traderGrades",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/trader-grades",
         "pointer": "#/paths/~1v1~1trader-grades/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Trader Grades"
       },
@@ -229,8 +609,28 @@
         "kind": "operation",
         "method": "get",
         "name": "tradingIndicator",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/trading-indicator",
         "pointer": "#/paths/~1v1~1trading-indicator/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Trading Indicator"
       }

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_BoxHQ_profile_image
 
 | | |
 | --- | --- |
-| Signed bundle | `8aadb93bc9d22778b819a6859c7fe4eb8c988cb59d8c449b8569e717572215cb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,265 +34,267 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_BoxHQ_profile_image
 
 179 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/authorize` | get_authorize | Authorize user |
-| GET | `/collaboration_whitelist_entries` | get_collaboration_whitelist_entries | List allowed collaboration domains |
-| POST | `/collaboration_whitelist_entries` | post_collaboration_whitelist_entries | Add domain to list of allowed collaboration domains |
-| DELETE | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` | delete_collaboration_whitelist_entries_id | Remove domain from list of allowed collaboration domains |
-| GET | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` | get_collaboration_whitelist_entries_id | Get allowed collaboration domain |
-| GET | `/collaboration_whitelist_exempt_targets` | get_collaboration_whitelist_exempt_targets | List users exempt from collaboration domain restrictions |
-| POST | `/collaboration_whitelist_exempt_targets` | post_collaboration_whitelist_exempt_targets | Create user exemption from collaboration domain restrictions |
-| DELETE | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` | delete_collaboration_whitelist_exempt_targets_id | Remove user from list of users exempt from domain restrictions |
-| GET | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` | get_collaboration_whitelist_exempt_targets_id | Get user exempt from collaboration domain restrictions |
-| GET | `/collaborations` | get_collaborations | List pending collaborations |
-| POST | `/collaborations` | post_collaborations | Create collaboration |
-| DELETE | `/collaborations/{collaboration_id}` | delete_collaborations_id | Remove collaboration |
-| GET | `/collaborations/{collaboration_id}` | get_collaborations_id | Get collaboration |
-| PUT | `/collaborations/{collaboration_id}` | put_collaborations_id | Update collaboration |
-| GET | `/collections` | get_collections | List all collections |
-| GET | `/collections/{collection_id}/items` | get_collections_id_items | List collection items |
-| POST | `/comments` | post_comments | Create comment |
-| DELETE | `/comments/{comment_id}` | delete_comments_id | Remove comment |
-| GET | `/comments/{comment_id}` | get_comments_id | Get comment |
-| PUT | `/comments/{comment_id}` | put_comments_id | Update comment |
-| DELETE | `/device_pinners/{device_pinner_id}` | delete_device_pinners_id | Remove device pin |
-| GET | `/device_pinners/{device_pinner_id}` | get_device_pinners_id | Get device pin |
-| GET | `/enterprises/{enterprise_id}/device_pinners` | get_enterprises_id_device_pinners | List enterprise device pins |
-| GET | `/events` | get_events | List user and enterprise events |
-| OPTIONS | `/events` | options_events | Get events long poll endpoint |
-| DELETE | `/file_requests/{file_request_id}` | delete_file_requests_id | Delete file request |
-| GET | `/file_requests/{file_request_id}` | get_file_requests_id | Get file request |
-| PUT | `/file_requests/{file_request_id}` | put_file_requests_id | Update file request |
-| POST | `/file_requests/{file_request_id}/copy` | post_file_requests_id_copy | Copy file request |
-| GET | `/file_version_legal_holds` | get_file_version_legal_holds | List file version legal holds |
-| GET | `/file_version_legal_holds/{file_version_legal_hold_id}` | get_file_version_legal_holds_id | Get file version legal hold |
-| GET | `/file_version_retentions` | get_file_version_retentions | List file version retentions |
-| GET | `/file_version_retentions/{file_version_retention_id}` | get_file_version_retentions_id | Get retention on file |
-| OPTIONS | `/files/content` | options_files_content | Preflight check before upload |
-| POST | `/files/content` | post_files_content | Upload file |
-| POST | `/files/upload_sessions` | post_files_upload_sessions | Create upload session |
-| DELETE | `/files/upload_sessions/{upload_session_id}` | delete_files_upload_sessions_id | Remove upload session |
-| GET | `/files/upload_sessions/{upload_session_id}` | get_files_upload_sessions_id | Get upload session |
-| PUT | `/files/upload_sessions/{upload_session_id}` | put_files_upload_sessions_id | Upload part of file |
-| POST | `/files/upload_sessions/{upload_session_id}/commit` | post_files_upload_sessions_id_commit | Commit upload session |
-| GET | `/files/upload_sessions/{upload_session_id}/parts` | get_files_upload_sessions_id_parts | List parts |
-| DELETE | `/files/{file_id}` | delete_files_id | Delete file |
-| GET | `/files/{file_id}` | get_files_id | Get file information |
-| POST | `/files/{file_id}` | post_files_id | Restore file |
-| PUT | `/files/{file_id}` | put_files_id | Update file |
-| PUT | `/files/{file_id}#add_shared_link` | put_files_id#add_shared_link | Add shared link to file |
-| GET | `/files/{file_id}#get_shared_link` | get_files_id#get_shared_link | Get shared link for file |
-| PUT | `/files/{file_id}#remove_shared_link` | put_files_id#remove_shared_link | Remove shared link from file |
-| PUT | `/files/{file_id}#update_shared_link` | put_files_id#update_shared_link | Update shared link on file |
-| GET | `/files/{file_id}/collaborations` | get_files_id_collaborations | List file collaborations |
-| GET | `/files/{file_id}/comments` | get_files_id_comments | List file comments |
-| GET | `/files/{file_id}/content` | get_files_id_content | Download file |
-| POST | `/files/{file_id}/content` | post_files_id_content | Upload file version |
-| POST | `/files/{file_id}/copy` | post_files_id_copy | Copy file |
-| GET | `/files/{file_id}/metadata` | get_files_id_metadata | List metadata instances on file |
-| DELETE | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | delete_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | Remove classification from file |
-| GET | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | get_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | Get classification on file |
-| POST | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | post_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | Add classification to file |
-| PUT | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | put_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | Update classification on file |
-| DELETE | `/files/{file_id}/metadata/global/boxSkillsCards` | delete_files_id_metadata_global_boxSkillsCards | Remove Box Skill cards from file |
-| GET | `/files/{file_id}/metadata/global/boxSkillsCards` | get_files_id_metadata_global_boxSkillsCards | List Box Skill cards on file |
-| POST | `/files/{file_id}/metadata/global/boxSkillsCards` | post_files_id_metadata_global_boxSkillsCards | Create Box Skill cards on file |
-| PUT | `/files/{file_id}/metadata/global/boxSkillsCards` | put_files_id_metadata_global_boxSkillsCards | Update Box Skill cards on file |
-| DELETE | `/files/{file_id}/metadata/{scope}/{template_key}` | delete_files_id_metadata_id_id | Remove metadata instance from file |
-| GET | `/files/{file_id}/metadata/{scope}/{template_key}` | get_files_id_metadata_id_id | Get metadata instance on file |
-| POST | `/files/{file_id}/metadata/{scope}/{template_key}` | post_files_id_metadata_id_id | Create metadata instance on file |
-| PUT | `/files/{file_id}/metadata/{scope}/{template_key}` | put_files_id_metadata_id_id | Update metadata instance on file |
-| GET | `/files/{file_id}/tasks` | get_files_id_tasks | List tasks on file |
-| GET | `/files/{file_id}/thumbnail.{extension}` | get_files_id_thumbnail_id | Get file thumbnail |
-| DELETE | `/files/{file_id}/trash` | delete_files_id_trash | Permanently remove file |
-| GET | `/files/{file_id}/trash` | get_files_id_trash | Get trashed file |
-| POST | `/files/{file_id}/upload_sessions` | post_files_id_upload_sessions | Create upload session for existing file |
-| GET | `/files/{file_id}/versions` | get_files_id_versions | List all file versions |
-| POST | `/files/{file_id}/versions/current` | post_files_id_versions_current | Promote file version |
-| DELETE | `/files/{file_id}/versions/{file_version_id}` | delete_files_id_versions_id | Remove file version |
-| GET | `/files/{file_id}/versions/{file_version_id}` | get_files_id_versions_id | Get file version |
-| PUT | `/files/{file_id}/versions/{file_version_id}` | put_files_id_versions_id | Restore file version |
-| DELETE | `/files/{file_id}/watermark` | delete_files_id_watermark | Remove watermark from file |
-| GET | `/files/{file_id}/watermark` | get_files_id_watermark | Get watermark on file |
-| PUT | `/files/{file_id}/watermark` | put_files_id_watermark | Apply watermark to file |
-| GET | `/folder_locks` | get_folder_locks | List folder locks |
-| POST | `/folder_locks` | post_folder_locks | Create folder lock |
-| DELETE | `/folder_locks/{folder_lock_id}` | delete_folder_locks_id | Delete folder lock |
-| POST | `/folders` | post_folders | Create folder |
-| GET | `/folders/trash/items` | get_folders_trash_items | List trashed items |
-| DELETE | `/folders/{folder_id}` | delete_folders_id | Delete folder |
-| GET | `/folders/{folder_id}` | get_folders_id | Get folder information |
-| POST | `/folders/{folder_id}` | post_folders_id | Restore folder |
-| PUT | `/folders/{folder_id}` | put_folders_id | Update folder |
-| PUT | `/folders/{folder_id}#add_shared_link` | put_folders_id#add_shared_link | Add shared link to folder |
-| GET | `/folders/{folder_id}#get_shared_link` | get_folders_id#get_shared_link | Get shared link for folder |
-| PUT | `/folders/{folder_id}#remove_shared_link` | put_folders_id#remove_shared_link | Remove shared link from folder |
-| PUT | `/folders/{folder_id}#update_shared_link` | put_folders_id#update_shared_link | Update shared link on folder |
-| GET | `/folders/{folder_id}/collaborations` | get_folders_id_collaborations | List folder collaborations |
-| POST | `/folders/{folder_id}/copy` | post_folders_id_copy | Copy folder |
-| GET | `/folders/{folder_id}/items` | get_folders_id_items | List items in folder |
-| GET | `/folders/{folder_id}/metadata` | get_folders_id_metadata | List metadata instances on folder |
-| DELETE | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | delete_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | Remove classification from folder |
-| GET | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | get_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | Get classification on folder |
-| POST | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | post_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | Add classification to folder |
-| PUT | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | put_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | Update classification on folder |
-| DELETE | `/folders/{folder_id}/metadata/{scope}/{template_key}` | delete_folders_id_metadata_id_id | Remove metadata instance from folder |
-| GET | `/folders/{folder_id}/metadata/{scope}/{template_key}` | get_folders_id_metadata_id_id | Get metadata instance on folder |
-| POST | `/folders/{folder_id}/metadata/{scope}/{template_key}` | post_folders_id_metadata_id_id | Create metadata instance on folder |
-| PUT | `/folders/{folder_id}/metadata/{scope}/{template_key}` | put_folders_id_metadata_id_id | Update metadata instance on folder |
-| DELETE | `/folders/{folder_id}/trash` | delete_folders_id_trash | Permanently remove folder |
-| GET | `/folders/{folder_id}/trash` | get_folders_id_trash | Get trashed folder |
-| DELETE | `/folders/{folder_id}/watermark` | delete_folders_id_watermark | Remove watermark from folder |
-| GET | `/folders/{folder_id}/watermark` | get_folders_id_watermark | Get watermark for folder |
-| PUT | `/folders/{folder_id}/watermark` | put_folders_id_watermark | Apply watermark to folder |
-| POST | `/group_memberships` | post_group_memberships | Add user to group |
-| DELETE | `/group_memberships/{group_membership_id}` | delete_group_memberships_id | Remove user from group |
-| GET | `/group_memberships/{group_membership_id}` | get_group_memberships_id | Get group membership |
-| PUT | `/group_memberships/{group_membership_id}` | put_group_memberships_id | Update group membership |
-| GET | `/groups` | get_groups | List groups for enterprise |
-| POST | `/groups` | post_groups | Create group |
-| POST | `/groups/terminate_sessions` | post_groups_terminate_sessions | Create jobs to terminate user group session |
-| DELETE | `/groups/{group_id}` | delete_groups_id | Remove group |
-| GET | `/groups/{group_id}` | get_groups_id | Get group |
-| PUT | `/groups/{group_id}` | put_groups_id | Update group |
-| GET | `/groups/{group_id}/collaborations` | get_groups_id_collaborations | List group collaborations |
-| GET | `/groups/{group_id}/memberships` | get_groups_id_memberships | List members of group |
-| POST | `/invites` | post_invites | Create user invite |
-| GET | `/invites/{invite_id}` | get_invites_id | Get user invite status |
-| GET | `/legal_hold_policies` | get_legal_hold_policies | List all legal hold policies |
-| POST | `/legal_hold_policies` | post_legal_hold_policies | Create legal hold policy |
-| DELETE | `/legal_hold_policies/{legal_hold_policy_id}` | delete_legal_hold_policies_id | Remove legal hold policy |
-| GET | `/legal_hold_policies/{legal_hold_policy_id}` | get_legal_hold_policies_id | Get legal hold policy |
-| PUT | `/legal_hold_policies/{legal_hold_policy_id}` | put_legal_hold_policies_id | Update legal hold policy |
-| GET | `/legal_hold_policy_assignments` | get_legal_hold_policy_assignments | List legal hold policy assignments |
-| POST | `/legal_hold_policy_assignments` | post_legal_hold_policy_assignments | Assign legal hold policy |
-| DELETE | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}` | delete_legal_hold_policy_assignments_id | Unassign legal hold policy |
-| GET | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}` | get_legal_hold_policy_assignments_id | Get legal hold policy assignment |
-| GET | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}/file_versions_on_hold` | get_legal_hold_policy_assignments_id_file_versions_on_hold | List previous file versions for legal hold policy assignment |
-| GET | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}/files_on_hold` | get_legal_hold_policy_assignments_id_files_on_hold | List current file versions for legal hold policy assignment |
-| GET | `/metadata_cascade_policies` | get_metadata_cascade_policies | List metadata cascade policies |
-| POST | `/metadata_cascade_policies` | post_metadata_cascade_policies | Create metadata cascade policy |
-| DELETE | `/metadata_cascade_policies/{metadata_cascade_policy_id}` | delete_metadata_cascade_policies_id | Remove metadata cascade policy |
-| GET | `/metadata_cascade_policies/{metadata_cascade_policy_id}` | get_metadata_cascade_policies_id | Get metadata cascade policy |
-| POST | `/metadata_cascade_policies/{metadata_cascade_policy_id}/apply` | post_metadata_cascade_policies_id_apply | Force-apply metadata cascade policy to folder |
-| POST | `/metadata_queries/execute_read` | post_metadata_queries_execute_read | Query files/folders by metadata |
-| GET | `/metadata_query_indices` | get_metadata_query_indices | List metadata query indices |
-| GET | `/metadata_templates` | get_metadata_templates | Find metadata template by instance ID |
-| GET | `/metadata_templates/enterprise` | get_metadata_templates_enterprise | List all metadata templates for enterprise |
-| DELETE | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema` | delete_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema | Delete all classifications |
-| GET | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema` | get_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema | List all classifications |
-| PUT | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema#add` | put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#add | Add classification |
-| PUT | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema#delete` | put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#delete | Delete classification |
-| PUT | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema#update` | put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#update | Update classification |
-| GET | `/metadata_templates/global` | get_metadata_templates_global | List all global metadata templates |
-| POST | `/metadata_templates/schema` | post_metadata_templates_schema | Create metadata template |
-| POST | `/metadata_templates/schema#classifications` | post_metadata_templates_schema#classifications | Add initial classifications |
-| DELETE | `/metadata_templates/{scope}/{template_key}/schema` | delete_metadata_templates_id_id_schema | Remove metadata template |
-| GET | `/metadata_templates/{scope}/{template_key}/schema` | get_metadata_templates_id_id_schema | Get metadata template by name |
-| PUT | `/metadata_templates/{scope}/{template_key}/schema` | put_metadata_templates_id_id_schema | Update metadata template |
-| GET | `/metadata_templates/{template_id}` | get_metadata_templates_id | Get metadata template by ID |
-| POST | `/oauth2/revoke` | post_oauth2_revoke | Revoke access token |
-| POST | `/oauth2/token` | post_oauth2_token | Request access token |
-| POST | `/oauth2/token#refresh` | post_oauth2_token#refresh | Refresh access token |
-| GET | `/recent_items` | get_recent_items | List recently accessed items |
-| GET | `/retention_policies` | get_retention_policies | List retention policies |
-| POST | `/retention_policies` | post_retention_policies | Create retention policy |
-| DELETE | `/retention_policies/{retention_policy_id}` | delete_retention_policies_id | Delete retention policy |
-| GET | `/retention_policies/{retention_policy_id}` | get_retention_policies_id | Get retention policy |
-| PUT | `/retention_policies/{retention_policy_id}` | put_retention_policies_id | Update retention policy |
-| GET | `/retention_policies/{retention_policy_id}/assignments` | get_retention_policies_id_assignments | List retention policy assignments |
-| POST | `/retention_policy_assignments` | post_retention_policy_assignments | Assign retention policy |
-| DELETE | `/retention_policy_assignments/{retention_policy_assignment_id}` | delete_retention_policy_assignments_id | Remove retention policy assignment |
-| GET | `/retention_policy_assignments/{retention_policy_assignment_id}` | get_retention_policy_assignments_id | Get retention policy assignment |
-| GET | `/retention_policy_assignments/{retention_policy_assignment_id}/file_versions_under_retention` | get_retention_policy_assignments_id_file_versions_under_retention | Get file versions under retention |
-| GET | `/retention_policy_assignments/{retention_policy_assignment_id}/files_under_retention` | get_retention_policy_assignments_id_files_under_retention | Get files under retention |
-| GET | `/search` | get_search | Search for content |
-| GET | `/shared_items` | get_shared_items | Find file for shared link |
-| GET | `/shared_items#folders` | get_shared_items#folders | Find folder for shared link |
-| GET | `/shared_items#web_links` | get_shared_items#web_links | Find web link for shared link |
-| GET | `/shield_information_barrier_reports` | get_shield_information_barrier_reports | List shield information barrier reports |
-| POST | `/shield_information_barrier_reports` | post_shield_information_barrier_reports | Create shield information barrier report |
-| GET | `/shield_information_barrier_reports/{shield_information_barrier_report_id}` | get_shield_information_barrier_reports_id | Get shield information barrier report by ID |
-| GET | `/shield_information_barrier_segment_members` | get_shield_information_barrier_segment_members | List shield information barrier segment members |
-| POST | `/shield_information_barrier_segment_members` | post_shield_information_barrier_segment_members | Create shield information barrier segment member |
-| DELETE | `/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}` | delete_shield_information_barrier_segment_members_id | Delete shield information barrier segment member by ID |
-| GET | `/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}` | get_shield_information_barrier_segment_members_id | Get shield information barrier segment member by ID |
-| GET | `/shield_information_barrier_segment_restrictions` | get_shield_information_barrier_segment_restrictions | List shield information barrier segment restrictions |
-| POST | `/shield_information_barrier_segment_restrictions` | post_shield_information_barrier_segment_restrictions | Create shield information barrier segment restriction |
-| DELETE | `/shield_information_barrier_segment_restrictions/{shield_information_barrier_segment_restriction_id}` | delete_shield_information_barrier_segment_restrictions_id | Delete shield information barrier segment restriction by ID |
-| GET | `/shield_information_barrier_segment_restrictions/{shield_information_barrier_segment_restriction_id}` | get_shield_information_barrier_segment_restrictions_id | Get shield information barrier segment restriction by ID |
-| GET | `/shield_information_barrier_segments` | get_shield_information_barrier_segments | List shield information barrier segments |
-| POST | `/shield_information_barrier_segments` | post_shield_information_barrier_segments | Create shield information barrier segment |
-| DELETE | `/shield_information_barrier_segments/{shield_information_barrier_segment_id}` | delete_shield_information_barrier_segments_id | Delete shield information barrier segment |
-| GET | `/shield_information_barrier_segments/{shield_information_barrier_segment_id}` | get_shield_information_barrier_segments_id | Get shield information barrier segment with specified ID |
-| PUT | `/shield_information_barrier_segments/{shield_information_barrier_segment_id}` | put_shield_information_barrier_segments_id | Update shield information barrier segment with specified ID |
-| GET | `/shield_information_barriers` | get_shield_information_barriers | List shield information barriers |
-| POST | `/shield_information_barriers` | post_shield_information_barriers | Create shield information barrier |
-| POST | `/shield_information_barriers/change_status` | post_shield_information_barriers_change_status | Add changed status of shield information barrier with specified ID |
-| GET | `/shield_information_barriers/{shield_information_barrier_id}` | get_shield_information_barriers_id | Get shield information barrier with specified ID |
-| GET | `/sign_requests` | get_sign_requests | List sign requests |
-| POST | `/sign_requests` | post_sign_requests | Create sign request |
-| GET | `/sign_requests/{sign_request_id}` | get_sign_requests_id | Get sign request by ID |
-| POST | `/sign_requests/{sign_request_id}/cancel` | post_sign_requests_id_cancel | Cancel sign request |
-| POST | `/sign_requests/{sign_request_id}/resend` | post_sign_requests_id_resend | Resend sign request |
-| PUT | `/skill_invocations/{skill_id}` | put_skill_invocations_id | Update all Box Skill cards on file |
-| GET | `/storage_policies` | get_storage_policies | List storage policies |
-| GET | `/storage_policies/{storage_policy_id}` | get_storage_policies_id | Get storage policy |
-| GET | `/storage_policy_assignments` | get_storage_policy_assignments | List storage policy assignments |
-| POST | `/storage_policy_assignments` | post_storage_policy_assignments | Assign storage policy |
-| DELETE | `/storage_policy_assignments/{storage_policy_assignment_id}` | delete_storage_policy_assignments_id | Unassign storage policy |
-| GET | `/storage_policy_assignments/{storage_policy_assignment_id}` | get_storage_policy_assignments_id | Get storage policy assignment |
-| PUT | `/storage_policy_assignments/{storage_policy_assignment_id}` | put_storage_policy_assignments_id | Update storage policy assignment |
-| POST | `/task_assignments` | post_task_assignments | Assign task |
-| DELETE | `/task_assignments/{task_assignment_id}` | delete_task_assignments_id | Unassign task |
-| GET | `/task_assignments/{task_assignment_id}` | get_task_assignments_id | Get task assignment |
-| PUT | `/task_assignments/{task_assignment_id}` | put_task_assignments_id | Update task assignment |
-| POST | `/tasks` | post_tasks | Create task |
-| DELETE | `/tasks/{task_id}` | delete_tasks_id | Remove task |
-| GET | `/tasks/{task_id}` | get_tasks_id | Get task |
-| PUT | `/tasks/{task_id}` | put_tasks_id | Update task |
-| GET | `/tasks/{task_id}/assignments` | get_tasks_id_assignments | List task assignments |
-| GET | `/terms_of_service_user_statuses` | get_terms_of_service_user_statuses | List terms of service user statuses |
-| POST | `/terms_of_service_user_statuses` | post_terms_of_service_user_statuses | Create terms of service status for new user |
-| PUT | `/terms_of_service_user_statuses/{terms_of_service_user_status_id}` | put_terms_of_service_user_statuses_id | Update terms of service status for existing user |
-| GET | `/terms_of_services` | get_terms_of_services | List terms of services |
-| POST | `/terms_of_services` | post_terms_of_services | Create terms of service |
-| GET | `/terms_of_services/{terms_of_service_id}` | get_terms_of_services_id | Get terms of service |
-| PUT | `/terms_of_services/{terms_of_service_id}` | put_terms_of_services_id | Update terms of service |
-| GET | `/users` | get_users | List enterprise users |
-| POST | `/users` | post_users | Create user |
-| GET | `/users/me` | get_users_me | Get current user |
-| POST | `/users/terminate_sessions` | post_users_terminate_sessions | Create jobs to terminate users session |
-| DELETE | `/users/{user_id}` | delete_users_id | Delete user |
-| GET | `/users/{user_id}` | get_users_id | Get user |
-| PUT | `/users/{user_id}` | put_users_id | Update user |
-| DELETE | `/users/{user_id}/avatar` | delete_users_id_avatar | Delete user avatar |
-| GET | `/users/{user_id}/avatar` | get_users_id_avatar | Get user avatar |
-| POST | `/users/{user_id}/avatar` | post_users_id_avatar | Add or update user avatar |
-| GET | `/users/{user_id}/email_aliases` | get_users_id_email_aliases | List user's email aliases |
-| POST | `/users/{user_id}/email_aliases` | post_users_id_email_aliases | Create email alias |
-| DELETE | `/users/{user_id}/email_aliases/{email_alias_id}` | delete_users_id_email_aliases_id | Remove email alias |
-| PUT | `/users/{user_id}/folders/0` | put_users_id_folders_0 | Transfer owned folders |
-| GET | `/users/{user_id}/memberships` | get_users_id_memberships | List user's groups |
-| POST | `/web_links` | post_web_links | Create web link |
-| DELETE | `/web_links/{web_link_id}` | delete_web_links_id | Remove web link |
-| GET | `/web_links/{web_link_id}` | get_web_links_id | Get web link |
-| POST | `/web_links/{web_link_id}` | post_web_links_id | Restore web link |
-| PUT | `/web_links/{web_link_id}` | put_web_links_id | Update web link |
-| PUT | `/web_links/{web_link_id}#add_shared_link` | put_web_links_id#add_shared_link | Add shared link to web link |
-| GET | `/web_links/{web_link_id}#get_shared_link` | get_web_links_id#get_shared_link | Get shared link for web link |
-| PUT | `/web_links/{web_link_id}#remove_shared_link` | put_web_links_id#remove_shared_link | Remove shared link from web link |
-| PUT | `/web_links/{web_link_id}#update_shared_link` | put_web_links_id#update_shared_link | Update shared link on web link |
-| DELETE | `/web_links/{web_link_id}/trash` | delete_web_links_id_trash | Permanently remove web link |
-| GET | `/web_links/{web_link_id}/trash` | get_web_links_id_trash | Get trashed web link |
-| GET | `/webhooks` | get_webhooks | List all webhooks |
-| POST | `/webhooks` | post_webhooks | Create webhook |
-| DELETE | `/webhooks/{webhook_id}` | delete_webhooks_id | Remove webhook |
-| GET | `/webhooks/{webhook_id}` | get_webhooks_id | Get webhook |
-| PUT | `/webhooks/{webhook_id}` | put_webhooks_id | Update webhook |
-| GET | `/workflows` | get_workflows | List workflows |
-| POST | `/workflows/{workflow_id}/start` | post_workflows_id_start | Starts workflow based on request body |
-| POST | `/zip_downloads` | post_zip_downloads | Create zip download |
-| GET | `/zip_downloads/{zip_download_id}/content` | get_zip_downloads_id_content | Download zip archive |
-| GET | `/zip_downloads/{zip_download_id}/status` | get_zip_downloads_id_status | Get zip download status |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/authorize` | get_authorize | `response_type`*, `client_id`*, `redirect_uri`, `state`, `scope` | string:html | yes | Authorize user |
+| GET | `/collaboration_whitelist_entries` | get_collaboration_whitelist_entries | `marker`, `limit` | CollaborationAllowlistEntries | yes | List allowed collaboration domains |
+| POST | `/collaboration_whitelist_entries` | post_collaboration_whitelist_entries | body: object | CollaborationAllowlistEntry |  | Add domain to list of allowed collaboration domains |
+| GET | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` | get_collaboration_whitelist_entries_id | `collaboration_whitelist_entry_id`* | CollaborationAllowlistEntry | yes | Get allowed collaboration domain |
+| DELETE | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` | delete_collaboration_whitelist_entries_id | `collaboration_whitelist_entry_id`* | — |  | Remove domain from list of allowed collaboration domains |
+| GET | `/collaboration_whitelist_exempt_targets` | get_collaboration_whitelist_exempt_targets | `marker`, `limit` | CollaborationAllowlistExemptTargets | yes | List users exempt from collaboration domain restrictions |
+| POST | `/collaboration_whitelist_exempt_targets` | post_collaboration_whitelist_exempt_targets | body: object | CollaborationAllowlistExemptTarget |  | Create user exemption from collaboration domain restrictions |
+| GET | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` | get_collaboration_whitelist_exempt_targets_id | `collaboration_whitelist_exempt_target_id`* | CollaborationAllowlistExemptTarget | yes | Get user exempt from collaboration domain restrictions |
+| DELETE | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` | delete_collaboration_whitelist_exempt_targets_id | `collaboration_whitelist_exempt_target_id`* | — |  | Remove user from list of users exempt from domain restrictions |
+| GET | `/collaborations` | get_collaborations | `status`*, `fields`, `offset`, `limit` | Collaborations | yes | List pending collaborations |
+| POST | `/collaborations` | post_collaborations | `fields`, `notify`, body: object | Collaboration |  | Create collaboration |
+| GET | `/collaborations/{collaboration_id}` | get_collaborations_id | `collaboration_id`*, `fields` | Collaboration | yes | Get collaboration |
+| PUT | `/collaborations/{collaboration_id}` | put_collaborations_id | `collaboration_id`*, body: object | Collaboration |  | Update collaboration |
+| DELETE | `/collaborations/{collaboration_id}` | delete_collaborations_id | `collaboration_id`* | — |  | Remove collaboration |
+| GET | `/collections` | get_collections | `fields`, `offset`, `limit` | Collections | yes | List all collections |
+| GET | `/collections/{collection_id}/items` | get_collections_id_items | `collection_id`*, `fields`, `offset`, `limit` | Items | yes | List collection items |
+| POST | `/comments` | post_comments | `fields`, body: object | Comment |  | Create comment |
+| GET | `/comments/{comment_id}` | get_comments_id | `comment_id`*, `fields` | Comment | yes | Get comment |
+| PUT | `/comments/{comment_id}` | put_comments_id | `comment_id`*, `fields`, body: object | Comment |  | Update comment |
+| DELETE | `/comments/{comment_id}` | delete_comments_id | `comment_id`* | — |  | Remove comment |
+| GET | `/device_pinners/{device_pinner_id}` | get_device_pinners_id | `device_pinner_id`* | DevicePinner | yes | Get device pin |
+| DELETE | `/device_pinners/{device_pinner_id}` | delete_device_pinners_id | `device_pinner_id`* | — |  | Remove device pin |
+| GET | `/enterprises/{enterprise_id}/device_pinners` | get_enterprises_id_device_pinners | `enterprise_id`*, `marker`, `limit`, `direction` | DevicePinners | yes | List enterprise device pins |
+| GET | `/events` | get_events | `stream_type`, `stream_position`, `limit`, `event_type`, `created_after`, `created_before` | Events | yes | List user and enterprise events |
+| OPTIONS | `/events` | options_events | — | RealtimeServers | yes | Get events long poll endpoint |
+| GET | `/file_requests/{file_request_id}` | get_file_requests_id | `file_request_id`* | FileRequest | yes | Get file request |
+| PUT | `/file_requests/{file_request_id}` | put_file_requests_id | `file_request_id`*, `if-match`, body: FileRequestUpdateRequest | FileRequest |  | Update file request |
+| DELETE | `/file_requests/{file_request_id}` | delete_file_requests_id | `file_request_id`* | — |  | Delete file request |
+| POST | `/file_requests/{file_request_id}/copy` | post_file_requests_id_copy | `file_request_id`*, body: FileRequestCopyRequest | FileRequest |  | Copy file request |
+| GET | `/file_version_legal_holds` | get_file_version_legal_holds | `policy_id`*, `marker`, `limit` | FileVersionLegalHolds | yes | List file version legal holds |
+| GET | `/file_version_legal_holds/{file_version_legal_hold_id}` | get_file_version_legal_holds_id | `file_version_legal_hold_id`* | FileVersionLegalHold | yes | Get file version legal hold |
+| GET | `/file_version_retentions` | get_file_version_retentions | `file_id`, `file_version_id`, `policy_id`, `disposition_action`, `disposition_before`, `disposition_after`, `limit`, `marker` | FileVersionRetentions | yes | List file version retentions |
+| GET | `/file_version_retentions/{file_version_retention_id}` | get_file_version_retentions_id | `file_version_retention_id`* | FileVersionRetention | yes | Get retention on file |
+| POST | `/files/content` | post_files_content | `fields`, `content-md5`, body: object | Files |  | Upload file |
+| OPTIONS | `/files/content` | options_files_content | body: object | UploadUrl | yes | Preflight check before upload |
+| POST | `/files/upload_sessions` | post_files_upload_sessions | body: object | UploadSession |  | Create upload session |
+| GET | `/files/upload_sessions/{upload_session_id}` | get_files_upload_sessions_id | `upload_session_id`* | UploadSession | yes | Get upload session |
+| PUT | `/files/upload_sessions/{upload_session_id}` | put_files_upload_sessions_id | `upload_session_id`*, `digest`*, `content-range`*, body: string:binary | UploadedPart |  | Upload part of file |
+| DELETE | `/files/upload_sessions/{upload_session_id}` | delete_files_upload_sessions_id | `upload_session_id`* | — |  | Remove upload session |
+| POST | `/files/upload_sessions/{upload_session_id}/commit` | post_files_upload_sessions_id_commit | `upload_session_id`*, `digest`*, `if-match`, `if-none-match`, body: object | Files |  | Commit upload session |
+| GET | `/files/upload_sessions/{upload_session_id}/parts` | get_files_upload_sessions_id_parts | `upload_session_id`*, `offset`, `limit` | UploadParts | yes | List parts |
+| GET | `/files/{file_id}` | get_files_id | `file_id`*, `fields`, `if-none-match`, `boxapi`, `x-rep-hints`* | File | yes | Get file information |
+| PUT | `/files/{file_id}` | put_files_id | `file_id`*, `fields`, `if-match`, body: object | File |  | Update file |
+| POST | `/files/{file_id}` | post_files_id | `file_id`*, `fields`, body: object | TrashFileRestored |  | Restore file |
+| DELETE | `/files/{file_id}` | delete_files_id | `file_id`*, `if-match` | — |  | Delete file |
+| PUT | `/files/{file_id}#add_shared_link` | put_files_id#add_shared_link | `file_id`*, `fields`*, body: object | File |  | Add shared link to file |
+| GET | `/files/{file_id}#get_shared_link` | get_files_id#get_shared_link | `file_id`*, `fields`* | File | yes | Get shared link for file |
+| PUT | `/files/{file_id}#remove_shared_link` | put_files_id#remove_shared_link | `file_id`*, `fields`*, body: object | File |  | Remove shared link from file |
+| PUT | `/files/{file_id}#update_shared_link` | put_files_id#update_shared_link | `file_id`*, `fields`*, body: object | File |  | Update shared link on file |
+| GET | `/files/{file_id}/collaborations` | get_files_id_collaborations | `file_id`*, `fields`, `limit`, `marker` | Collaborations | yes | List file collaborations |
+| GET | `/files/{file_id}/comments` | get_files_id_comments | `file_id`*, `fields`, `limit`, `offset` | Comments | yes | List file comments |
+| GET | `/files/{file_id}/content` | get_files_id_content | `file_id`*, `range`, `boxapi`, `version`, `access_token` | — | yes | Download file |
+| POST | `/files/{file_id}/content` | post_files_id_content | `file_id`*, `if-match`, `fields`, `content-md5`, body: object | Files |  | Upload file version |
+| POST | `/files/{file_id}/copy` | post_files_id_copy | `file_id`*, `fields`, body: object | File |  | Copy file |
+| GET | `/files/{file_id}/metadata` | get_files_id_metadata | `file_id`* | Metadatas | yes | List metadata instances on file |
+| GET | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | get_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | `file_id`* | Classification | yes | Get classification on file |
+| PUT | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | put_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | `file_id`*, body: object[] | Classification |  | Update classification on file |
+| POST | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | post_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | `file_id`*, body: object | Classification |  | Add classification to file |
+| DELETE | `/files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | delete_files_id_metadata_enterprise_securityClassification-6VMVochwUWo | `file_id`* | — |  | Remove classification from file |
+| GET | `/files/{file_id}/metadata/global/boxSkillsCards` | get_files_id_metadata_global_boxSkillsCards | `file_id`* | SkillCardsMetadata | yes | List Box Skill cards on file |
+| PUT | `/files/{file_id}/metadata/global/boxSkillsCards` | put_files_id_metadata_global_boxSkillsCards | `file_id`*, body: object[] | SkillCardsMetadata |  | Update Box Skill cards on file |
+| POST | `/files/{file_id}/metadata/global/boxSkillsCards` | post_files_id_metadata_global_boxSkillsCards | `file_id`*, body: object | SkillCardsMetadata |  | Create Box Skill cards on file |
+| DELETE | `/files/{file_id}/metadata/global/boxSkillsCards` | delete_files_id_metadata_global_boxSkillsCards | `file_id`* | — |  | Remove Box Skill cards from file |
+| GET | `/files/{file_id}/metadata/{scope}/{template_key}` | get_files_id_metadata_id_id | `file_id`*, `scope`*, `template_key`* | Metadata | yes | Get metadata instance on file |
+| PUT | `/files/{file_id}/metadata/{scope}/{template_key}` | put_files_id_metadata_id_id | `file_id`*, `scope`*, `template_key`*, body: object[] | Metadata |  | Update metadata instance on file |
+| POST | `/files/{file_id}/metadata/{scope}/{template_key}` | post_files_id_metadata_id_id | `file_id`*, `scope`*, `template_key`*, body: object | Metadata |  | Create metadata instance on file |
+| DELETE | `/files/{file_id}/metadata/{scope}/{template_key}` | delete_files_id_metadata_id_id | `file_id`*, `scope`*, `template_key`* | — |  | Remove metadata instance from file |
+| GET | `/files/{file_id}/tasks` | get_files_id_tasks | `file_id`* | Tasks | yes | List tasks on file |
+| GET | `/files/{file_id}/thumbnail.{extension}` | get_files_id_thumbnail_id | `file_id`*, `extension`*, `min_height`, `min_width`, `max_height`, `max_width` | string:binary | yes | Get file thumbnail |
+| GET | `/files/{file_id}/trash` | get_files_id_trash | `file_id`*, `fields` | TrashFile | yes | Get trashed file |
+| DELETE | `/files/{file_id}/trash` | delete_files_id_trash | `file_id`* | — |  | Permanently remove file |
+| POST | `/files/{file_id}/upload_sessions` | post_files_id_upload_sessions | `file_id`*, body: object | UploadSession |  | Create upload session for existing file |
+| GET | `/files/{file_id}/versions` | get_files_id_versions | `file_id`*, `fields`, `limit`, `offset` | FileVersions | yes | List all file versions |
+| POST | `/files/{file_id}/versions/current` | post_files_id_versions_current | `file_id`*, `fields`, body: object | FileVersion |  | Promote file version |
+| GET | `/files/{file_id}/versions/{file_version_id}` | get_files_id_versions_id | `file_id`*, `fields`, `file_version_id`* | FileVersion | yes | Get file version |
+| PUT | `/files/{file_id}/versions/{file_version_id}` | put_files_id_versions_id | `file_id`*, `file_version_id`*, body: object | FileVersion |  | Restore file version |
+| DELETE | `/files/{file_id}/versions/{file_version_id}` | delete_files_id_versions_id | `file_id`*, `file_version_id`*, `if-match` | — |  | Remove file version |
+| GET | `/files/{file_id}/watermark` | get_files_id_watermark | `file_id`* | Watermark | yes | Get watermark on file |
+| PUT | `/files/{file_id}/watermark` | put_files_id_watermark | `file_id`*, body: object | Watermark |  | Apply watermark to file |
+| DELETE | `/files/{file_id}/watermark` | delete_files_id_watermark | `file_id`* | — |  | Remove watermark from file |
+| GET | `/folder_locks` | get_folder_locks | `folder_id`* | FolderLocks | yes | List folder locks |
+| POST | `/folder_locks` | post_folder_locks | body: object | FolderLock |  | Create folder lock |
+| DELETE | `/folder_locks/{folder_lock_id}` | delete_folder_locks_id | `folder_lock_id`* | — |  | Delete folder lock |
+| POST | `/folders` | post_folders | `fields`, body: object | Folder |  | Create folder |
+| GET | `/folders/trash/items` | get_folders_trash_items | `fields`, `limit`, `offset`, `usemarker`, `marker`, `direction`, `sort` | Items | yes | List trashed items |
+| GET | `/folders/{folder_id}` | get_folders_id | `folder_id`*, `fields`, `if-none-match`, `boxapi` | Folder | yes | Get folder information |
+| PUT | `/folders/{folder_id}` | put_folders_id | `folder_id`*, `fields`, `if-match`, body: object | Folder |  | Update folder |
+| POST | `/folders/{folder_id}` | post_folders_id | `folder_id`*, `fields`, body: object | TrashFolderRestored |  | Restore folder |
+| DELETE | `/folders/{folder_id}` | delete_folders_id | `folder_id`*, `if-match`, `recursive` | — |  | Delete folder |
+| PUT | `/folders/{folder_id}#add_shared_link` | put_folders_id#add_shared_link | `folder_id`*, `fields`*, body: object | Folder |  | Add shared link to folder |
+| GET | `/folders/{folder_id}#get_shared_link` | get_folders_id#get_shared_link | `folder_id`*, `fields`* | Folder | yes | Get shared link for folder |
+| PUT | `/folders/{folder_id}#remove_shared_link` | put_folders_id#remove_shared_link | `folder_id`*, `fields`*, body: object | Folder |  | Remove shared link from folder |
+| PUT | `/folders/{folder_id}#update_shared_link` | put_folders_id#update_shared_link | `folder_id`*, `fields`*, body: object | Folder |  | Update shared link on folder |
+| GET | `/folders/{folder_id}/collaborations` | get_folders_id_collaborations | `folder_id`*, `fields` | Collaborations | yes | List folder collaborations |
+| POST | `/folders/{folder_id}/copy` | post_folders_id_copy | `folder_id`*, `fields`, body: object | Folder |  | Copy folder |
+| GET | `/folders/{folder_id}/items` | get_folders_id_items | `folder_id`*, `fields`, `usemarker`, `marker`, `offset`, `limit`, `boxapi`, `sort`, `direction` | Items | yes | List items in folder |
+| GET | `/folders/{folder_id}/metadata` | get_folders_id_metadata | `folder_id`* | Metadatas | yes | List metadata instances on folder |
+| GET | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | get_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | `folder_id`* | Classification | yes | Get classification on folder |
+| PUT | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | put_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | `folder_id`*, body: object[] | Classification |  | Update classification on folder |
+| POST | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | post_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | `folder_id`*, body: object | Classification |  | Add classification to folder |
+| DELETE | `/folders/{folder_id}/metadata/enterprise/securityClassification-6VMVochwUWo` | delete_folders_id_metadata_enterprise_securityClassification-6VMVochwUWo | `folder_id`* | — |  | Remove classification from folder |
+| GET | `/folders/{folder_id}/metadata/{scope}/{template_key}` | get_folders_id_metadata_id_id | `folder_id`*, `scope`*, `template_key`* | Metadata | yes | Get metadata instance on folder |
+| PUT | `/folders/{folder_id}/metadata/{scope}/{template_key}` | put_folders_id_metadata_id_id | `folder_id`*, `scope`*, `template_key`*, body: object[] | Metadata |  | Update metadata instance on folder |
+| POST | `/folders/{folder_id}/metadata/{scope}/{template_key}` | post_folders_id_metadata_id_id | `folder_id`*, `scope`*, `template_key`*, body: object | Metadata |  | Create metadata instance on folder |
+| DELETE | `/folders/{folder_id}/metadata/{scope}/{template_key}` | delete_folders_id_metadata_id_id | `folder_id`*, `scope`*, `template_key`* | — |  | Remove metadata instance from folder |
+| GET | `/folders/{folder_id}/trash` | get_folders_id_trash | `folder_id`*, `fields` | TrashFolder | yes | Get trashed folder |
+| DELETE | `/folders/{folder_id}/trash` | delete_folders_id_trash | `folder_id`* | — |  | Permanently remove folder |
+| GET | `/folders/{folder_id}/watermark` | get_folders_id_watermark | `folder_id`* | Watermark | yes | Get watermark for folder |
+| PUT | `/folders/{folder_id}/watermark` | put_folders_id_watermark | `folder_id`*, body: object | Watermark |  | Apply watermark to folder |
+| DELETE | `/folders/{folder_id}/watermark` | delete_folders_id_watermark | `folder_id`* | — |  | Remove watermark from folder |
+| POST | `/group_memberships` | post_group_memberships | `fields`, body: object | GroupMembership |  | Add user to group |
+| GET | `/group_memberships/{group_membership_id}` | get_group_memberships_id | `group_membership_id`*, `fields` | GroupMembership | yes | Get group membership |
+| PUT | `/group_memberships/{group_membership_id}` | put_group_memberships_id | `group_membership_id`*, `fields`, body: object | GroupMembership |  | Update group membership |
+| DELETE | `/group_memberships/{group_membership_id}` | delete_group_memberships_id | `group_membership_id`* | — |  | Remove user from group |
+| GET | `/groups` | get_groups | `filter_term`, `fields`, `limit`, `offset` | Groups | yes | List groups for enterprise |
+| POST | `/groups` | post_groups | `fields`, body: object | Group |  | Create group |
+| POST | `/groups/terminate_sessions` | post_groups_terminate_sessions | body: object | SessionTerminationMessage |  | Create jobs to terminate user group session |
+| GET | `/groups/{group_id}` | get_groups_id | `group_id`*, `fields` | Group | yes | Get group |
+| PUT | `/groups/{group_id}` | put_groups_id | `group_id`*, `fields`, body: object | Group |  | Update group |
+| DELETE | `/groups/{group_id}` | delete_groups_id | `group_id`* | — |  | Remove group |
+| GET | `/groups/{group_id}/collaborations` | get_groups_id_collaborations | `group_id`*, `limit`, `offset` | Collaborations | yes | List group collaborations |
+| GET | `/groups/{group_id}/memberships` | get_groups_id_memberships | `group_id`*, `limit`, `offset` | GroupMemberships | yes | List members of group |
+| POST | `/invites` | post_invites | `fields`, body: object | Invite |  | Create user invite |
+| GET | `/invites/{invite_id}` | get_invites_id | `invite_id`*, `fields` | Invite | yes | Get user invite status |
+| GET | `/legal_hold_policies` | get_legal_hold_policies | `policy_name`, `fields`, `marker`, `limit` | LegalHoldPolicies | yes | List all legal hold policies |
+| POST | `/legal_hold_policies` | post_legal_hold_policies | body: object | LegalHoldPolicy |  | Create legal hold policy |
+| GET | `/legal_hold_policies/{legal_hold_policy_id}` | get_legal_hold_policies_id | `legal_hold_policy_id`* | LegalHoldPolicy | yes | Get legal hold policy |
+| PUT | `/legal_hold_policies/{legal_hold_policy_id}` | put_legal_hold_policies_id | `legal_hold_policy_id`*, body: object | LegalHoldPolicy |  | Update legal hold policy |
+| DELETE | `/legal_hold_policies/{legal_hold_policy_id}` | delete_legal_hold_policies_id | `legal_hold_policy_id`* | — |  | Remove legal hold policy |
+| GET | `/legal_hold_policy_assignments` | get_legal_hold_policy_assignments | `policy_id`*, `assign_to_type`, `assign_to_id`, `marker`, `limit`, `fields` | LegalHoldPolicyAssignments | yes | List legal hold policy assignments |
+| POST | `/legal_hold_policy_assignments` | post_legal_hold_policy_assignments | body: object | LegalHoldPolicyAssignment |  | Assign legal hold policy |
+| GET | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}` | get_legal_hold_policy_assignments_id | `legal_hold_policy_assignment_id`* | LegalHoldPolicyAssignment | yes | Get legal hold policy assignment |
+| DELETE | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}` | delete_legal_hold_policy_assignments_id | `legal_hold_policy_assignment_id`* | — |  | Unassign legal hold policy |
+| GET | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}/file_versions_on_hold` | get_legal_hold_policy_assignments_id_file_versions_on_hold | `legal_hold_policy_assignment_id`*, `marker`, `limit`, `fields` | FileVersionLegalHolds | yes | List previous file versions for legal hold policy assignment |
+| GET | `/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}/files_on_hold` | get_legal_hold_policy_assignments_id_files_on_hold | `legal_hold_policy_assignment_id`*, `marker`, `limit`, `fields` | FileVersionLegalHolds | yes | List current file versions for legal hold policy assignment |
+| GET | `/metadata_cascade_policies` | get_metadata_cascade_policies | `folder_id`*, `owner_enterprise_id`, `marker`, `offset` | MetadataCascadePolicies | yes | List metadata cascade policies |
+| POST | `/metadata_cascade_policies` | post_metadata_cascade_policies | body: object | MetadataCascadePolicy |  | Create metadata cascade policy |
+| GET | `/metadata_cascade_policies/{metadata_cascade_policy_id}` | get_metadata_cascade_policies_id | `metadata_cascade_policy_id`* | MetadataCascadePolicy | yes | Get metadata cascade policy |
+| DELETE | `/metadata_cascade_policies/{metadata_cascade_policy_id}` | delete_metadata_cascade_policies_id | `metadata_cascade_policy_id`* | — |  | Remove metadata cascade policy |
+| POST | `/metadata_cascade_policies/{metadata_cascade_policy_id}/apply` | post_metadata_cascade_policies_id_apply | `metadata_cascade_policy_id`*, body: object | — |  | Force-apply metadata cascade policy to folder |
+| POST | `/metadata_queries/execute_read` | post_metadata_queries_execute_read | body: MetadataQuery | MetadataQueryResults |  | Query files/folders by metadata |
+| GET | `/metadata_query_indices` | get_metadata_query_indices | `scope`*, `template_key`* | MetadataQueryIndices | yes | List metadata query indices |
+| GET | `/metadata_templates` | get_metadata_templates | `metadata_instance_id`* | MetadataTemplates | yes | Find metadata template by instance ID |
+| GET | `/metadata_templates/enterprise` | get_metadata_templates_enterprise | `marker`, `limit` | MetadataTemplates | yes | List all metadata templates for enterprise |
+| GET | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema` | get_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema | — | ClassificationTemplate | yes | List all classifications |
+| DELETE | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema` | delete_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema | — | — |  | Delete all classifications |
+| PUT | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema#add` | put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#add | body: object[] | ClassificationTemplate |  | Add classification |
+| PUT | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema#delete` | put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#delete | body: object[] | ClassificationTemplate |  | Delete classification |
+| PUT | `/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema#update` | put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#update | body: object[] | ClassificationTemplate |  | Update classification |
+| GET | `/metadata_templates/global` | get_metadata_templates_global | `marker`, `limit` | MetadataTemplates | yes | List all global metadata templates |
+| POST | `/metadata_templates/schema` | post_metadata_templates_schema | body: object | MetadataTemplate |  | Create metadata template |
+| POST | `/metadata_templates/schema#classifications` | post_metadata_templates_schema#classifications | body: object | ClassificationTemplate |  | Add initial classifications |
+| GET | `/metadata_templates/{scope}/{template_key}/schema` | get_metadata_templates_id_id_schema | `scope`*, `template_key`* | MetadataTemplate | yes | Get metadata template by name |
+| PUT | `/metadata_templates/{scope}/{template_key}/schema` | put_metadata_templates_id_id_schema | `scope`*, `template_key`*, body: object[] | MetadataTemplate |  | Update metadata template |
+| DELETE | `/metadata_templates/{scope}/{template_key}/schema` | delete_metadata_templates_id_id_schema | `scope`*, `template_key`* | — |  | Remove metadata template |
+| GET | `/metadata_templates/{template_id}` | get_metadata_templates_id | `template_id`* | MetadataTemplate | yes | Get metadata template by ID |
+| POST | `/oauth2/revoke` | post_oauth2_revoke | body: PostOAuth2Revoke | — |  | Revoke access token |
+| POST | `/oauth2/token` | post_oauth2_token | body: PostOAuth2Token | AccessToken |  | Request access token |
+| POST | `/oauth2/token#refresh` | post_oauth2_token#refresh | body: PostOAuth2Token--RefreshAccessToken | AccessToken |  | Refresh access token |
+| GET | `/recent_items` | get_recent_items | `fields`, `limit`, `marker` | RecentItems | yes | List recently accessed items |
+| GET | `/retention_policies` | get_retention_policies | `policy_name`, `policy_type`, `created_by_user_id`, `fields`, `limit`, `marker` | RetentionPolicies | yes | List retention policies |
+| POST | `/retention_policies` | post_retention_policies | body: object | RetentionPolicy |  | Create retention policy |
+| GET | `/retention_policies/{retention_policy_id}` | get_retention_policies_id | `retention_policy_id`*, `fields` | RetentionPolicy | yes | Get retention policy |
+| PUT | `/retention_policies/{retention_policy_id}` | put_retention_policies_id | `retention_policy_id`*, body: object | RetentionPolicy |  | Update retention policy |
+| DELETE | `/retention_policies/{retention_policy_id}` | delete_retention_policies_id | `retention_policy_id`* | — |  | Delete retention policy |
+| GET | `/retention_policies/{retention_policy_id}/assignments` | get_retention_policies_id_assignments | `retention_policy_id`*, `type`, `fields`, `marker`, `limit` | RetentionPolicyAssignments | yes | List retention policy assignments |
+| POST | `/retention_policy_assignments` | post_retention_policy_assignments | body: object | RetentionPolicyAssignment |  | Assign retention policy |
+| GET | `/retention_policy_assignments/{retention_policy_assignment_id}` | get_retention_policy_assignments_id | `retention_policy_assignment_id`*, `fields` | RetentionPolicyAssignment | yes | Get retention policy assignment |
+| DELETE | `/retention_policy_assignments/{retention_policy_assignment_id}` | delete_retention_policy_assignments_id | `retention_policy_assignment_id`* | — |  | Remove retention policy assignment |
+| GET | `/retention_policy_assignments/{retention_policy_assignment_id}/file_versions_under_retention` | get_retention_policy_assignments_id_file_versions_under_retention | `retention_policy_assignment_id`*, `marker`, `limit` | FilesUnderRetention | yes | Get file versions under retention |
+| GET | `/retention_policy_assignments/{retention_policy_assignment_id}/files_under_retention` | get_retention_policy_assignments_id_files_under_retention | `retention_policy_assignment_id`*, `marker`, `limit` | FilesUnderRetention | yes | Get files under retention |
+| GET | `/search` | get_search | `query`, `scope`, `file_extensions`, `created_at_range`, `updated_at_range`, `size_range`, `owner_user_ids`, `recent_updater_user_ids`, `ancestor_folder_ids`, `content_types`, `type`, `trash_content`, `mdfilters`, `sort`, `direction`, `limit`, `include_recent_shared_links`, `fields`, `offset` | SearchResults\|SearchResultsWithSharedLinks | yes | Search for content |
+| GET | `/shared_items` | get_shared_items | `if-none-match`, `fields`, `boxapi`* | File | yes | Find file for shared link |
+| GET | `/shared_items#folders` | get_shared_items#folders | `if-none-match`, `fields`, `boxapi`* | Folder | yes | Find folder for shared link |
+| GET | `/shared_items#web_links` | get_shared_items#web_links | `if-none-match`, `fields`, `boxapi`* | WebLink | yes | Find web link for shared link |
+| GET | `/shield_information_barrier_reports` | get_shield_information_barrier_reports | `shield_information_barrier_id`*, `marker`, `limit` | object | yes | List shield information barrier reports |
+| POST | `/shield_information_barrier_reports` | post_shield_information_barrier_reports | body: ShieldInformationBarrierReference | ShieldInformationBarrierReport |  | Create shield information barrier report |
+| GET | `/shield_information_barrier_reports/{shield_information_barrier_report_id}` | get_shield_information_barrier_reports_id | `shield_information_barrier_report_id`* | ShieldInformationBarrierReport | yes | Get shield information barrier report by ID |
+| GET | `/shield_information_barrier_segment_members` | get_shield_information_barrier_segment_members | `shield_information_barrier_segment_id`*, `marker`, `limit` | object | yes | List shield information barrier segment members |
+| POST | `/shield_information_barrier_segment_members` | post_shield_information_barrier_segment_members | body: object | ShieldInformationBarrierSegmentMember |  | Create shield information barrier segment member |
+| GET | `/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}` | get_shield_information_barrier_segment_members_id | `shield_information_barrier_segment_member_id`* | ShieldInformationBarrierSegmentMember | yes | Get shield information barrier segment member by ID |
+| DELETE | `/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}` | delete_shield_information_barrier_segment_members_id | `shield_information_barrier_segment_member_id`* | — |  | Delete shield information barrier segment member by ID |
+| GET | `/shield_information_barrier_segment_restrictions` | get_shield_information_barrier_segment_restrictions | `shield_information_barrier_segment_id`*, `marker`, `limit` | object | yes | List shield information barrier segment restrictions |
+| POST | `/shield_information_barrier_segment_restrictions` | post_shield_information_barrier_segment_restrictions | body: object | ShieldInformationBarrierSegmentRestriction |  | Create shield information barrier segment restriction |
+| GET | `/shield_information_barrier_segment_restrictions/{shield_information_barrier_segment_restriction_id}` | get_shield_information_barrier_segment_restrictions_id | `shield_information_barrier_segment_restriction_id`* | ShieldInformationBarrierSegmentRestriction | yes | Get shield information barrier segment restriction by ID |
+| DELETE | `/shield_information_barrier_segment_restrictions/{shield_information_barrier_segment_restriction_id}` | delete_shield_information_barrier_segment_restrictions_id | `shield_information_barrier_segment_restriction_id`* | — |  | Delete shield information barrier segment restriction by ID |
+| GET | `/shield_information_barrier_segments` | get_shield_information_barrier_segments | `shield_information_barrier_id`*, `marker`, `limit` | object | yes | List shield information barrier segments |
+| POST | `/shield_information_barrier_segments` | post_shield_information_barrier_segments | body: object | ShieldInformationBarrierSegment |  | Create shield information barrier segment |
+| GET | `/shield_information_barrier_segments/{shield_information_barrier_segment_id}` | get_shield_information_barrier_segments_id | `shield_information_barrier_segment_id`* | ShieldInformationBarrierSegment | yes | Get shield information barrier segment with specified ID |
+| PUT | `/shield_information_barrier_segments/{shield_information_barrier_segment_id}` | put_shield_information_barrier_segments_id | `shield_information_barrier_segment_id`*, body: object | ShieldInformationBarrierSegment |  | Update shield information barrier segment with specified ID |
+| DELETE | `/shield_information_barrier_segments/{shield_information_barrier_segment_id}` | delete_shield_information_barrier_segments_id | `shield_information_barrier_segment_id`* | — |  | Delete shield information barrier segment |
+| GET | `/shield_information_barriers` | get_shield_information_barriers | `marker`, `limit` | object | yes | List shield information barriers |
+| POST | `/shield_information_barriers` | post_shield_information_barriers | body: ShieldInformationBarrier | ShieldInformationBarrier |  | Create shield information barrier |
+| POST | `/shield_information_barriers/change_status` | post_shield_information_barriers_change_status | body: object | ShieldInformationBarrier |  | Add changed status of shield information barrier with specified ID |
+| GET | `/shield_information_barriers/{shield_information_barrier_id}` | get_shield_information_barriers_id | `shield_information_barrier_id`* | ShieldInformationBarrier | yes | Get shield information barrier with specified ID |
+| GET | `/sign_requests` | get_sign_requests | `marker`, `limit` | SignRequests | yes | List sign requests |
+| POST | `/sign_requests` | post_sign_requests | body: SignRequestCreateRequest | SignRequest |  | Create sign request |
+| GET | `/sign_requests/{sign_request_id}` | get_sign_requests_id | `sign_request_id`* | SignRequest | yes | Get sign request by ID |
+| POST | `/sign_requests/{sign_request_id}/cancel` | post_sign_requests_id_cancel | `sign_request_id`* | SignRequest |  | Cancel sign request |
+| POST | `/sign_requests/{sign_request_id}/resend` | post_sign_requests_id_resend | `sign_request_id`* | — |  | Resend sign request |
+| PUT | `/skill_invocations/{skill_id}` | put_skill_invocations_id | `skill_id`*, body: object | — |  | Update all Box Skill cards on file |
+| GET | `/storage_policies` | get_storage_policies | `fields`, `marker`, `limit` | StoragePolicies | yes | List storage policies |
+| GET | `/storage_policies/{storage_policy_id}` | get_storage_policies_id | `storage_policy_id`* | StoragePolicy | yes | Get storage policy |
+| GET | `/storage_policy_assignments` | get_storage_policy_assignments | `marker`, `resolved_for_type`*, `resolved_for_id`* | StoragePolicyAssignments | yes | List storage policy assignments |
+| POST | `/storage_policy_assignments` | post_storage_policy_assignments | body: object | StoragePolicyAssignment |  | Assign storage policy |
+| GET | `/storage_policy_assignments/{storage_policy_assignment_id}` | get_storage_policy_assignments_id | `storage_policy_assignment_id`* | StoragePolicyAssignment | yes | Get storage policy assignment |
+| PUT | `/storage_policy_assignments/{storage_policy_assignment_id}` | put_storage_policy_assignments_id | `storage_policy_assignment_id`*, body: object | StoragePolicyAssignment |  | Update storage policy assignment |
+| DELETE | `/storage_policy_assignments/{storage_policy_assignment_id}` | delete_storage_policy_assignments_id | `storage_policy_assignment_id`* | — |  | Unassign storage policy |
+| POST | `/task_assignments` | post_task_assignments | body: object | TaskAssignment |  | Assign task |
+| GET | `/task_assignments/{task_assignment_id}` | get_task_assignments_id | `task_assignment_id`* | TaskAssignment | yes | Get task assignment |
+| PUT | `/task_assignments/{task_assignment_id}` | put_task_assignments_id | `task_assignment_id`*, body: object | TaskAssignment |  | Update task assignment |
+| DELETE | `/task_assignments/{task_assignment_id}` | delete_task_assignments_id | `task_assignment_id`* | — |  | Unassign task |
+| POST | `/tasks` | post_tasks | body: object | Task |  | Create task |
+| GET | `/tasks/{task_id}` | get_tasks_id | `task_id`* | Task | yes | Get task |
+| PUT | `/tasks/{task_id}` | put_tasks_id | `task_id`*, body: object | Task |  | Update task |
+| DELETE | `/tasks/{task_id}` | delete_tasks_id | `task_id`* | — |  | Remove task |
+| GET | `/tasks/{task_id}/assignments` | get_tasks_id_assignments | `task_id`* | TaskAssignments | yes | List task assignments |
+| GET | `/terms_of_service_user_statuses` | get_terms_of_service_user_statuses | `tos_id`*, `user_id` | TermsOfServiceUserStatuses | yes | List terms of service user statuses |
+| POST | `/terms_of_service_user_statuses` | post_terms_of_service_user_statuses | body: object | TermsOfServiceUserStatus |  | Create terms of service status for new user |
+| PUT | `/terms_of_service_user_statuses/{terms_of_service_user_status_id}` | put_terms_of_service_user_statuses_id | `terms_of_service_user_status_id`*, body: object | TermsOfServiceUserStatus |  | Update terms of service status for existing user |
+| GET | `/terms_of_services` | get_terms_of_services | `tos_type` | TermsOfServices | yes | List terms of services |
+| POST | `/terms_of_services` | post_terms_of_services | body: object | Task |  | Create terms of service |
+| GET | `/terms_of_services/{terms_of_service_id}` | get_terms_of_services_id | `terms_of_service_id`* | TermsOfService | yes | Get terms of service |
+| PUT | `/terms_of_services/{terms_of_service_id}` | put_terms_of_services_id | `terms_of_service_id`*, body: object | TermsOfService |  | Update terms of service |
+| GET | `/users` | get_users | `filter_term`, `user_type`, `external_app_user_id`, `fields`, `offset`, `limit`, `usemarker`, `marker` | Users | yes | List enterprise users |
+| POST | `/users` | post_users | `fields`, body: object | User |  | Create user |
+| GET | `/users/me` | get_users_me | `fields` | User | yes | Get current user |
+| POST | `/users/terminate_sessions` | post_users_terminate_sessions | body: object | SessionTerminationMessage |  | Create jobs to terminate users session |
+| GET | `/users/{user_id}` | get_users_id | `user_id`*, `fields` | User | yes | Get user |
+| PUT | `/users/{user_id}` | put_users_id | `user_id`*, `fields`, body: object | User |  | Update user |
+| DELETE | `/users/{user_id}` | delete_users_id | `user_id`*, `notify`, `force` | — |  | Delete user |
+| GET | `/users/{user_id}/avatar` | get_users_id_avatar | `user_id`* | string:binary | yes | Get user avatar |
+| POST | `/users/{user_id}/avatar` | post_users_id_avatar | `user_id`*, body: object | UserAvatar |  | Add or update user avatar |
+| DELETE | `/users/{user_id}/avatar` | delete_users_id_avatar | `user_id`* | — |  | Delete user avatar |
+| GET | `/users/{user_id}/email_aliases` | get_users_id_email_aliases | `user_id`* | EmailAliases | yes | List user's email aliases |
+| POST | `/users/{user_id}/email_aliases` | post_users_id_email_aliases | `user_id`*, body: object | EmailAlias |  | Create email alias |
+| DELETE | `/users/{user_id}/email_aliases/{email_alias_id}` | delete_users_id_email_aliases_id | `user_id`*, `email_alias_id`* | — |  | Remove email alias |
+| PUT | `/users/{user_id}/folders/0` | put_users_id_folders_0 | `user_id`*, `fields`, `notify`, body: object | Folder |  | Transfer owned folders |
+| GET | `/users/{user_id}/memberships` | get_users_id_memberships | `user_id`*, `limit`, `offset` | GroupMemberships | yes | List user's groups |
+| POST | `/web_links` | post_web_links | body: object | WebLink |  | Create web link |
+| GET | `/web_links/{web_link_id}` | get_web_links_id | `web_link_id`*, `boxapi` | WebLink | yes | Get web link |
+| PUT | `/web_links/{web_link_id}` | put_web_links_id | `web_link_id`*, body: object | WebLink |  | Update web link |
+| POST | `/web_links/{web_link_id}` | post_web_links_id | `web_link_id`*, `fields`, body: object | TrashWebLinkRestored |  | Restore web link |
+| DELETE | `/web_links/{web_link_id}` | delete_web_links_id | `web_link_id`* | — |  | Remove web link |
+| PUT | `/web_links/{web_link_id}#add_shared_link` | put_web_links_id#add_shared_link | `web_link_id`*, `fields`*, body: object | WebLink |  | Add shared link to web link |
+| GET | `/web_links/{web_link_id}#get_shared_link` | get_web_links_id#get_shared_link | `web_link_id`*, `fields`* | WebLink | yes | Get shared link for web link |
+| PUT | `/web_links/{web_link_id}#remove_shared_link` | put_web_links_id#remove_shared_link | `web_link_id`*, `fields`*, body: object | WebLink |  | Remove shared link from web link |
+| PUT | `/web_links/{web_link_id}#update_shared_link` | put_web_links_id#update_shared_link | `web_link_id`*, `fields`*, body: object | WebLink |  | Update shared link on web link |
+| GET | `/web_links/{web_link_id}/trash` | get_web_links_id_trash | `web_link_id`*, `fields` | TrashWebLink | yes | Get trashed web link |
+| DELETE | `/web_links/{web_link_id}/trash` | delete_web_links_id_trash | `web_link_id`* | — |  | Permanently remove web link |
+| GET | `/webhooks` | get_webhooks | `marker`, `limit` | Webhooks | yes | List all webhooks |
+| POST | `/webhooks` | post_webhooks | body: object | Webhook |  | Create webhook |
+| GET | `/webhooks/{webhook_id}` | get_webhooks_id | `webhook_id`* | Webhook | yes | Get webhook |
+| PUT | `/webhooks/{webhook_id}` | put_webhooks_id | `webhook_id`*, body: object | Webhook |  | Update webhook |
+| DELETE | `/webhooks/{webhook_id}` | delete_webhooks_id | `webhook_id`* | — |  | Remove webhook |
+| GET | `/workflows` | get_workflows | `folder_id`*, `trigger_type`, `limit`, `marker` | Workflows | yes | List workflows |
+| POST | `/workflows/{workflow_id}/start` | post_workflows_id_start | `workflow_id`*, body: object | — |  | Starts workflow based on request body |
+| POST | `/zip_downloads` | post_zip_downloads | body: ZipDownloadRequest | ZipDownload |  | Create zip download |
+| GET | `/zip_downloads/{zip_download_id}/content` | get_zip_downloads_id_content | `zip_download_id`* | string:binary | yes | Download zip archive |
+| GET | `/zip_downloads/{zip_download_id}/status` | get_zip_downloads_id_status | `zip_download_id`* | ZipDownloadStatus | yes | Get zip download status |

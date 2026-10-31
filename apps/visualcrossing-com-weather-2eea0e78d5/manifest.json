@@ -37,58 +37,380 @@
       },
       {
         "deprecated": false,
+        "description": "Seamless access to daily and hourly historical and forecast weather data plus weather alerts, events and current conditions.",
         "id": "operation:get:/VisualCrossingWebServices/rest/services/timeline/{location}",
         "kind": "operation",
         "method": "get",
         "name": "get /VisualCrossingWebServices/rest/services/timeline/{location}",
+        "parameters": [
+          {
+            "description": "Locaton of interest as an address, partial address or decimal latitude,longtude value",
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "data format of the output either json or CSV",
+            "in": "query",
+            "name": "contentType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "unitGroup",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "data to include in the output (required for CSV format - days,hours,alerts,current,events )",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Language to use for weather descriptions",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/VisualCrossingWebServices/rest/services/timeline/{location}",
         "pointer": "#/paths/~1VisualCrossingWebServices~1rest~1services~1timeline~1{location}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Historical and Forecast Weather API"
+        "summary": "Historical and Forecast Weather API",
+        "tags": [
+          "Timeline Weather API (15-day forecast request)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Seamless access to daily and hourly historical and forecast weather data plus weather alerts, events and current conditions.",
         "id": "operation:get:/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}",
         "kind": "operation",
         "method": "get",
         "name": "get /VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "startdate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "data format of the output either json or CSV",
+            "in": "query",
+            "name": "contentType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "unitGroup",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "data to include in the output (required for CSV format - days,hours,alerts,current,events )",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Language to use for weather descriptions",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}",
         "pointer": "#/paths/~1VisualCrossingWebServices~1rest~1services~1timeline~1{location}~1{startdate}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Historical and Forecast Weather API"
+        "summary": "Historical and Forecast Weather API",
+        "tags": [
+          "Timeline Weather API (single date request)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Seamless access to daily and hourly historical and forecast weather data plus weather alerts, events and current conditions.",
         "id": "operation:get:/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate}",
         "kind": "operation",
         "method": "get",
         "name": "get /VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "location",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "startdate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "enddate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "data format of the output either json or CSV",
+            "in": "query",
+            "name": "contentType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "unitGroup",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "data to include in the output (required for CSV format - days,hours,alerts,current,events )",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Language to use for weather descriptions",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate}",
         "pointer": "#/paths/~1VisualCrossingWebServices~1rest~1services~1timeline~1{location}~1{startdate}~1{enddate}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Historical and Forecast Weather API"
+        "summary": "Historical and Forecast Weather API",
+        "tags": [
+          "Timeline Weather API (date range request)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides access to weather forecast information.",
         "id": "operation:get:/VisualCrossingWebServices/rest/services/weatherdata/forecast",
         "kind": "operation",
         "method": "get",
         "name": "get /VisualCrossingWebServices/rest/services/weatherdata/forecast",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sendAsDatasource",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "allowAsynch",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "shortColumnNames",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "locations",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "aggregateHours",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "contentType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "unitGroup",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/VisualCrossingWebServices/rest/services/weatherdata/forecast",
         "pointer": "#/paths/~1VisualCrossingWebServices~1rest~1services~1weatherdata~1forecast/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Weather Forecast API"
+        "summary": "Weather Forecast API",
+        "tags": [
+          "Weather Forecast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The weather history data is suitable for retrieving hourly or daily historical weather records.",
         "id": "operation:get:/VisualCrossingWebServices/rest/services/weatherdata/history",
         "kind": "operation",
         "method": "get",
         "name": "get /VisualCrossingWebServices/rest/services/weatherdata/history",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "maxDistance",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "shortColumnNames",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "endDateTime",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "aggregateHours",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "collectStationContributions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "startDateTime",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "maxStations",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "allowAsynch",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "locations",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "includeNormals",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "contentType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "unitGroup",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/VisualCrossingWebServices/rest/services/weatherdata/history",
         "pointer": "#/paths/~1VisualCrossingWebServices~1rest~1services~1weatherdata~1history/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves hourly or daily historical weather records."
+        "summary": "Retrieves hourly or daily historical weather records.",
+        "tags": [
+          "Historical Weather"
+        ]
       }
     ]
   },

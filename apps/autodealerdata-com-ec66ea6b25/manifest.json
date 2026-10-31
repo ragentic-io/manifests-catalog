@@ -178,6 +178,256 @@
         "from": "autodealerdata-com-ec66ea6b25",
         "kind": "EXPOSES",
         "to": "operation:get:/vinDecode"
+      },
+      {
+        "from": "operation:get:/daysSupply",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/daysToSell",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/getBrands",
+        "kind": "RETURNS",
+        "to": "schema:BrandResp"
+      },
+      {
+        "from": "operation:get:/getDealers",
+        "kind": "RETURNS",
+        "to": "schema:DealershipDataResp"
+      },
+      {
+        "from": "operation:get:/getDealersByID",
+        "kind": "RETURNS",
+        "to": "schema:DealershipDataResp"
+      },
+      {
+        "from": "operation:get:/getDealersByRegion",
+        "kind": "RETURNS",
+        "to": "schema:DealershipDataPaginatedResp"
+      },
+      {
+        "from": "operation:get:/getInactiveModels",
+        "kind": "RETURNS",
+        "to": "schema:ModelResp"
+      },
+      {
+        "from": "operation:get:/getModels",
+        "kind": "RETURNS",
+        "to": "schema:ModelResp"
+      },
+      {
+        "from": "operation:get:/getRegionBrandMarketShare",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/getRegionMarketShare",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/getRegions",
+        "kind": "RETURNS",
+        "to": "schema:RegionResp"
+      },
+      {
+        "from": "operation:get:/getSubUserKeys",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/getToken",
+        "kind": "RETURNS",
+        "to": "schema:JSONWebToken"
+      },
+      {
+        "from": "operation:post:/getToken",
+        "kind": "RETURNS",
+        "to": "schema:JSONWebToken"
+      },
+      {
+        "from": "operation:get:/listPrice",
+        "kind": "RETURNS",
+        "to": "schema:BasicModelStatsResp"
+      },
+      {
+        "from": "operation:get:/listings",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:get:/listings2",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:get:/listingsByDate",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:get:/listingsByRegion",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:get:/listingsByRegionAndDate",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:get:/listingsByZipCode",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:get:/listingsByZipCodeAndDate",
+        "kind": "RETURNS",
+        "to": "schema:ListingResp"
+      },
+      {
+        "from": "operation:post:/makeSubUserKey",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointList"
+      },
+      {
+        "from": "operation:post:/makeSubUserKey",
+        "kind": "RETURNS",
+        "to": "schema:SubUserJSONWebToken"
+      },
+      {
+        "from": "operation:get:/modelYearDist",
+        "kind": "RETURNS",
+        "to": "schema:ModelYearDistResp"
+      },
+      {
+        "from": "operation:get:/regionDailySales",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/regionSales",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:put:/revokeSubUserKey",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:get:/salePrice",
+        "kind": "RETURNS",
+        "to": "schema:BasicModelStatsResp"
+      },
+      {
+        "from": "operation:get:/salePriceHistogram",
+        "kind": "RETURNS",
+        "to": "schema:BucketResp"
+      },
+      {
+        "from": "operation:get:/similarSalePrice",
+        "kind": "RETURNS",
+        "to": "schema:SimilarSalePriceResp"
+      },
+      {
+        "from": "operation:get:/topModels",
+        "kind": "RETURNS",
+        "to": "schema:TopModelResp"
+      },
+      {
+        "from": "operation:get:/valuation",
+        "kind": "RETURNS",
+        "to": "schema:SimilarSalePriceResp"
+      },
+      {
+        "from": "operation:get:/vehicleHistory",
+        "kind": "RETURNS",
+        "to": "schema:HistoryResp"
+      },
+      {
+        "from": "operation:get:/vehicleSeen",
+        "kind": "RETURNS",
+        "to": "schema:BooleanResp"
+      },
+      {
+        "from": "operation:get:/vinDecode",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "schema:BasicModelStatsResp",
+        "kind": "REFERENCES",
+        "to": "schema:BasicModelStats"
+      },
+      {
+        "from": "schema:BucketResp",
+        "kind": "REFERENCES",
+        "to": "schema:BucketEntry"
+      },
+      {
+        "from": "schema:DealershipDataPaginated",
+        "kind": "REFERENCES",
+        "to": "schema:DealershipData"
+      },
+      {
+        "from": "schema:DealershipDataPaginatedResp",
+        "kind": "REFERENCES",
+        "to": "schema:DealershipDataPaginated"
+      },
+      {
+        "from": "schema:DealershipDataResp",
+        "kind": "REFERENCES",
+        "to": "schema:DealershipData"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:HistoryResp",
+        "kind": "REFERENCES",
+        "to": "schema:VehHistoryData"
+      },
+      {
+        "from": "schema:ListingResp",
+        "kind": "REFERENCES",
+        "to": "schema:ListingRespPaginated"
+      },
+      {
+        "from": "schema:ListingRespPaginated",
+        "kind": "REFERENCES",
+        "to": "schema:Listing"
+      },
+      {
+        "from": "schema:ModelResp",
+        "kind": "REFERENCES",
+        "to": "schema:ModelDict"
+      },
+      {
+        "from": "schema:ModelYearDistResp",
+        "kind": "REFERENCES",
+        "to": "schema:ModelYearDistEntry"
+      },
+      {
+        "from": "schema:SimilarSalePriceResp",
+        "kind": "REFERENCES",
+        "to": "schema:SimilarSalePriceData"
+      },
+      {
+        "from": "schema:TopModelResp",
+        "kind": "REFERENCES",
+        "to": "schema:TopModelEntry"
+      },
+      {
+        "from": "schema:VehHistoryData",
+        "kind": "REFERENCES",
+        "to": "schema:VehHistory"
       }
     ],
     "nodes": [
@@ -187,36 +437,134 @@
       },
       {
         "deprecated": false,
+        "description": "Average, median, standard deviation, population variance, and whole region average of the days of supply left on dealer lots for a given brand and region.",
         "id": "operation:get:/daysSupply",
         "kind": "operation",
         "method": "get",
         "name": "daysSupply_daysSupply_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/daysSupply",
         "pointer": "#/paths/~1daysSupply/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Days worth of supply left on dealer lots"
+        "summary": "Days worth of supply left on dealer lots",
+        "tags": [
+          "Supply Data",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Average, median, standard deviation, population variance, and whole region average of the number of days a vehicle spends on dealer lots for a given brand and…",
         "id": "operation:get:/daysToSell",
         "kind": "operation",
         "method": "get",
         "name": "daysToSell_daysToSell_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/daysToSell",
         "pointer": "#/paths/~1daysToSell/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Days a vehicle takes to sell"
+        "summary": "Days a vehicle takes to sell",
+        "tags": [
+          "Supply Data",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get vehicle brand names.",
         "id": "operation:get:/getBrands",
         "kind": "operation",
         "method": "get",
         "name": "getBrandNames_getBrands_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getBrands",
         "pointer": "#/paths/~1getBrands/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrandResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of brand names"
+        "summary": "Get a list of brand names",
+        "tags": [
+          "Static Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -224,10 +572,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getDealers_getDealers_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "zipCode",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/getDealers",
         "pointer": "#/paths/~1getDealers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DealershipDataResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Dealers in a zip code."
+        "summary": "Premium. Dealers in a zip code.",
+        "tags": [
+          "Dealership Data",
+          "Premium",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -235,10 +613,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getDealers_getDealersByID_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dealerID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/getDealersByID",
         "pointer": "#/paths/~1getDealersByID/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DealershipDataResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Dealers by ID"
+        "summary": "Premium. Dealers by ID",
+        "tags": [
+          "Dealership Data",
+          "Premium",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -246,219 +654,1131 @@
         "kind": "operation",
         "method": "get",
         "name": "getDealers_getDealersByRegion_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/getDealersByRegion",
         "pointer": "#/paths/~1getDealersByRegion/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DealershipDataPaginatedResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Dealers in a region."
+        "summary": "Premium. Dealers in a region.",
+        "tags": [
+          "Dealership Data",
+          "Premium",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all model names including discontinued models.",
         "id": "operation:get:/getInactiveModels",
         "kind": "operation",
         "method": "get",
         "name": "getModelNamesAll_getInactiveModels_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getInactiveModels",
         "pointer": "#/paths/~1getInactiveModels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of model names including discontinued models"
+        "summary": "Get a list of model names including discontinued models",
+        "tags": [
+          "Static Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get brand model names for currently active models.",
         "id": "operation:get:/getModels",
         "kind": "operation",
         "method": "get",
         "name": "getModelNames_getModels_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getModels",
         "pointer": "#/paths/~1getModels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of model names"
+        "summary": "Get a list of model names",
+        "tags": [
+          "Static Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Market share of a given brand in a given region by number of vehicles sold over the last 45 days.",
         "id": "operation:get:/getRegionBrandMarketShare",
         "kind": "operation",
         "method": "get",
         "name": "getRegionBrandMarketShare_getRegionBrandMarketShare_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getRegionBrandMarketShare",
         "pointer": "#/paths/~1getRegionBrandMarketShare/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Market share of a brand in region"
+        "summary": "Market share of a brand in region",
+        "tags": [
+          "Sales Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Market share of a all brands in a given region by number of vehicles sold over the last 45 days.",
         "id": "operation:get:/getRegionMarketShare",
         "kind": "operation",
         "method": "get",
         "name": "getRegionMarketShare_getRegionMarketShare_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getRegionMarketShare",
         "pointer": "#/paths/~1getRegionMarketShare/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Market share of all brands in region"
+        "summary": "Market share of all brands in region",
+        "tags": [
+          "Sales Data",
+          "Premium",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get region names.",
         "id": "operation:get:/getRegions",
         "kind": "operation",
         "method": "get",
         "name": "getRegions_getRegions_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getRegions",
         "pointer": "#/paths/~1getRegions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RegionResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of region names"
+        "summary": "Get a list of region names",
+        "tags": [
+          "Static Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of your issued SubUser API Keys.",
         "id": "operation:get:/getSubUserKeys",
         "kind": "operation",
         "method": "get",
         "name": "getSubUserKeys_getSubUserKeys_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "apiID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getSubUserKeys",
         "pointer": "#/paths/~1getSubUserKeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all Sub User Keys associated with your account."
+        "summary": "Get all Sub User Keys associated with your account.",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is the first function you should call.",
         "id": "operation:get:/getToken",
         "kind": "operation",
         "method": "get",
         "name": "makeToken_getToken_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "apiID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getToken",
         "pointer": "#/paths/~1getToken/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JSONWebToken"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a JWT from your API credentials"
+        "summary": "Get a JWT from your API credentials",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is the first function you should call.",
         "id": "operation:post:/getToken",
         "kind": "operation",
         "method": "post",
         "name": "makeToken_getToken_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "apiID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getToken",
         "pointer": "#/paths/~1getToken/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JSONWebToken"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get a JWT from your API credentials"
+        "summary": "Get a JWT from your API credentials",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Average, median, standard deviation, and population variance of the ask price of new vehicles over the last 15 days for a given brand and region.",
         "id": "operation:get:/listPrice",
         "kind": "operation",
         "method": "get",
         "name": "getAvgListPrice_listPrice_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listPrice",
         "pointer": "#/paths/~1listPrice/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BasicModelStatsResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Stats on ask price of new vehicles"
+        "summary": "Stats on ask price of new vehicles",
+        "tags": [
+          "Pricing Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See /listings2 endpoint for more flexible listing search.",
         "id": "operation:get:/listings",
         "kind": "operation",
         "method": "get",
         "name": "getListingsByDealer_listings_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dealerID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/listings",
         "pointer": "#/paths/~1listings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listings by Dealer ID"
+        "summary": "Listings by Dealer ID",
+        "tags": [
+          "Vehicle Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generic getter for listings supporting a wide array of selection criteria.",
         "id": "operation:get:/listings2",
         "kind": "operation",
         "method": "get",
         "name": "getListings2_listings2_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "dealerID",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "zipCode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "modelYear",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "mileageLow",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "mileageHigh",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "default": 45,
+            "in": "query",
+            "name": "daysBack",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "extendedSearch",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/listings2",
         "pointer": "#/paths/~1listings2/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Flexible Listing Search"
+        "summary": "Flexible Listing Search",
+        "tags": [
+          "Vehicle Data",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See /listings2 endpoint for more flexible listing search.",
         "id": "operation:get:/listingsByDate",
         "kind": "operation",
         "method": "get",
         "name": "getListingsByDealer_listingsByDate_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dealerID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/listingsByDate",
         "pointer": "#/paths/~1listingsByDate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listings by Dealer ID and Date"
+        "summary": "Listings by Dealer ID and Date",
+        "tags": [
+          "Vehicle Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See /listings2 endpoint for more flexible listing search.",
         "id": "operation:get:/listingsByRegion",
         "kind": "operation",
         "method": "get",
         "name": "getListingsByRegion_listingsByRegion_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "regionName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "in": "query",
+            "name": "daysBack",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/listingsByRegion",
         "pointer": "#/paths/~1listingsByRegion/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listings by Region"
+        "summary": "Listings by Region",
+        "tags": [
+          "Vehicle Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See /listings2 endpoint for more flexible listing search.",
         "id": "operation:get:/listingsByRegionAndDate",
         "kind": "operation",
         "method": "get",
         "name": "getListingsByRegionAndDate_listingsByRegionAndDate_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "regionName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/listingsByRegionAndDate",
         "pointer": "#/paths/~1listingsByRegionAndDate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listings by Region and Date"
+        "summary": "Listings by Region and Date",
+        "tags": [
+          "Vehicle Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See /listings2 endpoint for more flexible listing search.",
         "id": "operation:get:/listingsByZipCode",
         "kind": "operation",
         "method": "get",
         "name": "listingsByZipCode_listingsByZipCode_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "zipCode",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listingsByZipCode",
         "pointer": "#/paths/~1listingsByZipCode/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listings by ZipCode"
+        "summary": "Listings by ZipCode",
+        "tags": [
+          "Vehicle Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See /listings2 endpoint for more flexible listing search.",
         "id": "operation:get:/listingsByZipCodeAndDate",
         "kind": "operation",
         "method": "get",
         "name": "listingsByZipCodeAndDate_listingsByZipCodeAndDate_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "zipCode",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/listingsByZipCodeAndDate",
         "pointer": "#/paths/~1listingsByZipCodeAndDate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListingResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listings by ZipCode and Date"
+        "summary": "Listings by ZipCode and Date",
+        "tags": [
+          "Vehicle Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint is only fully available to users with a paid plan.",
         "id": "operation:post:/makeSubUserKey",
         "kind": "operation",
         "method": "post",
         "name": "makeSubUserKey_makeSubUserKey_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "apiID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "localhost",
+            "in": "query",
+            "name": "siteName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/makeSubUserKey",
         "pointer": "#/paths/~1makeSubUserKey/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointList"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubUserJSONWebToken"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Generate a Sub User Key that can be used by your users to make API calls in frontend applications."
+        "summary": "Generate a Sub User Key that can be used by your users to make API calls in frontend applications.",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Market share of used vehicles over the last 45 days by model and year.",
         "id": "operation:get:/modelYearDist",
         "kind": "operation",
         "method": "get",
         "name": "getModelUsedDist_modelYearDist_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/modelYearDist",
         "pointer": "#/paths/~1modelYearDist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelYearDistResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Used market share of model year by model"
+        "summary": "Used market share of model year by model",
+        "tags": [
+          "Sales Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get regional sales by brand and day.",
         "id": "operation:get:/regionDailySales",
         "kind": "operation",
         "method": "get",
         "name": "getDealerSales_regionDailySales_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "regionName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "day",
+            "required": true,
+            "type": "string:date"
+          }
+        ],
         "path": "/regionDailySales",
         "pointer": "#/paths/~1regionDailySales/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Brand sales by region and Day"
+        "summary": "Brand sales by region and Day",
+        "tags": [
+          "Sales Data",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -466,43 +1786,200 @@
         "kind": "operation",
         "method": "get",
         "name": "getDealerSales_regionSales_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "regionName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "month",
+            "required": true,
+            "type": "string:date"
+          }
+        ],
         "path": "/regionSales",
         "pointer": "#/paths/~1regionSales/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Brand sales by region and month"
+        "summary": "Premium. Brand sales by region and month",
+        "tags": [
+          "Sales Data",
+          "Premium",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Revoke a SubUser API Key with the given UUID.",
         "id": "operation:put:/revokeSubUserKey",
         "kind": "operation",
         "method": "put",
         "name": "revokeSubUserKey_revokeSubUserKey_put",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "apiID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "subUserKeyUUID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/revokeSubUserKey",
         "pointer": "#/paths/~1revokeSubUserKey/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Revoke a Sub User Key associated with your account."
+        "summary": "Revoke a Sub User Key associated with your account.",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Average, median, standard deviation, and population variance of the sale price of new vehicles over the last 15 days for a given brand and region.",
         "id": "operation:get:/salePrice",
         "kind": "operation",
         "method": "get",
         "name": "getAvgSalePrice_salePrice_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/salePrice",
         "pointer": "#/paths/~1salePrice/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BasicModelStatsResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Stats on sale price of new vehicles"
+        "summary": "Stats on sale price of new vehicles",
+        "tags": [
+          "Pricing Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Histogram of the sale price of vehicles over the last 45 days for a given model and region.",
         "id": "operation:get:/salePriceHistogram",
         "kind": "operation",
         "method": "get",
         "name": "getModelSaleBuckets_salePriceHistogram_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "modelName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "brandName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/salePriceHistogram",
         "pointer": "#/paths/~1salePriceHistogram/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BucketResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Histogram of sales price of new vehicles by model"
+        "summary": "Histogram of sales price of new vehicles by model",
+        "tags": [
+          "Pricing Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -510,21 +1987,104 @@
         "kind": "operation",
         "method": "get",
         "name": "getMarket3_similarSalePrice_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "vin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 45,
+            "in": "query",
+            "name": "daysBack",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "sameYear",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/similarSalePrice",
         "pointer": "#/paths/~1similarSalePrice/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SimilarSalePriceResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Simple Vehicle Market Report"
+        "summary": "Premium. Simple Vehicle Market Report",
+        "tags": [
+          "Vehicle Data",
+          "Premium",
+          "Pricing Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sales ranking of different models by region over the last 45 days.",
         "id": "operation:get:/topModels",
         "kind": "operation",
         "method": "get",
         "name": "getTopModels_topModels_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "REGION_STATE_CA",
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/topModels",
         "pointer": "#/paths/~1topModels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TopModelResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Top models in a given region"
+        "summary": "Top models in a given region",
+        "tags": [
+          "Sales Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -532,10 +2092,136 @@
         "kind": "operation",
         "method": "get",
         "name": "getMarket4_valuation_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "vin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "dealerID",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "zipCode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "regionName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "mileageLow",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "mileageHigh",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "default": 45,
+            "in": "query",
+            "name": "daysBack",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "newCars",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "extendedSearch",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "sameYear",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/valuation",
         "pointer": "#/paths/~1valuation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SimilarSalePriceResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Simple Vehicle Market Report Over Arbitrary Locations and Vehicles."
+        "summary": "Premium. Simple Vehicle Market Report Over Arbitrary Locations and Vehicles.",
+        "tags": [
+          "Vehicle Data",
+          "Premium",
+          "Pricing Data",
+          "Developer Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
@@ -543,187 +2229,329 @@
         "kind": "operation",
         "method": "get",
         "name": "getHistory2_vehicleHistory_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "vin",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vehicleHistory",
         "pointer": "#/paths/~1vehicleHistory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Premium. Simple Vehicle History Report"
+        "summary": "Premium. Simple Vehicle History Report",
+        "tags": [
+          "Vehicle Data",
+          "Premium",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks our database to see if we have data on a VIN that appeared on the open market on or after the given date with a True/False response.",
         "id": "operation:get:/vehicleSeen",
         "kind": "operation",
         "method": "get",
         "name": "getVehicleSeen_vehicleSeen_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "vin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterDate",
+            "required": true,
+            "type": "string:date"
+          }
+        ],
         "path": "/vehicleSeen",
         "pointer": "#/paths/~1vehicleSeen/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BooleanResp"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Checks if a VIN appeared on the market on or after a given date."
+        "summary": "Checks if a VIN appeared on the market on or after a given date.",
+        "tags": [
+          "Vehicle Data",
+          "Application Acceleration",
+          "Analyst Plan Or Greater"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Decodes the provided North American vin and provides recall information if available.",
         "id": "operation:get:/vinDecode",
         "kind": "operation",
         "method": "get",
         "name": "vinDecode_vinDecode_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "vin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "passEmpty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "includeRecall",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/vinDecode",
         "pointer": "#/paths/~1vinDecode/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Vin decoder and Recall Info"
+        "summary": "Vin decoder and Recall Info",
+        "tags": [
+          "Vehicle Data",
+          "Starter Plan Or Greater"
+        ]
       },
       {
         "id": "schema:BasicModelStats",
         "kind": "schema",
-        "name": "BasicModelStats"
+        "name": "BasicModelStats",
+        "type": "object"
       },
       {
         "id": "schema:BasicModelStatsResp",
         "kind": "schema",
-        "name": "BasicModelStatsResp"
+        "name": "BasicModelStatsResp",
+        "type": "object"
       },
       {
         "id": "schema:BooleanResp",
         "kind": "schema",
-        "name": "BooleanResp"
+        "name": "BooleanResp",
+        "type": "object"
       },
       {
         "id": "schema:BrandResp",
         "kind": "schema",
-        "name": "BrandResp"
+        "name": "BrandResp",
+        "type": "object"
       },
       {
         "id": "schema:BucketEntry",
         "kind": "schema",
-        "name": "BucketEntry"
+        "name": "BucketEntry",
+        "type": "object"
       },
       {
         "id": "schema:BucketResp",
         "kind": "schema",
-        "name": "BucketResp"
+        "name": "BucketResp",
+        "type": "object"
       },
       {
         "id": "schema:DealershipData",
         "kind": "schema",
-        "name": "DealershipData"
+        "name": "DealershipData",
+        "type": "object"
       },
       {
         "id": "schema:DealershipDataPaginated",
         "kind": "schema",
-        "name": "DealershipDataPaginated"
+        "name": "DealershipDataPaginated",
+        "type": "object"
       },
       {
         "id": "schema:DealershipDataPaginatedResp",
         "kind": "schema",
-        "name": "DealershipDataPaginatedResp"
+        "name": "DealershipDataPaginatedResp",
+        "type": "object"
       },
       {
         "id": "schema:DealershipDataResp",
         "kind": "schema",
-        "name": "DealershipDataResp"
+        "name": "DealershipDataResp",
+        "type": "object"
       },
       {
         "id": "schema:EndpointList",
         "kind": "schema",
-        "name": "EndpointList"
+        "name": "EndpointList",
+        "type": "object"
       },
       {
         "id": "schema:GenericResponse",
         "kind": "schema",
-        "name": "GenericResponse"
+        "name": "GenericResponse",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:HistoryResp",
         "kind": "schema",
-        "name": "HistoryResp"
+        "name": "HistoryResp",
+        "type": "object"
       },
       {
         "id": "schema:JSONWebToken",
         "kind": "schema",
-        "name": "JSONWebToken"
+        "name": "JSONWebToken",
+        "type": "object"
       },
       {
         "id": "schema:Listing",
         "kind": "schema",
-        "name": "Listing"
+        "name": "Listing",
+        "type": "object"
       },
       {
         "id": "schema:ListingResp",
         "kind": "schema",
-        "name": "ListingResp"
+        "name": "ListingResp",
+        "type": "object"
       },
       {
         "id": "schema:ListingRespPaginated",
         "kind": "schema",
-        "name": "ListingRespPaginated"
+        "name": "ListingRespPaginated",
+        "type": "object"
       },
       {
         "id": "schema:ModelDict",
         "kind": "schema",
-        "name": "ModelDict"
+        "name": "ModelDict",
+        "type": "object"
       },
       {
         "id": "schema:ModelResp",
         "kind": "schema",
-        "name": "ModelResp"
+        "name": "ModelResp",
+        "type": "object"
       },
       {
         "id": "schema:ModelYearDistEntry",
         "kind": "schema",
-        "name": "ModelYearDistEntry"
+        "name": "ModelYearDistEntry",
+        "type": "object"
       },
       {
         "id": "schema:ModelYearDistResp",
         "kind": "schema",
-        "name": "ModelYearDistResp"
+        "name": "ModelYearDistResp",
+        "type": "object"
       },
       {
         "id": "schema:RegionResp",
         "kind": "schema",
-        "name": "RegionResp"
+        "name": "RegionResp",
+        "type": "object"
       },
       {
         "id": "schema:SimilarSalePriceData",
         "kind": "schema",
-        "name": "SimilarSalePriceData"
+        "name": "SimilarSalePriceData",
+        "type": "object"
       },
       {
         "id": "schema:SimilarSalePriceResp",
         "kind": "schema",
-        "name": "SimilarSalePriceResp"
+        "name": "SimilarSalePriceResp",
+        "type": "object"
       },
       {
         "id": "schema:SubUserJSONWebToken",
         "kind": "schema",
-        "name": "SubUserJSONWebToken"
+        "name": "SubUserJSONWebToken",
+        "type": "object"
       },
       {
         "id": "schema:TopModelEntry",
         "kind": "schema",
-        "name": "TopModelEntry"
+        "name": "TopModelEntry",
+        "type": "object"
       },
       {
         "id": "schema:TopModelResp",
         "kind": "schema",
-        "name": "TopModelResp"
+        "name": "TopModelResp",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VehHistory",
         "kind": "schema",
-        "name": "VehHistory"
+        "name": "VehHistory",
+        "type": "object"
       },
       {
         "id": "schema:VehHistoryData",
         "kind": "schema",
-        "name": "VehHistoryData"
+        "name": "VehHistoryData",
+        "type": "object"
       }
     ]
   },

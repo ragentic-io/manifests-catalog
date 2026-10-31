@@ -72,12 +72,12 @@
       {
         "from": "openai-com-bb438e1309",
         "kind": "EXPOSES",
-        "to": "operation:delete:/files/{file_id}"
+        "to": "operation:get:/files/{file_id}"
       },
       {
         "from": "openai-com-bb438e1309",
         "kind": "EXPOSES",
-        "to": "operation:get:/files/{file_id}"
+        "to": "operation:delete:/files/{file_id}"
       },
       {
         "from": "openai-com-bb438e1309",
@@ -132,17 +132,272 @@
       {
         "from": "openai-com-bb438e1309",
         "kind": "EXPOSES",
-        "to": "operation:delete:/models/{model}"
-      },
-      {
-        "from": "openai-com-bb438e1309",
-        "kind": "EXPOSES",
         "to": "operation:get:/models/{model}"
       },
       {
         "from": "openai-com-bb438e1309",
         "kind": "EXPOSES",
+        "to": "operation:delete:/models/{model}"
+      },
+      {
+        "from": "openai-com-bb438e1309",
+        "kind": "EXPOSES",
         "to": "operation:post:/moderations"
+      },
+      {
+        "from": "operation:post:/answers",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAnswerRequest"
+      },
+      {
+        "from": "operation:post:/answers",
+        "kind": "RETURNS",
+        "to": "schema:CreateAnswerResponse"
+      },
+      {
+        "from": "operation:post:/audio/transcriptions",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateTranscriptionRequest"
+      },
+      {
+        "from": "operation:post:/audio/transcriptions",
+        "kind": "RETURNS",
+        "to": "schema:CreateTranscriptionResponse"
+      },
+      {
+        "from": "operation:post:/audio/translations",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateTranslationRequest"
+      },
+      {
+        "from": "operation:post:/audio/translations",
+        "kind": "RETURNS",
+        "to": "schema:CreateTranslationResponse"
+      },
+      {
+        "from": "operation:post:/chat/completions",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateChatCompletionRequest"
+      },
+      {
+        "from": "operation:post:/chat/completions",
+        "kind": "RETURNS",
+        "to": "schema:CreateChatCompletionResponse"
+      },
+      {
+        "from": "operation:post:/classifications",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateClassificationRequest"
+      },
+      {
+        "from": "operation:post:/classifications",
+        "kind": "RETURNS",
+        "to": "schema:CreateClassificationResponse"
+      },
+      {
+        "from": "operation:post:/completions",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCompletionRequest"
+      },
+      {
+        "from": "operation:post:/completions",
+        "kind": "RETURNS",
+        "to": "schema:CreateCompletionResponse"
+      },
+      {
+        "from": "operation:post:/edits",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateEditRequest"
+      },
+      {
+        "from": "operation:post:/edits",
+        "kind": "RETURNS",
+        "to": "schema:CreateEditResponse"
+      },
+      {
+        "from": "operation:post:/embeddings",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateEmbeddingRequest"
+      },
+      {
+        "from": "operation:post:/embeddings",
+        "kind": "RETURNS",
+        "to": "schema:CreateEmbeddingResponse"
+      },
+      {
+        "from": "operation:get:/engines",
+        "kind": "RETURNS",
+        "to": "schema:ListEnginesResponse"
+      },
+      {
+        "from": "operation:get:/engines/{engine_id}",
+        "kind": "RETURNS",
+        "to": "schema:Engine"
+      },
+      {
+        "from": "operation:post:/engines/{engine_id}/search",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSearchRequest"
+      },
+      {
+        "from": "operation:post:/engines/{engine_id}/search",
+        "kind": "RETURNS",
+        "to": "schema:CreateSearchResponse"
+      },
+      {
+        "from": "operation:get:/files",
+        "kind": "RETURNS",
+        "to": "schema:ListFilesResponse"
+      },
+      {
+        "from": "operation:post:/files",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateFileRequest"
+      },
+      {
+        "from": "operation:post:/files",
+        "kind": "RETURNS",
+        "to": "schema:OpenAIFile"
+      },
+      {
+        "from": "operation:get:/files/{file_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAIFile"
+      },
+      {
+        "from": "operation:delete:/files/{file_id}",
+        "kind": "RETURNS",
+        "to": "schema:DeleteFileResponse"
+      },
+      {
+        "from": "operation:get:/fine-tunes",
+        "kind": "RETURNS",
+        "to": "schema:ListFineTunesResponse"
+      },
+      {
+        "from": "operation:post:/fine-tunes",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateFineTuneRequest"
+      },
+      {
+        "from": "operation:post:/fine-tunes",
+        "kind": "RETURNS",
+        "to": "schema:FineTune"
+      },
+      {
+        "from": "operation:get:/fine-tunes/{fine_tune_id}",
+        "kind": "RETURNS",
+        "to": "schema:FineTune"
+      },
+      {
+        "from": "operation:post:/fine-tunes/{fine_tune_id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:FineTune"
+      },
+      {
+        "from": "operation:get:/fine-tunes/{fine_tune_id}/events",
+        "kind": "RETURNS",
+        "to": "schema:ListFineTuneEventsResponse"
+      },
+      {
+        "from": "operation:post:/images/edits",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateImageEditRequest"
+      },
+      {
+        "from": "operation:post:/images/edits",
+        "kind": "RETURNS",
+        "to": "schema:ImagesResponse"
+      },
+      {
+        "from": "operation:post:/images/generations",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateImageRequest"
+      },
+      {
+        "from": "operation:post:/images/generations",
+        "kind": "RETURNS",
+        "to": "schema:ImagesResponse"
+      },
+      {
+        "from": "operation:post:/images/variations",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateImageVariationRequest"
+      },
+      {
+        "from": "operation:post:/images/variations",
+        "kind": "RETURNS",
+        "to": "schema:ImagesResponse"
+      },
+      {
+        "from": "operation:get:/models",
+        "kind": "RETURNS",
+        "to": "schema:ListModelsResponse"
+      },
+      {
+        "from": "operation:get:/models/{model}",
+        "kind": "RETURNS",
+        "to": "schema:Model"
+      },
+      {
+        "from": "operation:delete:/models/{model}",
+        "kind": "RETURNS",
+        "to": "schema:DeleteModelResponse"
+      },
+      {
+        "from": "operation:post:/moderations",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateModerationRequest"
+      },
+      {
+        "from": "operation:post:/moderations",
+        "kind": "RETURNS",
+        "to": "schema:CreateModerationResponse"
+      },
+      {
+        "from": "schema:CreateChatCompletionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ChatCompletionRequestMessage"
+      },
+      {
+        "from": "schema:CreateChatCompletionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ChatCompletionResponseMessage"
+      },
+      {
+        "from": "schema:FineTune",
+        "kind": "REFERENCES",
+        "to": "schema:FineTuneEvent"
+      },
+      {
+        "from": "schema:FineTune",
+        "kind": "REFERENCES",
+        "to": "schema:OpenAIFile"
+      },
+      {
+        "from": "schema:ListEnginesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Engine"
+      },
+      {
+        "from": "schema:ListFilesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OpenAIFile"
+      },
+      {
+        "from": "schema:ListFineTuneEventsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FineTuneEvent"
+      },
+      {
+        "from": "schema:ListFineTunesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FineTune"
+      },
+      {
+        "from": "schema:ListModelsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Model"
       }
     ],
     "nodes": [
@@ -158,8 +413,25 @@
         "name": "createAnswer",
         "path": "/answers",
         "pointer": "#/paths/~1answers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateAnswerRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateAnswerResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Answers the specified question using the provided documents and examples.\n\nThe endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).\n"
+        "summary": "Answers the specified question using the provided documents and examples.\n\nThe endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -169,8 +441,25 @@
         "name": "createTranscription",
         "path": "/audio/transcriptions",
         "pointer": "#/paths/~1audio~1transcriptions/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "CreateTranscriptionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateTranscriptionResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Transcribes audio into the input language."
+        "summary": "Transcribes audio into the input language.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -180,8 +469,25 @@
         "name": "createTranslation",
         "path": "/audio/translations",
         "pointer": "#/paths/~1audio~1translations/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "CreateTranslationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateTranslationResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translates audio into into English."
+        "summary": "Translates audio into into English.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -191,8 +497,25 @@
         "name": "createChatCompletion",
         "path": "/chat/completions",
         "pointer": "#/paths/~1chat~1completions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateChatCompletionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateChatCompletionResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a completion for the chat message"
+        "summary": "Creates a completion for the chat message",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": true,
@@ -202,8 +525,25 @@
         "name": "createClassification",
         "path": "/classifications",
         "pointer": "#/paths/~1classifications/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateClassificationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateClassificationResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Classifies the specified `query` using provided examples.\n\nThe endpoint first [searches](/docs/api-reference/searches) over the labeled examples\nto select the ones most relevant for the particular query. Then, the relevant examples\nare combined with the query to construct a prompt to produce the final label via the\n[completions](/docs/api-reference/completions) endpoint.\n\nLabeled examples can be provided via an uploaded `file`, or explicitly listed in the\nrequest using the `examples` parameter for quick tests and small scale use cases.\n"
+        "summary": "Classifies the specified `query` using provided examples.\n\nThe endpoint first [searches](/docs/api-reference/searches) over the labeled examples\nto select the ones most relevant for the particular query. Then, the relevant examples\nare combined with the query to construct a prompt to produce the final label via the\n[completions](/docs/api-reference/completions) endpoint.\n\nLabeled examples can be provided via an uploaded `file`, or explicitly listed in the\nrequest using the `examples` parameter for quick tests and small scale use cases.\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -213,8 +553,25 @@
         "name": "createCompletion",
         "path": "/completions",
         "pointer": "#/paths/~1completions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateCompletionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateCompletionResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a completion for the provided prompt and parameters"
+        "summary": "Creates a completion for the provided prompt and parameters",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -224,8 +581,25 @@
         "name": "createEdit",
         "path": "/edits",
         "pointer": "#/paths/~1edits/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateEditRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateEditResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new edit for the provided input, instruction, and parameters."
+        "summary": "Creates a new edit for the provided input, instruction, and parameters.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -235,8 +609,25 @@
         "name": "createEmbedding",
         "path": "/embeddings",
         "pointer": "#/paths/~1embeddings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateEmbeddingRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateEmbeddingResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates an embedding vector representing the input text."
+        "summary": "Creates an embedding vector representing the input text.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": true,
@@ -246,8 +637,18 @@
         "name": "listEngines",
         "path": "/engines",
         "pointer": "#/paths/~1engines/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListEnginesResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability."
+        "summary": "Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": true,
@@ -255,10 +656,29 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveEngine",
+        "parameters": [
+          {
+            "description": "The ID of the engine to use for this request",
+            "in": "path",
+            "name": "engine_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/engines/{engine_id}",
         "pointer": "#/paths/~1engines~1{engine_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Engine"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves a model instance, providing basic information about it such as the owner and availability."
+        "summary": "Retrieves a model instance, providing basic information about it such as the owner and availability.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": true,
@@ -266,10 +686,36 @@
         "kind": "operation",
         "method": "post",
         "name": "createSearch",
+        "parameters": [
+          {
+            "description": "The ID of the engine to use for this request.",
+            "in": "path",
+            "name": "engine_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/engines/{engine_id}/search",
         "pointer": "#/paths/~1engines~1{engine_id}~1search/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateSearchRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateSearchResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.\n\nTo go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.\n\nThe similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.\n"
+        "summary": "The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.\n\nTo go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.\n\nThe similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -279,8 +725,18 @@
         "name": "listFiles",
         "path": "/files",
         "pointer": "#/paths/~1files/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListFilesResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of files that belong to the user's organization."
+        "summary": "Returns a list of files that belong to the user's organization.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -290,19 +746,25 @@
         "name": "createFile",
         "path": "/files",
         "pointer": "#/paths/~1files/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "CreateFileRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAIFile"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.\n"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/files/{file_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteFile",
-        "path": "/files/{file_id}",
-        "pointer": "#/paths/~1files~1{file_id}/delete",
-        "security": [],
-        "summary": "Delete a file."
+        "summary": "Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -310,10 +772,59 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveFile",
+        "parameters": [
+          {
+            "description": "The ID of the file to use for this request",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}",
         "pointer": "#/paths/~1files~1{file_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAIFile"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns information about a specific file."
+        "summary": "Returns information about a specific file.",
+        "tags": [
+          "OpenAI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/files/{file_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteFile",
+        "parameters": [
+          {
+            "description": "The ID of the file to use for this request",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/files/{file_id}",
+        "pointer": "#/paths/~1files~1{file_id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteFileResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a file.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -321,10 +832,29 @@
         "kind": "operation",
         "method": "get",
         "name": "downloadFile",
+        "parameters": [
+          {
+            "description": "The ID of the file to use for this request",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}/content",
         "pointer": "#/paths/~1files~1{file_id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the contents of the specified file"
+        "summary": "Returns the contents of the specified file",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -334,8 +864,18 @@
         "name": "listFineTunes",
         "path": "/fine-tunes",
         "pointer": "#/paths/~1fine-tunes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListFineTunesResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List your organization's fine-tuning jobs\n"
+        "summary": "List your organization's fine-tuning jobs\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -345,8 +885,25 @@
         "name": "createFineTune",
         "path": "/fine-tunes",
         "pointer": "#/paths/~1fine-tunes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateFineTuneRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FineTune"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a job that fine-tunes a specified model from a given dataset.\n\nResponse includes details of the enqueued job including job status and the name of the fine-tuned models once complete.\n\n[Learn more about Fine-tuning](/docs/guides/fine-tuning)\n"
+        "summary": "Creates a job that fine-tunes a specified model from a given dataset.\n\nResponse includes details of the enqueued job including job status and the name of the fine-tuned models once complete.\n\n[Learn more about Fine-tuning](/docs/guides/fine-tuning)\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -354,10 +911,29 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveFineTune",
+        "parameters": [
+          {
+            "description": "The ID of the fine-tune job",
+            "in": "path",
+            "name": "fine_tune_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fine-tunes/{fine_tune_id}",
         "pointer": "#/paths/~1fine-tunes~1{fine_tune_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FineTune"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets info about the fine-tune job.\n\n[Learn more about Fine-tuning](/docs/guides/fine-tuning)\n"
+        "summary": "Gets info about the fine-tune job.\n\n[Learn more about Fine-tuning](/docs/guides/fine-tuning)\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -365,10 +941,29 @@
         "kind": "operation",
         "method": "post",
         "name": "cancelFineTune",
+        "parameters": [
+          {
+            "description": "The ID of the fine-tune job to cancel",
+            "in": "path",
+            "name": "fine_tune_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fine-tunes/{fine_tune_id}/cancel",
         "pointer": "#/paths/~1fine-tunes~1{fine_tune_id}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FineTune"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Immediately cancel a fine-tune job.\n"
+        "summary": "Immediately cancel a fine-tune job.\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -376,10 +971,37 @@
         "kind": "operation",
         "method": "get",
         "name": "listFineTuneEvents",
+        "parameters": [
+          {
+            "description": "The ID of the fine-tune job to get events for.",
+            "in": "path",
+            "name": "fine_tune_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Whether to stream events for the fine-tune job.",
+            "in": "query",
+            "name": "stream",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/fine-tunes/{fine_tune_id}/events",
         "pointer": "#/paths/~1fine-tunes~1{fine_tune_id}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListFineTuneEventsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get fine-grained status updates for a fine-tune job.\n"
+        "summary": "Get fine-grained status updates for a fine-tune job.\n",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -389,8 +1011,25 @@
         "name": "createImageEdit",
         "path": "/images/edits",
         "pointer": "#/paths/~1images~1edits/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "CreateImageEditRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImagesResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates an edited or extended image given an original image and a prompt."
+        "summary": "Creates an edited or extended image given an original image and a prompt.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -400,8 +1039,25 @@
         "name": "createImage",
         "path": "/images/generations",
         "pointer": "#/paths/~1images~1generations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateImageRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImagesResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates an image given a prompt."
+        "summary": "Creates an image given a prompt.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -411,8 +1067,25 @@
         "name": "createImageVariation",
         "path": "/images/variations",
         "pointer": "#/paths/~1images~1variations/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "CreateImageVariationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImagesResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a variation of a given image."
+        "summary": "Creates a variation of a given image.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -422,19 +1095,18 @@
         "name": "listModels",
         "path": "/models",
         "pointer": "#/paths/~1models/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListModelsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists the currently available models, and provides basic information about each one such as the owner and availability."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/models/{model}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteModel",
-        "path": "/models/{model}",
-        "pointer": "#/paths/~1models~1{model}/delete",
-        "security": [],
-        "summary": "Delete a fine-tuned model. You must have the Owner role in your organization."
+        "summary": "Lists the currently available models, and provides basic information about each one such as the owner and availability.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -442,10 +1114,59 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveModel",
+        "parameters": [
+          {
+            "description": "The ID of the model to use for this request",
+            "in": "path",
+            "name": "model",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/models/{model}",
         "pointer": "#/paths/~1models~1{model}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Model"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves a model instance, providing basic information about the model such as the owner and permissioning."
+        "summary": "Retrieves a model instance, providing basic information about the model such as the owner and permissioning.",
+        "tags": [
+          "OpenAI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/models/{model}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteModel",
+        "parameters": [
+          {
+            "description": "The model to delete",
+            "in": "path",
+            "name": "model",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/models/{model}",
+        "pointer": "#/paths/~1models~1{model}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteModelResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a fine-tuned model. You must have the Owner role in your organization.",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "deprecated": false,
@@ -455,208 +1176,265 @@
         "name": "createModeration",
         "path": "/moderations",
         "pointer": "#/paths/~1moderations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateModerationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateModerationResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Classifies if text violates OpenAI's Content Policy"
+        "summary": "Classifies if text violates OpenAI's Content Policy",
+        "tags": [
+          "OpenAI"
+        ]
       },
       {
         "id": "schema:ChatCompletionRequestMessage",
         "kind": "schema",
-        "name": "ChatCompletionRequestMessage"
+        "name": "ChatCompletionRequestMessage",
+        "type": "object"
       },
       {
         "id": "schema:ChatCompletionResponseMessage",
         "kind": "schema",
-        "name": "ChatCompletionResponseMessage"
+        "name": "ChatCompletionResponseMessage",
+        "type": "object"
       },
       {
         "id": "schema:CreateAnswerRequest",
         "kind": "schema",
-        "name": "CreateAnswerRequest"
+        "name": "CreateAnswerRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateAnswerResponse",
         "kind": "schema",
-        "name": "CreateAnswerResponse"
+        "name": "CreateAnswerResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateChatCompletionRequest",
         "kind": "schema",
-        "name": "CreateChatCompletionRequest"
+        "name": "CreateChatCompletionRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateChatCompletionResponse",
         "kind": "schema",
-        "name": "CreateChatCompletionResponse"
+        "name": "CreateChatCompletionResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateClassificationRequest",
         "kind": "schema",
-        "name": "CreateClassificationRequest"
+        "name": "CreateClassificationRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateClassificationResponse",
         "kind": "schema",
-        "name": "CreateClassificationResponse"
+        "name": "CreateClassificationResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateCompletionRequest",
         "kind": "schema",
-        "name": "CreateCompletionRequest"
+        "name": "CreateCompletionRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateCompletionResponse",
         "kind": "schema",
-        "name": "CreateCompletionResponse"
+        "name": "CreateCompletionResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateEditRequest",
         "kind": "schema",
-        "name": "CreateEditRequest"
+        "name": "CreateEditRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateEditResponse",
         "kind": "schema",
-        "name": "CreateEditResponse"
+        "name": "CreateEditResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateEmbeddingRequest",
         "kind": "schema",
-        "name": "CreateEmbeddingRequest"
+        "name": "CreateEmbeddingRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateEmbeddingResponse",
         "kind": "schema",
-        "name": "CreateEmbeddingResponse"
+        "name": "CreateEmbeddingResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateFileRequest",
         "kind": "schema",
-        "name": "CreateFileRequest"
+        "name": "CreateFileRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateFineTuneRequest",
         "kind": "schema",
-        "name": "CreateFineTuneRequest"
+        "name": "CreateFineTuneRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateImageEditRequest",
         "kind": "schema",
-        "name": "CreateImageEditRequest"
+        "name": "CreateImageEditRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateImageRequest",
         "kind": "schema",
-        "name": "CreateImageRequest"
+        "name": "CreateImageRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateImageVariationRequest",
         "kind": "schema",
-        "name": "CreateImageVariationRequest"
+        "name": "CreateImageVariationRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateModerationRequest",
         "kind": "schema",
-        "name": "CreateModerationRequest"
+        "name": "CreateModerationRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateModerationResponse",
         "kind": "schema",
-        "name": "CreateModerationResponse"
+        "name": "CreateModerationResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateSearchRequest",
         "kind": "schema",
-        "name": "CreateSearchRequest"
+        "name": "CreateSearchRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateSearchResponse",
         "kind": "schema",
-        "name": "CreateSearchResponse"
+        "name": "CreateSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateTranscriptionRequest",
         "kind": "schema",
-        "name": "CreateTranscriptionRequest"
+        "name": "CreateTranscriptionRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateTranscriptionResponse",
         "kind": "schema",
-        "name": "CreateTranscriptionResponse"
+        "name": "CreateTranscriptionResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateTranslationRequest",
         "kind": "schema",
-        "name": "CreateTranslationRequest"
+        "name": "CreateTranslationRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateTranslationResponse",
         "kind": "schema",
-        "name": "CreateTranslationResponse"
+        "name": "CreateTranslationResponse",
+        "type": "object"
       },
       {
         "id": "schema:DeleteFileResponse",
         "kind": "schema",
-        "name": "DeleteFileResponse"
+        "name": "DeleteFileResponse",
+        "type": "object"
       },
       {
         "id": "schema:DeleteModelResponse",
         "kind": "schema",
-        "name": "DeleteModelResponse"
+        "name": "DeleteModelResponse",
+        "type": "object"
       },
       {
         "id": "schema:Engine",
         "kind": "schema",
-        "name": "Engine"
+        "name": "Engine",
+        "type": "object"
       },
       {
         "id": "schema:FineTune",
         "kind": "schema",
-        "name": "FineTune"
+        "name": "FineTune",
+        "type": "object"
       },
       {
         "id": "schema:FineTuneEvent",
         "kind": "schema",
-        "name": "FineTuneEvent"
+        "name": "FineTuneEvent",
+        "type": "object"
       },
       {
         "id": "schema:ImagesResponse",
         "kind": "schema",
-        "name": "ImagesResponse"
+        "name": "ImagesResponse",
+        "type": "object"
       },
       {
         "id": "schema:ListEnginesResponse",
         "kind": "schema",
-        "name": "ListEnginesResponse"
+        "name": "ListEnginesResponse",
+        "type": "object"
       },
       {
         "id": "schema:ListFilesResponse",
         "kind": "schema",
-        "name": "ListFilesResponse"
+        "name": "ListFilesResponse",
+        "type": "object"
       },
       {
         "id": "schema:ListFineTuneEventsResponse",
         "kind": "schema",
-        "name": "ListFineTuneEventsResponse"
+        "name": "ListFineTuneEventsResponse",
+        "type": "object"
       },
       {
         "id": "schema:ListFineTunesResponse",
         "kind": "schema",
-        "name": "ListFineTunesResponse"
+        "name": "ListFineTunesResponse",
+        "type": "object"
       },
       {
         "id": "schema:ListModelsResponse",
         "kind": "schema",
-        "name": "ListModelsResponse"
+        "name": "ListModelsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Model",
         "kind": "schema",
-        "name": "Model"
+        "name": "Model",
+        "type": "object"
       },
       {
         "id": "schema:OpenAIFile",
         "kind": "schema",
-        "name": "OpenAIFile"
+        "name": "OpenAIFile",
+        "type": "object"
       }
     ]
   },

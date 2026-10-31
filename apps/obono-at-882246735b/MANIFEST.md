@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_obono_at_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `89245e14fb600d7e449257cbb6003033dc8deb815f74911c5473ded200a2b2dc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,23 +34,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_obono_at_profile_im
 
 13 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/auth` | get /auth | — |
-| GET | `/belege/{belegUuid}` | get /belege/{belegUuid} | — |
-| GET | `/export/csv/registrierkassen/{registrierkasseUuid}/belege` | get /export/csv/registrierkassen/{registrierkasseUuid}/belege | — |
-| GET | `/export/dep131/registrierkassen/{registrierkasseUuid}/belege` | get /export/dep131/registrierkassen/{registrierkasseUuid}/belege | — |
-| GET | `/export/dep7/registrierkassen/{registrierkasseUuid}/belege` | get /export/dep7/registrierkassen/{registrierkasseUuid}/belege | — |
-| GET | `/export/gobd/registrierkassen/{registrierkasseUuid}` | get /export/gobd/registrierkassen/{registrierkasseUuid} | — |
-| GET | `/export/html/belege/{belegUuid}` | get /export/html/belege/{belegUuid} | — |
-| GET | `/export/pdf/belege/{belegUuid}` | get /export/pdf/belege/{belegUuid} | — |
-| GET | `/export/qr/belege/{belegUuid}` | get /export/qr/belege/{belegUuid} | — |
-| GET | `/export/thermal-print/belege/{belegUuid}` | get /export/thermal-print/belege/{belegUuid} | — |
-| GET | `/export/xls/registrierkassen/{registrierkasseUuid}/belege` | get /export/xls/registrierkassen/{registrierkasseUuid}/belege | — |
-| GET | `/registrierkassen/{registrierkasseUuid}` | getRegistrierkasse | — |
-| POST | `/registrierkassen/{registrierkasseUuid}/abschluss` | createAbschluss | — |
-| GET | `/registrierkassen/{registrierkasseUuid}/belege` | getBelege | — |
-| GET | `/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}` | getBeleg | — |
-| PUT | `/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}` | addBeleg | — |
-| GET | `/registrierkassen/{registrierkasseUuid}/dep` | getDEP | — |
-| GET | `/registrierkassen/{registrierkasseUuid}/monatsbelege` | getMonatsbelege | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/auth` | get /auth | — | AuthResult | yes | — |
+| GET | `/belege/{belegUuid}` | get /belege/{belegUuid} | `belegUuid`* | Beleg | yes | — |
+| GET | `/export/csv/registrierkassen/{registrierkasseUuid}/belege` | get /export/csv/registrierkassen/{registrierkasseUuid}/belege | `registrierkasseUuid`*, `before`, `after`, `posten` | — | yes | — |
+| GET | `/export/dep131/registrierkassen/{registrierkasseUuid}/belege` | get /export/dep131/registrierkassen/{registrierkasseUuid}/belege | `registrierkasseUuid`*, `before`, `after` | — | yes | — |
+| GET | `/export/dep7/registrierkassen/{registrierkasseUuid}/belege` | get /export/dep7/registrierkassen/{registrierkasseUuid}/belege | `registrierkasseUuid`*, `before`, `after` | — | yes | — |
+| GET | `/export/gobd/registrierkassen/{registrierkasseUuid}` | get /export/gobd/registrierkassen/{registrierkasseUuid} | `registrierkasseUuid`*, `before`, `after` | — | yes | — |
+| GET | `/export/html/belege/{belegUuid}` | get /export/html/belege/{belegUuid} | `belegUuid`* | — | yes | — |
+| GET | `/export/pdf/belege/{belegUuid}` | get /export/pdf/belege/{belegUuid} | `belegUuid`* | — | yes | — |
+| GET | `/export/qr/belege/{belegUuid}` | get /export/qr/belege/{belegUuid} | `belegUuid`* | — | yes | — |
+| GET | `/export/thermal-print/belege/{belegUuid}` | get /export/thermal-print/belege/{belegUuid} | `belegUuid`*, `qr`, `width`, `dialect`, `encoding` | — | yes | — |
+| GET | `/export/xls/registrierkassen/{registrierkasseUuid}/belege` | get /export/xls/registrierkassen/{registrierkasseUuid}/belege | `registrierkasseUuid`*, `before`, `after` | — | yes | — |
+| GET | `/registrierkassen/{registrierkasseUuid}` | getRegistrierkasse | `registrierkasseUuid`* | Registrierkasse | yes | — |
+| POST | `/registrierkassen/{registrierkasseUuid}/abschluss` | createAbschluss | `registrierkasseUuid`*, body*: Abschlussbelegdaten | — |  | — |
+| GET | `/registrierkassen/{registrierkasseUuid}/belege` | getBelege | `registrierkasseUuid`*, `format`*, `order`, `limit`, `offset`, `before`, `after`, `gte`, `lte` | Belege | yes | — |
+| GET | `/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}` | getBeleg | `registrierkasseUuid`*, `belegUuid`* | Beleg | yes | — |
+| PUT | `/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}` | addBeleg | `registrierkasseUuid`*, `belegUuid`*, body*: Belegdaten | — |  | — |
+| GET | `/registrierkassen/{registrierkasseUuid}/dep` | getDEP | `registrierkasseUuid`* | — | yes | — |
+| GET | `/registrierkassen/{registrierkasseUuid}/monatsbelege` | getMonatsbelege | `registrierkasseUuid`*, `year`, `month` | Monatsbeleg[] | yes | — |

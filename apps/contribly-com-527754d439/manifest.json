@@ -22,12 +22,12 @@
       {
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
-        "to": "operation:delete:/assignments/{id}"
+        "to": "operation:get:/assignments/{id}"
       },
       {
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
-        "to": "operation:get:/assignments/{id}"
+        "to": "operation:delete:/assignments/{id}"
       },
       {
         "from": "contribly-com-527754d439",
@@ -57,12 +57,12 @@
       {
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
-        "to": "operation:delete:/contributions/{id}"
+        "to": "operation:get:/contributions/{id}"
       },
       {
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
-        "to": "operation:get:/contributions/{id}"
+        "to": "operation:delete:/contributions/{id}"
       },
       {
         "from": "contribly-com-527754d439",
@@ -137,12 +137,12 @@
       {
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
-        "to": "operation:delete:/forms/{id}"
+        "to": "operation:get:/forms/{id}"
       },
       {
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
-        "to": "operation:get:/forms/{id}"
+        "to": "operation:delete:/forms/{id}"
       },
       {
         "from": "contribly-com-527754d439",
@@ -223,6 +223,371 @@
         "from": "contribly-com-527754d439",
         "kind": "EXPOSES",
         "to": "operation:post:/verify"
+      },
+      {
+        "from": "operation:get:/artifact-formats",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactFormats"
+      },
+      {
+        "from": "operation:get:/assignments",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:post:/assignments",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:post:/assignments",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:get:/assignments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:get:/change-log",
+        "kind": "RETURNS",
+        "to": "schema:ChangeLogItem"
+      },
+      {
+        "from": "operation:get:/contributions",
+        "kind": "RETURNS",
+        "to": "schema:Contribution"
+      },
+      {
+        "from": "operation:post:/contributions",
+        "kind": "ACCEPTS",
+        "to": "schema:Contribution"
+      },
+      {
+        "from": "operation:post:/contributions",
+        "kind": "RETURNS",
+        "to": "schema:Contribution"
+      },
+      {
+        "from": "operation:get:/contributions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Contribution"
+      },
+      {
+        "from": "operation:delete:/contributions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Contribution"
+      },
+      {
+        "from": "operation:post:/contributions/{id}/flag",
+        "kind": "ACCEPTS",
+        "to": "schema:Flag"
+      },
+      {
+        "from": "operation:post:/contributions/{id}/flag",
+        "kind": "RETURNS",
+        "to": "schema:Flag"
+      },
+      {
+        "from": "operation:post:/contributions/{id}/moderate",
+        "kind": "ACCEPTS",
+        "to": "schema:ModerationHistoryItemSubmission"
+      },
+      {
+        "from": "operation:get:/credentials",
+        "kind": "RETURNS",
+        "to": "schema:Credential"
+      },
+      {
+        "from": "operation:get:/event-types",
+        "kind": "RETURNS",
+        "to": "schema:EventType"
+      },
+      {
+        "from": "operation:post:/export",
+        "kind": "RETURNS",
+        "to": "schema:Export"
+      },
+      {
+        "from": "operation:post:/export-summary",
+        "kind": "RETURNS",
+        "to": "schema:ExportSummary"
+      },
+      {
+        "from": "operation:get:/exports/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Export"
+      },
+      {
+        "from": "operation:get:/form-responses",
+        "kind": "RETURNS",
+        "to": "schema:FormResponse"
+      },
+      {
+        "from": "operation:post:/form-responses",
+        "kind": "ACCEPTS",
+        "to": "schema:FormResponseSubmission"
+      },
+      {
+        "from": "operation:post:/form-responses",
+        "kind": "RETURNS",
+        "to": "schema:FormResponse"
+      },
+      {
+        "from": "operation:get:/form-responses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FormResponse"
+      },
+      {
+        "from": "operation:get:/forms",
+        "kind": "RETURNS",
+        "to": "schema:Form"
+      },
+      {
+        "from": "operation:post:/forms",
+        "kind": "ACCEPTS",
+        "to": "schema:FormSubmission"
+      },
+      {
+        "from": "operation:post:/forms",
+        "kind": "RETURNS",
+        "to": "schema:Form"
+      },
+      {
+        "from": "operation:get:/forms/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Form"
+      },
+      {
+        "from": "operation:post:/media",
+        "kind": "RETURNS",
+        "to": "schema:Media"
+      },
+      {
+        "from": "operation:get:/notifications/contributions/{id}/preview",
+        "kind": "RETURNS",
+        "to": "schema:NotificationPreview"
+      },
+      {
+        "from": "operation:get:/subscription-types",
+        "kind": "RETURNS",
+        "to": "schema:SubscriptionType"
+      },
+      {
+        "from": "operation:get:/subscriptions",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscriptionSubmission"
+      },
+      {
+        "from": "operation:get:/subscriptions",
+        "kind": "RETURNS",
+        "to": "schema:Subscription"
+      },
+      {
+        "from": "operation:get:/tags",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:post:/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:TagSubmission"
+      },
+      {
+        "from": "operation:post:/tags",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:get:/tags/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:get:/tagsets",
+        "kind": "RETURNS",
+        "to": "schema:TagSet"
+      },
+      {
+        "from": "operation:post:/tagsets",
+        "kind": "ACCEPTS",
+        "to": "schema:TagSetSubmission"
+      },
+      {
+        "from": "operation:post:/tagsets",
+        "kind": "RETURNS",
+        "to": "schema:TagSet"
+      },
+      {
+        "from": "operation:get:/tagsets/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TagSet"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/users/{id}/linked/{type}",
+        "kind": "RETURNS",
+        "to": "schema:LinkedProfile"
+      },
+      {
+        "from": "operation:post:/verify",
+        "kind": "RETURNS",
+        "to": "schema:Authority"
+      },
+      {
+        "from": "schema:ArtifactFormats",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactFormat"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:MediaUsage"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:AssignmentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:MediaUsage"
+      },
+      {
+        "from": "schema:AssignmentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Authority",
+        "kind": "REFERENCES",
+        "to": "schema:Client"
+      },
+      {
+        "from": "schema:Authority",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Contribution",
+        "kind": "REFERENCES",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "schema:Contribution",
+        "kind": "REFERENCES",
+        "to": "schema:MediaUsage"
+      },
+      {
+        "from": "schema:Contribution",
+        "kind": "REFERENCES",
+        "to": "schema:ModerationHistoryItem"
+      },
+      {
+        "from": "schema:Contribution",
+        "kind": "REFERENCES",
+        "to": "schema:Place"
+      },
+      {
+        "from": "schema:Contribution",
+        "kind": "REFERENCES",
+        "to": "schema:Via"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorField"
+      },
+      {
+        "from": "schema:Form",
+        "kind": "REFERENCES",
+        "to": "schema:FormField"
+      },
+      {
+        "from": "schema:Form",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:FormSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:FormField"
+      },
+      {
+        "from": "schema:FormSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Media",
+        "kind": "REFERENCES",
+        "to": "schema:Place"
+      },
+      {
+        "from": "schema:MediaUsage",
+        "kind": "REFERENCES",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "schema:MediaUsage",
+        "kind": "REFERENCES",
+        "to": "schema:Media"
+      },
+      {
+        "from": "schema:ModerationAction",
+        "kind": "REFERENCES",
+        "to": "schema:ModerationState"
+      },
+      {
+        "from": "schema:ModerationHistoryItem",
+        "kind": "REFERENCES",
+        "to": "schema:ModerationAction"
+      },
+      {
+        "from": "schema:ModerationHistoryItemSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:ModerationAction"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:LatLong"
+      },
+      {
+        "from": "schema:Place",
+        "kind": "REFERENCES",
+        "to": "schema:OsmId"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "REFERENCES",
+        "to": "schema:TagSet"
+      },
+      {
+        "from": "schema:TagSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:TagSet"
+      },
+      {
+        "from": "schema:Via",
+        "kind": "REFERENCES",
+        "to": "schema:Authority"
+      },
+      {
+        "from": "schema:Via",
+        "kind": "REFERENCES",
+        "to": "schema:Place"
       }
     ],
     "nodes": [
@@ -232,14 +597,25 @@
       },
       {
         "deprecated": false,
+        "description": "List the available artifact formats",
         "id": "operation:get:/artifact-formats",
         "kind": "operation",
         "method": "get",
         "name": "get /artifact-formats",
         "path": "/artifact-formats",
         "pointer": "#/paths/~1artifact-formats/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactFormats"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Artifact formats"
+        "summary": "Artifact formats",
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
@@ -247,10 +623,85 @@
         "kind": "operation",
         "method": "get",
         "name": "get /assignments",
+        "parameters": [
+          {
+            "description": "Restrict results to assignments owned by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Pagination page size",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restrict results to assignments whose name or description matches this keyword.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Select an assignment by urlWords.",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Select open or closed assignments",
+            "in": "query",
+            "name": "open",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Select assignments with no closing date.",
+            "in": "query",
+            "name": "alwaysOpen",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Restrict results to assignments which are tagged with this tag.",
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to the assignment (or potentially assignments) with this exact name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/assignments",
         "pointer": "#/paths/~1assignments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List assignments"
+        "summary": "List assignments",
+        "tags": [
+          "assignment"
+        ]
       },
       {
         "deprecated": false,
@@ -260,19 +711,33 @@
         "name": "post /assignments",
         "path": "/assignments",
         "pointer": "#/paths/~1assignments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssignmentSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new assignment"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/assignments/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /assignments/{id}",
-        "path": "/assignments/{id}",
-        "pointer": "#/paths/~1assignments~1{id}/delete",
-        "security": [],
-        "summary": "Delete this assignment and all of it's contributions"
+        "summary": "Create a new assignment",
+        "tags": [
+          "assignment"
+        ]
       },
       {
         "deprecated": false,
@@ -280,21 +745,89 @@
         "kind": "operation",
         "method": "get",
         "name": "get /assignments/{id}",
+        "parameters": [
+          {
+            "description": "Id of the assignment to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/assignments/{id}",
         "pointer": "#/paths/~1assignments~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single assigment by id"
+        "summary": "Get a single assigment by id",
+        "tags": [
+          "assignment"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/assignments/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /assignments/{id}",
+        "parameters": [
+          {
+            "description": "Id of the assignment to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/assignments/{id}",
+        "pointer": "#/paths/~1assignments~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete this assignment and all of it's contributions",
+        "tags": [
+          "assignment"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The Contribly change log.",
         "id": "operation:get:/change-log",
         "kind": "operation",
         "method": "get",
         "name": "get /change-log",
         "path": "/change-log",
         "pointer": "#/paths/~1change-log/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChangeLogItem[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Recent changes"
+        "summary": "Recent changes",
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
@@ -304,30 +837,290 @@
         "name": "get /contribution-refinement-types",
         "path": "/contribution-refinement-types",
         "pointer": "#/paths/~1contribution-refinement-types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List valid contribution refinement types"
+        "summary": "List valid contribution refinement types",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Given a contribution list query determine the available filter options.",
         "id": "operation:get:/contribution-refinements",
         "kind": "operation",
         "method": "get",
         "name": "get /contribution-refinements",
+        "parameters": [
+          {
+            "description": "Restrict results to contributions submitted to this assignment.",
+            "in": "query",
+            "name": "assignment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions which have a publicly visible location within the given country (specified by two letter country code).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions created before this date time.",
+            "in": "query",
+            "name": "createdBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit results to contributions created after this date time.",
+            "in": "query",
+            "name": "createdAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Restrict results to contributions which have specified a location which falls within this geohash (or comma seperated list of multiple geohashes)",
+            "in": "query",
+            "name": "geohash",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which have a publicly visible location.",
+            "in": "query",
+            "name": "hasLocation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair).",
+            "in": "query",
+            "name": "latLong",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When limiting result by location with the latLong parameter, specify the radius in kilometers.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Restrict results to contributions which include a media file of the given type (ie.",
+            "in": "query",
+            "name": "mediaType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which are fall under the jurisdiction by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions whose headline text matches this keyword.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Locate a specific contribution by URL words",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions by this user identified by id.",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma seperated list of refinement names.",
+            "in": "query",
+            "name": "refinements",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of refinement options to return.",
+            "in": "query",
+            "name": "refinementSize",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/contribution-refinements",
         "pointer": "#/paths/~1contribution-refinements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List contribution refinement options"
+        "summary": "List contribution refinement options",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve contributions.",
         "id": "operation:get:/contributions",
         "kind": "operation",
         "method": "get",
         "name": "get /contributions",
+        "parameters": [
+          {
+            "description": "Restrict results to contributions submitted to this assignment.",
+            "in": "query",
+            "name": "assignment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions which have a publicly visible location within the given country (specified by two letter country code).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions created before this date time.",
+            "in": "query",
+            "name": "createdBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit results to contributions created after this date time.",
+            "in": "query",
+            "name": "createdAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit results to contributions created on this day.",
+            "in": "query",
+            "name": "createdDay",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Limit results to contributions created during this month.",
+            "in": "query",
+            "name": "createdMonth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which have specified a location which falls within this geohash (or comma seperated list of multiple geohashes)",
+            "in": "query",
+            "name": "geohash",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which have a publicly visible location.",
+            "in": "query",
+            "name": "hasLocation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair).",
+            "in": "query",
+            "name": "latLong",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When limiting result by location with the latLong parameter, specify the radius in kilometers.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Restrict results to contributions which include a media file of the given type (ie.",
+            "in": "query",
+            "name": "mediaType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which are fall under the jurisdiction by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions whose headline text matches this keyword.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Locate a specific contribution by URL words",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions by this user identified by id.",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to a list of specific contributions identified by a comma seperated list of ids.",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Select output format.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/contributions",
         "pointer": "#/paths/~1contributions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Contribution[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List contributions"
+        "summary": "List contributions",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
@@ -337,6 +1130,20 @@
         "name": "post /contributions",
         "path": "/contributions",
         "pointer": "#/paths/~1contributions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Contribution"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Contribution"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth": [
@@ -344,18 +1151,10 @@
             ]
           }
         ],
-        "summary": "Create a new contribution"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/contributions/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /contributions/{id}",
-        "path": "/contributions/{id}",
-        "pointer": "#/paths/~1contributions~1{id}/delete",
-        "security": [],
-        "summary": "Delete this contribution"
+        "summary": "Create a new contribution",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
@@ -363,21 +1162,106 @@
         "kind": "operation",
         "method": "get",
         "name": "get /contributions/{id}",
+        "parameters": [
+          {
+            "description": "Id of the contribution to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contributions/{id}",
         "pointer": "#/paths/~1contributions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Contribution"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single contribution by id"
+        "summary": "Get a single contribution by id",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/contributions/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /contributions/{id}",
+        "parameters": [
+          {
+            "description": "Id of the contribution to delete",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/contributions/{id}",
+        "pointer": "#/paths/~1contributions~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Contribution"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete this contribution",
+        "tags": [
+          "contribution"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Allows end users to bring potential issues with publicly visible content to the attention of moderators.",
         "id": "operation:post:/contributions/{id}/flag",
         "kind": "operation",
         "method": "post",
         "name": "post /contributions/{id}/flag",
+        "parameters": [
+          {
+            "description": "Id of the contribution to flag",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contributions/{id}/flag",
         "pointer": "#/paths/~1contributions~1{id}~1flag/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Flag"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Flag"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Raise a flag against this contribution"
+        "summary": "Raise a flag against this contribution",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
@@ -385,32 +1269,114 @@
         "kind": "operation",
         "method": "post",
         "name": "post /contributions/{id}/like",
+        "parameters": [
+          {
+            "description": "Id of the contribution",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contributions/{id}/like",
         "pointer": "#/paths/~1contributions~1{id}~1like/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Allows a user to mark a contribution as liked"
+        "summary": "Allows a user to mark a contribution as liked",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of user ids of users who have liked this conribution",
         "id": "operation:get:/contributions/{id}/likes",
         "kind": "operation",
         "method": "get",
         "name": "get /contributions/{id}/likes",
+        "parameters": [
+          {
+            "description": "Id of the contribution",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contributions/{id}/likes",
         "pointer": "#/paths/~1contributions~1{id}~1likes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List users who have liked this contributions"
+        "summary": "List users who have liked this contributions",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows the contribution to approved of rejected.",
         "id": "operation:post:/contributions/{id}/moderate",
         "kind": "operation",
         "method": "post",
         "name": "post /contributions/{id}/moderate",
+        "parameters": [
+          {
+            "description": "Id of the contribution to moderate",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contributions/{id}/moderate",
         "pointer": "#/paths/~1contributions~1{id}~1moderate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ModerationHistoryItemSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Perform a moderation action on this contribution"
+        "summary": "Perform a moderation action on this contribution",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
@@ -420,41 +1386,308 @@
         "name": "get /credentials",
         "path": "/credentials",
         "pointer": "#/paths/~1credentials/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credential[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List the credentials associated with the authenticated user."
+        "summary": "List the credentials associated with the authenticated user.",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List available notification event types",
         "id": "operation:get:/event-types",
         "kind": "operation",
         "method": "get",
         "name": "get /event-types",
         "path": "/event-types",
         "pointer": "#/paths/~1event-types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventType[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Event types"
+        "summary": "Event types",
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Begin an export job.",
         "id": "operation:post:/export",
         "kind": "operation",
         "method": "post",
         "name": "post /export",
+        "parameters": [
+          {
+            "description": "Restrict results to contributions submitted to this assignment.",
+            "in": "query",
+            "name": "assignment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions which have a publicly visible location within the given country (specified by two letter country code).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions created before this date time.",
+            "in": "query",
+            "name": "createdBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit results to contributions created after this date time.",
+            "in": "query",
+            "name": "createdAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Restrict results to contributions which have specified a location which falls within this geohash (or comma seperated list of multiple geohashes)",
+            "in": "query",
+            "name": "geohash",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which have a publicly visible location.",
+            "in": "query",
+            "name": "hasLocation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair).",
+            "in": "query",
+            "name": "latLong",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When limiting result by location with the latLong parameter, specify the radius in kilometers.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Restrict results to contributions which include a media file of the given type (ie.",
+            "in": "query",
+            "name": "mediaType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which are fall under the jurisdiction by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions whose headline text matches this keyword.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Locate a specific contribution by URL words",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions by this user identified by id.",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Should exported media files be tagged with metadata.",
+            "in": "query",
+            "name": "tagged",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Included a combined file with all contribution text.",
+            "in": "query",
+            "name": "combined",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Include individual text files for each contribution.",
+            "in": "query",
+            "name": "individual",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Media format to export; none, fullsize, tagged or original.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Include raw JSON for each contribution.",
+            "in": "query",
+            "name": "json",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/export",
         "pointer": "#/paths/~1export/post",
+        "responses": [
+          {
+            "status": "202",
+            "type": "Export"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Export contributions."
+        "summary": "Export contributions.",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provide a preflight summary of an export request.",
         "id": "operation:post:/export-summary",
         "kind": "operation",
         "method": "post",
         "name": "post /export-summary",
+        "parameters": [
+          {
+            "description": "Restrict results to contributions submitted to this assignment.",
+            "in": "query",
+            "name": "assignment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions which have a publicly visible location within the given country (specified by two letter country code).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to contributions created before this date time.",
+            "in": "query",
+            "name": "createdBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit results to contributions created after this date time.",
+            "in": "query",
+            "name": "createdAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Restrict results to contributions which have specified a location which falls within this geohash (or comma seperated list of multiple geohashes)",
+            "in": "query",
+            "name": "geohash",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which have a publicly visible location.",
+            "in": "query",
+            "name": "hasLocation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair).",
+            "in": "query",
+            "name": "latLong",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When limiting result by location with the latLong parameter, specify the radius in kilometers.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Restrict results to contributions which include a media file of the given type (ie.",
+            "in": "query",
+            "name": "mediaType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions which are fall under the jurisdiction by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions whose headline text matches this keyword.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Locate a specific contribution by URL words",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to contributions by this user identified by id.",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/export-summary",
         "pointer": "#/paths/~1export-summary/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExportSummary"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Export contributions preflight summary."
+        "summary": "Export contributions preflight summary.",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
@@ -462,10 +1695,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /exports/{id}",
+        "parameters": [
+          {
+            "description": "Id of the export job to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/exports/{id}",
         "pointer": "#/paths/~1exports~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Export"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single export job; poll to follow export progress."
+        "summary": "Get a single export job; poll to follow export progress.",
+        "tags": [
+          "contribution"
+        ]
       },
       {
         "deprecated": false,
@@ -473,10 +1728,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /form-responses",
+        "parameters": [
+          {
+            "description": "Restrict results to responses submitted by this user.",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to responses submitted to this form.",
+            "in": "query",
+            "name": "form",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to responses relating to this contribution.",
+            "in": "query",
+            "name": "contribution",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/form-responses",
         "pointer": "#/paths/~1form-responses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List form responses"
+        "summary": "List form responses",
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -486,8 +1774,25 @@
         "name": "post /form-responses",
         "path": "/form-responses",
         "pointer": "#/paths/~1form-responses/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FormResponseSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Submit a response to a form"
+        "summary": "Submit a response to a form",
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -495,10 +1800,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /form-responses/{id}",
+        "parameters": [
+          {
+            "description": "Id of the assignment to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/form-responses/{id}",
         "pointer": "#/paths/~1form-responses~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single form response by id"
+        "summary": "Get a single form response by id",
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -506,10 +1833,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get /forms",
+        "parameters": [
+          {
+            "description": "Restrict results to forms owned by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/forms",
         "pointer": "#/paths/~1forms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Form[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List forms"
+        "summary": "List forms",
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -519,19 +1865,25 @@
         "name": "post /forms",
         "path": "/forms",
         "pointer": "#/paths/~1forms/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FormSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Form"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a form"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/forms/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /forms/{id}",
-        "path": "/forms/{id}",
-        "pointer": "#/paths/~1forms~1{id}/delete",
-        "security": [],
-        "summary": "Delete this form and all of it's responses."
+        "summary": "Create a form",
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -539,10 +1891,64 @@
         "kind": "operation",
         "method": "get",
         "name": "get /forms/{id}",
+        "parameters": [
+          {
+            "description": "Id of the form to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/forms/{id}",
         "pointer": "#/paths/~1forms~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Form"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single form by id"
+        "summary": "Get a single form by id",
+        "tags": [
+          "form"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/forms/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /forms/{id}",
+        "parameters": [
+          {
+            "description": "Id of the form to delete",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/forms/{id}",
+        "pointer": "#/paths/~1forms~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete this form and all of it's responses.",
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -552,6 +1958,20 @@
         "name": "post /media",
         "path": "/media",
         "pointer": "#/paths/~1media/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string:byte"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Media"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth": [
@@ -559,7 +1979,10 @@
             ]
           }
         ],
-        "summary": "Submit a new media file"
+        "summary": "Submit a new media file",
+        "tags": [
+          "media"
+        ]
       },
       {
         "deprecated": false,
@@ -567,32 +1990,80 @@
         "kind": "operation",
         "method": "get",
         "name": "get /notifications/contributions/{id}/preview",
+        "parameters": [
+          {
+            "description": "Id of the contribution to preview a notification for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of message to preview.",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/notifications/contributions/{id}/preview",
         "pointer": "#/paths/~1notifications~1contributions~1{id}~1preview/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotificationPreview"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "notifications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List available token scopes",
         "id": "operation:get:/scopes",
         "kind": "operation",
         "method": "get",
         "name": "get /scopes",
         "path": "/scopes",
         "pointer": "#/paths/~1scopes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Scopes"
+        "summary": "Scopes",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List available subscription types",
         "id": "operation:get:/subscription-types",
         "kind": "operation",
         "method": "get",
         "name": "get /subscription-types",
         "path": "/subscription-types",
         "pointer": "#/paths/~1subscription-types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubscriptionType[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Subscription types"
+        "summary": "Subscription types",
+        "tags": [
+          "subscriptions"
+        ]
       },
       {
         "deprecated": false,
@@ -602,8 +2073,25 @@
         "name": "get /subscriptions",
         "path": "/subscriptions",
         "pointer": "#/paths/~1subscriptions/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubscriptionSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subscription[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List subscriptions for the authorised user."
+        "summary": "List subscriptions for the authorised user.",
+        "tags": [
+          "subscriptions"
+        ]
       },
       {
         "deprecated": false,
@@ -611,21 +2099,73 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /subscriptions/{id}",
+        "parameters": [
+          {
+            "description": "Id of the subscription to delete",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscriptions/{id}",
         "pointer": "#/paths/~1subscriptions~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a subscription."
+        "summary": "Delete a subscription.",
+        "tags": [
+          "subscriptions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve tags.",
         "id": "operation:get:/tags",
         "kind": "operation",
         "method": "get",
         "name": "get /tags",
+        "parameters": [
+          {
+            "description": "Restrict results to those owned by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to tags belonging to this tag set.",
+            "in": "query",
+            "name": "tagSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results by urlWords.",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tags",
         "pointer": "#/paths/~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List tags"
+        "summary": "List tags",
+        "tags": [
+          "tag"
+        ]
       },
       {
         "deprecated": false,
@@ -635,8 +2175,33 @@
         "name": "post /tags",
         "path": "/tags",
         "pointer": "#/paths/~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TagSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new tag"
+        "summary": "Create a new tag",
+        "tags": [
+          "tag"
+        ]
       },
       {
         "deprecated": false,
@@ -644,21 +2209,70 @@
         "kind": "operation",
         "method": "get",
         "name": "get /tags/{id}",
+        "parameters": [
+          {
+            "description": "Id of the tag to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tags/{id}",
         "pointer": "#/paths/~1tags~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a single tag by id"
+        "summary": "Retrieve a single tag by id",
+        "tags": [
+          "tag"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve tag sets.",
         "id": "operation:get:/tagsets",
         "kind": "operation",
         "method": "get",
         "name": "get /tagsets",
+        "parameters": [
+          {
+            "description": "Restrict results to those owned by this user.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results by urlWords.",
+            "in": "query",
+            "name": "urlWords",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tagsets",
         "pointer": "#/paths/~1tagsets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagSet[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List tag sets"
+        "summary": "List tag sets",
+        "tags": [
+          "tag"
+        ]
       },
       {
         "deprecated": false,
@@ -668,8 +2282,25 @@
         "name": "post /tagsets",
         "path": "/tagsets",
         "pointer": "#/paths/~1tagsets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TagSetSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagSet"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new tag set"
+        "summary": "Create a new tag set",
+        "tags": [
+          "tag"
+        ]
       },
       {
         "deprecated": false,
@@ -677,10 +2308,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /tagsets/{id}",
+        "parameters": [
+          {
+            "description": "Id of the tag set to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tagsets/{id}",
         "pointer": "#/paths/~1tagsets~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagSet"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a single tag set by id"
+        "summary": "Retrieve a single tag set by id",
+        "tags": [
+          "tag"
+        ]
       },
       {
         "deprecated": false,
@@ -688,10 +2341,78 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users",
+        "parameters": [
+          {
+            "description": "Restrict results to the users who have contributed to this assignment.",
+            "in": "query",
+            "name": "assignment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to the users who have submitted a contribution with a public location located within this country.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to the users who have submitted at least this many contributions.",
+            "in": "query",
+            "name": "minimumContributions",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Restrict results to the users who a linked profile of this type.",
+            "in": "query",
+            "name": "linkedProfile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict results to the users who are owned by of this owner.",
+            "in": "query",
+            "name": "ownedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to users who have submitted at least one contribution before this date time.",
+            "in": "query",
+            "name": "submittedBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Limit results to users who have submitted at least one contribution after this date time.",
+            "in": "query",
+            "name": "submittedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Restrict results to the user with this username.",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List users"
+        "summary": "List users",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -699,10 +2420,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}",
+        "parameters": [
+          {
+            "description": "Id of the user to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a single user by id"
+        "summary": "Retrieve a single user by id",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -710,10 +2453,39 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/linked/{type}",
+        "parameters": [
+          {
+            "description": "Id of the user to return",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of the linked profile to fetch",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}/linked/{type}",
         "pointer": "#/paths/~1users~1{id}~1linked~1{type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinkedProfile"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a users linked profile by type"
+        "summary": "Retrieve a users linked profile by type",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -723,6 +2495,13 @@
         "name": "post /verify",
         "path": "/verify",
         "pointer": "#/paths/~1verify/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Authority"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth": [
@@ -730,217 +2509,262 @@
             ]
           }
         ],
-        "summary": "Verify token and return details of the owning user"
+        "summary": "Verify token and return details of the owning user",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "id": "schema:Artifact",
         "kind": "schema",
-        "name": "Artifact"
+        "name": "Artifact",
+        "type": "object"
       },
       {
         "id": "schema:ArtifactFormat",
         "kind": "schema",
-        "name": "ArtifactFormat"
+        "name": "ArtifactFormat",
+        "type": "object"
       },
       {
         "id": "schema:ArtifactFormats",
         "kind": "schema",
-        "name": "ArtifactFormats"
+        "name": "ArtifactFormats",
+        "type": "object"
       },
       {
         "id": "schema:Assignment",
         "kind": "schema",
-        "name": "Assignment"
+        "name": "Assignment",
+        "type": "object"
       },
       {
         "id": "schema:AssignmentSubmission",
         "kind": "schema",
-        "name": "AssignmentSubmission"
+        "name": "AssignmentSubmission",
+        "type": "object"
       },
       {
         "id": "schema:Authority",
         "kind": "schema",
-        "name": "Authority"
+        "name": "Authority",
+        "type": "object"
       },
       {
         "id": "schema:ChangeLogItem",
         "kind": "schema",
-        "name": "ChangeLogItem"
+        "name": "ChangeLogItem",
+        "type": "object"
       },
       {
         "id": "schema:Client",
         "kind": "schema",
-        "name": "Client"
+        "name": "Client",
+        "type": "object"
       },
       {
         "id": "schema:Contribution",
         "kind": "schema",
-        "name": "Contribution"
+        "name": "Contribution",
+        "type": "object"
       },
       {
         "id": "schema:Credential",
         "kind": "schema",
-        "name": "Credential"
+        "name": "Credential",
+        "type": "object"
       },
       {
         "id": "schema:ErrorField",
         "kind": "schema",
-        "name": "ErrorField"
+        "name": "ErrorField",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:EventType",
         "kind": "schema",
-        "name": "EventType"
+        "name": "EventType",
+        "type": "object"
       },
       {
         "id": "schema:Export",
         "kind": "schema",
-        "name": "Export"
+        "name": "Export",
+        "type": "object"
       },
       {
         "id": "schema:ExportSummary",
         "kind": "schema",
-        "name": "ExportSummary"
+        "name": "ExportSummary",
+        "type": "object"
       },
       {
         "id": "schema:Flag",
         "kind": "schema",
-        "name": "Flag"
+        "name": "Flag",
+        "type": "object"
       },
       {
         "id": "schema:Form",
         "kind": "schema",
-        "name": "Form"
+        "name": "Form",
+        "type": "object"
       },
       {
         "id": "schema:FormField",
         "kind": "schema",
-        "name": "FormField"
+        "name": "FormField",
+        "type": "object"
       },
       {
         "id": "schema:FormResponse",
         "kind": "schema",
-        "name": "FormResponse"
+        "name": "FormResponse",
+        "type": "object"
       },
       {
         "id": "schema:FormResponseSubmission",
         "kind": "schema",
-        "name": "FormResponseSubmission"
+        "name": "FormResponseSubmission",
+        "type": "object"
       },
       {
         "id": "schema:FormSubmission",
         "kind": "schema",
-        "name": "FormSubmission"
+        "name": "FormSubmission",
+        "type": "object"
       },
       {
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
         "id": "schema:LatLong",
         "kind": "schema",
-        "name": "LatLong"
+        "name": "LatLong",
+        "type": "object"
       },
       {
         "id": "schema:LinkedProfile",
         "kind": "schema",
-        "name": "LinkedProfile"
+        "name": "LinkedProfile",
+        "type": "object"
       },
       {
         "id": "schema:Media",
         "kind": "schema",
-        "name": "Media"
+        "name": "Media",
+        "type": "object"
       },
       {
         "id": "schema:MediaUsage",
         "kind": "schema",
-        "name": "MediaUsage"
+        "name": "MediaUsage",
+        "type": "object"
       },
       {
         "id": "schema:ModerationAction",
         "kind": "schema",
-        "name": "ModerationAction"
+        "name": "ModerationAction",
+        "type": "object"
       },
       {
         "id": "schema:ModerationHistoryItem",
         "kind": "schema",
-        "name": "ModerationHistoryItem"
+        "name": "ModerationHistoryItem",
+        "type": "object"
       },
       {
         "id": "schema:ModerationHistoryItemSubmission",
         "kind": "schema",
-        "name": "ModerationHistoryItemSubmission"
+        "name": "ModerationHistoryItemSubmission",
+        "type": "object"
       },
       {
         "id": "schema:ModerationState",
         "kind": "schema",
-        "name": "ModerationState"
+        "name": "ModerationState",
+        "type": "object"
       },
       {
         "id": "schema:NotificationPreview",
         "kind": "schema",
-        "name": "NotificationPreview"
+        "name": "NotificationPreview",
+        "type": "object"
       },
       {
         "id": "schema:OsmId",
         "kind": "schema",
-        "name": "OsmId"
+        "name": "OsmId",
+        "type": "object"
       },
       {
         "id": "schema:Place",
         "kind": "schema",
-        "name": "Place"
+        "name": "Place",
+        "type": "object"
       },
       {
         "id": "schema:Subscription",
         "kind": "schema",
-        "name": "Subscription"
+        "name": "Subscription",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionSubmission",
         "kind": "schema",
-        "name": "SubscriptionSubmission"
+        "name": "SubscriptionSubmission",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionType",
         "kind": "schema",
-        "name": "SubscriptionType"
+        "name": "SubscriptionType",
+        "type": "object"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:TagSet",
         "kind": "schema",
-        "name": "TagSet"
+        "name": "TagSet",
+        "type": "object"
       },
       {
         "id": "schema:TagSetSubmission",
         "kind": "schema",
-        "name": "TagSetSubmission"
+        "name": "TagSetSubmission",
+        "type": "object"
       },
       {
         "id": "schema:TagSubmission",
         "kind": "schema",
-        "name": "TagSubmission"
+        "name": "TagSubmission",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:Via",
         "kind": "schema",
-        "name": "Via"
+        "name": "Via",
+        "type": "object"
       }
     ]
   },

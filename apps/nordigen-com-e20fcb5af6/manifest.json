@@ -42,12 +42,12 @@
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/agreements/enduser/{id}/"
+        "to": "operation:get:/api/v2/agreements/enduser/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/agreements/enduser/{id}/"
+        "to": "operation:delete:/api/v2/agreements/enduser/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
@@ -92,12 +92,12 @@
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/payments/creditors/{id}/"
+        "to": "operation:get:/api/v2/payments/creditors/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/payments/creditors/{id}/"
+        "to": "operation:delete:/api/v2/payments/creditors/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
@@ -107,12 +107,12 @@
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/payments/{id}/"
+        "to": "operation:get:/api/v2/payments/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/payments/{id}/"
+        "to": "operation:delete:/api/v2/payments/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
@@ -127,12 +127,12 @@
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/requisitions/{id}/"
+        "to": "operation:get:/api/v2/requisitions/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/requisitions/{id}/"
+        "to": "operation:delete:/api/v2/requisitions/{id}/"
       },
       {
         "from": "nordigen-com-e20fcb5af6",
@@ -143,6 +143,301 @@
         "from": "nordigen-com-e20fcb5af6",
         "kind": "EXPOSES",
         "to": "operation:post:/api/v2/token/refresh/"
+      },
+      {
+        "from": "operation:get:/api/v2/accounts/{id}/",
+        "kind": "RETURNS",
+        "to": "schema:AccountV2"
+      },
+      {
+        "from": "operation:get:/api/v2/agreements/enduser/",
+        "kind": "RETURNS",
+        "to": "schema:PaginatedEndUserAgreementList"
+      },
+      {
+        "from": "operation:post:/api/v2/agreements/enduser/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndUserAgreementRequest"
+      },
+      {
+        "from": "operation:post:/api/v2/agreements/enduser/",
+        "kind": "RETURNS",
+        "to": "schema:EndUserAgreement"
+      },
+      {
+        "from": "operation:get:/api/v2/agreements/enduser/{id}/",
+        "kind": "RETURNS",
+        "to": "schema:EndUserAgreement"
+      },
+      {
+        "from": "operation:put:/api/v2/agreements/enduser/{id}/accept/",
+        "kind": "ACCEPTS",
+        "to": "schema:EnduserAcceptanceDetailsRequest"
+      },
+      {
+        "from": "operation:put:/api/v2/agreements/enduser/{id}/accept/",
+        "kind": "RETURNS",
+        "to": "schema:EndUserAgreement"
+      },
+      {
+        "from": "operation:get:/api/v2/institutions/",
+        "kind": "RETURNS",
+        "to": "schema:Integration"
+      },
+      {
+        "from": "operation:get:/api/v2/institutions/{id}/",
+        "kind": "RETURNS",
+        "to": "schema:Integration"
+      },
+      {
+        "from": "operation:get:/api/v2/payments/",
+        "kind": "RETURNS",
+        "to": "schema:PaginatedPaymentReadList"
+      },
+      {
+        "from": "operation:post:/api/v2/payments/",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentWriteRequest"
+      },
+      {
+        "from": "operation:post:/api/v2/payments/",
+        "kind": "RETURNS",
+        "to": "schema:PaymentWrite"
+      },
+      {
+        "from": "operation:get:/api/v2/payments/account/",
+        "kind": "RETURNS",
+        "to": "schema:CreditorAccount"
+      },
+      {
+        "from": "operation:get:/api/v2/payments/creditors/",
+        "kind": "RETURNS",
+        "to": "schema:PaginatedCreditorAccountList"
+      },
+      {
+        "from": "operation:post:/api/v2/payments/creditors/",
+        "kind": "ACCEPTS",
+        "to": "schema:CreditorAccountWriteRequest"
+      },
+      {
+        "from": "operation:post:/api/v2/payments/creditors/",
+        "kind": "RETURNS",
+        "to": "schema:CreditorAccountWrite"
+      },
+      {
+        "from": "operation:get:/api/v2/payments/creditors/{id}/",
+        "kind": "RETURNS",
+        "to": "schema:CreditorAccount"
+      },
+      {
+        "from": "operation:get:/api/v2/payments/{id}/",
+        "kind": "RETURNS",
+        "to": "schema:PaymentRead"
+      },
+      {
+        "from": "operation:get:/api/v2/requisitions/",
+        "kind": "RETURNS",
+        "to": "schema:PaginatedRequisitionV2List"
+      },
+      {
+        "from": "operation:post:/api/v2/requisitions/",
+        "kind": "ACCEPTS",
+        "to": "schema:RequisitionV2Request"
+      },
+      {
+        "from": "operation:post:/api/v2/requisitions/",
+        "kind": "RETURNS",
+        "to": "schema:SpectacularRequisitionV2"
+      },
+      {
+        "from": "operation:get:/api/v2/requisitions/{id}/",
+        "kind": "RETURNS",
+        "to": "schema:RequisitionV2"
+      },
+      {
+        "from": "operation:post:/api/v2/token/new/",
+        "kind": "ACCEPTS",
+        "to": "schema:JWTObtainPairRequest"
+      },
+      {
+        "from": "operation:post:/api/v2/token/new/",
+        "kind": "RETURNS",
+        "to": "schema:SpectacularJWTObtain"
+      },
+      {
+        "from": "operation:post:/api/v2/token/refresh/",
+        "kind": "ACCEPTS",
+        "to": "schema:JWTRefreshRequest"
+      },
+      {
+        "from": "operation:post:/api/v2/token/refresh/",
+        "kind": "RETURNS",
+        "to": "schema:SpectacularJWTRefresh"
+      },
+      {
+        "from": "schema:AccountV2",
+        "kind": "REFERENCES",
+        "to": "schema:AccountV2StatusEnum"
+      },
+      {
+        "from": "schema:CreditorAccount",
+        "kind": "REFERENCES",
+        "to": "schema:TypeEnum"
+      },
+      {
+        "from": "schema:CreditorAccountWrite",
+        "kind": "REFERENCES",
+        "to": "schema:AddressCountryEnum"
+      },
+      {
+        "from": "schema:CreditorAccountWrite",
+        "kind": "REFERENCES",
+        "to": "schema:TypeEnum"
+      },
+      {
+        "from": "schema:CreditorAccountWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AddressCountryEnum"
+      },
+      {
+        "from": "schema:CreditorAccountWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TypeEnum"
+      },
+      {
+        "from": "schema:DebtorAccountWrite",
+        "kind": "REFERENCES",
+        "to": "schema:TypeEnum"
+      },
+      {
+        "from": "schema:DebtorAccountWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TypeEnum"
+      },
+      {
+        "from": "schema:PaginatedCreditorAccountList",
+        "kind": "REFERENCES",
+        "to": "schema:CreditorAccount"
+      },
+      {
+        "from": "schema:PaginatedEndUserAgreementList",
+        "kind": "REFERENCES",
+        "to": "schema:EndUserAgreement"
+      },
+      {
+        "from": "schema:PaginatedPaymentReadList",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentRead"
+      },
+      {
+        "from": "schema:PaginatedRequisitionV2List",
+        "kind": "REFERENCES",
+        "to": "schema:RequisitionV2"
+      },
+      {
+        "from": "schema:PaymentRead",
+        "kind": "REFERENCES",
+        "to": "schema:DebtorAccountWrite"
+      },
+      {
+        "from": "schema:PaymentRead",
+        "kind": "REFERENCES",
+        "to": "schema:InstructedAmount"
+      },
+      {
+        "from": "schema:PaymentRead",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentProductEnum"
+      },
+      {
+        "from": "schema:PaymentRead",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentStatusEnum"
+      },
+      {
+        "from": "schema:PaymentRead",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentTypeEnum"
+      },
+      {
+        "from": "schema:PaymentWrite",
+        "kind": "REFERENCES",
+        "to": "schema:InstructedAmount"
+      },
+      {
+        "from": "schema:PaymentWrite",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentProductEnum"
+      },
+      {
+        "from": "schema:PaymentWrite",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentStatusEnum"
+      },
+      {
+        "from": "schema:PaymentWrite",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentTypeEnum"
+      },
+      {
+        "from": "schema:PaymentWrite",
+        "kind": "REFERENCES",
+        "to": "schema:PeriodicPayment"
+      },
+      {
+        "from": "schema:PaymentWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DebtorAccountWriteRequest"
+      },
+      {
+        "from": "schema:PaymentWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:InstructedAmountRequest"
+      },
+      {
+        "from": "schema:PaymentWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentProductEnum"
+      },
+      {
+        "from": "schema:PaymentWriteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PeriodicPaymentRequest"
+      },
+      {
+        "from": "schema:PeriodicPayment",
+        "kind": "REFERENCES",
+        "to": "schema:ExecutionRuleEnum"
+      },
+      {
+        "from": "schema:PeriodicPayment",
+        "kind": "REFERENCES",
+        "to": "schema:FrequencyEnum"
+      },
+      {
+        "from": "schema:PeriodicPaymentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ExecutionRuleEnum"
+      },
+      {
+        "from": "schema:PeriodicPaymentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:FrequencyEnum"
+      },
+      {
+        "from": "schema:PremiumAccountQuery",
+        "kind": "REFERENCES",
+        "to": "schema:CountryEnum"
+      },
+      {
+        "from": "schema:RequisitionV2",
+        "kind": "REFERENCES",
+        "to": "schema:Status1c5Enum"
+      },
+      {
+        "from": "schema:SpectacularRequisitionV2",
+        "kind": "REFERENCES",
+        "to": "schema:Status1c5Enum"
       }
     ],
     "nodes": [
@@ -152,628 +447,1741 @@
       },
       {
         "deprecated": false,
+        "description": "Access account premium transactions.",
         "id": "operation:get:/api/v2/accounts/premium/{id}/transactions/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve account transactions v2",
+        "parameters": [
+          {
+            "description": "ISO 3166 two-character country code",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/accounts/premium/{id}/transactions/",
         "pointer": "#/paths/~1api~1v2~1accounts~1premium~1{id}~1transactions~1/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "409",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "503",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "premium"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Access account metadata.",
         "id": "operation:get:/api/v2/accounts/{id}/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve account metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/accounts/{id}/",
         "pointer": "#/paths/~1api~1v2~1accounts~1{id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountV2"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Access account balances.",
         "id": "operation:get:/api/v2/accounts/{id}/balances/",
         "kind": "operation",
         "method": "get",
         "name": "accounts_balances_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/accounts/{id}/balances/",
         "pointer": "#/paths/~1api~1v2~1accounts~1{id}~1balances~1/get",
+        "responses": [
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "409",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "503",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Access account details.",
         "id": "operation:get:/api/v2/accounts/{id}/details/",
         "kind": "operation",
         "method": "get",
         "name": "accounts_details_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/accounts/{id}/details/",
         "pointer": "#/paths/~1api~1v2~1accounts~1{id}~1details~1/get",
+        "responses": [
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "409",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "503",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Access account transactions.",
         "id": "operation:get:/api/v2/accounts/{id}/transactions/",
         "kind": "operation",
         "method": "get",
         "name": "accounts_transactions_retrieve",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/accounts/{id}/transactions/",
         "pointer": "#/paths/~1api~1v2~1accounts~1{id}~1transactions~1/get",
+        "responses": [
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "409",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "503",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all end user agreements belonging to the company",
         "id": "operation:get:/api/v2/agreements/enduser/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve all EUAs for an end user v2",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The initial index from which to return the results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v2/agreements/enduser/",
         "pointer": "#/paths/~1api~1v2~1agreements~1enduser~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaginatedEndUserAgreementList"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create an end user agreement",
         "id": "operation:post:/api/v2/agreements/enduser/",
         "kind": "operation",
         "method": "post",
         "name": "create EUA v2",
         "path": "/api/v2/agreements/enduser/",
         "pointer": "#/paths/~1api~1v2~1agreements~1enduser~1/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "EndUserAgreementRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "EndUserAgreement"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "agreements"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/agreements/enduser/{id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete EUA by id v2",
-        "path": "/api/v2/agreements/enduser/{id}/",
-        "pointer": "#/paths/~1api~1v2~1agreements~1enduser~1{id}~1/delete",
-        "security": [
-          {
-            "jwtAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve end user agreement by ID",
         "id": "operation:get:/api/v2/agreements/enduser/{id}/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve EUA by id v2",
+        "parameters": [
+          {
+            "description": "A UUID string identifying this end user agreement.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/agreements/enduser/{id}/",
         "pointer": "#/paths/~1api~1v2~1agreements~1enduser~1{id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndUserAgreement"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an end user agreement",
+        "id": "operation:delete:/api/v2/agreements/enduser/{id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete EUA by id v2",
+        "parameters": [
+          {
+            "description": "A UUID string identifying this end user agreement.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/v2/agreements/enduser/{id}/",
+        "pointer": "#/paths/~1api~1v2~1agreements~1enduser~1{id}~1/delete",
+        "responses": [
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwtAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "agreements"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Accept an end-user agreement via the API",
         "id": "operation:put:/api/v2/agreements/enduser/{id}/accept/",
         "kind": "operation",
         "method": "put",
         "name": "accept EUA",
+        "parameters": [
+          {
+            "description": "A UUID string identifying this end user agreement.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/agreements/enduser/{id}/accept/",
         "pointer": "#/paths/~1api~1v2~1agreements~1enduser~1{id}~1accept~1/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "EnduserAcceptanceDetailsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndUserAgreement"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "405",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all available institutions",
         "id": "operation:get:/api/v2/institutions/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve all supported Institutions in a given country",
+        "parameters": [
+          {
+            "description": "ISO 3166 two-character country code",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Boolean value, indicating if payments are enabled",
+            "in": "query",
+            "name": "payments_enabled",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/institutions/",
         "pointer": "#/paths/~1api~1v2~1institutions~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Integration[]"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details about a specific Institution",
         "id": "operation:get:/api/v2/institutions/{id}/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve institution",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/institutions/{id}/",
         "pointer": "#/paths/~1api~1v2~1institutions~1{id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Integration"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all payments belonging to the company",
         "id": "operation:get:/api/v2/payments/",
         "kind": "operation",
         "method": "get",
         "name": "list payments",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The initial index from which to return the results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v2/payments/",
         "pointer": "#/paths/~1api~1v2~1payments~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaginatedPaymentReadList"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create payment",
         "id": "operation:post:/api/v2/payments/",
         "kind": "operation",
         "method": "post",
         "name": "create payment",
         "path": "/api/v2/payments/",
         "pointer": "#/paths/~1api~1v2~1payments~1/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "PaymentWriteRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "PaymentWrite"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all payment creditor accounts",
         "id": "operation:get:/api/v2/payments/account/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve all payment creditor accounts",
         "path": "/api/v2/payments/account/",
         "pointer": "#/paths/~1api~1v2~1payments~1account~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreditorAccount[]"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "API endpoints related to creditor accounts.",
         "id": "operation:get:/api/v2/payments/creditors/",
         "kind": "operation",
         "method": "get",
         "name": "payments_creditors_list",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "address_country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "currency",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The initial index from which to return the results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/payments/creditors/",
         "pointer": "#/paths/~1api~1v2~1payments~1creditors~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaginatedCreditorAccountList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "API endpoints related to creditor accounts.",
         "id": "operation:post:/api/v2/payments/creditors/",
         "kind": "operation",
         "method": "post",
         "name": "payments_creditors_create",
         "path": "/api/v2/payments/creditors/",
         "pointer": "#/paths/~1api~1v2~1payments~1creditors~1/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "CreditorAccountWriteRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreditorAccountWrite"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/payments/creditors/{id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "payments_creditors_destroy",
-        "path": "/api/v2/payments/creditors/{id}/",
-        "pointer": "#/paths/~1api~1v2~1payments~1creditors~1{id}~1/delete",
-        "security": [
-          {
-            "jwtAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "API endpoints related to creditor accounts.",
         "id": "operation:get:/api/v2/payments/creditors/{id}/",
         "kind": "operation",
         "method": "get",
         "name": "payments_creditors_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/payments/creditors/{id}/",
         "pointer": "#/paths/~1api~1v2~1payments~1creditors~1{id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreditorAccount"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "API endpoints related to creditor accounts.",
+        "id": "operation:delete:/api/v2/payments/creditors/{id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "payments_creditors_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/v2/payments/creditors/{id}/",
+        "pointer": "#/paths/~1api~1v2~1payments~1creditors~1{id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwtAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List minimum required fields for institution",
         "id": "operation:get:/api/v2/payments/fields/{institution_id}/",
         "kind": "operation",
         "method": "get",
         "name": "list minimum required fields for institution",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "institution_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/payments/fields/{institution_id}/",
         "pointer": "#/paths/~1api~1v2~1payments~1fields~1{institution_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/payments/{id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete periodic payment",
-        "path": "/api/v2/payments/{id}/",
-        "pointer": "#/paths/~1api~1v2~1payments~1{id}~1/delete",
-        "security": [
-          {
-            "jwtAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve payment",
         "id": "operation:get:/api/v2/payments/{id}/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve payment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/payments/{id}/",
         "pointer": "#/paths/~1api~1v2~1payments~1{id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentRead"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete periodic payment",
+        "id": "operation:delete:/api/v2/payments/{id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete periodic payment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/v2/payments/{id}/",
+        "pointer": "#/paths/~1api~1v2~1payments~1{id}~1/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "409",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwtAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "payments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve all requisitions belonging to the company",
         "id": "operation:get:/api/v2/requisitions/",
         "kind": "operation",
         "method": "get",
         "name": "retrieve all requisitions",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The initial index from which to return the results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v2/requisitions/",
         "pointer": "#/paths/~1api~1v2~1requisitions~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaginatedRequisitionV2List"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "requisitions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new requisition",
         "id": "operation:post:/api/v2/requisitions/",
         "kind": "operation",
         "method": "post",
         "name": "requisition created",
         "path": "/api/v2/requisitions/",
         "pointer": "#/paths/~1api~1v2~1requisitions~1/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "RequisitionV2Request"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SpectacularRequisitionV2"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "requisitions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/requisitions/{id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete requisition by id v2",
-        "path": "/api/v2/requisitions/{id}/",
-        "pointer": "#/paths/~1api~1v2~1requisitions~1{id}~1/delete",
-        "security": [
-          {
-            "jwtAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve a requisition by ID",
         "id": "operation:get:/api/v2/requisitions/{id}/",
         "kind": "operation",
         "method": "get",
         "name": "requisition by id",
+        "parameters": [
+          {
+            "description": "A UUID string identifying this requisition.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/v2/requisitions/{id}/",
         "pointer": "#/paths/~1api~1v2~1requisitions~1{id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RequisitionV2"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "requisitions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete requisition and its end user agreement",
+        "id": "operation:delete:/api/v2/requisitions/{id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete requisition by id v2",
+        "parameters": [
+          {
+            "description": "A UUID string identifying this requisition.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/v2/requisitions/{id}/",
+        "pointer": "#/paths/~1api~1v2~1requisitions~1{id}~1/delete",
+        "responses": [
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwtAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "requisitions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Obtain JWT pair",
         "id": "operation:post:/api/v2/token/new/",
         "kind": "operation",
         "method": "post",
         "name": "JWT Obtain",
         "path": "/api/v2/token/new/",
         "pointer": "#/paths/~1api~1v2~1token~1new~1/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "JWTObtainPairRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpectacularJWTObtain"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "token"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Refresh access token",
         "id": "operation:post:/api/v2/token/refresh/",
         "kind": "operation",
         "method": "post",
         "name": "JWT Refresh",
         "path": "/api/v2/token/refresh/",
         "pointer": "#/paths/~1api~1v2~1token~1refresh~1/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "JWTRefreshRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpectacularJWTRefresh"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "token"
+        ]
       },
       {
+        "description": "AccountV2Serializer.",
         "id": "schema:AccountV2",
         "kind": "schema",
-        "name": "AccountV2"
+        "name": "AccountV2",
+        "type": "object"
       },
       {
         "id": "schema:AccountV2StatusEnum",
         "kind": "schema",
-        "name": "AccountV2StatusEnum"
+        "name": "AccountV2StatusEnum",
+        "type": "string"
       },
       {
         "id": "schema:AddressCountryEnum",
         "kind": "schema",
-        "name": "AddressCountryEnum"
+        "name": "AddressCountryEnum",
+        "type": "string"
       },
       {
         "id": "schema:CountryEnum",
         "kind": "schema",
-        "name": "CountryEnum"
+        "name": "CountryEnum",
+        "type": "string"
       },
       {
+        "description": "Creditor account read serializer.",
         "id": "schema:CreditorAccount",
         "kind": "schema",
-        "name": "CreditorAccount"
+        "name": "CreditorAccount",
+        "type": "object"
       },
       {
+        "description": "Creditor account write serializer.",
         "id": "schema:CreditorAccountWrite",
         "kind": "schema",
-        "name": "CreditorAccountWrite"
+        "name": "CreditorAccountWrite",
+        "type": "object"
       },
       {
+        "description": "Creditor account write serializer.",
         "id": "schema:CreditorAccountWriteRequest",
         "kind": "schema",
-        "name": "CreditorAccountWriteRequest"
+        "name": "CreditorAccountWriteRequest",
+        "type": "object"
       },
       {
+        "description": "Debtor account write serializer.",
         "id": "schema:DebtorAccountWrite",
         "kind": "schema",
-        "name": "DebtorAccountWrite"
+        "name": "DebtorAccountWrite",
+        "type": "object"
       },
       {
+        "description": "Debtor account write serializer.",
         "id": "schema:DebtorAccountWriteRequest",
         "kind": "schema",
-        "name": "DebtorAccountWriteRequest"
+        "name": "DebtorAccountWriteRequest",
+        "type": "object"
       },
       {
+        "description": "EndUserAgreement.",
         "id": "schema:EndUserAgreement",
         "kind": "schema",
-        "name": "EndUserAgreement"
+        "name": "EndUserAgreement",
+        "type": "object"
       },
       {
+        "description": "EndUserAgreement.",
         "id": "schema:EndUserAgreementRequest",
         "kind": "schema",
-        "name": "EndUserAgreementRequest"
+        "name": "EndUserAgreementRequest",
+        "type": "object"
       },
       {
+        "description": "Represents end-user details.",
         "id": "schema:EnduserAcceptanceDetailsRequest",
         "kind": "schema",
-        "name": "EnduserAcceptanceDetailsRequest"
+        "name": "EnduserAcceptanceDetailsRequest",
+        "type": "object"
       },
       {
         "id": "schema:ExecutionRuleEnum",
         "kind": "schema",
-        "name": "ExecutionRuleEnum"
+        "name": "ExecutionRuleEnum",
+        "type": "string"
       },
       {
         "id": "schema:FrequencyEnum",
         "kind": "schema",
-        "name": "FrequencyEnum"
+        "name": "FrequencyEnum",
+        "type": "string"
       },
       {
+        "description": "InstructedAmountSerializer.",
         "id": "schema:InstructedAmount",
         "kind": "schema",
-        "name": "InstructedAmount"
+        "name": "InstructedAmount",
+        "type": "object"
       },
       {
+        "description": "InstructedAmountSerializer.",
         "id": "schema:InstructedAmountRequest",
         "kind": "schema",
-        "name": "InstructedAmountRequest"
+        "name": "InstructedAmountRequest",
+        "type": "object"
       },
       {
+        "description": "Represents an Integration.",
         "id": "schema:Integration",
         "kind": "schema",
-        "name": "Integration"
+        "name": "Integration",
+        "type": "object"
       },
       {
+        "description": "Obtain JWT pair.",
         "id": "schema:JWTObtainPairRequest",
         "kind": "schema",
-        "name": "JWTObtainPairRequest"
+        "name": "JWTObtainPairRequest",
+        "type": "object"
       },
       {
+        "description": "Refresh access token.",
         "id": "schema:JWTRefreshRequest",
         "kind": "schema",
-        "name": "JWTRefreshRequest"
+        "name": "JWTRefreshRequest",
+        "type": "object"
       },
       {
         "id": "schema:PaginatedCreditorAccountList",
         "kind": "schema",
-        "name": "PaginatedCreditorAccountList"
+        "name": "PaginatedCreditorAccountList",
+        "type": "object"
       },
       {
         "id": "schema:PaginatedEndUserAgreementList",
         "kind": "schema",
-        "name": "PaginatedEndUserAgreementList"
+        "name": "PaginatedEndUserAgreementList",
+        "type": "object"
       },
       {
         "id": "schema:PaginatedPaymentReadList",
         "kind": "schema",
-        "name": "PaginatedPaymentReadList"
+        "name": "PaginatedPaymentReadList",
+        "type": "object"
       },
       {
         "id": "schema:PaginatedRequisitionV2List",
         "kind": "schema",
-        "name": "PaginatedRequisitionV2List"
+        "name": "PaginatedRequisitionV2List",
+        "type": "object"
       },
       {
         "id": "schema:PaymentProductEnum",
         "kind": "schema",
-        "name": "PaymentProductEnum"
+        "name": "PaymentProductEnum",
+        "type": "string"
       },
       {
+        "description": "PaymentReadSerializer.",
         "id": "schema:PaymentRead",
         "kind": "schema",
-        "name": "PaymentRead"
+        "name": "PaymentRead",
+        "type": "object"
       },
       {
         "id": "schema:PaymentStatusEnum",
         "kind": "schema",
-        "name": "PaymentStatusEnum"
+        "name": "PaymentStatusEnum",
+        "type": "string"
       },
       {
         "id": "schema:PaymentTypeEnum",
         "kind": "schema",
-        "name": "PaymentTypeEnum"
+        "name": "PaymentTypeEnum",
+        "type": "string"
       },
       {
+        "description": "PaymentWriteSerializer.",
         "id": "schema:PaymentWrite",
         "kind": "schema",
-        "name": "PaymentWrite"
+        "name": "PaymentWrite",
+        "type": "object"
       },
       {
+        "description": "PaymentWriteSerializer.",
         "id": "schema:PaymentWriteRequest",
         "kind": "schema",
-        "name": "PaymentWriteRequest"
+        "name": "PaymentWriteRequest",
+        "type": "object"
       },
       {
+        "description": "Periodic Payment Serializer.",
         "id": "schema:PeriodicPayment",
         "kind": "schema",
-        "name": "PeriodicPayment"
+        "name": "PeriodicPayment",
+        "type": "object"
       },
       {
+        "description": "Periodic Payment Serializer.",
         "id": "schema:PeriodicPaymentRequest",
         "kind": "schema",
-        "name": "PeriodicPaymentRequest"
+        "name": "PeriodicPaymentRequest",
+        "type": "object"
       },
       {
+        "description": "Filter country.",
         "id": "schema:PremiumAccountQuery",
         "kind": "schema",
-        "name": "PremiumAccountQuery"
+        "name": "PremiumAccountQuery",
+        "type": "object"
       },
       {
+        "description": "RequisitionLinkParamsSerializer.",
         "id": "schema:RequisitionLinkParamsRequest",
         "kind": "schema",
-        "name": "RequisitionLinkParamsRequest"
+        "name": "RequisitionLinkParamsRequest",
+        "type": "object"
       },
       {
+        "description": "RequisitionLinksSerializer.",
         "id": "schema:RequisitionLinks",
         "kind": "schema",
-        "name": "RequisitionLinks"
+        "name": "RequisitionLinks",
+        "type": "object"
       },
       {
+        "description": "RequisitionV2Serializer.",
         "id": "schema:RequisitionV2",
         "kind": "schema",
-        "name": "RequisitionV2"
+        "name": "RequisitionV2",
+        "type": "object"
       },
       {
+        "description": "RequisitionV2Serializer.",
         "id": "schema:RequisitionV2Request",
         "kind": "schema",
-        "name": "RequisitionV2Request"
+        "name": "RequisitionV2Request",
+        "type": "object"
       },
       {
+        "description": "Obtain new JWT pair.",
         "id": "schema:SpectacularJWTObtain",
         "kind": "schema",
-        "name": "SpectacularJWTObtain"
+        "name": "SpectacularJWTObtain",
+        "type": "object"
       },
       {
+        "description": "Refresh Access token.",
         "id": "schema:SpectacularJWTRefresh",
         "kind": "schema",
-        "name": "SpectacularJWTRefresh"
+        "name": "SpectacularJWTRefresh",
+        "type": "object"
       },
       {
+        "description": "Create requisition.",
         "id": "schema:SpectacularRequisitionV2",
         "kind": "schema",
-        "name": "SpectacularRequisitionV2"
+        "name": "SpectacularRequisitionV2",
+        "type": "object"
       },
       {
         "id": "schema:Status1c5Enum",
         "kind": "schema",
-        "name": "Status1c5Enum"
+        "name": "Status1c5Enum",
+        "type": "string"
       },
       {
         "id": "schema:TypeEnum",
         "kind": "schema",
-        "name": "TypeEnum"
+        "name": "TypeEnum",
+        "type": "string"
       }
     ]
   },

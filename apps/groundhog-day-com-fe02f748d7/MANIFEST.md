@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_groundhog-day.com_apple-touch-i
 
 | | |
 | --- | --- |
-| Signed bundle | `1f0d86ee34b6379b49f62d0af22fe15b589273b7156ada919963718cee6aea79` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_groundhog-day.com_apple-touch-i
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1` | root | Root |
-| GET | `/api/v1/groundhogs` | groundhogs | Get all groundhogs |
-| GET | `/api/v1/groundhogs/{slug}` | groundhog | Get a groundhog by slug |
-| GET | `/api/v1/predictions` | predictions | Get predictions for a given year |
-| GET | `/api/v1/spec` | spec | Get JSON schema |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1` | root | — | object | yes | Root |
+| GET | `/api/v1/groundhogs` | groundhogs | `country`, `isGroundhog` | object | yes | Get all groundhogs |
+| GET | `/api/v1/groundhogs/{slug}` | groundhog | `slug`* | object | yes | Get a groundhog by slug |
+| GET | `/api/v1/predictions` | predictions | `year` | object | yes | Get predictions for a given year |
+| GET | `/api/v1/spec` | spec | — | — | yes | Get JSON schema |

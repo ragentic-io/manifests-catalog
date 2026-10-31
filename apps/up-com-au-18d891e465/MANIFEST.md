@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `7e070e42b4e783841756525ff6f6ec425418cc78dca7c831f94345b56234d908` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,23 +34,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 37 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | get /accounts | List accounts |
-| GET | `/accounts/{accountId}/transactions` | get /accounts/{accountId}/transactions | List transactions by account |
-| GET | `/accounts/{id}` | get /accounts/{id} | Retrieve account |
-| GET | `/categories` | get /categories | List categories |
-| GET | `/categories/{id}` | get /categories/{id} | Retrieve category |
-| GET | `/tags` | get /tags | List tags |
-| GET | `/transactions` | get /transactions | List transactions |
-| GET | `/transactions/{id}` | get /transactions/{id} | Retrieve transaction |
-| PATCH | `/transactions/{transactionId}/relationships/category` | patch /transactions/{transactionId}/relationships/category | Categorize transaction |
-| DELETE | `/transactions/{transactionId}/relationships/tags` | delete /transactions/{transactionId}/relationships/tags | Remove tags from transaction |
-| POST | `/transactions/{transactionId}/relationships/tags` | post /transactions/{transactionId}/relationships/tags | Add tags to transaction |
-| GET | `/util/ping` | get /util/ping | Ping |
-| GET | `/webhooks` | get /webhooks | List webhooks |
-| POST | `/webhooks` | post /webhooks | Create webhook |
-| DELETE | `/webhooks/{id}` | delete /webhooks/{id} | Delete webhook |
-| GET | `/webhooks/{id}` | get /webhooks/{id} | Retrieve webhook |
-| GET | `/webhooks/{webhookId}/logs` | get /webhooks/{webhookId}/logs | List webhook logs |
-| POST | `/webhooks/{webhookId}/ping` | post /webhooks/{webhookId}/ping | Ping webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | get /accounts | `page[size]`, `filter[accountType]`, `filter[ownershipType]` | ListAccountsResponse | yes | List accounts |
+| GET | `/accounts/{accountId}/transactions` | get /accounts/{accountId}/transactions | `accountId`*, `page[size]`, `filter[status]`, `filter[since]`, `filter[until]`, `filter[category]`, `filter[tag]` | ListTransactionsResponse | yes | List transactions by account |
+| GET | `/accounts/{id}` | get /accounts/{id} | `id`* | GetAccountResponse | yes | Retrieve account |
+| GET | `/categories` | get /categories | `filter[parent]` | ListCategoriesResponse | yes | List categories |
+| GET | `/categories/{id}` | get /categories/{id} | `id`* | GetCategoryResponse | yes | Retrieve category |
+| GET | `/tags` | get /tags | `page[size]` | ListTagsResponse | yes | List tags |
+| GET | `/transactions` | get /transactions | `page[size]`, `filter[status]`, `filter[since]`, `filter[until]`, `filter[category]`, `filter[tag]` | ListTransactionsResponse | yes | List transactions |
+| GET | `/transactions/{id}` | get /transactions/{id} | `id`* | GetTransactionResponse | yes | Retrieve transaction |
+| PATCH | `/transactions/{transactionId}/relationships/category` | patch /transactions/{transactionId}/relationships/category | `transactionId`*, body: UpdateTransactionCategoryRequest | — |  | Categorize transaction |
+| POST | `/transactions/{transactionId}/relationships/tags` | post /transactions/{transactionId}/relationships/tags | `transactionId`*, body: UpdateTransactionTagsRequest | — |  | Add tags to transaction |
+| DELETE | `/transactions/{transactionId}/relationships/tags` | delete /transactions/{transactionId}/relationships/tags | `transactionId`*, body: UpdateTransactionTagsRequest | — |  | Remove tags from transaction |
+| GET | `/util/ping` | get /util/ping | — | PingResponse | yes | Ping |
+| GET | `/webhooks` | get /webhooks | `page[size]` | ListWebhooksResponse | yes | List webhooks |
+| POST | `/webhooks` | post /webhooks | body: CreateWebhookRequest | CreateWebhookResponse |  | Create webhook |
+| GET | `/webhooks/{id}` | get /webhooks/{id} | `id`* | GetWebhookResponse | yes | Retrieve webhook |
+| DELETE | `/webhooks/{id}` | delete /webhooks/{id} | `id`* | — |  | Delete webhook |
+| GET | `/webhooks/{webhookId}/logs` | get /webhooks/{webhookId}/logs | `webhookId`*, `page[size]` | ListWebhookDeliveryLogsResponse | yes | List webhook logs |
+| POST | `/webhooks/{webhookId}/ping` | post /webhooks/{webhookId}/ping | `webhookId`* | WebhookEventCallback |  | Ping webhook |

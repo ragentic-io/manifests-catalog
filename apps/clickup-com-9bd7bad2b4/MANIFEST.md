@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_clickup.com_favicons_apple-touc
 
 | | |
 | --- | --- |
-| Signed bundle | `a651d47e55ac2c42f17899eacbf1bbb59f9cfa313293fa6db448e8da14c62d9e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_clickup.com_favicons_apple-touc
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/questions` | List All Questions | List All Questions |
-| POST | `/questions` | Create a New Question | Create a New Question |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/questions` | List All Questions | — | — | yes | List All Questions |
+| POST | `/questions` | Create a New Question | body: object | — |  | Create a New Question |

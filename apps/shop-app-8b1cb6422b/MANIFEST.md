@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.shopify.com_shop-assets_sta
 
 | | |
 | --- | --- |
-| Signed bundle | `93766bae49ecf258b1535c2df47b6469d0a63d50c065992d32f805cf188f39fc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.shopify.com_shop-assets_sta
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/openai/details` | details | Return more details about a list of products. |
-| GET | `/openai/search` | search | Search for products |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/openai/details` | details | `ids`* | searchResponse | yes | Return more details about a list of products. |
+| GET | `/openai/search` | search | `query`, `price_min`, `price_max`, `similar_to_id`, `num_results` | searchResponse | yes | Search for products |

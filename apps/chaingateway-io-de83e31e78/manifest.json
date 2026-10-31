@@ -108,6 +108,231 @@
         "from": "chaingateway-io-de83e31e78",
         "kind": "EXPOSES",
         "to": "operation:post:/unsubscribeAddress"
+      },
+      {
+        "from": "operation:post:/clearAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:clearAddressRequest"
+      },
+      {
+        "from": "operation:post:/clearAddress",
+        "kind": "RETURNS",
+        "to": "schema:clearAddress"
+      },
+      {
+        "from": "operation:post:/deleteAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:deleteAddressRequest"
+      },
+      {
+        "from": "operation:post:/deleteAddress",
+        "kind": "RETURNS",
+        "to": "schema:deleteAddress"
+      },
+      {
+        "from": "operation:post:/exportAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:exportAddressRequest"
+      },
+      {
+        "from": "operation:post:/exportAddress",
+        "kind": "RETURNS",
+        "to": "schema:exportAddress"
+      },
+      {
+        "from": "operation:post:/getBlock",
+        "kind": "ACCEPTS",
+        "to": "schema:getBlockRequest"
+      },
+      {
+        "from": "operation:post:/getBlock",
+        "kind": "RETURNS",
+        "to": "schema:getBlock"
+      },
+      {
+        "from": "operation:post:/getEthereumBalance",
+        "kind": "ACCEPTS",
+        "to": "schema:getEthereumBalanceRequest"
+      },
+      {
+        "from": "operation:post:/getEthereumBalance",
+        "kind": "RETURNS",
+        "to": "schema:getEthereumBalance"
+      },
+      {
+        "from": "operation:post:/getExchangeRate",
+        "kind": "ACCEPTS",
+        "to": "schema:getExchangeRateRequest"
+      },
+      {
+        "from": "operation:post:/getExchangeRate",
+        "kind": "RETURNS",
+        "to": "schema:getExchangeRate"
+      },
+      {
+        "from": "operation:post:/getGasPrice",
+        "kind": "RETURNS",
+        "to": "schema:getGasPrice"
+      },
+      {
+        "from": "operation:post:/getLastBlockNumber",
+        "kind": "RETURNS",
+        "to": "schema:getLastBlockNumber"
+      },
+      {
+        "from": "operation:post:/getToken",
+        "kind": "ACCEPTS",
+        "to": "schema:getTokenRequest"
+      },
+      {
+        "from": "operation:post:/getToken",
+        "kind": "RETURNS",
+        "to": "schema:getToken"
+      },
+      {
+        "from": "operation:post:/getTokenBalance",
+        "kind": "ACCEPTS",
+        "to": "schema:getTokenBalanceRequest"
+      },
+      {
+        "from": "operation:post:/getTokenBalance",
+        "kind": "RETURNS",
+        "to": "schema:getTokenBalance"
+      },
+      {
+        "from": "operation:post:/getTransactions",
+        "kind": "ACCEPTS",
+        "to": "schema:getTransactionsRequest"
+      },
+      {
+        "from": "operation:post:/getTransactions",
+        "kind": "RETURNS",
+        "to": "schema:getTransactions"
+      },
+      {
+        "from": "operation:post:/importAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:importAddressRequest"
+      },
+      {
+        "from": "operation:post:/importAddress",
+        "kind": "RETURNS",
+        "to": "schema:importAddress"
+      },
+      {
+        "from": "operation:post:/listAddresses",
+        "kind": "RETURNS",
+        "to": "schema:listAddresses"
+      },
+      {
+        "from": "operation:post:/listFailedIPNs",
+        "kind": "RETURNS",
+        "to": "schema:listFailedIPNs"
+      },
+      {
+        "from": "operation:post:/listSubscribedAddresses",
+        "kind": "RETURNS",
+        "to": "schema:listSubscribedAddresses"
+      },
+      {
+        "from": "operation:post:/newAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:newAddressRequest"
+      },
+      {
+        "from": "operation:post:/newAddress",
+        "kind": "RETURNS",
+        "to": "schema:newAddress"
+      },
+      {
+        "from": "operation:post:/resendFailedIPN",
+        "kind": "ACCEPTS",
+        "to": "schema:resendFailedIPNRequest"
+      },
+      {
+        "from": "operation:post:/resendFailedIPN",
+        "kind": "RETURNS",
+        "to": "schema:resendFailedIPN"
+      },
+      {
+        "from": "operation:post:/sendEthereum",
+        "kind": "ACCEPTS",
+        "to": "schema:sendEthereumRequest"
+      },
+      {
+        "from": "operation:post:/sendEthereum",
+        "kind": "RETURNS",
+        "to": "schema:sendEthereum"
+      },
+      {
+        "from": "operation:post:/sendToken",
+        "kind": "ACCEPTS",
+        "to": "schema:sendTokenRequest"
+      },
+      {
+        "from": "operation:post:/sendToken",
+        "kind": "RETURNS",
+        "to": "schema:sendToken"
+      },
+      {
+        "from": "operation:post:/subscribeAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:subscribeAddressRequest"
+      },
+      {
+        "from": "operation:post:/subscribeAddress",
+        "kind": "RETURNS",
+        "to": "schema:subscribeAddress"
+      },
+      {
+        "from": "operation:post:/unsubscribeAddress",
+        "kind": "ACCEPTS",
+        "to": "schema:unsubscribeAddressRequest"
+      },
+      {
+        "from": "operation:post:/unsubscribeAddress",
+        "kind": "RETURNS",
+        "to": "schema:unsubscribeAddress"
+      },
+      {
+        "from": "schema:Content",
+        "kind": "REFERENCES",
+        "to": "schema:Crypto"
+      },
+      {
+        "from": "schema:Crypto",
+        "kind": "REFERENCES",
+        "to": "schema:Cipherparams"
+      },
+      {
+        "from": "schema:Crypto",
+        "kind": "REFERENCES",
+        "to": "schema:Kdfparams"
+      },
+      {
+        "from": "schema:getTransactions",
+        "kind": "REFERENCES",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "schema:importAddressRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:listAddresses",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:listFailedIPNs",
+        "kind": "REFERENCES",
+        "to": "schema:FailedIpn"
+      },
+      {
+        "from": "schema:listSubscribedAddresses",
+        "kind": "REFERENCES",
+        "to": "schema:Ipn"
       }
     ],
     "nodes": [
@@ -117,459 +342,1066 @@
       },
       {
         "deprecated": false,
+        "description": "Sends all available ethereum funds of an address to a specified receiver address.",
         "id": "operation:post:/clearAddress",
         "kind": "operation",
         "method": "post",
         "name": "clearAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/clearAddress",
         "pointer": "#/paths/~1clearAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "clearAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "clearAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "clearAddress"
+        "summary": "clearAddress",
+        "tags": [
+          "Transaction Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an existing ethereum address.",
         "id": "operation:post:/deleteAddress",
         "kind": "operation",
         "method": "post",
         "name": "deleteAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deleteAddress",
         "pointer": "#/paths/~1deleteAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "deleteAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "deleteAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "deleteAddress"
+        "summary": "deleteAddress",
+        "tags": [
+          "Address Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all ethereum addresses created with an account.",
         "id": "operation:post:/exportAddress",
         "kind": "operation",
         "method": "post",
         "name": "exportAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/exportAddress",
         "pointer": "#/paths/~1exportAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "exportAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "exportAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "exportAddress"
+        "summary": "exportAddress",
+        "tags": [
+          "Address Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information of an ethereum block with or without transactions",
         "id": "operation:post:/getBlock",
         "kind": "operation",
         "method": "post",
         "name": "getBlock",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getBlock",
         "pointer": "#/paths/~1getBlock/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "getBlockRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "getBlock"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getBlock"
+        "summary": "getBlock",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the ethereum balance of a given address.",
         "id": "operation:post:/getEthereumBalance",
         "kind": "operation",
         "method": "post",
         "name": "getEthereumBalance",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getEthereumBalance",
         "pointer": "#/paths/~1getEthereumBalance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "getEthereumBalanceRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "getEthereumBalance"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getEthereumBalance"
+        "summary": "getEthereumBalance",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the current Ethereum price in Euro or US Dollar.",
         "id": "operation:post:/getExchangeRate",
         "kind": "operation",
         "method": "post",
         "name": "getExchangeRate",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getExchangeRate",
         "pointer": "#/paths/~1getExchangeRate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "getExchangeRateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "getExchangeRate"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getExchangeRate"
+        "summary": "getExchangeRate",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the current gas price in GWEI.",
         "id": "operation:post:/getGasPrice",
         "kind": "operation",
         "method": "post",
         "name": "getGasPrice",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getGasPrice",
         "pointer": "#/paths/~1getGasPrice/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getGasPrice"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getGasPrice"
+        "summary": "getGasPrice",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the block number of the last mined ethereum block.",
         "id": "operation:post:/getLastBlockNumber",
         "kind": "operation",
         "method": "post",
         "name": "getLastBlockNumber",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getLastBlockNumber",
         "pointer": "#/paths/~1getLastBlockNumber/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getLastBlockNumber"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getLastBlockNumber"
+        "summary": "getLastBlockNumber",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about a specific ERC20 token like name, symbol, decimal places and total supply.",
         "id": "operation:post:/getToken",
         "kind": "operation",
         "method": "post",
         "name": "getToken",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getToken",
         "pointer": "#/paths/~1getToken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "getTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "getToken"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getToken"
+        "summary": "getToken",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the token balance of a given address.",
         "id": "operation:post:/getTokenBalance",
         "kind": "operation",
         "method": "post",
         "name": "getTokenBalance",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getTokenBalance",
         "pointer": "#/paths/~1getTokenBalance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "getTokenBalanceRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenBalance"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getTokenBalance"
+        "summary": "getTokenBalance",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information like confirmations, token contract address, amount, gas price and more of a given transaction.",
         "id": "operation:post:/getTransactions",
         "kind": "operation",
         "method": "post",
         "name": "getTransactions",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getTransactions",
         "pointer": "#/paths/~1getTransactions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "getTransactionsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTransactions"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "getTransactions"
+        "summary": "getTransactions",
+        "tags": [
+          "Info Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all ethereum addresses created with an account.",
         "id": "operation:post:/importAddress",
         "kind": "operation",
         "method": "post",
         "name": "importAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/importAddress",
         "pointer": "#/paths/~1importAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "importAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "importAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "importAddress"
+        "summary": "importAddress",
+        "tags": [
+          "Address Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all ethereum addresses created with an account.",
         "id": "operation:post:/listAddresses",
         "kind": "operation",
         "method": "post",
         "name": "listAddresses",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/listAddresses",
         "pointer": "#/paths/~1listAddresses/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "listAddresses"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "listAddresses"
+        "summary": "listAddresses",
+        "tags": [
+          "Address Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all subscriptions/IPNs created with an account.",
         "id": "operation:post:/listFailedIPNs",
         "kind": "operation",
         "method": "post",
         "name": "listFailedIPNs",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/listFailedIPNs",
         "pointer": "#/paths/~1listFailedIPNs/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "listFailedIPNs"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "listFailedIPNs"
+        "summary": "listFailedIPNs",
+        "tags": [
+          "Subscription/IPN Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all subscriptions/IPNs created with an account.",
         "id": "operation:post:/listSubscribedAddresses",
         "kind": "operation",
         "method": "post",
         "name": "listSubscribedAddresses",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/listSubscribedAddresses",
         "pointer": "#/paths/~1listSubscribedAddresses/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "listSubscribedAddresses"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "listSubscribedAddresses"
+        "summary": "listSubscribedAddresses",
+        "tags": [
+          "Subscription/IPN Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generates a new ethereum addresses you can use to send or receive funds.",
         "id": "operation:post:/newAddress",
         "kind": "operation",
         "method": "post",
         "name": "newAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/newAddress",
         "pointer": "#/paths/~1newAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "newAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "newAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "newAddress"
+        "summary": "newAddress",
+        "tags": [
+          "Address Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all subscriptions/IPNs created with an account.",
         "id": "operation:post:/resendFailedIPN",
         "kind": "operation",
         "method": "post",
         "name": "resendFailedIPN",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resendFailedIPN",
         "pointer": "#/paths/~1resendFailedIPN/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "resendFailedIPNRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "resendFailedIPN"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "resendFailedIPN"
+        "summary": "resendFailedIPN",
+        "tags": [
+          "Subscription/IPN Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends ethereum from an address controlled by the account to a specified receiver address.",
         "id": "operation:post:/sendEthereum",
         "kind": "operation",
         "method": "post",
         "name": "sendEthereum",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sendEthereum",
         "pointer": "#/paths/~1sendEthereum/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sendEthereumRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "sendEthereum"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "sendEthereum"
+        "summary": "sendEthereum",
+        "tags": [
+          "Transaction Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends ERC20 tokens from an address controlled by the account to a specified receiver address.",
         "id": "operation:post:/sendToken",
         "kind": "operation",
         "method": "post",
         "name": "sendToken",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sendToken",
         "pointer": "#/paths/~1sendToken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sendTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "sendToken"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "sendToken"
+        "summary": "sendToken",
+        "tags": [
+          "Transaction Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new subscription/IPN for the given address (and contractaddress).",
         "id": "operation:post:/subscribeAddress",
         "kind": "operation",
         "method": "post",
         "name": "subscribeAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscribeAddress",
         "pointer": "#/paths/~1subscribeAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "subscribeAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subscribeAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "subscribeAddress"
+        "summary": "subscribeAddress",
+        "tags": [
+          "Subscription/IPN Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an existing subscription/IPN for the given address (and contractaddress).",
         "id": "operation:post:/unsubscribeAddress",
         "kind": "operation",
         "method": "post",
         "name": "unsubscribeAddress",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/unsubscribeAddress",
         "pointer": "#/paths/~1unsubscribeAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "unsubscribeAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "unsubscribeAddress"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "unsubscribeAddress"
+        "summary": "unsubscribeAddress",
+        "tags": [
+          "Subscription/IPN Requests"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:Cipherparams",
         "kind": "schema",
-        "name": "Cipherparams"
+        "name": "Cipherparams",
+        "type": "object"
       },
       {
         "id": "schema:Content",
         "kind": "schema",
-        "name": "Content"
+        "name": "Content",
+        "type": "object"
       },
       {
         "id": "schema:Crypto",
         "kind": "schema",
-        "name": "Crypto"
+        "name": "Crypto",
+        "type": "object"
       },
       {
         "id": "schema:FailedIpn",
         "kind": "schema",
-        "name": "FailedIpn"
+        "name": "FailedIpn",
+        "type": "object"
       },
       {
         "id": "schema:Ipn",
         "kind": "schema",
-        "name": "Ipn"
+        "name": "Ipn",
+        "type": "object"
       },
       {
         "id": "schema:Kdfparams",
         "kind": "schema",
-        "name": "Kdfparams"
+        "name": "Kdfparams",
+        "type": "object"
       },
       {
         "id": "schema:Transaction",
         "kind": "schema",
-        "name": "Transaction"
+        "name": "Transaction",
+        "type": "object"
       },
       {
         "id": "schema:clearAddress",
         "kind": "schema",
-        "name": "clearAddress"
+        "name": "clearAddress",
+        "type": "object"
       },
       {
         "id": "schema:clearAddressRequest",
         "kind": "schema",
-        "name": "clearAddressRequest"
+        "name": "clearAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:deleteAddress",
         "kind": "schema",
-        "name": "deleteAddress"
+        "name": "deleteAddress",
+        "type": "object"
       },
       {
         "id": "schema:deleteAddressRequest",
         "kind": "schema",
-        "name": "deleteAddressRequest"
+        "name": "deleteAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:exportAddress",
         "kind": "schema",
-        "name": "exportAddress"
+        "name": "exportAddress",
+        "type": "object"
       },
       {
         "id": "schema:exportAddressRequest",
         "kind": "schema",
-        "name": "exportAddressRequest"
+        "name": "exportAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:getBlock",
         "kind": "schema",
-        "name": "getBlock"
+        "name": "getBlock",
+        "type": "object"
       },
       {
         "id": "schema:getBlockRequest",
         "kind": "schema",
-        "name": "getBlockRequest"
+        "name": "getBlockRequest",
+        "type": "object"
       },
       {
         "id": "schema:getEthereumBalance",
         "kind": "schema",
-        "name": "getEthereumBalance"
+        "name": "getEthereumBalance",
+        "type": "object"
       },
       {
         "id": "schema:getEthereumBalanceRequest",
         "kind": "schema",
-        "name": "getEthereumBalanceRequest"
+        "name": "getEthereumBalanceRequest",
+        "type": "object"
       },
       {
         "id": "schema:getExchangeRate",
         "kind": "schema",
-        "name": "getExchangeRate"
+        "name": "getExchangeRate",
+        "type": "object"
       },
       {
         "id": "schema:getExchangeRateRequest",
         "kind": "schema",
-        "name": "getExchangeRateRequest"
+        "name": "getExchangeRateRequest",
+        "type": "object"
       },
       {
         "id": "schema:getGasPrice",
         "kind": "schema",
-        "name": "getGasPrice"
+        "name": "getGasPrice",
+        "type": "object"
       },
       {
         "id": "schema:getLastBlockNumber",
         "kind": "schema",
-        "name": "getLastBlockNumber"
+        "name": "getLastBlockNumber",
+        "type": "object"
       },
       {
         "id": "schema:getToken",
         "kind": "schema",
-        "name": "getToken"
+        "name": "getToken",
+        "type": "object"
       },
       {
         "id": "schema:getTokenBalance",
         "kind": "schema",
-        "name": "getTokenBalance"
+        "name": "getTokenBalance",
+        "type": "object"
       },
       {
         "id": "schema:getTokenBalanceRequest",
         "kind": "schema",
-        "name": "getTokenBalanceRequest"
+        "name": "getTokenBalanceRequest",
+        "type": "object"
       },
       {
         "id": "schema:getTokenRequest",
         "kind": "schema",
-        "name": "getTokenRequest"
+        "name": "getTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:getTransactions",
         "kind": "schema",
-        "name": "getTransactions"
+        "name": "getTransactions",
+        "type": "object"
       },
       {
         "id": "schema:getTransactionsRequest",
         "kind": "schema",
-        "name": "getTransactionsRequest"
+        "name": "getTransactionsRequest",
+        "type": "object"
       },
       {
         "id": "schema:importAddress",
         "kind": "schema",
-        "name": "importAddress"
+        "name": "importAddress",
+        "type": "object"
       },
       {
         "id": "schema:importAddressRequest",
         "kind": "schema",
-        "name": "importAddressRequest"
+        "name": "importAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:listAddresses",
         "kind": "schema",
-        "name": "listAddresses"
+        "name": "listAddresses",
+        "type": "object"
       },
       {
         "id": "schema:listFailedIPNs",
         "kind": "schema",
-        "name": "listFailedIPNs"
+        "name": "listFailedIPNs",
+        "type": "object"
       },
       {
         "id": "schema:listSubscribedAddresses",
         "kind": "schema",
-        "name": "listSubscribedAddresses"
+        "name": "listSubscribedAddresses",
+        "type": "object"
       },
       {
         "id": "schema:newAddress",
         "kind": "schema",
-        "name": "newAddress"
+        "name": "newAddress",
+        "type": "object"
       },
       {
         "id": "schema:newAddressRequest",
         "kind": "schema",
-        "name": "newAddressRequest"
+        "name": "newAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:resendFailedIPN",
         "kind": "schema",
-        "name": "resendFailedIPN"
+        "name": "resendFailedIPN",
+        "type": "object"
       },
       {
         "id": "schema:resendFailedIPNRequest",
         "kind": "schema",
-        "name": "resendFailedIPNRequest"
+        "name": "resendFailedIPNRequest",
+        "type": "object"
       },
       {
         "id": "schema:sendEthereum",
         "kind": "schema",
-        "name": "sendEthereum"
+        "name": "sendEthereum",
+        "type": "object"
       },
       {
         "id": "schema:sendEthereumRequest",
         "kind": "schema",
-        "name": "sendEthereumRequest"
+        "name": "sendEthereumRequest",
+        "type": "object"
       },
       {
         "id": "schema:sendToken",
         "kind": "schema",
-        "name": "sendToken"
+        "name": "sendToken",
+        "type": "object"
       },
       {
         "id": "schema:sendTokenRequest",
         "kind": "schema",
-        "name": "sendTokenRequest"
+        "name": "sendTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:subscribeAddress",
         "kind": "schema",
-        "name": "subscribeAddress"
+        "name": "subscribeAddress",
+        "type": "object"
       },
       {
         "id": "schema:subscribeAddressRequest",
         "kind": "schema",
-        "name": "subscribeAddressRequest"
+        "name": "subscribeAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:unsubscribeAddress",
         "kind": "schema",
-        "name": "unsubscribeAddress"
+        "name": "unsubscribeAddress",
+        "type": "object"
       },
       {
         "id": "schema:unsubscribeAddressRequest",
         "kind": "schema",
-        "name": "unsubscribeAddressRequest"
+        "name": "unsubscribeAddressRequest",
+        "type": "object"
       }
     ]
   },

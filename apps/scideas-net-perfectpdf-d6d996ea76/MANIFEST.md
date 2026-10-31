@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_scideas.net_media_logos_favicon
 
 | | |
 | --- | --- |
-| Signed bundle | `52461fea28c93b7eb95a5b788128d69e479ad4ec0a1b9ca58d846078ce804476` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_scideas.net_media_logos_favicon
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/perfectpdf/api` | post /perfectpdf/api | Returns PDF document. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/perfectpdf/api` | post /perfectpdf/api | body*: perfectpdf_api_body | inline_response_200 |  | Returns PDF document. |

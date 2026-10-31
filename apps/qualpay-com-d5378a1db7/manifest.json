@@ -73,6 +73,161 @@
         "from": "qualpay-com-d5378a1db7",
         "kind": "EXPOSES",
         "to": "operation:post:/void/{pgIdOrig}"
+      },
+      {
+        "from": "operation:post:/ardef",
+        "kind": "ACCEPTS",
+        "to": "schema:ArdefRequest"
+      },
+      {
+        "from": "operation:post:/ardef",
+        "kind": "RETURNS",
+        "to": "schema:ArdefResponse"
+      },
+      {
+        "from": "operation:post:/auth",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiTransactionRequest"
+      },
+      {
+        "from": "operation:post:/auth",
+        "kind": "RETURNS",
+        "to": "schema:PGApiTransactionResponse"
+      },
+      {
+        "from": "operation:post:/batchClose",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiBatchCloseRequest"
+      },
+      {
+        "from": "operation:post:/batchClose",
+        "kind": "RETURNS",
+        "to": "schema:PGApiBatchCloseResponse"
+      },
+      {
+        "from": "operation:post:/capture/{pgIdOrig}",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiCaptureRequest"
+      },
+      {
+        "from": "operation:post:/capture/{pgIdOrig}",
+        "kind": "RETURNS",
+        "to": "schema:PGApiCaptureResponse"
+      },
+      {
+        "from": "operation:post:/credit",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiTransactionRequest"
+      },
+      {
+        "from": "operation:post:/credit",
+        "kind": "RETURNS",
+        "to": "schema:PGApiTransactionResponse"
+      },
+      {
+        "from": "operation:post:/emailReceipt/{pgId}",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiEmailReceiptRequest"
+      },
+      {
+        "from": "operation:post:/emailReceipt/{pgId}",
+        "kind": "RETURNS",
+        "to": "schema:PGApiEmailReceiptResponse"
+      },
+      {
+        "from": "operation:post:/expireToken",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiExpireTokenRequest"
+      },
+      {
+        "from": "operation:post:/expireToken",
+        "kind": "RETURNS",
+        "to": "schema:PGApiExpireTokenResponse"
+      },
+      {
+        "from": "operation:post:/force",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiTransactionRequest"
+      },
+      {
+        "from": "operation:post:/force",
+        "kind": "RETURNS",
+        "to": "schema:PGApiTransactionResponse"
+      },
+      {
+        "from": "operation:post:/recharge/{pgIdOrig}",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiRechargeRequest"
+      },
+      {
+        "from": "operation:post:/recharge/{pgIdOrig}",
+        "kind": "RETURNS",
+        "to": "schema:PGApiRechargeResponse"
+      },
+      {
+        "from": "operation:post:/refund/{pgIdOrig}",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiRefundRequest"
+      },
+      {
+        "from": "operation:post:/refund/{pgIdOrig}",
+        "kind": "RETURNS",
+        "to": "schema:PGApiRefundResponse"
+      },
+      {
+        "from": "operation:post:/sale",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiTransactionRequest"
+      },
+      {
+        "from": "operation:post:/sale",
+        "kind": "RETURNS",
+        "to": "schema:PGApiTransactionResponse"
+      },
+      {
+        "from": "operation:post:/tokenize",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiTokenizeRequest"
+      },
+      {
+        "from": "operation:post:/tokenize",
+        "kind": "RETURNS",
+        "to": "schema:PGApiTokenizeResponse"
+      },
+      {
+        "from": "operation:post:/verify",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiVerifyRequest"
+      },
+      {
+        "from": "operation:post:/verify",
+        "kind": "RETURNS",
+        "to": "schema:PGApiVerifyResponse"
+      },
+      {
+        "from": "operation:post:/void/{pgIdOrig}",
+        "kind": "ACCEPTS",
+        "to": "schema:PGApiVoidRequest"
+      },
+      {
+        "from": "operation:post:/void/{pgIdOrig}",
+        "kind": "RETURNS",
+        "to": "schema:PGApiVoidResponse"
+      },
+      {
+        "from": "schema:Customer",
+        "kind": "REFERENCES",
+        "to": "schema:ShippingAddress"
+      },
+      {
+        "from": "schema:PGApiTransactionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Customer"
+      },
+      {
+        "from": "schema:PGApiVerifyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Customer"
       }
     ],
     "nodes": [
@@ -82,363 +237,974 @@
       },
       {
         "deprecated": false,
+        "description": "Gets Card type information for Visa, Mastercard, and Discover.",
         "id": "operation:post:/ardef",
         "kind": "operation",
         "method": "post",
         "name": "Get Card Type Information ",
         "path": "/ardef",
         "pointer": "#/paths/~1ardef/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ArdefRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArdefResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiResponse"
+          },
+          {
+            "status": "409",
+            "type": "PGApiResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get Card type Information for Visa, Mastercard, and Discover"
+        "summary": "Get Card type Information for Visa, Mastercard, and Discover",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Authorizes a credit card for capture at a later time.",
         "id": "operation:post:/auth",
         "kind": "operation",
         "method": "post",
         "name": "Authorization",
         "path": "/auth",
         "pointer": "#/paths/~1auth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiTransactionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiTransactionResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Authorize Transaction"
+        "summary": "Authorize Transaction",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Closes a batch.",
         "id": "operation:post:/batchClose",
         "kind": "operation",
         "method": "post",
         "name": "Batch Close",
         "path": "/batchClose",
         "pointer": "#/paths/~1batchClose/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiBatchCloseRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiBatchCloseResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Close Batch"
+        "summary": "Close Batch",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Captures an authorized transaction for any amount up to the amount originally authorized.",
         "id": "operation:post:/capture/{pgIdOrig}",
         "kind": "operation",
         "method": "post",
         "name": "Capture",
+        "parameters": [
+          {
+            "description": "pgIdOrig",
+            "in": "path",
+            "name": "pgIdOrig",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/capture/{pgIdOrig}",
         "pointer": "#/paths/~1capture~1{pgIdOrig}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiCaptureRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiCaptureResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Capture an Authorized Transaction"
+        "summary": "Capture an Authorized Transaction",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Issues an unlinked credit.",
         "id": "operation:post:/credit",
         "kind": "operation",
         "method": "post",
         "name": "Credit",
         "path": "/credit",
         "pointer": "#/paths/~1credit/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiTransactionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiTransactionResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Issue Credit to Cardholder"
+        "summary": "Issue Credit to Cardholder",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends the transaction receipt to multiple email addresses.",
         "id": "operation:post:/emailReceipt/{pgId}",
         "kind": "operation",
         "method": "post",
         "name": "Send Receipt",
+        "parameters": [
+          {
+            "description": "pgId",
+            "in": "path",
+            "name": "pgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/emailReceipt/{pgId}",
         "pointer": "#/paths/~1emailReceipt~1{pgId}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiEmailReceiptRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiEmailReceiptResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Send Transaction Receipt Email"
+        "summary": "Send Transaction Receipt Email",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Once expired, the token (card_id) is no longer valid for use in future transactions.",
         "id": "operation:post:/expireToken",
         "kind": "operation",
         "method": "post",
         "name": "Expire",
         "path": "/expireToken",
         "pointer": "#/paths/~1expireToken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiExpireTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiExpireTokenResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Expire Token"
+        "summary": "Expire Token",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Forces an approval, used when an online authorization request received a 'declined' reason code and you have received an authorization from a voice or automate…",
         "id": "operation:post:/force",
         "kind": "operation",
         "method": "post",
         "name": "Force",
         "path": "/force",
         "pointer": "#/paths/~1force/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiTransactionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiTransactionResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Force Transaction Approval"
+        "summary": "Force Transaction Approval",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new sale transaction using the cardholder data from a previous successful transaction.",
         "id": "operation:post:/recharge/{pgIdOrig}",
         "kind": "operation",
         "method": "post",
         "name": "Recharge",
+        "parameters": [
+          {
+            "description": "pgIdOrig",
+            "in": "path",
+            "name": "pgIdOrig",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/recharge/{pgIdOrig}",
         "pointer": "#/paths/~1recharge~1{pgIdOrig}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiRechargeRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiRechargeResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Recharge Previously Settled Transaction"
+        "summary": "Recharge Previously Settled Transaction",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns money to the cardholder from a previously captured transaction.",
         "id": "operation:post:/refund/{pgIdOrig}",
         "kind": "operation",
         "method": "post",
         "name": "Refund",
+        "parameters": [
+          {
+            "description": "pgIdOrig",
+            "in": "path",
+            "name": "pgIdOrig",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/refund/{pgIdOrig}",
         "pointer": "#/paths/~1refund~1{pgIdOrig}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiRefundRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiRefundResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Refund Previously Captured Transaction"
+        "summary": "Refund Previously Captured Transaction",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Requests authorization, and, if approved, will immediately capture the transaction to be included in the next batch close.",
         "id": "operation:post:/sale",
         "kind": "operation",
         "method": "post",
         "name": "Sale",
         "path": "/sale",
         "pointer": "#/paths/~1sale/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiTransactionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiTransactionResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Sale (Auth + Capture)"
+        "summary": "Sale (Auth + Capture)",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Once stored, a unique card_id is returned for use in future transactions.",
         "id": "operation:post:/tokenize",
         "kind": "operation",
         "method": "post",
         "name": "Tokenize",
         "path": "/tokenize",
         "pointer": "#/paths/~1tokenize/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiTokenizeRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiTokenizeResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Tokenize Card"
+        "summary": "Tokenize Card",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A verify request will return success if the cardholder information was verified by the issuer.",
         "id": "operation:post:/verify",
         "kind": "operation",
         "method": "post",
         "name": "Verify",
         "path": "/verify",
         "pointer": "#/paths/~1verify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiVerifyRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiVerifyResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Verify Card"
+        "summary": "Verify Card",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Authorizations can be voided at any time until Qualpay automatically voids them at 28 days.",
         "id": "operation:post:/void/{pgIdOrig}",
         "kind": "operation",
         "method": "post",
         "name": "Void",
+        "parameters": [
+          {
+            "description": "pgIdOrig",
+            "in": "path",
+            "name": "pgIdOrig",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/void/{pgIdOrig}",
         "pointer": "#/paths/~1void~1{pgIdOrig}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PGApiVoidRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PGApiVoidResponse"
+          },
+          {
+            "status": "400",
+            "type": "PGApiBadResponse"
+          },
+          {
+            "status": "401",
+            "type": "PGApiUnauthResponse"
+          },
+          {
+            "status": "402",
+            "type": "PGApiDeclineResponse"
+          },
+          {
+            "status": "500",
+            "type": "PGApiInternalErrorResponse"
+          },
+          {
+            "status": "509",
+            "type": "PGApiTimeoutResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Void a Previously Authorized Transaction"
+        "summary": "Void a Previously Authorized Transaction",
+        "tags": [
+          "payment-gateway"
+        ]
       },
       {
         "id": "schema:ArdefRequest",
         "kind": "schema",
-        "name": "ArdefRequest"
+        "name": "ArdefRequest",
+        "type": "object"
       },
       {
         "id": "schema:ArdefResponse",
         "kind": "schema",
-        "name": "ArdefResponse"
+        "name": "ArdefResponse",
+        "type": "object"
       },
       {
         "id": "schema:Customer",
         "kind": "schema",
-        "name": "Customer"
+        "name": "Customer",
+        "type": "object"
       },
       {
         "id": "schema:PGApiBadResponse",
         "kind": "schema",
-        "name": "PGApiBadResponse"
+        "name": "PGApiBadResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiBatchCloseRequest",
         "kind": "schema",
-        "name": "PGApiBatchCloseRequest"
+        "name": "PGApiBatchCloseRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiBatchCloseResponse",
         "kind": "schema",
-        "name": "PGApiBatchCloseResponse"
+        "name": "PGApiBatchCloseResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiCaptureRequest",
         "kind": "schema",
-        "name": "PGApiCaptureRequest"
+        "name": "PGApiCaptureRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiCaptureResponse",
         "kind": "schema",
-        "name": "PGApiCaptureResponse"
+        "name": "PGApiCaptureResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiDeclineResponse",
         "kind": "schema",
-        "name": "PGApiDeclineResponse"
+        "name": "PGApiDeclineResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiEmailReceiptRequest",
         "kind": "schema",
-        "name": "PGApiEmailReceiptRequest"
+        "name": "PGApiEmailReceiptRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiEmailReceiptResponse",
         "kind": "schema",
-        "name": "PGApiEmailReceiptResponse"
+        "name": "PGApiEmailReceiptResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiExpireTokenRequest",
         "kind": "schema",
-        "name": "PGApiExpireTokenRequest"
+        "name": "PGApiExpireTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiExpireTokenResponse",
         "kind": "schema",
-        "name": "PGApiExpireTokenResponse"
+        "name": "PGApiExpireTokenResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiInternalErrorResponse",
         "kind": "schema",
-        "name": "PGApiInternalErrorResponse"
+        "name": "PGApiInternalErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiRechargeRequest",
         "kind": "schema",
-        "name": "PGApiRechargeRequest"
+        "name": "PGApiRechargeRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiRechargeResponse",
         "kind": "schema",
-        "name": "PGApiRechargeResponse"
+        "name": "PGApiRechargeResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiRefundRequest",
         "kind": "schema",
-        "name": "PGApiRefundRequest"
+        "name": "PGApiRefundRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiRefundResponse",
         "kind": "schema",
-        "name": "PGApiRefundResponse"
+        "name": "PGApiRefundResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiResponse",
         "kind": "schema",
-        "name": "PGApiResponse"
+        "name": "PGApiResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiTimeoutResponse",
         "kind": "schema",
-        "name": "PGApiTimeoutResponse"
+        "name": "PGApiTimeoutResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiTokenizeRequest",
         "kind": "schema",
-        "name": "PGApiTokenizeRequest"
+        "name": "PGApiTokenizeRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiTokenizeResponse",
         "kind": "schema",
-        "name": "PGApiTokenizeResponse"
+        "name": "PGApiTokenizeResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiTransactionRequest",
         "kind": "schema",
-        "name": "PGApiTransactionRequest"
+        "name": "PGApiTransactionRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiTransactionResponse",
         "kind": "schema",
-        "name": "PGApiTransactionResponse"
+        "name": "PGApiTransactionResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiUnauthResponse",
         "kind": "schema",
-        "name": "PGApiUnauthResponse"
+        "name": "PGApiUnauthResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiVerifyRequest",
         "kind": "schema",
-        "name": "PGApiVerifyRequest"
+        "name": "PGApiVerifyRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiVerifyResponse",
         "kind": "schema",
-        "name": "PGApiVerifyResponse"
+        "name": "PGApiVerifyResponse",
+        "type": "object"
       },
       {
         "id": "schema:PGApiVoidRequest",
         "kind": "schema",
-        "name": "PGApiVoidRequest"
+        "name": "PGApiVoidRequest",
+        "type": "object"
       },
       {
         "id": "schema:PGApiVoidResponse",
         "kind": "schema",
-        "name": "PGApiVoidResponse"
+        "name": "PGApiVoidResponse",
+        "type": "object"
       },
       {
         "id": "schema:ShippingAddress",
         "kind": "schema",
-        "name": "ShippingAddress"
+        "name": "ShippingAddress",
+        "type": "object"
       }
     ]
   },

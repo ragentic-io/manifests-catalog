@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `c26235820d60d997725b236c831a72a4f16bf53c44b6b8aa504929c5a300ed39` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/about` | get /about | Metadata about this API&#58; version number, release date and available languages. Metadata requests are NOT billed. |
-| GET | `/ec` | get /ec | The entropy calculator - alias ec -, analyzes a password and calculates its entropy. Entropy calculator requests are billed. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/about` | get /about | `outputFormat` | about | yes | Metadata about this API&#58; version number, release date and available languages. Metadata requests are NOT billed. |
+| GET | `/ec` | get /ec | `password`*, `outputFormat`, `penalty`, `reqId` | ec | yes | The entropy calculator - alias ec -, analyzes a password and calculates its entropy. Entropy calculator requests are billed. |

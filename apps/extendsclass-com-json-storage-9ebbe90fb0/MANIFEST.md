@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `96dff877e705b63101bbd566d60a4193427cb5eef2626d05fc0366e30a0b234c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/bin` | post /bin | Create a json bin |
-| DELETE | `/bin/{id}` | delete /bin/{id} | Delete a json bin |
-| GET | `/bin/{id}` | get /bin/{id} | Return a json bin |
-| PATCH | `/bin/{id}` | patch /bin/{id} | Partially update a json bin with JSON Merge Patch |
-| PUT | `/bin/{id}` | put /bin/{id} | Update a json bin |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/bin` | post /bin | — | CreateStatus |  | Create a json bin |
+| GET | `/bin/{id}` | get /bin/{id} | `id`* | object | yes | Return a json bin |
+| PUT | `/bin/{id}` | put /bin/{id} | `id`* | UpdateStatus |  | Update a json bin |
+| DELETE | `/bin/{id}` | delete /bin/{id} | `id`* | DeleteStatus |  | Delete a json bin |
+| PATCH | `/bin/{id}` | patch /bin/{id} | `id`* | UpdateStatus |  | Partially update a json bin with JSON Merge Patch |

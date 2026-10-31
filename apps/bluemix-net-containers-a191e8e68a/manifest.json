@@ -42,12 +42,12 @@
       {
         "from": "bluemix-net-containers-a191e8e68a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/containers/groups/{name_or_id}"
+        "to": "operation:get:/containers/groups/{name_or_id}"
       },
       {
         "from": "bluemix-net-containers-a191e8e68a",
         "kind": "EXPOSES",
-        "to": "operation:get:/containers/groups/{name_or_id}"
+        "to": "operation:delete:/containers/groups/{name_or_id}"
       },
       {
         "from": "bluemix-net-containers-a191e8e68a",
@@ -227,17 +227,272 @@
       {
         "from": "bluemix-net-containers-a191e8e68a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/volumes/{name}"
-      },
-      {
-        "from": "bluemix-net-containers-a191e8e68a",
-        "kind": "EXPOSES",
         "to": "operation:post:/volumes/{name}"
       },
       {
         "from": "bluemix-net-containers-a191e8e68a",
         "kind": "EXPOSES",
+        "to": "operation:delete:/volumes/{name}"
+      },
+      {
+        "from": "bluemix-net-containers-a191e8e68a",
+        "kind": "EXPOSES",
         "to": "operation:get:/volumes/{name}/json"
+      },
+      {
+        "from": "operation:post:/containers/create",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateContainer"
+      },
+      {
+        "from": "operation:post:/containers/create",
+        "kind": "RETURNS",
+        "to": "schema:ContainerId"
+      },
+      {
+        "from": "operation:get:/containers/floating-ips",
+        "kind": "RETURNS",
+        "to": "schema:FloatingIP"
+      },
+      {
+        "from": "operation:get:/containers/groups",
+        "kind": "RETURNS",
+        "to": "schema:ContainersGroupsGetListItem"
+      },
+      {
+        "from": "operation:post:/containers/groups",
+        "kind": "ACCEPTS",
+        "to": "schema:ContainersGroupsPostRequiredAttributes"
+      },
+      {
+        "from": "operation:post:/containers/groups",
+        "kind": "RETURNS",
+        "to": "schema:ContainersGroupsPostCreatedInfo"
+      },
+      {
+        "from": "operation:get:/containers/groups/{name_or_id}",
+        "kind": "RETURNS",
+        "to": "schema:ContainersGroupsNameOrIdGetDetails"
+      },
+      {
+        "from": "operation:patch:/containers/groups/{name_or_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:ContainersGroupsNameOrIdPatchUpdatedInfo"
+      },
+      {
+        "from": "operation:post:/containers/groups/{name_or_id}/maproute",
+        "kind": "ACCEPTS",
+        "to": "schema:Route"
+      },
+      {
+        "from": "operation:post:/containers/groups/{name_or_id}/maproute",
+        "kind": "RETURNS",
+        "to": "schema:ContainersGroupsNameOrIdMaproutePostInfo"
+      },
+      {
+        "from": "operation:post:/containers/groups/{name_or_id}/unmaproute",
+        "kind": "ACCEPTS",
+        "to": "schema:Route"
+      },
+      {
+        "from": "operation:post:/containers/groups/{name_or_id}/unmaproute",
+        "kind": "RETURNS",
+        "to": "schema:ContainersGroupsNameOrIdMaproutePostInfo"
+      },
+      {
+        "from": "operation:get:/containers/json",
+        "kind": "RETURNS",
+        "to": "schema:Container"
+      },
+      {
+        "from": "operation:get:/containers/quota",
+        "kind": "RETURNS",
+        "to": "schema:ContainersQuotaInfo"
+      },
+      {
+        "from": "operation:put:/containers/quota",
+        "kind": "ACCEPTS",
+        "to": "schema:ContainersQuotaList"
+      },
+      {
+        "from": "operation:get:/containers/usage",
+        "kind": "RETURNS",
+        "to": "schema:ContainersUsageInfo"
+      },
+      {
+        "from": "operation:get:/containers/version",
+        "kind": "RETURNS",
+        "to": "schema:ContainersVersionGetInfo"
+      },
+      {
+        "from": "operation:get:/containers/{id}/status",
+        "kind": "RETURNS",
+        "to": "schema:getContainerStatus"
+      },
+      {
+        "from": "operation:get:/containers/{name_or_id}/json",
+        "kind": "RETURNS",
+        "to": "schema:ContainerInfo"
+      },
+      {
+        "from": "operation:get:/images/json",
+        "kind": "RETURNS",
+        "to": "schema:ImageInfo"
+      },
+      {
+        "from": "operation:get:/images/{name_or_id}/json",
+        "kind": "RETURNS",
+        "to": "schema:ImageDetail"
+      },
+      {
+        "from": "operation:get:/registry/namespaces",
+        "kind": "RETURNS",
+        "to": "schema:Namespace"
+      },
+      {
+        "from": "operation:get:/registry/namespaces/{namespace}",
+        "kind": "RETURNS",
+        "to": "schema:Namespace"
+      },
+      {
+        "from": "operation:put:/registry/namespaces/{namespace}",
+        "kind": "RETURNS",
+        "to": "schema:Namespace"
+      },
+      {
+        "from": "operation:get:/tlskey",
+        "kind": "RETURNS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:put:/tlskey/refresh",
+        "kind": "RETURNS",
+        "to": "schema:CertificateRefresh"
+      },
+      {
+        "from": "operation:post:/volumes/create",
+        "kind": "RETURNS",
+        "to": "schema:Volume"
+      },
+      {
+        "from": "operation:post:/volumes/fs/create",
+        "kind": "ACCEPTS",
+        "to": "schema:FileshareParam"
+      },
+      {
+        "from": "operation:get:/volumes/fs/json",
+        "kind": "RETURNS",
+        "to": "schema:Fileshare"
+      },
+      {
+        "from": "operation:get:/volumes/fs/{name}/json",
+        "kind": "RETURNS",
+        "to": "schema:GetFileshareDetails"
+      },
+      {
+        "from": "operation:get:/volumes/json",
+        "kind": "RETURNS",
+        "to": "schema:Volume"
+      },
+      {
+        "from": "operation:post:/volumes/{name}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateVolume"
+      },
+      {
+        "from": "operation:post:/volumes/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Volume"
+      },
+      {
+        "from": "operation:get:/volumes/{name}/json",
+        "kind": "RETURNS",
+        "to": "schema:Volume"
+      },
+      {
+        "from": "schema:Container",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Container",
+        "kind": "REFERENCES",
+        "to": "schema:NetworkSetting"
+      },
+      {
+        "from": "schema:Container",
+        "kind": "REFERENCES",
+        "to": "schema:Port"
+      },
+      {
+        "from": "schema:ContainerInfo",
+        "kind": "REFERENCES",
+        "to": "schema:ContainerConfig"
+      },
+      {
+        "from": "schema:ContainerInfo",
+        "kind": "REFERENCES",
+        "to": "schema:ContainerState"
+      },
+      {
+        "from": "schema:ContainerInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:ContainerInfo",
+        "kind": "REFERENCES",
+        "to": "schema:HostConfig"
+      },
+      {
+        "from": "schema:ContainerInfo",
+        "kind": "REFERENCES",
+        "to": "schema:NetworkSetting"
+      },
+      {
+        "from": "schema:ContainerInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Volume"
+      },
+      {
+        "from": "schema:ContainersGroupsNameOrIdMaproutePostInfo",
+        "kind": "REFERENCES",
+        "to": "schema:ContainersGroupsPostCreatedInfo"
+      },
+      {
+        "from": "schema:ContainersUsageInfo",
+        "kind": "REFERENCES",
+        "to": "schema:ContainersUsageInfoAvailableSizes"
+      },
+      {
+        "from": "schema:CreateContainer",
+        "kind": "REFERENCES",
+        "to": "schema:HostConfig"
+      },
+      {
+        "from": "schema:FloatingIP",
+        "kind": "REFERENCES",
+        "to": "schema:Binding"
+      },
+      {
+        "from": "schema:GetFileshareDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Fileshare"
+      },
+      {
+        "from": "schema:GetFileshareDetails",
+        "kind": "REFERENCES",
+        "to": "schema:FileshareUsage"
+      },
+      {
+        "from": "schema:ImageDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ContainerConfig"
+      },
+      {
+        "from": "schema:NetworkSetting",
+        "kind": "REFERENCES",
+        "to": "schema:Network"
       }
     ],
     "nodes": [
@@ -247,705 +502,2777 @@
       },
       {
         "deprecated": false,
+        "description": "This API builds a new container image from a Dockerfile that is stored on your local machine and pushes the image to the private Bluemix registry (correspondin…",
         "id": "operation:post:/build",
         "kind": "operation",
         "method": "post",
         "name": "post /build",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Tag the image with the full path to your private Bluemix registry in the following format: `t=registry.ng.bluemix.net/<namespace>/<image_name>:<tag>`.",
+            "in": "query",
+            "name": "t",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "You can choose whether or not to show the verbose build output to review every step during the container image build.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If you set the query parameter to `nocache=true`, `nocache=True`, or `nocache=1`, the cache will not be used to build your image.",
+            "in": "query",
+            "name": "nocache",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to pull=true, pull=True, or pull=1, then a newer version of the image is always attempted to be pulled even though an older version of the image exists…",
+            "in": "query",
+            "name": "pull",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/build",
         "pointer": "#/paths/~1build/post",
+        "request": {
+          "content_types": [
+            "application/tar"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Build a Docker image from a Dockerfile"
+        "summary": "Build a Docker image from a Dockerfile",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates and starts a single container in your space based on the Docker image that is specified in the Image field of the request json.",
         "id": "operation:post:/containers/create",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/create",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Choose a name for your container.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/containers/create",
         "pointer": "#/paths/~1containers~1create/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateContainer"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ContainerId"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create and start a single container"
+        "summary": "Create and start a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all public IP addresses that are allocated to a space and not bound to a container.",
         "id": "operation:get:/containers/floating-ips",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/floating-ips",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If this option is set to `all=1`, `all=True`, or `all=true`, all public IP addresses that are allocated to a space are returned.",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/containers/floating-ips",
         "pointer": "#/paths/~1containers~1floating-ips/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FloatingIP[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List available public IP addresses in a space"
+        "summary": "List available public IP addresses in a space",
+        "tags": [
+          "Public IP addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint requests a new public IP address for a space (corresponding IBM Containers command: `cf ic ip request`).",
         "id": "operation:post:/containers/floating-ips/request",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/floating-ips/request",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/floating-ips/request",
         "pointer": "#/paths/~1containers~1floating-ips~1request/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request a public IP address for a space"
+        "summary": "Request a public IP address for a space",
+        "tags": [
+          "Public IP addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint releases a public IP address from a space (corresponding IBM Containers command: `cf ic ip release <ip_adress>`).",
         "id": "operation:post:/containers/floating-ips/{ip}/release",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/floating-ips/{ip}/release",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The public IP address that you want to release.",
+            "in": "path",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/floating-ips/{ip}/release",
         "pointer": "#/paths/~1containers~1floating-ips~1{ip}~1release/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Release public IP address"
+        "summary": "Release public IP address",
+        "tags": [
+          "Public IP addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all container groups in a space independent of their current state.",
         "id": "operation:get:/containers/groups",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/groups",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/groups",
         "pointer": "#/paths/~1containers~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContainersGroupsGetListItem[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all container groups in a space"
+        "summary": "List all container groups in a space",
+        "tags": [
+          "Container Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates and starts a new container group in your space.",
         "id": "operation:post:/containers/groups",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/groups",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/groups",
         "pointer": "#/paths/~1containers~1groups/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ContainersGroupsPostRequiredAttributes"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ContainersGroupsPostCreatedInfo"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create and start a container group."
+        "summary": "Create and start a container group.",
+        "tags": [
+          "Container Groups"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/containers/groups/{name_or_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /containers/groups/{name_or_id}",
-        "path": "/containers/groups/{name_or_id}",
-        "pointer": "#/paths/~1containers~1groups~1{name_or_id}/delete",
-        "security": [],
-        "summary": "Stop and delete all container instances in a container group."
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint retrieves detailed information about a container group with a given name (corresponding IBM Containers command: `cf ic group inspect GROUP`).",
         "id": "operation:get:/containers/groups/{name_or_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/groups/{name_or_id}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or unique ID of the container group that you want to inspect.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/groups/{name_or_id}",
         "pointer": "#/paths/~1containers~1groups~1{name_or_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContainersGroupsNameOrIdGetDetails"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Inspect a container group."
+        "summary": "Inspect a container group.",
+        "tags": [
+          "Container Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stops and deletes the container instances that run in a container group (corresponding IBM Containers command: `cf ic group rm <group_name>`).",
+        "id": "operation:delete:/containers/groups/{name_or_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /containers/groups/{name_or_id}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or unique ID of the container group that you want to delete.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If you want to force the deletion of a container group that has running container instances, use the force option.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/containers/groups/{name_or_id}",
+        "pointer": "#/paths/~1containers~1groups~1{name_or_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Stop and delete all container instances in a container group.",
+        "tags": [
+          "Container Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update the number of container instances that run in a container group (corresponding IBM Containers command: `cf ic group update <option> <group>`).",
         "id": "operation:patch:/containers/groups/{name_or_id}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /containers/groups/{name_or_id}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or unique ID of the container group that you want to update.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/groups/{name_or_id}",
         "pointer": "#/paths/~1containers~1groups~1{name_or_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ContainersGroupsNameOrIdPatchUpdatedInfo"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a container group."
+        "summary": "Update a container group.",
+        "tags": [
+          "Container Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If you want your container group to be accessible from the Internet, you need to expose a public port and map a public route to it (corresponding IBM Container…",
         "id": "operation:post:/containers/groups/{name_or_id}/maproute",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/groups/{name_or_id}/maproute",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or unique ID of the container group to which you want to map a public route.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/groups/{name_or_id}/maproute",
         "pointer": "#/paths/~1containers~1groups~1{name_or_id}~1maproute/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Route"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ContainersGroupsNameOrIdMaproutePostInfo"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Map a public route to a container group."
+        "summary": "Map a public route to a container group.",
+        "tags": [
+          "Container Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint unmaps a public route from a container group (corresponding IBM Containers command: `cf ic route unmap -n <host> -d <domain> <group>`).",
         "id": "operation:post:/containers/groups/{name_or_id}/unmaproute",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/groups/{name_or_id}/unmaproute",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or unique ID (UUID) of the container group that you want to inspect.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/groups/{name_or_id}/unmaproute",
         "pointer": "#/paths/~1containers~1groups~1{name_or_id}~1unmaproute/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Route"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ContainersGroupsNameOrIdMaproutePostInfo"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Unmap a public route from a container group"
+        "summary": "Unmap a public route from a container group",
+        "tags": [
+          "Container Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all single containers in a space that are currently in a running state (corresponding IBM Containers command: `cf ic ps`).",
         "id": "operation:get:/containers/json",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "By default, the `GET /containers/json` endpoint returns a list of all single containers in a space that are in a running state.",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "You can filter your containers by any environment variable key or value that is listed in the `Env` section of your CLI/ API response when you run the `cf ic i…",
+            "in": "query",
+            "name": "filters",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/containers/json",
         "pointer": "#/paths/~1containers~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Container[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List single containers in a space."
+        "summary": "List single containers in a space.",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint retrieves all IBM Containers system messages for the user.",
         "id": "operation:get:/containers/messages",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/messages",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/messages",
         "pointer": "#/paths/~1containers~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List messages for the user"
+        "summary": "List messages for the user",
+        "tags": [
+          "API info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the quota that is assigned to the organization and space.",
         "id": "operation:get:/containers/quota",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/quota",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/quota",
         "pointer": "#/paths/~1containers~1quota/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContainersQuotaInfo"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve organization and space specific quota"
+        "summary": "Retrieve organization and space specific quota",
+        "tags": [
+          "Quota"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates the quota that is allocated to a Bluemix space.",
         "id": "operation:put:/containers/quota",
         "kind": "operation",
         "method": "put",
         "name": "put /containers/quota",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/quota",
         "pointer": "#/paths/~1containers~1quota/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ContainersQuotaList"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update space quota"
+        "summary": "Update space quota",
+        "tags": [
+          "Quota"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of available container sizes and the quota limit and usage for the space.",
         "id": "operation:get:/containers/usage",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/usage",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/usage",
         "pointer": "#/paths/~1containers~1usage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContainersUsageInfo"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List container sizes and quota limits"
+        "summary": "List container sizes and quota limits",
+        "tags": [
+          "Quota"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint retrieves a list of all microservices that are used in the IBM Containers service with their current build version.",
         "id": "operation:get:/containers/version",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/version",
         "path": "/containers/version",
         "pointer": "#/paths/~1containers~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContainersVersionGetInfo"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List latest API version"
+        "summary": "List latest API version",
+        "tags": [
+          "API info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the current state of a container.",
         "id": "operation:get:/containers/{id}/status",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/{id}/status",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier that represents the container.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{id}/status",
         "pointer": "#/paths/~1containers~1{id}~1status/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "getContainerStatus"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List the current state of a container."
+        "summary": "List the current state of a container.",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a single container that is identified by container ID or name from a space (corresponding IBM Containers command: `cf ic delete <container>`).",
         "id": "operation:delete:/containers/{name_or_id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /containers/{name_or_id}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to delete.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Use the `force` query parameter if you want to delete the container independent of their current state.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/containers/{name_or_id}",
         "pointer": "#/paths/~1containers~1{name_or_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Remove a single container"
+        "summary": "Remove a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint binds an available public IP address to a single container (corresponding IBM Containers command: `cf ic ip bind <ip_adress> <container>`).",
         "id": "operation:post:/containers/{name_or_id}/floating-ips/{ip}/bind",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/floating-ips/{ip}/bind",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or ID of the container that you want to bind to the public IP address.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The public IP address that you want to bind to your container.",
+            "in": "path",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/floating-ips/{ip}/bind",
         "pointer": "#/paths/~1containers~1{name_or_id}~1floating-ips~1{ip}~1bind/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bind a public IP address to a single container"
+        "summary": "Bind a public IP address to a single container",
+        "tags": [
+          "Public IP addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint unbinds a public IP address from a container (corresponding IBM Containers command: `cf ic ip unbind <ip_adress> <container>`).",
         "id": "operation:post:/containers/{name_or_id}/floating-ips/{ip}/unbind",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/floating-ips/{ip}/unbind",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or ID of the container that you want to bind to the public IP address.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The public IP address that you want to unbind from your container.",
+            "in": "path",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/floating-ips/{ip}/unbind",
         "pointer": "#/paths/~1containers~1{name_or_id}~1floating-ips~1{ip}~1unbind/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Unbind a public IP address from a container"
+        "summary": "Unbind a public IP address from a container",
+        "tags": [
+          "Public IP addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint retrieves detailed information about a single container (corresponding IBM Containers command: `cf ic inspect <container>`).",
         "id": "operation:get:/containers/{name_or_id}/json",
         "kind": "operation",
         "method": "get",
         "name": "get /containers/{name_or_id}/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name or ID of the container that you want to inspect.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/json",
         "pointer": "#/paths/~1containers~1{name_or_id}~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContainerInfo"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Inspect a single container"
+        "summary": "Inspect a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Pause all processes in a running single container with a given container ID or name (corresponding IBM Containers command: `cf ic pause <container>`).",
         "id": "operation:post:/containers/{name_or_id}/pause",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/pause",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to pause.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/pause",
         "pointer": "#/paths/~1containers~1{name_or_id}~1pause/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Pause a single container"
+        "summary": "Pause a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Change the current name of an existing single container that is identified by the container ID or name (corresponding IBM Containers command: `cf ic rename <ol…",
         "id": "operation:post:/containers/{name_or_id}/rename",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/rename",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to rename.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The new name for the container.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/rename",
         "pointer": "#/paths/~1containers~1{name_or_id}~1rename/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Rename a single container"
+        "summary": "Rename a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Restart a container with a given container ID or name (corresponding IBM Containers command: `cf ic restart <container>`).",
         "id": "operation:post:/containers/{name_or_id}/restart",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/restart",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to restart.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of seconds to wait before the container is restarted.",
+            "in": "query",
+            "name": "t",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/containers/{name_or_id}/restart",
         "pointer": "#/paths/~1containers~1{name_or_id}~1restart/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Restart a single container"
+        "summary": "Restart a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Start a single container with a given container name or ID (corresponding IBM Containers command: `cf ic start <container>`).",
         "id": "operation:post:/containers/{name_or_id}/start",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/start",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to start.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/start",
         "pointer": "#/paths/~1containers~1{name_or_id}~1start/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Start a single container"
+        "summary": "Start a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stop a single container with a given container name or ID (corresponding IBM Containers command: `cf ic stop <container>`).",
         "id": "operation:post:/containers/{name_or_id}/stop",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/stop",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to stop.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of seconds to wait before the container is stopped.",
+            "in": "query",
+            "name": "t",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/containers/{name_or_id}/stop",
         "pointer": "#/paths/~1containers~1{name_or_id}~1stop/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Stop a single container"
+        "summary": "Stop a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Unpause all processes that are currently stopped inside a single containers with a given container ID or name (corresponding IBM Containers command: `cf ic unp…",
         "id": "operation:post:/containers/{name_or_id}/unpause",
         "kind": "operation",
         "method": "post",
         "name": "post /containers/{name_or_id}/unpause",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier or name of the container that you want to unpause.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/containers/{name_or_id}/unpause",
         "pointer": "#/paths/~1containers~1{name_or_id}~1unpause/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Unpause a single container"
+        "summary": "Unpause a single container",
+        "tags": [
+          "Single containers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all available Docker images in a private Bluemix registry (corresponding IBM Containers command: `cf ic images`.",
         "id": "operation:get:/images/json",
         "kind": "operation",
         "method": "get",
         "name": "get /images/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/images/json",
         "pointer": "#/paths/~1images~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageInfo"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all Docker images that are available in your private Bluemix registry."
+        "summary": "List all Docker images that are available in your private Bluemix registry.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a Docker image from the private Bluemix registry that is identified by the image ID (corresponding IBM Containers command: `cf ic rmi <image>`).",
         "id": "operation:delete:/images/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /images/{id}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier representing a Docker image.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/images/{id}",
         "pointer": "#/paths/~1images~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Remove a Docker image."
+        "summary": "Remove a Docker image.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns detailed information about a Docker image that is stored in the private Bluemix registry of an organization (corresponding IBM Containers…",
         "id": "operation:get:/images/{name_or_id}/json",
         "kind": "operation",
         "method": "get",
         "name": "get /images/{name_or_id}/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The full private Bluemix registry path to your image or the unique ID of the image that you want to inspect.",
+            "in": "path",
+            "name": "name_or_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/images/{name_or_id}/json",
         "pointer": "#/paths/~1images~1{name_or_id}~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageDetail"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Inspect a Docker image in private Bluemix registry"
+        "summary": "Inspect a Docker image in private Bluemix registry",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint retrieves the namespace that was set for the organization that owns the current space (corresponding IBM Containers command: `cf ic namespace get…",
         "id": "operation:get:/registry/namespaces",
         "kind": "operation",
         "method": "get",
         "name": "get /registry/namespaces",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registry/namespaces",
         "pointer": "#/paths/~1registry~1namespaces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Namespace"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the namespace of an organization."
+        "summary": "Retrieve the namespace of an organization.",
+        "tags": [
+          "Private Docker images registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint checks whether a namespace is available in Bluemix and can be used to set up the private Docker images registry for an organization.",
         "id": "operation:get:/registry/namespaces/{namespace}",
         "kind": "operation",
         "method": "get",
         "name": "get /registry/namespaces/{namespace}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the namespace that you would like to use for your organization and for which you would like to check availability in Bluemix.",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registry/namespaces/{namespace}",
         "pointer": "#/paths/~1registry~1namespaces~1{namespace}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Namespace"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check the availability of a namespace"
+        "summary": "Check the availability of a namespace",
+        "tags": [
+          "Private Docker images registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set up your own Docker images registry in Bluemix by defining a namespace for your organization (corresponding IBM Containers command: `cf ic namespace set <na…",
         "id": "operation:put:/registry/namespaces/{namespace}",
         "kind": "operation",
         "method": "put",
         "name": "put /registry/namespaces/{namespace}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name for your namespace to create your private Docker images registry in Bluemix.",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registry/namespaces/{namespace}",
         "pointer": "#/paths/~1registry~1namespaces~1{namespace}/put",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Namespace"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set a namespace for your private Bluemix registry."
+        "summary": "Set a namespace for your private Bluemix registry.",
+        "tags": [
+          "Private Docker images registry"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the TLS (Transport Layer Security) certificate to the user (corresponding IBM Containers command: `cf ic login`).",
         "id": "operation:get:/tlskey",
         "kind": "operation",
         "method": "get",
         "name": "get /tlskey",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tlskey",
         "pointer": "#/paths/~1tlskey/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Certificate"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the TLS Certificate"
+        "summary": "Retrieve the TLS Certificate",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint requests to generate a new TLS (Transport Layer Security) certificate on the server and to update the existing user TLS certificate (correspondin…",
         "id": "operation:put:/tlskey/refresh",
         "kind": "operation",
         "method": "put",
         "name": "put /tlskey/refresh",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tlskey/refresh",
         "pointer": "#/paths/~1tlskey~1refresh/put",
+        "responses": [
+          {
+            "status": "201",
+            "type": "CertificateRefresh"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Refresh the TLS Certificate"
+        "summary": "Refresh the TLS Certificate",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoints creates a new volume in your space (corresponding IBM Containers command: `cf ic volume create VOLNAME`).",
         "id": "operation:post:/volumes/create",
         "kind": "operation",
         "method": "post",
         "name": "post /volumes/create",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the volume.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the file share that the volume is hosted on.",
+            "in": "query",
+            "name": "fsName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/create",
         "pointer": "#/paths/~1volumes~1create/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Volume"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a volume in a space"
+        "summary": "Create a volume in a space",
+        "tags": [
+          "Volumes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new file share in a space (corresponding IBM Containers command: `cf ic volume fs-create FSNAME FSSIZE FSIOPS`).",
         "id": "operation:post:/volumes/fs/create",
         "kind": "operation",
         "method": "post",
         "name": "post /volumes/fs/create",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/fs/create",
         "pointer": "#/paths/~1volumes~1fs~1create/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FileshareParam"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a file share in a space"
+        "summary": "Create a file share in a space",
+        "tags": [
+          "File shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of available file shares in gigabyte (corresponding IBM Containers command: `cf ic volume fs-flavor-list`).",
         "id": "operation:get:/volumes/fs/flavors/json",
         "kind": "operation",
         "method": "get",
         "name": "get /volumes/fs/flavors/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/fs/flavors/json",
         "pointer": "#/paths/~1volumes~1fs~1flavors~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List available file share sizes"
+        "summary": "List available file share sizes",
+        "tags": [
+          "File shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all file shares that are availble in a space (corresponding IBM Containers command: `cf ic volume fs-list`).",
         "id": "operation:get:/volumes/fs/json",
         "kind": "operation",
         "method": "get",
         "name": "get /volumes/fs/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/fs/json",
         "pointer": "#/paths/~1volumes~1fs~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Fileshare[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List available file shares in a space"
+        "summary": "List available file shares in a space",
+        "tags": [
+          "File shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint deletes a file share from a space (corresponding IBM Containers command: `cf ic volume fs-rm FSNAME`).",
         "id": "operation:delete:/volumes/fs/{name}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /volumes/fs/{name}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the file share that you want to delete.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/fs/{name}",
         "pointer": "#/paths/~1volumes~1fs~1{name}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a file share"
+        "summary": "Delete a file share",
+        "tags": [
+          "File shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns detailed information about a file share (corresponding IBM Containers command: `cf ic volume fs-inspect FSNAME`).",
         "id": "operation:get:/volumes/fs/{name}/json",
         "kind": "operation",
         "method": "get",
         "name": "get /volumes/fs/{name}/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the file share that you want to inspect.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/fs/{name}/json",
         "pointer": "#/paths/~1volumes~1fs~1{name}~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetFileshareDetails[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Inspect a file share"
+        "summary": "Inspect a file share",
+        "tags": [
+          "File shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all volumes that are available in the given space (corresponding IBM Containers command: `cf ic volume list`).",
         "id": "operation:get:/volumes/json",
         "kind": "operation",
         "method": "get",
         "name": "get /volumes/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/json",
         "pointer": "#/paths/~1volumes~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Volume[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all volumes for a space"
+        "summary": "List all volumes for a space",
+        "tags": [
+          "Volumes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/volumes/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /volumes/{name}",
-        "path": "/volumes/{name}",
-        "pointer": "#/paths/~1volumes~1{name}/delete",
-        "security": [],
-        "summary": "Delete a volume"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint provisions an existing volume that was created in one space to another space within the same organization.",
         "id": "operation:post:/volumes/{name}",
         "kind": "operation",
         "method": "post",
         "name": "post /volumes/{name}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the volume that you want to share with another space in your organization.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/{name}",
         "pointer": "#/paths/~1volumes~1{name}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateVolume"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Volume"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Share a volume with another space"
+        "summary": "Share a volume with another space",
+        "tags": [
+          "Volumes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a volume with a given name from a space (corresponding IBM Containers command: `cf ic volume rm VOLNAME`).",
+        "id": "operation:delete:/volumes/{name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /volumes/{name}",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the volume that you want to delete.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/volumes/{name}",
+        "pointer": "#/paths/~1volumes~1{name}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a volume",
+        "tags": [
+          "Volumes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve a detailed list of information about a volume that is identified by the volume name (corresponding IBM Containers command: `cf ic volume inspect VOLNA…",
         "id": "operation:get:/volumes/{name}/json",
         "kind": "operation",
         "method": "get",
         "name": "get /volumes/{name}/json",
+        "parameters": [
+          {
+            "description": "The Bluemix JSON web token that you receive when logging into Bluemix.",
+            "in": "header",
+            "name": "X-Auth-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique ID of your organization space where you want to create or work with your containers.",
+            "in": "header",
+            "name": "X-Auth-Project-Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the volume, for which you want to retrieve detailed information.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/volumes/{name}/json",
         "pointer": "#/paths/~1volumes~1{name}~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Volume"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve detailed information about a volume. "
+        "summary": "Retrieve detailed information about a volume. ",
+        "tags": [
+          "Volumes"
+        ]
       },
       {
         "id": "schema:Binding",
         "kind": "schema",
-        "name": "Binding"
+        "name": "Binding",
+        "type": "object"
       },
       {
         "id": "schema:Certificate",
         "kind": "schema",
-        "name": "Certificate"
+        "name": "Certificate",
+        "type": "object"
       },
       {
         "id": "schema:CertificateRefresh",
         "kind": "schema",
-        "name": "CertificateRefresh"
+        "name": "CertificateRefresh",
+        "type": "object"
       },
       {
         "id": "schema:Container",
         "kind": "schema",
-        "name": "Container"
+        "name": "Container",
+        "type": "object"
       },
       {
         "id": "schema:ContainerConfig",
         "kind": "schema",
-        "name": "ContainerConfig"
+        "name": "ContainerConfig",
+        "type": "object"
       },
       {
         "id": "schema:ContainerId",
         "kind": "schema",
-        "name": "ContainerId"
+        "name": "ContainerId",
+        "type": "object"
       },
       {
         "id": "schema:ContainerInfo",
         "kind": "schema",
-        "name": "ContainerInfo"
+        "name": "ContainerInfo",
+        "type": "object"
       },
       {
         "id": "schema:ContainerState",
         "kind": "schema",
-        "name": "ContainerState"
+        "name": "ContainerState",
+        "type": "object"
       },
       {
         "id": "schema:ContainersGroupsGetListItem",
         "kind": "schema",
-        "name": "ContainersGroupsGetListItem"
+        "name": "ContainersGroupsGetListItem",
+        "type": "object"
       },
       {
         "id": "schema:ContainersGroupsNameOrIdGetDetails",
         "kind": "schema",
-        "name": "ContainersGroupsNameOrIdGetDetails"
+        "name": "ContainersGroupsNameOrIdGetDetails",
+        "type": "object"
       },
       {
         "id": "schema:ContainersGroupsNameOrIdMaproutePostInfo",
         "kind": "schema",
-        "name": "ContainersGroupsNameOrIdMaproutePostInfo"
+        "name": "ContainersGroupsNameOrIdMaproutePostInfo",
+        "type": "ContainersGroupsPostCreatedInfo|object"
       },
       {
         "id": "schema:ContainersGroupsNameOrIdPatchUpdatedInfo",
         "kind": "schema",
-        "name": "ContainersGroupsNameOrIdPatchUpdatedInfo"
+        "name": "ContainersGroupsNameOrIdPatchUpdatedInfo",
+        "type": "object"
       },
       {
         "id": "schema:ContainersGroupsPostCreatedInfo",
         "kind": "schema",
-        "name": "ContainersGroupsPostCreatedInfo"
+        "name": "ContainersGroupsPostCreatedInfo",
+        "type": "object"
       },
       {
         "id": "schema:ContainersGroupsPostRequiredAttributes",
         "kind": "schema",
-        "name": "ContainersGroupsPostRequiredAttributes"
+        "name": "ContainersGroupsPostRequiredAttributes",
+        "type": "object"
       },
       {
         "id": "schema:ContainersQuotaInfo",
         "kind": "schema",
-        "name": "ContainersQuotaInfo"
+        "name": "ContainersQuotaInfo",
+        "type": "object"
       },
       {
         "id": "schema:ContainersQuotaList",
         "kind": "schema",
-        "name": "ContainersQuotaList"
+        "name": "ContainersQuotaList",
+        "type": "object"
       },
       {
         "id": "schema:ContainersUsageInfo",
         "kind": "schema",
-        "name": "ContainersUsageInfo"
+        "name": "ContainersUsageInfo",
+        "type": "object"
       },
       {
         "id": "schema:ContainersUsageInfoAvailableSizes",
         "kind": "schema",
-        "name": "ContainersUsageInfoAvailableSizes"
+        "name": "ContainersUsageInfoAvailableSizes",
+        "type": "object"
       },
       {
         "id": "schema:ContainersVersionGetInfo",
         "kind": "schema",
-        "name": "ContainersVersionGetInfo"
+        "name": "ContainersVersionGetInfo",
+        "type": "object"
       },
       {
         "id": "schema:CreateContainer",
         "kind": "schema",
-        "name": "CreateContainer"
+        "name": "CreateContainer",
+        "type": "object"
       },
       {
         "id": "schema:Fileshare",
         "kind": "schema",
-        "name": "Fileshare"
+        "name": "Fileshare",
+        "type": "object"
       },
       {
         "id": "schema:FileshareParam",
         "kind": "schema",
-        "name": "FileshareParam"
+        "name": "FileshareParam",
+        "type": "object"
       },
       {
         "id": "schema:FileshareUsage",
         "kind": "schema",
-        "name": "FileshareUsage"
+        "name": "FileshareUsage",
+        "type": "object"
       },
       {
         "id": "schema:FloatingIP",
         "kind": "schema",
-        "name": "FloatingIP"
+        "name": "FloatingIP",
+        "type": "object"
       },
       {
         "id": "schema:GetFileshareDetails",
         "kind": "schema",
-        "name": "GetFileshareDetails"
+        "name": "GetFileshareDetails",
+        "type": "object"
       },
       {
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
         "id": "schema:HostConfig",
         "kind": "schema",
-        "name": "HostConfig"
+        "name": "HostConfig",
+        "type": "object"
       },
       {
         "id": "schema:ImageDetail",
         "kind": "schema",
-        "name": "ImageDetail"
+        "name": "ImageDetail",
+        "type": "object"
       },
       {
         "id": "schema:ImageInfo",
         "kind": "schema",
-        "name": "ImageInfo"
+        "name": "ImageInfo",
+        "type": "object"
       },
       {
         "id": "schema:Namespace",
         "kind": "schema",
-        "name": "Namespace"
+        "name": "Namespace",
+        "type": "object"
       },
       {
         "id": "schema:Network",
         "kind": "schema",
-        "name": "Network"
+        "name": "Network",
+        "type": "object"
       },
       {
         "id": "schema:NetworkSetting",
         "kind": "schema",
-        "name": "NetworkSetting"
+        "name": "NetworkSetting",
+        "type": "object"
       },
       {
         "id": "schema:Port",
         "kind": "schema",
-        "name": "Port"
+        "name": "Port",
+        "type": "object"
       },
       {
+        "description": "The public route that is mapped to the container group.",
         "id": "schema:Route",
         "kind": "schema",
-        "name": "Route"
+        "name": "Route",
+        "type": "object"
       },
       {
         "id": "schema:UpdateVolume",
         "kind": "schema",
-        "name": "UpdateVolume"
+        "name": "UpdateVolume",
+        "type": "object"
       },
       {
         "id": "schema:Volume",
         "kind": "schema",
-        "name": "Volume"
+        "name": "Volume",
+        "type": "object"
       },
       {
         "id": "schema:getContainerStatus",
         "kind": "schema",
-        "name": "getContainerStatus"
+        "name": "getContainerStatus",
+        "type": "object"
       }
     ]
   },

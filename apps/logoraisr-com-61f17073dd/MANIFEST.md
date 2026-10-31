@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_logoraisr.com_assets_images_con
 
 | | |
 | --- | --- |
-| Signed bundle | `023ac69c6e223ac7cd1db093b6920367fa88a03eb76c164c9a2753f27d9460c2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_logoraisr.com_assets_images_con
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/previews/{file_id}/` | previews_read | Get preview image of uploaded file |
-| GET | `/processes/` | processes_list | Get process list. |
-| GET | `/projects/` | projects_list | Get user project list. |
-| POST | `/projects/` | projects_create | Create a new project. |
-| GET | `/projects/{project_number}/` | projects_read | Get project details. |
-| GET | `/reports/` | reports_list | Get user report list. |
-| POST | `/reports/` | reports_create | Create a new report. |
-| GET | `/reports/{report_number}/` | reports_read | Get report details. |
-| GET | `/results/{result_file_id}/` | results_read | Get the result from image processing |
-| POST | `/uploads/` | uploads_create | Upload a new image |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/previews/{file_id}/` | previews_read | `file_id`* | PreviewResponse | yes | Get preview image of uploaded file |
+| GET | `/processes/` | processes_list | — | Process | yes | Get process list. |
+| GET | `/projects/` | projects_list | — | Project | yes | Get user project list. |
+| POST | `/projects/` | projects_create | body*: ProjectRequest | ProjectResponse |  | Create a new project. |
+| GET | `/projects/{project_number}/` | projects_read | `project_number`* | Project | yes | Get project details. |
+| GET | `/reports/` | reports_list | — | Report | yes | Get user report list. |
+| POST | `/reports/` | reports_create | body*: ReportRequest | ReportResponse |  | Create a new report. |
+| GET | `/reports/{report_number}/` | reports_read | `report_number`* | Report | yes | Get report details. |
+| GET | `/results/{result_file_id}/` | results_read | `result_file_id`* | ResultResponse | yes | Get the result from image processing |
+| POST | `/uploads/` | uploads_create | body*: object | FileResponse |  | Upload a new image |

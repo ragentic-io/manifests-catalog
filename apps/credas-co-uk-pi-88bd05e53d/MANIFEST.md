@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_credas_co_uk_wp-content_upl
 
 | | |
 | --- | --- |
-| Signed bundle | `66cebdbff07986fab4f73931b851f67f336b31bacfee7664693a74f9ee041f46` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,42 +34,44 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_credas_co_uk_wp-content_upl
 
 66 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/api/bank-accounts/verify` | Verify | Verifies bank account details. |
-| POST | `/api/companies` | SearchCompany | Searches for a company based on its Company Number and returns its details. |
-| GET | `/api/companies/{companyId}` | GetCompany | — |
-| POST | `/api/credit-status/perform` | CheckCreditStatus | Check includes identifying bankruptcy, insolvency, CCJ's or Company Directorship. |
-| POST | `/api/datachecks` | AddDataCheck | Creates new data check against a specified registration. |
-| POST | `/api/images/id-document` | AddIdDocumentImage | Add an id document image to the specified registration. |
-| GET | `/api/images/id-document/{registrationId}` | GetIdDocumentImages | Get all id document images associated with a registration. |
-| POST | `/api/images/liveness` | AddLivenessImage | Add a liveness image (UAP) to the specified registration. |
-| GET | `/api/images/liveness-performed/{registrationId}` | GetLivenessPerformedImage | Retrieve the liveness performed image associated with a registration. |
-| GET | `/api/images/liveness/{registrationId}` | GetLivenessImage | Retrieve the liveness action image (UAP) associated with a registration. |
-| GET | `/api/images/scan-report-pdf/{scanId}` | GetScanReportPdf | Returns a detailed report on the analysis that has taken place of a scanned document |
-| POST | `/api/images/selfie` | AddSelfieImage | Add a selfie image to the registration. |
-| GET | `/api/images/selfie/{registrationId}` | GetSelfieImage | Retrieve the selfie image associated with a registration. |
-| POST | `/api/property-register` | AddPropertyRegisterCheck | Creates new property registry check against the registration. |
-| GET | `/api/property-register/{id}` | GetPropertyRegisterCheckResult | Retrieves property registry check associated with the registration. |
-| GET | `/api/reg-types` | GetAll | Gets all available RegTypes. |
-| POST | `/api/registrations` | AddRegistration | Creates new registration. |
-| POST | `/api/registrations/instant` | AddInstantRegistration | Creates new registration record, adds an ID document and optional selfie image in one go. |
-| GET | `/api/registrations/referenceid/{referenceId}/summary` | GetRegistrationSummariesByReferenceId | Finds registrations by the ReferenceId. |
-| GET | `/api/registrations/regcode/{regCode}/summary` | GetRegistrationSummaryByRegCode | Finds a registration by the RegCode. |
-| GET | `/api/registrations/search` | GetRegistrationSearch | Gets paged registration list by search criteria or nothing if there are no matching fields. Optional parameters may be appended to the query string. Maximum page size is 50. |
-| GET | `/api/registrations/{id}/check-submitted-id-documents` | CheckSubmittedIdDocuments | Checks if submitted documents are sufficient to complete registration. |
-| PUT | `/api/registrations/{id}/contact-details` | UpdateContactDetails | Updates a registration's contact details. |
-| PUT | `/api/registrations/{id}/override-check-status` | OverrideCheckStatus | Sets an override for a specific check on the registration. |
-| GET | `/api/registrations/{id}/pdf-export` | GetRegistrationPdfExport | Returns PDF export for a given registration. |
-| GET | `/api/registrations/{id}/pdf-export-sections` | get /api/registrations/{id}/pdf-export-sections | Returns a PDF report for a given registration containing specified sections |
-| GET | `/api/registrations/{id}/pdf-settlement-status` | GetShareCodePdfExport | Returns settlement status PDF (Share Code) for a given registration. |
-| POST | `/api/registrations/{id}/resend-invitation` | ResendInvitation | Resends any invitation for the specified registration. |
-| GET | `/api/registrations/{id}/settings` | GetRegistrationSettings | Gets registration settings or nothing if there are no settings associated with the registration. |
-| PUT | `/api/registrations/{id}/settings` | UpdateRegistrationSettings | Updates registration settings. |
-| PUT | `/api/registrations/{id}/status` | UpdateRegistrationStatus | Updates the status of the registration to one specified in the request. |
-| GET | `/api/registrations/{id}/summary` | GetRegistrationSummary | Finds a registration by the Id. |
-| GET | `/api/registrations/{id}/supported-id-documents` | GetRegistrationSupportedIdDocuments | Get a list of supported id document for the specified registration id. |
-| POST | `/api/report-view/by-referenceid` | GetReportViewByReferenceId | Retrieves secure links to registration details pages searching by the Reference Id. |
-| POST | `/api/report-view/by-registrationid` | GetReportViewByRegistrationId | Retrieves secure link to registration details page searching by the Registration Id. |
-| POST | `/api/web-verifications/by-referenceid` | GetWebVerificationsByReferenceId | Retrieves secure links to web verification pages searching by the Reference Id. |
-| POST | `/api/web-verifications/by-registrationid` | GetWebVerificationsByRegistrationId | Retrieves secure link to web verification page searching by the Registration Id. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/api/bank-accounts/verify` | Verify | `apikey`*, body: Credas.Api.Models.BankAccounts.AccountVerificationRequest | Credas.Api.Models.BankAccounts.AccountVerificationResponse |  | Verifies bank account details. |
+| POST | `/api/companies` | SearchCompany | `companyNumber`, `apikey`* | Credas.Api.Models.Companies.CompanyDetail |  | Searches for a company based on its Company Number and returns its details. |
+| GET | `/api/companies/{companyId}` | GetCompany | `companyId`*, `apikey`* | Credas.Api.Models.Companies.CompanyDetail | yes | — |
+| POST | `/api/credit-status/perform` | CheckCreditStatus | `apikey`*, body: Credas.Api.Models.StatusChecks.StatusCheckRequest | Credas.Api.Models.StatusChecks.StatusCheck |  | Check includes identifying bankruptcy, insolvency, CCJ's or Company Directorship. |
+| POST | `/api/datachecks` | AddDataCheck | `apikey`*, body: Credas.Api.Models.DataCheck.AddDataCheckRequest | Credas.Api.Models.DataCheck.AddDataCheckResponse |  | Creates new data check against a specified registration. |
+| POST | `/api/images/id-document` | AddIdDocumentImage | `apikey`*, body: Credas.Api.Models.Images.AddIdDocumentImageRequest | Credas.Api.Models.Images.AddIdDocumentImageResponse |  | Add an id document image to the specified registration. |
+| GET | `/api/images/id-document/{registrationId}` | GetIdDocumentImages | `registrationId`*, `apikey`* | Credas.Api.Models.Images.GetIdDocumentImageResponse[] | yes | Get all id document images associated with a registration. |
+| POST | `/api/images/liveness` | AddLivenessImage | `apikey`*, body: Credas.Api.Models.Images.AddLivenessImageRequest | — |  | Add a liveness image (UAP) to the specified registration. |
+| GET | `/api/images/liveness-performed/{registrationId}` | GetLivenessPerformedImage | `registrationId`*, `apikey`* | Credas.Api.Models.Images.GetLivenessPerformedImageResponse | yes | Retrieve the liveness performed image associated with a registration. |
+| GET | `/api/images/liveness/{registrationId}` | GetLivenessImage | `registrationId`*, `apikey`* | Credas.Api.Models.Images.GetLivenessImageResponse | yes | Retrieve the liveness action image (UAP) associated with a registration. |
+| GET | `/api/images/scan-report-pdf/{scanId}` | GetScanReportPdf | `scanId`*, `apikey`* | string:byte | yes | Returns a detailed report on the analysis that has taken place of a scanned document |
+| POST | `/api/images/selfie` | AddSelfieImage | `apikey`*, body: Credas.Api.Models.Images.AddSelfieImageRequest | Credas.Api.Models.Images.AddSelfieImageResponse |  | Add a selfie image to the registration. |
+| GET | `/api/images/selfie/{registrationId}` | GetSelfieImage | `registrationId`*, `apikey`* | Credas.Api.Models.Images.GetSelfieImageResponse | yes | Retrieve the selfie image associated with a registration. |
+| POST | `/api/property-register` | AddPropertyRegisterCheck | `apikey`*, body: Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest | Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse |  | Creates new property registry check against the registration. |
+| GET | `/api/property-register/{id}` | GetPropertyRegisterCheckResult | `id`*, `apikey`* | Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse | yes | Retrieves property registry check associated with the registration. |
+| GET | `/api/reg-types` | GetAll | `apikey`* | Credas.Api.Models.RegTypes.RegType[] | yes | Gets all available RegTypes. |
+| POST | `/api/registrations` | AddRegistration | `apikey`*, body: Credas.Api.Models.Registrations.AddRegistrationRequest | Credas.Api.Models.Registrations.AddRegistrationResponse |  | Creates new registration. |
+| POST | `/api/registrations/instant` | AddInstantRegistration | `apikey`*, body: Credas.Api.Models.Registrations.AddInstantRegistrationRequest | Credas.Api.Models.Registrations.AddInstantRegistrationResponse |  | Creates new registration record, adds an ID document and optional selfie image in one go. |
+| GET | `/api/registrations/referenceid/{referenceId}/summary` | GetRegistrationSummariesByReferenceId | `referenceId`*, `apikey`* | Credas.Api.Models.Registrations.RegistrationSummary[] | yes | Finds registrations by the ReferenceId. |
+| GET | `/api/registrations/regcode/{regCode}/summary` | GetRegistrationSummaryByRegCode | `regCode`*, `apikey`* | Credas.Api.Models.Registrations.RegistrationSummary | yes | Finds a registration by the RegCode. |
+| GET | `/api/registrations/search` | GetRegistrationSearch | `pageNum`, `pageSize`, `forename`, `surname`, `email`, `dob`, `apikey`* | Credas.Api.Models.Registrations.PagedRegistrationSummary | yes | Gets paged registration list by search criteria or nothing if there are no matching fields. Optional parameters may be appended to the query string. Maximum page size is 50. |
+| GET | `/api/registrations/{id}/check-submitted-id-documents` | CheckSubmittedIdDocuments | `id`*, `apikey`* | Credas.Api.Models.Registrations.CheckSubmittedIdDocumentsResponse | yes | Checks if submitted documents are sufficient to complete registration. |
+| PUT | `/api/registrations/{id}/contact-details` | UpdateContactDetails | `id`*, `apikey`*, body: Credas.Api.Models.Registrations.UpdateContactDetailsRequest | — |  | Updates a registration's contact details. |
+| PUT | `/api/registrations/{id}/override-check-status` | OverrideCheckStatus | `id`*, `apikey`*, body: Credas.Api.Models.StatusOverrides.OverrideCheckStatusRequest | — |  | Sets an override for a specific check on the registration. |
+| GET | `/api/registrations/{id}/pdf-export` | GetRegistrationPdfExport | `id`*, `apikey`* | string:byte | yes | Returns PDF export for a given registration. |
+| GET | `/api/registrations/{id}/pdf-export-sections` | get /api/registrations/{id}/pdf-export-sections | `id`*, `Comments`, `ContactDetails`, `StandardChecks`, `PepSanctionChecks`, `ProofOfOwnership`, `BankAccountCheck`, `CreditStatusCheck`, `Liveness`, `ExcludeSelfie`, `ExcludeIDDocuments`, `DIATFSection`, `apikey`* | string:byte | yes | Returns a PDF report for a given registration containing specified sections |
+| GET | `/api/registrations/{id}/pdf-settlement-status` | GetShareCodePdfExport | `id`*, `apikey`* | string:byte | yes | Returns settlement status PDF (Share Code) for a given registration. |
+| POST | `/api/registrations/{id}/resend-invitation` | ResendInvitation | `id`*, `apikey`* | — |  | Resends any invitation for the specified registration. |
+| GET | `/api/registrations/{id}/settings` | GetRegistrationSettings | `id`*, `apikey`* | — | yes | Gets registration settings or nothing if there are no settings associated with the registration. |
+| PUT | `/api/registrations/{id}/settings` | UpdateRegistrationSettings | `id`*, `apikey`*, body: Credas.Api.Models.Registrations.RegistrationSettings | — |  | Updates registration settings. |
+| PUT | `/api/registrations/{id}/status` | UpdateRegistrationStatus | `id`*, `apikey`*, body: Credas.Api.Models.Registrations.UpdateRegistrationStatusRequest | — |  | Updates the status of the registration to one specified in the request. |
+| GET | `/api/registrations/{id}/summary` | GetRegistrationSummary | `id`*, `apikey`* | Credas.Api.Models.Registrations.RegistrationSummary | yes | Finds a registration by the Id. |
+| GET | `/api/registrations/{id}/supported-id-documents` | GetRegistrationSupportedIdDocuments | `id`*, `apikey`* | Credas.Api.Models.Registrations.SupportedIdDocument | yes | Get a list of supported id document for the specified registration id. |
+| POST | `/api/report-view/by-referenceid` | GetReportViewByReferenceId | `apikey`*, body: Credas.Api.Models.ReportView.GetReportViewByReferenceIdRequest | Credas.Api.Models.ReportView.GetReportViewResponse |  | Retrieves secure links to registration details pages searching by the Reference Id. |
+| POST | `/api/report-view/by-registrationid` | GetReportViewByRegistrationId | `apikey`*, body: Credas.Api.Models.ReportView.GetReportViewByRegistrationIdRequest | Credas.Api.Models.ReportView.GetReportViewResponse |  | Retrieves secure link to registration details page searching by the Registration Id. |
+| POST | `/api/web-verifications/by-referenceid` | GetWebVerificationsByReferenceId | `apikey`*, body: Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest | Credas.Api.Models.WebVerifications.GetWebVerificationsResponse |  | Retrieves secure links to web verification pages searching by the Reference Id. |
+| POST | `/api/web-verifications/by-registrationid` | GetWebVerificationsByRegistrationId | `apikey`*, body: Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest | Credas.Api.Models.WebVerifications.GetWebVerificationsResponse |  | Retrieves secure link to web verification page searching by the Registration Id. |

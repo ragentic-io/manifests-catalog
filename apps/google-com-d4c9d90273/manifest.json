@@ -12,12 +12,12 @@
       {
         "from": "google-com-d4c9d90273",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/{name}"
+        "to": "operation:get:/v3/{name}"
       },
       {
         "from": "google-com-d4c9d90273",
         "kind": "EXPOSES",
-        "to": "operation:get:/v3/{name}"
+        "to": "operation:delete:/v3/{name}"
       },
       {
         "from": "google-com-d4c9d90273",
@@ -118,6 +118,371 @@
         "from": "google-com-d4c9d90273",
         "kind": "EXPOSES",
         "to": "operation:post:/v3/{parent}/reconciliationReports:validate"
+      },
+      {
+        "from": "operation:post:/v3/{account}/hotels:setLiveOnGoogle",
+        "kind": "ACCEPTS",
+        "to": "schema:SetLiveOnGoogleRequest"
+      },
+      {
+        "from": "operation:post:/v3/{account}/hotels:setLiveOnGoogle",
+        "kind": "RETURNS",
+        "to": "schema:SetLiveOnGoogleResponse"
+      },
+      {
+        "from": "operation:get:/v3/{name}",
+        "kind": "RETURNS",
+        "to": "schema:ReconciliationReport"
+      },
+      {
+        "from": "operation:delete:/v3/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:patch:/v3/{name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Brand"
+      },
+      {
+        "from": "operation:patch:/v3/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Brand"
+      },
+      {
+        "from": "operation:get:/v3/{name}/freeBookingLinksReportViews:query",
+        "kind": "RETURNS",
+        "to": "schema:QueryFreeBookingLinksReportResponse"
+      },
+      {
+        "from": "operation:get:/v3/{name}/participationReportViews:query",
+        "kind": "RETURNS",
+        "to": "schema:QueryParticipationReportResponse"
+      },
+      {
+        "from": "operation:get:/v3/{name}/propertyPerformanceReportViews:query",
+        "kind": "RETURNS",
+        "to": "schema:QueryPropertyPerformanceReportResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/accountLinks",
+        "kind": "RETURNS",
+        "to": "schema:ListAccountLinksResponse"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/accountLinks",
+        "kind": "ACCEPTS",
+        "to": "schema:AccountLink"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/accountLinks",
+        "kind": "RETURNS",
+        "to": "schema:AccountLink"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/brands",
+        "kind": "RETURNS",
+        "to": "schema:ListBrandsResponse"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/brands",
+        "kind": "ACCEPTS",
+        "to": "schema:Brand"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/brands",
+        "kind": "RETURNS",
+        "to": "schema:Brand"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/hotelViews",
+        "kind": "RETURNS",
+        "to": "schema:ListHotelViewsResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/hotelViews:summarize",
+        "kind": "RETURNS",
+        "to": "schema:SummarizeHotelViewsResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/icons",
+        "kind": "RETURNS",
+        "to": "schema:ListIconsResponse"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/icons",
+        "kind": "ACCEPTS",
+        "to": "schema:Icon"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/icons",
+        "kind": "RETURNS",
+        "to": "schema:Icon"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/listings:verify",
+        "kind": "ACCEPTS",
+        "to": "schema:VerifyListingsRequest"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/listings:verify",
+        "kind": "RETURNS",
+        "to": "schema:VerifyListingsResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/priceAccuracyViews",
+        "kind": "RETURNS",
+        "to": "schema:ListPriceAccuracyViewsResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/priceAccuracyViews:summarize",
+        "kind": "RETURNS",
+        "to": "schema:SummarizePriceAccuracyResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/priceCoverageViews",
+        "kind": "RETURNS",
+        "to": "schema:ListPriceCoverageViewsResponse"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/priceCoverageViews:latest",
+        "kind": "RETURNS",
+        "to": "schema:PriceCoverageView"
+      },
+      {
+        "from": "operation:get:/v3/{parent}/reconciliationReports",
+        "kind": "RETURNS",
+        "to": "schema:ListReconciliationReportsResponse"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/reconciliationReports",
+        "kind": "ACCEPTS",
+        "to": "schema:ReconciliationReport"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/reconciliationReports",
+        "kind": "RETURNS",
+        "to": "schema:CreateReconciliationReportResponse"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/reconciliationReports:validate",
+        "kind": "ACCEPTS",
+        "to": "schema:ReconciliationReport"
+      },
+      {
+        "from": "operation:post:/v3/{parent}/reconciliationReports:validate",
+        "kind": "RETURNS",
+        "to": "schema:ValidateReconciliationReportResponse"
+      },
+      {
+        "from": "schema:AccountLink",
+        "kind": "REFERENCES",
+        "to": "schema:AccountLinkTarget"
+      },
+      {
+        "from": "schema:AccountLinkTarget",
+        "kind": "REFERENCES",
+        "to": "schema:HotelList"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "REFERENCES",
+        "to": "schema:DisplayNameDisapprovalReason"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "REFERENCES",
+        "to": "schema:LocalizedText"
+      },
+      {
+        "from": "schema:CreateReconciliationReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ReconciliationReport"
+      },
+      {
+        "from": "schema:CreateReconciliationReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ReconciliationReportValidationIssue"
+      },
+      {
+        "from": "schema:FreeBookingLinksResult",
+        "kind": "REFERENCES",
+        "to": "schema:Date"
+      },
+      {
+        "from": "schema:HotelPricePerItinerary",
+        "kind": "REFERENCES",
+        "to": "schema:Date"
+      },
+      {
+        "from": "schema:HotelView",
+        "kind": "REFERENCES",
+        "to": "schema:DataIssueDetail"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "REFERENCES",
+        "to": "schema:LocalizedText"
+      },
+      {
+        "from": "schema:Key",
+        "kind": "REFERENCES",
+        "to": "schema:Date"
+      },
+      {
+        "from": "schema:ListAccountLinksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountLink"
+      },
+      {
+        "from": "schema:ListBrandsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Brand"
+      },
+      {
+        "from": "schema:ListHotelViewsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HotelView"
+      },
+      {
+        "from": "schema:ListIconsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Icon"
+      },
+      {
+        "from": "schema:ListPriceAccuracyViewsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PriceAccuracyView"
+      },
+      {
+        "from": "schema:ListPriceCoverageViewsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PriceCoverageView"
+      },
+      {
+        "from": "schema:ListReconciliationReportsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ReconciliationReport"
+      },
+      {
+        "from": "schema:MissedParticipationCountDetails",
+        "kind": "REFERENCES",
+        "to": "schema:NoPriceCountDetails"
+      },
+      {
+        "from": "schema:MissedParticipationCountDetails",
+        "kind": "REFERENCES",
+        "to": "schema:PriceMissingCountDetails"
+      },
+      {
+        "from": "schema:MissedParticipationCountDetails",
+        "kind": "REFERENCES",
+        "to": "schema:PriceProblemCountDetails"
+      },
+      {
+        "from": "schema:MissedParticipationCountDetails",
+        "kind": "REFERENCES",
+        "to": "schema:PriceUnavailableCountDetails"
+      },
+      {
+        "from": "schema:ParsedListing",
+        "kind": "REFERENCES",
+        "to": "schema:DataIssueDetail"
+      },
+      {
+        "from": "schema:ParsedListing",
+        "kind": "REFERENCES",
+        "to": "schema:Image"
+      },
+      {
+        "from": "schema:ParsedListing",
+        "kind": "REFERENCES",
+        "to": "schema:LatLng"
+      },
+      {
+        "from": "schema:ParsedListing",
+        "kind": "REFERENCES",
+        "to": "schema:LocalizedText"
+      },
+      {
+        "from": "schema:ParsedListing",
+        "kind": "REFERENCES",
+        "to": "schema:Review"
+      },
+      {
+        "from": "schema:ParticipationResult",
+        "kind": "REFERENCES",
+        "to": "schema:Key"
+      },
+      {
+        "from": "schema:ParticipationResult",
+        "kind": "REFERENCES",
+        "to": "schema:MissedParticipationCountDetails"
+      },
+      {
+        "from": "schema:PriceAccuracyRow",
+        "kind": "REFERENCES",
+        "to": "schema:Date"
+      },
+      {
+        "from": "schema:PriceAccuracyRow",
+        "kind": "REFERENCES",
+        "to": "schema:PriceRecord"
+      },
+      {
+        "from": "schema:PriceAccuracyView",
+        "kind": "REFERENCES",
+        "to": "schema:PriceAccuracyRow"
+      },
+      {
+        "from": "schema:PriceCoverageView",
+        "kind": "REFERENCES",
+        "to": "schema:Date"
+      },
+      {
+        "from": "schema:PriceCoverageView",
+        "kind": "REFERENCES",
+        "to": "schema:PriceCoverageBucket"
+      },
+      {
+        "from": "schema:PriceView",
+        "kind": "REFERENCES",
+        "to": "schema:HotelPricePerItinerary"
+      },
+      {
+        "from": "schema:PropertyPerformanceResult",
+        "kind": "REFERENCES",
+        "to": "schema:Date"
+      },
+      {
+        "from": "schema:QueryFreeBookingLinksReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FreeBookingLinksResult"
+      },
+      {
+        "from": "schema:QueryParticipationReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ParticipationResult"
+      },
+      {
+        "from": "schema:QueryPropertyPerformanceReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PropertyPerformanceResult"
+      },
+      {
+        "from": "schema:Review",
+        "kind": "REFERENCES",
+        "to": "schema:Rating"
+      },
+      {
+        "from": "schema:ValidateReconciliationReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ReconciliationReportValidationIssue"
+      },
+      {
+        "from": "schema:VerifyListingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ParsedListing"
       }
     ],
     "nodes": [
@@ -127,516 +492,3275 @@
       },
       {
         "deprecated": false,
+        "description": "Collection-level custom method to update the Live on Google status for multiple properties.",
         "id": "operation:post:/v3/{account}/hotels:setLiveOnGoogle",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.hotels.setLiveOnGoogle",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{account}/hotels:setLiveOnGoogle",
         "pointer": "#/paths/~1v3~1{account}~1hotels:setLiveOnGoogle/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SetLiveOnGoogleRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SetLiveOnGoogleResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v3/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "travelpartner.accounts.accountLinks.delete",
-        "path": "/v3/{name}",
-        "pointer": "#/paths/~1v3~1{name}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a reconciliation report.",
         "id": "operation:get:/v3/{name}",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.reconciliationReports.get",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the reconciliation report to fetch.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set to true if matched prices are to be added into the report.",
+            "in": "query",
+            "name": "includeMatchedPrices",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Set to true if non-account impacting rows are to be added into the report.",
+            "in": "query",
+            "name": "includeNonScoring",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Set to true if pixel signals are to be added into the report.",
+            "in": "query",
+            "name": "includePixels",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/{name}",
         "pointer": "#/paths/~1v3~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReconciliationReport"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an account link.",
+        "id": "operation:delete:/v3/{name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "travelpartner.accounts.accountLinks.delete",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v3/{name}",
+        "pointer": "#/paths/~1v3~1{name}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a brand.",
         "id": "operation:patch:/v3/{name}",
         "kind": "operation",
         "method": "patch",
         "name": "travelpartner.accounts.brands.patch",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Output only.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When true, and the Brand is not found, a new Brand will be created.",
+            "in": "query",
+            "name": "allowMissing",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "updateMask",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{name}",
         "pointer": "#/paths/~1v3~1{name}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Brand"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Brand"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**DEPRECATED:** Use PropertyPerformanceReportService.QueryPropertyPerformanceReport, which also has impression reporting, instead.",
         "id": "operation:get:/v3/{name}/freeBookingLinksReportViews:query",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.freeBookingLinksReportViews.query",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies how to segment the metrics returned by the query.",
+            "in": "query",
+            "name": "aggregateBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The conditions (fields and expressions) used to filter the free booking link metrics for the account being queried.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of participation results to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A page token, received from a previous QueryParticipationReport request.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{name}/freeBookingLinksReportViews:query",
         "pointer": "#/paths/~1v3~1{name}~1freeBookingLinksReportViews:query/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QueryFreeBookingLinksReportResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides the ability to query (get, filter, and segment) a participation report for a particular account.",
         "id": "operation:get:/v3/{name}/participationReportViews:query",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.participationReportViews.query",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies how to segment the metrics returned by the query.",
+            "in": "query",
+            "name": "aggregateBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The conditions (fields and expressions) used to filter the participation metrics for the account being queried.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of participation results to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A page token, received from a previous QueryParticipationReport request.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{name}/participationReportViews:query",
         "pointer": "#/paths/~1v3~1{name}~1participationReportViews:query/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QueryParticipationReportResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides the ability to query (get, filter, and segment) a property performance links report for a specific account.",
         "id": "operation:get:/v3/{name}/propertyPerformanceReportViews:query",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.propertyPerformanceReportViews.query",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies how to segment the metrics returned by the query.",
+            "in": "query",
+            "name": "aggregateBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The conditions (fields and expressions) used to filter the property performance metrics for the account being queried.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of participation results to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A page token, received from a previous QueryParticipationReport request.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{name}/propertyPerformanceReportViews:query",
         "pointer": "#/paths/~1v3~1{name}~1propertyPerformanceReportViews:query/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QueryPropertyPerformanceReportResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the account links for a Hotel Center account.",
         "id": "operation:get:/v3/{parent}/accountLinks",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.accountLinks.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/accountLinks",
         "pointer": "#/paths/~1v3~1{parent}~1accountLinks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListAccountLinksResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new account link between a Hotel Center account and a Google Ads account.",
         "id": "operation:post:/v3/{parent}/accountLinks",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.accountLinks.create",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the Hotel Center account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/accountLinks",
         "pointer": "#/paths/~1v3~1{parent}~1accountLinks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AccountLink"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountLink"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the brands for a partner account.",
         "id": "operation:get:/v3/{parent}/brands",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.brands.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/brands",
         "pointer": "#/paths/~1v3~1{parent}~1brands/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListBrandsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new brand.",
         "id": "operation:post:/v3/{parent}/brands",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.brands.create",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "query",
+            "name": "brandId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/brands",
         "pointer": "#/paths/~1v3~1{parent}~1brands/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Brand"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Brand"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of hotel views.",
         "id": "operation:get:/v3/{parent}/hotelViews",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.hotelViews.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of elements to retrieve in a single page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Token of the page to retrieve.",
+            "in": "query",
+            "name": "pageToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/hotelViews",
         "pointer": "#/paths/~1v3~1{parent}~1hotelViews/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListHotelViewsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns summarized information about hotels.",
         "id": "operation:get:/v3/{parent}/hotelViews:summarize",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.hotelViews.summarize",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/hotelViews:summarize",
         "pointer": "#/paths/~1v3~1{parent}~1hotelViews:summarize/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SummarizeHotelViewsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the `Icon`s for a partner account.",
         "id": "operation:get:/v3/{parent}/icons",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.icons.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/icons",
         "pointer": "#/paths/~1v3~1{parent}~1icons/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListIconsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Uploads a new icon and starts its review process.",
         "id": "operation:post:/v3/{parent}/icons",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.icons.create",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/icons",
         "pointer": "#/paths/~1v3~1{parent}~1icons/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Icon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Icon"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "returns verified listings with data issues and serving eligibilities",
         "id": "operation:post:/v3/{parent}/listings:verify",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.listings.verify",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/listings:verify",
         "pointer": "#/paths/~1v3~1{parent}~1listings:verify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "VerifyListingsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerifyListingsResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the available price accuracy views.",
         "id": "operation:get:/v3/{parent}/priceAccuracyViews",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.priceAccuracyViews.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/priceAccuracyViews",
         "pointer": "#/paths/~1v3~1{parent}~1priceAccuracyViews/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListPriceAccuracyViewsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the price accuracy summary.",
         "id": "operation:get:/v3/{parent}/priceAccuracyViews:summarize",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.priceAccuracyViews.summarize",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account that is being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/priceAccuracyViews:summarize",
         "pointer": "#/paths/~1v3~1{parent}~1priceAccuracyViews:summarize/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SummarizePriceAccuracyResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the entire price coverage history.",
         "id": "operation:get:/v3/{parent}/priceCoverageViews",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.priceCoverageViews.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/priceCoverageViews",
         "pointer": "#/paths/~1v3~1{parent}~1priceCoverageViews/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListPriceCoverageViewsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the latest price coverage view in full detail.",
         "id": "operation:get:/v3/{parent}/priceCoverageViews:latest",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.priceCoverageViews.getLatest",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/priceCoverageViews:latest",
         "pointer": "#/paths/~1v3~1{parent}~1priceCoverageViews:latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PriceCoverageView"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the names of created reconciliation reports.",
         "id": "operation:get:/v3/{parent}/reconciliationReports",
         "kind": "operation",
         "method": "get",
         "name": "travelpartner.accounts.reconciliationReports.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "End of date range to fetch files for.",
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range to fetch files for.",
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/reconciliationReports",
         "pointer": "#/paths/~1v3~1{parent}~1reconciliationReports/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListReconciliationReportsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a reconciliation report and uploads it to Google.",
         "id": "operation:post:/v3/{parent}/reconciliationReports",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.reconciliationReports.create",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/reconciliationReports",
         "pointer": "#/paths/~1v3~1{parent}~1reconciliationReports/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ReconciliationReport"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateReconciliationReportResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Validates a reconciliation report.",
         "id": "operation:post:/v3/{parent}/reconciliationReports:validate",
         "kind": "operation",
         "method": "post",
         "name": "travelpartner.accounts.reconciliationReports.validate",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The resource name of the account being queried.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/{parent}/reconciliationReports:validate",
         "pointer": "#/paths/~1v3~1{parent}~1reconciliationReports:validate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ReconciliationReport"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidateReconciliationReportResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
+        "description": "An account link.",
         "id": "schema:AccountLink",
         "kind": "schema",
-        "name": "AccountLink"
+        "name": "AccountLink",
+        "type": "object"
       },
       {
+        "description": "Defines whether all properties or a subset of properties in the Hotel Center account can be managed with the linked Google Ads account.",
         "id": "schema:AccountLinkTarget",
         "kind": "schema",
-        "name": "AccountLinkTarget"
+        "name": "AccountLinkTarget",
+        "type": "object"
       },
       {
+        "description": "Brand-level icon and display name configuration.",
         "id": "schema:Brand",
         "kind": "schema",
-        "name": "Brand"
+        "name": "Brand",
+        "type": "object"
       },
       {
+        "description": "Response message for ReconciliationReportService.CreateReconciliationReport.",
         "id": "schema:CreateReconciliationReportResponse",
         "kind": "schema",
-        "name": "CreateReconciliationReportResponse"
+        "name": "CreateReconciliationReportResponse",
+        "type": "object"
       },
       {
+        "description": "Details on a data issue in the listing.",
         "id": "schema:DataIssueDetail",
         "kind": "schema",
-        "name": "DataIssueDetail"
+        "name": "DataIssueDetail",
+        "type": "object"
       },
       {
+        "description": "Represents a whole or partial calendar date, such as a birthday.",
         "id": "schema:Date",
         "kind": "schema",
-        "name": "Date"
+        "name": "Date",
+        "type": "object"
       },
       {
+        "description": "Disapproval reason of the display name in a specific language.",
         "id": "schema:DisplayNameDisapprovalReason",
         "kind": "schema",
-        "name": "DisplayNameDisapprovalReason"
+        "name": "DisplayNameDisapprovalReason",
+        "type": "object"
       },
       {
+        "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs.",
         "id": "schema:Empty",
         "kind": "schema",
-        "name": "Empty"
+        "name": "Empty",
+        "type": "object"
       },
       {
+        "description": "**DEPRECATED:** Use `PropertyPerformanceResult` with `PropertyPerformanceReportService` instead.",
         "id": "schema:FreeBookingLinksResult",
         "kind": "schema",
-        "name": "FreeBookingLinksResult"
+        "name": "FreeBookingLinksResult",
+        "type": "object"
       },
       {
+        "description": "The properties in the Hotel Center account that can be managed with the Google Ads account.",
         "id": "schema:HotelList",
         "kind": "schema",
-        "name": "HotelList"
+        "name": "HotelList",
+        "type": "object"
       },
       {
+        "description": "Hotel price for a given itinerary.",
         "id": "schema:HotelPricePerItinerary",
         "kind": "schema",
-        "name": "HotelPricePerItinerary"
+        "name": "HotelPricePerItinerary",
+        "type": "object"
       },
       {
+        "description": "A hotel view.",
         "id": "schema:HotelView",
         "kind": "schema",
-        "name": "HotelView"
+        "name": "HotelView",
+        "type": "object"
       },
       {
+        "description": "Information about a partner's icon.",
         "id": "schema:Icon",
         "kind": "schema",
-        "name": "Icon"
+        "name": "Icon",
+        "type": "object"
       },
       {
+        "description": "A single image in a VR Listing.",
         "id": "schema:Image",
         "kind": "schema",
-        "name": "Image"
+        "name": "Image",
+        "type": "object"
       },
       {
+        "description": "Key of a result.",
         "id": "schema:Key",
         "kind": "schema",
-        "name": "Key"
+        "name": "Key",
+        "type": "object"
       },
       {
+        "description": "An object that represents a latitude/longitude pair.",
         "id": "schema:LatLng",
         "kind": "schema",
-        "name": "LatLng"
+        "name": "LatLng",
+        "type": "object"
       },
       {
+        "description": "Response message for AccountLinkService.ListAccountLinks.",
         "id": "schema:ListAccountLinksResponse",
         "kind": "schema",
-        "name": "ListAccountLinksResponse"
+        "name": "ListAccountLinksResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for BrandService.ListBrands.",
         "id": "schema:ListBrandsResponse",
         "kind": "schema",
-        "name": "ListBrandsResponse"
+        "name": "ListBrandsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for HotelViewService.ListHotelViews.",
         "id": "schema:ListHotelViewsResponse",
         "kind": "schema",
-        "name": "ListHotelViewsResponse"
+        "name": "ListHotelViewsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for IconService.ListIcons.",
         "id": "schema:ListIconsResponse",
         "kind": "schema",
-        "name": "ListIconsResponse"
+        "name": "ListIconsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for PriceAccuracyViewService.ListPriceAccuracyViews.",
         "id": "schema:ListPriceAccuracyViewsResponse",
         "kind": "schema",
-        "name": "ListPriceAccuracyViewsResponse"
+        "name": "ListPriceAccuracyViewsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for PriceCoverageViewService.ListPriceCoverageViews.",
         "id": "schema:ListPriceCoverageViewsResponse",
         "kind": "schema",
-        "name": "ListPriceCoverageViewsResponse"
+        "name": "ListPriceCoverageViewsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ReconciliationReportService.ListReconciliationReports.",
         "id": "schema:ListReconciliationReportsResponse",
         "kind": "schema",
-        "name": "ListReconciliationReportsResponse"
+        "name": "ListReconciliationReportsResponse",
+        "type": "object"
       },
       {
+        "description": "Localized variant of a text in a particular language.",
         "id": "schema:LocalizedText",
         "kind": "schema",
-        "name": "LocalizedText"
+        "name": "LocalizedText",
+        "type": "object"
       },
       {
+        "description": "Missed participation count broken down by reason.",
         "id": "schema:MissedParticipationCountDetails",
         "kind": "schema",
-        "name": "MissedParticipationCountDetails"
+        "name": "MissedParticipationCountDetails",
+        "type": "object"
       },
       {
+        "description": "The reasons that contributed to the no price count and the total count for each reason.",
         "id": "schema:NoPriceCountDetails",
         "kind": "schema",
-        "name": "NoPriceCountDetails"
+        "name": "NoPriceCountDetails",
+        "type": "object"
       },
       {
+        "description": "A parsed listing",
         "id": "schema:ParsedListing",
         "kind": "schema",
-        "name": "ParsedListing"
+        "name": "ParsedListing",
+        "type": "object"
       },
       {
+        "description": "Represents a result from querying for participation stats for an account.",
         "id": "schema:ParticipationResult",
         "kind": "schema",
-        "name": "ParticipationResult"
+        "name": "ParticipationResult",
+        "type": "object"
       },
       {
+        "description": "A price accuracy row.",
         "id": "schema:PriceAccuracyRow",
         "kind": "schema",
-        "name": "PriceAccuracyRow"
+        "name": "PriceAccuracyRow",
+        "type": "object"
       },
       {
+        "description": "A price accuracy view.",
         "id": "schema:PriceAccuracyView",
         "kind": "schema",
-        "name": "PriceAccuracyView"
+        "name": "PriceAccuracyView",
+        "type": "object"
       },
       {
+        "description": "Coverage stats for one combination of advance booking window and length of stay.",
         "id": "schema:PriceCoverageBucket",
         "kind": "schema",
-        "name": "PriceCoverageBucket"
+        "name": "PriceCoverageBucket",
+        "type": "object"
       },
       {
+        "description": "A price coverage view.",
         "id": "schema:PriceCoverageView",
         "kind": "schema",
-        "name": "PriceCoverageView"
+        "name": "PriceCoverageView",
+        "type": "object"
       },
       {
+        "description": "The reasons that contributed to the price missing count and the total count for each reason.",
         "id": "schema:PriceMissingCountDetails",
         "kind": "schema",
-        "name": "PriceMissingCountDetails"
+        "name": "PriceMissingCountDetails",
+        "type": "object"
       },
       {
+        "description": "The reasons that contributed to the price problem count and the total count for each reason.",
         "id": "schema:PriceProblemCountDetails",
         "kind": "schema",
-        "name": "PriceProblemCountDetails"
+        "name": "PriceProblemCountDetails",
+        "type": "object"
       },
       {
+        "description": "A price record.",
         "id": "schema:PriceRecord",
         "kind": "schema",
-        "name": "PriceRecord"
+        "name": "PriceRecord",
+        "type": "object"
       },
       {
+        "description": "The reasons that contributed to the price unavailable count and the total count for each reason.",
         "id": "schema:PriceUnavailableCountDetails",
         "kind": "schema",
-        "name": "PriceUnavailableCountDetails"
+        "name": "PriceUnavailableCountDetails",
+        "type": "object"
       },
       {
+        "description": "A price view.",
         "id": "schema:PriceView",
         "kind": "schema",
-        "name": "PriceView"
+        "name": "PriceView",
+        "type": "object"
       },
       {
+        "description": "Represents a result from querying for the property performance report for an account.",
         "id": "schema:PropertyPerformanceResult",
         "kind": "schema",
-        "name": "PropertyPerformanceResult"
+        "name": "PropertyPerformanceResult",
+        "type": "object"
       },
       {
+        "description": "**DEPRECATED:** Use `QueryPropertyPerformanceReportResponse` with `PropertyPerformanceReportService` instead.",
         "id": "schema:QueryFreeBookingLinksReportResponse",
         "kind": "schema",
-        "name": "QueryFreeBookingLinksReportResponse"
+        "name": "QueryFreeBookingLinksReportResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ParticipationReportService.QueryParticipationReport.",
         "id": "schema:QueryParticipationReportResponse",
         "kind": "schema",
-        "name": "QueryParticipationReportResponse"
+        "name": "QueryParticipationReportResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for PropertyPerformanceReportService.QueryPropertyPerformanceReport.",
         "id": "schema:QueryPropertyPerformanceReportResponse",
         "kind": "schema",
-        "name": "QueryPropertyPerformanceReportResponse"
+        "name": "QueryPropertyPerformanceReportResponse",
+        "type": "object"
       },
       {
+        "description": "A rating within a vacation rentals Listing.",
         "id": "schema:Rating",
         "kind": "schema",
-        "name": "Rating"
+        "name": "Rating",
+        "type": "object"
       },
       {
+        "description": "Reconciliation report (Hotel Ads only).",
         "id": "schema:ReconciliationReport",
         "kind": "schema",
-        "name": "ReconciliationReport"
+        "name": "ReconciliationReport",
+        "type": "object"
       },
       {
+        "description": "Represents an issue encountered when validating a reconciliation report.",
         "id": "schema:ReconciliationReportValidationIssue",
         "kind": "schema",
-        "name": "ReconciliationReportValidationIssue"
+        "name": "ReconciliationReportValidationIssue",
+        "type": "object"
       },
       {
+        "description": "A single review in a VR Listing.",
         "id": "schema:Review",
         "kind": "schema",
-        "name": "Review"
+        "name": "Review",
+        "type": "object"
       },
       {
+        "description": "Request message for HotelService.SetLiveOnGoogle.",
         "id": "schema:SetLiveOnGoogleRequest",
         "kind": "schema",
-        "name": "SetLiveOnGoogleRequest"
+        "name": "SetLiveOnGoogleRequest",
+        "type": "object"
       },
       {
+        "description": "Response message for HotelService.SetLiveOnGoogle.",
         "id": "schema:SetLiveOnGoogleResponse",
         "kind": "schema",
-        "name": "SetLiveOnGoogleResponse"
+        "name": "SetLiveOnGoogleResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for HotelViewService.SummarizeHotelViews.",
         "id": "schema:SummarizeHotelViewsResponse",
         "kind": "schema",
-        "name": "SummarizeHotelViewsResponse"
+        "name": "SummarizeHotelViewsResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for PriceAccuracyViewService.SummarizePriceAccuracy.",
         "id": "schema:SummarizePriceAccuracyResponse",
         "kind": "schema",
-        "name": "SummarizePriceAccuracyResponse"
+        "name": "SummarizePriceAccuracyResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ReconciliationReportService.ValidateReconciliationReport.",
         "id": "schema:ValidateReconciliationReportResponse",
         "kind": "schema",
-        "name": "ValidateReconciliationReportResponse"
+        "name": "ValidateReconciliationReportResponse",
+        "type": "object"
       },
       {
+        "description": "Request message for VRPartnerListingVerificationService.VerifyPartnerListings.",
         "id": "schema:VerifyListingsRequest",
         "kind": "schema",
-        "name": "VerifyListingsRequest"
+        "name": "VerifyListingsRequest",
+        "type": "object"
       },
       {
+        "description": "Response message for VRPartnerListingVerificationService.VerifyPartnerListings.",
         "id": "schema:VerifyListingsResponse",
         "kind": "schema",
-        "name": "VerifyListingsResponse"
+        "name": "VerifyListingsResponse",
+        "type": "object"
       }
     ]
   },

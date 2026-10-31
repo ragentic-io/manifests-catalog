@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_exlibrisgroup.com_wp-content_up
 
 | | |
 | --- | --- |
-| Signed bundle | `a2e4f45c0efac52bd9aac3c6a00c40c77222958052062b431f36f50d437891d1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,15 +32,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_exlibrisgroup.com_wp-content_up
 
 ## Operations (10)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/almaws/v1/task-lists/printouts` | get/almaws/v1/task-lists/printouts | Retrieve Printouts |
-| POST | `/almaws/v1/task-lists/printouts` | post/almaws/v1/task-lists/printouts | Act on Printouts |
-| GET | `/almaws/v1/task-lists/printouts/{printout_id}` | get/almaws/v1/task-lists/printouts/{printout_id} | Retrieve a Printout |
-| POST | `/almaws/v1/task-lists/printouts/{printout_id}` | post/almaws/v1/task-lists/printouts/{printout_id} | Printout Service |
-| GET | `/almaws/v1/task-lists/requested-resources` | get/almaws/v1/task-lists/requested-resources | Get Requested Resources |
-| POST | `/almaws/v1/task-lists/requested-resources` | post/almaws/v1/task-lists/requested-resources | Act on Requested Resources |
-| GET | `/almaws/v1/task-lists/rs/lending-requests` | get/almaws/v1/task-lists/rs/lending-requests | Get Lending Requests |
-| POST | `/almaws/v1/task-lists/rs/lending-requests` | post/almaws/v1/task-lists/rs/lending-requests | Act on Lending Requests |
-| GET | `/almaws/v1/task-lists/test` | get/almaws/v1/task-lists/test | GET Task-lists Test API |
-| POST | `/almaws/v1/task-lists/test` | post/almaws/v1/task-lists/test | POST Task-lists Test API |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/almaws/v1/task-lists/printouts` | get/almaws/v1/task-lists/printouts | `letter`, `status`, `printer_id`, `printout_id`, `limit`, `offset` | object | yes | Retrieve Printouts |
+| POST | `/almaws/v1/task-lists/printouts` | post/almaws/v1/task-lists/printouts | `letter`, `status`, `printer_id`, `printout_id`, `op`* | — |  | Act on Printouts |
+| GET | `/almaws/v1/task-lists/printouts/{printout_id}` | get/almaws/v1/task-lists/printouts/{printout_id} | `printout_id`* | — | yes | Retrieve a Printout |
+| POST | `/almaws/v1/task-lists/printouts/{printout_id}` | post/almaws/v1/task-lists/printouts/{printout_id} | `printout_id`*, `op`* | — |  | Printout Service |
+| GET | `/almaws/v1/task-lists/requested-resources` | get/almaws/v1/task-lists/requested-resources | `library`*, `circ_desk`*, `location`, `order_by`, `direction`, `pickup_inst`, `reported`, `printed`, `limit`, `offset` | object | yes | Get Requested Resources |
+| POST | `/almaws/v1/task-lists/requested-resources` | post/almaws/v1/task-lists/requested-resources | `library`, `circ_desk`, `op`, `location`, `pickup_inst`, `reported`, `printed` | — |  | Act on Requested Resources |
+| GET | `/almaws/v1/task-lists/rs/lending-requests` | get/almaws/v1/task-lists/rs/lending-requests | `library`, `status`, `printed`, `reported`, `partner`, `requested_format`, `supplied_format` | object | yes | Get Lending Requests |
+| POST | `/almaws/v1/task-lists/rs/lending-requests` | post/almaws/v1/task-lists/rs/lending-requests | `library`, `op`, `status`, `printed`, `reported`, `partner`, `requested_format`, `supplied_format` | — |  | Act on Lending Requests |
+| GET | `/almaws/v1/task-lists/test` | get/almaws/v1/task-lists/test | — | object | yes | GET Task-lists Test API |
+| POST | `/almaws/v1/task-lists/test` | post/almaws/v1/task-lists/test | — | object |  | POST Task-lists Test API |

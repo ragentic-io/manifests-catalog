@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_jokes.one_branding_smile_magent
 
 | | |
 | --- | --- |
-| Signed bundle | `638b93faef4a5ea3a3bfd494893f96f02c3e4e9618f01e17c6fc0ce02fe8c5ae` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,17 +34,19 @@ logo: "https://api.apis.guru/v2/cache/logo/https_jokes.one_branding_smile_magent
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/jod` | get /jod | — |
-| GET | `/jod/categories` | get /jod/categories | — |
-| DELETE | `/joke` | delete /joke | — |
-| GET | `/joke` | get /joke | — |
-| PATCH | `/joke` | patch /joke | — |
-| PUT | `/joke` | put /joke | — |
-| GET | `/joke/categories/search` | get /joke/categories/search | — |
-| GET | `/joke/list` | get /joke/list | — |
-| GET | `/joke/random` | get /joke/random | — |
-| GET | `/joke/search` | get /joke/search | — |
-| POST | `/joke/tags/add` | post /joke/tags/add | — |
-| POST | `/joke/tags/remove` | post /joke/tags/remove | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/jod` | get /jod | `category` | JokeOfTheDayResponse | yes | — |
+| GET | `/jod/categories` | get /jod/categories | — | — | yes | — |
+| GET | `/joke` | get /joke | `id` | JokeResponse | yes | — |
+| PUT | `/joke` | put /joke | `title`*, `text`*, `author`, `tags` | — |  | — |
+| DELETE | `/joke` | delete /joke | `id`* | — |  | — |
+| PATCH | `/joke` | patch /joke | `id`*, `title`, `text`, `author`, `tags` | — |  | — |
+| GET | `/joke/categories/search` | get /joke/categories/search | `query`*, `start` | — | yes | — |
+| GET | `/joke/list` | get /joke/list | `start` | — | yes | — |
+| GET | `/joke/random` | get /joke/random | — | JokeResponse | yes | — |
+| GET | `/joke/search` | get /joke/search | `category`, `query`, `minlength`, `maxlength`, `author`, `private` | JokeResponse | yes | — |
+| POST | `/joke/tags/add` | post /joke/tags/add | `id`*, `tags`* | — |  | — |
+| POST | `/joke/tags/remove` | post /joke/tags/remove | `id`*, `tags`* | — |  | — |

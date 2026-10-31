@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_linuxfoundation_org_wp-content_
 
 | | |
 | --- | --- |
-| Signed bundle | `ca1b92e5641e283a3d7c85d75d6cfbe7f39232cb54c4d9ead2f5b50e2e68acde` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_linuxfoundation_org_wp-content_
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api-docs` | getDoc | Get swagger documentation |
-| GET | `/health` | healthCheck | Get API Health Status |
-| PATCH | `/reimbursement/{projectId}` | updateReimbursement | Update Reimbursement |
-| POST | `/reimbursement/{projectId}` | createReimbursement | Create Reimbursement |
-| POST | `/reset` | resetPolicy | Reset Policy |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api-docs` | getDoc | — | — | yes | Get swagger documentation |
+| GET | `/health` | healthCheck | — | health | yes | Get API Health Status |
+| POST | `/reimbursement/{projectId}` | createReimbursement | `projectId`*, body*: policy-create-input\|policy-update-input | — |  | Create Reimbursement |
+| PATCH | `/reimbursement/{projectId}` | updateReimbursement | `projectId`*, body*: policy-update-input | — |  | Update Reimbursement |
+| POST | `/reset` | resetPolicy | body*: policy-reset-input | — |  | Reset Policy |

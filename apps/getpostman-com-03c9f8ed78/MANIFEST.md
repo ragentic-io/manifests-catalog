@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.vectorlogo.zone_logos_getpo
 
 | | |
 | --- | --- |
-| Signed bundle | `ef2bace5a944e4dfb2b1627df656a8492ca5df0218fb20cf5deb9cb4ddddb834` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,62 +32,64 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.vectorlogo.zone_logos_getpo
 
 ## Operations (57)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/apis` | getAllApIs | Get all APIs |
-| POST | `/apis` | createApi | Create API |
-| DELETE | `/apis/{apiId}` | deleteAnApi | Delete an API |
-| GET | `/apis/{apiId}` | singleApi | Single API |
-| PUT | `/apis/{apiId}` | updateAnApi | Update an API |
-| GET | `/apis/{apiId}/versions` | getAllApiVersions | Get All API Versions |
-| POST | `/apis/{apiId}/versions` | createApiVersion | Create API Version |
-| DELETE | `/apis/{apiId}/versions/{apiVersionId}` | deleteAnApiVersion | Delete an API Version |
-| GET | `/apis/{apiId}/versions/{apiVersionId}` | getAnApiVersion | Get an API Version |
-| PUT | `/apis/{apiId}/versions/{apiVersionId}` | updateAnApiVersion | Update an API Version |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/contracttest` | getContractTestRelations | Get contract test relations |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/documentation` | getDocumentationRelations | Get documentation relations |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/environment` | getEnvironmentRelations | Get environment relations |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/integrationtest` | getIntegrationTestRelations | Get integration test relations |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/monitor` | getMonitorRelations | Get monitor relations |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/relations` | getLinkedRelations | Get linked relations |
-| POST | `/apis/{apiId}/versions/{apiVersionId}/relations` | createRelations | Create relations |
-| POST | `/apis/{apiId}/versions/{apiVersionId}/schemas` | createSchema | Create Schema |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}` | getSchema | Get Schema |
-| PUT | `/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}` | updateSchema | Update Schema |
-| POST | `/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}/collections` | createCollectionFromSchema | Create collection from schema |
-| GET | `/apis/{apiId}/versions/{apiVersionId}/testsuite` | getTestSuiteRelations | Get test suite relations |
-| PUT | `/apis/{apiId}/versions/{apiVersionId}/{entityType}/{entityId}/syncWithSchema` | syncRelationsWithSchema | Sync relations with schema |
-| GET | `/collections` | allCollections | All Collections |
-| POST | `/collections` | createCollection | Create Collection |
-| POST | `/collections/fork/{collection_uid}` | createAFork | Create a Fork |
-| POST | `/collections/merge` | mergeAFork | Merge a Fork |
-| DELETE | `/collections/{collection_uid}` | deleteCollection | Delete Collection |
-| GET | `/collections/{collection_uid}` | singleCollection | Single Collection |
-| PUT | `/collections/{collection_uid}` | updateCollection | Update Collection |
-| GET | `/environments` | allEnvironments | All Environments |
-| POST | `/environments` | createEnvironment | Create Environment |
-| DELETE | `/environments/{environment_uid}` | deleteEnvironment | Delete Environment |
-| GET | `/environments/{environment_uid}` | singleEnvironment | Single Environment |
-| PUT | `/environments/{environment_uid}` | updateEnvironment | Update Environment |
-| POST | `/import/exported` | importExportedData | Import exported data |
-| POST | `/import/openapi` | importExternalApiSpecification | Import external API specification |
-| GET | `/me` | apiKeyOwner | API Key Owner |
-| GET | `/mocks` | allMocks | All Mocks |
-| POST | `/mocks` | createMock | Create Mock |
-| DELETE | `/mocks/{mock_uid}` | deleteMock | Delete Mock |
-| GET | `/mocks/{mock_uid}` | singleMock | Single Mock |
-| PUT | `/mocks/{mock_uid}` | updateMock | Update Mock |
-| POST | `/mocks/{mock_uid}/publish` | publishMock | Publish Mock |
-| DELETE | `/mocks/{mock_uid}/unpublish` | unpublishMock | Unpublish Mock |
-| GET | `/monitors` | allMonitors | All Monitors |
-| POST | `/monitors` | createMonitor | Create Monitor |
-| DELETE | `/monitors/{monitor_uid}` | deleteMonitor | Delete Monitor |
-| GET | `/monitors/{monitor_uid}` | singleMonitor | Single Monitor |
-| PUT | `/monitors/{monitor_uid}` | updateMonitor | Update Monitor |
-| POST | `/monitors/{monitor_uid}/run` | runAMonitor | Run a Monitor |
-| POST | `/webhooks` | createWebhook | Create Webhook |
-| GET | `/workspaces` | allWorkspaces | All workspaces |
-| POST | `/workspaces` | createWorkspace | Create Workspace |
-| DELETE | `/workspaces/{workspace_id}` | deleteWorkspace | Delete Workspace |
-| GET | `/workspaces/{workspace_id}` | singleWorkspace | Single workspace |
-| PUT | `/workspaces/{workspace_id}` | updateWorkspace | Update Workspace |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/apis` | getAllApIs | `workspace`, `since`, `until`, `createdBy`, `updatedBy`, `isPublic`, `name`, `summary`, `description`, `sort`, `direction` | — | yes | Get all APIs |
+| POST | `/apis` | createApi | `workspace`, body: object | object |  | Create API |
+| GET | `/apis/{apiId}` | singleApi | `apiId`* | object | yes | Single API |
+| PUT | `/apis/{apiId}` | updateAnApi | `apiId`*, body: object | object |  | Update an API |
+| DELETE | `/apis/{apiId}` | deleteAnApi | `apiId`* | object |  | Delete an API |
+| GET | `/apis/{apiId}/versions` | getAllApiVersions | `apiId`* | object | yes | Get All API Versions |
+| POST | `/apis/{apiId}/versions` | createApiVersion | `apiId`*, body: object | object |  | Create API Version |
+| GET | `/apis/{apiId}/versions/{apiVersionId}` | getAnApiVersion | `apiId`*, `apiVersionId`* | object | yes | Get an API Version |
+| PUT | `/apis/{apiId}/versions/{apiVersionId}` | updateAnApiVersion | `apiId`*, `apiVersionId`*, body: object | object |  | Update an API Version |
+| DELETE | `/apis/{apiId}/versions/{apiVersionId}` | deleteAnApiVersion | `apiId`*, `apiVersionId`* | object |  | Delete an API Version |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/contracttest` | getContractTestRelations | `apiId`*, `apiVersionId`* | object | yes | Get contract test relations |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/documentation` | getDocumentationRelations | `apiId`*, `apiVersionId`* | object | yes | Get documentation relations |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/environment` | getEnvironmentRelations | `apiId`*, `apiVersionId`* | object | yes | Get environment relations |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/integrationtest` | getIntegrationTestRelations | `apiId`*, `apiVersionId`* | object | yes | Get integration test relations |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/monitor` | getMonitorRelations | `apiId`*, `apiVersionId`* | object | yes | Get monitor relations |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/relations` | getLinkedRelations | `apiId`*, `apiVersionId`* | object | yes | Get linked relations |
+| POST | `/apis/{apiId}/versions/{apiVersionId}/relations` | createRelations | `apiId`*, `apiVersionId`*, body: object | object |  | Create relations |
+| POST | `/apis/{apiId}/versions/{apiVersionId}/schemas` | createSchema | `apiId`*, `apiVersionId`*, body: object | object |  | Create Schema |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}` | getSchema | `apiId`*, `apiVersionId`*, `schemaId`* | object | yes | Get Schema |
+| PUT | `/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}` | updateSchema | `apiId`*, `apiVersionId`*, `schemaId`*, body: object | object |  | Update Schema |
+| POST | `/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}/collections` | createCollectionFromSchema | `apiId`*, `apiVersionId`*, `schemaId`*, `workspace`, body: object | object |  | Create collection from schema |
+| GET | `/apis/{apiId}/versions/{apiVersionId}/testsuite` | getTestSuiteRelations | `apiId`*, `apiVersionId`* | object | yes | Get test suite relations |
+| PUT | `/apis/{apiId}/versions/{apiVersionId}/{entityType}/{entityId}/syncWithSchema` | syncRelationsWithSchema | `apiId`*, `apiVersionId`*, `entityType`*, `entityId`* | object |  | Sync relations with schema |
+| GET | `/collections` | allCollections | — | object | yes | All Collections |
+| POST | `/collections` | createCollection | body: object | object |  | Create Collection |
+| POST | `/collections/fork/{collection_uid}` | createAFork | `collection_uid`*, `workspace`, body: object | — |  | Create a Fork |
+| POST | `/collections/merge` | mergeAFork | body: object | — |  | Merge a Fork |
+| GET | `/collections/{collection_uid}` | singleCollection | `collection_uid`* | object | yes | Single Collection |
+| PUT | `/collections/{collection_uid}` | updateCollection | `collection_uid`*, body: object | object |  | Update Collection |
+| DELETE | `/collections/{collection_uid}` | deleteCollection | `collection_uid`* | object |  | Delete Collection |
+| GET | `/environments` | allEnvironments | — | object | yes | All Environments |
+| POST | `/environments` | createEnvironment | body: object | object |  | Create Environment |
+| GET | `/environments/{environment_uid}` | singleEnvironment | `environment_uid`* | object | yes | Single Environment |
+| PUT | `/environments/{environment_uid}` | updateEnvironment | `environment_uid`*, body: object | object |  | Update Environment |
+| DELETE | `/environments/{environment_uid}` | deleteEnvironment | `environment_uid`* | object |  | Delete Environment |
+| POST | `/import/exported` | importExportedData | body: — | object |  | Import exported data |
+| POST | `/import/openapi` | importExternalApiSpecification | body: object | object |  | Import external API specification |
+| GET | `/me` | apiKeyOwner | — | object | yes | API Key Owner |
+| GET | `/mocks` | allMocks | — | object | yes | All Mocks |
+| POST | `/mocks` | createMock | body: object | object |  | Create Mock |
+| GET | `/mocks/{mock_uid}` | singleMock | `mock_uid`* | object | yes | Single Mock |
+| PUT | `/mocks/{mock_uid}` | updateMock | `mock_uid`*, body: object | object |  | Update Mock |
+| DELETE | `/mocks/{mock_uid}` | deleteMock | `mock_uid`* | object |  | Delete Mock |
+| POST | `/mocks/{mock_uid}/publish` | publishMock | `mock_uid`* | object |  | Publish Mock |
+| DELETE | `/mocks/{mock_uid}/unpublish` | unpublishMock | `mock_uid`* | object |  | Unpublish Mock |
+| GET | `/monitors` | allMonitors | — | object | yes | All Monitors |
+| POST | `/monitors` | createMonitor | body: object | object |  | Create Monitor |
+| GET | `/monitors/{monitor_uid}` | singleMonitor | `monitor_uid`* | object | yes | Single Monitor |
+| PUT | `/monitors/{monitor_uid}` | updateMonitor | `monitor_uid`*, body: object | object |  | Update Monitor |
+| DELETE | `/monitors/{monitor_uid}` | deleteMonitor | `monitor_uid`* | object |  | Delete Monitor |
+| POST | `/monitors/{monitor_uid}/run` | runAMonitor | `monitor_uid`* | object |  | Run a Monitor |
+| POST | `/webhooks` | createWebhook | `workspace`, body: object | — |  | Create Webhook |
+| GET | `/workspaces` | allWorkspaces | — | object | yes | All workspaces |
+| POST | `/workspaces` | createWorkspace | body: object | object |  | Create Workspace |
+| GET | `/workspaces/{workspace_id}` | singleWorkspace | `workspace_id`* | object | yes | Single workspace |
+| PUT | `/workspaces/{workspace_id}` | updateWorkspace | `workspace_id`*, body: object | object |  | Update Workspace |
+| DELETE | `/workspaces/{workspace_id}` | deleteWorkspace | `workspace_id`* | object |  | Delete Workspace |

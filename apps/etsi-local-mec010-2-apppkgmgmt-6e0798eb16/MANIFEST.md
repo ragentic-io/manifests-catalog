@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `92f9dee63a4f520b98a9cbdd2296dc17de3d453bd78435934249fe5679536493` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 73 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/app_packages` | app_packagesGET | Queries information relating to on-boarded application packages in the MEO |
-| POST | `/app_packages` | app_packagesPOST | Create a resource for on-boarding an application package to a MEO |
-| DELETE | `/app_packages/{appPkgId}` | app_packageDELETE | Deletes an individual application package resources |
-| GET | `/app_packages/{appPkgId}` | app_packageGET | Queries the information related to individual application package resources |
-| PATCH | `/app_packages/{appPkgId}` | app_packagePATCH | Updates the operational state of an individual application package resource |
-| GET | `/app_packages/{appPkgId}/appd` | appPkgIdGET | Reads the content of the AppD of on-boarded individual application package resources. |
-| GET | `/app_packages/{appPkgId}/package_content` | appPkgGET | Fetch the onboarded application package content identified by appPkgId or appDId. |
-| PUT | `/app_packages/{appPkgId}/package_content` | appPkgPUT | Uploads the content of application package. |
-| GET | `/onboarded_app_packages/{appDId}/appd` | appDGET | Reads the content of the AppD of on-boarded individual application package resources. |
-| GET | `/onboarded_app_packages/{appDId}/package_content` | appDIdGET | Fetch the onboarded application package content identified by appPkgId or appDId. |
-| PUT | `/onboarded_app_packages/{appDId}/package_content` | appDIdPUT | Uploads the content of application package. |
-| GET | `/subscriptions` | subscriptionsGET | used to retrieve the information of subscriptions to individual application package resource in MEO |
-| POST | `/subscriptions` | subscriptionsPOST | Subscribe to notifications about on-boarding an application package |
-| DELETE | `/subscriptions/{subscriptionId}` | individualSubscriptionDELETE | Deletes the individual subscription to notifications about application package changes in MEO. |
-| GET | `/subscriptions/{subscriptionId}` | individualSubscriptionGET | Used to represent an individual subscription to notifications about application package changes. |
-| POST | `/user_defined_notification` | app_pkg_notificationPOST | Registers a notification endpoint to notify application package operations |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/app_packages` | app_packagesGET | `filter`, `all_fields`, `fields`, `exclude_fields`, `exclude_default` | AppPkgInfo[] | yes | Queries information relating to on-boarded application packages in the MEO |
+| POST | `/app_packages` | app_packagesPOST | body*: CreateAppPkg | AppPkgInfo[] |  | Create a resource for on-boarding an application package to a MEO |
+| GET | `/app_packages/{appPkgId}` | app_packageGET | `appPkgId`* | AppPkgInfo | yes | Queries the information related to individual application package resources |
+| DELETE | `/app_packages/{appPkgId}` | app_packageDELETE | `appPkgId`* | — |  | Deletes an individual application package resources |
+| PATCH | `/app_packages/{appPkgId}` | app_packagePATCH | `appPkgId`*, body*: AppPkgInfoModifications | AppPkgInfoModifications |  | Updates the operational state of an individual application package resource |
+| GET | `/app_packages/{appPkgId}/appd` | appPkgIdGET | `appPkgId`*, `filter`, `all_fields`, `fields`, `exclude_fields`, `exclude_default` | AppD | yes | Reads the content of the AppD of on-boarded individual application package resources. |
+| GET | `/app_packages/{appPkgId}/package_content` | appPkgGET | `appPkgId`* | — | yes | Fetch the onboarded application package content identified by appPkgId or appDId. |
+| PUT | `/app_packages/{appPkgId}/package_content` | appPkgPUT | `appPkgId`*, body: string:binary | — |  | Uploads the content of application package. |
+| GET | `/onboarded_app_packages/{appDId}/appd` | appDGET | `appDId`*, `filter`, `all_fields`, `fields`, `exclude_fields`, `exclude_default` | AppD | yes | Reads the content of the AppD of on-boarded individual application package resources. |
+| GET | `/onboarded_app_packages/{appDId}/package_content` | appDIdGET | `appDId`* | — | yes | Fetch the onboarded application package content identified by appPkgId or appDId. |
+| PUT | `/onboarded_app_packages/{appDId}/package_content` | appDIdPUT | `appDId`*, body: string:binary | — |  | Uploads the content of application package. |
+| GET | `/subscriptions` | subscriptionsGET | — | AppPkgSubscriptionLinkList | yes | used to retrieve the information of subscriptions to individual application package resource in MEO |
+| POST | `/subscriptions` | subscriptionsPOST | body*: AppPkgSubscription | AppPkgSubscriptionInfo |  | Subscribe to notifications about on-boarding an application package |
+| GET | `/subscriptions/{subscriptionId}` | individualSubscriptionGET | `subscriptionId`* | AppPkgSubscriptionInfo | yes | Used to represent an individual subscription to notifications about application package changes. |
+| DELETE | `/subscriptions/{subscriptionId}` | individualSubscriptionDELETE | `subscriptionId`* | — |  | Deletes the individual subscription to notifications about application package changes in MEO. |
+| POST | `/user_defined_notification` | app_pkg_notificationPOST | body*: AppPkgNotification | — |  | Registers a notification endpoint to notify application package operations |

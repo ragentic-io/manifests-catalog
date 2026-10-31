@@ -32,17 +32,17 @@
       {
         "from": "shop-pro-jp-57b39c5557",
         "kind": "EXPOSES",
-        "to": "operation:delete:/appstore/v1/script_tags/{scriptTagId}.json"
-      },
-      {
-        "from": "shop-pro-jp-57b39c5557",
-        "kind": "EXPOSES",
         "to": "operation:get:/appstore/v1/script_tags/{scriptTagId}.json"
       },
       {
         "from": "shop-pro-jp-57b39c5557",
         "kind": "EXPOSES",
         "to": "operation:put:/appstore/v1/script_tags/{scriptTagId}.json"
+      },
+      {
+        "from": "shop-pro-jp-57b39c5557",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/appstore/v1/script_tags/{scriptTagId}.json"
       },
       {
         "from": "shop-pro-jp-57b39c5557",
@@ -57,17 +57,17 @@
       {
         "from": "shop-pro-jp-57b39c5557",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/inline_script_tags/{inlineScriptTagId}.json"
-      },
-      {
-        "from": "shop-pro-jp-57b39c5557",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/inline_script_tags/{inlineScriptTagId}.json"
       },
       {
         "from": "shop-pro-jp-57b39c5557",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/inline_script_tags/{inlineScriptTagId}.json"
+      },
+      {
+        "from": "shop-pro-jp-57b39c5557",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/inline_script_tags/{inlineScriptTagId}.json"
       },
       {
         "from": "shop-pro-jp-57b39c5557",
@@ -82,17 +82,17 @@
       {
         "from": "shop-pro-jp-57b39c5557",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/script_tags/{scriptTagId}.json"
-      },
-      {
-        "from": "shop-pro-jp-57b39c5557",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/script_tags/{scriptTagId}.json"
       },
       {
         "from": "shop-pro-jp-57b39c5557",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/script_tags/{scriptTagId}.json"
+      },
+      {
+        "from": "shop-pro-jp-57b39c5557",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/script_tags/{scriptTagId}.json"
       }
     ],
     "nodes": [
@@ -102,12 +102,27 @@
       },
       {
         "deprecated": false,
+        "description": "「アプリ内課金」はすでにインストール済みのアプリ上において、利用者が追加の買い切りによる課金によって新たなアプリ内の機能を提供される場合などに、利用者へ買い切りの課金分の請求を行うための課金形式です。 この課金はプラン課金の情報に紐付かないため、リクエストされたタイミングで課金データが作成されます。また、同一のアプリ…",
         "id": "operation:post:/appstore/v1/application_charges.json",
         "kind": "operation",
         "method": "post",
         "name": "postApplicationCharge",
         "path": "/appstore/v1/application_charges.json",
         "pointer": "#/paths/~1appstore~1v1~1application_charges.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -115,31 +130,76 @@
             ]
           }
         ],
-        "summary": "アプリ内課金データの作成"
+        "summary": "アプリ内課金データの作成",
+        "tags": [
+          "application_charge"
+        ]
       },
       {
         "deprecated": false,
+        "description": "このAPIは OAuth のアクセストークンに紐付くアプリケーションをショップから削除します。 このAPIを利用した場合、ショップオーナーがアンインストールした場合と異なり、アンインストールフックは実行されません。 代わりにアンインストールフックで通知される情報は、このAPIのレスポンスに含まれています。 アンインス…",
         "id": "operation:delete:/appstore/v1/installation.json",
         "kind": "operation",
         "method": "delete",
         "name": "deleteInstallation",
         "path": "/appstore/v1/installation.json",
         "pointer": "#/paths/~1appstore~1v1~1installation.json/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": []
           }
         ],
-        "summary": "アプリストアアプリのアンインストール"
+        "summary": "アプリストアアプリのアンインストール",
+        "tags": [
+          "uninstallation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "アプリ内で基本機能が利用された頻度に伴って毎月の請求が変動するようなアプリの場合は「従量課金」を使って利用者に変動分の請求を行うことができます。 ※無料お試し期間中のショップに対しては従量課金データを作成できません。",
         "id": "operation:post:/appstore/v1/recurring_application_charges/{recurringApplicationChargeId}/usage_charges.json",
         "kind": "operation",
         "method": "post",
         "name": "createUsageCharge",
+        "parameters": [
+          {
+            "description": "課金契約ID",
+            "in": "path",
+            "name": "recurringApplicationChargeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "アンインストール後の従量課金の精算をする際に、 `Authorization` ヘッダへアクセストークンを指定する代わりにこのヘッダを指定することで、このAPIを実行することができます。 インストール中は指定不要で、アンインストール後のみ必須となります。 アンインストールフックで通知される `usage_charge…",
+            "in": "header",
+            "name": "X-Appstore-Usage-Charge-Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/appstore/v1/recurring_application_charges/{recurringApplicationChargeId}/usage_charges.json",
         "pointer": "#/paths/~1appstore~1v1~1recurring_application_charges~1{recurringApplicationChargeId}~1usage_charges.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -147,7 +207,10 @@
             ]
           }
         ],
-        "summary": "従量課金データの作成"
+        "summary": "従量課金データの作成",
+        "tags": [
+          "application_charge"
+        ]
       },
       {
         "deprecated": false,
@@ -157,6 +220,13 @@
         "name": "getShopScriptTags",
         "path": "/appstore/v1/script_tags.json",
         "pointer": "#/paths/~1appstore~1v1~1script_tags.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -164,7 +234,10 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの取得"
+        "summary": "スクリプトタグの取得",
+        "tags": [
+          "script"
+        ]
       },
       {
         "deprecated": false,
@@ -174,6 +247,20 @@
         "name": "createShopScriptTag",
         "path": "/appstore/v1/script_tags.json",
         "pointer": "#/paths/~1appstore~1v1~1script_tags.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -181,24 +268,10 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの作成"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/appstore/v1/script_tags/{scriptTagId}.json",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScriptTag",
-        "path": "/appstore/v1/script_tags/{scriptTagId}.json",
-        "pointer": "#/paths/~1appstore~1v1~1script_tags~1{scriptTagId}.json/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "write_shop_script_tags"
-            ]
-          }
-        ],
-        "summary": "スクリプトタグの削除"
+        "summary": "スクリプトタグの作成",
+        "tags": [
+          "script"
+        ]
       },
       {
         "deprecated": false,
@@ -206,8 +279,24 @@
         "kind": "operation",
         "method": "get",
         "name": "getShopScriptTag",
+        "parameters": [
+          {
+            "description": "スクリプトタグID",
+            "in": "path",
+            "name": "scriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/appstore/v1/script_tags/{scriptTagId}.json",
         "pointer": "#/paths/~1appstore~1v1~1script_tags~1{scriptTagId}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -215,7 +304,10 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの取得"
+        "summary": "スクリプトタグの取得",
+        "tags": [
+          "script"
+        ]
       },
       {
         "deprecated": false,
@@ -223,8 +315,31 @@
         "kind": "operation",
         "method": "put",
         "name": "updateShopScriptTag",
+        "parameters": [
+          {
+            "description": "スクリプトタグID",
+            "in": "path",
+            "name": "scriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/appstore/v1/script_tags/{scriptTagId}.json",
         "pointer": "#/paths/~1appstore~1v1~1script_tags~1{scriptTagId}.json/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -232,7 +347,45 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの更新"
+        "summary": "スクリプトタグの更新",
+        "tags": [
+          "script"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/appstore/v1/script_tags/{scriptTagId}.json",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteScriptTag",
+        "parameters": [
+          {
+            "description": "スクリプトタグID",
+            "in": "path",
+            "name": "scriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/appstore/v1/script_tags/{scriptTagId}.json",
+        "pointer": "#/paths/~1appstore~1v1~1script_tags~1{scriptTagId}.json/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "write_shop_script_tags"
+            ]
+          }
+        ],
+        "summary": "スクリプトタグの削除",
+        "tags": [
+          "script"
+        ]
       },
       {
         "deprecated": false,
@@ -242,6 +395,13 @@
         "name": "getInlineScriptTags",
         "path": "/v1/inline_script_tags.json",
         "pointer": "#/paths/~1v1~1inline_script_tags.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -249,7 +409,10 @@
             ]
           }
         ],
-        "summary": "インラインスクリプトタグの取得"
+        "summary": "インラインスクリプトタグの取得",
+        "tags": [
+          "inline_script"
+        ]
       },
       {
         "deprecated": false,
@@ -259,6 +422,20 @@
         "name": "createInlineScriptTag",
         "path": "/v1/inline_script_tags.json",
         "pointer": "#/paths/~1v1~1inline_script_tags.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -266,24 +443,10 @@
             ]
           }
         ],
-        "summary": "インラインスクリプトタグの登録"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/inline_script_tags/{inlineScriptTagId}.json",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteInlineScriptTag",
-        "path": "/v1/inline_script_tags/{inlineScriptTagId}.json",
-        "pointer": "#/paths/~1v1~1inline_script_tags~1{inlineScriptTagId}.json/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "write_inline_script_tags"
-            ]
-          }
-        ],
-        "summary": "インラインスクリプトタグの削除"
+        "summary": "インラインスクリプトタグの登録",
+        "tags": [
+          "inline_script"
+        ]
       },
       {
         "deprecated": false,
@@ -291,8 +454,24 @@
         "kind": "operation",
         "method": "get",
         "name": "getInlineScriptTag",
+        "parameters": [
+          {
+            "description": "インラインスクリプトタグID",
+            "in": "path",
+            "name": "inlineScriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/inline_script_tags/{inlineScriptTagId}.json",
         "pointer": "#/paths/~1v1~1inline_script_tags~1{inlineScriptTagId}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -300,7 +479,10 @@
             ]
           }
         ],
-        "summary": "インラインスクリプトタグの取得"
+        "summary": "インラインスクリプトタグの取得",
+        "tags": [
+          "inline_script"
+        ]
       },
       {
         "deprecated": false,
@@ -308,8 +490,31 @@
         "kind": "operation",
         "method": "put",
         "name": "updateInlineScriptTag",
+        "parameters": [
+          {
+            "description": "インラインスクリプトタグID",
+            "in": "path",
+            "name": "inlineScriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/inline_script_tags/{inlineScriptTagId}.json",
         "pointer": "#/paths/~1v1~1inline_script_tags~1{inlineScriptTagId}.json/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -317,7 +522,45 @@
             ]
           }
         ],
-        "summary": "インラインスクリプトタグの更新"
+        "summary": "インラインスクリプトタグの更新",
+        "tags": [
+          "inline_script"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v1/inline_script_tags/{inlineScriptTagId}.json",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteInlineScriptTag",
+        "parameters": [
+          {
+            "description": "インラインスクリプトタグID",
+            "in": "path",
+            "name": "inlineScriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/v1/inline_script_tags/{inlineScriptTagId}.json",
+        "pointer": "#/paths/~1v1~1inline_script_tags~1{inlineScriptTagId}.json/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "write_inline_script_tags"
+            ]
+          }
+        ],
+        "summary": "インラインスクリプトタグの削除",
+        "tags": [
+          "inline_script"
+        ]
       },
       {
         "deprecated": false,
@@ -327,6 +570,13 @@
         "name": "getScriptTags",
         "path": "/v1/script_tags.json",
         "pointer": "#/paths/~1v1~1script_tags.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -334,7 +584,10 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの取得"
+        "summary": "スクリプトタグの取得",
+        "tags": [
+          "script(deprecated)"
+        ]
       },
       {
         "deprecated": false,
@@ -344,6 +597,20 @@
         "name": "createScriptTag",
         "path": "/v1/script_tags.json",
         "pointer": "#/paths/~1v1~1script_tags.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -351,24 +618,10 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの作成"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/script_tags/{scriptTagId}.json",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /v1/script_tags/{scriptTagId}.json",
-        "path": "/v1/script_tags/{scriptTagId}.json",
-        "pointer": "#/paths/~1v1~1script_tags~1{scriptTagId}.json/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "write_script_tags"
-            ]
-          }
-        ],
-        "summary": "スクリプトタグの削除"
+        "summary": "スクリプトタグの作成",
+        "tags": [
+          "script(deprecated)"
+        ]
       },
       {
         "deprecated": false,
@@ -376,8 +629,24 @@
         "kind": "operation",
         "method": "get",
         "name": "getScriptTag",
+        "parameters": [
+          {
+            "description": "スクリプトタグID",
+            "in": "path",
+            "name": "scriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/script_tags/{scriptTagId}.json",
         "pointer": "#/paths/~1v1~1script_tags~1{scriptTagId}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -385,7 +654,10 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの取得"
+        "summary": "スクリプトタグの取得",
+        "tags": [
+          "script(deprecated)"
+        ]
       },
       {
         "deprecated": false,
@@ -393,8 +665,31 @@
         "kind": "operation",
         "method": "put",
         "name": "updateScriptTag",
+        "parameters": [
+          {
+            "description": "スクリプトタグID",
+            "in": "path",
+            "name": "scriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/script_tags/{scriptTagId}.json",
         "pointer": "#/paths/~1v1~1script_tags~1{scriptTagId}.json/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -402,37 +697,81 @@
             ]
           }
         ],
-        "summary": "スクリプトタグの更新"
+        "summary": "スクリプトタグの更新",
+        "tags": [
+          "script(deprecated)"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v1/script_tags/{scriptTagId}.json",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /v1/script_tags/{scriptTagId}.json",
+        "parameters": [
+          {
+            "description": "スクリプトタグID",
+            "in": "path",
+            "name": "scriptTagId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/v1/script_tags/{scriptTagId}.json",
+        "pointer": "#/paths/~1v1~1script_tags~1{scriptTagId}.json/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "write_script_tags"
+            ]
+          }
+        ],
+        "summary": "スクリプトタグの削除",
+        "tags": [
+          "script(deprecated)"
+        ]
       },
       {
         "id": "schema:ApplicationCharge",
         "kind": "schema",
-        "name": "ApplicationCharge"
+        "name": "ApplicationCharge",
+        "type": "object"
       },
       {
         "id": "schema:CartScriptTag",
         "kind": "schema",
-        "name": "CartScriptTag"
+        "name": "CartScriptTag",
+        "type": "object"
       },
       {
         "id": "schema:InlineScriptTag",
         "kind": "schema",
-        "name": "InlineScriptTag"
+        "name": "InlineScriptTag",
+        "type": "object"
       },
       {
         "id": "schema:ScriptTag",
         "kind": "schema",
-        "name": "ScriptTag"
+        "name": "ScriptTag",
+        "type": "object"
       },
       {
         "id": "schema:ShopScriptTag",
         "kind": "schema",
-        "name": "ShopScriptTag"
+        "name": "ShopScriptTag",
+        "type": "object"
       },
       {
         "id": "schema:UsageCharge",
         "kind": "schema",
-        "name": "UsageCharge"
+        "name": "UsageCharge",
+        "type": "object"
       }
     ]
   },

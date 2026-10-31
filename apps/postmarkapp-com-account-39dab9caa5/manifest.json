@@ -17,17 +17,17 @@
       {
         "from": "postmarkapp-com-account-39dab9caa5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/domains/{domainid}"
-      },
-      {
-        "from": "postmarkapp-com-account-39dab9caa5",
-        "kind": "EXPOSES",
         "to": "operation:get:/domains/{domainid}"
       },
       {
         "from": "postmarkapp-com-account-39dab9caa5",
         "kind": "EXPOSES",
         "to": "operation:put:/domains/{domainid}"
+      },
+      {
+        "from": "postmarkapp-com-account-39dab9caa5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/domains/{domainid}"
       },
       {
         "from": "postmarkapp-com-account-39dab9caa5",
@@ -62,17 +62,17 @@
       {
         "from": "postmarkapp-com-account-39dab9caa5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/senders/{signatureid}"
-      },
-      {
-        "from": "postmarkapp-com-account-39dab9caa5",
-        "kind": "EXPOSES",
         "to": "operation:get:/senders/{signatureid}"
       },
       {
         "from": "postmarkapp-com-account-39dab9caa5",
         "kind": "EXPOSES",
         "to": "operation:put:/senders/{signatureid}"
+      },
+      {
+        "from": "postmarkapp-com-account-39dab9caa5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/senders/{signatureid}"
       },
       {
         "from": "postmarkapp-com-account-39dab9caa5",
@@ -102,11 +102,6 @@
       {
         "from": "postmarkapp-com-account-39dab9caa5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}"
-      },
-      {
-        "from": "postmarkapp-com-account-39dab9caa5",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{serverid}"
       },
       {
@@ -117,7 +112,172 @@
       {
         "from": "postmarkapp-com-account-39dab9caa5",
         "kind": "EXPOSES",
+        "to": "operation:delete:/servers/{serverid}"
+      },
+      {
+        "from": "postmarkapp-com-account-39dab9caa5",
+        "kind": "EXPOSES",
         "to": "operation:put:/templates/push"
+      },
+      {
+        "from": "operation:get:/domains",
+        "kind": "RETURNS",
+        "to": "schema:DomainListingResults"
+      },
+      {
+        "from": "operation:post:/domains",
+        "kind": "ACCEPTS",
+        "to": "schema:DomainCreationModel"
+      },
+      {
+        "from": "operation:post:/domains",
+        "kind": "RETURNS",
+        "to": "schema:DomainExtendedInformation"
+      },
+      {
+        "from": "operation:get:/domains/{domainid}",
+        "kind": "RETURNS",
+        "to": "schema:DomainExtendedInformation"
+      },
+      {
+        "from": "operation:put:/domains/{domainid}",
+        "kind": "ACCEPTS",
+        "to": "schema:DomainEditingModel"
+      },
+      {
+        "from": "operation:put:/domains/{domainid}",
+        "kind": "RETURNS",
+        "to": "schema:DomainExtendedInformation"
+      },
+      {
+        "from": "operation:delete:/domains/{domainid}",
+        "kind": "RETURNS",
+        "to": "schema:StandardPostmarkResponse"
+      },
+      {
+        "from": "operation:post:/domains/{domainid}/rotatedkim",
+        "kind": "RETURNS",
+        "to": "schema:DKIMRotationResponse"
+      },
+      {
+        "from": "operation:put:/domains/{domainid}/verifydkim",
+        "kind": "RETURNS",
+        "to": "schema:DomainExtendedInformation"
+      },
+      {
+        "from": "operation:put:/domains/{domainid}/verifyreturnpath",
+        "kind": "RETURNS",
+        "to": "schema:DomainExtendedInformation"
+      },
+      {
+        "from": "operation:post:/domains/{domainid}/verifyspf",
+        "kind": "RETURNS",
+        "to": "schema:DomainSPFResult"
+      },
+      {
+        "from": "operation:get:/senders",
+        "kind": "RETURNS",
+        "to": "schema:SenderListingResults"
+      },
+      {
+        "from": "operation:post:/senders",
+        "kind": "ACCEPTS",
+        "to": "schema:SenderSignatureCreationModel"
+      },
+      {
+        "from": "operation:post:/senders",
+        "kind": "RETURNS",
+        "to": "schema:SenderSignatureExtendedInformation"
+      },
+      {
+        "from": "operation:get:/senders/{signatureid}",
+        "kind": "RETURNS",
+        "to": "schema:SenderSignatureExtendedInformation"
+      },
+      {
+        "from": "operation:put:/senders/{signatureid}",
+        "kind": "ACCEPTS",
+        "to": "schema:SenderSignatureEditingModel"
+      },
+      {
+        "from": "operation:put:/senders/{signatureid}",
+        "kind": "RETURNS",
+        "to": "schema:SenderSignatureExtendedInformation"
+      },
+      {
+        "from": "operation:delete:/senders/{signatureid}",
+        "kind": "RETURNS",
+        "to": "schema:StandardPostmarkResponse"
+      },
+      {
+        "from": "operation:post:/senders/{signatureid}/requestnewdkim",
+        "kind": "RETURNS",
+        "to": "schema:StandardPostmarkResponse"
+      },
+      {
+        "from": "operation:post:/senders/{signatureid}/resend",
+        "kind": "RETURNS",
+        "to": "schema:StandardPostmarkResponse"
+      },
+      {
+        "from": "operation:post:/senders/{signatureid}/verifyspf",
+        "kind": "RETURNS",
+        "to": "schema:SenderSignatureExtendedInformation"
+      },
+      {
+        "from": "operation:get:/servers",
+        "kind": "RETURNS",
+        "to": "schema:ServerListingResponse"
+      },
+      {
+        "from": "operation:post:/servers",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateServerPayload"
+      },
+      {
+        "from": "operation:post:/servers",
+        "kind": "RETURNS",
+        "to": "schema:ExtendedServerInfo"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}",
+        "kind": "RETURNS",
+        "to": "schema:ExtendedServerInfo"
+      },
+      {
+        "from": "operation:put:/servers/{serverid}",
+        "kind": "ACCEPTS",
+        "to": "schema:EditServerPayload"
+      },
+      {
+        "from": "operation:put:/servers/{serverid}",
+        "kind": "RETURNS",
+        "to": "schema:ExtendedServerInfo"
+      },
+      {
+        "from": "operation:put:/templates/push",
+        "kind": "ACCEPTS",
+        "to": "schema:TemplatesPushModel"
+      },
+      {
+        "from": "operation:put:/templates/push",
+        "kind": "RETURNS",
+        "to": "schema:TemplatesPushResponse"
+      },
+      {
+        "from": "schema:DomainListingResults",
+        "kind": "REFERENCES",
+        "to": "schema:DomainInformation"
+      },
+      {
+        "from": "schema:SenderListingResults",
+        "kind": "REFERENCES",
+        "to": "schema:SenderSignatureInformation"
+      },
+      {
+        "from": "schema:ServerListingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedServerInfo"
       }
     ],
     "nodes": [
@@ -131,10 +291,50 @@
         "kind": "operation",
         "method": "get",
         "name": "listDomains",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records to return per request.",
+            "in": "query",
+            "name": "count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Number of records to skip",
+            "in": "query",
+            "name": "offset",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains",
         "pointer": "#/paths/~1domains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainListingResults"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List Domains"
+        "summary": "List Domains",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -142,21 +342,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains",
         "pointer": "#/paths/~1domains/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DomainCreationModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Domain"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/domains/{domainid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDomain",
-        "path": "/domains/{domainid}",
-        "pointer": "#/paths/~1domains~1{domainid}/delete",
-        "security": [],
-        "summary": "Delete a Domain"
+        "summary": "Create a Domain",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -164,10 +386,43 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Domain that should be retrieved.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/{domainid}",
         "pointer": "#/paths/~1domains~1{domainid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Domain"
+        "summary": "Get a Domain",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -175,21 +430,139 @@
         "kind": "operation",
         "method": "put",
         "name": "editDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Domain that should be modified by the request.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/{domainid}",
         "pointer": "#/paths/~1domains~1{domainid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DomainEditingModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a Domain"
+        "summary": "Update a Domain",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/domains/{domainid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Domain that should be deleted by the request.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/domains/{domainid}",
+        "pointer": "#/paths/~1domains~1{domainid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Domain",
+        "tags": [
+          "Domains API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Creates a new DKIM key to replace your current key.",
         "id": "operation:post:/domains/{domainid}/rotatedkim",
         "kind": "operation",
         "method": "post",
         "name": "rotateDKIMKeyForDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature for which a new DKIM Key should be generated.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/{domainid}/rotatedkim",
         "pointer": "#/paths/~1domains~1{domainid}~1rotatedkim/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DKIMRotationResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Rotate DKIM Key"
+        "summary": "Rotate DKIM Key",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -197,10 +570,43 @@
         "kind": "operation",
         "method": "put",
         "name": "requestDkimVerificationForDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Domain for which DKIM DNS records should be verified.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/{domainid}/verifydkim",
         "pointer": "#/paths/~1domains~1{domainid}~1verifydkim/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request DNS Verification for DKIM"
+        "summary": "Request DNS Verification for DKIM",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -208,10 +614,43 @@
         "kind": "operation",
         "method": "put",
         "name": "requestReturnPathVerificationForDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Domain for which Return-Path DNS records should be verified.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/{domainid}/verifyreturnpath",
         "pointer": "#/paths/~1domains~1{domainid}~1verifyreturnpath/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request DNS Verification for Return-Path"
+        "summary": "Request DNS Verification for Return-Path",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -219,10 +658,43 @@
         "kind": "operation",
         "method": "post",
         "name": "requestSPFVerificationForDomain",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Domain for which SPF DNS records should be verified.",
+            "in": "path",
+            "name": "domainid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/{domainid}/verifyspf",
         "pointer": "#/paths/~1domains~1{domainid}~1verifyspf/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainSPFResult"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request DNS Verification for SPF"
+        "summary": "Request DNS Verification for SPF",
+        "tags": [
+          "Domains API"
+        ]
       },
       {
         "deprecated": false,
@@ -230,10 +702,50 @@
         "kind": "operation",
         "method": "get",
         "name": "listSenderSignatures",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records to return per request.",
+            "in": "query",
+            "name": "count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Number of records to skip",
+            "in": "query",
+            "name": "offset",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/senders",
         "pointer": "#/paths/~1senders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SenderListingResults"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List Sender Signatures"
+        "summary": "List Sender Signatures",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
@@ -241,21 +753,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createSenderSignature",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/senders",
         "pointer": "#/paths/~1senders/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SenderSignatureCreationModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SenderSignatureExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Sender Signature"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/senders/{signatureid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSenderSignature",
-        "path": "/senders/{signatureid}",
-        "pointer": "#/paths/~1senders~1{signatureid}/delete",
-        "security": [],
-        "summary": "Delete a Sender Signature"
+        "summary": "Create a Sender Signature",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
@@ -263,10 +797,43 @@
         "kind": "operation",
         "method": "get",
         "name": "getSenderSignature",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature that should be retrieved.",
+            "in": "path",
+            "name": "signatureid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/senders/{signatureid}",
         "pointer": "#/paths/~1senders~1{signatureid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SenderSignatureExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Sender Signature"
+        "summary": "Get a Sender Signature",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
@@ -274,21 +841,139 @@
         "kind": "operation",
         "method": "put",
         "name": "editSenderSignature",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature that should be modified by the request.",
+            "in": "path",
+            "name": "signatureid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/senders/{signatureid}",
         "pointer": "#/paths/~1senders~1{signatureid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SenderSignatureEditingModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SenderSignatureExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a Sender Signature"
+        "summary": "Update a Sender Signature",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/senders/{signatureid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSenderSignature",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature that should be deleted by the request.",
+            "in": "path",
+            "name": "signatureid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/senders/{signatureid}",
+        "pointer": "#/paths/~1senders~1{signatureid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Sender Signature",
+        "tags": [
+          "Sender Signatures API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Requests a new DKIM key to be created.",
         "id": "operation:post:/senders/{signatureid}/requestnewdkim",
         "kind": "operation",
         "method": "post",
         "name": "requestNewDKIMKeyForSenderSignature",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature for which a new DKIM Key should be generated.",
+            "in": "path",
+            "name": "signatureid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/senders/{signatureid}/requestnewdkim",
         "pointer": "#/paths/~1senders~1{signatureid}~1requestnewdkim/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request a new DKIM Key"
+        "summary": "Request a new DKIM Key",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
@@ -296,10 +981,43 @@
         "kind": "operation",
         "method": "post",
         "name": "resendSenderSignatureConfirmationEmail",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature that should have its confirmation email resent.",
+            "in": "path",
+            "name": "signatureid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/senders/{signatureid}/resend",
         "pointer": "#/paths/~1senders~1{signatureid}~1resend/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Resend Signature Confirmation Email"
+        "summary": "Resend Signature Confirmation Email",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
@@ -307,10 +1025,43 @@
         "kind": "operation",
         "method": "post",
         "name": "requestSPFVerificationForSenderSignature",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID for the Sender Signature for which SPF DNS records should be verified.",
+            "in": "path",
+            "name": "signatureid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/senders/{signatureid}/verifyspf",
         "pointer": "#/paths/~1senders~1{signatureid}~1verifyspf/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SenderSignatureExtendedInformation"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request DNS Verification for SPF"
+        "summary": "Request DNS Verification for SPF",
+        "tags": [
+          "Sender Signatures API"
+        ]
       },
       {
         "deprecated": false,
@@ -318,10 +1069,57 @@
         "kind": "operation",
         "method": "get",
         "name": "listServers",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of servers to return per request.",
+            "in": "query",
+            "name": "count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Number of servers to skip.",
+            "in": "query",
+            "name": "offset",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Filter by a specific server name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/servers",
         "pointer": "#/paths/~1servers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServerListingResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List servers"
+        "summary": "List servers",
+        "tags": [
+          "Server Management API"
+        ]
       },
       {
         "deprecated": false,
@@ -329,21 +1127,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createServer",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers",
         "pointer": "#/paths/~1servers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateServerPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExtendedServerInfo"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Server"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/servers/{serverid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteServer",
-        "path": "/servers/{serverid}",
-        "pointer": "#/paths/~1servers~1{serverid}/delete",
-        "security": [],
-        "summary": "Delete a Server"
+        "summary": "Create a Server",
+        "tags": [
+          "Server Management API"
+        ]
       },
       {
         "deprecated": false,
@@ -351,10 +1171,43 @@
         "kind": "operation",
         "method": "get",
         "name": "getServerInformation",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Server to get.",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/{serverid}",
         "pointer": "#/paths/~1servers~1{serverid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExtendedServerInfo"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Server"
+        "summary": "Get a Server",
+        "tags": [
+          "Server Management API"
+        ]
       },
       {
         "deprecated": false,
@@ -362,10 +1215,93 @@
         "kind": "operation",
         "method": "put",
         "name": "editServerInformation",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Server to update.",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/{serverid}",
         "pointer": "#/paths/~1servers~1{serverid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "EditServerPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExtendedServerInfo"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit a Server"
+        "summary": "Edit a Server",
+        "tags": [
+          "Server Management API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/servers/{serverid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteServer",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Server that should be deleted.",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/servers/{serverid}",
+        "pointer": "#/paths/~1servers~1{serverid}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Server",
+        "tags": [
+          "Server Management API"
+        ]
       },
       {
         "deprecated": false,
@@ -373,105 +1309,159 @@
         "kind": "operation",
         "method": "put",
         "name": "pushTemplates",
+        "parameters": [
+          {
+            "description": "The token associated with the Account on which this request will operate.",
+            "in": "header",
+            "name": "X-Postmark-Account-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/push",
         "pointer": "#/paths/~1templates~1push/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TemplatesPushModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplatesPushResponse"
+          },
+          {
+            "status": "422",
+            "type": "StandardPostmarkResponse"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Push templates from one server to another"
+        "summary": "Push templates from one server to another",
+        "tags": [
+          "Templates API"
+        ]
       },
       {
         "id": "schema:CreateServerPayload",
         "kind": "schema",
-        "name": "CreateServerPayload"
+        "name": "CreateServerPayload",
+        "type": "object"
       },
       {
         "id": "schema:DKIMRotationResponse",
         "kind": "schema",
-        "name": "DKIMRotationResponse"
+        "name": "DKIMRotationResponse",
+        "type": "object"
       },
       {
         "id": "schema:DomainCreationModel",
         "kind": "schema",
-        "name": "DomainCreationModel"
+        "name": "DomainCreationModel",
+        "type": "object"
       },
       {
         "id": "schema:DomainEditingModel",
         "kind": "schema",
-        "name": "DomainEditingModel"
+        "name": "DomainEditingModel",
+        "type": "object"
       },
       {
         "id": "schema:DomainExtendedInformation",
         "kind": "schema",
-        "name": "DomainExtendedInformation"
+        "name": "DomainExtendedInformation",
+        "type": "object"
       },
       {
         "id": "schema:DomainInformation",
         "kind": "schema",
-        "name": "DomainInformation"
+        "name": "DomainInformation",
+        "type": "object"
       },
       {
         "id": "schema:DomainListingResults",
         "kind": "schema",
-        "name": "DomainListingResults"
+        "name": "DomainListingResults",
+        "type": "object"
       },
       {
         "id": "schema:DomainSPFResult",
         "kind": "schema",
-        "name": "DomainSPFResult"
+        "name": "DomainSPFResult",
+        "type": "object"
       },
       {
         "id": "schema:EditServerPayload",
         "kind": "schema",
-        "name": "EditServerPayload"
+        "name": "EditServerPayload",
+        "type": "object"
       },
       {
         "id": "schema:ExtendedServerInfo",
         "kind": "schema",
-        "name": "ExtendedServerInfo"
+        "name": "ExtendedServerInfo",
+        "type": "object"
       },
       {
         "id": "schema:SenderListingResults",
         "kind": "schema",
-        "name": "SenderListingResults"
+        "name": "SenderListingResults",
+        "type": "object"
       },
       {
         "id": "schema:SenderSignatureCreationModel",
         "kind": "schema",
-        "name": "SenderSignatureCreationModel"
+        "name": "SenderSignatureCreationModel",
+        "type": "object"
       },
       {
         "id": "schema:SenderSignatureEditingModel",
         "kind": "schema",
-        "name": "SenderSignatureEditingModel"
+        "name": "SenderSignatureEditingModel",
+        "type": "object"
       },
       {
         "id": "schema:SenderSignatureExtendedInformation",
         "kind": "schema",
-        "name": "SenderSignatureExtendedInformation"
+        "name": "SenderSignatureExtendedInformation",
+        "type": "object"
       },
       {
         "id": "schema:SenderSignatureInformation",
         "kind": "schema",
-        "name": "SenderSignatureInformation"
+        "name": "SenderSignatureInformation",
+        "type": "object"
       },
       {
+        "description": "The results of listing servers.",
         "id": "schema:ServerListingResponse",
         "kind": "schema",
-        "name": "ServerListingResponse"
+        "name": "ServerListingResponse",
+        "type": "object"
       },
       {
+        "description": "A Postmark API error.",
         "id": "schema:StandardPostmarkResponse",
         "kind": "schema",
-        "name": "StandardPostmarkResponse"
+        "name": "StandardPostmarkResponse",
+        "type": "object"
       },
       {
         "id": "schema:TemplatesPushModel",
         "kind": "schema",
-        "name": "TemplatesPushModel"
+        "name": "TemplatesPushModel",
+        "type": "object"
       },
       {
         "id": "schema:TemplatesPushResponse",
         "kind": "schema",
-        "name": "TemplatesPushResponse"
+        "name": "TemplatesPushResponse",
+        "type": "object"
       }
     ]
   },

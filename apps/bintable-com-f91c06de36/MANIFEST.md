@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `cf9c16125437afdd58b59eeaf572114d640a32bb3191a1572b89d291b0e74852` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/balance` | balanceLookup | Check Balance |
-| GET | `/{bin}` | binLookup | Lookup for bin |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/balance` | balanceLookup | `api_key`* | ResponseItem[] | yes | Check Balance |
+| GET | `/{bin}` | binLookup | `bin`*, `api_key`* | ResponseItem[] | yes | Lookup for bin |

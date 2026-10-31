@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_mailscript_com_images_favicon.s
 
 | | |
 | --- | --- |
-| Signed bundle | `fd1a41abcd055ae0866d80438439e3d292a5140dad6186ce9e0e3a5cab299807` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,43 +34,45 @@ logo: "https://api.apis.guru/v2/cache/logo/https_mailscript_com_images_favicon.s
 
 55 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/actions` | getAllActions | Get all actions for the user |
-| POST | `/actions` | addAction | Add an action |
-| DELETE | `/actions/{action}` | deleteAction | Delete an action |
-| PUT | `/actions/{action}` | updateAction | Update an action key |
-| GET | `/addresses` | getAllAddresses | Get all addresses you have access to |
-| POST | `/addresses` | addAddress | Claim a new Mailscript address |
-| DELETE | `/addresses/{address}` | deleteAddress | Delete a mailscript address |
-| GET | `/addresses/{address}/keys` | getAllKeys | List address keys |
-| POST | `/addresses/{address}/keys` | addKey | Add address key |
-| DELETE | `/addresses/{address}/keys/{key}` | deleteKey | Delete address key |
-| GET | `/addresses/{address}/keys/{key}` | getKey | Get address key |
-| PUT | `/addresses/{address}/keys/{key}` | updateKey | Update an address key |
-| GET | `/daemons/{daemon}/token` | getDaemonToken | Get a token for opening a daemon connection |
-| GET | `/domains` | getAllDomains | Get all domains you have access to |
-| POST | `/domains` | addDomain | Claim a new Domain |
-| GET | `/domains/verify/{domain}` | getDomainVerify | Get domain verification |
-| POST | `/domains/verify/{domain}` | CheckDomainVerify | Check a new Domain |
-| DELETE | `/domains/{domain}` | removeDomainVerify | Remove a domain |
-| GET | `/inputs` | getAllInputs | Get all inputs you have access to |
-| GET | `/integrations` | getAllIntegrations | Get all integrations for the user |
-| DELETE | `/integrations/{integration}` | deleteIntegration | Delete an integration |
-| POST | `/send` | send | Send an email |
-| GET | `/triggers` | getAllTriggers | Get all triggers you have access to |
-| POST | `/triggers` | addTrigger | Setup a trigger |
-| DELETE | `/triggers/{trigger}` | deleteTrigger | Delete a trigger |
-| PUT | `/triggers/{trigger}` | updateTrigger | Update a trigger |
-| GET | `/user` | getAuthenticatedUser | Get the authenticated user |
-| PUT | `/user` | updateUser | Update a user |
-| GET | `/verifications` | getAllVerifications | Get all verificats for the user |
-| POST | `/verifications` | addVerification | Start verification process for external email address or sms number |
-| POST | `/verifications/{verification}/verify` | verify | Verify an email address or sms number with a code |
-| GET | `/workflows` | getAllWorkflows | Get all workflows you have access to |
-| POST | `/workflows` | addWorkflow | Setup workflow |
-| POST | `/workflows/set` | setWorkflow | Set a property on a workflow |
-| DELETE | `/workflows/{workflow}` | deleteWorkflow | Delete a workflow |
-| PUT | `/workflows/{workflow}` | updateWorkflow | Update an workflow |
-| GET | `/workspaces` | getAllWorkspaces | Get all workspaces you have access to |
-| POST | `/workspaces` | addWorkspace | Claim a Mailscript workspace |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/actions` | getAllActions | — | GetAllActionsResponse | yes | Get all actions for the user |
+| POST | `/actions` | addAction | body*: AddActionCombineRequest\|AddActionSmsRequest\|AddActionWebhookRequest\|AddActionDaemonRequest\|AddActionSendRequest\|AddActionForwardRequest\|AddActionReplyRequest\|AddActionReplyAllRequest\|AddActionAliasRequest | AddActionResponse |  | Add an action |
+| PUT | `/actions/{action}` | updateAction | `action`*, body*: AddActionCombineRequest\|AddActionSmsRequest\|AddActionWebhookRequest\|AddActionDaemonRequest\|AddActionSendRequest\|AddActionForwardRequest\|AddActionReplyRequest\|AddActionReplyAllRequest\|AddActionAliasRequest | Key |  | Update an action key |
+| DELETE | `/actions/{action}` | deleteAction | `action`* | — |  | Delete an action |
+| GET | `/addresses` | getAllAddresses | — | GetAllAddressesResponse | yes | Get all addresses you have access to |
+| POST | `/addresses` | addAddress | body*: AddAddressRequest | — |  | Claim a new Mailscript address |
+| DELETE | `/addresses/{address}` | deleteAddress | `address`* | — |  | Delete a mailscript address |
+| GET | `/addresses/{address}/keys` | getAllKeys | `address`* | GetAllKeysResponse | yes | List address keys |
+| POST | `/addresses/{address}/keys` | addKey | `address`*, body*: AddKeyRequest | AddKeyResponse |  | Add address key |
+| GET | `/addresses/{address}/keys/{key}` | getKey | `address`*, `key`* | Key | yes | Get address key |
+| PUT | `/addresses/{address}/keys/{key}` | updateKey | `address`*, `key`*, body*: UpdateKeyRequest | Key |  | Update an address key |
+| DELETE | `/addresses/{address}/keys/{key}` | deleteKey | `address`*, `key`* | — |  | Delete address key |
+| GET | `/daemons/{daemon}/token` | getDaemonToken | `daemon`* | object | yes | Get a token for opening a daemon connection |
+| GET | `/domains` | getAllDomains | — | GetAllDomainsResponse | yes | Get all domains you have access to |
+| POST | `/domains` | addDomain | body*: AddDomainRequest | DomainResponse |  | Claim a new Domain |
+| GET | `/domains/verify/{domain}` | getDomainVerify | `domain`* | DomainResponse | yes | Get domain verification |
+| POST | `/domains/verify/{domain}` | CheckDomainVerify | `domain`* | CheckDomainVerify |  | Check a new Domain |
+| DELETE | `/domains/{domain}` | removeDomainVerify | `domain`* | — |  | Remove a domain |
+| GET | `/inputs` | getAllInputs | `name` | GetAllInputsResponse | yes | Get all inputs you have access to |
+| GET | `/integrations` | getAllIntegrations | — | GetAllIntegrationsResponse | yes | Get all integrations for the user |
+| DELETE | `/integrations/{integration}` | deleteIntegration | `integration`* | — |  | Delete an integration |
+| POST | `/send` | send | body*: SendRequest | — |  | Send an email |
+| GET | `/triggers` | getAllTriggers | — | GetAllTriggersResponse | yes | Get all triggers you have access to |
+| POST | `/triggers` | addTrigger | body*: AddTriggerRequest | AddTriggerResponse |  | Setup a trigger |
+| PUT | `/triggers/{trigger}` | updateTrigger | `trigger`*, body*: AddTriggerRequest | — |  | Update a trigger |
+| DELETE | `/triggers/{trigger}` | deleteTrigger | `trigger`* | — |  | Delete a trigger |
+| GET | `/user` | getAuthenticatedUser | — | User | yes | Get the authenticated user |
+| PUT | `/user` | updateUser | body*: UpdateUserRequest | — |  | Update a user |
+| GET | `/verifications` | getAllVerifications | — | GetAllVerificationsResponse | yes | Get all verificats for the user |
+| POST | `/verifications` | addVerification | body*: AddEmailVerificationRequest\|AddSmsVerificationRequest | AddVerificationResponse |  | Start verification process for external email address or sms number |
+| POST | `/verifications/{verification}/verify` | verify | `verification`*, body*: VerifyEmailRequest\|VerifySmsRequest | — |  | Verify an email address or sms number with a code |
+| GET | `/workflows` | getAllWorkflows | — | GetAllWorkflowsResponse | yes | Get all workflows you have access to |
+| POST | `/workflows` | addWorkflow | body*: AddWorkflowRequest | — |  | Setup workflow |
+| POST | `/workflows/set` | setWorkflow | body*: SetWorkflowRequest | — |  | Set a property on a workflow |
+| PUT | `/workflows/{workflow}` | updateWorkflow | `workflow`*, body*: AddWorkflowRequest | — |  | Update an workflow |
+| DELETE | `/workflows/{workflow}` | deleteWorkflow | `workflow`* | — |  | Delete a workflow |
+| GET | `/workspaces` | getAllWorkspaces | — | GetAllWorkspacesResponse | yes | Get all workspaces you have access to |
+| POST | `/workspaces` | addWorkspace | body*: AddWorkspaceRequest | — |  | Claim a Mailscript workspace |

@@ -53,6 +53,46 @@
         "from": "weber-gesamtausgabe-de-26b96f06de",
         "kind": "EXPOSES",
         "to": "operation:get:/search/entity"
+      },
+      {
+        "from": "operation:get:/code/findByElement/{element}",
+        "kind": "RETURNS",
+        "to": "schema:CodeSample"
+      },
+      {
+        "from": "operation:get:/documents",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/documents/findByAuthor/{authorID}",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/documents/findByDate",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/documents/findByMention/{docID}",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/documents/{docID}",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/facets/{facet}",
+        "kind": "RETURNS",
+        "to": "schema:Facet"
+      },
+      {
+        "from": "operation:get:/search/entity",
+        "kind": "RETURNS",
+        "to": "schema:Document"
       }
     ],
     "nodes": [
@@ -66,10 +106,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /application/newID",
+        "parameters": [
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/application/newID",
         "pointer": "#/paths/~1application~1newID/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Create a new WeGA ID"
+        "summary": "Create a new WeGA ID",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
@@ -79,8 +146,26 @@
         "name": "get /application/status",
         "path": "/application/status",
         "pointer": "#/paths/~1application~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get status information about the running WeGA-WebApp"
+        "summary": "Get status information about the running WeGA-WebApp",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
@@ -88,65 +173,335 @@
         "kind": "operation",
         "method": "get",
         "name": "get /code/findByElement/{element}",
+        "parameters": [
+          {
+            "description": "The XML element to search for",
+            "in": "path",
+            "name": "element",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "http://www.tei-c.org/ns/1.0",
+            "description": "The element namespace.",
+            "in": "query",
+            "name": "namespace",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/code/findByElement/{element}",
         "pointer": "#/paths/~1code~1findByElement~1{element}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CodeSample[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds code samples by XML element"
+        "summary": "Finds code samples by XML element",
+        "tags": [
+          "Code Samples"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Documents endpoint returns a list of all documents from the WeGA digital edition.",
         "id": "operation:get:/documents",
         "kind": "operation",
         "method": "get",
         "name": "get /documents",
+        "parameters": [
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/documents",
         "pointer": "#/paths/~1documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists all documents"
+        "summary": "Lists all documents",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of documents by a given author – optionally filtered by document type",
         "id": "operation:get:/documents/findByAuthor/{authorID}",
         "kind": "operation",
         "method": "get",
         "name": "get /documents/findByAuthor/{authorID}",
+        "parameters": [
+          {
+            "default": "A002068",
+            "description": "The author ID to search for.",
+            "in": "path",
+            "name": "authorID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/documents/findByAuthor/{authorID}",
         "pointer": "#/paths/~1documents~1findByAuthor~1{authorID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds documents by author"
+        "summary": "Finds documents by author",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of documents related to the given date – optionally filtered by document type.",
         "id": "operation:get:/documents/findByDate",
         "kind": "operation",
         "method": "get",
         "name": "get /documents/findByDate",
+        "parameters": [
+          {
+            "default": "1786-11-18",
+            "description": "The min date to search for",
+            "in": "query",
+            "name": "fromDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "The max date to search for",
+            "in": "query",
+            "name": "toDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/documents/findByDate",
         "pointer": "#/paths/~1documents~1findByDate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds documents by date"
+        "summary": "Finds documents by date",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of documents that reference a particular docID – optionally filtered by document type.",
         "id": "operation:get:/documents/findByMention/{docID}",
         "kind": "operation",
         "method": "get",
         "name": "get /documents/findByMention/{docID}",
+        "parameters": [
+          {
+            "default": "A002068",
+            "description": "The document ID that is to be mentioned.",
+            "in": "path",
+            "name": "docID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/documents/findByMention/{docID}",
         "pointer": "#/paths/~1documents~1findByMention~1{docID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds documents by reference"
+        "summary": "Finds documents by reference",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns documents, indicated by an ID.",
         "id": "operation:get:/documents/{docID}",
         "kind": "operation",
         "method": "get",
         "name": "get /documents/{docID}",
+        "parameters": [
+          {
+            "default": "A002068",
+            "description": "The document identifier to search for",
+            "in": "path",
+            "name": "docID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/documents/{docID}",
         "pointer": "#/paths/~1documents~1{docID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns documents by ID"
+        "summary": "Returns documents by ID",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -154,41 +509,156 @@
         "kind": "operation",
         "method": "get",
         "name": "get /facets/{facet}",
+        "parameters": [
+          {
+            "description": "The facet to search for",
+            "enum": [
+              "sender",
+              "addressee"
+            ],
+            "in": "path",
+            "name": "facet",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The scope of the result set, i.e.",
+            "in": "query",
+            "name": "scope",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The search term to be looked for in the facet's label",
+            "in": "query",
+            "name": "term",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/facets/{facet}",
         "pointer": "#/paths/~1facets~1{facet}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Facet[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns facets"
+        "summary": "Returns facets",
+        "tags": [
+          "Facets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the search results for an entity's name or title.",
         "id": "operation:get:/search/entity",
         "kind": "operation",
         "method": "get",
         "name": "get /search/entity",
+        "parameters": [
+          {
+            "description": "The WeGA document type",
+            "in": "query",
+            "name": "docType",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The query string",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Position of first item to retrieve (starting from 1)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to retrieve (200 max)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/search/entity",
         "pointer": "#/paths/~1search~1entity/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for a WeGA entity"
+        "summary": "Search for a WeGA entity",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "id": "schema:CodeSample",
         "kind": "schema",
-        "name": "CodeSample"
+        "name": "CodeSample",
+        "type": "object"
       },
       {
         "id": "schema:Document",
         "kind": "schema",
-        "name": "Document"
+        "name": "Document",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Facet",
         "kind": "schema",
-        "name": "Facet"
+        "name": "Facet",
+        "type": "object"
       }
     ]
   },

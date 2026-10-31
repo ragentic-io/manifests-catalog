@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.i-cue.solutions_icue_icue_l
 
 | | |
 | --- | --- |
-| Signed bundle | `aa96da43111e4ef5fec42cfbc1c312dfc9d5bd2540253c10e410191ba8435555` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,69 +34,71 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.i-cue.solutions_icue_icue_l
 
 42 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/administration/entity` | get /administration/entity | Get all organizations |
-| POST | `/administration/entity` | post /administration/entity | Create organization |
-| PUT | `/administration/entity` | put /administration/entity | Pause organization |
-| DELETE | `/administration/entity/{id}` | delete /administration/entity/{id} | Delete organization |
-| POST | `/administration/file-to-json` | post /administration/file-to-json | Transform data file to JSON format |
-| GET | `/administration/model` | get /administration/model | Get all common Models |
-| POST | `/administration/model` | post /administration/model | Register new forecasting model |
-| GET | `/administration/model/{entityId}` | get /administration/model/{entityId} | Get Models for Organization |
-| POST | `/administration/model/{entityId}` | post /administration/model/{entityId} | Register new forecasting model |
-| POST | `/administration/planning-level/lock` | post /administration/planning-level/lock | Lock planning level |
-| DELETE | `/administration/planning-level/{entityId}/{id}` | delete /administration/planning-level/{entityId}/{id} | Delete planning level |
-| POST | `/administration/token` | post /administration/token | Issue a token |
-| POST | `/administration/user` | post /administration/user | Create user |
-| PUT | `/administration/user` | put /administration/user | Update user |
-| PUT | `/administration/user/lock` | put /administration/user/lock | Lock user |
-| GET | `/administration/user/{entityId}` | get /administration/user/{entityId} | Get all users |
-| DELETE | `/administration/user/{entityId}/{id}` | delete /administration/user/{entityId}/{id} | Delete user |
-| POST | `/forecast` | post /forecast | Forecasts only, for faster results |
-| POST | `/forecast/AI` | post /forecast/AI | Forecast utilizing advanced machine learning models |
-| POST | `/forecast/AI/history-and-forecast` | post /forecast/AI/history-and-forecast | History and forecast utilizing advanced machine learning models |
-| POST | `/forecast/file-to-forecast` | post /forecast/file-to-forecast | Forecast from file |
-| POST | `/forecast/forecast-bottom-up` | post /forecast/forecast-bottom-up | Bottom up forecasting |
-| POST | `/forecast/forecast-top-down` | post /forecast/forecast-top-down | Top down forecasting |
-| POST | `/forecast/full-detail` | post /forecast/full-detail | Full forecast result details, including error, trend seasonality and outlier |
-| POST | `/forecast/history-and-forecast` | post /forecast/history-and-forecast | History and forecast for fast timeseries view |
-| POST | `/forecast/optimal-parameter` | post /forecast/optimal-parameter | Get optimal parameter per method |
-| POST | `/forecast/rerun` | post /forecast/rerun | Rerun previously uploaded planning level |
-| GET | `/forecast/result/{jobId}` | get /forecast/result/{jobId} | Forecast result |
-| GET | `/forecast/status/{jobId}` | get /forecast/status/{jobId} | Forecast status |
-| GET | `/hyperparameter` | get /hyperparameter | Get hyperparameters |
-| POST | `/hyperparameter` | post /hyperparameter | Set hyperparameters |
-| POST | `/inventory/amazon-ipi` | post /inventory/amazon-ipi | Calculate Amazon Inventory Performance Index (IPI) |
-| POST | `/inventory/caryying-cost` | post /inventory/caryying-cost | Carrying Cost |
-| POST | `/inventory/eoq` | post /inventory/eoq | Calculate economic order quantity |
-| POST | `/inventory/fill-rate` | post /inventory/fill-rate | Calculate fill rate |
-| POST | `/inventory/financial-imapct-forecast-accuracy` | post /inventory/financial-imapct-forecast-accuracy | Calculate financial impact of forecast accuracy |
-| POST | `/inventory/inventory-turnover` | post /inventory/inventory-turnover | Inventroy Turn-over |
-| POST | `/inventory/ltd` | post /inventory/ltd | Calculate lead time demand |
-| POST | `/inventory/moq` | post /inventory/moq | Calculate minimum order quantity |
-| POST | `/inventory/optimal-service-level` | post /inventory/optimal-service-level | Calculate optimal service level |
-| POST | `/inventory/reorder-point` | post /inventory/reorder-point | Re-order Point |
-| POST | `/inventory/safety-stock` | post /inventory/safety-stock | Safety Stock |
-| POST | `/inventory/service-level` | post /inventory/service-level | Calculate service level |
-| POST | `/inventory/turns` | post /inventory/turns | Calculate inventory turns |
-| POST | `/lifecycle/many-to-one` | post /lifecycle/many-to-one | Map from old product to new product to create artifical history |
-| POST | `/lifecycle/one-to-one` | post /lifecycle/one-to-one | Map from old product to new product to create artifical history |
-| POST | `/outlier` | post /outlier | Get outlier |
-| POST | `/portfolio` | post /portfolio | ABCxyz Analysis |
-| POST | `/portfolio/abc` | post /portfolio/abc | ABC Analysis |
-| POST | `/portfolio/file-to-portfolio` | post /portfolio/file-to-portfolio | ABCxyz Analysis |
-| POST | `/portfolio/forecast-performance-rewind` | post /portfolio/forecast-performance-rewind | Planning level rewind to calculate and measure performance potential (internal versus iCUE). |
-| POST | `/portfolio/xyz` | post /portfolio/xyz | xyz Analysis |
-| POST | `/pricing/bundle-pricing` | post /pricing/bundle-pricing | Bundle pricing |
-| POST | `/pricing/competitive-pricing` | post /pricing/competitive-pricing | — |
-| POST | `/pricing/cost-plus-pricing` | post /pricing/cost-plus-pricing | — |
-| POST | `/pricing/decoy-pricing` | post /pricing/decoy-pricing | — |
-| POST | `/pricing/odd-pricing` | post /pricing/odd-pricing | — |
-| POST | `/pricing/penetration-pricing` | post /pricing/penetration-pricing | — |
-| POST | `/pricing/price-elasticity-of-demand` | post /pricing/price-elasticity-of-demand | — |
-| GET | `/report/performance/sku-rationalization/{planningLevelId}` | get /report/performance/sku-rationalization/{planningLevelId} | SKU rationalization report |
-| GET | `/report/performance/{planningLevelId}` | get /report/performance/{planningLevelId} | Month over month performance per planning level |
-| GET | `/report/planning-level/organization` | get /report/planning-level/organization | Get list of plannign levels by organization |
-| GET | `/report/planning-level/user` | get /report/planning-level/user | Get list of plannign levels by user |
-| GET | `/report/user` | get /report/user | Get usage statistics per user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/administration/entity` | get /administration/entity | `Token` | EntityResponse[] | yes | Get all organizations |
+| PUT | `/administration/entity` | put /administration/entity | `Token`, body: ToggleRequest | — |  | Pause organization |
+| POST | `/administration/entity` | post /administration/entity | `Token`, body: NewEntityRequest | string:uuid |  | Create organization |
+| DELETE | `/administration/entity/{id}` | delete /administration/entity/{id} | `id`*, `Token` | — |  | Delete organization |
+| POST | `/administration/file-to-json` | post /administration/file-to-json | `Token`, body: object | JsonForecastResponse |  | Transform data file to JSON format |
+| GET | `/administration/model` | get /administration/model | `Token` | MethodDto[] | yes | Get all common Models |
+| POST | `/administration/model` | post /administration/model | `Token`, body: NewModelRequest | MethodDto |  | Register new forecasting model |
+| GET | `/administration/model/{entityId}` | get /administration/model/{entityId} | `entityId`*, `Token` | MethodDto[] | yes | Get Models for Organization |
+| POST | `/administration/model/{entityId}` | post /administration/model/{entityId} | `entityId`*, `Token`, body: NewModelRequest | MethodDto |  | Register new forecasting model |
+| POST | `/administration/planning-level/lock` | post /administration/planning-level/lock | `Token` | — |  | Lock planning level |
+| DELETE | `/administration/planning-level/{entityId}/{id}` | delete /administration/planning-level/{entityId}/{id} | `entityId`*, `id`*, `Token` | — |  | Delete planning level |
+| POST | `/administration/token` | post /administration/token | `Token`, body: NewTokenRequest | string:uuid |  | Issue a token |
+| PUT | `/administration/user` | put /administration/user | `Token` | — |  | Update user |
+| POST | `/administration/user` | post /administration/user | `Token`, body: NewUserRequest | string:uuid |  | Create user |
+| PUT | `/administration/user/lock` | put /administration/user/lock | `Token`, body: ToggleUserRequest | — |  | Lock user |
+| GET | `/administration/user/{entityId}` | get /administration/user/{entityId} | `entityId`*, `Token` | — | yes | Get all users |
+| DELETE | `/administration/user/{entityId}/{id}` | delete /administration/user/{entityId}/{id} | `entityId`*, `id`*, `Token` | — |  | Delete user |
+| POST | `/forecast` | post /forecast | `Token`, body: PlanningLevelRequest | ForecastResponse |  | Forecasts only, for faster results |
+| POST | `/forecast/AI` | post /forecast/AI | `Token`, body: AiPlanningLevelRequest | JobResponse |  | Forecast utilizing advanced machine learning models |
+| POST | `/forecast/AI/history-and-forecast` | post /forecast/AI/history-and-forecast | `Token`, body: AiPlanningLevelRequest | JobResponse |  | History and forecast utilizing advanced machine learning models |
+| POST | `/forecast/file-to-forecast` | post /forecast/file-to-forecast | `Token`, body: object | JobResponse |  | Forecast from file |
+| POST | `/forecast/forecast-bottom-up` | post /forecast/forecast-bottom-up | `Token`, body: PlanningLevelRequest | ForecastBottomUpResponse |  | Bottom up forecasting |
+| POST | `/forecast/forecast-top-down` | post /forecast/forecast-top-down | `Token`, body: PlanningLevelRequest | — |  | Top down forecasting |
+| POST | `/forecast/full-detail` | post /forecast/full-detail | `Token`, body: PlanningLevelRequest | FullDetailsForecastResponse |  | Full forecast result details, including error, trend seasonality and outlier |
+| POST | `/forecast/history-and-forecast` | post /forecast/history-and-forecast | `Token`, body: PlanningLevelRequest | HistoryAndForecastResponse |  | History and forecast for fast timeseries view |
+| POST | `/forecast/optimal-parameter` | post /forecast/optimal-parameter | `Token`, body: PlanningLevelRequest | OptimalParameterResponse |  | Get optimal parameter per method |
+| POST | `/forecast/rerun` | post /forecast/rerun | `Token`, body: PlanningLevelReRunRequest | ForecastResponse |  | Rerun previously uploaded planning level |
+| GET | `/forecast/result/{jobId}` | get /forecast/result/{jobId} | `jobId`*, `Token` | — | yes | Forecast result |
+| GET | `/forecast/status/{jobId}` | get /forecast/status/{jobId} | `jobId`*, `Token` | — | yes | Forecast status |
+| GET | `/hyperparameter` | get /hyperparameter | `Token` | HyperparameterModel | yes | Get hyperparameters |
+| POST | `/hyperparameter` | post /hyperparameter | `Token`, body: HyperparameterModel | — |  | Set hyperparameters |
+| POST | `/inventory/amazon-ipi` | post /inventory/amazon-ipi | `Token` | — |  | Calculate Amazon Inventory Performance Index (IPI) |
+| POST | `/inventory/caryying-cost` | post /inventory/caryying-cost | `Token` | — |  | Carrying Cost |
+| POST | `/inventory/eoq` | post /inventory/eoq | `Token` | — |  | Calculate economic order quantity |
+| POST | `/inventory/fill-rate` | post /inventory/fill-rate | `Token` | — |  | Calculate fill rate |
+| POST | `/inventory/financial-imapct-forecast-accuracy` | post /inventory/financial-imapct-forecast-accuracy | `Token` | — |  | Calculate financial impact of forecast accuracy |
+| POST | `/inventory/inventory-turnover` | post /inventory/inventory-turnover | `Token` | — |  | Inventroy Turn-over |
+| POST | `/inventory/ltd` | post /inventory/ltd | `Token` | — |  | Calculate lead time demand |
+| POST | `/inventory/moq` | post /inventory/moq | `Token` | — |  | Calculate minimum order quantity |
+| POST | `/inventory/optimal-service-level` | post /inventory/optimal-service-level | `Token` | — |  | Calculate optimal service level |
+| POST | `/inventory/reorder-point` | post /inventory/reorder-point | `Token` | — |  | Re-order Point |
+| POST | `/inventory/safety-stock` | post /inventory/safety-stock | `Token` | — |  | Safety Stock |
+| POST | `/inventory/service-level` | post /inventory/service-level | `Token` | — |  | Calculate service level |
+| POST | `/inventory/turns` | post /inventory/turns | `Token` | — |  | Calculate inventory turns |
+| POST | `/lifecycle/many-to-one` | post /lifecycle/many-to-one | `Token`, body: LifecycleManyToOneRequest | PlanningLevelDataDto |  | Map from old product to new product to create artifical history |
+| POST | `/lifecycle/one-to-one` | post /lifecycle/one-to-one | `Token`, body: LifecycleOneToOneRequest | PlanningLevelDataDto |  | Map from old product to new product to create artifical history |
+| POST | `/outlier` | post /outlier | `Token`, body: OutliersRequest | TimeSeriesOutliersResponse[] |  | Get outlier |
+| POST | `/portfolio` | post /portfolio | `Token`, body: PortfolioRequest | PortfolioModel[] |  | ABCxyz Analysis |
+| POST | `/portfolio/abc` | post /portfolio/abc | `Token`, body: PortfolioRequest | PortfolioAbcModel[] |  | ABC Analysis |
+| POST | `/portfolio/file-to-portfolio` | post /portfolio/file-to-portfolio | `Token`, body: object | — |  | ABCxyz Analysis |
+| POST | `/portfolio/forecast-performance-rewind` | post /portfolio/forecast-performance-rewind | `Token`, body: ForecastPerformanceRequest | RewindResponse |  | Planning level rewind to calculate and measure performance potential (internal versus iCUE). |
+| POST | `/portfolio/xyz` | post /portfolio/xyz | `Token`, body: PortfolioRequest | PortfolioXyzModel[] |  | xyz Analysis |
+| POST | `/pricing/bundle-pricing` | post /pricing/bundle-pricing | `Token` | — |  | Bundle pricing |
+| POST | `/pricing/competitive-pricing` | post /pricing/competitive-pricing | `Token` | — |  | — |
+| POST | `/pricing/cost-plus-pricing` | post /pricing/cost-plus-pricing | `Token` | — |  | — |
+| POST | `/pricing/decoy-pricing` | post /pricing/decoy-pricing | `Token` | — |  | — |
+| POST | `/pricing/odd-pricing` | post /pricing/odd-pricing | `Token` | — |  | — |
+| POST | `/pricing/penetration-pricing` | post /pricing/penetration-pricing | `Token` | — |  | — |
+| POST | `/pricing/price-elasticity-of-demand` | post /pricing/price-elasticity-of-demand | `Token` | — |  | — |
+| GET | `/report/performance/sku-rationalization/{planningLevelId}` | get /report/performance/sku-rationalization/{planningLevelId} | `planningLevelId`*, `Token` | PortfolioModel[] | yes | SKU rationalization report |
+| GET | `/report/performance/{planningLevelId}` | get /report/performance/{planningLevelId} | `planningLevelId`*, `Token` | — | yes | Month over month performance per planning level |
+| GET | `/report/planning-level/organization` | get /report/planning-level/organization | `Token` | — | yes | Get list of plannign levels by organization |
+| GET | `/report/planning-level/user` | get /report/planning-level/user | `Token` | — | yes | Get list of plannign levels by user |
+| GET | `/report/user` | get /report/user | `Token` | — | yes | Get usage statistics per user |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloudrf.com_wp-content_uploads_
 
 | | |
 | --- | --- |
-| Signed bundle | `ec5d1f60ab25b883e7bd89492406716ea73b597c180a7be1226dc2f39cabc4e2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,16 +34,18 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloudrf.com_wp-content_uploads_
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/archive/delete` | delete | Delete a calculation from the database. |
-| GET | `/archive/delete/network` | deleteNetwork | Delete an entire network |
-| GET | `/archive/export` | export | Export a calculation in a GIS file format |
-| GET | `/archive/list` | list | List calculations from your archive |
-| POST | `/area` | area | Create a point-to-multipoint heatmap |
-| POST | `/clutter/add` | addClutter | Upload clutter data as GeoJSON |
-| GET | `/interference` | interference | Find the best server for overlapping coverage |
-| GET | `/mesh` | mesh | Merge sites into a super layer. |
-| GET | `/network` | network | Find the best server for somewhere |
-| POST | `/path` | path | Point-to-point path profile analysis (Tx to Rx) |
-| POST | `/points` | points | Point-to-multipoint path profile analysis (Many Tx, one Rx) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/archive/delete` | delete | `cid`* | — | yes | Delete a calculation from the database. |
+| GET | `/archive/delete/network` | deleteNetwork | `nid`* | — | yes | Delete an entire network |
+| GET | `/archive/export` | export | `file`*, `fmt`* | — | yes | Export a calculation in a GIS file format |
+| GET | `/archive/list` | list | `n`, `e`, `s`, `w` | — | yes | List calculations from your archive |
+| POST | `/area` | area | body*: object | — |  | Create a point-to-multipoint heatmap |
+| POST | `/clutter/add` | addClutter | body*: object | — |  | Upload clutter data as GeoJSON |
+| GET | `/interference` | interference | `network`*, `name`* | — | yes | Find the best server for overlapping coverage |
+| GET | `/mesh` | mesh | `network`*, `name`* | — | yes | Merge sites into a super layer. |
+| GET | `/network` | network | `net`*, `nam`*, `lat`*, `lon`*, `alt`*, `rxg` | — | yes | Find the best server for somewhere |
+| POST | `/path` | path | body*: object | — |  | Point-to-point path profile analysis (Tx to Rx) |
+| POST | `/points` | points | body*: object | — |  | Point-to-multipoint path profile analysis (Many Tx, one Rx) |

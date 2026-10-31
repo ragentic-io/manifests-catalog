@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2ae75f88d02aec53257e4996f77c7d62ed047cb8f2979ccd25b45e32fae11ddd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,104 +32,106 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (99)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/food/converse` | talkToChatbot | Talk to Chatbot |
-| GET | `/food/converse/suggest` | getConversationSuggests | Conversation Suggests |
-| GET | `/food/customFoods/search` | searchCustomFoods | Search Custom Foods |
-| POST | `/food/detect` | detectFoodInText | Detect Food in Text |
-| GET | `/food/images/analyze` | imageAnalysisByURL | Image Analysis by URL |
-| GET | `/food/images/classify` | imageClassificationByURL | Image Classification by URL |
-| GET | `/food/ingredients/autocomplete` | autocompleteIngredientSearch | Autocomplete Ingredient Search |
-| POST | `/food/ingredients/glycemicLoad` | computeGlycemicLoad | Compute Glycemic Load |
-| POST | `/food/ingredients/map` | mapIngredientsToGroceryProducts | Map Ingredients to Grocery Products |
-| GET | `/food/ingredients/search` | ingredientSearch | Ingredient Search |
-| GET | `/food/ingredients/substitutes` | getIngredientSubstitutes | Get Ingredient Substitutes |
-| GET | `/food/ingredients/{id}/amount` | computeIngredientAmount | Compute Ingredient Amount |
-| GET | `/food/ingredients/{id}/information` | getIngredientInformation | Get Ingredient Information |
-| GET | `/food/ingredients/{id}/substitutes` | getIngredientSubstitutesByID | Get Ingredient Substitutes by ID |
-| GET | `/food/jokes/random` | getARandomFoodJoke | Random Food Joke |
-| GET | `/food/menuItems/search` | searchMenuItems | Search Menu Items |
-| GET | `/food/menuItems/suggest` | autocompleteMenuItemSearch | Autocomplete Menu Item Search |
-| GET | `/food/menuItems/{id}` | getMenuItemInformation | Get Menu Item Information |
-| GET | `/food/menuItems/{id}/nutritionLabel` | menuItemNutritionLabelWidget | Menu Item Nutrition Label Widget |
-| GET | `/food/menuItems/{id}/nutritionLabel.png` | menuItemNutritionLabelImage | Menu Item Nutrition Label Image |
-| GET | `/food/menuItems/{id}/nutritionWidget` | visualizeMenuItemNutritionByID | Menu Item Nutrition by ID Widget |
-| GET | `/food/menuItems/{id}/nutritionWidget.png` | menuItemNutritionByIDImage | Menu Item Nutrition by ID Image |
-| POST | `/food/products/classify` | classifyGroceryProduct | Classify Grocery Product |
-| POST | `/food/products/classifyBatch` | classifyGroceryProductBulk | Classify Grocery Product Bulk |
-| GET | `/food/products/search` | searchGroceryProducts | Search Grocery Products |
-| GET | `/food/products/suggest` | autocompleteProductSearch | Autocomplete Product Search |
-| GET | `/food/products/upc/{upc}` | searchGroceryProductsByUPC | Search Grocery Products by UPC |
-| GET | `/food/products/upc/{upc}/comparable` | getComparableProducts | Get Comparable Products |
-| GET | `/food/products/{id}` | getProductInformation | Get Product Information |
-| GET | `/food/products/{id}/nutritionLabel` | productNutritionLabelWidget | Product Nutrition Label Widget |
-| GET | `/food/products/{id}/nutritionLabel.png` | productNutritionLabelImage | Product Nutrition Label Image |
-| GET | `/food/products/{id}/nutritionWidget` | visualizeProductNutritionByID | Product Nutrition by ID Widget |
-| GET | `/food/products/{id}/nutritionWidget.png` | productNutritionByIDImage | Product Nutrition by ID Image |
-| GET | `/food/restaurants/search` | searchRestaurants | Search Restaurants |
-| GET | `/food/search` | searchAllFood | Search All Food |
-| GET | `/food/site/search` | searchSiteContent | Search Site Content |
-| GET | `/food/trivia/random` | getRandomFoodTrivia | Random Food Trivia |
-| GET | `/food/videos/search` | searchFoodVideos | Search Food Videos |
-| GET | `/food/wine/description` | getWineDescription | Wine Description |
-| GET | `/food/wine/dishes` | getDishPairingForWine | Dish Pairing for Wine |
-| GET | `/food/wine/pairing` | getWinePairing | Wine Pairing |
-| GET | `/food/wine/recommendation` | getWineRecommendation | Wine Recommendation |
-| GET | `/mealplanner/generate` | generateMealPlan | Generate Meal Plan |
-| DELETE | `/mealplanner/{username}/day/{date}` | clearMealPlanDay | Clear Meal Plan Day |
-| POST | `/mealplanner/{username}/items` | addToMealPlan | Add to Meal Plan |
-| DELETE | `/mealplanner/{username}/items/{id}` | deleteFromMealPlan | Delete from Meal Plan |
-| GET | `/mealplanner/{username}/shopping-list` | getShoppingList | Get Shopping List |
-| POST | `/mealplanner/{username}/shopping-list/items` | addToShoppingList | Add to Shopping List |
-| DELETE | `/mealplanner/{username}/shopping-list/items/{id}` | deleteFromShoppingList | Delete from Shopping List |
-| POST | `/mealplanner/{username}/shopping-list/{start-date}/{end-date}` | generateShoppingList | Generate Shopping List |
-| GET | `/mealplanner/{username}/templates` | getMealPlanTemplates | Get Meal Plan Templates |
-| POST | `/mealplanner/{username}/templates` | addMealPlanTemplate | Add Meal Plan Template |
-| DELETE | `/mealplanner/{username}/templates/{id}` | deleteMealPlanTemplate | Delete Meal Plan Template |
-| GET | `/mealplanner/{username}/templates/{id}` | getMealPlanTemplate | Get Meal Plan Template |
-| GET | `/mealplanner/{username}/week/{start-date}` | getMealPlanWeek | Get Meal Plan Week |
-| POST | `/recipes/analyze` | analyzeRecipe | Analyze Recipe |
-| POST | `/recipes/analyzeInstructions` | analyzeRecipeInstructions | Analyze Recipe Instructions |
-| GET | `/recipes/autocomplete` | autocompleteRecipeSearch | Autocomplete Recipe Search |
-| GET | `/recipes/complexSearch` | searchRecipes | Search Recipes |
-| GET | `/recipes/convert` | convertAmounts | Convert Amounts |
-| POST | `/recipes/cuisine` | classifyCuisine | Classify Cuisine |
-| GET | `/recipes/extract` | extractRecipeFromWebsite | Extract Recipe from Website |
-| GET | `/recipes/findByIngredients` | searchRecipesByIngredients | Search Recipes by Ingredients |
-| GET | `/recipes/findByNutrients` | searchRecipesByNutrients | Search Recipes by Nutrients |
-| GET | `/recipes/guessNutrition` | guessNutritionByDishName | Guess Nutrition by Dish Name |
-| GET | `/recipes/informationBulk` | getRecipeInformationBulk | Get Recipe Information Bulk |
-| POST | `/recipes/parseIngredients` | parseIngredients | Parse Ingredients |
-| GET | `/recipes/queries/analyze` | analyzeARecipeSearchQuery | Analyze a Recipe Search Query |
-| GET | `/recipes/quickAnswer` | quickAnswer | Quick Answer |
-| GET | `/recipes/random` | getRandomRecipes | Get Random Recipes |
-| POST | `/recipes/visualizeEquipment` | visualizeEquipment | Equipment Widget |
-| POST | `/recipes/visualizeIngredients` | visualizeIngredients | Ingredients Widget |
-| POST | `/recipes/visualizeNutrition` | visualizeRecipeNutrition | Recipe Nutrition Widget |
-| POST | `/recipes/visualizePriceEstimator` | visualizePriceBreakdown | Price Breakdown Widget |
-| POST | `/recipes/visualizeRecipe` | createRecipeCard | Create Recipe Card |
-| POST | `/recipes/visualizeTaste` | visualizeRecipeTaste | Recipe Taste Widget |
-| GET | `/recipes/{id}/analyzedInstructions` | getAnalyzedRecipeInstructions | Get Analyzed Recipe Instructions |
-| GET | `/recipes/{id}/card` | createRecipeCardGet | Create Recipe Card |
-| GET | `/recipes/{id}/equipmentWidget` | visualizeRecipeEquipmentByID | Equipment by ID Widget |
-| GET | `/recipes/{id}/equipmentWidget.json` | getRecipeEquipmentByID | Equipment by ID |
-| GET | `/recipes/{id}/equipmentWidget.png` | equipmentByIDImage | Equipment by ID Image |
-| GET | `/recipes/{id}/information` | getRecipeInformation | Get Recipe Information |
-| GET | `/recipes/{id}/ingredientWidget` | visualizeRecipeIngredientsByID | Ingredients by ID Widget |
-| GET | `/recipes/{id}/ingredientWidget.json` | getRecipeIngredientsByID | Ingredients by ID |
-| GET | `/recipes/{id}/ingredientWidget.png` | ingredientsByIDImage | Ingredients by ID Image |
-| GET | `/recipes/{id}/nutritionLabel` | recipeNutritionLabelWidget | Recipe Nutrition Label Widget |
-| GET | `/recipes/{id}/nutritionLabel.png` | recipeNutritionLabelImage | Recipe Nutrition Label Image |
-| GET | `/recipes/{id}/nutritionWidget` | visualizeRecipeNutritionByID | Recipe Nutrition by ID Widget |
-| GET | `/recipes/{id}/nutritionWidget.json` | getRecipeNutritionWidgetByID | Nutrition by ID |
-| GET | `/recipes/{id}/nutritionWidget.png` | recipeNutritionByIDImage | Recipe Nutrition by ID Image |
-| GET | `/recipes/{id}/priceBreakdownWidget` | visualizeRecipePriceBreakdownByID | Price Breakdown by ID Widget |
-| GET | `/recipes/{id}/priceBreakdownWidget.json` | getRecipePriceBreakdownByID | Price Breakdown by ID |
-| GET | `/recipes/{id}/priceBreakdownWidget.png` | priceBreakdownByIDImage | Price Breakdown by ID Image |
-| GET | `/recipes/{id}/similar` | getSimilarRecipes | Get Similar Recipes |
-| GET | `/recipes/{id}/summary` | summarizeRecipe | Summarize Recipe |
-| GET | `/recipes/{id}/tasteWidget` | visualizeRecipeTasteByID | Recipe Taste by ID Widget |
-| GET | `/recipes/{id}/tasteWidget.json` | getRecipeTasteByID | Taste by ID |
-| GET | `/recipes/{id}/tasteWidget.png` | recipeTasteByIDImage | Recipe Taste by ID Image |
-| POST | `/users/connect` | connectUser | Connect User |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/food/converse` | talkToChatbot | `text`*, `contextId` | object | yes | Talk to Chatbot |
+| GET | `/food/converse/suggest` | getConversationSuggests | `query`*, `number` | object | yes | Conversation Suggests |
+| GET | `/food/customFoods/search` | searchCustomFoods | `query`, `username`*, `hash`*, `offset`, `number` | object | yes | Search Custom Foods |
+| POST | `/food/detect` | detectFoodInText | `Content-Type`, body*: string | object |  | Detect Food in Text |
+| GET | `/food/images/analyze` | imageAnalysisByURL | `imageUrl`* | object | yes | Image Analysis by URL |
+| GET | `/food/images/classify` | imageClassificationByURL | `imageUrl`* | object | yes | Image Classification by URL |
+| GET | `/food/ingredients/autocomplete` | autocompleteIngredientSearch | `query`, `number`, `metaInformation`, `intolerances`, `language` | object[] | yes | Autocomplete Ingredient Search |
+| POST | `/food/ingredients/glycemicLoad` | computeGlycemicLoad | `language`, body*: object | object |  | Compute Glycemic Load |
+| POST | `/food/ingredients/map` | mapIngredientsToGroceryProducts | body*: object | object[] |  | Map Ingredients to Grocery Products |
+| GET | `/food/ingredients/search` | ingredientSearch | `query`, `addChildren`, `minProteinPercent`, `maxProteinPercent`, `minFatPercent`, `maxFatPercent`, `minCarbsPercent`, `maxCarbsPercent`, `metaInformation`, `intolerances`, `sort`, `sortDirection`, `offset`, `number`, `language` | object | yes | Ingredient Search |
+| GET | `/food/ingredients/substitutes` | getIngredientSubstitutes | `ingredientName`* | object | yes | Get Ingredient Substitutes |
+| GET | `/food/ingredients/{id}/amount` | computeIngredientAmount | `id`*, `nutrient`*, `target`*, `unit` | object | yes | Compute Ingredient Amount |
+| GET | `/food/ingredients/{id}/information` | getIngredientInformation | `id`*, `amount`, `unit` | object | yes | Get Ingredient Information |
+| GET | `/food/ingredients/{id}/substitutes` | getIngredientSubstitutesByID | `id`* | object | yes | Get Ingredient Substitutes by ID |
+| GET | `/food/jokes/random` | getARandomFoodJoke | — | object | yes | Random Food Joke |
+| GET | `/food/menuItems/search` | searchMenuItems | `query`, `minCalories`, `maxCalories`, `minCarbs`, `maxCarbs`, `minProtein`, `maxProtein`, `minFat`, `maxFat`, `addMenuItemInformation`, `offset`, `number` | object | yes | Search Menu Items |
+| GET | `/food/menuItems/suggest` | autocompleteMenuItemSearch | `query`*, `number` | object | yes | Autocomplete Menu Item Search |
+| GET | `/food/menuItems/{id}` | getMenuItemInformation | `id`* | object | yes | Get Menu Item Information |
+| GET | `/food/menuItems/{id}/nutritionLabel` | menuItemNutritionLabelWidget | `id`*, `defaultCss`, `showOptionalNutrients`, `showZeroValues`, `showIngredients` | string | yes | Menu Item Nutrition Label Widget |
+| GET | `/food/menuItems/{id}/nutritionLabel.png` | menuItemNutritionLabelImage | `id`*, `showOptionalNutrients`, `showZeroValues`, `showIngredients` | object | yes | Menu Item Nutrition Label Image |
+| GET | `/food/menuItems/{id}/nutritionWidget` | visualizeMenuItemNutritionByID | `id`*, `defaultCss`, `Accept` | string | yes | Menu Item Nutrition by ID Widget |
+| GET | `/food/menuItems/{id}/nutritionWidget.png` | menuItemNutritionByIDImage | `id`* | object | yes | Menu Item Nutrition by ID Image |
+| POST | `/food/products/classify` | classifyGroceryProduct | `locale`, body*: object | object |  | Classify Grocery Product |
+| POST | `/food/products/classifyBatch` | classifyGroceryProductBulk | `locale`, body*: object[] | object[] |  | Classify Grocery Product Bulk |
+| GET | `/food/products/search` | searchGroceryProducts | `query`, `minCalories`, `maxCalories`, `minCarbs`, `maxCarbs`, `minProtein`, `maxProtein`, `minFat`, `maxFat`, `addProductInformation`, `offset`, `number` | object | yes | Search Grocery Products |
+| GET | `/food/products/suggest` | autocompleteProductSearch | `query`*, `number` | object | yes | Autocomplete Product Search |
+| GET | `/food/products/upc/{upc}` | searchGroceryProductsByUPC | `upc`* | object | yes | Search Grocery Products by UPC |
+| GET | `/food/products/upc/{upc}/comparable` | getComparableProducts | `upc`* | object | yes | Get Comparable Products |
+| GET | `/food/products/{id}` | getProductInformation | `id`* | object | yes | Get Product Information |
+| GET | `/food/products/{id}/nutritionLabel` | productNutritionLabelWidget | `id`*, `defaultCss`, `showOptionalNutrients`, `showZeroValues`, `showIngredients` | string | yes | Product Nutrition Label Widget |
+| GET | `/food/products/{id}/nutritionLabel.png` | productNutritionLabelImage | `id`*, `showOptionalNutrients`, `showZeroValues`, `showIngredients` | object | yes | Product Nutrition Label Image |
+| GET | `/food/products/{id}/nutritionWidget` | visualizeProductNutritionByID | `id`*, `defaultCss`, `Accept` | string | yes | Product Nutrition by ID Widget |
+| GET | `/food/products/{id}/nutritionWidget.png` | productNutritionByIDImage | `id`* | object | yes | Product Nutrition by ID Image |
+| GET | `/food/restaurants/search` | searchRestaurants | `query`, `lat`, `lng`, `distance`, `budget`, `cuisine`, `min-rating`, `is-open`, `sort`, `page` | object | yes | Search Restaurants |
+| GET | `/food/search` | searchAllFood | `query`*, `offset`, `number` | object | yes | Search All Food |
+| GET | `/food/site/search` | searchSiteContent | `query`* | object | yes | Search Site Content |
+| GET | `/food/trivia/random` | getRandomFoodTrivia | — | object | yes | Random Food Trivia |
+| GET | `/food/videos/search` | searchFoodVideos | `query`, `type`, `cuisine`, `diet`, `includeIngredients`, `excludeIngredients`, `minLength`, `maxLength`, `offset`, `number` | object | yes | Search Food Videos |
+| GET | `/food/wine/description` | getWineDescription | `wine`* | object | yes | Wine Description |
+| GET | `/food/wine/dishes` | getDishPairingForWine | `wine`* | object | yes | Dish Pairing for Wine |
+| GET | `/food/wine/pairing` | getWinePairing | `food`*, `maxPrice` | object | yes | Wine Pairing |
+| GET | `/food/wine/recommendation` | getWineRecommendation | `wine`*, `maxPrice`, `minRating`, `number` | object | yes | Wine Recommendation |
+| GET | `/mealplanner/generate` | generateMealPlan | `timeFrame`, `targetCalories`, `diet`, `exclude` | object | yes | Generate Meal Plan |
+| DELETE | `/mealplanner/{username}/day/{date}` | clearMealPlanDay | `username`*, `date`*, `hash`*, body*: object | object |  | Clear Meal Plan Day |
+| POST | `/mealplanner/{username}/items` | addToMealPlan | `username`*, `hash`*, body*: object | object |  | Add to Meal Plan |
+| DELETE | `/mealplanner/{username}/items/{id}` | deleteFromMealPlan | `username`*, `id`*, `hash`*, body*: object | object |  | Delete from Meal Plan |
+| GET | `/mealplanner/{username}/shopping-list` | getShoppingList | `username`*, `hash`* | object | yes | Get Shopping List |
+| POST | `/mealplanner/{username}/shopping-list/items` | addToShoppingList | `username`*, `hash`*, body*: object | object |  | Add to Shopping List |
+| DELETE | `/mealplanner/{username}/shopping-list/items/{id}` | deleteFromShoppingList | `username`*, `id`*, `hash`*, body*: object | object |  | Delete from Shopping List |
+| POST | `/mealplanner/{username}/shopping-list/{start-date}/{end-date}` | generateShoppingList | `username`*, `start-date`*, `end-date`*, `hash`*, body*: object | object |  | Generate Shopping List |
+| GET | `/mealplanner/{username}/templates` | getMealPlanTemplates | `username`*, `hash`* | object | yes | Get Meal Plan Templates |
+| POST | `/mealplanner/{username}/templates` | addMealPlanTemplate | `username`*, `hash`*, body*: object | object |  | Add Meal Plan Template |
+| GET | `/mealplanner/{username}/templates/{id}` | getMealPlanTemplate | `username`*, `id`*, `hash`* | object | yes | Get Meal Plan Template |
+| DELETE | `/mealplanner/{username}/templates/{id}` | deleteMealPlanTemplate | `username`*, `id`*, `hash`*, body*: object | object |  | Delete Meal Plan Template |
+| GET | `/mealplanner/{username}/week/{start-date}` | getMealPlanWeek | `username`*, `start-date`*, `hash`* | object | yes | Get Meal Plan Week |
+| POST | `/recipes/analyze` | analyzeRecipe | `language`, `includeNutrition`, `includeTaste`, body*: object | object |  | Analyze Recipe |
+| POST | `/recipes/analyzeInstructions` | analyzeRecipeInstructions | `Content-Type`, body*: string | object |  | Analyze Recipe Instructions |
+| GET | `/recipes/autocomplete` | autocompleteRecipeSearch | `query`, `number` | object[] | yes | Autocomplete Recipe Search |
+| GET | `/recipes/complexSearch` | searchRecipes | `query`, `cuisine`, `excludeCuisine`, `diet`, `intolerances`, `equipment`, `includeIngredients`, `excludeIngredients`, `type`, `instructionsRequired`, `fillIngredients`, `addRecipeInformation`, `addRecipeNutrition`, `author`, `tags`, `recipeBoxId`, `titleMatch`, `maxReadyTime`, `ignorePantry`, `sort`, `sortDirection`, `minCarbs`, `maxCarbs`, `minProtein`, `maxProtein`, `minCalories`, `maxCalories`, `minFat`, `maxFat`, `minAlcohol`, `maxAlcohol`, `minCaffeine`, `maxCaffeine`, `minCopper`, `maxCopper`, `minCalcium`, `maxCalcium`, `minCholine`, `maxCholine`, `minCholesterol`, `maxCholesterol`, `minFluoride`, `maxFluoride`, `minSaturatedFat`, `maxSaturatedFat`, `minVitaminA`, `maxVitaminA`, `minVitaminC`, `maxVitaminC`, `minVitaminD`, `maxVitaminD`, `minVitaminE`, `maxVitaminE`, `minVitaminK`, `maxVitaminK`, `minVitaminB1`, `maxVitaminB1`, `minVitaminB2`, `maxVitaminB2`, `minVitaminB5`, `maxVitaminB5`, `minVitaminB3`, `maxVitaminB3`, `minVitaminB6`, `maxVitaminB6`, `minVitaminB12`, `maxVitaminB12`, `minFiber`, `maxFiber`, `minFolate`, `maxFolate`, `minFolicAcid`, `maxFolicAcid`, `minIodine`, `maxIodine`, `minIron`, `maxIron`, `minMagnesium`, `maxMagnesium`, `minManganese`, `maxManganese`, `minPhosphorus`, `maxPhosphorus`, `minPotassium`, `maxPotassium`, `minSelenium`, `maxSelenium`, `minSodium`, `maxSodium`, `minSugar`, `maxSugar`, `minZinc`, `maxZinc`, `offset`, `number`, `limitLicense` | object | yes | Search Recipes |
+| GET | `/recipes/convert` | convertAmounts | `ingredientName`*, `sourceAmount`*, `sourceUnit`*, `targetUnit`* | object | yes | Convert Amounts |
+| POST | `/recipes/cuisine` | classifyCuisine | `Content-Type`, body*: string | object |  | Classify Cuisine |
+| GET | `/recipes/extract` | extractRecipeFromWebsite | `url`*, `forceExtraction`, `analyze`, `includeNutrition`, `includeTaste` | object | yes | Extract Recipe from Website |
+| GET | `/recipes/findByIngredients` | searchRecipesByIngredients | `ingredients`, `number`, `limitLicense`, `ranking`, `ignorePantry` | object[] | yes | Search Recipes by Ingredients |
+| GET | `/recipes/findByNutrients` | searchRecipesByNutrients | `minCarbs`, `maxCarbs`, `minProtein`, `maxProtein`, `minCalories`, `maxCalories`, `minFat`, `maxFat`, `minAlcohol`, `maxAlcohol`, `minCaffeine`, `maxCaffeine`, `minCopper`, `maxCopper`, `minCalcium`, `maxCalcium`, `minCholine`, `maxCholine`, `minCholesterol`, `maxCholesterol`, `minFluoride`, `maxFluoride`, `minSaturatedFat`, `maxSaturatedFat`, `minVitaminA`, `maxVitaminA`, `minVitaminC`, `maxVitaminC`, `minVitaminD`, `maxVitaminD`, `minVitaminE`, `maxVitaminE`, `minVitaminK`, `maxVitaminK`, `minVitaminB1`, `maxVitaminB1`, `minVitaminB2`, `maxVitaminB2`, `minVitaminB5`, `maxVitaminB5`, `minVitaminB3`, `maxVitaminB3`, `minVitaminB6`, `maxVitaminB6`, `minVitaminB12`, `maxVitaminB12`, `minFiber`, `maxFiber`, `minFolate`, `maxFolate`, `minFolicAcid`, `maxFolicAcid`, `minIodine`, `maxIodine`, `minIron`, `maxIron`, `minMagnesium`, `maxMagnesium`, `minManganese`, `maxManganese`, `minPhosphorus`, `maxPhosphorus`, `minPotassium`, `maxPotassium`, `minSelenium`, `maxSelenium`, `minSodium`, `maxSodium`, `minSugar`, `maxSugar`, `minZinc`, `maxZinc`, `offset`, `number`, `random`, `limitLicense` | object[] | yes | Search Recipes by Nutrients |
+| GET | `/recipes/guessNutrition` | guessNutritionByDishName | `title`* | object | yes | Guess Nutrition by Dish Name |
+| GET | `/recipes/informationBulk` | getRecipeInformationBulk | `ids`*, `includeNutrition` | object[] | yes | Get Recipe Information Bulk |
+| POST | `/recipes/parseIngredients` | parseIngredients | `Content-Type`, `language`, body*: string | object[] |  | Parse Ingredients |
+| GET | `/recipes/queries/analyze` | analyzeARecipeSearchQuery | `q`* | object | yes | Analyze a Recipe Search Query |
+| GET | `/recipes/quickAnswer` | quickAnswer | `q`* | object | yes | Quick Answer |
+| GET | `/recipes/random` | getRandomRecipes | `limitLicense`, `tags`, `number` | object | yes | Get Random Recipes |
+| POST | `/recipes/visualizeEquipment` | visualizeEquipment | `Content-Type`, `Accept`, body*: string | string |  | Equipment Widget |
+| POST | `/recipes/visualizeIngredients` | visualizeIngredients | `Content-Type`, `language`, `Accept`, body*: string | string |  | Ingredients Widget |
+| POST | `/recipes/visualizeNutrition` | visualizeRecipeNutrition | `Content-Type`, `Accept`, `language`, body*: string | string |  | Recipe Nutrition Widget |
+| POST | `/recipes/visualizePriceEstimator` | visualizePriceBreakdown | `Content-Type`, `Accept`, `language`, body*: string | string |  | Price Breakdown Widget |
+| POST | `/recipes/visualizeRecipe` | createRecipeCard | `Content-Type`, body*: string | object |  | Create Recipe Card |
+| POST | `/recipes/visualizeTaste` | visualizeRecipeTaste | `language`, `Content-Type`, `Accept`, `normalize`, `rgb`, body*: string | string |  | Recipe Taste Widget |
+| GET | `/recipes/{id}/analyzedInstructions` | getAnalyzedRecipeInstructions | `id`*, `stepBreakdown` | object | yes | Get Analyzed Recipe Instructions |
+| GET | `/recipes/{id}/card` | createRecipeCardGet | `id`*, `mask`, `backgroundImage`, `backgroundColor`, `fontColor` | object | yes | Create Recipe Card |
+| GET | `/recipes/{id}/equipmentWidget` | visualizeRecipeEquipmentByID | `id`*, `defaultCss` | string | yes | Equipment by ID Widget |
+| GET | `/recipes/{id}/equipmentWidget.json` | getRecipeEquipmentByID | `id`* | object | yes | Equipment by ID |
+| GET | `/recipes/{id}/equipmentWidget.png` | equipmentByIDImage | `id`* | object | yes | Equipment by ID Image |
+| GET | `/recipes/{id}/information` | getRecipeInformation | `id`*, `includeNutrition` | object | yes | Get Recipe Information |
+| GET | `/recipes/{id}/ingredientWidget` | visualizeRecipeIngredientsByID | `id`*, `defaultCss`, `measure` | string | yes | Ingredients by ID Widget |
+| GET | `/recipes/{id}/ingredientWidget.json` | getRecipeIngredientsByID | `id`* | object | yes | Ingredients by ID |
+| GET | `/recipes/{id}/ingredientWidget.png` | ingredientsByIDImage | `id`*, `measure` | object | yes | Ingredients by ID Image |
+| GET | `/recipes/{id}/nutritionLabel` | recipeNutritionLabelWidget | `id`*, `defaultCss`, `showOptionalNutrients`, `showZeroValues`, `showIngredients` | string | yes | Recipe Nutrition Label Widget |
+| GET | `/recipes/{id}/nutritionLabel.png` | recipeNutritionLabelImage | `id`*, `showOptionalNutrients`, `showZeroValues`, `showIngredients` | object | yes | Recipe Nutrition Label Image |
+| GET | `/recipes/{id}/nutritionWidget` | visualizeRecipeNutritionByID | `id`*, `defaultCss`, `Accept` | string | yes | Recipe Nutrition by ID Widget |
+| GET | `/recipes/{id}/nutritionWidget.json` | getRecipeNutritionWidgetByID | `id`* | object | yes | Nutrition by ID |
+| GET | `/recipes/{id}/nutritionWidget.png` | recipeNutritionByIDImage | `id`* | object | yes | Recipe Nutrition by ID Image |
+| GET | `/recipes/{id}/priceBreakdownWidget` | visualizeRecipePriceBreakdownByID | `id`*, `defaultCss` | string | yes | Price Breakdown by ID Widget |
+| GET | `/recipes/{id}/priceBreakdownWidget.json` | getRecipePriceBreakdownByID | `id`* | object | yes | Price Breakdown by ID |
+| GET | `/recipes/{id}/priceBreakdownWidget.png` | priceBreakdownByIDImage | `id`* | object | yes | Price Breakdown by ID Image |
+| GET | `/recipes/{id}/similar` | getSimilarRecipes | `id`*, `number`, `limitLicense` | object[] | yes | Get Similar Recipes |
+| GET | `/recipes/{id}/summary` | summarizeRecipe | `id`* | object | yes | Summarize Recipe |
+| GET | `/recipes/{id}/tasteWidget` | visualizeRecipeTasteByID | `id`*, `normalize`, `rgb` | string | yes | Recipe Taste by ID Widget |
+| GET | `/recipes/{id}/tasteWidget.json` | getRecipeTasteByID | `id`*, `normalize` | object | yes | Taste by ID |
+| GET | `/recipes/{id}/tasteWidget.png` | recipeTasteByIDImage | `id`*, `normalize`, `rgb` | object | yes | Recipe Taste by ID Image |
+| POST | `/users/connect` | connectUser | body*: object | object |  | Connect User |

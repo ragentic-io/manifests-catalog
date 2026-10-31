@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `de6fc94fe097b2a52bd5bb1269b1eae8d0833a791a866db58719390018c58f6c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,140 +34,142 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 106 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/about/release_notes` | get_release_notes | — |
-| GET | `/about/version` | get_version | — |
-| POST | `/auth` | post_auth | Login and retrieve a JWT Token |
-| GET | `/auth/api-key` | get_api_keys_resource | Get all API-Key |
-| POST | `/auth/api-key` | post_api_keys_resource | Create a new API Key |
-| GET | `/auth/api-key/inbox/{inbox_id}` | get_api_keys_inbox_resource | Get all API-Keys for this inbox |
-| POST | `/auth/api-key/inbox/{inbox_id}` | post_api_keys_inbox_resource | Create a new API Key on inbox level |
-| DELETE | `/auth/api-key/{key}` | delete_api_key_resource | Delete an API Key |
-| GET | `/auth/api-key/{key}` | get_api_key_resource | Get details of an API-Key |
-| PATCH | `/auth/api-key/{key}` | patch_api_key_resource | Edit an API-Key |
-| POST | `/auth/ephemeral` | post_ephemeral_token_resource | Create a new ephemeral token |
-| POST | `/auth/get_JWT` | post_get_jwt_resource | Create a new JWT Token |
-| POST | `/auth/reset_password` | post_reset_password | Reset the user password |
-| POST | `/auth/token` | post_token_resource | Create a new token |
-| GET | `/connections` | get_connections_resource | Get all Connections |
-| POST | `/connections` | post_connections_resource | Create connection |
-| DELETE | `/connections/{connection_id}` | delete_connection_resource | Delete a connection |
-| GET | `/connections/{connection_id}` | get_connection_resource | Get connection |
-| PATCH | `/connections/{connection_id}` | patch_connection_resource | Update connection |
-| GET | `/data_retention_settings` | get_data_retention_resource | Get all data retention settings |
-| DELETE | `/data_retention_settings/{level}/{id}` | delete_data_retention_resource | Delete scoped sampling settings |
-| GET | `/data_retention_settings/{level}/{id}` | get /data_retention_settings/{level}/{id} | Get scoped data retention settings |
-| PATCH | `/data_retention_settings/{level}/{id}` | patch_data_retention_resource | Update scoped data retention settings |
-| POST | `/documents/` | post_simple_documents_resource | Upload a new document |
-| POST | `/documents/custom_output` | post_document_custom_output_resource | Generate custom output for documents |
-| POST | `/documents/enrich` | post_enrichment_resource | — |
-| POST | `/documents/file_query/{data_type}` | post_document_data_resource | — |
-| POST | `/documents/query/{query_type}` | post_document_query | — |
-| DELETE | `/documents/{document_id}` | delete_document_delete_resource | Delete the document |
-| GET | `/documents/{document_id}` | get_document_delete_resource | Get the document |
-| POST | `/documents/{document_id}/compare_versions` | post_document_compare_versions_resource | — |
-| GET | `/documents/{document_id}/custom_output` | get_document_transform_resource | Get custom output formatted document |
-| POST | `/documents/{document_id}/feedback` | post_document_submit_eval_resource | Submit a feedback |
-| GET | `/documents/{document_id}/last_version` | get_document_last_version_resource | Get latest version |
-| GET | `/documents/{document_id}/original_file` | get_document_original_file_resource | Get document original file |
-| GET | `/documents/{document_id}/page/{page_range}` | get_document_page_image_resource | — |
-| GET | `/documents/{document_id}/page_thumbnail/{page_range}` | get_document_page_image_thumbnail_resource | — |
-| POST | `/documents/{document_id}/process_table_annotation` | post_document_process_table_annotation | Process a table-level annotation |
-| POST | `/documents/{document_id}/reprocess` | post_reprocess_document_resource | Schedule document reprocessing |
-| GET | `/documents/{document_id}/reverse/{page_range}` | get_document_reverse_resource | — |
-| POST | `/documents/{document_id}/status_data` | post_document_status_data_resource | Update document status |
-| GET | `/documents/{document_id}/text` | get_document_text_resource | Get the document text |
-| GET | `/documents/{document_id}/workflow` | get_document_workflow_resource | Get the document Workflow |
-| POST | `/documents/{inbox_id}` | post_documents_resource | Upload a new doc to the inbox |
-| PATCH | `/documents/{inbox_id}/copy_inbox` | patch_document_copy_resource | Copy documents to another inbox |
-| PATCH | `/documents/{inbox_id}/move_inbox` | patch_document_move_resource | Move documents to another inbox |
-| GET | `/formats` | get_formats_resource | Get lists of format |
-| POST | `/formats` | post_formats_resource | Create format |
-| GET | `/formats/document_types` | get_formats_doc_types_resource | Get supported document_types |
-| DELETE | `/formats/{format_id}` | delete_format_resource | Delete the format |
-| GET | `/formats/{format_id}` | get_format_resource | Get format attributes |
-| PATCH | `/formats/{format_id}` | patch_format_resource | Update the format |
-| GET | `/formats/{scope}/tag_fields` | get_format_tag_fields_resource | Get tags values |
-| GET | `/inboxes` | get_inboxes_resource | Get list of inboxes |
-| POST | `/inboxes` | post_inboxes_resource | Create an inbox |
-| DELETE | `/inboxes/{inbox_id}` | delete_inbox_resource | Delete an inbox |
-| GET | `/inboxes/{inbox_id}` | get_inbox_resource | Get Inbox attributes |
-| PATCH | `/inboxes/{inbox_id}` | patch_inbox_resource | Update inbox |
-| GET | `/inboxes/{inbox_id}/document_versions` | get_inbox_document_versions_resource | — |
-| DELETE | `/inboxes/{inbox_id}/documents` | delete_inbox_document_resource | Delete documents |
-| GET | `/inboxes/{inbox_id}/documents` | get_inbox_document_resource | Get documents in the inbox |
-| GET | `/inboxes/{inbox_id}/paginated` | get_inbox_paginated_resource | Get paginated list of documents in the inbox |
-| POST | `/inboxes/{inbox_id}/reprocess` | post_inbox_reprocess_resource | Schedule inbox reprocessing |
-| GET | `/integrations/` | get_integration_resources | Get all integrations |
-| POST | `/integrations/` | post_integration_resources | Create integration |
-| DELETE | `/integrations/{integration_id}` | delete_integration_resource | Delete an integration |
-| GET | `/integrations/{integration_id}` | get_integration_resource | Get integration attributes |
-| PATCH | `/integrations/{integration_id}` | patch_integration_resource | Update integration |
-| GET | `/integrations/{integration_id}/activate` | get_email_integration_activation_resource | — |
-| GET | `/predictor_settings` | get_predictor_settings_resource | Get all predictor settings |
-| DELETE | `/predictor_settings/{scope}` | delete_predictor_setting_resource | Delete scoped predictor settings |
-| GET | `/predictor_settings/{scope}` | get_predictor_setting_resource | Get scoped predictor settings |
-| PATCH | `/predictor_settings/{scope}` | patch_predictor_setting_resource | Update scoped predictor settings |
-| GET | `/projects` | get_projects_resource | Get the list of projects |
-| POST | `/projects` | post_projects_resource | Create a project |
-| DELETE | `/projects/{project_id}` | delete_project_resource | Delete project |
-| GET | `/projects/{project_id}` | get_project_resource | Get project attributes |
-| PATCH | `/projects/{project_id}` | patch_project_resource | Update project |
-| GET | `/reports` | get_reports_resource | Get all reports |
-| POST | `/reports` | post_reports_resource | Create report |
-| POST | `/reports/generate` | post_generate_report_resource | Generate report based on input |
-| DELETE | `/reports/{report_id}` | delete_report_resource | Delete a report |
-| GET | `/reports/{report_id}` | get_report_resource | Get report |
-| PATCH | `/reports/{report_id}` | patch_report_resource | Update report |
-| POST | `/reports/{report_id}/generate` | post_generate_report_id_resource | Generate report based on report id |
-| GET | `/roles` | get_roles_resource | Get all roles |
-| POST | `/roles` | post_roles_resource | Create role |
-| DELETE | `/roles/{role_id}` | delete_role_resource | Delete a role |
-| GET | `/roles/{role_id}` | get_role_resource | Get role |
-| PATCH | `/roles/{role_id}` | patch_role_resource | Update role |
-| GET | `/rule_config` | get_rule_configs_resource | Get all rule configs |
-| POST | `/rule_config/rule_entity/` | post_debug_rule_entity_resource | Get the regexes that are generated by the rule |
-| POST | `/rule_config/rule_entity/{document_id}` | post_debug_rule_entity_document_resource | Evaluate a rule on a document |
-| POST | `/rule_config/where_to_search/{document_id}` | post_debug_where_to_search | Get the text a where_to_search specification will generate |
-| DELETE | `/rule_config/{scope}` | delete_rule_config_resource | Delete scoped rule config |
-| GET | `/rule_config/{scope}` | get_rule_config_resource | Get scoped rule config |
-| PATCH | `/rule_config/{scope}` | patch_rule_config_resource | Update scoped rule config |
-| GET | `/sampling_settings` | get_setting_samplings_resource | Get all sampling settings |
-| DELETE | `/sampling_settings/{scope}` | delete_setting_sampling_resource | Delete scoped sampling settings |
-| GET | `/sampling_settings/{scope}` | get_setting_sampling_resource | Get scoped sampling settings |
-| PATCH | `/sampling_settings/{scope}` | patch_setting_sampling_resource | Update scoped sampling settings |
-| GET | `/settings/dashboard` | get_dashboard_settings_atomic_resource | Get scoped dashboard setting |
-| PATCH | `/settings/dashboard` | patch_dashboard_settings_atomic_resource | Update scoped dashboard setting |
-| GET | `/settings/review` | get_review_settings_atomic_resource | Get scoped review setting |
-| PATCH | `/settings/review` | patch_review_settings_atomic_resource | Update scoped review setting |
-| GET | `/sso/config` | get_sso_config_resources | — |
-| POST | `/sso/config` | post_sso_config_resources | — |
-| DELETE | `/sso/config/{sso_config_id}` | delete_sso_config_resources | Get integration attributes |
-| POST | `/sso/login` | post_oauth_login_resource | — |
-| GET | `/stats/usage` | get_usage_stats_resource | — |
-| GET | `/stats/{inbox_id}` | get_stats_resource | Get inbox statistics |
-| GET | `/stats/{inbox_id}/automation_blockers` | get_automation_blockers_stats | Get summary or details of automation blockers |
-| POST | `/stats/{inbox_id}/blue_dots` | post_blue_dots_resource | Get the Blue Dots statistics for the inbox |
-| GET | `/stats/{inbox_id}/evaluated_versions` | get_evaluated_versions | Get the documents with evaluated versions |
-| GET | `/stats/{inbox_id}/processing` | get_processing_stats | Get processing runtime stats |
-| GET | `/stats/{inbox_id}/volume` | get_volume_stats | **Permission required:** view_statistics |
-| GET | `/stats/{scope}/accuracy` | get_accuracy_resource | Get the Accuracy counts on documents, sections and fields in the given inbox |
-| GET | `/stats/{scope}/stp` | get_stp_resource | Get the STP counts on documents, sections and fields in the given inbox |
-| GET | `/style/custom.css` | get_style_sheet_resource | Get the custom CSS file |
-| POST | `/style/custom.css` | post_style_sheet_resource | Upload the custom logo |
-| GET | `/style/logo.png` | get_style_logo_resource | Get the custom logo |
-| POST | `/style/logo.png` | post_style_logo_resource | Upload the custom logo |
-| DELETE | `/tenant` | delete_tenant_resource | — |
-| PATCH | `/tenant/activate` | patch_activate_tenant_resource | — |
-| GET | `/threshold_settings` | get_settings_threshold_resource | Get all thresholds settings |
-| DELETE | `/threshold_settings/{scope}` | delete_setting_threshold_resource | Delete the thresholds settings |
-| GET | `/threshold_settings/{scope}` | get_setting_threshold_resource | Get the scoped thresholds settings |
-| PATCH | `/threshold_settings/{scope}` | patch_setting_threshold_resource | Update the scoped thresholds settings |
-| GET | `/users` | get_users_resource | Get all users |
-| POST | `/users` | post_users_resource | Create user |
-| GET | `/users/me` | get_me | Return info on the current user |
-| POST | `/users/me/change_password` | post_change_password | Change the current user password |
-| DELETE | `/users/{user_id}` | delete_user_resource | Delete a user |
-| GET | `/users/{user_id}` | get_user_resource | Get user |
-| PATCH | `/users/{user_id}` | patch_user_resource | Update user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/about/release_notes` | get_release_notes | — | — | yes | — |
+| GET | `/about/version` | get_version | — | — | yes | — |
+| POST | `/auth` | post_auth | `X-Fields`, body*: AuthModel | TokenReplyModel |  | Login and retrieve a JWT Token |
+| GET | `/auth/api-key` | get_api_keys_resource | `X-Fields` | APIKeyModel[] | yes | Get all API-Key |
+| POST | `/auth/api-key` | post_api_keys_resource | `X-Fields`, body*: APIKeyRequest | APIKeyModel |  | Create a new API Key |
+| GET | `/auth/api-key/inbox/{inbox_id}` | get_api_keys_inbox_resource | `inbox_id`*, `X-Fields` | APIKeyModel[] | yes | Get all API-Keys for this inbox |
+| POST | `/auth/api-key/inbox/{inbox_id}` | post_api_keys_inbox_resource | `inbox_id`*, `X-Fields`, body*: APIKeyRequest | APIKeyModel |  | Create a new API Key on inbox level |
+| GET | `/auth/api-key/{key}` | get_api_key_resource | `key`*, `X-Fields` | APIKeyModel | yes | Get details of an API-Key |
+| DELETE | `/auth/api-key/{key}` | delete_api_key_resource | `key`* | — |  | Delete an API Key |
+| PATCH | `/auth/api-key/{key}` | patch_api_key_resource | `key`*, `X-Fields` | APIKeyModel |  | Edit an API-Key |
+| POST | `/auth/ephemeral` | post_ephemeral_token_resource | `X-Fields` | TokenReplyModel |  | Create a new ephemeral token |
+| POST | `/auth/get_JWT` | post_get_jwt_resource | `X-Fields`, body*: TokenModelBase | TokenReplyModel |  | Create a new JWT Token |
+| POST | `/auth/reset_password` | post_reset_password | body*: ResetPasswordModelPost | — |  | Reset the user password |
+| POST | `/auth/token` | post_token_resource | `X-Fields`, body*: TokenModelBase | TokenReplyModel |  | Create a new token |
+| GET | `/connections` | get_connections_resource | `X-Fields` | ConnectionModelGet[] | yes | Get all Connections |
+| POST | `/connections` | post_connections_resource | `X-Fields`, body*: ConnectionModelPost | ConnectionModelGet |  | Create connection |
+| GET | `/connections/{connection_id}` | get_connection_resource | `connection_id`*, `X-Fields` | ConnectionModelGet | yes | Get connection |
+| DELETE | `/connections/{connection_id}` | delete_connection_resource | `connection_id`* | — |  | Delete a connection |
+| PATCH | `/connections/{connection_id}` | patch_connection_resource | `connection_id`*, `X-Fields`, body*: ConnectionModelPost | ConnectionModelGet |  | Update connection |
+| GET | `/data_retention_settings` | get_data_retention_resource | `X-Fields` | DataRetentionModel[] | yes | Get all data retention settings |
+| GET | `/data_retention_settings/{level}/{id}` | get /data_retention_settings/{level}/{id} | `level`*, `id`*, `X-Fields` | DataRetentionModel | yes | Get scoped data retention settings |
+| DELETE | `/data_retention_settings/{level}/{id}` | delete_data_retention_resource | `level`*, `id`* | — |  | Delete scoped sampling settings |
+| PATCH | `/data_retention_settings/{level}/{id}` | patch_data_retention_resource | `level`*, `id`*, `X-Fields`, body*: DataRetentionModelPatch | DataRetentionModel |  | Update scoped data retention settings |
+| POST | `/documents/` | post_simple_documents_resource | body*: object | — |  | Upload a new document |
+| POST | `/documents/custom_output` | post_document_custom_output_resource | body*: CustomOutputPost | — |  | Generate custom output for documents |
+| POST | `/documents/enrich` | post_enrichment_resource | body*: EnrichmentModelPost | — |  | — |
+| POST | `/documents/file_query/{data_type}` | post_document_data_resource | `data_type`*, body*: DocumentIds | — |  | — |
+| POST | `/documents/query/{query_type}` | post_document_query | `query_type`*, body*: AggregationPipelinePost | — |  | — |
+| GET | `/documents/{document_id}` | get_document_delete_resource | `document_id`* | — | yes | Get the document |
+| DELETE | `/documents/{document_id}` | delete_document_delete_resource | `document_id`*, `how` | — |  | Delete the document |
+| POST | `/documents/{document_id}/compare_versions` | post_document_compare_versions_resource | `document_id`*, body*: VersionCompare | — |  | — |
+| GET | `/documents/{document_id}/custom_output` | get_document_transform_resource | `document_id`* | — | yes | Get custom output formatted document |
+| POST | `/documents/{document_id}/feedback` | post_document_submit_eval_resource | `document_id`*, body*: VersionPost | — |  | Submit a feedback |
+| GET | `/documents/{document_id}/last_version` | get_document_last_version_resource | `document_id`*, `name`, `source`, `is_evaluated` | — | yes | Get latest version |
+| GET | `/documents/{document_id}/original_file` | get_document_original_file_resource | `document_id`* | — | yes | Get document original file |
+| GET | `/documents/{document_id}/page/{page_range}` | get_document_page_image_resource | `page_range`*, `document_id`* | — | yes | — |
+| GET | `/documents/{document_id}/page_thumbnail/{page_range}` | get_document_page_image_thumbnail_resource | `document_id`*, `page_range`* | — | yes | — |
+| POST | `/documents/{document_id}/process_table_annotation` | post_document_process_table_annotation | `document_id`*, body*: TableAnnotationPost | — |  | Process a table-level annotation |
+| POST | `/documents/{document_id}/reprocess` | post_reprocess_document_resource | `document_id`*, `name`, `reviewer`, `X-Fields` | DocumentModelGet |  | Schedule document reprocessing |
+| GET | `/documents/{document_id}/reverse/{page_range}` | get_document_reverse_resource | `page_range`*, `document_id`* | — | yes | — |
+| POST | `/documents/{document_id}/status_data` | post_document_status_data_resource | `document_id`*, `X-Fields`, body*: StatusDataPost | DocumentModelGet |  | Update document status |
+| GET | `/documents/{document_id}/text` | get_document_text_resource | `document_id`* | — | yes | Get the document text |
+| GET | `/documents/{document_id}/workflow` | get_document_workflow_resource | `document_id`*, `X-Fields` | WorkflowModel | yes | Get the document Workflow |
+| POST | `/documents/{inbox_id}` | post_documents_resource | `inbox_id`*, body*: object | — |  | Upload a new doc to the inbox |
+| PATCH | `/documents/{inbox_id}/copy_inbox` | patch_document_copy_resource | `inbox_id`*, body*: DocumentIds | — |  | Copy documents to another inbox |
+| PATCH | `/documents/{inbox_id}/move_inbox` | patch_document_move_resource | `inbox_id`*, body*: DocumentIds | — |  | Move documents to another inbox |
+| GET | `/formats` | get_formats_resource | — | — | yes | Get lists of format |
+| POST | `/formats` | post_formats_resource | body*: FormatModelPost | — |  | Create format |
+| GET | `/formats/document_types` | get_formats_doc_types_resource | `X-Fields` | DocumentTypeModelGet | yes | Get supported document_types |
+| GET | `/formats/{format_id}` | get_format_resource | `format_id`* | — | yes | Get format attributes |
+| DELETE | `/formats/{format_id}` | delete_format_resource | `format_id`* | — |  | Delete the format |
+| PATCH | `/formats/{format_id}` | patch_format_resource | `format_id`*, `X-Fields`, body*: FormatModelPatch | FormatModelGet |  | Update the format |
+| GET | `/formats/{scope}/tag_fields` | get_format_tag_fields_resource | `scope`*, `X-Fields` | TagFieldModelGet | yes | Get tags values |
+| GET | `/inboxes` | get_inboxes_resource | `X-Fields` | InboxModelGet[] | yes | Get list of inboxes |
+| POST | `/inboxes` | post_inboxes_resource | `X-Fields`, body*: InboxModelPost | InboxModelGet |  | Create an inbox |
+| GET | `/inboxes/{inbox_id}` | get_inbox_resource | `inbox_id`*, `X-Fields` | InboxModelGet | yes | Get Inbox attributes |
+| DELETE | `/inboxes/{inbox_id}` | delete_inbox_resource | `inbox_id`* | — |  | Delete an inbox |
+| PATCH | `/inboxes/{inbox_id}` | patch_inbox_resource | `inbox_id`*, `X-Fields`, body*: InboxModelPatch | InboxModelGet |  | Update inbox |
+| GET | `/inboxes/{inbox_id}/document_versions` | get_inbox_document_versions_resource | `inbox_id`* | — | yes | — |
+| GET | `/inboxes/{inbox_id}/documents` | get_inbox_document_resource | `inbox_id`*, `X-Fields` | DocumentModelGet[] | yes | Get documents in the inbox |
+| DELETE | `/inboxes/{inbox_id}/documents` | delete_inbox_document_resource | `inbox_id`*, `how`, `what`, `start_date`, `end_date` | — |  | Delete documents |
+| GET | `/inboxes/{inbox_id}/paginated` | get_inbox_paginated_resource | `inbox_id`*, `page`, `per_page`, `start_receive_date`, `end_receive_date`, `order_by`, `X-Fields` | DocumentModelPaginated[] | yes | Get paginated list of documents in the inbox |
+| POST | `/inboxes/{inbox_id}/reprocess` | post_inbox_reprocess_resource | `inbox_id`*, `name`, `reviewer`, body: object | — |  | Schedule inbox reprocessing |
+| GET | `/integrations/` | get_integration_resources | — | — | yes | Get all integrations |
+| POST | `/integrations/` | post_integration_resources | body*: IntegrationModelGet | — |  | Create integration |
+| GET | `/integrations/{integration_id}` | get_integration_resource | `integration_id`* | — | yes | Get integration attributes |
+| DELETE | `/integrations/{integration_id}` | delete_integration_resource | `integration_id`* | — |  | Delete an integration |
+| PATCH | `/integrations/{integration_id}` | patch_integration_resource | `integration_id`*, body*: IntegrationModelGet | — |  | Update integration |
+| GET | `/integrations/{integration_id}/activate` | get_email_integration_activation_resource | `integration_id`*, `secret`* | — | yes | — |
+| GET | `/predictor_settings` | get_predictor_settings_resource | `X-Fields` | PredictorModelGet[] | yes | Get all predictor settings |
+| GET | `/predictor_settings/{scope}` | get_predictor_setting_resource | `scope`*, `X-Fields` | PredictorModelGet | yes | Get scoped predictor settings |
+| DELETE | `/predictor_settings/{scope}` | delete_predictor_setting_resource | `scope`* | — |  | Delete scoped predictor settings |
+| PATCH | `/predictor_settings/{scope}` | patch_predictor_setting_resource | `scope`*, `X-Fields`, body*: PredictorSettingModel | PredictorModelGet |  | Update scoped predictor settings |
+| GET | `/projects` | get_projects_resource | — | — | yes | Get the list of projects |
+| POST | `/projects` | post_projects_resource | body*: ProjectModelPost | — |  | Create a project |
+| GET | `/projects/{project_id}` | get_project_resource | `project_id`* | — | yes | Get project attributes |
+| DELETE | `/projects/{project_id}` | delete_project_resource | `project_id`* | — |  | Delete project |
+| PATCH | `/projects/{project_id}` | patch_project_resource | `project_id`*, body*: ProjectModelPatch | — |  | Update project |
+| GET | `/reports` | get_reports_resource | `X-Fields` | ReportModelGet[] | yes | Get all reports |
+| POST | `/reports` | post_reports_resource | `X-Fields`, body*: ReportModelPost | ReportModelGet |  | Create report |
+| POST | `/reports/generate` | post_generate_report_resource | body*: ReportModelFullGenerate | — |  | Generate report based on input |
+| GET | `/reports/{report_id}` | get_report_resource | `report_id`*, `X-Fields` | ReportModelGet | yes | Get report |
+| DELETE | `/reports/{report_id}` | delete_report_resource | `report_id`* | — |  | Delete a report |
+| PATCH | `/reports/{report_id}` | patch_report_resource | `report_id`*, `X-Fields`, body*: ReportModelPost | ReportModelPost |  | Update report |
+| POST | `/reports/{report_id}/generate` | post_generate_report_id_resource | `report_id`*, `delivery_method`*, `email`, `start_date`, `end_date` | — |  | Generate report based on report id |
+| GET | `/roles` | get_roles_resource | `X-Fields` | RoleModelGet[] | yes | Get all roles |
+| POST | `/roles` | post_roles_resource | `X-Fields`, body*: RoleModelPost | RoleModelGet |  | Create role |
+| GET | `/roles/{role_id}` | get_role_resource | `role_id`*, `X-Fields` | RoleModelGet | yes | Get role |
+| DELETE | `/roles/{role_id}` | delete_role_resource | `role_id`* | — |  | Delete a role |
+| PATCH | `/roles/{role_id}` | patch_role_resource | `role_id`*, `X-Fields`, body*: RoleModelPatch | RoleModelGet |  | Update role |
+| GET | `/rule_config` | get_rule_configs_resource | `X-Fields` | RuleConfigModelGet[] | yes | Get all rule configs |
+| POST | `/rule_config/rule_entity/` | post_debug_rule_entity_resource | body*: dictionary | — |  | Get the regexes that are generated by the rule |
+| POST | `/rule_config/rule_entity/{document_id}` | post_debug_rule_entity_document_resource | `document_id`*, body*: dictionary | — |  | Evaluate a rule on a document |
+| POST | `/rule_config/where_to_search/{document_id}` | post_debug_where_to_search | `document_id`*, body*: dictionary | — |  | Get the text a where_to_search specification will generate |
+| GET | `/rule_config/{scope}` | get_rule_config_resource | `scope`*, `X-Fields` | RuleConfigModelGet | yes | Get scoped rule config |
+| DELETE | `/rule_config/{scope}` | delete_rule_config_resource | `scope`* | — |  | Delete scoped rule config |
+| PATCH | `/rule_config/{scope}` | patch_rule_config_resource | `scope`*, `X-Fields`, body*: RuleConfigModel | RuleConfigModelGet |  | Update scoped rule config |
+| GET | `/sampling_settings` | get_setting_samplings_resource | `X-Fields` | SamplingModelGet[] | yes | Get all sampling settings |
+| GET | `/sampling_settings/{scope}` | get_setting_sampling_resource | `scope`*, `X-Fields` | SamplingModelGet | yes | Get scoped sampling settings |
+| DELETE | `/sampling_settings/{scope}` | delete_setting_sampling_resource | `scope`* | — |  | Delete scoped sampling settings |
+| PATCH | `/sampling_settings/{scope}` | patch_setting_sampling_resource | `scope`*, `X-Fields`, body*: SamplingModelPatch | SamplingModelGet |  | Update scoped sampling settings |
+| GET | `/settings/dashboard` | get_dashboard_settings_atomic_resource | `scope`, `full`, `X-Fields` | DashboardSettingsModelGet | yes | Get scoped dashboard setting |
+| PATCH | `/settings/dashboard` | patch_dashboard_settings_atomic_resource | `X-Fields`, body*: DashboardSettingsModelPatch | DashboardSettingsModelGet |  | Update scoped dashboard setting |
+| GET | `/settings/review` | get_review_settings_atomic_resource | `scope`, `full`, `X-Fields` | ReviewSettingsModelGet | yes | Get scoped review setting |
+| PATCH | `/settings/review` | patch_review_settings_atomic_resource | `X-Fields`, body*: ReviewSettingsModelPatch | ReviewSettingsModelGet |  | Update scoped review setting |
+| GET | `/sso/config` | get_sso_config_resources | `X-Fields` | SsoConfigModelGet | yes | — |
+| POST | `/sso/config` | post_sso_config_resources | `X-Fields`, body*: SsoConfigModel | — |  | — |
+| DELETE | `/sso/config/{sso_config_id}` | delete_sso_config_resources | `sso_config_id`* | — |  | Get integration attributes |
+| POST | `/sso/login` | post_oauth_login_resource | body*: SsoModel | — |  | — |
+| GET | `/stats/usage` | get_usage_stats_resource | `inbox_id`, `start_date`*, `end_date`*, `excel_output` | — | yes | — |
+| GET | `/stats/{inbox_id}` | get_stats_resource | `inbox_id`*, `field_name`, `start_date`, `end_date`, `version_name` | — | yes | Get inbox statistics |
+| GET | `/stats/{inbox_id}/automation_blockers` | get_automation_blockers_stats | `inbox_id`*, `start_date`, `end_date`, `version_name`, `include_detail` | — | yes | Get summary or details of automation blockers |
+| POST | `/stats/{inbox_id}/blue_dots` | post_blue_dots_resource | `inbox_id`*, body: object | — |  | Get the Blue Dots statistics for the inbox |
+| GET | `/stats/{inbox_id}/evaluated_versions` | get_evaluated_versions | `inbox_id`*, `start_date`, `end_date`, `filter_versions`, `last_one_only`, `version_name` | — | yes | Get the documents with evaluated versions |
+| GET | `/stats/{inbox_id}/processing` | get_processing_stats | `inbox_id`*, `start_date`, `end_date`, `group_by` | — | yes | Get processing runtime stats |
+| GET | `/stats/{inbox_id}/volume` | get_volume_stats | `inbox_id`*, `start_date`, `end_date`, `status`, `user` | — | yes | **Permission required:** view_statistics |
+| GET | `/stats/{scope}/accuracy` | get_accuracy_resource | `scope`*, `start_date`, `end_date`, `stp_files_only`, `stp_fields_only`, `version_name`, `filter_by` | — | yes | Get the Accuracy counts on documents, sections and fields in the given inbox |
+| GET | `/stats/{scope}/stp` | get_stp_resource | `scope`*, `start_date`, `end_date`, `version_name`, `filter_by` | — | yes | Get the STP counts on documents, sections and fields in the given inbox |
+| GET | `/style/custom.css` | get_style_sheet_resource | — | — | yes | Get the custom CSS file |
+| POST | `/style/custom.css` | post_style_sheet_resource | body*: object | — |  | Upload the custom logo |
+| GET | `/style/logo.png` | get_style_logo_resource | — | — | yes | Get the custom logo |
+| POST | `/style/logo.png` | post_style_logo_resource | body*: object | — |  | Upload the custom logo |
+| DELETE | `/tenant` | delete_tenant_resource | — | — |  | — |
+| PATCH | `/tenant/activate` | patch_activate_tenant_resource | `X-Fields`, body*: TenantModelPatch | TenantModelGet |  | — |
+| GET | `/threshold_settings` | get_settings_threshold_resource | `X-Fields` | SettingThresholdModelGet[] | yes | Get all thresholds settings |
+| GET | `/threshold_settings/{scope}` | get_setting_threshold_resource | `scope`*, `default`, `X-Fields` | SettingThresholdModelGet | yes | Get the scoped thresholds settings |
+| DELETE | `/threshold_settings/{scope}` | delete_setting_threshold_resource | `scope`* | — |  | Delete the thresholds settings |
+| PATCH | `/threshold_settings/{scope}` | patch_setting_threshold_resource | `scope`*, `X-Fields`, body*: SettingThresholdModelPatch | SettingThresholdModelGet |  | Update the scoped thresholds settings |
+| GET | `/users` | get_users_resource | `X-Fields` | UserModelGet[] | yes | Get all users |
+| POST | `/users` | post_users_resource | `X-Fields`, body*: UserModelPost | UserModelGet |  | Create user |
+| GET | `/users/me` | get_me | `X-Fields` | UserModelGet | yes | Return info on the current user |
+| POST | `/users/me/change_password` | post_change_password | body*: ChangePasswordModelPost | — |  | Change the current user password |
+| GET | `/users/{user_id}` | get_user_resource | `user_id`*, `X-Fields` | UserModelGet | yes | Get user |
+| DELETE | `/users/{user_id}` | delete_user_resource | `user_id`* | — |  | Delete a user |
+| PATCH | `/users/{user_id}` | patch_user_resource | `user_id`*, `X-Fields`, body*: UserModelPatch | UserModelGet |  | Update user |

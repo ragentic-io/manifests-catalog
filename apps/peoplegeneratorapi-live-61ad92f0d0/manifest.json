@@ -233,6 +233,46 @@
         "from": "peoplegeneratorapi-live-61ad92f0d0",
         "kind": "EXPOSES",
         "to": "operation:get:/api/person/{number}/"
+      },
+      {
+        "from": "operation:get:/api/address",
+        "kind": "RETURNS",
+        "to": "schema:Address"
+      },
+      {
+        "from": "operation:get:/api/address/",
+        "kind": "RETURNS",
+        "to": "schema:Address"
+      },
+      {
+        "from": "operation:get:/api/lifestory",
+        "kind": "RETURNS",
+        "to": "schema:Lifestory"
+      },
+      {
+        "from": "operation:get:/api/lifestory/",
+        "kind": "RETURNS",
+        "to": "schema:Lifestory"
+      },
+      {
+        "from": "operation:get:/api/person",
+        "kind": "RETURNS",
+        "to": "schema:Person"
+      },
+      {
+        "from": "operation:get:/api/person/",
+        "kind": "RETURNS",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:Lifestory",
+        "kind": "REFERENCES",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
       }
     ],
     "nodes": [
@@ -248,8 +288,18 @@
         "name": "generateAddress",
         "path": "/api/address",
         "pointer": "#/paths/~1api~1address/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Address"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -259,8 +309,18 @@
         "name": "generateAddress_1",
         "path": "/api/address/",
         "pointer": "#/paths/~1api~1address~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Address"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -270,8 +330,18 @@
         "name": "generateLifeStory_1",
         "path": "/api/lifestory",
         "pointer": "#/paths/~1api~1lifestory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Lifestory"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -281,8 +351,18 @@
         "name": "generateLifeStory",
         "path": "/api/lifestory/",
         "pointer": "#/paths/~1api~1lifestory~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Lifestory"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -292,8 +372,18 @@
         "name": "getPerson_1",
         "path": "/api/person",
         "pointer": "#/paths/~1api~1person/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Person"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -303,8 +393,18 @@
         "name": "getPerson",
         "path": "/api/person/",
         "pointer": "#/paths/~1api~1person~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Person"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -314,8 +414,18 @@
         "name": "age_1",
         "path": "/api/person/age",
         "pointer": "#/paths/~1api~1person~1age/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -325,8 +435,18 @@
         "name": "age",
         "path": "/api/person/age/",
         "pointer": "#/paths/~1api~1person~1age~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -336,8 +456,18 @@
         "name": "bloodtype_1",
         "path": "/api/person/bloodtype",
         "pointer": "#/paths/~1api~1person~1bloodtype/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -347,8 +477,18 @@
         "name": "bloodtype",
         "path": "/api/person/bloodtype/",
         "pointer": "#/paths/~1api~1person~1bloodtype~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -358,8 +498,18 @@
         "name": "creditcardnumber",
         "path": "/api/person/creditcardnumber",
         "pointer": "#/paths/~1api~1person~1creditcardnumber/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -369,8 +519,18 @@
         "name": "creditcardnumber_1",
         "path": "/api/person/creditcardnumber/",
         "pointer": "#/paths/~1api~1person~1creditcardnumber~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -380,8 +540,18 @@
         "name": "creditscore_1",
         "path": "/api/person/creditscore",
         "pointer": "#/paths/~1api~1person~1creditscore/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -391,8 +561,18 @@
         "name": "creditscore",
         "path": "/api/person/creditscore/",
         "pointer": "#/paths/~1api~1person~1creditscore~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -402,8 +582,18 @@
         "name": "email",
         "path": "/api/person/email",
         "pointer": "#/paths/~1api~1person~1email/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -413,8 +603,18 @@
         "name": "email_1",
         "path": "/api/person/email/",
         "pointer": "#/paths/~1api~1person~1email~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -424,8 +624,18 @@
         "name": "eyecolor_1",
         "path": "/api/person/eyecolor",
         "pointer": "#/paths/~1api~1person~1eyecolor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -435,8 +645,18 @@
         "name": "eyecolor",
         "path": "/api/person/eyecolor/",
         "pointer": "#/paths/~1api~1person~1eyecolor~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -446,8 +666,18 @@
         "name": "gender",
         "path": "/api/person/gender",
         "pointer": "#/paths/~1api~1person~1gender/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -457,8 +687,18 @@
         "name": "gender_1",
         "path": "/api/person/gender/",
         "pointer": "#/paths/~1api~1person~1gender~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -468,8 +708,18 @@
         "name": "gpa",
         "path": "/api/person/gpa",
         "pointer": "#/paths/~1api~1person~1gpa/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -479,8 +729,18 @@
         "name": "gpa_1",
         "path": "/api/person/gpa/",
         "pointer": "#/paths/~1api~1person~1gpa~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -490,8 +750,18 @@
         "name": "haschildren_1",
         "path": "/api/person/haschildren",
         "pointer": "#/paths/~1api~1person~1haschildren/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -501,8 +771,18 @@
         "name": "haschildren",
         "path": "/api/person/haschildren/",
         "pointer": "#/paths/~1api~1person~1haschildren~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -512,8 +792,18 @@
         "name": "hasdegree",
         "path": "/api/person/hasdegree",
         "pointer": "#/paths/~1api~1person~1hasdegree/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -523,8 +813,18 @@
         "name": "hasdegree_1",
         "path": "/api/person/hasdegree/",
         "pointer": "#/paths/~1api~1person~1hasdegree~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -534,8 +834,18 @@
         "name": "height",
         "path": "/api/person/height",
         "pointer": "#/paths/~1api~1person~1height/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -545,8 +855,18 @@
         "name": "height_1",
         "path": "/api/person/height/",
         "pointer": "#/paths/~1api~1person~1height~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -556,8 +876,18 @@
         "name": "income",
         "path": "/api/person/income",
         "pointer": "#/paths/~1api~1person~1income/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -567,8 +897,18 @@
         "name": "income_1",
         "path": "/api/person/income/",
         "pointer": "#/paths/~1api~1person~1income~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -578,8 +918,18 @@
         "name": "job",
         "path": "/api/person/job",
         "pointer": "#/paths/~1api~1person~1job/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -589,8 +939,18 @@
         "name": "job_1",
         "path": "/api/person/job/",
         "pointer": "#/paths/~1api~1person~1job~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -600,8 +960,18 @@
         "name": "maritalstatus_1",
         "path": "/api/person/maritalstatus",
         "pointer": "#/paths/~1api~1person~1maritalstatus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -611,8 +981,18 @@
         "name": "maritalstatus",
         "path": "/api/person/maritalstatus/",
         "pointer": "#/paths/~1api~1person~1maritalstatus~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -622,8 +1002,18 @@
         "name": "name_1",
         "path": "/api/person/name",
         "pointer": "#/paths/~1api~1person~1name/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -633,8 +1023,18 @@
         "name": "name",
         "path": "/api/person/name/",
         "pointer": "#/paths/~1api~1person~1name~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -644,8 +1044,18 @@
         "name": "politicalLeaning",
         "path": "/api/person/politicalleaning",
         "pointer": "#/paths/~1api~1person~1politicalleaning/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -655,8 +1065,18 @@
         "name": "politicalLeaning_1",
         "path": "/api/person/politicalleaning/",
         "pointer": "#/paths/~1api~1person~1politicalleaning~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -666,8 +1086,18 @@
         "name": "religion_1",
         "path": "/api/person/religion",
         "pointer": "#/paths/~1api~1person~1religion/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -677,8 +1107,18 @@
         "name": "religion",
         "path": "/api/person/religion/",
         "pointer": "#/paths/~1api~1person~1religion~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -688,8 +1128,18 @@
         "name": "username_1",
         "path": "/api/person/username",
         "pointer": "#/paths/~1api~1person~1username/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -699,8 +1149,18 @@
         "name": "username",
         "path": "/api/person/username/",
         "pointer": "#/paths/~1api~1person~1username~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -710,8 +1170,18 @@
         "name": "weight",
         "path": "/api/person/weight",
         "pointer": "#/paths/~1api~1person~1weight/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -721,8 +1191,18 @@
         "name": "weight_1",
         "path": "/api/person/weight/",
         "pointer": "#/paths/~1api~1person~1weight~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "number:double"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -730,10 +1210,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getCompressedPerson_1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/person/{number}",
         "pointer": "#/paths/~1api~1person~1{number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "deprecated": false,
@@ -741,25 +1239,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getCompressedPerson",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/person/{number}/",
         "pointer": "#/paths/~1api~1person~1{number}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "peoplegeneratorapi-application"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:Lifestory",
         "kind": "schema",
-        "name": "Lifestory"
+        "name": "Lifestory",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       }
     ]
   },

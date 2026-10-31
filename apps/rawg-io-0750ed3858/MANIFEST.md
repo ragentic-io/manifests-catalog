@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_rawgtheworld_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `7a1a4bcaa69b5a2bf71f4a416401b0071c1a5d765af1893f3b2c95c9a62bf2fc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_rawgtheworld_profil
 
 27 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/creator-roles` | creator-roles_list | Get a list of creator positions (jobs). |
-| GET | `/creators` | creators_list | Get a list of game creators. |
-| GET | `/creators/{id}` | creators_read | Get details of the creator. |
-| GET | `/developers` | developers_list | Get a list of game developers. |
-| GET | `/developers/{id}` | developers_read | Get details of the developer. |
-| GET | `/games` | games_list | Get a list of games. |
-| GET | `/games/{game_pk}/additions` | games_additions_list | Get a list of DLC's for the game, GOTY and other editions, companion apps, etc. |
-| GET | `/games/{game_pk}/development-team` | games_development-team_list | Get a list of individual creators that were part of the development team. |
-| GET | `/games/{game_pk}/game-series` | games_game-series_list | Get a list of games that are part of the same series. |
-| GET | `/games/{game_pk}/parent-games` | games_parent-games_list | Get a list of parent games for DLC's and editions. |
-| GET | `/games/{game_pk}/screenshots` | games_screenshots_list | Get screenshots for the game. |
-| GET | `/games/{game_pk}/stores` | games_stores_list | Get links to the stores that sell the game. |
-| GET | `/games/{id}` | games_read | Get details of the game. |
-| GET | `/games/{id}/achievements` | games_achievements_read | Get a list of game achievements. |
-| GET | `/games/{id}/movies` | games_movies_read | Get a list of game trailers. |
-| GET | `/games/{id}/reddit` | games_reddit_read | Get a list of most recent posts from the game's subreddit. |
-| GET | `/games/{id}/suggested` | games_suggested_read | Get a list of visually similar games, available only for business and enterprise API users. |
-| GET | `/games/{id}/twitch` | games_twitch_read | Get streams on Twitch associated with the game, available only for business and enterprise API users. |
-| GET | `/games/{id}/youtube` | games_youtube_read | Get videos from YouTube associated with the game, available only for business and enterprise API users. |
-| GET | `/genres` | genres_list | Get a list of video game genres. |
-| GET | `/genres/{id}` | genres_read | Get details of the genre. |
-| GET | `/platforms` | platforms_list | Get a list of video game platforms. |
-| GET | `/platforms/lists/parents` | platforms_lists_parents_list | Get a list of parent platforms. |
-| GET | `/platforms/{id}` | platforms_read | Get details of the platform. |
-| GET | `/publishers` | publishers_list | Get a list of video game publishers. |
-| GET | `/publishers/{id}` | publishers_read | Get details of the publisher. |
-| GET | `/stores` | stores_list | Get a list of video game storefronts. |
-| GET | `/stores/{id}` | stores_read | Get details of the store. |
-| GET | `/tags` | tags_list | Get a list of tags. |
-| GET | `/tags/{id}` | tags_read | Get details of the tag. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/creator-roles` | creator-roles_list | `page`, `page_size` | object | yes | Get a list of creator positions (jobs). |
+| GET | `/creators` | creators_list | `page`, `page_size` | object | yes | Get a list of game creators. |
+| GET | `/creators/{id}` | creators_read | `id`* | PersonSingle | yes | Get details of the creator. |
+| GET | `/developers` | developers_list | `page`, `page_size` | object | yes | Get a list of game developers. |
+| GET | `/developers/{id}` | developers_read | `id`* | DeveloperSingle | yes | Get details of the developer. |
+| GET | `/games` | games_list | `page`, `page_size`, `search`, `search_precise`, `search_exact`, `parent_platforms`, `platforms`, `stores`, `developers`, `publishers`, `genres`, `tags`, `creators`, `dates`, `updated`, `platforms_count`, `metacritic`, `exclude_collection`, `exclude_additions`, `exclude_parents`, `exclude_game_series`, `exclude_stores`, `ordering` | object | yes | Get a list of games. |
+| GET | `/games/{game_pk}/additions` | games_additions_list | `game_pk`*, `page`, `page_size` | object | yes | Get a list of DLC's for the game, GOTY and other editions, companion apps, etc. |
+| GET | `/games/{game_pk}/development-team` | games_development-team_list | `game_pk`*, `ordering`, `page`, `page_size` | object | yes | Get a list of individual creators that were part of the development team. |
+| GET | `/games/{game_pk}/game-series` | games_game-series_list | `game_pk`*, `page`, `page_size` | object | yes | Get a list of games that are part of the same series. |
+| GET | `/games/{game_pk}/parent-games` | games_parent-games_list | `game_pk`*, `page`, `page_size` | object | yes | Get a list of parent games for DLC's and editions. |
+| GET | `/games/{game_pk}/screenshots` | games_screenshots_list | `game_pk`*, `ordering`, `page`, `page_size` | object | yes | Get screenshots for the game. |
+| GET | `/games/{game_pk}/stores` | games_stores_list | `game_pk`*, `ordering`, `page`, `page_size` | object | yes | Get links to the stores that sell the game. |
+| GET | `/games/{id}` | games_read | `id`* | GameSingle | yes | Get details of the game. |
+| GET | `/games/{id}/achievements` | games_achievements_read | `id`* | ParentAchievement | yes | Get a list of game achievements. |
+| GET | `/games/{id}/movies` | games_movies_read | `id`* | Movie | yes | Get a list of game trailers. |
+| GET | `/games/{id}/reddit` | games_reddit_read | `id`* | Reddit | yes | Get a list of most recent posts from the game's subreddit. |
+| GET | `/games/{id}/suggested` | games_suggested_read | `id`* | GameSingle | yes | Get a list of visually similar games, available only for business and enterprise API users. |
+| GET | `/games/{id}/twitch` | games_twitch_read | `id`* | Twitch | yes | Get streams on Twitch associated with the game, available only for business and enterprise API users. |
+| GET | `/games/{id}/youtube` | games_youtube_read | `id`* | Youtube | yes | Get videos from YouTube associated with the game, available only for business and enterprise API users. |
+| GET | `/genres` | genres_list | `ordering`, `page`, `page_size` | object | yes | Get a list of video game genres. |
+| GET | `/genres/{id}` | genres_read | `id`* | GenreSingle | yes | Get details of the genre. |
+| GET | `/platforms` | platforms_list | `ordering`, `page`, `page_size` | object | yes | Get a list of video game platforms. |
+| GET | `/platforms/lists/parents` | platforms_lists_parents_list | `ordering`, `page`, `page_size` | object | yes | Get a list of parent platforms. |
+| GET | `/platforms/{id}` | platforms_read | `id`* | PlatformSingle | yes | Get details of the platform. |
+| GET | `/publishers` | publishers_list | `page`, `page_size` | object | yes | Get a list of video game publishers. |
+| GET | `/publishers/{id}` | publishers_read | `id`* | PublisherSingle | yes | Get details of the publisher. |
+| GET | `/stores` | stores_list | `ordering`, `page`, `page_size` | object | yes | Get a list of video game storefronts. |
+| GET | `/stores/{id}` | stores_read | `id`* | StoreSingle | yes | Get details of the store. |
+| GET | `/tags` | tags_list | `page`, `page_size` | object | yes | Get a list of tags. |
+| GET | `/tags/{id}` | tags_read | `id`* | TagSingle | yes | Get details of the tag. |

@@ -133,6 +133,16 @@
         "from": "climatekuul-com-70382207ed",
         "kind": "EXPOSES",
         "to": "operation:patch:/urbanDelivery/confirmTransaction"
+      },
+      {
+        "from": "operation:post:/airtravelMultileg",
+        "kind": "ACCEPTS",
+        "to": "schema:airtravelMultilegRequest"
+      },
+      {
+        "from": "schema:airtravelMultilegRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Leg1"
       }
     ],
     "nodes": [
@@ -146,10 +156,34 @@
         "kind": "operation",
         "method": "post",
         "name": "airtravelCoordinates",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/airtravelCoordinates",
         "pointer": "#/paths/~1airtravelCoordinates/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "airtravelCoordinates"
+        "summary": "airtravelCoordinates",
+        "tags": [
+          "AirtravelCoordinates"
+        ]
       },
       {
         "deprecated": false,
@@ -159,8 +193,24 @@
         "name": "confirmCarbonOffset4",
         "path": "/airtravelCoordinates/confirmCarbonOffset",
         "pointer": "#/paths/~1airtravelCoordinates~1confirmCarbonOffset/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmCarbonOffset"
+        "summary": "confirmCarbonOffset",
+        "tags": [
+          "AirtravelCoordinates"
+        ]
       },
       {
         "deprecated": false,
@@ -170,8 +220,24 @@
         "name": "confirmPayment4",
         "path": "/airtravelCoordinates/confirmPayment",
         "pointer": "#/paths/~1airtravelCoordinates~1confirmPayment/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPayment"
+        "summary": "confirmPayment",
+        "tags": [
+          "AirtravelCoordinates"
+        ]
       },
       {
         "deprecated": false,
@@ -181,8 +247,24 @@
         "name": "confirmsPlanting4",
         "path": "/airtravelCoordinates/confirmPlanting",
         "pointer": "#/paths/~1airtravelCoordinates~1confirmPlanting/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPlanting"
+        "summary": "confirmPlanting",
+        "tags": [
+          "AirtravelCoordinates"
+        ]
       },
       {
         "deprecated": false,
@@ -192,8 +274,24 @@
         "name": "confirmPaymentOfTransaction4",
         "path": "/airtravelCoordinates/confirmTransaction",
         "pointer": "#/paths/~1airtravelCoordinates~1confirmTransaction/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmTransaction"
+        "summary": "confirmTransaction",
+        "tags": [
+          "AirtravelCoordinates"
+        ]
       },
       {
         "deprecated": false,
@@ -203,8 +301,24 @@
         "name": "airtravelMultileg",
         "path": "/airtravelMultileg",
         "pointer": "#/paths/~1airtravelMultileg/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "airtravelMultilegRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "airtravelMultileg"
+        "summary": "airtravelMultileg",
+        "tags": [
+          "airtravelMultileg"
+        ]
       },
       {
         "deprecated": false,
@@ -214,8 +328,24 @@
         "name": "confirmCarbonOffset3",
         "path": "/airtravelMultileg/confirmCarbonOffset",
         "pointer": "#/paths/~1airtravelMultileg~1confirmCarbonOffset/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmCarbonOffset"
+        "summary": "confirmCarbonOffset",
+        "tags": [
+          "airtravelMultileg"
+        ]
       },
       {
         "deprecated": false,
@@ -225,8 +355,24 @@
         "name": "confirmPayment3",
         "path": "/airtravelMultileg/confirmPayment",
         "pointer": "#/paths/~1airtravelMultileg~1confirmPayment/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPayment"
+        "summary": "confirmPayment",
+        "tags": [
+          "airtravelMultileg"
+        ]
       },
       {
         "deprecated": false,
@@ -236,8 +382,24 @@
         "name": "confirmsPlanting3",
         "path": "/airtravelMultileg/confirmPlanting",
         "pointer": "#/paths/~1airtravelMultileg~1confirmPlanting/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPlanting"
+        "summary": "confirmPlanting",
+        "tags": [
+          "airtravelMultileg"
+        ]
       },
       {
         "deprecated": false,
@@ -247,8 +409,24 @@
         "name": "confirmPaymentOfTransaction3",
         "path": "/airtravelMultileg/confirmTransaction",
         "pointer": "#/paths/~1airtravelMultileg~1confirmTransaction/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmTransaction"
+        "summary": "confirmTransaction",
+        "tags": [
+          "airtravelMultileg"
+        ]
       },
       {
         "deprecated": false,
@@ -256,10 +434,34 @@
         "kind": "operation",
         "method": "post",
         "name": "ecommerceDelivery",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ecommerceDelivery",
         "pointer": "#/paths/~1ecommerceDelivery/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ecommerceDelivery"
+        "summary": "ecommerceDelivery",
+        "tags": [
+          "EcommerceDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -269,8 +471,24 @@
         "name": "confirmCarbonOffset1",
         "path": "/ecommerceDelivery/confirmCarbonOffset",
         "pointer": "#/paths/~1ecommerceDelivery~1confirmCarbonOffset/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmCarbonOffset"
+        "summary": "confirmCarbonOffset",
+        "tags": [
+          "EcommerceDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -280,8 +498,24 @@
         "name": "confirmPayment1",
         "path": "/ecommerceDelivery/confirmPayment",
         "pointer": "#/paths/~1ecommerceDelivery~1confirmPayment/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPayment"
+        "summary": "confirmPayment",
+        "tags": [
+          "EcommerceDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -291,8 +525,24 @@
         "name": "confirmsPlanting2",
         "path": "/ecommerceDelivery/confirmPlanting",
         "pointer": "#/paths/~1ecommerceDelivery~1confirmPlanting/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPlanting"
+        "summary": "confirmPlanting",
+        "tags": [
+          "EcommerceDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -302,8 +552,24 @@
         "name": "confirmPaymentOfTransaction1",
         "path": "/ecommerceDelivery/confirmTransaction",
         "pointer": "#/paths/~1ecommerceDelivery~1confirmTransaction/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmTransaction"
+        "summary": "confirmTransaction",
+        "tags": [
+          "EcommerceDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -313,8 +579,24 @@
         "name": "requestApiKey",
         "path": "/requestApiKey",
         "pointer": "#/paths/~1requestApiKey/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "requestApiKey"
+        "summary": "requestApiKey",
+        "tags": [
+          "Request Api Key"
+        ]
       },
       {
         "deprecated": false,
@@ -324,8 +606,24 @@
         "name": "roadDistance",
         "path": "/roadDistance",
         "pointer": "#/paths/~1roadDistance/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "RoadDistance"
+        "summary": "RoadDistance",
+        "tags": [
+          "RoadDistance"
+        ]
       },
       {
         "deprecated": false,
@@ -335,8 +633,24 @@
         "name": "confirmCarbonOffset5",
         "path": "/roadDistance/confirmCarbonOffset",
         "pointer": "#/paths/~1roadDistance~1confirmCarbonOffset/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmCarbonOffset"
+        "summary": "confirmCarbonOffset",
+        "tags": [
+          "RoadDistance"
+        ]
       },
       {
         "deprecated": false,
@@ -346,8 +660,24 @@
         "name": "confirmPayment5",
         "path": "/roadDistance/confirmPayment",
         "pointer": "#/paths/~1roadDistance~1confirmPayment/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPayment"
+        "summary": "confirmPayment",
+        "tags": [
+          "RoadDistance"
+        ]
       },
       {
         "deprecated": false,
@@ -357,8 +687,24 @@
         "name": "confirmsPlanting5",
         "path": "/roadDistance/confirmPlanting",
         "pointer": "#/paths/~1roadDistance~1confirmPlanting/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPlanting"
+        "summary": "confirmPlanting",
+        "tags": [
+          "RoadDistance"
+        ]
       },
       {
         "deprecated": false,
@@ -368,8 +714,24 @@
         "name": "confirmPaymentOfTransaction5",
         "path": "/roadDistance/confirmTransaction",
         "pointer": "#/paths/~1roadDistance~1confirmTransaction/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmTransaction"
+        "summary": "confirmTransaction",
+        "tags": [
+          "RoadDistance"
+        ]
       },
       {
         "deprecated": false,
@@ -379,8 +741,24 @@
         "name": "urbanDelivery",
         "path": "/urbanDelivery",
         "pointer": "#/paths/~1urbanDelivery/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "urbanDelivery"
+        "summary": "urbanDelivery",
+        "tags": [
+          "UrbanDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -390,8 +768,24 @@
         "name": "confirmCarbonOffset",
         "path": "/urbanDelivery/confirmCarbonOffset",
         "pointer": "#/paths/~1urbanDelivery~1confirmCarbonOffset/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmCarbonOffset"
+        "summary": "confirmCarbonOffset",
+        "tags": [
+          "UrbanDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -401,8 +795,24 @@
         "name": "confirmPayment",
         "path": "/urbanDelivery/confirmPayment",
         "pointer": "#/paths/~1urbanDelivery~1confirmPayment/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPayment"
+        "summary": "confirmPayment",
+        "tags": [
+          "UrbanDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -412,8 +822,24 @@
         "name": "confirmsPlanting",
         "path": "/urbanDelivery/confirmPlanting",
         "pointer": "#/paths/~1urbanDelivery~1confirmPlanting/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmPlanting"
+        "summary": "confirmPlanting",
+        "tags": [
+          "UrbanDelivery"
+        ]
       },
       {
         "deprecated": false,
@@ -423,18 +849,36 @@
         "name": "confirmPaymentOfTransaction",
         "path": "/urbanDelivery/confirmTransaction",
         "pointer": "#/paths/~1urbanDelivery~1confirmTransaction/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "confirmTransaction"
+        "summary": "confirmTransaction",
+        "tags": [
+          "UrbanDelivery"
+        ]
       },
       {
         "id": "schema:Leg1",
         "kind": "schema",
-        "name": "Leg1"
+        "name": "Leg1",
+        "type": "object"
       },
       {
         "id": "schema:airtravelMultilegRequest",
         "kind": "schema",
-        "name": "airtravelMultilegRequest"
+        "name": "airtravelMultilegRequest",
+        "type": "object"
       }
     ]
   },

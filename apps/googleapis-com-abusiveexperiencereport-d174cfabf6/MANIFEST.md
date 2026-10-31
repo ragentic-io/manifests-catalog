@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.google.com_images_branding_
 
 | | |
 | --- | --- |
-| Signed bundle | `1af2d0196c03412d98aa097f854c61099d8a8aa7b7bc21da9c5d7541189ea7d0` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.google.com_images_branding_
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/violatingSites` | abusiveexperiencereport.violatingSites.list | — |
-| GET | `/v1/{name}` | abusiveexperiencereport.sites.get | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/violatingSites` | abusiveexperiencereport.violatingSites.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType` | ViolatingSitesResponse | yes | — |
+| GET | `/v1/{name}` | abusiveexperiencereport.sites.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`* | SiteSummaryResponse | yes | — |

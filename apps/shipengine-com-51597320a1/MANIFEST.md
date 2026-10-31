@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.shipengine.com_wp-content_t
 
 | | |
 | --- | --- |
-| Signed bundle | `9f923363e12d0cfd5bce2896702f11a4be263ee178e9e4a3e6fb69027a675a68` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,89 +34,91 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.shipengine.com_wp-content_t
 
 282 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| PUT | `/v1/addresses/recognize` | parse_address | Parse an address |
-| POST | `/v1/addresses/validate` | validate_address | Validate An Address |
-| GET | `/v1/batches` | list_batches | List Batches |
-| POST | `/v1/batches` | create_batch | Create A Batch |
-| GET | `/v1/batches/external_batch_id/{external_batch_id}` | get_batch_by_external_id | Get Batch By External ID |
-| DELETE | `/v1/batches/{batch_id}` | delete_batch | Delete Batch By Id |
-| GET | `/v1/batches/{batch_id}` | get_batch_by_id | Get Batch By ID |
-| PUT | `/v1/batches/{batch_id}` | update_batch | Update Batch By Id |
-| POST | `/v1/batches/{batch_id}/add` | add_to_batch | Add to a Batch |
-| GET | `/v1/batches/{batch_id}/errors` | list_batch_errors | Get Batch Errors |
-| POST | `/v1/batches/{batch_id}/process/labels` | process_batch | Process Batch ID Labels |
-| POST | `/v1/batches/{batch_id}/remove` | remove_from_batch | Remove From Batch |
-| GET | `/v1/carriers` | list_carriers | List Carriers |
-| GET | `/v1/carriers/{carrier_id}` | get_carrier_by_id | Get Carrier By ID |
-| PUT | `/v1/carriers/{carrier_id}/add_funds` | add_funds_to_carrier | Add Funds To Carrier |
-| GET | `/v1/carriers/{carrier_id}/options` | get_carrier_options | Get Carrier Options |
-| GET | `/v1/carriers/{carrier_id}/packages` | list_carrier_package_types | List Carrier Package Types |
-| GET | `/v1/carriers/{carrier_id}/services` | list_carrier_services | List Carrier Services |
-| POST | `/v1/connections/carriers/{carrier_name}` | connect_carrier | Connect a carrier account |
-| DELETE | `/v1/connections/carriers/{carrier_name}/{carrier_id}` | disconnect_carrier | Disconnect a carrier |
-| GET | `/v1/connections/carriers/{carrier_name}/{carrier_id}/settings` | get_carrier_settings | Get carrier settings |
-| PUT | `/v1/connections/carriers/{carrier_name}/{carrier_id}/settings` | update_carrier_settings | Update carrier settings |
-| DELETE | `/v1/connections/insurance/shipsurance` | disconnect_insurer | Disconnect a Shipsurance Account |
-| POST | `/v1/connections/insurance/shipsurance` | connect_insurer | Connect a Shipsurance Account |
-| GET | `/v1/downloads/{dir}/{subdir}/{filename}` | download_file | Download File |
-| GET | `/v1/environment/webhooks` | list_webhooks | List Webhooks |
-| POST | `/v1/environment/webhooks` | create_webhook | Create a Webhook |
-| DELETE | `/v1/environment/webhooks/{webhook_id}` | delete_webhook | Delete Webhook By ID |
-| GET | `/v1/environment/webhooks/{webhook_id}` | get_webhook_by_id | Get Webhook By ID |
-| PUT | `/v1/environment/webhooks/{webhook_id}` | update_webhook | Update a Webhook |
-| PATCH | `/v1/insurance/shipsurance/add_funds` | add_funds_to_insurance | Add Funds To Insurance |
-| GET | `/v1/insurance/shipsurance/balance` | get_insurance_balance | Get Insurance Funds Balance |
-| GET | `/v1/labels` | list_labels | List labels |
-| POST | `/v1/labels` | create_label | Purchase Label |
-| GET | `/v1/labels/external_shipment_id/{external_shipment_id}` | get_label_by_external_shipment_id | Get Label By External Shipment ID |
-| POST | `/v1/labels/rates/{rate_id}` | create_label_from_rate | Purchase Label with Rate ID |
-| POST | `/v1/labels/shipment/{shipment_id}` | create_label_from_shipment | Purchase Label with Shipment ID |
-| GET | `/v1/labels/{label_id}` | get_label_by_id | Get Label By ID |
-| POST | `/v1/labels/{label_id}/return` | create_return_label | Create a return label |
-| GET | `/v1/labels/{label_id}/track` | get_tracking_log_from_label | Get Label Tracking Information |
-| PUT | `/v1/labels/{label_id}/void` | void_label | Void a Label By ID |
-| GET | `/v1/manifests` | list_manifests | List Manifests |
-| POST | `/v1/manifests` | create_manifest | Create Manifest |
-| GET | `/v1/manifests/requests/{manifest_request_id}` | get_manifest_request_by_id | Get Manifest Request By Id |
-| GET | `/v1/manifests/{manifest_id}` | get_manifest_by_id | Get Manifest By Id |
-| GET | `/v1/packages` | list_package_types | List Custom Package Types |
-| POST | `/v1/packages` | create_package_type | Create Custom Package Type |
-| DELETE | `/v1/packages/{package_id}` | delete_package_type | Delete A Custom Package By ID |
-| GET | `/v1/packages/{package_id}` | get_package_type_by_id | Get Custom Package Type By ID |
-| PUT | `/v1/packages/{package_id}` | update_package_type | Update Custom Package Type By ID |
-| GET | `/v1/pickups` | list_scheduled_pickups | List Scheduled Pickups |
-| POST | `/v1/pickups` | schedule_pickup | Schedule a Pickup |
-| DELETE | `/v1/pickups/{pickup_id}` | delete_scheduled_pickup | Delete a Scheduled Pickup |
-| GET | `/v1/pickups/{pickup_id}` | get_pickup_by_id | Get Pickup By ID |
-| POST | `/v1/rates` | calculate_rates | Get Shipping Rates |
-| POST | `/v1/rates/bulk` | compare_bulk_rates | Get Bulk Rates |
-| POST | `/v1/rates/estimate` | estimate_rates | Estimate Rates |
-| GET | `/v1/rates/{rate_id}` | get_rate_by_id | Get Rate By ID |
-| POST | `/v1/service_points/list` | service_points_list | List Service Points |
-| GET | `/v1/service_points/{carrier_code}/{country_code}/{service_point_id}` | service_points_get_by_id | Get Service Point By ID |
-| GET | `/v1/shipments` | list_shipments | List Shipments |
-| POST | `/v1/shipments` | create_shipments | Create Shipments |
-| GET | `/v1/shipments/external_shipment_id/{external_shipment_id}` | get_shipment_by_external_id | Get Shipment By External ID |
-| PUT | `/v1/shipments/recognize` | parse_shipment | Parse shipping info |
-| GET | `/v1/shipments/{shipment_id}` | get_shipment_by_id | Get Shipment By ID |
-| PUT | `/v1/shipments/{shipment_id}` | update_shipment | Update Shipment By ID |
-| PUT | `/v1/shipments/{shipment_id}/cancel` | cancel_shipments | Cancel a Shipment |
-| GET | `/v1/shipments/{shipment_id}/rates` | list_shipment_rates | Get Shipment Rates |
-| DELETE | `/v1/shipments/{shipment_id}/tags/{tag_name}` | untag_shipment | Remove Tag from Shipment |
-| POST | `/v1/shipments/{shipment_id}/tags/{tag_name}` | tag_shipment | Add Tag to Shipment |
-| GET | `/v1/tags` | list_tags | Get Tags |
-| DELETE | `/v1/tags/{tag_name}` | delete_tag | Delete Tag |
-| POST | `/v1/tags/{tag_name}` | create_tag | Create a New Tag |
-| PUT | `/v1/tags/{tag_name}/{new_tag_name}` | rename_tag | Update Tag Name |
-| POST | `/v1/tokens/ephemeral` | tokens_get_ephemeral_token | Get Ephemeral Token |
-| GET | `/v1/tracking` | get_tracking_log | Get Tracking Information |
-| POST | `/v1/tracking/start` | start_tracking | Start Tracking a Package |
-| POST | `/v1/tracking/stop` | stop_tracking | Stop Tracking a Package |
-| GET | `/v1/warehouses` | list_warehouses | List Warehouses |
-| POST | `/v1/warehouses` | create_warehouse | Create Warehouse |
-| DELETE | `/v1/warehouses/{warehouse_id}` | delete_warehouse | Delete Warehouse By ID |
-| GET | `/v1/warehouses/{warehouse_id}` | get_warehouse_by_id | Get Warehouse By Id |
-| PUT | `/v1/warehouses/{warehouse_id}` | update_warehouse | Update Warehouse By Id |
-| PUT | `/v1/warehouses/{warehouse_id}/settings` | update_warehouse_settings | Update Warehouse Settings |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/v1/addresses/recognize` | parse_address | body*: parse_address_request_body | parse_address_response_body |  | Parse an address |
+| POST | `/v1/addresses/validate` | validate_address | body*: validate_address_request_body | validate_address_response_body |  | Validate An Address |
+| GET | `/v1/batches` | list_batches | `status`, `page`, `page_size`, `sort_dir`, `batch_number`, `sort_by` | list_batches_response_body | yes | List Batches |
+| POST | `/v1/batches` | create_batch | body*: create_batch_request_body | create_batch_response_body |  | Create A Batch |
+| GET | `/v1/batches/external_batch_id/{external_batch_id}` | get_batch_by_external_id | `external_batch_id`* | get_batch_by_external_id_response_body | yes | Get Batch By External ID |
+| GET | `/v1/batches/{batch_id}` | get_batch_by_id | `batch_id`* | get_batch_by_id_response_body | yes | Get Batch By ID |
+| PUT | `/v1/batches/{batch_id}` | update_batch | `batch_id`* | empty_response_body |  | Update Batch By Id |
+| DELETE | `/v1/batches/{batch_id}` | delete_batch | `batch_id`* | empty_response_body |  | Delete Batch By Id |
+| POST | `/v1/batches/{batch_id}/add` | add_to_batch | `batch_id`*, body*: add_to_batch_request_body | empty_response_body |  | Add to a Batch |
+| GET | `/v1/batches/{batch_id}/errors` | list_batch_errors | `batch_id`*, `page`, `pagesize` | list_batch_errors_response_body | yes | Get Batch Errors |
+| POST | `/v1/batches/{batch_id}/process/labels` | process_batch | `batch_id`*, body*: process_batch_request_body | empty_response_body |  | Process Batch ID Labels |
+| POST | `/v1/batches/{batch_id}/remove` | remove_from_batch | `batch_id`*, body*: remove_from_batch_request_body | empty_response_body |  | Remove From Batch |
+| GET | `/v1/carriers` | list_carriers | — | get_carriers_response_body | yes | List Carriers |
+| GET | `/v1/carriers/{carrier_id}` | get_carrier_by_id | `carrier_id`* | get_carrier_by_id_response_body | yes | Get Carrier By ID |
+| PUT | `/v1/carriers/{carrier_id}/add_funds` | add_funds_to_carrier | `carrier_id`*, body*: add_funds_to_carrier_request_body | add_funds_to_carrier_response_body |  | Add Funds To Carrier |
+| GET | `/v1/carriers/{carrier_id}/options` | get_carrier_options | `carrier_id`* | get_carrier_options_response_body | yes | Get Carrier Options |
+| GET | `/v1/carriers/{carrier_id}/packages` | list_carrier_package_types | `carrier_id`* | list_carrier_package_types_response_body | yes | List Carrier Package Types |
+| GET | `/v1/carriers/{carrier_id}/services` | list_carrier_services | `carrier_id`* | list_carrier_services_response_body | yes | List Carrier Services |
+| POST | `/v1/connections/carriers/{carrier_name}` | connect_carrier | `carrier_name`*, body*: connect_carrier_request_body | connect_carrier_response_body |  | Connect a carrier account |
+| DELETE | `/v1/connections/carriers/{carrier_name}/{carrier_id}` | disconnect_carrier | `carrier_name`*, `carrier_id`* | empty_response_body |  | Disconnect a carrier |
+| GET | `/v1/connections/carriers/{carrier_name}/{carrier_id}/settings` | get_carrier_settings | `carrier_name`*, `carrier_id`* | get_carrier_settings_response_body | yes | Get carrier settings |
+| PUT | `/v1/connections/carriers/{carrier_name}/{carrier_id}/settings` | update_carrier_settings | `carrier_name`*, `carrier_id`*, body*: update_carrier_settings_request_body | empty_response_body |  | Update carrier settings |
+| POST | `/v1/connections/insurance/shipsurance` | connect_insurer | body*: connect_insurer_request_body | connect_insurer_response_body |  | Connect a Shipsurance Account |
+| DELETE | `/v1/connections/insurance/shipsurance` | disconnect_insurer | — | disconnect_insurer_response_body |  | Disconnect a Shipsurance Account |
+| GET | `/v1/downloads/{dir}/{subdir}/{filename}` | download_file | `subdir`*, `filename`*, `dir`*, `download`, `rotation` | download_file_pdf_response_body | yes | Download File |
+| GET | `/v1/environment/webhooks` | list_webhooks | — | list_webhooks_response_body | yes | List Webhooks |
+| POST | `/v1/environment/webhooks` | create_webhook | body*: create_webhook_request_body | create_webhook_response_body |  | Create a Webhook |
+| GET | `/v1/environment/webhooks/{webhook_id}` | get_webhook_by_id | `webhook_id`* | get_webhook_by_id_response_body | yes | Get Webhook By ID |
+| PUT | `/v1/environment/webhooks/{webhook_id}` | update_webhook | `webhook_id`*, body*: update_webhook_request_body | empty_response_body |  | Update a Webhook |
+| DELETE | `/v1/environment/webhooks/{webhook_id}` | delete_webhook | `webhook_id`* | empty_response_body |  | Delete Webhook By ID |
+| PATCH | `/v1/insurance/shipsurance/add_funds` | add_funds_to_insurance | body*: add_funds_to_insurance_request_body | add_funds_to_insurance_response_body |  | Add Funds To Insurance |
+| GET | `/v1/insurance/shipsurance/balance` | get_insurance_balance | — | get_insurance_balance_response_body | yes | Get Insurance Funds Balance |
+| GET | `/v1/labels` | list_labels | `label_status`, `service_code`, `carrier_id`, `tracking_number`, `batch_id`, `rate_id`, `shipment_id`, `warehouse_id`, `created_at_start`, `created_at_end`, `page`, `page_size`, `sort_dir`, `sort_by` | list_labels_response_body | yes | List labels |
+| POST | `/v1/labels` | create_label | body*: create_label_request_body | create_label_response_body |  | Purchase Label |
+| GET | `/v1/labels/external_shipment_id/{external_shipment_id}` | get_label_by_external_shipment_id | `external_shipment_id`*, `label_download_type` | get_label_by_external_shipment_id_response_body | yes | Get Label By External Shipment ID |
+| POST | `/v1/labels/rates/{rate_id}` | create_label_from_rate | `rate_id`*, body*: create_label_from_rate_request_body | create_label_from_rate_response_body |  | Purchase Label with Rate ID |
+| POST | `/v1/labels/shipment/{shipment_id}` | create_label_from_shipment | `shipment_id`*, body*: create_label_from_shipment_request_body | create_label_from_shipment_response_body |  | Purchase Label with Shipment ID |
+| GET | `/v1/labels/{label_id}` | get_label_by_id | `label_id`*, `label_download_type` | get_label_by_id_response_body | yes | Get Label By ID |
+| POST | `/v1/labels/{label_id}/return` | create_return_label | `label_id`*, body*: create_return_label_request_body | create_return_label_response_body |  | Create a return label |
+| GET | `/v1/labels/{label_id}/track` | get_tracking_log_from_label | `label_id`* | get_tracking_log_from_label_response_body | yes | Get Label Tracking Information |
+| PUT | `/v1/labels/{label_id}/void` | void_label | `label_id`* | void_label_response_body |  | Void a Label By ID |
+| GET | `/v1/manifests` | list_manifests | `warehouse_id`, `ship_date_start`, `ship_date_end`, `created_at_start`, `created_at_end`, `carrier_id`, `page`, `page_size`, `label_ids` | list_manifests_response_body | yes | List Manifests |
+| POST | `/v1/manifests` | create_manifest | body*: create_manifest_request_body | create_manifest_response_body |  | Create Manifest |
+| GET | `/v1/manifests/requests/{manifest_request_id}` | get_manifest_request_by_id | `manifest_request_id`* | create_manifest_response_body | yes | Get Manifest Request By Id |
+| GET | `/v1/manifests/{manifest_id}` | get_manifest_by_id | `manifest_id`* | get_manifest_by_id_response_body | yes | Get Manifest By Id |
+| GET | `/v1/packages` | list_package_types | — | list_package_types_response_body | yes | List Custom Package Types |
+| POST | `/v1/packages` | create_package_type | body*: create_package_type_request_body | create_package_type_response_body |  | Create Custom Package Type |
+| GET | `/v1/packages/{package_id}` | get_package_type_by_id | `package_id`* | get_package_type_by_id_response_body | yes | Get Custom Package Type By ID |
+| PUT | `/v1/packages/{package_id}` | update_package_type | `package_id`*, body*: update_package_type_request_body | empty_response_body |  | Update Custom Package Type By ID |
+| DELETE | `/v1/packages/{package_id}` | delete_package_type | `package_id`* | empty_response_body |  | Delete A Custom Package By ID |
+| GET | `/v1/pickups` | list_scheduled_pickups | `carrier_id`, `warehouse_id`, `created_at_start`, `created_at_end`, `page`, `page_size` | get_pickups_response_body | yes | List Scheduled Pickups |
+| POST | `/v1/pickups` | schedule_pickup | body*: schedule_pickup_request_body | schedule_pickup_response_body |  | Schedule a Pickup |
+| GET | `/v1/pickups/{pickup_id}` | get_pickup_by_id | `pickup_id`* | get_pickup_by_id_response_body | yes | Get Pickup By ID |
+| DELETE | `/v1/pickups/{pickup_id}` | delete_scheduled_pickup | `pickup_id`* | delete_pickup_by_id_response_body |  | Delete a Scheduled Pickup |
+| POST | `/v1/rates` | calculate_rates | body*: calculate_rates_request_body | calculate_rates_response_body |  | Get Shipping Rates |
+| POST | `/v1/rates/bulk` | compare_bulk_rates | body*: compare_bulk_rates_request_body | compare_bulk_rates_response_body |  | Get Bulk Rates |
+| POST | `/v1/rates/estimate` | estimate_rates | body*: estimate_rates_request_body | estimate_rates_response_body |  | Estimate Rates |
+| GET | `/v1/rates/{rate_id}` | get_rate_by_id | `rate_id`* | get_rate_by_id_response_body | yes | Get Rate By ID |
+| POST | `/v1/service_points/list` | service_points_list | body*: get_service_points_request | list_service_points_response_body |  | List Service Points |
+| GET | `/v1/service_points/{carrier_code}/{country_code}/{service_point_id}` | service_points_get_by_id | `carrier_code`*, `country_code`*, `service_point_id`* | get_service_point_by_id_response_body | yes | Get Service Point By ID |
+| GET | `/v1/shipments` | list_shipments | `shipment_status`, `batch_id`, `tag`, `created_at_start`, `created_at_end`, `modified_at_start`, `modified_at_end`, `page`, `page_size`, `sales_order_id`, `sort_dir`, `sort_by` | list_shipments_response_body | yes | List Shipments |
+| POST | `/v1/shipments` | create_shipments | body*: create_shipments_request_body | create_shipments_response_body |  | Create Shipments |
+| GET | `/v1/shipments/external_shipment_id/{external_shipment_id}` | get_shipment_by_external_id | `external_shipment_id`* | get_shipment_by_external_id_response_body | yes | Get Shipment By External ID |
+| PUT | `/v1/shipments/recognize` | parse_shipment | body*: parse_shipment_request_body | parse_shipment_response_body |  | Parse shipping info |
+| GET | `/v1/shipments/{shipment_id}` | get_shipment_by_id | `shipment_id`* | get_shipment_by_id_response_body | yes | Get Shipment By ID |
+| PUT | `/v1/shipments/{shipment_id}` | update_shipment | `shipment_id`*, body*: update_shipment_request_body | update_shipment_response_body |  | Update Shipment By ID |
+| PUT | `/v1/shipments/{shipment_id}/cancel` | cancel_shipments | `shipment_id`* | empty_response_body |  | Cancel a Shipment |
+| GET | `/v1/shipments/{shipment_id}/rates` | list_shipment_rates | `shipment_id`*, `created_at_start` | list_shipment_rates_response_body | yes | Get Shipment Rates |
+| POST | `/v1/shipments/{shipment_id}/tags/{tag_name}` | tag_shipment | `shipment_id`*, `tag_name`* | tag_shipment_response_body |  | Add Tag to Shipment |
+| DELETE | `/v1/shipments/{shipment_id}/tags/{tag_name}` | untag_shipment | `shipment_id`*, `tag_name`* | empty_response_body |  | Remove Tag from Shipment |
+| GET | `/v1/tags` | list_tags | — | list_tags_response_body | yes | Get Tags |
+| POST | `/v1/tags/{tag_name}` | create_tag | `tag_name`* | create_tag_response_body |  | Create a New Tag |
+| DELETE | `/v1/tags/{tag_name}` | delete_tag | `tag_name`* | empty_response_body |  | Delete Tag |
+| PUT | `/v1/tags/{tag_name}/{new_tag_name}` | rename_tag | `tag_name`*, `new_tag_name`* | empty_response_body |  | Update Tag Name |
+| POST | `/v1/tokens/ephemeral` | tokens_get_ephemeral_token | `redirect` | tokens_get_ephemeral_token_response_body.yaml |  | Get Ephemeral Token |
+| GET | `/v1/tracking` | get_tracking_log | `carrier_code`, `tracking_number` | get_tracking_log_response_body | yes | Get Tracking Information |
+| POST | `/v1/tracking/start` | start_tracking | `carrier_code`, `tracking_number` | empty_response_body |  | Start Tracking a Package |
+| POST | `/v1/tracking/stop` | stop_tracking | `carrier_code`, `tracking_number` | empty_response_body |  | Stop Tracking a Package |
+| GET | `/v1/warehouses` | list_warehouses | — | list_warehouses_response_body | yes | List Warehouses |
+| POST | `/v1/warehouses` | create_warehouse | body*: create_warehouse_request_body | create_warehouse_response_body |  | Create Warehouse |
+| GET | `/v1/warehouses/{warehouse_id}` | get_warehouse_by_id | `warehouse_id`* | get_warehouse_by_id_response_body | yes | Get Warehouse By Id |
+| PUT | `/v1/warehouses/{warehouse_id}` | update_warehouse | `warehouse_id`*, body*: update_warehouse_request_body | empty_response_body |  | Update Warehouse By Id |
+| DELETE | `/v1/warehouses/{warehouse_id}` | delete_warehouse | `warehouse_id`* | empty_response_body |  | Delete Warehouse By ID |
+| PUT | `/v1/warehouses/{warehouse_id}/settings` | update_warehouse_settings | `warehouse_id`*, body*: update_warehouse_settings_request_body | empty_response_body |  | Update Warehouse Settings |

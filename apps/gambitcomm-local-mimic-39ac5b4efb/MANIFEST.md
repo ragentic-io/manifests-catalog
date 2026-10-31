@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.gambitcomm.com_site_images_
 
 | | |
 | --- | --- |
-| Signed bundle | `0297b84ff1a104d3acaebe61d0f422576fd48868175aac8d47f7b966560fb313` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,361 +34,363 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.gambitcomm.com_site_images_
 
 24 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/mimic/access/add/{user}/{agents}/{mask}` | access_add | Adds/Overwrites the user entry in the access control database. |
-| DELETE | `/mimic/access/del/{user}` | access_del | Clears a users entry from access control database. |
-| GET | `/mimic/access/get/acldb` | access_get_acldb | Returns the current access control database in use. |
-| GET | `/mimic/access/get/admindir` | access_get_admindir | Returns the current admin directory. |
-| GET | `/mimic/access/get/adminuser` | access_get_adminuser | Returns the current administrator. |
-| GET | `/mimic/access/get/enabled` | access_get_enabled | Returns the state of access control checking. |
-| GET | `/mimic/access/list` | access_list | Returns an array of entries. |
-| PUT | `/mimic/access/load/{filename}` | access_load | Loads the specified file for access control data. |
-| PUT | `/mimic/access/save/{filename}` | access_save | Saves current access control data in specified file. |
-| PUT | `/mimic/access/set/acldb/{databaseName}` | access_set_acldb | Allows setting the name of the current access control database. |
-| PUT | `/mimic/access/set/enabled/{enabledOrNot}` | access_set_enabled | Allows the user to enable/disable the access control check. |
-| POST | `/mimic/agent/{agentNum}/add/{IP}` | new | Add an agent. |
-| POST | `/mimic/agent/{agentNum}/from/add/{IP}/{port}` | from_add | Add a source address that the agent will accept messages from. |
-| DELETE | `/mimic/agent/{agentNum}/from/delete/{IP}/{port}` | from_del | delete a source address that the agent will accept messages from. |
-| GET | `/mimic/agent/{agentNum}/from/list` | from_list | List the source addresses that the agent will accept messages from. |
-| GET | `/mimic/agent/{agentNum}/get/changed` | get_changed | has the agent value space changed? |
-| GET | `/mimic/agent/{agentNum}/get/config_changed` | get_config_changed | has the lab configuration changed? |
-| GET | `/mimic/agent/{agentNum}/get/delay` | get_delay | one-way transit delay in msec. |
-| GET | `/mimic/agent/{agentNum}/get/drops` | get_drops | drop rate (every N-th PDU). 0 means no drops. |
-| GET | `/mimic/agent/{agentNum}/get/host` | get_host | host address of the agent. |
-| GET | `/mimic/agent/{agentNum}/get/inform_timeout` | get_inform_timeout | timeout in seconds for retransmitting INFORM PDUs. |
-| GET | `/mimic/agent/{agentNum}/get/interface` | get_interface | network interface card for the agent. |
-| GET | `/mimic/agent/{agentNum}/get/mask` | get_mask | subnet mask of the agent. |
-| GET | `/mimic/agent/{agentNum}/get/mibs` | get_mibs | set of MIBs, simulations and scenarios |
-| GET | `/mimic/agent/{agentNum}/get/num_starts` | get_number_starts | number of starts for the agent. |
-| GET | `/mimic/agent/{agentNum}/get/oiddir` | get_oiddir | MIB directory of the agent. |
-| GET | `/mimic/agent/{agentNum}/get/owner` | get_owner | owner of the agent. |
-| GET | `/mimic/agent/{agentNum}/get/pdusize` | get_pdusize | maximum PDU size. |
-| GET | `/mimic/agent/{agentNum}/get/port` | get_port | port number |
-| GET | `/mimic/agent/{agentNum}/get/privdir` | get_privdir | private directory of the agent. |
-| GET | `/mimic/agent/{agentNum}/get/protocol` | get_protocols | protocols supported by agent |
-| GET | `/mimic/agent/{agentNum}/get/read` | get_read_community | read community string |
-| GET | `/mimic/agent/{agentNum}/get/scen` | get_scen | first scenario name |
-| GET | `/mimic/agent/{agentNum}/get/sim` | get_sim | first simulation name |
-| GET | `/mimic/agent/{agentNum}/get/start` | get_starttime | relative start time |
-| GET | `/mimic/agent/{agentNum}/get/state` | get_agent_state | current running state of the agent |
-| GET | `/mimic/agent/{agentNum}/get/state_changed` | get_state_changed | has the agent state changed? |
-| GET | `/mimic/agent/{agentNum}/get/statistics` | get_statistics | current statistics of the agent instance |
-| GET | `/mimic/agent/{agentNum}/get/trace` | get_trace | SNMP PDU tracing |
-| GET | `/mimic/agent/{agentNum}/get/validate` | get_validate | SNMP SET validation policy. |
-| GET | `/mimic/agent/{agentNum}/get/write` | get_write_community | write community string |
-| PUT | `/mimic/agent/{agentNum}/halt` | halt | Halt the current agent. |
-| POST | `/mimic/agent/{agentNum}/ipalias/add/{IP}/{port}/{mask}/{interface}` | add_ipalias | Adds a new ipalias for the agent. |
-| DELETE | `/mimic/agent/{agentNum}/ipalias/delete/{IP}/{port}` | del_ipalias | Deletes an existing ipalias from the agent. |
-| GET | `/mimic/agent/{agentNum}/ipalias/list` | list_ipaliases | Lists all the additional ipaliases configured for the agent. |
-| PUT | `/mimic/agent/{agentNum}/ipalias/start/{IP}/{port}` | start_ipalias | Starts an existing ipalias for the agent. |
-| GET | `/mimic/agent/{agentNum}/ipalias/status/{IP}/{port}` | status_ipalias | Returns the status (0=down, 1=up) of an existing ipalias for the agent. |
-| PUT | `/mimic/agent/{agentNum}/ipalias/stop/{IP}/{port}` | stop_ipalias | Stops an existing ipalias for the agent. |
-| PUT | `/mimic/agent/{agentNum}/pause` | pause_now | Pause the current agent. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/args` | protocol_coap_get_args | Show the agent's COAP argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/config` | protocol_coap_get_config | Show the agent's COAP configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/statistics` | protocol_coap_get_statistics | Show the agent's COAP statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/trace` | protocol_coap_get_trace | Show the agent's COAP traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/coap/set/config/{argument}/{value}` | protocol_coap_set_config | Set the agent's COAP configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/coap/set/trace/{enableOrNot}` | protocol_coap_set_trace | Set the agent's COAP traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/args` | protocol_dhcp_get_args | Show the agent's DHCP argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/config` | protocol_dhcp_get_config | Show the agent's DHCP configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/statistics` | protocol_dhcp_get_statistics | Show the agent's DHCP statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/trace` | protocol_dhcp_get_trace | Show the agent's DHCP traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/params` | protocol_dhcp_params | Show the parameters configured by the server in its DHCP-OFFER message |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/dhcp/set/config/{argument}/{value}` | protocol_dhcp_set_config | Set the agent's DHCP configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/dhcp/set/trace/{enableOrNot}` | protocol_dhcp_set_trace | Set the agent's DHCP traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/args` | protocol_ipmi_get_args | Show the agent's IPMI argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/config` | protocol_ipmi_get_config | Show the agent's IPMI configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/statistics` | protocol_ipmi_get_statistics | Show the agent's IPMI statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/trace` | protocol_ipmi_get_trace | Show the agent's IPMI traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/{attr}` | protocol_ipmi_get_attr | Show the outgoing message's attributes |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ipmi/set/config/{argument}/{value}` | protocol_ipmi_set_config | Set the agent's IPMI configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ipmi/set/trace/{enableOrNot}` | protocol_ipmi_set_trace | Set the agent's IPMI traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ipmi/set/{attr}/{value}` | protocol_ipmi_set_attr | Set the outgoing message's attributes |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/get/protstate` | protocol_mqtt_client_get_protstate | Show the agent's MQTT TCP connection state |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/get/state` | protocol_mqtt_client_get_state | Show the agent's MQTT state |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/card` | protocol_mqtt_client_message_card | Show the agent's current messages' cardinality |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/get/{msgNum}/{attr}` | protocol_mqtt_client_message_get | Show the agent's message attributes |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/set/{msgNum}/{attr}/{value}` | protocol_mqtt_client_message_set | Set the agent's message attributes |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/resubscribe/{subNum}` | protocol_mqtt_client_resubscribe | Restart receiving messages from a subcription of the agent |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/abort` | protocol_mqtt_client_runtime_abort | Abort agent's MQTT TCP session without sending DISCONNECT command |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/connect` | protocol_mqtt_client_runtime_connect | Start agent's MQTT TCP session |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/disconnect` | protocol_mqtt_client_runtime_disconnect | Disconnect agent's MQTT TCP session by sending DISCONNECT command |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/broker/{brokerAddr}` | protocol_mqtt_client_set_broker | Set the agent's MQTT TCP connection target broker |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/cleansession/{cleanOrNot}` | protocol_mqtt_client_set_cleansession | Set the agent's MQTT session |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/clientid/{clientID}` | protocol_mqtt_client_set_clientid | Set the agent's MQTT client ID |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/keepalive/{aliveTime}` | protocol_mqtt_client_set_keepalive | Set the agent's MQTT TCP keepalive |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/on_disconnect/{action}` | protocol_mqtt_client_set_on_disconnect | Set the agent's MQTT disconnection action |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/password/{password}` | protocol_mqtt_client_set_password | Set the agent's MQTT client password |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/port/{port}` | protocol_mqtt_client_set_port | Set the agent's MQTT TCP connection target port |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/username/{username}` | protocol_mqtt_client_set_username | Set the agent's MQTT client username |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willmsg/{msg}` | protocol_mqtt_client_set_willmsg | Set the agent's MQTT client's will |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willqos/{qos}` | protocol_mqtt_client_set_willqos | Set the agent's MQTT will message's QOS field |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willretain/{retain}` | protocol_mqtt_client_set_willretain | Set the agent's MQTT retained will |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willtopic/{topic}` | protocol_mqtt_client_set_willtopic | Set the agent's MQTT client will's topic |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/card` | protocol_mqtt_client_subscribe_card | Show the agent's current subscriptions' cardinality |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/get/{subNum}/{attr}` | protocol_mqtt_client_subscribe_get | Show the agent's subscription attributes |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/set/{subNum}/{attr}/{value}` | protocol_mqtt_client_subscribe_set | Set the agent's subscribe attributes |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/unsubscribe/{subNum}` | protocol_mqtt_client_unsubscribe | Stops receiving messages from a subcription of the agent |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/args` | protocol_mqtt_get_args | Show the agent's MQTT argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/config` | protocol_mqtt_get_config | Show the agent's MQTT configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/statistics` | protocol_mqtt_get_statistics | Show the agent's MQTT statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/trace` | protocol_mqtt_get_trace | Show the agent's MQTT traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/set/config/{argument}/{value}` | protocol_mqtt_set_config | Set the agent's MQTT configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/set/trace/{enableOrNot}` | protocol_mqtt_set_trace | Set the agent's MQTT traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/dfs_interval/{interval}` | protocol_netflow_change_dfs | Change NETFLOW data export interval |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/tfs_interval/{interval}` | protocol_netflow_change_tfs | Change NETFLOW template export interval |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/{flowset-uid}/{field-num}/{attr}/{value}` | protocol_netflow_change_attr | Change NETFLOW export attributes |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/list` | protocol_netflow_list | Show list of NETFLOW exports |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/args` | protocol_netflow_get_args | Show the agent's NETFLOW argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/config` | protocol_netflow_get_config | Show the agent's NETFLOW configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/statistics` | protocol_netflow_get_statistics | Show the agent's NETFLOW statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/trace` | protocol_netflow_get_trace | Show the agent's NETFLOW traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/halt` | protocol_netflow_halt | Halt NETFLOW traffic |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/reload` | protocol_netflow_reload | Reload NETFLOW configuration before resuming traffic |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/resume` | protocol_netflow_resume | Resuming traffic |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/collector/{collectorIP}` | protocol_netflow_set_collector | Swap NETFLOW collector |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/config/{argument}/{value}` | protocol_netflow_set_config | Set the agent's NETFLOW configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/filename/{fileName}` | protocol_netflow_set_fileName | Swap NETFLOW configuration file |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/trace/{enableOrNot}` | protocol_netflow_set_trace | Set the agent's NETFLOW traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/args` | protocol_proxy_get_args | Show the agent's PROXY argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/config` | protocol_proxy_get_config | Show the agent's PROXY configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/statistics` | protocol_proxy_get_statistics | Show the agent's PROXY statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/trace` | protocol_proxy_get_trace | Show the agent's PROXY traffic tracing |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/add/{port}/{target}/{targetPort}` | protocol_proxy_port_add | Add individual proxy target on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/isStarted/{port}` | protocol_proxy_port_isstarted | Check individual target |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/list` | protocol_proxy_port_list | List all proxy targets |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/remove/{port}` | protocol_proxy_port_remove | Remove individual proxy target on the agent and the simulator host |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/start/{port}` | protocol_proxy_port_start | Start additional target |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/stop/{port}` | protocol_proxy_port_stop | Stop additional target |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/set/config/{argument}/{value}` | protocol_proxy_set_config | Set the agent's PROXY configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/set/trace/{enableOrNot}` | protocol_proxy_set_trace | Set the agent's PROXY traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/args` | protocol_sflow_get_args | Show the agent's SFLOW argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/config` | protocol_sflow_get_config | Show the agent's SFLOW configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/statistics` | protocol_sflow_get_statistics | Show the agent's SFLOW statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/trace` | protocol_sflow_get_trace | Show the agent's SFLOW traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/halt` | protocol_sflow_halt | Halt SFLOW traffic |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/reload` | protocol_sflow_reload | Reload SFLOW configuration before resuming traffic |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/resume` | protocol_sflow_resume | Resuming traffic |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/set/config/{argument}/{value}` | protocol_sflow_set_config | Set the agent's SFLOW configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/set/trace/{enableOrNot}` | protocol_sflow_set_trace | Set the agent's SFLOW traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/args` | protocol_snmptcp_get_args | Show the agent's SNMPTCP argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/config` | protocol_snmptcp_get_config | Show the agent's SNMPTCP configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/statistics` | protocol_snmptcp_get_statistics | Show the agent's SNMPTCP statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/trace` | protocol_snmptcp_get_trace | Show the agent's SNMPTCP traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/disable/{ipaddress}/{port}` | protocol_snmptcp_ipalias_disable | Disable individual IP aliases on the agent and the simulator host |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/enable/{ipaddress}/{port}` | protocol_snmptcp_ipalias_enable | Enable individual IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/isenabled/{ipaddress}/{port}` | protocol_snmptcp_ipalias_isenabled | Check individual IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/list` | protocol_snmptcp_ipalias_list | List all IP aliases on the agent and the simulator host |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/set/config/{argument}/{value}` | protocol_snmptcp_set_config | Set the agent's SNMPTCP configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/set/trace/{enableOrNot}` | protocol_snmptcp_set_trace | Set the agent's SNMPTCP traffic tracing |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/add/{groupName}/{prefix}/{securityModel}/{securityLevel}/{contextMatch}/{readView}/{writeView}/{notifyView}` | protocol_snmpv3_access_add | Adds a new access entry with the specified parameters. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/clear` | protocol_snmpv3_access_clear | Clears all access entries. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/del/{accessName}` | protocol_snmpv3_access_del | Deletes the specified access entry. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/list` | protocol_snmpv3_access_list | Returns the current acccess entries as an array of strings. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/config` | protocol_snmpv3_get_config | Returns the SNMPv3 configuration. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/context_engineid` | protocol_snmpv3_get_context_engineid | Retrieves the contextEngineID for the agent instance. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/engineboots` | protocol_snmpv3_get_engineboots | Retrieves the number of times the agent has been restarted. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/engineid` | protocol_snmpv3_get_engineid | For started agents, retrieves the current engineID in use by the snmpv3 module. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/enginetime` | protocol_snmpv3_get_enginetime | Retrieves the time in seconds for which the agent has been running. |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/add/{groupName}/{securityModel}/{securityName}` | protocol_snmpv3_group_add | Adds a new group entry with the specified parameters. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/clear` | protocol_snmpv3_group_clear | Clears all group entries. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/del/{groupName}` | protocol_snmpv3_group_del | Deletes the specified group entry. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/list` | protocol_snmpv3_group_list | Returns the current group entries as an array of strings. |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/set/config/{parameter}/{value}` | protocol_snmpv3_set_config | Changes the SNMPv3 configuration. |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/add/{userName}/{securityName}/{authProtocol}/{authKey}/{privProtocol}/{privKey}` | protocol_snmpv3_user_add | Adds a new user entry with the specified parameters. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/clear` | protocol_snmpv3_user_clear | Clears all user entries. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/del/{userName}` | protocol_snmpv3_user_del | Deletes the specified user entry. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/list` | protocol_snmpv3_user_list | Returns the current user entries as a Tcl list. |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/usm/save` | protocol_snmpv3_usm_save | Saves current user settings in the currently loaded USM config file. |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/usm/saveas/{filename}` | protocol_snmpv3_usm_saveas | Saves current user settings in the specified USM config file. |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/vacm/save` | protocol_snmpv3_vacm_save | Saves current group, access, view settings in the currently loaded VACM config file. |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/vacm/saveas/{filename}` | protocol_snmpv3_vacm_saveas | Saves current group, access, view settings in the specified VACM config file. |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/add/{viewName}/{viewType}/{subtree}/{mask}` | protocol_snmpv3_view_add | Adds a new view entry with the specified parameters. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/clear` | protocol_snmpv3_view_clear | Clears all view entries. |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/del/{viewName}` | protocol_snmpv3_view_del | Deletes the specified view entry. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/list` | protocol_snmpv3_view_list | Returns the current view entries as an array of strings. |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/args` | protocol_ssh_get_args | Show the agent's SSH argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/config` | protocol_ssh_get_config | Show the agent's SSH configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/statistics` | protocol_ssh_get_statistics | Show the agent's SSH statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/trace` | protocol_ssh_get_trace | Show the agent's SSH traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/disable/{ipaddress}/{port}` | protocol_ssh_ipalias_disable | Disable individual IP aliases on the agent and the simulator host |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/enable/{ipaddress}/{port}` | protocol_ssh_ipalias_enable | Enable individual IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/isenabled/{ipaddress}/{port}` | protocol_ssh_ipalias_isenabled | Check individual IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/list` | protocol_ssh_ipalias_list | List all IP aliases on the agent and the simulator host |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/set/config/{argument}/{value}` | protocol_ssh_set_config | Set the agent's SSH configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/set/trace/{enableOrNot}` | protocol_ssh_set_trace | Set the agent's SSH traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/args` | protocol_syslog_get_args | Show the agent's SYSLOG argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/config` | protocol_syslog_get_config | Show the agent's SYSLOG configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/statistics` | protocol_syslog_get_statistics | Show the agent's SYSLOG statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/trace` | protocol_syslog_get_trace | Show the agent's SYSLOG traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/{attr}` | protocol_syslog_get_attr | Show the outgoing message's attributes |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/syslog/send/{pri}` | protocol_syslog_send | Set the agent's SYSLOG traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/syslog/set/config/{argument}/{value}` | protocol_syslog_set_config | Set the agent's SYSLOG configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/syslog/set/trace/{enableOrNot}` | protocol_syslog_set_trace | Set the agent's SYSLOG traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/syslog/set/{attr}/{value}` | protocol_syslog_set_attr | Set the outgoing message's attributes |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/connection/logon/{connectionID}/{user}/{password}` | protocol_telnet_connection_logon | Changes the connection's current logon. |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/connection/request/{connectionID}/{command}` | protocol_telnet_connection_request | Executes the command asynchronously . |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/connection/signal/{connectionID}/{signalName}` | protocol_telnet_connection_signal | Triggers the asynchronous signal event with the specified signal name |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/args` | protocol_telnet_get_args | Show the agent's TELNET argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/config` | protocol_telnet_get_config | Show the agent's TELNET configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/statistics` | protocol_telnet_get_statistics | Show the agent's TELNET statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/trace` | protocol_telnet_get_trace | Show the agent's TELNET traffic tracing |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/disable/{ipaddress}/{port}` | protocol_telnet_ipalias_disable | Disable individual IP aliases on the agent and the simulator host |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/enable/{ipaddress}/{port}` | protocol_telnet_ipalias_enable | Enable individual IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/isenabled/{ipaddress}/{port}` | protocol_telnet_ipalias_isenabled | Check individual IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/list` | protocol_telnet_ipalias_list | List all IP aliases on the agent and the simulator host |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/connections` | protocol_telnet_server_get_connections | Show the agent's TELNET connections |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/keymap` | protocol_telnet_server_get_keymap | Show the agent's TELNET keymap file name |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/rulesdb` | protocol_telnet_server_get_rulesdb | Show the agent's TELNET rules db file name |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/state` | protocol_telnet_server_get_state | Show the agent's TELNET server state |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/userdb` | protocol_telnet_server_get_userdb | Show the agent's TELNET user db file name |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/users` | protocol_telnet_server_get_users | Show the agent's TELNET users |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/set/config/{argument}/{value}` | protocol_telnet_set_config | Set the agent's TELNET configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/set/trace/{enableOrNot}` | protocol_telnet_set_trace | Set the agent's TELNET traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/args` | protocol_tftp_get_args | Show the agent's TFTP argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/config` | protocol_tftp_get_config | Show the agent's TFTP configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/statistics` | protocol_tftp_get_statistics | Show the agent's TFTP statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/trace` | protocol_tftp_get_trace | Show the agent's TFTP traffic tracing |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/tftp/session/read/server/{srcfile}` | protocol_tftp_session_read | Create a read session to download srcfile from server |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/tftp/session/write/server/{srcfile}` | protocol_tftp_session_write | Create a read session to upload srcfile to server |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/set/config/{argument}/{value}` | protocol_tftp_set_config | Set the agent's TFTP configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/set/trace/{enableOrNot}` | protocol_tftp_set_trace | Set the agent's TFTP traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/get/{parameter}` | protocol_tftp_session_get_parameter | Show a parameter of a TFTP sesssion |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/set/{parameter}/{value}` | protocol_tftp_session_set_parameter | Set a parameter of a TFTP sesssion |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/start` | protocol_tftp_session_start | Start a TFTP sesssion |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/status` | protocol_tftp_session_status | Check a TFTP sesssion's status |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/stop` | protocol_tftp_session_stop | Stop a TFTP sesssion |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/args` | protocol_tod_get_args | Show the agent's TOD argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/config` | protocol_tod_get_config | Show the agent's TOD configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/statistics` | protocol_tod_get_statistics | Show the agent's TOD statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/trace` | protocol_tod_get_trace | Show the agent's TOD traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/gettime/server/{serverAddr}/port/{portNum}/script/{scriptName}/timeout/{timeSec}/retries/{numRetries}` | protocol_tod_gettime | Retrieve TOD time |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tod/set/config/{argument}/{value}` | protocol_tod_set_config | Set the agent's TOD configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/tod/set/trace/{enableOrNot}` | protocol_tod_set_trace | Set the agent's TOD traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/args` | protocol_web_get_args | Show the agent's WEB argument structure |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/config` | protocol_web_get_config | Show the agent's WEB configuration |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/statistics` | protocol_web_get_statistics | Show the agent's WEB statistics |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/trace` | protocol_web_get_trace | Show the agent's WEB traffic tracing |
-| POST | `/mimic/agent/{agentNum}/protocol/msg/web/port/add/{port}` | protocol_web_port_add | Add the agent's WEB port |
-| GET | `/mimic/agent/{agentNum}/protocol/msg/web/port/exists/{port}` | protocol_web_port_exists | Show the agent's WEB port |
-| DELETE | `/mimic/agent/{agentNum}/protocol/msg/web/port/remove/{port}` | protocol_web_port_remove | Remove the agent's WEB port |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/port/set/{port}/{protocol}/{version}` | protocol_web_port_set | Set the agent's WEB port attribute |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/port/start/{port}` | protocol_web_port_start | Start the agent's WEB port |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/port/stop/{port}` | protocol_web_port_stop | Stop the agent's WEB port |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/set/config/{argument}/{value}` | protocol_web_set_config | Set the agent's WEB configuration |
-| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/set/trace/{enableOrNot}` | protocol_web_set_trace | Set the agent's WEB traffic tracing |
-| GET | `/mimic/agent/{agentNum}/protocol/{prot}/get/config` | protocol_get_config | Returns the protocol's configuration. |
-| PUT | `/mimic/agent/{agentNum}/reload` | reload | Reload the current agent. |
-| DELETE | `/mimic/agent/{agentNum}/remove` | agent_remove | Remove the current agent. |
-| PUT | `/mimic/agent/{agentNum}/resume` | resume | Resume the current agent. |
-| PUT | `/mimic/agent/{agentNum}/save` | save | Save agent MIB values. |
-| PUT | `/mimic/agent/{agentNum}/set/delay/{delay}` | set_delay | one-way transit delay in msec |
-| PUT | `/mimic/agent/{agentNum}/set/drops/{drops}` | set_drops | drop rate (every N-th PDU) |
-| PUT | `/mimic/agent/{agentNum}/set/host/{host}` | set_host | host address of the agent. |
-| PUT | `/mimic/agent/{agentNum}/set/inform_timeout/{inform_timeout}` | set_inform_timeout | timeout in seconds for retransmitting INFORM PDUs |
-| PUT | `/mimic/agent/{agentNum}/set/interface/{interface}` | set_interface | network interface card for the agent |
-| PUT | `/mimic/agent/{agentNum}/set/mask/{mask}` | set_mask | subnet mask of the agent. |
-| PUT | `/mimic/agent/{agentNum}/set/mibs` | set_mibs | set of MIBs, simulations and scenarios |
-| PUT | `/mimic/agent/{agentNum}/set/oiddir/{oiddir}` | set_oiddir | MIB directory of the agent. |
-| PUT | `/mimic/agent/{agentNum}/set/owner/{owner}` | set_owner | owner of the agent |
-| PUT | `/mimic/agent/{agentNum}/set/pdusize/{pdusize}` | set_pdusize | maximum PDU size |
-| PUT | `/mimic/agent/{agentNum}/set/port/{port}` | set_port | port number |
-| PUT | `/mimic/agent/{agentNum}/set/privdir/{privdir}` | set_privdir | private directory of the agent. |
-| PUT | `/mimic/agent/{agentNum}/set/protocol` | set_protocols | protocols supported by agent as a comma-separated list |
-| PUT | `/mimic/agent/{agentNum}/set/read/{read}` | set_read_community | read community string |
-| PUT | `/mimic/agent/{agentNum}/set/start/{start}` | set_starttime | relative start time |
-| PUT | `/mimic/agent/{agentNum}/set/trace/{trace}` | set_trace | SNMP PDU tracing |
-| PUT | `/mimic/agent/{agentNum}/set/validate/{validate}` | set_validate | SNMP SET validation policy |
-| PUT | `/mimic/agent/{agentNum}/set/write/{write}` | set_write_community | write community string |
-| PUT | `/mimic/agent/{agentNum}/start` | start | Start the current agent. |
-| PUT | `/mimic/agent/{agentNum}/stop` | stop | Show the agent's primary IP address |
-| PUT | `/mimic/agent/{agentNum}/store/copy/{otherAgent}` | agent_store_copy | This command copies the variable store from the other agent to this agent. |
-| GET | `/mimic/agent/{agentNum}/store/exists/{var}` | agent_store_exists | This command can be used as a predicate to ascertain the existence of a given variable. |
-| GET | `/mimic/agent/{agentNum}/store/get/{var}` | agent_store_get | Fetches the value associated with a variable. |
-| GET | `/mimic/agent/{agentNum}/store/list` | agent_store_list | This command will return the list of variables in the said scope. |
-| PUT | `/mimic/agent/{agentNum}/store/lreplace/{var}/{index}` | agent_store_lreplace | These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist. |
-| GET | `/mimic/agent/{agentNum}/store/persists/{var}` | agent_store_persists | This command can be used as a predicate to ascertain the persistence of a given variable. |
-| PUT | `/mimic/agent/{agentNum}/store/set/{var}/{persist}` | agent_store_set | These commands allow the creation of a new variable, or changing an existing value. |
-| PUT | `/mimic/agent/{agentNum}/store/unset/{var}` | agent_store_unset | Deletes a variable which is currently defined. |
-| POST | `/mimic/agent/{agentNum}/timer/script/add/{script}/{interval}/{arg}` | add_timer_script | Add a new timer script to be executed at specified interval (in msec) with the specified argument. |
-| DELETE | `/mimic/agent/{agentNum}/timer/script/delete/{script}/{interval}/{arg}` | del_timer_script | Remove a timer script from the execution list. |
-| GET | `/mimic/agent/{agentNum}/timer/script/list` | list_timer_scripts | List the timer scripts currently running along with the their intervals. |
-| POST | `/mimic/agent/{agentNum}/trap/config/add/{IP}/{port}` | trap_config_add | Add a trap destination to the set of destinations. |
-| DELETE | `/mimic/agent/{agentNum}/trap/config/delete/{IP}/{port}` | trap_config_del | Remove a trap destination from the set of destinations. |
-| GET | `/mimic/agent/{agentNum}/trap/config/list` | trap_config_list | List the set of trap destinations for this agent instance. |
-| GET | `/mimic/agent/{agentNum}/trap/list` | trap_list | List the outstanding asynchronous traps for this agent instance. |
-| POST | `/mimic/agent/{agentNum}/value/add/{object}/{instance}` | add | Add an entry to a table. |
-| GET | `/mimic/agent/{agentNum}/value/eval/{object}/{instance}` | eval_value | Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests. |
-| GET | `/mimic/agent/{agentNum}/value/get/{object}/{instance}/{variable}` | get_value | Get a variable in the Value Space. |
-| GET | `/mimic/agent/{agentNum}/value/info/{object}` | get_info | Return the syntactical information for the specified object, such as type, size, range, enumerations, and ACCESS. |
-| GET | `/mimic/agent/{agentNum}/value/instances/{object}` | get_instances | Display the MIB object instances for the specified object. |
-| GET | `/mimic/agent/{agentNum}/value/list/{OID}` | get_objects | Display the MIB objects below the current position |
-| GET | `/mimic/agent/{agentNum}/value/meval/{objInsArray}` | meval_value | Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests. |
-| GET | `/mimic/agent/{agentNum}/value/mget/{objInsVarArray}` | mget_value | Get multiple variables in the Value Space. |
-| GET | `/mimic/agent/{agentNum}/value/mib/{object}` | get_mib | Return the MIB that defines the specified object. |
-| PUT | `/mimic/agent/{agentNum}/value/mset` | mset_value | Set multiple variables in the Value Space. |
-| PUT | `/mimic/agent/{agentNum}/value/munset` | munset_value | Unset multiple variables in the Value Space |
-| GET | `/mimic/agent/{agentNum}/value/name/{OID}` | get_name | Return the symbolic name of the specified object identifier. |
-| GET | `/mimic/agent/{agentNum}/value/oid/{object}` | get_oid | Return the numeric OID of the specified object. |
-| DELETE | `/mimic/agent/{agentNum}/value/remove/{object}/{instance}` | remove | Remove an entry from a table. |
-| PUT | `/mimic/agent/{agentNum}/value/set/{object}/{instance}/{variable}` | set_value | Set a variable in the Value Space. |
-| GET | `/mimic/agent/{agentNum}/value/split/{OID}` | split_oid | Split the numerical OID into the object OID and instance OID. |
-| GET | `/mimic/agent/{agentNum}/value/state/get/{object}` | get_state | Get the state of a MIB object object. |
-| PUT | `/mimic/agent/{agentNum}/value/state/set/{object}/{state}` | set_state | Set the state of a MIB object object |
-| PUT | `/mimic/agent/{agentNum}/value/unset/{object}/{instance}/{variable}` | unset_value | Unset a variable in the Value Space in order to free its memory. |
-| GET | `/mimic/agent/{agentNum}/value/variables/{object}/{instance}` | get_variables | Display the variables for the specified instance instance for the specified MIB object object |
-| PUT | `/mimic/clear/{firstAgentNum}/{lastAgentNum}` | cfg_new | Clear the lab configuration. |
-| GET | `/mimic/get/active_data_list` | get_active_data_list | The list of {agentnum {statistics}} for agents that are currently active and whose statistics have changed since the last invocation of this command. |
-| GET | `/mimic/get/active_list` | get_active_list | The list of {agentnum} that are currently active (running or paused). |
-| GET | `/mimic/get/cfgfile` | get_cfgfile | The currently loaded lab configuration file for the particular user. |
-| GET | `/mimic/get/cfgfile_changed` | get_cfg_file_changed | This predicate indicates if the currently loaded agent configuration file has changed. |
-| GET | `/mimic/get/changed_config_list` | get_changed_config_list | The list of {agentnum} for which a configurable parameter changed. |
-| GET | `/mimic/get/changed_state_list` | get_changed_state_list | The list of {agentnum state} for which the state changed. |
-| GET | `/mimic/get/clients` | get_clients | The number of clients currently connected to the daemon. |
-| GET | `/mimic/get/configured_list` | get_configured_list | The list of {agentnum} that are currently configured. |
-| GET | `/mimic/get/interfaces` | get_interfaces | The set of network interfaces that can be used for simulations. |
-| GET | `/mimic/get/last` | get_last | The last configured agent instance. |
-| GET | `/mimic/get/log` | get_log | The current log file for the Simulator. |
-| GET | `/mimic/get/max` | get_max | The maximum number of agent instances. |
-| GET | `/mimic/get/netaddr` | get_netaddr | The network address of the host where the MIMIC simulator is running. |
-| GET | `/mimic/get/netdev` | get_netdev | The default network device to be used for agent addresses. |
-| GET | `/mimic/get/product` | get_product | The product number that is licensed. |
-| GET | `/mimic/get/protocols` | get_daemon_protocols | The set of protocols supported by the Simulator. |
-| GET | `/mimic/get/return` | get_return | The return mode. |
-| GET | `/mimic/get/version` | get_version | The version of the MIMIC command interface. |
-| PUT | `/mimic/load/{cfgFile}/{firstAgentNum}/{lastAgentNum}/{startAgentNum}` | cfg_load | Load the lab configuration file file. |
-| GET | `/mimic/mget/{infoArray}` | mget_info | Get multiple sets of information about MIMIC, where infoArray is one of the parameters defined in the mimic get command. |
-| GET | `/mimic/protocol/msg/coap/get/stats_hdr` | protocol_coap_get_stats_hdr | Show the COAP statistics headers |
-| GET | `/mimic/protocol/msg/dhcp/get/stats_hdr` | protocol_dhcp_get_stats_hdr | Show the DHCP statistics headers |
-| GET | `/mimic/protocol/msg/ipmi/get/stats_hdr` | protocol_ipmi_get_stats_hdr | Show the IPMI statistics headers |
-| GET | `/mimic/protocol/msg/mqtt/get/stats_hdr` | protocol_mqtt_get_stats_hdr | Show the MQTT statistics headers |
-| GET | `/mimic/protocol/msg/netflow/get/stats_hdr` | protocol_netflow_get_stats_hdr | Show the NETFLOW statistics headers |
-| GET | `/mimic/protocol/msg/proxy/get/stats_hdr` | protocol_proxy_get_stats_hdr | Show the PROXY statistics headers |
-| GET | `/mimic/protocol/msg/sflow/get/stats_hdr` | protocol_sflow_get_stats_hdr | Show the SFLOW statistics headers |
-| GET | `/mimic/protocol/msg/snmptcp/get/stats_hdr` | protocol_snmptcp_get_stats_hdr | Show the SNMPTCP statistics headers |
-| GET | `/mimic/protocol/msg/ssh/get/stats_hdr` | protocol_ssh_get_stats_hdr | Show the SSH statistics headers |
-| GET | `/mimic/protocol/msg/syslog/get/stats_hdr` | protocol_syslog_get_stats_hdr | Show the SYSLOG statistics headers |
-| GET | `/mimic/protocol/msg/telnet/get/stats_hdr` | protocol_telnet_get_stats_hdr | Show the TELNET statistics headers |
-| GET | `/mimic/protocol/msg/tftp/get/stats_hdr` | protocol_tftp_get_stats_hdr | Show the TFTP statistics headers |
-| GET | `/mimic/protocol/msg/tod/get/stats_hdr` | protocol_tod_get_stats_hdr | Show the TOD statistics headers |
-| GET | `/mimic/protocol/msg/web/get/stats_hdr` | protocol_web_get_stats_hdr | Show the WEB statistics headers |
-| PUT | `/mimic/save` | cfg_save | Save the lab configuration. |
-| PUT | `/mimic/saveas/{cfgFile}/{firstAgentNum}/{lastAgentNum}` | cfg_saveas | Save the lab configuration in file. |
-| PUT | `/mimic/set/log` | set_log | The current log file for the Simulator. |
-| PUT | `/mimic/set/netdev` | set_netdev | The network address of the host where the MIMIC simulator is running. |
-| PUT | `/mimic/set/persistent` | store_save | This operation flushes all global objects which need to be made persistent to disk. |
-| PUT | `/mimic/start` | start_all_agents | Start MIMIC. |
-| PUT | `/mimic/stop` | stop_all_agents | Stop MIMIC. |
-| GET | `/mimic/store/exists/{var}` | store_exists | This command can be used as a predicate to ascertain the existence of a given variable. |
-| GET | `/mimic/store/get/{var}` | store_get | Fetches the value associated with a variable. |
-| GET | `/mimic/store/list` | store_list | This command will return the list of variables in the said scope. |
-| PUT | `/mimic/store/lreplace/{var}/{index}` | store_lreplace | These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist. |
-| GET | `/mimic/store/persists/{var}` | store_persists | This command can be used as a predicate to ascertain the persistence of a given variable. |
-| PUT | `/mimic/store/set/{var}/{persist}` | store_set | Set the variable store for the global storage |
-| PUT | `/mimic/store/unset/{var}` | store_unset | Deletes a variable which is currently defined. |
-| PUT | `/mimic/terminate` | terminate | Terminate the MIMIC daemon. |
-| POST | `/mimic/timer/script/add/{script}/{interval}/{arg}` | add_daemon_timer_script | Add a new timer script to be executed at specified interval (in msec) with the specified argument. |
-| DELETE | `/mimic/timer/script/delete/{script}/{interval}/{arg}` | del_daemon_timer_script | Remove a timer script from the execution list. |
-| GET | `/mimic/timer/script/list` | list_daemon_timer_scripts | List the timer scripts currently running along with the their intervals. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/mimic/access/add/{user}/{agents}/{mask}` | access_add | `user`*, `agents`*, `mask`* | string |  | Adds/Overwrites the user entry in the access control database. |
+| DELETE | `/mimic/access/del/{user}` | access_del | `user`* | string |  | Clears a users entry from access control database. |
+| GET | `/mimic/access/get/acldb` | access_get_acldb | — | string | yes | Returns the current access control database in use. |
+| GET | `/mimic/access/get/admindir` | access_get_admindir | — | string | yes | Returns the current admin directory. |
+| GET | `/mimic/access/get/adminuser` | access_get_adminuser | — | string | yes | Returns the current administrator. |
+| GET | `/mimic/access/get/enabled` | access_get_enabled | — | string | yes | Returns the state of access control checking. |
+| GET | `/mimic/access/list` | access_list | — | AccessEntry[] | yes | Returns an array of entries. |
+| PUT | `/mimic/access/load/{filename}` | access_load | `filename`* | string[] |  | Loads the specified file for access control data. |
+| PUT | `/mimic/access/save/{filename}` | access_save | `filename`* | string[] |  | Saves current access control data in specified file. |
+| PUT | `/mimic/access/set/acldb/{databaseName}` | access_set_acldb | `databaseName`* | string |  | Allows setting the name of the current access control database. |
+| PUT | `/mimic/access/set/enabled/{enabledOrNot}` | access_set_enabled | `enabledOrNot`* | string |  | Allows the user to enable/disable the access control check. |
+| POST | `/mimic/agent/{agentNum}/add/{IP}` | new | `agentNum`*, `IP`*, body*: Triplet[] | string |  | Add an agent. |
+| POST | `/mimic/agent/{agentNum}/from/add/{IP}/{port}` | from_add | `agentNum`*, `IP`*, `port`* | string |  | Add a source address that the agent will accept messages from. |
+| DELETE | `/mimic/agent/{agentNum}/from/delete/{IP}/{port}` | from_del | `agentNum`*, `IP`*, `port`* | string |  | delete a source address that the agent will accept messages from. |
+| GET | `/mimic/agent/{agentNum}/from/list` | from_list | `agentNum`* | IPSource[] | yes | List the source addresses that the agent will accept messages from. |
+| GET | `/mimic/agent/{agentNum}/get/changed` | get_changed | `agentNum`* | integer:int32 | yes | has the agent value space changed? |
+| GET | `/mimic/agent/{agentNum}/get/config_changed` | get_config_changed | `agentNum`* | integer:int32 | yes | has the lab configuration changed? |
+| GET | `/mimic/agent/{agentNum}/get/delay` | get_delay | `agentNum`* | integer:int32 | yes | one-way transit delay in msec. |
+| GET | `/mimic/agent/{agentNum}/get/drops` | get_drops | `agentNum`* | integer:int32 | yes | drop rate (every N-th PDU). 0 means no drops. |
+| GET | `/mimic/agent/{agentNum}/get/host` | get_host | `agentNum`* | string | yes | host address of the agent. |
+| GET | `/mimic/agent/{agentNum}/get/inform_timeout` | get_inform_timeout | `agentNum`* | integer:int32 | yes | timeout in seconds for retransmitting INFORM PDUs. |
+| GET | `/mimic/agent/{agentNum}/get/interface` | get_interface | `agentNum`* | string | yes | network interface card for the agent. |
+| GET | `/mimic/agent/{agentNum}/get/mask` | get_mask | `agentNum`* | string | yes | subnet mask of the agent. |
+| GET | `/mimic/agent/{agentNum}/get/mibs` | get_mibs | `agentNum`* | Triplet[] | yes | set of MIBs, simulations and scenarios |
+| GET | `/mimic/agent/{agentNum}/get/num_starts` | get_number_starts | `agentNum`* | integer:int32 | yes | number of starts for the agent. |
+| GET | `/mimic/agent/{agentNum}/get/oiddir` | get_oiddir | `agentNum`* | string | yes | MIB directory of the agent. |
+| GET | `/mimic/agent/{agentNum}/get/owner` | get_owner | `agentNum`* | string | yes | owner of the agent. |
+| GET | `/mimic/agent/{agentNum}/get/pdusize` | get_pdusize | `agentNum`* | integer:int32 | yes | maximum PDU size. |
+| GET | `/mimic/agent/{agentNum}/get/port` | get_port | `agentNum`* | string | yes | port number |
+| GET | `/mimic/agent/{agentNum}/get/privdir` | get_privdir | `agentNum`* | string | yes | private directory of the agent. |
+| GET | `/mimic/agent/{agentNum}/get/protocol` | get_protocols | `agentNum`* | string[] | yes | protocols supported by agent |
+| GET | `/mimic/agent/{agentNum}/get/read` | get_read_community | `agentNum`* | string | yes | read community string |
+| GET | `/mimic/agent/{agentNum}/get/scen` | get_scen | `agentNum`* | integer:int32 | yes | first scenario name |
+| GET | `/mimic/agent/{agentNum}/get/sim` | get_sim | `agentNum`* | string | yes | first simulation name |
+| GET | `/mimic/agent/{agentNum}/get/start` | get_starttime | `agentNum`* | string | yes | relative start time |
+| GET | `/mimic/agent/{agentNum}/get/state` | get_agent_state | `agentNum`* | integer:int32 | yes | current running state of the agent |
+| GET | `/mimic/agent/{agentNum}/get/state_changed` | get_state_changed | `agentNum`* | integer:int32 | yes | has the agent state changed? |
+| GET | `/mimic/agent/{agentNum}/get/statistics` | get_statistics | `agentNum`* | integer:int32[] | yes | current statistics of the agent instance |
+| GET | `/mimic/agent/{agentNum}/get/trace` | get_trace | `agentNum`* | integer:int32 | yes | SNMP PDU tracing |
+| GET | `/mimic/agent/{agentNum}/get/validate` | get_validate | `agentNum`* | integer:int32 | yes | SNMP SET validation policy. |
+| GET | `/mimic/agent/{agentNum}/get/write` | get_write_community | `agentNum`* | string | yes | write community string |
+| PUT | `/mimic/agent/{agentNum}/halt` | halt | `agentNum`* | string |  | Halt the current agent. |
+| POST | `/mimic/agent/{agentNum}/ipalias/add/{IP}/{port}/{mask}/{interface}` | add_ipalias | `agentNum`*, `IP`*, `port`*, `mask`*, `interface`* | string |  | Adds a new ipalias for the agent. |
+| DELETE | `/mimic/agent/{agentNum}/ipalias/delete/{IP}/{port}` | del_ipalias | `agentNum`*, `IP`*, `port`* | string |  | Deletes an existing ipalias from the agent. |
+| GET | `/mimic/agent/{agentNum}/ipalias/list` | list_ipaliases | `agentNum`* | IPAlias[] | yes | Lists all the additional ipaliases configured for the agent. |
+| PUT | `/mimic/agent/{agentNum}/ipalias/start/{IP}/{port}` | start_ipalias | `agentNum`*, `IP`*, `port`* | string |  | Starts an existing ipalias for the agent. |
+| GET | `/mimic/agent/{agentNum}/ipalias/status/{IP}/{port}` | status_ipalias | `agentNum`*, `IP`*, `port`* | string | yes | Returns the status (0=down, 1=up) of an existing ipalias for the agent. |
+| PUT | `/mimic/agent/{agentNum}/ipalias/stop/{IP}/{port}` | stop_ipalias | `agentNum`*, `IP`*, `port`* | string |  | Stops an existing ipalias for the agent. |
+| PUT | `/mimic/agent/{agentNum}/pause` | pause_now | `agentNum`* | string |  | Pause the current agent. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/args` | protocol_coap_get_args | `agentNum`* | object | yes | Show the agent's COAP argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/config` | protocol_coap_get_config | `agentNum`* | ConfigCOAP | yes | Show the agent's COAP configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/statistics` | protocol_coap_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's COAP statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/coap/get/trace` | protocol_coap_get_trace | `agentNum`* | ConfigCOAP | yes | Show the agent's COAP traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/coap/set/config/{argument}/{value}` | protocol_coap_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's COAP configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/coap/set/trace/{enableOrNot}` | protocol_coap_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's COAP traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/args` | protocol_dhcp_get_args | `agentNum`* | object | yes | Show the agent's DHCP argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/config` | protocol_dhcp_get_config | `agentNum`* | ConfigDHCP | yes | Show the agent's DHCP configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/statistics` | protocol_dhcp_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's DHCP statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/get/trace` | protocol_dhcp_get_trace | `agentNum`* | ConfigDHCP | yes | Show the agent's DHCP traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/dhcp/params` | protocol_dhcp_params | `agentNum`* | object[] | yes | Show the parameters configured by the server in its DHCP-OFFER message |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/dhcp/set/config/{argument}/{value}` | protocol_dhcp_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's DHCP configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/dhcp/set/trace/{enableOrNot}` | protocol_dhcp_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's DHCP traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/args` | protocol_ipmi_get_args | `agentNum`* | object | yes | Show the agent's IPMI argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/config` | protocol_ipmi_get_config | `agentNum`* | ConfigIPMI | yes | Show the agent's IPMI configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/statistics` | protocol_ipmi_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's IPMI statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/trace` | protocol_ipmi_get_trace | `agentNum`* | ConfigIPMI | yes | Show the agent's IPMI traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ipmi/get/{attr}` | protocol_ipmi_get_attr | `agentNum`*, `attr`* | string | yes | Show the outgoing message's attributes |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ipmi/set/config/{argument}/{value}` | protocol_ipmi_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's IPMI configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ipmi/set/trace/{enableOrNot}` | protocol_ipmi_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's IPMI traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ipmi/set/{attr}/{value}` | protocol_ipmi_set_attr | `agentNum`*, `attr`*, `value`* | string |  | Set the outgoing message's attributes |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/get/protstate` | protocol_mqtt_client_get_protstate | `agentNum`* | integer:int32[] | yes | Show the agent's MQTT TCP connection state |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/get/state` | protocol_mqtt_client_get_state | `agentNum`* | integer:int32[] | yes | Show the agent's MQTT state |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/card` | protocol_mqtt_client_message_card | `agentNum`* | integer:int32[] | yes | Show the agent's current messages' cardinality |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/get/{msgNum}/{attr}` | protocol_mqtt_client_message_get | `agentNum`*, `msgNum`*, `attr`* | string[] | yes | Show the agent's message attributes |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/set/{msgNum}/{attr}/{value}` | protocol_mqtt_client_message_set | `agentNum`*, `msgNum`*, `attr`*, `value`* | string[] |  | Set the agent's message attributes |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/resubscribe/{subNum}` | protocol_mqtt_client_resubscribe | `agentNum`*, `subNum`* | string |  | Restart receiving messages from a subcription of the agent |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/abort` | protocol_mqtt_client_runtime_abort | `agentNum`* | string[] |  | Abort agent's MQTT TCP session without sending DISCONNECT command |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/connect` | protocol_mqtt_client_runtime_connect | `agentNum`* | string[] |  | Start agent's MQTT TCP session |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/disconnect` | protocol_mqtt_client_runtime_disconnect | `agentNum`* | string[] |  | Disconnect agent's MQTT TCP session by sending DISCONNECT command |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/broker/{brokerAddr}` | protocol_mqtt_client_set_broker | `agentNum`*, `brokerAddr`* | integer:int32[] |  | Set the agent's MQTT TCP connection target broker |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/cleansession/{cleanOrNot}` | protocol_mqtt_client_set_cleansession | `agentNum`*, `cleanOrNot`* | integer:int32[] |  | Set the agent's MQTT session |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/clientid/{clientID}` | protocol_mqtt_client_set_clientid | `agentNum`*, `clientID`* | integer:int32[] |  | Set the agent's MQTT client ID |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/keepalive/{aliveTime}` | protocol_mqtt_client_set_keepalive | `agentNum`*, `aliveTime`* | integer:int32[] |  | Set the agent's MQTT TCP keepalive |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/on_disconnect/{action}` | protocol_mqtt_client_set_on_disconnect | `agentNum`*, `action`* | integer:int32[] |  | Set the agent's MQTT disconnection action |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/password/{password}` | protocol_mqtt_client_set_password | `agentNum`*, `password`* | integer:int32[] |  | Set the agent's MQTT client password |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/port/{port}` | protocol_mqtt_client_set_port | `agentNum`*, `port`* | integer:int32[] |  | Set the agent's MQTT TCP connection target port |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/username/{username}` | protocol_mqtt_client_set_username | `agentNum`*, `username`* | integer:int32[] |  | Set the agent's MQTT client username |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willmsg/{msg}` | protocol_mqtt_client_set_willmsg | `agentNum`*, `msg`* | integer:int32[] |  | Set the agent's MQTT client's will |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willqos/{qos}` | protocol_mqtt_client_set_willqos | `agentNum`*, `qos`* | integer:int32[] |  | Set the agent's MQTT will message's QOS field |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willretain/{retain}` | protocol_mqtt_client_set_willretain | `agentNum`*, `retain`* | integer:int32[] |  | Set the agent's MQTT retained will |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willtopic/{topic}` | protocol_mqtt_client_set_willtopic | `agentNum`*, `topic`* | integer:int32[] |  | Set the agent's MQTT client will's topic |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/card` | protocol_mqtt_client_subscribe_card | `agentNum`* | integer:int32[] | yes | Show the agent's current subscriptions' cardinality |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/get/{subNum}/{attr}` | protocol_mqtt_client_subscribe_get | `agentNum`*, `subNum`*, `attr`* | string[] | yes | Show the agent's subscription attributes |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/set/{subNum}/{attr}/{value}` | protocol_mqtt_client_subscribe_set | `agentNum`*, `subNum`*, `attr`*, `value`* | string[] |  | Set the agent's subscribe attributes |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/client/unsubscribe/{subNum}` | protocol_mqtt_client_unsubscribe | `agentNum`*, `subNum`* | string |  | Stops receiving messages from a subcription of the agent |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/args` | protocol_mqtt_get_args | `agentNum`* | object | yes | Show the agent's MQTT argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/config` | protocol_mqtt_get_config | `agentNum`* | ConfigMQTT | yes | Show the agent's MQTT configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/statistics` | protocol_mqtt_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's MQTT statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/mqtt/get/trace` | protocol_mqtt_get_trace | `agentNum`* | ConfigMQTT | yes | Show the agent's MQTT traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/set/config/{argument}/{value}` | protocol_mqtt_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's MQTT configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/mqtt/set/trace/{enableOrNot}` | protocol_mqtt_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's MQTT traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/dfs_interval/{interval}` | protocol_netflow_change_dfs | `agentNum`*, `interval`* | string |  | Change NETFLOW data export interval |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/tfs_interval/{interval}` | protocol_netflow_change_tfs | `agentNum`*, `interval`* | string |  | Change NETFLOW template export interval |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/{flowset-uid}/{field-num}/{attr}/{value}` | protocol_netflow_change_attr | `agentNum`*, `flowset-uid`*, `field-num`*, `attr`*, `value`* | string |  | Change NETFLOW export attributes |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/flow/list` | protocol_netflow_list | `agentNum`* | object[] | yes | Show list of NETFLOW exports |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/args` | protocol_netflow_get_args | `agentNum`* | object | yes | Show the agent's NETFLOW argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/config` | protocol_netflow_get_config | `agentNum`* | ConfigNETFLOW | yes | Show the agent's NETFLOW configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/statistics` | protocol_netflow_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's NETFLOW statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/netflow/get/trace` | protocol_netflow_get_trace | `agentNum`* | ConfigNETFLOW | yes | Show the agent's NETFLOW traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/halt` | protocol_netflow_halt | `agentNum`* | string |  | Halt NETFLOW traffic |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/reload` | protocol_netflow_reload | `agentNum`* | string |  | Reload NETFLOW configuration before resuming traffic |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/resume` | protocol_netflow_resume | `agentNum`* | string |  | Resuming traffic |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/collector/{collectorIP}` | protocol_netflow_set_collector | `agentNum`*, `collectorIP`* | string |  | Swap NETFLOW collector |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/config/{argument}/{value}` | protocol_netflow_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's NETFLOW configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/filename/{fileName}` | protocol_netflow_set_fileName | `agentNum`*, `fileName`* | string |  | Swap NETFLOW configuration file |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/netflow/set/trace/{enableOrNot}` | protocol_netflow_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's NETFLOW traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/args` | protocol_proxy_get_args | `agentNum`* | object | yes | Show the agent's PROXY argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/config` | protocol_proxy_get_config | `agentNum`* | ConfigPROXY | yes | Show the agent's PROXY configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/statistics` | protocol_proxy_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's PROXY statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/get/trace` | protocol_proxy_get_trace | `agentNum`* | ConfigPROXY | yes | Show the agent's PROXY traffic tracing |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/add/{port}/{target}/{targetPort}` | protocol_proxy_port_add | `agentNum`*, `port`*, `target`*, `targetPort`* | string |  | Add individual proxy target on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/isStarted/{port}` | protocol_proxy_port_isstarted | `agentNum`*, `port`* | string | yes | Check individual target |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/list` | protocol_proxy_port_list | `agentNum`* | integer:int32[] | yes | List all proxy targets |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/remove/{port}` | protocol_proxy_port_remove | `agentNum`*, `port`* | string |  | Remove individual proxy target on the agent and the simulator host |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/start/{port}` | protocol_proxy_port_start | `agentNum`*, `port`* | string |  | Start additional target |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/port/stop/{port}` | protocol_proxy_port_stop | `agentNum`*, `port`* | string |  | Stop additional target |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/set/config/{argument}/{value}` | protocol_proxy_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's PROXY configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/proxy/set/trace/{enableOrNot}` | protocol_proxy_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's PROXY traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/args` | protocol_sflow_get_args | `agentNum`* | object | yes | Show the agent's SFLOW argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/config` | protocol_sflow_get_config | `agentNum`* | ConfigSFLOW | yes | Show the agent's SFLOW configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/statistics` | protocol_sflow_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's SFLOW statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/sflow/get/trace` | protocol_sflow_get_trace | `agentNum`* | ConfigSFLOW | yes | Show the agent's SFLOW traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/halt` | protocol_sflow_halt | `agentNum`* | string |  | Halt SFLOW traffic |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/reload` | protocol_sflow_reload | `agentNum`* | string |  | Reload SFLOW configuration before resuming traffic |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/resume` | protocol_sflow_resume | `agentNum`* | string |  | Resuming traffic |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/set/config/{argument}/{value}` | protocol_sflow_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's SFLOW configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/sflow/set/trace/{enableOrNot}` | protocol_sflow_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's SFLOW traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/args` | protocol_snmptcp_get_args | `agentNum`* | object | yes | Show the agent's SNMPTCP argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/config` | protocol_snmptcp_get_config | `agentNum`* | ConfigSNMPTCP | yes | Show the agent's SNMPTCP configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/statistics` | protocol_snmptcp_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's SNMPTCP statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/get/trace` | protocol_snmptcp_get_trace | `agentNum`* | ConfigSNMPTCP | yes | Show the agent's SNMPTCP traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/disable/{ipaddress}/{port}` | protocol_snmptcp_ipalias_disable | `agentNum`*, `ipaddress`*, `port`* | string |  | Disable individual IP aliases on the agent and the simulator host |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/enable/{ipaddress}/{port}` | protocol_snmptcp_ipalias_enable | `agentNum`*, `ipaddress`*, `port`* | string |  | Enable individual IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/isenabled/{ipaddress}/{port}` | protocol_snmptcp_ipalias_isenabled | `agentNum`*, `ipaddress`*, `port`* | string | yes | Check individual IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/list` | protocol_snmptcp_ipalias_list | `agentNum`* | IPAlias[] | yes | List all IP aliases on the agent and the simulator host |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/set/config/{argument}/{value}` | protocol_snmptcp_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's SNMPTCP configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmptcp/set/trace/{enableOrNot}` | protocol_snmptcp_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's SNMPTCP traffic tracing |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/add/{groupName}/{prefix}/{securityModel}/{securityLevel}/{contextMatch}/{readView}/{writeView}/{notifyView}` | protocol_snmpv3_access_add | `agentNum`*, `groupName`*, `prefix`*, `securityModel`*, `securityLevel`*, `contextMatch`*, `readView`*, `writeView`*, `notifyView`* | string |  | Adds a new access entry with the specified parameters. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/clear` | protocol_snmpv3_access_clear | `agentNum`* | string |  | Clears all access entries. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/del/{accessName}` | protocol_snmpv3_access_del | `agentNum`*, `accessName`* | string |  | Deletes the specified access entry. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/access/list` | protocol_snmpv3_access_list | `agentNum`* | string[] | yes | Returns the current acccess entries as an array of strings. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/config` | protocol_snmpv3_get_config | `agentNum`* | ConfigSNMPv3 | yes | Returns the SNMPv3 configuration. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/context_engineid` | protocol_snmpv3_get_context_engineid | `agentNum`* | string | yes | Retrieves the contextEngineID for the agent instance. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/engineboots` | protocol_snmpv3_get_engineboots | `agentNum`* | integer:int32 | yes | Retrieves the number of times the agent has been restarted. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/engineid` | protocol_snmpv3_get_engineid | `agentNum`* | string | yes | For started agents, retrieves the current engineID in use by the snmpv3 module. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/get/enginetime` | protocol_snmpv3_get_enginetime | `agentNum`* | integer:int32 | yes | Retrieves the time in seconds for which the agent has been running. |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/add/{groupName}/{securityModel}/{securityName}` | protocol_snmpv3_group_add | `agentNum`*, `groupName`*, `securityModel`*, `securityName`* | string |  | Adds a new group entry with the specified parameters. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/clear` | protocol_snmpv3_group_clear | `agentNum`* | string |  | Clears all group entries. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/del/{groupName}` | protocol_snmpv3_group_del | `agentNum`*, `groupName`* | string |  | Deletes the specified group entry. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/group/list` | protocol_snmpv3_group_list | `agentNum`* | string[] | yes | Returns the current group entries as an array of strings. |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/set/config/{parameter}/{value}` | protocol_snmpv3_set_config | `agentNum`*, `parameter`*, `value`* | string |  | Changes the SNMPv3 configuration. |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/add/{userName}/{securityName}/{authProtocol}/{authKey}/{privProtocol}/{privKey}` | protocol_snmpv3_user_add | `agentNum`*, `userName`*, `securityName`*, `authProtocol`*, `authKey`*, `privProtocol`*, `privKey`* | string |  | Adds a new user entry with the specified parameters. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/clear` | protocol_snmpv3_user_clear | `agentNum`* | string |  | Clears all user entries. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/del/{userName}` | protocol_snmpv3_user_del | `agentNum`*, `userName`* | string |  | Deletes the specified user entry. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/user/list` | protocol_snmpv3_user_list | `agentNum`* | string[] | yes | Returns the current user entries as a Tcl list. |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/usm/save` | protocol_snmpv3_usm_save | `agentNum`* | string[] |  | Saves current user settings in the currently loaded USM config file. |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/usm/saveas/{filename}` | protocol_snmpv3_usm_saveas | `agentNum`*, `filename`* | string[] |  | Saves current user settings in the specified USM config file. |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/vacm/save` | protocol_snmpv3_vacm_save | `agentNum`* | string[] |  | Saves current group, access, view settings in the currently loaded VACM config file. |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/vacm/saveas/{filename}` | protocol_snmpv3_vacm_saveas | `agentNum`*, `filename`* | string[] |  | Saves current group, access, view settings in the specified VACM config file. |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/add/{viewName}/{viewType}/{subtree}/{mask}` | protocol_snmpv3_view_add | `agentNum`*, `viewName`*, `viewType`*, `subtree`*, `mask`* | string |  | Adds a new view entry with the specified parameters. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/clear` | protocol_snmpv3_view_clear | `agentNum`* | string |  | Clears all view entries. |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/del/{viewName}` | protocol_snmpv3_view_del | `agentNum`*, `viewName`* | string |  | Deletes the specified view entry. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/snmpv3/view/list` | protocol_snmpv3_view_list | `agentNum`* | string[] | yes | Returns the current view entries as an array of strings. |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/args` | protocol_ssh_get_args | `agentNum`* | object | yes | Show the agent's SSH argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/config` | protocol_ssh_get_config | `agentNum`* | ConfigSSH | yes | Show the agent's SSH configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/statistics` | protocol_ssh_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's SSH statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/get/trace` | protocol_ssh_get_trace | `agentNum`* | ConfigSSH | yes | Show the agent's SSH traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/disable/{ipaddress}/{port}` | protocol_ssh_ipalias_disable | `agentNum`*, `ipaddress`*, `port`* | string |  | Disable individual IP aliases on the agent and the simulator host |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/enable/{ipaddress}/{port}` | protocol_ssh_ipalias_enable | `agentNum`*, `ipaddress`*, `port`* | string |  | Enable individual IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/isenabled/{ipaddress}/{port}` | protocol_ssh_ipalias_isenabled | `agentNum`*, `ipaddress`*, `port`* | string | yes | Check individual IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/list` | protocol_ssh_ipalias_list | `agentNum`* | IPAlias[] | yes | List all IP aliases on the agent and the simulator host |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/set/config/{argument}/{value}` | protocol_ssh_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's SSH configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/ssh/set/trace/{enableOrNot}` | protocol_ssh_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's SSH traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/args` | protocol_syslog_get_args | `agentNum`* | object | yes | Show the agent's SYSLOG argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/config` | protocol_syslog_get_config | `agentNum`* | ConfigSYSLOG | yes | Show the agent's SYSLOG configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/statistics` | protocol_syslog_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's SYSLOG statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/trace` | protocol_syslog_get_trace | `agentNum`* | ConfigSYSLOG | yes | Show the agent's SYSLOG traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/syslog/get/{attr}` | protocol_syslog_get_attr | `agentNum`*, `attr`* | string | yes | Show the outgoing message's attributes |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/syslog/send/{pri}` | protocol_syslog_send | `agentNum`*, `pri`*, body*: SyslogMsg | string |  | Set the agent's SYSLOG traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/syslog/set/config/{argument}/{value}` | protocol_syslog_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's SYSLOG configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/syslog/set/trace/{enableOrNot}` | protocol_syslog_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's SYSLOG traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/syslog/set/{attr}/{value}` | protocol_syslog_set_attr | `agentNum`*, `attr`*, `value`* | string |  | Set the outgoing message's attributes |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/connection/logon/{connectionID}/{user}/{password}` | protocol_telnet_connection_logon | `agentNum`*, `connectionID`*, `user`*, `password`* | string[] |  | Changes the connection's current logon. |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/connection/request/{connectionID}/{command}` | protocol_telnet_connection_request | `agentNum`*, `connectionID`*, `command`* | string[] |  | Executes the command asynchronously . |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/connection/signal/{connectionID}/{signalName}` | protocol_telnet_connection_signal | `agentNum`*, `connectionID`*, `signalName`* | string[] |  | Triggers the asynchronous signal event with the specified signal name |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/args` | protocol_telnet_get_args | `agentNum`* | object | yes | Show the agent's TELNET argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/config` | protocol_telnet_get_config | `agentNum`* | ConfigTELNET | yes | Show the agent's TELNET configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/statistics` | protocol_telnet_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's TELNET statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/get/trace` | protocol_telnet_get_trace | `agentNum`* | ConfigTELNET | yes | Show the agent's TELNET traffic tracing |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/disable/{ipaddress}/{port}` | protocol_telnet_ipalias_disable | `agentNum`*, `ipaddress`*, `port`* | string |  | Disable individual IP aliases on the agent and the simulator host |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/enable/{ipaddress}/{port}` | protocol_telnet_ipalias_enable | `agentNum`*, `ipaddress`*, `port`* | string |  | Enable individual IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/isenabled/{ipaddress}/{port}` | protocol_telnet_ipalias_isenabled | `agentNum`*, `ipaddress`*, `port`* | string | yes | Check individual IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/list` | protocol_telnet_ipalias_list | `agentNum`* | IPAlias[] | yes | List all IP aliases on the agent and the simulator host |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/connections` | protocol_telnet_server_get_connections | `agentNum`* | integer:int32[] | yes | Show the agent's TELNET connections |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/keymap` | protocol_telnet_server_get_keymap | `agentNum`* | string[] | yes | Show the agent's TELNET keymap file name |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/rulesdb` | protocol_telnet_server_get_rulesdb | `agentNum`* | string[] | yes | Show the agent's TELNET rules db file name |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/state` | protocol_telnet_server_get_state | `agentNum`* | integer:int32[] | yes | Show the agent's TELNET server state |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/userdb` | protocol_telnet_server_get_userdb | `agentNum`* | string[] | yes | Show the agent's TELNET user db file name |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/telnet/server/get/users` | protocol_telnet_server_get_users | `agentNum`* | TelnetUser[] | yes | Show the agent's TELNET users |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/set/config/{argument}/{value}` | protocol_telnet_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's TELNET configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/telnet/set/trace/{enableOrNot}` | protocol_telnet_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's TELNET traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/args` | protocol_tftp_get_args | `agentNum`* | object | yes | Show the agent's TFTP argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/config` | protocol_tftp_get_config | `agentNum`* | ConfigTFTP | yes | Show the agent's TFTP configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/statistics` | protocol_tftp_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's TFTP statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/get/trace` | protocol_tftp_get_trace | `agentNum`* | ConfigTFTP | yes | Show the agent's TFTP traffic tracing |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/tftp/session/read/server/{srcfile}` | protocol_tftp_session_read | `agentNum`*, `srcfile`* | integer:int32[] |  | Create a read session to download srcfile from server |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/tftp/session/write/server/{srcfile}` | protocol_tftp_session_write | `agentNum`*, `srcfile`* | integer:int32[] |  | Create a read session to upload srcfile to server |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/set/config/{argument}/{value}` | protocol_tftp_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's TFTP configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/set/trace/{enableOrNot}` | protocol_tftp_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's TFTP traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/get/{parameter}` | protocol_tftp_session_get_parameter | `agentNum`*, `sessionID`*, `parameter`* | string | yes | Show a parameter of a TFTP sesssion |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/set/{parameter}/{value}` | protocol_tftp_session_set_parameter | `agentNum`*, `sessionID`*, `parameter`*, `value`* | string |  | Set a parameter of a TFTP sesssion |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/start` | protocol_tftp_session_start | `agentNum`*, `sessionID`* | string |  | Start a TFTP sesssion |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/status` | protocol_tftp_session_status | `agentNum`*, `sessionID`* | string | yes | Check a TFTP sesssion's status |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/stop` | protocol_tftp_session_stop | `agentNum`*, `sessionID`* | string |  | Stop a TFTP sesssion |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/args` | protocol_tod_get_args | `agentNum`* | object | yes | Show the agent's TOD argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/config` | protocol_tod_get_config | `agentNum`* | ConfigTOD | yes | Show the agent's TOD configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/statistics` | protocol_tod_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's TOD statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/get/trace` | protocol_tod_get_trace | `agentNum`* | ConfigTOD | yes | Show the agent's TOD traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/tod/gettime/server/{serverAddr}/port/{portNum}/script/{scriptName}/timeout/{timeSec}/retries/{numRetries}` | protocol_tod_gettime | `agentNum`*, `serverAddr`*, `portNum`*, `scriptName`*, `timeSec`*, `numRetries`* | string[] | yes | Retrieve TOD time |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tod/set/config/{argument}/{value}` | protocol_tod_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's TOD configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/tod/set/trace/{enableOrNot}` | protocol_tod_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's TOD traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/args` | protocol_web_get_args | `agentNum`* | object | yes | Show the agent's WEB argument structure |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/config` | protocol_web_get_config | `agentNum`* | ConfigWEB | yes | Show the agent's WEB configuration |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/statistics` | protocol_web_get_statistics | `agentNum`* | integer:int32[] | yes | Show the agent's WEB statistics |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/web/get/trace` | protocol_web_get_trace | `agentNum`* | ConfigWEB | yes | Show the agent's WEB traffic tracing |
+| POST | `/mimic/agent/{agentNum}/protocol/msg/web/port/add/{port}` | protocol_web_port_add | `agentNum`*, `port`* | string |  | Add the agent's WEB port |
+| GET | `/mimic/agent/{agentNum}/protocol/msg/web/port/exists/{port}` | protocol_web_port_exists | `agentNum`*, `port`* | string[] | yes | Show the agent's WEB port |
+| DELETE | `/mimic/agent/{agentNum}/protocol/msg/web/port/remove/{port}` | protocol_web_port_remove | `agentNum`*, `port`* | string |  | Remove the agent's WEB port |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/port/set/{port}/{protocol}/{version}` | protocol_web_port_set | `agentNum`*, `port`*, `protocol`*, `version`* | string |  | Set the agent's WEB port attribute |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/port/start/{port}` | protocol_web_port_start | `agentNum`*, `port`* | string |  | Start the agent's WEB port |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/port/stop/{port}` | protocol_web_port_stop | `agentNum`*, `port`* | string |  | Stop the agent's WEB port |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/set/config/{argument}/{value}` | protocol_web_set_config | `agentNum`*, `argument`*, `value`* | string |  | Set the agent's WEB configuration |
+| PUT | `/mimic/agent/{agentNum}/protocol/msg/web/set/trace/{enableOrNot}` | protocol_web_set_trace | `agentNum`*, `enableOrNot`* | string |  | Set the agent's WEB traffic tracing |
+| GET | `/mimic/agent/{agentNum}/protocol/{prot}/get/config` | protocol_get_config | `agentNum`*, `prot`* | object | yes | Returns the protocol's configuration. |
+| PUT | `/mimic/agent/{agentNum}/reload` | reload | `agentNum`* | string |  | Reload the current agent. |
+| DELETE | `/mimic/agent/{agentNum}/remove` | agent_remove | `agentNum`* | string |  | Remove the current agent. |
+| PUT | `/mimic/agent/{agentNum}/resume` | resume | `agentNum`* | string |  | Resume the current agent. |
+| PUT | `/mimic/agent/{agentNum}/save` | save | `agentNum`* | string |  | Save agent MIB values. |
+| PUT | `/mimic/agent/{agentNum}/set/delay/{delay}` | set_delay | `agentNum`*, `delay`* | integer:int32 |  | one-way transit delay in msec |
+| PUT | `/mimic/agent/{agentNum}/set/drops/{drops}` | set_drops | `agentNum`*, `drops`* | integer:int32 |  | drop rate (every N-th PDU) |
+| PUT | `/mimic/agent/{agentNum}/set/host/{host}` | set_host | `agentNum`*, `host`* | string |  | host address of the agent. |
+| PUT | `/mimic/agent/{agentNum}/set/inform_timeout/{inform_timeout}` | set_inform_timeout | `agentNum`*, `inform_timeout`* | integer:int32 |  | timeout in seconds for retransmitting INFORM PDUs |
+| PUT | `/mimic/agent/{agentNum}/set/interface/{interface}` | set_interface | `agentNum`*, `interface`* | string |  | network interface card for the agent |
+| PUT | `/mimic/agent/{agentNum}/set/mask/{mask}` | set_mask | `agentNum`*, `mask`* | string |  | subnet mask of the agent. |
+| PUT | `/mimic/agent/{agentNum}/set/mibs` | set_mibs | `agentNum`*, body*: Triplet[] | string |  | set of MIBs, simulations and scenarios |
+| PUT | `/mimic/agent/{agentNum}/set/oiddir/{oiddir}` | set_oiddir | `agentNum`*, `oiddir`* | string |  | MIB directory of the agent. |
+| PUT | `/mimic/agent/{agentNum}/set/owner/{owner}` | set_owner | `agentNum`*, `owner`* | string |  | owner of the agent |
+| PUT | `/mimic/agent/{agentNum}/set/pdusize/{pdusize}` | set_pdusize | `agentNum`*, `pdusize`* | integer:int32 |  | maximum PDU size |
+| PUT | `/mimic/agent/{agentNum}/set/port/{port}` | set_port | `agentNum`*, `port`* | string |  | port number |
+| PUT | `/mimic/agent/{agentNum}/set/privdir/{privdir}` | set_privdir | `agentNum`*, `privdir`* | string |  | private directory of the agent. |
+| PUT | `/mimic/agent/{agentNum}/set/protocol` | set_protocols | `agentNum`*, body*: string[] | integer:string[] |  | protocols supported by agent as a comma-separated list |
+| PUT | `/mimic/agent/{agentNum}/set/read/{read}` | set_read_community | `agentNum`*, `read`* | string |  | read community string |
+| PUT | `/mimic/agent/{agentNum}/set/start/{start}` | set_starttime | `agentNum`*, `start`* | string |  | relative start time |
+| PUT | `/mimic/agent/{agentNum}/set/trace/{trace}` | set_trace | `agentNum`*, `trace`* | integer:int32 |  | SNMP PDU tracing |
+| PUT | `/mimic/agent/{agentNum}/set/validate/{validate}` | set_validate | `agentNum`*, `validate`* | integer:int32 |  | SNMP SET validation policy |
+| PUT | `/mimic/agent/{agentNum}/set/write/{write}` | set_write_community | `agentNum`*, `write`* | string |  | write community string |
+| PUT | `/mimic/agent/{agentNum}/start` | start | `agentNum`* | string |  | Start the current agent. |
+| PUT | `/mimic/agent/{agentNum}/stop` | stop | `agentNum`* | string |  | Show the agent's primary IP address |
+| PUT | `/mimic/agent/{agentNum}/store/copy/{otherAgent}` | agent_store_copy | `agentNum`*, `otherAgent`* | string |  | This command copies the variable store from the other agent to this agent. |
+| GET | `/mimic/agent/{agentNum}/store/exists/{var}` | agent_store_exists | `agentNum`*, `var`* | string | yes | This command can be used as a predicate to ascertain the existence of a given variable. |
+| GET | `/mimic/agent/{agentNum}/store/get/{var}` | agent_store_get | `agentNum`*, `var`* | string | yes | Fetches the value associated with a variable. |
+| GET | `/mimic/agent/{agentNum}/store/list` | agent_store_list | `agentNum`* | string[] | yes | This command will return the list of variables in the said scope. |
+| PUT | `/mimic/agent/{agentNum}/store/lreplace/{var}/{index}` | agent_store_lreplace | `agentNum`*, `var`*, `index`*, body: string | string |  | These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist. |
+| GET | `/mimic/agent/{agentNum}/store/persists/{var}` | agent_store_persists | `agentNum`*, `var`* | string | yes | This command can be used as a predicate to ascertain the persistence of a given variable. |
+| PUT | `/mimic/agent/{agentNum}/store/set/{var}/{persist}` | agent_store_set | `agentNum`*, `var`*, `persist`*, body: string | string |  | These commands allow the creation of a new variable, or changing an existing value. |
+| PUT | `/mimic/agent/{agentNum}/store/unset/{var}` | agent_store_unset | `agentNum`*, `var`* | string |  | Deletes a variable which is currently defined. |
+| POST | `/mimic/agent/{agentNum}/timer/script/add/{script}/{interval}/{arg}` | add_timer_script | `agentNum`*, `script`*, `interval`*, `arg`* | string |  | Add a new timer script to be executed at specified interval (in msec) with the specified argument. |
+| DELETE | `/mimic/agent/{agentNum}/timer/script/delete/{script}/{interval}/{arg}` | del_timer_script | `agentNum`*, `script`*, `interval`*, `arg`* | string |  | Remove a timer script from the execution list. |
+| GET | `/mimic/agent/{agentNum}/timer/script/list` | list_timer_scripts | `agentNum`* | TimerScript[] | yes | List the timer scripts currently running along with the their intervals. |
+| POST | `/mimic/agent/{agentNum}/trap/config/add/{IP}/{port}` | trap_config_add | `agentNum`*, `IP`*, `port`* | string |  | Add a trap destination to the set of destinations. |
+| DELETE | `/mimic/agent/{agentNum}/trap/config/delete/{IP}/{port}` | trap_config_del | `agentNum`*, `IP`*, `port`* | string |  | Remove a trap destination from the set of destinations. |
+| GET | `/mimic/agent/{agentNum}/trap/config/list` | trap_config_list | `agentNum`* | TrapDest[] | yes | List the set of trap destinations for this agent instance. |
+| GET | `/mimic/agent/{agentNum}/trap/list` | trap_list | `agentNum`* | string[] | yes | List the outstanding asynchronous traps for this agent instance. |
+| POST | `/mimic/agent/{agentNum}/value/add/{object}/{instance}` | add | `agentNum`*, `object`*, `instance`* | string |  | Add an entry to a table. |
+| GET | `/mimic/agent/{agentNum}/value/eval/{object}/{instance}` | eval_value | `agentNum`*, `object`*, `instance`* | string | yes | Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests. |
+| GET | `/mimic/agent/{agentNum}/value/get/{object}/{instance}/{variable}` | get_value | `agentNum`*, `object`*, `instance`*, `variable`* | string | yes | Get a variable in the Value Space. |
+| GET | `/mimic/agent/{agentNum}/value/info/{object}` | get_info | `agentNum`*, `object`* | string | yes | Return the syntactical information for the specified object, such as type, size, range, enumerations, and ACCESS. |
+| GET | `/mimic/agent/{agentNum}/value/instances/{object}` | get_instances | `agentNum`*, `object`* | string[] | yes | Display the MIB object instances for the specified object. |
+| GET | `/mimic/agent/{agentNum}/value/list/{OID}` | get_objects | `agentNum`*, `OID`* | string[] | yes | Display the MIB objects below the current position |
+| GET | `/mimic/agent/{agentNum}/value/meval/{objInsArray}` | meval_value | `agentNum`*, `objInsArray`* | string[] | yes | Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests. |
+| GET | `/mimic/agent/{agentNum}/value/mget/{objInsVarArray}` | mget_value | `agentNum`*, `objInsVarArray`* | string[] | yes | Get multiple variables in the Value Space. |
+| GET | `/mimic/agent/{agentNum}/value/mib/{object}` | get_mib | `agentNum`*, `object`* | string | yes | Return the MIB that defines the specified object. |
+| PUT | `/mimic/agent/{agentNum}/value/mset` | mset_value | `agentNum`*, body: string[][] | string |  | Set multiple variables in the Value Space. |
+| PUT | `/mimic/agent/{agentNum}/value/munset` | munset_value | `agentNum`*, body: string[][] | string |  | Unset multiple variables in the Value Space |
+| GET | `/mimic/agent/{agentNum}/value/name/{OID}` | get_name | `agentNum`*, `OID`* | string | yes | Return the symbolic name of the specified object identifier. |
+| GET | `/mimic/agent/{agentNum}/value/oid/{object}` | get_oid | `agentNum`*, `object`* | string | yes | Return the numeric OID of the specified object. |
+| DELETE | `/mimic/agent/{agentNum}/value/remove/{object}/{instance}` | remove | `agentNum`*, `object`*, `instance`* | string |  | Remove an entry from a table. |
+| PUT | `/mimic/agent/{agentNum}/value/set/{object}/{instance}/{variable}` | set_value | `agentNum`*, `object`*, `instance`*, `variable`*, body: string | string |  | Set a variable in the Value Space. |
+| GET | `/mimic/agent/{agentNum}/value/split/{OID}` | split_oid | `agentNum`*, `OID`* | string[] | yes | Split the numerical OID into the object OID and instance OID. |
+| GET | `/mimic/agent/{agentNum}/value/state/get/{object}` | get_state | `agentNum`*, `object`* | string | yes | Get the state of a MIB object object. |
+| PUT | `/mimic/agent/{agentNum}/value/state/set/{object}/{state}` | set_state | `agentNum`*, `object`*, `state`* | string |  | Set the state of a MIB object object |
+| PUT | `/mimic/agent/{agentNum}/value/unset/{object}/{instance}/{variable}` | unset_value | `agentNum`*, `object`*, `instance`*, `variable`* | string |  | Unset a variable in the Value Space in order to free its memory. |
+| GET | `/mimic/agent/{agentNum}/value/variables/{object}/{instance}` | get_variables | `agentNum`*, `object`*, `instance`* | string[] | yes | Display the variables for the specified instance instance for the specified MIB object object |
+| PUT | `/mimic/clear/{firstAgentNum}/{lastAgentNum}` | cfg_new | `firstAgentNum`*, `lastAgentNum`* | object |  | Clear the lab configuration. |
+| GET | `/mimic/get/active_data_list` | get_active_data_list | — | integer:int32[] | yes | The list of {agentnum {statistics}} for agents that are currently active and whose statistics have changed since the last invocation of this command. |
+| GET | `/mimic/get/active_list` | get_active_list | — | integer:int32[] | yes | The list of {agentnum} that are currently active (running or paused). |
+| GET | `/mimic/get/cfgfile` | get_cfgfile | — | object | yes | The currently loaded lab configuration file for the particular user. |
+| GET | `/mimic/get/cfgfile_changed` | get_cfg_file_changed | — | object | yes | This predicate indicates if the currently loaded agent configuration file has changed. |
+| GET | `/mimic/get/changed_config_list` | get_changed_config_list | — | integer:int32[] | yes | The list of {agentnum} for which a configurable parameter changed. |
+| GET | `/mimic/get/changed_state_list` | get_changed_state_list | — | AgentState[] | yes | The list of {agentnum state} for which the state changed. |
+| GET | `/mimic/get/clients` | get_clients | — | object | yes | The number of clients currently connected to the daemon. |
+| GET | `/mimic/get/configured_list` | get_configured_list | — | integer:int32[] | yes | The list of {agentnum} that are currently configured. |
+| GET | `/mimic/get/interfaces` | get_interfaces | — | object | yes | The set of network interfaces that can be used for simulations. |
+| GET | `/mimic/get/last` | get_last | — | integer:int32 | yes | The last configured agent instance. |
+| GET | `/mimic/get/log` | get_log | — | object | yes | The current log file for the Simulator. |
+| GET | `/mimic/get/max` | get_max | — | integer:int32 | yes | The maximum number of agent instances. |
+| GET | `/mimic/get/netaddr` | get_netaddr | — | object | yes | The network address of the host where the MIMIC simulator is running. |
+| GET | `/mimic/get/netdev` | get_netdev | — | object | yes | The default network device to be used for agent addresses. |
+| GET | `/mimic/get/product` | get_product | — | object | yes | The product number that is licensed. |
+| GET | `/mimic/get/protocols` | get_daemon_protocols | — | object | yes | The set of protocols supported by the Simulator. |
+| GET | `/mimic/get/return` | get_return | — | object | yes | The return mode. |
+| GET | `/mimic/get/version` | get_version | — | string | yes | The version of the MIMIC command interface. |
+| PUT | `/mimic/load/{cfgFile}/{firstAgentNum}/{lastAgentNum}/{startAgentNum}` | cfg_load | `cfgFile`*, `firstAgentNum`*, `lastAgentNum`*, `startAgentNum`* | object |  | Load the lab configuration file file. |
+| GET | `/mimic/mget/{infoArray}` | mget_info | `infoArray`* | object[] | yes | Get multiple sets of information about MIMIC, where infoArray is one of the parameters defined in the mimic get command. |
+| GET | `/mimic/protocol/msg/coap/get/stats_hdr` | protocol_coap_get_stats_hdr | — | string[] | yes | Show the COAP statistics headers |
+| GET | `/mimic/protocol/msg/dhcp/get/stats_hdr` | protocol_dhcp_get_stats_hdr | — | string[] | yes | Show the DHCP statistics headers |
+| GET | `/mimic/protocol/msg/ipmi/get/stats_hdr` | protocol_ipmi_get_stats_hdr | — | string[] | yes | Show the IPMI statistics headers |
+| GET | `/mimic/protocol/msg/mqtt/get/stats_hdr` | protocol_mqtt_get_stats_hdr | — | string[] | yes | Show the MQTT statistics headers |
+| GET | `/mimic/protocol/msg/netflow/get/stats_hdr` | protocol_netflow_get_stats_hdr | — | string[] | yes | Show the NETFLOW statistics headers |
+| GET | `/mimic/protocol/msg/proxy/get/stats_hdr` | protocol_proxy_get_stats_hdr | — | string[] | yes | Show the PROXY statistics headers |
+| GET | `/mimic/protocol/msg/sflow/get/stats_hdr` | protocol_sflow_get_stats_hdr | — | string[] | yes | Show the SFLOW statistics headers |
+| GET | `/mimic/protocol/msg/snmptcp/get/stats_hdr` | protocol_snmptcp_get_stats_hdr | — | string[] | yes | Show the SNMPTCP statistics headers |
+| GET | `/mimic/protocol/msg/ssh/get/stats_hdr` | protocol_ssh_get_stats_hdr | — | string[] | yes | Show the SSH statistics headers |
+| GET | `/mimic/protocol/msg/syslog/get/stats_hdr` | protocol_syslog_get_stats_hdr | — | string[] | yes | Show the SYSLOG statistics headers |
+| GET | `/mimic/protocol/msg/telnet/get/stats_hdr` | protocol_telnet_get_stats_hdr | — | string[] | yes | Show the TELNET statistics headers |
+| GET | `/mimic/protocol/msg/tftp/get/stats_hdr` | protocol_tftp_get_stats_hdr | — | string[] | yes | Show the TFTP statistics headers |
+| GET | `/mimic/protocol/msg/tod/get/stats_hdr` | protocol_tod_get_stats_hdr | — | string[] | yes | Show the TOD statistics headers |
+| GET | `/mimic/protocol/msg/web/get/stats_hdr` | protocol_web_get_stats_hdr | — | string[] | yes | Show the WEB statistics headers |
+| PUT | `/mimic/save` | cfg_save | — | object |  | Save the lab configuration. |
+| PUT | `/mimic/saveas/{cfgFile}/{firstAgentNum}/{lastAgentNum}` | cfg_saveas | `cfgFile`*, `firstAgentNum`*, `lastAgentNum`* | object |  | Save the lab configuration in file. |
+| PUT | `/mimic/set/log` | set_log | body*: string | string |  | The current log file for the Simulator. |
+| PUT | `/mimic/set/netdev` | set_netdev | — | object |  | The network address of the host where the MIMIC simulator is running. |
+| PUT | `/mimic/set/persistent` | store_save | — | object |  | This operation flushes all global objects which need to be made persistent to disk. |
+| PUT | `/mimic/start` | start_all_agents | — | object |  | Start MIMIC. |
+| PUT | `/mimic/stop` | stop_all_agents | — | object |  | Stop MIMIC. |
+| GET | `/mimic/store/exists/{var}` | store_exists | `var`* | string | yes | This command can be used as a predicate to ascertain the existence of a given variable. |
+| GET | `/mimic/store/get/{var}` | store_get | `var`* | string | yes | Fetches the value associated with a variable. |
+| GET | `/mimic/store/list` | store_list | — | string[] | yes | This command will return the list of variables in the said scope. |
+| PUT | `/mimic/store/lreplace/{var}/{index}` | store_lreplace | `var`*, `index`*, body: string | string |  | These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist. |
+| GET | `/mimic/store/persists/{var}` | store_persists | `var`* | string | yes | This command can be used as a predicate to ascertain the persistence of a given variable. |
+| PUT | `/mimic/store/set/{var}/{persist}` | store_set | `var`*, `persist`*, body: string | string |  | Set the variable store for the global storage |
+| PUT | `/mimic/store/unset/{var}` | store_unset | `var`* | string |  | Deletes a variable which is currently defined. |
+| PUT | `/mimic/terminate` | terminate | — | object |  | Terminate the MIMIC daemon. |
+| POST | `/mimic/timer/script/add/{script}/{interval}/{arg}` | add_daemon_timer_script | `script`*, `interval`*, `arg`* | string |  | Add a new timer script to be executed at specified interval (in msec) with the specified argument. |
+| DELETE | `/mimic/timer/script/delete/{script}/{interval}/{arg}` | del_daemon_timer_script | `script`*, `interval`*, `arg`* | string |  | Remove a timer script from the execution list. |
+| GET | `/mimic/timer/script/list` | list_daemon_timer_scripts | — | TimerScript[] | yes | List the timer scripts currently running along with the their intervals. |

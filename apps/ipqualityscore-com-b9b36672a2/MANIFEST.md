@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ipqualityscore.com_templates_im
 
 | | |
 | --- | --- |
-| Signed bundle | `3b57c12620b6840dce9ab595b220761689263395c7a5968ed517e68b9139f13a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,8 +32,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ipqualityscore.com_templates_im
 
 ## Operations (3)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/json/email/{YOUR_API_KEY_HERE}/{USER_EMAIL_HERE}` | emailValidation | Email Validation |
-| GET | `/json/phone/{YOUR_API_KEY_HERE}/{USER_PHONE_HERE}` | phoneValidation | Phone Validation |
-| GET | `/json/url/{YOUR_API_KEY_HERE}/{URL_HERE}` | maliciousUrlScanner | Malicious URL Scanner |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/json/email/{YOUR_API_KEY_HERE}/{USER_EMAIL_HERE}` | emailValidation | `YOUR_API_KEY_HERE`*, `USER_EMAIL_HERE`* | object | yes | Email Validation |
+| GET | `/json/phone/{YOUR_API_KEY_HERE}/{USER_PHONE_HERE}` | phoneValidation | `YOUR_API_KEY_HERE`*, `USER_PHONE_HERE`*, `country` | object | yes | Phone Validation |
+| GET | `/json/url/{YOUR_API_KEY_HERE}/{URL_HERE}` | maliciousUrlScanner | `YOUR_API_KEY_HERE`*, `URL_HERE`* | object | yes | Malicious URL Scanner |

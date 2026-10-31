@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.billingo.hu_images_billingo
 
 | | |
 | --- | --- |
-| Signed bundle | `170bf33bd048bef485290be736bba01c7043ed4a4ea96c016e564baf473d23c6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,36 +34,38 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.billingo.hu_images_billingo
 
 47 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/bank-accounts` | ListBankAccount | List all bank account |
-| POST | `/bank-accounts` | CreateBankAccount | Create a bank account |
-| DELETE | `/bank-accounts/{id}` | DeleteBankAccount | Delete a bank account |
-| GET | `/bank-accounts/{id}` | GetBankAccount | Retrieve a bank account |
-| PUT | `/bank-accounts/{id}` | UpdateBankAccount | Update a bank account |
-| GET | `/currencies` | GetConversionRate | Get currencies exchange rate. |
-| GET | `/document-blocks` | ListDocumentBlock | List all document blocks |
-| GET | `/documents` | ListDocument | List all documents |
-| POST | `/documents` | CreateDocument | Create a document |
-| GET | `/documents/{id}` | GetDocument | Retrieve a document |
-| POST | `/documents/{id}/cancel` | CancelDocument | Cancel a document |
-| POST | `/documents/{id}/create-from-proforma` | CreateDocumentFromProforma | Create a document from proforma. |
-| GET | `/documents/{id}/download` | DownloadDocument | Download a document in PDF format. |
-| GET | `/documents/{id}/online-szamla` | GetOnlineSzamlaStatus | Retrieve a document Online Számla status |
-| DELETE | `/documents/{id}/payments` | DeletePayment | Delete all payment history on document |
-| GET | `/documents/{id}/payments` | GetPayment | Retrieve a payment histroy |
-| PUT | `/documents/{id}/payments` | UpdatePayment | Update payment history |
-| GET | `/documents/{id}/public-url` | GetPublicUrl | Retrieve a document download public url. |
-| POST | `/documents/{id}/send` | SendDocument | Send invoice to given email adresses. |
-| GET | `/organization` | GetOrganizationData | Retrieve a organization data. |
-| GET | `/partners` | ListPartner | List all partners |
-| POST | `/partners` | CreatePartner | Create a partner |
-| DELETE | `/partners/{id}` | DeletePartner | Delete a partner |
-| GET | `/partners/{id}` | GetPartner | Retrieve a partner |
-| PUT | `/partners/{id}` | UpdatePartner | Update a partner |
-| GET | `/products` | ListProduct | List all product |
-| POST | `/products` | CreateProduct | Create a product |
-| DELETE | `/products/{id}` | DeleteProduct | Delete a product |
-| GET | `/products/{id}` | GetProduct | Retrieve a product |
-| PUT | `/products/{id}` | UpdateProduct | Update a product |
-| GET | `/utils/convert-legacy-id/{id}` | GetId | Convert legacy ID to v3 ID. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/bank-accounts` | ListBankAccount | `page`, `per_page` | BankAccountList | yes | List all bank account |
+| POST | `/bank-accounts` | CreateBankAccount | body*: BankAccount | BankAccount |  | Create a bank account |
+| GET | `/bank-accounts/{id}` | GetBankAccount | `id`* | BankAccount | yes | Retrieve a bank account |
+| PUT | `/bank-accounts/{id}` | UpdateBankAccount | `id`*, body*: BankAccount | BankAccount |  | Update a bank account |
+| DELETE | `/bank-accounts/{id}` | DeleteBankAccount | `id`* | — |  | Delete a bank account |
+| GET | `/currencies` | GetConversionRate | `from`*, `to`* | ConversationRate | yes | Get currencies exchange rate. |
+| GET | `/document-blocks` | ListDocumentBlock | `page`, `per_page` | DocumentBlockList | yes | List all document blocks |
+| GET | `/documents` | ListDocument | `page`, `per_page`, `block_id`, `partner_id`, `payment_method`, `payment_status`, `start_date`, `end_date`, `start_number`, `end_number`, `start_year`, `end_year` | DocumentList | yes | List all documents |
+| POST | `/documents` | CreateDocument | body*: DocumentInsert | Document |  | Create a document |
+| GET | `/documents/{id}` | GetDocument | `id`* | Document | yes | Retrieve a document |
+| POST | `/documents/{id}/cancel` | CancelDocument | `id`* | Document |  | Cancel a document |
+| POST | `/documents/{id}/create-from-proforma` | CreateDocumentFromProforma | `id`* | Document |  | Create a document from proforma. |
+| GET | `/documents/{id}/download` | DownloadDocument | `id`* | string:binary, ClientError | yes | Download a document in PDF format. |
+| GET | `/documents/{id}/online-szamla` | GetOnlineSzamlaStatus | `id`* | OnlineSzamlaStatus | yes | Retrieve a document Online Számla status |
+| GET | `/documents/{id}/payments` | GetPayment | `id`* | PaymentHistory[] | yes | Retrieve a payment histroy |
+| PUT | `/documents/{id}/payments` | UpdatePayment | `id`*, body*: PaymentHistory[] | PaymentHistory[] |  | Update payment history |
+| DELETE | `/documents/{id}/payments` | DeletePayment | `id`* | PaymentHistory[] |  | Delete all payment history on document |
+| GET | `/documents/{id}/public-url` | GetPublicUrl | `id`* | DocumentPublicUrl | yes | Retrieve a document download public url. |
+| POST | `/documents/{id}/send` | SendDocument | `id`*, body: SendDocument | SendDocument |  | Send invoice to given email adresses. |
+| GET | `/organization` | GetOrganizationData | — | OrganizationData | yes | Retrieve a organization data. |
+| GET | `/partners` | ListPartner | `page`, `per_page` | PartnerList | yes | List all partners |
+| POST | `/partners` | CreatePartner | body*: PartnerUpsert | Partner |  | Create a partner |
+| GET | `/partners/{id}` | GetPartner | `id`* | Partner | yes | Retrieve a partner |
+| PUT | `/partners/{id}` | UpdatePartner | `id`*, body*: PartnerUpsert | Partner |  | Update a partner |
+| DELETE | `/partners/{id}` | DeletePartner | `id`* | — |  | Delete a partner |
+| GET | `/products` | ListProduct | `page`, `per_page` | ProductList | yes | List all product |
+| POST | `/products` | CreateProduct | body*: Product | Product |  | Create a product |
+| GET | `/products/{id}` | GetProduct | `id`* | Product | yes | Retrieve a product |
+| PUT | `/products/{id}` | UpdateProduct | `id`*, body*: Product | Product |  | Update a product |
+| DELETE | `/products/{id}` | DeleteProduct | `id`* | — |  | Delete a product |
+| GET | `/utils/convert-legacy-id/{id}` | GetId | `id`* | Id | yes | Convert legacy ID to v3 ID. |

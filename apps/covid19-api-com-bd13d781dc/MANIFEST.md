@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `3ea294c3432d54016a301abdb26f0d6f40697895f3e5c3dc2c77c73ec4da6eba` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/country` | getLatestCountryDataByName | getLatestCountryDataByName |
-| GET | `/country/all` | getLatestAllCountries | getLatestAllCountries |
-| GET | `/country/code` | getLatestCountryDataByCode | getLatestCountryDataByCode |
-| GET | `/help/countries` | getListOfCountries | getListOfCountries |
-| GET | `/report/country/all` | getDailyReportAllCountries | getDailyReportAllCountries |
-| GET | `/report/country/code` | getDailyReportByCountryCode | getDailyReportByCountryCode |
-| GET | `/report/country/name` | getDailyReportByCountryName | getDailyReportByCountryName |
-| GET | `/report/totals` | getDailyReportTotals | getDailyReportTotals |
-| GET | `/totals` | getLatestTotals | getLatestTotals |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/country` | getLatestCountryDataByName | `name`*, `format` | object[] | yes | getLatestCountryDataByName |
+| GET | `/country/all` | getLatestAllCountries | `format` | object[] | yes | getLatestAllCountries |
+| GET | `/country/code` | getLatestCountryDataByCode | `code`*, `format` | object[] | yes | getLatestCountryDataByCode |
+| GET | `/help/countries` | getListOfCountries | `format` | object[] | yes | getListOfCountries |
+| GET | `/report/country/all` | getDailyReportAllCountries | `date`*, `date-format`, `format` | object[] | yes | getDailyReportAllCountries |
+| GET | `/report/country/code` | getDailyReportByCountryCode | `code`*, `date`*, `date-format`, `format` | object[] | yes | getDailyReportByCountryCode |
+| GET | `/report/country/name` | getDailyReportByCountryName | `name`*, `date`*, `date-format`, `format` | object[] | yes | getDailyReportByCountryName |
+| GET | `/report/totals` | getDailyReportTotals | `date`, `date-format`, `format` | object[] | yes | getDailyReportTotals |
+| GET | `/totals` | getLatestTotals | `format` | object[] | yes | getLatestTotals |

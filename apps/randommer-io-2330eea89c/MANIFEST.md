@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ba8871a875e0782337ffd2cde71546784a03b556077cb3578365485209ed9920` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,30 +34,32 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/Card` | get /api/Card | Get Card |
-| GET | `/api/Card/Types` | get /api/Card/Types | Get available card types |
-| GET | `/api/Finance/Countries` | get /api/Finance/Countries | Get available countries |
-| GET | `/api/Finance/CryptoAddress` | get /api/Finance/CryptoAddress | Get crypto address |
-| GET | `/api/Finance/CryptoAddress/Types` | get /api/Finance/CryptoAddress/Types | Get available crypto types |
-| GET | `/api/Finance/Iban/{countryCode}` | get /api/Finance/Iban/{countryCode} | Get IBAN by countryCode |
-| POST | `/api/Finance/Vat/Validator` | post /api/Finance/Vat/Validator | — |
-| GET | `/api/Misc/Cultures` | get /api/Misc/Cultures | — |
-| GET | `/api/Misc/Random-Address` | get /api/Misc/Random-Address | — |
-| GET | `/api/Name` | get /api/Name | Get name |
-| POST | `/api/Name/BrandName` | post /api/Name/BrandName | Generate brand name suggestions |
-| POST | `/api/Name/BusinessName` | post /api/Name/BusinessName | Get business names for a specific culture |
-| GET | `/api/Name/Cultures` | get /api/Name/Cultures | Get available cultures |
-| GET | `/api/Name/Suggestions` | get /api/Name/Suggestions | Get business name suggestions |
-| GET | `/api/Phone/Countries` | get /api/Phone/Countries | Get available countries |
-| GET | `/api/Phone/Generate` | get /api/Phone/Generate | Get bulk telephone numbers for a country |
-| GET | `/api/Phone/IMEI` | get /api/Phone/IMEI | Get bulk imeis |
-| GET | `/api/Phone/Validate` | get /api/Phone/Validate | Validate a phone number |
-| GET | `/api/SocialNumber` | get /api/SocialNumber | Generate a social security number |
-| POST | `/api/SocialNumber` | post /api/SocialNumber | Validate VAT/identity numbers |
-| POST | `/api/Text/Humanize` | post /api/Text/Humanize | Humanize text |
-| GET | `/api/Text/LoremIpsum` | get /api/Text/LoremIpsum | Generate lorem ipsum |
-| GET | `/api/Text/Password` | get /api/Text/Password | Generate password |
-| POST | `/api/Text/Review` | post /api/Text/Review | Get reviews (max quantity=500) |
-| POST | `/api/Text/Transform` | post /api/Text/Transform | Transform text |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/Card` | get /api/Card | `type`, `X-Api-Key` | — | yes | Get Card |
+| GET | `/api/Card/Types` | get /api/Card/Types | `X-Api-Key` | — | yes | Get available card types |
+| GET | `/api/Finance/Countries` | get /api/Finance/Countries | `X-Api-Key` | — | yes | Get available countries |
+| GET | `/api/Finance/CryptoAddress` | get /api/Finance/CryptoAddress | `cryptoType`, `X-Api-Key` | — | yes | Get crypto address |
+| GET | `/api/Finance/CryptoAddress/Types` | get /api/Finance/CryptoAddress/Types | `X-Api-Key` | — | yes | Get available crypto types |
+| GET | `/api/Finance/Iban/{countryCode}` | get /api/Finance/Iban/{countryCode} | `countryCode`*, `X-Api-Key` | — | yes | Get IBAN by countryCode |
+| POST | `/api/Finance/Vat/Validator` | post /api/Finance/Vat/Validator | `country`*, `vat`*, `X-Api-Key` | — |  | — |
+| GET | `/api/Misc/Cultures` | get /api/Misc/Cultures | `X-Api-Key` | — | yes | — |
+| GET | `/api/Misc/Random-Address` | get /api/Misc/Random-Address | `number`*, `culture`, `X-Api-Key` | — | yes | — |
+| GET | `/api/Name` | get /api/Name | `nameType`*, `quantity`*, `X-Api-Key` | — | yes | Get name |
+| POST | `/api/Name/BrandName` | post /api/Name/BrandName | `startingWords`*, `X-Api-Key` | — |  | Generate brand name suggestions |
+| POST | `/api/Name/BusinessName` | post /api/Name/BusinessName | `number`*, `cultureCode`, `X-Api-Key` | — |  | Get business names for a specific culture |
+| GET | `/api/Name/Cultures` | get /api/Name/Cultures | `X-Api-Key` | — | yes | Get available cultures |
+| GET | `/api/Name/Suggestions` | get /api/Name/Suggestions | `startingWords`*, `X-Api-Key` | — | yes | Get business name suggestions |
+| GET | `/api/Phone/Countries` | get /api/Phone/Countries | `X-Api-Key` | — | yes | Get available countries |
+| GET | `/api/Phone/Generate` | get /api/Phone/Generate | `CountryCode`*, `Quantity`*, `X-Api-Key` | — | yes | Get bulk telephone numbers for a country |
+| GET | `/api/Phone/IMEI` | get /api/Phone/IMEI | `Quantity`*, `X-Api-Key` | — | yes | Get bulk imeis |
+| GET | `/api/Phone/Validate` | get /api/Phone/Validate | `telephone`*, `CountryCode`, `X-Api-Key` | — | yes | Validate a phone number |
+| GET | `/api/SocialNumber` | get /api/SocialNumber | `X-Api-Key` | — | yes | Generate a social security number |
+| POST | `/api/SocialNumber` | post /api/SocialNumber | `idType`*, `X-Api-Key`, body*: NumberValidation | — |  | Validate VAT/identity numbers |
+| POST | `/api/Text/Humanize` | post /api/Text/Humanize | `X-Api-Key`, body*: TextDto | — |  | Humanize text |
+| GET | `/api/Text/LoremIpsum` | get /api/Text/LoremIpsum | `loremType`*, `type`*, `number`*, `X-Api-Key` | — | yes | Generate lorem ipsum |
+| GET | `/api/Text/Password` | get /api/Text/Password | `length`*, `hasDigits`*, `hasUppercase`*, `hasSpecial`*, `X-Api-Key` | — | yes | Generate password |
+| POST | `/api/Text/Review` | post /api/Text/Review | `product`*, `quantity`*, `X-Api-Key` | — |  | Get reviews (max quantity=500) |
+| POST | `/api/Text/Transform` | post /api/Text/Transform | `textActionType`*, `caseType`, `find`, `replace`, `X-Api-Key`, body*: TextDto | — |  | Transform text |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_id4i_de_wp-content_uploads_2017
 
 | | |
 | --- | --- |
-| Signed bundle | `5439d6122396db894c709ade0a9fe68cf68d846d7813d003a8b957c6fb01bd77` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,112 +34,114 @@ logo: "https://api.apis.guru/v2/cache/logo/https_id4i_de_wp-content_uploads_2017
 
 78 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/account/password` | requestPasswordReset | Request password reset |
-| PUT | `/account/password` | verifyPasswordReset | Verify password reset |
-| POST | `/account/registration` | registerUser | Register user |
-| PUT | `/account/registration` | completeRegistration | Complete registration |
-| POST | `/account/verification` | verifyUserRegistration | Verify registration |
-| GET | `/api/v1/apikeys` | listAllApiKeysOfOrganization | Find API key by organization |
-| POST | `/api/v1/apikeys` | createNewApiKey | Create API key |
-| GET | `/api/v1/apikeys/privileges` | listAllApiKeyPrivileges | List all privileges |
-| DELETE | `/api/v1/apikeys/{key}` | deleteApiKey | Delete API key |
-| GET | `/api/v1/apikeys/{key}` | getApiKey | Show API key |
-| PUT | `/api/v1/apikeys/{key}` | updateApiKey | Update API keys |
-| DELETE | `/api/v1/apikeys/{key}/privileges` | removeApiKeyPrivilege | Remove privilege |
-| GET | `/api/v1/apikeys/{key}/privileges` | listApiKeyPrivileges | List privileges |
-| POST | `/api/v1/apikeys/{key}/privileges` | addApiKeyPrivilege | Add privilege |
-| DELETE | `/api/v1/apikeys/{key}/privileges/{privilege}/id4ns` | removeApiKeyPrivilegeForId4ns | Remove id4ns of a privilege |
-| GET | `/api/v1/apikeys/{key}/privileges/{privilege}/id4ns` | listId4ns | ID4ns of a privilege |
-| POST | `/api/v1/apikeys/{key}/privileges/{privilege}/id4ns` | addApiKeyPrivilegeForId4ns | Add ID4ns of a privilege |
-| GET | `/api/v1/billing/{organizationId}` | getSumForOrganization | Get billing amount of services for a given organization |
-| GET | `/api/v1/billing/{organizationId}/positions` | getPositionsForOrganization | Get billing positions for a given organization |
-| GET | `/api/v1/changelog/organization/{organizationId}/` | listOrganizationChangeLog | List change log entries of an organization |
-| POST | `/api/v1/collections` | createCollection | Create collection |
-| DELETE | `/api/v1/collections/{id4n}` | deleteCollection | Delete collection |
-| GET | `/api/v1/collections/{id4n}` | findCollection | Find collection |
-| PATCH | `/api/v1/collections/{id4n}` | updateCollection | Update collection |
-| DELETE | `/api/v1/collections/{id4n}/elements` | removeElementsFromCollection | Remove elements from collection |
-| GET | `/api/v1/collections/{id4n}/elements` | listElementsOfCollection | List contents of the collection |
-| POST | `/api/v1/collections/{id4n}/elements` | addElementsToCollection | Add elements to collection |
-| GET | `/api/v1/countries` | listCountries | List countries |
-| GET | `/api/v1/documents/{id4n}` | listAllDocuments | List documents |
-| GET | `/api/v1/documents/{id4n}/{organizationId}` | listDocuments | List organization specific documents |
-| POST | `/api/v1/documents/{id4n}/{organizationId}` | createDocument | Create an document for an id4n |
-| PUT | `/api/v1/documents/{id4n}/{organizationId}` | putDocument | Put an document for an id4n |
-| DELETE | `/api/v1/documents/{id4n}/{organizationId}/{fileName}` | deleteDocument | Delete a document |
-| GET | `/api/v1/documents/{id4n}/{organizationId}/{fileName}` | readDocument | Read document contents |
-| GET | `/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata` | getDocument | Retrieve a document (meta-data only, no content) |
-| PATCH | `/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata` | updateDocumentMetadata | Update a document |
-| POST | `/api/v1/guids` | createGuid | Create GUID(s) |
-| GET | `/api/v1/guids/withoutCollection` | getGuidsWithoutCollection | Retrieve GUIDs not in any collection |
-| GET | `/api/v1/guids/{id4n}` | getGuid | Retrieve GUID information |
-| PATCH | `/api/v1/guids/{id4n}` | updateGuid | Change GUID information. |
-| GET | `/api/v1/history/{id4n}` | filteredList | List history |
-| POST | `/api/v1/history/{id4n}` | addItem | Add history item |
-| GET | `/api/v1/history/{id4n}/{organizationId}` | list | DEPRECATED - List history |
-| GET | `/api/v1/history/{id4n}/{organizationId}/{sequenceId}` | retrieveItem | Get history item |
-| PATCH | `/api/v1/history/{id4n}/{organizationId}/{sequenceId}` | updateItem | Update history item |
-| PUT | `/api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility` | updateItemVisibility | Set history item visibility |
-| GET | `/api/v1/id4ns/{id4n}` | getId4n | Retrieve ID4n information |
-| GET | `/api/v1/id4ns/{id4n}/alias` | getGuidAliases | Get all aliases for the given GUID or Collection. |
-| DELETE | `/api/v1/id4ns/{id4n}/alias/{aliasType}` | removeGuidAlias | Remove aliases from GUID or Collection |
-| POST | `/api/v1/id4ns/{id4n}/alias/{aliasType}` | addGuidAlias | Add alias for GUID or Collection |
-| GET | `/api/v1/id4ns/{id4n}/collections` | getCollections | Retrieve collections of an ID |
-| DELETE | `/api/v1/id4ns/{id4n}/properties` | deleteProperties | Delete ID4n properties |
-| GET | `/api/v1/id4ns/{id4n}/properties` | getProperties | Retrieve ID4n properties |
-| PATCH | `/api/v1/id4ns/{id4n}/properties` | patchProperties | Patch ID4n properties |
-| POST | `/api/v1/import/gs1` | importGS1Codes | Import GS1/MAPP codes |
-| GET | `/api/v1/info` | applicationInfo | Retrieve version information about ID4i |
-| GET | `/api/v1/microstorage/{id4n}/{organization}` | readFromMicrostorage | Read data from microstorage |
-| PUT | `/api/v1/microstorage/{id4n}/{organization}` | writeToMicrostorage | Write data to microstorage |
-| GET | `/api/v1/multiple/id4ns/properties` | getMultipleProperties | Get multiple ID4n properties |
-| POST | `/api/v1/organizations` | createOrganization | Create organization |
-| DELETE | `/api/v1/organizations/{organizationId}` | deleteOrganization | Delete organization |
-| GET | `/api/v1/organizations/{organizationId}` | findOrganization | Find organization by id/namespace |
-| PUT | `/api/v1/organizations/{organizationId}` | updateOrganization | Update organization |
-| DELETE | `/api/v1/organizations/{organizationId}/addresses/billing` | deleteOrganizationBillingAddress | Remove billing address |
-| GET | `/api/v1/organizations/{organizationId}/addresses/billing` | findOrganizationBillingAddress | Retrieve billing address |
-| PUT | `/api/v1/organizations/{organizationId}/addresses/billing` | updateOrganizationBillingAddress | Store billing address |
-| GET | `/api/v1/organizations/{organizationId}/addresses/default` | findOrganizationAddress | Retrieve address |
-| PUT | `/api/v1/organizations/{organizationId}/addresses/default` | updateOrganizationAddress | Store address |
-| GET | `/api/v1/organizations/{organizationId}/collections` | getAllCollectionsOfOrganization | Get collections of organization |
-| DELETE | `/api/v1/organizations/{organizationId}/logo` | deleteOrganizationLogo | Delete organization logo |
-| POST | `/api/v1/organizations/{organizationId}/logo` | setOrganizationLogo | Update organization logo |
-| GET | `/api/v1/organizations/{organizationId}/messaging` | getDefaultQueue | — |
-| PATCH | `/api/v1/organizations/{organizationId}/messaging` | patchDefaultQueue | — |
-| POST | `/api/v1/organizations/{organizationId}/messaging/enqueueCustomMessage` | enqueueCustomMessage | Enqueue a custom message |
-| DELETE | `/api/v1/organizations/{organizationId}/partner` | removePartnerOrganization | Remove partner |
-| GET | `/api/v1/organizations/{organizationId}/partner` | getPartnerOrganizations | Get partners of an organization |
-| PUT | `/api/v1/organizations/{organizationId}/partner` | addPartnerOrganization | Add partner |
-| GET | `/api/v1/organizations/{organizationId}/privileges` | getOrganizationPrivileges | List my privileges |
-| GET | `/api/v1/organizations/{organizationId}/roles` | getAllOrganizationRoles | List users and their roles |
-| GET | `/api/v1/organizations/{organizationId}/users` | getUsersOfOrganization | Find users in organization |
-| POST | `/api/v1/organizations/{organizationId}/users/invite` | inviteUsers | Invite Users |
-| DELETE | `/api/v1/organizations/{organizationId}/users/{username}/roles` | removeUserRoles | Remove role(s) from user |
-| GET | `/api/v1/organizations/{organizationId}/users/{username}/roles` | getUserRoles | Get user roles by username |
-| POST | `/api/v1/organizations/{organizationId}/users/{username}/roles` | addUserRoles | Add role(s) to user |
-| GET | `/api/v1/public/documents/{id4n}` | listAllPublicDocuments | List public documents |
-| GET | `/api/v1/public/documents/{id4n}/{organizationId}/{fileName}` | readPublicDocument | Read public document contents |
-| GET | `/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata` | getPublicDocument | Retrieve a public document (meta-data only, no content) |
-| GET | `/api/v1/public/history/{id4n}` | listPublicHistory | Shows the public history of the given GUID |
-| GET | `/api/v1/public/image/{imageID}` | resolveImageUsingGET | Resolve image |
-| GET | `/api/v1/public/organizations/{organizationId}` | readOrganizationInfo | Read public organization information |
-| GET | `/api/v1/public/routes/{id4n}` | getRoutes | Retrieve all public routes for a GUID |
-| GET | `/api/v1/roles` | listAllRoles | List roles |
-| GET | `/api/v1/routingfiles/{id4n}` | getRoutingFile | Retrieve routing file |
-| PUT | `/api/v1/routingfiles/{id4n}` | updateRoutingFile | Store routing file |
-| GET | `/api/v1/routingfiles/{id4n}/route/{type}` | getRoute | Retrieve current route of a GUID (or ID4N) |
-| GET | `/api/v1/routingfiles/{id4n}/routes/{type}` | getAllRoutes | Retrieve all routes of a GUID (or ID4N) |
-| GET | `/api/v1/search/guids` | searchByAlias | Search for GUIDs by alias |
-| GET | `/api/v1/search/guids/aliases/types` | getGuidAliasTypes | List all supported alias types |
-| PUT | `/api/v1/transfers/{id4n}/receiveInfo` | receive | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership |
-| GET | `/api/v1/transfers/{id4n}/sendInfo` | getSendInfo | Show transfer preparation information |
-| PUT | `/api/v1/transfers/{id4n}/sendInfo` | prepare | Prepare an object for transfer |
-| GET | `/api/v1/user/organizations` | getOrganizationsOfUser | Retrieve organizations of user |
-| GET | `/api/v1/users` | findUsers | Find users |
-| GET | `/api/v1/users/{username}` | findUserByUsername | Find by username |
-| GET | `/go/{guid}` | go | Forward |
-| POST | `/login` | login | — |
-| GET | `/whois/{id4n}` | resolveWhoIsEntry | Resolve owner of id4n |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/account/password` | verifyPasswordReset | body*: PasswordResetVerificationRequest | SimpleMessageResponse |  | Verify password reset |
+| POST | `/account/password` | requestPasswordReset | body*: PasswordResetRequest | SimpleMessageResponse |  | Request password reset |
+| PUT | `/account/registration` | completeRegistration | body*: CompleteUserRegistrationRequest | — |  | Complete registration |
+| POST | `/account/registration` | registerUser | body*: UserRegistrationRequest | UserRegistrationResponse |  | Register user |
+| POST | `/account/verification` | verifyUserRegistration | body*: RegistrationVerificationTokenPresentation | — |  | Verify registration |
+| GET | `/api/v1/apikeys` | listAllApiKeysOfOrganization | `organizationId`, `offset`, `limit` | PaginatedResponseOfApiKeyPresentation | yes | Find API key by organization |
+| POST | `/api/v1/apikeys` | createNewApiKey | body*: ApiKeyCreationRequest | ApiKeyPresentation |  | Create API key |
+| GET | `/api/v1/apikeys/privileges` | listAllApiKeyPrivileges | `id4nConcerning`, `offset`, `limit` | PaginatedResponseOfApiKeyPrivilegeInfo | yes | List all privileges |
+| GET | `/api/v1/apikeys/{key}` | getApiKey | `key`* | ApiKeyPresentation | yes | Show API key |
+| PUT | `/api/v1/apikeys/{key}` | updateApiKey | `key`*, body*: ApiKeyChangeRequest | — |  | Update API keys |
+| DELETE | `/api/v1/apikeys/{key}` | deleteApiKey | `key`* | — |  | Delete API key |
+| GET | `/api/v1/apikeys/{key}/privileges` | listApiKeyPrivileges | `key`*, `offset`, `limit` | PaginatedResponseOfApiKeyPrivilege | yes | List privileges |
+| POST | `/api/v1/apikeys/{key}/privileges` | addApiKeyPrivilege | `key`*, body*: AddApiKeyPrivilegeRequest | — |  | Add privilege |
+| DELETE | `/api/v1/apikeys/{key}/privileges` | removeApiKeyPrivilege | `key`*, body*: RemoveApiKeyPrivilegeRequest | — |  | Remove privilege |
+| GET | `/api/v1/apikeys/{key}/privileges/{privilege}/id4ns` | listId4ns | `key`*, `privilege`*, `offset`, `limit` | PaginatedResponseOfId4nPresentation | yes | ID4ns of a privilege |
+| POST | `/api/v1/apikeys/{key}/privileges/{privilege}/id4ns` | addApiKeyPrivilegeForId4ns | `key`*, `privilege`*, body*: ListOfId4ns | — |  | Add ID4ns of a privilege |
+| DELETE | `/api/v1/apikeys/{key}/privileges/{privilege}/id4ns` | removeApiKeyPrivilegeForId4ns | `key`*, `privilege`*, body*: ListOfId4ns | — |  | Remove id4ns of a privilege |
+| GET | `/api/v1/billing/{organizationId}` | getSumForOrganization | `organizationId`*, `fromDate`, `toDate` | ServiceCosts | yes | Get billing amount of services for a given organization |
+| GET | `/api/v1/billing/{organizationId}/positions` | getPositionsForOrganization | `organizationId`*, `fromDate`, `toDate` | BillingPosition[] | yes | Get billing positions for a given organization |
+| GET | `/api/v1/changelog/organization/{organizationId}/` | listOrganizationChangeLog | `organizationId`*, `messageMimeType`, `fromDate`, `toDate`, `offset`, `limit` | PaginatedResponseOfChangeLogEntry | yes | List change log entries of an organization |
+| POST | `/api/v1/collections` | createCollection | body*: CreateCollectionRequest | Id4n |  | Create collection |
+| GET | `/api/v1/collections/{id4n}` | findCollection | `id4n`* | GuidCollection | yes | Find collection |
+| DELETE | `/api/v1/collections/{id4n}` | deleteCollection | `id4n`* | — |  | Delete collection |
+| PATCH | `/api/v1/collections/{id4n}` | updateCollection | `id4n`*, body*: GuidCollection | object |  | Update collection |
+| GET | `/api/v1/collections/{id4n}/elements` | listElementsOfCollection | `id4n`*, `offset`, `limit`, `organizationId` | PaginatedResponseOfGuid | yes | List contents of the collection |
+| POST | `/api/v1/collections/{id4n}/elements` | addElementsToCollection | `id4n`*, body*: ListOfId4ns | — |  | Add elements to collection |
+| DELETE | `/api/v1/collections/{id4n}/elements` | removeElementsFromCollection | `id4n`*, body*: ListOfId4ns | — |  | Remove elements from collection |
+| GET | `/api/v1/countries` | listCountries | `offset`, `limit` | PaginatedResponseOfCountry | yes | List countries |
+| GET | `/api/v1/documents/{id4n}` | listAllDocuments | `id4n`*, `owner`, `offset`, `limit` | PaginatedResponseOfDocument | yes | List documents |
+| GET | `/api/v1/documents/{id4n}/{organizationId}` | listDocuments | `organizationId`*, `id4n`*, `owner`, `offset`, `limit` | PaginatedResponseOfDocument | yes | List organization specific documents |
+| PUT | `/api/v1/documents/{id4n}/{organizationId}` | putDocument | `organizationId`*, `id4n`*, body*: object | Document |  | Put an document for an id4n |
+| POST | `/api/v1/documents/{id4n}/{organizationId}` | createDocument | `organizationId`*, `id4n`*, body*: object | Document |  | Create an document for an id4n |
+| GET | `/api/v1/documents/{id4n}/{organizationId}/{fileName}` | readDocument | `organizationId`*, `id4n`*, `fileName`* | string:byte | yes | Read document contents |
+| DELETE | `/api/v1/documents/{id4n}/{organizationId}/{fileName}` | deleteDocument | `organizationId`*, `id4n`*, `fileName`* | — |  | Delete a document |
+| GET | `/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata` | getDocument | `organizationId`*, `id4n`*, `fileName`* | Document | yes | Retrieve a document (meta-data only, no content) |
+| PATCH | `/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata` | updateDocumentMetadata | `organizationId`*, `id4n`*, `fileName`*, body*: DocumentUpdate | Document |  | Update a document |
+| POST | `/api/v1/guids` | createGuid | body*: CreateGuidRequest | ListOfId4ns |  | Create GUID(s) |
+| GET | `/api/v1/guids/withoutCollection` | getGuidsWithoutCollection | `organizationId`*, `offset`, `limit` | PaginatedResponseOfGuid | yes | Retrieve GUIDs not in any collection |
+| GET | `/api/v1/guids/{id4n}` | getGuid | `id4n`*, `organizationId` | Guid | yes | Retrieve GUID information |
+| PATCH | `/api/v1/guids/{id4n}` | updateGuid | `id4n`*, body*: Guid | object |  | Change GUID information. |
+| GET | `/api/v1/history/{id4n}` | filteredList | `id4n`*, `includePrivate`, `organization`, `type`, `qualifier`, `fromDate`, `toDate`, `offset`, `limit` | PaginatedResponseOfHistoryItem | yes | List history |
+| POST | `/api/v1/history/{id4n}` | addItem | `id4n`*, body*: HistoryItem | — |  | Add history item |
+| GET | `/api/v1/history/{id4n}/{organizationId}` | list | `id4n`*, `organizationId`*, `includePrivate`, `offset`, `limit` | PaginatedResponseOfHistoryItem | yes | DEPRECATED - List history |
+| GET | `/api/v1/history/{id4n}/{organizationId}/{sequenceId}` | retrieveItem | `id4n`*, `organizationId`*, `sequenceId`* | HistoryItem | yes | Get history item |
+| PATCH | `/api/v1/history/{id4n}/{organizationId}/{sequenceId}` | updateItem | `id4n`*, `organizationId`*, `sequenceId`*, body*: HistoryItemUpdate | HistoryItem |  | Update history item |
+| PUT | `/api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility` | updateItemVisibility | `id4n`*, `organizationId`*, `sequenceId`*, body*: Visibility | HistoryItem |  | Set history item visibility |
+| GET | `/api/v1/id4ns/{id4n}` | getId4n | `id4n`*, `organizationId` | Id4nPresentation | yes | Retrieve ID4n information |
+| GET | `/api/v1/id4ns/{id4n}/alias` | getGuidAliases | `id4n`* | object | yes | Get all aliases for the given GUID or Collection. |
+| POST | `/api/v1/id4ns/{id4n}/alias/{aliasType}` | addGuidAlias | `id4n`*, `aliasType`*, body*: GuidAlias | — |  | Add alias for GUID or Collection |
+| DELETE | `/api/v1/id4ns/{id4n}/alias/{aliasType}` | removeGuidAlias | `id4n`*, `aliasType`* | — |  | Remove aliases from GUID or Collection |
+| GET | `/api/v1/id4ns/{id4n}/collections` | getCollections | `id4n`*, `organizationId`, `offset`, `limit` | PaginatedResponseOfGuidCollection | yes | Retrieve collections of an ID |
+| GET | `/api/v1/id4ns/{id4n}/properties` | getProperties | `id4n`*, `organizationId` | object | yes | Retrieve ID4n properties |
+| DELETE | `/api/v1/id4ns/{id4n}/properties` | deleteProperties | `id4n`*, `organizationId`*, body*: string[] | — |  | Delete ID4n properties |
+| PATCH | `/api/v1/id4ns/{id4n}/properties` | patchProperties | `id4n`*, `organizationId`*, body*: object | — |  | Patch ID4n properties |
+| POST | `/api/v1/import/gs1` | importGS1Codes | body*: ImportGS1CodesRequest | — |  | Import GS1/MAPP codes |
+| GET | `/api/v1/info` | applicationInfo | — | AppInfoPresentation | yes | Retrieve version information about ID4i |
+| GET | `/api/v1/microstorage/{id4n}/{organization}` | readFromMicrostorage | `organization`*, `id4n`* | string:byte | yes | Read data from microstorage |
+| PUT | `/api/v1/microstorage/{id4n}/{organization}` | writeToMicrostorage | `organization`*, `id4n`*, `Content-Type`, `Content-Length`, body: string:byte | object |  | Write data to microstorage |
+| GET | `/api/v1/multiple/id4ns/properties` | getMultipleProperties | `id4ns`*, `organizationId` | ListOfId4nProperties | yes | Get multiple ID4n properties |
+| POST | `/api/v1/organizations` | createOrganization | body*: Organization | Organization |  | Create organization |
+| GET | `/api/v1/organizations/{organizationId}` | findOrganization | `organizationId`* | Organization | yes | Find organization by id/namespace |
+| PUT | `/api/v1/organizations/{organizationId}` | updateOrganization | `organizationId`*, body*: OrganizationUpdate | Organization |  | Update organization |
+| DELETE | `/api/v1/organizations/{organizationId}` | deleteOrganization | `organizationId`* | — |  | Delete organization |
+| GET | `/api/v1/organizations/{organizationId}/addresses/billing` | findOrganizationBillingAddress | `organizationId`* | OrganizationAddress | yes | Retrieve billing address |
+| PUT | `/api/v1/organizations/{organizationId}/addresses/billing` | updateOrganizationBillingAddress | `organizationId`*, body*: OrganizationAddress | OrganizationAddress |  | Store billing address |
+| DELETE | `/api/v1/organizations/{organizationId}/addresses/billing` | deleteOrganizationBillingAddress | `organizationId`* | — |  | Remove billing address |
+| GET | `/api/v1/organizations/{organizationId}/addresses/default` | findOrganizationAddress | `organizationId`* | OrganizationAddress | yes | Retrieve address |
+| PUT | `/api/v1/organizations/{organizationId}/addresses/default` | updateOrganizationAddress | `organizationId`*, body*: OrganizationAddress | OrganizationAddress |  | Store address |
+| GET | `/api/v1/organizations/{organizationId}/collections` | getAllCollectionsOfOrganization | `offset`, `limit`, `organizationId`*, `type`, `label`, `labelPrefix`, `property` | PaginatedResponseOfGuidCollection | yes | Get collections of organization |
+| POST | `/api/v1/organizations/{organizationId}/logo` | setOrganizationLogo | `organizationId`*, body*: object | PublicImagePresentation |  | Update organization logo |
+| DELETE | `/api/v1/organizations/{organizationId}/logo` | deleteOrganizationLogo | `organizationId`* | — |  | Delete organization logo |
+| GET | `/api/v1/organizations/{organizationId}/messaging` | getDefaultQueue | `organizationId`* | QueuePresentation | yes | — |
+| PATCH | `/api/v1/organizations/{organizationId}/messaging` | patchDefaultQueue | `organizationId`*, body*: QueueUpdateRequest | — |  | — |
+| POST | `/api/v1/organizations/{organizationId}/messaging/enqueueCustomMessage` | enqueueCustomMessage | `organizationId`*, body*: SendCustomMessage | — |  | Enqueue a custom message |
+| GET | `/api/v1/organizations/{organizationId}/partner` | getPartnerOrganizations | `organizationId`*, `offset`, `limit` | PaginatedResponseOfPartnerOrganization | yes | Get partners of an organization |
+| PUT | `/api/v1/organizations/{organizationId}/partner` | addPartnerOrganization | `organizationId`*, body*: AddPartnerRequest | — |  | Add partner |
+| DELETE | `/api/v1/organizations/{organizationId}/partner` | removePartnerOrganization | `organizationId`*, body*: RemovePartnerRequest | — |  | Remove partner |
+| GET | `/api/v1/organizations/{organizationId}/privileges` | getOrganizationPrivileges | `organizationId`* | string[] | yes | List my privileges |
+| GET | `/api/v1/organizations/{organizationId}/roles` | getAllOrganizationRoles | `offset`, `limit`, `organizationId`* | PaginatedResponseOfUserRoles | yes | List users and their roles |
+| GET | `/api/v1/organizations/{organizationId}/users` | getUsersOfOrganization | `offset`, `limit`, `organizationId`* | PaginatedResponseOfUserPresentation | yes | Find users in organization |
+| POST | `/api/v1/organizations/{organizationId}/users/invite` | inviteUsers | `organizationId`*, body*: OrganizationUserInvitationListRequest | — |  | Invite Users |
+| GET | `/api/v1/organizations/{organizationId}/users/{username}/roles` | getUserRoles | `organizationId`*, `username`*, `offset`, `limit` | PaginatedResponseOfstring | yes | Get user roles by username |
+| POST | `/api/v1/organizations/{organizationId}/users/{username}/roles` | addUserRoles | `organizationId`*, `username`*, body*: ChangeRoleRequest | — |  | Add role(s) to user |
+| DELETE | `/api/v1/organizations/{organizationId}/users/{username}/roles` | removeUserRoles | `organizationId`*, `username`*, body*: ChangeRoleRequest | — |  | Remove role(s) from user |
+| GET | `/api/v1/public/documents/{id4n}` | listAllPublicDocuments | `organizationId`, `id4n`*, `owner`, `offset`, `limit` | PaginatedResponseOfDocument | yes | List public documents |
+| GET | `/api/v1/public/documents/{id4n}/{organizationId}/{fileName}` | readPublicDocument | `organizationId`*, `id4n`*, `fileName`* | string:byte | yes | Read public document contents |
+| GET | `/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata` | getPublicDocument | `organizationId`*, `id4n`*, `fileName`* | Document | yes | Retrieve a public document (meta-data only, no content) |
+| GET | `/api/v1/public/history/{id4n}` | listPublicHistory | `id4n`*, `offset`, `limit` | PaginatedResponseOfHistoryItem | yes | Shows the public history of the given GUID |
+| GET | `/api/v1/public/image/{imageID}` | resolveImageUsingGET | `imageID`* | string:byte | yes | Resolve image |
+| GET | `/api/v1/public/organizations/{organizationId}` | readOrganizationInfo | `organizationId`* | Organization | yes | Read public organization information |
+| GET | `/api/v1/public/routes/{id4n}` | getRoutes | `id4n`*, `type`*, `interpolate` | Route[] | yes | Retrieve all public routes for a GUID |
+| GET | `/api/v1/roles` | listAllRoles | `privilege`, `offset`, `limit` | PaginatedResponseOfRole | yes | List roles |
+| GET | `/api/v1/routingfiles/{id4n}` | getRoutingFile | `id4n`*, `organizationId` | RoutingFile | yes | Retrieve routing file |
+| PUT | `/api/v1/routingfiles/{id4n}` | updateRoutingFile | `id4n`*, body*: RoutingFileRequest | — |  | Store routing file |
+| GET | `/api/v1/routingfiles/{id4n}/route/{type}` | getRoute | `id4n`*, `type`*, `privateRoutes`, `publicRoutes`, `interpolate` | Route | yes | Retrieve current route of a GUID (or ID4N) |
+| GET | `/api/v1/routingfiles/{id4n}/routes/{type}` | getAllRoutes | `id4n`*, `type`*, `organizationId`, `interpolate` | Route[] | yes | Retrieve all routes of a GUID (or ID4N) |
+| GET | `/api/v1/search/guids` | searchByAlias | `alias`*, `aliasType`*, `offset`, `limit` | PaginatedResponseOfGuid | yes | Search for GUIDs by alias |
+| GET | `/api/v1/search/guids/aliases/types` | getGuidAliasTypes | — | string[] | yes | List all supported alias types |
+| PUT | `/api/v1/transfers/{id4n}/receiveInfo` | receive | `id4n`*, body*: TransferReceiveInfo | — |  | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership |
+| GET | `/api/v1/transfers/{id4n}/sendInfo` | getSendInfo | `id4n`* | TransferSendInfo | yes | Show transfer preparation information |
+| PUT | `/api/v1/transfers/{id4n}/sendInfo` | prepare | `id4n`*, body*: TransferSendInfo | object |  | Prepare an object for transfer |
+| GET | `/api/v1/user/organizations` | getOrganizationsOfUser | `role`, `offset`, `limit` | PaginatedResponseOfOrganization | yes | Retrieve organizations of user |
+| GET | `/api/v1/users` | findUsers | `usernamePrefix`, `offset`, `limit` | PaginatedResponseOfUserPresentation | yes | Find users |
+| GET | `/api/v1/users/{username}` | findUserByUsername | `username`* | UserPresentation | yes | Find by username |
+| GET | `/go/{guid}` | go | `guid`* | — | yes | Forward |
+| POST | `/login` | login | body*: AccountCredentials | — |  | — |
+| GET | `/whois/{id4n}` | resolveWhoIsEntry | `id4n`* | WhoIsResponse | yes | Resolve owner of id4n |

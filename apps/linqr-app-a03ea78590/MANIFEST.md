@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_linqr.app_assets_apple-touch-ic
 
 | | |
 | --- | --- |
-| Signed bundle | `32758c5e7ee0b8fe089c5754d34f312d98ec40515e650c754dc38ab91d71f93d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_linqr.app_assets_apple-touch-ic
 
 72 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/batch/qrcode` | qrCodeBatch_batch_qrcode_post | QR Code Batch |
-| GET | `/images` | imageListAll_images_get | List all images |
-| POST | `/images` | imageUpload_images_post | Upload image |
-| DELETE | `/images/{id}` | imageDelete_images__id__delete | Delete image |
-| GET | `/images/{id}` | imageList_images__id__get | List image |
-| POST | `/qrcode` | dispatcher_qrcode_post | Arbitrary data type QR Code |
-| POST | `/qrcode/contact` | dispatcher_qrcode_contact_post | Contact QR Code |
-| POST | `/qrcode/crypto` | dispatcher_qrcode_crypto_post | Cryptocurrency payment QR Code |
-| POST | `/qrcode/email` | dispatcher_qrcode_email_post | Email QR Code |
-| POST | `/qrcode/geo` | dispatcher_qrcode_geo_post | Geolocation QR Code |
-| POST | `/qrcode/phone` | dispatcher_qrcode_phone_post | Telephone QR Code |
-| POST | `/qrcode/sms` | dispatcher_qrcode_sms_post | SMS QR Code |
-| POST | `/qrcode/text` | dispatcher_qrcode_text_post | Text QR Code |
-| POST | `/qrcode/wifi` | dispatcher_qrcode_wifi_post | WiFi QR Code |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/batch/qrcode` | qrCodeBatch_batch_qrcode_post | body*: AutoQRCodeBatch | string:binary |  | QR Code Batch |
+| GET | `/images` | imageListAll_images_get | — | ImageMetadata[] | yes | List all images |
+| POST | `/images` | imageUpload_images_post | body*: object | ImageMetadata |  | Upload image |
+| GET | `/images/{id}` | imageList_images__id__get | `id`* | ImageMetadata | yes | List image |
+| DELETE | `/images/{id}` | imageDelete_images__id__delete | `id`* | — |  | Delete image |
+| POST | `/qrcode` | dispatcher_qrcode_post | body: AutoQRCode | string:binary |  | Arbitrary data type QR Code |
+| POST | `/qrcode/contact` | dispatcher_qrcode_contact_post | body: ContactQRCode | string:binary |  | Contact QR Code |
+| POST | `/qrcode/crypto` | dispatcher_qrcode_crypto_post | body: CryptoPaymentQRCode | string:binary |  | Cryptocurrency payment QR Code |
+| POST | `/qrcode/email` | dispatcher_qrcode_email_post | body: EmailQRCode | string:binary |  | Email QR Code |
+| POST | `/qrcode/geo` | dispatcher_qrcode_geo_post | body: GeolocationQRCode | string:binary |  | Geolocation QR Code |
+| POST | `/qrcode/phone` | dispatcher_qrcode_phone_post | body: PhoneQRCode | string:binary |  | Telephone QR Code |
+| POST | `/qrcode/sms` | dispatcher_qrcode_sms_post | body: SMSQRCode | string:binary |  | SMS QR Code |
+| POST | `/qrcode/text` | dispatcher_qrcode_text_post | body: TextQRCode | string:binary |  | Text QR Code |
+| POST | `/qrcode/wifi` | dispatcher_qrcode_wifi_post | body: WiFiQRCode | string:binary |  | WiFi QR Code |

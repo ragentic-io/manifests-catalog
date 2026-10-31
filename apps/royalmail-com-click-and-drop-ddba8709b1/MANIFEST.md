@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `d989956389dfe65325a92c29b89a6e552f9c85c104124c6a5a2e8c27c2ef09c1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,17 +34,19 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 43 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/manifests` | CreateManifestsAsync | Manifest orders |
-| GET | `/manifests/{manifestGuid}` | GetManifestAsync | Retrieve manifest status and documentation |
-| POST | `/manifests/{manifestGuid}/retry` | RetryManifestAsync | Retry failed manifest |
-| GET | `/orders` | GetOrdersAsync | Retrieve pageable list of orders |
-| POST | `/orders` | CreateOrdersAsync | Create orders |
-| GET | `/orders/full` | GetOrdersWithDetailsAsync | Retrieve pageable list of orders with details |
-| PUT | `/orders/status` | UpdateOrdersStatusAsync | Set order status |
-| DELETE | `/orders/{orderIdentifiers}` | DeleteOrdersAsync | Delete orders |
-| GET | `/orders/{orderIdentifiers}` | GetSpecificOrdersAsync | Retrieve specific orders |
-| GET | `/orders/{orderIdentifiers}/full` | GetSpecificOrdersWithDetailsAsync | Retrieve details of the specific orders |
-| GET | `/orders/{orderIdentifiers}/label` | GetOrdersLabelAsync | Return a single PDF file with generated label and/or associated document(s) |
-| GET | `/version` | GetVersionAsync | Get API version details. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/manifests` | CreateManifestsAsync | body*: CreateManifestsRequest | CreateManifestsResponse |  | Manifest orders |
+| GET | `/manifests/{manifestGuid}` | GetManifestAsync | `manifestGuid`* | GetManifestResponse | yes | Retrieve manifest status and documentation |
+| POST | `/manifests/{manifestGuid}/retry` | RetryManifestAsync | `manifestGuid`* | — |  | Retry failed manifest |
+| GET | `/orders` | GetOrdersAsync | `pageSize`, `startDateTime`, `endDateTime`, `continuationToken` | GetOrdersResponse | yes | Retrieve pageable list of orders |
+| POST | `/orders` | CreateOrdersAsync | body*: CreateOrdersRequest | CreateOrdersResponse |  | Create orders |
+| GET | `/orders/full` | GetOrdersWithDetailsAsync | `pageSize`, `startDateTime`, `endDateTime`, `continuationToken` | GetOrdersDetailsResponse | yes | Retrieve pageable list of orders with details |
+| PUT | `/orders/status` | UpdateOrdersStatusAsync | body*: UpdateOrdersStatusRequest | UpdateOrderStatusResponse |  | Set order status |
+| GET | `/orders/{orderIdentifiers}` | GetSpecificOrdersAsync | `orderIdentifiers`* | GetOrderInfoResource[] | yes | Retrieve specific orders |
+| DELETE | `/orders/{orderIdentifiers}` | DeleteOrdersAsync | `orderIdentifiers`* | DeleteOrdersResource |  | Delete orders |
+| GET | `/orders/{orderIdentifiers}/full` | GetSpecificOrdersWithDetailsAsync | `orderIdentifiers`* | GetOrderDetailsResource[] | yes | Retrieve details of the specific orders |
+| GET | `/orders/{orderIdentifiers}/label` | GetOrdersLabelAsync | `orderIdentifiers`*, `documentType`*, `includeReturnsLabel`, `includeCN` | file | yes | Return a single PDF file with generated label and/or associated document(s) |
+| GET | `/version` | GetVersionAsync | — | GetVersionResource | yes | Get API version details. |

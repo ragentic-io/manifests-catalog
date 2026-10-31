@@ -98,6 +98,181 @@
         "from": "cloudmersive-com-ocr-287ded8748",
         "kind": "EXPOSES",
         "to": "operation:post:/ocr/receipts/photo/to/csv"
+      },
+      {
+        "from": "operation:post:/ocr/image/to/lines-with-location",
+        "kind": "RETURNS",
+        "to": "schema:ImageToLinesWithLocationResult"
+      },
+      {
+        "from": "operation:post:/ocr/image/to/words-with-location",
+        "kind": "RETURNS",
+        "to": "schema:ImageToWordsWithLocationResult"
+      },
+      {
+        "from": "operation:post:/ocr/image/toText",
+        "kind": "RETURNS",
+        "to": "schema:ImageToTextResponse"
+      },
+      {
+        "from": "operation:post:/ocr/pdf/to/lines-with-location",
+        "kind": "RETURNS",
+        "to": "schema:PdfToLinesWithLocationResult"
+      },
+      {
+        "from": "operation:post:/ocr/pdf/to/words-with-location",
+        "kind": "RETURNS",
+        "to": "schema:PdfToWordsWithLocationResult"
+      },
+      {
+        "from": "operation:post:/ocr/pdf/toText",
+        "kind": "RETURNS",
+        "to": "schema:PdfToTextResponse"
+      },
+      {
+        "from": "operation:post:/ocr/photo/recognize/business-card",
+        "kind": "RETURNS",
+        "to": "schema:BusinessCardRecognitionResult"
+      },
+      {
+        "from": "operation:post:/ocr/photo/recognize/form",
+        "kind": "RETURNS",
+        "to": "schema:FormRecognitionResult"
+      },
+      {
+        "from": "operation:post:/ocr/photo/recognize/form/advanced",
+        "kind": "RETURNS",
+        "to": "schema:FormRecognitionResult"
+      },
+      {
+        "from": "operation:post:/ocr/photo/recognize/receipt",
+        "kind": "RETURNS",
+        "to": "schema:ReceiptRecognitionResult"
+      },
+      {
+        "from": "operation:post:/ocr/photo/to/words-with-location",
+        "kind": "RETURNS",
+        "to": "schema:PhotoToWordsWithLocationResult"
+      },
+      {
+        "from": "operation:post:/ocr/photo/toText",
+        "kind": "RETURNS",
+        "to": "schema:ImageToTextResponse"
+      },
+      {
+        "from": "operation:post:/ocr/preprocessing/image/get-page-angle",
+        "kind": "RETURNS",
+        "to": "schema:GetPageAngleResult"
+      },
+      {
+        "from": "schema:FieldResult",
+        "kind": "REFERENCES",
+        "to": "schema:FormFieldDefinition"
+      },
+      {
+        "from": "schema:FieldResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrPhotoTextElement"
+      },
+      {
+        "from": "schema:FormDefinitionTemplate",
+        "kind": "REFERENCES",
+        "to": "schema:FormFieldDefinition"
+      },
+      {
+        "from": "schema:FormDefinitionTemplate",
+        "kind": "REFERENCES",
+        "to": "schema:FormTableDefinition"
+      },
+      {
+        "from": "schema:FormRecognitionResult",
+        "kind": "REFERENCES",
+        "to": "schema:FieldResult"
+      },
+      {
+        "from": "schema:FormRecognitionResult",
+        "kind": "REFERENCES",
+        "to": "schema:TableResult"
+      },
+      {
+        "from": "schema:FormTableDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:FormTableColumnDefinition"
+      },
+      {
+        "from": "schema:ImageToLinesWithLocationResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrLineElement"
+      },
+      {
+        "from": "schema:ImageToWordsWithLocationResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrWordElement"
+      },
+      {
+        "from": "schema:OcrLineElement",
+        "kind": "REFERENCES",
+        "to": "schema:OcrWordElement"
+      },
+      {
+        "from": "schema:OcrPageResultWithLinesWithLocation",
+        "kind": "REFERENCES",
+        "to": "schema:OcrLineElement"
+      },
+      {
+        "from": "schema:OcrPageResultWithWordsWithLocation",
+        "kind": "REFERENCES",
+        "to": "schema:OcrWordElement"
+      },
+      {
+        "from": "schema:OcrPhotoTextElement",
+        "kind": "REFERENCES",
+        "to": "schema:Point"
+      },
+      {
+        "from": "schema:PdfToLinesWithLocationResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrPageResultWithLinesWithLocation"
+      },
+      {
+        "from": "schema:PdfToTextResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OcrPageResult"
+      },
+      {
+        "from": "schema:PdfToWordsWithLocationResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrPageResultWithWordsWithLocation"
+      },
+      {
+        "from": "schema:PhotoToWordsWithLocationResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrPhotoTextElement"
+      },
+      {
+        "from": "schema:ReceiptRecognitionResult",
+        "kind": "REFERENCES",
+        "to": "schema:ReceiptLineItem"
+      },
+      {
+        "from": "schema:TableCellResult",
+        "kind": "REFERENCES",
+        "to": "schema:OcrPhotoTextElement"
+      },
+      {
+        "from": "schema:TableResult",
+        "kind": "REFERENCES",
+        "to": "schema:FormTableDefinition"
+      },
+      {
+        "from": "schema:TableResult",
+        "kind": "REFERENCES",
+        "to": "schema:TableRowResult"
+      },
+      {
+        "from": "schema:TableRowResult",
+        "kind": "REFERENCES",
+        "to": "schema:TableCellResult"
       }
     ],
     "nodes": [
@@ -107,78 +282,255 @@
       },
       {
         "deprecated": false,
+        "description": "Converts an uploaded image in common formats such as JPEG, PNG into lines/text with location information and other metdata via Optical Character Recognition.",
         "id": "operation:post:/ocr/image/to/lines-with-location",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_ImageLinesWithLocation",
+        "parameters": [
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/image/to/lines-with-location",
         "pointer": "#/paths/~1ocr~1image~1to~1lines-with-location/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageToLinesWithLocationResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a scanned image into words with location"
+        "summary": "Convert a scanned image into words with location",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts an uploaded image in common formats such as JPEG, PNG into words/text with location information and other metdata via Optical Character Recognition.",
         "id": "operation:post:/ocr/image/to/words-with-location",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_ImageWordsWithLocation",
+        "parameters": [
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/image/to/words-with-location",
         "pointer": "#/paths/~1ocr~1image~1to~1words-with-location/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageToWordsWithLocationResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a scanned image into words with location"
+        "summary": "Convert a scanned image into words with location",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.",
         "id": "operation:post:/ocr/image/toText",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_Post",
+        "parameters": [
+          {
+            "description": "Optional; possible values are 'Basic' which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls; '…",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/image/toText",
         "pointer": "#/paths/~1ocr~1image~1toText/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageToTextResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a scanned image into text"
+        "summary": "Convert a scanned image into text",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts a PDF into lines/text with location information and other metdata via Optical Character Recognition.",
         "id": "operation:post:/ocr/pdf/to/lines-with-location",
         "kind": "operation",
         "method": "post",
         "name": "PdfOcr_PdfToLinesWithLocation",
+        "parameters": [
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/pdf/to/lines-with-location",
         "pointer": "#/paths/~1ocr~1pdf~1to~1lines-with-location/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfToLinesWithLocationResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a PDF into text lines with location"
+        "summary": "Convert a PDF into text lines with location",
+        "tags": [
+          "PdfOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts a PDF into words/text with location information and other metdata via Optical Character Recognition.",
         "id": "operation:post:/ocr/pdf/to/words-with-location",
         "kind": "operation",
         "method": "post",
         "name": "PdfOcr_PdfToWordsWithLocation",
+        "parameters": [
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/pdf/to/words-with-location",
         "pointer": "#/paths/~1ocr~1pdf~1to~1words-with-location/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfToWordsWithLocationResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a PDF into words with location"
+        "summary": "Convert a PDF into words with location",
+        "tags": [
+          "PdfOcr"
+        ]
       },
       {
         "deprecated": false,
@@ -186,344 +538,814 @@
         "kind": "operation",
         "method": "post",
         "name": "PdfOcr_Post",
+        "parameters": [
+          {
+            "description": "Optional; possible values are 'Basic' which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls pe…",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/pdf/toText",
         "pointer": "#/paths/~1ocr~1pdf~1toText/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfToTextResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Converts an uploaded PDF file into text via Optical Character Recognition."
+        "summary": "Converts an uploaded PDF file into text via Optical Character Recognition.",
+        "tags": [
+          "PdfOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Analyzes a photograph of a business card as input, and outputs key business information such as the name of the person, name of the business, the address of th…",
         "id": "operation:post:/ocr/photo/recognize/business-card",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_PhotoRecognizeBusinessCard",
         "path": "/ocr/photo/recognize/business-card",
         "pointer": "#/paths/~1ocr~1photo~1recognize~1business-card/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BusinessCardRecognitionResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Recognize a photo of a business card, extract key business information"
+        "summary": "Recognize a photo of a business card, extract key business information",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Analyzes a photograph of a form as input, and outputs key business fields and information.",
         "id": "operation:post:/ocr/photo/recognize/form",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_PhotoRecognizeForm",
+        "parameters": [
+          {
+            "description": "Form field definitions",
+            "in": "header",
+            "name": "formTemplateDefinition",
+            "required": false,
+            "type": "FormDefinitionTemplate"
+          },
+          {
+            "description": "Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, diagnostics mode, default is 'false'.",
+            "in": "header",
+            "name": "diagnostics",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/photo/recognize/form",
         "pointer": "#/paths/~1ocr~1photo~1recognize~1form/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormRecognitionResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Recognize a photo of a form, extract key fields and business information"
+        "summary": "Recognize a photo of a form, extract key fields and business information",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Analyzes a photograph of a form as input, and outputs key business fields and information.",
         "id": "operation:post:/ocr/photo/recognize/form/advanced",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_PhotoRecognizeFormAdvanced",
+        "parameters": [
+          {
+            "description": "Bucket ID of the Configuration Bucket storing the form templates",
+            "in": "header",
+            "name": "bucketID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Bucket Secret Key of the Configuration Bucket storing the form templates",
+            "in": "header",
+            "name": "bucketSecretKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, diagnostics mode, default is 'false'.",
+            "in": "header",
+            "name": "diagnostics",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/photo/recognize/form/advanced",
         "pointer": "#/paths/~1ocr~1photo~1recognize~1form~1advanced/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormRecognitionResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Recognize a photo of a form, extract key fields using stored templates"
+        "summary": "Recognize a photo of a form, extract key fields using stored templates",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Analyzes a photograph of a receipt as input, and outputs key business information such as the name of the business, the address of the business, the phone numb…",
         "id": "operation:post:/ocr/photo/recognize/receipt",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_PhotoRecognizeReceipt",
+        "parameters": [
+          {
+            "description": "Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'None'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/photo/recognize/receipt",
         "pointer": "#/paths/~1ocr~1photo~1recognize~1receipt/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReceiptRecognitionResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Recognize a photo of a receipt, extract key business information"
+        "summary": "Recognize a photo of a receipt, extract key business information",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts a photo of a document or receipt in common formats such as JPEG, PNG into words/text with location information and other metdata via Optical Character…",
         "id": "operation:post:/ocr/photo/to/words-with-location",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_PhotoWordsWithLocation",
+        "parameters": [
+          {
+            "description": "Optional; possible values are 'Normal' which provides highly fault tolerant OCR recognition uses 26-30 API calls; and 'Advanced' which provides the highest qua…",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, preprocessing mode, default is 'Auto'.",
+            "in": "header",
+            "name": "preprocessing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, diagnostics mode, default is 'false'.",
+            "in": "header",
+            "name": "diagnostics",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/photo/to/words-with-location",
         "pointer": "#/paths/~1ocr~1photo~1to~1words-with-location/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhotoToWordsWithLocationResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a photo of a document or receipt into words with location"
+        "summary": "Convert a photo of a document or receipt into words with location",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts an uploaded photo of a document in common formats such as JPEG, PNG into text via Optical Character Recognition.",
         "id": "operation:post:/ocr/photo/toText",
         "kind": "operation",
         "method": "post",
         "name": "ImageOcr_PhotoToText",
+        "parameters": [
+          {
+            "description": "Optional; possible values are 'Basic' which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls; '…",
+            "in": "header",
+            "name": "recognitionMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional, language of the input document, default is English (ENG).",
+            "in": "header",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ocr/photo/toText",
         "pointer": "#/paths/~1ocr~1photo~1toText/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageToTextResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a photo of a document into text"
+        "summary": "Convert a photo of a document into text",
+        "tags": [
+          "ImageOcr"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.",
         "id": "operation:post:/ocr/preprocessing/image/binarize",
         "kind": "operation",
         "method": "post",
         "name": "Preprocessing_Binarize",
         "path": "/ocr/preprocessing/image/binarize",
         "pointer": "#/paths/~1ocr~1preprocessing~1image~1binarize/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert an image of text into a binarized (light and dark) view"
+        "summary": "Convert an image of text into a binarized (light and dark) view",
+        "tags": [
+          "Preprocessing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.",
         "id": "operation:post:/ocr/preprocessing/image/binarize/advanced",
         "kind": "operation",
         "method": "post",
         "name": "Preprocessing_BinarizeAdvanced",
         "path": "/ocr/preprocessing/image/binarize/advanced",
         "pointer": "#/paths/~1ocr~1preprocessing~1image~1binarize~1advanced/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert an image of text into a binary (light and dark) view with ML"
+        "summary": "Convert an image of text into a binary (light and dark) view with ML",
+        "tags": [
+          "Preprocessing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Analyzes a photo or image of a document and identifies the rotation angle of the page.",
         "id": "operation:post:/ocr/preprocessing/image/get-page-angle",
         "kind": "operation",
         "method": "post",
         "name": "Preprocessing_GetPageAngle",
         "path": "/ocr/preprocessing/image/get-page-angle",
         "pointer": "#/paths/~1ocr~1preprocessing~1image~1get-page-angle/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetPageAngleResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Get the angle of the page / document / receipt"
+        "summary": "Get the angle of the page / document / receipt",
+        "tags": [
+          "Preprocessing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Detect and unrotate an image of a document (e.g.",
         "id": "operation:post:/ocr/preprocessing/image/unrotate",
         "kind": "operation",
         "method": "post",
         "name": "Preprocessing_Unrotate",
         "path": "/ocr/preprocessing/image/unrotate",
         "pointer": "#/paths/~1ocr~1preprocessing~1image~1unrotate/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Detect and unrotate a document image"
+        "summary": "Detect and unrotate a document image",
+        "tags": [
+          "Preprocessing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Detect and unrotate an image of a document (e.g.",
         "id": "operation:post:/ocr/preprocessing/image/unrotate/advanced",
         "kind": "operation",
         "method": "post",
         "name": "Preprocessing_UnrotateAdvanced",
         "path": "/ocr/preprocessing/image/unrotate/advanced",
         "pointer": "#/paths/~1ocr~1preprocessing~1image~1unrotate~1advanced/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Detect and unrotate a document image (advanced)"
+        "summary": "Detect and unrotate a document image (advanced)",
+        "tags": [
+          "Preprocessing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Detect and unskew a photo of a document (e.g.",
         "id": "operation:post:/ocr/preprocessing/image/unskew",
         "kind": "operation",
         "method": "post",
         "name": "Preprocessing_Unskew",
         "path": "/ocr/preprocessing/image/unskew",
         "pointer": "#/paths/~1ocr~1preprocessing~1image~1unskew/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Detect and unskew a photo of a document"
+        "summary": "Detect and unskew a photo of a document",
+        "tags": [
+          "Preprocessing"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Leverage Deep Learning to automatically turn a photo of a receipt into a CSV file containing the structured information from the receipt.",
         "id": "operation:post:/ocr/receipts/photo/to/csv",
         "kind": "operation",
         "method": "post",
         "name": "Receipts_PhotoToCSV",
         "path": "/ocr/receipts/photo/to/csv",
         "pointer": "#/paths/~1ocr~1receipts~1photo~1to~1csv/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Apikey": []
           }
         ],
-        "summary": "Convert a photo of a receipt into a CSV file containing structured information from the receipt"
+        "summary": "Convert a photo of a receipt into a CSV file containing structured information from the receipt",
+        "tags": [
+          "Receipts"
+        ]
       },
       {
+        "description": "Result of recognizing a business card, to extract the key information from the business card",
         "id": "schema:BusinessCardRecognitionResult",
         "kind": "schema",
-        "name": "BusinessCardRecognitionResult"
+        "name": "BusinessCardRecognitionResult",
+        "type": "object"
       },
       {
+        "description": "A pairing target field and actual value read from form",
         "id": "schema:FieldResult",
         "kind": "schema",
-        "name": "FieldResult"
+        "name": "FieldResult",
+        "type": "object"
       },
       {
+        "description": "Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR",
         "id": "schema:FormDefinitionTemplate",
         "kind": "schema",
-        "name": "FormDefinitionTemplate"
+        "name": "FormDefinitionTemplate",
+        "type": "object"
       },
       {
+        "description": "Definition of a form field for OCR data extraction from images",
         "id": "schema:FormFieldDefinition",
         "kind": "schema",
-        "name": "FormFieldDefinition"
+        "name": "FormFieldDefinition",
+        "type": "object"
       },
       {
+        "description": "The result of extracting form field values",
         "id": "schema:FormRecognitionResult",
         "kind": "schema",
-        "name": "FormRecognitionResult"
+        "name": "FormRecognitionResult",
+        "type": "object"
       },
       {
+        "description": "Definition of a column within a table for OCR data extraction from images",
         "id": "schema:FormTableColumnDefinition",
         "kind": "schema",
-        "name": "FormTableColumnDefinition"
+        "name": "FormTableColumnDefinition",
+        "type": "object"
       },
       {
+        "description": "Definition of a form table for OCR data extraction from images",
         "id": "schema:FormTableDefinition",
         "kind": "schema",
-        "name": "FormTableDefinition"
+        "name": "FormTableDefinition",
+        "type": "object"
       },
       {
+        "description": "Result of performing a get-page-angle operation",
         "id": "schema:GetPageAngleResult",
         "kind": "schema",
-        "name": "GetPageAngleResult"
+        "name": "GetPageAngleResult",
+        "type": "object"
       },
       {
+        "description": "Result of an image to lines-with-location OCR operation",
         "id": "schema:ImageToLinesWithLocationResult",
         "kind": "schema",
-        "name": "ImageToLinesWithLocationResult"
+        "name": "ImageToLinesWithLocationResult",
+        "type": "object"
       },
       {
+        "description": "Response from an OCR to text operation.",
         "id": "schema:ImageToTextResponse",
         "kind": "schema",
-        "name": "ImageToTextResponse"
+        "name": "ImageToTextResponse",
+        "type": "object"
       },
       {
+        "description": "Result of an image to words-with-location OCR operation",
         "id": "schema:ImageToWordsWithLocationResult",
         "kind": "schema",
-        "name": "ImageToWordsWithLocationResult"
+        "name": "ImageToWordsWithLocationResult",
+        "type": "object"
       },
       {
+        "description": "A contiguous line of text in an OCR document",
         "id": "schema:OcrLineElement",
         "kind": "schema",
-        "name": "OcrLineElement"
+        "name": "OcrLineElement",
+        "type": "object"
       },
       {
         "id": "schema:OcrPageResult",
         "kind": "schema",
-        "name": "OcrPageResult"
+        "name": "OcrPageResult",
+        "type": "object"
       },
       {
+        "description": "OCR results of a page, including lines of text and their location",
         "id": "schema:OcrPageResultWithLinesWithLocation",
         "kind": "schema",
-        "name": "OcrPageResultWithLinesWithLocation"
+        "name": "OcrPageResultWithLinesWithLocation",
+        "type": "object"
       },
       {
+        "description": "OCR results of a page, including words of text and their location",
         "id": "schema:OcrPageResultWithWordsWithLocation",
         "kind": "schema",
-        "name": "OcrPageResultWithWordsWithLocation"
+        "name": "OcrPageResultWithWordsWithLocation",
+        "type": "object"
       },
       {
+        "description": "A single text in an OCR document",
         "id": "schema:OcrPhotoTextElement",
         "kind": "schema",
-        "name": "OcrPhotoTextElement"
+        "name": "OcrPhotoTextElement",
+        "type": "object"
       },
       {
+        "description": "A single word in an OCR document",
         "id": "schema:OcrWordElement",
         "kind": "schema",
-        "name": "OcrWordElement"
+        "name": "OcrWordElement",
+        "type": "object"
       },
       {
+        "description": "Response from an OCR to lines with location operation.",
         "id": "schema:PdfToLinesWithLocationResult",
         "kind": "schema",
-        "name": "PdfToLinesWithLocationResult"
+        "name": "PdfToLinesWithLocationResult",
+        "type": "object"
       },
       {
+        "description": "Response from an OCR to text operation.",
         "id": "schema:PdfToTextResponse",
         "kind": "schema",
-        "name": "PdfToTextResponse"
+        "name": "PdfToTextResponse",
+        "type": "object"
       },
       {
+        "description": "Response from an OCR to words with location operation.",
         "id": "schema:PdfToWordsWithLocationResult",
         "kind": "schema",
-        "name": "PdfToWordsWithLocationResult"
+        "name": "PdfToWordsWithLocationResult",
+        "type": "object"
       },
       {
+        "description": "Result of an photo to words-with-location OCR operation",
         "id": "schema:PhotoToWordsWithLocationResult",
         "kind": "schema",
-        "name": "PhotoToWordsWithLocationResult"
+        "name": "PhotoToWordsWithLocationResult",
+        "type": "object"
       },
       {
+        "description": "Point location in 2D in an image, where 0, 0 represents the top/left corner of the image",
         "id": "schema:Point",
         "kind": "schema",
-        "name": "Point"
+        "name": "Point",
+        "type": "object"
       },
       {
+        "description": "Receipt line item, comprised of a product or item and a price (if available)",
         "id": "schema:ReceiptLineItem",
         "kind": "schema",
-        "name": "ReceiptLineItem"
+        "name": "ReceiptLineItem",
+        "type": "object"
       },
       {
+        "description": "Result of recognizing a receipt, to extract the key information from the receipt",
         "id": "schema:ReceiptRecognitionResult",
         "kind": "schema",
-        "name": "ReceiptRecognitionResult"
+        "name": "ReceiptRecognitionResult",
+        "type": "object"
       },
       {
+        "description": "The recognition result of one cell in one row in a table of a form",
         "id": "schema:TableCellResult",
         "kind": "schema",
-        "name": "TableCellResult"
+        "name": "TableCellResult",
+        "type": "object"
       },
       {
+        "description": "The result of reading a table via OCR from a form",
         "id": "schema:TableResult",
         "kind": "schema",
-        "name": "TableResult"
+        "name": "TableResult",
+        "type": "object"
       },
       {
+        "description": "One row of data in the resulting table",
         "id": "schema:TableRowResult",
         "kind": "schema",
-        "name": "TableRowResult"
+        "name": "TableRowResult",
+        "type": "object"
       }
     ]
   },

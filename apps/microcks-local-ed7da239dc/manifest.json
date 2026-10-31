@@ -42,17 +42,17 @@
       {
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/jobs/{id}"
-      },
-      {
-        "from": "microcks-local-ed7da239dc",
-        "kind": "EXPOSES",
         "to": "operation:get:/jobs/{id}"
       },
       {
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
         "to": "operation:post:/jobs/{id}"
+      },
+      {
+        "from": "microcks-local-ed7da239dc",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/jobs/{id}"
       },
       {
         "from": "microcks-local-ed7da239dc",
@@ -137,17 +137,17 @@
       {
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/secrets/{id}"
-      },
-      {
-        "from": "microcks-local-ed7da239dc",
-        "kind": "EXPOSES",
         "to": "operation:get:/secrets/{id}"
       },
       {
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
         "to": "operation:put:/secrets/{id}"
+      },
+      {
+        "from": "microcks-local-ed7da239dc",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/secrets/{id}"
       },
       {
         "from": "microcks-local-ed7da239dc",
@@ -172,12 +172,12 @@
       {
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/services/{id}"
+        "to": "operation:get:/services/{id}"
       },
       {
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
-        "to": "operation:get:/services/{id}"
+        "to": "operation:delete:/services/{id}"
       },
       {
         "from": "microcks-local-ed7da239dc",
@@ -223,6 +223,401 @@
         "from": "microcks-local-ed7da239dc",
         "kind": "EXPOSES",
         "to": "operation:post:/tests/{id}/testCaseResult"
+      },
+      {
+        "from": "operation:post:/artifact/upload",
+        "kind": "ACCEPTS",
+        "to": "schema:ArtifactUpload"
+      },
+      {
+        "from": "operation:post:/import",
+        "kind": "ACCEPTS",
+        "to": "schema:SnapshotUpload"
+      },
+      {
+        "from": "operation:get:/jobs",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:post:/jobs",
+        "kind": "ACCEPTS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:post:/jobs",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:get:/jobs/count",
+        "kind": "RETURNS",
+        "to": "schema:Counter"
+      },
+      {
+        "from": "operation:get:/jobs/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:post:/jobs/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:post:/jobs/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:put:/jobs/{id}/activate",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:put:/jobs/{id}/start",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:put:/jobs/{id}/stop",
+        "kind": "RETURNS",
+        "to": "schema:ImportJob"
+      },
+      {
+        "from": "operation:get:/keycloak/config",
+        "kind": "RETURNS",
+        "to": "schema:KeycloakConfig"
+      },
+      {
+        "from": "operation:get:/metrics/conformance/aggregate",
+        "kind": "RETURNS",
+        "to": "schema:WeightedMetricValue"
+      },
+      {
+        "from": "operation:get:/metrics/conformance/service/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:TestConformanceMetric"
+      },
+      {
+        "from": "operation:get:/metrics/invocations/global",
+        "kind": "RETURNS",
+        "to": "schema:DailyInvocationStatistic"
+      },
+      {
+        "from": "operation:get:/metrics/invocations/global/latest",
+        "kind": "RETURNS",
+        "to": "schema:CounterMap"
+      },
+      {
+        "from": "operation:get:/metrics/invocations/top",
+        "kind": "RETURNS",
+        "to": "schema:DailyInvocationStatistic"
+      },
+      {
+        "from": "operation:get:/metrics/invocations/{serviceName}/{serviceVersion}",
+        "kind": "RETURNS",
+        "to": "schema:DailyInvocationStatistic"
+      },
+      {
+        "from": "operation:get:/metrics/tests/latest",
+        "kind": "RETURNS",
+        "to": "schema:TestResultSummary"
+      },
+      {
+        "from": "operation:get:/resources/service/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "operation:get:/resources/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "operation:get:/secrets",
+        "kind": "RETURNS",
+        "to": "schema:Secret"
+      },
+      {
+        "from": "operation:post:/secrets",
+        "kind": "ACCEPTS",
+        "to": "schema:Secret"
+      },
+      {
+        "from": "operation:post:/secrets",
+        "kind": "RETURNS",
+        "to": "schema:Secret"
+      },
+      {
+        "from": "operation:get:/secrets/count",
+        "kind": "RETURNS",
+        "to": "schema:Counter"
+      },
+      {
+        "from": "operation:get:/secrets/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Secret"
+      },
+      {
+        "from": "operation:get:/services",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:get:/services/count",
+        "kind": "RETURNS",
+        "to": "schema:Counter"
+      },
+      {
+        "from": "operation:get:/services/labels",
+        "kind": "RETURNS",
+        "to": "schema:LabelsMap"
+      },
+      {
+        "from": "operation:get:/services/search",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:get:/services/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:get:/services/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceView"
+      },
+      {
+        "from": "operation:put:/services/{id}/metadata",
+        "kind": "ACCEPTS",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "operation:put:/services/{id}/operation",
+        "kind": "ACCEPTS",
+        "to": "schema:OperationOverrideDTO"
+      },
+      {
+        "from": "operation:post:/tests",
+        "kind": "ACCEPTS",
+        "to": "schema:TestRequest"
+      },
+      {
+        "from": "operation:post:/tests",
+        "kind": "RETURNS",
+        "to": "schema:TestResult"
+      },
+      {
+        "from": "operation:get:/tests/service/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:TestResult"
+      },
+      {
+        "from": "operation:get:/tests/service/{serviceId}/count",
+        "kind": "RETURNS",
+        "to": "schema:Counter"
+      },
+      {
+        "from": "operation:get:/tests/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TestResult"
+      },
+      {
+        "from": "operation:get:/tests/{id}/events/{testCaseId}",
+        "kind": "RETURNS",
+        "to": "schema:UnidirectionalEvent"
+      },
+      {
+        "from": "operation:get:/tests/{id}/messages/{testCaseId}",
+        "kind": "RETURNS",
+        "to": "schema:RequestResponsePair"
+      },
+      {
+        "from": "operation:post:/tests/{id}/testCaseResult",
+        "kind": "ACCEPTS",
+        "to": "schema:TestCaseReturnDTO"
+      },
+      {
+        "from": "operation:post:/tests/{id}/testCaseResult",
+        "kind": "RETURNS",
+        "to": "schema:TestCaseResult"
+      },
+      {
+        "from": "schema:EventMessage",
+        "kind": "REFERENCES",
+        "to": "schema:Header"
+      },
+      {
+        "from": "schema:Exchange",
+        "kind": "REFERENCES",
+        "to": "schema:RequestResponsePair"
+      },
+      {
+        "from": "schema:Exchange",
+        "kind": "REFERENCES",
+        "to": "schema:UnidirectionalEvent"
+      },
+      {
+        "from": "schema:ImportJob",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:ImportJob",
+        "kind": "REFERENCES",
+        "to": "schema:SecretRef"
+      },
+      {
+        "from": "schema:ImportJob",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceRef"
+      },
+      {
+        "from": "schema:LabelsMap",
+        "kind": "REFERENCES",
+        "to": "schema:StringArray"
+      },
+      {
+        "from": "schema:MessageArray",
+        "kind": "REFERENCES",
+        "to": "schema:Exchange"
+      },
+      {
+        "from": "schema:Operation",
+        "kind": "REFERENCES",
+        "to": "schema:Binding"
+      },
+      {
+        "from": "schema:Operation",
+        "kind": "REFERENCES",
+        "to": "schema:ParameterConstraint"
+      },
+      {
+        "from": "schema:OperationHeaders",
+        "kind": "REFERENCES",
+        "to": "schema:HeaderDTO"
+      },
+      {
+        "from": "schema:OperationOverrideDTO",
+        "kind": "REFERENCES",
+        "to": "schema:ParameterConstraint"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Header"
+      },
+      {
+        "from": "schema:RequestResponsePair",
+        "kind": "REFERENCES",
+        "to": "schema:AbstractExchange"
+      },
+      {
+        "from": "schema:RequestResponsePair",
+        "kind": "REFERENCES",
+        "to": "schema:Request"
+      },
+      {
+        "from": "schema:RequestResponsePair",
+        "kind": "REFERENCES",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceType"
+      },
+      {
+        "from": "schema:Response",
+        "kind": "REFERENCES",
+        "to": "schema:Header"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Operation"
+      },
+      {
+        "from": "schema:ServiceView",
+        "kind": "REFERENCES",
+        "to": "schema:MessageArray"
+      },
+      {
+        "from": "schema:ServiceView",
+        "kind": "REFERENCES",
+        "to": "schema:Service"
+      },
+      {
+        "from": "schema:TestCaseResult",
+        "kind": "REFERENCES",
+        "to": "schema:TestStepResult"
+      },
+      {
+        "from": "schema:TestConformanceMetric",
+        "kind": "REFERENCES",
+        "to": "schema:Trend"
+      },
+      {
+        "from": "schema:TestRequest",
+        "kind": "REFERENCES",
+        "to": "schema:OperationHeaders"
+      },
+      {
+        "from": "schema:TestRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TestRunnerType"
+      },
+      {
+        "from": "schema:TestResult",
+        "kind": "REFERENCES",
+        "to": "schema:OperationHeaders"
+      },
+      {
+        "from": "schema:TestResult",
+        "kind": "REFERENCES",
+        "to": "schema:SecretRef"
+      },
+      {
+        "from": "schema:TestResult",
+        "kind": "REFERENCES",
+        "to": "schema:TestCaseResult"
+      },
+      {
+        "from": "schema:TestResult",
+        "kind": "REFERENCES",
+        "to": "schema:TestRunnerType"
+      },
+      {
+        "from": "schema:TestReturn",
+        "kind": "REFERENCES",
+        "to": "schema:EventMessage"
+      },
+      {
+        "from": "schema:TestReturn",
+        "kind": "REFERENCES",
+        "to": "schema:Request"
+      },
+      {
+        "from": "schema:TestReturn",
+        "kind": "REFERENCES",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:UnidirectionalEvent",
+        "kind": "REFERENCES",
+        "to": "schema:AbstractExchange"
+      },
+      {
+        "from": "schema:UnidirectionalEvent",
+        "kind": "REFERENCES",
+        "to": "schema:EventMessage"
       }
     ],
     "nodes": [
@@ -232,12 +627,43 @@
       },
       {
         "deprecated": false,
+        "description": "Uploads an artifact to be imported by Microcks.",
         "id": "operation:post:/artifact/upload",
         "kind": "operation",
         "method": "post",
         "name": "uploadArtifact",
+        "parameters": [
+          {
+            "description": "Flag telling if this should be considered as primary or secondary artifact.",
+            "in": "query",
+            "name": "mainArtifact",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
         "path": "/artifact/upload",
         "pointer": "#/paths/~1artifact~1upload/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "ArtifactUpload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "string"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -245,16 +671,36 @@
             ]
           }
         ],
-        "summary": "Upload an artifact"
+        "summary": "Upload an artifact",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export a repostiory snapshot with requested services",
         "id": "operation:get:/export",
         "kind": "operation",
         "method": "get",
         "name": "exportSnapshot",
+        "parameters": [
+          {
+            "description": "List of service identifiers to export",
+            "in": "query",
+            "name": "serviceIds",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/export",
         "pointer": "#/paths/~1export/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -262,7 +708,10 @@
             ]
           }
         ],
-        "summary": "Export a snapshot"
+        "summary": "Export a snapshot",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -272,21 +721,44 @@
         "name": "GetFeaturesConfiguration",
         "path": "/features/config",
         "pointer": "#/paths/~1features~1config/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get features configuration"
+        "summary": "Get features configuration",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Import a repository snapshot previsouly exported into Microcks",
         "id": "operation:post:/import",
         "kind": "operation",
         "method": "post",
         "name": "importSnapshot",
         "path": "/import",
         "pointer": "#/paths/~1import/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "SnapshotUpload"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -294,16 +766,50 @@
             ]
           }
         ],
-        "summary": "Import a snapshot"
+        "summary": "Import a snapshot",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of ImportJobs",
         "id": "operation:get:/jobs",
         "kind": "operation",
         "method": "get",
         "name": "GetImportJobs",
+        "parameters": [
+          {
+            "description": "Page of ImportJobs to retrieve (starts at and defaults to 0)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Size of a page.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Name like criterion for query",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/jobs",
         "pointer": "#/paths/~1jobs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportJob[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -311,16 +817,34 @@
             ]
           }
         ],
-        "summary": "Get ImportJobs"
+        "summary": "Get ImportJobs",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new ImportJob",
         "id": "operation:post:/jobs",
         "kind": "operation",
         "method": "post",
         "name": "CreateImportJob",
         "path": "/jobs",
         "pointer": "#/paths/~1jobs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ImportJob"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ImportJob"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -328,7 +852,10 @@
             ]
           }
         ],
-        "summary": "Create ImportJob"
+        "summary": "Create ImportJob",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
@@ -338,6 +865,13 @@
         "name": "GetImportJobCounter",
         "path": "/jobs/count",
         "pointer": "#/paths/~1jobs~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Counter"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -345,16 +879,114 @@
             ]
           }
         ],
-        "summary": "Get the ImportJobs counter"
+        "summary": "Get the ImportJobs counter",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an ImportJob using its identifier",
+        "id": "operation:get:/jobs/{id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /jobs/{id}",
+        "parameters": [
+          {
+            "description": "Unique identifier of ImportJob to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/jobs/{id}",
+        "pointer": "#/paths/~1jobs~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportJob"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "jwt-bearer": [
+              "user"
+            ]
+          }
+        ],
+        "summary": "Get ImportJob",
+        "tags": [
+          "job"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update an ImportJob",
+        "id": "operation:post:/jobs/{id}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /jobs/{id}",
+        "parameters": [
+          {
+            "description": "Unique identifier of ImportJob to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/jobs/{id}",
+        "pointer": "#/paths/~1jobs~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ImportJob"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportJob"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwt-bearer": []
+          }
+        ],
+        "summary": "Update ImportJob",
+        "tags": [
+          "job"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete an ImportJob",
         "id": "operation:delete:/jobs/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "DeleteImportJob",
+        "parameters": [
+          {
+            "description": "Unique identifier of ImportJob to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}",
         "pointer": "#/paths/~1jobs~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -362,48 +994,36 @@
             ]
           }
         ],
-        "summary": "Delete ImportJob"
+        "summary": "Delete ImportJob",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/jobs/{id}",
-        "kind": "operation",
-        "method": "get",
-        "name": "get /jobs/{id}",
-        "path": "/jobs/{id}",
-        "pointer": "#/paths/~1jobs~1{id}/get",
-        "security": [
-          {
-            "jwt-bearer": [
-              "user"
-            ]
-          }
-        ],
-        "summary": "Get ImportJob"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/jobs/{id}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /jobs/{id}",
-        "path": "/jobs/{id}",
-        "pointer": "#/paths/~1jobs~1{id}/post",
-        "security": [
-          {
-            "jwt-bearer": []
-          }
-        ],
-        "summary": "Update ImportJob"
-      },
-      {
-        "deprecated": false,
+        "description": "Make an ImportJob active, so that it is executed",
         "id": "operation:put:/jobs/{id}/activate",
         "kind": "operation",
         "method": "put",
         "name": "ActivateImportJob",
+        "parameters": [
+          {
+            "description": "Unique identifier of ImportJob to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}/activate",
         "pointer": "#/paths/~1jobs~1{id}~1activate/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportJob"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -411,16 +1031,36 @@
             ]
           }
         ],
-        "summary": "Activate an ImportJob"
+        "summary": "Activate an ImportJob",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Starting an ImportJob forces it to immediatly import mock definitions",
         "id": "operation:put:/jobs/{id}/start",
         "kind": "operation",
         "method": "put",
         "name": "StartImportJob",
+        "parameters": [
+          {
+            "description": "Unique identifier of ImportJob to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}/start",
         "pointer": "#/paths/~1jobs~1{id}~1start/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportJob"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -428,16 +1068,36 @@
             ]
           }
         ],
-        "summary": "Start an ImportJob"
+        "summary": "Start an ImportJob",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stopping an ImportJob desactivate it, so that it won't execute at next schedule",
         "id": "operation:put:/jobs/{id}/stop",
         "kind": "operation",
         "method": "put",
         "name": "StopImportJob",
+        "parameters": [
+          {
+            "description": "Unique identifier of ImportJob to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/jobs/{id}/stop",
         "pointer": "#/paths/~1jobs~1{id}~1stop/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportJob"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -445,7 +1105,10 @@
             ]
           }
         ],
-        "summary": "Stop an ImportJob"
+        "summary": "Stop an ImportJob",
+        "tags": [
+          "job"
+        ]
       },
       {
         "deprecated": false,
@@ -455,12 +1118,22 @@
         "name": "GetKeycloakConfig",
         "path": "/keycloak/config",
         "pointer": "#/paths/~1keycloak~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "KeycloakConfig"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get authentification configuration"
+        "summary": "Get authentification configuration",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
@@ -470,12 +1143,22 @@
         "name": "GetConformanceMetricsAggregation",
         "path": "/metrics/conformance/aggregate",
         "pointer": "#/paths/~1metrics~1conformance~1aggregate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WeightedMetricValue[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get aggregation of conformance metrics"
+        "summary": "Get aggregation of conformance metrics",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -483,14 +1166,33 @@
         "kind": "operation",
         "method": "get",
         "name": "GetServiceTestConformanceMetric",
+        "parameters": [
+          {
+            "description": "Unique Services identifier this metrics are related to",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/metrics/conformance/service/{serviceId}",
         "pointer": "#/paths/~1metrics~1conformance~1service~1{serviceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestConformanceMetric"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get conformance metrics for a Service"
+        "summary": "Get conformance metrics for a Service",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -498,14 +1200,33 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAggregatedInvocationsStats",
+        "parameters": [
+          {
+            "description": "The day to get statistics for (formatted with yyyyMMdd pattern).",
+            "in": "query",
+            "name": "day",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/metrics/invocations/global",
         "pointer": "#/paths/~1metrics~1invocations~1global/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DailyInvocationStatistic"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get aggregated invocation statistics for a day"
+        "summary": "Get aggregated invocation statistics for a day",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -513,14 +1234,33 @@
         "kind": "operation",
         "method": "get",
         "name": "GetLatestAggregatedInvocationsStats",
+        "parameters": [
+          {
+            "description": "Number of days to get back in time.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/metrics/invocations/global/latest",
         "pointer": "#/paths/~1metrics~1invocations~1global~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CounterMap"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get aggregated invocations statistics for latest days"
+        "summary": "Get aggregated invocations statistics for latest days",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -528,14 +1268,40 @@
         "kind": "operation",
         "method": "get",
         "name": "GetTopIvnocationsStatsByDay",
+        "parameters": [
+          {
+            "description": "The day to get statistics for (formatted with yyyyMMdd pattern).",
+            "in": "query",
+            "name": "day",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of top invoked mocks to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/metrics/invocations/top",
         "pointer": "#/paths/~1metrics~1invocations~1top/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DailyInvocationStatistic[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get top invocation statistics for a day"
+        "summary": "Get top invocation statistics for a day",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -543,14 +1309,47 @@
         "kind": "operation",
         "method": "get",
         "name": "GetInvocationStatsByService",
+        "parameters": [
+          {
+            "description": "Name of service to get statistics for",
+            "in": "path",
+            "name": "serviceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version of service to get statistics for",
+            "in": "path",
+            "name": "serviceVersion",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The day to get statistics for (formatted with yyyyMMdd pattern).",
+            "in": "query",
+            "name": "day",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/metrics/invocations/{serviceName}/{serviceVersion}",
         "pointer": "#/paths/~1metrics~1invocations~1{serviceName}~1{serviceVersion}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DailyInvocationStatistic"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get invocation statistics for Service"
+        "summary": "Get invocation statistics for Service",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -558,14 +1357,33 @@
         "kind": "operation",
         "method": "get",
         "name": "GetLatestTestResults",
+        "parameters": [
+          {
+            "description": "Number of days to consider for test results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/metrics/tests/latest",
         "pointer": "#/paths/~1metrics~1tests~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestResultSummary[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get latest tests results"
+        "summary": "Get latest tests results",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -573,8 +1391,24 @@
         "kind": "operation",
         "method": "get",
         "name": "GetResourcesByService",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Service or API the resources are attached to",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/service/{serviceId}",
         "pointer": "#/paths/~1resources~1service~1{serviceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Resource[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -590,8 +1424,24 @@
         "kind": "operation",
         "method": "get",
         "name": "GetResource",
+        "parameters": [
+          {
+            "description": "Unique name/business identifier of the Service or API resource",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/{name}",
         "pointer": "#/paths/~1resources~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Resource"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -607,8 +1457,31 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSecrets",
+        "parameters": [
+          {
+            "description": "Page of Secrets to retrieve (starts at and defaults to 0)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Size of a page.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/secrets",
         "pointer": "#/paths/~1secrets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Secret[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -616,7 +1489,10 @@
             ]
           }
         ],
-        "summary": "Get Secrets"
+        "summary": "Get Secrets",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
@@ -626,6 +1502,20 @@
         "name": "CreateSecret",
         "path": "/secrets",
         "pointer": "#/paths/~1secrets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Secret"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Secret"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -633,7 +1523,10 @@
             ]
           }
         ],
-        "summary": "Create a new Secret"
+        "summary": "Create a new Secret",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
@@ -643,6 +1536,13 @@
         "name": "GetSecretsCounter",
         "path": "/secrets/count",
         "pointer": "#/paths/~1secrets~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Counter"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -650,33 +1550,36 @@
             ]
           }
         ],
-        "summary": "Get the Secrets counter"
+        "summary": "Get the Secrets counter",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/secrets/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteSecret",
-        "path": "/secrets/{id}",
-        "pointer": "#/paths/~1secrets~1{id}/delete",
-        "security": [
-          {
-            "jwt-bearer": [
-              "admin"
-            ]
-          }
-        ],
-        "summary": "Delete Secret"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve a Secret",
         "id": "operation:get:/secrets/{id}",
         "kind": "operation",
         "method": "get",
         "name": "GetSecret",
+        "parameters": [
+          {
+            "description": "Unique identifier of Secret to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/secrets/{id}",
         "pointer": "#/paths/~1secrets~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Secret"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -684,16 +1587,35 @@
             ]
           }
         ],
-        "summary": "Get Secret"
+        "summary": "Get Secret",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a Secret",
         "id": "operation:put:/secrets/{id}",
         "kind": "operation",
         "method": "put",
         "name": "UpdateSecret",
+        "parameters": [
+          {
+            "description": "Unique identifier of Secret to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/secrets/{id}",
         "pointer": "#/paths/~1secrets~1{id}/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -701,7 +1623,46 @@
             ]
           }
         ],
-        "summary": "Update Secret"
+        "summary": "Update Secret",
+        "tags": [
+          "config"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete a Secret",
+        "id": "operation:delete:/secrets/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteSecret",
+        "parameters": [
+          {
+            "description": "Unique identifier of Secret to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/secrets/{id}",
+        "pointer": "#/paths/~1secrets~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwt-bearer": [
+              "admin"
+            ]
+          }
+        ],
+        "summary": "Delete Secret",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
@@ -709,8 +1670,31 @@
         "kind": "operation",
         "method": "get",
         "name": "GetServices",
+        "parameters": [
+          {
+            "description": "Page of Services to retrieve (starts at and defaults to 0)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Size of a page.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/services",
         "pointer": "#/paths/~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -718,7 +1702,10 @@
             ]
           }
         ],
-        "summary": "Get Services and APIs"
+        "summary": "Get Services and APIs",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -728,6 +1715,13 @@
         "name": "GetServicesCounter",
         "path": "/services/count",
         "pointer": "#/paths/~1services~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Counter"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -735,7 +1729,10 @@
             ]
           }
         ],
-        "summary": "Get the Services counter"
+        "summary": "Get the Services counter",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -745,6 +1742,13 @@
         "name": "GetServicesLabels",
         "path": "/services/labels",
         "pointer": "#/paths/~1services~1labels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LabelsMap"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -752,7 +1756,10 @@
             ]
           }
         ],
-        "summary": "Get the already used labels for Services"
+        "summary": "Get the already used labels for Services",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -760,8 +1767,24 @@
         "kind": "operation",
         "method": "get",
         "name": "SearchServices",
+        "parameters": [
+          {
+            "description": "Map of criterion.",
+            "in": "query",
+            "name": "queryMap",
+            "required": true,
+            "type": "object"
+          }
+        ],
         "path": "/services/search",
         "pointer": "#/paths/~1services~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -769,25 +1792,10 @@
             ]
           }
         ],
-        "summary": "Search for Services and APIs"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/services/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteService",
-        "path": "/services/{id}",
-        "pointer": "#/paths/~1services~1{id}/delete",
-        "security": [
-          {
-            "jwt-bearer": [
-              "admin",
-              "manager"
-            ]
-          }
-        ],
-        "summary": "Delete Service"
+        "summary": "Search for Services and APIs",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -795,8 +1803,31 @@
         "kind": "operation",
         "method": "get",
         "name": "GetService",
+        "parameters": [
+          {
+            "description": "Unique identifier of Service to managed",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether to include details on services messages into result.",
+            "in": "query",
+            "name": "messages",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/services/{id}",
         "pointer": "#/paths/~1services~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service|ServiceView"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -804,7 +1835,47 @@
             ]
           }
         ],
-        "summary": "Get Service"
+        "summary": "Get Service",
+        "tags": [
+          "mock"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete a Service",
+        "id": "operation:delete:/services/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteService",
+        "parameters": [
+          {
+            "description": "Unique identifier of Service to managed",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/services/{id}",
+        "pointer": "#/paths/~1services~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "jwt-bearer": [
+              "admin",
+              "manager"
+            ]
+          }
+        ],
+        "summary": "Delete Service",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -812,8 +1883,33 @@
         "kind": "operation",
         "method": "put",
         "name": "UpdateServiceMetadata",
+        "parameters": [
+          {
+            "description": "Unique identifier of Service to managed",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/services/{id}/metadata",
         "pointer": "#/paths/~1services~1{id}~1metadata/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Metadata"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -822,7 +1918,10 @@
             ]
           }
         ],
-        "summary": "Update Service Metadata"
+        "summary": "Update Service Metadata",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -830,8 +1929,40 @@
         "kind": "operation",
         "method": "put",
         "name": "OverrideServiceOperation",
+        "parameters": [
+          {
+            "description": "Unique identifier of Service to managed",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of operation to update",
+            "in": "query",
+            "name": "operationName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/services/{id}/operation",
         "pointer": "#/paths/~1services~1{id}~1operation/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OperationOverrideDTO"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -840,7 +1971,10 @@
             ]
           }
         ],
-        "summary": "Override Service Operation"
+        "summary": "Override Service Operation",
+        "tags": [
+          "mock"
+        ]
       },
       {
         "deprecated": false,
@@ -850,6 +1984,20 @@
         "name": "CreateTest",
         "path": "/tests",
         "pointer": "#/paths/~1tests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "TestResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": [
@@ -857,7 +2005,10 @@
             ]
           }
         ],
-        "summary": "Create a new Test"
+        "summary": "Create a new Test",
+        "tags": [
+          "test"
+        ]
       },
       {
         "deprecated": false,
@@ -865,8 +2016,24 @@
         "kind": "operation",
         "method": "get",
         "name": "GetTestResultsByService",
+        "parameters": [
+          {
+            "description": "Unique identifier of Service to manage TestResults for",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tests/service/{serviceId}",
         "pointer": "#/paths/~1tests~1service~1{serviceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestResult[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -874,7 +2041,10 @@
             ]
           }
         ],
-        "summary": "Get TestResults by Service"
+        "summary": "Get TestResults by Service",
+        "tags": [
+          "test"
+        ]
       },
       {
         "deprecated": false,
@@ -882,8 +2052,24 @@
         "kind": "operation",
         "method": "get",
         "name": "GetTestResultsByServiceCounter",
+        "parameters": [
+          {
+            "description": "Unique identifier of Service to manage TestResults for",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tests/service/{serviceId}/count",
         "pointer": "#/paths/~1tests~1service~1{serviceId}~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Counter"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -891,7 +2077,10 @@
             ]
           }
         ],
-        "summary": "Get the TestResults for Service counter"
+        "summary": "Get the TestResults for Service counter",
+        "tags": [
+          "test"
+        ]
       },
       {
         "deprecated": false,
@@ -899,8 +2088,24 @@
         "kind": "operation",
         "method": "get",
         "name": "GetTestResult",
+        "parameters": [
+          {
+            "description": "Unique identifier of TestResult to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tests/{id}",
         "pointer": "#/paths/~1tests~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestResult"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -908,7 +2113,10 @@
             ]
           }
         ],
-        "summary": "Get TestResult"
+        "summary": "Get TestResult",
+        "tags": [
+          "test"
+        ]
       },
       {
         "deprecated": false,
@@ -916,14 +2124,40 @@
         "kind": "operation",
         "method": "get",
         "name": "GetEventsByTestCase",
+        "parameters": [
+          {
+            "description": "Unique identifier of TestResult to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of TetsCaseResult to manage",
+            "in": "path",
+            "name": "testCaseId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tests/{id}/events/{testCaseId}",
         "pointer": "#/paths/~1tests~1{id}~1events~1{testCaseId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UnidirectionalEvent[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Get events for TestCase"
+        "summary": "Get events for TestCase",
+        "tags": [
+          "test"
+        ]
       },
       {
         "deprecated": false,
@@ -931,8 +2165,31 @@
         "kind": "operation",
         "method": "get",
         "name": "GetMessagesByTestCase",
+        "parameters": [
+          {
+            "description": "Unique identifier of TestResult to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of TetsCaseResult to manage",
+            "in": "path",
+            "name": "testCaseId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tests/{id}/messages/{testCaseId}",
         "pointer": "#/paths/~1tests~1{id}~1messages~1{testCaseId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RequestResponsePair[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt-bearer": [
@@ -940,242 +2197,358 @@
             ]
           }
         ],
-        "summary": "Get messages for TestCase"
+        "summary": "Get messages for TestCase",
+        "tags": [
+          "test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Report a TestCaseResult (typically used by a Test runner)",
         "id": "operation:post:/tests/{id}/testCaseResult",
         "kind": "operation",
         "method": "post",
         "name": "ReportTestCaseResult",
+        "parameters": [
+          {
+            "description": "Unique identifier of TestResult to manage",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tests/{id}/testCaseResult",
         "pointer": "#/paths/~1tests~1{id}~1testCaseResult/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestCaseReturnDTO"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestCaseResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt-bearer": []
           }
         ],
-        "summary": "Report and create a new TestCaseResult"
+        "summary": "Report and create a new TestCaseResult",
+        "tags": [
+          "test"
+        ]
       },
       {
+        "description": "Abstract bean representing a Service or API Exchange.",
         "id": "schema:AbstractExchange",
         "kind": "schema",
-        "name": "AbstractExchange"
+        "name": "AbstractExchange",
+        "type": "object"
       },
       {
+        "description": "Artifact to be imported by Microcks.",
         "id": "schema:ArtifactUpload",
         "kind": "schema",
-        "name": "ArtifactUpload"
+        "name": "ArtifactUpload",
+        "type": "object"
       },
       {
+        "description": "Protocol binding details for asynchronous operations",
         "id": "schema:Binding",
         "kind": "schema",
-        "name": "Binding"
+        "name": "Binding",
+        "type": "object"
       },
       {
+        "description": "A simple Counter type.",
         "id": "schema:Counter",
         "kind": "schema",
-        "name": "Counter"
+        "name": "Counter",
+        "type": "object"
       },
       {
+        "description": "A generic map of counter",
         "id": "schema:CounterMap",
         "kind": "schema",
-        "name": "CounterMap"
+        "name": "CounterMap",
+        "type": "object"
       },
       {
+        "description": "The daily statistic of a service mock invocations",
         "id": "schema:DailyInvocationStatistic",
         "kind": "schema",
-        "name": "DailyInvocationStatistic"
+        "name": "DailyInvocationStatistic",
+        "type": "object"
       },
       {
         "id": "schema:EventMessage",
         "kind": "schema",
-        "name": "EventMessage"
+        "name": "EventMessage",
+        "type": "object"
       },
       {
+        "description": "Abstract representation of a Service or API exchange type (request/response, event based, ...)",
         "id": "schema:Exchange",
         "kind": "schema",
-        "name": "Exchange"
+        "name": "Exchange",
+        "type": "RequestResponsePair|UnidirectionalEvent"
       },
       {
+        "description": "Representation of optional features configuration used by Microcks server",
         "id": "schema:FeaturesConfig",
         "kind": "schema",
-        "name": "FeaturesConfig"
+        "name": "FeaturesConfig",
+        "type": "object"
       },
       {
+        "description": "Transport headers for both Requests and Responses",
         "id": "schema:Header",
         "kind": "schema",
-        "name": "Header"
+        "name": "Header",
+        "type": "object"
       },
       {
+        "description": "Data Transfert Object for headers of both Requests and Responses",
         "id": "schema:HeaderDTO",
         "kind": "schema",
-        "name": "HeaderDTO"
+        "name": "HeaderDTO",
+        "type": "object"
       },
       {
+        "description": "An ImportJob allow defining a repository artifact to poll for discovering Services and APIs mocks and tests",
         "id": "schema:ImportJob",
         "kind": "schema",
-        "name": "ImportJob"
+        "name": "ImportJob",
+        "type": "object"
       },
       {
+        "description": "Representation of Keycloak / SSO configuration used by Microcks server",
         "id": "schema:KeycloakConfig",
         "kind": "schema",
-        "name": "KeycloakConfig"
+        "name": "KeycloakConfig",
+        "type": "object"
       },
       {
+        "description": "A map which keys are already used labels keys and values are already used values for this key",
         "id": "schema:LabelsMap",
         "kind": "schema",
-        "name": "LabelsMap"
+        "name": "LabelsMap",
+        "type": "object"
       },
       {
+        "description": "Array of Message for Service operations",
         "id": "schema:MessageArray",
         "kind": "schema",
-        "name": "MessageArray"
+        "name": "MessageArray",
+        "type": "Exchange[]"
       },
       {
+        "description": "Commodity object for holding metadata on any entity.",
         "id": "schema:Metadata",
         "kind": "schema",
-        "name": "Metadata"
+        "name": "Metadata",
+        "type": "object"
       },
       {
+        "description": "An Operation of a Service or API",
         "id": "schema:Operation",
         "kind": "schema",
-        "name": "Operation"
+        "name": "Operation",
+        "type": "object"
       },
       {
+        "description": "Specification of additional headers for a Service/API operations.",
         "id": "schema:OperationHeaders",
         "kind": "schema",
-        "name": "OperationHeaders"
+        "name": "OperationHeaders",
+        "type": "object"
       },
       {
+        "description": "Data Transfer object for grouping the mutable properties of an Operation",
         "id": "schema:OperationOverrideDTO",
         "kind": "schema",
-        "name": "OperationOverrideDTO"
+        "name": "OperationOverrideDTO",
+        "type": "object"
       },
       {
+        "description": "Companion object for Operation that may be used to express constraints on request parameters",
         "id": "schema:ParameterConstraint",
         "kind": "schema",
-        "name": "ParameterConstraint"
+        "name": "ParameterConstraint",
+        "type": "object"
       },
       {
+        "description": "A mock invocation or test request",
         "id": "schema:Request",
         "kind": "schema",
-        "name": "Request"
+        "name": "Request",
+        "type": "object"
       },
       {
+        "description": "Request associated with corresponding Response",
         "id": "schema:RequestResponsePair",
         "kind": "schema",
-        "name": "RequestResponsePair"
+        "name": "RequestResponsePair",
+        "type": "object|AbstractExchange"
       },
       {
+        "description": "Resource represents a Service or API artifacts such as specification, contract",
         "id": "schema:Resource",
         "kind": "schema",
-        "name": "Resource"
+        "name": "Resource",
+        "type": "object"
       },
       {
+        "description": "Types of managed resources for Services or APIs",
         "id": "schema:ResourceType",
         "kind": "schema",
-        "name": "ResourceType"
+        "name": "ResourceType",
+        "type": "string"
       },
       {
+        "description": "A mock invocation or test response",
         "id": "schema:Response",
         "kind": "schema",
-        "name": "Response"
+        "name": "Response",
+        "type": "object"
       },
       {
+        "description": "A Secret allows grouping informations on how to access a restricted resource such as a repsoitory URL.",
         "id": "schema:Secret",
         "kind": "schema",
-        "name": "Secret"
+        "name": "Secret",
+        "type": "object"
       },
       {
+        "description": "Lightweight reference for an existing Secret",
         "id": "schema:SecretRef",
         "kind": "schema",
-        "name": "SecretRef"
+        "name": "SecretRef",
+        "type": "object"
       },
       {
+        "description": "Represents a Service or API definition as registred into Microcks repository",
         "id": "schema:Service",
         "kind": "schema",
-        "name": "Service"
+        "name": "Service",
+        "type": "object"
       },
       {
+        "description": "Lightweight reference of an existing Service",
         "id": "schema:ServiceRef",
         "kind": "schema",
-        "name": "ServiceRef"
+        "name": "ServiceRef",
+        "type": "object"
       },
       {
+        "description": "Aggregate bean for grouping a Service an its messages pairs",
         "id": "schema:ServiceView",
         "kind": "schema",
-        "name": "ServiceView"
+        "name": "ServiceView",
+        "type": "object"
       },
       {
+        "description": "Upload of a repository snapshot file",
         "id": "schema:SnapshotUpload",
         "kind": "schema",
-        "name": "SnapshotUpload"
+        "name": "SnapshotUpload",
+        "type": "object"
       },
       {
+        "description": "A simple array of String",
         "id": "schema:StringArray",
         "kind": "schema",
-        "name": "StringArray"
+        "name": "StringArray",
+        "type": "string[]"
       },
       {
+        "description": "Companion objects for TestResult.",
         "id": "schema:TestCaseResult",
         "kind": "schema",
-        "name": "TestCaseResult"
+        "name": "TestCaseResult",
+        "type": "object"
       },
       {
         "id": "schema:TestCaseReturnDTO",
         "kind": "schema",
-        "name": "TestCaseReturnDTO"
+        "name": "TestCaseReturnDTO",
+        "type": "object"
       },
       {
+        "description": "Represents the test conformance metrics (current score, history and evolution trend) of a Service",
         "id": "schema:TestConformanceMetric",
         "kind": "schema",
-        "name": "TestConformanceMetric"
+        "name": "TestConformanceMetric",
+        "type": "object"
       },
       {
+        "description": "Test request is a minimalist wrapper for requesting the launch of a new test",
         "id": "schema:TestRequest",
         "kind": "schema",
-        "name": "TestRequest"
+        "name": "TestRequest",
+        "type": "object"
       },
       {
+        "description": "Represents the result of a Service or API test run by Microcks.",
         "id": "schema:TestResult",
         "kind": "schema",
-        "name": "TestResult"
+        "name": "TestResult",
+        "type": "object"
       },
       {
+        "description": "Represents the summary result of a Service or API test run by Microcks.",
         "id": "schema:TestResultSummary",
         "kind": "schema",
-        "name": "TestResultSummary"
+        "name": "TestResultSummary",
+        "type": "object"
       },
       {
+        "description": "TestReturn is used for wrapping the return code of a test step execution",
         "id": "schema:TestReturn",
         "kind": "schema",
-        "name": "TestReturn"
+        "name": "TestReturn",
+        "type": "object"
       },
       {
+        "description": "Type of test strategy (different strategies are implemented by different runners)",
         "id": "schema:TestRunnerType",
         "kind": "schema",
-        "name": "TestRunnerType"
+        "name": "TestRunnerType",
+        "type": "string"
       },
       {
+        "description": "TestStepResult is an entity embedded within TestCaseResult.",
         "id": "schema:TestStepResult",
         "kind": "schema",
-        "name": "TestStepResult"
+        "name": "TestStepResult",
+        "type": "object"
       },
       {
+        "description": "Evolution trend qualifier",
         "id": "schema:Trend",
         "kind": "schema",
-        "name": "Trend"
+        "name": "Trend",
+        "type": "string"
       },
       {
+        "description": "Representation of an unidirectional exchange as an event message",
         "id": "schema:UnidirectionalEvent",
         "kind": "schema",
-        "name": "UnidirectionalEvent"
+        "name": "UnidirectionalEvent",
+        "type": "object|AbstractExchange"
       },
       {
+        "description": "Value of a metric with an associated weight",
         "id": "schema:WeightedMetricValue",
         "kind": "schema",
-        "name": "WeightedMetricValue"
+        "name": "WeightedMetricValue",
+        "type": "object"
       }
     ]
   },

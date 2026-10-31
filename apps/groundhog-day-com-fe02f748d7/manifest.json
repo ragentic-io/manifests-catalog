@@ -28,6 +28,16 @@
         "from": "groundhog-day-com-fe02f748d7",
         "kind": "EXPOSES",
         "to": "operation:get:/api/v1/spec"
+      },
+      {
+        "from": "schema:Groundhog",
+        "kind": "REFERENCES",
+        "to": "schema:Prediction"
+      },
+      {
+        "from": "schema:Prediction",
+        "kind": "REFERENCES",
+        "to": "schema:Groundhog"
       }
     ],
     "nodes": [
@@ -37,68 +47,177 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a welcome message.",
         "id": "operation:get:/api/v1",
         "kind": "operation",
         "method": "get",
         "name": "root",
         "path": "/api/v1",
         "pointer": "#/paths/~1api~1v1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Root"
+        "summary": "Root",
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all prognosticating animals with their known predictions.",
         "id": "operation:get:/api/v1/groundhogs",
         "kind": "operation",
         "method": "get",
         "name": "groundhogs",
+        "parameters": [
+          {
+            "description": "Filter groundhogs by country of origin (USA or Canada).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter groundhogs by type (actual, alive groundhogs, or other prognosticators)",
+            "enum": [
+              "1",
+              "0",
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "isGroundhog",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/groundhogs",
         "pointer": "#/paths/~1api~1v1~1groundhogs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all groundhogs"
+        "summary": "Get all groundhogs",
+        "tags": [
+          "groundhogs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a prognosticating animal and its known predictions.",
         "id": "operation:get:/api/v1/groundhogs/{slug}",
         "kind": "operation",
         "method": "get",
         "name": "groundhog",
+        "parameters": [
+          {
+            "description": "Groundhog name in kebab-case: (eg, lucy-the-lobster)",
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/groundhogs/{slug}",
         "pointer": "#/paths/~1api~1v1~1groundhogs~1{slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a groundhog by slug"
+        "summary": "Get a groundhog by slug",
+        "tags": [
+          "groundhogs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all predictions for a given year.",
         "id": "operation:get:/api/v1/predictions",
         "kind": "operation",
         "method": "get",
         "name": "predictions",
+        "parameters": [
+          {
+            "description": "A calendar year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/predictions",
         "pointer": "#/paths/~1api~1v1~1predictions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "302"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get predictions for a given year"
+        "summary": "Get predictions for a given year",
+        "tags": [
+          "predictions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the schema for the JSON API as a yaml file.",
         "id": "operation:get:/api/v1/spec",
         "kind": "operation",
         "method": "get",
         "name": "spec",
         "path": "/api/v1/spec",
         "pointer": "#/paths/~1api~1v1~1spec/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get JSON schema"
+        "summary": "Get JSON schema",
+        "tags": [
+          "info"
+        ]
       },
       {
+        "description": "An animal that makes an annual prediction on Groundhog Day.",
         "id": "schema:Groundhog",
         "kind": "schema",
-        "name": "Groundhog"
+        "name": "Groundhog",
+        "type": "object"
       },
       {
+        "description": "An annual prediction of an early spring or a longer winter.",
         "id": "schema:Prediction",
         "kind": "schema",
-        "name": "Prediction"
+        "name": "Prediction",
+        "type": "object"
       }
     ]
   },

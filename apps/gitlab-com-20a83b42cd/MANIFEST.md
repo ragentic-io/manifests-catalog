@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud.githubusercontent.com_ass
 
 | | |
 | --- | --- |
-| Signed bundle | `203e199b3f7e918a196c290160701aa9f858551c5a53fcd19601fbd80d479bd7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,363 +34,365 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud.githubusercontent.com_ass
 
 68 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v3/application/settings` | getV3ApplicationSettings | Get the current application settings |
-| PUT | `/v3/application/settings` | putV3ApplicationSettings | Modify application settings |
-| POST | `/v3/ci/lint` | postV3CiLint | Validation of .gitlab-ci.yml content |
-| GET | `/v3/deploy_keys` | getV3DeployKeys | — |
-| GET | `/v3/dockerfiles` | getV3Dockerfiles | Get the list of the available template |
-| GET | `/v3/dockerfiles/{name}` | getV3DockerfilesName | Get the text for a specific template present in local filesystem |
-| GET | `/v3/gitignores` | getV3Gitignores | Get the list of the available template |
-| GET | `/v3/gitignores/{name}` | getV3GitignoresName | Get the text for a specific template present in local filesystem |
-| GET | `/v3/gitlab_ci_ymls` | getV3GitlabCiYmls | Get the list of the available template |
-| GET | `/v3/gitlab_ci_ymls/{name}` | getV3GitlabCiYmlsName | Get the text for a specific template present in local filesystem |
-| GET | `/v3/groups` | getV3Groups | Get a groups list |
-| POST | `/v3/groups` | postV3Groups | Create a group. Available only for users who can create groups. |
-| GET | `/v3/groups/owned` | getV3GroupsOwned | Get list of owned groups for authenticated user |
-| DELETE | `/v3/groups/{id}` | deleteV3GroupsId | Remove a group. |
-| GET | `/v3/groups/{id}` | getV3GroupsId | Get a single group, with containing projects. |
-| PUT | `/v3/groups/{id}` | putV3GroupsId | Update a group. Available only for users who can administrate groups. |
-| GET | `/v3/groups/{id}/access_requests` | getV3GroupsIdAccessRequests | Gets a list of access requests for a group. |
-| POST | `/v3/groups/{id}/access_requests` | postV3GroupsIdAccessRequests | Requests access for the authenticated user to a group. |
-| DELETE | `/v3/groups/{id}/access_requests/{user_id}` | deleteV3GroupsIdAccessRequestsUserId | Denies an access request for the given user. |
-| PUT | `/v3/groups/{id}/access_requests/{user_id}/approve` | putV3GroupsIdAccessRequestsUserIdApprove | Approves an access request for the given user. |
-| GET | `/v3/groups/{id}/issues` | getV3GroupsIdIssues | Get a list of group issues |
-| GET | `/v3/groups/{id}/members` | getV3GroupsIdMembers | Gets a list of group or project members viewable by the authenticated user. |
-| POST | `/v3/groups/{id}/members` | postV3GroupsIdMembers | Adds a member to a group or project. |
-| DELETE | `/v3/groups/{id}/members/{user_id}` | deleteV3GroupsIdMembersUserId | Removes a user from a group or project. |
-| GET | `/v3/groups/{id}/members/{user_id}` | getV3GroupsIdMembersUserId | Gets a member of a group or project. |
-| PUT | `/v3/groups/{id}/members/{user_id}` | putV3GroupsIdMembersUserId | Updates a member of a group or project. |
-| GET | `/v3/groups/{id}/notification_settings` | getV3GroupsIdNotificationSettings | Get group level notification level settings, defaults to Global |
-| PUT | `/v3/groups/{id}/notification_settings` | putV3GroupsIdNotificationSettings | Update group level notification level settings, defaults to Global |
-| GET | `/v3/groups/{id}/projects` | getV3GroupsIdProjects | Get a list of projects in this group. |
-| POST | `/v3/groups/{id}/projects/{project_id}` | postV3GroupsIdProjectsProjectId | Transfer a project to the group namespace. Available only for admin. |
-| GET | `/v3/hooks` | getV3Hooks | Get the list of system hooks |
-| POST | `/v3/hooks` | postV3Hooks | Create a new system hook |
-| DELETE | `/v3/hooks/{id}` | deleteV3HooksId | Delete a hook |
-| GET | `/v3/hooks/{id}` | getV3HooksId | Test a hook |
-| POST | `/v3/internal/allowed` | postV3InternalAllowed | — |
-| GET | `/v3/internal/broadcast_message` | getV3InternalBroadcastMessage | — |
-| GET | `/v3/internal/check` | getV3InternalCheck | — |
-| GET | `/v3/internal/discover` | getV3InternalDiscover | — |
-| POST | `/v3/internal/lfs_authenticate` | postV3InternalLfsAuthenticate | — |
-| GET | `/v3/internal/merge_request_urls` | getV3InternalMergeRequestUrls | — |
-| POST | `/v3/internal/two_factor_recovery_codes` | postV3InternalTwoFactorRecoveryCodes | — |
-| GET | `/v3/issues` | getV3Issues | Get currently authenticated user's issues |
-| GET | `/v3/keys/{id}` | getV3KeysId | Get single ssh key by id. Only available to admin users |
-| GET | `/v3/licenses` | getV3Licenses | Get the list of the available license template |
-| GET | `/v3/licenses/{name}` | getV3LicensesName | Get the text for a specific license |
-| GET | `/v3/namespaces` | getV3Namespaces | Get a namespaces list |
-| GET | `/v3/notification_settings` | getV3NotificationSettings | Get global notification level settings and email, defaults to Participate |
-| PUT | `/v3/notification_settings` | putV3NotificationSettings | Update global notification level settings and email, defaults to Participate |
-| GET | `/v3/projects` | getV3Projects | Get a projects list for authenticated user |
-| POST | `/v3/projects` | postV3Projects | Create new project |
-| GET | `/v3/projects/all` | getV3ProjectsAll | Get all projects for admin user |
-| POST | `/v3/projects/fork/{id}` | postV3ProjectsForkId | Fork new project for the current user or provided namespace. |
-| GET | `/v3/projects/owned` | getV3ProjectsOwned | Get an owned projects list for authenticated user |
-| GET | `/v3/projects/search/{query}` | getV3ProjectsSearchQuery | Search for projects the current user has access to |
-| GET | `/v3/projects/starred` | getV3ProjectsStarred | Gets starred project for the authenticated user |
-| POST | `/v3/projects/user/{user_id}` | postV3ProjectsUserUserId | Create new project for a specified user. Only available to admin users. |
-| GET | `/v3/projects/visible` | getV3ProjectsVisible | Get a list of visible projects for authenticated user |
-| DELETE | `/v3/projects/{id}` | deleteV3ProjectsId | Remove a project |
-| GET | `/v3/projects/{id}` | getV3ProjectsId | Get a single project |
-| PUT | `/v3/projects/{id}` | putV3ProjectsId | Update an existing project |
-| POST | `/v3/projects/{id}/(ref/{ref}/)trigger/builds` | postV3ProjectsId(refRef)triggerBuilds | Trigger a GitLab project build |
-| GET | `/v3/projects/{id}/access_requests` | getV3ProjectsIdAccessRequests | Gets a list of access requests for a project. |
-| POST | `/v3/projects/{id}/access_requests` | postV3ProjectsIdAccessRequests | Requests access for the authenticated user to a project. |
-| DELETE | `/v3/projects/{id}/access_requests/{user_id}` | deleteV3ProjectsIdAccessRequestsUserId | Denies an access request for the given user. |
-| PUT | `/v3/projects/{id}/access_requests/{user_id}/approve` | putV3ProjectsIdAccessRequestsUserIdApprove | Approves an access request for the given user. |
-| POST | `/v3/projects/{id}/archive` | postV3ProjectsIdArchive | Archive a project |
-| GET | `/v3/projects/{id}/boards` | getV3ProjectsIdBoards | Get all project boards |
-| GET | `/v3/projects/{id}/boards/{board_id}/lists` | getV3ProjectsIdBoardsBoardIdLists | Get the lists of a project board |
-| POST | `/v3/projects/{id}/boards/{board_id}/lists` | postV3ProjectsIdBoardsBoardIdLists | Create a new board list |
-| DELETE | `/v3/projects/{id}/boards/{board_id}/lists/{list_id}` | deleteV3ProjectsIdBoardsBoardIdListsListId | Delete a board list |
-| GET | `/v3/projects/{id}/boards/{board_id}/lists/{list_id}` | getV3ProjectsIdBoardsBoardIdListsListId | Get a list of a project board |
-| PUT | `/v3/projects/{id}/boards/{board_id}/lists/{list_id}` | putV3ProjectsIdBoardsBoardIdListsListId | Moves a board list to a new position |
-| GET | `/v3/projects/{id}/builds` | getV3ProjectsIdBuilds | Get a project builds |
-| GET | `/v3/projects/{id}/builds/artifacts/{ref_name}/download` | getV3ProjectsIdBuildsArtifactsRefNameDownload | Download the artifacts file from build |
-| GET | `/v3/projects/{id}/builds/{build_id}` | getV3ProjectsIdBuildsBuildId | Get a specific build of a project |
-| GET | `/v3/projects/{id}/builds/{build_id}/artifacts` | getV3ProjectsIdBuildsBuildIdArtifacts | Download the artifacts file from build |
-| POST | `/v3/projects/{id}/builds/{build_id}/artifacts/keep` | postV3ProjectsIdBuildsBuildIdArtifactsKeep | Keep the artifacts to prevent them from being deleted |
-| POST | `/v3/projects/{id}/builds/{build_id}/cancel` | postV3ProjectsIdBuildsBuildIdCancel | Cancel a specific build of a project |
-| POST | `/v3/projects/{id}/builds/{build_id}/erase` | postV3ProjectsIdBuildsBuildIdErase | Erase build (remove artifacts and build trace) |
-| POST | `/v3/projects/{id}/builds/{build_id}/play` | postV3ProjectsIdBuildsBuildIdPlay | Trigger a manual build |
-| POST | `/v3/projects/{id}/builds/{build_id}/retry` | postV3ProjectsIdBuildsBuildIdRetry | Retry a specific build of a project |
-| GET | `/v3/projects/{id}/builds/{build_id}/trace` | getV3ProjectsIdBuildsBuildIdTrace | Get a trace of a specific build of a project |
-| GET | `/v3/projects/{id}/deploy_keys` | getV3ProjectsIdDeployKeys | Get a specific project's deploy keys |
-| POST | `/v3/projects/{id}/deploy_keys` | postV3ProjectsIdDeployKeys | Add new deploy key to currently authenticated user |
-| DELETE | `/v3/projects/{id}/deploy_keys/{key_id}` | deleteV3ProjectsIdDeployKeysKeyId | Delete deploy key for a project |
-| GET | `/v3/projects/{id}/deploy_keys/{key_id}` | getV3ProjectsIdDeployKeysKeyId | Get single deploy key |
-| DELETE | `/v3/projects/{id}/deploy_keys/{key_id}/disable` | deleteV3ProjectsIdDeployKeysKeyIdDisable | Disable a deploy key for a project |
-| POST | `/v3/projects/{id}/deploy_keys/{key_id}/enable` | postV3ProjectsIdDeployKeysKeyIdEnable | Enable a deploy key for a project |
-| GET | `/v3/projects/{id}/deployments` | getV3ProjectsIdDeployments | Get all deployments of the project |
-| GET | `/v3/projects/{id}/deployments/{deployment_id}` | getV3ProjectsIdDeploymentsDeploymentId | Gets a specific deployment |
-| GET | `/v3/projects/{id}/environments` | getV3ProjectsIdEnvironments | Get all environments of the project |
-| POST | `/v3/projects/{id}/environments` | postV3ProjectsIdEnvironments | Creates a new environment |
-| DELETE | `/v3/projects/{id}/environments/{environment_id}` | deleteV3ProjectsIdEnvironmentsEnvironmentId | Deletes an existing environment |
-| PUT | `/v3/projects/{id}/environments/{environment_id}` | putV3ProjectsIdEnvironmentsEnvironmentId | Updates an existing environment |
-| GET | `/v3/projects/{id}/events` | getV3ProjectsIdEvents | Get events for a single project |
-| DELETE | `/v3/projects/{id}/fork` | deleteV3ProjectsIdFork | Remove a forked_from relationship |
-| POST | `/v3/projects/{id}/fork/{forked_from_id}` | postV3ProjectsIdForkForkedFromId | Mark this project as forked from another |
-| GET | `/v3/projects/{id}/hooks` | getV3ProjectsIdHooks | Get project hooks |
-| POST | `/v3/projects/{id}/hooks` | postV3ProjectsIdHooks | Add hook to project |
-| DELETE | `/v3/projects/{id}/hooks/{hook_id}` | deleteV3ProjectsIdHooksHookId | Deletes project hook |
-| GET | `/v3/projects/{id}/hooks/{hook_id}` | getV3ProjectsIdHooksHookId | Get a project hook |
-| PUT | `/v3/projects/{id}/hooks/{hook_id}` | putV3ProjectsIdHooksHookId | Update an existing project hook |
-| GET | `/v3/projects/{id}/issues` | getV3ProjectsIdIssues | Get a list of project issues |
-| POST | `/v3/projects/{id}/issues` | postV3ProjectsIdIssues | Create a new project issue |
-| DELETE | `/v3/projects/{id}/issues/{issue_id}` | deleteV3ProjectsIdIssuesIssueId | Delete a project issue |
-| GET | `/v3/projects/{id}/issues/{issue_id}` | getV3ProjectsIdIssuesIssueId | Get a single project issue |
-| PUT | `/v3/projects/{id}/issues/{issue_id}` | putV3ProjectsIdIssuesIssueId | Update an existing issue |
-| POST | `/v3/projects/{id}/issues/{issue_id}/add_spent_time` | postV3ProjectsIdIssuesIssueIdAddSpentTime | Add spent time for a project issue |
-| GET | `/v3/projects/{id}/issues/{issue_id}/award_emoji` | getV3ProjectsIdIssuesIssueIdAwardEmoji | Get a list of project +awardable+ award emoji |
-| POST | `/v3/projects/{id}/issues/{issue_id}/award_emoji` | postV3ProjectsIdIssuesIssueIdAwardEmoji | Award a new Emoji |
-| DELETE | `/v3/projects/{id}/issues/{issue_id}/award_emoji/{award_id}` | deleteV3ProjectsIdIssuesIssueIdAwardEmojiAwardId | Delete a +awardables+ award emoji |
-| GET | `/v3/projects/{id}/issues/{issue_id}/award_emoji/{award_id}` | getV3ProjectsIdIssuesIssueIdAwardEmojiAwardId | Get a specific award emoji |
-| POST | `/v3/projects/{id}/issues/{issue_id}/move` | postV3ProjectsIdIssuesIssueIdMove | Move an existing issue |
-| GET | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji` | getV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmoji | Get a list of project +awardable+ award emoji |
-| POST | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji` | postV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmoji | Award a new Emoji |
-| DELETE | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji/{award_id}` | deleteV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmojiAwardId | Delete a +awardables+ award emoji |
-| GET | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji/{award_id}` | getV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmojiAwardId | Get a specific award emoji |
-| POST | `/v3/projects/{id}/issues/{issue_id}/reset_spent_time` | postV3ProjectsIdIssuesIssueIdResetSpentTime | Reset spent time for a project issue |
-| POST | `/v3/projects/{id}/issues/{issue_id}/reset_time_estimate` | postV3ProjectsIdIssuesIssueIdResetTimeEstimate | Reset the time estimate for a project issue |
-| POST | `/v3/projects/{id}/issues/{issue_id}/time_estimate` | postV3ProjectsIdIssuesIssueIdTimeEstimate | Set a time estimate for a project issue |
-| GET | `/v3/projects/{id}/issues/{issue_id}/time_stats` | getV3ProjectsIdIssuesIssueIdTimeStats | Show time stats for a project issue |
-| POST | `/v3/projects/{id}/issues/{issue_id}/todo` | postV3ProjectsIdIssuesIssueIdTodo | Create a todo on an issuable |
-| GET | `/v3/projects/{id}/issues/{noteable_id}/notes` | getV3ProjectsIdIssuesNoteableIdNotes | Get a list of project +noteable+ notes |
-| POST | `/v3/projects/{id}/issues/{noteable_id}/notes` | postV3ProjectsIdIssuesNoteableIdNotes | Create a new +noteable+ note |
-| DELETE | `/v3/projects/{id}/issues/{noteable_id}/notes/{note_id}` | deleteV3ProjectsIdIssuesNoteableIdNotesNoteId | Delete a +noteable+ note |
-| GET | `/v3/projects/{id}/issues/{noteable_id}/notes/{note_id}` | getV3ProjectsIdIssuesNoteableIdNotesNoteId | Get a single +noteable+ note |
-| PUT | `/v3/projects/{id}/issues/{noteable_id}/notes/{note_id}` | putV3ProjectsIdIssuesNoteableIdNotesNoteId | Update an existing +noteable+ note |
-| DELETE | `/v3/projects/{id}/issues/{subscribable_id}/subscription` | deleteV3ProjectsIdIssuesSubscribableIdSubscription | Unsubscribe from a resource |
-| POST | `/v3/projects/{id}/issues/{subscribable_id}/subscription` | postV3ProjectsIdIssuesSubscribableIdSubscription | Subscribe to a resource |
-| GET | `/v3/projects/{id}/keys` | getV3ProjectsIdKeys | Get a specific project's deploy keys |
-| POST | `/v3/projects/{id}/keys` | postV3ProjectsIdKeys | Add new deploy key to currently authenticated user |
-| DELETE | `/v3/projects/{id}/keys/{key_id}` | deleteV3ProjectsIdKeysKeyId | Delete deploy key for a project |
-| GET | `/v3/projects/{id}/keys/{key_id}` | getV3ProjectsIdKeysKeyId | Get single deploy key |
-| DELETE | `/v3/projects/{id}/keys/{key_id}/disable` | deleteV3ProjectsIdKeysKeyIdDisable | Disable a deploy key for a project |
-| POST | `/v3/projects/{id}/keys/{key_id}/enable` | postV3ProjectsIdKeysKeyIdEnable | Enable a deploy key for a project |
-| DELETE | `/v3/projects/{id}/labels` | deleteV3ProjectsIdLabels | Delete an existing label |
-| GET | `/v3/projects/{id}/labels` | getV3ProjectsIdLabels | Get all labels of the project |
-| POST | `/v3/projects/{id}/labels` | postV3ProjectsIdLabels | Create a new label |
-| PUT | `/v3/projects/{id}/labels` | putV3ProjectsIdLabels | Update an existing label. At least one optional parameter is required. |
-| DELETE | `/v3/projects/{id}/labels/{subscribable_id}/subscription` | deleteV3ProjectsIdLabelsSubscribableIdSubscription | Unsubscribe from a resource |
-| POST | `/v3/projects/{id}/labels/{subscribable_id}/subscription` | postV3ProjectsIdLabelsSubscribableIdSubscription | Subscribe to a resource |
-| GET | `/v3/projects/{id}/members` | getV3ProjectsIdMembers | Gets a list of group or project members viewable by the authenticated user. |
-| POST | `/v3/projects/{id}/members` | postV3ProjectsIdMembers | Adds a member to a group or project. |
-| DELETE | `/v3/projects/{id}/members/{user_id}` | deleteV3ProjectsIdMembersUserId | Removes a user from a group or project. |
-| GET | `/v3/projects/{id}/members/{user_id}` | getV3ProjectsIdMembersUserId | Gets a member of a group or project. |
-| PUT | `/v3/projects/{id}/members/{user_id}` | putV3ProjectsIdMembersUserId | Updates a member of a group or project. |
-| GET | `/v3/projects/{id}/merge_request/{merge_request_id}` | getV3ProjectsIdMergeRequestMergeRequestId | Get a single merge request |
-| PUT | `/v3/projects/{id}/merge_request/{merge_request_id}` | putV3ProjectsIdMergeRequestMergeRequestId | Update a merge request |
-| POST | `/v3/projects/{id}/merge_request/{merge_request_id}/cancel_merge_when_build_succeeds` | postV3ProjectsIdMergeRequestMergeRequestIdCancelMergeWhenBuildSucceeds | Cancel merge if "Merge When Pipeline Succeeds" is enabled |
-| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/changes` | getV3ProjectsIdMergeRequestMergeRequestIdChanges | Show the merge request changes |
-| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/closes_issues` | getV3ProjectsIdMergeRequestMergeRequestIdClosesIssues | List issues that will be closed on merge |
-| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/comments` | getV3ProjectsIdMergeRequestMergeRequestIdComments | Get the comments of a merge request |
-| POST | `/v3/projects/{id}/merge_request/{merge_request_id}/comments` | postV3ProjectsIdMergeRequestMergeRequestIdComments | Post a comment to a merge request |
-| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/commits` | getV3ProjectsIdMergeRequestMergeRequestIdCommits | Get the commits of a merge request |
-| PUT | `/v3/projects/{id}/merge_request/{merge_request_id}/merge` | putV3ProjectsIdMergeRequestMergeRequestIdMerge | Merge a merge request |
-| DELETE | `/v3/projects/{id}/merge_request/{subscribable_id}/subscription` | deleteV3ProjectsIdMergeRequestSubscribableIdSubscription | Unsubscribe from a resource |
-| POST | `/v3/projects/{id}/merge_request/{subscribable_id}/subscription` | postV3ProjectsIdMergeRequestSubscribableIdSubscription | Subscribe to a resource |
-| GET | `/v3/projects/{id}/merge_requests` | getV3ProjectsIdMergeRequests | List merge requests |
-| POST | `/v3/projects/{id}/merge_requests` | postV3ProjectsIdMergeRequests | Create a merge request |
-| DELETE | `/v3/projects/{id}/merge_requests/{merge_request_id}` | deleteV3ProjectsIdMergeRequestsMergeRequestId | Delete a merge request |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}` | getV3ProjectsIdMergeRequestsMergeRequestId | Get a single merge request |
-| PUT | `/v3/projects/{id}/merge_requests/{merge_request_id}` | putV3ProjectsIdMergeRequestsMergeRequestId | Update a merge request |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/add_spent_time` | postV3ProjectsIdMergeRequestsMergeRequestIdAddSpentTime | Add spent time for a project merge_request |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji` | getV3ProjectsIdMergeRequestsMergeRequestIdAwardEmoji | Get a list of project +awardable+ award emoji |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji` | postV3ProjectsIdMergeRequestsMergeRequestIdAwardEmoji | Award a new Emoji |
-| DELETE | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji/{award_id}` | deleteV3ProjectsIdMergeRequestsMergeRequestIdAwardEmojiAwardId | Delete a +awardables+ award emoji |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji/{award_id}` | getV3ProjectsIdMergeRequestsMergeRequestIdAwardEmojiAwardId | Get a specific award emoji |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/cancel_merge_when_build_succeeds` | postV3ProjectsIdMergeRequestsMergeRequestIdCancelMergeWhenBuildSucceeds | Cancel merge if "Merge When Pipeline Succeeds" is enabled |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/changes` | getV3ProjectsIdMergeRequestsMergeRequestIdChanges | Show the merge request changes |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/closes_issues` | getV3ProjectsIdMergeRequestsMergeRequestIdClosesIssues | List issues that will be closed on merge |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/comments` | getV3ProjectsIdMergeRequestsMergeRequestIdComments | Get the comments of a merge request |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/comments` | postV3ProjectsIdMergeRequestsMergeRequestIdComments | Post a comment to a merge request |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/commits` | getV3ProjectsIdMergeRequestsMergeRequestIdCommits | Get the commits of a merge request |
-| PUT | `/v3/projects/{id}/merge_requests/{merge_request_id}/merge` | putV3ProjectsIdMergeRequestsMergeRequestIdMerge | Merge a merge request |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji` | getV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmoji | Get a list of project +awardable+ award emoji |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji` | postV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmoji | Award a new Emoji |
-| DELETE | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji/{award_id}` | deleteV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmojiAwardId | Delete a +awardables+ award emoji |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji/{award_id}` | getV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmojiAwardId | Get a specific award emoji |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/reset_spent_time` | postV3ProjectsIdMergeRequestsMergeRequestIdResetSpentTime | Reset spent time for a project merge_request |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/reset_time_estimate` | postV3ProjectsIdMergeRequestsMergeRequestIdResetTimeEstimate | Reset the time estimate for a project merge_request |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/time_estimate` | postV3ProjectsIdMergeRequestsMergeRequestIdTimeEstimate | Set a time estimate for a project merge_request |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/time_stats` | getV3ProjectsIdMergeRequestsMergeRequestIdTimeStats | Show time stats for a project merge_request |
-| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/todo` | postV3ProjectsIdMergeRequestsMergeRequestIdTodo | Create a todo on an issuable |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/versions` | getV3ProjectsIdMergeRequestsMergeRequestIdVersions | Get a list of merge request diff versions |
-| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/versions/{version_id}` | getV3ProjectsIdMergeRequestsMergeRequestIdVersionsVersionId | Get a single merge request diff version |
-| GET | `/v3/projects/{id}/merge_requests/{noteable_id}/notes` | getV3ProjectsIdMergeRequestsNoteableIdNotes | Get a list of project +noteable+ notes |
-| POST | `/v3/projects/{id}/merge_requests/{noteable_id}/notes` | postV3ProjectsIdMergeRequestsNoteableIdNotes | Create a new +noteable+ note |
-| DELETE | `/v3/projects/{id}/merge_requests/{noteable_id}/notes/{note_id}` | deleteV3ProjectsIdMergeRequestsNoteableIdNotesNoteId | Delete a +noteable+ note |
-| GET | `/v3/projects/{id}/merge_requests/{noteable_id}/notes/{note_id}` | getV3ProjectsIdMergeRequestsNoteableIdNotesNoteId | Get a single +noteable+ note |
-| PUT | `/v3/projects/{id}/merge_requests/{noteable_id}/notes/{note_id}` | putV3ProjectsIdMergeRequestsNoteableIdNotesNoteId | Update an existing +noteable+ note |
-| DELETE | `/v3/projects/{id}/merge_requests/{subscribable_id}/subscription` | deleteV3ProjectsIdMergeRequestsSubscribableIdSubscription | Unsubscribe from a resource |
-| POST | `/v3/projects/{id}/merge_requests/{subscribable_id}/subscription` | postV3ProjectsIdMergeRequestsSubscribableIdSubscription | Subscribe to a resource |
-| GET | `/v3/projects/{id}/milestones` | getV3ProjectsIdMilestones | Get a list of project milestones |
-| POST | `/v3/projects/{id}/milestones` | postV3ProjectsIdMilestones | Create a new project milestone |
-| GET | `/v3/projects/{id}/milestones/{milestone_id}` | getV3ProjectsIdMilestonesMilestoneId | Get a single project milestone |
-| PUT | `/v3/projects/{id}/milestones/{milestone_id}` | putV3ProjectsIdMilestonesMilestoneId | Update an existing project milestone |
-| GET | `/v3/projects/{id}/milestones/{milestone_id}/issues` | getV3ProjectsIdMilestonesMilestoneIdIssues | Get all issues for a single project milestone |
-| GET | `/v3/projects/{id}/notification_settings` | getV3ProjectsIdNotificationSettings | Get project level notification level settings, defaults to Global |
-| PUT | `/v3/projects/{id}/notification_settings` | putV3ProjectsIdNotificationSettings | Update project level notification level settings, defaults to Global |
-| POST | `/v3/projects/{id}/pipeline` | postV3ProjectsIdPipeline | Create a new pipeline |
-| GET | `/v3/projects/{id}/pipelines` | getV3ProjectsIdPipelines | Get all Pipelines of the project |
-| GET | `/v3/projects/{id}/pipelines/{pipeline_id}` | getV3ProjectsIdPipelinesPipelineId | Gets a specific pipeline for the project |
-| POST | `/v3/projects/{id}/pipelines/{pipeline_id}/cancel` | postV3ProjectsIdPipelinesPipelineIdCancel | Cancel all builds in the pipeline |
-| POST | `/v3/projects/{id}/pipelines/{pipeline_id}/retry` | postV3ProjectsIdPipelinesPipelineIdRetry | Retry failed builds in the pipeline |
-| GET | `/v3/projects/{id}/repository/archive` | getV3ProjectsIdRepositoryArchive | Get an archive of the repository |
-| GET | `/v3/projects/{id}/repository/blobs/{sha}` | getV3ProjectsIdRepositoryBlobsSha | Get a raw file contents |
-| GET | `/v3/projects/{id}/repository/branches` | getV3ProjectsIdRepositoryBranches | Get a project repository branches |
-| POST | `/v3/projects/{id}/repository/branches` | postV3ProjectsIdRepositoryBranches | Create branch |
-| DELETE | `/v3/projects/{id}/repository/branches/{branch}` | deleteV3ProjectsIdRepositoryBranchesBranch | Delete a branch |
-| GET | `/v3/projects/{id}/repository/branches/{branch}` | getV3ProjectsIdRepositoryBranchesBranch | Get a single branch |
-| PUT | `/v3/projects/{id}/repository/branches/{branch}/protect` | putV3ProjectsIdRepositoryBranchesBranchProtect | Protect a single branch |
-| PUT | `/v3/projects/{id}/repository/branches/{branch}/unprotect` | putV3ProjectsIdRepositoryBranchesBranchUnprotect | Unprotect a single branch |
-| GET | `/v3/projects/{id}/repository/commits` | getV3ProjectsIdRepositoryCommits | Get a project repository commits |
-| POST | `/v3/projects/{id}/repository/commits` | postV3ProjectsIdRepositoryCommits | Commit multiple file changes as one commit |
-| GET | `/v3/projects/{id}/repository/commits/{sha}` | getV3ProjectsIdRepositoryCommitsSha | Get a specific commit of a project |
-| GET | `/v3/projects/{id}/repository/commits/{sha}/blob` | getV3ProjectsIdRepositoryCommitsShaBlob | Get a raw file contents |
-| GET | `/v3/projects/{id}/repository/commits/{sha}/builds` | getV3ProjectsIdRepositoryCommitsShaBuilds | Get builds for a specific commit of a project |
-| POST | `/v3/projects/{id}/repository/commits/{sha}/cherry_pick` | postV3ProjectsIdRepositoryCommitsShaCherryPick | Cherry pick commit into a branch |
-| GET | `/v3/projects/{id}/repository/commits/{sha}/comments` | getV3ProjectsIdRepositoryCommitsShaComments | Get a commit's comments |
-| POST | `/v3/projects/{id}/repository/commits/{sha}/comments` | postV3ProjectsIdRepositoryCommitsShaComments | Post comment to commit |
-| GET | `/v3/projects/{id}/repository/commits/{sha}/diff` | getV3ProjectsIdRepositoryCommitsShaDiff | Get the diff for a specific commit of a project |
-| GET | `/v3/projects/{id}/repository/commits/{sha}/statuses` | getV3ProjectsIdRepositoryCommitsShaStatuses | Get a commit's statuses |
-| GET | `/v3/projects/{id}/repository/compare` | getV3ProjectsIdRepositoryCompare | Compare two branches, tags, or commits |
-| GET | `/v3/projects/{id}/repository/contributors` | getV3ProjectsIdRepositoryContributors | Get repository contributors |
-| DELETE | `/v3/projects/{id}/repository/files` | deleteV3ProjectsIdRepositoryFiles | Delete an existing file in repository |
-| GET | `/v3/projects/{id}/repository/files` | getV3ProjectsIdRepositoryFiles | Get a file from repository |
-| POST | `/v3/projects/{id}/repository/files` | postV3ProjectsIdRepositoryFiles | Create new file in repository |
-| PUT | `/v3/projects/{id}/repository/files` | putV3ProjectsIdRepositoryFiles | Update existing file in repository |
-| DELETE | `/v3/projects/{id}/repository/merged_branches` | deleteV3ProjectsIdRepositoryMergedBranches | — |
-| GET | `/v3/projects/{id}/repository/raw_blobs/{sha}` | getV3ProjectsIdRepositoryRawBlobsSha | Get a raw blob contents by blob sha |
-| GET | `/v3/projects/{id}/repository/tags` | getV3ProjectsIdRepositoryTags | Get a project repository tags |
-| POST | `/v3/projects/{id}/repository/tags` | postV3ProjectsIdRepositoryTags | Create a new repository tag |
-| DELETE | `/v3/projects/{id}/repository/tags/{tag_name}` | deleteV3ProjectsIdRepositoryTagsTagName | Delete a repository tag |
-| GET | `/v3/projects/{id}/repository/tags/{tag_name}` | getV3ProjectsIdRepositoryTagsTagName | Get a single repository tag |
-| POST | `/v3/projects/{id}/repository/tags/{tag_name}/release` | postV3ProjectsIdRepositoryTagsTagNameRelease | Add a release note to a tag |
-| PUT | `/v3/projects/{id}/repository/tags/{tag_name}/release` | putV3ProjectsIdRepositoryTagsTagNameRelease | Update a tag's release note |
-| GET | `/v3/projects/{id}/repository/tree` | getV3ProjectsIdRepositoryTree | Get a project repository tree |
-| GET | `/v3/projects/{id}/runners` | getV3ProjectsIdRunners | Get runners available for project |
-| POST | `/v3/projects/{id}/runners` | postV3ProjectsIdRunners | Enable a runner for a project |
-| DELETE | `/v3/projects/{id}/runners/{runner_id}` | deleteV3ProjectsIdRunnersRunnerId | Disable project's runner |
-| PUT | `/v3/projects/{id}/services/asana` | putV3ProjectsIdServicesAsana | Set asana service for project |
-| PUT | `/v3/projects/{id}/services/assembla` | putV3ProjectsIdServicesAssembla | Set assembla service for project |
-| PUT | `/v3/projects/{id}/services/bamboo` | putV3ProjectsIdServicesBamboo | Set bamboo service for project |
-| PUT | `/v3/projects/{id}/services/bugzilla` | putV3ProjectsIdServicesBugzilla | Set bugzilla service for project |
-| PUT | `/v3/projects/{id}/services/buildkite` | putV3ProjectsIdServicesBuildkite | Set buildkite service for project |
-| PUT | `/v3/projects/{id}/services/builds-email` | putV3ProjectsIdServicesBuildsEmail | Set builds-email service for project |
-| PUT | `/v3/projects/{id}/services/campfire` | putV3ProjectsIdServicesCampfire | Set campfire service for project |
-| PUT | `/v3/projects/{id}/services/custom-issue-tracker` | putV3ProjectsIdServicesCustomIssueTracker | Set custom-issue-tracker service for project |
-| PUT | `/v3/projects/{id}/services/drone-ci` | putV3ProjectsIdServicesDroneCi | Set drone-ci service for project |
-| PUT | `/v3/projects/{id}/services/emails-on-push` | putV3ProjectsIdServicesEmailsOnPush | Set emails-on-push service for project |
-| PUT | `/v3/projects/{id}/services/external-wiki` | putV3ProjectsIdServicesExternalWiki | Set external-wiki service for project |
-| PUT | `/v3/projects/{id}/services/flowdock` | putV3ProjectsIdServicesFlowdock | Set flowdock service for project |
-| PUT | `/v3/projects/{id}/services/gemnasium` | putV3ProjectsIdServicesGemnasium | Set gemnasium service for project |
-| PUT | `/v3/projects/{id}/services/hipchat` | putV3ProjectsIdServicesHipchat | Set hipchat service for project |
-| PUT | `/v3/projects/{id}/services/irker` | putV3ProjectsIdServicesIrker | Set irker service for project |
-| PUT | `/v3/projects/{id}/services/jira` | putV3ProjectsIdServicesJira | Set jira service for project |
-| PUT | `/v3/projects/{id}/services/kubernetes` | putV3ProjectsIdServicesKubernetes | Set kubernetes service for project |
-| PUT | `/v3/projects/{id}/services/mattermost` | putV3ProjectsIdServicesMattermost | Set mattermost service for project |
-| PUT | `/v3/projects/{id}/services/mattermost-slash-commands` | putV3ProjectsIdServicesMattermostSlashCommands | Set mattermost-slash-commands service for project |
-| POST | `/v3/projects/{id}/services/mattermost_slash_commands/trigger` | postV3ProjectsIdServicesMattermostSlashCommandsTrigger | Trigger a slash command for mattermost-slash-commands |
-| PUT | `/v3/projects/{id}/services/pipelines-email` | putV3ProjectsIdServicesPipelinesEmail | Set pipelines-email service for project |
-| PUT | `/v3/projects/{id}/services/pivotaltracker` | putV3ProjectsIdServicesPivotaltracker | Set pivotaltracker service for project |
-| PUT | `/v3/projects/{id}/services/pushover` | putV3ProjectsIdServicesPushover | Set pushover service for project |
-| PUT | `/v3/projects/{id}/services/redmine` | putV3ProjectsIdServicesRedmine | Set redmine service for project |
-| PUT | `/v3/projects/{id}/services/slack` | putV3ProjectsIdServicesSlack | Set slack service for project |
-| PUT | `/v3/projects/{id}/services/slack-slash-commands` | putV3ProjectsIdServicesSlackSlashCommands | Set slack-slash-commands service for project |
-| POST | `/v3/projects/{id}/services/slack_slash_commands/trigger` | postV3ProjectsIdServicesSlackSlashCommandsTrigger | Trigger a slash command for slack-slash-commands |
-| PUT | `/v3/projects/{id}/services/teamcity` | putV3ProjectsIdServicesTeamcity | Set teamcity service for project |
-| DELETE | `/v3/projects/{id}/services/{service_slug}` | deleteV3ProjectsIdServicesServiceSlug | Delete a service for project |
-| GET | `/v3/projects/{id}/services/{service_slug}` | getV3ProjectsIdServicesServiceSlug | Get the service settings for project |
-| POST | `/v3/projects/{id}/share` | postV3ProjectsIdShare | Share the project with a group |
-| DELETE | `/v3/projects/{id}/share/{group_id}` | deleteV3ProjectsIdShareGroupId | — |
-| GET | `/v3/projects/{id}/snippets` | getV3ProjectsIdSnippets | Get all project snippets |
-| POST | `/v3/projects/{id}/snippets` | postV3ProjectsIdSnippets | Create a new project snippet |
-| GET | `/v3/projects/{id}/snippets/{noteable_id}/notes` | getV3ProjectsIdSnippetsNoteableIdNotes | Get a list of project +noteable+ notes |
-| POST | `/v3/projects/{id}/snippets/{noteable_id}/notes` | postV3ProjectsIdSnippetsNoteableIdNotes | Create a new +noteable+ note |
-| DELETE | `/v3/projects/{id}/snippets/{noteable_id}/notes/{note_id}` | deleteV3ProjectsIdSnippetsNoteableIdNotesNoteId | Delete a +noteable+ note |
-| GET | `/v3/projects/{id}/snippets/{noteable_id}/notes/{note_id}` | getV3ProjectsIdSnippetsNoteableIdNotesNoteId | Get a single +noteable+ note |
-| PUT | `/v3/projects/{id}/snippets/{noteable_id}/notes/{note_id}` | putV3ProjectsIdSnippetsNoteableIdNotesNoteId | Update an existing +noteable+ note |
-| DELETE | `/v3/projects/{id}/snippets/{snippet_id}` | deleteV3ProjectsIdSnippetsSnippetId | Delete a project snippet |
-| GET | `/v3/projects/{id}/snippets/{snippet_id}` | getV3ProjectsIdSnippetsSnippetId | Get a single project snippet |
-| PUT | `/v3/projects/{id}/snippets/{snippet_id}` | putV3ProjectsIdSnippetsSnippetId | Update an existing project snippet |
-| GET | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji` | getV3ProjectsIdSnippetsSnippetIdAwardEmoji | Get a list of project +awardable+ award emoji |
-| POST | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji` | postV3ProjectsIdSnippetsSnippetIdAwardEmoji | Award a new Emoji |
-| DELETE | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji/{award_id}` | deleteV3ProjectsIdSnippetsSnippetIdAwardEmojiAwardId | Delete a +awardables+ award emoji |
-| GET | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji/{award_id}` | getV3ProjectsIdSnippetsSnippetIdAwardEmojiAwardId | Get a specific award emoji |
-| GET | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji` | getV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmoji | Get a list of project +awardable+ award emoji |
-| POST | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji` | postV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmoji | Award a new Emoji |
-| DELETE | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji/{award_id}` | deleteV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmojiAwardId | Delete a +awardables+ award emoji |
-| GET | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji/{award_id}` | getV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmojiAwardId | Get a specific award emoji |
-| GET | `/v3/projects/{id}/snippets/{snippet_id}/raw` | getV3ProjectsIdSnippetsSnippetIdRaw | Get a raw project snippet |
-| DELETE | `/v3/projects/{id}/star` | deleteV3ProjectsIdStar | Unstar a project |
-| POST | `/v3/projects/{id}/star` | postV3ProjectsIdStar | Star a project |
-| POST | `/v3/projects/{id}/statuses/{sha}` | postV3ProjectsIdStatusesSha | Post status to a commit |
-| GET | `/v3/projects/{id}/triggers` | getV3ProjectsIdTriggers | Get triggers list |
-| POST | `/v3/projects/{id}/triggers` | postV3ProjectsIdTriggers | Create a trigger |
-| DELETE | `/v3/projects/{id}/triggers/{token}` | deleteV3ProjectsIdTriggersToken | Delete a trigger |
-| GET | `/v3/projects/{id}/triggers/{token}` | getV3ProjectsIdTriggersToken | Get specific trigger of a project |
-| POST | `/v3/projects/{id}/unarchive` | postV3ProjectsIdUnarchive | Unarchive a project |
-| POST | `/v3/projects/{id}/uploads` | postV3ProjectsIdUploads | Upload a file |
-| GET | `/v3/projects/{id}/users` | getV3ProjectsIdUsers | Get the users list of a project |
-| GET | `/v3/projects/{id}/variables` | getV3ProjectsIdVariables | Get project variables |
-| POST | `/v3/projects/{id}/variables` | postV3ProjectsIdVariables | Create a new variable in a project |
-| DELETE | `/v3/projects/{id}/variables/{key}` | deleteV3ProjectsIdVariablesKey | Delete an existing variable from a project |
-| GET | `/v3/projects/{id}/variables/{key}` | getV3ProjectsIdVariablesKey | Get a specific variable from a project |
-| PUT | `/v3/projects/{id}/variables/{key}` | putV3ProjectsIdVariablesKey | Update an existing variable from a project |
-| GET | `/v3/runners` | getV3Runners | Get runners available for user |
-| GET | `/v3/runners/all` | getV3RunnersAll | Get all runners - shared and specific |
-| DELETE | `/v3/runners/{id}` | deleteV3RunnersId | Remove a runner |
-| GET | `/v3/runners/{id}` | getV3RunnersId | Get runner's details |
-| PUT | `/v3/runners/{id}` | putV3RunnersId | Update runner's details |
-| POST | `/v3/session` | postV3Session | Login to get token |
-| GET | `/v3/sidekiq/compound_metrics` | getV3SidekiqCompoundMetrics | Get the Sidekiq Compound metrics. Includes queue, process, and job statistics |
-| GET | `/v3/sidekiq/job_stats` | getV3SidekiqJobStats | Get the Sidekiq job statistics |
-| GET | `/v3/sidekiq/process_metrics` | getV3SidekiqProcessMetrics | Get the Sidekiq process metrics |
-| GET | `/v3/sidekiq/queue_metrics` | getV3SidekiqQueueMetrics | Get the Sidekiq queue metrics |
-| GET | `/v3/snippets` | getV3Snippets | Get a snippets list for authenticated user |
-| POST | `/v3/snippets` | postV3Snippets | Create new snippet |
-| GET | `/v3/snippets/public` | getV3SnippetsPublic | List all public snippets current_user has access to |
-| DELETE | `/v3/snippets/{id}` | deleteV3SnippetsId | Remove snippet |
-| GET | `/v3/snippets/{id}` | getV3SnippetsId | Get a single snippet |
-| PUT | `/v3/snippets/{id}` | putV3SnippetsId | Update an existing snippet |
-| GET | `/v3/snippets/{id}/raw` | getV3SnippetsIdRaw | Get a raw snippet |
-| GET | `/v3/templates/dockerfiles` | getV3TemplatesDockerfiles | Get the list of the available template |
-| GET | `/v3/templates/dockerfiles/{name}` | getV3TemplatesDockerfilesName | Get the text for a specific template present in local filesystem |
-| GET | `/v3/templates/gitignores` | getV3TemplatesGitignores | Get the list of the available template |
-| GET | `/v3/templates/gitignores/{name}` | getV3TemplatesGitignoresName | Get the text for a specific template present in local filesystem |
-| GET | `/v3/templates/gitlab_ci_ymls` | getV3TemplatesGitlabCiYmls | Get the list of the available template |
-| GET | `/v3/templates/gitlab_ci_ymls/{name}` | getV3TemplatesGitlabCiYmlsName | Get the text for a specific template present in local filesystem |
-| GET | `/v3/templates/licenses` | getV3TemplatesLicenses | Get the list of the available license template |
-| GET | `/v3/templates/licenses/{name}` | getV3TemplatesLicensesName | Get the text for a specific license |
-| DELETE | `/v3/todos` | deleteV3Todos | Mark all todos as done |
-| GET | `/v3/todos` | getV3Todos | Get a todo list |
-| DELETE | `/v3/todos/{id}` | deleteV3TodosId | Mark a todo as done |
-| GET | `/v3/user` | getV3User | Get the currently authenticated user |
-| GET | `/v3/user/emails` | getV3UserEmails | Get the currently authenticated user's email addresses |
-| POST | `/v3/user/emails` | postV3UserEmails | Add new email address to the currently authenticated user |
-| DELETE | `/v3/user/emails/{email_id}` | deleteV3UserEmailsEmailId | Delete an email address from the currently authenticated user |
-| GET | `/v3/user/emails/{email_id}` | getV3UserEmailsEmailId | Get a single email address owned by the currently authenticated user |
-| GET | `/v3/user/keys` | getV3UserKeys | Get the currently authenticated user's SSH keys |
-| POST | `/v3/user/keys` | postV3UserKeys | Add a new SSH key to the currently authenticated user |
-| DELETE | `/v3/user/keys/{key_id}` | deleteV3UserKeysKeyId | Delete an SSH key from the currently authenticated user |
-| GET | `/v3/user/keys/{key_id}` | getV3UserKeysKeyId | Get a single key owned by currently authenticated user |
-| GET | `/v3/users` | getV3Users | Get the list of users |
-| POST | `/v3/users` | postV3Users | Create a user. Available only for admins. |
-| DELETE | `/v3/users/{id}` | deleteV3UsersId | Delete a user. Available only for admins. |
-| GET | `/v3/users/{id}` | getV3UsersId | Get a single user |
-| PUT | `/v3/users/{id}` | putV3UsersId | Update a user. Available only for admins. |
-| PUT | `/v3/users/{id}/block` | putV3UsersIdBlock | Block a user. Available only for admins. |
-| GET | `/v3/users/{id}/emails` | getV3UsersIdEmails | Get the emails addresses of a specified user. Available only for admins. |
-| POST | `/v3/users/{id}/emails` | postV3UsersIdEmails | Add an email address to a specified user. Available only for admins. |
-| DELETE | `/v3/users/{id}/emails/{email_id}` | deleteV3UsersIdEmailsEmailId | Delete an email address of a specified user. Available only for admins. |
-| GET | `/v3/users/{id}/events` | getV3UsersIdEvents | Get the contribution events of a specified user |
-| GET | `/v3/users/{id}/keys` | getV3UsersIdKeys | Get the SSH keys of a specified user. Available only for admins. |
-| POST | `/v3/users/{id}/keys` | postV3UsersIdKeys | Add an SSH key to a specified user. Available only for admins. |
-| DELETE | `/v3/users/{id}/keys/{key_id}` | deleteV3UsersIdKeysKeyId | Delete an existing SSH key from a specified user. Available only for admins. |
-| PUT | `/v3/users/{id}/unblock` | putV3UsersIdUnblock | Unblock a user. Available only for admins. |
-| GET | `/v3/version` | getV3Version | Get the version information of the GitLab instance. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v3/application/settings` | getV3ApplicationSettings | — | ApplicationSetting | yes | Get the current application settings |
+| PUT | `/v3/application/settings` | putV3ApplicationSettings | `default_branch_protection`, `default_project_visibility`, `default_snippet_visibility`, `default_group_visibility`, `restricted_visibility_levels`, `import_sources`, `disabled_oauth_sign_in_sources`, `enabled_git_access_protocol`, `gravatar_enabled`, `default_projects_limit`, `max_attachment_size`, `session_expire_delay`, `user_oauth_applications`, `user_default_external`, `signup_enabled`, `send_user_confirmation_email`, `domain_whitelist`, `domain_blacklist_enabled`, `domain_blacklist`*, `after_sign_up_text`, `signin_enabled`, `require_two_factor_authentication`, `two_factor_grace_period`*, `home_page_url`, `after_sign_out_path`, `sign_in_text`, `help_page_text`, `shared_runners_enabled`, `shared_runners_text`*, `max_artifacts_size`, `container_registry_token_expire_delay`, `metrics_enabled`, `metrics_host`*, `metrics_port`*, `metrics_pool_size`*, `metrics_timeout`*, `metrics_method_call_threshold`*, `metrics_sample_interval`*, `metrics_packet_size`*, `sidekiq_throttling_enabled`, `sidekiq_throttling_queus`*, `sidekiq_throttling_factor`*, `recaptcha_enabled`, `recaptcha_site_key`*, `recaptcha_private_key`*, `akismet_enabled`, `akismet_api_key`*, `admin_notification_email`, `sentry_enabled`, `sentry_dsn`*, `repository_storage`, `repository_checks_enabled`, `koding_enabled`, `koding_url`*, `plantuml_enabled`, `plantuml_url`*, `version_check_enabled`, `email_author_in_body`, `html_emails_enabled`, `housekeeping_enabled`, `housekeeping_bitmaps_enabled`*, `housekeeping_incremental_repack_period`*, `housekeeping_full_repack_period`*, `housekeeping_gc_period`* | ApplicationSetting |  | Modify application settings |
+| POST | `/v3/ci/lint` | postV3CiLint | `content`* | — |  | Validation of .gitlab-ci.yml content |
+| GET | `/v3/deploy_keys` | getV3DeployKeys | — | — | yes | — |
+| GET | `/v3/dockerfiles` | getV3Dockerfiles | — | TemplatesList | yes | Get the list of the available template |
+| GET | `/v3/dockerfiles/{name}` | getV3DockerfilesName | `name`* | Template | yes | Get the text for a specific template present in local filesystem |
+| GET | `/v3/gitignores` | getV3Gitignores | — | TemplatesList | yes | Get the list of the available template |
+| GET | `/v3/gitignores/{name}` | getV3GitignoresName | `name`* | Template | yes | Get the text for a specific template present in local filesystem |
+| GET | `/v3/gitlab_ci_ymls` | getV3GitlabCiYmls | — | TemplatesList | yes | Get the list of the available template |
+| GET | `/v3/gitlab_ci_ymls/{name}` | getV3GitlabCiYmlsName | `name`* | Template | yes | Get the text for a specific template present in local filesystem |
+| GET | `/v3/groups` | getV3Groups | `statistics`, `skip_groups`, `all_available`, `search`, `order_by`, `sort`, `page`, `per_page` | Group | yes | Get a groups list |
+| POST | `/v3/groups` | postV3Groups | `name`*, `path`*, `description`, `visibility_level`, `lfs_enabled`, `request_access_enabled` | Group |  | Create a group. Available only for users who can create groups. |
+| GET | `/v3/groups/owned` | getV3GroupsOwned | `page`, `per_page`, `statistics` | Group | yes | Get list of owned groups for authenticated user |
+| GET | `/v3/groups/{id}` | getV3GroupsId | `id`* | GroupDetail | yes | Get a single group, with containing projects. |
+| PUT | `/v3/groups/{id}` | putV3GroupsId | `id`*, `name`, `path`, `description`, `visibility_level`, `lfs_enabled`, `request_access_enabled` | Group |  | Update a group. Available only for users who can administrate groups. |
+| DELETE | `/v3/groups/{id}` | deleteV3GroupsId | `id`* | — |  | Remove a group. |
+| GET | `/v3/groups/{id}/access_requests` | getV3GroupsIdAccessRequests | `id`*, `page`, `per_page` | AccessRequester | yes | Gets a list of access requests for a group. |
+| POST | `/v3/groups/{id}/access_requests` | postV3GroupsIdAccessRequests | `id`* | AccessRequester |  | Requests access for the authenticated user to a group. |
+| DELETE | `/v3/groups/{id}/access_requests/{user_id}` | deleteV3GroupsIdAccessRequestsUserId | `id`*, `user_id`* | — |  | Denies an access request for the given user. |
+| PUT | `/v3/groups/{id}/access_requests/{user_id}/approve` | putV3GroupsIdAccessRequestsUserIdApprove | `id`*, `user_id`*, `access_level` | Member |  | Approves an access request for the given user. |
+| GET | `/v3/groups/{id}/issues` | getV3GroupsIdIssues | `id`*, `state`, `labels`, `milestone`, `order_by`, `sort`, `page`, `per_page` | Issue | yes | Get a list of group issues |
+| GET | `/v3/groups/{id}/members` | getV3GroupsIdMembers | `id`*, `query`, `page`, `per_page` | Member | yes | Gets a list of group or project members viewable by the authenticated user. |
+| POST | `/v3/groups/{id}/members` | postV3GroupsIdMembers | `id`*, `user_id`*, `access_level`*, `expires_at` | Member |  | Adds a member to a group or project. |
+| GET | `/v3/groups/{id}/members/{user_id}` | getV3GroupsIdMembersUserId | `id`*, `user_id`* | Member | yes | Gets a member of a group or project. |
+| PUT | `/v3/groups/{id}/members/{user_id}` | putV3GroupsIdMembersUserId | `id`*, `user_id`*, `access_level`*, `expires_at` | Member |  | Updates a member of a group or project. |
+| DELETE | `/v3/groups/{id}/members/{user_id}` | deleteV3GroupsIdMembersUserId | `id`*, `user_id`* | — |  | Removes a user from a group or project. |
+| GET | `/v3/groups/{id}/notification_settings` | getV3GroupsIdNotificationSettings | `id`* | NotificationSetting | yes | Get group level notification level settings, defaults to Global |
+| PUT | `/v3/groups/{id}/notification_settings` | putV3GroupsIdNotificationSettings | `id`*, `level`, `new_note`, `new_issue`, `reopen_issue`, `close_issue`, `reassign_issue`, `new_merge_request`, `reopen_merge_request`, `close_merge_request`, `reassign_merge_request`, `merge_merge_request`, `failed_pipeline`, `success_pipeline` | NotificationSetting |  | Update group level notification level settings, defaults to Global |
+| GET | `/v3/groups/{id}/projects` | getV3GroupsIdProjects | `id`*, `archived`, `visibility`, `search`, `order_by`, `sort`, `simple`, `page`, `per_page` | Project | yes | Get a list of projects in this group. |
+| POST | `/v3/groups/{id}/projects/{project_id}` | postV3GroupsIdProjectsProjectId | `id`*, `project_id`* | GroupDetail |  | Transfer a project to the group namespace. Available only for admin. |
+| GET | `/v3/hooks` | getV3Hooks | — | Hook | yes | Get the list of system hooks |
+| POST | `/v3/hooks` | postV3Hooks | `url`*, `token`, `push_events`, `tag_push_events`, `enable_ssl_verification` | Hook |  | Create a new system hook |
+| GET | `/v3/hooks/{id}` | getV3HooksId | `id`* | Hook | yes | Test a hook |
+| DELETE | `/v3/hooks/{id}` | deleteV3HooksId | `id`* | Hook |  | Delete a hook |
+| POST | `/v3/internal/allowed` | postV3InternalAllowed | — | — |  | — |
+| GET | `/v3/internal/broadcast_message` | getV3InternalBroadcastMessage | — | — | yes | — |
+| GET | `/v3/internal/check` | getV3InternalCheck | — | — | yes | — |
+| GET | `/v3/internal/discover` | getV3InternalDiscover | — | — | yes | — |
+| POST | `/v3/internal/lfs_authenticate` | postV3InternalLfsAuthenticate | — | — |  | — |
+| GET | `/v3/internal/merge_request_urls` | getV3InternalMergeRequestUrls | — | — | yes | — |
+| POST | `/v3/internal/two_factor_recovery_codes` | postV3InternalTwoFactorRecoveryCodes | — | — |  | — |
+| GET | `/v3/issues` | getV3Issues | `state`, `labels`, `milestone`, `order_by`, `sort`, `page`, `per_page` | Issue | yes | Get currently authenticated user's issues |
+| GET | `/v3/keys/{id}` | getV3KeysId | `id`* | SSHKeyWithUser | yes | Get single ssh key by id. Only available to admin users |
+| GET | `/v3/licenses` | getV3Licenses | `popular` | RepoLicense | yes | Get the list of the available license template |
+| GET | `/v3/licenses/{name}` | getV3LicensesName | `name`* | RepoLicense | yes | Get the text for a specific license |
+| GET | `/v3/namespaces` | getV3Namespaces | `search`, `page`, `per_page` | Namespace | yes | Get a namespaces list |
+| GET | `/v3/notification_settings` | getV3NotificationSettings | — | GlobalNotificationSetting | yes | Get global notification level settings and email, defaults to Participate |
+| PUT | `/v3/notification_settings` | putV3NotificationSettings | `level`, `notification_email`, `new_note`, `new_issue`, `reopen_issue`, `close_issue`, `reassign_issue`, `new_merge_request`, `reopen_merge_request`, `close_merge_request`, `reassign_merge_request`, `merge_merge_request`, `failed_pipeline`, `success_pipeline` | GlobalNotificationSetting |  | Update global notification level settings and email, defaults to Participate |
+| GET | `/v3/projects` | getV3Projects | `order_by`, `sort`, `archived`, `visibility`, `search`, `page`, `per_page`, `simple` | BasicProjectDetails | yes | Get a projects list for authenticated user |
+| POST | `/v3/projects` | postV3Projects | `name`*, `path`, `description`, `issues_enabled`, `merge_requests_enabled`, `wiki_enabled`, `builds_enabled`, `snippets_enabled`, `shared_runners_enabled`, `container_registry_enabled`, `lfs_enabled`, `public`, `visibility_level`, `public_builds`, `request_access_enabled`, `only_allow_merge_if_build_succeeds`, `only_allow_merge_if_all_discussions_are_resolved`, `namespace_id`, `import_url` | Project |  | Create new project |
+| GET | `/v3/projects/all` | getV3ProjectsAll | `order_by`, `sort`, `archived`, `visibility`, `search`, `page`, `per_page`, `simple`, `statistics` | BasicProjectDetails | yes | Get all projects for admin user |
+| POST | `/v3/projects/fork/{id}` | postV3ProjectsForkId | `id`*, `namespace` | Project |  | Fork new project for the current user or provided namespace. |
+| GET | `/v3/projects/owned` | getV3ProjectsOwned | `order_by`, `sort`, `archived`, `visibility`, `search`, `page`, `per_page`, `simple`, `statistics` | BasicProjectDetails | yes | Get an owned projects list for authenticated user |
+| GET | `/v3/projects/search/{query}` | getV3ProjectsSearchQuery | `query`*, `order_by`, `sort`, `page`, `per_page` | Project | yes | Search for projects the current user has access to |
+| GET | `/v3/projects/starred` | getV3ProjectsStarred | `order_by`, `sort`, `archived`, `visibility`, `search`, `page`, `per_page`, `simple` | BasicProjectDetails | yes | Gets starred project for the authenticated user |
+| POST | `/v3/projects/user/{user_id}` | postV3ProjectsUserUserId | `name`*, `user_id`*, `default_branch`, `description`, `issues_enabled`, `merge_requests_enabled`, `wiki_enabled`, `builds_enabled`, `snippets_enabled`, `shared_runners_enabled`, `container_registry_enabled`, `lfs_enabled`, `public`, `visibility_level`, `public_builds`, `request_access_enabled`, `only_allow_merge_if_build_succeeds`, `only_allow_merge_if_all_discussions_are_resolved`, `namespace_id`, `import_url` | Project |  | Create new project for a specified user. Only available to admin users. |
+| GET | `/v3/projects/visible` | getV3ProjectsVisible | `order_by`, `sort`, `archived`, `visibility`, `search`, `page`, `per_page`, `simple` | BasicProjectDetails | yes | Get a list of visible projects for authenticated user |
+| GET | `/v3/projects/{id}` | getV3ProjectsId | `id`* | ProjectWithAccess | yes | Get a single project |
+| PUT | `/v3/projects/{id}` | putV3ProjectsId | `id`*, `name`, `default_branch`, `path`, `description`, `issues_enabled`, `merge_requests_enabled`, `wiki_enabled`, `builds_enabled`, `snippets_enabled`, `shared_runners_enabled`, `container_registry_enabled`, `lfs_enabled`, `public`, `visibility_level`, `public_builds`, `request_access_enabled`, `only_allow_merge_if_build_succeeds`, `only_allow_merge_if_all_discussions_are_resolved` | Project |  | Update an existing project |
+| DELETE | `/v3/projects/{id}` | deleteV3ProjectsId | `id`* | — |  | Remove a project |
+| POST | `/v3/projects/{id}/(ref/{ref}/)trigger/builds` | postV3ProjectsId(refRef)triggerBuilds | `id`*, `ref`*, `token`* | TriggerRequest |  | Trigger a GitLab project build |
+| GET | `/v3/projects/{id}/access_requests` | getV3ProjectsIdAccessRequests | `id`*, `page`, `per_page` | AccessRequester | yes | Gets a list of access requests for a project. |
+| POST | `/v3/projects/{id}/access_requests` | postV3ProjectsIdAccessRequests | `id`* | AccessRequester |  | Requests access for the authenticated user to a project. |
+| DELETE | `/v3/projects/{id}/access_requests/{user_id}` | deleteV3ProjectsIdAccessRequestsUserId | `id`*, `user_id`* | — |  | Denies an access request for the given user. |
+| PUT | `/v3/projects/{id}/access_requests/{user_id}/approve` | putV3ProjectsIdAccessRequestsUserIdApprove | `id`*, `user_id`*, `access_level` | Member |  | Approves an access request for the given user. |
+| POST | `/v3/projects/{id}/archive` | postV3ProjectsIdArchive | `id`* | Project |  | Archive a project |
+| GET | `/v3/projects/{id}/boards` | getV3ProjectsIdBoards | `id`* | Board | yes | Get all project boards |
+| GET | `/v3/projects/{id}/boards/{board_id}/lists` | getV3ProjectsIdBoardsBoardIdLists | `id`*, `board_id`* | List | yes | Get the lists of a project board |
+| POST | `/v3/projects/{id}/boards/{board_id}/lists` | postV3ProjectsIdBoardsBoardIdLists | `id`*, `board_id`*, `label_id`* | List |  | Create a new board list |
+| GET | `/v3/projects/{id}/boards/{board_id}/lists/{list_id}` | getV3ProjectsIdBoardsBoardIdListsListId | `id`*, `board_id`*, `list_id`* | List | yes | Get a list of a project board |
+| PUT | `/v3/projects/{id}/boards/{board_id}/lists/{list_id}` | putV3ProjectsIdBoardsBoardIdListsListId | `id`*, `board_id`*, `list_id`*, `position`* | List |  | Moves a board list to a new position |
+| DELETE | `/v3/projects/{id}/boards/{board_id}/lists/{list_id}` | deleteV3ProjectsIdBoardsBoardIdListsListId | `id`*, `board_id`*, `list_id`* | List |  | Delete a board list |
+| GET | `/v3/projects/{id}/builds` | getV3ProjectsIdBuilds | `id`*, `scope`, `page`, `per_page` | Build | yes | Get a project builds |
+| GET | `/v3/projects/{id}/builds/artifacts/{ref_name}/download` | getV3ProjectsIdBuildsArtifactsRefNameDownload | `id`*, `ref_name`*, `job`* | — | yes | Download the artifacts file from build |
+| GET | `/v3/projects/{id}/builds/{build_id}` | getV3ProjectsIdBuildsBuildId | `id`*, `build_id`* | Build | yes | Get a specific build of a project |
+| GET | `/v3/projects/{id}/builds/{build_id}/artifacts` | getV3ProjectsIdBuildsBuildIdArtifacts | `id`*, `build_id`* | — | yes | Download the artifacts file from build |
+| POST | `/v3/projects/{id}/builds/{build_id}/artifacts/keep` | postV3ProjectsIdBuildsBuildIdArtifactsKeep | `id`*, `build_id`* | Build |  | Keep the artifacts to prevent them from being deleted |
+| POST | `/v3/projects/{id}/builds/{build_id}/cancel` | postV3ProjectsIdBuildsBuildIdCancel | `id`*, `build_id`* | Build |  | Cancel a specific build of a project |
+| POST | `/v3/projects/{id}/builds/{build_id}/erase` | postV3ProjectsIdBuildsBuildIdErase | `id`*, `build_id`* | Build |  | Erase build (remove artifacts and build trace) |
+| POST | `/v3/projects/{id}/builds/{build_id}/play` | postV3ProjectsIdBuildsBuildIdPlay | `id`*, `build_id`* | Build |  | Trigger a manual build |
+| POST | `/v3/projects/{id}/builds/{build_id}/retry` | postV3ProjectsIdBuildsBuildIdRetry | `id`*, `build_id`* | Build |  | Retry a specific build of a project |
+| GET | `/v3/projects/{id}/builds/{build_id}/trace` | getV3ProjectsIdBuildsBuildIdTrace | `id`*, `build_id`* | — | yes | Get a trace of a specific build of a project |
+| GET | `/v3/projects/{id}/deploy_keys` | getV3ProjectsIdDeployKeys | `id`* | SSHKey | yes | Get a specific project's deploy keys |
+| POST | `/v3/projects/{id}/deploy_keys` | postV3ProjectsIdDeployKeys | `id`*, `key`*, `title`* | SSHKey |  | Add new deploy key to currently authenticated user |
+| GET | `/v3/projects/{id}/deploy_keys/{key_id}` | getV3ProjectsIdDeployKeysKeyId | `id`*, `key_id`* | SSHKey | yes | Get single deploy key |
+| DELETE | `/v3/projects/{id}/deploy_keys/{key_id}` | deleteV3ProjectsIdDeployKeysKeyId | `id`*, `key_id`* | SSHKey |  | Delete deploy key for a project |
+| DELETE | `/v3/projects/{id}/deploy_keys/{key_id}/disable` | deleteV3ProjectsIdDeployKeysKeyIdDisable | `id`*, `key_id`* | SSHKey |  | Disable a deploy key for a project |
+| POST | `/v3/projects/{id}/deploy_keys/{key_id}/enable` | postV3ProjectsIdDeployKeysKeyIdEnable | `id`*, `key_id`* | SSHKey |  | Enable a deploy key for a project |
+| GET | `/v3/projects/{id}/deployments` | getV3ProjectsIdDeployments | `id`*, `page`, `per_page` | Deployment | yes | Get all deployments of the project |
+| GET | `/v3/projects/{id}/deployments/{deployment_id}` | getV3ProjectsIdDeploymentsDeploymentId | `id`*, `deployment_id`* | Deployment | yes | Gets a specific deployment |
+| GET | `/v3/projects/{id}/environments` | getV3ProjectsIdEnvironments | `id`*, `page`, `per_page` | Environment | yes | Get all environments of the project |
+| POST | `/v3/projects/{id}/environments` | postV3ProjectsIdEnvironments | `id`*, `name`*, `external_url`, `slug` | Environment |  | Creates a new environment |
+| PUT | `/v3/projects/{id}/environments/{environment_id}` | putV3ProjectsIdEnvironmentsEnvironmentId | `id`*, `environment_id`*, `name`, `external_url`, `slug` | Environment |  | Updates an existing environment |
+| DELETE | `/v3/projects/{id}/environments/{environment_id}` | deleteV3ProjectsIdEnvironmentsEnvironmentId | `id`*, `environment_id`* | Environment |  | Deletes an existing environment |
+| GET | `/v3/projects/{id}/events` | getV3ProjectsIdEvents | `id`*, `page`, `per_page` | Event | yes | Get events for a single project |
+| DELETE | `/v3/projects/{id}/fork` | deleteV3ProjectsIdFork | `id`* | — |  | Remove a forked_from relationship |
+| POST | `/v3/projects/{id}/fork/{forked_from_id}` | postV3ProjectsIdForkForkedFromId | `id`*, `forked_from_id`* | — |  | Mark this project as forked from another |
+| GET | `/v3/projects/{id}/hooks` | getV3ProjectsIdHooks | `id`*, `page`, `per_page` | ProjectHook | yes | Get project hooks |
+| POST | `/v3/projects/{id}/hooks` | postV3ProjectsIdHooks | `id`*, `url`*, `push_events`, `issues_events`, `merge_requests_events`, `tag_push_events`, `note_events`, `build_events`, `pipeline_events`, `wiki_page_events`, `enable_ssl_verification`, `token` | ProjectHook |  | Add hook to project |
+| GET | `/v3/projects/{id}/hooks/{hook_id}` | getV3ProjectsIdHooksHookId | `id`*, `hook_id`* | ProjectHook | yes | Get a project hook |
+| PUT | `/v3/projects/{id}/hooks/{hook_id}` | putV3ProjectsIdHooksHookId | `id`*, `hook_id`*, `url`*, `push_events`, `issues_events`, `merge_requests_events`, `tag_push_events`, `note_events`, `build_events`, `pipeline_events`, `wiki_page_events`, `enable_ssl_verification`, `token` | ProjectHook |  | Update an existing project hook |
+| DELETE | `/v3/projects/{id}/hooks/{hook_id}` | deleteV3ProjectsIdHooksHookId | `id`*, `hook_id`* | ProjectHook |  | Deletes project hook |
+| GET | `/v3/projects/{id}/issues` | getV3ProjectsIdIssues | `id`*, `state`, `iid`, `labels`, `milestone`, `order_by`, `sort`, `page`, `per_page` | Issue | yes | Get a list of project issues |
+| POST | `/v3/projects/{id}/issues` | postV3ProjectsIdIssues | `id`*, `title`*, `created_at`, `merge_request_for_resolving_discussions`, `description`, `assignee_id`, `milestone_id`, `labels`, `due_date`, `confidential` | Issue |  | Create a new project issue |
+| GET | `/v3/projects/{id}/issues/{issue_id}` | getV3ProjectsIdIssuesIssueId | `id`*, `issue_id`* | Issue | yes | Get a single project issue |
+| PUT | `/v3/projects/{id}/issues/{issue_id}` | putV3ProjectsIdIssuesIssueId | `id`*, `issue_id`*, `title`, `updated_at`, `state_event`, `description`, `assignee_id`, `milestone_id`, `labels`, `due_date`, `confidential`, `created_at` | Issue |  | Update an existing issue |
+| DELETE | `/v3/projects/{id}/issues/{issue_id}` | deleteV3ProjectsIdIssuesIssueId | `id`*, `issue_id`* | — |  | Delete a project issue |
+| POST | `/v3/projects/{id}/issues/{issue_id}/add_spent_time` | postV3ProjectsIdIssuesIssueIdAddSpentTime | `id`*, `issue_id`*, `duration`* | — |  | Add spent time for a project issue |
+| GET | `/v3/projects/{id}/issues/{issue_id}/award_emoji` | getV3ProjectsIdIssuesIssueIdAwardEmoji | `id`*, `issue_id`*, `page`, `per_page` | AwardEmoji | yes | Get a list of project +awardable+ award emoji |
+| POST | `/v3/projects/{id}/issues/{issue_id}/award_emoji` | postV3ProjectsIdIssuesIssueIdAwardEmoji | `name`*, `id`*, `issue_id`* | AwardEmoji |  | Award a new Emoji |
+| GET | `/v3/projects/{id}/issues/{issue_id}/award_emoji/{award_id}` | getV3ProjectsIdIssuesIssueIdAwardEmojiAwardId | `award_id`*, `id`*, `issue_id`* | AwardEmoji | yes | Get a specific award emoji |
+| DELETE | `/v3/projects/{id}/issues/{issue_id}/award_emoji/{award_id}` | deleteV3ProjectsIdIssuesIssueIdAwardEmojiAwardId | `award_id`*, `id`*, `issue_id`* | AwardEmoji |  | Delete a +awardables+ award emoji |
+| POST | `/v3/projects/{id}/issues/{issue_id}/move` | postV3ProjectsIdIssuesIssueIdMove | `id`*, `issue_id`*, `to_project_id`* | Issue |  | Move an existing issue |
+| GET | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji` | getV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmoji | `page`, `per_page`, `id`*, `issue_id`*, `note_id`* | AwardEmoji | yes | Get a list of project +awardable+ award emoji |
+| POST | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji` | postV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmoji | `name`*, `id`*, `issue_id`*, `note_id`* | AwardEmoji |  | Award a new Emoji |
+| GET | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji/{award_id}` | getV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmojiAwardId | `award_id`*, `id`*, `issue_id`*, `note_id`* | AwardEmoji | yes | Get a specific award emoji |
+| DELETE | `/v3/projects/{id}/issues/{issue_id}/notes/{note_id}/award_emoji/{award_id}` | deleteV3ProjectsIdIssuesIssueIdNotesNoteIdAwardEmojiAwardId | `award_id`*, `id`*, `issue_id`*, `note_id`* | AwardEmoji |  | Delete a +awardables+ award emoji |
+| POST | `/v3/projects/{id}/issues/{issue_id}/reset_spent_time` | postV3ProjectsIdIssuesIssueIdResetSpentTime | `id`*, `issue_id`* | — |  | Reset spent time for a project issue |
+| POST | `/v3/projects/{id}/issues/{issue_id}/reset_time_estimate` | postV3ProjectsIdIssuesIssueIdResetTimeEstimate | `id`*, `issue_id`* | — |  | Reset the time estimate for a project issue |
+| POST | `/v3/projects/{id}/issues/{issue_id}/time_estimate` | postV3ProjectsIdIssuesIssueIdTimeEstimate | `id`*, `issue_id`*, `duration`* | — |  | Set a time estimate for a project issue |
+| GET | `/v3/projects/{id}/issues/{issue_id}/time_stats` | getV3ProjectsIdIssuesIssueIdTimeStats | `id`*, `issue_id`* | — | yes | Show time stats for a project issue |
+| POST | `/v3/projects/{id}/issues/{issue_id}/todo` | postV3ProjectsIdIssuesIssueIdTodo | `id`*, `issue_id`* | Todo |  | Create a todo on an issuable |
+| GET | `/v3/projects/{id}/issues/{noteable_id}/notes` | getV3ProjectsIdIssuesNoteableIdNotes | `id`*, `noteable_id`*, `page`, `per_page` | Note | yes | Get a list of project +noteable+ notes |
+| POST | `/v3/projects/{id}/issues/{noteable_id}/notes` | postV3ProjectsIdIssuesNoteableIdNotes | `id`*, `noteable_id`*, `body`*, `created_at` | Note |  | Create a new +noteable+ note |
+| GET | `/v3/projects/{id}/issues/{noteable_id}/notes/{note_id}` | getV3ProjectsIdIssuesNoteableIdNotesNoteId | `id`*, `note_id`*, `noteable_id`* | Note | yes | Get a single +noteable+ note |
+| PUT | `/v3/projects/{id}/issues/{noteable_id}/notes/{note_id}` | putV3ProjectsIdIssuesNoteableIdNotesNoteId | `id`*, `noteable_id`*, `note_id`*, `body`* | Note |  | Update an existing +noteable+ note |
+| DELETE | `/v3/projects/{id}/issues/{noteable_id}/notes/{note_id}` | deleteV3ProjectsIdIssuesNoteableIdNotesNoteId | `id`*, `noteable_id`*, `note_id`* | Note |  | Delete a +noteable+ note |
+| POST | `/v3/projects/{id}/issues/{subscribable_id}/subscription` | postV3ProjectsIdIssuesSubscribableIdSubscription | `id`*, `subscribable_id`* | Issue |  | Subscribe to a resource |
+| DELETE | `/v3/projects/{id}/issues/{subscribable_id}/subscription` | deleteV3ProjectsIdIssuesSubscribableIdSubscription | `id`*, `subscribable_id`* | Issue |  | Unsubscribe from a resource |
+| GET | `/v3/projects/{id}/keys` | getV3ProjectsIdKeys | `id`* | SSHKey | yes | Get a specific project's deploy keys |
+| POST | `/v3/projects/{id}/keys` | postV3ProjectsIdKeys | `id`*, `key`*, `title`* | SSHKey |  | Add new deploy key to currently authenticated user |
+| GET | `/v3/projects/{id}/keys/{key_id}` | getV3ProjectsIdKeysKeyId | `id`*, `key_id`* | SSHKey | yes | Get single deploy key |
+| DELETE | `/v3/projects/{id}/keys/{key_id}` | deleteV3ProjectsIdKeysKeyId | `id`*, `key_id`* | SSHKey |  | Delete deploy key for a project |
+| DELETE | `/v3/projects/{id}/keys/{key_id}/disable` | deleteV3ProjectsIdKeysKeyIdDisable | `id`*, `key_id`* | SSHKey |  | Disable a deploy key for a project |
+| POST | `/v3/projects/{id}/keys/{key_id}/enable` | postV3ProjectsIdKeysKeyIdEnable | `id`*, `key_id`* | SSHKey |  | Enable a deploy key for a project |
+| GET | `/v3/projects/{id}/labels` | getV3ProjectsIdLabels | `id`* | Label | yes | Get all labels of the project |
+| PUT | `/v3/projects/{id}/labels` | putV3ProjectsIdLabels | `id`*, `name`*, `new_name`, `color`, `description`, `priority` | Label |  | Update an existing label. At least one optional parameter is required. |
+| POST | `/v3/projects/{id}/labels` | postV3ProjectsIdLabels | `id`*, `name`*, `color`*, `description`, `priority` | Label |  | Create a new label |
+| DELETE | `/v3/projects/{id}/labels` | deleteV3ProjectsIdLabels | `id`*, `name`* | Label |  | Delete an existing label |
+| POST | `/v3/projects/{id}/labels/{subscribable_id}/subscription` | postV3ProjectsIdLabelsSubscribableIdSubscription | `id`*, `subscribable_id`* | Label |  | Subscribe to a resource |
+| DELETE | `/v3/projects/{id}/labels/{subscribable_id}/subscription` | deleteV3ProjectsIdLabelsSubscribableIdSubscription | `id`*, `subscribable_id`* | Label |  | Unsubscribe from a resource |
+| GET | `/v3/projects/{id}/members` | getV3ProjectsIdMembers | `id`*, `query`, `page`, `per_page` | Member | yes | Gets a list of group or project members viewable by the authenticated user. |
+| POST | `/v3/projects/{id}/members` | postV3ProjectsIdMembers | `id`*, `user_id`*, `access_level`*, `expires_at` | Member |  | Adds a member to a group or project. |
+| GET | `/v3/projects/{id}/members/{user_id}` | getV3ProjectsIdMembersUserId | `id`*, `user_id`* | Member | yes | Gets a member of a group or project. |
+| PUT | `/v3/projects/{id}/members/{user_id}` | putV3ProjectsIdMembersUserId | `id`*, `user_id`*, `access_level`*, `expires_at` | Member |  | Updates a member of a group or project. |
+| DELETE | `/v3/projects/{id}/members/{user_id}` | deleteV3ProjectsIdMembersUserId | `id`*, `user_id`* | — |  | Removes a user from a group or project. |
+| GET | `/v3/projects/{id}/merge_request/{merge_request_id}` | getV3ProjectsIdMergeRequestMergeRequestId | `id`*, `merge_request_id`* | MergeRequest | yes | Get a single merge request |
+| PUT | `/v3/projects/{id}/merge_request/{merge_request_id}` | putV3ProjectsIdMergeRequestMergeRequestId | `id`*, `title`, `target_branch`, `state_event`, `description`, `assignee_id`, `milestone_id`, `labels`, `remove_source_branch`, `merge_request_id`* | MergeRequest |  | Update a merge request |
+| POST | `/v3/projects/{id}/merge_request/{merge_request_id}/cancel_merge_when_build_succeeds` | postV3ProjectsIdMergeRequestMergeRequestIdCancelMergeWhenBuildSucceeds | `id`*, `merge_request_id`* | MergeRequest |  | Cancel merge if "Merge When Pipeline Succeeds" is enabled |
+| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/changes` | getV3ProjectsIdMergeRequestMergeRequestIdChanges | `id`*, `merge_request_id`* | MergeRequestChanges | yes | Show the merge request changes |
+| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/closes_issues` | getV3ProjectsIdMergeRequestMergeRequestIdClosesIssues | `id`*, `page`, `per_page`, `merge_request_id`* | MRNote | yes | List issues that will be closed on merge |
+| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/comments` | getV3ProjectsIdMergeRequestMergeRequestIdComments | `id`*, `page`, `per_page`, `merge_request_id`* | MRNote | yes | Get the comments of a merge request |
+| POST | `/v3/projects/{id}/merge_request/{merge_request_id}/comments` | postV3ProjectsIdMergeRequestMergeRequestIdComments | `id`*, `note`*, `merge_request_id`* | MRNote |  | Post a comment to a merge request |
+| GET | `/v3/projects/{id}/merge_request/{merge_request_id}/commits` | getV3ProjectsIdMergeRequestMergeRequestIdCommits | `id`*, `merge_request_id`* | RepoCommit | yes | Get the commits of a merge request |
+| PUT | `/v3/projects/{id}/merge_request/{merge_request_id}/merge` | putV3ProjectsIdMergeRequestMergeRequestIdMerge | `id`*, `merge_commit_message`, `should_remove_source_branch`, `merge_when_build_succeeds`, `sha`, `merge_request_id`* | MergeRequest |  | Merge a merge request |
+| POST | `/v3/projects/{id}/merge_request/{subscribable_id}/subscription` | postV3ProjectsIdMergeRequestSubscribableIdSubscription | `id`*, `subscribable_id`* | MergeRequest |  | Subscribe to a resource |
+| DELETE | `/v3/projects/{id}/merge_request/{subscribable_id}/subscription` | deleteV3ProjectsIdMergeRequestSubscribableIdSubscription | `id`*, `subscribable_id`* | MergeRequest |  | Unsubscribe from a resource |
+| GET | `/v3/projects/{id}/merge_requests` | getV3ProjectsIdMergeRequests | `id`*, `state`, `order_by`, `sort`, `iid`, `page`, `per_page` | MergeRequest | yes | List merge requests |
+| POST | `/v3/projects/{id}/merge_requests` | postV3ProjectsIdMergeRequests | `id`*, `title`*, `source_branch`*, `target_branch`*, `target_project_id`, `description`, `assignee_id`, `milestone_id`, `labels`, `remove_source_branch` | MergeRequest |  | Create a merge request |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}` | getV3ProjectsIdMergeRequestsMergeRequestId | `id`*, `merge_request_id`* | MergeRequest | yes | Get a single merge request |
+| PUT | `/v3/projects/{id}/merge_requests/{merge_request_id}` | putV3ProjectsIdMergeRequestsMergeRequestId | `id`*, `title`, `target_branch`, `state_event`, `description`, `assignee_id`, `milestone_id`, `labels`, `remove_source_branch`, `merge_request_id`* | MergeRequest |  | Update a merge request |
+| DELETE | `/v3/projects/{id}/merge_requests/{merge_request_id}` | deleteV3ProjectsIdMergeRequestsMergeRequestId | `id`*, `merge_request_id`* | — |  | Delete a merge request |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/add_spent_time` | postV3ProjectsIdMergeRequestsMergeRequestIdAddSpentTime | `id`*, `merge_request_id`*, `duration`* | — |  | Add spent time for a project merge_request |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji` | getV3ProjectsIdMergeRequestsMergeRequestIdAwardEmoji | `id`*, `merge_request_id`*, `page`, `per_page` | AwardEmoji | yes | Get a list of project +awardable+ award emoji |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji` | postV3ProjectsIdMergeRequestsMergeRequestIdAwardEmoji | `name`*, `id`*, `merge_request_id`* | AwardEmoji |  | Award a new Emoji |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji/{award_id}` | getV3ProjectsIdMergeRequestsMergeRequestIdAwardEmojiAwardId | `award_id`*, `id`*, `merge_request_id`* | AwardEmoji | yes | Get a specific award emoji |
+| DELETE | `/v3/projects/{id}/merge_requests/{merge_request_id}/award_emoji/{award_id}` | deleteV3ProjectsIdMergeRequestsMergeRequestIdAwardEmojiAwardId | `award_id`*, `id`*, `merge_request_id`* | AwardEmoji |  | Delete a +awardables+ award emoji |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/cancel_merge_when_build_succeeds` | postV3ProjectsIdMergeRequestsMergeRequestIdCancelMergeWhenBuildSucceeds | `id`*, `merge_request_id`* | MergeRequest |  | Cancel merge if "Merge When Pipeline Succeeds" is enabled |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/changes` | getV3ProjectsIdMergeRequestsMergeRequestIdChanges | `id`*, `merge_request_id`* | MergeRequestChanges | yes | Show the merge request changes |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/closes_issues` | getV3ProjectsIdMergeRequestsMergeRequestIdClosesIssues | `id`*, `page`, `per_page`, `merge_request_id`* | MRNote | yes | List issues that will be closed on merge |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/comments` | getV3ProjectsIdMergeRequestsMergeRequestIdComments | `id`*, `page`, `per_page`, `merge_request_id`* | MRNote | yes | Get the comments of a merge request |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/comments` | postV3ProjectsIdMergeRequestsMergeRequestIdComments | `id`*, `note`*, `merge_request_id`* | MRNote |  | Post a comment to a merge request |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/commits` | getV3ProjectsIdMergeRequestsMergeRequestIdCommits | `id`*, `merge_request_id`* | RepoCommit | yes | Get the commits of a merge request |
+| PUT | `/v3/projects/{id}/merge_requests/{merge_request_id}/merge` | putV3ProjectsIdMergeRequestsMergeRequestIdMerge | `id`*, `merge_commit_message`, `should_remove_source_branch`, `merge_when_build_succeeds`, `sha`, `merge_request_id`* | MergeRequest |  | Merge a merge request |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji` | getV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmoji | `page`, `per_page`, `id`*, `merge_request_id`*, `note_id`* | AwardEmoji | yes | Get a list of project +awardable+ award emoji |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji` | postV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmoji | `name`*, `id`*, `merge_request_id`*, `note_id`* | AwardEmoji |  | Award a new Emoji |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji/{award_id}` | getV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmojiAwardId | `award_id`*, `id`*, `merge_request_id`*, `note_id`* | AwardEmoji | yes | Get a specific award emoji |
+| DELETE | `/v3/projects/{id}/merge_requests/{merge_request_id}/notes/{note_id}/award_emoji/{award_id}` | deleteV3ProjectsIdMergeRequestsMergeRequestIdNotesNoteIdAwardEmojiAwardId | `award_id`*, `id`*, `merge_request_id`*, `note_id`* | AwardEmoji |  | Delete a +awardables+ award emoji |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/reset_spent_time` | postV3ProjectsIdMergeRequestsMergeRequestIdResetSpentTime | `id`*, `merge_request_id`* | — |  | Reset spent time for a project merge_request |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/reset_time_estimate` | postV3ProjectsIdMergeRequestsMergeRequestIdResetTimeEstimate | `id`*, `merge_request_id`* | — |  | Reset the time estimate for a project merge_request |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/time_estimate` | postV3ProjectsIdMergeRequestsMergeRequestIdTimeEstimate | `id`*, `merge_request_id`*, `duration`* | — |  | Set a time estimate for a project merge_request |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/time_stats` | getV3ProjectsIdMergeRequestsMergeRequestIdTimeStats | `id`*, `merge_request_id`* | — | yes | Show time stats for a project merge_request |
+| POST | `/v3/projects/{id}/merge_requests/{merge_request_id}/todo` | postV3ProjectsIdMergeRequestsMergeRequestIdTodo | `id`*, `merge_request_id`* | Todo |  | Create a todo on an issuable |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/versions` | getV3ProjectsIdMergeRequestsMergeRequestIdVersions | `id`*, `merge_request_id`* | MergeRequestDiff | yes | Get a list of merge request diff versions |
+| GET | `/v3/projects/{id}/merge_requests/{merge_request_id}/versions/{version_id}` | getV3ProjectsIdMergeRequestsMergeRequestIdVersionsVersionId | `id`*, `merge_request_id`*, `version_id`* | MergeRequestDiffFull | yes | Get a single merge request diff version |
+| GET | `/v3/projects/{id}/merge_requests/{noteable_id}/notes` | getV3ProjectsIdMergeRequestsNoteableIdNotes | `id`*, `noteable_id`*, `page`, `per_page` | Note | yes | Get a list of project +noteable+ notes |
+| POST | `/v3/projects/{id}/merge_requests/{noteable_id}/notes` | postV3ProjectsIdMergeRequestsNoteableIdNotes | `id`*, `noteable_id`*, `body`*, `created_at` | Note |  | Create a new +noteable+ note |
+| GET | `/v3/projects/{id}/merge_requests/{noteable_id}/notes/{note_id}` | getV3ProjectsIdMergeRequestsNoteableIdNotesNoteId | `id`*, `note_id`*, `noteable_id`* | Note | yes | Get a single +noteable+ note |
+| PUT | `/v3/projects/{id}/merge_requests/{noteable_id}/notes/{note_id}` | putV3ProjectsIdMergeRequestsNoteableIdNotesNoteId | `id`*, `noteable_id`*, `note_id`*, `body`* | Note |  | Update an existing +noteable+ note |
+| DELETE | `/v3/projects/{id}/merge_requests/{noteable_id}/notes/{note_id}` | deleteV3ProjectsIdMergeRequestsNoteableIdNotesNoteId | `id`*, `noteable_id`*, `note_id`* | Note |  | Delete a +noteable+ note |
+| POST | `/v3/projects/{id}/merge_requests/{subscribable_id}/subscription` | postV3ProjectsIdMergeRequestsSubscribableIdSubscription | `id`*, `subscribable_id`* | MergeRequest |  | Subscribe to a resource |
+| DELETE | `/v3/projects/{id}/merge_requests/{subscribable_id}/subscription` | deleteV3ProjectsIdMergeRequestsSubscribableIdSubscription | `id`*, `subscribable_id`* | MergeRequest |  | Unsubscribe from a resource |
+| GET | `/v3/projects/{id}/milestones` | getV3ProjectsIdMilestones | `id`*, `state`, `iid`, `page`, `per_page` | Milestone | yes | Get a list of project milestones |
+| POST | `/v3/projects/{id}/milestones` | postV3ProjectsIdMilestones | `id`*, `title`*, `description`, `due_date`, `start_date` | Milestone |  | Create a new project milestone |
+| GET | `/v3/projects/{id}/milestones/{milestone_id}` | getV3ProjectsIdMilestonesMilestoneId | `id`*, `milestone_id`* | Milestone | yes | Get a single project milestone |
+| PUT | `/v3/projects/{id}/milestones/{milestone_id}` | putV3ProjectsIdMilestonesMilestoneId | `id`*, `milestone_id`*, `title`, `state_event`, `description`, `due_date`, `start_date` | Milestone |  | Update an existing project milestone |
+| GET | `/v3/projects/{id}/milestones/{milestone_id}/issues` | getV3ProjectsIdMilestonesMilestoneIdIssues | `id`*, `milestone_id`*, `page`, `per_page` | Issue | yes | Get all issues for a single project milestone |
+| GET | `/v3/projects/{id}/notification_settings` | getV3ProjectsIdNotificationSettings | `id`* | NotificationSetting | yes | Get project level notification level settings, defaults to Global |
+| PUT | `/v3/projects/{id}/notification_settings` | putV3ProjectsIdNotificationSettings | `id`*, `level`, `new_note`, `new_issue`, `reopen_issue`, `close_issue`, `reassign_issue`, `new_merge_request`, `reopen_merge_request`, `close_merge_request`, `reassign_merge_request`, `merge_merge_request`, `failed_pipeline`, `success_pipeline` | NotificationSetting |  | Update project level notification level settings, defaults to Global |
+| POST | `/v3/projects/{id}/pipeline` | postV3ProjectsIdPipeline | `id`*, `ref`* | Pipeline |  | Create a new pipeline |
+| GET | `/v3/projects/{id}/pipelines` | getV3ProjectsIdPipelines | `id`*, `page`, `per_page`, `scope` | Pipeline | yes | Get all Pipelines of the project |
+| GET | `/v3/projects/{id}/pipelines/{pipeline_id}` | getV3ProjectsIdPipelinesPipelineId | `id`*, `pipeline_id`* | Pipeline | yes | Gets a specific pipeline for the project |
+| POST | `/v3/projects/{id}/pipelines/{pipeline_id}/cancel` | postV3ProjectsIdPipelinesPipelineIdCancel | `id`*, `pipeline_id`* | Pipeline |  | Cancel all builds in the pipeline |
+| POST | `/v3/projects/{id}/pipelines/{pipeline_id}/retry` | postV3ProjectsIdPipelinesPipelineIdRetry | `id`*, `pipeline_id`* | Pipeline |  | Retry failed builds in the pipeline |
+| GET | `/v3/projects/{id}/repository/archive` | getV3ProjectsIdRepositoryArchive | `id`*, `sha`, `format` | — | yes | Get an archive of the repository |
+| GET | `/v3/projects/{id}/repository/blobs/{sha}` | getV3ProjectsIdRepositoryBlobsSha | `id`*, `sha`*, `filepath`* | — | yes | Get a raw file contents |
+| GET | `/v3/projects/{id}/repository/branches` | getV3ProjectsIdRepositoryBranches | `id`* | RepoBranch | yes | Get a project repository branches |
+| POST | `/v3/projects/{id}/repository/branches` | postV3ProjectsIdRepositoryBranches | `id`*, `branch_name`*, `ref`* | RepoBranch |  | Create branch |
+| GET | `/v3/projects/{id}/repository/branches/{branch}` | getV3ProjectsIdRepositoryBranchesBranch | `id`*, `branch`* | RepoBranch | yes | Get a single branch |
+| DELETE | `/v3/projects/{id}/repository/branches/{branch}` | deleteV3ProjectsIdRepositoryBranchesBranch | `id`*, `branch`* | — |  | Delete a branch |
+| PUT | `/v3/projects/{id}/repository/branches/{branch}/protect` | putV3ProjectsIdRepositoryBranchesBranchProtect | `id`*, `branch`*, `developers_can_push`, `developers_can_merge` | RepoBranch |  | Protect a single branch |
+| PUT | `/v3/projects/{id}/repository/branches/{branch}/unprotect` | putV3ProjectsIdRepositoryBranchesBranchUnprotect | `id`*, `branch`* | RepoBranch |  | Unprotect a single branch |
+| GET | `/v3/projects/{id}/repository/commits` | getV3ProjectsIdRepositoryCommits | `id`*, `ref_name`, `since`, `until`, `page`, `per_page`, `path` | RepoCommit | yes | Get a project repository commits |
+| POST | `/v3/projects/{id}/repository/commits` | postV3ProjectsIdRepositoryCommits | `id`*, `branch_name`*, `commit_message`*, `actions`*, `author_email`, `author_name` | RepoCommitDetail |  | Commit multiple file changes as one commit |
+| GET | `/v3/projects/{id}/repository/commits/{sha}` | getV3ProjectsIdRepositoryCommitsSha | `id`*, `sha`* | RepoCommitDetail | yes | Get a specific commit of a project |
+| GET | `/v3/projects/{id}/repository/commits/{sha}/blob` | getV3ProjectsIdRepositoryCommitsShaBlob | `id`*, `sha`*, `filepath`* | — | yes | Get a raw file contents |
+| GET | `/v3/projects/{id}/repository/commits/{sha}/builds` | getV3ProjectsIdRepositoryCommitsShaBuilds | `id`*, `sha`*, `scope`, `page`, `per_page` | Build | yes | Get builds for a specific commit of a project |
+| POST | `/v3/projects/{id}/repository/commits/{sha}/cherry_pick` | postV3ProjectsIdRepositoryCommitsShaCherryPick | `id`*, `sha`*, `branch`* | RepoCommit |  | Cherry pick commit into a branch |
+| GET | `/v3/projects/{id}/repository/commits/{sha}/comments` | getV3ProjectsIdRepositoryCommitsShaComments | `id`*, `page`, `per_page`, `sha`* | CommitNote | yes | Get a commit's comments |
+| POST | `/v3/projects/{id}/repository/commits/{sha}/comments` | postV3ProjectsIdRepositoryCommitsShaComments | `id`*, `sha`*, `note`*, `path`, `line`*, `line_type`* | CommitNote |  | Post comment to commit |
+| GET | `/v3/projects/{id}/repository/commits/{sha}/diff` | getV3ProjectsIdRepositoryCommitsShaDiff | `id`*, `sha`* | — | yes | Get the diff for a specific commit of a project |
+| GET | `/v3/projects/{id}/repository/commits/{sha}/statuses` | getV3ProjectsIdRepositoryCommitsShaStatuses | `id`*, `sha`*, `ref`, `stage`, `name`, `all`, `page`, `per_page` | CommitStatus | yes | Get a commit's statuses |
+| GET | `/v3/projects/{id}/repository/compare` | getV3ProjectsIdRepositoryCompare | `id`*, `from`*, `to`* | Compare | yes | Compare two branches, tags, or commits |
+| GET | `/v3/projects/{id}/repository/contributors` | getV3ProjectsIdRepositoryContributors | `id`* | Contributor | yes | Get repository contributors |
+| GET | `/v3/projects/{id}/repository/files` | getV3ProjectsIdRepositoryFiles | `id`*, `file_path`*, `ref`* | — | yes | Get a file from repository |
+| PUT | `/v3/projects/{id}/repository/files` | putV3ProjectsIdRepositoryFiles | `id`*, `file_path`*, `branch_name`*, `commit_message`*, `author_email`, `author_name`, `content`*, `encoding` | — |  | Update existing file in repository |
+| POST | `/v3/projects/{id}/repository/files` | postV3ProjectsIdRepositoryFiles | `id`*, `file_path`*, `branch_name`*, `commit_message`*, `author_email`, `author_name`, `content`*, `encoding` | — |  | Create new file in repository |
+| DELETE | `/v3/projects/{id}/repository/files` | deleteV3ProjectsIdRepositoryFiles | `id`*, `file_path`*, `branch_name`*, `commit_message`*, `author_email`, `author_name` | — |  | Delete an existing file in repository |
+| DELETE | `/v3/projects/{id}/repository/merged_branches` | deleteV3ProjectsIdRepositoryMergedBranches | `id`* | — |  | — |
+| GET | `/v3/projects/{id}/repository/raw_blobs/{sha}` | getV3ProjectsIdRepositoryRawBlobsSha | `id`*, `sha`* | — | yes | Get a raw blob contents by blob sha |
+| GET | `/v3/projects/{id}/repository/tags` | getV3ProjectsIdRepositoryTags | `id`* | RepoTag | yes | Get a project repository tags |
+| POST | `/v3/projects/{id}/repository/tags` | postV3ProjectsIdRepositoryTags | `id`*, `tag_name`*, `ref`*, `message`, `release_description` | RepoTag |  | Create a new repository tag |
+| GET | `/v3/projects/{id}/repository/tags/{tag_name}` | getV3ProjectsIdRepositoryTagsTagName | `id`*, `tag_name`* | RepoTag | yes | Get a single repository tag |
+| DELETE | `/v3/projects/{id}/repository/tags/{tag_name}` | deleteV3ProjectsIdRepositoryTagsTagName | `id`*, `tag_name`* | — |  | Delete a repository tag |
+| PUT | `/v3/projects/{id}/repository/tags/{tag_name}/release` | putV3ProjectsIdRepositoryTagsTagNameRelease | `id`*, `tag_name`*, `description`* | Release |  | Update a tag's release note |
+| POST | `/v3/projects/{id}/repository/tags/{tag_name}/release` | postV3ProjectsIdRepositoryTagsTagNameRelease | `id`*, `tag_name`*, `description`* | Release |  | Add a release note to a tag |
+| GET | `/v3/projects/{id}/repository/tree` | getV3ProjectsIdRepositoryTree | `id`*, `ref_name`, `path`, `recursive` | RepoTreeObject | yes | Get a project repository tree |
+| GET | `/v3/projects/{id}/runners` | getV3ProjectsIdRunners | `id`*, `scope`, `page`, `per_page` | Runner | yes | Get runners available for project |
+| POST | `/v3/projects/{id}/runners` | postV3ProjectsIdRunners | `id`*, `runner_id`* | Runner |  | Enable a runner for a project |
+| DELETE | `/v3/projects/{id}/runners/{runner_id}` | deleteV3ProjectsIdRunnersRunnerId | `id`*, `runner_id`* | Runner |  | Disable project's runner |
+| PUT | `/v3/projects/{id}/services/asana` | putV3ProjectsIdServicesAsana | `api_key`*, `restrict_to_branch`, `push_events`, `id`* | — |  | Set asana service for project |
+| PUT | `/v3/projects/{id}/services/assembla` | putV3ProjectsIdServicesAssembla | `token`*, `subdomain`, `push_events`, `id`* | — |  | Set assembla service for project |
+| PUT | `/v3/projects/{id}/services/bamboo` | putV3ProjectsIdServicesBamboo | `bamboo_url`*, `build_key`*, `username`*, `password`*, `push_events`, `id`* | — |  | Set bamboo service for project |
+| PUT | `/v3/projects/{id}/services/bugzilla` | putV3ProjectsIdServicesBugzilla | `new_issue_url`*, `issues_url`*, `project_url`*, `description`, `title`, `push_events`, `id`* | — |  | Set bugzilla service for project |
+| PUT | `/v3/projects/{id}/services/buildkite` | putV3ProjectsIdServicesBuildkite | `token`*, `project_url`*, `enable_ssl_verification`, `push_events`, `id`* | — |  | Set buildkite service for project |
+| PUT | `/v3/projects/{id}/services/builds-email` | putV3ProjectsIdServicesBuildsEmail | `recipients`*, `add_pusher`, `notify_only_broken_builds`, `build_events`, `id`* | — |  | Set builds-email service for project |
+| PUT | `/v3/projects/{id}/services/campfire` | putV3ProjectsIdServicesCampfire | `token`*, `subdomain`, `room`, `push_events`, `id`* | — |  | Set campfire service for project |
+| PUT | `/v3/projects/{id}/services/custom-issue-tracker` | putV3ProjectsIdServicesCustomIssueTracker | `new_issue_url`*, `issues_url`*, `project_url`*, `description`, `title`, `push_events`, `id`* | — |  | Set custom-issue-tracker service for project |
+| PUT | `/v3/projects/{id}/services/drone-ci` | putV3ProjectsIdServicesDroneCi | `token`*, `drone_url`*, `enable_ssl_verification`, `push_events`, `merge_request_events`, `tag_push_events`, `id`* | — |  | Set drone-ci service for project |
+| PUT | `/v3/projects/{id}/services/emails-on-push` | putV3ProjectsIdServicesEmailsOnPush | `recipients`*, `disable_diffs`, `send_from_committer_email`, `push_events`, `tag_push_events`, `id`* | — |  | Set emails-on-push service for project |
+| PUT | `/v3/projects/{id}/services/external-wiki` | putV3ProjectsIdServicesExternalWiki | `external_wiki_url`*, `id`* | — |  | Set external-wiki service for project |
+| PUT | `/v3/projects/{id}/services/flowdock` | putV3ProjectsIdServicesFlowdock | `token`*, `push_events`, `id`* | — |  | Set flowdock service for project |
+| PUT | `/v3/projects/{id}/services/gemnasium` | putV3ProjectsIdServicesGemnasium | `api_key`*, `token`*, `push_events`, `id`* | — |  | Set gemnasium service for project |
+| PUT | `/v3/projects/{id}/services/hipchat` | putV3ProjectsIdServicesHipchat | `token`*, `room`, `color`, `notify`, `api_version`, `server`, `push_events`, `issue_events`, `confidential_issue_events`, `merge_request_events`, `note_events`, `tag_push_events`, `build_events`, `id`* | — |  | Set hipchat service for project |
+| PUT | `/v3/projects/{id}/services/irker` | putV3ProjectsIdServicesIrker | `recipients`*, `default_irc_uri`, `server_host`, `server_port`, `colorize_messages`, `push_events`, `id`* | — |  | Set irker service for project |
+| PUT | `/v3/projects/{id}/services/jira` | putV3ProjectsIdServicesJira | `url`*, `project_key`*, `username`, `password`, `jira_issue_transition_id`, `commit_events`, `merge_request_events`, `id`* | — |  | Set jira service for project |
+| PUT | `/v3/projects/{id}/services/kubernetes` | putV3ProjectsIdServicesKubernetes | `namespace`*, `api_url`*, `token`*, `ca_pem`, `id`* | — |  | Set kubernetes service for project |
+| PUT | `/v3/projects/{id}/services/mattermost` | putV3ProjectsIdServicesMattermost | `webhook`*, `push_events`, `issue_events`, `confidential_issue_events`, `merge_request_events`, `note_events`, `tag_push_events`, `build_events`, `pipeline_events`, `wiki_page_events`, `id`* | — |  | Set mattermost service for project |
+| PUT | `/v3/projects/{id}/services/mattermost-slash-commands` | putV3ProjectsIdServicesMattermostSlashCommands | `token`*, `id`* | — |  | Set mattermost-slash-commands service for project |
+| POST | `/v3/projects/{id}/services/mattermost_slash_commands/trigger` | postV3ProjectsIdServicesMattermostSlashCommandsTrigger | `id`*, `token`* | — |  | Trigger a slash command for mattermost-slash-commands |
+| PUT | `/v3/projects/{id}/services/pipelines-email` | putV3ProjectsIdServicesPipelinesEmail | `recipients`*, `notify_only_broken_builds`, `pipeline_events`, `id`* | — |  | Set pipelines-email service for project |
+| PUT | `/v3/projects/{id}/services/pivotaltracker` | putV3ProjectsIdServicesPivotaltracker | `token`*, `restrict_to_branch`, `push_events`, `id`* | — |  | Set pivotaltracker service for project |
+| PUT | `/v3/projects/{id}/services/pushover` | putV3ProjectsIdServicesPushover | `api_key`*, `user_key`*, `priority`*, `device`*, `sound`*, `push_events`, `id`* | — |  | Set pushover service for project |
+| PUT | `/v3/projects/{id}/services/redmine` | putV3ProjectsIdServicesRedmine | `new_issue_url`*, `project_url`*, `issues_url`*, `description`, `push_events`, `id`* | — |  | Set redmine service for project |
+| PUT | `/v3/projects/{id}/services/slack` | putV3ProjectsIdServicesSlack | `webhook`*, `new_issue_url`, `channel`, `push_events`, `issue_events`, `confidential_issue_events`, `merge_request_events`, `note_events`, `tag_push_events`, `build_events`, `pipeline_events`, `wiki_page_events`, `id`* | — |  | Set slack service for project |
+| PUT | `/v3/projects/{id}/services/slack-slash-commands` | putV3ProjectsIdServicesSlackSlashCommands | `token`*, `id`* | — |  | Set slack-slash-commands service for project |
+| POST | `/v3/projects/{id}/services/slack_slash_commands/trigger` | postV3ProjectsIdServicesSlackSlashCommandsTrigger | `id`*, `token`* | — |  | Trigger a slash command for slack-slash-commands |
+| PUT | `/v3/projects/{id}/services/teamcity` | putV3ProjectsIdServicesTeamcity | `teamcity_url`*, `build_type`*, `username`*, `password`*, `push_events`, `id`* | — |  | Set teamcity service for project |
+| GET | `/v3/projects/{id}/services/{service_slug}` | getV3ProjectsIdServicesServiceSlug | `service_slug`*, `id`* | ProjectService | yes | Get the service settings for project |
+| DELETE | `/v3/projects/{id}/services/{service_slug}` | deleteV3ProjectsIdServicesServiceSlug | `service_slug`*, `id`* | — |  | Delete a service for project |
+| POST | `/v3/projects/{id}/share` | postV3ProjectsIdShare | `id`*, `group_id`*, `group_access`*, `expires_at` | ProjectGroupLink |  | Share the project with a group |
+| DELETE | `/v3/projects/{id}/share/{group_id}` | deleteV3ProjectsIdShareGroupId | `id`*, `group_id`* | — |  | — |
+| GET | `/v3/projects/{id}/snippets` | getV3ProjectsIdSnippets | `id`*, `page`, `per_page` | ProjectSnippet | yes | Get all project snippets |
+| POST | `/v3/projects/{id}/snippets` | postV3ProjectsIdSnippets | `id`*, `title`*, `file_name`*, `code`*, `visibility_level`* | ProjectSnippet |  | Create a new project snippet |
+| GET | `/v3/projects/{id}/snippets/{noteable_id}/notes` | getV3ProjectsIdSnippetsNoteableIdNotes | `id`*, `noteable_id`*, `page`, `per_page` | Note | yes | Get a list of project +noteable+ notes |
+| POST | `/v3/projects/{id}/snippets/{noteable_id}/notes` | postV3ProjectsIdSnippetsNoteableIdNotes | `id`*, `noteable_id`*, `body`*, `created_at` | Note |  | Create a new +noteable+ note |
+| GET | `/v3/projects/{id}/snippets/{noteable_id}/notes/{note_id}` | getV3ProjectsIdSnippetsNoteableIdNotesNoteId | `id`*, `note_id`*, `noteable_id`* | Note | yes | Get a single +noteable+ note |
+| PUT | `/v3/projects/{id}/snippets/{noteable_id}/notes/{note_id}` | putV3ProjectsIdSnippetsNoteableIdNotesNoteId | `id`*, `noteable_id`*, `note_id`*, `body`* | Note |  | Update an existing +noteable+ note |
+| DELETE | `/v3/projects/{id}/snippets/{noteable_id}/notes/{note_id}` | deleteV3ProjectsIdSnippetsNoteableIdNotesNoteId | `id`*, `noteable_id`*, `note_id`* | Note |  | Delete a +noteable+ note |
+| GET | `/v3/projects/{id}/snippets/{snippet_id}` | getV3ProjectsIdSnippetsSnippetId | `id`*, `snippet_id`* | ProjectSnippet | yes | Get a single project snippet |
+| PUT | `/v3/projects/{id}/snippets/{snippet_id}` | putV3ProjectsIdSnippetsSnippetId | `id`*, `snippet_id`*, `title`, `file_name`, `code`, `visibility_level` | ProjectSnippet |  | Update an existing project snippet |
+| DELETE | `/v3/projects/{id}/snippets/{snippet_id}` | deleteV3ProjectsIdSnippetsSnippetId | `id`*, `snippet_id`* | — |  | Delete a project snippet |
+| GET | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji` | getV3ProjectsIdSnippetsSnippetIdAwardEmoji | `id`*, `snippet_id`*, `page`, `per_page` | AwardEmoji | yes | Get a list of project +awardable+ award emoji |
+| POST | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji` | postV3ProjectsIdSnippetsSnippetIdAwardEmoji | `name`*, `id`*, `snippet_id`* | AwardEmoji |  | Award a new Emoji |
+| GET | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji/{award_id}` | getV3ProjectsIdSnippetsSnippetIdAwardEmojiAwardId | `award_id`*, `id`*, `snippet_id`* | AwardEmoji | yes | Get a specific award emoji |
+| DELETE | `/v3/projects/{id}/snippets/{snippet_id}/award_emoji/{award_id}` | deleteV3ProjectsIdSnippetsSnippetIdAwardEmojiAwardId | `award_id`*, `id`*, `snippet_id`* | AwardEmoji |  | Delete a +awardables+ award emoji |
+| GET | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji` | getV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmoji | `page`, `per_page`, `id`*, `snippet_id`*, `note_id`* | AwardEmoji | yes | Get a list of project +awardable+ award emoji |
+| POST | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji` | postV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmoji | `name`*, `id`*, `snippet_id`*, `note_id`* | AwardEmoji |  | Award a new Emoji |
+| GET | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji/{award_id}` | getV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmojiAwardId | `award_id`*, `id`*, `snippet_id`*, `note_id`* | AwardEmoji | yes | Get a specific award emoji |
+| DELETE | `/v3/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji/{award_id}` | deleteV3ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmojiAwardId | `award_id`*, `id`*, `snippet_id`*, `note_id`* | AwardEmoji |  | Delete a +awardables+ award emoji |
+| GET | `/v3/projects/{id}/snippets/{snippet_id}/raw` | getV3ProjectsIdSnippetsSnippetIdRaw | `id`*, `snippet_id`* | — | yes | Get a raw project snippet |
+| POST | `/v3/projects/{id}/star` | postV3ProjectsIdStar | `id`* | Project |  | Star a project |
+| DELETE | `/v3/projects/{id}/star` | deleteV3ProjectsIdStar | `id`* | Project |  | Unstar a project |
+| POST | `/v3/projects/{id}/statuses/{sha}` | postV3ProjectsIdStatusesSha | `id`*, `sha`*, `state`*, `ref`, `target_url`, `description`, `name`, `context` | CommitStatus |  | Post status to a commit |
+| GET | `/v3/projects/{id}/triggers` | getV3ProjectsIdTriggers | `id`*, `page`, `per_page` | Trigger | yes | Get triggers list |
+| POST | `/v3/projects/{id}/triggers` | postV3ProjectsIdTriggers | `id`* | Trigger |  | Create a trigger |
+| GET | `/v3/projects/{id}/triggers/{token}` | getV3ProjectsIdTriggersToken | `id`*, `token`* | Trigger | yes | Get specific trigger of a project |
+| DELETE | `/v3/projects/{id}/triggers/{token}` | deleteV3ProjectsIdTriggersToken | `id`*, `token`* | Trigger |  | Delete a trigger |
+| POST | `/v3/projects/{id}/unarchive` | postV3ProjectsIdUnarchive | `id`* | Project |  | Unarchive a project |
+| POST | `/v3/projects/{id}/uploads` | postV3ProjectsIdUploads | `id`*, `file`* | — |  | Upload a file |
+| GET | `/v3/projects/{id}/users` | getV3ProjectsIdUsers | `id`*, `search`, `page`, `per_page` | UserBasic | yes | Get the users list of a project |
+| GET | `/v3/projects/{id}/variables` | getV3ProjectsIdVariables | `id`*, `page`, `per_page` | Variable | yes | Get project variables |
+| POST | `/v3/projects/{id}/variables` | postV3ProjectsIdVariables | `id`*, `key`*, `value`* | Variable |  | Create a new variable in a project |
+| GET | `/v3/projects/{id}/variables/{key}` | getV3ProjectsIdVariablesKey | `id`*, `key`* | Variable | yes | Get a specific variable from a project |
+| PUT | `/v3/projects/{id}/variables/{key}` | putV3ProjectsIdVariablesKey | `id`*, `key`*, `value` | Variable |  | Update an existing variable from a project |
+| DELETE | `/v3/projects/{id}/variables/{key}` | deleteV3ProjectsIdVariablesKey | `id`*, `key`* | Variable |  | Delete an existing variable from a project |
+| GET | `/v3/runners` | getV3Runners | `scope`, `page`, `per_page` | Runner | yes | Get runners available for user |
+| GET | `/v3/runners/all` | getV3RunnersAll | `scope`, `page`, `per_page` | Runner | yes | Get all runners - shared and specific |
+| GET | `/v3/runners/{id}` | getV3RunnersId | `id`* | RunnerDetails | yes | Get runner's details |
+| PUT | `/v3/runners/{id}` | putV3RunnersId | `id`*, `description`, `active`, `tag_list`, `run_untagged`, `locked` | RunnerDetails |  | Update runner's details |
+| DELETE | `/v3/runners/{id}` | deleteV3RunnersId | `id`* | Runner |  | Remove a runner |
+| POST | `/v3/session` | postV3Session | `login`, `email`, `password`* | UserWithPrivateToken |  | Login to get token |
+| GET | `/v3/sidekiq/compound_metrics` | getV3SidekiqCompoundMetrics | — | — | yes | Get the Sidekiq Compound metrics. Includes queue, process, and job statistics |
+| GET | `/v3/sidekiq/job_stats` | getV3SidekiqJobStats | — | — | yes | Get the Sidekiq job statistics |
+| GET | `/v3/sidekiq/process_metrics` | getV3SidekiqProcessMetrics | — | — | yes | Get the Sidekiq process metrics |
+| GET | `/v3/sidekiq/queue_metrics` | getV3SidekiqQueueMetrics | — | — | yes | Get the Sidekiq queue metrics |
+| GET | `/v3/snippets` | getV3Snippets | `page`, `per_page` | PersonalSnippet | yes | Get a snippets list for authenticated user |
+| POST | `/v3/snippets` | postV3Snippets | `title`*, `file_name`*, `content`*, `visibility_level` | PersonalSnippet |  | Create new snippet |
+| GET | `/v3/snippets/public` | getV3SnippetsPublic | `page`, `per_page` | PersonalSnippet | yes | List all public snippets current_user has access to |
+| GET | `/v3/snippets/{id}` | getV3SnippetsId | `id`* | PersonalSnippet | yes | Get a single snippet |
+| PUT | `/v3/snippets/{id}` | putV3SnippetsId | `id`*, `title`, `file_name`, `content`, `visibility_level` | PersonalSnippet |  | Update an existing snippet |
+| DELETE | `/v3/snippets/{id}` | deleteV3SnippetsId | `id`* | PersonalSnippet |  | Remove snippet |
+| GET | `/v3/snippets/{id}/raw` | getV3SnippetsIdRaw | `id`* | — | yes | Get a raw snippet |
+| GET | `/v3/templates/dockerfiles` | getV3TemplatesDockerfiles | — | TemplatesList | yes | Get the list of the available template |
+| GET | `/v3/templates/dockerfiles/{name}` | getV3TemplatesDockerfilesName | `name`* | Template | yes | Get the text for a specific template present in local filesystem |
+| GET | `/v3/templates/gitignores` | getV3TemplatesGitignores | — | TemplatesList | yes | Get the list of the available template |
+| GET | `/v3/templates/gitignores/{name}` | getV3TemplatesGitignoresName | `name`* | Template | yes | Get the text for a specific template present in local filesystem |
+| GET | `/v3/templates/gitlab_ci_ymls` | getV3TemplatesGitlabCiYmls | — | TemplatesList | yes | Get the list of the available template |
+| GET | `/v3/templates/gitlab_ci_ymls/{name}` | getV3TemplatesGitlabCiYmlsName | `name`* | Template | yes | Get the text for a specific template present in local filesystem |
+| GET | `/v3/templates/licenses` | getV3TemplatesLicenses | `popular` | RepoLicense | yes | Get the list of the available license template |
+| GET | `/v3/templates/licenses/{name}` | getV3TemplatesLicensesName | `name`* | RepoLicense | yes | Get the text for a specific license |
+| GET | `/v3/todos` | getV3Todos | `page`, `per_page` | Todo | yes | Get a todo list |
+| DELETE | `/v3/todos` | deleteV3Todos | — | — |  | Mark all todos as done |
+| DELETE | `/v3/todos/{id}` | deleteV3TodosId | `id`* | Todo |  | Mark a todo as done |
+| GET | `/v3/user` | getV3User | — | UserPublic | yes | Get the currently authenticated user |
+| GET | `/v3/user/emails` | getV3UserEmails | — | Email | yes | Get the currently authenticated user's email addresses |
+| POST | `/v3/user/emails` | postV3UserEmails | `email`* | Email |  | Add new email address to the currently authenticated user |
+| GET | `/v3/user/emails/{email_id}` | getV3UserEmailsEmailId | `email_id`* | Email | yes | Get a single email address owned by the currently authenticated user |
+| DELETE | `/v3/user/emails/{email_id}` | deleteV3UserEmailsEmailId | `email_id`* | — |  | Delete an email address from the currently authenticated user |
+| GET | `/v3/user/keys` | getV3UserKeys | — | SSHKey | yes | Get the currently authenticated user's SSH keys |
+| POST | `/v3/user/keys` | postV3UserKeys | `key`*, `title`* | SSHKey |  | Add a new SSH key to the currently authenticated user |
+| GET | `/v3/user/keys/{key_id}` | getV3UserKeysKeyId | `key_id`* | SSHKey | yes | Get a single key owned by currently authenticated user |
+| DELETE | `/v3/user/keys/{key_id}` | deleteV3UserKeysKeyId | `key_id`* | SSHKey |  | Delete an SSH key from the currently authenticated user |
+| GET | `/v3/users` | getV3Users | `username`, `search`, `active`, `external`, `blocked`, `page`, `per_page` | UserBasic | yes | Get the list of users |
+| POST | `/v3/users` | postV3Users | `email`*, `password`*, `name`*, `username`*, `skype`, `linkedin`, `twitter`, `website_url`, `organization`, `projects_limit`, `extern_uid`, `provider`, `bio`, `location`, `admin`, `can_create_group`, `confirm`, `external` | UserPublic |  | Create a user. Available only for admins. |
+| GET | `/v3/users/{id}` | getV3UsersId | `id`* | UserBasic | yes | Get a single user |
+| PUT | `/v3/users/{id}` | putV3UsersId | `id`*, `email`, `password`, `name`, `username`, `skype`, `linkedin`, `twitter`, `website_url`, `organization`, `projects_limit`, `extern_uid`, `provider`, `bio`, `location`, `admin`, `can_create_group`, `confirm`, `external` | UserPublic |  | Update a user. Available only for admins. |
+| DELETE | `/v3/users/{id}` | deleteV3UsersId | `id`* | Email |  | Delete a user. Available only for admins. |
+| PUT | `/v3/users/{id}/block` | putV3UsersIdBlock | `id`* | — |  | Block a user. Available only for admins. |
+| GET | `/v3/users/{id}/emails` | getV3UsersIdEmails | `id`* | Email | yes | Get the emails addresses of a specified user. Available only for admins. |
+| POST | `/v3/users/{id}/emails` | postV3UsersIdEmails | `id`*, `email`* | Email |  | Add an email address to a specified user. Available only for admins. |
+| DELETE | `/v3/users/{id}/emails/{email_id}` | deleteV3UsersIdEmailsEmailId | `id`*, `email_id`* | Email |  | Delete an email address of a specified user. Available only for admins. |
+| GET | `/v3/users/{id}/events` | getV3UsersIdEvents | `id`*, `page`, `per_page` | Event | yes | Get the contribution events of a specified user |
+| GET | `/v3/users/{id}/keys` | getV3UsersIdKeys | `id`* | SSHKey | yes | Get the SSH keys of a specified user. Available only for admins. |
+| POST | `/v3/users/{id}/keys` | postV3UsersIdKeys | `id`*, `key`*, `title`* | SSHKey |  | Add an SSH key to a specified user. Available only for admins. |
+| DELETE | `/v3/users/{id}/keys/{key_id}` | deleteV3UsersIdKeysKeyId | `id`*, `key_id`* | SSHKey |  | Delete an existing SSH key from a specified user. Available only for admins. |
+| PUT | `/v3/users/{id}/unblock` | putV3UsersIdUnblock | `id`* | — |  | Unblock a user. Available only for admins. |
+| GET | `/v3/version` | getV3Version | — | — | yes | Get the version information of the GitLab instance. |

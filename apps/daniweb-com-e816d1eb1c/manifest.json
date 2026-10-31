@@ -102,12 +102,12 @@
       {
         "from": "daniweb-com-e816d1eb1c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/messages/{ID}"
+        "to": "operation:get:/groups/messages/{ID}"
       },
       {
         "from": "daniweb-com-e816d1eb1c",
         "kind": "EXPOSES",
-        "to": "operation:get:/groups/messages/{ID}"
+        "to": "operation:delete:/groups/messages/{ID}"
       },
       {
         "from": "daniweb-com-e816d1eb1c",
@@ -147,22 +147,22 @@
       {
         "from": "daniweb-com-e816d1eb1c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{ID}/memberships"
-      },
-      {
-        "from": "daniweb-com-e816d1eb1c",
-        "kind": "EXPOSES",
         "to": "operation:get:/groups/{ID}/memberships"
       },
       {
         "from": "daniweb-com-e816d1eb1c",
         "kind": "EXPOSES",
-        "to": "operation:patch:/groups/{ID}/memberships"
+        "to": "operation:post:/groups/{ID}/memberships"
       },
       {
         "from": "daniweb-com-e816d1eb1c",
         "kind": "EXPOSES",
-        "to": "operation:post:/groups/{ID}/memberships"
+        "to": "operation:delete:/groups/{ID}/memberships"
+      },
+      {
+        "from": "daniweb-com-e816d1eb1c",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/groups/{ID}/memberships"
       },
       {
         "from": "daniweb-com-e816d1eb1c",
@@ -338,6 +338,876 @@
         "from": "daniweb-com-e816d1eb1c",
         "kind": "EXPOSES",
         "to": "operation:delete:/webhooks/{ID}"
+      },
+      {
+        "from": "operation:get:/apps",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-apps"
+      },
+      {
+        "from": "operation:get:/apps/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-apps-ID"
+      },
+      {
+        "from": "operation:get:/audiences",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-audiences"
+      },
+      {
+        "from": "operation:get:/audiences/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-audiences-ID"
+      },
+      {
+        "from": "operation:post:/audiences/{ID}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-audiences-ID-memberships"
+      },
+      {
+        "from": "operation:get:/autocompletes",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-autocompletes"
+      },
+      {
+        "from": "operation:post:/conversations/schedules",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-conversations-schedules"
+      },
+      {
+        "from": "operation:post:/conversations/searches",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-conversations-searches"
+      },
+      {
+        "from": "operation:get:/conversations/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-conversations-statuses"
+      },
+      {
+        "from": "operation:get:/conversations/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-conversations-ID"
+      },
+      {
+        "from": "operation:get:/conversations/{ID}/messages",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-conversations-ID-messages"
+      },
+      {
+        "from": "operation:post:/conversations/{ID}/messages",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-conversations-ID-messages"
+      },
+      {
+        "from": "operation:post:/conversations/{ID}/schedules",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-conversations-ID-schedules"
+      },
+      {
+        "from": "operation:post:/conversations/{ID}/searches",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-conversations-ID-searches"
+      },
+      {
+        "from": "operation:get:/conversations/{ID}/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-conversations-ID-statuses"
+      },
+      {
+        "from": "operation:patch:/conversations/{ID}/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-patch-conversations-ID-statuses"
+      },
+      {
+        "from": "operation:get:/groups",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups"
+      },
+      {
+        "from": "operation:post:/groups",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups"
+      },
+      {
+        "from": "operation:post:/groups/messages/metadata/filters",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups-messages-metadata-filters"
+      },
+      {
+        "from": "operation:get:/groups/messages/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-messages-ID"
+      },
+      {
+        "from": "operation:delete:/groups/messages/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-delete-groups-messages-ID"
+      },
+      {
+        "from": "operation:get:/groups/messages/{ID}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-messages-ID-metadata"
+      },
+      {
+        "from": "operation:post:/groups/messages/{ID}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups-messages-ID-metadata"
+      },
+      {
+        "from": "operation:get:/groups/messages/{ID}/metadata/collections",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-messages-ID-metadata-collections"
+      },
+      {
+        "from": "operation:post:/groups/schedules",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups-schedules"
+      },
+      {
+        "from": "operation:get:/groups/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-statuses"
+      },
+      {
+        "from": "operation:get:/groups/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-ID"
+      },
+      {
+        "from": "operation:patch:/groups/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-patch-groups-ID"
+      },
+      {
+        "from": "operation:get:/groups/{ID}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-ID-memberships"
+      },
+      {
+        "from": "operation:post:/groups/{ID}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups-ID-memberships"
+      },
+      {
+        "from": "operation:delete:/groups/{ID}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-delete-groups-ID-memberships"
+      },
+      {
+        "from": "operation:patch:/groups/{ID}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-patch-groups-ID-memberships"
+      },
+      {
+        "from": "operation:get:/groups/{ID}/messages",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-ID-messages"
+      },
+      {
+        "from": "operation:post:/groups/{ID}/messages",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups-ID-messages"
+      },
+      {
+        "from": "operation:post:/groups/{ID}/schedules",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-groups-ID-schedules"
+      },
+      {
+        "from": "operation:get:/groups/{ID}/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-groups-ID-statuses"
+      },
+      {
+        "from": "operation:get:/industries",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-industries"
+      },
+      {
+        "from": "operation:post:/markdown",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-markdown"
+      },
+      {
+        "from": "operation:get:/markdown/emoticons",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-markdown-emoticons"
+      },
+      {
+        "from": "operation:post:/messages/metadata/filters",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-messages-metadata-filters"
+      },
+      {
+        "from": "operation:get:/messages/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-messages-ID"
+      },
+      {
+        "from": "operation:get:/messages/{ID}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-messages-ID-metadata"
+      },
+      {
+        "from": "operation:post:/messages/{ID}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-messages-ID-metadata"
+      },
+      {
+        "from": "operation:get:/messages/{ID}/metadata/collections",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-messages-ID-metadata-collections"
+      },
+      {
+        "from": "operation:post:/positions",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-positions"
+      },
+      {
+        "from": "operation:delete:/positions/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-delete-positions-ID"
+      },
+      {
+        "from": "operation:patch:/positions/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-patch-positions-ID"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users"
+      },
+      {
+        "from": "operation:post:/users/invites",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-users-invites"
+      },
+      {
+        "from": "operation:post:/users/metadata/filters",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-users-metadata-filters"
+      },
+      {
+        "from": "operation:get:/users/nearby",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-nearby"
+      },
+      {
+        "from": "operation:post:/users/searches",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-users-searches"
+      },
+      {
+        "from": "operation:get:/users/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID"
+      },
+      {
+        "from": "operation:get:/users/{ID}/groups",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID-groups"
+      },
+      {
+        "from": "operation:get:/users/{ID}/groups/messages",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID-groups-messages"
+      },
+      {
+        "from": "operation:post:/users/{ID}/messages",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-users-ID-messages"
+      },
+      {
+        "from": "operation:get:/users/{ID}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID-metadata"
+      },
+      {
+        "from": "operation:post:/users/{ID}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-users-ID-metadata"
+      },
+      {
+        "from": "operation:get:/users/{ID}/metadata/collections",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID-metadata-collections"
+      },
+      {
+        "from": "operation:get:/users/{ID}/positions",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID-positions"
+      },
+      {
+        "from": "operation:get:/users/{ID}/synergies",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users-ID-synergies"
+      },
+      {
+        "from": "operation:patch:/users/{ID}/synergies",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-patch-users-ID-synergies"
+      },
+      {
+        "from": "operation:get:/users/~",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-users--"
+      },
+      {
+        "from": "operation:patch:/users/~",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-patch-users--"
+      },
+      {
+        "from": "operation:get:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-get-webhooks"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-post-webhooks"
+      },
+      {
+        "from": "operation:delete:/webhooks/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:Endpoint-delete-webhooks-ID"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-delete-groups-messages-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-get-apps",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-apps",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Endpoint-get-apps-ID",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Endpoint-get-audiences",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-audiences",
+        "kind": "REFERENCES",
+        "to": "schema:Bubble"
+      },
+      {
+        "from": "schema:Endpoint-get-audiences-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Bubble"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-ID-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-ID-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:Endpoint-get-conversations-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-get-groups",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-groups",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-ID-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-messages-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-messages-ID-metadata",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-messages-ID-metadata",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message_data"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-get-groups-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-get-messages-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-get-messages-ID-metadata",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-messages-ID-metadata",
+        "kind": "REFERENCES",
+        "to": "schema:Message_data"
+      },
+      {
+        "from": "schema:Endpoint-get-users",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-users",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-get-users--",
+        "kind": "REFERENCES",
+        "to": "schema:Me"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-groups",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-groups-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-groups-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-metadata",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-metadata",
+        "kind": "REFERENCES",
+        "to": "schema:User_data"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-positions",
+        "kind": "REFERENCES",
+        "to": "schema:Position"
+      },
+      {
+        "from": "schema:Endpoint-get-users-ID-synergies",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:Endpoint-get-users-nearby",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-get-users-nearby",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-get-webhooks",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "schema:Endpoint-patch-conversations-ID-statuses",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:Endpoint-patch-groups-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-patch-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-patch-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-patch-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-patch-positions-ID",
+        "kind": "REFERENCES",
+        "to": "schema:Position"
+      },
+      {
+        "from": "schema:Endpoint-patch-users--",
+        "kind": "REFERENCES",
+        "to": "schema:Me"
+      },
+      {
+        "from": "schema:Endpoint-post-audiences-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-ID-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-ID-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-ID-searches",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-ID-searches",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-searches",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-conversations-searches",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-groups",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-ID-memberships",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-ID-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-ID-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-messages-metadata-filters",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-messages-metadata-filters",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-groups-schedules",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Endpoint-post-messages-metadata-filters",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-messages-metadata-filters",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-positions",
+        "kind": "REFERENCES",
+        "to": "schema:Position"
+      },
+      {
+        "from": "schema:Endpoint-post-users-ID-messages",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Endpoint-post-users-invites",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-post-users-metadata-filters",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-users-metadata-filters",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-post-users-searches",
+        "kind": "REFERENCES",
+        "to": "schema:Api-pagination"
+      },
+      {
+        "from": "schema:Endpoint-post-users-searches",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Endpoint-post-webhooks",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "schema:Group",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Group",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Group_message",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:Group_message",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Group_message_data",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Group_message_data",
+        "kind": "REFERENCES",
+        "to": "schema:Group_message"
+      },
+      {
+        "from": "schema:Group_message_data",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Me",
+        "kind": "REFERENCES",
+        "to": "schema:Member"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Message_data",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Message_data",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Message_data",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Position",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Position",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:Member"
+      },
+      {
+        "from": "schema:User_data",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:User_data",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Webhook",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Webhook",
+        "kind": "REFERENCES",
+        "to": "schema:User"
       }
     ],
     "nodes": [
@@ -347,12 +1217,36 @@
       },
       {
         "deprecated": false,
+        "description": "Fetch all Daniapps that are currently in production mode.",
         "id": "operation:get:/apps",
         "kind": "operation",
         "method": "get",
         "name": "get /apps",
+        "parameters": [
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/apps",
         "pointer": "#/paths/~1apps/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-apps"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -365,16 +1259,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of Daniapps that are currently in production mode.",
         "id": "operation:get:/apps/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/apps/{ID}",
         "pointer": "#/paths/~1apps~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-apps-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -387,16 +1300,43 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch all Daniapp audience segments that comprise the current access token's bubble.",
         "id": "operation:get:/audiences",
         "kind": "operation",
         "method": "get",
         "name": "get /audiences",
+        "parameters": [
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/audiences",
         "pointer": "#/paths/~1audiences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-audiences"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -409,16 +1349,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "audiences"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of Daniapp audience segments that comprise the current access token's bubble.",
         "id": "operation:get:/audiences/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /audiences/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/audiences/{ID}",
         "pointer": "#/paths/~1audiences~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-audiences-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -431,16 +1390,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "audiences"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a membership record for the OAuth'ed end-user based on the current audience segment/bubble combination.",
         "id": "operation:post:/audiences/{ID}/memberships",
         "kind": "operation",
         "method": "post",
         "name": "post /audiences/{ID}/memberships",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/audiences/{ID}/memberships",
         "pointer": "#/paths/~1audiences~1{ID}~1memberships/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-audiences-ID-memberships"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -453,16 +1431,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "audiences"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an array of names and locations, filtered by category, that begin with the query string passed in.",
         "id": "operation:get:/autocompletes",
         "kind": "operation",
         "method": "get",
         "name": "get /autocompletes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/autocompletes",
         "pointer": "#/paths/~1autocompletes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-autocompletes"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -475,16 +1472,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "autocompletes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated report of information about messages contributed by conversation and date.",
         "id": "operation:post:/conversations/schedules",
         "kind": "operation",
         "method": "post",
         "name": "post /conversations/schedules",
         "path": "/conversations/schedules",
         "pointer": "#/paths/~1conversations~1schedules/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-conversations-schedules"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -497,16 +1512,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch messages authored from within the current bubble that match a query string passed in as a search parameter along with their relevancy score.",
         "id": "operation:post:/conversations/searches",
         "kind": "operation",
         "method": "post",
         "name": "post /conversations/searches",
         "path": "/conversations/searches",
         "pointer": "#/paths/~1conversations~1searches/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-conversations-searches"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -519,16 +1552,69 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve conversations that you are participating in with users who exists within the same bubble, along with your current relationship with the conversations.",
         "id": "operation:get:/conversations/statuses",
         "kind": "operation",
         "method": "get",
         "name": "get /conversations/statuses",
+        "parameters": [
+          {
+            "enum": [
+              "new",
+              "introductions",
+              "unreplied",
+              "notifications"
+            ],
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "bubbled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/conversations/statuses",
         "pointer": "#/paths/~1conversations~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-conversations-statuses"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -541,16 +1627,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of conversations.",
         "id": "operation:get:/conversations/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /conversations/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/conversations/{ID}",
         "pointer": "#/paths/~1conversations~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-conversations-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -563,16 +1668,89 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the last {limit} messages in the conversation, provided the conversations exist within the current access token's bubble.",
         "id": "operation:get:/conversations/{ID}/messages",
         "kind": "operation",
         "method": "get",
         "name": "get /conversations/{ID}/messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "gt_message_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "exclude_self",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "bubbled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "record_seen",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "timeout",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/conversations/{ID}/messages",
         "pointer": "#/paths/~1conversations~1{ID}~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-conversations-ID-messages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -585,16 +1763,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Post a message to a conversation that is with a user who exists within the current access token's bubble.",
         "id": "operation:post:/conversations/{ID}/messages",
         "kind": "operation",
         "method": "post",
         "name": "post /conversations/{ID}/messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/conversations/{ID}/messages",
         "pointer": "#/paths/~1conversations~1{ID}~1messages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-conversations-ID-messages"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -609,16 +1813,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated report of information about messages contributed by conversation and date.",
         "id": "operation:post:/conversations/{ID}/schedules",
         "kind": "operation",
         "method": "post",
         "name": "post /conversations/{ID}/schedules",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/conversations/{ID}/schedules",
         "pointer": "#/paths/~1conversations~1{ID}~1schedules/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-conversations-ID-schedules"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -631,16 +1861,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch messages authored from within specified conversations that match a query string passed in as a search parameter along with their relevancy score.",
         "id": "operation:post:/conversations/{ID}/searches",
         "kind": "operation",
         "method": "post",
         "name": "post /conversations/{ID}/searches",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/conversations/{ID}/searches",
         "pointer": "#/paths/~1conversations~1{ID}~1searches/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-conversations-ID-searches"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -653,16 +1909,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Status information about your current relationship with one or more conversations you participating in, provided the conversations exist within the current acc…",
         "id": "operation:get:/conversations/{ID}/statuses",
         "kind": "operation",
         "method": "get",
         "name": "get /conversations/{ID}/statuses",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/conversations/{ID}/statuses",
         "pointer": "#/paths/~1conversations~1{ID}~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-conversations-ID-statuses"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -675,16 +1950,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Archive or unarchive a conversation that is with a user who exists within the same bubble.",
         "id": "operation:patch:/conversations/{ID}/statuses",
         "kind": "operation",
         "method": "patch",
         "name": "patch /conversations/{ID}/statuses",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/conversations/{ID}/statuses",
         "pointer": "#/paths/~1conversations~1{ID}~1statuses/patch",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-patch-conversations-ID-statuses"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -699,16 +2000,43 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of all groups that were created by users existing within the current access token's bubble.",
         "id": "operation:get:/groups",
         "kind": "operation",
         "method": "get",
         "name": "get /groups",
+        "parameters": [
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups",
         "pointer": "#/paths/~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -721,16 +2049,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new group for other members to join.",
         "id": "operation:post:/groups",
         "kind": "operation",
         "method": "post",
         "name": "post /groups",
         "path": "/groups",
         "pointer": "#/paths/~1groups/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -745,16 +2091,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated listing of messages filtered by arbitrary metadata criteria.",
         "id": "operation:post:/groups/messages/metadata/filters",
         "kind": "operation",
         "method": "post",
         "name": "post /groups/messages/metadata/filters",
         "path": "/groups/messages/metadata/filters",
         "pointer": "#/paths/~1groups~1messages~1metadata~1filters/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups-messages-metadata-filters"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -767,40 +2131,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/messages/{ID}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /groups/messages/{ID}",
-        "path": "/groups/messages/{ID}",
-        "pointer": "#/paths/~1groups~1messages~1{ID}/delete",
-        "security": [
-          {
-            "explicit_flow": [
-              "groups_read",
-              "groups_write"
-            ]
-          },
-          {
-            "implicit_flow": [
-              "groups_read",
-              "groups_write"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Fetch an array of group messages.",
         "id": "operation:get:/groups/messages/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/messages/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/groups/messages/{ID}",
         "pointer": "#/paths/~1groups~1messages~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-messages-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -813,16 +2172,92 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an array of group messages.",
+        "id": "operation:delete:/groups/messages/{ID}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /groups/messages/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
+        "path": "/groups/messages/{ID}",
+        "pointer": "#/paths/~1groups~1messages~1{ID}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-delete-groups-messages-ID"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "explicit_flow": [
+              "groups_read",
+              "groups_write"
+            ]
+          },
+          {
+            "implicit_flow": [
+              "groups_read",
+              "groups_write"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve all key/value pairs attached to the current message that you have access to, so long as the user who created the group exists within the current acces…",
         "id": "operation:get:/groups/messages/{ID}/metadata",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/messages/{ID}/metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/messages/{ID}/metadata",
         "pointer": "#/paths/~1groups~1messages~1{ID}~1metadata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-messages-ID-metadata"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -835,16 +2270,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Attach one-to-many key/value pairs of metadata to a group message, so long as the user who authored the message exists within the current access token's bubble…",
         "id": "operation:post:/groups/messages/{ID}/metadata",
         "kind": "operation",
         "method": "post",
         "name": "post /groups/messages/{ID}/metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/messages/{ID}/metadata",
         "pointer": "#/paths/~1groups~1messages~1{ID}~1metadata/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups-messages-ID-metadata"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -857,16 +2318,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all key/value pairs attached to the current message that you have access to, so long as the user who created the group exists within the current acces…",
         "id": "operation:get:/groups/messages/{ID}/metadata/collections",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/messages/{ID}/metadata/collections",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/messages/{ID}/metadata/collections",
         "pointer": "#/paths/~1groups~1messages~1{ID}~1metadata~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-messages-ID-metadata-collections"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -879,16 +2359,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated report of information about messages contributed by group and date.",
         "id": "operation:post:/groups/schedules",
         "kind": "operation",
         "method": "post",
         "name": "post /groups/schedules",
         "path": "/groups/schedules",
         "pointer": "#/paths/~1groups~1schedules/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups-schedules"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -901,16 +2399,50 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve groups that were created by users within the current access token's bubble, along with your current relationship with the groups.",
         "id": "operation:get:/groups/statuses",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/statuses",
+        "parameters": [
+          {
+            "default": false,
+            "in": "query",
+            "name": "existing_membership",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/statuses",
         "pointer": "#/paths/~1groups~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-statuses"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -923,16 +2455,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of groups.",
         "id": "operation:get:/groups/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/groups/{ID}",
         "pointer": "#/paths/~1groups~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -945,16 +2496,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Modify a group you previously created.",
         "id": "operation:patch:/groups/{ID}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /groups/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/{ID}",
         "pointer": "#/paths/~1groups~1{ID}/patch",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-patch-groups-ID"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -969,40 +2546,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{ID}/memberships",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /groups/{ID}/memberships",
-        "path": "/groups/{ID}/memberships",
-        "pointer": "#/paths/~1groups~1{ID}~1memberships/delete",
-        "security": [
-          {
-            "explicit_flow": [
-              "groups_read",
-              "groups_write"
-            ]
-          },
-          {
-            "implicit_flow": [
-              "groups_read",
-              "groups_write"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Fetch an array of users who are members of specific groups that you are also a member of.",
         "id": "operation:get:/groups/{ID}/memberships",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/{ID}/memberships",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "moderators_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/{ID}/memberships",
         "pointer": "#/paths/~1groups~1{ID}~1memberships/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-ID-memberships"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1015,38 +2601,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/groups/{ID}/memberships",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /groups/{ID}/memberships",
-        "path": "/groups/{ID}/memberships",
-        "pointer": "#/paths/~1groups~1{ID}~1memberships/patch",
-        "security": [
-          {
-            "explicit_flow": [
-              "groups_read"
-            ]
-          },
-          {
-            "implicit_flow": [
-              "groups_read"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Join a group that was created by a user who exists within the current access token's bubble, or join other users into a group that you created.",
         "id": "operation:post:/groups/{ID}/memberships",
         "kind": "operation",
         "method": "post",
         "name": "post /groups/{ID}/memberships",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/{ID}/memberships",
         "pointer": "#/paths/~1groups~1{ID}~1memberships/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups-ID-memberships"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1061,16 +2651,187 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Leave a group that you are a member of and that was created by a user who exists within the current access token's bubble.",
+        "id": "operation:delete:/groups/{ID}/memberships",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /groups/{ID}/memberships",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/groups/{ID}/memberships",
+        "pointer": "#/paths/~1groups~1{ID}~1memberships/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-delete-groups-ID-memberships"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "explicit_flow": [
+              "groups_read",
+              "groups_write"
+            ]
+          },
+          {
+            "implicit_flow": [
+              "groups_read",
+              "groups_write"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Promote or demote a member's privileges within a group that you created.",
+        "id": "operation:patch:/groups/{ID}/memberships",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /groups/{ID}/memberships",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/groups/{ID}/memberships",
+        "pointer": "#/paths/~1groups~1{ID}~1memberships/patch",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-patch-groups-ID-memberships"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "explicit_flow": [
+              "groups_read"
+            ]
+          },
+          {
+            "implicit_flow": [
+              "groups_read"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve the last {limit} messages in the group, for messages authored by users within the current access token's bubble.",
         "id": "operation:get:/groups/{ID}/messages",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/{ID}/messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "gt_message_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "exclude_self",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "include_deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "bubbled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "record_seen",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "timeout",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/{ID}/messages",
         "pointer": "#/paths/~1groups~1{ID}~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-ID-messages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1083,16 +2844,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Post a message to a group that you are a member of and that was created by a user who exists within the current access token's bubble.",
         "id": "operation:post:/groups/{ID}/messages",
         "kind": "operation",
         "method": "post",
         "name": "post /groups/{ID}/messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/groups/{ID}/messages",
         "pointer": "#/paths/~1groups~1{ID}~1messages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups-ID-messages"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1107,16 +2894,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated report of information about group messages contributed by conversation and date.",
         "id": "operation:post:/groups/{ID}/schedules",
         "kind": "operation",
         "method": "post",
         "name": "post /groups/{ID}/schedules",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/groups/{ID}/schedules",
         "pointer": "#/paths/~1groups~1{ID}~1schedules/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-groups-ID-schedules"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1129,16 +2942,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Status information about your current relationship with one or more groups you are a member of, provided the users who created the groups exist within the curr…",
         "id": "operation:get:/groups/{ID}/statuses",
         "kind": "operation",
         "method": "get",
         "name": "get /groups/{ID}/statuses",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/groups/{ID}/statuses",
         "pointer": "#/paths/~1groups~1{ID}~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-groups-ID-statuses"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1151,7 +2983,10 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1161,6 +2996,13 @@
         "name": "get /industries",
         "path": "/industries",
         "pointer": "#/paths/~1industries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-industries"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1173,7 +3015,10 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "industries"
+        ]
       },
       {
         "deprecated": false,
@@ -1183,6 +3028,20 @@
         "name": "post /markdown",
         "path": "/markdown",
         "pointer": "#/paths/~1markdown/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-markdown"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1195,7 +3054,10 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "markdown"
+        ]
       },
       {
         "deprecated": false,
@@ -1205,6 +3067,13 @@
         "name": "get /markdown/emoticons",
         "path": "/markdown/emoticons",
         "pointer": "#/paths/~1markdown~1emoticons/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-markdown-emoticons"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1217,16 +3086,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "markdown"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated listing of messages filtered by arbitrary metadata criteria.",
         "id": "operation:post:/messages/metadata/filters",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/metadata/filters",
         "path": "/messages/metadata/filters",
         "pointer": "#/paths/~1messages~1metadata~1filters/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-messages-metadata-filters"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1239,16 +3126,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of messages.",
         "id": "operation:get:/messages/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/messages/{ID}",
         "pointer": "#/paths/~1messages~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-messages-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1261,16 +3167,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all key/value pairs attached to the current message that you have access to, so long as the user who authored the message exists within the current ac…",
         "id": "operation:get:/messages/{ID}/metadata",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/{ID}/metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/messages/{ID}/metadata",
         "pointer": "#/paths/~1messages~1{ID}~1metadata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-messages-ID-metadata"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1283,16 +3222,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Attach one-to-many key/value pairs of metadata to a message, so long as the user who authored the message exists within the current access token's bubble.",
         "id": "operation:post:/messages/{ID}/metadata",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/{ID}/metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/messages/{ID}/metadata",
         "pointer": "#/paths/~1messages~1{ID}~1metadata/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-messages-ID-metadata"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1305,16 +3270,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all key/value pairs attached to the current message that you have access to, so long as the user who authored the message exists within the current ac…",
         "id": "operation:get:/messages/{ID}/metadata/collections",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/{ID}/metadata/collections",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/messages/{ID}/metadata/collections",
         "pointer": "#/paths/~1messages~1{ID}~1metadata~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-messages-ID-metadata-collections"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1327,16 +3311,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the OAuth'ed end user's Curriculum Vitae by adding a position.",
         "id": "operation:post:/positions",
         "kind": "operation",
         "method": "post",
         "name": "post /positions",
         "path": "/positions",
         "pointer": "#/paths/~1positions/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-positions"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1351,16 +3353,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "positions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove an item from the OAuth'ed end user's Curriculum Vitae.",
         "id": "operation:delete:/positions/{ID}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /positions/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/positions/{ID}",
         "pointer": "#/paths/~1positions~1{ID}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-delete-positions-ID"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1375,16 +3396,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "positions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the OAuth'ed end user's Curriculum Vitae by modifying an existing position.",
         "id": "operation:patch:/positions/{ID}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /positions/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/positions/{ID}",
         "pointer": "#/paths/~1positions~1{ID}/patch",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-patch-positions-ID"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1399,16 +3446,77 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "positions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of users that you've been matched with, connected with, skipped, or muted.",
         "id": "operation:get:/users",
         "kind": "operation",
         "method": "get",
         "name": "get /users",
+        "parameters": [
+          {
+            "default": "connections",
+            "enum": [
+              "connections",
+              "matches",
+              "skipped",
+              "muted"
+            ],
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "id",
+            "enum": [
+              "id",
+              "last_activity",
+              "first_name",
+              "last_name",
+              "industry"
+            ],
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "bubbled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1421,16 +3529,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Invite users to into your current access token's bubble by having Dazah send out email invitations on your behalf.",
         "id": "operation:post:/users/invites",
         "kind": "operation",
         "method": "post",
         "name": "post /users/invites",
         "path": "/users/invites",
         "pointer": "#/paths/~1users~1invites/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-users-invites"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1445,16 +3571,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated listing of users filtered by arbitrary metadata criteria.",
         "id": "operation:post:/users/metadata/filters",
         "kind": "operation",
         "method": "post",
         "name": "post /users/metadata/filters",
         "path": "/users/metadata/filters",
         "pointer": "#/paths/~1users~1metadata~1filters/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-users-metadata-filters"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1467,16 +3611,55 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of users that are geographically close to a set of coordinates.",
         "id": "operation:get:/users/nearby",
         "kind": "operation",
         "method": "get",
         "name": "get /users/nearby",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/nearby",
         "pointer": "#/paths/~1users~1nearby/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-nearby"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1489,16 +3672,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Filter and perform a weighted search against user profile fields, CV fields, and metadata by specifying a string to search on for each individual field.",
         "id": "operation:post:/users/searches",
         "kind": "operation",
         "method": "post",
         "name": "post /users/searches",
         "path": "/users/searches",
         "pointer": "#/paths/~1users~1searches/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-users-searches"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1511,16 +3712,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch an array of users.",
         "id": "operation:get:/users/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/users/{ID}",
         "pointer": "#/paths/~1users~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1533,16 +3753,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can only retrieve groups that were created by users existing within the current access token's bubble.",
         "id": "operation:get:/users/{ID}/groups",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}/groups",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/groups",
         "pointer": "#/paths/~1users~1{ID}~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID-groups"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1555,16 +3794,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Paginated transcript of group messages authored by an individual user who exists within the current access token's bubble.",
         "id": "operation:get:/users/{ID}/groups/messages",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}/groups/messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/groups/messages",
         "pointer": "#/paths/~1users~1{ID}~1groups~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID-groups-messages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1577,16 +3849,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Initiate a conversation with a user who exists within the current access token's bubble by sending them an introductory message.",
         "id": "operation:post:/users/{ID}/messages",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{ID}/messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/messages",
         "pointer": "#/paths/~1users~1{ID}~1messages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-users-ID-messages"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1601,16 +3899,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all key/value pairs attached to the current user that you have access to, so long as the user exists within the current access token's bubble.",
         "id": "operation:get:/users/{ID}/metadata",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}/metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/metadata",
         "pointer": "#/paths/~1users~1{ID}~1metadata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID-metadata"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1623,16 +3954,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Attach one-to-many key/value pairs of metadata to a user, so long as the user exists within the current access token's bubble.",
         "id": "operation:post:/users/{ID}/metadata",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{ID}/metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/metadata",
         "pointer": "#/paths/~1users~1{ID}~1metadata/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-users-ID-metadata"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1645,16 +4002,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all key/value pairs attached to the current user that you have access to, so long as the user exists within the current access token's bubble.",
         "id": "operation:get:/users/{ID}/metadata/collections",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}/metadata/collections",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/metadata/collections",
         "pointer": "#/paths/~1users~1{ID}~1metadata~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID-metadata-collections"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1667,16 +4043,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the CV of a user who exists within the current access token's bubble.",
         "id": "operation:get:/users/{ID}/positions",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}/positions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "bubbled",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/users/{ID}/positions",
         "pointer": "#/paths/~1users~1{ID}~1positions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID-positions"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1689,16 +4091,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Determine your match relationship with one or more users who exist within the current access token's bubble.",
         "id": "operation:get:/users/{ID}/synergies",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{ID}/synergies",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32[]"
+          }
+        ],
         "path": "/users/{ID}/synergies",
         "pointer": "#/paths/~1users~1{ID}~1synergies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users-ID-synergies"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1711,16 +4132,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Skip, mute or unmute a user you've been matched with.",
         "id": "operation:patch:/users/{ID}/synergies",
         "kind": "operation",
         "method": "patch",
         "name": "patch /users/{ID}/synergies",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/users/{ID}/synergies",
         "pointer": "#/paths/~1users~1{ID}~1synergies/patch",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-patch-users-ID-synergies"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1733,16 +4180,27 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the currently OAuth'ed end-user, based on the access token being used, including private information and settings such as their email address.",
         "id": "operation:get:/users/~",
         "kind": "operation",
         "method": "get",
         "name": "get /users/~",
         "path": "/users/~",
         "pointer": "#/paths/~1users~1~0/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-users--"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1755,16 +4213,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the OAuth'ed end user's account profile.",
         "id": "operation:patch:/users/~",
         "kind": "operation",
         "method": "patch",
         "name": "patch /users/~",
         "path": "/users/~",
         "pointer": "#/paths/~1users~1~0/patch",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-patch-users--"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1779,16 +4255,27 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch a listing of all webhooks owned by the current user/bubble combination.",
         "id": "operation:get:/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "get /webhooks",
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-get-webhooks"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "explicit_flow": [
@@ -1801,16 +4288,34 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register a new webhook for the current user/bubble combination.",
         "id": "operation:post:/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks",
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-post-webhooks"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1823,16 +4328,35 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a webhook that was previously registered by the current user/bubble combination.",
         "id": "operation:delete:/webhooks/{ID}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /webhooks/{ID}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/webhooks/{ID}",
         "pointer": "#/paths/~1webhooks~1{ID}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Endpoint-delete-webhooks-ID"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "explicit_flow": [
@@ -1845,417 +4369,502 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "webhooks"
+        ]
       },
       {
         "id": "schema:Api-pagination",
         "kind": "schema",
-        "name": "Api-pagination"
+        "name": "Api-pagination",
+        "type": "object"
       },
       {
         "id": "schema:App",
         "kind": "schema",
-        "name": "App"
+        "name": "App",
+        "type": "object"
       },
       {
         "id": "schema:Bubble",
         "kind": "schema",
-        "name": "Bubble"
+        "name": "Bubble",
+        "type": "object"
       },
       {
         "id": "schema:Conversation",
         "kind": "schema",
-        "name": "Conversation"
+        "name": "Conversation",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-delete-groups-ID-memberships",
         "kind": "schema",
-        "name": "Endpoint-delete-groups-ID-memberships"
+        "name": "Endpoint-delete-groups-ID-memberships",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-delete-groups-messages-ID",
         "kind": "schema",
-        "name": "Endpoint-delete-groups-messages-ID"
+        "name": "Endpoint-delete-groups-messages-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-delete-positions-ID",
         "kind": "schema",
-        "name": "Endpoint-delete-positions-ID"
+        "name": "Endpoint-delete-positions-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-delete-webhooks-ID",
         "kind": "schema",
-        "name": "Endpoint-delete-webhooks-ID"
+        "name": "Endpoint-delete-webhooks-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-apps",
         "kind": "schema",
-        "name": "Endpoint-get-apps"
+        "name": "Endpoint-get-apps",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-apps-ID",
         "kind": "schema",
-        "name": "Endpoint-get-apps-ID"
+        "name": "Endpoint-get-apps-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-audiences",
         "kind": "schema",
-        "name": "Endpoint-get-audiences"
+        "name": "Endpoint-get-audiences",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-audiences-ID",
         "kind": "schema",
-        "name": "Endpoint-get-audiences-ID"
+        "name": "Endpoint-get-audiences-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-autocompletes",
         "kind": "schema",
-        "name": "Endpoint-get-autocompletes"
+        "name": "Endpoint-get-autocompletes",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-conversations-ID",
         "kind": "schema",
-        "name": "Endpoint-get-conversations-ID"
+        "name": "Endpoint-get-conversations-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-conversations-ID-messages",
         "kind": "schema",
-        "name": "Endpoint-get-conversations-ID-messages"
+        "name": "Endpoint-get-conversations-ID-messages",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-conversations-ID-statuses",
         "kind": "schema",
-        "name": "Endpoint-get-conversations-ID-statuses"
+        "name": "Endpoint-get-conversations-ID-statuses",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-conversations-statuses",
         "kind": "schema",
-        "name": "Endpoint-get-conversations-statuses"
+        "name": "Endpoint-get-conversations-statuses",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups",
         "kind": "schema",
-        "name": "Endpoint-get-groups"
+        "name": "Endpoint-get-groups",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-ID",
         "kind": "schema",
-        "name": "Endpoint-get-groups-ID"
+        "name": "Endpoint-get-groups-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-ID-memberships",
         "kind": "schema",
-        "name": "Endpoint-get-groups-ID-memberships"
+        "name": "Endpoint-get-groups-ID-memberships",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-ID-messages",
         "kind": "schema",
-        "name": "Endpoint-get-groups-ID-messages"
+        "name": "Endpoint-get-groups-ID-messages",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-ID-statuses",
         "kind": "schema",
-        "name": "Endpoint-get-groups-ID-statuses"
+        "name": "Endpoint-get-groups-ID-statuses",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-messages-ID",
         "kind": "schema",
-        "name": "Endpoint-get-groups-messages-ID"
+        "name": "Endpoint-get-groups-messages-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-messages-ID-metadata",
         "kind": "schema",
-        "name": "Endpoint-get-groups-messages-ID-metadata"
+        "name": "Endpoint-get-groups-messages-ID-metadata",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-messages-ID-metadata-collections",
         "kind": "schema",
-        "name": "Endpoint-get-groups-messages-ID-metadata-collections"
+        "name": "Endpoint-get-groups-messages-ID-metadata-collections",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-groups-statuses",
         "kind": "schema",
-        "name": "Endpoint-get-groups-statuses"
+        "name": "Endpoint-get-groups-statuses",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-industries",
         "kind": "schema",
-        "name": "Endpoint-get-industries"
+        "name": "Endpoint-get-industries",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-markdown-emoticons",
         "kind": "schema",
-        "name": "Endpoint-get-markdown-emoticons"
+        "name": "Endpoint-get-markdown-emoticons",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-messages-ID",
         "kind": "schema",
-        "name": "Endpoint-get-messages-ID"
+        "name": "Endpoint-get-messages-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-messages-ID-metadata",
         "kind": "schema",
-        "name": "Endpoint-get-messages-ID-metadata"
+        "name": "Endpoint-get-messages-ID-metadata",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-messages-ID-metadata-collections",
         "kind": "schema",
-        "name": "Endpoint-get-messages-ID-metadata-collections"
+        "name": "Endpoint-get-messages-ID-metadata-collections",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users",
         "kind": "schema",
-        "name": "Endpoint-get-users"
+        "name": "Endpoint-get-users",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users--",
         "kind": "schema",
-        "name": "Endpoint-get-users--"
+        "name": "Endpoint-get-users--",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID"
+        "name": "Endpoint-get-users-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID-groups",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID-groups"
+        "name": "Endpoint-get-users-ID-groups",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID-groups-messages",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID-groups-messages"
+        "name": "Endpoint-get-users-ID-groups-messages",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID-metadata",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID-metadata"
+        "name": "Endpoint-get-users-ID-metadata",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID-metadata-collections",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID-metadata-collections"
+        "name": "Endpoint-get-users-ID-metadata-collections",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID-positions",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID-positions"
+        "name": "Endpoint-get-users-ID-positions",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-ID-synergies",
         "kind": "schema",
-        "name": "Endpoint-get-users-ID-synergies"
+        "name": "Endpoint-get-users-ID-synergies",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-users-nearby",
         "kind": "schema",
-        "name": "Endpoint-get-users-nearby"
+        "name": "Endpoint-get-users-nearby",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-get-webhooks",
         "kind": "schema",
-        "name": "Endpoint-get-webhooks"
+        "name": "Endpoint-get-webhooks",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-patch-conversations-ID-statuses",
         "kind": "schema",
-        "name": "Endpoint-patch-conversations-ID-statuses"
+        "name": "Endpoint-patch-conversations-ID-statuses",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-patch-groups-ID",
         "kind": "schema",
-        "name": "Endpoint-patch-groups-ID"
+        "name": "Endpoint-patch-groups-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-patch-groups-ID-memberships",
         "kind": "schema",
-        "name": "Endpoint-patch-groups-ID-memberships"
+        "name": "Endpoint-patch-groups-ID-memberships",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-patch-positions-ID",
         "kind": "schema",
-        "name": "Endpoint-patch-positions-ID"
+        "name": "Endpoint-patch-positions-ID",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-patch-users--",
         "kind": "schema",
-        "name": "Endpoint-patch-users--"
+        "name": "Endpoint-patch-users--",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-patch-users-ID-synergies",
         "kind": "schema",
-        "name": "Endpoint-patch-users-ID-synergies"
+        "name": "Endpoint-patch-users-ID-synergies",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-audiences-ID-memberships",
         "kind": "schema",
-        "name": "Endpoint-post-audiences-ID-memberships"
+        "name": "Endpoint-post-audiences-ID-memberships",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-conversations-ID-messages",
         "kind": "schema",
-        "name": "Endpoint-post-conversations-ID-messages"
+        "name": "Endpoint-post-conversations-ID-messages",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-conversations-ID-schedules",
         "kind": "schema",
-        "name": "Endpoint-post-conversations-ID-schedules"
+        "name": "Endpoint-post-conversations-ID-schedules",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-conversations-ID-searches",
         "kind": "schema",
-        "name": "Endpoint-post-conversations-ID-searches"
+        "name": "Endpoint-post-conversations-ID-searches",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-conversations-schedules",
         "kind": "schema",
-        "name": "Endpoint-post-conversations-schedules"
+        "name": "Endpoint-post-conversations-schedules",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-conversations-searches",
         "kind": "schema",
-        "name": "Endpoint-post-conversations-searches"
+        "name": "Endpoint-post-conversations-searches",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups",
         "kind": "schema",
-        "name": "Endpoint-post-groups"
+        "name": "Endpoint-post-groups",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups-ID-memberships",
         "kind": "schema",
-        "name": "Endpoint-post-groups-ID-memberships"
+        "name": "Endpoint-post-groups-ID-memberships",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups-ID-messages",
         "kind": "schema",
-        "name": "Endpoint-post-groups-ID-messages"
+        "name": "Endpoint-post-groups-ID-messages",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups-ID-schedules",
         "kind": "schema",
-        "name": "Endpoint-post-groups-ID-schedules"
+        "name": "Endpoint-post-groups-ID-schedules",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups-messages-ID-metadata",
         "kind": "schema",
-        "name": "Endpoint-post-groups-messages-ID-metadata"
+        "name": "Endpoint-post-groups-messages-ID-metadata",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups-messages-metadata-filters",
         "kind": "schema",
-        "name": "Endpoint-post-groups-messages-metadata-filters"
+        "name": "Endpoint-post-groups-messages-metadata-filters",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-groups-schedules",
         "kind": "schema",
-        "name": "Endpoint-post-groups-schedules"
+        "name": "Endpoint-post-groups-schedules",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-markdown",
         "kind": "schema",
-        "name": "Endpoint-post-markdown"
+        "name": "Endpoint-post-markdown",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-messages-ID-metadata",
         "kind": "schema",
-        "name": "Endpoint-post-messages-ID-metadata"
+        "name": "Endpoint-post-messages-ID-metadata",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-messages-metadata-filters",
         "kind": "schema",
-        "name": "Endpoint-post-messages-metadata-filters"
+        "name": "Endpoint-post-messages-metadata-filters",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-positions",
         "kind": "schema",
-        "name": "Endpoint-post-positions"
+        "name": "Endpoint-post-positions",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-users-ID-messages",
         "kind": "schema",
-        "name": "Endpoint-post-users-ID-messages"
+        "name": "Endpoint-post-users-ID-messages",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-users-ID-metadata",
         "kind": "schema",
-        "name": "Endpoint-post-users-ID-metadata"
+        "name": "Endpoint-post-users-ID-metadata",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-users-invites",
         "kind": "schema",
-        "name": "Endpoint-post-users-invites"
+        "name": "Endpoint-post-users-invites",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-users-metadata-filters",
         "kind": "schema",
-        "name": "Endpoint-post-users-metadata-filters"
+        "name": "Endpoint-post-users-metadata-filters",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-users-searches",
         "kind": "schema",
-        "name": "Endpoint-post-users-searches"
+        "name": "Endpoint-post-users-searches",
+        "type": "object"
       },
       {
         "id": "schema:Endpoint-post-webhooks",
         "kind": "schema",
-        "name": "Endpoint-post-webhooks"
+        "name": "Endpoint-post-webhooks",
+        "type": "object"
       },
       {
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
         "id": "schema:Group_message",
         "kind": "schema",
-        "name": "Group_message"
+        "name": "Group_message",
+        "type": "object"
       },
       {
         "id": "schema:Group_message_data",
         "kind": "schema",
-        "name": "Group_message_data"
+        "name": "Group_message_data",
+        "type": "object"
       },
       {
         "id": "schema:Me",
         "kind": "schema",
-        "name": "Me"
+        "name": "Me",
+        "type": "object"
       },
       {
         "id": "schema:Member",
         "kind": "schema",
-        "name": "Member"
+        "name": "Member",
+        "type": "object"
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:Message_data",
         "kind": "schema",
-        "name": "Message_data"
+        "name": "Message_data",
+        "type": "object"
       },
       {
         "id": "schema:Position",
         "kind": "schema",
-        "name": "Position"
+        "name": "Position",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:User_data",
         "kind": "schema",
-        "name": "User_data"
+        "name": "User_data",
+        "type": "object"
       },
       {
         "id": "schema:Webhook",
         "kind": "schema",
-        "name": "Webhook"
+        "name": "Webhook",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.gerermesaffaires.com_wp-con
 
 | | |
 | --- | --- |
-| Signed bundle | `287c9f107f63a4e260f18eabaf11372887dd354fd9d892e24e4bf67a21542ad7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,285 +34,287 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.gerermesaffaires.com_wp-con
 
 53 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/box/menus` | get /box/menus | — |
-| GET | `/business-groups` | get /business-groups | — |
-| PATCH | `/business-groups` | patch /business-groups | — |
-| POST | `/business-groups` | post /business-groups | — |
-| GET | `/business-groups/all` | get /business-groups/all | — |
-| GET | `/business-groups/{id}` | get /business-groups/{id} | — |
-| GET | `/business-groups/{id}/spaces` | get /business-groups/{id}/spaces | — |
-| DELETE | `/business-groups/{id}/spaces/{spaceId}` | delete /business-groups/{id}/spaces/{spaceId} | — |
-| POST | `/business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/guest-in-space` | post /business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/guest-in-space | — |
-| POST | `/business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/spaces` | post /business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/spaces | — |
-| GET | `/hub/business-groups/{Id}/menus` | get /hub/business-groups/{Id}/menus | — |
-| POST | `/hub/documents` | post /hub/documents | — |
-| GET | `/hub/menus` | get /hub/menus | — |
-| GET | `/hub/menus/all` | get /hub/menus/all | — |
-| POST | `/hub/payslips` | post /hub/payslips | — |
-| POST | `/hub/spaces/{spaceId}/documents` | post /hub/spaces/{spaceId}/documents | — |
-| GET | `/hub/spaces/{spaceId}/menus` | get /hub/spaces/{spaceId}/menus | — |
-| POST | `/hub/spaces/{spaceId}/payslips` | post /hub/spaces/{spaceId}/payslips | — |
-| GET | `/menus` | get /menus | — |
-| POST | `/menus/{menuId}/documents` | post /menus/{menuId}/documents | — |
-| GET | `/profile` | get /profile | — |
-| PATCH | `/profile` | patch /profile | — |
-| POST | `/profile` | post /profile | — |
-| PATCH | `/profile/email` | patch /profile/email | — |
-| GET | `/profile/id-file` | get /profile/id-file | — |
-| PATCH | `/profile/mobile` | patch /profile/mobile | — |
-| GET | `/registration` | get /registration | — |
-| POST | `/registration` | post /registration | — |
-| GET | `/session` | get /session | — |
-| GET | `/spaces` | get /spaces | — |
-| POST | `/spaces` | post /spaces | — |
-| GET | `/spaces/all` | get /spaces/all | — |
-| DELETE | `/spaces/{id}` | delete /spaces/{id} | — |
-| GET | `/spaces/{id}` | get /spaces/{id} | — |
-| PATCH | `/spaces/{id}` | patch /spaces/{id} | — |
-| GET | `/spaces/{id}/accounting-year` | get /spaces/{id}/accounting-year | — |
-| POST | `/spaces/{id}/accounting-year` | post /spaces/{id}/accounting-year | — |
-| GET | `/spaces/{id}/collective-decision` | get /spaces/{id}/collective-decision | — |
-| POST | `/spaces/{id}/collective-decision` | post /spaces/{id}/collective-decision | — |
-| GET | `/spaces/{id}/company-entities` | get /spaces/{id}/company-entities | — |
-| POST | `/spaces/{id}/company-entities` | post /spaces/{id}/company-entities | — |
-| GET | `/spaces/{id}/company-entities/all` | get /spaces/{id}/company-entities/all | — |
-| GET | `/spaces/{id}/company-entities/{companyId}` | get /spaces/{id}/company-entities/{companyId} | — |
-| PATCH | `/spaces/{id}/company-entities/{companyId}` | patch /spaces/{id}/company-entities/{companyId} | — |
-| GET | `/spaces/{id}/company-entities/{personId}/details` | get /spaces/{id}/company-entities/{personId}/details | — |
-| POST | `/spaces/{id}/company-entities/{personId}/details` | post /spaces/{id}/company-entities/{personId}/details | — |
-| DELETE | `/spaces/{id}/company-entities/{personId}/details/{designation}` | delete /spaces/{id}/company-entities/{personId}/details/{designation} | — |
-| POST | `/spaces/{id}/documents/download` | post /spaces/{id}/documents/download | — |
-| GET | `/spaces/{id}/folders/{folderId}/persons/{memberId}` | get /spaces/{id}/folders/{folderId}/persons/{memberId} | — |
-| PATCH | `/spaces/{id}/folders/{folderId}/persons/{memberId}` | patch /spaces/{id}/folders/{folderId}/persons/{memberId} | — |
-| PATCH | `/spaces/{id}/folders/{folderId}/persons/{memberId}/activeaccess` | patch /spaces/{id}/folders/{folderId}/persons/{memberId}/activeaccess | — |
-| PATCH | `/spaces/{id}/folders/{folderId}/persons/{memberId}/unactiveaccess` | patch /spaces/{id}/folders/{folderId}/persons/{memberId}/unactiveaccess | — |
-| POST | `/spaces/{id}/folders/{folderId}/persons/{personId}/guest-in-space` | post /spaces/{id}/folders/{folderId}/persons/{personId}/guest-in-space | — |
-| GET | `/spaces/{id}/groups` | get /spaces/{id}/groups | — |
-| POST | `/spaces/{id}/groups` | post /spaces/{id}/groups | — |
-| GET | `/spaces/{id}/groups/all` | get /spaces/{id}/groups/all | — |
-| GET | `/spaces/{id}/groups/{groupId}` | get /spaces/{id}/groups/{groupId} | — |
-| PATCH | `/spaces/{id}/groups/{groupId}` | patch /spaces/{id}/groups/{groupId} | — |
-| DELETE | `/spaces/{id}/groups/{groupId}/folders/{folderId}` | delete /spaces/{id}/groups/{groupId}/folders/{folderId} | — |
-| PATCH | `/spaces/{id}/groups/{groupId}/folders/{folderId}` | patch /spaces/{id}/groups/{groupId}/folders/{folderId} | — |
-| DELETE | `/spaces/{id}/groups/{groupId}/persons/{memberId}` | delete /spaces/{id}/groups/{groupId}/persons/{memberId} | — |
-| PATCH | `/spaces/{id}/groups/{groupId}/persons/{memberId}` | patch /spaces/{id}/groups/{groupId}/persons/{memberId} | — |
-| GET | `/spaces/{id}/legal` | get /spaces/{id}/legal | — |
-| PATCH | `/spaces/{id}/legal` | patch /spaces/{id}/legal | — |
-| GET | `/spaces/{id}/logo` | get /spaces/{id}/logo | — |
-| GET | `/spaces/{id}/persons` | get /spaces/{id}/persons | — |
-| POST | `/spaces/{id}/persons` | post /spaces/{id}/persons | — |
-| GET | `/spaces/{id}/persons/all` | get /spaces/{id}/persons/all | — |
-| PATCH | `/spaces/{id}/persons/{memberId}/player` | patch /spaces/{id}/persons/{memberId}/player | — |
-| DELETE | `/spaces/{id}/persons/{personId}` | delete /spaces/{id}/persons/{personId} | — |
-| GET | `/spaces/{id}/persons/{personId}` | get /spaces/{id}/persons/{personId} | — |
-| PATCH | `/spaces/{id}/persons/{personId}` | patch /spaces/{id}/persons/{personId} | — |
-| GET | `/spaces/{id}/persons/{personId}/details` | get /spaces/{id}/persons/{personId}/details | — |
-| POST | `/spaces/{id}/persons/{personId}/details` | post /spaces/{id}/persons/{personId}/details | — |
-| DELETE | `/spaces/{id}/persons/{personId}/details/{designation}` | delete /spaces/{id}/persons/{personId}/details/{designation} | — |
-| GET | `/spaces/{id}/persons/{personId}/folders` | get /spaces/{id}/persons/{personId}/folders | — |
-| GET | `/spaces/{id}/persons/{personId}/groups` | get /spaces/{id}/persons/{personId}/groups | — |
-| GET | `/spaces/{id}/persons/{personId}/portfolios` | get /spaces/{id}/persons/{personId}/portfolios | — |
-| POST | `/spaces/{id}/persons/{personId}/portfolios` | post /spaces/{id}/persons/{personId}/portfolios | — |
-| PATCH | `/spaces/{id}/portfolios/{portfolioId}/persons/{memberId}` | patch /spaces/{id}/portfolios/{portfolioId}/persons/{memberId} | — |
-| GET | `/spaces/{id}/professional-vehicles` | get /spaces/{id}/professional-vehicles | — |
-| POST | `/spaces/{id}/professional-vehicles` | post /spaces/{id}/professional-vehicles | — |
-| GET | `/spaces/{id}/settings/nf203/logs` | get /spaces/{id}/settings/nf203/logs | — |
-| POST | `/spaces/{id}/settings/nf203/logs` | post /spaces/{id}/settings/nf203/logs | — |
-| GET | `/spaces/{id}/status` | get /spaces/{id}/status | — |
-| POST | `/spaces/{id}/status` | post /spaces/{id}/status | — |
-| DELETE | `/spaces/{id}/status/{code}` | delete /spaces/{id}/status/{code} | — |
-| GET | `/spaces/{id}/tax-contracts` | get /spaces/{id}/tax-contracts | — |
-| POST | `/spaces/{id}/tax-contracts` | post /spaces/{id}/tax-contracts | — |
-| GET | `/spaces/{id}/triggers` | get /spaces/{id}/triggers | — |
-| DELETE | `/spaces/{id}/triggers/{name}` | delete /spaces/{id}/triggers/{name} | — |
-| POST | `/spaces/{id}/triggers/{name}` | post /spaces/{id}/triggers/{name} | — |
-| DELETE | `/spaces/{spaceId}/common-folders/{id}` | delete /spaces/{spaceId}/common-folders/{id} | — |
-| PATCH | `/spaces/{spaceId}/common-folders/{id}` | patch /spaces/{spaceId}/common-folders/{id} | — |
-| GET | `/spaces/{spaceId}/company-entities/{id}/follow-ups` | get /spaces/{spaceId}/company-entities/{id}/follow-ups | — |
-| GET | `/spaces/{spaceId}/customers` | get /spaces/{spaceId}/customers | — |
-| GET | `/spaces/{spaceId}/customers/all` | get /spaces/{spaceId}/customers/all | — |
-| GET | `/spaces/{spaceId}/documents` | get /spaces/{spaceId}/documents | — |
-| PATCH | `/spaces/{spaceId}/documents/{documentId}` | patch /spaces/{spaceId}/documents/{documentId} | — |
-| GET | `/spaces/{spaceId}/documents/{documentId}/extend` | get /spaces/{spaceId}/documents/{documentId}/extend | — |
-| POST | `/spaces/{spaceId}/documents/{documentId}/extend` | post /spaces/{spaceId}/documents/{documentId}/extend | — |
-| GET | `/spaces/{spaceId}/documents/{documentId}/folders` | get /spaces/{spaceId}/documents/{documentId}/folders | — |
-| POST | `/spaces/{spaceId}/documents/{documentId}/mailing` | post /spaces/{spaceId}/documents/{documentId}/mailing | — |
-| GET | `/spaces/{spaceId}/documents/{documentId}/mailingprice` | get /spaces/{spaceId}/documents/{documentId}/mailingprice | — |
-| GET | `/spaces/{spaceId}/documents/{documentId}/versions` | get /spaces/{spaceId}/documents/{documentId}/versions | — |
-| POST | `/spaces/{spaceId}/documents/{documentId}/versions` | post /spaces/{spaceId}/documents/{documentId}/versions | — |
-| GET | `/spaces/{spaceId}/documents/{documentId}/versions/current` | get /spaces/{spaceId}/documents/{documentId}/versions/current | — |
-| GET | `/spaces/{spaceId}/documents/{id}/access` | get /spaces/{spaceId}/documents/{id}/access | — |
-| GET | `/spaces/{spaceId}/documents/{id}/accounting` | get /spaces/{spaceId}/documents/{id}/accounting | — |
-| GET | `/spaces/{spaceId}/documents/{id}/download` | get /spaces/{spaceId}/documents/{id}/download | — |
-| GET | `/spaces/{spaceId}/employees` | get /spaces/{spaceId}/employees | — |
-| GET | `/spaces/{spaceId}/employees/all` | get /spaces/{spaceId}/employees/all | — |
-| GET | `/spaces/{spaceId}/employers` | get /spaces/{spaceId}/employers | — |
-| GET | `/spaces/{spaceId}/employers/all` | get /spaces/{spaceId}/employers/all | — |
-| GET | `/spaces/{spaceId}/extend` | get /spaces/{spaceId}/extend | — |
-| POST | `/spaces/{spaceId}/extend` | post /spaces/{spaceId}/extend | — |
-| GET | `/spaces/{spaceId}/folders` | get /spaces/{spaceId}/folders | — |
-| GET | `/spaces/{spaceId}/folders/all` | get /spaces/{spaceId}/folders/all | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/invoices/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/invoices/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/invoices/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/invoices/{documentId} | — |
-| GET | `/spaces/{spaceId}/folders/{folderId}/nominative-social-declarations/{documentId}` | get /spaces/{spaceId}/folders/{folderId}/nominative-social-declarations/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/payrolls/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/payrolls/{documentId} | — |
-| POST | `/spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}/refresh` | post /spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}/refresh | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/payslips/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/payslips/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/payslips/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/payslips/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId} | — |
-| GET | `/spaces/{spaceId}/folders/{id}` | get /spaces/{spaceId}/folders/{id} | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}` | patch /spaces/{spaceId}/folders/{id} | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/accounting-year` | delete /spaces/{spaceId}/folders/{id}/accounting-year | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/accounting-year` | patch /spaces/{spaceId}/folders/{id}/accounting-year | — |
-| GET | `/spaces/{spaceId}/folders/{id}/accountings` | get /spaces/{spaceId}/folders/{id}/accountings | — |
-| GET | `/spaces/{spaceId}/folders/{id}/accountings-journal` | get /spaces/{spaceId}/folders/{id}/accountings-journal | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/bank` | delete /spaces/{spaceId}/folders/{id}/bank | — |
-| GET | `/spaces/{spaceId}/folders/{id}/bank` | get /spaces/{spaceId}/folders/{id}/bank | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/bank` | patch /spaces/{spaceId}/folders/{id}/bank | — |
-| GET | `/spaces/{spaceId}/folders/{id}/bank-statements` | get /spaces/{spaceId}/folders/{id}/bank-statements | — |
-| POST | `/spaces/{spaceId}/folders/{id}/bank-statements` | post /spaces/{spaceId}/folders/{id}/bank-statements | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/collective-decision` | patch /spaces/{spaceId}/folders/{id}/collective-decision | — |
-| GET | `/spaces/{spaceId}/folders/{id}/common-folders` | get /spaces/{spaceId}/folders/{id}/common-folders | — |
-| POST | `/spaces/{spaceId}/folders/{id}/common-folders` | post /spaces/{spaceId}/folders/{id}/common-folders | — |
-| GET | `/spaces/{spaceId}/folders/{id}/common-folders/all` | get /spaces/{spaceId}/folders/{id}/common-folders/all | — |
-| GET | `/spaces/{spaceId}/folders/{id}/contracting-partner` | get /spaces/{spaceId}/folders/{id}/contracting-partner | — |
-| GET | `/spaces/{spaceId}/folders/{id}/contracting-partner/space` | get /spaces/{spaceId}/folders/{id}/contracting-partner/space | — |
-| GET | `/spaces/{spaceId}/folders/{id}/contractual-documents` | get /spaces/{spaceId}/folders/{id}/contractual-documents | — |
-| POST | `/spaces/{spaceId}/folders/{id}/contractual-documents` | post /spaces/{spaceId}/folders/{id}/contractual-documents | — |
-| GET | `/spaces/{spaceId}/folders/{id}/contractual-relationship` | get /spaces/{spaceId}/folders/{id}/contractual-relationship | — |
-| GET | `/spaces/{spaceId}/folders/{id}/coporate-tax-declarations` | get /spaces/{spaceId}/folders/{id}/coporate-tax-declarations | — |
-| POST | `/spaces/{spaceId}/folders/{id}/coporate-tax-declarations` | post /spaces/{spaceId}/folders/{id}/coporate-tax-declarations | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/customer` | delete /spaces/{spaceId}/folders/{id}/customer | — |
-| GET | `/spaces/{spaceId}/folders/{id}/customer` | get /spaces/{spaceId}/folders/{id}/customer | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/customer` | patch /spaces/{spaceId}/folders/{id}/customer | — |
-| GET | `/spaces/{spaceId}/folders/{id}/deliveries-journal` | get /spaces/{spaceId}/folders/{id}/deliveries-journal | — |
-| GET | `/spaces/{spaceId}/folders/{id}/documents` | get /spaces/{spaceId}/folders/{id}/documents | — |
-| POST | `/spaces/{spaceId}/folders/{id}/documents` | post /spaces/{spaceId}/folders/{id}/documents | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/documents/{documentId}/detach` | patch /spaces/{spaceId}/folders/{id}/documents/{documentId}/detach | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/employee` | delete /spaces/{spaceId}/folders/{id}/employee | — |
-| GET | `/spaces/{spaceId}/folders/{id}/employee` | get /spaces/{spaceId}/folders/{id}/employee | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/employee` | patch /spaces/{spaceId}/folders/{id}/employee | — |
-| GET | `/spaces/{spaceId}/folders/{id}/expense-proofs` | get /spaces/{spaceId}/folders/{id}/expense-proofs | — |
-| POST | `/spaces/{spaceId}/folders/{id}/expense-proofs` | post /spaces/{spaceId}/folders/{id}/expense-proofs | — |
-| GET | `/spaces/{spaceId}/folders/{id}/expense-reports` | get /spaces/{spaceId}/folders/{id}/expense-reports | — |
-| POST | `/spaces/{spaceId}/folders/{id}/expense-reports` | post /spaces/{spaceId}/folders/{id}/expense-reports | — |
-| GET | `/spaces/{spaceId}/folders/{id}/expense-reports/{expenseReportId}/expense-proofs` | get /spaces/{spaceId}/folders/{id}/expense-reports/{expenseReportId}/expense-proofs | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/insurance` | delete /spaces/{spaceId}/folders/{id}/insurance | — |
-| GET | `/spaces/{spaceId}/folders/{id}/insurance` | get /spaces/{spaceId}/folders/{id}/insurance | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/insurance` | patch /spaces/{spaceId}/folders/{id}/insurance | — |
-| GET | `/spaces/{spaceId}/folders/{id}/invoices` | get /spaces/{spaceId}/folders/{id}/invoices | — |
-| POST | `/spaces/{spaceId}/folders/{id}/invoices` | post /spaces/{spaceId}/folders/{id}/invoices | — |
-| GET | `/spaces/{spaceId}/folders/{id}/legal-entity` | get /spaces/{spaceId}/folders/{id}/legal-entity | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/loan` | delete /spaces/{spaceId}/folders/{id}/loan | — |
-| GET | `/spaces/{spaceId}/folders/{id}/loan` | get /spaces/{spaceId}/folders/{id}/loan | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/loan` | patch /spaces/{spaceId}/folders/{id}/loan | — |
-| GET | `/spaces/{spaceId}/folders/{id}/messages` | get /spaces/{spaceId}/folders/{id}/messages | — |
-| POST | `/spaces/{spaceId}/folders/{id}/messages` | post /spaces/{spaceId}/folders/{id}/messages | — |
-| GET | `/spaces/{spaceId}/folders/{id}/messages/{messageId}` | get /spaces/{spaceId}/folders/{id}/messages/{messageId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/messages/{messageId}` | patch /spaces/{spaceId}/folders/{id}/messages/{messageId} | — |
-| GET | `/spaces/{spaceId}/folders/{id}/nominative-social-declarations` | get /spaces/{spaceId}/folders/{id}/nominative-social-declarations | — |
-| GET | `/spaces/{spaceId}/folders/{id}/other-taxes` | get /spaces/{spaceId}/folders/{id}/other-taxes | — |
-| POST | `/spaces/{spaceId}/folders/{id}/other-taxes` | post /spaces/{spaceId}/folders/{id}/other-taxes | — |
-| GET | `/spaces/{spaceId}/folders/{id}/passwords` | get /spaces/{spaceId}/folders/{id}/passwords | — |
-| POST | `/spaces/{spaceId}/folders/{id}/passwords` | post /spaces/{spaceId}/folders/{id}/passwords | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/passwords/{passwordId}` | delete /spaces/{spaceId}/folders/{id}/passwords/{passwordId} | — |
-| GET | `/spaces/{spaceId}/folders/{id}/passwords/{passwordId}` | get /spaces/{spaceId}/folders/{id}/passwords/{passwordId} | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/passwords/{passwordId}` | patch /spaces/{spaceId}/folders/{id}/passwords/{passwordId} | — |
-| GET | `/spaces/{spaceId}/folders/{id}/payrolls` | get /spaces/{spaceId}/folders/{id}/payrolls | — |
-| POST | `/spaces/{spaceId}/folders/{id}/payrolls` | post /spaces/{spaceId}/folders/{id}/payrolls | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration` | delete /spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration | — |
-| POST | `/spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration` | post /spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration | — |
-| GET | `/spaces/{spaceId}/folders/{id}/payslips` | get /spaces/{spaceId}/folders/{id}/payslips | — |
-| POST | `/spaces/{spaceId}/folders/{id}/payslips` | post /spaces/{spaceId}/folders/{id}/payslips | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/portfolio/{portfolioId}` | delete /spaces/{spaceId}/folders/{id}/portfolio/{portfolioId} | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/professional-vehicle` | delete /spaces/{spaceId}/folders/{id}/professional-vehicle | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/professional-vehicle` | patch /spaces/{spaceId}/folders/{id}/professional-vehicle | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/provider` | delete /spaces/{spaceId}/folders/{id}/provider | — |
-| GET | `/spaces/{spaceId}/folders/{id}/provider` | get /spaces/{spaceId}/folders/{id}/provider | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/provider` | patch /spaces/{spaceId}/folders/{id}/provider | — |
-| GET | `/spaces/{spaceId}/folders/{id}/required-documents` | get /spaces/{spaceId}/folders/{id}/required-documents | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}` | patch /spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid} | — |
-| POST | `/spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}` | post /spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid} | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}/documents/{documentId}` | delete /spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}/documents/{documentId} | — |
-| GET | `/spaces/{spaceId}/folders/{id}/sections` | get /spaces/{spaceId}/folders/{id}/sections | — |
-| GET | `/spaces/{spaceId}/folders/{id}/social-contracts` | get /spaces/{spaceId}/folders/{id}/social-contracts | — |
-| POST | `/spaces/{spaceId}/folders/{id}/social-contracts` | post /spaces/{spaceId}/folders/{id}/social-contracts | — |
-| GET | `/spaces/{spaceId}/folders/{id}/social-declarations` | get /spaces/{spaceId}/folders/{id}/social-declarations | — |
-| POST | `/spaces/{spaceId}/folders/{id}/social-declarations` | post /spaces/{spaceId}/folders/{id}/social-declarations | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/social-regimes` | delete /spaces/{spaceId}/folders/{id}/social-regimes | — |
-| GET | `/spaces/{spaceId}/folders/{id}/social-regimes` | get /spaces/{spaceId}/folders/{id}/social-regimes | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/social-regimes` | patch /spaces/{spaceId}/folders/{id}/social-regimes | — |
-| GET | `/spaces/{spaceId}/folders/{id}/sum-invoices` | get /spaces/{spaceId}/folders/{id}/sum-invoices | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/tax-contract` | delete /spaces/{spaceId}/folders/{id}/tax-contract | — |
-| PATCH | `/spaces/{spaceId}/folders/{id}/tax-contract` | patch /spaces/{spaceId}/folders/{id}/tax-contract | — |
-| GET | `/spaces/{spaceId}/folders/{id}/vat-declarations` | get /spaces/{spaceId}/folders/{id}/vat-declarations | — |
-| POST | `/spaces/{spaceId}/folders/{id}/vat-declarations` | post /spaces/{spaceId}/folders/{id}/vat-declarations | — |
-| DELETE | `/spaces/{spaceId}/folders/{id}/{documentClass}` | delete /spaces/{spaceId}/folders/{id}/{documentClass} | — |
-| GET | `/spaces/{spaceId}/folders/{id}/{documentClass}` | get /spaces/{spaceId}/folders/{id}/{documentClass} | — |
-| POST | `/spaces/{spaceId}/folders/{id}/{documentClass}` | post /spaces/{spaceId}/folders/{id}/{documentClass} | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/banks` | get /spaces/{spaceId}/legal-entities/{id}/banks | — |
-| POST | `/spaces/{spaceId}/legal-entities/{id}/banks` | post /spaces/{spaceId}/legal-entities/{id}/banks | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/banks/all` | get /spaces/{spaceId}/legal-entities/{id}/banks/all | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/contracts` | get /spaces/{spaceId}/legal-entities/{id}/contracts | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/contractual-relationships` | get /spaces/{spaceId}/legal-entities/{id}/contractual-relationships | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/contractual-relationships/all` | get /spaces/{spaceId}/legal-entities/{id}/contractual-relationships/all | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/customers` | get /spaces/{spaceId}/legal-entities/{id}/customers | — |
-| POST | `/spaces/{spaceId}/legal-entities/{id}/customers` | post /spaces/{spaceId}/legal-entities/{id}/customers | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/customers/all` | get /spaces/{spaceId}/legal-entities/{id}/customers/all | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/insurances` | get /spaces/{spaceId}/legal-entities/{id}/insurances | — |
-| POST | `/spaces/{spaceId}/legal-entities/{id}/insurances` | post /spaces/{spaceId}/legal-entities/{id}/insurances | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/insurances/all` | get /spaces/{spaceId}/legal-entities/{id}/insurances/all | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/loans` | get /spaces/{spaceId}/legal-entities/{id}/loans | — |
-| POST | `/spaces/{spaceId}/legal-entities/{id}/loans` | post /spaces/{spaceId}/legal-entities/{id}/loans | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/loans/all` | get /spaces/{spaceId}/legal-entities/{id}/loans/all | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/providers` | get /spaces/{spaceId}/legal-entities/{id}/providers | — |
-| POST | `/spaces/{spaceId}/legal-entities/{id}/providers` | post /spaces/{spaceId}/legal-entities/{id}/providers | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/providers/all` | get /spaces/{spaceId}/legal-entities/{id}/providers/all | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/social-regimes` | get /spaces/{spaceId}/legal-entities/{id}/social-regimes | — |
-| POST | `/spaces/{spaceId}/legal-entities/{id}/social-regimes` | post /spaces/{spaceId}/legal-entities/{id}/social-regimes | — |
-| GET | `/spaces/{spaceId}/legal-entities/{id}/social-regimes/all` | get /spaces/{spaceId}/legal-entities/{id}/social-regimes/all | — |
-| GET | `/spaces/{spaceId}/loans` | get /spaces/{spaceId}/loans | — |
-| GET | `/spaces/{spaceId}/loans/all` | get /spaces/{spaceId}/loans/all | — |
-| PATCH | `/spaces/{spaceId}/persons/{id}/call-for-document` | patch /spaces/{spaceId}/persons/{id}/call-for-document | — |
-| POST | `/spaces/{spaceId}/persons/{id}/call-for-document` | post /spaces/{spaceId}/persons/{id}/call-for-document | — |
-| GET | `/spaces/{spaceId}/persons/{id}/employees` | get /spaces/{spaceId}/persons/{id}/employees | — |
-| POST | `/spaces/{spaceId}/persons/{id}/employees` | post /spaces/{spaceId}/persons/{id}/employees | — |
-| GET | `/spaces/{spaceId}/persons/{id}/employees/all` | get /spaces/{spaceId}/persons/{id}/employees/all | — |
-| GET | `/spaces/{spaceId}/persons/{id}/exchange` | get /spaces/{spaceId}/persons/{id}/exchange | — |
-| GET | `/spaces/{spaceId}/persons/{id}/follow-ups` | get /spaces/{spaceId}/persons/{id}/follow-ups | — |
-| DELETE | `/spaces/{spaceId}/persons/{id}/guest-in-space` | delete /spaces/{spaceId}/persons/{id}/guest-in-space | — |
-| PATCH | `/spaces/{spaceId}/persons/{id}/guest-in-space` | patch /spaces/{spaceId}/persons/{id}/guest-in-space | — |
-| POST | `/spaces/{spaceId}/persons/{id}/guest-in-space` | post /spaces/{spaceId}/persons/{id}/guest-in-space | — |
-| DELETE | `/spaces/{spaceId}/persons/{id}/invitation` | delete /spaces/{spaceId}/persons/{id}/invitation | — |
-| GET | `/spaces/{spaceId}/persons/{id}/invitation` | get /spaces/{spaceId}/persons/{id}/invitation | — |
-| PATCH | `/spaces/{spaceId}/persons/{id}/invitation` | patch /spaces/{spaceId}/persons/{id}/invitation | — |
-| POST | `/spaces/{spaceId}/persons/{id}/invitation` | post /spaces/{spaceId}/persons/{id}/invitation | — |
-| POST | `/spaces/{spaceId}/persons/{id}/invitation/{invitationId}/send` | post /spaces/{spaceId}/persons/{id}/invitation/{invitationId}/send | — |
-| GET | `/spaces/{spaceId}/persons/{memberId}/folders/{id}` | get /spaces/{spaceId}/persons/{memberId}/folders/{id} | — |
-| PATCH | `/spaces/{spaceId}/persons/{memberId}/folders/{id}` | patch /spaces/{spaceId}/persons/{memberId}/folders/{id} | — |
-| GET | `/spaces/{spaceId}/providers` | get /spaces/{spaceId}/providers | — |
-| GET | `/spaces/{spaceId}/providers/all` | get /spaces/{spaceId}/providers/all | — |
-| GET | `/spaces/{spaceId}/search` | get /spaces/{spaceId}/search | — |
-| GET | `/spaces/{spaceId}/social-regimes` | get /spaces/{spaceId}/social-regimes | — |
-| GET | `/spaces/{spaceId}/social-regimes/all` | get /spaces/{spaceId}/social-regimes/all | — |
-| GET | `/spaces/{spaceId}/spaces-invoicings` | get /spaces/{spaceId}/spaces-invoicings | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/box/menus` | get /box/menus | — | object | yes | — |
+| GET | `/business-groups` | get /business-groups | `Name` | BusinessGroup[] | yes | — |
+| POST | `/business-groups` | post /business-groups | body*: object | object |  | — |
+| PATCH | `/business-groups` | patch /business-groups | body*: object | — |  | — |
+| GET | `/business-groups/all` | get /business-groups/all | `Name` | BusinessGroup[] | yes | — |
+| GET | `/business-groups/{id}` | get /business-groups/{id} | `id`* | BusinessGroup\|object | yes | — |
+| GET | `/business-groups/{id}/spaces` | get /business-groups/{id}/spaces | `id`*, `Name`, `Type`, `RegistrationNumber` | object[] | yes | — |
+| DELETE | `/business-groups/{id}/spaces/{spaceId}` | delete /business-groups/{id}/spaces/{spaceId} | `id`*, `spaceId`* | — |  | — |
+| POST | `/business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/guest-in-space` | post /business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/guest-in-space | `id`*, `spaceId`*, `personId`*, `folderId`*, body*: object | object |  | — |
+| POST | `/business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/spaces` | post /business-groups/{id}/spaces/{spaceId}/legal-entities/{personId}/customers/{folderId}/spaces | `id`*, `spaceId`*, `personId`*, `folderId`*, body*: object | object |  | — |
+| GET | `/hub/business-groups/{Id}/menus` | get /hub/business-groups/{Id}/menus | `Id`* | object | yes | — |
+| POST | `/hub/documents` | post /hub/documents | body*: object | object |  | — |
+| GET | `/hub/menus` | get /hub/menus | — | object | yes | — |
+| GET | `/hub/menus/all` | get /hub/menus/all | — | object | yes | — |
+| POST | `/hub/payslips` | post /hub/payslips | body*: object | object |  | — |
+| POST | `/hub/spaces/{spaceId}/documents` | post /hub/spaces/{spaceId}/documents | `spaceId`*, body*: object | object |  | — |
+| GET | `/hub/spaces/{spaceId}/menus` | get /hub/spaces/{spaceId}/menus | `spaceId`* | object | yes | — |
+| POST | `/hub/spaces/{spaceId}/payslips` | post /hub/spaces/{spaceId}/payslips | `spaceId`*, body*: object | object |  | — |
+| GET | `/menus` | get /menus | — | object | yes | — |
+| POST | `/menus/{menuId}/documents` | post /menus/{menuId}/documents | `menuId`*, body*: object | object |  | — |
+| GET | `/profile` | get /profile | `Contract` | object | yes | — |
+| POST | `/profile` | post /profile | body*: object | — |  | — |
+| PATCH | `/profile` | patch /profile | body*: object | — |  | — |
+| PATCH | `/profile/email` | patch /profile/email | body*: object | — |  | — |
+| GET | `/profile/id-file` | get /profile/id-file | `Contract` | object | yes | — |
+| PATCH | `/profile/mobile` | patch /profile/mobile | body*: object | — |  | — |
+| GET | `/registration` | get /registration | `Code`* | object | yes | — |
+| POST | `/registration` | post /registration | body*: object | object |  | — |
+| GET | `/session` | get /session | — | Session | yes | — |
+| GET | `/spaces` | get /spaces | `Name`, `Type`, `RegistrationNumber` | object[] | yes | — |
+| POST | `/spaces` | post /spaces | body*: object | object |  | — |
+| GET | `/spaces/all` | get /spaces/all | `Name`, `Type` | object[] | yes | — |
+| GET | `/spaces/{id}` | get /spaces/{id} | `id`* | object | yes | — |
+| DELETE | `/spaces/{id}` | delete /spaces/{id} | `id`* | — |  | — |
+| PATCH | `/spaces/{id}` | patch /spaces/{id} | `id`*, body*: object | — |  | — |
+| GET | `/spaces/{id}/accounting-year` | get /spaces/{id}/accounting-year | `id`*, `End`, `EffectiveDate` | AccountingYear\|object[] | yes | — |
+| POST | `/spaces/{id}/accounting-year` | post /spaces/{id}/accounting-year | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/collective-decision` | get /spaces/{id}/collective-decision | `id`*, `Date`, `Event`, `Range`, `HasCompanyRegistrationCertificate`, `HasStatus`, `HasSireneRegister`, `HasMinutes` | CollectiveDecision\|object[] | yes | — |
+| POST | `/spaces/{id}/collective-decision` | post /spaces/{id}/collective-decision | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/company-entities` | get /spaces/{id}/company-entities | `id`*, `Name`, `LegalName`, `RegistrationNumber` | CompanyEntity[] | yes | — |
+| POST | `/spaces/{id}/company-entities` | post /spaces/{id}/company-entities | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/company-entities/all` | get /spaces/{id}/company-entities/all | `id`*, `Name`, `RegistrationNumber` | CompanyEntity[] | yes | — |
+| GET | `/spaces/{id}/company-entities/{companyId}` | get /spaces/{id}/company-entities/{companyId} | `id`*, `companyId`* | CompanyEntity | yes | — |
+| PATCH | `/spaces/{id}/company-entities/{companyId}` | patch /spaces/{id}/company-entities/{companyId} | `id`*, `companyId`*, body*: object | — |  | — |
+| GET | `/spaces/{id}/company-entities/{personId}/details` | get /spaces/{id}/company-entities/{personId}/details | `id`*, `personId`* | object[] | yes | — |
+| POST | `/spaces/{id}/company-entities/{personId}/details` | post /spaces/{id}/company-entities/{personId}/details | `id`*, `personId`*, body*: object | — |  | — |
+| DELETE | `/spaces/{id}/company-entities/{personId}/details/{designation}` | delete /spaces/{id}/company-entities/{personId}/details/{designation} | `id`*, `personId`*, `designation`* | — |  | — |
+| POST | `/spaces/{id}/documents/download` | post /spaces/{id}/documents/download | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/folders/{folderId}/persons/{memberId}` | get /spaces/{id}/folders/{folderId}/persons/{memberId} | `id`*, `memberId`*, `folderId`* | object[] | yes | — |
+| PATCH | `/spaces/{id}/folders/{folderId}/persons/{memberId}` | patch /spaces/{id}/folders/{folderId}/persons/{memberId} | `id`*, `memberId`*, `folderId`*, body*: object | — |  | — |
+| PATCH | `/spaces/{id}/folders/{folderId}/persons/{memberId}/activeaccess` | patch /spaces/{id}/folders/{folderId}/persons/{memberId}/activeaccess | `id`*, `memberId`*, `folderId`* | — |  | — |
+| PATCH | `/spaces/{id}/folders/{folderId}/persons/{memberId}/unactiveaccess` | patch /spaces/{id}/folders/{folderId}/persons/{memberId}/unactiveaccess | `id`*, `memberId`*, `folderId`* | — |  | — |
+| POST | `/spaces/{id}/folders/{folderId}/persons/{personId}/guest-in-space` | post /spaces/{id}/folders/{folderId}/persons/{personId}/guest-in-space | `folderId`*, `personId`*, `id`*, body*: InvitationPerson | — |  | — |
+| GET | `/spaces/{id}/groups` | get /spaces/{id}/groups | `id`*, `Name` | Group[] | yes | — |
+| POST | `/spaces/{id}/groups` | post /spaces/{id}/groups | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/groups/all` | get /spaces/{id}/groups/all | `id`*, `Name` | Group[] | yes | — |
+| GET | `/spaces/{id}/groups/{groupId}` | get /spaces/{id}/groups/{groupId} | `id`*, `groupId`* | Group\|object | yes | — |
+| PATCH | `/spaces/{id}/groups/{groupId}` | patch /spaces/{id}/groups/{groupId} | `id`*, `groupId`*, body*: object | — |  | — |
+| DELETE | `/spaces/{id}/groups/{groupId}/folders/{folderId}` | delete /spaces/{id}/groups/{groupId}/folders/{folderId} | `id`*, `groupId`*, `folderId`* | — |  | — |
+| PATCH | `/spaces/{id}/groups/{groupId}/folders/{folderId}` | patch /spaces/{id}/groups/{groupId}/folders/{folderId} | `id`*, `groupId`*, `folderId`*, body*: object | — |  | — |
+| DELETE | `/spaces/{id}/groups/{groupId}/persons/{memberId}` | delete /spaces/{id}/groups/{groupId}/persons/{memberId} | `id`*, `groupId`*, `memberId`* | — |  | — |
+| PATCH | `/spaces/{id}/groups/{groupId}/persons/{memberId}` | patch /spaces/{id}/groups/{groupId}/persons/{memberId} | `id`*, `groupId`*, `memberId`* | — |  | — |
+| GET | `/spaces/{id}/legal` | get /spaces/{id}/legal | `id`* | Legal | yes | — |
+| PATCH | `/spaces/{id}/legal` | patch /spaces/{id}/legal | `id`*, body*: Legal | — |  | — |
+| GET | `/spaces/{id}/logo` | get /spaces/{id}/logo | `id`* | Space | yes | — |
+| GET | `/spaces/{id}/persons` | get /spaces/{id}/persons | `id`*, `Function`, `Range`, `Name`, `Validated`, `Email` | Person[] | yes | — |
+| POST | `/spaces/{id}/persons` | post /spaces/{id}/persons | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/persons/all` | get /spaces/{id}/persons/all | `id`*, `Name`, `Function`, `Range`, `Validated`, `Email` | Person[] | yes | — |
+| PATCH | `/spaces/{id}/persons/{memberId}/player` | patch /spaces/{id}/persons/{memberId}/player | `id`*, `memberId`*, body*: object | — |  | — |
+| GET | `/spaces/{id}/persons/{personId}` | get /spaces/{id}/persons/{personId} | `id`*, `personId`* | Person\|object | yes | — |
+| DELETE | `/spaces/{id}/persons/{personId}` | delete /spaces/{id}/persons/{personId} | `id`*, `personId`* | — |  | — |
+| PATCH | `/spaces/{id}/persons/{personId}` | patch /spaces/{id}/persons/{personId} | `id`*, `personId`*, body*: object | — |  | — |
+| GET | `/spaces/{id}/persons/{personId}/details` | get /spaces/{id}/persons/{personId}/details | `id`*, `personId`* | object[] | yes | — |
+| POST | `/spaces/{id}/persons/{personId}/details` | post /spaces/{id}/persons/{personId}/details | `id`*, `personId`*, body*: object | — |  | — |
+| DELETE | `/spaces/{id}/persons/{personId}/details/{designation}` | delete /spaces/{id}/persons/{personId}/details/{designation} | `id`*, `personId`*, `designation`* | — |  | — |
+| GET | `/spaces/{id}/persons/{personId}/folders` | get /spaces/{id}/persons/{personId}/folders | `id`*, `personId`*, `Range` | Folder[] | yes | — |
+| GET | `/spaces/{id}/persons/{personId}/groups` | get /spaces/{id}/persons/{personId}/groups | `id`*, `personId`* | Group[] | yes | — |
+| GET | `/spaces/{id}/persons/{personId}/portfolios` | get /spaces/{id}/persons/{personId}/portfolios | `id`*, `personId`* | Portfolio\|object[] | yes | — |
+| POST | `/spaces/{id}/persons/{personId}/portfolios` | post /spaces/{id}/persons/{personId}/portfolios | `id`*, `personId`*, body: object | object |  | — |
+| PATCH | `/spaces/{id}/portfolios/{portfolioId}/persons/{memberId}` | patch /spaces/{id}/portfolios/{portfolioId}/persons/{memberId} | `id`*, `memberId`*, `portfolioId`*, body*: object | — |  | — |
+| GET | `/spaces/{id}/professional-vehicles` | get /spaces/{id}/professional-vehicles | `id`*, `Designation` | ProfessionalVehicle\|object[] | yes | — |
+| POST | `/spaces/{id}/professional-vehicles` | post /spaces/{id}/professional-vehicles | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/settings/nf203/logs` | get /spaces/{id}/settings/nf203/logs | `id`* | object | yes | — |
+| POST | `/spaces/{id}/settings/nf203/logs` | post /spaces/{id}/settings/nf203/logs | `id`*, body: object | — |  | — |
+| GET | `/spaces/{id}/status` | get /spaces/{id}/status | `id`* | object[] | yes | — |
+| POST | `/spaces/{id}/status` | post /spaces/{id}/status | `id`*, body*: object | — |  | — |
+| DELETE | `/spaces/{id}/status/{code}` | delete /spaces/{id}/status/{code} | `id`*, `code`* | — |  | — |
+| GET | `/spaces/{id}/tax-contracts` | get /spaces/{id}/tax-contracts | `id`* | TaxContract\|object[] | yes | — |
+| POST | `/spaces/{id}/tax-contracts` | post /spaces/{id}/tax-contracts | `id`*, body*: object | object |  | — |
+| GET | `/spaces/{id}/triggers` | get /spaces/{id}/triggers | `id`* | Trigger[] | yes | — |
+| POST | `/spaces/{id}/triggers/{name}` | post /spaces/{id}/triggers/{name} | `id`*, `name`* | — |  | — |
+| DELETE | `/spaces/{id}/triggers/{name}` | delete /spaces/{id}/triggers/{name} | `id`*, `name`* | — |  | — |
+| DELETE | `/spaces/{spaceId}/common-folders/{id}` | delete /spaces/{spaceId}/common-folders/{id} | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/common-folders/{id}` | patch /spaces/{spaceId}/common-folders/{id} | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/company-entities/{id}/follow-ups` | get /spaces/{spaceId}/company-entities/{id}/follow-ups | `id`*, `spaceId`* | Folder[] | yes | — |
+| GET | `/spaces/{spaceId}/customers` | get /spaces/{spaceId}/customers | `spaceId`*, `CustomerNumber`, `WithContractingPartner` | Customer[] | yes | — |
+| GET | `/spaces/{spaceId}/customers/all` | get /spaces/{spaceId}/customers/all | `spaceId`*, `CustomerNumber`, `WithContractingPartner` | Customer[] | yes | — |
+| GET | `/spaces/{spaceId}/documents` | get /spaces/{spaceId}/documents | `spaceId`*, `FullText`, `Range`, `Class` | object[] | yes | — |
+| PATCH | `/spaces/{spaceId}/documents/{documentId}` | patch /spaces/{spaceId}/documents/{documentId} | `spaceId`*, `documentId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/documents/{documentId}/extend` | get /spaces/{spaceId}/documents/{documentId}/extend | `documentId`*, `spaceId`* | Document\|object[] | yes | — |
+| POST | `/spaces/{spaceId}/documents/{documentId}/extend` | post /spaces/{spaceId}/documents/{documentId}/extend | `documentId`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/documents/{documentId}/folders` | get /spaces/{spaceId}/documents/{documentId}/folders | `documentId`*, `spaceId`* | object | yes | — |
+| POST | `/spaces/{spaceId}/documents/{documentId}/mailing` | post /spaces/{spaceId}/documents/{documentId}/mailing | `documentId`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/documents/{documentId}/mailingprice` | get /spaces/{spaceId}/documents/{documentId}/mailingprice | `documentId`*, `spaceId`* | object | yes | — |
+| GET | `/spaces/{spaceId}/documents/{documentId}/versions` | get /spaces/{spaceId}/documents/{documentId}/versions | `documentId`*, `spaceId`* | Document[] | yes | — |
+| POST | `/spaces/{spaceId}/documents/{documentId}/versions` | post /spaces/{spaceId}/documents/{documentId}/versions | `documentId`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/documents/{documentId}/versions/current` | get /spaces/{spaceId}/documents/{documentId}/versions/current | `documentId`*, `spaceId`* | object | yes | — |
+| GET | `/spaces/{spaceId}/documents/{id}/access` | get /spaces/{spaceId}/documents/{id}/access | `id`*, `spaceId`* | object | yes | — |
+| GET | `/spaces/{spaceId}/documents/{id}/accounting` | get /spaces/{spaceId}/documents/{id}/accounting | `id`*, `spaceId`* | object | yes | — |
+| GET | `/spaces/{spaceId}/documents/{id}/download` | get /spaces/{spaceId}/documents/{id}/download | `id`*, `spaceId`* | object | yes | — |
+| GET | `/spaces/{spaceId}/employees` | get /spaces/{spaceId}/employees | `spaceId`*, `SSNumber`, `EmployeeNumber`, `WithContractingPartner` | Employee[] | yes | — |
+| GET | `/spaces/{spaceId}/employees/all` | get /spaces/{spaceId}/employees/all | `spaceId`*, `SSNumber`, `EmployeeNumber`, `WithContractingPartner` | Employee[] | yes | — |
+| GET | `/spaces/{spaceId}/employers` | get /spaces/{spaceId}/employers | `spaceId`*, `EmployeeNumber`, `WithContractingPartner` | Employee[] | yes | — |
+| GET | `/spaces/{spaceId}/employers/all` | get /spaces/{spaceId}/employers/all | `spaceId`*, `EmployeeNumber`, `WithContractingPartner` | Employee[] | yes | — |
+| GET | `/spaces/{spaceId}/extend` | get /spaces/{spaceId}/extend | `spaceId`* | object | yes | — |
+| POST | `/spaces/{spaceId}/extend` | post /spaces/{spaceId}/extend | `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders` | get /spaces/{spaceId}/folders | `Name`, `Keywords`, `RootFolders`, `Range`, `Class`, `spaceId`* | Folder[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/all` | get /spaces/{spaceId}/folders/all | `Name`, `Range`, `Keywords`, `Class`, `spaceId`* | Folder[] | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/bank-statements/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/contractual-documents/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/corporate-tax-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/expense-proofs/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/expense-reports/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/invoices/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/invoices/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/invoices/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/invoices/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{folderId}/nominative-social-declarations/{documentId}` | get /spaces/{spaceId}/folders/{folderId}/nominative-social-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`* | Payroll\|object | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/other-taxes/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/payrolls/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/payrolls/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| POST | `/spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}/refresh` | post /spaces/{spaceId}/folders/{folderId}/payrolls/{documentId}/refresh | `spaceId`*, `folderId`*, `documentId`* | object |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/payslips/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/payslips/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/payslips/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/payslips/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/social-contracts/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/social-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId}` | delete /spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId}` | patch /spaces/{spaceId}/folders/{folderId}/vat-declarations/{documentId} | `spaceId`*, `folderId`*, `documentId`*, body: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}` | get /spaces/{spaceId}/folders/{id} | `id`*, `spaceId`* | Folder\|object | yes | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}` | patch /spaces/{spaceId}/folders/{id} | `id`*, `spaceId`*, body*: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/accounting-year` | delete /spaces/{spaceId}/folders/{id}/accounting-year | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/accounting-year` | patch /spaces/{spaceId}/folders/{id}/accounting-year | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/accountings` | get /spaces/{spaceId}/folders/{id}/accountings | `id`*, `spaceId`*, `Date`, `FolderDate`, `Title`, `Workbook`, `Class`, `AccountedOn`, `WithFolders`, `Range` | Accounting[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/accountings-journal` | get /spaces/{spaceId}/folders/{id}/accountings-journal | `id`*, `spaceId`*, `DeliveryDate`, `AccountingDate`, `Number`, `Workbook`, `YearMonth`, `Class`, `Code`, `TargetFolderName` | object[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/bank` | get /spaces/{spaceId}/folders/{id}/bank | `id`*, `spaceId`* | Bank | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/bank` | delete /spaces/{spaceId}/folders/{id}/bank | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/bank` | patch /spaces/{spaceId}/folders/{id}/bank | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/bank-statements` | get /spaces/{spaceId}/folders/{id}/bank-statements | `id`*, `spaceId`*, `Date`, `Number`, `Range` | BankStatement[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/bank-statements` | post /spaces/{spaceId}/folders/{id}/bank-statements | `id`*, `spaceId`*, body*: object | object |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/collective-decision` | patch /spaces/{spaceId}/folders/{id}/collective-decision | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/common-folders` | get /spaces/{spaceId}/folders/{id}/common-folders | `id`*, `spaceId`*, `Name`, `Keywords` | Folder[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/common-folders` | post /spaces/{spaceId}/folders/{id}/common-folders | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/common-folders/all` | get /spaces/{spaceId}/folders/{id}/common-folders/all | `id`*, `spaceId`*, `Name`, `Keywords` | Folder[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/contracting-partner` | get /spaces/{spaceId}/folders/{id}/contracting-partner | `id`*, `spaceId`* | object[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/contracting-partner/space` | get /spaces/{spaceId}/folders/{id}/contracting-partner/space | `id`*, `spaceId`* | object[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/contractual-documents` | get /spaces/{spaceId}/folders/{id}/contractual-documents | `id`*, `spaceId`*, `Date`, `FolderDate`, `Type`, `Range` | ContractualDocument[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/contractual-documents` | post /spaces/{spaceId}/folders/{id}/contractual-documents | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/contractual-relationship` | get /spaces/{spaceId}/folders/{id}/contractual-relationship | `id`*, `spaceId`* | Contractual-Relationship | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/coporate-tax-declarations` | get /spaces/{spaceId}/folders/{id}/coporate-tax-declarations | `id`*, `spaceId`*, `Date`, `Range` | CorporateTaxDeclaration[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/coporate-tax-declarations` | post /spaces/{spaceId}/folders/{id}/coporate-tax-declarations | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/customer` | get /spaces/{spaceId}/folders/{id}/customer | `id`*, `spaceId`* | Customer\|object | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/customer` | delete /spaces/{spaceId}/folders/{id}/customer | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/customer` | patch /spaces/{spaceId}/folders/{id}/customer | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/deliveries-journal` | get /spaces/{spaceId}/folders/{id}/deliveries-journal | `id`*, `spaceId`*, `DeliveryDate`, `AccountingDate`, `Number`, `Class`, `TargetFolderName` | object[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/documents` | get /spaces/{spaceId}/folders/{id}/documents | `id`*, `spaceId`*, `Date`, `Title`, `FolderDate`, `Class`, `Range` | Document[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/documents` | post /spaces/{spaceId}/folders/{id}/documents | `id`*, `spaceId`*, body*: object | object |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/documents/{documentId}/detach` | patch /spaces/{spaceId}/folders/{id}/documents/{documentId}/detach | `id`*, `spaceId`*, `documentId`* | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/employee` | get /spaces/{spaceId}/folders/{id}/employee | `id`*, `spaceId`* | Employee | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/employee` | delete /spaces/{spaceId}/folders/{id}/employee | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/employee` | patch /spaces/{spaceId}/folders/{id}/employee | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/expense-proofs` | get /spaces/{spaceId}/folders/{id}/expense-proofs | `id`*, `spaceId`*, `Date`, `FolderDate`, `Status`, `NoExpenseReport`, `Range` | ExpenseProof[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/expense-proofs` | post /spaces/{spaceId}/folders/{id}/expense-proofs | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/expense-reports` | get /spaces/{spaceId}/folders/{id}/expense-reports | `id`*, `spaceId`*, `Date`, `FolderDate`, `WithExtend`, `Range`, `ProcessingDate`, `ExpenseDate`, `SortOrder`, `SortName` | ExpenseReport[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/expense-reports` | post /spaces/{spaceId}/folders/{id}/expense-reports | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/expense-reports/{expenseReportId}/expense-proofs` | get /spaces/{spaceId}/folders/{id}/expense-reports/{expenseReportId}/expense-proofs | `id`*, `spaceId`*, `expenseReportId`*, `Date`, `Status`, `FolderDate` | ExpenseProof[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/insurance` | get /spaces/{spaceId}/folders/{id}/insurance | `id`*, `spaceId`* | Insurance | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/insurance` | delete /spaces/{spaceId}/folders/{id}/insurance | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/insurance` | patch /spaces/{spaceId}/folders/{id}/insurance | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/invoices` | get /spaces/{spaceId}/folders/{id}/invoices | `id`*, `spaceId`*, `Title`, `Date`, `Number`, `InclVAT`, `BeforeVAT`, `DueDate`, `PaymentDate`, `InvoiceDate`, `FolderDate`, `AccountedOn`, `WithExtend`, `Extend`, `Range`, `SortOrder`, `SortName` | Invoice[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/invoices` | post /spaces/{spaceId}/folders/{id}/invoices | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/legal-entity` | get /spaces/{spaceId}/folders/{id}/legal-entity | `id`*, `spaceId`* | object | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/loan` | get /spaces/{spaceId}/folders/{id}/loan | `id`*, `spaceId`* | Loan | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/loan` | delete /spaces/{spaceId}/folders/{id}/loan | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/loan` | patch /spaces/{spaceId}/folders/{id}/loan | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/messages` | get /spaces/{spaceId}/folders/{id}/messages | `Text`, `Range`, `MessageDate`, `spaceId`*, `id`* | Message[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/messages` | post /spaces/{spaceId}/folders/{id}/messages | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/messages/{messageId}` | get /spaces/{spaceId}/folders/{id}/messages/{messageId} | `id`*, `spaceId`*, `messageId`* | Message\|object | yes | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/messages/{messageId}` | patch /spaces/{spaceId}/folders/{id}/messages/{messageId} | `id`*, `spaceId`*, `messageId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/nominative-social-declarations` | get /spaces/{spaceId}/folders/{id}/nominative-social-declarations | `id`*, `spaceId`*, `Date`, `Range` | Payroll\|object[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/other-taxes` | get /spaces/{spaceId}/folders/{id}/other-taxes | `id`*, `spaceId`*, `Date`, `Range` | OtherTax[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/other-taxes` | post /spaces/{spaceId}/folders/{id}/other-taxes | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/passwords` | get /spaces/{spaceId}/folders/{id}/passwords | `spaceId`*, `id`* | Password\|object[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/passwords` | post /spaces/{spaceId}/folders/{id}/passwords | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/passwords/{passwordId}` | get /spaces/{spaceId}/folders/{id}/passwords/{passwordId} | `id`*, `spaceId`*, `passwordId`* | Password\|object | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/passwords/{passwordId}` | delete /spaces/{spaceId}/folders/{id}/passwords/{passwordId} | `id`*, `spaceId`*, `passwordId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/passwords/{passwordId}` | patch /spaces/{spaceId}/folders/{id}/passwords/{passwordId} | `id`*, `spaceId`*, `passwordId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/payrolls` | get /spaces/{spaceId}/folders/{id}/payrolls | `id`*, `spaceId`*, `Date`, `Begin`, `End`, `Range` | Payroll[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/payrolls` | post /spaces/{spaceId}/folders/{id}/payrolls | `id`*, `spaceId`*, body*: object | object |  | — |
+| POST | `/spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration` | post /spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration | `id`*, `spaceId`*, `payrollId`*, body*: object | object |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration` | delete /spaces/{spaceId}/folders/{id}/payrolls/{payrollId}/nominative-social-declaration | `id`*, `spaceId`*, `payrollId`* | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/payslips` | get /spaces/{spaceId}/folders/{id}/payslips | `id`*, `spaceId`*, `Date`, `Range` | PaySlip[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/payslips` | post /spaces/{spaceId}/folders/{id}/payslips | `id`*, `spaceId`*, body*: object | object |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/portfolio/{portfolioId}` | delete /spaces/{spaceId}/folders/{id}/portfolio/{portfolioId} | `id`*, `spaceId`*, `portfolioId`* | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/professional-vehicle` | delete /spaces/{spaceId}/folders/{id}/professional-vehicle | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/professional-vehicle` | patch /spaces/{spaceId}/folders/{id}/professional-vehicle | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/provider` | get /spaces/{spaceId}/folders/{id}/provider | `id`*, `spaceId`* | Provider | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/provider` | delete /spaces/{spaceId}/folders/{id}/provider | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/provider` | patch /spaces/{spaceId}/folders/{id}/provider | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/required-documents` | get /spaces/{spaceId}/folders/{id}/required-documents | `id`*, `spaceId`* | object[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}` | post /spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid} | `id`*, `spaceId`*, `requireddocumentid`*, body*: object | object |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}` | patch /spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid} | `id`*, `spaceId`*, `requireddocumentid`*, body*: object | — |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}/documents/{documentId}` | delete /spaces/{spaceId}/folders/{id}/required-documents/{requireddocumentid}/documents/{documentId} | `id`*, `spaceId`*, `requireddocumentid`*, `documentId`* | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/sections` | get /spaces/{spaceId}/folders/{id}/sections | `id`*, `spaceId`* | Section\|object[] | yes | — |
+| GET | `/spaces/{spaceId}/folders/{id}/social-contracts` | get /spaces/{spaceId}/folders/{id}/social-contracts | `id`*, `spaceId`*, `Date`, `Range` | SocialContract[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/social-contracts` | post /spaces/{spaceId}/folders/{id}/social-contracts | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/social-declarations` | get /spaces/{spaceId}/folders/{id}/social-declarations | `id`*, `spaceId`*, `Date`, `Range` | SocialDeclaration[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/social-declarations` | post /spaces/{spaceId}/folders/{id}/social-declarations | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/social-regimes` | get /spaces/{spaceId}/folders/{id}/social-regimes | `id`*, `spaceId`* | SocialRegime | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/social-regimes` | delete /spaces/{spaceId}/folders/{id}/social-regimes | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/social-regimes` | patch /spaces/{spaceId}/folders/{id}/social-regimes | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/sum-invoices` | get /spaces/{spaceId}/folders/{id}/sum-invoices | `id`*, `spaceId`*, `Number`, `InclVat`, `BeforeVAT`, `DueDate`, `PaymentDate`, `InvoiceDate` | object | yes | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/tax-contract` | delete /spaces/{spaceId}/folders/{id}/tax-contract | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/folders/{id}/tax-contract` | patch /spaces/{spaceId}/folders/{id}/tax-contract | `id`*, `spaceId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/vat-declarations` | get /spaces/{spaceId}/folders/{id}/vat-declarations | `id`*, `spaceId`*, `Date`, `Range` | VATDeclaration[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/vat-declarations` | post /spaces/{spaceId}/folders/{id}/vat-declarations | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/folders/{id}/{documentClass}` | get /spaces/{spaceId}/folders/{id}/{documentClass} | `id`*, `spaceId`*, `documentClass`* | Document[] | yes | — |
+| POST | `/spaces/{spaceId}/folders/{id}/{documentClass}` | post /spaces/{spaceId}/folders/{id}/{documentClass} | `id`*, `spaceId`*, `documentClass`*, body*: object | object |  | — |
+| DELETE | `/spaces/{spaceId}/folders/{id}/{documentClass}` | delete /spaces/{spaceId}/folders/{id}/{documentClass} | `spaceId`*, `id`*, `documentClass`* | — |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/banks` | get /spaces/{spaceId}/legal-entities/{id}/banks | `id`*, `spaceId`* | Bank[] | yes | — |
+| POST | `/spaces/{spaceId}/legal-entities/{id}/banks` | post /spaces/{spaceId}/legal-entities/{id}/banks | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/banks/all` | get /spaces/{spaceId}/legal-entities/{id}/banks/all | `id`*, `spaceId`* | Bank[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/contracts` | get /spaces/{spaceId}/legal-entities/{id}/contracts | `id`*, `spaceId`* | Contract[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/contractual-relationships` | get /spaces/{spaceId}/legal-entities/{id}/contractual-relationships | `id`*, `spaceId`* | Contractual-Relationship[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/contractual-relationships/all` | get /spaces/{spaceId}/legal-entities/{id}/contractual-relationships/all | `id`*, `spaceId`* | Contractual-Relationship[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/customers` | get /spaces/{spaceId}/legal-entities/{id}/customers | `id`*, `spaceId`* | Customer[] | yes | — |
+| POST | `/spaces/{spaceId}/legal-entities/{id}/customers` | post /spaces/{spaceId}/legal-entities/{id}/customers | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/customers/all` | get /spaces/{spaceId}/legal-entities/{id}/customers/all | `id`*, `spaceId`* | Customer[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/insurances` | get /spaces/{spaceId}/legal-entities/{id}/insurances | `id`*, `spaceId`* | Insurance[] | yes | — |
+| POST | `/spaces/{spaceId}/legal-entities/{id}/insurances` | post /spaces/{spaceId}/legal-entities/{id}/insurances | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/insurances/all` | get /spaces/{spaceId}/legal-entities/{id}/insurances/all | `id`*, `spaceId`* | Insurance[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/loans` | get /spaces/{spaceId}/legal-entities/{id}/loans | `id`*, `spaceId`* | Loan[] | yes | — |
+| POST | `/spaces/{spaceId}/legal-entities/{id}/loans` | post /spaces/{spaceId}/legal-entities/{id}/loans | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/loans/all` | get /spaces/{spaceId}/legal-entities/{id}/loans/all | `id`*, `spaceId`* | Loan[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/providers` | get /spaces/{spaceId}/legal-entities/{id}/providers | `id`*, `spaceId`* | Provider[] | yes | — |
+| POST | `/spaces/{spaceId}/legal-entities/{id}/providers` | post /spaces/{spaceId}/legal-entities/{id}/providers | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/providers/all` | get /spaces/{spaceId}/legal-entities/{id}/providers/all | `id`*, `spaceId`* | Provider[] | yes | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/social-regimes` | get /spaces/{spaceId}/legal-entities/{id}/social-regimes | `id`*, `spaceId`* | SocialRegime[] | yes | — |
+| POST | `/spaces/{spaceId}/legal-entities/{id}/social-regimes` | post /spaces/{spaceId}/legal-entities/{id}/social-regimes | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/legal-entities/{id}/social-regimes/all` | get /spaces/{spaceId}/legal-entities/{id}/social-regimes/all | `id`*, `spaceId`* | SocialRegime[] | yes | — |
+| GET | `/spaces/{spaceId}/loans` | get /spaces/{spaceId}/loans | `spaceId`* | Loan[] | yes | — |
+| GET | `/spaces/{spaceId}/loans/all` | get /spaces/{spaceId}/loans/all | `spaceId`* | Loan[] | yes | — |
+| POST | `/spaces/{spaceId}/persons/{id}/call-for-document` | post /spaces/{spaceId}/persons/{id}/call-for-document | `id`*, `spaceId`*, body*: CallForDocument | object |  | — |
+| PATCH | `/spaces/{spaceId}/persons/{id}/call-for-document` | patch /spaces/{spaceId}/persons/{id}/call-for-document | `id`*, `spaceId`*, body*: ModifyCollect | — |  | — |
+| GET | `/spaces/{spaceId}/persons/{id}/employees` | get /spaces/{spaceId}/persons/{id}/employees | `id`*, `spaceId`* | Employee[] | yes | — |
+| POST | `/spaces/{spaceId}/persons/{id}/employees` | post /spaces/{spaceId}/persons/{id}/employees | `id`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/persons/{id}/employees/all` | get /spaces/{spaceId}/persons/{id}/employees/all | `id`*, `spaceId`* | Employee[] | yes | — |
+| GET | `/spaces/{spaceId}/persons/{id}/exchange` | get /spaces/{spaceId}/persons/{id}/exchange | `id`*, `spaceId`* | Folder\|object | yes | — |
+| GET | `/spaces/{spaceId}/persons/{id}/follow-ups` | get /spaces/{spaceId}/persons/{id}/follow-ups | `id`*, `spaceId`* | FollowUp | yes | — |
+| POST | `/spaces/{spaceId}/persons/{id}/guest-in-space` | post /spaces/{spaceId}/persons/{id}/guest-in-space | `id`*, `spaceId`*, body*: GuestInSpace | — |  | — |
+| DELETE | `/spaces/{spaceId}/persons/{id}/guest-in-space` | delete /spaces/{spaceId}/persons/{id}/guest-in-space | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/persons/{id}/guest-in-space` | patch /spaces/{spaceId}/persons/{id}/guest-in-space | `id`*, `spaceId`*, body*: ModifyInvitation | — |  | — |
+| GET | `/spaces/{spaceId}/persons/{id}/invitation` | get /spaces/{spaceId}/persons/{id}/invitation | `id`*, `spaceId`* | Invitation | yes | — |
+| POST | `/spaces/{spaceId}/persons/{id}/invitation` | post /spaces/{spaceId}/persons/{id}/invitation | `id`*, `spaceId`*, body*: object | object |  | — |
+| DELETE | `/spaces/{spaceId}/persons/{id}/invitation` | delete /spaces/{spaceId}/persons/{id}/invitation | `id`*, `spaceId`* | — |  | — |
+| PATCH | `/spaces/{spaceId}/persons/{id}/invitation` | patch /spaces/{spaceId}/persons/{id}/invitation | `id`*, `spaceId`*, body*: object | — |  | — |
+| POST | `/spaces/{spaceId}/persons/{id}/invitation/{invitationId}/send` | post /spaces/{spaceId}/persons/{id}/invitation/{invitationId}/send | `id`*, `invitationId`*, `spaceId`*, body*: object | object |  | — |
+| GET | `/spaces/{spaceId}/persons/{memberId}/folders/{id}` | get /spaces/{spaceId}/persons/{memberId}/folders/{id} | `id`*, `spaceId`*, `memberId`* | Access\|Folder | yes | — |
+| PATCH | `/spaces/{spaceId}/persons/{memberId}/folders/{id}` | patch /spaces/{spaceId}/persons/{memberId}/folders/{id} | `id`*, `spaceId`*, `memberId`*, body*: object | — |  | — |
+| GET | `/spaces/{spaceId}/providers` | get /spaces/{spaceId}/providers | `spaceId`*, `WithContractingPartner` | Provider[] | yes | — |
+| GET | `/spaces/{spaceId}/providers/all` | get /spaces/{spaceId}/providers/all | `spaceId`*, `WithContractingPartner` | Provider[] | yes | — |
+| GET | `/spaces/{spaceId}/search` | get /spaces/{spaceId}/search | `spaceId`*, `Query`, `Range`, `QueryContext` | object | yes | — |
+| GET | `/spaces/{spaceId}/social-regimes` | get /spaces/{spaceId}/social-regimes | `spaceId`*, `WithContractingPartner` | SocialRegime[] | yes | — |
+| GET | `/spaces/{spaceId}/social-regimes/all` | get /spaces/{spaceId}/social-regimes/all | `spaceId`*, `WithContractingPartner` | SocialRegime[] | yes | — |
+| GET | `/spaces/{spaceId}/spaces-invoicings` | get /spaces/{spaceId}/spaces-invoicings | `spaceId`*, `Date` | SpacesInvoicing[] | yes | — |

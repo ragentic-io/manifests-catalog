@@ -17,12 +17,12 @@
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:delete:/actions/{action}"
+        "to": "operation:put:/actions/{action}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:put:/actions/{action}"
+        "to": "operation:delete:/actions/{action}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
@@ -52,17 +52,17 @@
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:delete:/addresses/{address}/keys/{key}"
-      },
-      {
-        "from": "mailscript-com-2fc9dce0ed",
-        "kind": "EXPOSES",
         "to": "operation:get:/addresses/{address}/keys/{key}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
         "to": "operation:put:/addresses/{address}/keys/{key}"
+      },
+      {
+        "from": "mailscript-com-2fc9dce0ed",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/addresses/{address}/keys/{key}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
@@ -127,12 +127,12 @@
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:delete:/triggers/{trigger}"
+        "to": "operation:put:/triggers/{trigger}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:put:/triggers/{trigger}"
+        "to": "operation:delete:/triggers/{trigger}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
@@ -177,12 +177,12 @@
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:delete:/workflows/{workflow}"
+        "to": "operation:put:/workflows/{workflow}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
-        "to": "operation:put:/workflows/{workflow}"
+        "to": "operation:delete:/workflows/{workflow}"
       },
       {
         "from": "mailscript-com-2fc9dce0ed",
@@ -193,6 +193,356 @@
         "from": "mailscript-com-2fc9dce0ed",
         "kind": "EXPOSES",
         "to": "operation:post:/workspaces"
+      },
+      {
+        "from": "operation:get:/actions",
+        "kind": "RETURNS",
+        "to": "schema:GetAllActionsResponse"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionAliasRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionCombineRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionDaemonRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionForwardRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionReplyAllRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionReplyRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionSendRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionSmsRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionWebhookRequest"
+      },
+      {
+        "from": "operation:post:/actions",
+        "kind": "RETURNS",
+        "to": "schema:AddActionResponse"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionAliasRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionCombineRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionDaemonRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionForwardRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionReplyAllRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionReplyRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionSendRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionSmsRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddActionWebhookRequest"
+      },
+      {
+        "from": "operation:put:/actions/{action}",
+        "kind": "RETURNS",
+        "to": "schema:Key"
+      },
+      {
+        "from": "operation:get:/addresses",
+        "kind": "RETURNS",
+        "to": "schema:GetAllAddressesResponse"
+      },
+      {
+        "from": "operation:post:/addresses",
+        "kind": "ACCEPTS",
+        "to": "schema:AddAddressRequest"
+      },
+      {
+        "from": "operation:get:/addresses/{address}/keys",
+        "kind": "RETURNS",
+        "to": "schema:GetAllKeysResponse"
+      },
+      {
+        "from": "operation:post:/addresses/{address}/keys",
+        "kind": "ACCEPTS",
+        "to": "schema:AddKeyRequest"
+      },
+      {
+        "from": "operation:post:/addresses/{address}/keys",
+        "kind": "RETURNS",
+        "to": "schema:AddKeyResponse"
+      },
+      {
+        "from": "operation:get:/addresses/{address}/keys/{key}",
+        "kind": "RETURNS",
+        "to": "schema:Key"
+      },
+      {
+        "from": "operation:put:/addresses/{address}/keys/{key}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateKeyRequest"
+      },
+      {
+        "from": "operation:put:/addresses/{address}/keys/{key}",
+        "kind": "RETURNS",
+        "to": "schema:Key"
+      },
+      {
+        "from": "operation:get:/domains",
+        "kind": "RETURNS",
+        "to": "schema:GetAllDomainsResponse"
+      },
+      {
+        "from": "operation:post:/domains",
+        "kind": "ACCEPTS",
+        "to": "schema:AddDomainRequest"
+      },
+      {
+        "from": "operation:post:/domains",
+        "kind": "RETURNS",
+        "to": "schema:DomainResponse"
+      },
+      {
+        "from": "operation:get:/domains/verify/{domain}",
+        "kind": "RETURNS",
+        "to": "schema:DomainResponse"
+      },
+      {
+        "from": "operation:post:/domains/verify/{domain}",
+        "kind": "RETURNS",
+        "to": "schema:CheckDomainVerify"
+      },
+      {
+        "from": "operation:get:/inputs",
+        "kind": "RETURNS",
+        "to": "schema:GetAllInputsResponse"
+      },
+      {
+        "from": "operation:get:/integrations",
+        "kind": "RETURNS",
+        "to": "schema:GetAllIntegrationsResponse"
+      },
+      {
+        "from": "operation:post:/send",
+        "kind": "ACCEPTS",
+        "to": "schema:SendRequest"
+      },
+      {
+        "from": "operation:get:/triggers",
+        "kind": "RETURNS",
+        "to": "schema:GetAllTriggersResponse"
+      },
+      {
+        "from": "operation:post:/triggers",
+        "kind": "ACCEPTS",
+        "to": "schema:AddTriggerRequest"
+      },
+      {
+        "from": "operation:post:/triggers",
+        "kind": "RETURNS",
+        "to": "schema:AddTriggerResponse"
+      },
+      {
+        "from": "operation:put:/triggers/{trigger}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddTriggerRequest"
+      },
+      {
+        "from": "operation:get:/user",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:put:/user",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateUserRequest"
+      },
+      {
+        "from": "operation:get:/verifications",
+        "kind": "RETURNS",
+        "to": "schema:GetAllVerificationsResponse"
+      },
+      {
+        "from": "operation:post:/verifications",
+        "kind": "ACCEPTS",
+        "to": "schema:AddEmailVerificationRequest"
+      },
+      {
+        "from": "operation:post:/verifications",
+        "kind": "ACCEPTS",
+        "to": "schema:AddSmsVerificationRequest"
+      },
+      {
+        "from": "operation:post:/verifications",
+        "kind": "RETURNS",
+        "to": "schema:AddVerificationResponse"
+      },
+      {
+        "from": "operation:post:/verifications/{verification}/verify",
+        "kind": "ACCEPTS",
+        "to": "schema:VerifyEmailRequest"
+      },
+      {
+        "from": "operation:post:/verifications/{verification}/verify",
+        "kind": "ACCEPTS",
+        "to": "schema:VerifySmsRequest"
+      },
+      {
+        "from": "operation:get:/workflows",
+        "kind": "RETURNS",
+        "to": "schema:GetAllWorkflowsResponse"
+      },
+      {
+        "from": "operation:post:/workflows",
+        "kind": "ACCEPTS",
+        "to": "schema:AddWorkflowRequest"
+      },
+      {
+        "from": "operation:post:/workflows/set",
+        "kind": "ACCEPTS",
+        "to": "schema:SetWorkflowRequest"
+      },
+      {
+        "from": "operation:put:/workflows/{workflow}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddWorkflowRequest"
+      },
+      {
+        "from": "operation:get:/workspaces",
+        "kind": "RETURNS",
+        "to": "schema:GetAllWorkspacesResponse"
+      },
+      {
+        "from": "operation:post:/workspaces",
+        "kind": "ACCEPTS",
+        "to": "schema:AddWorkspaceRequest"
+      },
+      {
+        "from": "schema:AddTriggerRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Criteria"
+      },
+      {
+        "from": "schema:AddTriggerRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CriteriaOperand"
+      },
+      {
+        "from": "schema:GetAllActionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionCombine"
+      },
+      {
+        "from": "schema:GetAllActionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionSend"
+      },
+      {
+        "from": "schema:GetAllAddressesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:GetAllInputsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MailscriptEmailInput"
+      },
+      {
+        "from": "schema:GetAllIntegrationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Integration"
+      },
+      {
+        "from": "schema:GetAllKeysResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Key"
+      },
+      {
+        "from": "schema:GetAllTriggersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Trigger"
+      },
+      {
+        "from": "schema:GetAllVerificationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:VerificationEmail"
+      },
+      {
+        "from": "schema:GetAllVerificationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:VerificationSms"
+      },
+      {
+        "from": "schema:GetAllWorkflowsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Workflow"
+      },
+      {
+        "from": "schema:GetAllWorkspacesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Workspace"
+      },
+      {
+        "from": "schema:SetWorkflowRequest",
+        "kind": "REFERENCES",
+        "to": "schema:KeyValuePair"
+      },
+      {
+        "from": "schema:Trigger",
+        "kind": "REFERENCES",
+        "to": "schema:Criteria"
       }
     ],
     "nodes": [
@@ -208,12 +558,26 @@
         "name": "getAllActions",
         "path": "/actions",
         "pointer": "#/paths/~1actions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllActionsResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all actions for the user"
+        "summary": "Get all actions for the user",
+        "tags": [
+          "actions"
+        ]
       },
       {
         "deprecated": false,
@@ -223,27 +587,37 @@
         "name": "addAction",
         "path": "/actions",
         "pointer": "#/paths/~1actions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddActionCombineRequest|AddActionSmsRequest|AddActionWebhookRequest|AddActionDaemonRequest|AddActionSendRequest|AddActionForwardRequest|AddActionReplyRequest|AddActionReplyAllRequest|AddActionAliasRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AddActionResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Add an action"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/actions/{action}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteAction",
-        "path": "/actions/{action}",
-        "pointer": "#/paths/~1actions~1{action}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete an action"
+        "summary": "Add an action",
+        "tags": [
+          "actions"
+        ]
       },
       {
         "deprecated": false,
@@ -251,14 +625,97 @@
         "kind": "operation",
         "method": "put",
         "name": "updateAction",
+        "parameters": [
+          {
+            "description": "ID of action",
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/actions/{action}",
         "pointer": "#/paths/~1actions~1{action}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddActionCombineRequest|AddActionSmsRequest|AddActionWebhookRequest|AddActionDaemonRequest|AddActionSendRequest|AddActionForwardRequest|AddActionReplyRequest|AddActionReplyAllRequest|AddActionAliasRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Key"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update an action key"
+        "summary": "Update an action key",
+        "tags": [
+          "actions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/actions/{action}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteAction",
+        "parameters": [
+          {
+            "description": "ID of the action",
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/actions/{action}",
+        "pointer": "#/paths/~1actions~1{action}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete an action",
+        "tags": [
+          "actions"
+        ]
       },
       {
         "deprecated": false,
@@ -268,12 +725,30 @@
         "name": "getAllAddresses",
         "path": "/addresses",
         "pointer": "#/paths/~1addresses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllAddressesResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all addresses you have access to"
+        "summary": "Get all addresses you have access to",
+        "tags": [
+          "addresses"
+        ]
       },
       {
         "deprecated": false,
@@ -283,12 +758,40 @@
         "name": "addAddress",
         "path": "/addresses",
         "pointer": "#/paths/~1addresses/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddAddressRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Claim a new Mailscript address"
+        "summary": "Claim a new Mailscript address",
+        "tags": [
+          "addresses"
+        ]
       },
       {
         "deprecated": false,
@@ -296,14 +799,40 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteAddress",
+        "parameters": [
+          {
+            "description": "ID of address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/addresses/{address}",
         "pointer": "#/paths/~1addresses~1{address}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Delete a mailscript address"
+        "summary": "Delete a mailscript address",
+        "tags": [
+          "addresses"
+        ]
       },
       {
         "deprecated": false,
@@ -311,14 +840,41 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllKeys",
+        "parameters": [
+          {
+            "description": "ID of address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/addresses/{address}/keys",
         "pointer": "#/paths/~1addresses~1{address}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllKeysResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List address keys"
+        "summary": "List address keys",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
@@ -326,29 +882,48 @@
         "kind": "operation",
         "method": "post",
         "name": "addKey",
+        "parameters": [
+          {
+            "description": "ID of address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/addresses/{address}/keys",
         "pointer": "#/paths/~1addresses~1{address}~1keys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddKeyRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AddKeyResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Add address key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/addresses/{address}/keys/{key}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteKey",
-        "path": "/addresses/{address}/keys/{key}",
-        "pointer": "#/paths/~1addresses~1{address}~1keys~1{key}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete address key"
+        "summary": "Add address key",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
@@ -356,14 +931,48 @@
         "kind": "operation",
         "method": "get",
         "name": "getKey",
+        "parameters": [
+          {
+            "description": "ID of address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of key",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/addresses/{address}/keys/{key}",
         "pointer": "#/paths/~1addresses~1{address}~1keys~1{key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Key"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get address key"
+        "summary": "Get address key",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
@@ -371,14 +980,111 @@
         "kind": "operation",
         "method": "put",
         "name": "updateKey",
+        "parameters": [
+          {
+            "description": "ID of address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of key",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/addresses/{address}/keys/{key}",
         "pointer": "#/paths/~1addresses~1{address}~1keys~1{key}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateKeyRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Key"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update an address key"
+        "summary": "Update an address key",
+        "tags": [
+          "keys"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/addresses/{address}/keys/{key}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteKey",
+        "parameters": [
+          {
+            "description": "ID of address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of key",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/addresses/{address}/keys/{key}",
+        "pointer": "#/paths/~1addresses~1{address}~1keys~1{key}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete address key",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
@@ -386,14 +1092,41 @@
         "kind": "operation",
         "method": "get",
         "name": "getDaemonToken",
+        "parameters": [
+          {
+            "description": "name of Daemon",
+            "in": "path",
+            "name": "daemon",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/daemons/{daemon}/token",
         "pointer": "#/paths/~1daemons~1{daemon}~1token/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get a token for opening a daemon connection"
+        "summary": "Get a token for opening a daemon connection",
+        "tags": [
+          "daemon"
+        ]
       },
       {
         "deprecated": false,
@@ -403,12 +1136,34 @@
         "name": "getAllDomains",
         "path": "/domains",
         "pointer": "#/paths/~1domains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllDomainsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all domains you have access to"
+        "summary": "Get all domains you have access to",
+        "tags": [
+          "domains"
+        ]
       },
       {
         "deprecated": false,
@@ -418,12 +1173,41 @@
         "name": "addDomain",
         "path": "/domains",
         "pointer": "#/paths/~1domains/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddDomainRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Claim a new Domain"
+        "summary": "Claim a new Domain",
+        "tags": [
+          "domains"
+        ]
       },
       {
         "deprecated": false,
@@ -431,14 +1215,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainVerify",
+        "parameters": [
+          {
+            "description": "Full Top-level domain name",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/verify/{domain}",
         "pointer": "#/paths/~1domains~1verify~1{domain}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get domain verification"
+        "summary": "Get domain verification",
+        "tags": [
+          "domains"
+        ]
       },
       {
         "deprecated": false,
@@ -446,14 +1261,49 @@
         "kind": "operation",
         "method": "post",
         "name": "CheckDomainVerify",
+        "parameters": [
+          {
+            "description": "Full Top-level domain name",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/verify/{domain}",
         "pointer": "#/paths/~1domains~1verify~1{domain}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CheckDomainVerify"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Check a new Domain"
+        "summary": "Check a new Domain",
+        "tags": [
+          "domains"
+        ]
       },
       {
         "deprecated": false,
@@ -461,14 +1311,44 @@
         "kind": "operation",
         "method": "delete",
         "name": "removeDomainVerify",
+        "parameters": [
+          {
+            "description": "Full Top-level domain name",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domain}",
         "pointer": "#/paths/~1domains~1{domain}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Remove a domain"
+        "summary": "Remove a domain",
+        "tags": [
+          "domains"
+        ]
       },
       {
         "deprecated": false,
@@ -476,14 +1356,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllInputs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inputs",
         "pointer": "#/paths/~1inputs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllInputsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all inputs you have access to"
+        "summary": "Get all inputs you have access to",
+        "tags": [
+          "inputs"
+        ]
       },
       {
         "deprecated": false,
@@ -493,12 +1399,26 @@
         "name": "getAllIntegrations",
         "path": "/integrations",
         "pointer": "#/paths/~1integrations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllIntegrationsResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all integrations for the user"
+        "summary": "Get all integrations for the user",
+        "tags": [
+          "integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -506,14 +1426,44 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteIntegration",
+        "parameters": [
+          {
+            "description": "ID of the integration",
+            "in": "path",
+            "name": "integration",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/integrations/{integration}",
         "pointer": "#/paths/~1integrations~1{integration}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Delete an integration"
+        "summary": "Delete an integration",
+        "tags": [
+          "integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -523,12 +1473,36 @@
         "name": "send",
         "path": "/send",
         "pointer": "#/paths/~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SendRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Send an email"
+        "summary": "Send an email",
+        "tags": [
+          "send"
+        ]
       },
       {
         "deprecated": false,
@@ -538,12 +1512,30 @@
         "name": "getAllTriggers",
         "path": "/triggers",
         "pointer": "#/paths/~1triggers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllTriggersResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all triggers you have access to"
+        "summary": "Get all triggers you have access to",
+        "tags": [
+          "triggers"
+        ]
       },
       {
         "deprecated": false,
@@ -553,27 +1545,37 @@
         "name": "addTrigger",
         "path": "/triggers",
         "pointer": "#/paths/~1triggers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddTriggerRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AddTriggerResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Setup a trigger"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/triggers/{trigger}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTrigger",
-        "path": "/triggers/{trigger}",
-        "pointer": "#/paths/~1triggers~1{trigger}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a trigger"
+        "summary": "Setup a trigger",
+        "tags": [
+          "triggers"
+        ]
       },
       {
         "deprecated": false,
@@ -581,14 +1583,96 @@
         "kind": "operation",
         "method": "put",
         "name": "updateTrigger",
+        "parameters": [
+          {
+            "description": "ID of the trigger",
+            "in": "path",
+            "name": "trigger",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/triggers/{trigger}",
         "pointer": "#/paths/~1triggers~1{trigger}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddTriggerRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update a trigger"
+        "summary": "Update a trigger",
+        "tags": [
+          "triggers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/triggers/{trigger}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTrigger",
+        "parameters": [
+          {
+            "description": "ID of the trigger",
+            "in": "path",
+            "name": "trigger",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/triggers/{trigger}",
+        "pointer": "#/paths/~1triggers~1{trigger}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a trigger",
+        "tags": [
+          "triggers"
+        ]
       },
       {
         "deprecated": false,
@@ -598,12 +1682,26 @@
         "name": "getAuthenticatedUser",
         "path": "/user",
         "pointer": "#/paths/~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get the authenticated user"
+        "summary": "Get the authenticated user",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -613,12 +1711,36 @@
         "name": "updateUser",
         "path": "/user",
         "pointer": "#/paths/~1user/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateUserRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update a user"
+        "summary": "Update a user",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -628,12 +1750,26 @@
         "name": "getAllVerifications",
         "path": "/verifications",
         "pointer": "#/paths/~1verifications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllVerificationsResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all verificats for the user"
+        "summary": "Get all verificats for the user",
+        "tags": [
+          "verifications"
+        ]
       },
       {
         "deprecated": false,
@@ -643,12 +1779,37 @@
         "name": "addVerification",
         "path": "/verifications",
         "pointer": "#/paths/~1verifications/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddEmailVerificationRequest|AddSmsVerificationRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AddVerificationResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Start verification process for external email address or sms number"
+        "summary": "Start verification process for external email address or sms number",
+        "tags": [
+          "verifications"
+        ]
       },
       {
         "deprecated": false,
@@ -656,14 +1817,51 @@
         "kind": "operation",
         "method": "post",
         "name": "verify",
+        "parameters": [
+          {
+            "description": "ID of the verification entry",
+            "in": "path",
+            "name": "verification",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/verifications/{verification}/verify",
         "pointer": "#/paths/~1verifications~1{verification}~1verify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VerifyEmailRequest|VerifySmsRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Verify an email address or sms number with a code"
+        "summary": "Verify an email address or sms number with a code",
+        "tags": [
+          "verifications"
+        ]
       },
       {
         "deprecated": false,
@@ -673,12 +1871,30 @@
         "name": "getAllWorkflows",
         "path": "/workflows",
         "pointer": "#/paths/~1workflows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllWorkflowsResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all workflows you have access to"
+        "summary": "Get all workflows you have access to",
+        "tags": [
+          "workflows"
+        ]
       },
       {
         "deprecated": false,
@@ -688,12 +1904,40 @@
         "name": "addWorkflow",
         "path": "/workflows",
         "pointer": "#/paths/~1workflows/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddWorkflowRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Setup workflow"
+        "summary": "Setup workflow",
+        "tags": [
+          "workflows"
+        ]
       },
       {
         "deprecated": false,
@@ -703,27 +1947,40 @@
         "name": "setWorkflow",
         "path": "/workflows/set",
         "pointer": "#/paths/~1workflows~1set/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetWorkflowRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Set a property on a workflow"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/workflows/{workflow}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteWorkflow",
-        "path": "/workflows/{workflow}",
-        "pointer": "#/paths/~1workflows~1{workflow}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a workflow"
+        "summary": "Set a property on a workflow",
+        "tags": [
+          "workflows"
+        ]
       },
       {
         "deprecated": false,
@@ -731,14 +1988,96 @@
         "kind": "operation",
         "method": "put",
         "name": "updateWorkflow",
+        "parameters": [
+          {
+            "description": "ID of the workflow",
+            "in": "path",
+            "name": "workflow",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/workflows/{workflow}",
         "pointer": "#/paths/~1workflows~1{workflow}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddWorkflowRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update an workflow"
+        "summary": "Update an workflow",
+        "tags": [
+          "workflows"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/workflows/{workflow}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteWorkflow",
+        "parameters": [
+          {
+            "description": "ID of the workflow",
+            "in": "path",
+            "name": "workflow",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/workflows/{workflow}",
+        "pointer": "#/paths/~1workflows~1{workflow}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a workflow",
+        "tags": [
+          "workflows"
+        ]
       },
       {
         "deprecated": false,
@@ -748,302 +2087,404 @@
         "name": "getAllWorkspaces",
         "path": "/workspaces",
         "pointer": "#/paths/~1workspaces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAllWorkspacesResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all workspaces you have access to"
+        "summary": "Get all workspaces you have access to",
+        "tags": [
+          "workspaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "An attendant address will be created as well",
         "id": "operation:post:/workspaces",
         "kind": "operation",
         "method": "post",
         "name": "addWorkspace",
         "path": "/workspaces",
         "pointer": "#/paths/~1workspaces/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AddWorkspaceRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "405",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Claim a Mailscript workspace"
+        "summary": "Claim a Mailscript workspace",
+        "tags": [
+          "workspaces"
+        ]
       },
       {
         "id": "schema:ActionCombine",
         "kind": "schema",
-        "name": "ActionCombine"
+        "name": "ActionCombine",
+        "type": "object"
       },
       {
         "id": "schema:ActionSend",
         "kind": "schema",
-        "name": "ActionSend"
+        "name": "ActionSend",
+        "type": "object"
       },
       {
         "id": "schema:AddActionAliasRequest",
         "kind": "schema",
-        "name": "AddActionAliasRequest"
+        "name": "AddActionAliasRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionCombineRequest",
         "kind": "schema",
-        "name": "AddActionCombineRequest"
+        "name": "AddActionCombineRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionDaemonRequest",
         "kind": "schema",
-        "name": "AddActionDaemonRequest"
+        "name": "AddActionDaemonRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionForwardRequest",
         "kind": "schema",
-        "name": "AddActionForwardRequest"
+        "name": "AddActionForwardRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionReplyAllRequest",
         "kind": "schema",
-        "name": "AddActionReplyAllRequest"
+        "name": "AddActionReplyAllRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionReplyRequest",
         "kind": "schema",
-        "name": "AddActionReplyRequest"
+        "name": "AddActionReplyRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionResponse",
         "kind": "schema",
-        "name": "AddActionResponse"
+        "name": "AddActionResponse",
+        "type": "object"
       },
       {
         "id": "schema:AddActionSendRequest",
         "kind": "schema",
-        "name": "AddActionSendRequest"
+        "name": "AddActionSendRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionSmsRequest",
         "kind": "schema",
-        "name": "AddActionSmsRequest"
+        "name": "AddActionSmsRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddActionWebhookRequest",
         "kind": "schema",
-        "name": "AddActionWebhookRequest"
+        "name": "AddActionWebhookRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddAddressRequest",
         "kind": "schema",
-        "name": "AddAddressRequest"
+        "name": "AddAddressRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddDomainRequest",
         "kind": "schema",
-        "name": "AddDomainRequest"
+        "name": "AddDomainRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddEmailVerificationRequest",
         "kind": "schema",
-        "name": "AddEmailVerificationRequest"
+        "name": "AddEmailVerificationRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddKeyRequest",
         "kind": "schema",
-        "name": "AddKeyRequest"
+        "name": "AddKeyRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddKeyResponse",
         "kind": "schema",
-        "name": "AddKeyResponse"
+        "name": "AddKeyResponse",
+        "type": "object"
       },
       {
         "id": "schema:AddSmsVerificationRequest",
         "kind": "schema",
-        "name": "AddSmsVerificationRequest"
+        "name": "AddSmsVerificationRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddTriggerRequest",
         "kind": "schema",
-        "name": "AddTriggerRequest"
+        "name": "AddTriggerRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddTriggerResponse",
         "kind": "schema",
-        "name": "AddTriggerResponse"
+        "name": "AddTriggerResponse",
+        "type": "object"
       },
       {
         "id": "schema:AddVerificationResponse",
         "kind": "schema",
-        "name": "AddVerificationResponse"
+        "name": "AddVerificationResponse",
+        "type": "object"
       },
       {
         "id": "schema:AddWorkflowRequest",
         "kind": "schema",
-        "name": "AddWorkflowRequest"
+        "name": "AddWorkflowRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddWorkspaceRequest",
         "kind": "schema",
-        "name": "AddWorkspaceRequest"
+        "name": "AddWorkspaceRequest",
+        "type": "object"
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:CheckDomainVerify",
         "kind": "schema",
-        "name": "CheckDomainVerify"
+        "name": "CheckDomainVerify",
+        "type": "object"
       },
       {
         "id": "schema:Criteria",
         "kind": "schema",
-        "name": "Criteria"
+        "name": "Criteria",
+        "type": "object"
       },
       {
         "id": "schema:CriteriaOperand",
         "kind": "schema",
-        "name": "CriteriaOperand"
+        "name": "CriteriaOperand",
+        "type": "object"
       },
       {
         "id": "schema:DomainResponse",
         "kind": "schema",
-        "name": "DomainResponse"
+        "name": "DomainResponse",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllActionsResponse",
         "kind": "schema",
-        "name": "GetAllActionsResponse"
+        "name": "GetAllActionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllAddressesResponse",
         "kind": "schema",
-        "name": "GetAllAddressesResponse"
+        "name": "GetAllAddressesResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllDomainsResponse",
         "kind": "schema",
-        "name": "GetAllDomainsResponse"
+        "name": "GetAllDomainsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllInputsResponse",
         "kind": "schema",
-        "name": "GetAllInputsResponse"
+        "name": "GetAllInputsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllIntegrationsResponse",
         "kind": "schema",
-        "name": "GetAllIntegrationsResponse"
+        "name": "GetAllIntegrationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllKeysResponse",
         "kind": "schema",
-        "name": "GetAllKeysResponse"
+        "name": "GetAllKeysResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllTriggersResponse",
         "kind": "schema",
-        "name": "GetAllTriggersResponse"
+        "name": "GetAllTriggersResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllVerificationsResponse",
         "kind": "schema",
-        "name": "GetAllVerificationsResponse"
+        "name": "GetAllVerificationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllWorkflowsResponse",
         "kind": "schema",
-        "name": "GetAllWorkflowsResponse"
+        "name": "GetAllWorkflowsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAllWorkspacesResponse",
         "kind": "schema",
-        "name": "GetAllWorkspacesResponse"
+        "name": "GetAllWorkspacesResponse",
+        "type": "object"
       },
       {
         "id": "schema:Integration",
         "kind": "schema",
-        "name": "Integration"
+        "name": "Integration",
+        "type": "object"
       },
       {
         "id": "schema:Key",
         "kind": "schema",
-        "name": "Key"
+        "name": "Key",
+        "type": "object"
       },
       {
         "id": "schema:KeyValuePair",
         "kind": "schema",
-        "name": "KeyValuePair"
+        "name": "KeyValuePair",
+        "type": "object"
       },
       {
         "id": "schema:MailscriptEmailInput",
         "kind": "schema",
-        "name": "MailscriptEmailInput"
+        "name": "MailscriptEmailInput",
+        "type": "object"
       },
       {
         "id": "schema:SendRequest",
         "kind": "schema",
-        "name": "SendRequest"
+        "name": "SendRequest",
+        "type": "object"
       },
       {
         "id": "schema:SetWorkflowRequest",
         "kind": "schema",
-        "name": "SetWorkflowRequest"
+        "name": "SetWorkflowRequest",
+        "type": "object"
       },
       {
         "id": "schema:Trigger",
         "kind": "schema",
-        "name": "Trigger"
+        "name": "Trigger",
+        "type": "object"
       },
       {
         "id": "schema:UpdateKeyRequest",
         "kind": "schema",
-        "name": "UpdateKeyRequest"
+        "name": "UpdateKeyRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateUserRequest",
         "kind": "schema",
-        "name": "UpdateUserRequest"
+        "name": "UpdateUserRequest",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:VerificationEmail",
         "kind": "schema",
-        "name": "VerificationEmail"
+        "name": "VerificationEmail",
+        "type": "object"
       },
       {
         "id": "schema:VerificationSms",
         "kind": "schema",
-        "name": "VerificationSms"
+        "name": "VerificationSms",
+        "type": "object"
       },
       {
         "id": "schema:VerifyEmailRequest",
         "kind": "schema",
-        "name": "VerifyEmailRequest"
+        "name": "VerifyEmailRequest",
+        "type": "object"
       },
       {
         "id": "schema:VerifySmsRequest",
         "kind": "schema",
-        "name": "VerifySmsRequest"
+        "name": "VerifySmsRequest",
+        "type": "object"
       },
       {
         "id": "schema:Workflow",
         "kind": "schema",
-        "name": "Workflow"
+        "name": "Workflow",
+        "type": "object"
       },
       {
         "id": "schema:Workspace",
         "kind": "schema",
-        "name": "Workspace"
+        "name": "Workspace",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_Mediu
 
 | | |
 | --- | --- |
-| Signed bundle | `561e59241bf0f9bdae4626f5d77ed0ec6ac1ce358c659c2aa2eed9496932699c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,37 +32,39 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_Mediu
 
 ## Operations (32)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | get / | Get Welcome |
-| GET | `/article/{article_id}` | get /article/{article_id} | Get Article Info |
-| GET | `/article/{article_id}/content` | get /article/{article_id}/content | Get Article's Content |
-| GET | `/article/{article_id}/fans` | get /article/{article_id}/fans | Get Article Fans |
-| GET | `/article/{article_id}/markdown` | get /article/{article_id}/markdown | Get Article's Markdown |
-| GET | `/article/{article_id}/related` | get /article/{article_id}/related | Get Related Articles |
-| GET | `/article/{article_id}/responses` | get /article/{article_id}/responses | Get Article Responses |
-| GET | `/latestposts/{topic_slug}` | get /latestposts/{topic_slug} | Get Latest Posts |
-| GET | `/list/{list_id}` | get /list/{list_id} | Get List Info |
-| GET | `/list/{list_id}/articles` | get /list/{list_id}/articles | Get List Articles |
-| GET | `/list/{list_id}/responses` | get /list/{list_id}/responses | Get List Responses |
-| GET | `/publication/id_for/{publication_slug}` | get /publication/id_for/{publication_slug} | Get Publication ID |
-| GET | `/publication/{publication_id}` | get /publication/{publication_id} | Get Publication Info |
-| GET | `/publication/{publication_id}/articles` | get /publication/{publication_id}/articles | Get Publication Articles |
-| GET | `/publication/{publication_id}/newsletter` | get /publication/{publication_id}/newsletter | Get Publication Newsletter |
-| GET | `/related_tags/{tag}` | get /related_tags/{tag} | Get Related Tags |
-| GET | `/search/articles?query={query}` | get /search/articles?query={query} | Search Articles |
-| GET | `/search/lists?query={query}` | get /search/lists?query={query} | Search Lists |
-| GET | `/search/publications?query={query}` | get /search/publications?query={query} | Search Publications |
-| GET | `/search/tags?query={query}` | get /search/tags?query={query} | Search Tags |
-| GET | `/search/users?query={query}` | get /search/users?query={query} | Search Users |
-| GET | `/top_writer/{topic_slug}` | get /top_writer/{topic_slug} | Get Top Writers |
-| GET | `/topfeeds/{tag}/{mode}` | get /topfeeds/{tag}/{mode} | Get Topfeeds |
-| GET | `/user/id_for/{username}` | get /user/id_for/{username} | Get User ID |
-| GET | `/user/{user_id}` | get /user/{user_id} | Get User Info |
-| GET | `/user/{user_id}/articles` | get /user/{user_id}/articles | Get User's Articles |
-| GET | `/user/{user_id}/followers` | get /user/{user_id}/followers | Get User Followers |
-| GET | `/user/{user_id}/following` | get /user/{user_id}/following | Get User Following |
-| GET | `/user/{user_id}/interests` | get /user/{user_id}/interests | Get User's Interests |
-| GET | `/user/{user_id}/lists` | get /user/{user_id}/lists | Get User's Lists |
-| GET | `/user/{user_id}/publications` | get /user/{user_id}/publications | Get User's Publications |
-| GET | `/user/{user_id}/top_articles` | get /user/{user_id}/top_articles | Get User's Top Articles |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | get / | — | object | yes | Get Welcome |
+| GET | `/article/{article_id}` | get /article/{article_id} | `article_id`* | object | yes | Get Article Info |
+| GET | `/article/{article_id}/content` | get /article/{article_id}/content | `article_id`* | object | yes | Get Article's Content |
+| GET | `/article/{article_id}/fans` | get /article/{article_id}/fans | `article_id`* | object | yes | Get Article Fans |
+| GET | `/article/{article_id}/markdown` | get /article/{article_id}/markdown | `article_id`* | object | yes | Get Article's Markdown |
+| GET | `/article/{article_id}/related` | get /article/{article_id}/related | `article_id`* | object | yes | Get Related Articles |
+| GET | `/article/{article_id}/responses` | get /article/{article_id}/responses | `article_id`* | object | yes | Get Article Responses |
+| GET | `/latestposts/{topic_slug}` | get /latestposts/{topic_slug} | `topic_slug`* | object | yes | Get Latest Posts |
+| GET | `/list/{list_id}` | get /list/{list_id} | `list_id`* | object | yes | Get List Info |
+| GET | `/list/{list_id}/articles` | get /list/{list_id}/articles | `list_id`* | object | yes | Get List Articles |
+| GET | `/list/{list_id}/responses` | get /list/{list_id}/responses | `list_id`* | object | yes | Get List Responses |
+| GET | `/publication/id_for/{publication_slug}` | get /publication/id_for/{publication_slug} | `publication_slug`* | object | yes | Get Publication ID |
+| GET | `/publication/{publication_id}` | get /publication/{publication_id} | `publication_id`* | object | yes | Get Publication Info |
+| GET | `/publication/{publication_id}/articles` | get /publication/{publication_id}/articles | `publication_id`*, `from` | object | yes | Get Publication Articles |
+| GET | `/publication/{publication_id}/newsletter` | get /publication/{publication_id}/newsletter | `publication_id`* | object | yes | Get Publication Newsletter |
+| GET | `/related_tags/{tag}` | get /related_tags/{tag} | `tag`* | object | yes | Get Related Tags |
+| GET | `/search/articles?query={query}` | get /search/articles?query={query} | `query`* | object | yes | Search Articles |
+| GET | `/search/lists?query={query}` | get /search/lists?query={query} | `query`* | object | yes | Search Lists |
+| GET | `/search/publications?query={query}` | get /search/publications?query={query} | `query`* | object | yes | Search Publications |
+| GET | `/search/tags?query={query}` | get /search/tags?query={query} | `query`* | object | yes | Search Tags |
+| GET | `/search/users?query={query}` | get /search/users?query={query} | `query`* | object | yes | Search Users |
+| GET | `/top_writer/{topic_slug}` | get /top_writer/{topic_slug} | `topic_slug`*, `count` | object | yes | Get Top Writers |
+| GET | `/topfeeds/{tag}/{mode}` | get /topfeeds/{tag}/{mode} | `tag`*, `mode`*, `after`, `count` | object | yes | Get Topfeeds |
+| GET | `/user/id_for/{username}` | get /user/id_for/{username} | `username`* | object | yes | Get User ID |
+| GET | `/user/{user_id}` | get /user/{user_id} | `user_id`* | object | yes | Get User Info |
+| GET | `/user/{user_id}/articles` | get /user/{user_id}/articles | `user_id`* | object | yes | Get User's Articles |
+| GET | `/user/{user_id}/followers` | get /user/{user_id}/followers | `user_id`*, `count` | object | yes | Get User Followers |
+| GET | `/user/{user_id}/following` | get /user/{user_id}/following | `user_id`*, `count` | object | yes | Get User Following |
+| GET | `/user/{user_id}/interests` | get /user/{user_id}/interests | `user_id`* | object | yes | Get User's Interests |
+| GET | `/user/{user_id}/lists` | get /user/{user_id}/lists | `user_id`* | object | yes | Get User's Lists |
+| GET | `/user/{user_id}/publications` | get /user/{user_id}/publications | `user_id`* | object | yes | Get User's Publications |
+| GET | `/user/{user_id}/top_articles` | get /user/{user_id}/top_articles | `user_id`* | object | yes | Get User's Top Articles |

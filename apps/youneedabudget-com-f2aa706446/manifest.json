@@ -122,12 +122,12 @@
       {
         "from": "youneedabudget-com-f2aa706446",
         "kind": "EXPOSES",
-        "to": "operation:patch:/budgets/{budget_id}/transactions"
+        "to": "operation:post:/budgets/{budget_id}/transactions"
       },
       {
         "from": "youneedabudget-com-f2aa706446",
         "kind": "EXPOSES",
-        "to": "operation:post:/budgets/{budget_id}/transactions"
+        "to": "operation:patch:/budgets/{budget_id}/transactions"
       },
       {
         "from": "youneedabudget-com-f2aa706446",
@@ -142,11 +142,6 @@
       {
         "from": "youneedabudget-com-f2aa706446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/budgets/{budget_id}/transactions/{transaction_id}"
-      },
-      {
-        "from": "youneedabudget-com-f2aa706446",
-        "kind": "EXPOSES",
         "to": "operation:get:/budgets/{budget_id}/transactions/{transaction_id}"
       },
       {
@@ -157,7 +152,492 @@
       {
         "from": "youneedabudget-com-f2aa706446",
         "kind": "EXPOSES",
+        "to": "operation:delete:/budgets/{budget_id}/transactions/{transaction_id}"
+      },
+      {
+        "from": "youneedabudget-com-f2aa706446",
+        "kind": "EXPOSES",
         "to": "operation:get:/user"
+      },
+      {
+        "from": "operation:get:/budgets",
+        "kind": "RETURNS",
+        "to": "schema:BudgetSummaryResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}",
+        "kind": "RETURNS",
+        "to": "schema:BudgetDetailResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:AccountsResponse"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/accounts",
+        "kind": "ACCEPTS",
+        "to": "schema:PostAccountWrapper"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:AccountResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/accounts/{account_id}",
+        "kind": "RETURNS",
+        "to": "schema:AccountResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/accounts/{account_id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:TransactionsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/categories",
+        "kind": "RETURNS",
+        "to": "schema:CategoriesResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/categories/{category_id}",
+        "kind": "RETURNS",
+        "to": "schema:CategoryResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/categories/{category_id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:HybridTransactionsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/months",
+        "kind": "RETURNS",
+        "to": "schema:MonthSummariesResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/months/{month}",
+        "kind": "RETURNS",
+        "to": "schema:MonthDetailResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/months/{month}/categories/{category_id}",
+        "kind": "RETURNS",
+        "to": "schema:CategoryResponse"
+      },
+      {
+        "from": "operation:patch:/budgets/{budget_id}/months/{month}/categories/{category_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:PatchMonthCategoryWrapper"
+      },
+      {
+        "from": "operation:patch:/budgets/{budget_id}/months/{month}/categories/{category_id}",
+        "kind": "RETURNS",
+        "to": "schema:SaveCategoryResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/payee_locations",
+        "kind": "RETURNS",
+        "to": "schema:PayeeLocationsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/payee_locations/{payee_location_id}",
+        "kind": "RETURNS",
+        "to": "schema:PayeeLocationResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/payees",
+        "kind": "RETURNS",
+        "to": "schema:PayeesResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/payees/{payee_id}",
+        "kind": "RETURNS",
+        "to": "schema:PayeeResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/payees/{payee_id}/payee_locations",
+        "kind": "RETURNS",
+        "to": "schema:PayeeLocationsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/payees/{payee_id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:HybridTransactionsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/scheduled_transactions",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledTransactionsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledTransactionResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/settings",
+        "kind": "RETURNS",
+        "to": "schema:BudgetSettingsResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:TransactionsResponse"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/transactions",
+        "kind": "ACCEPTS",
+        "to": "schema:PostTransactionsWrapper"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:SaveTransactionsResponse"
+      },
+      {
+        "from": "operation:patch:/budgets/{budget_id}/transactions",
+        "kind": "ACCEPTS",
+        "to": "schema:PatchTransactionsWrapper"
+      },
+      {
+        "from": "operation:patch:/budgets/{budget_id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:SaveTransactionsResponse"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/transactions/bulk",
+        "kind": "ACCEPTS",
+        "to": "schema:BulkTransactions"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/transactions/bulk",
+        "kind": "RETURNS",
+        "to": "schema:BulkResponse"
+      },
+      {
+        "from": "operation:post:/budgets/{budget_id}/transactions/import",
+        "kind": "RETURNS",
+        "to": "schema:TransactionsImportResponse"
+      },
+      {
+        "from": "operation:get:/budgets/{budget_id}/transactions/{transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:TransactionResponse"
+      },
+      {
+        "from": "operation:put:/budgets/{budget_id}/transactions/{transaction_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:PutTransactionWrapper"
+      },
+      {
+        "from": "operation:put:/budgets/{budget_id}/transactions/{transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:TransactionResponse"
+      },
+      {
+        "from": "operation:delete:/budgets/{budget_id}/transactions/{transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:TransactionResponse"
+      },
+      {
+        "from": "operation:get:/user",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:AccountType"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:LoanAccountPeriodicValue"
+      },
+      {
+        "from": "schema:AccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:AccountsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:BudgetSummary"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryGroup"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:MonthDetail"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Payee"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:PayeeLocation"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledSubTransaction"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledTransactionSummary"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SubTransaction"
+      },
+      {
+        "from": "schema:BudgetDetail",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionSummary"
+      },
+      {
+        "from": "schema:BudgetDetailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BudgetDetail"
+      },
+      {
+        "from": "schema:BudgetSettings",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyFormat"
+      },
+      {
+        "from": "schema:BudgetSettings",
+        "kind": "REFERENCES",
+        "to": "schema:DateFormat"
+      },
+      {
+        "from": "schema:BudgetSettingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BudgetSettings"
+      },
+      {
+        "from": "schema:BudgetSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:BudgetSummary",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyFormat"
+      },
+      {
+        "from": "schema:BudgetSummary",
+        "kind": "REFERENCES",
+        "to": "schema:DateFormat"
+      },
+      {
+        "from": "schema:BudgetSummaryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BudgetSummary"
+      },
+      {
+        "from": "schema:BulkTransactions",
+        "kind": "REFERENCES",
+        "to": "schema:SaveTransaction"
+      },
+      {
+        "from": "schema:CategoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryGroupWithCategories"
+      },
+      {
+        "from": "schema:CategoryGroupWithCategories",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:CategoryGroupWithCategories",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryGroup"
+      },
+      {
+        "from": "schema:CategoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorDetail"
+      },
+      {
+        "from": "schema:HybridTransaction",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionSummary"
+      },
+      {
+        "from": "schema:HybridTransactionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HybridTransaction"
+      },
+      {
+        "from": "schema:MonthDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:MonthDetail",
+        "kind": "REFERENCES",
+        "to": "schema:MonthSummary"
+      },
+      {
+        "from": "schema:MonthDetailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MonthDetail"
+      },
+      {
+        "from": "schema:MonthSummariesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MonthSummary"
+      },
+      {
+        "from": "schema:PatchMonthCategoryWrapper",
+        "kind": "REFERENCES",
+        "to": "schema:SaveMonthCategory"
+      },
+      {
+        "from": "schema:PatchTransactionsWrapper",
+        "kind": "REFERENCES",
+        "to": "schema:SaveTransactionWithId"
+      },
+      {
+        "from": "schema:PayeeLocationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PayeeLocation"
+      },
+      {
+        "from": "schema:PayeeLocationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PayeeLocation"
+      },
+      {
+        "from": "schema:PayeeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Payee"
+      },
+      {
+        "from": "schema:PayeesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Payee"
+      },
+      {
+        "from": "schema:PostAccountWrapper",
+        "kind": "REFERENCES",
+        "to": "schema:SaveAccount"
+      },
+      {
+        "from": "schema:PostTransactionsWrapper",
+        "kind": "REFERENCES",
+        "to": "schema:SaveTransaction"
+      },
+      {
+        "from": "schema:PutTransactionWrapper",
+        "kind": "REFERENCES",
+        "to": "schema:SaveTransaction"
+      },
+      {
+        "from": "schema:SaveAccount",
+        "kind": "REFERENCES",
+        "to": "schema:AccountType"
+      },
+      {
+        "from": "schema:SaveCategoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:SaveTransaction",
+        "kind": "REFERENCES",
+        "to": "schema:SaveTransactionWithOptionalFields"
+      },
+      {
+        "from": "schema:SaveTransactionWithId",
+        "kind": "REFERENCES",
+        "to": "schema:SaveTransactionWithOptionalFields"
+      },
+      {
+        "from": "schema:SaveTransactionWithOptionalFields",
+        "kind": "REFERENCES",
+        "to": "schema:SaveSubTransaction"
+      },
+      {
+        "from": "schema:SaveTransactionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionDetail"
+      },
+      {
+        "from": "schema:ScheduledTransactionDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledSubTransaction"
+      },
+      {
+        "from": "schema:ScheduledTransactionDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledTransactionSummary"
+      },
+      {
+        "from": "schema:ScheduledTransactionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledTransactionDetail"
+      },
+      {
+        "from": "schema:ScheduledTransactionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledTransactionDetail"
+      },
+      {
+        "from": "schema:TransactionDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SubTransaction"
+      },
+      {
+        "from": "schema:TransactionDetail",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionSummary"
+      },
+      {
+        "from": "schema:TransactionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionDetail"
+      },
+      {
+        "from": "schema:TransactionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionDetail"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
       }
     ],
     "nodes": [
@@ -167,768 +647,1965 @@
       },
       {
         "deprecated": false,
+        "description": "Returns budgets list with summary information",
         "id": "operation:get:/budgets",
         "kind": "operation",
         "method": "get",
         "name": "getBudgets",
+        "parameters": [
+          {
+            "description": "Whether to include the list of budget accounts",
+            "in": "query",
+            "name": "include_accounts",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/budgets",
         "pointer": "#/paths/~1budgets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BudgetSummaryResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List budgets"
+        "summary": "List budgets",
+        "tags": [
+          "Budgets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single budget with all related entities.",
         "id": "operation:get:/budgets/{budget_id}",
         "kind": "operation",
         "method": "get",
         "name": "getBudgetById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BudgetDetailResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single budget"
+        "summary": "Single budget",
+        "tags": [
+          "Budgets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all accounts",
         "id": "operation:get:/budgets/{budget_id}/accounts",
         "kind": "operation",
         "method": "get",
         "name": "getAccounts",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/accounts",
         "pointer": "#/paths/~1budgets~1{budget_id}~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Account list"
+        "summary": "Account list",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new account",
         "id": "operation:post:/budgets/{budget_id}/accounts",
         "kind": "operation",
         "method": "post",
         "name": "createAccount",
+        "parameters": [
+          {
+            "description": "The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://ap…",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/accounts",
         "pointer": "#/paths/~1budgets~1{budget_id}~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PostAccountWrapper"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AccountResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create a new account"
+        "summary": "Create a new account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single account",
         "id": "operation:get:/budgets/{budget_id}/accounts/{account_id}",
         "kind": "operation",
         "method": "get",
         "name": "getAccountById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the account",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/budgets/{budget_id}/accounts/{account_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1accounts~1{account_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single account"
+        "summary": "Single account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all transactions for a specified account",
         "id": "operation:get:/budgets/{budget_id}/accounts/{account_id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionsByAccount",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the account",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If specified, only transactions on or after this date will be included.",
+            "in": "query",
+            "name": "since_date",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "If specified, only transactions of the specified type will be included.",
+            "enum": [
+              "uncategorized",
+              "unapproved"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/accounts/{account_id}/transactions",
         "pointer": "#/paths/~1budgets~1{budget_id}~1accounts~1{account_id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List account transactions"
+        "summary": "List account transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all categories grouped by category group.",
         "id": "operation:get:/budgets/{budget_id}/categories",
         "kind": "operation",
         "method": "get",
         "name": "getCategories",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/categories",
         "pointer": "#/paths/~1budgets~1{budget_id}~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoriesResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List categories"
+        "summary": "List categories",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single category.",
         "id": "operation:get:/budgets/{budget_id}/categories/{category_id}",
         "kind": "operation",
         "method": "get",
         "name": "getCategoryById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the category",
+            "in": "path",
+            "name": "category_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/categories/{category_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1categories~1{category_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single category"
+        "summary": "Single category",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all transactions for a specified category",
         "id": "operation:get:/budgets/{budget_id}/categories/{category_id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionsByCategory",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the category",
+            "in": "path",
+            "name": "category_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If specified, only transactions on or after this date will be included.",
+            "in": "query",
+            "name": "since_date",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "If specified, only transactions of the specified type will be included.",
+            "enum": [
+              "uncategorized",
+              "unapproved"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/categories/{category_id}/transactions",
         "pointer": "#/paths/~1budgets~1{budget_id}~1categories~1{category_id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HybridTransactionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List category transactions"
+        "summary": "List category transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all budget months",
         "id": "operation:get:/budgets/{budget_id}/months",
         "kind": "operation",
         "method": "get",
         "name": "getBudgetMonths",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/months",
         "pointer": "#/paths/~1budgets~1{budget_id}~1months/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MonthSummariesResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List budget months"
+        "summary": "List budget months",
+        "tags": [
+          "Months"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single budget month",
         "id": "operation:get:/budgets/{budget_id}/months/{month}",
         "kind": "operation",
         "method": "get",
         "name": "getBudgetMonth",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The budget month in ISO format (e.g.",
+            "in": "path",
+            "name": "month",
+            "required": true,
+            "type": "string:date"
+          }
+        ],
         "path": "/budgets/{budget_id}/months/{month}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1months~1{month}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MonthDetailResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single budget month"
+        "summary": "Single budget month",
+        "tags": [
+          "Months"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single category for a specific budget month.",
         "id": "operation:get:/budgets/{budget_id}/months/{month}/categories/{category_id}",
         "kind": "operation",
         "method": "get",
         "name": "getMonthCategoryById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The budget month in ISO format (e.g.",
+            "in": "path",
+            "name": "month",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "The id of the category",
+            "in": "path",
+            "name": "category_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/months/{month}/categories/{category_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1months~1{month}~1categories~1{category_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single category for a specific budget month"
+        "summary": "Single category for a specific budget month",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a category for a specific month.",
         "id": "operation:patch:/budgets/{budget_id}/months/{month}/categories/{category_id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateMonthCategory",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The budget month in ISO format (e.g.",
+            "in": "path",
+            "name": "month",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "The id of the category",
+            "in": "path",
+            "name": "category_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/months/{month}/categories/{category_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1months~1{month}~1categories~1{category_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PatchMonthCategoryWrapper"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SaveCategoryResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Update a category for a specific month"
+        "summary": "Update a category for a specific month",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all payee locations",
         "id": "operation:get:/budgets/{budget_id}/payee_locations",
         "kind": "operation",
         "method": "get",
         "name": "getPayeeLocations",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/payee_locations",
         "pointer": "#/paths/~1budgets~1{budget_id}~1payee_locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PayeeLocationsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List payee locations"
+        "summary": "List payee locations",
+        "tags": [
+          "Payee Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single payee location",
         "id": "operation:get:/budgets/{budget_id}/payee_locations/{payee_location_id}",
         "kind": "operation",
         "method": "get",
         "name": "getPayeeLocationById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id of payee location",
+            "in": "path",
+            "name": "payee_location_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/payee_locations/{payee_location_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1payee_locations~1{payee_location_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PayeeLocationResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single payee location"
+        "summary": "Single payee location",
+        "tags": [
+          "Payee Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all payees",
         "id": "operation:get:/budgets/{budget_id}/payees",
         "kind": "operation",
         "method": "get",
         "name": "getPayees",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/payees",
         "pointer": "#/paths/~1budgets~1{budget_id}~1payees/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PayeesResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List payees"
+        "summary": "List payees",
+        "tags": [
+          "Payees"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single payee",
         "id": "operation:get:/budgets/{budget_id}/payees/{payee_id}",
         "kind": "operation",
         "method": "get",
         "name": "getPayeeById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the payee",
+            "in": "path",
+            "name": "payee_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/payees/{payee_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1payees~1{payee_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PayeeResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single payee"
+        "summary": "Single payee",
+        "tags": [
+          "Payees"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all payee locations for a specified payee",
         "id": "operation:get:/budgets/{budget_id}/payees/{payee_id}/payee_locations",
         "kind": "operation",
         "method": "get",
         "name": "getPayeeLocationsByPayee",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id of payee",
+            "in": "path",
+            "name": "payee_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/payees/{payee_id}/payee_locations",
         "pointer": "#/paths/~1budgets~1{budget_id}~1payees~1{payee_id}~1payee_locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PayeeLocationsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List locations for a payee"
+        "summary": "List locations for a payee",
+        "tags": [
+          "Payee Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all transactions for a specified payee",
         "id": "operation:get:/budgets/{budget_id}/payees/{payee_id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionsByPayee",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the payee",
+            "in": "path",
+            "name": "payee_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If specified, only transactions on or after this date will be included.",
+            "in": "query",
+            "name": "since_date",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "If specified, only transactions of the specified type will be included.",
+            "enum": [
+              "uncategorized",
+              "unapproved"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/payees/{payee_id}/transactions",
         "pointer": "#/paths/~1budgets~1{budget_id}~1payees~1{payee_id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HybridTransactionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List payee transactions"
+        "summary": "List payee transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all scheduled transactions",
         "id": "operation:get:/budgets/{budget_id}/scheduled_transactions",
         "kind": "operation",
         "method": "get",
         "name": "getScheduledTransactions",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/scheduled_transactions",
         "pointer": "#/paths/~1budgets~1{budget_id}~1scheduled_transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledTransactionsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List scheduled transactions"
+        "summary": "List scheduled transactions",
+        "tags": [
+          "Scheduled Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single scheduled transaction",
         "id": "operation:get:/budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}",
         "kind": "operation",
         "method": "get",
         "name": "getScheduledTransactionById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the scheduled transaction",
+            "in": "path",
+            "name": "scheduled_transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1scheduled_transactions~1{scheduled_transaction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledTransactionResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single scheduled transaction"
+        "summary": "Single scheduled transaction",
+        "tags": [
+          "Scheduled Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns settings for a budget",
         "id": "operation:get:/budgets/{budget_id}/settings",
         "kind": "operation",
         "method": "get",
         "name": "getBudgetSettingsById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/settings",
         "pointer": "#/paths/~1budgets~1{budget_id}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BudgetSettingsResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Budget Settings"
+        "summary": "Budget Settings",
+        "tags": [
+          "Budgets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns budget transactions",
         "id": "operation:get:/budgets/{budget_id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getTransactions",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If specified, only transactions on or after this date will be included.",
+            "in": "query",
+            "name": "since_date",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "If specified, only transactions of the specified type will be included.",
+            "enum": [
+              "uncategorized",
+              "unapproved"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The starting server knowledge.",
+            "in": "query",
+            "name": "last_knowledge_of_server",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/budgets/{budget_id}/transactions",
         "pointer": "#/paths/~1budgets~1{budget_id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List transactions"
+        "summary": "List transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/budgets/{budget_id}/transactions",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateTransactions",
-        "path": "/budgets/{budget_id}/transactions",
-        "pointer": "#/paths/~1budgets~1{budget_id}~1transactions/patch",
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Update multiple transactions"
-      },
-      {
-        "deprecated": false,
+        "description": "Creates a single transaction or multiple transactions.",
         "id": "operation:post:/budgets/{budget_id}/transactions",
         "kind": "operation",
         "method": "post",
         "name": "createTransaction",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/transactions",
         "pointer": "#/paths/~1budgets~1{budget_id}~1transactions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PostTransactionsWrapper"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SaveTransactionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create a single transaction or multiple transactions"
+        "summary": "Create a single transaction or multiple transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates multiple transactions, by `id` or `import_id`.",
+        "id": "operation:patch:/budgets/{budget_id}/transactions",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateTransactions",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/budgets/{budget_id}/transactions",
+        "pointer": "#/paths/~1budgets~1{budget_id}~1transactions/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PatchTransactionsWrapper"
+        },
+        "responses": [
+          {
+            "status": "209",
+            "type": "SaveTransactionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Update multiple transactions",
+        "tags": [
+          "Transactions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Creates multiple transactions.",
         "id": "operation:post:/budgets/{budget_id}/transactions/bulk",
         "kind": "operation",
         "method": "post",
         "name": "bulkCreateTransactions",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/transactions/bulk",
         "pointer": "#/paths/~1budgets~1{budget_id}~1transactions~1bulk/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BulkTransactions"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "BulkResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Bulk create transactions"
+        "summary": "Bulk create transactions",
+        "tags": [
+          "Deprecated"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Imports available transactions on all linked accounts for the given budget.",
         "id": "operation:post:/budgets/{budget_id}/transactions/import",
         "kind": "operation",
         "method": "post",
         "name": "importTransactions",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/transactions/import",
         "pointer": "#/paths/~1budgets~1{budget_id}~1transactions~1import/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionsImportResponse"
+          },
+          {
+            "status": "201",
+            "type": "TransactionsImportResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Import transactions"
+        "summary": "Import transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/budgets/{budget_id}/transactions/{transaction_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTransaction",
-        "path": "/budgets/{budget_id}/transactions/{transaction_id}",
-        "pointer": "#/paths/~1budgets~1{budget_id}~1transactions~1{transaction_id}/delete",
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Deletes an existing transaction"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a single transaction",
         "id": "operation:get:/budgets/{budget_id}/transactions/{transaction_id}",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionById",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the transaction",
+            "in": "path",
+            "name": "transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/transactions/{transaction_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1transactions~1{transaction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Single transaction"
+        "summary": "Single transaction",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a single transaction",
         "id": "operation:put:/budgets/{budget_id}/transactions/{transaction_id}",
         "kind": "operation",
         "method": "put",
         "name": "updateTransaction",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the transaction",
+            "in": "path",
+            "name": "transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/budgets/{budget_id}/transactions/{transaction_id}",
         "pointer": "#/paths/~1budgets~1{budget_id}~1transactions~1{transaction_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PutTransactionWrapper"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Updates an existing transaction"
+        "summary": "Updates an existing transaction",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a transaction",
+        "id": "operation:delete:/budgets/{budget_id}/transactions/{transaction_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTransaction",
+        "parameters": [
+          {
+            "description": "The id of the budget.",
+            "in": "path",
+            "name": "budget_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the transaction",
+            "in": "path",
+            "name": "transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/budgets/{budget_id}/transactions/{transaction_id}",
+        "pointer": "#/paths/~1budgets~1{budget_id}~1transactions~1{transaction_id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Deletes an existing transaction",
+        "tags": [
+          "Transactions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns authenticated user information",
         "id": "operation:get:/user",
         "kind": "operation",
         "method": "get",
         "name": "getUser",
         "path": "/user",
         "pointer": "#/paths/~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "User info"
+        "summary": "User info",
+        "tags": [
+          "User"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:AccountResponse",
         "kind": "schema",
-        "name": "AccountResponse"
+        "name": "AccountResponse",
+        "type": "object"
       },
       {
+        "description": "The type of account",
         "id": "schema:AccountType",
         "kind": "schema",
-        "name": "AccountType"
+        "name": "AccountType",
+        "type": "string"
       },
       {
         "id": "schema:AccountsResponse",
         "kind": "schema",
-        "name": "AccountsResponse"
+        "name": "AccountsResponse",
+        "type": "object"
       },
       {
         "id": "schema:BudgetDetail",
         "kind": "schema",
-        "name": "BudgetDetail"
+        "name": "BudgetDetail",
+        "type": "BudgetSummary|object"
       },
       {
         "id": "schema:BudgetDetailResponse",
         "kind": "schema",
-        "name": "BudgetDetailResponse"
+        "name": "BudgetDetailResponse",
+        "type": "object"
       },
       {
         "id": "schema:BudgetSettings",
         "kind": "schema",
-        "name": "BudgetSettings"
+        "name": "BudgetSettings",
+        "type": "object"
       },
       {
         "id": "schema:BudgetSettingsResponse",
         "kind": "schema",
-        "name": "BudgetSettingsResponse"
+        "name": "BudgetSettingsResponse",
+        "type": "object"
       },
       {
         "id": "schema:BudgetSummary",
         "kind": "schema",
-        "name": "BudgetSummary"
+        "name": "BudgetSummary",
+        "type": "object"
       },
       {
         "id": "schema:BudgetSummaryResponse",
         "kind": "schema",
-        "name": "BudgetSummaryResponse"
+        "name": "BudgetSummaryResponse",
+        "type": "object"
       },
       {
         "id": "schema:BulkResponse",
         "kind": "schema",
-        "name": "BulkResponse"
+        "name": "BulkResponse",
+        "type": "object"
       },
       {
         "id": "schema:BulkTransactions",
         "kind": "schema",
-        "name": "BulkTransactions"
+        "name": "BulkTransactions",
+        "type": "object"
       },
       {
         "id": "schema:CategoriesResponse",
         "kind": "schema",
-        "name": "CategoriesResponse"
+        "name": "CategoriesResponse",
+        "type": "object"
       },
       {
         "id": "schema:Category",
         "kind": "schema",
-        "name": "Category"
+        "name": "Category",
+        "type": "object"
       },
       {
         "id": "schema:CategoryGroup",
         "kind": "schema",
-        "name": "CategoryGroup"
+        "name": "CategoryGroup",
+        "type": "object"
       },
       {
         "id": "schema:CategoryGroupWithCategories",
         "kind": "schema",
-        "name": "CategoryGroupWithCategories"
+        "name": "CategoryGroupWithCategories",
+        "type": "CategoryGroup|object"
       },
       {
         "id": "schema:CategoryResponse",
         "kind": "schema",
-        "name": "CategoryResponse"
+        "name": "CategoryResponse",
+        "type": "object"
       },
       {
+        "description": "The currency format setting for the budget.",
         "id": "schema:CurrencyFormat",
         "kind": "schema",
-        "name": "CurrencyFormat"
+        "name": "CurrencyFormat",
+        "type": "object"
       },
       {
+        "description": "The date format setting for the budget.",
         "id": "schema:DateFormat",
         "kind": "schema",
-        "name": "DateFormat"
+        "name": "DateFormat",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDetail",
         "kind": "schema",
-        "name": "ErrorDetail"
+        "name": "ErrorDetail",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:HybridTransaction",
         "kind": "schema",
-        "name": "HybridTransaction"
+        "name": "HybridTransaction",
+        "type": "TransactionSummary|object"
       },
       {
         "id": "schema:HybridTransactionsResponse",
         "kind": "schema",
-        "name": "HybridTransactionsResponse"
+        "name": "HybridTransactionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:LoanAccountPeriodicValue",
         "kind": "schema",
-        "name": "LoanAccountPeriodicValue"
+        "name": "LoanAccountPeriodicValue",
+        "type": "object"
       },
       {
         "id": "schema:MonthDetail",
         "kind": "schema",
-        "name": "MonthDetail"
+        "name": "MonthDetail",
+        "type": "MonthSummary|object"
       },
       {
         "id": "schema:MonthDetailResponse",
         "kind": "schema",
-        "name": "MonthDetailResponse"
+        "name": "MonthDetailResponse",
+        "type": "object"
       },
       {
         "id": "schema:MonthSummariesResponse",
         "kind": "schema",
-        "name": "MonthSummariesResponse"
+        "name": "MonthSummariesResponse",
+        "type": "object"
       },
       {
         "id": "schema:MonthSummary",
         "kind": "schema",
-        "name": "MonthSummary"
+        "name": "MonthSummary",
+        "type": "object"
       },
       {
         "id": "schema:PatchMonthCategoryWrapper",
         "kind": "schema",
-        "name": "PatchMonthCategoryWrapper"
+        "name": "PatchMonthCategoryWrapper",
+        "type": "object"
       },
       {
         "id": "schema:PatchTransactionsWrapper",
         "kind": "schema",
-        "name": "PatchTransactionsWrapper"
+        "name": "PatchTransactionsWrapper",
+        "type": "object"
       },
       {
         "id": "schema:Payee",
         "kind": "schema",
-        "name": "Payee"
+        "name": "Payee",
+        "type": "object"
       },
       {
         "id": "schema:PayeeLocation",
         "kind": "schema",
-        "name": "PayeeLocation"
+        "name": "PayeeLocation",
+        "type": "object"
       },
       {
         "id": "schema:PayeeLocationResponse",
         "kind": "schema",
-        "name": "PayeeLocationResponse"
+        "name": "PayeeLocationResponse",
+        "type": "object"
       },
       {
         "id": "schema:PayeeLocationsResponse",
         "kind": "schema",
-        "name": "PayeeLocationsResponse"
+        "name": "PayeeLocationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:PayeeResponse",
         "kind": "schema",
-        "name": "PayeeResponse"
+        "name": "PayeeResponse",
+        "type": "object"
       },
       {
         "id": "schema:PayeesResponse",
         "kind": "schema",
-        "name": "PayeesResponse"
+        "name": "PayeesResponse",
+        "type": "object"
       },
       {
         "id": "schema:PostAccountWrapper",
         "kind": "schema",
-        "name": "PostAccountWrapper"
+        "name": "PostAccountWrapper",
+        "type": "object"
       },
       {
         "id": "schema:PostTransactionsWrapper",
         "kind": "schema",
-        "name": "PostTransactionsWrapper"
+        "name": "PostTransactionsWrapper",
+        "type": "object"
       },
       {
         "id": "schema:PutTransactionWrapper",
         "kind": "schema",
-        "name": "PutTransactionWrapper"
+        "name": "PutTransactionWrapper",
+        "type": "object"
       },
       {
         "id": "schema:SaveAccount",
         "kind": "schema",
-        "name": "SaveAccount"
+        "name": "SaveAccount",
+        "type": "object"
       },
       {
         "id": "schema:SaveCategoryResponse",
         "kind": "schema",
-        "name": "SaveCategoryResponse"
+        "name": "SaveCategoryResponse",
+        "type": "object"
       },
       {
         "id": "schema:SaveMonthCategory",
         "kind": "schema",
-        "name": "SaveMonthCategory"
+        "name": "SaveMonthCategory",
+        "type": "object"
       },
       {
         "id": "schema:SaveSubTransaction",
         "kind": "schema",
-        "name": "SaveSubTransaction"
+        "name": "SaveSubTransaction",
+        "type": "object"
       },
       {
         "id": "schema:SaveTransaction",
         "kind": "schema",
-        "name": "SaveTransaction"
+        "name": "SaveTransaction",
+        "type": "SaveTransactionWithOptionalFields"
       },
       {
         "id": "schema:SaveTransactionWithId",
         "kind": "schema",
-        "name": "SaveTransactionWithId"
+        "name": "SaveTransactionWithId",
+        "type": "object|SaveTransactionWithOptionalFields"
       },
       {
         "id": "schema:SaveTransactionWithOptionalFields",
         "kind": "schema",
-        "name": "SaveTransactionWithOptionalFields"
+        "name": "SaveTransactionWithOptionalFields",
+        "type": "object"
       },
       {
         "id": "schema:SaveTransactionsResponse",
         "kind": "schema",
-        "name": "SaveTransactionsResponse"
+        "name": "SaveTransactionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledSubTransaction",
         "kind": "schema",
-        "name": "ScheduledSubTransaction"
+        "name": "ScheduledSubTransaction",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledTransactionDetail",
         "kind": "schema",
-        "name": "ScheduledTransactionDetail"
+        "name": "ScheduledTransactionDetail",
+        "type": "ScheduledTransactionSummary|object"
       },
       {
         "id": "schema:ScheduledTransactionResponse",
         "kind": "schema",
-        "name": "ScheduledTransactionResponse"
+        "name": "ScheduledTransactionResponse",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledTransactionSummary",
         "kind": "schema",
-        "name": "ScheduledTransactionSummary"
+        "name": "ScheduledTransactionSummary",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledTransactionsResponse",
         "kind": "schema",
-        "name": "ScheduledTransactionsResponse"
+        "name": "ScheduledTransactionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:SubTransaction",
         "kind": "schema",
-        "name": "SubTransaction"
+        "name": "SubTransaction",
+        "type": "object"
       },
       {
         "id": "schema:TransactionDetail",
         "kind": "schema",
-        "name": "TransactionDetail"
+        "name": "TransactionDetail",
+        "type": "TransactionSummary|object"
       },
       {
         "id": "schema:TransactionResponse",
         "kind": "schema",
-        "name": "TransactionResponse"
+        "name": "TransactionResponse",
+        "type": "object"
       },
       {
         "id": "schema:TransactionSummary",
         "kind": "schema",
-        "name": "TransactionSummary"
+        "name": "TransactionSummary",
+        "type": "object"
       },
       {
         "id": "schema:TransactionsImportResponse",
         "kind": "schema",
-        "name": "TransactionsImportResponse"
+        "name": "TransactionsImportResponse",
+        "type": "object"
       },
       {
         "id": "schema:TransactionsResponse",
         "kind": "schema",
-        "name": "TransactionsResponse"
+        "name": "TransactionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:UserResponse",
         "kind": "schema",
-        "name": "UserResponse"
+        "name": "UserResponse",
+        "type": "object"
       }
     ]
   },

@@ -27,12 +27,12 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books"
+        "to": "operation:get:/indexes/books"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:get:/indexes/books"
+        "to": "operation:delete:/indexes/books"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -42,12 +42,12 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/documents"
+        "to": "operation:get:/indexes/books/documents"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:get:/indexes/books/documents"
+        "to": "operation:put:/indexes/books/documents"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -57,7 +57,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:put:/indexes/books/documents"
+        "to": "operation:delete:/indexes/books/documents"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -87,22 +87,17 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings"
-      },
-      {
-        "from": "meilisearch-com-d0461774bf",
-        "kind": "EXPOSES",
         "to": "operation:get:/indexes/books/settings"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:patch:/indexes/books/settings"
+        "to": "operation:delete:/indexes/books/settings"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/displayed-attributes"
+        "to": "operation:patch:/indexes/books/settings"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -117,7 +112,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/distinct-attribute"
+        "to": "operation:delete:/indexes/books/settings/displayed-attributes"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -132,7 +127,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/faceting"
+        "to": "operation:delete:/indexes/books/settings/distinct-attribute"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -142,12 +137,12 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:patch:/indexes/books/settings/faceting"
+        "to": "operation:delete:/indexes/books/settings/faceting"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/filterable-attributes"
+        "to": "operation:patch:/indexes/books/settings/faceting"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -162,7 +157,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/pagination"
+        "to": "operation:delete:/indexes/books/settings/filterable-attributes"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -172,12 +167,12 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:patch:/indexes/books/settings/pagination"
+        "to": "operation:delete:/indexes/books/settings/pagination"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/ranking-rules"
+        "to": "operation:patch:/indexes/books/settings/pagination"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -192,7 +187,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/searchable-attributes"
+        "to": "operation:delete:/indexes/books/settings/ranking-rules"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -207,7 +202,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/sortable-attributes"
+        "to": "operation:delete:/indexes/books/settings/searchable-attributes"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -222,7 +217,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/stop-words"
+        "to": "operation:delete:/indexes/books/settings/sortable-attributes"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -237,7 +232,7 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/synonyms"
+        "to": "operation:delete:/indexes/books/settings/stop-words"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -252,12 +247,17 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/indexes/books/settings/typo-tolerance"
+        "to": "operation:delete:/indexes/books/settings/synonyms"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
         "to": "operation:get:/indexes/books/settings/typo-tolerance"
+      },
+      {
+        "from": "meilisearch-com-d0461774bf",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/indexes/books/settings/typo-tolerance"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -307,12 +307,12 @@
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:delete:/tasks"
+        "to": "operation:get:/tasks"
       },
       {
         "from": "meilisearch-com-d0461774bf",
         "kind": "EXPOSES",
-        "to": "operation:get:/tasks"
+        "to": "operation:delete:/tasks"
       },
       {
         "from": "meilisearch-com-d0461774bf",
@@ -343,8 +343,17 @@
         "name": "createADump",
         "path": "/dumps",
         "pointer": "#/paths/~1dumps/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a dump"
+        "summary": "Create a dump",
+        "tags": [
+          "Dumps"
+        ]
       },
       {
         "deprecated": false,
@@ -354,8 +363,17 @@
         "name": "health",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Health"
+        "summary": "Health",
+        "tags": [
+          "Stats"
+        ]
       },
       {
         "deprecated": false,
@@ -363,10 +381,33 @@
         "kind": "operation",
         "method": "get",
         "name": "getIndexes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/indexes",
         "pointer": "#/paths/~1indexes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get indexes"
+        "summary": "Get indexes",
+        "tags": [
+          "Indexes"
+        ]
       },
       {
         "deprecated": false,
@@ -376,19 +417,24 @@
         "name": "createIndexWithPrimaryKey",
         "path": "/indexes",
         "pointer": "#/paths/~1indexes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create index with primary key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/indexes/books",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteAnIndex",
-        "path": "/indexes/books",
-        "pointer": "#/paths/~1indexes~1books/delete",
-        "security": [],
-        "summary": "Delete an index"
+        "summary": "Create index with primary key",
+        "tags": [
+          "Indexes"
+        ]
       },
       {
         "deprecated": false,
@@ -398,19 +444,175 @@
         "name": "showIndex",
         "path": "/indexes/books",
         "pointer": "#/paths/~1indexes~1books/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Show index"
+        "summary": "Show index",
+        "tags": [
+          "Indexes"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/indexes/books",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteAnIndex",
+        "path": "/indexes/books",
+        "pointer": "#/paths/~1indexes~1books/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete an index",
+        "tags": [
+          "Indexes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Can only change the document identifier if it has not already been added before.",
         "id": "operation:patch:/indexes/books",
         "kind": "operation",
         "method": "patch",
         "name": "udpateIndex",
         "path": "/indexes/books",
         "pointer": "#/paths/~1indexes~1books/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Udpate index "
+        "summary": "Udpate index ",
+        "tags": [
+          "Indexes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/indexes/books/documents",
+        "kind": "operation",
+        "method": "get",
+        "name": "getDocuments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/indexes/books/documents",
+        "pointer": "#/paths/~1indexes~1books~1documents/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": "Get documents",
+        "tags": [
+          "Documents"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:put:/indexes/books/documents",
+        "kind": "operation",
+        "method": "put",
+        "name": "addOrUpdateDocuments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "primaryKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/indexes/books/documents",
+        "pointer": "#/paths/~1indexes~1books~1documents/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Add or update documents",
+        "tags": [
+          "Documents"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/indexes/books/documents",
+        "kind": "operation",
+        "method": "post",
+        "name": "addOrReplaceDocuments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "primaryKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/indexes/books/documents",
+        "pointer": "#/paths/~1indexes~1books~1documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Add or replace documents",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -420,41 +622,17 @@
         "name": "deleteAllDocuments",
         "path": "/indexes/books/documents",
         "pointer": "#/paths/~1indexes~1books~1documents/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete all documents"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:get:/indexes/books/documents",
-        "kind": "operation",
-        "method": "get",
-        "name": "getDocuments",
-        "path": "/indexes/books/documents",
-        "pointer": "#/paths/~1indexes~1books~1documents/get",
-        "security": [],
-        "summary": "Get documents"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/indexes/books/documents",
-        "kind": "operation",
-        "method": "post",
-        "name": "addOrReplaceDocuments",
-        "path": "/indexes/books/documents",
-        "pointer": "#/paths/~1indexes~1books~1documents/post",
-        "security": [],
-        "summary": "Add or replace documents"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/indexes/books/documents",
-        "kind": "operation",
-        "method": "put",
-        "name": "addOrUpdateDocuments",
-        "path": "/indexes/books/documents",
-        "pointer": "#/paths/~1indexes~1books~1documents/put",
-        "security": [],
-        "summary": "Add or update documents"
+        "summary": "Delete all documents",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -464,8 +642,23 @@
         "name": "deleteOneDocument",
         "path": "/indexes/books/documents/1",
         "pointer": "#/paths/~1indexes~1books~1documents~11/delete",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete one document"
+        "summary": "Delete one document",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -473,10 +666,27 @@
         "kind": "operation",
         "method": "get",
         "name": "getOneDocument",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/indexes/books/documents/2",
         "pointer": "#/paths/~1indexes~1books~1documents~12/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get one document"
+        "summary": "Get one document",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -486,8 +696,24 @@
         "name": "deleteDocuments",
         "path": "/indexes/books/documents/delete-batch",
         "pointer": "#/paths/~1indexes~1books~1documents~1delete-batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "number[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete documents"
+        "summary": "Delete documents",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -495,10 +721,123 @@
         "kind": "operation",
         "method": "get",
         "name": "searchInIndex",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "attributesToRetrieve",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "attributesToCrop",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "attributesToHighlight",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cropLength",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cropMarker",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "showMatchesPosition",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "facets",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "highlightPreTag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "highlightPostTag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "matchingStrategy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "hitsPerPage",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/indexes/books/search",
         "pointer": "#/paths/~1indexes~1books~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search in index"
+        "summary": "Search in index",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -508,19 +847,24 @@
         "name": "searchInIndex1",
         "path": "/indexes/books/search",
         "pointer": "#/paths/~1indexes~1books~1search/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Search in index"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings",
-        "kind": "operation",
-        "method": "delete",
-        "name": "resetAllSettings",
-        "path": "/indexes/books/settings",
-        "pointer": "#/paths/~1indexes~1books~1settings/delete",
-        "security": [],
-        "summary": "Reset all settings"
+        "summary": "Search in index",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -530,8 +874,37 @@
         "name": "getAllSettings",
         "path": "/indexes/books/settings",
         "pointer": "#/paths/~1indexes~1books~1settings/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all settings"
+        "summary": "Get all settings",
+        "tags": [
+          "Settings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/indexes/books/settings",
+        "kind": "operation",
+        "method": "delete",
+        "name": "resetAllSettings",
+        "path": "/indexes/books/settings",
+        "pointer": "#/paths/~1indexes~1books~1settings/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Reset all settings",
+        "tags": [
+          "Settings"
+        ]
       },
       {
         "deprecated": false,
@@ -541,19 +914,24 @@
         "name": "updateSettings",
         "path": "/indexes/books/settings",
         "pointer": "#/paths/~1indexes~1books~1settings/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update settings"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/displayed-attributes",
-        "kind": "operation",
-        "method": "delete",
-        "name": "resetDisplayedAttributes",
-        "path": "/indexes/books/settings/displayed-attributes",
-        "pointer": "#/paths/~1indexes~1books~1settings~1displayed-attributes/delete",
-        "security": [],
-        "summary": "Reset displayed attributes"
+        "summary": "Update settings",
+        "tags": [
+          "Settings"
+        ]
       },
       {
         "deprecated": false,
@@ -563,8 +941,18 @@
         "name": "getDisplayedAttributes",
         "path": "/indexes/books/settings/displayed-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1displayed-attributes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get displayed attributes"
+        "summary": "Get displayed attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -574,19 +962,46 @@
         "name": "updateDisplayedAttributes",
         "path": "/indexes/books/settings/displayed-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1displayed-attributes/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update displayed attributes"
+        "summary": "Update displayed attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/distinct-attribute",
+        "id": "operation:delete:/indexes/books/settings/displayed-attributes",
         "kind": "operation",
         "method": "delete",
-        "name": "resetDistinctAttribute",
-        "path": "/indexes/books/settings/distinct-attribute",
-        "pointer": "#/paths/~1indexes~1books~1settings~1distinct-attribute/delete",
+        "name": "resetDisplayedAttributes",
+        "path": "/indexes/books/settings/displayed-attributes",
+        "pointer": "#/paths/~1indexes~1books~1settings~1displayed-attributes/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset distinct attribute"
+        "summary": "Reset displayed attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -596,8 +1011,18 @@
         "name": "getDistinctAttribute",
         "path": "/indexes/books/settings/distinct-attribute",
         "pointer": "#/paths/~1indexes~1books~1settings~1distinct-attribute/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get distinct attribute"
+        "summary": "Get distinct attribute",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -607,19 +1032,45 @@
         "name": "updateDistinctAttribute",
         "path": "/indexes/books/settings/distinct-attribute",
         "pointer": "#/paths/~1indexes~1books~1settings~1distinct-attribute/put",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update distinct attribute"
+        "summary": "Update distinct attribute",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/faceting",
+        "id": "operation:delete:/indexes/books/settings/distinct-attribute",
         "kind": "operation",
         "method": "delete",
-        "name": "resetFaceting",
-        "path": "/indexes/books/settings/faceting",
-        "pointer": "#/paths/~1indexes~1books~1settings~1faceting/delete",
+        "name": "resetDistinctAttribute",
+        "path": "/indexes/books/settings/distinct-attribute",
+        "pointer": "#/paths/~1indexes~1books~1settings~1distinct-attribute/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset faceting"
+        "summary": "Reset distinct attribute",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -629,8 +1080,39 @@
         "name": "getFaceting",
         "path": "/indexes/books/settings/faceting",
         "pointer": "#/paths/~1indexes~1books~1settings~1faceting/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get faceting"
+        "summary": "Get faceting",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/indexes/books/settings/faceting",
+        "kind": "operation",
+        "method": "delete",
+        "name": "resetFaceting",
+        "path": "/indexes/books/settings/faceting",
+        "pointer": "#/paths/~1indexes~1books~1settings~1faceting/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Reset faceting",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -640,19 +1122,25 @@
         "name": "updateFaceting",
         "path": "/indexes/books/settings/faceting",
         "pointer": "#/paths/~1indexes~1books~1settings~1faceting/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update faceting"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/filterable-attributes",
-        "kind": "operation",
-        "method": "delete",
-        "name": "resetFilterableAttributes",
-        "path": "/indexes/books/settings/filterable-attributes",
-        "pointer": "#/paths/~1indexes~1books~1settings~1filterable-attributes/delete",
-        "security": [],
-        "summary": "Reset filterable attributes"
+        "summary": "Update faceting",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -662,8 +1150,18 @@
         "name": "getFilterableAttributes",
         "path": "/indexes/books/settings/filterable-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1filterable-attributes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get filterable attributes"
+        "summary": "Get filterable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -673,19 +1171,46 @@
         "name": "updateFilterableAttributes",
         "path": "/indexes/books/settings/filterable-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1filterable-attributes/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update filterable attributes"
+        "summary": "Update filterable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/pagination",
+        "id": "operation:delete:/indexes/books/settings/filterable-attributes",
         "kind": "operation",
         "method": "delete",
-        "name": "resetPagination",
-        "path": "/indexes/books/settings/pagination",
-        "pointer": "#/paths/~1indexes~1books~1settings~1pagination/delete",
+        "name": "resetFilterableAttributes",
+        "path": "/indexes/books/settings/filterable-attributes",
+        "pointer": "#/paths/~1indexes~1books~1settings~1filterable-attributes/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset pagination"
+        "summary": "Reset filterable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -695,8 +1220,39 @@
         "name": "getPagination",
         "path": "/indexes/books/settings/pagination",
         "pointer": "#/paths/~1indexes~1books~1settings~1pagination/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get pagination"
+        "summary": "Get pagination",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/indexes/books/settings/pagination",
+        "kind": "operation",
+        "method": "delete",
+        "name": "resetPagination",
+        "path": "/indexes/books/settings/pagination",
+        "pointer": "#/paths/~1indexes~1books~1settings~1pagination/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Reset pagination",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -706,19 +1262,25 @@
         "name": "updatePagination",
         "path": "/indexes/books/settings/pagination",
         "pointer": "#/paths/~1indexes~1books~1settings~1pagination/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update pagination"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/ranking-rules",
-        "kind": "operation",
-        "method": "delete",
-        "name": "resetRankingRules",
-        "path": "/indexes/books/settings/ranking-rules",
-        "pointer": "#/paths/~1indexes~1books~1settings~1ranking-rules/delete",
-        "security": [],
-        "summary": "Reset ranking rules"
+        "summary": "Update pagination",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -728,8 +1290,18 @@
         "name": "getRankingRules",
         "path": "/indexes/books/settings/ranking-rules",
         "pointer": "#/paths/~1indexes~1books~1settings~1ranking-rules/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get ranking rules"
+        "summary": "Get ranking rules",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -739,19 +1311,46 @@
         "name": "updateRankingRules",
         "path": "/indexes/books/settings/ranking-rules",
         "pointer": "#/paths/~1indexes~1books~1settings~1ranking-rules/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update ranking rules"
+        "summary": "Update ranking rules",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/searchable-attributes",
+        "id": "operation:delete:/indexes/books/settings/ranking-rules",
         "kind": "operation",
         "method": "delete",
-        "name": "resetSearchableAttributes",
-        "path": "/indexes/books/settings/searchable-attributes",
-        "pointer": "#/paths/~1indexes~1books~1settings~1searchable-attributes/delete",
+        "name": "resetRankingRules",
+        "path": "/indexes/books/settings/ranking-rules",
+        "pointer": "#/paths/~1indexes~1books~1settings~1ranking-rules/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset searchable attributes"
+        "summary": "Reset ranking rules",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -761,8 +1360,18 @@
         "name": "getSearchableAttributes",
         "path": "/indexes/books/settings/searchable-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1searchable-attributes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get searchable attributes"
+        "summary": "Get searchable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -772,19 +1381,46 @@
         "name": "updateSearchableAttributes",
         "path": "/indexes/books/settings/searchable-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1searchable-attributes/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update searchable attributes"
+        "summary": "Update searchable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/sortable-attributes",
+        "id": "operation:delete:/indexes/books/settings/searchable-attributes",
         "kind": "operation",
         "method": "delete",
-        "name": "resetSortableAttributes",
-        "path": "/indexes/books/settings/sortable-attributes",
-        "pointer": "#/paths/~1indexes~1books~1settings~1sortable-attributes/delete",
+        "name": "resetSearchableAttributes",
+        "path": "/indexes/books/settings/searchable-attributes",
+        "pointer": "#/paths/~1indexes~1books~1settings~1searchable-attributes/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset sortable attributes"
+        "summary": "Reset searchable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -794,8 +1430,18 @@
         "name": "getSortableAttributes",
         "path": "/indexes/books/settings/sortable-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1sortable-attributes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get sortable attributes"
+        "summary": "Get sortable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -805,19 +1451,46 @@
         "name": "updateSortableAttributes",
         "path": "/indexes/books/settings/sortable-attributes",
         "pointer": "#/paths/~1indexes~1books~1settings~1sortable-attributes/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update sortable attributes"
+        "summary": "Update sortable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/stop-words",
+        "id": "operation:delete:/indexes/books/settings/sortable-attributes",
         "kind": "operation",
         "method": "delete",
-        "name": "resetStopWords",
-        "path": "/indexes/books/settings/stop-words",
-        "pointer": "#/paths/~1indexes~1books~1settings~1stop-words/delete",
+        "name": "resetSortableAttributes",
+        "path": "/indexes/books/settings/sortable-attributes",
+        "pointer": "#/paths/~1indexes~1books~1settings~1sortable-attributes/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset stop-words"
+        "summary": "Reset sortable attributes",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -827,8 +1500,25 @@
         "name": "getStopWords",
         "path": "/indexes/books/settings/stop-words",
         "pointer": "#/paths/~1indexes~1books~1settings~1stop-words/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get stop-words"
+        "summary": "Get stop-words",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -838,19 +1528,46 @@
         "name": "updateStopWords",
         "path": "/indexes/books/settings/stop-words",
         "pointer": "#/paths/~1indexes~1books~1settings~1stop-words/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update stop-words"
+        "summary": "Update stop-words",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/synonyms",
+        "id": "operation:delete:/indexes/books/settings/stop-words",
         "kind": "operation",
         "method": "delete",
-        "name": "resetSynonyms",
-        "path": "/indexes/books/settings/synonyms",
-        "pointer": "#/paths/~1indexes~1books~1settings~1synonyms/delete",
+        "name": "resetStopWords",
+        "path": "/indexes/books/settings/stop-words",
+        "pointer": "#/paths/~1indexes~1books~1settings~1stop-words/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset synonyms"
+        "summary": "Reset stop-words",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -860,8 +1577,18 @@
         "name": "getSynonyms",
         "path": "/indexes/books/settings/synonyms",
         "pointer": "#/paths/~1indexes~1books~1settings~1synonyms/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get synonyms"
+        "summary": "Get synonyms",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -871,19 +1598,52 @@
         "name": "updateSynonyms",
         "path": "/indexes/books/settings/synonyms",
         "pointer": "#/paths/~1indexes~1books~1settings~1synonyms/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update synonyms"
+        "summary": "Update synonyms",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/indexes/books/settings/typo-tolerance",
+        "id": "operation:delete:/indexes/books/settings/synonyms",
         "kind": "operation",
         "method": "delete",
-        "name": "resetTypoTolerance",
-        "path": "/indexes/books/settings/typo-tolerance",
-        "pointer": "#/paths/~1indexes~1books~1settings~1typo-tolerance/delete",
+        "name": "resetSynonyms",
+        "path": "/indexes/books/settings/synonyms",
+        "pointer": "#/paths/~1indexes~1books~1settings~1synonyms/delete",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset typo-tolerance"
+        "summary": "Reset synonyms",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -893,8 +1653,39 @@
         "name": "getTypoTolerance",
         "path": "/indexes/books/settings/typo-tolerance",
         "pointer": "#/paths/~1indexes~1books~1settings~1typo-tolerance/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get typo-tolerance"
+        "summary": "Get typo-tolerance",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/indexes/books/settings/typo-tolerance",
+        "kind": "operation",
+        "method": "delete",
+        "name": "resetTypoTolerance",
+        "path": "/indexes/books/settings/typo-tolerance",
+        "pointer": "#/paths/~1indexes~1books~1settings~1typo-tolerance/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Reset typo-tolerance",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -904,8 +1695,25 @@
         "name": "updateTypoTolerance",
         "path": "/indexes/books/settings/typo-tolerance",
         "pointer": "#/paths/~1indexes~1books~1settings~1typo-tolerance/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update typo-tolerance"
+        "summary": "Update typo-tolerance",
+        "tags": [
+          "Settings",
+          "Sub-routes"
+        ]
       },
       {
         "deprecated": false,
@@ -915,8 +1723,17 @@
         "name": "statsOfAnIndex",
         "path": "/indexes/books/stats",
         "pointer": "#/paths/~1indexes~1books~1stats/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Stats of an index"
+        "summary": "Stats of an index",
+        "tags": [
+          "Stats"
+        ]
       },
       {
         "deprecated": false,
@@ -926,8 +1743,24 @@
         "name": "swapIndexes",
         "path": "/indexes/swap-indexes",
         "pointer": "#/paths/~1indexes~1swap-indexes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Swap indexes"
+        "summary": "Swap indexes",
+        "tags": [
+          "Indexes"
+        ]
       },
       {
         "deprecated": false,
@@ -935,10 +1768,33 @@
         "kind": "operation",
         "method": "get",
         "name": "getKeys",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/keys",
         "pointer": "#/paths/~1keys/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get keys"
+        "summary": "Get keys",
+        "tags": [
+          "Key Management"
+        ]
       },
       {
         "deprecated": false,
@@ -948,8 +1804,24 @@
         "name": "createAKey",
         "path": "/keys",
         "pointer": "#/paths/~1keys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a key"
+        "summary": "Create a key",
+        "tags": [
+          "Key Management"
+        ]
       },
       {
         "deprecated": false,
@@ -959,8 +1831,17 @@
         "name": "getOneKey",
         "path": "/keys/L8l05tFb188aab693735bbaf1f898b9902fb39f865160d39dddba2b47b940115a0430705",
         "pointer": "#/paths/~1keys~1L8l05tFb188aab693735bbaf1f898b9902fb39f865160d39dddba2b47b940115a0430705/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get one key"
+        "summary": "Get one key",
+        "tags": [
+          "Key Management"
+        ]
       },
       {
         "deprecated": false,
@@ -970,8 +1851,17 @@
         "name": "deleteAKey",
         "path": "/keys/kN2aK9EO8a7b627e425717d9196c8081552ca004e513545ed178f8a56981dbd3080d4a5b",
         "pointer": "#/paths/~1keys~1kN2aK9EO8a7b627e425717d9196c8081552ca004e513545ed178f8a56981dbd3080d4a5b/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a key"
+        "summary": "Delete a key",
+        "tags": [
+          "Key Management"
+        ]
       },
       {
         "deprecated": false,
@@ -981,8 +1871,24 @@
         "name": "updateAKey",
         "path": "/keys/wYZjGJyBcdb0621b97999c233246a8ec0a35d0fcd9a6417ef8ccee0c8978b64b123af2dd",
         "pointer": "#/paths/~1keys~1wYZjGJyBcdb0621b97999c233246a8ec0a35d0fcd9a6417ef8ccee0c8978b64b123af2dd/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a key"
+        "summary": "Update a key",
+        "tags": [
+          "Key Management"
+        ]
       },
       {
         "deprecated": false,
@@ -992,19 +1898,17 @@
         "name": "globalStats",
         "path": "/stats",
         "pointer": "#/paths/~1stats/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Global stats"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/tasks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTasks",
-        "path": "/tasks",
-        "pointer": "#/paths/~1tasks/delete",
-        "security": [],
-        "summary": "Delete tasks"
+        "summary": "Global stats",
+        "tags": [
+          "Stats"
+        ]
       },
       {
         "deprecated": false,
@@ -1012,10 +1916,199 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllTasks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "indexUids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "statuses",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeEnqueuedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterEnqueuedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeStartedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterStartedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeFinishedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterFinishedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "canceledBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tasks",
         "pointer": "#/paths/~1tasks/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all tasks"
+        "summary": "Get all tasks",
+        "tags": [
+          "Tasks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/tasks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTasks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "indexUids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "statuses",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeEnqueuedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterEnqueuedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeStartedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterStartedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeFinishedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterFinishedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "canceledBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/tasks",
+        "pointer": "#/paths/~1tasks/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete tasks",
+        "tags": [
+          "Tasks"
+        ]
       },
       {
         "deprecated": false,
@@ -1025,8 +2118,17 @@
         "name": "getOneTask",
         "path": "/tasks/0",
         "pointer": "#/paths/~1tasks~10/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get one task"
+        "summary": "Get one task",
+        "tags": [
+          "Tasks"
+        ]
       },
       {
         "deprecated": false,
@@ -1034,10 +2136,99 @@
         "kind": "operation",
         "method": "post",
         "name": "cancelTasks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "indexUids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "statuses",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeEnqueuedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterEnqueuedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeStartedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterStartedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "beforeFinishedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "afterFinishedAt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "canceledBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tasks/cancel",
         "pointer": "#/paths/~1tasks~1cancel/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Cancel tasks"
+        "summary": "Cancel tasks",
+        "tags": [
+          "Tasks"
+        ]
       },
       {
         "deprecated": false,
@@ -1047,8 +2238,17 @@
         "name": "version",
         "path": "/version",
         "pointer": "#/paths/~1version/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Version"
+        "summary": "Version",
+        "tags": [
+          "Stats"
+        ]
       }
     ]
   },

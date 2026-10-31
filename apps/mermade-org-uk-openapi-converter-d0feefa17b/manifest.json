@@ -33,6 +33,16 @@
         "from": "mermade-org-uk-openapi-converter-d0feefa17b",
         "kind": "EXPOSES",
         "to": "operation:post:/validate"
+      },
+      {
+        "from": "operation:get:/validate",
+        "kind": "RETURNS",
+        "to": "schema:validationResult"
+      },
+      {
+        "from": "operation:post:/validate",
+        "kind": "RETURNS",
+        "to": "schema:validationResult"
       }
     ],
     "nodes": [
@@ -46,10 +56,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getBadge",
+        "parameters": [
+          {
+            "description": "The URL to retrieve the OpenAPI 3.0.x definition from",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string:uri"
+          }
+        ],
         "path": "/badge",
         "pointer": "#/paths/~1badge/get",
+        "responses": [
+          {
+            "status": "301"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a redirect to a badge svg file depending on a source definition's validity"
+        "summary": "Return a redirect to a badge svg file depending on a source definition's validity",
+        "tags": [
+          "validation"
+        ]
       },
       {
         "deprecated": false,
@@ -57,10 +85,28 @@
         "kind": "operation",
         "method": "get",
         "name": "convertUrl",
+        "parameters": [
+          {
+            "description": "The URL to retrieve the OpenAPI 2.0 definition from",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string:uri"
+          }
+        ],
         "path": "/convert",
         "pointer": "#/paths/~1convert/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Convert a Swagger 2.0 definition to OpenAPI 3.0.x from a URL"
+        "summary": "Convert a Swagger 2.0 definition to OpenAPI 3.0.x from a URL",
+        "tags": [
+          "conversion"
+        ]
       },
       {
         "deprecated": false,
@@ -70,8 +116,27 @@
         "name": "convert",
         "path": "/convert",
         "pointer": "#/paths/~1convert/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Convert a Swagger 2.0 definition passed in the body to OpenAPI 3.0.x "
+        "summary": "Convert a Swagger 2.0 definition passed in the body to OpenAPI 3.0.x ",
+        "tags": [
+          "conversion"
+        ]
       },
       {
         "deprecated": false,
@@ -81,8 +146,17 @@
         "name": "getStatus",
         "path": "/status",
         "pointer": "#/paths/~1status/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the status of the API"
+        "summary": "Get the status of the API",
+        "tags": [
+          "metadata"
+        ]
       },
       {
         "deprecated": false,
@@ -90,10 +164,29 @@
         "kind": "operation",
         "method": "get",
         "name": "validateUrl",
+        "parameters": [
+          {
+            "description": "The URL to retrieve the OpenAPI 3.0.x definition from",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string:uri"
+          }
+        ],
         "path": "/validate",
         "pointer": "#/paths/~1validate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "validationResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Validate an OpenAPI 3.0.x definition"
+        "summary": "Validate an OpenAPI 3.0.x definition",
+        "tags": [
+          "validation"
+        ]
       },
       {
         "deprecated": false,
@@ -103,13 +196,34 @@
         "name": "validate",
         "path": "/validate",
         "pointer": "#/paths/~1validate/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "validationResult"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Validate an OpenAPI 3.0.x definition supplied in the body of the request"
+        "summary": "Validate an OpenAPI 3.0.x definition supplied in the body of the request",
+        "tags": [
+          "validation"
+        ]
       },
       {
         "id": "schema:validationResult",
         "kind": "schema",
-        "name": "validationResult"
+        "name": "validationResult",
+        "type": "object"
       }
     ]
   },

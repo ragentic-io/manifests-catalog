@@ -31,10 +31,44 @@
         "kind": "operation",
         "method": "get",
         "name": "emailValidation",
+        "parameters": [
+          {
+            "description": "(Required) YOUR_API_KEY_HERE",
+            "in": "path",
+            "name": "YOUR_API_KEY_HERE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "(Required) USER_EMAIL_HERE",
+            "in": "path",
+            "name": "USER_EMAIL_HERE",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/json/email/{YOUR_API_KEY_HERE}/{USER_EMAIL_HERE}",
         "pointer": "#/paths/~1json~1email~1{YOUR_API_KEY_HERE}~1{USER_EMAIL_HERE}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Email Validation"
+        "summary": "Email Validation",
+        "tags": [
+          "email_validation"
+        ]
       },
       {
         "deprecated": false,
@@ -42,10 +76,51 @@
         "kind": "operation",
         "method": "get",
         "name": "phoneValidation",
+        "parameters": [
+          {
+            "description": "(Required) YOUR_API_KEY_HERE",
+            "in": "path",
+            "name": "YOUR_API_KEY_HERE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "(Required) USER_PHONE_HERE",
+            "in": "path",
+            "name": "USER_PHONE_HERE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "country",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/json/phone/{YOUR_API_KEY_HERE}/{USER_PHONE_HERE}",
         "pointer": "#/paths/~1json~1phone~1{YOUR_API_KEY_HERE}~1{USER_PHONE_HERE}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Phone Validation"
+        "summary": "Phone Validation",
+        "tags": [
+          "phone_validation"
+        ]
       },
       {
         "deprecated": false,
@@ -53,10 +128,44 @@
         "kind": "operation",
         "method": "get",
         "name": "maliciousUrlScanner",
+        "parameters": [
+          {
+            "description": "(Required) YOUR_API_KEY_HERE",
+            "in": "path",
+            "name": "YOUR_API_KEY_HERE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "(Required) URL_HERE",
+            "in": "path",
+            "name": "URL_HERE",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/json/url/{YOUR_API_KEY_HERE}/{URL_HERE}",
         "pointer": "#/paths/~1json~1url~1{YOUR_API_KEY_HERE}~1{URL_HERE}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Malicious URL Scanner"
+        "summary": "Malicious URL Scanner",
+        "tags": [
+          "malicious_url_scanner"
+        ]
       }
     ]
   },

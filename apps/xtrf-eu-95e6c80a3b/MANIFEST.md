@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_xtrf.eu_wp-content_uploads_2023
 
 | | |
 | --- | --- |
-| Signed bundle | `edd8d005e89ca932e2e5d4833649870083d542df7e198b6ae01af6ce3545f6b8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,289 +34,291 @@ logo: "https://api.apis.guru/v2/cache/logo/https_xtrf.eu_wp-content_uploads_2023
 
 171 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounting/customers/invoices` | getAll | Lists all client invoices in all statuses (including not ready and drafts) that have been updated since a specific date. |
-| POST | `/accounting/customers/invoices` | create_1 | Creates a new invoice. |
-| POST | `/accounting/customers/invoices/documents` | downloadDocuments | Generates client invoices' documents. |
-| GET | `/accounting/customers/invoices/ids` | getAllIds | Returns client invoices' internal identifiers. |
-| POST | `/accounting/customers/invoices/sendReminders` | sendReminders | Sends reminders. Returns number of sent e-mails. |
-| DELETE | `/accounting/customers/invoices/{invoiceId}` | delete_1 | Removes a client invoice. |
-| GET | `/accounting/customers/invoices/{invoiceId}` | getById | Returns client invoice details. |
-| GET | `/accounting/customers/invoices/{invoiceId}/dates` | getDates | Returns dates of a given client invoice. |
-| GET | `/accounting/customers/invoices/{invoiceId}/document` | getDocument | Generates client invoice document (PDF). |
-| POST | `/accounting/customers/invoices/{invoiceId}/duplicate` | duplicate | Duplicate client invoice. |
-| POST | `/accounting/customers/invoices/{invoiceId}/duplicate/proForma` | duplicateAsProForma | Duplicate client invoice as pro forma. |
-| GET | `/accounting/customers/invoices/{invoiceId}/paymentTerms` | getPaymentTerms | Returns payment terms of a given client invoice. |
-| GET | `/accounting/customers/invoices/{invoiceId}/payments` | getPayments | Returns all payments for the client invoice. |
-| POST | `/accounting/customers/invoices/{invoiceId}/payments` | createPayment | Adds a new payment to the client invoice. The invoice payment status (Not Paid, Partially Paid, Fully Paid) is automatically recalculated. |
-| POST | `/accounting/customers/invoices/{invoiceId}/sendReminder` | sendReminder | Sends reminder. |
-| DELETE | `/accounting/customers/payments/{paymentId}` | delete_2 | Removes a customer payment. |
-| GET | `/accounting/providers/invoices` | getAll_2 | Lists all vendor invoices in all statuses (including not ready and drafts) that have been updated since a specific date. |
-| POST | `/accounting/providers/invoices` | create_4 | Creates a new invoice. |
-| GET | `/accounting/providers/invoices/ids` | getAllIds_3 | Returns vendor invoices' internal identifiers. |
-| DELETE | `/accounting/providers/invoices/{invoiceId}` | delete_6 | Removes a provider invoice. |
-| GET | `/accounting/providers/invoices/{invoiceId}` | getById_3 | Returns provider invoice details. |
-| GET | `/accounting/providers/invoices/{invoiceId}/document` | getDocument_1 | Generates provider invoice document (PDF). |
-| GET | `/accounting/providers/invoices/{invoiceId}/payments` | getPayments_1 | Returns all payments for the vendor invoice. |
-| POST | `/accounting/providers/invoices/{invoiceId}/payments` | createPayment_1 | Creates a new payment on the vendor account and assigns the payment to the invoice. |
-| POST | `/accounting/providers/invoices/{invoiceId}/send` | send | Sends a provider invoice. |
-| POST | `/accounting/providers/invoices/{invoiceId}/status` | setStatus | Changes invoice status to given status. |
-| DELETE | `/accounting/providers/payments/{paymentId}` | delete_7 | Removes a provider payment. |
-| GET | `/browser` | browseJSON | Searches for data (ie. customer, task, etc) and returns it in a tabular form. |
-| GET | `/browser/csv` | browseCSV | Searches for data (ie. customer, task, etc) and returns it in a CSV form. |
-| GET | `/browser/views/details/for/{className}` | getCurrentViewDetails | Returns current view's detailed information, suitable for browser. |
-| GET | `/browser/views/details/for/{className}/{viewId}` | getViewDetails | Returns view's detailed information, suitable for browser. |
-| POST | `/browser/views/details/for/{className}/{viewId}` | selectViewAndGetItsDetails | Selects given view as current and returns its detailed information, suitable for browser. |
-| GET | `/browser/views/for/{className}` | getViewsBrief | Returns views' brief. |
-| POST | `/browser/views/for/{className}` | create | Creates view for given class. |
-| DELETE | `/browser/views/{viewId}` | delete | Removes a view. |
-| GET | `/browser/views/{viewId}` | get | Returns all view's information. |
-| PUT | `/browser/views/{viewId}` | update | Updates all view's information. |
-| GET | `/browser/views/{viewId}/columns` | getColumns | Returns columns defined in view. |
-| PUT | `/browser/views/{viewId}/columns` | updateColumns | Updates columns in view. |
-| DELETE | `/browser/views/{viewId}/columns/{columnName}` | deleteColumn | Deletes a single column from view. |
-| GET | `/browser/views/{viewId}/columns/{columnName}/settings` | getColumnSettings | Returns column's specific settings. |
-| PUT | `/browser/views/{viewId}/columns/{columnName}/settings` | updateColumnSettings | Updates column's specific settings. |
-| GET | `/browser/views/{viewId}/filter` | getFilter | Returns view's filter. |
-| PUT | `/browser/views/{viewId}/filter` | updateFilter | Updates view's filter. |
-| PUT | `/browser/views/{viewId}/filter/{filterProperty}` | updateFilterProperty | Updates view's filter property. |
-| GET | `/browser/views/{viewId}/order` | getOrder | Returns view's order settings. |
-| PUT | `/browser/views/{viewId}/order` | updateOrder | Updates view's order settings. |
-| GET | `/browser/views/{viewId}/permissions` | getPermissions | Returns view's permissions. |
-| PUT | `/browser/views/{viewId}/permissions` | updatePermissions | Updates view's permissions. |
-| GET | `/browser/views/{viewId}/settings` | getSettings | Returns view's settings. |
-| PUT | `/browser/views/{viewId}/settings` | updateSettings | Updates view's settings. |
-| GET | `/browser/views/{viewId}/settings/local` | getLocalSettings | Returns view's local settings (for current user). |
-| PUT | `/browser/views/{viewId}/settings/local` | updateLocalSettings | Updates view's local settings (for current user). |
-| GET | `/customers` | getAllNamesWithIds | Returns list of simple clients representations |
-| POST | `/customers` | create_3 | Creates a new client. |
-| GET | `/customers/ids` | getAllIds_2 | Returns clients' internal identifiers. |
-| POST | `/customers/persons` | create_2 | Creates a new person. |
-| POST | `/customers/persons/accessToken` | generateSingleUseSignInToken | Generates a single use sign-in token. |
-| GET | `/customers/persons/ids` | getAllIds_1 | Returns persons' internal identifiers. |
-| DELETE | `/customers/persons/{personId}` | delete_3 | Removes a person. |
-| GET | `/customers/persons/{personId}` | getById_1 | Returns person details. |
-| PUT | `/customers/persons/{personId}` | update_1 | Updates an existing person. |
-| GET | `/customers/persons/{personId}/contact` | getContact | Returns contact of a given person. |
-| PUT | `/customers/persons/{personId}/contact` | updateContact | Updates contact of a given person. |
-| GET | `/customers/persons/{personId}/customFields` | getCustomFields | Returns custom fields of a given person. |
-| PUT | `/customers/persons/{personId}/customFields` | updateCustomFields | Updates custom fields of a given person. |
-| DELETE | `/customers/priceLists/{priceListId}` | delete_4 | Removes a customer price list. |
-| DELETE | `/customers/{customerId}` | delete_5 | Removes a client. |
-| GET | `/customers/{customerId}` | getById_2 | Returns client details. |
-| PUT | `/customers/{customerId}` | update_2 | Updates an existing client. |
-| GET | `/customers/{customerId}/address` | getAddress | Returns address of a given client. |
-| PUT | `/customers/{customerId}/address` | updateAddress | Updates address of a given client. |
-| GET | `/customers/{customerId}/categories` | getCategories | Returns categories of a given client. |
-| PUT | `/customers/{customerId}/categories` | updateCategories | Updates categories of a given client. |
-| GET | `/customers/{customerId}/contact` | getContact_1 | Returns contact of a given client. |
-| PUT | `/customers/{customerId}/contact` | updateContact_1 | Updates contact of a given client. |
-| GET | `/customers/{customerId}/correspondenceAddress` | getCorrespondenceAddress | Returns correspondence address of a given client. |
-| PUT | `/customers/{customerId}/correspondenceAddress` | updateCorrespondenceAddress | Updates correspondence address of a given client. |
-| GET | `/customers/{customerId}/customFields` | getCustomFields_1 | Returns custom fields of a given client. |
-| PUT | `/customers/{customerId}/customFields` | updateCustomFields_1 | Updates custom fields of a given client. |
-| GET | `/customers/{customerId}/customFields/{customFieldKey}` | getCustomField | Returns custom field of a given client. |
-| PUT | `/customers/{customerId}/customFields/{customFieldKey}` | updateCustomField | Updates given custom field of a given client. |
-| GET | `/customers/{customerId}/industries` | getIndustries | Returns industries of a given client. |
-| PUT | `/customers/{customerId}/industries` | updateIndustries | Updates industries of a given client. |
-| GET | `/dictionaries/active` | getActive | Returns active dictionary entities for all types. |
-| GET | `/dictionaries/all` | getAll_1 | Returns dictionary entities for all types. Both active and not active ones. |
-| GET | `/dictionaries/currency/{isoCode}/exchangeRate` | getByIsoCode | Returns currency exchange rates. |
-| POST | `/dictionaries/currency/{isoCode}/exchangeRate` | createExchangeRate | Adding currency exchange rates. |
-| GET | `/dictionaries/{type}/active` | getActiveByType | Returns active values from a given dictionary. |
-| GET | `/dictionaries/{type}/all` | getAllByType | Returns all values (both active and not active) from a given dictionary. |
-| GET | `/dictionaries/{type}/{id}` | getByTypeAndId | Returns specific value from a given dictionary. |
-| POST | `/files` | uploadFile | Uploads a temporary file (ie. for XML import). Returns token which can be used in other API calls. |
-| GET | `/jobs/{jobId}` | getJobDetails | Returns job details by jobId. |
-| PUT | `/jobs/{jobId}/dates` | updateDates | Updates dates of a given job. |
-| GET | `/jobs/{jobId}/files` | getJobFiles | Returns list of input and output files of a job. |
-| POST | `/jobs/{jobId}/files/output` | assignFileToJobOutput | — |
-| GET | `/jobs/{jobId}/files/{fileId}` | getJobFiles_1 | Returns file metadata. |
-| PUT | `/jobs/{jobId}/instructions` | updateInstructions | Updates instructions for a job. |
-| PUT | `/jobs/{jobId}/status` | changeStatus | Changes job status if possible (400 Bad Request is returned otherwise). |
-| PUT | `/jobs/{jobId}/vendor` | assignVendor | Assigns vendor to a job in a project. |
-| GET | `/license` | getLicense | Returns license content. |
-| POST | `/license/refresh` | refresh | Refreshes license content. |
-| POST | `/macros/{macroId}/run` | run | Executes a macro. |
-| POST | `/projects` | create_5 | Creates a new Classic Project. |
-| GET | `/projects/files/{fileId}/download` | getFileById | Downloads a file. |
-| GET | `/projects/ids` | getAllIds_6 | Returns projects' internal identifiers. |
-| DELETE | `/projects/{projectId}` | delete_12 | Removes a project. |
-| GET | `/projects/{projectId}` | getById_7 | Returns project details. |
-| GET | `/projects/{projectId}/contacts` | getContacts | Returns contacts of a given project. |
-| PUT | `/projects/{projectId}/contacts` | updateContacts | Updates contacts of a given project. |
-| GET | `/projects/{projectId}/customFields` | getCustomFields_5 | Returns custom fields of a given project. |
-| PUT | `/projects/{projectId}/customFields` | updateCustomFields_3 | Updates custom fields of a given project. |
-| GET | `/projects/{projectId}/dates` | getDates_1 | Returns dates of a given project. |
-| PUT | `/projects/{projectId}/dates` | updateDates_1 | Updates dates of a given project. |
-| GET | `/projects/{projectId}/finance` | getFinance | Returns finance of a given project. |
-| POST | `/projects/{projectId}/finance/payables` | createPayable | Adds a payable to a project. |
-| DELETE | `/projects/{projectId}/finance/payables/{payableId}` | deletePayable | Deletes a payable. |
-| PUT | `/projects/{projectId}/finance/payables/{payableId}` | updatePayable | Updates a payable. |
-| POST | `/projects/{projectId}/finance/receivables` | createReceivable | Adds a receivable to a project. |
-| DELETE | `/projects/{projectId}/finance/receivables/{receivableId}` | deleteReceivable | Deletes a receivable. |
-| PUT | `/projects/{projectId}/finance/receivables/{receivableId}` | updateReceivable | Updates a receivable. |
-| GET | `/projects/{projectId}/instructions` | getInstructions | Returns instructions of a given project. |
-| PUT | `/projects/{projectId}/instructions` | updateInstructions_1 | Updates instructions of a given project. |
-| POST | `/projects/{projectId}/languageCombinations` | createLanguageCombination | Creates a new language combination for a given project without creating a task. |
-| POST | `/projects/{projectId}/tasks` | createTask | Creates a new task for a given project. |
-| GET | `/providers/ids` | getAllIds_5 | Returns providers' internal identifiers. |
-| GET | `/providers/persons/ids` | getAllIds_4 | Returns persons' internal identifiers. |
-| DELETE | `/providers/persons/{personId}` | delete_8 | Removes a person. |
-| GET | `/providers/persons/{personId}` | getById_4 | Returns person details. |
-| GET | `/providers/persons/{personId}/contact` | getContact_2 | Returns contact of a given person. |
-| GET | `/providers/persons/{personId}/customFields` | getCustomFields_2 | Returns custom fields of a given person. |
-| POST | `/providers/persons/{personId}/notification/invitation` | sendInvitations | Sends invitation to Vendor Portal. |
-| DELETE | `/providers/priceLists/{priceListId}` | delete_9 | Removes a provider price list. |
-| DELETE | `/providers/{providerId}` | delete_10 | Removes a provider. |
-| GET | `/providers/{providerId}` | getById_5 | Returns provider details. |
-| GET | `/providers/{providerId}/address` | getAddress_1 | Returns address of a given provider. |
-| GET | `/providers/{providerId}/competencies` | getCompetencies | Returns competencies of a given provider. |
-| GET | `/providers/{providerId}/contact` | getContact_3 | Returns contact of a given provider. |
-| GET | `/providers/{providerId}/correspondenceAddress` | getCorrespondenceAddress_1 | Returns correspondence address of a given provider. |
-| GET | `/providers/{providerId}/customFields` | getCustomFields_3 | Returns custom fields of a given provider. |
-| POST | `/providers/{providerId}/notification/invitation` | sendInvitations_1 | Sends invitations to Vendor Portal. |
-| GET | `/quotes/ids` | getAllIds_7 | Returns quotes' internal identifiers. |
-| DELETE | `/quotes/{quoteId}` | delete_13 | Removes a quote. |
-| GET | `/quotes/{quoteId}` | getById_8 | Returns quote details. |
-| POST | `/quotes/{quoteId}/confirmation/send` | send_1 | Sends a quote for customer confirmation. |
-| GET | `/quotes/{quoteId}/customFields` | getCustomFields_6 | Returns custom fields of a given quote. |
-| PUT | `/quotes/{quoteId}/customFields` | updateCustomFields_4 | Updates custom fields of a given quote. |
-| GET | `/quotes/{quoteId}/dates` | getDates_2 | Returns dates of a given quote. |
-| GET | `/quotes/{quoteId}/finance` | getFinance_1 | Returns finance of a given quote. |
-| POST | `/quotes/{quoteId}/finance/payables` | createPayable_1 | Adds a payable. |
-| DELETE | `/quotes/{quoteId}/finance/payables/{payableId}` | deletePayable_1 | Deletes a payable. |
-| PUT | `/quotes/{quoteId}/finance/payables/{payableId}` | updatePayable_1 | Updates a payable. |
-| POST | `/quotes/{quoteId}/finance/receivables` | createReceivable_1 | Adds a receivable. |
-| DELETE | `/quotes/{quoteId}/finance/receivables/{receivableId}` | deleteReceivable_1 | Deletes a receivable. |
-| PUT | `/quotes/{quoteId}/finance/receivables/{receivableId}` | updateReceivable_1 | Updates a receivable. |
-| GET | `/quotes/{quoteId}/instructions` | getInstructions_1 | Returns instructions of a given quote. |
-| PUT | `/quotes/{quoteId}/instructions` | updateInstructions_2 | Updates instructions of a given quote. |
-| POST | `/quotes/{quoteId}/languageCombinations` | createLanguageCombination_1 | Creates a new language combination for a given quote without creating a task. |
-| POST | `/quotes/{quoteId}/start` | start | Starts a quote. |
-| POST | `/quotes/{quoteId}/tasks` | createTask_1 | Creates a new task for a given quote. |
-| POST | `/reports/export/xml` | exportToXML | Exports reports definition to XML. |
-| POST | `/reports/import/xml` | importFromXML | Imports reports definition from XML. |
-| DELETE | `/reports/{reportId}` | delete_11 | Removes a report. |
-| POST | `/reports/{reportId}/duplicate` | duplicate_1 | Duplicates a report. |
-| PUT | `/reports/{reportId}/preferred` | setPreferred | Marks report as preferred or not. |
-| GET | `/reports/{reportId}/result/csv` | generateCSV | Generates CSV content for a report. |
-| GET | `/reports/{reportId}/result/printerFriendly` | generatePrinterFriendly | Generates printer friendly content for a report. |
-| GET | `/services/active` | getAllActive | Returns active services list |
-| GET | `/services/all` | getAll_3 | Returns services list |
-| GET | `/subscription` | getAll_4 | Returns all subscriptions |
-| POST | `/subscription` | subscribe | Subscribe to event |
-| GET | `/subscription/supports` | areHooksSupported | This method can be used to determine if hooks are supported. |
-| DELETE | `/subscription/{subscriptionId}` | unsubscribe | Unsubscribe from event |
-| DELETE | `/tasks/{taskId}` | delete_14 | Removes a task. |
-| PUT | `/tasks/{taskId}/clientTaskPONumber` | updateClientTaskPONumber | Updates Client Task PO Number of a given task. |
-| GET | `/tasks/{taskId}/contacts` | getContacts_1 | Returns contacts of a given task. |
-| PUT | `/tasks/{taskId}/contacts` | updateContacts_1 | Updates contacts of a given task. |
-| GET | `/tasks/{taskId}/customFields` | getCustomFields_7 | Returns custom fields of a given task. |
-| PUT | `/tasks/{taskId}/customFields` | updateCustomFields_5 | Updates custom fields of a given task. |
-| GET | `/tasks/{taskId}/dates` | getDates_3 | Returns dates of a given task. |
-| PUT | `/tasks/{taskId}/dates` | updateDates_2 | Updates dates of a given task. |
-| GET | `/tasks/{taskId}/files` | getTaskFiles | Returns lists of files of a given task. |
-| POST | `/tasks/{taskId}/files/input` | addFile | Adds files to a given task. |
-| GET | `/tasks/{taskId}/instructions` | getInstructions_2 | Returns instructions of a given task. |
-| PUT | `/tasks/{taskId}/instructions` | updateInstructions_3 | Updates instructions of a given task. |
-| PUT | `/tasks/{taskId}/name` | updateName | Updates name of a given task. |
-| GET | `/tasks/{taskId}/progress` | getProgress | Returns progress of a given task. |
-| POST | `/tasks/{taskId}/start` | start_1 | Starts a task. |
-| GET | `/users` | getAllNamesWithIds_1 | Returns list of simple users representations |
-| GET | `/users/me` | getMe | Returns currently signed in user details. |
-| GET | `/users/me/timeZone` | getTimeZone | Returns time zone preferred by user currently signed in. |
-| GET | `/users/{userId}` | getById_6 | Returns user details. |
-| PUT | `/users/{userId}` | update_3 | Updates an existing user. |
-| GET | `/users/{userId}/customFields` | getCustomFields_4 | Returns custom fields of a given user. |
-| PUT | `/users/{userId}/customFields` | updateCustomFields_2 | Updates custom fields of a given user. |
-| GET | `/users/{userId}/customFields/{customFieldKey}` | getCustomField_1 | Returns custom field of a given user. |
-| PUT | `/users/{userId}/customFields/{customFieldKey}` | updateCustomField_1 | Updates given custom field of a given user. |
-| PUT | `/users/{userId}/password` | changePassword | Sets user's password to a new value. |
-| GET | `/v2/jobs/for-external-id` | getByExternalId | — |
-| GET | `/v2/jobs/{jobId}` | getFileById_1 | Returns details for a job. |
-| PUT | `/v2/jobs/{jobId}/dates` | changeDates | Updates dates of a given job. |
-| POST | `/v2/jobs/{jobId}/files/addExternalLink` | addExternalFileLink | — |
-| GET | `/v2/jobs/{jobId}/files/delivered` | getDeliveredFiles | Returns list of files delivered in the job. |
-| PUT | `/v2/jobs/{jobId}/files/delivered/add` | addFiles | Adds files to the project as delivered in the job. |
-| POST | `/v2/jobs/{jobId}/files/delivered/addLink` | addFileLinks | Adds file link to the project as a link delivered in the job. |
-| POST | `/v2/jobs/{jobId}/files/delivered/upload` | uploadFile_1 | Uploads file to the project as a file delivered in the job. |
-| GET | `/v2/jobs/{jobId}/files/sharedReferenceFiles` | getSharedReferenceFiles | Returns list of files shared with the job as Reference Files. |
-| PUT | `/v2/jobs/{jobId}/files/sharedReferenceFiles/share` | shareAsReferenceFiles | Shares selected files as Reference Files with a job in a project. |
-| GET | `/v2/jobs/{jobId}/files/sharedWorkFiles` | getSharedWorkFiles | Returns list of files shared with the job as Work Files. |
-| PUT | `/v2/jobs/{jobId}/files/sharedWorkFiles/share` | shareAsWorkFiles | Shares selected files as Work Files with a job in a project. |
-| PUT | `/v2/jobs/{jobId}/files/stopSharing` | stopSharing | Stops sharing selected files with a job in a project. |
-| PUT | `/v2/jobs/{jobId}/instructions` | updateInstructions_4 | Updates instructions for a job. |
-| PUT | `/v2/jobs/{jobId}/status` | changeStatus_1 | Changes job status if possible (400 Bad Request is returned otherwise). |
-| PUT | `/v2/jobs/{jobId}/vendor` | assignVendor_1 | Assigns vendor to a job in a project. |
-| POST | `/v2/projects` | create_6 | Creates a new Smart Project. |
-| POST | `/v2/projects/files/archive` | archive | Prepares a ZIP archive that contains the specified files. |
-| GET | `/v2/projects/files/{fileId}` | getFileById_2 | Returns details of a file. |
-| GET | `/v2/projects/files/{fileId}/download/{fileName}` | getFileContentById | Downloads a file content. |
-| GET | `/v2/projects/for-external-id/{externalProjectId}` | getByExternalId_1 | Returns project details. |
-| GET | `/v2/projects/{projectId}` | getById_9 | Returns project details. |
-| POST | `/v2/projects/{projectId}/addJob` | addJobToProcess | Returns process id. |
-| GET | `/v2/projects/{projectId}/catToolProject` | getCATToolProjectInfo | Returns if cat tool project is created or queued. |
-| GET | `/v2/projects/{projectId}/clientContacts` | getContacts_2 | Returns Client Contacts information for a project. |
-| PUT | `/v2/projects/{projectId}/clientContacts` | updateContacts_2 | Updates Client Contacts for a project. |
-| PUT | `/v2/projects/{projectId}/clientDeadline` | updateClientDeadline | Updates Client Deadline for a project. |
-| PUT | `/v2/projects/{projectId}/clientNotes` | updateClientNotes | Updates Client Notes for a project. |
-| PUT | `/v2/projects/{projectId}/clientReferenceNumber` | updateClientReferenceNumber | Updates Client Reference Number for a project. |
-| GET | `/v2/projects/{projectId}/customFields` | getCustomFields_8 | Returns a list of custom field keys and values for a project. |
-| PUT | `/v2/projects/{projectId}/customFields/{key}` | updateCustomField_2 | Updates a custom field with a specified key in a project |
-| GET | `/v2/projects/{projectId}/files` | getFiles | Returns list of files in a project. |
-| PUT | `/v2/projects/{projectId}/files/add` | addFiles_1 | Adds files to the project as added by PM. |
-| POST | `/v2/projects/{projectId}/files/addExternalLink` | addExternalFileLinks | — |
-| POST | `/v2/projects/{projectId}/files/addLink` | addFileLinks_1 | Adds file links to the project as added by PM. |
-| GET | `/v2/projects/{projectId}/files/deliverable` | getDeliverableFiles | Returns list of files in a project, that are ready to be delivered to client. |
-| POST | `/v2/projects/{projectId}/files/upload` | uploadFile_2 | Uploads file to the project as a file uploaded by PM. |
-| GET | `/v2/projects/{projectId}/finance` | getFinance_2 | Returns finance information for a project. |
-| POST | `/v2/projects/{projectId}/finance/payables` | createPayable_2 | Adds a payable to a project. |
-| DELETE | `/v2/projects/{projectId}/finance/payables/{payableId}` | deletePayable_2 | Deletes a payable. |
-| PUT | `/v2/projects/{projectId}/finance/payables/{payableId}` | updatePayable_2 | Updates a payable. |
-| POST | `/v2/projects/{projectId}/finance/receivables` | createReceivable_2 | Adds a receivable to a project. |
-| DELETE | `/v2/projects/{projectId}/finance/receivables/{receivableId}` | deleteReceivable_2 | Deletes a receivable. |
-| PUT | `/v2/projects/{projectId}/finance/receivables/{receivableId}` | updateReceivable_2 | Updates a receivable. |
-| PUT | `/v2/projects/{projectId}/internalNotes` | updateInternalNotes | Updates Internal Notes for a project. |
-| GET | `/v2/projects/{projectId}/jobs` | getJobs | Returns list of jobs in a project. |
-| PUT | `/v2/projects/{projectId}/orderDate` | updateOrderedOn | Updates Order Date for a project. |
-| GET | `/v2/projects/{projectId}/process` | getProcessId | Returns process id. |
-| PUT | `/v2/projects/{projectId}/sourceLanguage` | updateSourceLanguage | Updates source language for a project. |
-| PUT | `/v2/projects/{projectId}/specialization` | updateSpecialization | Updates specialization for a project. |
-| PUT | `/v2/projects/{projectId}/status` | changeStatus_2 | Changes project status if possible (400 Bad Request is returned otherwise). |
-| PUT | `/v2/projects/{projectId}/targetLanguages` | updateTargetLanguages | Updates target languages for a project. |
-| PUT | `/v2/projects/{projectId}/vendorInstructions` | updateVendorInstructions | Updates instructions for all vendors performing the jobs in a project. |
-| PUT | `/v2/projects/{projectId}/volume` | updateVolume | Updates volume for a project. |
-| POST | `/v2/quotes` | create_7 | Creates a new Smart Quote. |
-| POST | `/v2/quotes/files/archive` | archive_1 | Prepares a ZIP archive that contains the specified files. |
-| GET | `/v2/quotes/files/{fileId}` | getFileById_3 | Returns details of a file. |
-| GET | `/v2/quotes/files/{fileId}/download/{fileName}` | getFileContentById_1 | Downloads a file content. |
-| GET | `/v2/quotes/{quoteId}` | getById_10 | Returns quote details. |
-| PUT | `/v2/quotes/{quoteId}/businessDays` | updateBusinessDays | Updates Business Days for a quote. |
-| GET | `/v2/quotes/{quoteId}/clientContacts` | getContacts_3 | Returns Client Contacts information for a quote. |
-| PUT | `/v2/quotes/{quoteId}/clientContacts` | updateContacts_3 | Updates Client Contacts for a quote. |
-| PUT | `/v2/quotes/{quoteId}/clientNotes` | updateClientNotes_1 | Updates Client Notes for a quote. |
-| PUT | `/v2/quotes/{quoteId}/clientReferenceNumber` | updateClientReferenceNumber_1 | Updates Client Reference Number for a quote. |
-| GET | `/v2/quotes/{quoteId}/customFields` | getCustomFields_9 | Returns a list of custom field keys and values for a project. |
-| PUT | `/v2/quotes/{quoteId}/customFields/{key}` | updateCustomField_3 | Updates a custom field with a specified key in a quote. |
-| PUT | `/v2/quotes/{quoteId}/expectedDeliveryDate` | updateExpectedDeliveryDate | Updates Expected Delivery Date for a quote. |
-| GET | `/v2/quotes/{quoteId}/files` | getFiles_1 | Returns list of files in a quote. |
-| PUT | `/v2/quotes/{quoteId}/files/add` | addFiles_2 | Adds files to the quote as added by PM. |
-| POST | `/v2/quotes/{quoteId}/files/upload` | uploadFile_3 | Uploads file to the quote as a file uploaded by PM. |
-| GET | `/v2/quotes/{quoteId}/finance` | getFinance_3 | Returns finance information for a quote. |
-| POST | `/v2/quotes/{quoteId}/finance/payables` | createPayable_3 | Adds a payable to a quote. |
-| DELETE | `/v2/quotes/{quoteId}/finance/payables/{payableId}` | deletePayable_3 | Deletes a payable. |
-| PUT | `/v2/quotes/{quoteId}/finance/payables/{payableId}` | updatePayable_3 | Updates a payable. |
-| POST | `/v2/quotes/{quoteId}/finance/receivables` | createReceivable_3 | Adds a receivable to a quote. |
-| DELETE | `/v2/quotes/{quoteId}/finance/receivables/{receivableId}` | deleteReceivable_3 | Deletes a receivable. |
-| PUT | `/v2/quotes/{quoteId}/finance/receivables/{receivableId}` | updateReceivable_3 | Updates a receivable. |
-| PUT | `/v2/quotes/{quoteId}/internalNotes` | updateInternalNotes_1 | Updates Internal Notes for a quote. |
-| GET | `/v2/quotes/{quoteId}/jobs` | getJobs_1 | Returns list of jobs in a quote. |
-| PUT | `/v2/quotes/{quoteId}/quoteExpiry` | updateQuoteExpiry | Updates Quote Expiry Date for a quote. |
-| PUT | `/v2/quotes/{quoteId}/sourceLanguage` | updateSourceLanguage_1 | Updates source language for a quote. |
-| PUT | `/v2/quotes/{quoteId}/specialization` | updateSpecialization_1 | Updates specialization for a quote. |
-| PUT | `/v2/quotes/{quoteId}/status` | changeStatus_3 | Changes quote status if possible (400 Bad Request is returned otherwise). |
-| PUT | `/v2/quotes/{quoteId}/targetLanguages` | updateTargetLanguages_1 | Updates target languages for a quote. |
-| PUT | `/v2/quotes/{quoteId}/vendorInstructions` | updateVendorInstructions_1 | Updates instructions for all vendors performing the jobs in a quote. |
-| PUT | `/v2/quotes/{quoteId}/volume` | updateVolume_1 | Updates volume for a quote. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounting/customers/invoices` | getAll | `updatedSince` | — | yes | Lists all client invoices in all statuses (including not ready and drafts) that have been updated since a specific date. |
+| POST | `/accounting/customers/invoices` | create_1 | body*: CustomerInvoiceCreateDTO | — |  | Creates a new invoice. |
+| POST | `/accounting/customers/invoices/documents` | downloadDocuments | body*: DownloadDocumentsRequestDTO | — |  | Generates client invoices' documents. |
+| GET | `/accounting/customers/invoices/ids` | getAllIds | `updatedSince` | — | yes | Returns client invoices' internal identifiers. |
+| POST | `/accounting/customers/invoices/sendReminders` | sendReminders | body*: SendRemindersRequestDTO | — |  | Sends reminders. Returns number of sent e-mails. |
+| GET | `/accounting/customers/invoices/{invoiceId}` | getById | `invoiceId`*, `embed` | — | yes | Returns client invoice details. |
+| DELETE | `/accounting/customers/invoices/{invoiceId}` | delete_1 | `invoiceId`* | — |  | Removes a client invoice. |
+| GET | `/accounting/customers/invoices/{invoiceId}/dates` | getDates | `invoiceId`* | — | yes | Returns dates of a given client invoice. |
+| GET | `/accounting/customers/invoices/{invoiceId}/document` | getDocument | `invoiceId`* | — | yes | Generates client invoice document (PDF). |
+| POST | `/accounting/customers/invoices/{invoiceId}/duplicate` | duplicate | `invoiceId`* | — |  | Duplicate client invoice. |
+| POST | `/accounting/customers/invoices/{invoiceId}/duplicate/proForma` | duplicateAsProForma | `invoiceId`* | — |  | Duplicate client invoice as pro forma. |
+| GET | `/accounting/customers/invoices/{invoiceId}/paymentTerms` | getPaymentTerms | `invoiceId`* | — | yes | Returns payment terms of a given client invoice. |
+| GET | `/accounting/customers/invoices/{invoiceId}/payments` | getPayments | `invoiceId`* | — | yes | Returns all payments for the client invoice. |
+| POST | `/accounting/customers/invoices/{invoiceId}/payments` | createPayment | `invoiceId`*, body*: PaymentDTO | — |  | Adds a new payment to the client invoice. The invoice payment status (Not Paid, Partially Paid, Fully Paid) is automatically recalculated. |
+| POST | `/accounting/customers/invoices/{invoiceId}/sendReminder` | sendReminder | `invoiceId`* | — |  | Sends reminder. |
+| DELETE | `/accounting/customers/payments/{paymentId}` | delete_2 | `paymentId`* | — |  | Removes a customer payment. |
+| GET | `/accounting/providers/invoices` | getAll_2 | `updatedSince` | — | yes | Lists all vendor invoices in all statuses (including not ready and drafts) that have been updated since a specific date. |
+| POST | `/accounting/providers/invoices` | create_4 | body*: ProviderInvoiceCreateDTO | ProviderInvoiceCreateResultDTO |  | Creates a new invoice. |
+| GET | `/accounting/providers/invoices/ids` | getAllIds_3 | `updatedSince` | — | yes | Returns vendor invoices' internal identifiers. |
+| GET | `/accounting/providers/invoices/{invoiceId}` | getById_3 | `invoiceId`* | — | yes | Returns provider invoice details. |
+| DELETE | `/accounting/providers/invoices/{invoiceId}` | delete_6 | `invoiceId`* | — |  | Removes a provider invoice. |
+| GET | `/accounting/providers/invoices/{invoiceId}/document` | getDocument_1 | `invoiceId`* | — | yes | Generates provider invoice document (PDF). |
+| GET | `/accounting/providers/invoices/{invoiceId}/payments` | getPayments_1 | `invoiceId`* | — | yes | Returns all payments for the vendor invoice. |
+| POST | `/accounting/providers/invoices/{invoiceId}/payments` | createPayment_1 | `invoiceId`*, body*: PaymentDTO | — |  | Creates a new payment on the vendor account and assigns the payment to the invoice. |
+| POST | `/accounting/providers/invoices/{invoiceId}/send` | send | `invoiceId`* | — |  | Sends a provider invoice. |
+| POST | `/accounting/providers/invoices/{invoiceId}/status` | setStatus | `invoiceId`*, body*: StatusRequestDTO | — |  | Changes invoice status to given status. |
+| DELETE | `/accounting/providers/payments/{paymentId}` | delete_7 | `paymentId`* | — |  | Removes a provider payment. |
+| GET | `/browser` | browseJSON | `viewId`, `page`, `additionalOrder`, `useDeferredColumns`, `maxRows` | — | yes | Searches for data (ie. customer, task, etc) and returns it in a tabular form. |
+| GET | `/browser/csv` | browseCSV | `viewId`, `separator`, `secondarySeparator`, `additionalOrder` | — | yes | Searches for data (ie. customer, task, etc) and returns it in a CSV form. |
+| GET | `/browser/views/details/for/{className}` | getCurrentViewDetails | `className`*, `placeName` | — | yes | Returns current view's detailed information, suitable for browser. |
+| GET | `/browser/views/details/for/{className}/{viewId}` | getViewDetails | `className`*, `placeName`, `viewId`* | — | yes | Returns view's detailed information, suitable for browser. |
+| POST | `/browser/views/details/for/{className}/{viewId}` | selectViewAndGetItsDetails | `className`*, `place name (denotes specific place in system with the table)`, `viewId`* | — |  | Selects given view as current and returns its detailed information, suitable for browser. |
+| GET | `/browser/views/for/{className}` | getViewsBrief | `className`*, `placeName` | — | yes | Returns views' brief. |
+| POST | `/browser/views/for/{className}` | create | `className`*, body*: ViewDTO | — |  | Creates view for given class. |
+| GET | `/browser/views/{viewId}` | get | `viewId`* | — | yes | Returns all view's information. |
+| PUT | `/browser/views/{viewId}` | update | `viewId`*, body*: ViewDTO | — |  | Updates all view's information. |
+| DELETE | `/browser/views/{viewId}` | delete | `viewId`* | — |  | Removes a view. |
+| GET | `/browser/views/{viewId}/columns` | getColumns | `viewId`* | — | yes | Returns columns defined in view. |
+| PUT | `/browser/views/{viewId}/columns` | updateColumns | `viewId`*, body*: ColumnDTO[] | — |  | Updates columns in view. |
+| DELETE | `/browser/views/{viewId}/columns/{columnName}` | deleteColumn | `viewId`*, `columnName`* | — |  | Deletes a single column from view. |
+| GET | `/browser/views/{viewId}/columns/{columnName}/settings` | getColumnSettings | `viewId`*, `columnName`* | — | yes | Returns column's specific settings. |
+| PUT | `/browser/views/{viewId}/columns/{columnName}/settings` | updateColumnSettings | `viewId`*, `columnName`*, body*: object | — |  | Updates column's specific settings. |
+| GET | `/browser/views/{viewId}/filter` | getFilter | `viewId`* | — | yes | Returns view's filter. |
+| PUT | `/browser/views/{viewId}/filter` | updateFilter | `viewId`*, body*: FilterPropertyDTO[] | — |  | Updates view's filter. |
+| PUT | `/browser/views/{viewId}/filter/{filterProperty}` | updateFilterProperty | `viewId`*, `filterProperty`*, body*: FilterPropertyDTO | — |  | Updates view's filter property. |
+| GET | `/browser/views/{viewId}/order` | getOrder | `viewId`* | — | yes | Returns view's order settings. |
+| PUT | `/browser/views/{viewId}/order` | updateOrder | `viewId`*, body*: OrderDTO | — |  | Updates view's order settings. |
+| GET | `/browser/views/{viewId}/permissions` | getPermissions | `viewId`* | — | yes | Returns view's permissions. |
+| PUT | `/browser/views/{viewId}/permissions` | updatePermissions | `viewId`*, body*: PermissionsDTO | — |  | Updates view's permissions. |
+| GET | `/browser/views/{viewId}/settings` | getSettings | `viewId`* | — | yes | Returns view's settings. |
+| PUT | `/browser/views/{viewId}/settings` | updateSettings | `viewId`*, body*: SettingsDTO | — |  | Updates view's settings. |
+| GET | `/browser/views/{viewId}/settings/local` | getLocalSettings | `viewId`* | — | yes | Returns view's local settings (for current user). |
+| PUT | `/browser/views/{viewId}/settings/local` | updateLocalSettings | `viewId`*, body*: LocalSettingsDTO | — |  | Updates view's local settings (for current user). |
+| GET | `/customers` | getAllNamesWithIds | `updatedSince` | — | yes | Returns list of simple clients representations |
+| POST | `/customers` | create_3 | body*: CustomerDTO | — |  | Creates a new client. |
+| GET | `/customers/ids` | getAllIds_2 | `updatedSince`, `nameEquals`, `emailEquals` | — | yes | Returns clients' internal identifiers. |
+| POST | `/customers/persons` | create_2 | body*: CustomerPersonDTO | — |  | Creates a new person. |
+| POST | `/customers/persons/accessToken` | generateSingleUseSignInToken | body*: AccessTokenRequestDTO | — |  | Generates a single use sign-in token. |
+| GET | `/customers/persons/ids` | getAllIds_1 | `updatedSince` | — | yes | Returns persons' internal identifiers. |
+| GET | `/customers/persons/{personId}` | getById_1 | `personId`* | — | yes | Returns person details. |
+| PUT | `/customers/persons/{personId}` | update_1 | `personId`*, body*: CustomerPersonDTO | — |  | Updates an existing person. |
+| DELETE | `/customers/persons/{personId}` | delete_3 | `personId`* | — |  | Removes a person. |
+| GET | `/customers/persons/{personId}/contact` | getContact | `personId`* | — | yes | Returns contact of a given person. |
+| PUT | `/customers/persons/{personId}/contact` | updateContact | `personId`*, body*: PersonContactDTO | — |  | Updates contact of a given person. |
+| GET | `/customers/persons/{personId}/customFields` | getCustomFields | `personId`* | — | yes | Returns custom fields of a given person. |
+| PUT | `/customers/persons/{personId}/customFields` | updateCustomFields | `personId`*, body*: CustomFieldsDTO | — |  | Updates custom fields of a given person. |
+| DELETE | `/customers/priceLists/{priceListId}` | delete_4 | `priceListId`* | — |  | Removes a customer price list. |
+| GET | `/customers/{customerId}` | getById_2 | `customerId`*, `embed` | — | yes | Returns client details. |
+| PUT | `/customers/{customerId}` | update_2 | `customerId`*, body*: CustomerDTO | — |  | Updates an existing client. |
+| DELETE | `/customers/{customerId}` | delete_5 | `customerId`* | — |  | Removes a client. |
+| GET | `/customers/{customerId}/address` | getAddress | `customerId`* | — | yes | Returns address of a given client. |
+| PUT | `/customers/{customerId}/address` | updateAddress | `customerId`*, body*: AddressDTO | — |  | Updates address of a given client. |
+| GET | `/customers/{customerId}/categories` | getCategories | `customerId`* | — | yes | Returns categories of a given client. |
+| PUT | `/customers/{customerId}/categories` | updateCategories | `customerId`*, body*: CategoriesDTO | — |  | Updates categories of a given client. |
+| GET | `/customers/{customerId}/contact` | getContact_1 | `customerId`* | — | yes | Returns contact of a given client. |
+| PUT | `/customers/{customerId}/contact` | updateContact_1 | `customerId`*, body*: ContactDTO | — |  | Updates contact of a given client. |
+| GET | `/customers/{customerId}/correspondenceAddress` | getCorrespondenceAddress | `customerId`* | — | yes | Returns correspondence address of a given client. |
+| PUT | `/customers/{customerId}/correspondenceAddress` | updateCorrespondenceAddress | `customerId`*, body*: AddressDTO | — |  | Updates correspondence address of a given client. |
+| GET | `/customers/{customerId}/customFields` | getCustomFields_1 | `customerId`* | — | yes | Returns custom fields of a given client. |
+| PUT | `/customers/{customerId}/customFields` | updateCustomFields_1 | `customerId`*, body*: CustomFieldsDTO | — |  | Updates custom fields of a given client. |
+| GET | `/customers/{customerId}/customFields/{customFieldKey}` | getCustomField | `customerId`*, `customFieldKey`* | — | yes | Returns custom field of a given client. |
+| PUT | `/customers/{customerId}/customFields/{customFieldKey}` | updateCustomField | `customerId`*, `customFieldKey`*, body*: CustomFieldDTO | — |  | Updates given custom field of a given client. |
+| GET | `/customers/{customerId}/industries` | getIndustries | `customerId`* | — | yes | Returns industries of a given client. |
+| PUT | `/customers/{customerId}/industries` | updateIndustries | `customerId`*, body*: CategoriesDTO | — |  | Updates industries of a given client. |
+| GET | `/dictionaries/active` | getActive | — | — | yes | Returns active dictionary entities for all types. |
+| GET | `/dictionaries/all` | getAll_1 | — | — | yes | Returns dictionary entities for all types. Both active and not active ones. |
+| GET | `/dictionaries/currency/{isoCode}/exchangeRate` | getByIsoCode | `isoCode`* | — | yes | Returns currency exchange rates. |
+| POST | `/dictionaries/currency/{isoCode}/exchangeRate` | createExchangeRate | `isoCode`*, body*: CurrencyHistoryDTO | — |  | Adding currency exchange rates. |
+| GET | `/dictionaries/{type}/active` | getActiveByType | `type`*, `nameEquals` | — | yes | Returns active values from a given dictionary. |
+| GET | `/dictionaries/{type}/all` | getAllByType | `type`*, `nameEquals` | — | yes | Returns all values (both active and not active) from a given dictionary. |
+| GET | `/dictionaries/{type}/{id}` | getByTypeAndId | `type`*, `id`* | — | yes | Returns specific value from a given dictionary. |
+| POST | `/files` | uploadFile | body*: FileToUploadDto | — |  | Uploads a temporary file (ie. for XML import). Returns token which can be used in other API calls. |
+| GET | `/jobs/{jobId}` | getJobDetails | `jobId`* | — | yes | Returns job details by jobId. |
+| PUT | `/jobs/{jobId}/dates` | updateDates | `jobId`*, body*: JobDatesDto | — |  | Updates dates of a given job. |
+| GET | `/jobs/{jobId}/files` | getJobFiles | `jobId`* | JobFilesDTO | yes | Returns list of input and output files of a job. |
+| POST | `/jobs/{jobId}/files/output` | assignFileToJobOutput | `jobId`*, body*: TaskFileDTO | — |  | — |
+| GET | `/jobs/{jobId}/files/{fileId}` | getJobFiles_1 | `jobId`*, `fileId`* | FileMetadataDTO | yes | Returns file metadata. |
+| PUT | `/jobs/{jobId}/instructions` | updateInstructions | `jobId`*, body*: InstructionsDTO | — |  | Updates instructions for a job. |
+| PUT | `/jobs/{jobId}/status` | changeStatus | `jobId`*, body*: JobStatusDTO | — |  | Changes job status if possible (400 Bad Request is returned otherwise). |
+| PUT | `/jobs/{jobId}/vendor` | assignVendor | `jobId`*, body*: AssignVendorDTO | — |  | Assigns vendor to a job in a project. |
+| GET | `/license` | getLicense | — | GetLicenseResult | yes | Returns license content. |
+| POST | `/license/refresh` | refresh | — | — |  | Refreshes license content. |
+| POST | `/macros/{macroId}/run` | run | `macroId`*, body*: MacroRequestDTO | — |  | Executes a macro. |
+| POST | `/projects` | create_5 | body*: ClassicProjectCreateDTO | — |  | Creates a new Classic Project. |
+| GET | `/projects/files/{fileId}/download` | getFileById | `fileId`* | — | yes | Downloads a file. |
+| GET | `/projects/ids` | getAllIds_6 | `updatedSince` | — | yes | Returns projects' internal identifiers. |
+| GET | `/projects/{projectId}` | getById_7 | `projectId`*, `embed` | — | yes | Returns project details. |
+| DELETE | `/projects/{projectId}` | delete_12 | `projectId`* | — |  | Removes a project. |
+| GET | `/projects/{projectId}/contacts` | getContacts | `projectId`* | — | yes | Returns contacts of a given project. |
+| PUT | `/projects/{projectId}/contacts` | updateContacts | `projectId`*, body*: ContactsDTO | — |  | Updates contacts of a given project. |
+| GET | `/projects/{projectId}/customFields` | getCustomFields_5 | `projectId`* | — | yes | Returns custom fields of a given project. |
+| PUT | `/projects/{projectId}/customFields` | updateCustomFields_3 | `projectId`*, body*: CustomFieldsDTO | — |  | Updates custom fields of a given project. |
+| GET | `/projects/{projectId}/dates` | getDates_1 | `projectId`* | — | yes | Returns dates of a given project. |
+| PUT | `/projects/{projectId}/dates` | updateDates_1 | `projectId`*, body*: ProjectDatesDTO | — |  | Updates dates of a given project. |
+| GET | `/projects/{projectId}/finance` | getFinance | `projectId`* | — | yes | Returns finance of a given project. |
+| POST | `/projects/{projectId}/finance/payables` | createPayable | `projectId`*, body*: PayableCreateDTO | — |  | Adds a payable to a project. |
+| PUT | `/projects/{projectId}/finance/payables/{payableId}` | updatePayable | `projectId`*, `payableId`*, body*: PayableDTO | — |  | Updates a payable. |
+| DELETE | `/projects/{projectId}/finance/payables/{payableId}` | deletePayable | `projectId`*, `payableId`* | — |  | Deletes a payable. |
+| POST | `/projects/{projectId}/finance/receivables` | createReceivable | `projectId`*, body*: ReceivableCreateDTO | — |  | Adds a receivable to a project. |
+| PUT | `/projects/{projectId}/finance/receivables/{receivableId}` | updateReceivable | `projectId`*, `receivableId`*, body*: ReceivableDTO | — |  | Updates a receivable. |
+| DELETE | `/projects/{projectId}/finance/receivables/{receivableId}` | deleteReceivable | `projectId`*, `receivableId`* | — |  | Deletes a receivable. |
+| GET | `/projects/{projectId}/instructions` | getInstructions | `projectId`* | — | yes | Returns instructions of a given project. |
+| PUT | `/projects/{projectId}/instructions` | updateInstructions_1 | `projectId`*, body*: InstructionsDTO | — |  | Updates instructions of a given project. |
+| POST | `/projects/{projectId}/languageCombinations` | createLanguageCombination | `projectId`*, body*: CommonLanguageCombinationDTO | — |  | Creates a new language combination for a given project without creating a task. |
+| POST | `/projects/{projectId}/tasks` | createTask | `projectId`*, body*: TaskCreateDTO | — |  | Creates a new task for a given project. |
+| GET | `/providers/ids` | getAllIds_5 | `updatedSince` | — | yes | Returns providers' internal identifiers. |
+| GET | `/providers/persons/ids` | getAllIds_4 | `updatedSince` | — | yes | Returns persons' internal identifiers. |
+| GET | `/providers/persons/{personId}` | getById_4 | `personId`* | — | yes | Returns person details. |
+| DELETE | `/providers/persons/{personId}` | delete_8 | `personId`* | — |  | Removes a person. |
+| GET | `/providers/persons/{personId}/contact` | getContact_2 | `personId`* | — | yes | Returns contact of a given person. |
+| GET | `/providers/persons/{personId}/customFields` | getCustomFields_2 | `personId`* | — | yes | Returns custom fields of a given person. |
+| POST | `/providers/persons/{personId}/notification/invitation` | sendInvitations | `personId`* | — |  | Sends invitation to Vendor Portal. |
+| DELETE | `/providers/priceLists/{priceListId}` | delete_9 | `priceListId`* | — |  | Removes a provider price list. |
+| GET | `/providers/{providerId}` | getById_5 | `providerId`*, `embed` | — | yes | Returns provider details. |
+| DELETE | `/providers/{providerId}` | delete_10 | `providerId`* | — |  | Removes a provider. |
+| GET | `/providers/{providerId}/address` | getAddress_1 | `providerId`* | — | yes | Returns address of a given provider. |
+| GET | `/providers/{providerId}/competencies` | getCompetencies | `providerId`* | — | yes | Returns competencies of a given provider. |
+| GET | `/providers/{providerId}/contact` | getContact_3 | `providerId`* | — | yes | Returns contact of a given provider. |
+| GET | `/providers/{providerId}/correspondenceAddress` | getCorrespondenceAddress_1 | `providerId`* | — | yes | Returns correspondence address of a given provider. |
+| GET | `/providers/{providerId}/customFields` | getCustomFields_3 | `providerId`* | — | yes | Returns custom fields of a given provider. |
+| POST | `/providers/{providerId}/notification/invitation` | sendInvitations_1 | `providerId`* | — |  | Sends invitations to Vendor Portal. |
+| GET | `/quotes/ids` | getAllIds_7 | `updatedSince` | — | yes | Returns quotes' internal identifiers. |
+| GET | `/quotes/{quoteId}` | getById_8 | `quoteId`*, `embed` | — | yes | Returns quote details. |
+| DELETE | `/quotes/{quoteId}` | delete_13 | `quoteId`* | — |  | Removes a quote. |
+| POST | `/quotes/{quoteId}/confirmation/send` | send_1 | `quoteId`* | — |  | Sends a quote for customer confirmation. |
+| GET | `/quotes/{quoteId}/customFields` | getCustomFields_6 | `quoteId`* | — | yes | Returns custom fields of a given quote. |
+| PUT | `/quotes/{quoteId}/customFields` | updateCustomFields_4 | `quoteId`*, body*: CustomFieldsDTO | — |  | Updates custom fields of a given quote. |
+| GET | `/quotes/{quoteId}/dates` | getDates_2 | `quoteId`* | — | yes | Returns dates of a given quote. |
+| GET | `/quotes/{quoteId}/finance` | getFinance_1 | `quoteId`* | — | yes | Returns finance of a given quote. |
+| POST | `/quotes/{quoteId}/finance/payables` | createPayable_1 | `quoteId`*, body*: PayableCreateDTO | — |  | Adds a payable. |
+| PUT | `/quotes/{quoteId}/finance/payables/{payableId}` | updatePayable_1 | `quoteId`*, `payableId`*, body*: PayableDTO | — |  | Updates a payable. |
+| DELETE | `/quotes/{quoteId}/finance/payables/{payableId}` | deletePayable_1 | `quoteId`*, `payableId`* | — |  | Deletes a payable. |
+| POST | `/quotes/{quoteId}/finance/receivables` | createReceivable_1 | `quoteId`*, body*: ReceivableCreateDTO | — |  | Adds a receivable. |
+| PUT | `/quotes/{quoteId}/finance/receivables/{receivableId}` | updateReceivable_1 | `quoteId`*, `receivableId`*, body*: ReceivableDTO | — |  | Updates a receivable. |
+| DELETE | `/quotes/{quoteId}/finance/receivables/{receivableId}` | deleteReceivable_1 | `quoteId`*, `receivableId`* | — |  | Deletes a receivable. |
+| GET | `/quotes/{quoteId}/instructions` | getInstructions_1 | `quoteId`* | — | yes | Returns instructions of a given quote. |
+| PUT | `/quotes/{quoteId}/instructions` | updateInstructions_2 | `quoteId`*, body*: InstructionsDTO | — |  | Updates instructions of a given quote. |
+| POST | `/quotes/{quoteId}/languageCombinations` | createLanguageCombination_1 | `quoteId`*, body*: CommonLanguageCombinationDTO | — |  | Creates a new language combination for a given quote without creating a task. |
+| POST | `/quotes/{quoteId}/start` | start | `quoteId`* | — |  | Starts a quote. |
+| POST | `/quotes/{quoteId}/tasks` | createTask_1 | `quoteId`*, body*: TaskDTO | — |  | Creates a new task for a given quote. |
+| POST | `/reports/export/xml` | exportToXML | body*: ExportRequestDTO | — |  | Exports reports definition to XML. |
+| POST | `/reports/import/xml` | importFromXML | body*: ImportRequestDTO | — |  | Imports reports definition from XML. |
+| DELETE | `/reports/{reportId}` | delete_11 | `reportId`* | — |  | Removes a report. |
+| POST | `/reports/{reportId}/duplicate` | duplicate_1 | `reportId`* | — |  | Duplicates a report. |
+| PUT | `/reports/{reportId}/preferred` | setPreferred | `reportId`*, body*: PreferredRequestDTO | — |  | Marks report as preferred or not. |
+| GET | `/reports/{reportId}/result/csv` | generateCSV | `reportId`* | — | yes | Generates CSV content for a report. |
+| GET | `/reports/{reportId}/result/printerFriendly` | generatePrinterFriendly | `reportId`* | — | yes | Generates printer friendly content for a report. |
+| GET | `/services/active` | getAllActive | `nameEquals` | — | yes | Returns active services list |
+| GET | `/services/all` | getAll_3 | `nameEquals` | — | yes | Returns services list |
+| GET | `/subscription` | getAll_4 | — | — | yes | Returns all subscriptions |
+| POST | `/subscription` | subscribe | body*: SubscriptionDTO | string |  | Subscribe to event |
+| GET | `/subscription/supports` | areHooksSupported | — | — | yes | This method can be used to determine if hooks are supported. |
+| DELETE | `/subscription/{subscriptionId}` | unsubscribe | `subscriptionId`* | — |  | Unsubscribe from event |
+| DELETE | `/tasks/{taskId}` | delete_14 | `taskId`*, `removeFilesFromDisc`, `removeExternalProjects`, `forceJobsRemoval` | — |  | Removes a task. |
+| PUT | `/tasks/{taskId}/clientTaskPONumber` | updateClientTaskPONumber | `taskId`*, body*: StringDTO | StringDTO |  | Updates Client Task PO Number of a given task. |
+| GET | `/tasks/{taskId}/contacts` | getContacts_1 | `taskId`* | ContactsDTO | yes | Returns contacts of a given task. |
+| PUT | `/tasks/{taskId}/contacts` | updateContacts_1 | `taskId`*, body*: ContactsDTO | ContactsDTO |  | Updates contacts of a given task. |
+| GET | `/tasks/{taskId}/customFields` | getCustomFields_7 | `taskId`* | CustomFieldsDTO | yes | Returns custom fields of a given task. |
+| PUT | `/tasks/{taskId}/customFields` | updateCustomFields_5 | `taskId`*, body*: CustomFieldsDTO | CustomFieldsDTO |  | Updates custom fields of a given task. |
+| GET | `/tasks/{taskId}/dates` | getDates_3 | `taskId`* | ProjectDatesDTO | yes | Returns dates of a given task. |
+| PUT | `/tasks/{taskId}/dates` | updateDates_2 | `taskId`*, body*: ProjectDatesDTO | ProjectDatesDTO |  | Updates dates of a given task. |
+| GET | `/tasks/{taskId}/files` | getTaskFiles | `taskId`* | TaskFilesDTO | yes | Returns lists of files of a given task. |
+| POST | `/tasks/{taskId}/files/input` | addFile | `taskId`*, body*: FileDTO | — |  | Adds files to a given task. |
+| GET | `/tasks/{taskId}/instructions` | getInstructions_2 | `taskId`* | InstructionsDTO | yes | Returns instructions of a given task. |
+| PUT | `/tasks/{taskId}/instructions` | updateInstructions_3 | `taskId`*, body*: InstructionsDTO | InstructionsDTO |  | Updates instructions of a given task. |
+| PUT | `/tasks/{taskId}/name` | updateName | `taskId`*, body*: StringDTO | StringDTO |  | Updates name of a given task. |
+| GET | `/tasks/{taskId}/progress` | getProgress | `taskId`* | TaskProgressDTO | yes | Returns progress of a given task. |
+| POST | `/tasks/{taskId}/start` | start_1 | `taskId`* | — |  | Starts a task. |
+| GET | `/users` | getAllNamesWithIds_1 | — | — | yes | Returns list of simple users representations |
+| GET | `/users/me` | getMe | — | — | yes | Returns currently signed in user details. |
+| GET | `/users/me/timeZone` | getTimeZone | — | — | yes | Returns time zone preferred by user currently signed in. |
+| GET | `/users/{userId}` | getById_6 | `userId`* | — | yes | Returns user details. |
+| PUT | `/users/{userId}` | update_3 | `userId`*, body*: UserDTO | — |  | Updates an existing user. |
+| GET | `/users/{userId}/customFields` | getCustomFields_4 | `userId`* | — | yes | Returns custom fields of a given user. |
+| PUT | `/users/{userId}/customFields` | updateCustomFields_2 | `userId`*, body*: CustomFieldsDTO | — |  | Updates custom fields of a given user. |
+| GET | `/users/{userId}/customFields/{customFieldKey}` | getCustomField_1 | `userId`*, `customFieldKey`* | — | yes | Returns custom field of a given user. |
+| PUT | `/users/{userId}/customFields/{customFieldKey}` | updateCustomField_1 | `userId`*, `customFieldKey`*, body*: CustomFieldDTO | — |  | Updates given custom field of a given user. |
+| PUT | `/users/{userId}/password` | changePassword | `userId`*, body: object | — |  | Sets user's password to a new value. |
+| GET | `/v2/jobs/for-external-id` | getByExternalId | `externalProjectId`, `externalId` | — | yes | — |
+| GET | `/v2/jobs/{jobId}` | getFileById_1 | `jobId`* | — | yes | Returns details for a job. |
+| PUT | `/v2/jobs/{jobId}/dates` | changeDates | `jobId`*, body*: JobDatesDto | — |  | Updates dates of a given job. |
+| POST | `/v2/jobs/{jobId}/files/addExternalLink` | addExternalFileLink | `jobId`*, body*: ExternalFileDto | — |  | — |
+| GET | `/v2/jobs/{jobId}/files/delivered` | getDeliveredFiles | `jobId`* | — | yes | Returns list of files delivered in the job. |
+| PUT | `/v2/jobs/{jobId}/files/delivered/add` | addFiles | `jobId`*, body*: FileCategorizationsDto | — |  | Adds files to the project as delivered in the job. |
+| POST | `/v2/jobs/{jobId}/files/delivered/addLink` | addFileLinks | `jobId`*, body*: FileLinkCategorizationsDto | — |  | Adds file link to the project as a link delivered in the job. |
+| POST | `/v2/jobs/{jobId}/files/delivered/upload` | uploadFile_1 | `jobId`*, body*: FileToUploadDto | — |  | Uploads file to the project as a file delivered in the job. |
+| GET | `/v2/jobs/{jobId}/files/sharedReferenceFiles` | getSharedReferenceFiles | `jobId`* | — | yes | Returns list of files shared with the job as Reference Files. |
+| PUT | `/v2/jobs/{jobId}/files/sharedReferenceFiles/share` | shareAsReferenceFiles | `jobId`*, body*: FilesDto | — |  | Shares selected files as Reference Files with a job in a project. |
+| GET | `/v2/jobs/{jobId}/files/sharedWorkFiles` | getSharedWorkFiles | `jobId`* | — | yes | Returns list of files shared with the job as Work Files. |
+| PUT | `/v2/jobs/{jobId}/files/sharedWorkFiles/share` | shareAsWorkFiles | `jobId`*, body*: FilesDto | — |  | Shares selected files as Work Files with a job in a project. |
+| PUT | `/v2/jobs/{jobId}/files/stopSharing` | stopSharing | `jobId`*, body*: FilesDto | — |  | Stops sharing selected files with a job in a project. |
+| PUT | `/v2/jobs/{jobId}/instructions` | updateInstructions_4 | `jobId`*, body*: StringDTO | — |  | Updates instructions for a job. |
+| PUT | `/v2/jobs/{jobId}/status` | changeStatus_1 | `jobId`*, body*: JobStatusDTO | — |  | Changes job status if possible (400 Bad Request is returned otherwise). |
+| PUT | `/v2/jobs/{jobId}/vendor` | assignVendor_1 | `jobId`*, body*: VendorPriceProfileDTO | — |  | Assigns vendor to a job in a project. |
+| POST | `/v2/projects` | create_6 | body: ProjectCreateDTO | ProjectDTOv2 |  | Creates a new Smart Project. |
+| POST | `/v2/projects/files/archive` | archive | body*: FilesDto | — |  | Prepares a ZIP archive that contains the specified files. |
+| GET | `/v2/projects/files/{fileId}` | getFileById_2 | `fileId`* | — | yes | Returns details of a file. |
+| GET | `/v2/projects/files/{fileId}/download/{fileName}` | getFileContentById | `fileId`*, `fileName`* | — | yes | Downloads a file content. |
+| GET | `/v2/projects/for-external-id/{externalProjectId}` | getByExternalId_1 | `externalProjectId`* | — | yes | Returns project details. |
+| GET | `/v2/projects/{projectId}` | getById_9 | `projectId`* | — | yes | Returns project details. |
+| POST | `/v2/projects/{projectId}/addJob` | addJobToProcess | `projectId`* | — |  | Returns process id. |
+| GET | `/v2/projects/{projectId}/catToolProject` | getCATToolProjectInfo | `projectId`* | — | yes | Returns if cat tool project is created or queued. |
+| GET | `/v2/projects/{projectId}/clientContacts` | getContacts_2 | `projectId`* | — | yes | Returns Client Contacts information for a project. |
+| PUT | `/v2/projects/{projectId}/clientContacts` | updateContacts_2 | `projectId`*, body*: SmartContactsDTO | — |  | Updates Client Contacts for a project. |
+| PUT | `/v2/projects/{projectId}/clientDeadline` | updateClientDeadline | `projectId`*, body*: TimeDTO | — |  | Updates Client Deadline for a project. |
+| PUT | `/v2/projects/{projectId}/clientNotes` | updateClientNotes | `projectId`*, body*: StringDTO | — |  | Updates Client Notes for a project. |
+| PUT | `/v2/projects/{projectId}/clientReferenceNumber` | updateClientReferenceNumber | `projectId`*, body*: StringDTO | — |  | Updates Client Reference Number for a project. |
+| GET | `/v2/projects/{projectId}/customFields` | getCustomFields_8 | `projectId`* | — | yes | Returns a list of custom field keys and values for a project. |
+| PUT | `/v2/projects/{projectId}/customFields/{key}` | updateCustomField_2 | `projectId`*, `key`*, body*: SmartCustomFieldDTO | — |  | Updates a custom field with a specified key in a project |
+| GET | `/v2/projects/{projectId}/files` | getFiles | `projectId`* | — | yes | Returns list of files in a project. |
+| PUT | `/v2/projects/{projectId}/files/add` | addFiles_1 | `projectId`*, body*: FileCategorizationsDto | — |  | Adds files to the project as added by PM. |
+| POST | `/v2/projects/{projectId}/files/addExternalLink` | addExternalFileLinks | `projectId`*, body*: ExternalFileDto | — |  | — |
+| POST | `/v2/projects/{projectId}/files/addLink` | addFileLinks_1 | `projectId`*, body*: FileLinkCategorizationsDto | — |  | Adds file links to the project as added by PM. |
+| GET | `/v2/projects/{projectId}/files/deliverable` | getDeliverableFiles | `projectId`* | — | yes | Returns list of files in a project, that are ready to be delivered to client. |
+| POST | `/v2/projects/{projectId}/files/upload` | uploadFile_2 | `projectId`*, body*: FileToUploadDto | — |  | Uploads file to the project as a file uploaded by PM. |
+| GET | `/v2/projects/{projectId}/finance` | getFinance_2 | `projectId`* | — | yes | Returns finance information for a project. |
+| POST | `/v2/projects/{projectId}/finance/payables` | createPayable_2 | `projectId`*, body*: PayableCreateDTO | — |  | Adds a payable to a project. |
+| PUT | `/v2/projects/{projectId}/finance/payables/{payableId}` | updatePayable_2 | `projectId`*, `payableId`*, body*: PayableDTO | — |  | Updates a payable. |
+| DELETE | `/v2/projects/{projectId}/finance/payables/{payableId}` | deletePayable_2 | `projectId`*, `payableId`* | — |  | Deletes a payable. |
+| POST | `/v2/projects/{projectId}/finance/receivables` | createReceivable_2 | `projectId`*, body*: ReceivableCreateDTO | — |  | Adds a receivable to a project. |
+| PUT | `/v2/projects/{projectId}/finance/receivables/{receivableId}` | updateReceivable_2 | `projectId`*, `receivableId`*, body*: ReceivableDTO | — |  | Updates a receivable. |
+| DELETE | `/v2/projects/{projectId}/finance/receivables/{receivableId}` | deleteReceivable_2 | `projectId`*, `receivableId`* | — |  | Deletes a receivable. |
+| PUT | `/v2/projects/{projectId}/internalNotes` | updateInternalNotes | `projectId`*, body*: StringDTO | — |  | Updates Internal Notes for a project. |
+| GET | `/v2/projects/{projectId}/jobs` | getJobs | `projectId`* | — | yes | Returns list of jobs in a project. |
+| PUT | `/v2/projects/{projectId}/orderDate` | updateOrderedOn | `projectId`*, body*: TimeDTO | — |  | Updates Order Date for a project. |
+| GET | `/v2/projects/{projectId}/process` | getProcessId | `projectId`* | — | yes | Returns process id. |
+| PUT | `/v2/projects/{projectId}/sourceLanguage` | updateSourceLanguage | `projectId`*, body*: SourceLanguageDTO | — |  | Updates source language for a project. |
+| PUT | `/v2/projects/{projectId}/specialization` | updateSpecialization | `projectId`*, body*: SpecializationDTO | — |  | Updates specialization for a project. |
+| PUT | `/v2/projects/{projectId}/status` | changeStatus_2 | `projectId`*, body*: ProjectStatusDTO | — |  | Changes project status if possible (400 Bad Request is returned otherwise). |
+| PUT | `/v2/projects/{projectId}/targetLanguages` | updateTargetLanguages | `projectId`*, body*: TargetLanguagesDTO | — |  | Updates target languages for a project. |
+| PUT | `/v2/projects/{projectId}/vendorInstructions` | updateVendorInstructions | `projectId`*, body*: StringDTO | — |  | Updates instructions for all vendors performing the jobs in a project. |
+| PUT | `/v2/projects/{projectId}/volume` | updateVolume | `projectId`*, body*: BigDecimalDTO | — |  | Updates volume for a project. |
+| POST | `/v2/quotes` | create_7 | body: QuoteCreateDTO | QuoteDTOv2 |  | Creates a new Smart Quote. |
+| POST | `/v2/quotes/files/archive` | archive_1 | body*: FilesDto | — |  | Prepares a ZIP archive that contains the specified files. |
+| GET | `/v2/quotes/files/{fileId}` | getFileById_3 | `fileId`* | — | yes | Returns details of a file. |
+| GET | `/v2/quotes/files/{fileId}/download/{fileName}` | getFileContentById_1 | `fileId`*, `fileName`* | — | yes | Downloads a file content. |
+| GET | `/v2/quotes/{quoteId}` | getById_10 | `quoteId`* | — | yes | Returns quote details. |
+| PUT | `/v2/quotes/{quoteId}/businessDays` | updateBusinessDays | `quoteId`*, body*: integer:int32 | — |  | Updates Business Days for a quote. |
+| GET | `/v2/quotes/{quoteId}/clientContacts` | getContacts_3 | `quoteId`* | — | yes | Returns Client Contacts information for a quote. |
+| PUT | `/v2/quotes/{quoteId}/clientContacts` | updateContacts_3 | `quoteId`*, body*: SmartContactsDTO | — |  | Updates Client Contacts for a quote. |
+| PUT | `/v2/quotes/{quoteId}/clientNotes` | updateClientNotes_1 | `quoteId`*, body*: StringDTO | — |  | Updates Client Notes for a quote. |
+| PUT | `/v2/quotes/{quoteId}/clientReferenceNumber` | updateClientReferenceNumber_1 | `quoteId`*, body*: StringDTO | — |  | Updates Client Reference Number for a quote. |
+| GET | `/v2/quotes/{quoteId}/customFields` | getCustomFields_9 | `quoteId`* | — | yes | Returns a list of custom field keys and values for a project. |
+| PUT | `/v2/quotes/{quoteId}/customFields/{key}` | updateCustomField_3 | `quoteId`*, `key`*, body*: SmartCustomFieldDTO | — |  | Updates a custom field with a specified key in a quote. |
+| PUT | `/v2/quotes/{quoteId}/expectedDeliveryDate` | updateExpectedDeliveryDate | `quoteId`*, body*: TimeDTO | — |  | Updates Expected Delivery Date for a quote. |
+| GET | `/v2/quotes/{quoteId}/files` | getFiles_1 | `quoteId`* | — | yes | Returns list of files in a quote. |
+| PUT | `/v2/quotes/{quoteId}/files/add` | addFiles_2 | `quoteId`*, body*: TimeDTO | — |  | Adds files to the quote as added by PM. |
+| POST | `/v2/quotes/{quoteId}/files/upload` | uploadFile_3 | `quoteId`*, body*: FileToUploadDto | — |  | Uploads file to the quote as a file uploaded by PM. |
+| GET | `/v2/quotes/{quoteId}/finance` | getFinance_3 | `quoteId`* | — | yes | Returns finance information for a quote. |
+| POST | `/v2/quotes/{quoteId}/finance/payables` | createPayable_3 | `quoteId`*, body*: PayableCreateDTO | — |  | Adds a payable to a quote. |
+| PUT | `/v2/quotes/{quoteId}/finance/payables/{payableId}` | updatePayable_3 | `quoteId`*, `payableId`*, body*: PayableDTO | — |  | Updates a payable. |
+| DELETE | `/v2/quotes/{quoteId}/finance/payables/{payableId}` | deletePayable_3 | `quoteId`*, `payableId`* | — |  | Deletes a payable. |
+| POST | `/v2/quotes/{quoteId}/finance/receivables` | createReceivable_3 | `quoteId`*, body*: ReceivableCreateDTO | — |  | Adds a receivable to a quote. |
+| PUT | `/v2/quotes/{quoteId}/finance/receivables/{receivableId}` | updateReceivable_3 | `quoteId`*, `receivableId`*, body*: ReceivableDTO | — |  | Updates a receivable. |
+| DELETE | `/v2/quotes/{quoteId}/finance/receivables/{receivableId}` | deleteReceivable_3 | `quoteId`*, `receivableId`* | — |  | Deletes a receivable. |
+| PUT | `/v2/quotes/{quoteId}/internalNotes` | updateInternalNotes_1 | `quoteId`*, body*: StringDTO | — |  | Updates Internal Notes for a quote. |
+| GET | `/v2/quotes/{quoteId}/jobs` | getJobs_1 | `quoteId`* | — | yes | Returns list of jobs in a quote. |
+| PUT | `/v2/quotes/{quoteId}/quoteExpiry` | updateQuoteExpiry | `quoteId`*, body*: TimeDTO | — |  | Updates Quote Expiry Date for a quote. |
+| PUT | `/v2/quotes/{quoteId}/sourceLanguage` | updateSourceLanguage_1 | `quoteId`*, body*: SourceLanguageDTO | — |  | Updates source language for a quote. |
+| PUT | `/v2/quotes/{quoteId}/specialization` | updateSpecialization_1 | `quoteId`*, body*: SpecializationDTO | — |  | Updates specialization for a quote. |
+| PUT | `/v2/quotes/{quoteId}/status` | changeStatus_3 | `quoteId`*, body*: ProjectStatusDTO | — |  | Changes quote status if possible (400 Bad Request is returned otherwise). |
+| PUT | `/v2/quotes/{quoteId}/targetLanguages` | updateTargetLanguages_1 | `quoteId`*, body*: TargetLanguagesDTO | — |  | Updates target languages for a quote. |
+| PUT | `/v2/quotes/{quoteId}/vendorInstructions` | updateVendorInstructions_1 | `quoteId`*, body*: StringDTO | — |  | Updates instructions for all vendors performing the jobs in a quote. |
+| PUT | `/v2/quotes/{quoteId}/volume` | updateVolume_1 | `quoteId`*, body*: BigDecimalDTO | — |  | Updates volume for a quote. |

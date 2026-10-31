@@ -98,6 +98,301 @@
         "from": "parliament-uk-bills-65239ef3fd",
         "kind": "EXPOSES",
         "to": "operation:get:/api/v1/Stages"
+      },
+      {
+        "from": "operation:get:/api/v1/BillTypes",
+        "kind": "RETURNS",
+        "to": "schema:BillTypeSearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills",
+        "kind": "RETURNS",
+        "to": "schema:BillSummarySearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}",
+        "kind": "RETURNS",
+        "to": "schema:Bill"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/NewsArticles",
+        "kind": "RETURNS",
+        "to": "schema:NewsArticlesSummarySearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/Publications",
+        "kind": "RETURNS",
+        "to": "schema:BillPublicationList"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/Stages",
+        "kind": "RETURNS",
+        "to": "schema:StageSummarySearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/Stages/{billStageId}",
+        "kind": "RETURNS",
+        "to": "schema:BillStageDetails"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments",
+        "kind": "RETURNS",
+        "to": "schema:AmendmentSearchItemSearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments/{amendmentId}",
+        "kind": "RETURNS",
+        "to": "schema:AmendmentDetail"
+      },
+      {
+        "from": "operation:get:/api/v1/Bills/{billId}/Stages/{stageId}/Publications",
+        "kind": "RETURNS",
+        "to": "schema:BillStagePublicationList"
+      },
+      {
+        "from": "operation:get:/api/v1/PublicationTypes",
+        "kind": "RETURNS",
+        "to": "schema:PublicationTypeSearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Publications/{publicationId}/Documents/{documentId}",
+        "kind": "RETURNS",
+        "to": "schema:PublicationDocument"
+      },
+      {
+        "from": "operation:get:/api/v1/Sittings",
+        "kind": "RETURNS",
+        "to": "schema:BillStageSittingSearchResult"
+      },
+      {
+        "from": "operation:get:/api/v1/Stages",
+        "kind": "RETURNS",
+        "to": "schema:StageReferenceSearchResult"
+      },
+      {
+        "from": "schema:AmendmentDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentDecision"
+      },
+      {
+        "from": "schema:AmendmentDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentLine"
+      },
+      {
+        "from": "schema:AmendmentDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentMember"
+      },
+      {
+        "from": "schema:AmendmentDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentType"
+      },
+      {
+        "from": "schema:AmendmentMember",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:AmendmentSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentDecision"
+      },
+      {
+        "from": "schema:AmendmentSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentMember"
+      },
+      {
+        "from": "schema:AmendmentSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentType"
+      },
+      {
+        "from": "schema:AmendmentSearchItemSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:AmendmentSearchItem"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillAgent"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:Promoter"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:Sponsor"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:StageSummary"
+      },
+      {
+        "from": "schema:BillPublication",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:BillPublication",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationDocument"
+      },
+      {
+        "from": "schema:BillPublication",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationLink"
+      },
+      {
+        "from": "schema:BillPublication",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationType"
+      },
+      {
+        "from": "schema:BillPublicationList",
+        "kind": "REFERENCES",
+        "to": "schema:BillPublication"
+      },
+      {
+        "from": "schema:BillStageDetails",
+        "kind": "REFERENCES",
+        "to": "schema:BillStageSitting"
+      },
+      {
+        "from": "schema:BillStageDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Committee"
+      },
+      {
+        "from": "schema:BillStageDetails",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:BillStagePublicationList",
+        "kind": "REFERENCES",
+        "to": "schema:BillStageSittingPublicationList"
+      },
+      {
+        "from": "schema:BillStagePublicationList",
+        "kind": "REFERENCES",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:BillStageSittingPublicationList",
+        "kind": "REFERENCES",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:BillStageSittingSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:BillStageSitting"
+      },
+      {
+        "from": "schema:BillSummary",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:BillSummary",
+        "kind": "REFERENCES",
+        "to": "schema:StageSummary"
+      },
+      {
+        "from": "schema:BillSummarySearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:BillSummary"
+      },
+      {
+        "from": "schema:BillType",
+        "kind": "REFERENCES",
+        "to": "schema:BillTypeCategory"
+      },
+      {
+        "from": "schema:BillTypeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:BillType"
+      },
+      {
+        "from": "schema:Committee",
+        "kind": "REFERENCES",
+        "to": "schema:CommitteeHouse"
+      },
+      {
+        "from": "schema:Member",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:NewsArticlesSummarySearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:NewsArticlesSummary"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationDocument"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationLink"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationType"
+      },
+      {
+        "from": "schema:PublicationTypeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublicationType"
+      },
+      {
+        "from": "schema:Sponsor",
+        "kind": "REFERENCES",
+        "to": "schema:Member"
+      },
+      {
+        "from": "schema:Sponsor",
+        "kind": "REFERENCES",
+        "to": "schema:Organisation"
+      },
+      {
+        "from": "schema:StageReference",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:StageReferenceSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:StageReference"
+      },
+      {
+        "from": "schema:StageSummary",
+        "kind": "REFERENCES",
+        "to": "schema:BillStageSitting"
+      },
+      {
+        "from": "schema:StageSummary",
+        "kind": "REFERENCES",
+        "to": "schema:House"
+      },
+      {
+        "from": "schema:StageSummarySearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:StageSummary"
       }
     ],
     "nodes": [
@@ -111,10 +406,44 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/BillTypes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Category",
+            "required": false,
+            "type": "BillTypeCategory"
+          },
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/BillTypes",
         "pointer": "#/paths/~1api~1v1~1BillTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillTypeSearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of Bill types."
+        "summary": "Returns a list of Bill types.",
+        "tags": [
+          "BillTypes"
+        ]
       },
       {
         "deprecated": false,
@@ -122,10 +451,116 @@
         "kind": "operation",
         "method": "get",
         "name": "GetBills",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "SearchTerm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Session",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "CurrentHouse",
+            "required": false,
+            "type": "House"
+          },
+          {
+            "in": "query",
+            "name": "OriginatingHouse",
+            "required": false,
+            "type": "OriginatingHouse"
+          },
+          {
+            "in": "query",
+            "name": "MemberId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "DepartmentId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "BillStage",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "in": "query",
+            "name": "BillStagesExcluded",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "in": "query",
+            "name": "IsDefeated",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "IsWithdrawn",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "BillType",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "in": "query",
+            "name": "SortOrder",
+            "required": false,
+            "type": "BillSortOrder"
+          },
+          {
+            "in": "query",
+            "name": "BillIds",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills",
         "pointer": "#/paths/~1api~1v1~1Bills/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillSummarySearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of Bills."
+        "summary": "Returns a list of Bills.",
+        "tags": [
+          "Bills"
+        ]
       },
       {
         "deprecated": false,
@@ -133,10 +568,37 @@
         "kind": "operation",
         "method": "get",
         "name": "GetBill",
+        "parameters": [
+          {
+            "description": "Bill with ID specified",
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bill"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a Bill."
+        "summary": "Return a Bill.",
+        "tags": [
+          "Bills"
+        ]
       },
       {
         "deprecated": false,
@@ -144,10 +606,48 @@
         "kind": "operation",
         "method": "get",
         "name": "GetNewsArticles",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/NewsArticles",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1NewsArticles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NewsArticlesSummarySearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of news articles for a Bill."
+        "summary": "Returns a list of news articles for a Bill.",
+        "tags": [
+          "BillNews"
+        ]
       },
       {
         "deprecated": false,
@@ -155,10 +655,37 @@
         "kind": "operation",
         "method": "get",
         "name": "GetBillPublication",
+        "parameters": [
+          {
+            "description": "Publications relating to Bill with Bill ID specified",
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/Publications",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1Publications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillPublicationList"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of Bill publications."
+        "summary": "Return a list of Bill publications.",
+        "tags": [
+          "Publications"
+        ]
       },
       {
         "deprecated": false,
@@ -166,10 +693,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/Bills/{billId}/Stages",
+        "parameters": [
+          {
+            "description": "Stages relating to a Bill with Bill ID specified",
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/Stages",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1Stages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StageSummarySearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all Bill stages."
+        "summary": "Returns all Bill stages.",
+        "tags": [
+          "Bills"
+        ]
       },
       {
         "deprecated": false,
@@ -177,10 +743,44 @@
         "kind": "operation",
         "method": "get",
         "name": "GetBillStageDetails",
+        "parameters": [
+          {
+            "description": "Bill stage relating to Bill with Bill ID specified",
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Bill stage with ID specified",
+            "in": "path",
+            "name": "billStageId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/Stages/{billStageId}",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1Stages~1{billStageId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillStageDetails"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a Bill stage."
+        "summary": "Returns a Bill stage.",
+        "tags": [
+          "Bills"
+        ]
       },
       {
         "deprecated": false,
@@ -188,10 +788,74 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAmendments",
+        "parameters": [
+          {
+            "description": "Amendments relating to a Bill with Bill ID specified",
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Amendments relating to a Bill stage with Bill stage ID specified",
+            "in": "path",
+            "name": "billStageId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "SearchTerm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Decision",
+            "required": false,
+            "type": "Decision"
+          },
+          {
+            "in": "query",
+            "name": "MemberId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1Stages~1{billStageId}~1Amendments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AmendmentSearchItemSearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of amendments."
+        "summary": "Returns a list of amendments.",
+        "tags": [
+          "Amendments"
+        ]
       },
       {
         "deprecated": false,
@@ -199,10 +863,51 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAmendment",
+        "parameters": [
+          {
+            "description": "Amendment relating to a bill with bill ID specified",
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Amendment relating to a bill stage with bill stage ID specified",
+            "in": "path",
+            "name": "billStageId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Amendment with amendment ID specified",
+            "in": "path",
+            "name": "amendmentId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments/{amendmentId}",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1Stages~1{billStageId}~1Amendments~1{amendmentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AmendmentDetail"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an amendment."
+        "summary": "Returns an amendment.",
+        "tags": [
+          "Amendments"
+        ]
       },
       {
         "deprecated": false,
@@ -210,10 +915,42 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/Bills/{billId}/Stages/{stageId}/Publications",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "billId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "stageId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Bills/{billId}/Stages/{stageId}/Publications",
         "pointer": "#/paths/~1api~1v1~1Bills~1{billId}~1Stages~1{stageId}~1Publications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillStagePublicationList"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of Bill stage publications."
+        "summary": "Return a list of Bill stage publications.",
+        "tags": [
+          "Publications"
+        ]
       },
       {
         "deprecated": false,
@@ -221,10 +958,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/PublicationTypes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/PublicationTypes",
         "pointer": "#/paths/~1api~1v1~1PublicationTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicationTypeSearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of publication types."
+        "summary": "Returns a list of publication types.",
+        "tags": [
+          "PublicationTypes"
+        ]
       },
       {
         "deprecated": false,
@@ -232,10 +997,44 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/Publications/{publicationId}/Documents/{documentId}",
+        "parameters": [
+          {
+            "description": "Document with publication Id specified",
+            "in": "path",
+            "name": "publicationId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Document with Id specified",
+            "in": "path",
+            "name": "documentId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Publications/{publicationId}/Documents/{documentId}",
         "pointer": "#/paths/~1api~1v1~1Publications~1{publicationId}~1Documents~1{documentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicationDocument"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return information on a document."
+        "summary": "Return information on a document.",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -243,10 +1042,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/Publications/{publicationId}/Documents/{documentId}/Download",
+        "parameters": [
+          {
+            "description": "Document with publication Id specified",
+            "in": "path",
+            "name": "publicationId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Document with Id specified",
+            "in": "path",
+            "name": "documentId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Publications/{publicationId}/Documents/{documentId}/Download",
         "pointer": "#/paths/~1api~1v1~1Publications~1{publicationId}~1Documents~1{documentId}~1Download/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a document."
+        "summary": "Return a document.",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -254,10 +1086,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/Rss/Bills/{id}.rss",
+        "parameters": [
+          {
+            "description": "Id of Bill",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Rss/Bills/{id}.rss",
         "pointer": "#/paths/~1api~1v1~1Rss~1Bills~1{id}.rss/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an Rss feed of a certain Bill."
+        "summary": "Returns an Rss feed of a certain Bill.",
+        "tags": [
+          "Rss"
+        ]
       },
       {
         "deprecated": false,
@@ -267,8 +1125,17 @@
         "name": "get /api/v1/Rss/allbills.rss",
         "path": "/api/v1/Rss/allbills.rss",
         "pointer": "#/paths/~1api~1v1~1Rss~1allbills.rss/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an Rss feed of all Bills."
+        "summary": "Returns an Rss feed of all Bills.",
+        "tags": [
+          "Rss"
+        ]
       },
       {
         "deprecated": false,
@@ -278,8 +1145,17 @@
         "name": "get /api/v1/Rss/privatebills.rss",
         "path": "/api/v1/Rss/privatebills.rss",
         "pointer": "#/paths/~1api~1v1~1Rss~1privatebills.rss/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an Rss feed of private Bills."
+        "summary": "Returns an Rss feed of private Bills.",
+        "tags": [
+          "Rss"
+        ]
       },
       {
         "deprecated": false,
@@ -289,8 +1165,17 @@
         "name": "get /api/v1/Rss/publicbills.rss",
         "path": "/api/v1/Rss/publicbills.rss",
         "pointer": "#/paths/~1api~1v1~1Rss~1publicbills.rss/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns an Rss feed of public Bills."
+        "summary": "Returns an Rss feed of public Bills.",
+        "tags": [
+          "Rss"
+        ]
       },
       {
         "deprecated": false,
@@ -298,10 +1183,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSittings",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "House",
+            "required": false,
+            "type": "House"
+          },
+          {
+            "in": "query",
+            "name": "DateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "DateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Sittings",
         "pointer": "#/paths/~1api~1v1~1Sittings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillStageSittingSearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of Sittings."
+        "summary": "Returns a list of Sittings.",
+        "tags": [
+          "Sittings"
+        ]
       },
       {
         "deprecated": false,
@@ -309,225 +1240,296 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/Stages",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/Stages",
         "pointer": "#/paths/~1api~1v1~1Stages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StageReferenceSearchResult"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of Bill stages."
+        "summary": "Returns a list of Bill stages.",
+        "tags": [
+          "Stages"
+        ]
       },
       {
         "id": "schema:AmendmentDecision",
         "kind": "schema",
-        "name": "AmendmentDecision"
+        "name": "AmendmentDecision",
+        "type": "string"
       },
       {
         "id": "schema:AmendmentDetail",
         "kind": "schema",
-        "name": "AmendmentDetail"
+        "name": "AmendmentDetail",
+        "type": "object"
       },
       {
         "id": "schema:AmendmentLine",
         "kind": "schema",
-        "name": "AmendmentLine"
+        "name": "AmendmentLine",
+        "type": "object"
       },
       {
         "id": "schema:AmendmentMember",
         "kind": "schema",
-        "name": "AmendmentMember"
+        "name": "AmendmentMember",
+        "type": "object"
       },
       {
         "id": "schema:AmendmentSearchItem",
         "kind": "schema",
-        "name": "AmendmentSearchItem"
+        "name": "AmendmentSearchItem",
+        "type": "object"
       },
       {
         "id": "schema:AmendmentSearchItemSearchResult",
         "kind": "schema",
-        "name": "AmendmentSearchItemSearchResult"
+        "name": "AmendmentSearchItemSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:AmendmentType",
         "kind": "schema",
-        "name": "AmendmentType"
+        "name": "AmendmentType",
+        "type": "string"
       },
       {
         "id": "schema:Bill",
         "kind": "schema",
-        "name": "Bill"
+        "name": "Bill",
+        "type": "object"
       },
       {
         "id": "schema:BillAgent",
         "kind": "schema",
-        "name": "BillAgent"
+        "name": "BillAgent",
+        "type": "object"
       },
       {
         "id": "schema:BillPublication",
         "kind": "schema",
-        "name": "BillPublication"
+        "name": "BillPublication",
+        "type": "object"
       },
       {
         "id": "schema:BillPublicationList",
         "kind": "schema",
-        "name": "BillPublicationList"
+        "name": "BillPublicationList",
+        "type": "object"
       },
       {
         "id": "schema:BillSortOrder",
         "kind": "schema",
-        "name": "BillSortOrder"
+        "name": "BillSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:BillStageDetails",
         "kind": "schema",
-        "name": "BillStageDetails"
+        "name": "BillStageDetails",
+        "type": "object"
       },
       {
         "id": "schema:BillStagePublicationList",
         "kind": "schema",
-        "name": "BillStagePublicationList"
+        "name": "BillStagePublicationList",
+        "type": "object"
       },
       {
         "id": "schema:BillStageSitting",
         "kind": "schema",
-        "name": "BillStageSitting"
+        "name": "BillStageSitting",
+        "type": "object"
       },
       {
         "id": "schema:BillStageSittingPublicationList",
         "kind": "schema",
-        "name": "BillStageSittingPublicationList"
+        "name": "BillStageSittingPublicationList",
+        "type": "object"
       },
       {
         "id": "schema:BillStageSittingSearchResult",
         "kind": "schema",
-        "name": "BillStageSittingSearchResult"
+        "name": "BillStageSittingSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:BillSummary",
         "kind": "schema",
-        "name": "BillSummary"
+        "name": "BillSummary",
+        "type": "object"
       },
       {
         "id": "schema:BillSummarySearchResult",
         "kind": "schema",
-        "name": "BillSummarySearchResult"
+        "name": "BillSummarySearchResult",
+        "type": "object"
       },
       {
         "id": "schema:BillType",
         "kind": "schema",
-        "name": "BillType"
+        "name": "BillType",
+        "type": "object"
       },
       {
         "id": "schema:BillTypeCategory",
         "kind": "schema",
-        "name": "BillTypeCategory"
+        "name": "BillTypeCategory",
+        "type": "string"
       },
       {
         "id": "schema:BillTypeSearchResult",
         "kind": "schema",
-        "name": "BillTypeSearchResult"
+        "name": "BillTypeSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:Committee",
         "kind": "schema",
-        "name": "Committee"
+        "name": "Committee",
+        "type": "object"
       },
       {
         "id": "schema:CommitteeHouse",
         "kind": "schema",
-        "name": "CommitteeHouse"
+        "name": "CommitteeHouse",
+        "type": "string"
       },
       {
         "id": "schema:Decision",
         "kind": "schema",
-        "name": "Decision"
+        "name": "Decision",
+        "type": "string"
       },
       {
         "id": "schema:House",
         "kind": "schema",
-        "name": "House"
+        "name": "House",
+        "type": "string"
       },
       {
         "id": "schema:Member",
         "kind": "schema",
-        "name": "Member"
+        "name": "Member",
+        "type": "object"
       },
       {
         "id": "schema:NewsArticlesSummary",
         "kind": "schema",
-        "name": "NewsArticlesSummary"
+        "name": "NewsArticlesSummary",
+        "type": "object"
       },
       {
         "id": "schema:NewsArticlesSummarySearchResult",
         "kind": "schema",
-        "name": "NewsArticlesSummarySearchResult"
+        "name": "NewsArticlesSummarySearchResult",
+        "type": "object"
       },
       {
         "id": "schema:Organisation",
         "kind": "schema",
-        "name": "Organisation"
+        "name": "Organisation",
+        "type": "object"
       },
       {
         "id": "schema:OriginatingHouse",
         "kind": "schema",
-        "name": "OriginatingHouse"
+        "name": "OriginatingHouse",
+        "type": "string"
       },
       {
         "id": "schema:ProblemDetails",
         "kind": "schema",
-        "name": "ProblemDetails"
+        "name": "ProblemDetails",
+        "type": "object"
       },
       {
         "id": "schema:Promoter",
         "kind": "schema",
-        "name": "Promoter"
+        "name": "Promoter",
+        "type": "object"
       },
       {
         "id": "schema:Publication",
         "kind": "schema",
-        "name": "Publication"
+        "name": "Publication",
+        "type": "object"
       },
       {
         "id": "schema:PublicationDocument",
         "kind": "schema",
-        "name": "PublicationDocument"
+        "name": "PublicationDocument",
+        "type": "object"
       },
       {
         "id": "schema:PublicationLink",
         "kind": "schema",
-        "name": "PublicationLink"
+        "name": "PublicationLink",
+        "type": "object"
       },
       {
         "id": "schema:PublicationType",
         "kind": "schema",
-        "name": "PublicationType"
+        "name": "PublicationType",
+        "type": "object"
       },
       {
         "id": "schema:PublicationTypeSearchResult",
         "kind": "schema",
-        "name": "PublicationTypeSearchResult"
+        "name": "PublicationTypeSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:Sponsor",
         "kind": "schema",
-        "name": "Sponsor"
+        "name": "Sponsor",
+        "type": "object"
       },
       {
         "id": "schema:StageReference",
         "kind": "schema",
-        "name": "StageReference"
+        "name": "StageReference",
+        "type": "object"
       },
       {
         "id": "schema:StageReferenceSearchResult",
         "kind": "schema",
-        "name": "StageReferenceSearchResult"
+        "name": "StageReferenceSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:StageSummary",
         "kind": "schema",
-        "name": "StageSummary"
+        "name": "StageSummary",
+        "type": "object"
       },
       {
         "id": "schema:StageSummarySearchResult",
         "kind": "schema",
-        "name": "StageSummarySearchResult"
+        "name": "StageSummarySearchResult",
+        "type": "object"
       }
     ]
   },

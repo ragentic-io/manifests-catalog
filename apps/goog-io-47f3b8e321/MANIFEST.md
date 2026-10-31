@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `8deae5988144574e5310529ca1fbc1ebe0a65cc2be90ac164fe26b1d61df22ac` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | Get the status of the API service | Status |
-| GET | `/v1/crawl/{query}` | Crawl | Crawl |
-| GET | `/v1/images/{query}` | Images | Images |
-| GET | `/v1/news/{query}` | News | News |
-| GET | `/v1/search/{query}` | Search | Search |
-| POST | `/v1/serp/` | serp | SERP |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | Get the status of the API service | — | object | yes | Status |
+| GET | `/v1/crawl/{query}` | Crawl | `query`* | object | yes | Crawl |
+| GET | `/v1/images/{query}` | Images | `query`* | object | yes | Images |
+| GET | `/v1/news/{query}` | News | `query`* | object | yes | News |
+| GET | `/v1/search/{query}` | Search | `query`* | object | yes | Search |
+| POST | `/v1/serp/` | serp | body*: SerpData | object |  | SERP |

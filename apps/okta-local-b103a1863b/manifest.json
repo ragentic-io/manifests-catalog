@@ -111,8 +111,28 @@
         "kind": "operation",
         "method": "get",
         "name": "findUser",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users",
         "pointer": "#/paths/~1api~1v1~1users/get",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Find User"
       },
@@ -122,10 +142,34 @@
         "kind": "operation",
         "method": "post",
         "name": "createUserInGroup",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "activate",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users",
         "pointer": "#/paths/~1api~1v1~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create User in Group"
+        "summary": "Create User in Group",
+        "tags": [
+          "Create User"
+        ]
       },
       {
         "deprecated": false,
@@ -135,6 +179,18 @@
         "name": "getCurrentUser",
         "path": "/api/v1/users/me",
         "pointer": "#/paths/~1api~1v1~1users~1me/get",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get Current User"
       },
@@ -144,8 +200,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}/get",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get User"
       },
@@ -155,10 +231,34 @@
         "kind": "operation",
         "method": "put",
         "name": "setRecoveryCredential",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set Recovery Credential"
+        "summary": "Set Recovery Credential",
+        "tags": [
+          "Credential Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -166,8 +266,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getAssignedAppLinks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/appLinks",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1appLinks/get",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get Assigned App Links"
       },
@@ -177,10 +297,34 @@
         "kind": "operation",
         "method": "post",
         "name": "changePassword",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/credentials/change_password",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1credentials~1change_password/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change Password"
+        "summary": "Change Password",
+        "tags": [
+          "Credential Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -188,10 +332,34 @@
         "kind": "operation",
         "method": "post",
         "name": "changeRecoveryQuestion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/credentials/change_recovery_question",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1credentials~1change_recovery_question/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change Recovery Question"
+        "summary": "Change Recovery Question",
+        "tags": [
+          "Credential Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -199,10 +367,39 @@
         "kind": "operation",
         "method": "post",
         "name": "forgotPassword(oneTimeCode)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sendEmail",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/credentials/forgot_password",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1credentials~1forgot_password/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Forgot Password (One Time Code)"
+        "summary": "Forgot Password (One Time Code)",
+        "tags": [
+          "Credential Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -210,8 +407,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getGroupsForUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/groups",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1groups/get",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get Groups for User"
       },
@@ -221,10 +438,39 @@
         "kind": "operation",
         "method": "post",
         "name": "activateUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sendEmail",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/activate",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1activate/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Activate User"
+        "summary": "Activate User",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -232,10 +478,33 @@
         "kind": "operation",
         "method": "post",
         "name": "deactivateUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/deactivate",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1deactivate/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Deactivate User"
+        "summary": "Deactivate User",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -243,10 +512,39 @@
         "kind": "operation",
         "method": "post",
         "name": "setTempPassword",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tempPassword",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/expire_password",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1expire_password/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set Temp Password"
+        "summary": "Set Temp Password",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -254,8 +552,28 @@
         "kind": "operation",
         "method": "post",
         "name": "resetFactors",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/reset_factors",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1reset_factors/post",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Reset Factors"
       },
@@ -265,10 +583,39 @@
         "kind": "operation",
         "method": "post",
         "name": "resetPassword",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sendEmail",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/reset_password",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1reset_password/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Reset Password"
+        "summary": "Reset Password",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -276,10 +623,33 @@
         "kind": "operation",
         "method": "post",
         "name": "suspendUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/suspend",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1suspend/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Suspend User"
+        "summary": "Suspend User",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -287,10 +657,33 @@
         "kind": "operation",
         "method": "post",
         "name": "unlockUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/unlock",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1unlock/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Unlock User"
+        "summary": "Unlock User",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -298,10 +691,33 @@
         "kind": "operation",
         "method": "post",
         "name": "unsuspendUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/lifecycle/unsuspend",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1lifecycle~1unsuspend/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Unsuspend User"
+        "summary": "Unsuspend User",
+        "tags": [
+          "Lifecycle Operations"
+        ]
       },
       {
         "deprecated": false,
@@ -309,8 +725,28 @@
         "kind": "operation",
         "method": "delete",
         "name": "clearUserSessions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/users/{userId}/sessions",
         "pointer": "#/paths/~1api~1v1~1users~1{userId}~1sessions/delete",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Clear User Sessions"
       }

@@ -7,11 +7,6 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{id}"
-      },
-      {
-        "from": "pocketsmith-com-f56bf574eb",
-        "kind": "EXPOSES",
         "to": "operation:get:/accounts/{id}"
       },
       {
@@ -22,12 +17,12 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:get:/accounts/{id}/transactions"
+        "to": "operation:delete:/accounts/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/attachments/{id}"
+        "to": "operation:get:/accounts/{id}/transactions"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -42,7 +37,7 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/categories/{id}"
+        "to": "operation:delete:/attachments/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -53,6 +48,11 @@
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
         "to": "operation:put:/categories/{id}"
+      },
+      {
+        "from": "pocketsmith-com-f56bf574eb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/categories/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -77,11 +77,6 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/events/{id}"
-      },
-      {
-        "from": "pocketsmith-com-f56bf574eb",
-        "kind": "EXPOSES",
         "to": "operation:get:/events/{id}"
       },
       {
@@ -92,7 +87,7 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/institutions/{id}"
+        "to": "operation:delete:/events/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -103,6 +98,11 @@
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
         "to": "operation:put:/institutions/{id}"
+      },
+      {
+        "from": "pocketsmith-com-f56bf574eb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/institutions/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -152,17 +152,17 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/transactions/{id}"
-      },
-      {
-        "from": "pocketsmith-com-f56bf574eb",
-        "kind": "EXPOSES",
         "to": "operation:get:/transactions/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
         "to": "operation:put:/transactions/{id}"
+      },
+      {
+        "from": "pocketsmith-com-f56bf574eb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/transactions/{id}"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -197,12 +197,12 @@
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:post:/users/{id}/accounts"
+        "to": "operation:put:/users/{id}/accounts"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
-        "to": "operation:put:/users/{id}/accounts"
+        "to": "operation:post:/users/{id}/accounts"
       },
       {
         "from": "pocketsmith-com-f56bf574eb",
@@ -283,6 +283,301 @@
         "from": "pocketsmith-com-f56bf574eb",
         "kind": "EXPOSES",
         "to": "operation:get:/users/{id}/trend_analysis"
+      },
+      {
+        "from": "operation:get:/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:put:/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/accounts/{id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:get:/attachments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:put:/attachments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:get:/categories/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Category"
+      },
+      {
+        "from": "operation:put:/categories/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Category"
+      },
+      {
+        "from": "operation:post:/categories/{id}/category_rules",
+        "kind": "RETURNS",
+        "to": "schema:CategoryRule"
+      },
+      {
+        "from": "operation:get:/categories/{id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:get:/currencies",
+        "kind": "RETURNS",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "operation:get:/currencies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "operation:get:/events/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:put:/events/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/institutions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Institution"
+      },
+      {
+        "from": "operation:put:/institutions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Institution"
+      },
+      {
+        "from": "operation:get:/institutions/{id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/me",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/scenarios/{id}/events",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:post:/scenarios/{id}/events",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/time_zones",
+        "kind": "RETURNS",
+        "to": "schema:TimeZone"
+      },
+      {
+        "from": "operation:get:/transaction_accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TransactionAccount"
+      },
+      {
+        "from": "operation:put:/transaction_accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TransactionAccount"
+      },
+      {
+        "from": "operation:get:/transaction_accounts/{id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:post:/transaction_accounts/{id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:get:/transactions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:put:/transactions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:get:/transactions/{id}/attachments",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:post:/transactions/{id}/attachments",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:get:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:put:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/users/{id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:put:/users/{id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/users/{id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/users/{id}/attachments",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:post:/users/{id}/attachments",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:get:/users/{id}/budget",
+        "kind": "RETURNS",
+        "to": "schema:BudgetAnalysisPackage"
+      },
+      {
+        "from": "operation:get:/users/{id}/budget_summary",
+        "kind": "RETURNS",
+        "to": "schema:BudgetAnalysisPackage"
+      },
+      {
+        "from": "operation:get:/users/{id}/categories",
+        "kind": "RETURNS",
+        "to": "schema:Category"
+      },
+      {
+        "from": "operation:post:/users/{id}/categories",
+        "kind": "RETURNS",
+        "to": "schema:Category"
+      },
+      {
+        "from": "operation:get:/users/{id}/category_rules",
+        "kind": "RETURNS",
+        "to": "schema:CategoryRule"
+      },
+      {
+        "from": "operation:get:/users/{id}/events",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/users/{id}/institutions",
+        "kind": "RETURNS",
+        "to": "schema:Institution"
+      },
+      {
+        "from": "operation:post:/users/{id}/institutions",
+        "kind": "RETURNS",
+        "to": "schema:Institution"
+      },
+      {
+        "from": "operation:get:/users/{id}/saved_searches",
+        "kind": "RETURNS",
+        "to": "schema:SavedSearch"
+      },
+      {
+        "from": "operation:get:/users/{id}/transaction_accounts",
+        "kind": "RETURNS",
+        "to": "schema:TransactionAccount"
+      },
+      {
+        "from": "operation:get:/users/{id}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:get:/users/{id}/trend_analysis",
+        "kind": "RETURNS",
+        "to": "schema:BudgetAnalysisPackage"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:Scenario"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionAccount"
+      },
+      {
+        "from": "schema:BudgetAnalysis",
+        "kind": "REFERENCES",
+        "to": "schema:Period"
+      },
+      {
+        "from": "schema:BudgetAnalysisPackage",
+        "kind": "REFERENCES",
+        "to": "schema:BudgetAnalysis"
+      },
+      {
+        "from": "schema:BudgetAnalysisPackage",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:CategoryRule",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:Currency",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencySeparators"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Scenario"
+      },
+      {
+        "from": "schema:Transaction",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:Transaction",
+        "kind": "REFERENCES",
+        "to": "schema:TransactionAccount"
+      },
+      {
+        "from": "schema:TransactionAccount",
+        "kind": "REFERENCES",
+        "to": "schema:Institution"
       }
     ],
     "nodes": [
@@ -292,933 +587,3081 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/accounts/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /accounts/{id}",
-        "path": "/accounts/{id}",
-        "pointer": "#/paths/~1accounts~1{id}/delete",
-        "security": [
-          {
-            "developerKey": []
-          }
-        ],
-        "summary": "Delete account"
-      },
-      {
-        "deprecated": false,
+        "description": "Gets an account by its ID.",
         "id": "operation:get:/accounts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/accounts/{id}",
         "pointer": "#/paths/~1accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get account"
+        "summary": "Get account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates and returns an account by its ID.",
         "id": "operation:put:/accounts/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /accounts/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/accounts/{id}",
         "pointer": "#/paths/~1accounts~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update account"
+        "summary": "Update account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an account and all its data by ID, optionally merge scenarios into another account.",
+        "id": "operation:delete:/accounts/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /accounts/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/accounts/{id}",
+        "pointer": "#/paths/~1accounts~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "developerKey": []
+          }
+        ],
+        "summary": "Delete account",
+        "tags": [
+          "Accounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Lists transactions belonging to an account by its ID.",
         "id": "operation:get:/accounts/{id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{id}/transactions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions on or after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions on or before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions updated since an ISO 8601 timestamp.",
+            "in": "query",
+            "name": "updated_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to uncategorised transactions.",
+            "in": "query",
+            "name": "uncategorised",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions of this type.",
+            "enum": [
+              "debit",
+              "credit"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions that need to be reviewed.",
+            "in": "query",
+            "name": "needs_review",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions matching a keyword search string.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Choose a particular page of the results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/accounts/{id}/transactions",
         "pointer": "#/paths/~1accounts~1{id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Transaction[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List transactions in account"
+        "summary": "List transactions in account",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/attachments/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /attachments/{id}",
-        "path": "/attachments/{id}",
-        "pointer": "#/paths/~1attachments~1{id}/delete",
-        "security": [
-          {
-            "developerKey": []
-          }
-        ],
-        "summary": "Delete attachment"
-      },
-      {
-        "deprecated": false,
+        "description": "Gets a particular attachment by its ID.",
         "id": "operation:get:/attachments/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /attachments/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the attachment.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/attachments/{id}",
         "pointer": "#/paths/~1attachments~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get attachment"
+        "summary": "Get attachment",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the title of the attachment.",
         "id": "operation:put:/attachments/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /attachments/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the attachment.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/attachments/{id}",
         "pointer": "#/paths/~1attachments~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update attachment"
+        "summary": "Update attachment",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/categories/{id}",
+        "description": "Deletes a particular attachment by its ID.",
+        "id": "operation:delete:/attachments/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /categories/{id}",
-        "path": "/categories/{id}",
-        "pointer": "#/paths/~1categories~1{id}/delete",
+        "name": "delete /attachments/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the attachment.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/attachments/{id}",
+        "pointer": "#/paths/~1attachments~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Delete category"
+        "summary": "Delete attachment",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a particular category by its ID.",
         "id": "operation:get:/categories/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /categories/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the category.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/categories/{id}",
         "pointer": "#/paths/~1categories~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Category"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get category"
+        "summary": "Get category",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a category by its ID.",
         "id": "operation:put:/categories/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /categories/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the category.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/categories/{id}",
         "pointer": "#/paths/~1categories~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Category"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update category"
+        "summary": "Update category",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a particular category by its ID.",
+        "id": "operation:delete:/categories/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /categories/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the category.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/categories/{id}",
+        "pointer": "#/paths/~1categories~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "developerKey": []
+          }
+        ],
+        "summary": "Delete category",
+        "tags": [
+          "Categories"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Creates a rule to allocate a category to transactions.",
         "id": "operation:post:/categories/{id}/category_rules",
         "kind": "operation",
         "method": "post",
         "name": "post /categories/{id}/category_rules",
+        "parameters": [
+          {
+            "description": "The unique identifier of the category.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/categories/{id}/category_rules",
         "pointer": "#/paths/~1categories~1{id}~1category_rules/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryRule"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Create category rule in category"
+        "summary": "Create category rule in category",
+        "tags": [
+          "Category Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists transactions belonging to one or more categories by their IDs.",
         "id": "operation:get:/categories/{id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /categories/{id}/transactions",
+        "parameters": [
+          {
+            "description": "A comma-separated list of category IDs.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions on or after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions on or before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions updated since an ISO 8601 timestamp.",
+            "in": "query",
+            "name": "updated_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to uncategorised transactions.",
+            "in": "query",
+            "name": "uncategorised",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions of this type.",
+            "enum": [
+              "debit",
+              "credit"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions that need to be reviewed.",
+            "in": "query",
+            "name": "needs_review",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions matching a keyword search string.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Choose a particular page of the results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/categories/{id}/transactions",
         "pointer": "#/paths/~1categories~1{id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Transaction[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List transactions in categories"
+        "summary": "List transactions in categories",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists currencies supported by PocketSmith.",
         "id": "operation:get:/currencies",
         "kind": "operation",
         "method": "get",
         "name": "get /currencies",
         "path": "/currencies",
         "pointer": "#/paths/~1currencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Currency[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List currencies"
+        "summary": "List currencies",
+        "tags": [
+          "Currencies"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a particular currency by its ID.",
         "id": "operation:get:/currencies/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /currencies/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the currency.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/currencies/{id}",
         "pointer": "#/paths/~1currencies~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Currency"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get currency"
+        "summary": "Get currency",
+        "tags": [
+          "Currencies"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/events/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /events/{id}",
-        "path": "/events/{id}",
-        "pointer": "#/paths/~1events~1{id}/delete",
-        "security": [
-          {
-            "developerKey": []
-          }
-        ],
-        "summary": "Delete event"
-      },
-      {
-        "deprecated": false,
+        "description": "Gets a particular event by its ID.",
         "id": "operation:get:/events/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /events/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the event.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/events/{id}",
         "pointer": "#/paths/~1events~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get event"
+        "summary": "Get event",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates an event by its ID.",
         "id": "operation:put:/events/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /events/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the event.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/events/{id}",
         "pointer": "#/paths/~1events~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update event"
+        "summary": "Update event",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/institutions/{id}",
+        "description": "Deletes an event by its ID.",
+        "id": "operation:delete:/events/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /institutions/{id}",
-        "path": "/institutions/{id}",
-        "pointer": "#/paths/~1institutions~1{id}/delete",
+        "name": "delete /events/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the event.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether the delete applies only to this event, to all events within the series from this event or to all events within the series.",
+            "enum": [
+              "one",
+              "forward",
+              "all"
+            ],
+            "in": "query",
+            "name": "behaviour",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/events/{id}",
+        "pointer": "#/paths/~1events~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Delete institution"
+        "summary": "Delete event",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets an institution by its ID.",
         "id": "operation:get:/institutions/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /institutions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/institutions/{id}",
         "pointer": "#/paths/~1institutions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Institution"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get institution"
+        "summary": "Get institution",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the title and currency code for an institution.",
         "id": "operation:put:/institutions/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /institutions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/institutions/{id}",
         "pointer": "#/paths/~1institutions~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Institution"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update institution"
+        "summary": "Update institution",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an institution and all data within.",
+        "id": "operation:delete:/institutions/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /institutions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The unique identifier of the institution to merge into.",
+            "in": "query",
+            "name": "merge_into_institution_id",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "path": "/institutions/{id}",
+        "pointer": "#/paths/~1institutions~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "developerKey": []
+          }
+        ],
+        "summary": "Delete institution",
+        "tags": [
+          "Institutions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Lists accounts belonging to an institution by its ID.",
         "id": "operation:get:/institutions/{id}/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /institutions/{id}/accounts",
+        "parameters": [
+          {
+            "description": "The unique identifier of the institution.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/institutions/{id}/accounts",
         "pointer": "#/paths/~1institutions~1{id}~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List accounts in institution"
+        "summary": "List accounts in institution",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the user that corresponds to the access token used in the request.",
         "id": "operation:get:/me",
         "kind": "operation",
         "method": "get",
         "name": "get /me",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get the authorised user"
+        "summary": "Get the authorised user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists events belonging to a scenario by their ID.",
         "id": "operation:get:/scenarios/{id}/events",
         "kind": "operation",
         "method": "get",
         "name": "get /scenarios/{id}/events",
+        "parameters": [
+          {
+            "description": "The unique identifier of the scenario.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Return the events from and including this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Return the events until and including this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scenarios/{id}/events",
         "pointer": "#/paths/~1scenarios~1{id}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List events in scenario."
+        "summary": "List events in scenario.",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an event in a scenario by its ID.",
         "id": "operation:post:/scenarios/{id}/events",
         "kind": "operation",
         "method": "post",
         "name": "post /scenarios/{id}/events",
+        "parameters": [
+          {
+            "description": "The unique identifier of the scenario.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/scenarios/{id}/events",
         "pointer": "#/paths/~1scenarios~1{id}~1events/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Event"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Create event in scenario"
+        "summary": "Create event in scenario",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists time zones.",
         "id": "operation:get:/time_zones",
         "kind": "operation",
         "method": "get",
         "name": "get /time_zones",
         "path": "/time_zones",
         "pointer": "#/paths/~1time_zones/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeZone[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List time zones"
+        "summary": "List time zones",
+        "tags": [
+          "Time Zones"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a transaction account by its ID.",
         "id": "operation:get:/transaction_accounts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /transaction_accounts/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transaction_accounts/{id}",
         "pointer": "#/paths/~1transaction_accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionAccount"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get transaction account"
+        "summary": "Get transaction account",
+        "tags": [
+          "Transaction Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the transaction account by its ID.",
         "id": "operation:put:/transaction_accounts/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /transaction_accounts/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transaction_accounts/{id}",
         "pointer": "#/paths/~1transaction_accounts~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionAccount"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update transaction account"
+        "summary": "Update transaction account",
+        "tags": [
+          "Transaction Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists transactions belonging to a transaction account by its ID.",
         "id": "operation:get:/transaction_accounts/{id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /transaction_accounts/{id}/transactions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions on or after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions on or before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions updated since an ISO 8601 timestamp.",
+            "in": "query",
+            "name": "updated_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to uncategorised transactions.",
+            "in": "query",
+            "name": "uncategorised",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions of this type.",
+            "enum": [
+              "debit",
+              "credit"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions that need to be reviewed.",
+            "in": "query",
+            "name": "needs_review",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions matching a keyword search string.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Choose a particular page of the results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/transaction_accounts/{id}/transactions",
         "pointer": "#/paths/~1transaction_accounts~1{id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Transaction[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List transactions in transaction account"
+        "summary": "List transactions in transaction account",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a transaction in a transaction account by its ID.",
         "id": "operation:post:/transaction_accounts/{id}/transactions",
         "kind": "operation",
         "method": "post",
         "name": "post /transaction_accounts/{id}/transactions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transaction_accounts/{id}/transactions",
         "pointer": "#/paths/~1transaction_accounts~1{id}~1transactions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Transaction"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Create a transaction in transaction account"
+        "summary": "Create a transaction in transaction account",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/transactions/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /transactions/{id}",
-        "path": "/transactions/{id}",
-        "pointer": "#/paths/~1transactions~1{id}/delete",
-        "security": [
-          {
-            "developerKey": []
-          }
-        ],
-        "summary": "Delete transaction"
-      },
-      {
-        "deprecated": false,
+        "description": "Gets a transaction by its ID.",
         "id": "operation:get:/transactions/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /transactions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transactions/{id}",
         "pointer": "#/paths/~1transactions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Transaction"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get a transaction"
+        "summary": "Get a transaction",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a transaction by its ID.",
         "id": "operation:put:/transactions/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /transactions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transactions/{id}",
         "pointer": "#/paths/~1transactions~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Transaction"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update a transaction"
+        "summary": "Update a transaction",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a transaction and all its data by ID.",
+        "id": "operation:delete:/transactions/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /transactions/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/transactions/{id}",
+        "pointer": "#/paths/~1transactions~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "developerKey": []
+          }
+        ],
+        "summary": "Delete transaction",
+        "tags": [
+          "Transactions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Lists attachments belonging to a transaction by their ID.",
         "id": "operation:get:/transactions/{id}/attachments",
         "kind": "operation",
         "method": "get",
         "name": "get /transactions/{id}/attachments",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transactions/{id}/attachments",
         "pointer": "#/paths/~1transactions~1{id}~1attachments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List attachments in transaction"
+        "summary": "List attachments in transaction",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Assigns an attachment to the transaction by their ID.",
         "id": "operation:post:/transactions/{id}/attachments",
         "kind": "operation",
         "method": "post",
         "name": "post /transactions/{id}/attachments",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transactions/{id}/attachments",
         "pointer": "#/paths/~1transactions~1{id}~1attachments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Attachment"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Assigns attachment to transaction"
+        "summary": "Assigns attachment to transaction",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Unassigns a particular attachment by its ID from the transaction ID.",
         "id": "operation:delete:/transactions/{transaction_id}/attachments/{attachment_id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /transactions/{transaction_id}/attachments/{attachment_id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the transaction.",
+            "in": "path",
+            "name": "transaction_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The unique identifier of the attachment.",
+            "in": "path",
+            "name": "attachment_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/transactions/{transaction_id}/attachments/{attachment_id}",
         "pointer": "#/paths/~1transactions~1{transaction_id}~1attachments~1{attachment_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Unassigns attachment in transaction"
+        "summary": "Unassigns attachment in transaction",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a user by ID.",
         "id": "operation:get:/users/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get user"
+        "summary": "Get user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the user by their ID.",
         "id": "operation:put:/users/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /users/{id}",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update user"
+        "summary": "Update user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists all accounts belonging to the user by their ID.",
         "id": "operation:get:/users/{id}/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/accounts",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/accounts",
         "pointer": "#/paths/~1users~1{id}~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List accounts in user"
+        "summary": "List accounts in user",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/users/{id}/accounts",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /users/{id}/accounts",
-        "path": "/users/{id}/accounts",
-        "pointer": "#/paths/~1users~1{id}~1accounts/post",
-        "security": [
-          {
-            "developerKey": []
-          }
-        ],
-        "summary": "Create an account in user"
-      },
-      {
-        "deprecated": false,
+        "description": "Updates the display order of accounts belonging to the user, by accepting an array of accounts in their new display order.",
         "id": "operation:put:/users/{id}/accounts",
         "kind": "operation",
         "method": "put",
         "name": "put /users/{id}/accounts",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/accounts",
         "pointer": "#/paths/~1users~1{id}~1accounts/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Update the display order of accounts in user"
+        "summary": "Update the display order of accounts in user",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates and returns an account belonging to the user by their ID.",
+        "id": "operation:post:/users/{id}/accounts",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /users/{id}/accounts",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/users/{id}/accounts",
+        "pointer": "#/paths/~1users~1{id}~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Account"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "developerKey": []
+          }
+        ],
+        "summary": "Create an account in user",
+        "tags": [
+          "Accounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Lists attachments belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/attachments",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/attachments",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "If set, returns unassigned attachments, that are available for assigning to a transaction.",
+            "in": "query",
+            "name": "unassigned",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/attachments",
         "pointer": "#/paths/~1users~1{id}~1attachments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Lists attachments in user"
+        "summary": "Lists attachments in user",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an attachment belonging to the user by their ID.",
         "id": "operation:post:/users/{id}/attachments",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{id}/attachments",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/attachments",
         "pointer": "#/paths/~1users~1{id}~1attachments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Create attachment in user"
+        "summary": "Create attachment in user",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the user's budget, consisting of one or more budget analysis packages, one per category.",
         "id": "operation:get:/users/{id}/budget",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/budget",
+        "parameters": [
+          {
+            "description": "The unique identifier of the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Whether parent categories should have their children rolled up into them.",
+            "in": "query",
+            "name": "roll_up",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/users/{id}/budget",
         "pointer": "#/paths/~1users~1{id}~1budget/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BudgetAnalysisPackage[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List budget for user"
+        "summary": "List budget for user",
+        "tags": [
+          "Budgeting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the user's budget summary, containing an expense and income analysis for all categories (excluding transfer categories) for the given period and date range.",
         "id": "operation:get:/users/{id}/budget_summary",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/budget_summary",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The period to analyse in, one of `weeks`, `months` or `years`.",
+            "enum": [
+              "weeks",
+              "months",
+              "years",
+              "event"
+            ],
+            "in": "query",
+            "name": "period",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The period interval, e.g.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The date to start analysing the budget from.",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date to stop analysing the budget from.",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}/budget_summary",
         "pointer": "#/paths/~1users~1{id}~1budget_summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BudgetAnalysisPackage[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get budget summary for user"
+        "summary": "Get budget summary for user",
+        "tags": [
+          "Budgeting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists all categories belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/categories",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/categories",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/categories",
         "pointer": "#/paths/~1users~1{id}~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Category[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List categories in user"
+        "summary": "List categories in user",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a category belonging to the user by their ID.",
         "id": "operation:post:/users/{id}/categories",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{id}/categories",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/categories",
         "pointer": "#/paths/~1users~1{id}~1categories/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Category"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Create category in user"
+        "summary": "Create category in user",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists all category rules belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/category_rules",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/category_rules",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/category_rules",
         "pointer": "#/paths/~1users~1{id}~1category_rules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryRule[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List category rules in user"
+        "summary": "List category rules in user",
+        "tags": [
+          "Category Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists events belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/events",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/events",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Return the events from and including this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Return the events until and including this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}/events",
         "pointer": "#/paths/~1users~1{id}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List events in user."
+        "summary": "List events in user.",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete the user's cached forecast by recalculating the forecast.",
         "id": "operation:delete:/users/{id}/forecast_cache",
         "kind": "operation",
         "method": "delete",
         "name": "delete /users/{id}/forecast_cache",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/forecast_cache",
         "pointer": "#/paths/~1users~1{id}~1forecast_cache/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Delete forecast cache for user"
+        "summary": "Delete forecast cache for user",
+        "tags": [
+          "Budgeting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists all the institutions belonging to the user.",
         "id": "operation:get:/users/{id}/institutions",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/institutions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/institutions",
         "pointer": "#/paths/~1users~1{id}~1institutions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Institution[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List institutions in user"
+        "summary": "List institutions in user",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an institution belonging to a user.",
         "id": "operation:post:/users/{id}/institutions",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{id}/institutions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/institutions",
         "pointer": "#/paths/~1users~1{id}~1institutions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Institution"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Create institution in user"
+        "summary": "Create institution in user",
+        "tags": [
+          "Institutions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists labels belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/labels",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/labels",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/labels",
         "pointer": "#/paths/~1users~1{id}~1labels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List labels in user"
+        "summary": "List labels in user",
+        "tags": [
+          "Labels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists saved searches belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/saved_searches",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/saved_searches",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/saved_searches",
         "pointer": "#/paths/~1users~1{id}~1saved_searches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SavedSearch[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List saved searches in user"
+        "summary": "List saved searches in user",
+        "tags": [
+          "Saved Searches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all transaction accounts belonging to a user.",
         "id": "operation:get:/users/{id}/transaction_accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/transaction_accounts",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/transaction_accounts",
         "pointer": "#/paths/~1users~1{id}~1transaction_accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionAccount[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List transaction accounts in user"
+        "summary": "List transaction accounts in user",
+        "tags": [
+          "Transaction Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists transactions belonging to a user by their ID.",
         "id": "operation:get:/users/{id}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/transactions",
+        "parameters": [
+          {
+            "description": "The unique identifier of the account.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions on or after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions on or before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions updated since an ISO 8601 timestamp.",
+            "in": "query",
+            "name": "updated_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to uncategorised transactions.",
+            "in": "query",
+            "name": "uncategorised",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions of this type.",
+            "enum": [
+              "debit",
+              "credit"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to transactions that need to be reviewed.",
+            "in": "query",
+            "name": "needs_review",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit to transactions matching a keyword search string.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Choose a particular page of the results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}/transactions",
         "pointer": "#/paths/~1users~1{id}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Transaction[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "List transactions in user"
+        "summary": "List transactions in user",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get an income and/or expense budget analysis for the given date range and period across any number of categories and scenarios.",
         "id": "operation:get:/users/{id}/trend_analysis",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/trend_analysis",
+        "parameters": [
+          {
+            "description": "The unique identifier of the user.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The period to analyse in, one of `weeks`, `months` or `years`.",
+            "enum": [
+              "weeks",
+              "months",
+              "years",
+              "event"
+            ],
+            "in": "query",
+            "name": "period",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The period interval, e.g.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The date to start analysing the budget from.",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date to stop analysing the budget from.",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of category IDs to analyse.",
+            "in": "query",
+            "name": "categories",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of scenario IDs to analyse.",
+            "in": "query",
+            "name": "scenarios",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}/trend_analysis",
         "pointer": "#/paths/~1users~1{id}~1trend_analysis/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BudgetAnalysisPackage[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "developerKey": []
           }
         ],
-        "summary": "Get trend analysis for user"
+        "summary": "Get trend analysis for user",
+        "tags": [
+          "Budgeting"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:Attachment",
         "kind": "schema",
-        "name": "Attachment"
+        "name": "Attachment",
+        "type": "object"
       },
       {
         "id": "schema:BudgetAnalysis",
         "kind": "schema",
-        "name": "BudgetAnalysis"
+        "name": "BudgetAnalysis",
+        "type": "object"
       },
       {
         "id": "schema:BudgetAnalysisPackage",
         "kind": "schema",
-        "name": "BudgetAnalysisPackage"
+        "name": "BudgetAnalysisPackage",
+        "type": "object"
       },
       {
         "id": "schema:Category",
         "kind": "schema",
-        "name": "Category"
+        "name": "Category",
+        "type": "object"
       },
       {
         "id": "schema:CategoryRule",
         "kind": "schema",
-        "name": "CategoryRule"
+        "name": "CategoryRule",
+        "type": "object"
       },
       {
         "id": "schema:Currency",
         "kind": "schema",
-        "name": "Currency"
+        "name": "Currency",
+        "type": "object"
       },
       {
         "id": "schema:CurrencySeparators",
         "kind": "schema",
-        "name": "CurrencySeparators"
+        "name": "CurrencySeparators",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
         "id": "schema:Institution",
         "kind": "schema",
-        "name": "Institution"
+        "name": "Institution",
+        "type": "object"
       },
       {
         "id": "schema:Period",
         "kind": "schema",
-        "name": "Period"
+        "name": "Period",
+        "type": "object"
       },
       {
         "id": "schema:SavedSearch",
         "kind": "schema",
-        "name": "SavedSearch"
+        "name": "SavedSearch",
+        "type": "object"
       },
       {
         "id": "schema:Scenario",
         "kind": "schema",
-        "name": "Scenario"
+        "name": "Scenario",
+        "type": "object"
       },
       {
         "id": "schema:TimeZone",
         "kind": "schema",
-        "name": "TimeZone"
+        "name": "TimeZone",
+        "type": "object"
       },
       {
         "id": "schema:Transaction",
         "kind": "schema",
-        "name": "Transaction"
+        "name": "Transaction",
+        "type": "object"
       },
       {
         "id": "schema:TransactionAccount",
         "kind": "schema",
-        "name": "TransactionAccount"
+        "name": "TransactionAccount",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

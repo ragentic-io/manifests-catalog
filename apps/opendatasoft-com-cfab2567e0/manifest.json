@@ -183,6 +183,26 @@
         "from": "opendatasoft-com-cfab2567e0",
         "kind": "EXPOSES",
         "to": "operation:get:/{source}/metadata_templates/{metadata_template_type}/{metadata_template_name}"
+      },
+      {
+        "from": "schema:datasets",
+        "kind": "REFERENCES",
+        "to": "schema:dataset"
+      },
+      {
+        "from": "schema:facet_enumeration",
+        "kind": "REFERENCES",
+        "to": "schema:facet_value_enumeration"
+      },
+      {
+        "from": "schema:links",
+        "kind": "REFERENCES",
+        "to": "schema:link"
+      },
+      {
+        "from": "schema:records",
+        "kind": "REFERENCES",
+        "to": "schema:record"
       }
     ],
     "nodes": [
@@ -192,12 +212,20 @@
       },
       {
         "deprecated": false,
+        "description": "API entry point Provides links for: * catalog, your domain's list of datasets * opendatasoft, all datasets on the Opendatasoft network",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "getRoot",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -206,16 +234,28 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "root",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all pages from this portal.",
         "id": "operation:get:/pages",
         "kind": "operation",
         "method": "get",
         "name": "getPages",
         "path": "/pages",
         "pointer": "#/paths/~1pages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -224,16 +264,37 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "page",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A single page's metadata from this portal",
         "id": "operation:get:/pages/{slug}",
         "kind": "operation",
         "method": "get",
         "name": "getPage",
+        "parameters": [
+          {
+            "description": "Page slug.",
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/pages/{slug}",
         "pointer": "#/paths/~1pages~1{slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -242,16 +303,43 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "page",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Source entry points Provides links for the source's datasets and metadata.",
         "id": "operation:get:/{source}",
         "kind": "operation",
         "method": "get",
         "name": "getSource",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}",
         "pointer": "#/paths/~1{source}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -260,16 +348,108 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Deprecated, use `/datasets` instead.**",
         "id": "operation:get:/{source}/aggregates",
         "kind": "operation",
         "method": "get",
         "name": "aggregateDatasets",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A group by expression defines a grouping function for an aggregation.",
+            "in": "query",
+            "name": "group_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/{source}/aggregates",
         "pointer": "#/paths/~1{source}~1aggregates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -278,16 +458,147 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "catalog",
+          "aggregations",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of available datasets, each with their endpoints, paginated.",
         "id": "operation:get:/{source}/datasets",
         "kind": "operation",
         "method": "get",
         "name": "getDatasets",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A group by expression defines a grouping function for an aggregation.",
+            "in": "query",
+            "name": "group_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/datasets",
         "pointer": "#/paths/~1{source}~1datasets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -296,16 +607,81 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of available endpoints for the specified dataset, with metadata and endpoints.",
         "id": "operation:get:/{source}/datasets/{dataset_id}",
         "kind": "operation",
         "method": "get",
         "name": "getDataset",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -314,16 +690,115 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Deprecated, use `/records` instead.**",
         "id": "operation:get:/{source}/datasets/{dataset_id}/aggregates",
         "kind": "operation",
         "method": "get",
         "name": "aggregateRecords",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A group by expression defines a grouping function for an aggregation.",
+            "in": "query",
+            "name": "group_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/aggregates",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1aggregates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -332,16 +807,51 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "aggregations",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get list of all available attachments",
         "id": "operation:get:/{source}/datasets/{dataset_id}/attachments",
         "kind": "operation",
         "method": "get",
         "name": "getDatasetAttachements",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/attachments",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1attachments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -350,16 +860,55 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download attachment",
         "id": "operation:get:/{source}/datasets/{dataset_id}/attachments/{attachment_id}",
         "kind": "operation",
         "method": "get",
         "name": "downloadDatasetAttachement",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "attachment_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/attachments/{attachment_id}",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1attachments~1{attachment_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -368,16 +917,136 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in CSV format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/csv",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsCSV",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": ";",
+            "description": "Provide a different delimiter (default ',').",
+            "enum": [
+              ",",
+              ";",
+              "|"
+            ],
+            "in": "query",
+            "name": "delimiter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/csv",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1csv/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -386,16 +1055,138 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in GEOJSON format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/geojson",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsGEOJSON",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/geojson",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1geojson/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -404,16 +1195,130 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in ICAL format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/ical",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsICAL",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/ical",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1ical/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -422,16 +1327,138 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in JSON format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/json",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsJSON",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/json",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -440,16 +1467,130 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in OV2 format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/ov2",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsOV2",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/ov2",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1ov2/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -458,16 +1599,130 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in Esri shapefile (shp) format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/shp",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsSHP",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/shp",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1shp/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -476,16 +1731,130 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export dataset in XLS (Excel) format",
         "id": "operation:get:/{source}/datasets/{dataset_id}/exports/xls",
         "kind": "operation",
         "method": "get",
         "name": "exportRecordsXLS",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": -1,
+            "description": "Number of items to return in export.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/exports/xls",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1exports~1xls/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -494,16 +1863,93 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Enumerate facets values for records and return a list of values for each facet.",
         "id": "operation:get:/{source}/datasets/{dataset_id}/facets",
         "kind": "operation",
         "method": "get",
         "name": "getRecordsFacets",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/facets",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1facets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -512,16 +1958,57 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "facet",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create new feedback entry.",
         "id": "operation:put:/{source}/datasets/{dataset_id}/feedback",
         "kind": "operation",
         "method": "put",
         "name": "sendDatasetFeedback",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/feedback",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1feedback/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -530,16 +2017,62 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download file",
         "id": "operation:get:/{source}/datasets/{dataset_id}/files/{file_id}",
         "kind": "operation",
         "method": "get",
         "name": "getDatasetFile",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set the size of the thumbnail representing the resource (attachment, image or file)",
+            "in": "query",
+            "name": "thumbnail_size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/files/{file_id}",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1files~1{file_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -548,16 +2081,145 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search dataset's records.",
         "id": "operation:get:/{source}/datasets/{dataset_id}/records",
         "kind": "operation",
         "method": "get",
         "name": "getRecords",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A group by expression defines a grouping function for an aggregation.",
+            "in": "query",
+            "name": "group_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "**Deprecated, use `order_by` instead.** A list of field names, each possibly prefixed with a minus (-).",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma-separated list of field names or aggregations to sort on, followed by an order (`asc` or `desc`).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/records",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -566,16 +2228,79 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a single record based on its ID.",
         "id": "operation:get:/{source}/datasets/{dataset_id}/records/{record_id}",
         "kind": "operation",
         "method": "get",
         "name": "getRecord",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "record_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A select expression can be used to add, remove or change fields to return.",
+            "in": "query",
+            "name": "select",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/records/{record_id}",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1records~1{record_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -584,16 +2309,74 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get list of reuses",
         "id": "operation:get:/{source}/datasets/{dataset_id}/reuses",
         "kind": "operation",
         "method": "get",
         "name": "getDatasetReuses",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/reuses",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1reuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -602,16 +2385,64 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a single reuse based on its ID.",
         "id": "operation:get:/{source}/datasets/{dataset_id}/reuses/{reuse_id}",
         "kind": "operation",
         "method": "get",
         "name": "getDatasetReuse",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "reuse_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/reuses/{reuse_id}",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1reuses~1{reuse_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -620,16 +2451,58 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all snapshots for this dataset.",
         "id": "operation:get:/{source}/datasets/{dataset_id}/snapshots",
         "kind": "operation",
         "method": "get",
         "name": "getDatasetSnapshots",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/snapshots",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1snapshots/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -638,16 +2511,63 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all snapshots for this dataset.",
         "id": "operation:get:/{source}/datasets/{dataset_id}/snapshots/{snapshot_id}",
         "kind": "operation",
         "method": "get",
         "name": "downloadDatasetSnapshot",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dataset identifier.",
+            "in": "path",
+            "name": "dataset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "snapshot_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/datasets/{dataset_id}/snapshots/{snapshot_id}",
         "pointer": "#/paths/~1{source}~1datasets~1{dataset_id}~1snapshots~1{snapshot_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -656,16 +2576,123 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dataset",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export catalog (source) in CSV format",
         "id": "operation:get:/{source}/exports/csv",
         "kind": "operation",
         "method": "get",
         "name": "exportDatasetsCSV",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": ";",
+            "description": "Provide a different delimiter (default ',').",
+            "enum": [
+              ",",
+              ";",
+              "|"
+            ],
+            "in": "query",
+            "name": "delimiter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/exports/csv",
         "pointer": "#/paths/~1{source}~1exports~1csv/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -674,16 +2701,118 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export catalog (source) in JSON format",
         "id": "operation:get:/{source}/exports/json",
         "kind": "operation",
         "method": "get",
         "name": "exportDatasetsJson",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "description": "Activate pretty print",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/exports/json",
         "pointer": "#/paths/~1{source}~1exports~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -692,16 +2821,110 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export catalog (source) in RDF/XML format",
         "id": "operation:get:/{source}/exports/rdf",
         "kind": "operation",
         "method": "get",
         "name": "exportDatasetsRDF",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/exports/rdf",
         "pointer": "#/paths/~1{source}~1exports~1rdf/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -710,16 +2933,110 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export catalog (source) in RSS format",
         "id": "operation:get:/{source}/exports/rss",
         "kind": "operation",
         "method": "get",
         "name": "exportDatasetsRSS",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/exports/rss",
         "pointer": "#/paths/~1{source}~1exports~1rss/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -728,16 +3045,110 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export catalog (source) in TTL (turtle/rdf) format",
         "id": "operation:get:/{source}/exports/ttl",
         "kind": "operation",
         "method": "get",
         "name": "exportDatasetsTTL",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/exports/ttl",
         "pointer": "#/paths/~1{source}~1exports~1ttl/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -746,16 +3157,110 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export catalog (source) in XLS (Excel) format",
         "id": "operation:get:/{source}/exports/xls",
         "kind": "operation",
         "method": "get",
         "name": "exportDatasetsXLS",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 10,
+            "description": "Number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Index of the first item to return (starting at 0).",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Explicitely request application metas for each datasets.",
+            "in": "query",
+            "name": "include_app_metas",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/{source}/exports/xls",
         "pointer": "#/paths/~1{source}~1exports~1xls/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -764,16 +3269,86 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export catalog",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Enumerate facets values for datasets and return a list of values for each facet.",
         "id": "operation:get:/{source}/facets",
         "kind": "operation",
         "method": "get",
         "name": "getDatasetsFacets",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A facet is a field used for simple filtering (through the parameters refine and exclude) or exploration (with the endpoint `/facets`).",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "refine",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of facet filters.",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of filters.",
+            "in": "query",
+            "name": "where",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of full text search.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "UTC",
+            "description": "Set timezone for datetime fields",
+            "in": "query",
+            "name": "timezone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/facets",
         "pointer": "#/paths/~1{source}~1facets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -782,16 +3357,44 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "catalog",
+          "facet",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of available metadata templates types, each with their endpoints.",
         "id": "operation:get:/{source}/metadata_templates",
         "kind": "operation",
         "method": "get",
         "name": "getMetadataTemplatesTypes",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/metadata_templates",
         "pointer": "#/paths/~1{source}~1metadata_templates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -800,16 +3403,55 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "metadata",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of metadata templates available for this type.",
         "id": "operation:get:/{source}/metadata_templates/{metadata_template_type}",
         "kind": "operation",
         "method": "get",
         "name": "getMetadataTemplatesType",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "basic",
+            "enum": [
+              "basic",
+              "interop",
+              "extra"
+            ],
+            "in": "path",
+            "name": "metadata_template_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/metadata_templates/{metadata_template_type}",
         "pointer": "#/paths/~1{source}~1metadata_templates~1{metadata_template_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -818,16 +3460,61 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "metadata",
+          "ods"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A single metadata_template",
         "id": "operation:get:/{source}/metadata_templates/{metadata_template_type}/{metadata_template_name}",
         "kind": "operation",
         "method": "get",
         "name": "getMetadataTemplate",
+        "parameters": [
+          {
+            "default": "catalog",
+            "description": "Each source represents a different catalog of datasets you'll be able to query.",
+            "enum": [
+              "catalog",
+              "opendatasoft",
+              "monitoring"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "basic",
+            "enum": [
+              "basic",
+              "interop",
+              "extra"
+            ],
+            "in": "path",
+            "name": "metadata_template_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "metadata_template_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{source}/metadata_templates/{metadata_template_type}/{metadata_template_name}",
         "pointer": "#/paths/~1{source}~1metadata_templates~1{metadata_template_type}~1{metadata_template_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -836,87 +3523,110 @@
             "basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "metadata",
+          "ods"
+        ]
       },
       {
+        "description": "Result of an aggregation request.",
         "id": "schema:aggregation",
         "kind": "schema",
-        "name": "aggregation"
+        "name": "aggregation",
+        "type": "object"
       },
       {
         "id": "schema:attachment",
         "kind": "schema",
-        "name": "attachment"
+        "name": "attachment",
+        "type": "object"
       },
       {
         "id": "schema:dataset",
         "kind": "schema",
-        "name": "dataset"
+        "name": "dataset",
+        "type": "object"
       },
       {
         "id": "schema:datasets",
         "kind": "schema",
-        "name": "datasets"
+        "name": "datasets",
+        "type": "dataset[]"
       },
       {
         "id": "schema:facet_enumeration",
         "kind": "schema",
-        "name": "facet_enumeration"
+        "name": "facet_enumeration",
+        "type": "object"
       },
       {
         "id": "schema:facet_value_enumeration",
         "kind": "schema",
-        "name": "facet_value_enumeration"
+        "name": "facet_value_enumeration",
+        "type": "object"
       },
       {
         "id": "schema:link",
         "kind": "schema",
-        "name": "link"
+        "name": "link",
+        "type": "object"
       },
       {
         "id": "schema:links",
         "kind": "schema",
-        "name": "links"
+        "name": "links",
+        "type": "link[]"
       },
       {
         "id": "schema:metadata_template",
         "kind": "schema",
-        "name": "metadata_template"
+        "name": "metadata_template",
+        "type": "object"
       },
       {
         "id": "schema:page",
         "kind": "schema",
-        "name": "page"
+        "name": "page",
+        "type": "object"
       },
       {
+        "description": "Query string using the query language.",
         "id": "schema:query_string",
         "kind": "schema",
-        "name": "query_string"
+        "name": "query_string",
+        "type": "string"
       },
       {
         "id": "schema:record",
         "kind": "schema",
-        "name": "record"
+        "name": "record",
+        "type": "object"
       },
       {
         "id": "schema:records",
         "kind": "schema",
-        "name": "records"
+        "name": "records",
+        "type": "record[]"
       },
       {
         "id": "schema:reuse",
         "kind": "schema",
-        "name": "reuse"
+        "name": "reuse",
+        "type": "object"
       },
       {
         "id": "schema:snapshot",
         "kind": "schema",
-        "name": "snapshot"
+        "name": "snapshot",
+        "type": "object"
       },
       {
+        "description": "A timezone If used as a parameter, defines the timezone the calculations will be performed in.",
         "id": "schema:timezone",
         "kind": "schema",
-        "name": "timezone"
+        "name": "timezone",
+        "type": "string"
       }
     ]
   },

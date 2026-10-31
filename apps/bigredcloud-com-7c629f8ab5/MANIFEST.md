@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_bigredcloud_com_wp-content_
 
 | | |
 | --- | --- |
-| Signed bundle | `4e3e6f477562924c3e00c20a7a384b655405eb851842c39b5f6072b24f5da081` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,116 +34,118 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_bigredcloud_com_wp-content_
 
 152 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/accounts` | Accounts_Get | Returns a list of company's Accounts. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "code" fields. |
-| GET | `/v1/analysisCategories` | AnalysisCategories_Get | Returns a list of company's Analysis Categories. Supports OData querying protocol. Filtering is allowed by "categoryTypeId" field. Ordering is allowed by "id" and "orderIndex" fields. |
-| GET | `/v1/bankAccounts` | BankAccounts_Get | Returns a list of company's Bank Account. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "acCode" fields. |
-| POST | `/v1/bankAccounts` | BankAccounts_Post | Creates a new Bank Account. |
-| PUT | `/v1/bankAccounts/batch` | BankAccounts_ProcessBatch | Processes a batch of Bank Accounts. |
-| DELETE | `/v1/bankAccounts/{id}` | BankAccounts_Delete | Removes an existing Bank Account. |
-| GET | `/v1/bankAccounts/{id}` | get /v1/bankAccounts/{id} | Returns information about a single Bank Account. |
-| PUT | `/v1/bankAccounts/{id}` | BankAccounts_Put | Updates an existing Bank Account. |
-| GET | `/v1/bookTranTypes` | BookTranTypes_Get | Returns a list of global Book Transactions' Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| GET | `/v1/cashPayments` | CashPayments_Get | Returns a list of company's Cash Payments. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/cashPayments` | CashPayments_Post | Creates a new Cash Payment. |
-| PUT | `/v1/cashPayments/batch` | CashPayments_ProcessBatch | Processes a batch of Cash Payments. |
-| DELETE | `/v1/cashPayments/{id}` | CashPayments_Delete | Removes an existing Cash Payment. |
-| GET | `/v1/cashPayments/{id}` | get /v1/cashPayments/{id} | Returns information about a single Cash Payment. |
-| PUT | `/v1/cashPayments/{id}` | CashPayments_Put | Updates an existing Cash Payment. |
-| GET | `/v1/cashReceipts` | CashReceipts_Get | Returns a list of company's Cash Receipts. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/cashReceipts` | CashReceipts_Post | Creates a new Cash Receipt. |
-| PUT | `/v1/cashReceipts/batch` | CashReceipts_ProcessBatch | Processes a batch of Cash Receipts. |
-| DELETE | `/v1/cashReceipts/{id}` | CashReceipts_Delete | Removes an existing Cash Receipt. |
-| GET | `/v1/cashReceipts/{id}` | get /v1/cashReceipts/{id} | Returns information about a single Cash Receipt. |
-| PUT | `/v1/cashReceipts/{id}` | CashReceipts_Put | Updates an existing Cash Receipt. |
-| GET | `/v1/categoryTypes` | CategoryTypes_Get | Returns a list of company's Category Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| GET | `/v1/companySettings` | CompanySettings_Get | Returns a list of company settings. Supports OData querying protocol. Filtering is forbidden. |
-| GET | `/v1/companySetupConfig` | CompanySetupConfig_Get | Returns the company configuration settings. |
-| GET | `/v1/companySetupConfig/getCompanyOptions` | CompanySetupConfig_GetCompanyOptions | Returns the company option setting. |
-| GET | `/v1/companySetupConfig/getFinancialYear` | CompanySetupConfig_GetFinancialYear | Returns the financial year. |
-| GET | `/v1/customers` | Customers_Get | Returns a list of company's Customers. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "code" fields. |
-| POST | `/v1/customers` | Customers_Post | Creates a new Customer. |
-| PUT | `/v1/customers/batch` | Customers_ProcessBatch | Processes a batch of Customers. |
-| DELETE | `/v1/customers/{id}` | Customers_Delete | Removes an existing Customer. |
-| GET | `/v1/customers/{id}` | get /v1/customers/{id} | Returns information about a single Customer. You may specify that Customer's ledger balance should be calculated. |
-| PUT | `/v1/customers/{id}` | Customers_Put | Updates an existing Customer. |
-| GET | `/v1/customers/{itemId}/accountTrans` | Customers_GetAccountTrans | Returns a list of Customer's account transactions. |
-| GET | `/v1/customers/{itemId}/openingBalance` | Customers_GetOpeningBalance | Returns a Customer's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old. |
-| GET | `/v1/customers/{itemId}/openingBalanceList` | Customers_GetOpeningBalanceList | Returns a list of Customer's opening balance transactions. |
-| GET | `/v1/customers/{itemId}/quotes` | Customers_GetQuotes | Returns a list of Customer's quotes. |
-| POST | `/v1/email/sendEmailStatement` | Email_SendEmailStatement | Sends a Statement email. If "toAddress" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address. |
-| POST | `/v1/email/sendQuote` | Email_SendQuote | Sends a Quote email. If "toAddress" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address. |
-| POST | `/v1/email/sendSalesInvoice` | Email_SendSalesInvoice | Sends a Sales Invoice email. If "toAddress" is not empty then email will be sent to this address. Otherwise email will be sent to Sales Invoice Customer's address. |
-| GET | `/v1/ownerTypeGroups` | OwnerTypeGroups_Get | Returns a list of global Owner Type Groups. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| GET | `/v1/ownerTypes` | OwnerTypes_Get | Returns a list of global Owner Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| GET | `/v1/payments` | Payments_Get | Returns a list of company's Payments. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/payments` | Payments_Post | Creates a new Payment. |
-| PUT | `/v1/payments/batch` | Payments_ProcessBatch | Processes a batch of Payments. |
-| DELETE | `/v1/payments/{id}` | Payments_Delete | Removes an existing Payment. |
-| GET | `/v1/payments/{id}` | get /v1/payments/{id} | Returns information about a single Payments. |
-| PUT | `/v1/payments/{id}` | Payments_Put | Updates an existing Payment. |
-| GET | `/v1/productTypes` | ProductTypes_Get | Returns a list of global Product Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| GET | `/v1/products` | Products_Get | Returns a list of company's Products. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "stockCode" fields. |
-| POST | `/v1/products` | Products_Post | Creates a new Product. |
-| PUT | `/v1/products/batch` | Products_ProcessBatch | Processes a batch of Products. |
-| DELETE | `/v1/products/{id}` | Products_Delete | Removes an existing Product. |
-| GET | `/v1/products/{id}` | get /v1/products/{id} | Returns information about a single Product. |
-| PUT | `/v1/products/{id}` | Products_Put | Updates an existing Product. |
-| GET | `/v1/purchases` | Purchases_Get | Returns a list of company's Purchases. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/purchases` | Purchases_Post | Creates a new Purchase. |
-| PUT | `/v1/purchases/batch` | Purchases_ProcessBatch | Processes a batch of Purchases. |
-| DELETE | `/v1/purchases/{id}` | Purchases_Delete | Removes an existing Purchase. |
-| GET | `/v1/purchases/{id}` | get /v1/purchases/{id} | Returns information about a single Purchases. |
-| PUT | `/v1/purchases/{id}` | Purchases_Put | Updates an existing Purchase. |
-| GET | `/v1/quotes` | Quote_Get | Returns a list of company's Quotes. Filtering is forbidden. Ordering is allowed by "id". |
-| POST | `/v1/quotes` | Quote_Post | Creates a new Quote. |
-| PUT | `/v1/quotes/batch` | Quote_ProcessBatch | Processes a batch of Quote. |
-| PUT | `/v1/quotes/close/{id}` | Quote_Close | Close a Quote. |
-| POST | `/v1/quotes/createQuoteWithGeneratingReference` | Quote_Post_CreateQuoteWithGeneratingReference | Creates a new Quote with auto generating reference. |
-| POST | `/v1/quotes/generateSaleInvoice` | Quote_Post_GenerateSaleInvoice | Generate a sale invoice from a Quote. When sale invoice is empty, new sale invoice will be generated from Quote. |
-| PUT | `/v1/quotes/reopen/{id}` | Quote_Reopen | Reopen a Quote. |
-| DELETE | `/v1/quotes/{id}` | Quote_Delete | Removes an existing Quote. |
-| GET | `/v1/quotes/{id}` | get /v1/quotes/{id} | Returns information about a single Quote. |
-| PUT | `/v1/quotes/{id}` | Quote_Put | Updates an existing Quote. |
-| GET | `/v1/sales` | Sales_Get | Returns a list of company's Sales Entries, Sales Invoices and Sales Credit Notes. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| GET | `/v1/salesCreditNotes` | SalesCreditNotes_Get | Returns a list of company's Sales Credit Notes. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/salesCreditNotes` | SalesCreditNotes_Post | Creates a new Sales Credit Note. |
-| PUT | `/v1/salesCreditNotes/batch` | SalesCreditNotes_ProcessBatch | Processes a batch of Sales Credit Notes. |
-| DELETE | `/v1/salesCreditNotes/{id}` | SalesCreditNotes_Delete | Removes an existing Sales Credit Note. |
-| GET | `/v1/salesCreditNotes/{id}` | get /v1/salesCreditNotes/{id} | Returns information about a single Sales Credit Note. |
-| PUT | `/v1/salesCreditNotes/{id}` | SalesCreditNotes_Put | Updates an existing Sales Credit Note. |
-| GET | `/v1/salesEntries` | SalesEntries_Get | Returns a list of company's Sales Entries. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/salesEntries` | SalesEntries_Post | Creates a new Sales Entry. |
-| PUT | `/v1/salesEntries/batch` | SalesEntries_ProcessBatch | Processes a batch of Sales Entries. |
-| DELETE | `/v1/salesEntries/{id}` | SalesEntries_Delete | Removes an existing Sales Entry. |
-| GET | `/v1/salesEntries/{id}` | get /v1/salesEntries/{id} | Returns information about a single Sales Entry. |
-| PUT | `/v1/salesEntries/{id}` | SalesEntries_Put | Updates an existing Sales Entry. |
-| GET | `/v1/salesInvoices` | SalesInvoices_Get | Returns a list of company's Sales Invoices. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
-| POST | `/v1/salesInvoices` | SalesInvoices_Post | Creates a new Sales Invoice. |
-| PUT | `/v1/salesInvoices/batch` | SalesInvoices_ProcessBatch | Processes a batch of Sales Invoices. |
-| POST | `/v1/salesInvoices/createSaleInvoiceWithGeneratingReference` | SalesInvoices_Post_CreateSaleInvoiceWithGeneratingReference | Creates a new Sale Invoice with auto generating reference. |
-| DELETE | `/v1/salesInvoices/{id}` | SalesInvoices_Delete | Removes an existing Sales Invoice. |
-| GET | `/v1/salesInvoices/{id}` | get /v1/salesInvoices/{id} | Returns information about a single Sales Invoice. |
-| PUT | `/v1/salesInvoices/{id}` | SalesInvoices_Put | Updates an existing Sales Invoice. |
-| GET | `/v1/salesReps` | SalesRep_Get | Returns a list of company's SaleRep. Filtering is forbidden. Ordering is allowed by "id". |
-| POST | `/v1/salesReps` | SalesRep_Post | Creates a new SaleRep. |
-| PUT | `/v1/salesReps/batch` | SalesRep_ProcessBatch | Processes a batch of Sale Rep. |
-| DELETE | `/v1/salesReps/{id}` | SalesRep_Delete | Removes an existing Sale Rep. |
-| GET | `/v1/salesReps/{id}` | get /v1/salesReps/{id} | Returns information about a single SaleRep. |
-| PUT | `/v1/salesReps/{id}` | SalesRep_Put | Updates an existing Sale Rep. |
-| GET | `/v1/suppliers` | Suppliers_Get | Returns a list of company's Suppliers. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "code" fields. |
-| POST | `/v1/suppliers` | Suppliers_Post | Creates a new Supplier. |
-| PUT | `/v1/suppliers/batch` | Suppliers_ProcessBatch | Processes a batch of Suppliers. |
-| DELETE | `/v1/suppliers/{id}` | Suppliers_Delete | Removes an existing Supplier. |
-| GET | `/v1/suppliers/{id}` | get /v1/suppliers/{id} | Returns information about a single Supplier. You may specify that Supplier's ledger balance should be calculated. |
-| PUT | `/v1/suppliers/{id}` | Suppliers_Put | Updates an existing Supplier. |
-| GET | `/v1/suppliers/{itemId}/accountTrans` | Suppliers_GetAccountTrans | Returns a list of Supplier's account transactions. |
-| GET | `/v1/suppliers/{itemId}/openingBalance` | Suppliers_GetOpeningBalance | Returns a Supplier's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old. |
-| GET | `/v1/suppliers/{itemId}/openingBalanceList` | Suppliers_GetOpeningBalanceList | Returns a list of Supplier's opening balance transactions. |
-| GET | `/v1/userDefinedFields` | UserDefinedFields_Get | Returns a list of company's User Defined Fields. Supports OData querying protocol. Filtering is allowed by "categoryTypeId" field. Ordering is allowed by "id" and "orderIndex" fields. |
-| GET | `/v1/vatAnalysisTypes` | VatAnalysisTypes_Get | Returns a list of global Vat Analysis Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| GET | `/v1/vatCategories` | VatCategories_Get | Returns a list of global Vat Categories. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
-| POST | `/v1/vatCategories/vatRates` | VatCategories_ProcessVatRates | Process Vat Rates |
-| GET | `/v1/vatRates` | VatRates_Get | Returns a list of company's Vat Rates. Supports OData querying protocol. Filtering is allowed by "vatCategoryId" field. Ordering is allowed by "id" and "orderIndex" fields. |
-| GET | `/v1/vatTypes` | VatTypes_Get | Returns a list of global Vat Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/accounts` | Accounts_Get | — | PageResult_AccountDto_ | yes | Returns a list of company's Accounts. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "code" fields. |
+| GET | `/v1/analysisCategories` | AnalysisCategories_Get | — | PageResult_AnalysisCategoryDto_ | yes | Returns a list of company's Analysis Categories. Supports OData querying protocol. Filtering is allowed by "categoryTypeId" field. Ordering is allowed by "id" and "orderIndex" fields. |
+| GET | `/v1/bankAccounts` | BankAccounts_Get | — | PageResult_BankAccountQueryDto_ | yes | Returns a list of company's Bank Account. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "acCode" fields. |
+| POST | `/v1/bankAccounts` | BankAccounts_Post | body*: BankAccountDto | object |  | Creates a new Bank Account. |
+| PUT | `/v1/bankAccounts/batch` | BankAccounts_ProcessBatch | body*: BatchItem_BankAccountDto_[] | object |  | Processes a batch of Bank Accounts. |
+| GET | `/v1/bankAccounts/{id}` | get /v1/bankAccounts/{id} | `id`* | BankAccountDto | yes | Returns information about a single Bank Account. |
+| PUT | `/v1/bankAccounts/{id}` | BankAccounts_Put | `id`*, body*: BankAccountDto | object |  | Updates an existing Bank Account. |
+| DELETE | `/v1/bankAccounts/{id}` | BankAccounts_Delete | `id`*, `timestamp`* | object |  | Removes an existing Bank Account. |
+| GET | `/v1/bookTranTypes` | BookTranTypes_Get | — | PageResult_BookTranTypeDto_ | yes | Returns a list of global Book Transactions' Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| GET | `/v1/cashPayments` | CashPayments_Get | — | PageResult_CashPaymentQueryDto_ | yes | Returns a list of company's Cash Payments. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/cashPayments` | CashPayments_Post | body*: CashPaymentDto | object |  | Creates a new Cash Payment. |
+| PUT | `/v1/cashPayments/batch` | CashPayments_ProcessBatch | body*: BatchItem_CashPaymentDto_[] | object |  | Processes a batch of Cash Payments. |
+| GET | `/v1/cashPayments/{id}` | get /v1/cashPayments/{id} | `id`* | CashPaymentDto | yes | Returns information about a single Cash Payment. |
+| PUT | `/v1/cashPayments/{id}` | CashPayments_Put | `id`*, body*: CashPaymentDto | object |  | Updates an existing Cash Payment. |
+| DELETE | `/v1/cashPayments/{id}` | CashPayments_Delete | `id`*, `timestamp`* | object |  | Removes an existing Cash Payment. |
+| GET | `/v1/cashReceipts` | CashReceipts_Get | — | PageResult_CashReceiptQueryDto_ | yes | Returns a list of company's Cash Receipts. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/cashReceipts` | CashReceipts_Post | body*: CashReceiptDto | object |  | Creates a new Cash Receipt. |
+| PUT | `/v1/cashReceipts/batch` | CashReceipts_ProcessBatch | body*: BatchItem_CashReceiptDto_[] | object |  | Processes a batch of Cash Receipts. |
+| GET | `/v1/cashReceipts/{id}` | get /v1/cashReceipts/{id} | `id`* | CashReceiptDto | yes | Returns information about a single Cash Receipt. |
+| PUT | `/v1/cashReceipts/{id}` | CashReceipts_Put | `id`*, body*: CashReceiptDto | object |  | Updates an existing Cash Receipt. |
+| DELETE | `/v1/cashReceipts/{id}` | CashReceipts_Delete | `id`*, `timestamp`* | object |  | Removes an existing Cash Receipt. |
+| GET | `/v1/categoryTypes` | CategoryTypes_Get | — | PageResult_CategoryTypeDto_ | yes | Returns a list of company's Category Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| GET | `/v1/companySettings` | CompanySettings_Get | — | PageResult_CompanySettingDto_ | yes | Returns a list of company settings. Supports OData querying protocol. Filtering is forbidden. |
+| GET | `/v1/companySetupConfig` | CompanySetupConfig_Get | — | CompanySetupConfigViewModel | yes | Returns the company configuration settings. |
+| GET | `/v1/companySetupConfig/getCompanyOptions` | CompanySetupConfig_GetCompanyOptions | — | CompanyOptionDto | yes | Returns the company option setting. |
+| GET | `/v1/companySetupConfig/getFinancialYear` | CompanySetupConfig_GetFinancialYear | — | FinancialYearDto | yes | Returns the financial year. |
+| GET | `/v1/customers` | Customers_Get | — | PageResult_CustomerQueryDto_ | yes | Returns a list of company's Customers. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "code" fields. |
+| POST | `/v1/customers` | Customers_Post | body*: CustomerDto | object |  | Creates a new Customer. |
+| PUT | `/v1/customers/batch` | Customers_ProcessBatch | body*: BatchItem_CustomerDto_[] | object |  | Processes a batch of Customers. |
+| GET | `/v1/customers/{id}` | get /v1/customers/{id} | `id`*, `needBalance` | CustomerDto | yes | Returns information about a single Customer. You may specify that Customer's ledger balance should be calculated. |
+| PUT | `/v1/customers/{id}` | Customers_Put | `id`*, body*: CustomerDto | object |  | Updates an existing Customer. |
+| DELETE | `/v1/customers/{id}` | Customers_Delete | `id`*, `timestamp`* | object |  | Removes an existing Customer. |
+| GET | `/v1/customers/{itemId}/accountTrans` | Customers_GetAccountTrans | `itemId`* | AccountTranDto[] | yes | Returns a list of Customer's account transactions. |
+| GET | `/v1/customers/{itemId}/openingBalance` | Customers_GetOpeningBalance | `itemId`* | OwnerOpeningBalanceInPeriodsDto | yes | Returns a Customer's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old. |
+| GET | `/v1/customers/{itemId}/openingBalanceList` | Customers_GetOpeningBalanceList | `itemId`* | OwnerOpeningBalanceDto[] | yes | Returns a list of Customer's opening balance transactions. |
+| GET | `/v1/customers/{itemId}/quotes` | Customers_GetQuotes | `itemId`* | QuoteDto[] | yes | Returns a list of Customer's quotes. |
+| POST | `/v1/email/sendEmailStatement` | Email_SendEmailStatement | body*: EmailStatementDto | object |  | Sends a Statement email. If "toAddress" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address. |
+| POST | `/v1/email/sendQuote` | Email_SendQuote | body*: EmailQuoteDto | object |  | Sends a Quote email. If "toAddress" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address. |
+| POST | `/v1/email/sendSalesInvoice` | Email_SendSalesInvoice | body*: SalesInvoiceEmailInfoDto | object |  | Sends a Sales Invoice email. If "toAddress" is not empty then email will be sent to this address. Otherwise email will be sent to Sales Invoice Customer's address. |
+| GET | `/v1/ownerTypeGroups` | OwnerTypeGroups_Get | — | PageResult_OwnerTypeGroupDto_ | yes | Returns a list of global Owner Type Groups. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| GET | `/v1/ownerTypes` | OwnerTypes_Get | — | PageResult_OwnerTypeDto_ | yes | Returns a list of global Owner Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| GET | `/v1/payments` | Payments_Get | — | PageResult_PaymentQueryDto_ | yes | Returns a list of company's Payments. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/payments` | Payments_Post | body*: PaymentDto | object |  | Creates a new Payment. |
+| PUT | `/v1/payments/batch` | Payments_ProcessBatch | body*: BatchItem_PaymentDto_[] | object |  | Processes a batch of Payments. |
+| GET | `/v1/payments/{id}` | get /v1/payments/{id} | `id`* | PaymentDto | yes | Returns information about a single Payments. |
+| PUT | `/v1/payments/{id}` | Payments_Put | `id`*, body*: PaymentDto | object |  | Updates an existing Payment. |
+| DELETE | `/v1/payments/{id}` | Payments_Delete | `id`*, `timestamp`* | object |  | Removes an existing Payment. |
+| GET | `/v1/productTypes` | ProductTypes_Get | — | PageResult_OwnerTypeDto_ | yes | Returns a list of global Product Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| GET | `/v1/products` | Products_Get | — | PageResult_ProductDto_ | yes | Returns a list of company's Products. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "stockCode" fields. |
+| POST | `/v1/products` | Products_Post | body*: ProductDto | object |  | Creates a new Product. |
+| PUT | `/v1/products/batch` | Products_ProcessBatch | body*: BatchItem_ProductDto_[] | object |  | Processes a batch of Products. |
+| GET | `/v1/products/{id}` | get /v1/products/{id} | `id`* | ProductDto | yes | Returns information about a single Product. |
+| PUT | `/v1/products/{id}` | Products_Put | `id`*, body*: ProductDto | object |  | Updates an existing Product. |
+| DELETE | `/v1/products/{id}` | Products_Delete | `id`*, `timestamp`* | object |  | Removes an existing Product. |
+| GET | `/v1/purchases` | Purchases_Get | — | PageResult_PurchaseQueryDto_ | yes | Returns a list of company's Purchases. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/purchases` | Purchases_Post | body*: PurchaseDto | object |  | Creates a new Purchase. |
+| PUT | `/v1/purchases/batch` | Purchases_ProcessBatch | body*: BatchItem_PurchaseDto_[] | object |  | Processes a batch of Purchases. |
+| GET | `/v1/purchases/{id}` | get /v1/purchases/{id} | `id`* | PurchaseDto | yes | Returns information about a single Purchases. |
+| PUT | `/v1/purchases/{id}` | Purchases_Put | `id`*, body*: PurchaseDto | object |  | Updates an existing Purchase. |
+| DELETE | `/v1/purchases/{id}` | Purchases_Delete | `id`*, `timestamp`* | object |  | Removes an existing Purchase. |
+| GET | `/v1/quotes` | Quote_Get | — | PageResult_QuoteDto_ | yes | Returns a list of company's Quotes. Filtering is forbidden. Ordering is allowed by "id". |
+| POST | `/v1/quotes` | Quote_Post | body*: QuoteDto | object |  | Creates a new Quote. |
+| PUT | `/v1/quotes/batch` | Quote_ProcessBatch | body*: BatchItem_QuoteDto_[] | object |  | Processes a batch of Quote. |
+| PUT | `/v1/quotes/close/{id}` | Quote_Close | `id`* | object |  | Close a Quote. |
+| POST | `/v1/quotes/createQuoteWithGeneratingReference` | Quote_Post_CreateQuoteWithGeneratingReference | body*: QuoteDto | object |  | Creates a new Quote with auto generating reference. |
+| POST | `/v1/quotes/generateSaleInvoice` | Quote_Post_GenerateSaleInvoice | body*: QuoteGeneratingInvoiceDto | object |  | Generate a sale invoice from a Quote. When sale invoice is empty, new sale invoice will be generated from Quote. |
+| PUT | `/v1/quotes/reopen/{id}` | Quote_Reopen | `id`* | object |  | Reopen a Quote. |
+| GET | `/v1/quotes/{id}` | get /v1/quotes/{id} | `id`* | QuoteDto | yes | Returns information about a single Quote. |
+| PUT | `/v1/quotes/{id}` | Quote_Put | `id`*, body*: QuoteDto | object |  | Updates an existing Quote. |
+| DELETE | `/v1/quotes/{id}` | Quote_Delete | `id`*, `timestamp`* | object |  | Removes an existing Quote. |
+| GET | `/v1/sales` | Sales_Get | — | PageResult_SalesQueryDto_ | yes | Returns a list of company's Sales Entries, Sales Invoices and Sales Credit Notes. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| GET | `/v1/salesCreditNotes` | SalesCreditNotes_Get | — | PageResult_SalesCreditNoteQueryDto_ | yes | Returns a list of company's Sales Credit Notes. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/salesCreditNotes` | SalesCreditNotes_Post | body*: SalesInvoiceCreditNoteDto | object |  | Creates a new Sales Credit Note. |
+| PUT | `/v1/salesCreditNotes/batch` | SalesCreditNotes_ProcessBatch | body*: BatchItem_SalesInvoiceCreditNoteDto_[] | object |  | Processes a batch of Sales Credit Notes. |
+| GET | `/v1/salesCreditNotes/{id}` | get /v1/salesCreditNotes/{id} | `id`* | SalesInvoiceCreditNoteDto | yes | Returns information about a single Sales Credit Note. |
+| PUT | `/v1/salesCreditNotes/{id}` | SalesCreditNotes_Put | `id`*, body*: SalesInvoiceCreditNoteDto | object |  | Updates an existing Sales Credit Note. |
+| DELETE | `/v1/salesCreditNotes/{id}` | SalesCreditNotes_Delete | `id`*, `timestamp`* | object |  | Removes an existing Sales Credit Note. |
+| GET | `/v1/salesEntries` | SalesEntries_Get | — | PageResult_SalesEntryQueryDto_ | yes | Returns a list of company's Sales Entries. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/salesEntries` | SalesEntries_Post | body*: SalesEntryDto | object |  | Creates a new Sales Entry. |
+| PUT | `/v1/salesEntries/batch` | SalesEntries_ProcessBatch | body*: BatchItem_SalesEntryDto_[] | object |  | Processes a batch of Sales Entries. |
+| GET | `/v1/salesEntries/{id}` | get /v1/salesEntries/{id} | `id`* | SalesEntryDto | yes | Returns information about a single Sales Entry. |
+| PUT | `/v1/salesEntries/{id}` | SalesEntries_Put | `id`*, body*: SalesEntryDto | object |  | Updates an existing Sales Entry. |
+| DELETE | `/v1/salesEntries/{id}` | SalesEntries_Delete | `id`*, `timestamp`* | object |  | Removes an existing Sales Entry. |
+| GET | `/v1/salesInvoices` | SalesInvoices_Get | — | PageResult_SalesInvoiceQueryDto_ | yes | Returns a list of company's Sales Invoices. Supports OData querying protocol. Filtering is allowed by "entryDate" field. Ordering is allowed by "id" field. |
+| POST | `/v1/salesInvoices` | SalesInvoices_Post | body*: SalesInvoiceCreditNoteDto | object |  | Creates a new Sales Invoice. |
+| PUT | `/v1/salesInvoices/batch` | SalesInvoices_ProcessBatch | body*: BatchItem_SalesInvoiceCreditNoteDto_[] | object |  | Processes a batch of Sales Invoices. |
+| POST | `/v1/salesInvoices/createSaleInvoiceWithGeneratingReference` | SalesInvoices_Post_CreateSaleInvoiceWithGeneratingReference | body*: SalesInvoiceCreditNoteDto | object |  | Creates a new Sale Invoice with auto generating reference. |
+| GET | `/v1/salesInvoices/{id}` | get /v1/salesInvoices/{id} | `id`* | SalesInvoiceCreditNoteDto | yes | Returns information about a single Sales Invoice. |
+| PUT | `/v1/salesInvoices/{id}` | SalesInvoices_Put | `id`*, body*: SalesInvoiceCreditNoteDto | object |  | Updates an existing Sales Invoice. |
+| DELETE | `/v1/salesInvoices/{id}` | SalesInvoices_Delete | `id`*, `timestamp`* | object |  | Removes an existing Sales Invoice. |
+| GET | `/v1/salesReps` | SalesRep_Get | — | PageResult_SaleRepsDto_ | yes | Returns a list of company's SaleRep. Filtering is forbidden. Ordering is allowed by "id". |
+| POST | `/v1/salesReps` | SalesRep_Post | body*: SaleRepsDto | object |  | Creates a new SaleRep. |
+| PUT | `/v1/salesReps/batch` | SalesRep_ProcessBatch | body*: BatchItem_SaleRepsDto_[] | object |  | Processes a batch of Sale Rep. |
+| GET | `/v1/salesReps/{id}` | get /v1/salesReps/{id} | `id`* | SaleRepsDto | yes | Returns information about a single SaleRep. |
+| PUT | `/v1/salesReps/{id}` | SalesRep_Put | `id`*, body*: SaleRepsDto | object |  | Updates an existing Sale Rep. |
+| DELETE | `/v1/salesReps/{id}` | SalesRep_Delete | `id`*, `timestamp`* | object |  | Removes an existing Sale Rep. |
+| GET | `/v1/suppliers` | Suppliers_Get | — | PageResult_SupplierQueryDto_ | yes | Returns a list of company's Suppliers. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" and "code" fields. |
+| POST | `/v1/suppliers` | Suppliers_Post | body*: SupplierDto | object |  | Creates a new Supplier. |
+| PUT | `/v1/suppliers/batch` | Suppliers_ProcessBatch | body*: BatchItem_SupplierDto_[] | object |  | Processes a batch of Suppliers. |
+| GET | `/v1/suppliers/{id}` | get /v1/suppliers/{id} | `id`*, `needBalance` | SupplierDto | yes | Returns information about a single Supplier. You may specify that Supplier's ledger balance should be calculated. |
+| PUT | `/v1/suppliers/{id}` | Suppliers_Put | `id`*, body*: SupplierDto | object |  | Updates an existing Supplier. |
+| DELETE | `/v1/suppliers/{id}` | Suppliers_Delete | `id`*, `timestamp`* | object |  | Removes an existing Supplier. |
+| GET | `/v1/suppliers/{itemId}/accountTrans` | Suppliers_GetAccountTrans | `itemId`* | AccountTranDto[] | yes | Returns a list of Supplier's account transactions. |
+| GET | `/v1/suppliers/{itemId}/openingBalance` | Suppliers_GetOpeningBalance | `itemId`* | OwnerOpeningBalanceInPeriodsDto | yes | Returns a Supplier's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old. |
+| GET | `/v1/suppliers/{itemId}/openingBalanceList` | Suppliers_GetOpeningBalanceList | `itemId`* | OwnerOpeningBalanceDto[] | yes | Returns a list of Supplier's opening balance transactions. |
+| GET | `/v1/userDefinedFields` | UserDefinedFields_Get | — | PageResult_UserDefinedFieldDto_ | yes | Returns a list of company's User Defined Fields. Supports OData querying protocol. Filtering is allowed by "categoryTypeId" field. Ordering is allowed by "id" and "orderIndex" fields. |
+| GET | `/v1/vatAnalysisTypes` | VatAnalysisTypes_Get | — | PageResult_VatAnalysisTypeDto_ | yes | Returns a list of global Vat Analysis Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| GET | `/v1/vatCategories` | VatCategories_Get | — | PageResult_VatCategoryDto_ | yes | Returns a list of global Vat Categories. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |
+| POST | `/v1/vatCategories/vatRates` | VatCategories_ProcessVatRates | body*: VatRatesByVatCategoryDto[] | object |  | Process Vat Rates |
+| GET | `/v1/vatRates` | VatRates_Get | — | PageResult_VatRateDto_ | yes | Returns a list of company's Vat Rates. Supports OData querying protocol. Filtering is allowed by "vatCategoryId" field. Ordering is allowed by "id" and "orderIndex" fields. |
+| GET | `/v1/vatTypes` | VatTypes_Get | — | PageResult_VatTypeDto_ | yes | Returns a list of global Vat Types. Supports OData querying protocol. Filtering is forbidden. Ordering is allowed by "id" field. |

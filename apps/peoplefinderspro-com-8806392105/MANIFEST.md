@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `42f1ab693d635821967a2f756e4d22aa51badb9d3d03714ed7bbe829779b4292` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/address/autocomplete` | post /address/autocomplete | Search |
-| POST | `/contact/enrich` | post /contact/enrich | Search |
-| POST | `/email/enrich` | post /email/enrich | Search |
-| POST | `/identity/verify_id` | Search | Search |
-| POST | `/phone/enrich` | post /phone/enrich | Search |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/address/autocomplete` | post /address/autocomplete | `galaxy-ap-name`, `galaxy-ap-password`, `galaxy-search-type`, body: object | — |  | Search |
+| POST | `/contact/enrich` | post /contact/enrich | `galaxy-ap-name`, `galaxy-ap-password`, `galaxy-search-type`, body: object | — |  | Search |
+| POST | `/email/enrich` | post /email/enrich | `galaxy-ap-name`, `galaxy-ap-password`, `galaxy-search-type`, body: object | — |  | Search |
+| POST | `/identity/verify_id` | Search | `galaxy-ap-name`, `galaxy-ap-password`, `galaxy-search-type`, body: object | — |  | Search |
+| POST | `/phone/enrich` | post /phone/enrich | `galaxy-ap-name`, `galaxy-ap-password`, `galaxy-search-type`, body: object | — |  | Search |

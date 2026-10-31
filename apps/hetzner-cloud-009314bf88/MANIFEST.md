@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_hetzner_com_themes_hetzner_
 
 | | |
 | --- | --- |
-| Signed bundle | `fae7172e80d033c177e593c04c86b223fa124bc8802932ad8b6a185da2903165` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,149 +32,151 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_hetzner_com_themes_hetzner_
 
 ## Operations (144)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/actions` | get /actions | Get all Actions |
-| GET | `/actions/{id}` | get /actions/{id} | Get an Action |
-| GET | `/certificates` | get /certificates | Get all Certificates |
-| POST | `/certificates` | post /certificates | Create a Certificate |
-| DELETE | `/certificates/{id}` | delete /certificates/{id} | Delete a Certificate |
-| GET | `/certificates/{id}` | get /certificates/{id} | Get a Certificate |
-| PUT | `/certificates/{id}` | put /certificates/{id} | Update a Certificate |
-| GET | `/certificates/{id}/actions` | get /certificates/{id}/actions | Get all Actions for a Certificate |
-| POST | `/certificates/{id}/actions/retry` | post /certificates/{id}/actions/retry | Retry Issuance or Renewal |
-| GET | `/certificates/{id}/actions/{action_id}` | get /certificates/{id}/actions/{action_id} | Get an Action for a Certificate |
-| GET | `/datacenters` | get /datacenters | Get all Datacenters |
-| GET | `/datacenters/{id}` | get /datacenters/{id} | Get a Datacenter |
-| GET | `/firewalls` | get /firewalls | Get all Firewalls |
-| POST | `/firewalls` | post /firewalls | Create a Firewall |
-| DELETE | `/firewalls/{id}` | delete /firewalls/{id} | Delete a Firewall |
-| GET | `/firewalls/{id}` | get /firewalls/{id} | Get a Firewall |
-| PUT | `/firewalls/{id}` | put /firewalls/{id} | Update a Firewall |
-| GET | `/firewalls/{id}/actions` | get /firewalls/{id}/actions | Get all Actions for a Firewall |
-| POST | `/firewalls/{id}/actions/apply_to_resources` | post /firewalls/{id}/actions/apply_to_resources | Apply to Resources |
-| POST | `/firewalls/{id}/actions/remove_from_resources` | post /firewalls/{id}/actions/remove_from_resources | Remove from Resources |
-| POST | `/firewalls/{id}/actions/set_rules` | post /firewalls/{id}/actions/set_rules | Set Rules |
-| GET | `/firewalls/{id}/actions/{action_id}` | get /firewalls/{id}/actions/{action_id} | Get an Action for a Firewall |
-| GET | `/floating_ips` | get /floating_ips | Get all Floating IPs |
-| POST | `/floating_ips` | post /floating_ips | Create a Floating IP |
-| DELETE | `/floating_ips/{id}` | delete /floating_ips/{id} | Delete a Floating IP |
-| GET | `/floating_ips/{id}` | get /floating_ips/{id} | Get a Floating IP |
-| PUT | `/floating_ips/{id}` | put /floating_ips/{id} | Update a Floating IP |
-| GET | `/floating_ips/{id}/actions` | get /floating_ips/{id}/actions | Get all Actions for a Floating IP |
-| POST | `/floating_ips/{id}/actions/assign` | post /floating_ips/{id}/actions/assign | Assign a Floating IP to a Server |
-| POST | `/floating_ips/{id}/actions/change_dns_ptr` | post /floating_ips/{id}/actions/change_dns_ptr | Change reverse DNS entry for a Floating IP |
-| POST | `/floating_ips/{id}/actions/change_protection` | post /floating_ips/{id}/actions/change_protection | Change Floating IP Protection |
-| POST | `/floating_ips/{id}/actions/unassign` | post /floating_ips/{id}/actions/unassign | Unassign a Floating IP |
-| GET | `/floating_ips/{id}/actions/{action_id}` | get /floating_ips/{id}/actions/{action_id} | Get an Action for a Floating IP |
-| GET | `/images` | get /images | Get all Images |
-| DELETE | `/images/{id}` | delete /images/{id} | Delete an Image |
-| GET | `/images/{id}` | get /images/{id} | Get an Image |
-| PUT | `/images/{id}` | put /images/{id} | Update an Image |
-| GET | `/images/{id}/actions` | get /images/{id}/actions | Get all Actions for an Image |
-| POST | `/images/{id}/actions/change_protection` | post /images/{id}/actions/change_protection | Change Image Protection |
-| GET | `/images/{id}/actions/{action_id}` | get /images/{id}/actions/{action_id} | Get an Action for an Image |
-| GET | `/isos` | get /isos | Get all ISOs |
-| GET | `/isos/{id}` | get /isos/{id} | Get an ISO |
-| GET | `/load_balancer_types` | get /load_balancer_types | Get all Load Balancer Types |
-| GET | `/load_balancer_types/{id}` | get /load_balancer_types/{id} | Get a Load Balancer Type |
-| GET | `/load_balancers` | get /load_balancers | Get all Load Balancers |
-| POST | `/load_balancers` | post /load_balancers | Create a Load Balancer |
-| DELETE | `/load_balancers/{id}` | delete /load_balancers/{id} | Delete a Load Balancer |
-| GET | `/load_balancers/{id}` | get /load_balancers/{id} | Get a Load Balancer |
-| PUT | `/load_balancers/{id}` | put /load_balancers/{id} | Update a Load Balancer |
-| GET | `/load_balancers/{id}/actions` | get /load_balancers/{id}/actions | Get all Actions for a Load Balancer |
-| POST | `/load_balancers/{id}/actions/add_service` | post /load_balancers/{id}/actions/add_service | Add Service |
-| POST | `/load_balancers/{id}/actions/add_target` | post /load_balancers/{id}/actions/add_target | Add Target |
-| POST | `/load_balancers/{id}/actions/attach_to_network` | post /load_balancers/{id}/actions/attach_to_network | Attach a Load Balancer to a Network |
-| POST | `/load_balancers/{id}/actions/change_algorithm` | post /load_balancers/{id}/actions/change_algorithm | Change Algorithm |
-| POST | `/load_balancers/{id}/actions/change_dns_ptr` | post /load_balancers/{id}/actions/change_dns_ptr | Change reverse DNS entry for this Load Balancer |
-| POST | `/load_balancers/{id}/actions/change_protection` | post /load_balancers/{id}/actions/change_protection | Change Load Balancer Protection |
-| POST | `/load_balancers/{id}/actions/change_type` | post /load_balancers/{id}/actions/change_type | Change the Type of a Load Balancer |
-| POST | `/load_balancers/{id}/actions/delete_service` | post /load_balancers/{id}/actions/delete_service | Delete Service |
-| POST | `/load_balancers/{id}/actions/detach_from_network` | post /load_balancers/{id}/actions/detach_from_network | Detach a Load Balancer from a Network |
-| POST | `/load_balancers/{id}/actions/disable_public_interface` | post /load_balancers/{id}/actions/disable_public_interface | Disable the public interface of a Load Balancer |
-| POST | `/load_balancers/{id}/actions/enable_public_interface` | post /load_balancers/{id}/actions/enable_public_interface | Enable the public interface of a Load Balancer |
-| POST | `/load_balancers/{id}/actions/remove_target` | post /load_balancers/{id}/actions/remove_target | Remove Target |
-| POST | `/load_balancers/{id}/actions/update_service` | post /load_balancers/{id}/actions/update_service | Update Service |
-| GET | `/load_balancers/{id}/actions/{action_id}` | get /load_balancers/{id}/actions/{action_id} | Get an Action for a Load Balancer |
-| GET | `/load_balancers/{id}/metrics` | get /load_balancers/{id}/metrics | Get Metrics for a LoadBalancer |
-| GET | `/locations` | get /locations | Get all Locations |
-| GET | `/locations/{id}` | get /locations/{id} | Get a Location |
-| GET | `/networks` | get /networks | Get all Networks |
-| POST | `/networks` | post /networks | Create a Network |
-| DELETE | `/networks/{id}` | delete /networks/{id} | Delete a Network |
-| GET | `/networks/{id}` | get /networks/{id} | Get a Network |
-| PUT | `/networks/{id}` | put /networks/{id} | Update a Network |
-| GET | `/networks/{id}/actions` | get /networks/{id}/actions | Get all Actions for a Network |
-| POST | `/networks/{id}/actions/add_route` | post /networks/{id}/actions/add_route | Add a route to a Network |
-| POST | `/networks/{id}/actions/add_subnet` | post /networks/{id}/actions/add_subnet | Add a subnet to a Network |
-| POST | `/networks/{id}/actions/change_ip_range` | post /networks/{id}/actions/change_ip_range | Change IP range of a Network |
-| POST | `/networks/{id}/actions/change_protection` | post /networks/{id}/actions/change_protection | Change Network Protection |
-| POST | `/networks/{id}/actions/delete_route` | post /networks/{id}/actions/delete_route | Delete a route from a Network |
-| POST | `/networks/{id}/actions/delete_subnet` | post /networks/{id}/actions/delete_subnet | Delete a subnet from a Network |
-| GET | `/networks/{id}/actions/{action_id}` | get /networks/{id}/actions/{action_id} | Get an Action for a Network |
-| GET | `/placement_groups` | get /placement_groups | Get all PlacementGroups |
-| POST | `/placement_groups` | post /placement_groups | Create a PlacementGroup |
-| DELETE | `/placement_groups/{id}` | delete /placement_groups/{id} | Delete a PlacementGroup |
-| GET | `/placement_groups/{id}` | get /placement_groups/{id} | Get a PlacementGroup |
-| PUT | `/placement_groups/{id}` | put /placement_groups/{id} | Update a PlacementGroup |
-| GET | `/pricing` | get /pricing | Get all prices |
-| GET | `/primary_ips` | get /primary_ips | Get all Primary IPs |
-| POST | `/primary_ips` | post /primary_ips | Create a Primary IP |
-| DELETE | `/primary_ips/{id}` | delete /primary_ips/{id} | Delete a Primary IP |
-| GET | `/primary_ips/{id}` | get /primary_ips/{id} | Get a Primary IP |
-| PUT | `/primary_ips/{id}` | put /primary_ips/{id} | Update a Primary IP |
-| POST | `/primary_ips/{id}/actions/assign` | post /primary_ips/{id}/actions/assign | Assign a Primary IP to a resource |
-| POST | `/primary_ips/{id}/actions/change_dns_ptr` | post /primary_ips/{id}/actions/change_dns_ptr | Change reverse DNS entry for a Primary IP |
-| POST | `/primary_ips/{id}/actions/change_protection` | post /primary_ips/{id}/actions/change_protection | Change Primary IP Protection |
-| POST | `/primary_ips/{id}/actions/unassign` | post /primary_ips/{id}/actions/unassign | Unassign a Primary IP from a resource |
-| GET | `/server_types` | get /server_types | Get all Server Types |
-| GET | `/server_types/{id}` | get /server_types/{id} | Get a Server Type |
-| GET | `/servers` | get /servers | Get all Servers |
-| POST | `/servers` | post /servers | Create a Server |
-| DELETE | `/servers/{id}` | delete /servers/{id} | Delete a Server |
-| GET | `/servers/{id}` | get /servers/{id} | Get a Server |
-| PUT | `/servers/{id}` | put /servers/{id} | Update a Server |
-| GET | `/servers/{id}/actions` | get /servers/{id}/actions | Get all Actions for a Server |
-| POST | `/servers/{id}/actions/add_to_placement_group` | post /servers/{id}/actions/add_to_placement_group | Add a Server to a Placement Group |
-| POST | `/servers/{id}/actions/attach_iso` | post /servers/{id}/actions/attach_iso | Attach an ISO to a Server |
-| POST | `/servers/{id}/actions/attach_to_network` | post /servers/{id}/actions/attach_to_network | Attach a Server to a Network |
-| POST | `/servers/{id}/actions/change_alias_ips` | post /servers/{id}/actions/change_alias_ips | Change alias IPs of a Network |
-| POST | `/servers/{id}/actions/change_dns_ptr` | post /servers/{id}/actions/change_dns_ptr | Change reverse DNS entry for this Server |
-| POST | `/servers/{id}/actions/change_protection` | post /servers/{id}/actions/change_protection | Change Server Protection |
-| POST | `/servers/{id}/actions/change_type` | post /servers/{id}/actions/change_type | Change the Type of a Server |
-| POST | `/servers/{id}/actions/create_image` | post /servers/{id}/actions/create_image | Create Image from a Server |
-| POST | `/servers/{id}/actions/detach_from_network` | post /servers/{id}/actions/detach_from_network | Detach a Server from a Network |
-| POST | `/servers/{id}/actions/detach_iso` | post /servers/{id}/actions/detach_iso | Detach an ISO from a Server |
-| POST | `/servers/{id}/actions/disable_backup` | post /servers/{id}/actions/disable_backup | Disable Backups for a Server |
-| POST | `/servers/{id}/actions/disable_rescue` | post /servers/{id}/actions/disable_rescue | Disable Rescue Mode for a Server |
-| POST | `/servers/{id}/actions/enable_backup` | post /servers/{id}/actions/enable_backup | Enable and Configure Backups for a Server |
-| POST | `/servers/{id}/actions/enable_rescue` | post /servers/{id}/actions/enable_rescue | Enable Rescue Mode for a Server |
-| POST | `/servers/{id}/actions/poweroff` | post /servers/{id}/actions/poweroff | Power off a Server |
-| POST | `/servers/{id}/actions/poweron` | post /servers/{id}/actions/poweron | Power on a Server |
-| POST | `/servers/{id}/actions/reboot` | post /servers/{id}/actions/reboot | Soft-reboot a Server |
-| POST | `/servers/{id}/actions/rebuild` | post /servers/{id}/actions/rebuild | Rebuild a Server from an Image |
-| POST | `/servers/{id}/actions/remove_from_placement_group` | post /servers/{id}/actions/remove_from_placement_group | Remove from Placement Group |
-| POST | `/servers/{id}/actions/request_console` | post /servers/{id}/actions/request_console | Request Console for a Server |
-| POST | `/servers/{id}/actions/reset` | post /servers/{id}/actions/reset | Reset a Server |
-| POST | `/servers/{id}/actions/reset_password` | post /servers/{id}/actions/reset_password | Reset root Password of a Server |
-| POST | `/servers/{id}/actions/shutdown` | post /servers/{id}/actions/shutdown | Shutdown a Server |
-| GET | `/servers/{id}/actions/{action_id}` | get /servers/{id}/actions/{action_id} | Get an Action for a Server |
-| GET | `/servers/{id}/metrics` | get /servers/{id}/metrics | Get Metrics for a Server |
-| GET | `/ssh_keys` | get /ssh_keys | Get all SSH keys |
-| POST | `/ssh_keys` | post /ssh_keys | Create an SSH key |
-| DELETE | `/ssh_keys/{id}` | delete /ssh_keys/{id} | Delete an SSH key |
-| GET | `/ssh_keys/{id}` | get /ssh_keys/{id} | Get a SSH key |
-| PUT | `/ssh_keys/{id}` | put /ssh_keys/{id} | Update an SSH key |
-| GET | `/volumes` | get /volumes | Get all Volumes |
-| POST | `/volumes` | post /volumes | Create a Volume |
-| DELETE | `/volumes/{id}` | delete /volumes/{id} | Delete a Volume |
-| GET | `/volumes/{id}` | get /volumes/{id} | Get a Volume |
-| PUT | `/volumes/{id}` | put /volumes/{id} | Update a Volume |
-| GET | `/volumes/{id}/actions` | get /volumes/{id}/actions | Get all Actions for a Volume |
-| POST | `/volumes/{id}/actions/attach` | post /volumes/{id}/actions/attach | Attach Volume to a Server |
-| POST | `/volumes/{id}/actions/change_protection` | post /volumes/{id}/actions/change_protection | Change Volume Protection |
-| POST | `/volumes/{id}/actions/detach` | post /volumes/{id}/actions/detach | Detach Volume |
-| POST | `/volumes/{id}/actions/resize` | post /volumes/{id}/actions/resize | Resize Volume |
-| GET | `/volumes/{id}/actions/{action_id}` | get /volumes/{id}/actions/{action_id} | Get an Action for a Volume |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/actions` | get /actions | `id`, `sort`, `status` | object | yes | Get all Actions |
+| GET | `/actions/{id}` | get /actions/{id} | `id`* | object | yes | Get an Action |
+| GET | `/certificates` | get /certificates | `sort`, `name`, `label_selector`, `type` | object | yes | Get all Certificates |
+| POST | `/certificates` | post /certificates | body: object | object |  | Create a Certificate |
+| GET | `/certificates/{id}` | get /certificates/{id} | `id`* | object | yes | Get a Certificate |
+| PUT | `/certificates/{id}` | put /certificates/{id} | `id`*, body: object | object |  | Update a Certificate |
+| DELETE | `/certificates/{id}` | delete /certificates/{id} | `id`* | — |  | Delete a Certificate |
+| GET | `/certificates/{id}/actions` | get /certificates/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Certificate |
+| POST | `/certificates/{id}/actions/retry` | post /certificates/{id}/actions/retry | `id`* | object |  | Retry Issuance or Renewal |
+| GET | `/certificates/{id}/actions/{action_id}` | get /certificates/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Certificate |
+| GET | `/datacenters` | get /datacenters | `name` | object | yes | Get all Datacenters |
+| GET | `/datacenters/{id}` | get /datacenters/{id} | `id`* | object | yes | Get a Datacenter |
+| GET | `/firewalls` | get /firewalls | `sort`, `name`, `label_selector` | object | yes | Get all Firewalls |
+| POST | `/firewalls` | post /firewalls | body: object | object |  | Create a Firewall |
+| GET | `/firewalls/{id}` | get /firewalls/{id} | `id`* | object | yes | Get a Firewall |
+| PUT | `/firewalls/{id}` | put /firewalls/{id} | `id`*, body: object | object |  | Update a Firewall |
+| DELETE | `/firewalls/{id}` | delete /firewalls/{id} | `id`* | — |  | Delete a Firewall |
+| GET | `/firewalls/{id}/actions` | get /firewalls/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Firewall |
+| POST | `/firewalls/{id}/actions/apply_to_resources` | post /firewalls/{id}/actions/apply_to_resources | `id`*, body: object | object |  | Apply to Resources |
+| POST | `/firewalls/{id}/actions/remove_from_resources` | post /firewalls/{id}/actions/remove_from_resources | `id`*, body: object | object |  | Remove from Resources |
+| POST | `/firewalls/{id}/actions/set_rules` | post /firewalls/{id}/actions/set_rules | `id`*, body: object | object |  | Set Rules |
+| GET | `/firewalls/{id}/actions/{action_id}` | get /firewalls/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Firewall |
+| GET | `/floating_ips` | get /floating_ips | `name`, `label_selector`, `sort` | object | yes | Get all Floating IPs |
+| POST | `/floating_ips` | post /floating_ips | body: object | object |  | Create a Floating IP |
+| GET | `/floating_ips/{id}` | get /floating_ips/{id} | `id`* | object | yes | Get a Floating IP |
+| PUT | `/floating_ips/{id}` | put /floating_ips/{id} | `id`*, body: object | object |  | Update a Floating IP |
+| DELETE | `/floating_ips/{id}` | delete /floating_ips/{id} | `id`* | — |  | Delete a Floating IP |
+| GET | `/floating_ips/{id}/actions` | get /floating_ips/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Floating IP |
+| POST | `/floating_ips/{id}/actions/assign` | post /floating_ips/{id}/actions/assign | `id`*, body: object | object |  | Assign a Floating IP to a Server |
+| POST | `/floating_ips/{id}/actions/change_dns_ptr` | post /floating_ips/{id}/actions/change_dns_ptr | `id`*, body: object | object |  | Change reverse DNS entry for a Floating IP |
+| POST | `/floating_ips/{id}/actions/change_protection` | post /floating_ips/{id}/actions/change_protection | `id`*, body: object | object |  | Change Floating IP Protection |
+| POST | `/floating_ips/{id}/actions/unassign` | post /floating_ips/{id}/actions/unassign | `id`* | object |  | Unassign a Floating IP |
+| GET | `/floating_ips/{id}/actions/{action_id}` | get /floating_ips/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Floating IP |
+| GET | `/images` | get /images | `sort`, `type`, `status`, `bound_to`, `include_deprecated`, `name`, `label_selector` | object | yes | Get all Images |
+| GET | `/images/{id}` | get /images/{id} | `id`* | object | yes | Get an Image |
+| PUT | `/images/{id}` | put /images/{id} | `id`*, body: object | object |  | Update an Image |
+| DELETE | `/images/{id}` | delete /images/{id} | `id`* | — |  | Delete an Image |
+| GET | `/images/{id}/actions` | get /images/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for an Image |
+| POST | `/images/{id}/actions/change_protection` | post /images/{id}/actions/change_protection | `id`*, body: object | object |  | Change Image Protection |
+| GET | `/images/{id}/actions/{action_id}` | get /images/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for an Image |
+| GET | `/isos` | get /isos | `name` | object | yes | Get all ISOs |
+| GET | `/isos/{id}` | get /isos/{id} | `id`* | object | yes | Get an ISO |
+| GET | `/load_balancer_types` | get /load_balancer_types | `name` | object | yes | Get all Load Balancer Types |
+| GET | `/load_balancer_types/{id}` | get /load_balancer_types/{id} | `id`* | object | yes | Get a Load Balancer Type |
+| GET | `/load_balancers` | get /load_balancers | `sort`, `name`, `label_selector` | object | yes | Get all Load Balancers |
+| POST | `/load_balancers` | post /load_balancers | body: object | object |  | Create a Load Balancer |
+| GET | `/load_balancers/{id}` | get /load_balancers/{id} | `id`* | object | yes | Get a Load Balancer |
+| PUT | `/load_balancers/{id}` | put /load_balancers/{id} | `id`*, body: object | object |  | Update a Load Balancer |
+| DELETE | `/load_balancers/{id}` | delete /load_balancers/{id} | `id`* | — |  | Delete a Load Balancer |
+| GET | `/load_balancers/{id}/actions` | get /load_balancers/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Load Balancer |
+| POST | `/load_balancers/{id}/actions/add_service` | post /load_balancers/{id}/actions/add_service | `id`*, body: object | object |  | Add Service |
+| POST | `/load_balancers/{id}/actions/add_target` | post /load_balancers/{id}/actions/add_target | `id`*, body: object | object |  | Add Target |
+| POST | `/load_balancers/{id}/actions/attach_to_network` | post /load_balancers/{id}/actions/attach_to_network | `id`*, body: object | object |  | Attach a Load Balancer to a Network |
+| POST | `/load_balancers/{id}/actions/change_algorithm` | post /load_balancers/{id}/actions/change_algorithm | `id`*, body: object | object |  | Change Algorithm |
+| POST | `/load_balancers/{id}/actions/change_dns_ptr` | post /load_balancers/{id}/actions/change_dns_ptr | `id`*, body: object | object |  | Change reverse DNS entry for this Load Balancer |
+| POST | `/load_balancers/{id}/actions/change_protection` | post /load_balancers/{id}/actions/change_protection | `id`*, body: object | object |  | Change Load Balancer Protection |
+| POST | `/load_balancers/{id}/actions/change_type` | post /load_balancers/{id}/actions/change_type | `id`*, body: object | object |  | Change the Type of a Load Balancer |
+| POST | `/load_balancers/{id}/actions/delete_service` | post /load_balancers/{id}/actions/delete_service | `id`*, body: object | object |  | Delete Service |
+| POST | `/load_balancers/{id}/actions/detach_from_network` | post /load_balancers/{id}/actions/detach_from_network | `id`*, body: object | object |  | Detach a Load Balancer from a Network |
+| POST | `/load_balancers/{id}/actions/disable_public_interface` | post /load_balancers/{id}/actions/disable_public_interface | `id`* | object |  | Disable the public interface of a Load Balancer |
+| POST | `/load_balancers/{id}/actions/enable_public_interface` | post /load_balancers/{id}/actions/enable_public_interface | `id`* | object |  | Enable the public interface of a Load Balancer |
+| POST | `/load_balancers/{id}/actions/remove_target` | post /load_balancers/{id}/actions/remove_target | `id`*, body: object | object |  | Remove Target |
+| POST | `/load_balancers/{id}/actions/update_service` | post /load_balancers/{id}/actions/update_service | `id`*, body: object | object |  | Update Service |
+| GET | `/load_balancers/{id}/actions/{action_id}` | get /load_balancers/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Load Balancer |
+| GET | `/load_balancers/{id}/metrics` | get /load_balancers/{id}/metrics | `id`*, `type`*, `start`*, `end`*, `step` | object | yes | Get Metrics for a LoadBalancer |
+| GET | `/locations` | get /locations | `name` | object | yes | Get all Locations |
+| GET | `/locations/{id}` | get /locations/{id} | `id`* | object | yes | Get a Location |
+| GET | `/networks` | get /networks | `name`, `label_selector` | object | yes | Get all Networks |
+| POST | `/networks` | post /networks | body: object | object |  | Create a Network |
+| GET | `/networks/{id}` | get /networks/{id} | `id`* | object | yes | Get a Network |
+| PUT | `/networks/{id}` | put /networks/{id} | `id`*, body: object | object |  | Update a Network |
+| DELETE | `/networks/{id}` | delete /networks/{id} | `id`* | — |  | Delete a Network |
+| GET | `/networks/{id}/actions` | get /networks/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Network |
+| POST | `/networks/{id}/actions/add_route` | post /networks/{id}/actions/add_route | `id`*, body: object | object |  | Add a route to a Network |
+| POST | `/networks/{id}/actions/add_subnet` | post /networks/{id}/actions/add_subnet | `id`*, body: object | object |  | Add a subnet to a Network |
+| POST | `/networks/{id}/actions/change_ip_range` | post /networks/{id}/actions/change_ip_range | `id`*, body: object | object |  | Change IP range of a Network |
+| POST | `/networks/{id}/actions/change_protection` | post /networks/{id}/actions/change_protection | `id`*, body: object | object |  | Change Network Protection |
+| POST | `/networks/{id}/actions/delete_route` | post /networks/{id}/actions/delete_route | `id`*, body: object | object |  | Delete a route from a Network |
+| POST | `/networks/{id}/actions/delete_subnet` | post /networks/{id}/actions/delete_subnet | `id`*, body: object | object |  | Delete a subnet from a Network |
+| GET | `/networks/{id}/actions/{action_id}` | get /networks/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Network |
+| GET | `/placement_groups` | get /placement_groups | `sort`, `name`, `label_selector`, `type` | object | yes | Get all PlacementGroups |
+| POST | `/placement_groups` | post /placement_groups | body: object | object |  | Create a PlacementGroup |
+| GET | `/placement_groups/{id}` | get /placement_groups/{id} | `id`* | object | yes | Get a PlacementGroup |
+| PUT | `/placement_groups/{id}` | put /placement_groups/{id} | `id`*, body: object | object |  | Update a PlacementGroup |
+| DELETE | `/placement_groups/{id}` | delete /placement_groups/{id} | `id`* | — |  | Delete a PlacementGroup |
+| GET | `/pricing` | get /pricing | — | object | yes | Get all prices |
+| GET | `/primary_ips` | get /primary_ips | `name`, `label_selector`, `ip`, `sort` | object | yes | Get all Primary IPs |
+| POST | `/primary_ips` | post /primary_ips | body: object | object |  | Create a Primary IP |
+| GET | `/primary_ips/{id}` | get /primary_ips/{id} | `id`* | object | yes | Get a Primary IP |
+| PUT | `/primary_ips/{id}` | put /primary_ips/{id} | `id`*, body: object | object |  | Update a Primary IP |
+| DELETE | `/primary_ips/{id}` | delete /primary_ips/{id} | `id`* | — |  | Delete a Primary IP |
+| POST | `/primary_ips/{id}/actions/assign` | post /primary_ips/{id}/actions/assign | `id`*, body: object | object |  | Assign a Primary IP to a resource |
+| POST | `/primary_ips/{id}/actions/change_dns_ptr` | post /primary_ips/{id}/actions/change_dns_ptr | `id`*, body: object | object |  | Change reverse DNS entry for a Primary IP |
+| POST | `/primary_ips/{id}/actions/change_protection` | post /primary_ips/{id}/actions/change_protection | `id`*, body: object | object |  | Change Primary IP Protection |
+| POST | `/primary_ips/{id}/actions/unassign` | post /primary_ips/{id}/actions/unassign | `id`* | object |  | Unassign a Primary IP from a resource |
+| GET | `/server_types` | get /server_types | `name` | object | yes | Get all Server Types |
+| GET | `/server_types/{id}` | get /server_types/{id} | `id`* | object | yes | Get a Server Type |
+| GET | `/servers` | get /servers | `name`, `label_selector`, `sort`, `status` | object | yes | Get all Servers |
+| POST | `/servers` | post /servers | body: object | object |  | Create a Server |
+| GET | `/servers/{id}` | get /servers/{id} | `id`* | object | yes | Get a Server |
+| PUT | `/servers/{id}` | put /servers/{id} | `id`*, body: object | object |  | Update a Server |
+| DELETE | `/servers/{id}` | delete /servers/{id} | `id`* | object |  | Delete a Server |
+| GET | `/servers/{id}/actions` | get /servers/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Server |
+| POST | `/servers/{id}/actions/add_to_placement_group` | post /servers/{id}/actions/add_to_placement_group | `id`*, body: object | object |  | Add a Server to a Placement Group |
+| POST | `/servers/{id}/actions/attach_iso` | post /servers/{id}/actions/attach_iso | `id`*, body: object | object |  | Attach an ISO to a Server |
+| POST | `/servers/{id}/actions/attach_to_network` | post /servers/{id}/actions/attach_to_network | `id`*, body: object | object |  | Attach a Server to a Network |
+| POST | `/servers/{id}/actions/change_alias_ips` | post /servers/{id}/actions/change_alias_ips | `id`*, body: object | object |  | Change alias IPs of a Network |
+| POST | `/servers/{id}/actions/change_dns_ptr` | post /servers/{id}/actions/change_dns_ptr | `id`*, body: object | object |  | Change reverse DNS entry for this Server |
+| POST | `/servers/{id}/actions/change_protection` | post /servers/{id}/actions/change_protection | `id`*, body: object | object |  | Change Server Protection |
+| POST | `/servers/{id}/actions/change_type` | post /servers/{id}/actions/change_type | `id`*, body: object | object |  | Change the Type of a Server |
+| POST | `/servers/{id}/actions/create_image` | post /servers/{id}/actions/create_image | `id`*, body: object | object |  | Create Image from a Server |
+| POST | `/servers/{id}/actions/detach_from_network` | post /servers/{id}/actions/detach_from_network | `id`*, body: object | object |  | Detach a Server from a Network |
+| POST | `/servers/{id}/actions/detach_iso` | post /servers/{id}/actions/detach_iso | `id`* | object |  | Detach an ISO from a Server |
+| POST | `/servers/{id}/actions/disable_backup` | post /servers/{id}/actions/disable_backup | `id`* | object |  | Disable Backups for a Server |
+| POST | `/servers/{id}/actions/disable_rescue` | post /servers/{id}/actions/disable_rescue | `id`* | object |  | Disable Rescue Mode for a Server |
+| POST | `/servers/{id}/actions/enable_backup` | post /servers/{id}/actions/enable_backup | `id`* | object |  | Enable and Configure Backups for a Server |
+| POST | `/servers/{id}/actions/enable_rescue` | post /servers/{id}/actions/enable_rescue | `id`*, body: object | object |  | Enable Rescue Mode for a Server |
+| POST | `/servers/{id}/actions/poweroff` | post /servers/{id}/actions/poweroff | `id`* | object |  | Power off a Server |
+| POST | `/servers/{id}/actions/poweron` | post /servers/{id}/actions/poweron | `id`* | object |  | Power on a Server |
+| POST | `/servers/{id}/actions/reboot` | post /servers/{id}/actions/reboot | `id`* | object |  | Soft-reboot a Server |
+| POST | `/servers/{id}/actions/rebuild` | post /servers/{id}/actions/rebuild | `id`*, body: object | object |  | Rebuild a Server from an Image |
+| POST | `/servers/{id}/actions/remove_from_placement_group` | post /servers/{id}/actions/remove_from_placement_group | `id`* | object |  | Remove from Placement Group |
+| POST | `/servers/{id}/actions/request_console` | post /servers/{id}/actions/request_console | `id`* | object |  | Request Console for a Server |
+| POST | `/servers/{id}/actions/reset` | post /servers/{id}/actions/reset | `id`* | object |  | Reset a Server |
+| POST | `/servers/{id}/actions/reset_password` | post /servers/{id}/actions/reset_password | `id`* | object |  | Reset root Password of a Server |
+| POST | `/servers/{id}/actions/shutdown` | post /servers/{id}/actions/shutdown | `id`* | object |  | Shutdown a Server |
+| GET | `/servers/{id}/actions/{action_id}` | get /servers/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Server |
+| GET | `/servers/{id}/metrics` | get /servers/{id}/metrics | `id`*, `type`*, `start`*, `end`*, `step` | object | yes | Get Metrics for a Server |
+| GET | `/ssh_keys` | get /ssh_keys | `sort`, `name`, `fingerprint`, `label_selector` | object | yes | Get all SSH keys |
+| POST | `/ssh_keys` | post /ssh_keys | body: object | object |  | Create an SSH key |
+| GET | `/ssh_keys/{id}` | get /ssh_keys/{id} | `id`* | object | yes | Get a SSH key |
+| PUT | `/ssh_keys/{id}` | put /ssh_keys/{id} | `id`*, body: object | object |  | Update an SSH key |
+| DELETE | `/ssh_keys/{id}` | delete /ssh_keys/{id} | `id`* | — |  | Delete an SSH key |
+| GET | `/volumes` | get /volumes | `status`, `sort`, `name`, `label_selector` | object | yes | Get all Volumes |
+| POST | `/volumes` | post /volumes | body: object | object |  | Create a Volume |
+| GET | `/volumes/{id}` | get /volumes/{id} | `id`* | object | yes | Get a Volume |
+| PUT | `/volumes/{id}` | put /volumes/{id} | `id`*, body: object | object |  | Update a Volume |
+| DELETE | `/volumes/{id}` | delete /volumes/{id} | `id`* | — |  | Delete a Volume |
+| GET | `/volumes/{id}/actions` | get /volumes/{id}/actions | `id`*, `sort`, `status` | object | yes | Get all Actions for a Volume |
+| POST | `/volumes/{id}/actions/attach` | post /volumes/{id}/actions/attach | `id`*, body: object | object |  | Attach Volume to a Server |
+| POST | `/volumes/{id}/actions/change_protection` | post /volumes/{id}/actions/change_protection | `id`*, body: object | object |  | Change Volume Protection |
+| POST | `/volumes/{id}/actions/detach` | post /volumes/{id}/actions/detach | `id`* | object |  | Detach Volume |
+| POST | `/volumes/{id}/actions/resize` | post /volumes/{id}/actions/resize | `id`*, body: object | object |  | Resize Volume |
+| GET | `/volumes/{id}/actions/{action_id}` | get /volumes/{id}/actions/{action_id} | `id`*, `action_id`* | object | yes | Get an Action for a Volume |

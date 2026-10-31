@@ -17,12 +17,12 @@
       {
         "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
         "kind": "EXPOSES",
-        "to": "operation:delete:/app_packages/{appPkgId}"
+        "to": "operation:get:/app_packages/{appPkgId}"
       },
       {
         "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
         "kind": "EXPOSES",
-        "to": "operation:get:/app_packages/{appPkgId}"
+        "to": "operation:delete:/app_packages/{appPkgId}"
       },
       {
         "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
@@ -72,17 +72,472 @@
       {
         "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
         "kind": "EXPOSES",
-        "to": "operation:delete:/subscriptions/{subscriptionId}"
-      },
-      {
-        "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
-        "kind": "EXPOSES",
         "to": "operation:get:/subscriptions/{subscriptionId}"
       },
       {
         "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
         "kind": "EXPOSES",
+        "to": "operation:delete:/subscriptions/{subscriptionId}"
+      },
+      {
+        "from": "etsi-local-mec010-2-apppkgmgmt-6e0798eb16",
+        "kind": "EXPOSES",
         "to": "operation:post:/user_defined_notification"
+      },
+      {
+        "from": "operation:get:/app_packages",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgInfo"
+      },
+      {
+        "from": "operation:post:/app_packages",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAppPkg"
+      },
+      {
+        "from": "operation:post:/app_packages",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgInfo"
+      },
+      {
+        "from": "operation:get:/app_packages/{appPkgId}",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgInfo"
+      },
+      {
+        "from": "operation:patch:/app_packages/{appPkgId}",
+        "kind": "ACCEPTS",
+        "to": "schema:AppPkgInfoModifications"
+      },
+      {
+        "from": "operation:patch:/app_packages/{appPkgId}",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgInfoModifications"
+      },
+      {
+        "from": "operation:get:/app_packages/{appPkgId}/appd",
+        "kind": "RETURNS",
+        "to": "schema:AppD"
+      },
+      {
+        "from": "operation:get:/onboarded_app_packages/{appDId}/appd",
+        "kind": "RETURNS",
+        "to": "schema:AppD"
+      },
+      {
+        "from": "operation:get:/subscriptions",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgSubscriptionLinkList"
+      },
+      {
+        "from": "operation:post:/subscriptions",
+        "kind": "ACCEPTS",
+        "to": "schema:AppPkgSubscription"
+      },
+      {
+        "from": "operation:post:/subscriptions",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgSubscriptionInfo"
+      },
+      {
+        "from": "operation:get:/subscriptions/{subscriptionId}",
+        "kind": "RETURNS",
+        "to": "schema:AppPkgSubscriptionInfo"
+      },
+      {
+        "from": "operation:post:/user_defined_notification",
+        "kind": "ACCEPTS",
+        "to": "schema:AppPkgNotification"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:AppExternalCpd"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:ChangeAppInstanceStateOpConfig"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:DNSRuleDescriptor"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:FeatureDependency"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:LatencyDescriptor"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceDependency"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceDescriptor"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:SwImageDescriptor"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:TerminateAppInstanceOpConfig"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:TrafficRuleDescriptor"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:TransportDependency"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:VirtualComputeDescription"
+      },
+      {
+        "from": "schema:AppD",
+        "kind": "REFERENCES",
+        "to": "schema:VirtualStorageDescriptor"
+      },
+      {
+        "from": "schema:AppExternalCpd",
+        "kind": "REFERENCES",
+        "to": "schema:VirtualNetworkInterfaceRequirements"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppDId"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppDVersion"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppName"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkg.OperationalState"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgArtifactInfo"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgId"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgInfo.links"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgSWImageInfo"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppProvider"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppSoftwareVersion"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Checksum"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:KeyValuePairs"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:OnboardingState"
+      },
+      {
+        "from": "schema:AppPkgInfo",
+        "kind": "REFERENCES",
+        "to": "schema:UsageState"
+      },
+      {
+        "from": "schema:AppPkgInfo.links",
+        "kind": "REFERENCES",
+        "to": "schema:LinkType"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:AppDId"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkg.NotificationType"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgId"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgNotification.Id"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgNotification.links"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:SubscriptionId"
+      },
+      {
+        "from": "schema:AppPkgNotification",
+        "kind": "REFERENCES",
+        "to": "schema:TimeStamp"
+      },
+      {
+        "from": "schema:AppPkgNotification.links",
+        "kind": "REFERENCES",
+        "to": "schema:LinkType"
+      },
+      {
+        "from": "schema:AppPkgSubscription",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgFilter"
+      },
+      {
+        "from": "schema:AppPkgSubscription",
+        "kind": "REFERENCES",
+        "to": "schema:CallbackUri"
+      },
+      {
+        "from": "schema:AppPkgSubscription",
+        "kind": "REFERENCES",
+        "to": "schema:SubsctiptionType.AppPkg"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkg.SubscriptionType"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgSubscriptionInfo.Id"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionInfo",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgSubscriptionInfo.links"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionInfo",
+        "kind": "REFERENCES",
+        "to": "schema:CallbackUri"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionInfo.links",
+        "kind": "REFERENCES",
+        "to": "schema:LinkType"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionLinkList",
+        "kind": "REFERENCES",
+        "to": "schema:AppPkgSubscriptionLinkList.links"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionLinkList.links",
+        "kind": "REFERENCES",
+        "to": "schema:LinkType"
+      },
+      {
+        "from": "schema:AppPkgSubscriptionLinkList.links",
+        "kind": "REFERENCES",
+        "to": "schema:Subscriptions.AppPkgSubscription"
+      },
+      {
+        "from": "schema:Checksum",
+        "kind": "REFERENCES",
+        "to": "schema:Algorithm"
+      },
+      {
+        "from": "schema:Checksum",
+        "kind": "REFERENCES",
+        "to": "schema:Hash"
+      },
+      {
+        "from": "schema:CreateAppPkg",
+        "kind": "REFERENCES",
+        "to": "schema:Checksum"
+      },
+      {
+        "from": "schema:CreateAppPkg",
+        "kind": "REFERENCES",
+        "to": "schema:KeyValuePairs"
+      },
+      {
+        "from": "schema:CreateAppPkg",
+        "kind": "REFERENCES",
+        "to": "schema:URI"
+      },
+      {
+        "from": "schema:DNSRuleDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:IpAddressType"
+      },
+      {
+        "from": "schema:InterfaceDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:InterfaceType"
+      },
+      {
+        "from": "schema:InterfaceDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:TunnelInfo"
+      },
+      {
+        "from": "schema:Serializers",
+        "kind": "REFERENCES",
+        "to": "schema:SerializerTypes"
+      },
+      {
+        "from": "schema:ServiceDependency",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryRef"
+      },
+      {
+        "from": "schema:ServiceDependency",
+        "kind": "REFERENCES",
+        "to": "schema:Not_specified"
+      },
+      {
+        "from": "schema:ServiceDependency",
+        "kind": "REFERENCES",
+        "to": "schema:TransportDependency"
+      },
+      {
+        "from": "schema:ServiceDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryRef"
+      },
+      {
+        "from": "schema:ServiceDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:SerName"
+      },
+      {
+        "from": "schema:ServiceDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:SerVersion"
+      },
+      {
+        "from": "schema:ServiceDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:TransportsSupported"
+      },
+      {
+        "from": "schema:Subscriptions.AppPkgSubscription",
+        "kind": "REFERENCES",
+        "to": "schema:Href"
+      },
+      {
+        "from": "schema:Subscriptions.AppPkgSubscription",
+        "kind": "REFERENCES",
+        "to": "schema:SubsctiptionType.AppPkg"
+      },
+      {
+        "from": "schema:TrafficRuleDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:TrafficRuleDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:FilterType"
+      },
+      {
+        "from": "schema:TrafficRuleDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:InterfaceDescriptor"
+      },
+      {
+        "from": "schema:TrafficRuleDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:TrafficFilter"
+      },
+      {
+        "from": "schema:TransportDependency",
+        "kind": "REFERENCES",
+        "to": "schema:SerializerTypes"
+      },
+      {
+        "from": "schema:TransportDependency",
+        "kind": "REFERENCES",
+        "to": "schema:TransportDescriptor"
+      },
+      {
+        "from": "schema:TransportDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:SecurityInfo"
+      },
+      {
+        "from": "schema:TransportDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:TransportTypes"
+      },
+      {
+        "from": "schema:TransportsSupported",
+        "kind": "REFERENCES",
+        "to": "schema:Serializers"
+      },
+      {
+        "from": "schema:TransportsSupported",
+        "kind": "REFERENCES",
+        "to": "schema:TransportDescriptor"
+      },
+      {
+        "from": "schema:TunnelInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Not_specified"
+      },
+      {
+        "from": "schema:TunnelInfo",
+        "kind": "REFERENCES",
+        "to": "schema:TunnelType"
       }
     ],
     "nodes": [
@@ -92,14 +547,86 @@
       },
       {
         "deprecated": false,
+        "description": "queries information relating to on-boarded application packages in the MEO",
         "id": "operation:get:/app_packages",
         "kind": "operation",
         "method": "get",
         "name": "app_packagesGET",
+        "parameters": [
+          {
+            "description": "Attribute-based filtering parameters according to ETSI GS MEC 009",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Include all complex attributes in the response.",
+            "in": "query",
+            "name": "all_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Complex attributes of AppPkgInfo to be included into the response",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Complex attributes of AppPkgInfo to be excluded from the response.",
+            "in": "query",
+            "name": "exclude_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates to exclude the following complex attributes of AppPkgInfo from the response.",
+            "in": "query",
+            "name": "exclude_default",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/app_packages",
         "pointer": "#/paths/~1app_packages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppPkgInfo[]"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries information relating to on-boarded application packages in the MEO"
+        "summary": "Queries information relating to on-boarded application packages in the MEO",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -109,19 +636,49 @@
         "name": "app_packagesPOST",
         "path": "/app_packages",
         "pointer": "#/paths/~1app_packages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateAppPkg"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AppPkgInfo[]"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a resource for on-boarding an application package to a MEO"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/app_packages/{appPkgId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "app_packageDELETE",
-        "path": "/app_packages/{appPkgId}",
-        "pointer": "#/paths/~1app_packages~1{appPkgId}/delete",
-        "security": [],
-        "summary": "Deletes an individual application package resources"
+        "summary": "Create a resource for on-boarding an application package to a MEO",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -129,21 +686,172 @@
         "kind": "operation",
         "method": "get",
         "name": "app_packageGET",
+        "parameters": [
+          {
+            "description": "Identifier of an individual application package resource",
+            "in": "path",
+            "name": "appPkgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/app_packages/{appPkgId}",
         "pointer": "#/paths/~1app_packages~1{appPkgId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppPkgInfo"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Queries the information related to individual application package resources"
+        "summary": "Queries the information related to individual application package resources",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/app_packages/{appPkgId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "app_packageDELETE",
+        "parameters": [
+          {
+            "description": "Identifier of an individual application package resource",
+            "in": "path",
+            "name": "appPkgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/app_packages/{appPkgId}",
+        "pointer": "#/paths/~1app_packages~1{appPkgId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes an individual application package resources",
+        "tags": [
+          "app-pkgm"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates the operational state of an individual application package resources",
         "id": "operation:patch:/app_packages/{appPkgId}",
         "kind": "operation",
         "method": "patch",
         "name": "app_packagePATCH",
+        "parameters": [
+          {
+            "description": "Identifier of an individual application package resource",
+            "in": "path",
+            "name": "appPkgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/app_packages/{appPkgId}",
         "pointer": "#/paths/~1app_packages~1{appPkgId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AppPkgInfoModifications"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppPkgInfoModifications"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "409",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates the operational state of an individual application package resource"
+        "summary": "Updates the operational state of an individual application package resource",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -151,10 +859,88 @@
         "kind": "operation",
         "method": "get",
         "name": "appPkgIdGET",
+        "parameters": [
+          {
+            "description": "Identifier of an on-boarded individual application package",
+            "in": "path",
+            "name": "appPkgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Attribute-based filtering parameters according to ETSI GS MEC 009",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Include all complex attributes in the response.",
+            "in": "query",
+            "name": "all_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Complex attributes of AppPkgInfo to be included into the response",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Complex attributes of AppPkgInfo to be excluded from the response.",
+            "in": "query",
+            "name": "exclude_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates to exclude the following complex attributes of AppPkgInfo from the response.",
+            "in": "query",
+            "name": "exclude_default",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/app_packages/{appPkgId}/appd",
         "pointer": "#/paths/~1app_packages~1{appPkgId}~1appd/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppD"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Reads the content of the AppD of on-boarded individual application package resources."
+        "summary": "Reads the content of the AppD of on-boarded individual application package resources.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -162,10 +948,58 @@
         "kind": "operation",
         "method": "get",
         "name": "appPkgGET",
+        "parameters": [
+          {
+            "description": "Identifier of an on-boarded individual application package",
+            "in": "path",
+            "name": "appPkgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/app_packages/{appPkgId}/package_content",
         "pointer": "#/paths/~1app_packages~1{appPkgId}~1package_content/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "206"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "416"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch the onboarded application package content identified by appPkgId or appDId."
+        "summary": "Fetch the onboarded application package content identified by appPkgId or appDId.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -173,10 +1007,63 @@
         "kind": "operation",
         "method": "put",
         "name": "appPkgPUT",
+        "parameters": [
+          {
+            "description": "Identifier of an on-boarded individual application package",
+            "in": "path",
+            "name": "appPkgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/app_packages/{appPkgId}/package_content",
         "pointer": "#/paths/~1app_packages~1{appPkgId}~1package_content/put",
+        "request": {
+          "content_types": [
+            "application/zip"
+          ],
+          "required": false,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "409",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Uploads the content of application package."
+        "summary": "Uploads the content of application package.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -184,10 +1071,88 @@
         "kind": "operation",
         "method": "get",
         "name": "appDGET",
+        "parameters": [
+          {
+            "description": "Identifier of an application descriptor",
+            "in": "path",
+            "name": "appDId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Attribute-based filtering parameters according to ETSI GS MEC 009",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Include all complex attributes in the response.",
+            "in": "query",
+            "name": "all_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Complex attributes of AppPkgInfo to be included into the response",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Complex attributes of AppPkgInfo to be excluded from the response.",
+            "in": "query",
+            "name": "exclude_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates to exclude the following complex attributes of AppPkgInfo from the response.",
+            "in": "query",
+            "name": "exclude_default",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/onboarded_app_packages/{appDId}/appd",
         "pointer": "#/paths/~1onboarded_app_packages~1{appDId}~1appd/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppD"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Reads the content of the AppD of on-boarded individual application package resources."
+        "summary": "Reads the content of the AppD of on-boarded individual application package resources.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -195,10 +1160,58 @@
         "kind": "operation",
         "method": "get",
         "name": "appDIdGET",
+        "parameters": [
+          {
+            "description": "Identifier of an application descriptor",
+            "in": "path",
+            "name": "appDId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/onboarded_app_packages/{appDId}/package_content",
         "pointer": "#/paths/~1onboarded_app_packages~1{appDId}~1package_content/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "206"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "416"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch the onboarded application package content identified by appPkgId or appDId."
+        "summary": "Fetch the onboarded application package content identified by appPkgId or appDId.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -206,21 +1219,109 @@
         "kind": "operation",
         "method": "put",
         "name": "appDIdPUT",
+        "parameters": [
+          {
+            "description": "Identifier of an application descriptor",
+            "in": "path",
+            "name": "appDId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/onboarded_app_packages/{appDId}/package_content",
         "pointer": "#/paths/~1onboarded_app_packages~1{appDId}~1package_content/put",
+        "request": {
+          "content_types": [
+            "application/zip"
+          ],
+          "required": false,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "409",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Uploads the content of application package."
+        "summary": "Uploads the content of application package.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
+        "description": "used to retrieve the information of subscriptions to individual application package resource in MEO package",
         "id": "operation:get:/subscriptions",
         "kind": "operation",
         "method": "get",
         "name": "subscriptionsGET",
         "path": "/subscriptions",
         "pointer": "#/paths/~1subscriptions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppPkgSubscriptionLinkList"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "used to retrieve the information of subscriptions to individual application package resource in MEO"
+        "summary": "used to retrieve the information of subscriptions to individual application package resource in MEO",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -230,19 +1331,49 @@
         "name": "subscriptionsPOST",
         "path": "/subscriptions",
         "pointer": "#/paths/~1subscriptions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AppPkgSubscription"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AppPkgSubscriptionInfo"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Subscribe to notifications about on-boarding an application package"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/subscriptions/{subscriptionId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "individualSubscriptionDELETE",
-        "path": "/subscriptions/{subscriptionId}",
-        "pointer": "#/paths/~1subscriptions~1{subscriptionId}/delete",
-        "security": [],
-        "summary": "Deletes the individual subscription to notifications about application package changes in MEO."
+        "summary": "Subscribe to notifications about on-boarding an application package",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -250,10 +1381,98 @@
         "kind": "operation",
         "method": "get",
         "name": "individualSubscriptionGET",
+        "parameters": [
+          {
+            "description": "Identifier of an individual subscription to notifications about application package changes",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subscriptions/{subscriptionId}",
         "pointer": "#/paths/~1subscriptions~1{subscriptionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppPkgSubscriptionInfo"
+          },
+          {
+            "status": "400",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "406",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Used to represent an individual subscription to notifications about application package changes."
+        "summary": "Used to represent an individual subscription to notifications about application package changes.",
+        "tags": [
+          "app-pkgm"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/subscriptions/{subscriptionId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "individualSubscriptionDELETE",
+        "parameters": [
+          {
+            "description": "Identifier of an individual subscription to notifications about application package changes",
+            "in": "path",
+            "name": "subscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/subscriptions/{subscriptionId}",
+        "pointer": "#/paths/~1subscriptions~1{subscriptionId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes the individual subscription to notifications about application package changes in MEO.",
+        "tags": [
+          "app-pkgm"
+        ]
       },
       {
         "deprecated": false,
@@ -263,373 +1482,525 @@
         "name": "app_pkg_notificationPOST",
         "path": "/user_defined_notification",
         "pointer": "#/paths/~1user_defined_notification/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AppPkgNotification"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "403",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "404",
+            "type": "ProblemDetails"
+          },
+          {
+            "status": "429",
+            "type": "ProblemDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Registers a notification endpoint to notify application package operations"
+        "summary": "Registers a notification endpoint to notify application package operations",
+        "tags": [
+          "app-pkgm-notifications"
+        ]
       },
       {
+        "description": "'Identifies the action of the MEC host data plane, when a packet matches the trafficFilter.'",
         "id": "schema:Action",
         "kind": "schema",
-        "name": "Action"
+        "name": "Action",
+        "type": "string"
       },
       {
+        "description": "Name of the algorithm used to generate the checksum, as defined in ETSI GS NFV-SOL 004.",
         "id": "schema:Algorithm",
         "kind": "schema",
-        "name": "Algorithm"
+        "name": "Algorithm",
+        "type": "string"
       },
       {
         "id": "schema:AppD",
         "kind": "schema",
-        "name": "AppD"
+        "name": "AppD",
+        "type": "object"
       },
       {
+        "description": "Identifier of this MEC application descriptor.",
         "id": "schema:AppDId",
         "kind": "schema",
-        "name": "AppDId"
+        "name": "AppDId",
+        "type": "string"
       },
       {
+        "description": "Identifies the version of the application descriptor.",
         "id": "schema:AppDVersion",
         "kind": "schema",
-        "name": "AppDVersion"
+        "name": "AppDVersion",
+        "type": "string"
       },
       {
         "id": "schema:AppExternalCpd",
         "kind": "schema",
-        "name": "AppExternalCpd"
+        "name": "AppExternalCpd",
+        "type": "object"
       },
       {
+        "description": "Name to identify the MEC application.",
         "id": "schema:AppName",
         "kind": "schema",
-        "name": "AppName"
+        "name": "AppName",
+        "type": "string"
       },
       {
+        "description": "Discriminator for the different notification types",
         "id": "schema:AppPkg.NotificationType",
         "kind": "schema",
-        "name": "AppPkg.NotificationType"
+        "name": "AppPkg.NotificationType",
+        "type": "string"
       },
       {
+        "description": "Operational state of the onboarded application package: Ã¢â‚¬Â¢ENABLED: the application package can be used for instantiation of new application instances.",
         "id": "schema:AppPkg.OperationalState",
         "kind": "schema",
-        "name": "AppPkg.OperationalState"
+        "name": "AppPkg.OperationalState",
+        "type": "string"
       },
       {
+        "description": "Subscribed notification type.",
         "id": "schema:AppPkg.SubscriptionType",
         "kind": "schema",
-        "name": "AppPkg.SubscriptionType"
+        "name": "AppPkg.SubscriptionType",
+        "type": "string"
       },
       {
+        "description": "Additional information of application package artifacts that are not application software images.",
         "id": "schema:AppPkgArtifactInfo",
         "kind": "schema",
         "name": "AppPkgArtifactInfo"
       },
       {
+        "description": "The attribute-based filter is to filter application packages on which the query applies.",
         "id": "schema:AppPkgFilter",
         "kind": "schema",
-        "name": "AppPkgFilter"
+        "name": "AppPkgFilter",
+        "type": "string"
       },
       {
+        "description": "Identifier of the onboarded application package.",
         "id": "schema:AppPkgId",
         "kind": "schema",
-        "name": "AppPkgId"
+        "name": "AppPkgId",
+        "type": "string"
       },
       {
+        "description": "'The data type AppPkgInfo represents the parameters for an application package resource'",
         "id": "schema:AppPkgInfo",
         "kind": "schema",
-        "name": "AppPkgInfo"
+        "name": "AppPkgInfo",
+        "type": "object"
       },
       {
+        "description": "Links to resources related to this resource.",
         "id": "schema:AppPkgInfo.links",
         "kind": "schema",
-        "name": "AppPkgInfo.links"
+        "name": "AppPkgInfo.links",
+        "type": "object"
       },
       {
+        "description": "'The data type represents the operational state for an application package resource'",
         "id": "schema:AppPkgInfoModifications",
         "kind": "schema",
-        "name": "AppPkgInfoModifications"
+        "name": "AppPkgInfoModifications",
+        "type": "object"
       },
       {
+        "description": "'This data type represents an application package management notification for informing the subscribers about onboarding application package resources.",
         "id": "schema:AppPkgNotification",
         "kind": "schema",
-        "name": "AppPkgNotification"
+        "name": "AppPkgNotification",
+        "type": "object"
       },
       {
+        "description": "''",
         "id": "schema:AppPkgNotification.Id",
         "kind": "schema",
-        "name": "AppPkgNotification.Id"
+        "name": "AppPkgNotification.Id",
+        "type": "string"
       },
       {
+        "description": "Links to resources related to this resource.",
         "id": "schema:AppPkgNotification.links",
         "kind": "schema",
-        "name": "AppPkgNotification.links"
+        "name": "AppPkgNotification.links",
+        "type": "object"
       },
       {
+        "description": "Information of application software image in application package.",
         "id": "schema:AppPkgSWImageInfo",
         "kind": "schema",
         "name": "AppPkgSWImageInfo"
       },
       {
+        "description": "'The data type represents the input parameters of \"subscription operation\" to notification of application package management for the onboarding, or operational…",
         "id": "schema:AppPkgSubscription",
         "kind": "schema",
-        "name": "AppPkgSubscription"
+        "name": "AppPkgSubscription",
+        "type": "object"
       },
       {
+        "description": "'The data type represents a subscription to notification of application package management for the onboarding, or operational state change of application packa…",
         "id": "schema:AppPkgSubscriptionInfo",
         "kind": "schema",
-        "name": "AppPkgSubscriptionInfo"
+        "name": "AppPkgSubscriptionInfo",
+        "type": "object"
       },
       {
+        "description": "''",
         "id": "schema:AppPkgSubscriptionInfo.Id",
         "kind": "schema",
-        "name": "AppPkgSubscriptionInfo.Id"
+        "name": "AppPkgSubscriptionInfo.Id",
+        "type": "string"
       },
       {
+        "description": "Links to resources related to this resource.",
         "id": "schema:AppPkgSubscriptionInfo.links",
         "kind": "schema",
-        "name": "AppPkgSubscriptionInfo.links"
+        "name": "AppPkgSubscriptionInfo.links",
+        "type": "object"
       },
       {
+        "description": "'The data type represents a subscription link list of notification on application package management'",
         "id": "schema:AppPkgSubscriptionLinkList",
         "kind": "schema",
-        "name": "AppPkgSubscriptionLinkList"
+        "name": "AppPkgSubscriptionLinkList",
+        "type": "object"
       },
       {
+        "description": "Links to resources related to this resource.",
         "id": "schema:AppPkgSubscriptionLinkList.links",
         "kind": "schema",
-        "name": "AppPkgSubscriptionLinkList.links"
+        "name": "AppPkgSubscriptionLinkList.links",
+        "type": "object"
       },
       {
+        "description": "Provider of the application and of the AppD.",
         "id": "schema:AppProvider",
         "kind": "schema",
-        "name": "AppProvider"
+        "name": "AppProvider",
+        "type": "string"
       },
       {
+        "description": "Software version of the application.",
         "id": "schema:AppSoftwareVersion",
         "kind": "schema",
-        "name": "AppSoftwareVersion"
+        "name": "AppSoftwareVersion",
+        "type": "string"
       },
       {
+        "description": "The URI of the endpoint for the notification to be sent to.",
         "id": "schema:CallbackUri",
         "kind": "schema",
-        "name": "CallbackUri"
+        "name": "CallbackUri",
+        "type": "string:uri"
       },
       {
+        "description": "See MEC011",
         "id": "schema:CategoryRef",
         "kind": "schema",
         "name": "CategoryRef"
       },
       {
+        "description": "NFV",
         "id": "schema:ChangeAppInstanceStateOpConfig",
         "kind": "schema",
-        "name": "ChangeAppInstanceStateOpConfig"
+        "name": "ChangeAppInstanceStateOpConfig",
+        "type": "string"
       },
       {
         "id": "schema:Checksum",
         "kind": "schema",
-        "name": "Checksum"
+        "name": "Checksum",
+        "type": "object"
       },
       {
         "id": "schema:CreateAppPkg",
         "kind": "schema",
-        "name": "CreateAppPkg"
+        "name": "CreateAppPkg",
+        "type": "object"
       },
       {
         "id": "schema:DNSRuleDescriptor",
         "kind": "schema",
-        "name": "DNSRuleDescriptor"
+        "name": "DNSRuleDescriptor",
+        "type": "object"
       },
       {
         "id": "schema:FeatureDependency",
         "kind": "schema",
-        "name": "FeatureDependency"
+        "name": "FeatureDependency",
+        "type": "object"
       },
       {
+        "description": "Definition of filter type: per FLOW or PACKET",
         "id": "schema:FilterType",
         "kind": "schema",
-        "name": "FilterType"
+        "name": "FilterType",
+        "type": "string"
       },
       {
+        "description": "'String 1 The hexadecimal value of the checksum'",
         "id": "schema:Hash",
         "kind": "schema",
-        "name": "Hash"
+        "name": "Hash",
+        "type": "string"
       },
       {
+        "description": "The URI referring to the subscription.",
         "id": "schema:Href",
         "kind": "schema",
-        "name": "Href"
+        "name": "Href",
+        "type": "string:uri"
       },
       {
         "id": "schema:InterfaceDescriptor",
         "kind": "schema",
-        "name": "InterfaceDescriptor"
+        "name": "InterfaceDescriptor",
+        "type": "object"
       },
       {
+        "description": "Type of interface.",
         "id": "schema:InterfaceType",
         "kind": "schema",
-        "name": "InterfaceType"
+        "name": "InterfaceType",
+        "type": "string"
       },
       {
+        "description": "Specifies the IP address type",
         "id": "schema:IpAddressType",
         "kind": "schema",
-        "name": "IpAddressType"
+        "name": "IpAddressType",
+        "type": "string"
       },
       {
+        "description": "'This data type represents a list of key-value pairs.",
         "id": "schema:KeyValuePairs",
         "kind": "schema",
-        "name": "KeyValuePairs"
+        "name": "KeyValuePairs",
+        "type": "object"
       },
       {
         "id": "schema:LatencyDescriptor",
         "kind": "schema",
-        "name": "LatencyDescriptor"
+        "name": "LatencyDescriptor",
+        "type": "object"
       },
       {
         "id": "schema:LinkType",
         "kind": "schema",
-        "name": "LinkType"
+        "name": "LinkType",
+        "type": "object"
       },
       {
         "id": "schema:Not_specified",
         "kind": "schema",
-        "name": "Not_specified"
+        "name": "Not_specified",
+        "type": "string"
       },
       {
+        "description": "Onboarding state of application package",
         "id": "schema:OnboardingState",
         "kind": "schema",
-        "name": "OnboardingState"
+        "name": "OnboardingState",
+        "type": "string:enum"
       },
       {
         "id": "schema:ProblemDetails",
         "kind": "schema",
-        "name": "ProblemDetails"
+        "name": "ProblemDetails",
+        "type": "object"
       },
       {
+        "description": "See MEC011",
         "id": "schema:SecurityInfo",
         "kind": "schema",
         "name": "SecurityInfo"
       },
       {
+        "description": "The name of the service, for example, RNIS, LocationService, etc.",
         "id": "schema:SerName",
         "kind": "schema",
-        "name": "SerName"
+        "name": "SerName",
+        "type": "string"
       },
       {
+        "description": "The version of the service.",
         "id": "schema:SerVersion",
         "kind": "schema",
-        "name": "SerVersion"
+        "name": "SerVersion",
+        "type": "string"
       },
       {
         "id": "schema:SerializerTypes",
         "kind": "schema",
-        "name": "SerializerTypes"
+        "name": "SerializerTypes",
+        "type": "string"
       },
       {
+        "description": "'Information about the serializers in this binding, as defined in the SerializerTypes type in ETSI GS MEC 011 '",
         "id": "schema:Serializers",
         "kind": "schema",
-        "name": "Serializers"
+        "name": "Serializers",
+        "type": "SerializerTypes[]"
       },
       {
         "id": "schema:ServiceDependency",
         "kind": "schema",
-        "name": "ServiceDependency"
+        "name": "ServiceDependency",
+        "type": "object"
       },
       {
+        "description": "'The ServiceDescriptor data type describes a MEC service produced by a service-providing MEC application.'",
         "id": "schema:ServiceDescriptor",
         "kind": "schema",
-        "name": "ServiceDescriptor"
+        "name": "ServiceDescriptor",
+        "type": "object"
       },
       {
+        "description": "Identifier of the subscription related to this notification.",
         "id": "schema:SubscriptionId",
         "kind": "schema",
-        "name": "SubscriptionId"
+        "name": "SubscriptionId",
+        "type": "string"
       },
       {
+        "description": "'The data type represents the input parameters of \"subscription operation\" to notification of application package management for the onboarding, or operational…",
         "id": "schema:Subscriptions.AppPkgSubscription",
         "kind": "schema",
-        "name": "Subscriptions.AppPkgSubscription"
+        "name": "Subscriptions.AppPkgSubscription",
+        "type": "object"
       },
       {
+        "description": "'Subscribed notification type'",
         "id": "schema:SubsctiptionType.AppPkg",
         "kind": "schema",
-        "name": "SubsctiptionType.AppPkg"
+        "name": "SubsctiptionType.AppPkg",
+        "type": "string"
       },
       {
+        "description": "Ref NFV",
         "id": "schema:SwImageDescriptor",
         "kind": "schema",
-        "name": "SwImageDescriptor"
+        "name": "SwImageDescriptor",
+        "type": "string"
       },
       {
+        "description": "NFV",
         "id": "schema:TerminateAppInstanceOpConfig",
         "kind": "schema",
-        "name": "TerminateAppInstanceOpConfig"
+        "name": "TerminateAppInstanceOpConfig",
+        "type": "string"
       },
       {
         "id": "schema:TimeStamp",
         "kind": "schema",
-        "name": "TimeStamp"
+        "name": "TimeStamp",
+        "type": "object"
       },
       {
         "id": "schema:TrafficFilter",
         "kind": "schema",
-        "name": "TrafficFilter"
+        "name": "TrafficFilter",
+        "type": "object"
       },
       {
         "id": "schema:TrafficRuleDescriptor",
         "kind": "schema",
-        "name": "TrafficRuleDescriptor"
+        "name": "TrafficRuleDescriptor",
+        "type": "object"
       },
       {
         "id": "schema:TransportDependency",
         "kind": "schema",
-        "name": "TransportDependency"
+        "name": "TransportDependency",
+        "type": "object"
       },
       {
         "id": "schema:TransportDescriptor",
         "kind": "schema",
-        "name": "TransportDescriptor"
+        "name": "TransportDescriptor",
+        "type": "object"
       },
       {
         "id": "schema:TransportTypes",
         "kind": "schema",
-        "name": "TransportTypes"
+        "name": "TransportTypes",
+        "type": "string"
       },
       {
+        "description": "'Indicates transports and serialization formats supported made available to the service-consuming application.",
         "id": "schema:TransportsSupported",
         "kind": "schema",
-        "name": "TransportsSupported"
+        "name": "TransportsSupported",
+        "type": "object"
       },
       {
         "id": "schema:TunnelInfo",
         "kind": "schema",
-        "name": "TunnelInfo"
+        "name": "TunnelInfo",
+        "type": "object"
       },
       {
+        "description": "Type of tunnel.",
         "id": "schema:TunnelType",
         "kind": "schema",
-        "name": "TunnelType"
+        "name": "TunnelType",
+        "type": "string"
       },
       {
         "id": "schema:URI",
         "kind": "schema",
-        "name": "URI"
+        "name": "URI",
+        "type": "string"
       },
       {
+        "description": "Usage state of the onboarded instance of the application package",
         "id": "schema:UsageState",
         "kind": "schema",
-        "name": "UsageState"
+        "name": "UsageState",
+        "type": "string:enum"
       },
       {
+        "description": "Ref NFV",
         "id": "schema:VirtualComputeDescription",
         "kind": "schema",
-        "name": "VirtualComputeDescription"
+        "name": "VirtualComputeDescription",
+        "type": "string"
       },
       {
         "id": "schema:VirtualNetworkInterfaceRequirements",
         "kind": "schema",
-        "name": "VirtualNetworkInterfaceRequirements"
+        "name": "VirtualNetworkInterfaceRequirements",
+        "type": "string"
       },
       {
+        "description": "Ref NFV",
         "id": "schema:VirtualStorageDescriptor",
         "kind": "schema",
-        "name": "VirtualStorageDescriptor"
+        "name": "VirtualStorageDescriptor",
+        "type": "string"
       }
     ]
   },

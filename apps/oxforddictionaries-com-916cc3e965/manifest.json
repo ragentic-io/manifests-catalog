@@ -133,6 +133,396 @@
         "from": "oxforddictionaries-com-916cc3e965",
         "kind": "EXPOSES",
         "to": "operation:get:/wordlist/{source_lang}/{filters_basic}"
+      },
+      {
+        "from": "operation:get:/domains/{source_domains_language}/{target_domains_language}",
+        "kind": "RETURNS",
+        "to": "schema:UtilityLabels"
+      },
+      {
+        "from": "operation:get:/domains/{source_language}",
+        "kind": "RETURNS",
+        "to": "schema:UtilityLabels"
+      },
+      {
+        "from": "operation:get:/entries/{source_language}/{word_id}/sentences",
+        "kind": "RETURNS",
+        "to": "schema:SentencesResults"
+      },
+      {
+        "from": "operation:get:/entries/{source_lang}/{word_id}",
+        "kind": "RETURNS",
+        "to": "schema:RetrieveEntry"
+      },
+      {
+        "from": "operation:get:/entries/{source_lang}/{word_id}/antonyms",
+        "kind": "RETURNS",
+        "to": "schema:Thesaurus"
+      },
+      {
+        "from": "operation:get:/entries/{source_lang}/{word_id}/regions={region}",
+        "kind": "RETURNS",
+        "to": "schema:RetrieveEntry"
+      },
+      {
+        "from": "operation:get:/entries/{source_lang}/{word_id}/synonyms",
+        "kind": "RETURNS",
+        "to": "schema:Thesaurus"
+      },
+      {
+        "from": "operation:get:/entries/{source_lang}/{word_id}/synonyms;antonyms",
+        "kind": "RETURNS",
+        "to": "schema:Thesaurus"
+      },
+      {
+        "from": "operation:get:/entries/{source_lang}/{word_id}/{filters}",
+        "kind": "RETURNS",
+        "to": "schema:RetrieveEntry"
+      },
+      {
+        "from": "operation:get:/entries/{source_translation_language}/{word_id}/translations={target_translation_language}",
+        "kind": "RETURNS",
+        "to": "schema:RetrieveEntry"
+      },
+      {
+        "from": "operation:get:/filters",
+        "kind": "RETURNS",
+        "to": "schema:Filters"
+      },
+      {
+        "from": "operation:get:/filters/{endpoint}",
+        "kind": "RETURNS",
+        "to": "schema:Filters"
+      },
+      {
+        "from": "operation:get:/grammaticalFeatures/{source_language}",
+        "kind": "RETURNS",
+        "to": "schema:UtilityLabels"
+      },
+      {
+        "from": "operation:get:/inflections/{source_lang}/{word_id}/{filters}",
+        "kind": "RETURNS",
+        "to": "schema:Lemmatron"
+      },
+      {
+        "from": "operation:get:/languages",
+        "kind": "RETURNS",
+        "to": "schema:Languages"
+      },
+      {
+        "from": "operation:get:/lexicalcategories/{language}",
+        "kind": "RETURNS",
+        "to": "schema:UtilityLabels"
+      },
+      {
+        "from": "operation:get:/regions/{source_language}",
+        "kind": "RETURNS",
+        "to": "schema:Regions"
+      },
+      {
+        "from": "operation:get:/registers/{source_language}",
+        "kind": "RETURNS",
+        "to": "schema:UtilityLabels"
+      },
+      {
+        "from": "operation:get:/registers/{source_register_language}/{target_register_language}",
+        "kind": "RETURNS",
+        "to": "schema:UtilityLabels"
+      },
+      {
+        "from": "operation:get:/search/{source_lang}",
+        "kind": "RETURNS",
+        "to": "schema:Wordlist"
+      },
+      {
+        "from": "operation:get:/search/{source_search_language}/translations={target_search_language}",
+        "kind": "RETURNS",
+        "to": "schema:Wordlist"
+      },
+      {
+        "from": "operation:get:/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/",
+        "kind": "RETURNS",
+        "to": "schema:NgramsResult"
+      },
+      {
+        "from": "operation:get:/stats/frequency/word/{source_lang}/",
+        "kind": "RETURNS",
+        "to": "schema:StatsWordResult"
+      },
+      {
+        "from": "operation:get:/stats/frequency/words/{source_lang}/",
+        "kind": "RETURNS",
+        "to": "schema:StatsWordResultList"
+      },
+      {
+        "from": "operation:get:/wordlist/{source_lang}/{filters_advanced}",
+        "kind": "RETURNS",
+        "to": "schema:Wordlist"
+      },
+      {
+        "from": "operation:get:/wordlist/{source_lang}/{filters_basic}",
+        "kind": "RETURNS",
+        "to": "schema:Wordlist"
+      },
+      {
+        "from": "schema:ArrayOfRelatedEntries",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:Entry",
+        "kind": "REFERENCES",
+        "to": "schema:CategorizedTextList"
+      },
+      {
+        "from": "schema:Entry",
+        "kind": "REFERENCES",
+        "to": "schema:GrammaticalFeaturesList"
+      },
+      {
+        "from": "schema:Entry",
+        "kind": "REFERENCES",
+        "to": "schema:PronunciationsList"
+      },
+      {
+        "from": "schema:Entry",
+        "kind": "REFERENCES",
+        "to": "schema:Sense"
+      },
+      {
+        "from": "schema:Entry",
+        "kind": "REFERENCES",
+        "to": "schema:VariantFormsList"
+      },
+      {
+        "from": "schema:Entry",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:ExamplesList",
+        "kind": "REFERENCES",
+        "to": "schema:CategorizedTextList"
+      },
+      {
+        "from": "schema:ExamplesList",
+        "kind": "REFERENCES",
+        "to": "schema:TranslationsList"
+      },
+      {
+        "from": "schema:ExamplesList",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:Filters",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:HeadwordEntry",
+        "kind": "REFERENCES",
+        "to": "schema:PronunciationsList"
+      },
+      {
+        "from": "schema:HeadwordEntry",
+        "kind": "REFERENCES",
+        "to": "schema:lexicalEntry"
+      },
+      {
+        "from": "schema:HeadwordLemmatron",
+        "kind": "REFERENCES",
+        "to": "schema:LemmatronLexicalEntry"
+      },
+      {
+        "from": "schema:HeadwordThesaurus",
+        "kind": "REFERENCES",
+        "to": "schema:ThesaurusLexicalEntry"
+      },
+      {
+        "from": "schema:Lemmatron",
+        "kind": "REFERENCES",
+        "to": "schema:HeadwordLemmatron"
+      },
+      {
+        "from": "schema:LemmatronLexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:GrammaticalFeaturesList"
+      },
+      {
+        "from": "schema:LemmatronLexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:InflectionsList"
+      },
+      {
+        "from": "schema:PronunciationsList",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:Regions",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:RetrieveEntry",
+        "kind": "REFERENCES",
+        "to": "schema:HeadwordEntry"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:CategorizedTextList"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:CrossReferencesList"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:ExamplesList"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:PronunciationsList"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:TranslationsList"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:VariantFormsList"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:Sense",
+        "kind": "REFERENCES",
+        "to": "schema:thesaurusLink"
+      },
+      {
+        "from": "schema:SentencesEntry",
+        "kind": "REFERENCES",
+        "to": "schema:SentencesLexicalEntry"
+      },
+      {
+        "from": "schema:SentencesLexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:ExamplesList"
+      },
+      {
+        "from": "schema:SentencesLexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:GrammaticalFeaturesList"
+      },
+      {
+        "from": "schema:SentencesResults",
+        "kind": "REFERENCES",
+        "to": "schema:SentencesEntry"
+      },
+      {
+        "from": "schema:SynonymsAntonyms",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:Thesaurus",
+        "kind": "REFERENCES",
+        "to": "schema:HeadwordThesaurus"
+      },
+      {
+        "from": "schema:ThesaurusEntry",
+        "kind": "REFERENCES",
+        "to": "schema:ThesaurusSense"
+      },
+      {
+        "from": "schema:ThesaurusEntry",
+        "kind": "REFERENCES",
+        "to": "schema:VariantFormsList"
+      },
+      {
+        "from": "schema:ThesaurusLexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:ThesaurusEntry"
+      },
+      {
+        "from": "schema:ThesaurusLexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:VariantFormsList"
+      },
+      {
+        "from": "schema:ThesaurusSense",
+        "kind": "REFERENCES",
+        "to": "schema:ExamplesList"
+      },
+      {
+        "from": "schema:ThesaurusSense",
+        "kind": "REFERENCES",
+        "to": "schema:SynonymsAntonyms"
+      },
+      {
+        "from": "schema:ThesaurusSense",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:TranslationsList",
+        "kind": "REFERENCES",
+        "to": "schema:CategorizedTextList"
+      },
+      {
+        "from": "schema:TranslationsList",
+        "kind": "REFERENCES",
+        "to": "schema:GrammaticalFeaturesList"
+      },
+      {
+        "from": "schema:TranslationsList",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:VariantFormsList",
+        "kind": "REFERENCES",
+        "to": "schema:arrayofstrings"
+      },
+      {
+        "from": "schema:lexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:ArrayOfRelatedEntries"
+      },
+      {
+        "from": "schema:lexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:CategorizedTextList"
+      },
+      {
+        "from": "schema:lexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:Entry"
+      },
+      {
+        "from": "schema:lexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:GrammaticalFeaturesList"
+      },
+      {
+        "from": "schema:lexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:PronunciationsList"
+      },
+      {
+        "from": "schema:lexicalEntry",
+        "kind": "REFERENCES",
+        "to": "schema:VariantFormsList"
       }
     ],
     "nodes": [
@@ -142,469 +532,2444 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the available [domains](documentation/glossary?term=domain) for a given bilingual language dataset.",
         "id": "operation:get:/domains/{source_domains_language}/{target_domains_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /domains/{source_domains_language}/{target_domains_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "nso",
+              "zu",
+              "ur",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "source_domains_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IANA language code",
+            "enum": [
+              "es",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ro",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "target_domains_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{source_domains_language}/{target_domains_language}",
         "pointer": "#/paths/~1domains~1{source_domains_language}~1{target_domains_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UtilityLabels"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available domains in a bilingual dataset"
+        "summary": "Lists available domains in a bilingual dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the available [domains](documentation/glossary?term=domain) for a given monolingual language dataset.",
         "id": "operation:get:/domains/{source_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /domains/{source_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "nso",
+              "zu",
+              "hi",
+              "sw",
+              "ur",
+              "de",
+              "pt",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "source_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{source_language}",
         "pointer": "#/paths/~1domains~1{source_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UtilityLabels"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available domains in a monolingual dataset"
+        "summary": "Lists available domains in a monolingual dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to retrieve sentences extracted from corpora which show how a word is used in the language.",
         "id": "operation:get:/entries/{source_language}/{word_id}/sentences",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_language}/{word_id}/sentences",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es"
+            ],
+            "in": "path",
+            "name": "source_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_language}/{word_id}/sentences",
         "pointer": "#/paths/~1entries~1{source_language}~1{word_id}~1sentences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SentencesResults"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve corpus sentences for a given word"
+        "summary": "Retrieve corpus sentences for a given word",
+        "tags": [
+          "The Sentence Dictionary"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to retrieve definitions, [pronunciations](documentation/glossary?term=pronunciation), example sentences, [grammatical information](documentation/gloss…",
         "id": "operation:get:/entries/{source_lang}/{word_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_lang}/{word_id}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "lv",
+              "hi",
+              "sw",
+              "ta",
+              "gu",
+              "fr"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_lang}/{word_id}",
         "pointer": "#/paths/~1entries~1{source_lang}~1{word_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RetrieveEntry"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve dictionary information for a given word"
+        "summary": "Retrieve dictionary information for a given word",
+        "tags": [
+          "Dictionary entries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve words that are opposite in meaning to the input word ([antonym](documentation/glossary?term=thesaurus)).",
         "id": "operation:get:/entries/{source_lang}/{word_id}/antonyms",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_lang}/{word_id}/antonyms",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_lang}/{word_id}/antonyms",
         "pointer": "#/paths/~1entries~1{source_lang}~1{word_id}~1antonyms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Thesaurus"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve words that mean the opposite"
+        "summary": "Retrieve words that mean the opposite",
+        "tags": [
+          "Thesaurus"
+        ]
       },
       {
         "deprecated": false,
+        "description": "USe this filter to restrict the lookup to either our Oxford Dictionary of English (GB) or New Oxford American Dictionary (US).",
         "id": "operation:get:/entries/{source_lang}/{word_id}/regions={region}",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_lang}/{word_id}/regions={region}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Region filter parameter.",
+            "enum": [
+              "gb",
+              "us"
+            ],
+            "in": "path",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_lang}/{word_id}/regions={region}",
         "pointer": "#/paths/~1entries~1{source_lang}~1{word_id}~1regions={region}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RetrieveEntry"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Specify GB or US dictionary for English entry search"
+        "summary": "Specify GB or US dictionary for English entry search",
+        "tags": [
+          "Dictionary entries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to retrieve words that are similar in meaning to the input word ([synonym](documentation/glossary?term=synonym)).",
         "id": "operation:get:/entries/{source_lang}/{word_id}/synonyms",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_lang}/{word_id}/synonyms",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_lang}/{word_id}/synonyms",
         "pointer": "#/paths/~1entries~1{source_lang}~1{word_id}~1synonyms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Thesaurus"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve words that are similar"
+        "summary": "Retrieve words that are similar",
+        "tags": [
+          "Thesaurus"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve available [synonyms](documentation/glossary?term=thesaurus) and [antonyms](documentation/glossary?term=thesaurus) for a given word and language.",
         "id": "operation:get:/entries/{source_lang}/{word_id}/synonyms;antonyms",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_lang}/{word_id}/synonyms;antonyms",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_lang}/{word_id}/synonyms;antonyms",
         "pointer": "#/paths/~1entries~1{source_lang}~1{word_id}~1synonyms;antonyms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Thesaurus"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve synonyms and antonyms for a given word"
+        "summary": "Retrieve synonyms and antonyms for a given word",
+        "tags": [
+          "Thesaurus"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use filters to limit the [entry](documentation/glossary?term=entry) information that is returned.",
         "id": "operation:get:/entries/{source_lang}/{word_id}/{filters}",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_lang}/{word_id}/{filters}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "lv",
+              "hi",
+              "sw",
+              "ta",
+              "gu",
+              "fr"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "ace",
+            "description": "An Entry identifier.",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "grammaticalFeatures=singular,past;lexicalCategory=noun",
+            "description": "Separate filtering conditions using a semicolon.",
+            "in": "path",
+            "name": "filters",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_lang}/{word_id}/{filters}",
         "pointer": "#/paths/~1entries~1{source_lang}~1{word_id}~1{filters}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RetrieveEntry"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Apply filters to response"
+        "summary": "Apply filters to response",
+        "tags": [
+          "Dictionary entries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to return translations for a given word.",
         "id": "operation:get:/entries/{source_translation_language}/{word_id}/translations={target_translation_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /entries/{source_translation_language}/{word_id}/translations={target_translation_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ur",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "source_translation_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "change",
+            "description": "The source word",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IANA language code",
+            "enum": [
+              "es",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ro",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "target_translation_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entries/{source_translation_language}/{word_id}/translations={target_translation_language}",
         "pointer": "#/paths/~1entries~1{source_translation_language}~1{word_id}~1translations={target_translation_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RetrieveEntry"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve translation for a given word"
+        "summary": "Retrieve translation for a given word",
+        "tags": [
+          "Translation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all the valid filters to construct API calls.",
         "id": "operation:get:/filters",
         "kind": "operation",
         "method": "get",
         "name": "get /filters",
+        "parameters": [
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/filters",
         "pointer": "#/paths/~1filters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Filters"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available filters"
+        "summary": "Lists available filters",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all the valid filters for a given endpoint to construct API calls.",
         "id": "operation:get:/filters/{endpoint}",
         "kind": "operation",
         "method": "get",
         "name": "get /filters/{endpoint}",
+        "parameters": [
+          {
+            "description": "Name of the endpoint.",
+            "enum": [
+              "entries",
+              "inflections",
+              "translations"
+            ],
+            "in": "path",
+            "name": "endpoint",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/filters/{endpoint}",
         "pointer": "#/paths/~1filters~1{endpoint}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Filters"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available filters for specific endpoint"
+        "summary": "Lists available filters for specific endpoint",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the available [grammatical features](documentation/glossary?term=grammaticalfeatures) for a given language dataset.",
         "id": "operation:get:/grammaticalFeatures/{source_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /grammaticalFeatures/{source_language}",
+        "parameters": [
+          {
+            "description": "IANA language code.",
+            "enum": [
+              "en",
+              "es",
+              "lv",
+              "nso",
+              "zu",
+              "ms",
+              "tn",
+              "ur",
+              "hi",
+              "sw",
+              "de",
+              "pt",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "source_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/grammaticalFeatures/{source_language}",
         "pointer": "#/paths/~1grammaticalFeatures~1{source_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UtilityLabels"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available grammatical features in a dataset"
+        "summary": "Lists available grammatical features in a dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to check if a word exists in the dictionary, or what 'root' form it links to (e.g., swimming > swim).",
         "id": "operation:get:/inflections/{source_lang}/{word_id}/{filters}",
         "kind": "operation",
         "method": "get",
         "name": "get /inflections/{source_lang}/{word_id}/{filters}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "hi",
+              "nso",
+              "tn",
+              "zu",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "grammaticalFeatures=singular,past;lexicalCategory=noun",
+            "description": "Separate filtering conditions using a semicolon.",
+            "in": "path",
+            "name": "filters",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "swimming",
+            "description": "The input word",
+            "in": "path",
+            "name": "word_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/inflections/{source_lang}/{word_id}/{filters}",
         "pointer": "#/paths/~1inflections~1{source_lang}~1{word_id}~1{filters}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Lemmatron"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check a word exists in the dictionary and retrieve its root form"
+        "summary": "Check a word exists in the dictionary and retrieve its root form",
+        "tags": [
+          "Lemmatron"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of monolingual and bilingual language datasets available in the API",
         "id": "operation:get:/languages",
         "kind": "operation",
         "method": "get",
         "name": "get /languages",
+        "parameters": [
+          {
+            "description": "IANA language code.",
+            "enum": [
+              "es",
+              "en",
+              "lv",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ur",
+              "hi",
+              "sw",
+              "ro",
+              "de",
+              "pt",
+              "ta",
+              "gu"
+            ],
+            "in": "query",
+            "name": "sourceLanguage",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "IANA language code.",
+            "enum": [
+              "es",
+              "en",
+              "lv",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ur",
+              "hi",
+              "sw",
+              "ro"
+            ],
+            "in": "query",
+            "name": "targetLanguage",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/languages",
         "pointer": "#/paths/~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Languages"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available dictionaries"
+        "summary": "Lists available dictionaries",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of available [lexical categories](documentation/glossary?term=lexicalcategory) for a given language dataset.",
         "id": "operation:get:/lexicalcategories/{language}",
         "kind": "operation",
         "method": "get",
         "name": "get /lexicalcategories/{language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "es",
+              "en",
+              "lv",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ur",
+              "hi",
+              "sw",
+              "ro",
+              "de",
+              "pt",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lexicalcategories/{language}",
         "pointer": "#/paths/~1lexicalcategories~1{language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UtilityLabels"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available lexical categories in a dataset"
+        "summary": "Lists available lexical categories in a dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the available [regions](documentation/glossary?term=regions) for a given monolingual language dataset.",
         "id": "operation:get:/regions/{source_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /regions/{source_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en"
+            ],
+            "in": "path",
+            "name": "source_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/regions/{source_language}",
         "pointer": "#/paths/~1regions~1{source_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Regions"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available regions in a monolingual dataset"
+        "summary": "Lists available regions in a monolingual dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the available [registers](documentation/glossary?term=registers) for a given monolingual language dataset.",
         "id": "operation:get:/registers/{source_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /registers/{source_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "hi",
+              "id",
+              "lv",
+              "ms",
+              "sw",
+              "ur",
+              "de",
+              "pt",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "source_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registers/{source_language}",
         "pointer": "#/paths/~1registers~1{source_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UtilityLabels"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available registers in a  monolingual dataset"
+        "summary": "Lists available registers in a  monolingual dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of the available [registers](documentation/glossary?term=registers) for a given bilingual language dataset.",
         "id": "operation:get:/registers/{source_register_language}/{target_register_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /registers/{source_register_language}/{target_register_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "ms",
+              "id",
+              "ur",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "source_register_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IANA language code",
+            "enum": [
+              "es",
+              "en",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ro",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "target_register_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registers/{source_register_language}/{target_register_language}",
         "pointer": "#/paths/~1registers~1{source_register_language}~1{target_register_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UtilityLabels"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists available registers in a bilingual dataset"
+        "summary": "Lists available registers in a bilingual dataset",
+        "tags": [
+          "Utility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to retrieve possible [headword](documentation/glossary?term=headword) matches for a given string of text.",
         "id": "operation:get:/search/{source_lang}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/{source_lang}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "hi",
+              "lv",
+              "sw",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "eye",
+            "description": "Search string",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Set prefix to true if you'd like to get results only starting with search string.",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "prefix",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If searching in English, filter words with specific region(s) either 'us' or 'gb'.",
+            "in": "query",
+            "name": "regions",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the number of results per response.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offset the start number of the result.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/{source_lang}",
         "pointer": "#/paths/~1search~1{source_lang}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Wordlist"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve possible matches to input"
+        "summary": "Retrieve possible matches to input",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to find matches in our translation dictionaries.",
         "id": "operation:get:/search/{source_search_language}/translations={target_search_language}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/{source_search_language}/translations={target_search_language}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ur",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "source_search_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IANA language code",
+            "enum": [
+              "es",
+              "nso",
+              "zu",
+              "ms",
+              "id",
+              "tn",
+              "ro",
+              "de",
+              "pt"
+            ],
+            "in": "path",
+            "name": "target_search_language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "eye",
+            "description": "Search string.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Set prefix to true if you'd like to get results only starting with search string.",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "prefix",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter words with specific region(s) E.g., regions=us.",
+            "in": "query",
+            "name": "regions",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the number of results per response.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offset the start number of the result.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/{source_search_language}/translations={target_search_language}",
         "pointer": "#/paths/~1search~1{source_search_language}~1translations={target_search_language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Wordlist"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve possible translation matches to input"
+        "summary": "Retrieve possible translation matches to input",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns frequencies of ngrams of size 1-4.",
         "id": "operation:get:/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/",
         "kind": "operation",
         "method": "get",
         "name": "get /stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/",
+        "parameters": [
+          {
+            "default": "en",
+            "description": "IANA language code",
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "nmc",
+            "description": "For corpora other than 'nmc' (New Monitor Corpus) please contact api@oxforddictionaries.com",
+            "in": "path",
+            "name": "corpus",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 2,
+            "description": "the size of ngrams requested (1-4)",
+            "in": "path",
+            "name": "ngram-size",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "a word",
+            "description": "List of tokens to filter.",
+            "in": "query",
+            "name": "tokens",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find ngrams containing the given token(s).",
+            "in": "query",
+            "name": "contains",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Flag specifying whether to lookup ngrams that include punctuation or not (possible values are \"true\" and \"false\"; default is \"false\")",
+            "in": "query",
+            "name": "punctuation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "oup",
+            "description": "Option specifying whether tokens should be returned as a single string (option \"google\") or as a list of strings (option \"oup\")",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict the query to entries with frequency of at least `minFrequency`",
+            "in": "query",
+            "name": "minFrequency",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Restrict the query to entries with frequency of at most `maxFrequency`",
+            "in": "query",
+            "name": "maxFrequency",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Restrict the query to entries that appear in at least `minDocumentFrequency` documents",
+            "in": "query",
+            "name": "minDocumentFrequency",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Restrict the query to entries that appera in at most `maxDocumentFrequency` documents",
+            "in": "query",
+            "name": "maxDocumentFrequency",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "collate the results by wordform, trueCase, lemma, lexicalCategory.",
+            "in": "query",
+            "name": "collate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "sort the resulting list by wordform, trueCase, lemma, lexicalCategory, frequency, normalizedFrequency.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "pagination - results offset",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": 100,
+            "description": "pagination - results limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/",
         "pointer": "#/paths/~1stats~1frequency~1ngrams~1{source_lang}~1{corpus}~1{ngram-size}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NgramsResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the frequency of ngrams (1-4) derived from a corpus"
+        "summary": "Retrieve the frequency of ngrams (1-4) derived from a corpus",
+        "tags": [
+          "LexiStats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides the frequency of a given word.",
         "id": "operation:get:/stats/frequency/word/{source_lang}/",
         "kind": "operation",
         "method": "get",
         "name": "get /stats/frequency/word/{source_lang}/",
+        "parameters": [
+          {
+            "default": "en",
+            "description": "IANA language code",
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "nmc",
+            "description": "For corpora other than 'nmc' (New Monitor Corpus) please contact api@oxforddictionaries.com",
+            "in": "query",
+            "name": "corpus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The written form of the word to look up (preserving case e.g., Books vs books)",
+            "in": "query",
+            "name": "wordform",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The written form of the word to look up with normalised case (Books --> books)",
+            "in": "query",
+            "name": "trueCase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "test",
+            "description": "The lemma of the word to look up (e.g., Book, booked, books all have the lemma \"book\")",
+            "in": "query",
+            "name": "lemma",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The lexical category of the word(s) to look up (e.g., noun or verb)",
+            "in": "query",
+            "name": "lexicalCategory",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/frequency/word/{source_lang}/",
         "pointer": "#/paths/~1stats~1frequency~1word~1{source_lang}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatsWordResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the frequency of a word derived from a corpus."
+        "summary": "Retrieve the frequency of a word derived from a corpus.",
+        "tags": [
+          "LexiStats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides a list of frequencies for a given word or words.",
         "id": "operation:get:/stats/frequency/words/{source_lang}/",
         "kind": "operation",
         "method": "get",
         "name": "get /stats/frequency/words/{source_lang}/",
+        "parameters": [
+          {
+            "default": "en",
+            "description": "IANA language code",
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "nmc",
+            "description": "For corpora other than 'nmc' (New Monitor Corpus) please contact api@oxforddictionaries.com",
+            "in": "query",
+            "name": "corpus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The written form of the word to look up (preserving case e.g., Book vs book)",
+            "in": "query",
+            "name": "wordform",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The written form of the word to look up with normalised case (Books --> books)",
+            "in": "query",
+            "name": "trueCase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "test",
+            "description": "The lemma of the word to look up (e.g., Book, booked, books all have the lemma \"book\")",
+            "in": "query",
+            "name": "lemma",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The lexical category of the word(s) to look up (e.g., adjective or noun)",
+            "in": "query",
+            "name": "lexicalCategory",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The grammatical features of the word(s) to look up entered as a list of k:v (e.g., degree_type:comparative)",
+            "in": "query",
+            "name": "grammaticalFeatures",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "sort the resulting list by wordform, trueCase, lemma, lexicalCategory, frequency, normalizedFrequency.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "collate the results by wordform, trueCase, lemma, lexicalCategory.",
+            "in": "query",
+            "name": "collate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict the query to entries with frequency of at least `minFrequency`",
+            "in": "query",
+            "name": "minFrequency",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Restrict the query to entries with frequency of at most `maxFrequency`",
+            "in": "query",
+            "name": "maxFrequency",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Restrict the query to entries with frequency of at least `minNormalizedFrequency`",
+            "in": "query",
+            "name": "minNormalizedFrequency",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Restrict the query to entries with frequency of at most `maxNormalizedFrequency`",
+            "in": "query",
+            "name": "maxNormalizedFrequency",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "default": 0,
+            "description": "pagination - results offset",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": 100,
+            "description": "pagination - results limit",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/frequency/words/{source_lang}/",
         "pointer": "#/paths/~1stats~1frequency~1words~1{source_lang}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatsWordResultList"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of frequencies of a word/words derived from a corpus."
+        "summary": "Retrieve a list of frequencies of a word/words derived from a corpus.",
+        "tags": [
+          "LexiStats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to apply more complex filters to the [list of words](documentation/glossary?term=wordlist).",
         "id": "operation:get:/wordlist/{source_lang}/{filters_advanced}",
         "kind": "operation",
         "method": "get",
         "name": "get /wordlist/{source_lang}/{filters_advanced}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "hi",
+              "lv",
+              "sw",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "lexicalCategory=Noun;domains=sport",
+            "description": "Semicolon separated list of wordlist parameters, presented as value pairs: LexicalCategory, domains, regions, registers.",
+            "in": "path",
+            "name": "filters_advanced",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Semicolon separated list of parameters-value pairs (same as filters).",
+            "in": "query",
+            "name": "exclude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Semicolon separated list of parameters-value pairs (same as filters).",
+            "in": "query",
+            "name": "exclude_senses",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Semicolon separated list of parameters-value pairs (same as filters).",
+            "in": "query",
+            "name": "exclude_prime_senses",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": ">5,<10",
+            "description": "Parameter to speficy the minimum (>), exact or maximum (<) length of the words required.",
+            "in": "query",
+            "name": "word_length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "goal",
+            "description": "Filter words that start with prefix parameter",
+            "in": "query",
+            "name": "prefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If exact=true wordlist returns a list of entries that exactly matches the search string.",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "exact",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit the number of results per response.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offset the start number of the result.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wordlist/{source_lang}/{filters_advanced}",
         "pointer": "#/paths/~1wordlist~1{source_lang}~1{filters_advanced}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Wordlist"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve list of words for category with advanced options"
+        "summary": "Retrieve list of words for category with advanced options",
+        "tags": [
+          "Wordlist"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to retrieve a [list of words](documentation/glossary?term=wordlist) for particular [domain](documentation/glossary?term=domain), [lexical category](do…",
         "id": "operation:get:/wordlist/{source_lang}/{filters_basic}",
         "kind": "operation",
         "method": "get",
         "name": "get /wordlist/{source_lang}/{filters_basic}",
+        "parameters": [
+          {
+            "description": "IANA language code",
+            "enum": [
+              "en",
+              "es",
+              "hi",
+              "lv",
+              "sw",
+              "ta",
+              "gu"
+            ],
+            "in": "path",
+            "name": "source_lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "registers=Rare;domains=Art",
+            "description": "Semicolon separated list of wordlist parameters, presented as value pairs: LexicalCategory, domains, regions, registers.",
+            "in": "path",
+            "name": "filters_basic",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limit the number of results per response.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offset the start number of the result",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "5037d509",
+            "description": "App ID Authentication Parameter",
+            "in": "header",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "4dc1aebaa63721f0f8e79a55e2514bc7",
+            "description": "App Key Authentication Parameter",
+            "in": "header",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wordlist/{source_lang}/{filters_basic}",
         "pointer": "#/paths/~1wordlist~1{source_lang}~1{filters_basic}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Wordlist"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a list of words in a category"
+        "summary": "Retrieve a list of words in a category",
+        "tags": [
+          "Wordlist"
+        ]
       },
       {
+        "description": "A list of written or spoken words",
         "id": "schema:ArrayOfRelatedEntries",
         "kind": "schema",
-        "name": "ArrayOfRelatedEntries"
+        "name": "ArrayOfRelatedEntries",
+        "type": "object[]"
       },
       {
+        "description": "various types of notes that appear",
         "id": "schema:CategorizedTextList",
         "kind": "schema",
-        "name": "CategorizedTextList"
+        "name": "CategorizedTextList",
+        "type": "object[]"
       },
       {
+        "description": "A reference to another word that is closely related, might provide additional information about the subject, has a variant spelling or is an abbreviated form o…",
         "id": "schema:CrossReferencesList",
         "kind": "schema",
-        "name": "CrossReferencesList"
+        "name": "CrossReferencesList",
+        "type": "object[]"
       },
       {
         "id": "schema:Entry",
         "kind": "schema",
-        "name": "Entry"
+        "name": "Entry",
+        "type": "object"
       },
       {
+        "description": "A list of written or spoken rendering of examples of use of a word or text",
         "id": "schema:ExamplesList",
         "kind": "schema",
-        "name": "ExamplesList"
+        "name": "ExamplesList",
+        "type": "object[]"
       },
       {
+        "description": "Schema for the Filters endpoint.",
         "id": "schema:Filters",
         "kind": "schema",
-        "name": "Filters"
+        "name": "Filters",
+        "type": "object"
       },
       {
+        "description": "The different forms are correlated with meanings or functions which we text as 'features'",
         "id": "schema:GrammaticalFeaturesList",
         "kind": "schema",
-        "name": "GrammaticalFeaturesList"
+        "name": "GrammaticalFeaturesList",
+        "type": "object[]"
       },
       {
+        "description": "Description of a word",
         "id": "schema:HeadwordEntry",
         "kind": "schema",
-        "name": "HeadwordEntry"
+        "name": "HeadwordEntry",
+        "type": "object"
       },
       {
+        "description": "Description of an inflected form of a word",
         "id": "schema:HeadwordLemmatron",
         "kind": "schema",
-        "name": "HeadwordLemmatron"
+        "name": "HeadwordLemmatron",
+        "type": "object"
       },
       {
+        "description": "description of thesaurus information of a word",
         "id": "schema:HeadwordThesaurus",
         "kind": "schema",
-        "name": "HeadwordThesaurus"
+        "name": "HeadwordThesaurus",
+        "type": "object"
       },
       {
+        "description": "A grouping of the modifications of a word to express different grammatical categories",
         "id": "schema:InflectionsList",
         "kind": "schema",
-        "name": "InflectionsList"
+        "name": "InflectionsList",
+        "type": "object[]"
       },
       {
+        "description": "Schema for the languages endpoint.",
         "id": "schema:Languages",
         "kind": "schema",
-        "name": "Languages"
+        "name": "Languages",
+        "type": "object"
       },
       {
+        "description": "Schema for the inflections endpoint.",
         "id": "schema:Lemmatron",
         "kind": "schema",
-        "name": "Lemmatron"
+        "name": "Lemmatron",
+        "type": "object"
       },
       {
+        "description": "Description of an entry for a particular part of speech and grammatical features",
         "id": "schema:LemmatronLexicalEntry",
         "kind": "schema",
-        "name": "LemmatronLexicalEntry"
+        "name": "LemmatronLexicalEntry",
+        "type": "object"
       },
       {
+        "description": "Schema for corpus ngrams.",
         "id": "schema:NgramsResult",
         "kind": "schema",
-        "name": "NgramsResult"
+        "name": "NgramsResult",
+        "type": "object"
       },
       {
+        "description": "A list of possible pronunciations of a word",
         "id": "schema:PronunciationsList",
         "kind": "schema",
-        "name": "PronunciationsList"
+        "name": "PronunciationsList",
+        "type": "object[]"
       },
       {
+        "description": "Schema for region endpoint.",
         "id": "schema:Regions",
         "kind": "schema",
-        "name": "Regions"
+        "name": "Regions",
+        "type": "object"
       },
       {
+        "description": "Schema for the 'entries' endpoints",
         "id": "schema:RetrieveEntry",
         "kind": "schema",
-        "name": "RetrieveEntry"
+        "name": "RetrieveEntry",
+        "type": "object"
       },
       {
+        "description": "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element",
         "id": "schema:Sense",
         "kind": "schema",
-        "name": "Sense"
+        "name": "Sense",
+        "type": "object"
       },
       {
+        "description": "Description of a word",
         "id": "schema:SentencesEntry",
         "kind": "schema",
-        "name": "SentencesEntry"
+        "name": "SentencesEntry",
+        "type": "object"
       },
       {
+        "description": "Description of an entry for a particular part of speech",
         "id": "schema:SentencesLexicalEntry",
         "kind": "schema",
-        "name": "SentencesLexicalEntry"
+        "name": "SentencesLexicalEntry",
+        "type": "object"
       },
       {
+        "description": "Schema for the 'sentences' endpoint",
         "id": "schema:SentencesResults",
         "kind": "schema",
-        "name": "SentencesResults"
+        "name": "SentencesResults",
+        "type": "object"
       },
       {
+        "description": "Schema for lexi-stats results for a word/trueCase/lemma/lexicalCategory returned as a frequency",
         "id": "schema:StatsWordResult",
         "kind": "schema",
-        "name": "StatsWordResult"
+        "name": "StatsWordResult",
+        "type": "object"
       },
       {
+        "description": "Schema for lexi-stats results for a word/trueCase/lemma/lexicalCategory returned as a list of frequencies per wordform-trueCase-lemma-lexicalCategory entry.",
         "id": "schema:StatsWordResultList",
         "kind": "schema",
-        "name": "StatsWordResultList"
+        "name": "StatsWordResultList",
+        "type": "object"
       },
       {
         "id": "schema:SynonymsAntonyms",
         "kind": "schema",
-        "name": "SynonymsAntonyms"
+        "name": "SynonymsAntonyms",
+        "type": "object[]"
       },
       {
+        "description": "Schema for thesaurus endpoint",
         "id": "schema:Thesaurus",
         "kind": "schema",
-        "name": "Thesaurus"
+        "name": "Thesaurus",
+        "type": "object"
       },
       {
         "id": "schema:ThesaurusEntry",
         "kind": "schema",
-        "name": "ThesaurusEntry"
+        "name": "ThesaurusEntry",
+        "type": "object"
       },
       {
+        "description": "Description of an entry for a particular part of speech",
         "id": "schema:ThesaurusLexicalEntry",
         "kind": "schema",
-        "name": "ThesaurusLexicalEntry"
+        "name": "ThesaurusLexicalEntry",
+        "type": "object"
       },
       {
+        "description": "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element",
         "id": "schema:ThesaurusSense",
         "kind": "schema",
-        "name": "ThesaurusSense"
+        "name": "ThesaurusSense",
+        "type": "object"
       },
       {
+        "description": "A list of written or spoken rendering of the meaning of a word or text in another language(s)",
         "id": "schema:TranslationsList",
         "kind": "schema",
-        "name": "TranslationsList"
+        "name": "TranslationsList",
+        "type": "object[]"
       },
       {
+        "description": "Schema for lexicalcategories, registers utility endpoints.",
         "id": "schema:UtilityLabels",
         "kind": "schema",
-        "name": "UtilityLabels"
+        "name": "UtilityLabels",
+        "type": "object"
       },
       {
+        "description": "Various words that are used interchangeably depending on the context, e.g 'aluminium' and 'aluminum'",
         "id": "schema:VariantFormsList",
         "kind": "schema",
-        "name": "VariantFormsList"
+        "name": "VariantFormsList",
+        "type": "object[]"
       },
       {
+        "description": "Schema for wordlist endpoint.",
         "id": "schema:Wordlist",
         "kind": "schema",
-        "name": "Wordlist"
+        "name": "Wordlist",
+        "type": "object"
       },
       {
         "id": "schema:arrayofstrings",
         "kind": "schema",
-        "name": "arrayofstrings"
+        "name": "arrayofstrings",
+        "type": "string[]"
       },
       {
+        "description": "Description of an entry for a particular part of speech",
         "id": "schema:lexicalEntry",
         "kind": "schema",
-        "name": "lexicalEntry"
+        "name": "lexicalEntry",
+        "type": "object"
       },
       {
+        "description": "Link to a sense of a specific entry in the thesaurus Dictionary",
         "id": "schema:thesaurusLink",
         "kind": "schema",
-        "name": "thesaurusLink"
+        "name": "thesaurusLink",
+        "type": "object"
       }
     ]
   },

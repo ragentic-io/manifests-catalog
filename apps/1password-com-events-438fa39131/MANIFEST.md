@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload_wikimedia_org_wikipedia_
 
 | | |
 | --- | --- |
-| Signed bundle | `3eb55b3eac35db8ee1abfb51ef4b04b675a72580c44a9c2c6f00e6b50ad8108a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload_wikimedia_org_wikipedia_
 
 15 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/auth/introspect` | getAuthIntrospect | Performs introspection of the provided Bearer JWT token |
-| POST | `/api/v1/itemusages` | getItemUsages | Retrieves item usages |
-| POST | `/api/v1/signinattempts` | getSignInAttempts | Retrieves sign-in attempts |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/auth/introspect` | getAuthIntrospect | — | Introspection | yes | Performs introspection of the provided Bearer JWT token |
+| POST | `/api/v1/itemusages` | getItemUsages | body: Cursor\|ResetCursor | ItemUsageItems |  | Retrieves item usages |
+| POST | `/api/v1/signinattempts` | getSignInAttempts | body: Cursor\|ResetCursor | SignInAttemptItems |  | Retrieves sign-in attempts |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_AGCOcorp_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `e7bd1e1f6be5d4cb71a38bb96fedfb4f56818cd2014ba4cd03ed2b3d9bbccd5a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,282 +34,284 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_AGCOcorp_profile_im
 
 157 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v2/AftermarketServices/Certificates` | AftermarketServices_GetCerts | No Documentation Found. |
-| PUT | `/api/v2/AftermarketServices/ECUs/{serialNumber}` | AftermarketServices_PutECU | Activate or Deactivate an ECU, or Report an ECU as Damaged. |
-| GET | `/api/v2/AftermarketServices/Engines/{serialNumber}/IQACodes` | AftermarketServices_GetEngineIQACodes | Get injector codes given engine. |
-| PUT | `/api/v2/AftermarketServices/Engines/{serialNumber}/IQACodes` | AftermarketServices_PutIQACodes | Report the IQA codes used by an engine |
-| GET | `/api/v2/AftermarketServices/Engines/{serialNumber}/ProductionData` | AftermarketServices_GetProductionData | Get production calibration data for given engine. |
-| GET | `/api/v2/AftermarketServices/Hello` | AftermarketServices_GetConnectionStatus | Check whether there is connectivity to AGCO Power Web Services |
-| GET | `/api/v2/AftermarketServices/UserStatuses` | AftermarketServices_GetUserStatus | Retrieve the status of an EDT Kit Registration with AGCO Power Web Services |
-| PUT | `/api/v2/AftermarketServices/UserStatuses` | AftermarketServices_UpdateUserStatus | Update the status of an EDT Kit Registration with AGCO Power Web Services |
-| PUT | `/api/v2/AuthenticatedUsers/{UserID}/Tokens` | Authentication_PutManageTokens | Manage API tokens. |
-| POST | `/api/v2/Authentication` | Authentication_Default | Authenticate a user. |
-| GET | `/api/v2/Authentication/IsAlive` | Authentication_IsAlive | Acknowledges the connection to the API |
-| POST | `/api/v2/Authentication/RequestPasswordReset` | Authentication_RequestPasswordReset | Request a password reset. |
-| POST | `/api/v2/Authentication/ResetPasword` | Authentication_ResetPasword | Reset a password |
-| GET | `/api/v2/AuthorizationCategories` | AuthorizationCategories_Get | Get authorization categories. |
-| POST | `/api/v2/AuthorizationCategories` | AuthorizationCategories_Post | Add an authorization category. |
-| GET | `/api/v2/AuthorizationCategories/Users` | AuthorizationCategories_GetUsers | Returns a report of access that users have to Authorization Categories. |
-| DELETE | `/api/v2/AuthorizationCategories/{id}` | AuthorizationCategories_Delete | Remove an authorization category. |
-| PUT | `/api/v2/AuthorizationCategories/{id}` | AuthorizationCategories_Put | Update an authorization category. |
-| DELETE | `/api/v2/AuthorizationCategories/{id}/Users/{userID}` | AuthorizationCategories_RemoveUser | Deletes a category a user could see. |
-| POST | `/api/v2/AuthorizationCategories/{id}/Users/{userID}` | AuthorizationCategories_AddUser | Add a category that a user can see. |
-| GET | `/api/v2/AuthorizationCodeDefinitions` | AuthorizationCodeDefinitions_GetAuthorizationCodeDefinition | Get authorization code definitions. |
-| POST | `/api/v2/AuthorizationCodeDefinitions` | AuthorizationCodeDefinitions_PostAuthorizationCodeDefinition | Add an authorization code definition. |
-| DELETE | `/api/v2/AuthorizationCodeDefinitions/{ID}/Categories/{categoryID}` | AuthorizationCodeDefinitions_RemoveCategoryFromDefinition | Deletes the category from the authorization code definition. |
-| POST | `/api/v2/AuthorizationCodeDefinitions/{ID}/Categories/{categoryID}` | AuthorizationCodeDefinitions_AddCategoryToDefinition | Add a category to an authorizationCodeDefintion. |
-| DELETE | `/api/v2/AuthorizationCodeDefinitions/{id}` | AuthorizationCodeDefinitions_DeleteAuthorizationCodeDefinition | Disable an authorization code definition |
-| GET | `/api/v2/AuthorizationCodeDefinitions/{id}` | get /api/v2/AuthorizationCodeDefinitions/{id} | Get an authorization code definition by its ID |
-| PUT | `/api/v2/AuthorizationCodeDefinitions/{id}` | AuthorizationCodeDefinitions_PutAuthorizationCodeDefinition | Update an authorization code definition |
-| GET | `/api/v2/AuthorizationCodes` | AuthorizationCodes_GetAuthorizationCodes | Get authorization codes. |
-| POST | `/api/v2/AuthorizationCodes` | AuthorizationCodes_PostAuthorizationCode | Generates an authorization code using the provided definition and parameters. |
-| DELETE | `/api/v2/AuthorizationCodes/{id}` | AuthorizationCodes_DeleteAuthorizationCode | Hide an authorization code. |
-| GET | `/api/v2/AuthorizationCodes/{id}` | AuthorizationCodes_GetAuthorizationCode | Get an authorization code by its ID. |
-| PUT | `/api/v2/AuthorizationCodes/{id}` | AuthorizationCodes_PutAuthorizationCode | Update an authorization code. |
-| GET | `/api/v2/AuthorizationCodes/{id}/ContactInformation` | AuthorizationCodes_GetContactInformation | Get contact information for an authorization code. |
-| GET | `/api/v2/AuthorizationCodes/{id}/Validate` | AuthorizationCodes_ValidateAuthorizationCode | No Documentation Found. |
-| GET | `/api/v2/AuthorizationContactInformation` | AuthorizationContactInformation_Get | Get contact information for authorization codes. |
-| POST | `/api/v2/AuthorizationContactInformation` | AuthorizationContactInformation_Post | Add contact information for authorization code. |
-| GET | `/api/v2/Brands` | Brands_Brands | Gets a list of Brands. |
-| GET | `/api/v2/Bundles` | Bundles_GetBundles | Get the list of bundles. |
-| POST | `/api/v2/Bundles` | Bundles_PostBundle | Add a Bundle to the Update System. |
-| DELETE | `/api/v2/Bundles/{ID}` | Bundles_DeleteBundle | Delete a Bundle. |
-| GET | `/api/v2/Bundles/{ID}` | Bundles_GetBundle | Get a specific Bundle by ID. |
-| PUT | `/api/v2/Bundles/{ID}` | Bundles_PutBundle | Modify a Bundle in the Update System. |
-| GET | `/api/v2/Clients` | Clients_Get | Get a List of Clients in the Update System. |
-| GET | `/api/v2/Clients/{ClientID}/CachedFiles` | UpdateSystem_GetCachedFiles | Get a list of Cached Files installed on the client Machine. |
-| GET | `/api/v2/Clients/{ClientID}/PackageReports` | PackageReports_Default | Get the package reports for a client. |
-| PUT | `/api/v2/Clients/{ClientID}/PackageReports` | put /api/v2/Clients/{ClientID}/PackageReports | Submit a package report |
-| PUT | `/api/v2/Clients/{ClientID}/PackageReports/Batch` | PackageReports_Batch | Submit a batch of package reports |
-| GET | `/api/v2/Clients/{ID}` | get /api/v2/Clients/{ID} | Get a Client in the Update System. |
-| PUT | `/api/v2/Clients/{ID}` | Clients_Put | Update a Client. |
-| GET | `/api/v2/Clients/{ID}/AvailableUpdateGroupSubscriptions` | Clients_GetAvailableSubscriptions | Get a Client's Available Update Group Subscriptions |
-| GET | `/api/v2/Clients/{ID}/UpdateGroupSubscriptions` | Clients_GetSubscriptions | Get a Client's Current Update Group Subscriptions |
-| PUT | `/api/v2/ContentDefinitionAttributes/Batch` | ContentDefinitions_PutContentDefinitionAttributes | No Documentation Found. |
-| DELETE | `/api/v2/ContentDefinitionAttributes/{contentDefinitionAttributeID}` | ContentDefinitions_DeleteContentDefinitionAttribute | Remove an Attribute from a ContentDefinition |
-| PUT | `/api/v2/ContentDefinitionAttributes/{contentDefinitionAttributeID}` | ContentDefinitions_PutContentDefinitionAttributeAsync | Update an Attribute for a ContentDefinition |
-| GET | `/api/v2/ContentDefinitions` | ContentDefinitions_GetContentDefinitions | Get ContentDefinitions |
-| POST | `/api/v2/ContentDefinitions` | ContentDefinitions_PostContentDefinition | Create a ContentDefinition |
-| DELETE | `/api/v2/ContentDefinitions/{contentDefinitionID}` | ContentDefinitions_DeleteContentDefinition | Delete a ContentDefinition |
-| GET | `/api/v2/ContentDefinitions/{contentDefinitionID}` | ContentDefinitions_GetContentDefinition | Get a ContentDefinition by ID |
-| PUT | `/api/v2/ContentDefinitions/{contentDefinitionID}` | ContentDefinitions_PutContentDefinition | Update a ContentDefinition |
-| GET | `/api/v2/ContentDefinitions/{contentDefinitionID}/Attributes` | ContentDefinitions_GetContentDefinitionAttributes | Get Attributes for a ContentDefinition |
-| POST | `/api/v2/ContentDefinitions/{contentDefinitionID}/Attributes` | ContentDefinitions_PostContentDefinitionAttribute | Add an Attribute to a ContentDefinition |
-| POST | `/api/v2/ContentDefinitions/{contentDefinitionID}/Attributes/Batch` | ContentDefinitions_PostContentDefinitionAttributes | No Documentation Found. |
-| GET | `/api/v2/ContentReleases` | ContentRelease_GetContentReleaseVersion | Get ContentReleaseVersion |
-| POST | `/api/v2/ContentReleases` | ContentRelease_PostContentRelease | Create a ContentReleaseVersion |
-| DELETE | `/api/v2/ContentReleases/{ContentReleaseId}` | ContentRelease_DeleteContentReleaseVersionn | Delete a ContentReleaseVersion |
-| GET | `/api/v2/ContentReleases/{ContentReleaseId}` | get /api/v2/ContentReleases/{ContentReleaseId} | Get a Content Release Version by ID |
-| PUT | `/api/v2/ContentReleases/{ContentReleaseId}` | ContentRelease_PutContentDefinition | Update a ContentReleaseVersion |
-| PUT | `/api/v2/ContentSubmissionAttributes/Batch` | ContentSubmissions_PutContentSubmissionAttributes | No Documentation Found. |
-| DELETE | `/api/v2/ContentSubmissionAttributes/{contentSubmissionAttributeID}` | ContentSubmissions_DeleteContentSubmissionAttribute | Remove an Attribute from a ContentSubmission |
-| PUT | `/api/v2/ContentSubmissionAttributes/{contentSubmissionAttributeID}` | ContentSubmissions_PutContentSubmissionAttributeAsync | Update an Attribute for a ContentSubmission |
-| GET | `/api/v2/ContentSubmissionTypes` | ContentSubmissionTypes_GetContentSubmissionTypes | Returns available Content Submission Types. |
-| POST | `/api/v2/ContentSubmissionTypes` | ContentSubmissionTypes_PostContentSubmissionType | Add a Content Submission Type |
-| DELETE | `/api/v2/ContentSubmissionTypes/{id}` | ContentSubmissionTypes_DeleteContentSubmissionType | Remove a Content Submission Type |
-| GET | `/api/v2/ContentSubmissionTypes/{id}` | ContentSubmissionTypes_GetContentSubmissionType | Retrieves a Content Submission Type by its ID. |
-| PUT | `/api/v2/ContentSubmissionTypes/{id}` | ContentSubmissionTypes_PutContentSubmissionType | Update a Content Submission Type |
-| GET | `/api/v2/ContentSubmissions` | ContentSubmissions_GetContentSubmissions | Get ContentSubmissions |
-| POST | `/api/v2/ContentSubmissions` | ContentSubmissions_PostContentSubmission | Create a ContentSubmission |
-| DELETE | `/api/v2/ContentSubmissions/{contentSubmissionID}` | ContentSubmissions_DeleteContentSubmission | Delete a ContentSubmission |
-| GET | `/api/v2/ContentSubmissions/{contentSubmissionID}` | ContentSubmissions_GetContentSubmission | Get a ContentSubmission by ID |
-| PUT | `/api/v2/ContentSubmissions/{contentSubmissionID}` | ContentSubmissions_PutContentSubmission | Update a ContentSubmission |
-| GET | `/api/v2/ContentSubmissions/{contentSubmissionID}/Attributes` | ContentSubmissions_GetContentSubmissionAttributes | Get Attributes for a ContentSubmission |
-| POST | `/api/v2/ContentSubmissions/{contentSubmissionID}/Attributes` | ContentSubmissions_PostContentSubmissionAttribute | Add an Attribute to a ContentSubmission |
-| POST | `/api/v2/ContentSubmissions/{contentSubmissionID}/Attributes/Batch` | ContentSubmissions_PostContentSubmissionAttributes | No Documentation Found. |
-| GET | `/api/v2/ContentSubmissions/{contentSubmissionID}/Status` | ContentSubmissions_GetContentSubmissionStatus | Get the status of a ContentSubmission |
-| GET | `/api/v2/DealerByCountry` | DealerByCountry_GetCountries | Get a total count of dealers per country |
-| GET | `/api/v2/Dealers` | Dealers_GetDealers | Get a list of dealers. |
-| GET | `/api/v2/Dealers/{DealerCode}` | Dealers_GetDealerbyDealerCode | Lookup a dealer using a dealer code. |
-| GET | `/api/v2/Files` | Files_GetFiles | Get a paged response of file metadata. |
-| POST | `/api/v2/Files` | Files_PostFile | Create the metadata for a file before uploading. The State of the File should be 'Created'. |
-| DELETE | `/api/v2/Files/{ID}` | Files_DeleteFile | Mark a file as 'Removed'. Disables download of the file and hides metadata from GET all method |
-| GET | `/api/v2/Files/{ID}` | Files_GetFile | Gets a file's metadata. |
-| PUT | `/api/v2/Files/{ID}` | Files_PutFile | Update the metadata for a file. Size may not be modified by the client. |
-| GET | `/api/v2/Files/{ID}/FileContents` | Files_GetFileContents | Download the contents of a file. The current State of the File should be 'Available'. |
-| PUT | `/api/v2/Files/{ID}/FileContents` | Files_PutFileContents | Upload the contents of a file. The current State of the File should be 'Created'. |
-| GET | `/api/v2/GlobalImageCategories` | GlobalImageCategories_GetFiles | Get a paged response of file metadata. |
-| POST | `/api/v2/GlobalImageCategories` | GlobalImageCategories_PostFile | Create the metadata for a file before uploading. The State should be 'Created'. |
-| GET | `/api/v2/GlobalImageCategories/{ID}` | GlobalImageCategories_GetFile | Gets a file's metadata. |
-| GET | `/api/v2/GlobalImages` | GlobalImages_GetGlobalImages | Get a paged response of GlobalImage. |
-| POST | `/api/v2/GlobalImages` | GlobalImages_PostGlobalImage | Create the metadata for a GlobalImage before uploading. The State should be 'Created'. |
-| DELETE | `/api/v2/GlobalImages/{ID}` | GlobalImages_DeleteFile | Mark a file as 'Removed'. Disables download of the image and hides metadata from GET all method |
-| GET | `/api/v2/GlobalImages/{ID}` | GlobalImages_GetGlobalImage | Gets a GlobalImage's metadata. |
-| PUT | `/api/v2/GlobalImages/{ID}` | GlobalImages_PutGlobalImage | Update the metadata for an image. |
-| GET | `/api/v2/GlobalImages/{ID}/ImageContents` | GlobalImages_GetGlobalImageContents | Download the contents of a GlobalImage. The current State of the GlobalImage should be 'Available'. |
-| PUT | `/api/v2/GlobalImages/{ID}/ImageContents` | GlobalImages_PutGlobalImageContents | Upload the contents of a GlobalImage. The current State of the File for the GlobalImage should be 'Created'. |
-| GET | `/api/v2/Languages` | Languages_GetLanguages | Get a list of the languages for which translations are supported. Returns a PagedResponse of Language objects. |
-| POST | `/api/v2/Languages` | Languages_CreateLanguage | Add a Language to support for translations. Accepts a Language object. Returns the Id of the created object. |
-| DELETE | `/api/v2/Languages/{LocaleID}` | Languages_DeleteLanguage | Remove a Language from those supported for translations. Marks language as deleted. |
-| GET | `/api/v2/Languages/{LocaleID}` | Languages_GetLanguage | Get a language by its id. Returns a Language object |
-| PUT | `/api/v2/Languages/{LocaleID}` | Languages_UpdateLanguage | Update a language’s description. Accepts a Language object. |
-| POST | `/api/v2/LicenseActivations` | LicenseActivations_Post | Create a license activation. |
-| POST | `/api/v2/LicenseActivations/RegisterEDTLite` | LicenseActivations_PostRegisterEDTLite | Register an EDT Lite with the Server |
-| PUT | `/api/v2/LicenseActivations/{ID}` | LicenseActivations_Put | Update a license activiation. |
-| PUT | `/api/v2/LicenseActivations/{ID}/Confirm` | LicenseActivations_PutConfirm | Confirm that the client has applied the updated license. |
-| GET | `/api/v2/Licenses` | Licenses_Get | Gets a list of licenses with the specified criteria. |
-| GET | `/api/v2/Licenses/{ID}` | get /api/v2/Licenses/{ID} | Get a license. |
-| GET | `/api/v2/Logs` | Logs_GetLogs | Get the API System logs, most recent first. |
-| POST | `/api/v2/Logs` | Logs_PostLog | Add a Log entry |
-| GET | `/api/v2/Logs/{ID}` | Logs_GetLog | Get a log by ID |
-| POST | `/api/v2/Notifications` | Notifications_PostMail | Sends an email message. |
-| GET | `/api/v2/PackageTypes` | PackageTypes_Get | Get all of the Package Types. |
-| POST | `/api/v2/PackageTypes` | PackageTypes_Post | Add a Package Type. |
-| DELETE | `/api/v2/PackageTypes/{ID}` | PackageTypes_Delete | Delete a Package Type. |
-| GET | `/api/v2/PackageTypes/{ID}` | get /api/v2/PackageTypes/{ID} | Get a specific Package Type. |
-| PUT | `/api/v2/PackageTypes/{ID}` | PackageTypes_Put | Modify a Package Type. |
-| DELETE | `/api/v2/PackageTypes/{id}/Users/{userID}` | PackageTypes_RemovePackageTypeUser | Deletes a package type a user could see. |
-| POST | `/api/v2/PackageTypes/{id}/Users/{userID}` | PackageTypes_AddPackageTypeUser | Add a package type that a user can see. |
-| DELETE | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Delete | Delete a Package Type to Bundle Relationship. |
-| GET | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Get | Get all of the Package Type to Bundle Relationships. |
-| POST | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Post | Add a new Package Type ID to Bundle Relationship. |
-| PUT | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Put | Update a Package Type ID to Bundle Relationship. |
-| GET | `/api/v2/Packages` | Packages_GetPackages | List Packages. |
-| POST | `/api/v2/Packages` | Packages_PostPackage | Add a Package to the Update System. |
-| DELETE | `/api/v2/Packages/{ID}` | Packages_DeletePackage | Delete a Package. |
-| GET | `/api/v2/Packages/{ID}` | Packages_GetPackage | Find a Package. |
-| PUT | `/api/v2/Packages/{ID}` | Packages_PutPackage | Modify a Packge to the Update System. |
-| GET | `/api/v2/Permissions` | Permissions_GetPermissions | List Permissions |
-| POST | `/api/v2/Permissions` | Permissions_PostPermission | Adds a Permission |
-| DELETE | `/api/v2/Permissions/{id}` | Permissions_DeletePermission | Deletes a Permission |
-| GET | `/api/v2/Permissions/{id}` | Permissions_GetPermission | Gets a Permission |
-| PUT | `/api/v2/Permissions/{id}` | Permissions_PutPermission | Updates a Permission |
-| GET | `/api/v2/PriorityPackages` | PriorityPackages_GetPriorityPackages | Get a list of Priority Packages by Client. |
-| POST | `/api/v2/PriorityPackages` | PriorityPackages_PostPriorityPackages | Add a Priority Package for a Client. |
-| DELETE | `/api/v2/PriorityPackages/{ID}` | PriorityPackages_DeletePriorityPackages | Delete a Priority Package for a Client. |
-| GET | `/api/v2/PriorityPackages/{ID}` | PriorityPackages_GetPriorityPackage | Get a Priority Packages for a Client. |
-| GET | `/api/v2/Releases` | Release_GetReleases | Get Release |
-| POST | `/api/v2/Releases` | Release_PostRelease | Create a Release |
-| GET | `/api/v2/Releases/{ReleaseId}` | Release_GetRelease | Get a Release by ID |
-| DELETE | `/api/v2/Releases/{ReleaseId}/Bundle/{BundleId}` | Release_DeleteReleaseBundle | Deletes the association between a release and a bundle. |
-| POST | `/api/v2/Releases/{ReleaseId}/Bundle/{BundleId}` | Release_PostReleaseBundle | Associates the release with a bundle. |
-| PUT | `/api/v2/Releases/{releaseId}` | Release_PutContentDefinition | Update a Release |
-| GET | `/api/v2/Reporting/BundleStatusSummary` | Reporting_BundleStatusSummary | Get a summary of all Packages in a Bundle |
-| GET | `/api/v2/Reporting/BundlesInUpdateGroup` | Reporting_BundlesInUpdateGroup | Get a list of bundles for UpdateGroup. |
-| GET | `/api/v2/Reporting/ClientInfo` | Reporting_ClientInfo | Get Client Information |
-| GET | `/api/v2/Reporting/CurrentPackagesInUpdateGroup` | Reporting_CurrentPackagesInUpdateGroup | Get the current packages for an update group. |
-| GET | `/api/v2/Reporting/GetClient` | Reporting_GetClient | Get a Client in the Update System. |
-| GET | `/api/v2/Reporting/GetSubscriptions` | Reporting_GetSubscriptions | Get a list of current Client Subscriptions. |
-| GET | `/api/v2/Reporting/PackageStatusSummary` | Reporting_PackageStatusSummary | Get a summary report for a Specific Package |
-| GET | `/api/v2/Reporting/RegisteredClients` | Reporting_RegisteredClients | Get a list of subscribed clients |
-| GET | `/api/v2/Reporting/UpdateGroups` | Reporting_UpdateGroups | Get a list of Update Groups. Update Groups are used by the client to register for a specific type of update. |
-| GET | `/api/v2/Reporting/UpdateMetrics` | Reporting_UpdateMetrics | Get data for pie charts in UpdateMetrics. |
-| GET | `/api/v2/Roles` | Roles_GetRoles | List Roles |
-| POST | `/api/v2/Roles` | Roles_PostRole | Adds a User Role |
-| DELETE | `/api/v2/Roles/{id}` | Roles_DeleteRole | Deletes a User Role |
-| GET | `/api/v2/Roles/{id}` | Roles_GetRole | Gets a User Role |
-| PUT | `/api/v2/Roles/{id}` | Roles_PutRole | Updates a User Role |
-| GET | `/api/v2/Roles/{id}/Permissions` | Roles_GetRolePermissions | Get the Permissions for a Role |
-| PUT | `/api/v2/Roles/{id}/Permissions` | Roles_PutRolePermissions | Manage the Permissions for a Role |
-| GET | `/api/v2/Roles/{id}/Users` | UserPermissions_GetUsers | Get all user's in a role |
-| PUT | `/api/v2/Roles/{id}/Users` | put /api/v2/Roles/{id}/Users | Update a Role's users |
-| GET | `/api/v2/StringDefinitions` | StringDefinitions_GetDefinitions | Get a paged response of Global String Definitions. |
-| POST | `/api/v2/StringDefinitions/Batch` | StringDefinitions_PostDefinition | Create StringDefinition object. The originating translation must be provided. Accepts an array of StringDefinition objects. Returns nothing. |
-| PUT | `/api/v2/StringDefinitions/Batch` | StringDefinitions_UpdateDefinitions | Update StringDefinition objects. Accepts an array of StringDefinition objects. This endpoint will add StringDefinitionChange objects to the database. The DescriptionForTranslator may not be modified after a String is submitted for translation. |
-| GET | `/api/v2/StringDefinitions/{ID}` | StringDefinitions_GetDefinition | Get a paged response of Global String Definitions. |
-| GET | `/api/v2/StringTranslations` | StringTranslations_GetTranslations | Get a paged response of Global String Translations. |
-| PUT | `/api/v2/StringTranslations/Batch` | StringTranslations_UpdateTranslations | Update corrections to string translations |
-| GET | `/api/v2/StringTranslations/{stringId}/{languageId}` | StringTranslations_GetTranslation | Get a single translation based upon stringId and languageId |
-| PUT | `/api/v2/StringTranslations/{stringId}/{languageId}` | StringTranslations_UpdateTranslation | Update a string value or a state for a string translation. |
-| GET | `/api/v2/TranslationKeys` | TranslationKeys_Get | Get a paged response of TranslationKeys. |
-| POST | `/api/v2/TranslationKeys` | TranslationKeys_CreateTranslationKey | Create a translationKey object. |
-| GET | `/api/v2/TranslationKeys/{ID}` | TranslationKeys_GetTranslationKey | Get TranslationKey by ID |
-| PUT | `/api/v2/TranslationKeys/{ID}` | TranslationKeys_UpdateTranslationKey | Update the StringID of the translationKey object. |
-| GET | `/api/v2/TranslationRequests` | TranslationRequests_GetTranslationRequests | Get all TranslationRequest objects. Returns a PagedResponse of TranslationRequest objects with their language ids and string ids. |
-| POST | `/api/v2/TranslationRequests` | TranslationRequests_CreateTranslationRequest | Create a translation request. Accepts a TranslationRequest object. Returns the Id of the created object. The state of the TranslationRequest must be ‘NotSubmitted’. |
-| GET | `/api/v2/TranslationRequests/{Id}` | TranslationRequests_GetTranslationRequest | Get a TranslationRequest object by id. Returns TranslationRequest object with its language ids and string ids. |
-| PUT | `/api/v2/TranslationRequests/{Id}` | TranslationRequests_UpdateTranslationRequest | Update a TranslationRequest object by id. Accepts a TranslationRequest object. |
-| PUT | `/api/v2/TranslationRequests/{Id}/Strings` | TranslationRequests_UpdateTranslationRequestStrings | No Documentation Found. |
-| PUT | `/api/v2/TranslationSetAttributes/Batch` | TranslationSets_UpdateTranslationSetAttributes | No Documentation Found. |
-| DELETE | `/api/v2/TranslationSetAttributes/{ID}` | TranslationSets_DeleteTranslationSetAttribute | Delete a set of TranslationSetAttribute object |
-| PUT | `/api/v2/TranslationSetAttributes/{ID}` | TranslationSets_UpdateTranslationSetAttribute | Update a TranslationSetAttribute object |
-| GET | `/api/v2/TranslationSets` | TranslationSets_GetTranslationSets | Get a PagedResponse of TranslationSet objects. Related TranslationSetStrings are NOT returned |
-| GET | `/api/v2/TranslationSets/{ID}` | TranslationSets_GetTranslationSet | Get a TranslationSet object by its id. Related TranslationSetStrings are NOT returned. |
-| PUT | `/api/v2/TranslationSets/{ID}` | TranslationSets_UpdateTranslationSet | Update a Translation Set. Accepts a TranslationSet object. Only the state property may be updated. |
-| GET | `/api/v2/TranslationSets/{ID}/Attributes` | TranslationSets_GetTranslationSetAttributes | Get a PagedResponse of TranslationSetAttribute objects |
-| POST | `/api/v2/TranslationSets/{ID}/Attributes` | TranslationSets_PostTranslationSetAttribute | Create a TranslationSetAttribute object |
-| POST | `/api/v2/TranslationSets/{ID}/Attributes/Batch` | TranslationSets_PostTranslationSetAttributes | No Documentation Found. |
-| GET | `/api/v2/TranslationSets/{ID}/SourceStrings` | TranslationSets_GetSourceStrings | Gets the information needed to translate a string in a translation set |
-| GET | `/api/v2/TranslationSets/{ID}/Statistics` | TranslationSets_GetStatistics | Gets the statistics for translation sets such as the language ids and count of string definitions. |
-| GET | `/api/v2/TranslationSets/{ID}/Strings` | TranslationSets_GetTranslationSetStrings | Get a PagedResponse of TranslationSetString objects |
-| PUT | `/api/v2/TranslationSets/{ID}/Strings` | TranslationSets_UpdateTranslationSetStrings | No Documentation Found. |
-| GET | `/api/v2/UpdateGroupClientRelationships` | UpdateGroupClientRelationships_GetSubscriptions | Get a list of current Client Subscriptions. |
-| POST | `/api/v2/UpdateGroupClientRelationships` | UpdateGroupClientRelationships_PostSubscription | Add a subscription |
-| PUT | `/api/v2/UpdateGroupClientRelationships` | UpdateGroupClientRelationships_PutSubscriptionByClientIDUpdateGroupID | DEPRECATED. Set client subscription status for an update group. |
-| GET | `/api/v2/UpdateGroupClientRelationships/{RelationshipID}` | UpdateGroupClientRelationships_GetSubscription | Get a subscription by RelationshipID |
-| PUT | `/api/v2/UpdateGroupClientRelationships/{RelationshipID}` | UpdateGroupClientRelationships_PutSubscription | Updates a Subscription |
-| GET | `/api/v2/UpdateGroupSubscriptions` | UpdateGroupSubscriptions_GetUpdateGroupSubscriptions | Get Update Group Subscriptions |
-| POST | `/api/v2/UpdateGroupSubscriptions` | UpdateGroupSubscriptions_PostUpdateGroupSubscription | Add an Update Group Subscription |
-| POST | `/api/v2/UpdateGroupSubscriptions/Batch` | UpdateGroupSubscriptions_PostUpdateGroupSubscriptions | No Documentation Found. |
-| PUT | `/api/v2/UpdateGroupSubscriptions/Batch` | UpdateGroupSubscriptions_PutUpdateGroupSubscriptions | No Documentation Found. |
-| DELETE | `/api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}` | UpdateGroupSubscriptions_DeleteUpdateGroupSubscription | Delete an Update Group Subscription |
-| GET | `/api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}` | UpdateGroupSubscriptions_GetUpdateGroupSubscription | Get an Update Group Subscription |
-| PUT | `/api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}` | UpdateGroupSubscriptions_PutUpdateGroupSubscription | Update an Update Group Subscription |
-| GET | `/api/v2/UpdateGroups` | UpdateGroups_Get | Get a list of Update Groups. Update Groups are used by the client to register for a specific type of update. |
-| POST | `/api/v2/UpdateGroups` | UpdateGroups_Post | Add a new Update Group. The report field is a string that has a dot based request for a specific piece of submitted data. |
-| DELETE | `/api/v2/UpdateGroups/{ID}` | UpdateGroups_Delete | Delete an Update Group. |
-| GET | `/api/v2/UpdateGroups/{ID}` | get /api/v2/UpdateGroups/{ID} | Get a specific Update Group by ID. |
-| PUT | `/api/v2/UpdateGroups/{ID}` | UpdateGroups_Put | Modify an Update Group. |
-| GET | `/api/v2/UpdateGroups/{ID}/Bundles` | UpdateGroups_GetUpdateGroupBundles | Get a list of bundles for UpdateGroup. |
-| DELETE | `/api/v2/UpdateGroups/{id}/Users/{userID}` | UpdateGroups_RemoveUpdateGroupUser | Deletes an update group a user could see. |
-| POST | `/api/v2/UpdateGroups/{id}/Users/{userID}` | UpdateGroups_AddUpdateGroupUser | Add an updateGroup that a user can see. |
-| GET | `/api/v2/UpdateSystem` | UpdateSystem_GetCheckin | Checks the Client ID into the Update System. |
-| GET | `/api/v2/UserContentDefinitions` | UserContentDefinitions_GetUserContentDefinitions | Get UserContentDefinitions |
-| POST | `/api/v2/UserContentDefinitions` | UserContentDefinitions_PostUserContentDefinition | Create a UserContentDefinition |
-| DELETE | `/api/v2/UserContentDefinitions/{userContentDefinitionID}` | UserContentDefinitions_DeleteUserContentDefinition | Delete a UserContentDefinition |
-| GET | `/api/v2/UserContentDefinitions/{userContentDefinitionID}` | UserContentDefinitions_GetUserContentDefinition | Get a UserContentDefinition by ID |
-| GET | `/api/v2/Users` | Users_Get | Get users |
-| POST | `/api/v2/Users` | Users_Post | Create a user |
-| GET | `/api/v2/Users/Current` | Users_GetCurrentUser | Gets the current user |
-| PUT | `/api/v2/Users/Current` | Users_PutCurrentUser | Update a user |
-| GET | `/api/v2/Users/Current/Permissions` | get /api/v2/Users/Current/Permissions | Get a user's permissions |
-| GET | `/api/v2/Users/Current/Roles` | UserPermissions_GetCurrentUserRoles | Gets the current user's roles |
-| DELETE | `/api/v2/Users/{id}` | Users_Delete | Delete a user |
-| GET | `/api/v2/Users/{id}` | get /api/v2/Users/{id} | Get a specific user |
-| PUT | `/api/v2/Users/{id}` | Users_Put | Update a user |
-| GET | `/api/v2/Users/{id}/Permissions` | UserPermissions_GetPermissions | Get a user's permissions |
-| GET | `/api/v2/Users/{id}/Roles` | UserPermissions_GetRoles | Get a user's roles |
-| PUT | `/api/v2/Users/{id}/Roles` | UserPermissions_Put | Update a user's roles |
-| GET | `/api/v2/VoucherHistory` | VoucherHistory_GetVoucherHistory | Gets voucher history data |
-| GET | `/api/v2/Vouchers` | Vouchers_Get | Gets a list of vouchers |
-| POST | `/api/v2/Vouchers` | Vouchers_Post | Create a voucher |
-| DELETE | `/api/v2/Vouchers/{VoucherCode}` | Vouchers_Delete | Delete a voucher |
-| GET | `/api/v2/Vouchers/{VoucherCode}` | get /api/v2/Vouchers/{VoucherCode} | Get a voucher |
-| PUT | `/api/v2/Vouchers/{VoucherCode}` | Vouchers_Put | Update a voucher |
-| GET | `/api/v2/Vouchers/{VoucherCode}/VoucherHistory` | Vouchers_GetVoucherHistory | Get a voucher's history. |
-| GET | `/api/v2/activities` | Activities_GetActivities | Get Activities |
-| POST | `/api/v2/activities` | Activities_PostActivity | Create an Activity |
-| DELETE | `/api/v2/activities/{activityID}` | Activities_DeleteActivity | Mark the delete flag for the Activity |
-| GET | `/api/v2/activities/{activityID}` | Activities_GetActivity | Get an Activity by ID |
-| PUT | `/api/v2/activities/{activityID}` | Activities_PutActivity | Update an Activity |
-| GET | `/api/v2/activityRuns` | ActivityRuns_GetActivityRuns | Get ActivityRuns |
-| GET | `/api/v2/activityRuns/{activityRunID}` | ActivityRuns_GetActivityRun | Get an ActivityRun by ID |
-| PUT | `/api/v2/activityRuns/{activityRunID}` | ActivityRuns_PutActivityRun | Update an ActivityRun |
-| GET | `/api/v2/activityRuns/{activityRunID}/status` | ActivityRuns_GetActivityRunStatus | Get the ActivityRunStatus of an ActivityRun |
-| PUT | `/api/v2/activityRuns/{activityRunID}/status` | ActivityRuns_PutActivityRunStatus | Update the ActivityRunStatus of an ActivityRun |
-| GET | `/api/v2/agents` | Agents_GetAgents | Get Agents |
-| POST | `/api/v2/agents` | Agents_PostAgent | Create an Agent |
-| GET | `/api/v2/agents/Current` | Agents_GetCurrentAgentAsync | Get Agent associated with the current user |
-| GET | `/api/v2/agents/Current/ActivityRun` | Agents_GetCurrentAgentActivityRun | Get the ActivityRun of Agent associated with the current user |
-| DELETE | `/api/v2/agents/{agentID}` | Agents_DeleteAgent | Delete an Agent |
-| GET | `/api/v2/agents/{agentID}` | Agents_GetAgentAsync | Get Agent |
-| PUT | `/api/v2/agents/{agentID}` | Agents_PutAgent | Update an Agent |
-| GET | `/api/v2/agents/{agentID}/ActivityRun` | Agents_GetAgentActivityRun | Get an Agent's ActivityRun |
-| PUT | `/api/v2/agents/{agentID}/ActivityRun` | Agents_PutAgentActivityRun | Update the ActivityRun assigned to the Agent. |
-| PUT | `/api/v2/agents/{agentID}/Status` | Agents_PutAgentStatus | Update an Agent |
-| GET | `/api/v2/jobRuns` | JobRuns_GetJobRuns | Get JobRuns |
-| POST | `/api/v2/jobRuns` | JobRuns_PostJobRun | Create a JobRun |
-| DELETE | `/api/v2/jobRuns/{jobRunID}` | JobRuns_DeleteJobRun | Delete a JobRun |
-| GET | `/api/v2/jobRuns/{jobRunID}` | JobRuns_GetJobRun | Get a JobRun by ID |
-| PUT | `/api/v2/jobRuns/{jobRunID}` | JobRuns_PutJobRun | Update a JobRun |
-| GET | `/api/v2/jobs` | Jobs_GetJobs | Get Jobs |
-| POST | `/api/v2/jobs` | Jobs_PostJob | Create a Job |
-| DELETE | `/api/v2/jobs/{jobID}` | Jobs_DeleteJob | Mark the delete flag for the Job |
-| GET | `/api/v2/jobs/{jobID}` | Jobs_GetJob | Get a Job by ID |
-| PUT | `/api/v2/jobs/{jobID}` | Jobs_PutJob | Update a Job |
-| GET | `/api/v2/steps` | Steps_GetSteps | Get Steps |
-| POST | `/api/v2/steps` | Steps_PostStep | Create a Step |
-| GET | `/api/v2/steps/{stepID}` | Steps_GetStep | Get a Step by ID |
-| PUT | `/api/v2/steps/{stepID}` | Steps_PutStep | Update a Step |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v2/AftermarketServices/Certificates` | AftermarketServices_GetCerts | — | System.Object | yes | No Documentation Found. |
+| PUT | `/api/v2/AftermarketServices/ECUs/{serialNumber}` | AftermarketServices_PutECU | `serialNumber`*, `EDTInstanceId`*, body*: AGCOPowerServices.Models.ECU | AGCOPowerServices.Models.ECU |  | Activate or Deactivate an ECU, or Report an ECU as Damaged. |
+| GET | `/api/v2/AftermarketServices/Engines/{serialNumber}/IQACodes` | AftermarketServices_GetEngineIQACodes | `serialNumber`*, `EDTInstanceId`* | string[] | yes | Get injector codes given engine. |
+| PUT | `/api/v2/AftermarketServices/Engines/{serialNumber}/IQACodes` | AftermarketServices_PutIQACodes | `serialNumber`*, `EDTInstanceId`*, body*: string[] | boolean |  | Report the IQA codes used by an engine |
+| GET | `/api/v2/AftermarketServices/Engines/{serialNumber}/ProductionData` | AftermarketServices_GetProductionData | `serialNumber`*, `EDTInstanceId`* | AGCOPowerServices.Models.ProductionData[] | yes | Get production calibration data for given engine. |
+| GET | `/api/v2/AftermarketServices/Hello` | AftermarketServices_GetConnectionStatus | — | boolean | yes | Check whether there is connectivity to AGCO Power Web Services |
+| GET | `/api/v2/AftermarketServices/UserStatuses` | AftermarketServices_GetUserStatus | `voucherCode`*, `dealerCode`* | AGCOPowerServices.Models.UserStatus | yes | Retrieve the status of an EDT Kit Registration with AGCO Power Web Services |
+| PUT | `/api/v2/AftermarketServices/UserStatuses` | AftermarketServices_UpdateUserStatus | body*: AGCOPowerServices.Models.UserStatus | boolean |  | Update the status of an EDT Kit Registration with AGCO Power Web Services |
+| PUT | `/api/v2/AuthenticatedUsers/{UserID}/Tokens` | Authentication_PutManageTokens | `UserID`*, body*: API.Models.TokenOptions | — |  | Manage API tokens. |
+| POST | `/api/v2/Authentication` | Authentication_Default | body*: API.Models.Credentials | API.Models.AuthenticatedUser |  | Authenticate a user. |
+| GET | `/api/v2/Authentication/IsAlive` | Authentication_IsAlive | — | — | yes | Acknowledges the connection to the API |
+| POST | `/api/v2/Authentication/RequestPasswordReset` | Authentication_RequestPasswordReset | body*: API.Models.PasswordResetRequest | — |  | Request a password reset. |
+| POST | `/api/v2/Authentication/ResetPasword` | Authentication_ResetPasword | body*: API.Models.PasswordReset | — |  | Reset a password |
+| GET | `/api/v2/AuthorizationCategories` | AuthorizationCategories_Get | `limit`, `offset`, `userID`, `definitionID` | API.IPagedResponse_AuthorizationCodes.Shared.Models.Category_ | yes | Get authorization categories. |
+| POST | `/api/v2/AuthorizationCategories` | AuthorizationCategories_Post | body*: AuthorizationCodes.Shared.Models.Category | string |  | Add an authorization category. |
+| GET | `/api/v2/AuthorizationCategories/Users` | AuthorizationCategories_GetUsers | `limit`, `offset`, `userIDs`, `categoryIDs`, `includeCategories`, `includeUsers`, `userSearch` | API.IPagedResponse_AuthorizationCodes.Shared.Models.CategoryUserReport_ | yes | Returns a report of access that users have to Authorization Categories. |
+| PUT | `/api/v2/AuthorizationCategories/{id}` | AuthorizationCategories_Put | `id`*, body*: AuthorizationCodes.Shared.Models.Category | — |  | Update an authorization category. |
+| DELETE | `/api/v2/AuthorizationCategories/{id}` | AuthorizationCategories_Delete | `id`* | — |  | Remove an authorization category. |
+| POST | `/api/v2/AuthorizationCategories/{id}/Users/{userID}` | AuthorizationCategories_AddUser | `id`*, `userID`* | — |  | Add a category that a user can see. |
+| DELETE | `/api/v2/AuthorizationCategories/{id}/Users/{userID}` | AuthorizationCategories_RemoveUser | `id`*, `userID`* | — |  | Deletes a category a user could see. |
+| GET | `/api/v2/AuthorizationCodeDefinitions` | AuthorizationCodeDefinitions_GetAuthorizationCodeDefinition | `limit`, `offset`, `name`, `createdByUserID`, `deletedByUserID`, `includeDeleted`, `categoryID` | API.IPagedResponse_AuthorizationCodes.Shared.Models.AuthorizationCodeDefinition_ | yes | Get authorization code definitions. |
+| POST | `/api/v2/AuthorizationCodeDefinitions` | AuthorizationCodeDefinitions_PostAuthorizationCodeDefinition | body*: AuthorizationCodes.Shared.Models.AuthorizationCodeDefinition | string |  | Add an authorization code definition. |
+| POST | `/api/v2/AuthorizationCodeDefinitions/{ID}/Categories/{categoryID}` | AuthorizationCodeDefinitions_AddCategoryToDefinition | `ID`*, `categoryID`* | — |  | Add a category to an authorizationCodeDefintion. |
+| DELETE | `/api/v2/AuthorizationCodeDefinitions/{ID}/Categories/{categoryID}` | AuthorizationCodeDefinitions_RemoveCategoryFromDefinition | `ID`*, `categoryID`* | — |  | Deletes the category from the authorization code definition. |
+| GET | `/api/v2/AuthorizationCodeDefinitions/{id}` | get /api/v2/AuthorizationCodeDefinitions/{id} | `id`* | AuthorizationCodes.Shared.Models.AuthorizationCodeDefinition | yes | Get an authorization code definition by its ID |
+| PUT | `/api/v2/AuthorizationCodeDefinitions/{id}` | AuthorizationCodeDefinitions_PutAuthorizationCodeDefinition | `id`*, body*: AuthorizationCodes.Shared.Models.AuthorizationCodeDefinition | — |  | Update an authorization code definition |
+| DELETE | `/api/v2/AuthorizationCodeDefinitions/{id}` | AuthorizationCodeDefinitions_DeleteAuthorizationCodeDefinition | `id`* | — |  | Disable an authorization code definition |
+| GET | `/api/v2/AuthorizationCodes` | AuthorizationCodes_GetAuthorizationCodes | `code`, `limit`, `offset`, `definitionID`, `createdByUserID`, `deletedByUserID`, `includeDeleted` | API.IPagedResponse_AuthorizationCodes.Shared.Models.AuthorizationCode_ | yes | Get authorization codes. |
+| POST | `/api/v2/AuthorizationCodes` | AuthorizationCodes_PostAuthorizationCode | body*: AuthorizationCodes.Shared.Models.AuthorizationCode | integer:int32 |  | Generates an authorization code using the provided definition and parameters. |
+| GET | `/api/v2/AuthorizationCodes/{id}` | AuthorizationCodes_GetAuthorizationCode | `id`* | AuthorizationCodes.Shared.Models.AuthorizationCode | yes | Get an authorization code by its ID. |
+| PUT | `/api/v2/AuthorizationCodes/{id}` | AuthorizationCodes_PutAuthorizationCode | `id`*, body*: AuthorizationCodes.Shared.Models.AuthorizationCode | — |  | Update an authorization code. |
+| DELETE | `/api/v2/AuthorizationCodes/{id}` | AuthorizationCodes_DeleteAuthorizationCode | `id`* | — |  | Hide an authorization code. |
+| GET | `/api/v2/AuthorizationCodes/{id}/ContactInformation` | AuthorizationCodes_GetContactInformation | `id`* | AuthorizationCodes.Shared.Models.AuthorizationContactInformation | yes | Get contact information for an authorization code. |
+| GET | `/api/v2/AuthorizationCodes/{id}/Validate` | AuthorizationCodes_ValidateAuthorizationCode | `id`* | AuthorizationCodes.Shared.Models.CodeValidationModel | yes | No Documentation Found. |
+| GET | `/api/v2/AuthorizationContactInformation` | AuthorizationContactInformation_Get | `limit`, `offset`, `authorizationCode`, `afterDate`, `beforeDate`, `dealerCode` | API.IPagedResponse_AuthorizationCodes.Shared.Models.AuthorizationContactInformation_ | yes | Get contact information for authorization codes. |
+| POST | `/api/v2/AuthorizationContactInformation` | AuthorizationContactInformation_Post | body*: AuthorizationCodes.Shared.Models.AuthorizationContactInformation | integer:int32 |  | Add contact information for authorization code. |
+| GET | `/api/v2/Brands` | Brands_Brands | — | string[] | yes | Gets a list of Brands. |
+| GET | `/api/v2/Bundles` | Bundles_GetBundles | `UpdateGroupID`, `Active`, `limit`, `offset`, `BundleNumber` | API.PagedResponse_UpdateSystem.Models.Bundle_ | yes | Get the list of bundles. |
+| POST | `/api/v2/Bundles` | Bundles_PostBundle | body*: UpdateSystem.Models.Bundle | string |  | Add a Bundle to the Update System. |
+| GET | `/api/v2/Bundles/{ID}` | Bundles_GetBundle | `ID`* | UpdateSystem.Models.Bundle | yes | Get a specific Bundle by ID. |
+| PUT | `/api/v2/Bundles/{ID}` | Bundles_PutBundle | `ID`*, body*: UpdateSystem.Models.Bundle | — |  | Modify a Bundle in the Update System. |
+| DELETE | `/api/v2/Bundles/{ID}` | Bundles_DeleteBundle | `ID`* | — |  | Delete a Bundle. |
+| GET | `/api/v2/Clients` | Clients_Get | `Tag`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.Client_ | yes | Get a List of Clients in the Update System. |
+| GET | `/api/v2/Clients/{ClientID}/CachedFiles` | UpdateSystem_GetCachedFiles | `ClientID`*, `Expired`* | string[] | yes | Get a list of Cached Files installed on the client Machine. |
+| GET | `/api/v2/Clients/{ClientID}/PackageReports` | PackageReports_Default | `ClientID`* | UpdateSystem.Models.PackageReport[] | yes | Get the package reports for a client. |
+| PUT | `/api/v2/Clients/{ClientID}/PackageReports` | put /api/v2/Clients/{ClientID}/PackageReports | `ClientID`*, body*: UpdateSystem.Models.PackageReport | — |  | Submit a package report |
+| PUT | `/api/v2/Clients/{ClientID}/PackageReports/Batch` | PackageReports_Batch | `ClientID`*, body*: UpdateSystem.Models.PackageReport[] | — |  | Submit a batch of package reports |
+| GET | `/api/v2/Clients/{ID}` | get /api/v2/Clients/{ID} | `ID`* | UpdateSystem.Models.Client | yes | Get a Client in the Update System. |
+| PUT | `/api/v2/Clients/{ID}` | Clients_Put | `ID`*, body*: UpdateSystem.Models.Client | — |  | Update a Client. |
+| GET | `/api/v2/Clients/{ID}/AvailableUpdateGroupSubscriptions` | Clients_GetAvailableSubscriptions | `ID`*, `UpdateGroupID`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.AvailableUpdateGroupSubscription_ | yes | Get a Client's Available Update Group Subscriptions |
+| GET | `/api/v2/Clients/{ID}/UpdateGroupSubscriptions` | Clients_GetSubscriptions | `ID`*, `UpdateGroupID`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.UpdateGroupSubscription_ | yes | Get a Client's Current Update Group Subscriptions |
+| PUT | `/api/v2/ContentDefinitionAttributes/Batch` | ContentDefinitions_PutContentDefinitionAttributes | body*: ContentSubmission.Shared.BusinessEntities.ContentDefinitionAttribute[] | — |  | No Documentation Found. |
+| PUT | `/api/v2/ContentDefinitionAttributes/{contentDefinitionAttributeID}` | ContentDefinitions_PutContentDefinitionAttributeAsync | `contentDefinitionAttributeID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentDefinitionAttribute | — |  | Update an Attribute for a ContentDefinition |
+| DELETE | `/api/v2/ContentDefinitionAttributes/{contentDefinitionAttributeID}` | ContentDefinitions_DeleteContentDefinitionAttribute | `contentDefinitionAttributeID`* | — |  | Remove an Attribute from a ContentDefinition |
+| GET | `/api/v2/ContentDefinitions` | ContentDefinitions_GetContentDefinitions | `limit`, `offset`, `userID`, `includeAttributes`, `name`, `typeID`, `packageTypeID` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.ContentDefinition_ | yes | Get ContentDefinitions |
+| POST | `/api/v2/ContentDefinitions` | ContentDefinitions_PostContentDefinition | body*: ContentSubmission.Shared.BusinessEntities.ContentDefinition | integer:int32 |  | Create a ContentDefinition |
+| GET | `/api/v2/ContentDefinitions/{contentDefinitionID}` | ContentDefinitions_GetContentDefinition | `contentDefinitionID`*, `includeAttributes` | ContentSubmission.Shared.BusinessEntities.ContentDefinition | yes | Get a ContentDefinition by ID |
+| PUT | `/api/v2/ContentDefinitions/{contentDefinitionID}` | ContentDefinitions_PutContentDefinition | `contentDefinitionID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentDefinition | — |  | Update a ContentDefinition |
+| DELETE | `/api/v2/ContentDefinitions/{contentDefinitionID}` | ContentDefinitions_DeleteContentDefinition | `contentDefinitionID`* | — |  | Delete a ContentDefinition |
+| GET | `/api/v2/ContentDefinitions/{contentDefinitionID}/Attributes` | ContentDefinitions_GetContentDefinitionAttributes | `contentDefinitionID`*, `limit`, `offset`, `name` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.ContentDefinitionAttribute_ | yes | Get Attributes for a ContentDefinition |
+| POST | `/api/v2/ContentDefinitions/{contentDefinitionID}/Attributes` | ContentDefinitions_PostContentDefinitionAttribute | `contentDefinitionID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentDefinitionAttribute | integer:int32 |  | Add an Attribute to a ContentDefinition |
+| POST | `/api/v2/ContentDefinitions/{contentDefinitionID}/Attributes/Batch` | ContentDefinitions_PostContentDefinitionAttributes | `contentDefinitionID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentDefinitionAttribute[] | — |  | No Documentation Found. |
+| GET | `/api/v2/ContentReleases` | ContentRelease_GetContentReleaseVersion | `limit`, `offset`, `deleted`, `releaseID`, `userId`, `contentDefinitionID`, `version` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.ContentReleaseVersion_ | yes | Get ContentReleaseVersion |
+| POST | `/api/v2/ContentReleases` | ContentRelease_PostContentRelease | body*: ContentSubmission.Shared.BusinessEntities.ContentReleaseVersion | integer:int32 |  | Create a ContentReleaseVersion |
+| GET | `/api/v2/ContentReleases/{ContentReleaseId}` | get /api/v2/ContentReleases/{ContentReleaseId} | `ContentReleaseId`* | ContentSubmission.Shared.BusinessEntities.ContentReleaseVersion | yes | Get a Content Release Version by ID |
+| PUT | `/api/v2/ContentReleases/{ContentReleaseId}` | ContentRelease_PutContentDefinition | `ContentReleaseId`*, body*: ContentSubmission.Shared.BusinessEntities.ContentReleaseVersion | — |  | Update a ContentReleaseVersion |
+| DELETE | `/api/v2/ContentReleases/{ContentReleaseId}` | ContentRelease_DeleteContentReleaseVersionn | `ContentReleaseId`* | — |  | Delete a ContentReleaseVersion |
+| PUT | `/api/v2/ContentSubmissionAttributes/Batch` | ContentSubmissions_PutContentSubmissionAttributes | body*: ContentSubmission.Shared.BusinessEntities.ContentSubmissionAttribute[] | — |  | No Documentation Found. |
+| PUT | `/api/v2/ContentSubmissionAttributes/{contentSubmissionAttributeID}` | ContentSubmissions_PutContentSubmissionAttributeAsync | `contentSubmissionAttributeID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentSubmissionAttribute | — |  | Update an Attribute for a ContentSubmission |
+| DELETE | `/api/v2/ContentSubmissionAttributes/{contentSubmissionAttributeID}` | ContentSubmissions_DeleteContentSubmissionAttribute | `contentSubmissionAttributeID`* | — |  | Remove an Attribute from a ContentSubmission |
+| GET | `/api/v2/ContentSubmissionTypes` | ContentSubmissionTypes_GetContentSubmissionTypes | `enabled` | ContentSubmission.Shared.BusinessEntities.ContentSubmissionType[] | yes | Returns available Content Submission Types. |
+| POST | `/api/v2/ContentSubmissionTypes` | ContentSubmissionTypes_PostContentSubmissionType | body*: ContentSubmission.Shared.BusinessEntities.ContentSubmissionType | integer:int32 |  | Add a Content Submission Type |
+| GET | `/api/v2/ContentSubmissionTypes/{id}` | ContentSubmissionTypes_GetContentSubmissionType | `id`* | ContentSubmission.Shared.BusinessEntities.ContentSubmissionType | yes | Retrieves a Content Submission Type by its ID. |
+| PUT | `/api/v2/ContentSubmissionTypes/{id}` | ContentSubmissionTypes_PutContentSubmissionType | `id`*, body*: ContentSubmission.Shared.BusinessEntities.ContentSubmissionType | — |  | Update a Content Submission Type |
+| DELETE | `/api/v2/ContentSubmissionTypes/{id}` | ContentSubmissionTypes_DeleteContentSubmissionType | `id`* | — |  | Remove a Content Submission Type |
+| GET | `/api/v2/ContentSubmissions` | ContentSubmissions_GetContentSubmissions | `limit`, `offset`, `userID`, `contentDefinitionID`, `includeAttributes`, `releaseID`, `typeID`, `version`, `includeDefinition` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.ContentSubmission_ | yes | Get ContentSubmissions |
+| POST | `/api/v2/ContentSubmissions` | ContentSubmissions_PostContentSubmission | body*: ContentSubmission.Shared.BusinessEntities.ContentSubmission | integer:int32 |  | Create a ContentSubmission |
+| GET | `/api/v2/ContentSubmissions/{contentSubmissionID}` | ContentSubmissions_GetContentSubmission | `contentSubmissionID`*, `includeAttributes` | ContentSubmission.Shared.BusinessEntities.ContentSubmission | yes | Get a ContentSubmission by ID |
+| PUT | `/api/v2/ContentSubmissions/{contentSubmissionID}` | ContentSubmissions_PutContentSubmission | `contentSubmissionID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentSubmission | — |  | Update a ContentSubmission |
+| DELETE | `/api/v2/ContentSubmissions/{contentSubmissionID}` | ContentSubmissions_DeleteContentSubmission | `contentSubmissionID`* | — |  | Delete a ContentSubmission |
+| GET | `/api/v2/ContentSubmissions/{contentSubmissionID}/Attributes` | ContentSubmissions_GetContentSubmissionAttributes | `contentSubmissionID`*, `limit`, `offset`, `name` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.ContentSubmissionAttribute_ | yes | Get Attributes for a ContentSubmission |
+| POST | `/api/v2/ContentSubmissions/{contentSubmissionID}/Attributes` | ContentSubmissions_PostContentSubmissionAttribute | `contentSubmissionID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentSubmissionAttribute | integer:int32 |  | Add an Attribute to a ContentSubmission |
+| POST | `/api/v2/ContentSubmissions/{contentSubmissionID}/Attributes/Batch` | ContentSubmissions_PostContentSubmissionAttributes | `contentSubmissionID`*, body*: ContentSubmission.Shared.BusinessEntities.ContentSubmissionAttribute[] | — |  | No Documentation Found. |
+| GET | `/api/v2/ContentSubmissions/{contentSubmissionID}/Status` | ContentSubmissions_GetContentSubmissionStatus | `contentSubmissionID`*, `includeActivityRunDetails` | BuildSystem.Shared.Interfaces.IJobRun | yes | Get the status of a ContentSubmission |
+| GET | `/api/v2/DealerByCountry` | DealerByCountry_GetCountries | `limit`, `offset` | API.PagedResponse_DealerDB.Models.DealersPerCountry_ | yes | Get a total count of dealers per country |
+| GET | `/api/v2/Dealers` | Dealers_GetDealers | `Brand`, `ShippingCountry`, `DealerName`, `limit`, `offset` | API.PagedResponse_DealerDB.Models.Dealer_ | yes | Get a list of dealers. |
+| GET | `/api/v2/Dealers/{DealerCode}` | Dealers_GetDealerbyDealerCode | `DealerCode`* | DealerDB.Models.Dealer | yes | Lookup a dealer using a dealer code. |
+| GET | `/api/v2/Files` | Files_GetFiles | `includeDeleted`, `limit`, `offset` | API.IPagedResponse_GlobalResources.Shared.Models.FileDownload_ | yes | Get a paged response of file metadata. |
+| POST | `/api/v2/Files` | Files_PostFile | body*: GlobalResources.Shared.Models.FileDownload | string |  | Create the metadata for a file before uploading. The State of the File should be 'Created'. |
+| GET | `/api/v2/Files/{ID}` | Files_GetFile | `ID`* | GlobalResources.Shared.Models.FileDownload | yes | Gets a file's metadata. |
+| PUT | `/api/v2/Files/{ID}` | Files_PutFile | `ID`*, body*: GlobalResources.Shared.Models.FileDownload | — |  | Update the metadata for a file. Size may not be modified by the client. |
+| DELETE | `/api/v2/Files/{ID}` | Files_DeleteFile | `ID`* | — |  | Mark a file as 'Removed'. Disables download of the file and hides metadata from GET all method |
+| GET | `/api/v2/Files/{ID}/FileContents` | Files_GetFileContents | `ID`* | System.Object | yes | Download the contents of a file. The current State of the File should be 'Available'. |
+| PUT | `/api/v2/Files/{ID}/FileContents` | Files_PutFileContents | `ID`* | System.Object |  | Upload the contents of a file. The current State of the File should be 'Created'. |
+| GET | `/api/v2/GlobalImageCategories` | GlobalImageCategories_GetFiles | `limit`, `offset` | API.IPagedResponse_GlobalResources.Shared.Models.GlobalImageCategory_ | yes | Get a paged response of file metadata. |
+| POST | `/api/v2/GlobalImageCategories` | GlobalImageCategories_PostFile | body*: GlobalResources.Shared.Models.GlobalImageCategory | string |  | Create the metadata for a file before uploading. The State should be 'Created'. |
+| GET | `/api/v2/GlobalImageCategories/{ID}` | GlobalImageCategories_GetFile | `ID`* | GlobalResources.Shared.Models.GlobalImageCategory | yes | Gets a file's metadata. |
+| GET | `/api/v2/GlobalImages` | GlobalImages_GetGlobalImages | `search`, `categoryId`, `publisher`, `includeDeleted`, `limit`, `offset` | API.IPagedResponse_GlobalResources.Shared.Models.GlobalImage_ | yes | Get a paged response of GlobalImage. |
+| POST | `/api/v2/GlobalImages` | GlobalImages_PostGlobalImage | `overridePublisherOrDate`, body*: GlobalResources.Shared.Models.GlobalImage | string |  | Create the metadata for a GlobalImage before uploading. The State should be 'Created'. |
+| GET | `/api/v2/GlobalImages/{ID}` | GlobalImages_GetGlobalImage | `ID`* | GlobalResources.Shared.Models.GlobalImage | yes | Gets a GlobalImage's metadata. |
+| PUT | `/api/v2/GlobalImages/{ID}` | GlobalImages_PutGlobalImage | `ID`*, `overridePublisherOrDate`, body*: GlobalResources.Shared.Models.GlobalImage | — |  | Update the metadata for an image. |
+| DELETE | `/api/v2/GlobalImages/{ID}` | GlobalImages_DeleteFile | `ID`* | — |  | Mark a file as 'Removed'. Disables download of the image and hides metadata from GET all method |
+| GET | `/api/v2/GlobalImages/{ID}/ImageContents` | GlobalImages_GetGlobalImageContents | `ID`*, `isFullImage` | System.Object | yes | Download the contents of a GlobalImage. The current State of the GlobalImage should be 'Available'. |
+| PUT | `/api/v2/GlobalImages/{ID}/ImageContents` | GlobalImages_PutGlobalImageContents | `ID`*, `isFullImage` | System.Object |  | Upload the contents of a GlobalImage. The current State of the File for the GlobalImage should be 'Created'. |
+| GET | `/api/v2/Languages` | Languages_GetLanguages | `limit`, `offset`, `includeDeleted` | API.IPagedResponse_GlobalResources.Shared.Models.Language_ | yes | Get a list of the languages for which translations are supported. Returns a PagedResponse of Language objects. |
+| POST | `/api/v2/Languages` | Languages_CreateLanguage | body*: GlobalResources.Shared.Models.Language | integer:int32 |  | Add a Language to support for translations. Accepts a Language object. Returns the Id of the created object. |
+| GET | `/api/v2/Languages/{LocaleID}` | Languages_GetLanguage | `LocaleID`* | GlobalResources.Shared.Models.Language | yes | Get a language by its id. Returns a Language object |
+| PUT | `/api/v2/Languages/{LocaleID}` | Languages_UpdateLanguage | `LocaleID`*, body*: GlobalResources.Shared.Models.Language | — |  | Update a language’s description. Accepts a Language object. |
+| DELETE | `/api/v2/Languages/{LocaleID}` | Languages_DeleteLanguage | `LocaleID`* | — |  | Remove a Language from those supported for translations. Marks language as deleted. |
+| POST | `/api/v2/LicenseActivations` | LicenseActivations_Post | body*: DealerDB.Models.LicenseActivationCreate | DealerDB.Models.LicenseActivation |  | Create a license activation. |
+| POST | `/api/v2/LicenseActivations/RegisterEDTLite` | LicenseActivations_PostRegisterEDTLite | body*: DealerDB.Models.EDTLiteRegistration | boolean |  | Register an EDT Lite with the Server |
+| PUT | `/api/v2/LicenseActivations/{ID}` | LicenseActivations_Put | `ID`*, body*: DealerDB.Models.LicenseActivationUpdate | DealerDB.Models.LicenseActivation |  | Update a license activiation. |
+| PUT | `/api/v2/LicenseActivations/{ID}/Confirm` | LicenseActivations_PutConfirm | `ID`*, body*: DealerDB.Models.LicenseActivationConfirm | — |  | Confirm that the client has applied the updated license. |
+| GET | `/api/v2/Licenses` | Licenses_Get | `VoucherCode`, `DealerCode`, `Status`, `limit`, `offset` | API.PagedResponse_DealerDB.Models.License_ | yes | Gets a list of licenses with the specified criteria. |
+| GET | `/api/v2/Licenses/{ID}` | get /api/v2/Licenses/{ID} | `ID`* | DealerDB.Models.License | yes | Get a license. |
+| GET | `/api/v2/Logs` | Logs_GetLogs | `limit`, `offset` | API.PagedResponse_API.Models.Log_ | yes | Get the API System logs, most recent first. |
+| POST | `/api/v2/Logs` | Logs_PostLog | `Message`* | string |  | Add a Log entry |
+| GET | `/api/v2/Logs/{ID}` | Logs_GetLog | `ID`* | API.Models.Log | yes | Get a log by ID |
+| POST | `/api/v2/Notifications` | Notifications_PostMail | body*: API.Models.Notification | — |  | Sends an email message. |
+| GET | `/api/v2/PackageTypes` | PackageTypes_Get | `limit`, `offset`, `userID` | API.PagedResponse_UpdateSystem.Models.PackageType_ | yes | Get all of the Package Types. |
+| POST | `/api/v2/PackageTypes` | PackageTypes_Post | body*: UpdateSystem.Models.PackageType | string |  | Add a Package Type. |
+| GET | `/api/v2/PackageTypes/{ID}` | get /api/v2/PackageTypes/{ID} | `ID`* | UpdateSystem.Models.PackageType | yes | Get a specific Package Type. |
+| PUT | `/api/v2/PackageTypes/{ID}` | PackageTypes_Put | `ID`*, body*: UpdateSystem.Models.PackageType | — |  | Modify a Package Type. |
+| DELETE | `/api/v2/PackageTypes/{ID}` | PackageTypes_Delete | `ID`* | — |  | Delete a Package Type. |
+| POST | `/api/v2/PackageTypes/{id}/Users/{userID}` | PackageTypes_AddPackageTypeUser | `id`*, `userID`* | — |  | Add a package type that a user can see. |
+| DELETE | `/api/v2/PackageTypes/{id}/Users/{userID}` | PackageTypes_RemovePackageTypeUser | `id`*, `userID`* | — |  | Deletes a package type a user could see. |
+| GET | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Get | `BundleID`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.PackageTypeIDtoBundle_ | yes | Get all of the Package Type to Bundle Relationships. |
+| PUT | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Put | body*: UpdateSystem.Models.PackageTypeIDtoBundle | — |  | Update a Package Type ID to Bundle Relationship. |
+| POST | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Post | body*: UpdateSystem.Models.PackageTypeIDtoBundle | — |  | Add a new Package Type ID to Bundle Relationship. |
+| DELETE | `/api/v2/PackageTypetoBundles` | PackageTypetoBundles_Delete | `BundleID`*, `PackageTypeID`* | — |  | Delete a Package Type to Bundle Relationship. |
+| GET | `/api/v2/Packages` | Packages_GetPackages | `limit`, `offset`, `PackageTypeID`, `Version`, `Released` | API.PagedResponse_UpdateSystem.Models.Package_ | yes | List Packages. |
+| POST | `/api/v2/Packages` | Packages_PostPackage | body*: UpdateSystem.Models.Package | string |  | Add a Package to the Update System. |
+| GET | `/api/v2/Packages/{ID}` | Packages_GetPackage | `ID`* | UpdateSystem.Models.Package | yes | Find a Package. |
+| PUT | `/api/v2/Packages/{ID}` | Packages_PutPackage | `ID`*, body*: UpdateSystem.Models.Package | — |  | Modify a Packge to the Update System. |
+| DELETE | `/api/v2/Packages/{ID}` | Packages_DeletePackage | `ID`* | — |  | Delete a Package. |
+| GET | `/api/v2/Permissions` | Permissions_GetPermissions | `limit`, `offset`, `name` | API.PagedResponse_API.Models.Permission_ | yes | List Permissions |
+| POST | `/api/v2/Permissions` | Permissions_PostPermission | body*: API.Models.Permission | integer:int32 |  | Adds a Permission |
+| GET | `/api/v2/Permissions/{id}` | Permissions_GetPermission | `id`* | API.Models.Permission | yes | Gets a Permission |
+| PUT | `/api/v2/Permissions/{id}` | Permissions_PutPermission | `id`*, body*: API.Models.Permission | — |  | Updates a Permission |
+| DELETE | `/api/v2/Permissions/{id}` | Permissions_DeletePermission | `id`* | — |  | Deletes a Permission |
+| GET | `/api/v2/PriorityPackages` | PriorityPackages_GetPriorityPackages | `ClientID`, `Status`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.PriorityPackage_ | yes | Get a list of Priority Packages by Client. |
+| POST | `/api/v2/PriorityPackages` | PriorityPackages_PostPriorityPackages | body*: UpdateSystem.Models.PriorityPackage | string |  | Add a Priority Package for a Client. |
+| GET | `/api/v2/PriorityPackages/{ID}` | PriorityPackages_GetPriorityPackage | `ID`* | UpdateSystem.Models.PriorityPackage | yes | Get a Priority Packages for a Client. |
+| DELETE | `/api/v2/PriorityPackages/{ID}` | PriorityPackages_DeletePriorityPackages | `ID`* | — |  | Delete a Priority Package for a Client. |
+| GET | `/api/v2/Releases` | Release_GetReleases | `limit`, `offset`, `visible`, `bundleID` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.Release_ | yes | Get Release |
+| POST | `/api/v2/Releases` | Release_PostRelease | body*: ContentSubmission.Shared.BusinessEntities.Release | integer:int32 |  | Create a Release |
+| GET | `/api/v2/Releases/{ReleaseId}` | Release_GetRelease | `ReleaseId`* | ContentSubmission.Shared.BusinessEntities.Release | yes | Get a Release by ID |
+| POST | `/api/v2/Releases/{ReleaseId}/Bundle/{BundleId}` | Release_PostReleaseBundle | `ReleaseId`*, `BundleId`* | — |  | Associates the release with a bundle. |
+| DELETE | `/api/v2/Releases/{ReleaseId}/Bundle/{BundleId}` | Release_DeleteReleaseBundle | `ReleaseId`*, `BundleId`* | — |  | Deletes the association between a release and a bundle. |
+| PUT | `/api/v2/Releases/{releaseId}` | Release_PutContentDefinition | `releaseId`*, body*: ContentSubmission.Shared.BusinessEntities.Release | — |  | Update a Release |
+| GET | `/api/v2/Reporting/BundleStatusSummary` | Reporting_BundleStatusSummary | `BundleID`*, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.PackageStatusSummary_ | yes | Get a summary of all Packages in a Bundle |
+| GET | `/api/v2/Reporting/BundlesInUpdateGroup` | Reporting_BundlesInUpdateGroup | `ID`*, `IncludeInactive`*, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.Bundle_ | yes | Get a list of bundles for UpdateGroup. |
+| GET | `/api/v2/Reporting/ClientInfo` | Reporting_ClientInfo | `ClientID`* | UpdateSystem.Models.ClientInfo | yes | Get Client Information |
+| GET | `/api/v2/Reporting/CurrentPackagesInUpdateGroup` | Reporting_CurrentPackagesInUpdateGroup | `ID`*, `SubscriptionTypeFilter` | UpdateSystem.Models.Package[] | yes | Get the current packages for an update group. |
+| GET | `/api/v2/Reporting/GetClient` | Reporting_GetClient | `ID`* | UpdateSystem.Models.Client | yes | Get a Client in the Update System. |
+| GET | `/api/v2/Reporting/GetSubscriptions` | Reporting_GetSubscriptions | `ClientID`, `UpdateGroupID`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.UpdateGroupClientRelationship_ | yes | Get a list of current Client Subscriptions. |
+| GET | `/api/v2/Reporting/PackageStatusSummary` | Reporting_PackageStatusSummary | `PackageID`* | UpdateSystem.Models.PackageStatusSummary | yes | Get a summary report for a Specific Package |
+| GET | `/api/v2/Reporting/RegisteredClients` | Reporting_RegisteredClients | `UpdateGroupID`, `ClientID`, `Tag`, `ReportResult`, `ReportResultIsValid`, `ReportValue`, `LastCheckInBefore`, `LastCheckInAfter`, `OrderBy`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.ClientStatus_UpdateSystem.Models.PagedClientStatusMetadata_ | yes | Get a list of subscribed clients |
+| GET | `/api/v2/Reporting/UpdateGroups` | Reporting_UpdateGroups | `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.UpdateGroup_ | yes | Get a list of Update Groups. Update Groups are used by the client to register for a specific type of update. |
+| GET | `/api/v2/Reporting/UpdateMetrics` | Reporting_UpdateMetrics | `UpdateGroupID`*, `bundleNumber` | UpdateSystem.Models.UpdateMetricsData | yes | Get data for pie charts in UpdateMetrics. |
+| GET | `/api/v2/Roles` | Roles_GetRoles | `limit`, `offset`, `name`, `permissionID`, `permissionName` | API.PagedResponse_API.Models.Role_ | yes | List Roles |
+| POST | `/api/v2/Roles` | Roles_PostRole | body*: API.Models.Role | integer:int32 |  | Adds a User Role |
+| GET | `/api/v2/Roles/{id}` | Roles_GetRole | `id`* | API.Models.Role | yes | Gets a User Role |
+| PUT | `/api/v2/Roles/{id}` | Roles_PutRole | `id`*, body*: API.Models.Role | — |  | Updates a User Role |
+| DELETE | `/api/v2/Roles/{id}` | Roles_DeleteRole | `id`* | — |  | Deletes a User Role |
+| GET | `/api/v2/Roles/{id}/Permissions` | Roles_GetRolePermissions | `id`*, `name`, `limit`, `offset` | API.PagedResponse_API.Models.Permission_ | yes | Get the Permissions for a Role |
+| PUT | `/api/v2/Roles/{id}/Permissions` | Roles_PutRolePermissions | `id`*, body*: API.Models.RolePermissionChange[] | — |  | Manage the Permissions for a Role |
+| GET | `/api/v2/Roles/{id}/Users` | UserPermissions_GetUsers | `id`*, `limit`, `offset` | API.PagedResponse_API.Models.User_ | yes | Get all user's in a role |
+| PUT | `/api/v2/Roles/{id}/Users` | put /api/v2/Roles/{id}/Users | `id`*, body*: API.Models.RoleUserChange[] | — |  | Update a Role's users |
+| GET | `/api/v2/StringDefinitions` | StringDefinitions_GetDefinitions | `limit`, `modifiedAfterTimestamp`, `includeTranslations`, `stringText`, `descriptionText`, `useFullText`, `includeDeletedLanguages`, `languageIds`, `stringIds`, `matchingTranslationsOnly` | API.IPagedResponse_GlobalResources.Shared.Models.StringDefinition_ | yes | Get a paged response of Global String Definitions. |
+| PUT | `/api/v2/StringDefinitions/Batch` | StringDefinitions_UpdateDefinitions | body*: GlobalResources.Shared.Models.StringDefinition[] | — |  | Update StringDefinition objects. Accepts an array of StringDefinition objects. This endpoint will add StringDefinitionChange objects to the database. The DescriptionForTranslator may not be modified after a String is submitted for translation. |
+| POST | `/api/v2/StringDefinitions/Batch` | StringDefinitions_PostDefinition | body*: GlobalResources.Shared.Models.StringDefinition[] | — |  | Create StringDefinition object. The originating translation must be provided. Accepts an array of StringDefinition objects. Returns nothing. |
+| GET | `/api/v2/StringDefinitions/{ID}` | StringDefinitions_GetDefinition | `ID`*, `includeTranslations`, `includeDeletedLanguages`, `languageIds` | GlobalResources.Shared.Models.StringDefinition | yes | Get a paged response of Global String Definitions. |
+| GET | `/api/v2/StringTranslations` | StringTranslations_GetTranslations | `limit`, `modifiedAfterTimestamp` | API.IPagedResponse_GlobalResources.Shared.Models.StringTranslation_ | yes | Get a paged response of Global String Translations. |
+| PUT | `/api/v2/StringTranslations/Batch` | StringTranslations_UpdateTranslations | body*: GlobalResources.Shared.Models.StringTranslation[] | — |  | Update corrections to string translations |
+| GET | `/api/v2/StringTranslations/{stringId}/{languageId}` | StringTranslations_GetTranslation | `stringId`*, `languageId`* | GlobalResources.Shared.Models.StringTranslation | yes | Get a single translation based upon stringId and languageId |
+| PUT | `/api/v2/StringTranslations/{stringId}/{languageId}` | StringTranslations_UpdateTranslation | `stringId`*, `languageId`*, body*: GlobalResources.Shared.Models.StringTranslation | — |  | Update a string value or a state for a string translation. |
+| GET | `/api/v2/TranslationKeys` | TranslationKeys_Get | `limit`, `offset`, `keyNames` | API.IPagedResponse_OASSupport.Shared.Models.TranslationKey_ | yes | Get a paged response of TranslationKeys. |
+| POST | `/api/v2/TranslationKeys` | TranslationKeys_CreateTranslationKey | body*: OASSupport.Shared.Models.TranslationKey | integer:int32 |  | Create a translationKey object. |
+| GET | `/api/v2/TranslationKeys/{ID}` | TranslationKeys_GetTranslationKey | `ID`* | OASSupport.Shared.Models.TranslationKey | yes | Get TranslationKey by ID |
+| PUT | `/api/v2/TranslationKeys/{ID}` | TranslationKeys_UpdateTranslationKey | `ID`*, body*: OASSupport.Shared.Models.TranslationKey | — |  | Update the StringID of the translationKey object. |
+| GET | `/api/v2/TranslationRequests` | TranslationRequests_GetTranslationRequests | `limit`, `offset` | API.IPagedResponse_GlobalResources.Shared.Models.TranslationRequest_ | yes | Get all TranslationRequest objects. Returns a PagedResponse of TranslationRequest objects with their language ids and string ids. |
+| POST | `/api/v2/TranslationRequests` | TranslationRequests_CreateTranslationRequest | body*: GlobalResources.Shared.Models.TranslationRequest | integer:int32 |  | Create a translation request. Accepts a TranslationRequest object. Returns the Id of the created object. The state of the TranslationRequest must be ‘NotSubmitted’. |
+| GET | `/api/v2/TranslationRequests/{Id}` | TranslationRequests_GetTranslationRequest | `Id`* | GlobalResources.Shared.Models.TranslationRequest | yes | Get a TranslationRequest object by id. Returns TranslationRequest object with its language ids and string ids. |
+| PUT | `/api/v2/TranslationRequests/{Id}` | TranslationRequests_UpdateTranslationRequest | `Id`*, `doResendRequest`, body*: GlobalResources.Shared.Models.TranslationRequest | — |  | Update a TranslationRequest object by id. Accepts a TranslationRequest object. |
+| PUT | `/api/v2/TranslationRequests/{Id}/Strings` | TranslationRequests_UpdateTranslationRequestStrings | `Id`*, body*: string[] | — |  | No Documentation Found. |
+| PUT | `/api/v2/TranslationSetAttributes/Batch` | TranslationSets_UpdateTranslationSetAttributes | body*: GlobalResources.Shared.Models.TranslationSetAttribute[] | — |  | No Documentation Found. |
+| PUT | `/api/v2/TranslationSetAttributes/{ID}` | TranslationSets_UpdateTranslationSetAttribute | `ID`*, body*: GlobalResources.Shared.Models.TranslationSetAttribute | — |  | Update a TranslationSetAttribute object |
+| DELETE | `/api/v2/TranslationSetAttributes/{ID}` | TranslationSets_DeleteTranslationSetAttribute | `ID`* | — |  | Delete a set of TranslationSetAttribute object |
+| GET | `/api/v2/TranslationSets` | TranslationSets_GetTranslationSets | `limit`, `offset`, `translationRequestID`, `state`, `stringId`, `languageId`, `includeAttributes` | API.IPagedResponse_GlobalResources.Shared.Models.TranslationSet_ | yes | Get a PagedResponse of TranslationSet objects. Related TranslationSetStrings are NOT returned |
+| GET | `/api/v2/TranslationSets/{ID}` | TranslationSets_GetTranslationSet | `ID`*, `includeAttributes` | GlobalResources.Shared.Models.TranslationSet | yes | Get a TranslationSet object by its id. Related TranslationSetStrings are NOT returned. |
+| PUT | `/api/v2/TranslationSets/{ID}` | TranslationSets_UpdateTranslationSet | `ID`*, body*: GlobalResources.Shared.Models.TranslationSet | — |  | Update a Translation Set. Accepts a TranslationSet object. Only the state property may be updated. |
+| GET | `/api/v2/TranslationSets/{ID}/Attributes` | TranslationSets_GetTranslationSetAttributes | `ID`*, `limit`, `offset`, `name` | API.IPagedResponse_GlobalResources.Shared.Models.TranslationSetAttribute_ | yes | Get a PagedResponse of TranslationSetAttribute objects |
+| POST | `/api/v2/TranslationSets/{ID}/Attributes` | TranslationSets_PostTranslationSetAttribute | `ID`*, body*: GlobalResources.Shared.Models.TranslationSetAttribute | integer:int32 |  | Create a TranslationSetAttribute object |
+| POST | `/api/v2/TranslationSets/{ID}/Attributes/Batch` | TranslationSets_PostTranslationSetAttributes | `ID`*, body*: GlobalResources.Shared.Models.TranslationSetAttribute[] | — |  | No Documentation Found. |
+| GET | `/api/v2/TranslationSets/{ID}/SourceStrings` | TranslationSets_GetSourceStrings | `ID`*, `limit`, `offset` | API.IPagedResponse_GlobalResources.Shared.Models.TranslationSetSourceString_ | yes | Gets the information needed to translate a string in a translation set |
+| GET | `/api/v2/TranslationSets/{ID}/Statistics` | TranslationSets_GetStatistics | `ID`* | GlobalResources.Shared.Models.TranslationSetStatistics | yes | Gets the statistics for translation sets such as the language ids and count of string definitions. |
+| GET | `/api/v2/TranslationSets/{ID}/Strings` | TranslationSets_GetTranslationSetStrings | `ID`*, `limit`, `offset` | API.IPagedResponse_GlobalResources.Shared.Models.TranslationSetString_ | yes | Get a PagedResponse of TranslationSetString objects |
+| PUT | `/api/v2/TranslationSets/{ID}/Strings` | TranslationSets_UpdateTranslationSetStrings | `ID`*, body*: GlobalResources.Shared.Models.TranslationSetString[] | — |  | No Documentation Found. |
+| GET | `/api/v2/UpdateGroupClientRelationships` | UpdateGroupClientRelationships_GetSubscriptions | `ClientID`, `UpdateGroupID`, `limit`, `offset`, `Active` | API.PagedResponse_UpdateSystem.Models.UpdateGroupClientRelationship_ | yes | Get a list of current Client Subscriptions. |
+| PUT | `/api/v2/UpdateGroupClientRelationships` | UpdateGroupClientRelationships_PutSubscriptionByClientIDUpdateGroupID | `ClientID`*, `UpdateGroupID`*, `Active`* | — |  | DEPRECATED. Set client subscription status for an update group. |
+| POST | `/api/v2/UpdateGroupClientRelationships` | UpdateGroupClientRelationships_PostSubscription | body*: UpdateSystem.Models.UpdateGroupClientRelationship | string |  | Add a subscription |
+| GET | `/api/v2/UpdateGroupClientRelationships/{RelationshipID}` | UpdateGroupClientRelationships_GetSubscription | `RelationshipID`* | UpdateSystem.Models.UpdateGroupClientRelationship | yes | Get a subscription by RelationshipID |
+| PUT | `/api/v2/UpdateGroupClientRelationships/{RelationshipID}` | UpdateGroupClientRelationships_PutSubscription | `RelationshipID`*, body*: UpdateSystem.Models.UpdateGroupClientRelationship | — |  | Updates a Subscription |
+| GET | `/api/v2/UpdateGroupSubscriptions` | UpdateGroupSubscriptions_GetUpdateGroupSubscriptions | `UpdateGroupID`, `PackageTypeID`, `ClientID`, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.UpdateGroupSubscription_ | yes | Get Update Group Subscriptions |
+| POST | `/api/v2/UpdateGroupSubscriptions` | UpdateGroupSubscriptions_PostUpdateGroupSubscription | body*: UpdateSystem.Models.UpdateGroupSubscription | integer:int32 |  | Add an Update Group Subscription |
+| PUT | `/api/v2/UpdateGroupSubscriptions/Batch` | UpdateGroupSubscriptions_PutUpdateGroupSubscriptions | body*: UpdateSystem.Models.UpdateGroupSubscription[] | — |  | No Documentation Found. |
+| POST | `/api/v2/UpdateGroupSubscriptions/Batch` | UpdateGroupSubscriptions_PostUpdateGroupSubscriptions | body*: UpdateSystem.Models.UpdateGroupSubscription[] | — |  | No Documentation Found. |
+| GET | `/api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}` | UpdateGroupSubscriptions_GetUpdateGroupSubscription | `UpdateGroupSubscriptionID`* | UpdateSystem.Models.UpdateGroupSubscription | yes | Get an Update Group Subscription |
+| PUT | `/api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}` | UpdateGroupSubscriptions_PutUpdateGroupSubscription | `UpdateGroupSubscriptionID`*, body*: UpdateSystem.Models.UpdateGroupSubscription | — |  | Update an Update Group Subscription |
+| DELETE | `/api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}` | UpdateGroupSubscriptions_DeleteUpdateGroupSubscription | `UpdateGroupSubscriptionID`* | — |  | Delete an Update Group Subscription |
+| GET | `/api/v2/UpdateGroups` | UpdateGroups_Get | `limit`, `offset`, `userID` | API.PagedResponse_UpdateSystem.Models.UpdateGroup_ | yes | Get a list of Update Groups. Update Groups are used by the client to register for a specific type of update. |
+| POST | `/api/v2/UpdateGroups` | UpdateGroups_Post | body*: UpdateSystem.Models.UpdateGroup | string |  | Add a new Update Group. The report field is a string that has a dot based request for a specific piece of submitted data. |
+| GET | `/api/v2/UpdateGroups/{ID}` | get /api/v2/UpdateGroups/{ID} | `ID`* | UpdateSystem.Models.UpdateGroup | yes | Get a specific Update Group by ID. |
+| PUT | `/api/v2/UpdateGroups/{ID}` | UpdateGroups_Put | `ID`*, body*: UpdateSystem.Models.UpdateGroup | — |  | Modify an Update Group. |
+| DELETE | `/api/v2/UpdateGroups/{ID}` | UpdateGroups_Delete | `ID`* | — |  | Delete an Update Group. |
+| GET | `/api/v2/UpdateGroups/{ID}/Bundles` | UpdateGroups_GetUpdateGroupBundles | `ID`*, `IncludeInactive`*, `limit`, `offset` | API.PagedResponse_UpdateSystem.Models.Bundle_ | yes | Get a list of bundles for UpdateGroup. |
+| POST | `/api/v2/UpdateGroups/{id}/Users/{userID}` | UpdateGroups_AddUpdateGroupUser | `id`*, `userID`* | — |  | Add an updateGroup that a user can see. |
+| DELETE | `/api/v2/UpdateGroups/{id}/Users/{userID}` | UpdateGroups_RemoveUpdateGroupUser | `id`*, `userID`* | — |  | Deletes an update group a user could see. |
+| GET | `/api/v2/UpdateSystem` | UpdateSystem_GetCheckin | `ClientID`*, `Preview`*, `RunAllInventories` | UpdateSystem.Models.CheckinResult | yes | Checks the Client ID into the Update System. |
+| GET | `/api/v2/UserContentDefinitions` | UserContentDefinitions_GetUserContentDefinitions | `limit`, `offset`, `userID`, `contentDefinitionID` | API.PagedResponse_ContentSubmission.Shared.BusinessEntities.UserContentDefinition_ | yes | Get UserContentDefinitions |
+| POST | `/api/v2/UserContentDefinitions` | UserContentDefinitions_PostUserContentDefinition | body*: ContentSubmission.Shared.BusinessEntities.UserContentDefinition | integer:int32 |  | Create a UserContentDefinition |
+| GET | `/api/v2/UserContentDefinitions/{userContentDefinitionID}` | UserContentDefinitions_GetUserContentDefinition | `userContentDefinitionID`* | ContentSubmission.Shared.BusinessEntities.UserContentDefinition | yes | Get a UserContentDefinition by ID |
+| DELETE | `/api/v2/UserContentDefinitions/{userContentDefinitionID}` | UserContentDefinitions_DeleteUserContentDefinition | `userContentDefinitionID`* | — |  | Delete a UserContentDefinition |
+| GET | `/api/v2/Users` | Users_Get | `username`, `email`, `name`, `hasRole`, `limit`, `offset` | API.PagedResponse_API.Models.User_ | yes | Get users |
+| POST | `/api/v2/Users` | Users_Post | body*: API.Models.User | API.Models.User |  | Create a user |
+| GET | `/api/v2/Users/Current` | Users_GetCurrentUser | — | API.Models.User | yes | Gets the current user |
+| PUT | `/api/v2/Users/Current` | Users_PutCurrentUser | body*: API.Models.User | — |  | Update a user |
+| GET | `/api/v2/Users/Current/Permissions` | get /api/v2/Users/Current/Permissions | `Permission`, `limit`, `offset` | API.PagedResponse_API.Models.UserEffectivePermission_ | yes | Get a user's permissions |
+| GET | `/api/v2/Users/Current/Roles` | UserPermissions_GetCurrentUserRoles | `Role`, `limit`, `offset` | API.PagedResponse_API.Models.Role_ | yes | Gets the current user's roles |
+| GET | `/api/v2/Users/{id}` | get /api/v2/Users/{id} | `id`* | API.Models.User | yes | Get a specific user |
+| PUT | `/api/v2/Users/{id}` | Users_Put | `id`*, body*: API.Models.User | — |  | Update a user |
+| DELETE | `/api/v2/Users/{id}` | Users_Delete | `id`* | — |  | Delete a user |
+| GET | `/api/v2/Users/{id}/Permissions` | UserPermissions_GetPermissions | `id`*, `Permission`, `limit`, `offset` | API.PagedResponse_API.Models.UserEffectivePermission_ | yes | Get a user's permissions |
+| GET | `/api/v2/Users/{id}/Roles` | UserPermissions_GetRoles | `id`*, `Role`, `limit`, `offset` | API.PagedResponse_API.Models.Role_ | yes | Get a user's roles |
+| PUT | `/api/v2/Users/{id}/Roles` | UserPermissions_Put | `id`*, body*: API.Models.UserRoleChange[] | — |  | Update a user's roles |
+| GET | `/api/v2/VoucherHistory` | VoucherHistory_GetVoucherHistory | `VoucherCode`, `ChangedBefore`, `ChangedAfter`, `limit`, `offset` | API.PagedResponse_DealerDB.Models.VoucherHistory_ | yes | Gets voucher history data |
+| GET | `/api/v2/Vouchers` | Vouchers_Get | `Type`, `DealerCode`, `LicenseTo`, `Purpose`, `OrderNumber`, `Email`, `ModifiedBy`, `CreatedAfter`, `CreatedBefore`, `PunchedAfter`, `PunchedBefore`, `Punched`, `ExpirationAfter`, `ExpirationBefore`, `Deleted`, `limit`, `offset` | API.PagedResponse_DealerDB.Models.Voucher_ | yes | Gets a list of vouchers |
+| POST | `/api/v2/Vouchers` | Vouchers_Post | body*: DealerDB.Models.Voucher | string |  | Create a voucher |
+| GET | `/api/v2/Vouchers/{VoucherCode}` | get /api/v2/Vouchers/{VoucherCode} | `VoucherCode`*, `Deleted` | DealerDB.Models.Voucher | yes | Get a voucher |
+| PUT | `/api/v2/Vouchers/{VoucherCode}` | Vouchers_Put | `VoucherCode`*, body*: DealerDB.Models.Voucher | — |  | Update a voucher |
+| DELETE | `/api/v2/Vouchers/{VoucherCode}` | Vouchers_Delete | `VoucherCode`* | — |  | Delete a voucher |
+| GET | `/api/v2/Vouchers/{VoucherCode}/VoucherHistory` | Vouchers_GetVoucherHistory | `VoucherCode`*, `limit`, `offset` | API.PagedResponse_DealerDB.Models.VoucherHistory_ | yes | Get a voucher's history. |
+| GET | `/api/v2/activities` | Activities_GetActivities | `limit`, `offset`, `isIncludeDeleted` | API.PagedResponse_BuildSystem.Shared.DTO.Activity_ | yes | Get Activities |
+| POST | `/api/v2/activities` | Activities_PostActivity | body*: BuildSystem.Shared.DTO.Activity | integer:int32 |  | Create an Activity |
+| GET | `/api/v2/activities/{activityID}` | Activities_GetActivity | `activityID`*, `isIncludeDeleted` | BuildSystem.Shared.DTO.Activity | yes | Get an Activity by ID |
+| PUT | `/api/v2/activities/{activityID}` | Activities_PutActivity | `activityID`*, body*: BuildSystem.Shared.DTO.Activity | — |  | Update an Activity |
+| DELETE | `/api/v2/activities/{activityID}` | Activities_DeleteActivity | `activityID`* | — |  | Mark the delete flag for the Activity |
+| GET | `/api/v2/activityRuns` | ActivityRuns_GetActivityRuns | `limit`, `offset`, `status` | API.PagedResponse_BuildSystem.Shared.DTO.ActivityRun_ | yes | Get ActivityRuns |
+| GET | `/api/v2/activityRuns/{activityRunID}` | ActivityRuns_GetActivityRun | `activityRunID`* | BuildSystem.Shared.DTO.ActivityRun | yes | Get an ActivityRun by ID |
+| PUT | `/api/v2/activityRuns/{activityRunID}` | ActivityRuns_PutActivityRun | `activityRunID`*, body*: BuildSystem.Shared.DTO.ActivityRun | — |  | Update an ActivityRun |
+| GET | `/api/v2/activityRuns/{activityRunID}/status` | ActivityRuns_GetActivityRunStatus | `activityRunID`* | BuildSystem.Shared.DTO.ActivityRunStatus | yes | Get the ActivityRunStatus of an ActivityRun |
+| PUT | `/api/v2/activityRuns/{activityRunID}/status` | ActivityRuns_PutActivityRunStatus | `activityRunID`*, body*: BuildSystem.Shared.DTO.ActivityRunStatus | — |  | Update the ActivityRunStatus of an ActivityRun |
+| GET | `/api/v2/agents` | Agents_GetAgents | `limit`, `offset` | API.PagedResponse_BuildSystem.Shared.DTO.Agent_ | yes | Get Agents |
+| POST | `/api/v2/agents` | Agents_PostAgent | body*: BuildSystem.Shared.DTO.Agent | integer:int32 |  | Create an Agent |
+| GET | `/api/v2/agents/Current` | Agents_GetCurrentAgentAsync | — | BuildSystem.Shared.DTO.Agent | yes | Get Agent associated with the current user |
+| GET | `/api/v2/agents/Current/ActivityRun` | Agents_GetCurrentAgentActivityRun | — | BuildSystem.Shared.DTO.ActivityRun | yes | Get the ActivityRun of Agent associated with the current user |
+| GET | `/api/v2/agents/{agentID}` | Agents_GetAgentAsync | `agentID`* | BuildSystem.Shared.DTO.Agent | yes | Get Agent |
+| PUT | `/api/v2/agents/{agentID}` | Agents_PutAgent | `agentID`*, body*: BuildSystem.Shared.DTO.Agent | — |  | Update an Agent |
+| DELETE | `/api/v2/agents/{agentID}` | Agents_DeleteAgent | `agentID`* | — |  | Delete an Agent |
+| GET | `/api/v2/agents/{agentID}/ActivityRun` | Agents_GetAgentActivityRun | `agentID`* | BuildSystem.Shared.DTO.ActivityRun | yes | Get an Agent's ActivityRun |
+| PUT | `/api/v2/agents/{agentID}/ActivityRun` | Agents_PutAgentActivityRun | `agentID`*, body*: BuildSystem.Shared.DTO.ActivityRun | — |  | Update the ActivityRun assigned to the Agent. |
+| PUT | `/api/v2/agents/{agentID}/Status` | Agents_PutAgentStatus | `agentID`*, body*: BuildSystem.Shared.DTO.AgentStatus | — |  | Update an Agent |
+| GET | `/api/v2/jobRuns` | JobRuns_GetJobRuns | `limit`, `offset`, `includeActivityRunDetails` | API.PagedResponse_BuildSystem.Shared.DTO.JobRun_ | yes | Get JobRuns |
+| POST | `/api/v2/jobRuns` | JobRuns_PostJobRun | body*: BuildSystem.Shared.DTO.JobRun | integer:int32 |  | Create a JobRun |
+| GET | `/api/v2/jobRuns/{jobRunID}` | JobRuns_GetJobRun | `jobRunID`*, `includeActivityRunDetails` | BuildSystem.Shared.DTO.JobRun | yes | Get a JobRun by ID |
+| PUT | `/api/v2/jobRuns/{jobRunID}` | JobRuns_PutJobRun | `jobRunID`*, body*: BuildSystem.Shared.DTO.JobRun | — |  | Update a JobRun |
+| DELETE | `/api/v2/jobRuns/{jobRunID}` | JobRuns_DeleteJobRun | `jobRunID`* | — |  | Delete a JobRun |
+| GET | `/api/v2/jobs` | Jobs_GetJobs | `limit`, `offset`, `isIncludeDeleted` | API.PagedResponse_BuildSystem.Shared.DTO.Job_ | yes | Get Jobs |
+| POST | `/api/v2/jobs` | Jobs_PostJob | body*: BuildSystem.Shared.DTO.Job | integer:int32 |  | Create a Job |
+| GET | `/api/v2/jobs/{jobID}` | Jobs_GetJob | `jobID`*, `isIncludeDeleted` | BuildSystem.Shared.DTO.Job | yes | Get a Job by ID |
+| PUT | `/api/v2/jobs/{jobID}` | Jobs_PutJob | `jobID`*, body*: BuildSystem.Shared.DTO.Job | — |  | Update a Job |
+| DELETE | `/api/v2/jobs/{jobID}` | Jobs_DeleteJob | `jobID`* | — |  | Mark the delete flag for the Job |
+| GET | `/api/v2/steps` | Steps_GetSteps | `limit`, `offset`, `includeDeleted` | API.PagedResponse_BuildSystem.Shared.DTO.Step_ | yes | Get Steps |
+| POST | `/api/v2/steps` | Steps_PostStep | body*: BuildSystem.Shared.DTO.Step | integer:int32 |  | Create a Step |
+| GET | `/api/v2/steps/{stepID}` | Steps_GetStep | `stepID`*, `isIncludeDeleted` | BuildSystem.Shared.DTO.Step | yes | Get a Step by ID |
+| PUT | `/api/v2/steps/{stepID}` | Steps_PutStep | `stepID`*, body*: BuildSystem.Shared.DTO.Step | — |  | Update a Step |

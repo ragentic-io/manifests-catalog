@@ -72,12 +72,31 @@
       },
       {
         "deprecated": false,
+        "description": "Protect a PDF document with a password.",
         "id": "operation:post:/v1/add_password",
         "kind": "operation",
         "method": "post",
         "name": "addPasswordV1",
         "path": "/v1/add_password",
         "pointer": "#/paths/~1v1~1add_password/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -87,12 +106,31 @@
       },
       {
         "deprecated": false,
+        "description": "Add restrictions to prevent copying, printing, and modifying a PDF document.",
         "id": "operation:post:/v1/add_restrictions",
         "kind": "operation",
         "method": "post",
         "name": "addRestrictionsV1",
         "path": "/v1/add_restrictions",
         "pointer": "#/paths/~1v1~1add_restrictions/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -102,12 +140,31 @@
       },
       {
         "deprecated": false,
+        "description": "Add an image watermark to each page of a PDF document.",
         "id": "operation:post:/v1/add_watermark/image",
         "kind": "operation",
         "method": "post",
         "name": "addImageWatermarkV1",
         "path": "/v1/add_watermark/image",
         "pointer": "#/paths/~1v1~1add_watermark~1image/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -117,12 +174,31 @@
       },
       {
         "deprecated": false,
+        "description": "Add a text watermark to each page of a PDF document.",
         "id": "operation:post:/v1/add_watermark/text",
         "kind": "operation",
         "method": "post",
         "name": "addTextWatermarkV1",
         "path": "/v1/add_watermark/text",
         "pointer": "#/paths/~1v1~1add_watermark~1text/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -132,12 +208,31 @@
       },
       {
         "deprecated": false,
+        "description": "Extract one or more pages from a PDF document.",
         "id": "operation:post:/v1/extract_pages",
         "kind": "operation",
         "method": "post",
         "name": "extractPagesV1",
         "path": "/v1/extract_pages",
         "pointer": "#/paths/~1v1~1extract_pages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -147,12 +242,31 @@
       },
       {
         "deprecated": false,
+        "description": "Combine multiple PDF documents into a single PDF document.",
         "id": "operation:post:/v1/merge_documents",
         "kind": "operation",
         "method": "post",
         "name": "mergeDocumentsV1",
         "path": "/v1/merge_documents",
         "pointer": "#/paths/~1v1~1merge_documents/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -162,12 +276,31 @@
       },
       {
         "deprecated": false,
+        "description": "Remove one or more pages from a PDF document.",
         "id": "operation:post:/v1/remove_pages",
         "kind": "operation",
         "method": "post",
         "name": "removePagesV1",
         "path": "/v1/remove_pages",
         "pointer": "#/paths/~1v1~1remove_pages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -177,12 +310,31 @@
       },
       {
         "deprecated": false,
+        "description": "Remove the password from an encrypted PDF document.",
         "id": "operation:post:/v1/remove_password",
         "kind": "operation",
         "method": "post",
         "name": "removePasswordV1",
         "path": "/v1/remove_password",
         "pointer": "#/paths/~1v1~1remove_password/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -192,12 +344,31 @@
       },
       {
         "deprecated": false,
+        "description": "Remove all the restrictions from a PDF document.",
         "id": "operation:post:/v1/remove_restrictions",
         "kind": "operation",
         "method": "post",
         "name": "removeRestrictionsV1",
         "path": "/v1/remove_restrictions",
         "pointer": "#/paths/~1v1~1remove_restrictions/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -207,12 +378,31 @@
       },
       {
         "deprecated": false,
+        "description": "Remove the cryptographic signatures and timestamps from a PDF document.",
         "id": "operation:post:/v1/remove_signatures",
         "kind": "operation",
         "method": "post",
         "name": "removeSignaturesV1",
         "path": "/v1/remove_signatures",
         "pointer": "#/paths/~1v1~1remove_signatures/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -222,12 +412,31 @@
       },
       {
         "deprecated": false,
+        "description": "Reverse the order of the pages of a PDF document.",
         "id": "operation:post:/v1/reverse_pages",
         "kind": "operation",
         "method": "post",
         "name": "reversePagesV1",
         "path": "/v1/reverse_pages",
         "pointer": "#/paths/~1v1~1reverse_pages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []
@@ -237,12 +446,31 @@
       },
       {
         "deprecated": false,
+        "description": "Rotate one or more pages in a PDF document.",
         "id": "operation:post:/v1/rotate_pages",
         "kind": "operation",
         "method": "post",
         "name": "rotatePagesV1",
         "path": "/v1/rotate_pages",
         "pointer": "#/paths/~1v1~1rotate_pages/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "4XX",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": []

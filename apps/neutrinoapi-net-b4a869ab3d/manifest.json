@@ -138,6 +138,136 @@
         "from": "neutrinoapi-net-b4a869ab3d",
         "kind": "EXPOSES",
         "to": "operation:get:/verify-security-code"
+      },
+      {
+        "from": "operation:post:/bad-word-filter",
+        "kind": "RETURNS",
+        "to": "schema:BadWordFilterResponse"
+      },
+      {
+        "from": "operation:get:/bin-lookup",
+        "kind": "RETURNS",
+        "to": "schema:BINLookupResponse"
+      },
+      {
+        "from": "operation:post:/browser-bot",
+        "kind": "RETURNS",
+        "to": "schema:BrowserBotResponse"
+      },
+      {
+        "from": "operation:get:/convert",
+        "kind": "RETURNS",
+        "to": "schema:ConvertResponse"
+      },
+      {
+        "from": "operation:get:/email-validate",
+        "kind": "RETURNS",
+        "to": "schema:EmailValidateResponse"
+      },
+      {
+        "from": "operation:get:/email-verify",
+        "kind": "RETURNS",
+        "to": "schema:EmailVerifyResponse"
+      },
+      {
+        "from": "operation:get:/geocode-address",
+        "kind": "RETURNS",
+        "to": "schema:GeocodeAddressResponse"
+      },
+      {
+        "from": "operation:get:/geocode-reverse",
+        "kind": "RETURNS",
+        "to": "schema:GeocodeReverseResponse"
+      },
+      {
+        "from": "operation:get:/hlr-lookup",
+        "kind": "RETURNS",
+        "to": "schema:HLRLookupResponse"
+      },
+      {
+        "from": "operation:get:/host-reputation",
+        "kind": "RETURNS",
+        "to": "schema:HostReputationResponse"
+      },
+      {
+        "from": "operation:get:/ip-blocklist",
+        "kind": "RETURNS",
+        "to": "schema:IPBlocklistResponse"
+      },
+      {
+        "from": "operation:get:/ip-info",
+        "kind": "RETURNS",
+        "to": "schema:IPInfoResponse"
+      },
+      {
+        "from": "operation:get:/ip-probe",
+        "kind": "RETURNS",
+        "to": "schema:IPProbeResponse"
+      },
+      {
+        "from": "operation:post:/phone-playback",
+        "kind": "RETURNS",
+        "to": "schema:PhonePlaybackResponse"
+      },
+      {
+        "from": "operation:get:/phone-validate",
+        "kind": "RETURNS",
+        "to": "schema:PhoneValidateResponse"
+      },
+      {
+        "from": "operation:post:/phone-verify",
+        "kind": "RETURNS",
+        "to": "schema:PhoneVerifyResponse"
+      },
+      {
+        "from": "operation:post:/sms-verify",
+        "kind": "RETURNS",
+        "to": "schema:SMSVerifyResponse"
+      },
+      {
+        "from": "operation:get:/ua-lookup",
+        "kind": "RETURNS",
+        "to": "schema:UALookupResponse"
+      },
+      {
+        "from": "operation:get:/url-info",
+        "kind": "RETURNS",
+        "to": "schema:URLInfoResponse"
+      },
+      {
+        "from": "operation:get:/verify-security-code",
+        "kind": "RETURNS",
+        "to": "schema:VerifySecurityCodeResponse"
+      },
+      {
+        "from": "schema:GeocodeAddressResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:GeocodeReverseResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Timezone"
+      },
+      {
+        "from": "schema:HostReputationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Blacklist"
+      },
+      {
+        "from": "schema:IPBlocklistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BlocklistSensor"
+      },
+      {
+        "from": "schema:IPInfoResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Timezone"
+      },
+      {
+        "from": "schema:Location",
+        "kind": "REFERENCES",
+        "to": "schema:Timezone"
       }
     ],
     "nodes": [
@@ -147,560 +277,1830 @@
       },
       {
         "deprecated": false,
+        "description": "Detect bad words, swear words and profanity in a given text",
         "id": "operation:post:/bad-word-filter",
         "kind": "operation",
         "method": "post",
         "name": "BadWordFilter",
         "path": "/bad-word-filter",
         "pointer": "#/paths/~1bad-word-filter/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BadWordFilterResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Bad Word Filter"
+        "summary": "Bad Word Filter",
+        "tags": [
+          "Data Tools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download our entire BIN database for direct use on your own systems",
         "id": "operation:get:/bin-list-download",
         "kind": "operation",
         "method": "get",
         "name": "BINListDownload",
+        "parameters": [
+          {
+            "default": false,
+            "description": "Include ISO 3-letter country codes and ISO 3-letter currency codes in the data.",
+            "in": "query",
+            "name": "include-iso3",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Include 8-digit and higher BIN codes.",
+            "in": "query",
+            "name": "include-8digit",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/bin-list-download",
         "pointer": "#/paths/~1bin-list-download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "BIN List Download"
+        "summary": "BIN List Download",
+        "tags": [
+          "E-commerce"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Perform a BIN (Bank Identification Number) or IIN (Issuer Identification Number) lookup",
         "id": "operation:get:/bin-lookup",
         "kind": "operation",
         "method": "get",
         "name": "BINLookup",
+        "parameters": [
+          {
+            "description": "The BIN or IIN number.",
+            "in": "query",
+            "name": "bin-number",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Pass in the customers IP address and we will return some extra information about them",
+            "in": "query",
+            "name": "customer-ip",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/bin-lookup",
         "pointer": "#/paths/~1bin-lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BINLookupResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "BIN Lookup"
+        "summary": "BIN Lookup",
+        "tags": [
+          "E-commerce"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Browser bot can extract content, interact with keyboard and mouse events, and execute JavaScript on a website",
         "id": "operation:post:/browser-bot",
         "kind": "operation",
         "method": "post",
         "name": "BrowserBot",
         "path": "/browser-bot",
         "pointer": "#/paths/~1browser-bot/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrowserBotResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Browser Bot"
+        "summary": "Browser Bot",
+        "tags": [
+          "WWW"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A currency and unit conversion tool",
         "id": "operation:get:/convert",
         "kind": "operation",
         "method": "get",
         "name": "Convert",
+        "parameters": [
+          {
+            "description": "The value to convert from (e.g.",
+            "in": "query",
+            "name": "from-value",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type of the value to convert from (e.g.",
+            "in": "query",
+            "name": "from-type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type to convert to (e.g.",
+            "in": "query",
+            "name": "to-type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/convert",
         "pointer": "#/paths/~1convert/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConvertResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Convert"
+        "summary": "Convert",
+        "tags": [
+          "E-commerce"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Parse, validate and clean an email address",
         "id": "operation:get:/email-validate",
         "kind": "operation",
         "method": "get",
         "name": "EmailValidate",
+        "parameters": [
+          {
+            "description": "An email address",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Automatically attempt to fix typos in the address",
+            "in": "query",
+            "name": "fix-typos",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/email-validate",
         "pointer": "#/paths/~1email-validate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmailValidateResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Email Validate"
+        "summary": "Email Validate",
+        "tags": [
+          "Data Tools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "SMTP based email address verification",
         "id": "operation:get:/email-verify",
         "kind": "operation",
         "method": "get",
         "name": "EmailVerify",
+        "parameters": [
+          {
+            "description": "An email address",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Automatically attempt to fix typos in the address",
+            "in": "query",
+            "name": "fix-typos",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/email-verify",
         "pointer": "#/paths/~1email-verify/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmailVerifyResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Email Verify"
+        "summary": "Email Verify",
+        "tags": [
+          "Security and Networking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Geocode an address, partial address or just the name of a place",
         "id": "operation:get:/geocode-address",
         "kind": "operation",
         "method": "get",
         "name": "GeocodeAddress",
+        "parameters": [
+          {
+            "description": "The full address, partial address or name of a place to try and locate.",
+            "in": "query",
+            "name": "address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The house/building number to locate",
+            "in": "query",
+            "name": "house-number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The street/road name to locate",
+            "in": "query",
+            "name": "street",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The city/town name to locate",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The county/region name to locate",
+            "in": "query",
+            "name": "county",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The state name to locate",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The postal code to locate",
+            "in": "query",
+            "name": "postal-code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit result to this country (the default is no country bias)",
+            "in": "query",
+            "name": "country-code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "The language to display results in, available languages are: <ul> <li>de, en, es, fr, it, pt, ru, zh</li> </ul>",
+            "in": "query",
+            "name": "language-code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If no matches are found for the given address, start performing a recursive fuzzy search until a geolocation is found.",
+            "in": "query",
+            "name": "fuzzy-search",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/geocode-address",
         "pointer": "#/paths/~1geocode-address/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeocodeAddressResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Geocode Address"
+        "summary": "Geocode Address",
+        "tags": [
+          "Geolocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Convert a geographic coordinate (latitude and longitude) into a real world address",
         "id": "operation:get:/geocode-reverse",
         "kind": "operation",
         "method": "get",
         "name": "GeocodeReverse",
+        "parameters": [
+          {
+            "description": "The location latitude in decimal degrees format",
+            "in": "query",
+            "name": "latitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location longitude in decimal degrees format",
+            "in": "query",
+            "name": "longitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "The language to display results in, available languages are: <ul> <li>de, en, es, fr, it, pt, ru</li> </ul>",
+            "in": "query",
+            "name": "language-code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "address",
+            "description": "The zoom level to respond with: <br> <ul> <li>address - the most precise address available</li> <li>street - the street level</li> <li>city - the city level</l…",
+            "in": "query",
+            "name": "zoom",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geocode-reverse",
         "pointer": "#/paths/~1geocode-reverse/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeocodeReverseResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Geocode Reverse"
+        "summary": "Geocode Reverse",
+        "tags": [
+          "Geolocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Connect to the global mobile cellular network and retrieve the status of a mobile device",
         "id": "operation:get:/hlr-lookup",
         "kind": "operation",
         "method": "get",
         "name": "HLRLookup",
+        "parameters": [
+          {
+            "description": "A phone number",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ISO 2-letter country code, assume numbers are based in this country.",
+            "in": "query",
+            "name": "country-code",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/hlr-lookup",
         "pointer": "#/paths/~1hlr-lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HLRLookupResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "HLR Lookup"
+        "summary": "HLR Lookup",
+        "tags": [
+          "Telephony"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check the reputation of an IP address, domain name or URL against a comprehensive list of blacklists and blocklists",
         "id": "operation:get:/host-reputation",
         "kind": "operation",
         "method": "get",
         "name": "HostReputation",
+        "parameters": [
+          {
+            "description": "An IP address, domain name, FQDN or URL.",
+            "in": "query",
+            "name": "host",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 3,
+            "description": "Only check lists with this rating or better",
+            "in": "query",
+            "name": "list-rating",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only check these DNSBL zones/hosts.",
+            "in": "query",
+            "name": "zones",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/host-reputation",
         "pointer": "#/paths/~1host-reputation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HostReputationResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Host Reputation"
+        "summary": "Host Reputation",
+        "tags": [
+          "Security and Networking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Clean and sanitize untrusted HTML",
         "id": "operation:post:/html-clean",
         "kind": "operation",
         "method": "post",
         "name": "HTMLClean",
         "path": "/html-clean",
         "pointer": "#/paths/~1html-clean/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "HTML Clean"
+        "summary": "HTML Clean",
+        "tags": [
+          "WWW"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Render HTML content to PDF, JPG or PNG",
         "id": "operation:post:/html-render",
         "kind": "operation",
         "method": "post",
         "name": "HTMLRender",
         "path": "/html-render",
         "pointer": "#/paths/~1html-render/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "HTML Render"
+        "summary": "HTML Render",
+        "tags": [
+          "Imaging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resize an image and output as either JPEG or PNG",
         "id": "operation:post:/image-resize",
         "kind": "operation",
         "method": "post",
         "name": "ImageResize",
         "path": "/image-resize",
         "pointer": "#/paths/~1image-resize/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Image Resize"
+        "summary": "Image Resize",
+        "tags": [
+          "Imaging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Watermark one image with another image",
         "id": "operation:post:/image-watermark",
         "kind": "operation",
         "method": "post",
         "name": "ImageWatermark",
         "path": "/image-watermark",
         "pointer": "#/paths/~1image-watermark/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Image Watermark"
+        "summary": "Image Watermark",
+        "tags": [
+          "Imaging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The IP Blocklist API will detect potentially malicious or dangerous IP addresses",
         "id": "operation:get:/ip-blocklist",
         "kind": "operation",
         "method": "get",
         "name": "IPBlocklist",
+        "parameters": [
+          {
+            "description": "An IPv4 or IPv6 address.",
+            "in": "query",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Include public VPN provider IP addresses.",
+            "in": "query",
+            "name": "vpn-lookup",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/ip-blocklist",
         "pointer": "#/paths/~1ip-blocklist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPBlocklistResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "IP Blocklist"
+        "summary": "IP Blocklist",
+        "tags": [
+          "Security and Networking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is a direct feed to our IP blocklist data",
         "id": "operation:get:/ip-blocklist-download",
         "kind": "operation",
         "method": "get",
         "name": "IPBlocklistDownload",
+        "parameters": [
+          {
+            "default": "csv",
+            "description": "The data format.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Include public VPN provider addresses, this option is only available for Tier 3 or higher accounts.",
+            "in": "query",
+            "name": "include-vpn",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Output IPs using CIDR notation.",
+            "in": "query",
+            "name": "cidr",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Output the IPv6 version of the blocklist, the default is to output IPv4 only.",
+            "in": "query",
+            "name": "ip6",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/ip-blocklist-download",
         "pointer": "#/paths/~1ip-blocklist-download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "IP Blocklist Download"
+        "summary": "IP Blocklist Download",
+        "tags": [
+          "Security and Networking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get location information about an IP address and do reverse DNS (PTR) lookups",
         "id": "operation:get:/ip-info",
         "kind": "operation",
         "method": "get",
         "name": "IPInfo",
+        "parameters": [
+          {
+            "description": "IPv4 or IPv6 address",
+            "in": "query",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Do a reverse DNS (PTR) lookup.",
+            "in": "query",
+            "name": "reverse-lookup",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/ip-info",
         "pointer": "#/paths/~1ip-info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPInfoResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "IP Info"
+        "summary": "IP Info",
+        "tags": [
+          "Geolocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Execute a realtime network probe against an IPv4 or IPv6 address",
         "id": "operation:get:/ip-probe",
         "kind": "operation",
         "method": "get",
         "name": "IPProbe",
+        "parameters": [
+          {
+            "description": "IPv4 or IPv6 address",
+            "in": "query",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ip-probe",
         "pointer": "#/paths/~1ip-probe/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPProbeResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "IP Probe"
+        "summary": "IP Probe",
+        "tags": [
+          "Security and Networking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Make an automated call to any valid phone number and playback an audio message",
         "id": "operation:post:/phone-playback",
         "kind": "operation",
         "method": "post",
         "name": "PhonePlayback",
         "path": "/phone-playback",
         "pointer": "#/paths/~1phone-playback/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhonePlaybackResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Phone Playback"
+        "summary": "Phone Playback",
+        "tags": [
+          "Telephony"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Parse, validate and get location information about a phone number",
         "id": "operation:get:/phone-validate",
         "kind": "operation",
         "method": "get",
         "name": "PhoneValidate",
+        "parameters": [
+          {
+            "description": "A phone number.",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ISO 2-letter country code, assume numbers are based in this country.",
+            "in": "query",
+            "name": "country-code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pass in a users IP address and we will assume numbers are based in the country of the IP address",
+            "in": "query",
+            "name": "ip",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/phone-validate",
         "pointer": "#/paths/~1phone-validate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhoneValidateResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Phone Validate"
+        "summary": "Phone Validate",
+        "tags": [
+          "Data Tools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Make an automated call to any valid phone number and playback a unique security code",
         "id": "operation:post:/phone-verify",
         "kind": "operation",
         "method": "post",
         "name": "PhoneVerify",
         "path": "/phone-verify",
         "pointer": "#/paths/~1phone-verify/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhoneVerifyResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Phone Verify"
+        "summary": "Phone Verify",
+        "tags": [
+          "Telephony"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a QR code as a PNG image",
         "id": "operation:post:/qr-code",
         "kind": "operation",
         "method": "post",
         "name": "QRCode",
         "path": "/qr-code",
         "pointer": "#/paths/~1qr-code/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "QR Code"
+        "summary": "QR Code",
+        "tags": [
+          "Imaging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send a unique security code to any mobile device via SMS",
         "id": "operation:post:/sms-verify",
         "kind": "operation",
         "method": "post",
         "name": "SMSVerify",
         "path": "/sms-verify",
         "pointer": "#/paths/~1sms-verify/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SMSVerifyResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "SMS Verify"
+        "summary": "SMS Verify",
+        "tags": [
+          "Telephony"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Parse, validate and get detailed user-agent information from a user agent string or from client hints",
         "id": "operation:get:/ua-lookup",
         "kind": "operation",
         "method": "get",
         "name": "UALookup",
+        "parameters": [
+          {
+            "description": "The user-agent string to lookup.",
+            "in": "query",
+            "name": "ua",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "For client hints this corresponds to the 'UA-Full-Version' header or 'uaFullVersion' from NavigatorUAData",
+            "in": "query",
+            "name": "ua-version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For client hints this corresponds to the 'UA-Platform' header or 'platform' from NavigatorUAData",
+            "in": "query",
+            "name": "ua-platform",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For client hints this corresponds to the 'UA-Platform-Version' header or 'platformVersion' from NavigatorUAData",
+            "in": "query",
+            "name": "ua-platform-version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For client hints this corresponds to the 'UA-Mobile' header or 'mobile' from NavigatorUAData",
+            "in": "query",
+            "name": "ua-mobile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For client hints this corresponds to the 'UA-Model' header or 'model' from NavigatorUAData.",
+            "in": "query",
+            "name": "device-model",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This parameter is only used in combination with 'device-model' when doing direct device lookups without any user-agent data.",
+            "in": "query",
+            "name": "device-brand",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ua-lookup",
         "pointer": "#/paths/~1ua-lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UALookupResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "UA Lookup"
+        "summary": "UA Lookup",
+        "tags": [
+          "Data Tools"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Parse, analyze and retrieve content from the supplied URL",
         "id": "operation:get:/url-info",
         "kind": "operation",
         "method": "get",
         "name": "URLInfo",
+        "parameters": [
+          {
+            "description": "The URL to probe",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If this URL responds with html, text, json or xml then return the response.",
+            "in": "query",
+            "name": "fetch-content",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Ignore any TLS/SSL certificate errors and load the URL anyway",
+            "in": "query",
+            "name": "ignore-certificate-errors",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 60,
+            "description": "Timeout in seconds.",
+            "in": "query",
+            "name": "timeout",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "If the request fails for any reason try again this many times",
+            "in": "query",
+            "name": "retry",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/url-info",
         "pointer": "#/paths/~1url-info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "URLInfoResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "URL Info"
+        "summary": "URL Info",
+        "tags": [
+          "WWW"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check if a security code sent via SMS Verify or Phone Verify is valid",
         "id": "operation:get:/verify-security-code",
         "kind": "operation",
         "method": "get",
         "name": "VerifySecurityCode",
+        "parameters": [
+          {
+            "description": "The security code to verify",
+            "in": "query",
+            "name": "security-code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If set then enable additional brute-force protection by limiting the number of attempts by the supplied value.",
+            "in": "query",
+            "name": "limit-by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/verify-security-code",
         "pointer": "#/paths/~1verify-security-code/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerifySecurityCodeResponse"
+          },
+          {
+            "status": "400",
+            "type": "APIError"
+          },
+          {
+            "status": "403",
+            "type": "APIError"
+          },
+          {
+            "status": "500",
+            "type": "APIError"
+          },
+          {
+            "status": "default",
+            "type": "APIError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": [],
             "user-id": []
           }
         ],
-        "summary": "Verify Security Code"
+        "summary": "Verify Security Code",
+        "tags": [
+          "Telephony"
+        ]
       },
       {
         "id": "schema:APIError",
         "kind": "schema",
-        "name": "APIError"
+        "name": "APIError",
+        "type": "object"
       },
       {
         "id": "schema:BINLookupResponse",
         "kind": "schema",
-        "name": "BINLookupResponse"
+        "name": "BINLookupResponse",
+        "type": "object"
       },
       {
         "id": "schema:BadWordFilterResponse",
         "kind": "schema",
-        "name": "BadWordFilterResponse"
+        "name": "BadWordFilterResponse",
+        "type": "object"
       },
       {
         "id": "schema:Blacklist",
         "kind": "schema",
-        "name": "Blacklist"
+        "name": "Blacklist",
+        "type": "object"
       },
       {
         "id": "schema:BlocklistSensor",
         "kind": "schema",
-        "name": "BlocklistSensor"
+        "name": "BlocklistSensor",
+        "type": "object"
       },
       {
         "id": "schema:BrowserBotResponse",
         "kind": "schema",
-        "name": "BrowserBotResponse"
+        "name": "BrowserBotResponse",
+        "type": "object"
       },
       {
         "id": "schema:ConvertResponse",
         "kind": "schema",
-        "name": "ConvertResponse"
+        "name": "ConvertResponse",
+        "type": "object"
       },
       {
         "id": "schema:EmailValidateResponse",
         "kind": "schema",
-        "name": "EmailValidateResponse"
+        "name": "EmailValidateResponse",
+        "type": "object"
       },
       {
         "id": "schema:EmailVerifyResponse",
         "kind": "schema",
-        "name": "EmailVerifyResponse"
+        "name": "EmailVerifyResponse",
+        "type": "object"
       },
       {
         "id": "schema:GeocodeAddressResponse",
         "kind": "schema",
-        "name": "GeocodeAddressResponse"
+        "name": "GeocodeAddressResponse",
+        "type": "object"
       },
       {
         "id": "schema:GeocodeReverseResponse",
         "kind": "schema",
-        "name": "GeocodeReverseResponse"
+        "name": "GeocodeReverseResponse",
+        "type": "object"
       },
       {
         "id": "schema:HLRLookupResponse",
         "kind": "schema",
-        "name": "HLRLookupResponse"
+        "name": "HLRLookupResponse",
+        "type": "object"
       },
       {
         "id": "schema:HostReputationResponse",
         "kind": "schema",
-        "name": "HostReputationResponse"
+        "name": "HostReputationResponse",
+        "type": "object"
       },
       {
         "id": "schema:IPBlocklistResponse",
         "kind": "schema",
-        "name": "IPBlocklistResponse"
+        "name": "IPBlocklistResponse",
+        "type": "object"
       },
       {
         "id": "schema:IPInfoResponse",
         "kind": "schema",
-        "name": "IPInfoResponse"
+        "name": "IPInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:IPProbeResponse",
         "kind": "schema",
-        "name": "IPProbeResponse"
+        "name": "IPProbeResponse",
+        "type": "object"
       },
       {
         "id": "schema:Location",
         "kind": "schema",
-        "name": "Location"
+        "name": "Location",
+        "type": "object"
       },
       {
         "id": "schema:PhonePlaybackResponse",
         "kind": "schema",
-        "name": "PhonePlaybackResponse"
+        "name": "PhonePlaybackResponse",
+        "type": "object"
       },
       {
         "id": "schema:PhoneValidateResponse",
         "kind": "schema",
-        "name": "PhoneValidateResponse"
+        "name": "PhoneValidateResponse",
+        "type": "object"
       },
       {
         "id": "schema:PhoneVerifyResponse",
         "kind": "schema",
-        "name": "PhoneVerifyResponse"
+        "name": "PhoneVerifyResponse",
+        "type": "object"
       },
       {
         "id": "schema:SMSVerifyResponse",
         "kind": "schema",
-        "name": "SMSVerifyResponse"
+        "name": "SMSVerifyResponse",
+        "type": "object"
       },
       {
+        "description": "Map containing timezone details",
         "id": "schema:Timezone",
         "kind": "schema",
-        "name": "Timezone"
+        "name": "Timezone",
+        "type": "object"
       },
       {
         "id": "schema:UALookupResponse",
         "kind": "schema",
-        "name": "UALookupResponse"
+        "name": "UALookupResponse",
+        "type": "object"
       },
       {
         "id": "schema:URLInfoResponse",
         "kind": "schema",
-        "name": "URLInfoResponse"
+        "name": "URLInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:VerifySecurityCodeResponse",
         "kind": "schema",
-        "name": "VerifySecurityCodeResponse"
+        "name": "VerifySecurityCodeResponse",
+        "type": "object"
       }
     ]
   },

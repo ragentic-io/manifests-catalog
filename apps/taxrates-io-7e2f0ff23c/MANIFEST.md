@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_91
 
 | | |
 | --- | --- |
-| Signed bundle | `affb2870df8b34bbd98c97078dcbc4cfa4c500a028dad4968df61b6f563d0640` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,8 +32,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_91
 
 ## Operations (3)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/tax/countrycode` | taxRatesByCountryCode | Tax rates by Country Code |
-| GET | `/v1/tax/ip` | taxRatesByIpAddress | Tax rates by IP address |
-| GET | `/v3/tax/rates` | allTaxRates | All tax rates |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/tax/countrycode` | taxRatesByCountryCode | `domain`, `country_code`, `filter`, `zip`, `product_codes[]`, `province`, `date` | object | yes | Tax rates by Country Code |
+| GET | `/v1/tax/ip` | taxRatesByIpAddress | `domain`, `ip`, `filter`, `zip`, `product_code` | object[] | yes | Tax rates by IP address |
+| GET | `/v3/tax/rates` | allTaxRates | `domain`, `filter`, `cursor`, `Product_code` | object[] | yes | All tax rates |

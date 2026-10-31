@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_learnodo-newtonic.com_wp-conten
 
 | | |
 | --- | --- |
-| Signed bundle | `4404d222a688b1b4fa979bd4e9cb589839e7376ff833654ae11c06b0c717d8df` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,33 +34,35 @@ logo: "https://api.apis.guru/v2/cache/logo/https_learnodo-newtonic.com_wp-conten
 
 40 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/answers` | createAnswer | Answers the specified question using the provided documents and examples. The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions). |
-| POST | `/audio/transcriptions` | createTranscription | Transcribes audio into the input language. |
-| POST | `/audio/translations` | createTranslation | Translates audio into into English. |
-| POST | `/chat/completions` | createChatCompletion | Creates a completion for the chat message |
-| POST | `/classifications` | createClassification | Classifies the specified `query` using provided examples. The endpoint first [searches](/docs/api-reference/searches) over the labeled examples to select the ones most relevant for the particular query. Then, the relevant examples are combined with the query to construct a prompt to produce the final label via the [completions](/docs/api-reference/completions) endpoint. Labeled examples can be provided via an uploaded `file`, or explicitly listed in the request using the `examples` parameter for quick tests and small scale use cases. |
-| POST | `/completions` | createCompletion | Creates a completion for the provided prompt and parameters |
-| POST | `/edits` | createEdit | Creates a new edit for the provided input, instruction, and parameters. |
-| POST | `/embeddings` | createEmbedding | Creates an embedding vector representing the input text. |
-| GET | `/engines` | listEngines | Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability. |
-| GET | `/engines/{engine_id}` | retrieveEngine | Retrieves a model instance, providing basic information about it such as the owner and availability. |
-| POST | `/engines/{engine_id}/search` | createSearch | The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them. To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores. The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query. |
-| GET | `/files` | listFiles | Returns a list of files that belong to the user's organization. |
-| POST | `/files` | createFile | Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit. |
-| DELETE | `/files/{file_id}` | deleteFile | Delete a file. |
-| GET | `/files/{file_id}` | retrieveFile | Returns information about a specific file. |
-| GET | `/files/{file_id}/content` | downloadFile | Returns the contents of the specified file |
-| GET | `/fine-tunes` | listFineTunes | List your organization's fine-tuning jobs |
-| POST | `/fine-tunes` | createFineTune | Creates a job that fine-tunes a specified model from a given dataset. Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete. [Learn more about Fine-tuning](/docs/guides/fine-tuning) |
-| GET | `/fine-tunes/{fine_tune_id}` | retrieveFineTune | Gets info about the fine-tune job. [Learn more about Fine-tuning](/docs/guides/fine-tuning) |
-| POST | `/fine-tunes/{fine_tune_id}/cancel` | cancelFineTune | Immediately cancel a fine-tune job. |
-| GET | `/fine-tunes/{fine_tune_id}/events` | listFineTuneEvents | Get fine-grained status updates for a fine-tune job. |
-| POST | `/images/edits` | createImageEdit | Creates an edited or extended image given an original image and a prompt. |
-| POST | `/images/generations` | createImage | Creates an image given a prompt. |
-| POST | `/images/variations` | createImageVariation | Creates a variation of a given image. |
-| GET | `/models` | listModels | Lists the currently available models, and provides basic information about each one such as the owner and availability. |
-| DELETE | `/models/{model}` | deleteModel | Delete a fine-tuned model. You must have the Owner role in your organization. |
-| GET | `/models/{model}` | retrieveModel | Retrieves a model instance, providing basic information about the model such as the owner and permissioning. |
-| POST | `/moderations` | createModeration | Classifies if text violates OpenAI's Content Policy |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/answers` | createAnswer | body*: CreateAnswerRequest | CreateAnswerResponse |  | Answers the specified question using the provided documents and examples. The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions). |
+| POST | `/audio/transcriptions` | createTranscription | body*: CreateTranscriptionRequest | CreateTranscriptionResponse |  | Transcribes audio into the input language. |
+| POST | `/audio/translations` | createTranslation | body*: CreateTranslationRequest | CreateTranslationResponse |  | Translates audio into into English. |
+| POST | `/chat/completions` | createChatCompletion | body*: CreateChatCompletionRequest | CreateChatCompletionResponse |  | Creates a completion for the chat message |
+| POST | `/classifications` | createClassification | body*: CreateClassificationRequest | CreateClassificationResponse |  | Classifies the specified `query` using provided examples. The endpoint first [searches](/docs/api-reference/searches) over the labeled examples to select the ones most relevant for the particular query. Then, the relevant examples are combined with the query to construct a prompt to produce the final label via the [completions](/docs/api-reference/completions) endpoint. Labeled examples can be provided via an uploaded `file`, or explicitly listed in the request using the `examples` parameter for quick tests and small scale use cases. |
+| POST | `/completions` | createCompletion | body*: CreateCompletionRequest | CreateCompletionResponse |  | Creates a completion for the provided prompt and parameters |
+| POST | `/edits` | createEdit | body*: CreateEditRequest | CreateEditResponse |  | Creates a new edit for the provided input, instruction, and parameters. |
+| POST | `/embeddings` | createEmbedding | body*: CreateEmbeddingRequest | CreateEmbeddingResponse |  | Creates an embedding vector representing the input text. |
+| GET | `/engines` | listEngines | — | ListEnginesResponse | yes | Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability. |
+| GET | `/engines/{engine_id}` | retrieveEngine | `engine_id`* | Engine | yes | Retrieves a model instance, providing basic information about it such as the owner and availability. |
+| POST | `/engines/{engine_id}/search` | createSearch | `engine_id`*, body*: CreateSearchRequest | CreateSearchResponse |  | The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them. To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores. The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query. |
+| GET | `/files` | listFiles | — | ListFilesResponse | yes | Returns a list of files that belong to the user's organization. |
+| POST | `/files` | createFile | body*: CreateFileRequest | OpenAIFile |  | Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit. |
+| GET | `/files/{file_id}` | retrieveFile | `file_id`* | OpenAIFile | yes | Returns information about a specific file. |
+| DELETE | `/files/{file_id}` | deleteFile | `file_id`* | DeleteFileResponse |  | Delete a file. |
+| GET | `/files/{file_id}/content` | downloadFile | `file_id`* | string | yes | Returns the contents of the specified file |
+| GET | `/fine-tunes` | listFineTunes | — | ListFineTunesResponse | yes | List your organization's fine-tuning jobs |
+| POST | `/fine-tunes` | createFineTune | body*: CreateFineTuneRequest | FineTune |  | Creates a job that fine-tunes a specified model from a given dataset. Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete. [Learn more about Fine-tuning](/docs/guides/fine-tuning) |
+| GET | `/fine-tunes/{fine_tune_id}` | retrieveFineTune | `fine_tune_id`* | FineTune | yes | Gets info about the fine-tune job. [Learn more about Fine-tuning](/docs/guides/fine-tuning) |
+| POST | `/fine-tunes/{fine_tune_id}/cancel` | cancelFineTune | `fine_tune_id`* | FineTune |  | Immediately cancel a fine-tune job. |
+| GET | `/fine-tunes/{fine_tune_id}/events` | listFineTuneEvents | `fine_tune_id`*, `stream` | ListFineTuneEventsResponse | yes | Get fine-grained status updates for a fine-tune job. |
+| POST | `/images/edits` | createImageEdit | body*: CreateImageEditRequest | ImagesResponse |  | Creates an edited or extended image given an original image and a prompt. |
+| POST | `/images/generations` | createImage | body*: CreateImageRequest | ImagesResponse |  | Creates an image given a prompt. |
+| POST | `/images/variations` | createImageVariation | body*: CreateImageVariationRequest | ImagesResponse |  | Creates a variation of a given image. |
+| GET | `/models` | listModels | — | ListModelsResponse | yes | Lists the currently available models, and provides basic information about each one such as the owner and availability. |
+| GET | `/models/{model}` | retrieveModel | `model`* | Model | yes | Retrieves a model instance, providing basic information about the model such as the owner and permissioning. |
+| DELETE | `/models/{model}` | deleteModel | `model`* | DeleteModelResponse |  | Delete a fine-tuned model. You must have the Owner role in your organization. |
+| POST | `/moderations` | createModeration | body*: CreateModerationRequest | CreateModerationResponse |  | Classifies if text violates OpenAI's Content Policy |

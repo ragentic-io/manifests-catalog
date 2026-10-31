@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_qualpay_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `1ec54f93ad951a7dc105eef1372f654bf9abe48f8ac4de7599db45ce55ed01dc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_qualpay_profile_ima
 
 30 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/ardef` | Get Card Type Information | Get Card type Information for Visa, Mastercard, and Discover |
-| POST | `/auth` | Authorization | Authorize Transaction |
-| POST | `/batchClose` | Batch Close | Close Batch |
-| POST | `/capture/{pgIdOrig}` | Capture | Capture an Authorized Transaction |
-| POST | `/credit` | Credit | Issue Credit to Cardholder |
-| POST | `/emailReceipt/{pgId}` | Send Receipt | Send Transaction Receipt Email |
-| POST | `/expireToken` | Expire | Expire Token |
-| POST | `/force` | Force | Force Transaction Approval |
-| POST | `/recharge/{pgIdOrig}` | Recharge | Recharge Previously Settled Transaction |
-| POST | `/refund/{pgIdOrig}` | Refund | Refund Previously Captured Transaction |
-| POST | `/sale` | Sale | Sale (Auth + Capture) |
-| POST | `/tokenize` | Tokenize | Tokenize Card |
-| POST | `/verify` | Verify | Verify Card |
-| POST | `/void/{pgIdOrig}` | Void | Void a Previously Authorized Transaction |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/ardef` | Get Card Type Information | body*: ArdefRequest | ArdefResponse |  | Get Card type Information for Visa, Mastercard, and Discover |
+| POST | `/auth` | Authorization | body*: PGApiTransactionRequest | PGApiTransactionResponse |  | Authorize Transaction |
+| POST | `/batchClose` | Batch Close | body*: PGApiBatchCloseRequest | PGApiBatchCloseResponse |  | Close Batch |
+| POST | `/capture/{pgIdOrig}` | Capture | `pgIdOrig`*, body*: PGApiCaptureRequest | PGApiCaptureResponse |  | Capture an Authorized Transaction |
+| POST | `/credit` | Credit | body*: PGApiTransactionRequest | PGApiTransactionResponse |  | Issue Credit to Cardholder |
+| POST | `/emailReceipt/{pgId}` | Send Receipt | `pgId`*, body*: PGApiEmailReceiptRequest | PGApiEmailReceiptResponse |  | Send Transaction Receipt Email |
+| POST | `/expireToken` | Expire | body*: PGApiExpireTokenRequest | PGApiExpireTokenResponse |  | Expire Token |
+| POST | `/force` | Force | body*: PGApiTransactionRequest | PGApiTransactionResponse |  | Force Transaction Approval |
+| POST | `/recharge/{pgIdOrig}` | Recharge | `pgIdOrig`*, body*: PGApiRechargeRequest | PGApiRechargeResponse |  | Recharge Previously Settled Transaction |
+| POST | `/refund/{pgIdOrig}` | Refund | `pgIdOrig`*, body*: PGApiRefundRequest | PGApiRefundResponse |  | Refund Previously Captured Transaction |
+| POST | `/sale` | Sale | body*: PGApiTransactionRequest | PGApiTransactionResponse |  | Sale (Auth + Capture) |
+| POST | `/tokenize` | Tokenize | body*: PGApiTokenizeRequest | PGApiTokenizeResponse |  | Tokenize Card |
+| POST | `/verify` | Verify | body*: PGApiVerifyRequest | PGApiVerifyResponse |  | Verify Card |
+| POST | `/void/{pgIdOrig}` | Void | `pgIdOrig`*, body*: PGApiVoidRequest | PGApiVoidResponse |  | Void a Previously Authorized Transaction |

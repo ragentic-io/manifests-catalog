@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_tvmaze_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `71143a5796c9f6501e175f47c443be8f30680f44a9ccabdd3627ffa95b1e060b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,47 +34,49 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_tvmaze_profile_imag
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/auth/poll` | post /auth/poll | Poll whether an authentication request was confirmed |
-| POST | `/auth/start` | post /auth/start | Start an authentication request |
-| GET | `/auth/validate` | get /auth/validate | Validate your authentication credentials |
-| POST | `/scrobble/episodes` | post /scrobble/episodes | Mark episodes as acquired or watched based on their IDs |
-| PUT | `/scrobble/episodes/{episode_id}` | put /scrobble/episodes/{episode_id} | Mark an episode as acquired or watched based on its ID |
-| POST | `/scrobble/shows` | post /scrobble/shows | Mark episodes within a show as acquired or watched based on their attributes |
-| GET | `/scrobble/shows/{show_id}` | get /scrobble/shows/{show_id} | List watched and acquired episodes for a show |
-| GET | `/user/episodes` | get /user/episodes | List the marked episodes |
-| DELETE | `/user/episodes/{episode_id}` | delete /user/episodes/{episode_id} | Unmark an episode |
-| GET | `/user/episodes/{episode_id}` | get /user/episodes/{episode_id} | Check if an episode is marked |
-| PUT | `/user/episodes/{episode_id}` | put /user/episodes/{episode_id} | Mark an episode |
-| GET | `/user/follows/networks` | get /user/follows/networks | List the followed networks |
-| DELETE | `/user/follows/networks/{network_id}` | delete /user/follows/networks/{network_id} | Unfollow a network |
-| GET | `/user/follows/networks/{network_id}` | get /user/follows/networks/{network_id} | Check if a network is followed |
-| PUT | `/user/follows/networks/{network_id}` | put /user/follows/networks/{network_id} | Follow a network |
-| GET | `/user/follows/people` | get /user/follows/people | List the followed people |
-| DELETE | `/user/follows/people/{person_id}` | delete /user/follows/people/{person_id} | Unfollow a person |
-| GET | `/user/follows/people/{person_id}` | get /user/follows/people/{person_id} | Check if a person is followed |
-| PUT | `/user/follows/people/{person_id}` | put /user/follows/people/{person_id} | Follow a person |
-| GET | `/user/follows/shows` | get /user/follows/shows | List the followed shows |
-| DELETE | `/user/follows/shows/{show_id}` | delete /user/follows/shows/{show_id} | Unfollow a show |
-| GET | `/user/follows/shows/{show_id}` | get /user/follows/shows/{show_id} | Check if a show is followed |
-| PUT | `/user/follows/shows/{show_id}` | put /user/follows/shows/{show_id} | Follow a show |
-| GET | `/user/follows/webchannels` | get /user/follows/webchannels | List the followed webchannels |
-| DELETE | `/user/follows/webchannels/{webchannel_id}` | delete /user/follows/webchannels/{webchannel_id} | Unfollow a webchannel |
-| GET | `/user/follows/webchannels/{webchannel_id}` | get /user/follows/webchannels/{webchannel_id} | Check if a webchannel is followed |
-| PUT | `/user/follows/webchannels/{webchannel_id}` | put /user/follows/webchannels/{webchannel_id} | Follow a webchannel |
-| GET | `/user/tags` | get /user/tags | List all tags |
-| POST | `/user/tags` | post /user/tags | Create a new tag |
-| DELETE | `/user/tags/{tag_id}` | delete /user/tags/{tag_id} | Delete a specific tag |
-| PATCH | `/user/tags/{tag_id}` | patch /user/tags/{tag_id} | Update a specific tag |
-| GET | `/user/tags/{tag_id}/shows` | get /user/tags/{tag_id}/shows | List all shows under this tag |
-| DELETE | `/user/tags/{tag_id}/shows/{show_id}` | delete /user/tags/{tag_id}/shows/{show_id} | Untag a show |
-| PUT | `/user/tags/{tag_id}/shows/{show_id}` | put /user/tags/{tag_id}/shows/{show_id} | Tag a show |
-| GET | `/user/votes/episodes` | get /user/votes/episodes | List the episodes voted for |
-| DELETE | `/user/votes/episodes/{episode_id}` | delete /user/votes/episodes/{episode_id} | Remove an episode vote |
-| GET | `/user/votes/episodes/{episode_id}` | get /user/votes/episodes/{episode_id} | Check if an episode is voted for |
-| PUT | `/user/votes/episodes/{episode_id}` | put /user/votes/episodes/{episode_id} | Vote for an episode |
-| GET | `/user/votes/shows` | get /user/votes/shows | List the shows voted for |
-| DELETE | `/user/votes/shows/{show_id}` | delete /user/votes/shows/{show_id} | Remove a show vote |
-| GET | `/user/votes/shows/{show_id}` | get /user/votes/shows/{show_id} | Check if a show is voted for |
-| PUT | `/user/votes/shows/{show_id}` | put /user/votes/shows/{show_id} | Vote for a show |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/auth/poll` | post /auth/poll | body*: object | object |  | Poll whether an authentication request was confirmed |
+| POST | `/auth/start` | post /auth/start | body*: object | object |  | Start an authentication request |
+| GET | `/auth/validate` | get /auth/validate | — | object | yes | Validate your authentication credentials |
+| POST | `/scrobble/episodes` | post /scrobble/episodes | body: object[] | BulkResponse |  | Mark episodes as acquired or watched based on their IDs |
+| PUT | `/scrobble/episodes/{episode_id}` | put /scrobble/episodes/{episode_id} | `episode_id`*, body: MarkedEpisode | MarkedEpisode |  | Mark an episode as acquired or watched based on its ID |
+| POST | `/scrobble/shows` | post /scrobble/shows | `tvmaze_id`, `thetvdb_id`, `imdb_id`, body: object[] | BulkResponse |  | Mark episodes within a show as acquired or watched based on their attributes |
+| GET | `/scrobble/shows/{show_id}` | get /scrobble/shows/{show_id} | `show_id`*, `embed` | MarkedEpisode[] | yes | List watched and acquired episodes for a show |
+| GET | `/user/episodes` | get /user/episodes | `show_id` | MarkedEpisode[] | yes | List the marked episodes |
+| GET | `/user/episodes/{episode_id}` | get /user/episodes/{episode_id} | `episode_id`* | MarkedEpisode | yes | Check if an episode is marked |
+| PUT | `/user/episodes/{episode_id}` | put /user/episodes/{episode_id} | `episode_id`*, body: MarkedEpisode | MarkedEpisode |  | Mark an episode |
+| DELETE | `/user/episodes/{episode_id}` | delete /user/episodes/{episode_id} | `episode_id`* | — |  | Unmark an episode |
+| GET | `/user/follows/networks` | get /user/follows/networks | `embed` | NetworkFollow[] | yes | List the followed networks |
+| GET | `/user/follows/networks/{network_id}` | get /user/follows/networks/{network_id} | `network_id`* | NetworkFollow | yes | Check if a network is followed |
+| PUT | `/user/follows/networks/{network_id}` | put /user/follows/networks/{network_id} | `network_id`* | NetworkFollow |  | Follow a network |
+| DELETE | `/user/follows/networks/{network_id}` | delete /user/follows/networks/{network_id} | `network_id`* | — |  | Unfollow a network |
+| GET | `/user/follows/people` | get /user/follows/people | `embed` | PersonFollow[] | yes | List the followed people |
+| GET | `/user/follows/people/{person_id}` | get /user/follows/people/{person_id} | `person_id`* | PersonFollow | yes | Check if a person is followed |
+| PUT | `/user/follows/people/{person_id}` | put /user/follows/people/{person_id} | `person_id`* | PersonFollow |  | Follow a person |
+| DELETE | `/user/follows/people/{person_id}` | delete /user/follows/people/{person_id} | `person_id`* | — |  | Unfollow a person |
+| GET | `/user/follows/shows` | get /user/follows/shows | `embed` | ShowFollow[] | yes | List the followed shows |
+| GET | `/user/follows/shows/{show_id}` | get /user/follows/shows/{show_id} | `show_id`* | ShowFollow | yes | Check if a show is followed |
+| PUT | `/user/follows/shows/{show_id}` | put /user/follows/shows/{show_id} | `show_id`* | ShowFollow |  | Follow a show |
+| DELETE | `/user/follows/shows/{show_id}` | delete /user/follows/shows/{show_id} | `show_id`* | — |  | Unfollow a show |
+| GET | `/user/follows/webchannels` | get /user/follows/webchannels | `embed` | WebchannelFollow[] | yes | List the followed webchannels |
+| GET | `/user/follows/webchannels/{webchannel_id}` | get /user/follows/webchannels/{webchannel_id} | `webchannel_id`* | WebchannelFollow | yes | Check if a webchannel is followed |
+| PUT | `/user/follows/webchannels/{webchannel_id}` | put /user/follows/webchannels/{webchannel_id} | `webchannel_id`* | WebchannelFollow |  | Follow a webchannel |
+| DELETE | `/user/follows/webchannels/{webchannel_id}` | delete /user/follows/webchannels/{webchannel_id} | `webchannel_id`* | — |  | Unfollow a webchannel |
+| GET | `/user/tags` | get /user/tags | — | Tag[] | yes | List all tags |
+| POST | `/user/tags` | post /user/tags | body: Tag | Tag |  | Create a new tag |
+| DELETE | `/user/tags/{tag_id}` | delete /user/tags/{tag_id} | `tag_id`* | — |  | Delete a specific tag |
+| PATCH | `/user/tags/{tag_id}` | patch /user/tags/{tag_id} | `tag_id`*, body: Tag | Tag |  | Update a specific tag |
+| GET | `/user/tags/{tag_id}/shows` | get /user/tags/{tag_id}/shows | `tag_id`*, `embed` | TagInstance[] | yes | List all shows under this tag |
+| PUT | `/user/tags/{tag_id}/shows/{show_id}` | put /user/tags/{tag_id}/shows/{show_id} | `tag_id`*, `show_id`* | TagInstance |  | Tag a show |
+| DELETE | `/user/tags/{tag_id}/shows/{show_id}` | delete /user/tags/{tag_id}/shows/{show_id} | `tag_id`*, `show_id`* | — |  | Untag a show |
+| GET | `/user/votes/episodes` | get /user/votes/episodes | — | EpisodeVote[] | yes | List the episodes voted for |
+| GET | `/user/votes/episodes/{episode_id}` | get /user/votes/episodes/{episode_id} | `episode_id`* | EpisodeVote | yes | Check if an episode is voted for |
+| PUT | `/user/votes/episodes/{episode_id}` | put /user/votes/episodes/{episode_id} | `episode_id`*, body: EpisodeVote | EpisodeVote |  | Vote for an episode |
+| DELETE | `/user/votes/episodes/{episode_id}` | delete /user/votes/episodes/{episode_id} | `episode_id`* | — |  | Remove an episode vote |
+| GET | `/user/votes/shows` | get /user/votes/shows | `embed` | ShowVote[] | yes | List the shows voted for |
+| GET | `/user/votes/shows/{show_id}` | get /user/votes/shows/{show_id} | `show_id`* | ShowVote | yes | Check if a show is voted for |
+| PUT | `/user/votes/shows/{show_id}` | put /user/votes/shows/{show_id} | `show_id`*, body: ShowVote | ShowVote |  | Vote for a show |
+| DELETE | `/user/votes/shows/{show_id}` | delete /user/votes/shows/{show_id} | `show_id`* | — |  | Remove a show vote |

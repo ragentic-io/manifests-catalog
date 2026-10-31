@@ -37,12 +37,12 @@
       {
         "from": "circleci-com-63cac92d73",
         "kind": "EXPOSES",
-        "to": "operation:delete:/project/{username}/{project}/checkout-key/{fingerprint}"
+        "to": "operation:get:/project/{username}/{project}/checkout-key/{fingerprint}"
       },
       {
         "from": "circleci-com-63cac92d73",
         "kind": "EXPOSES",
-        "to": "operation:get:/project/{username}/{project}/checkout-key/{fingerprint}"
+        "to": "operation:delete:/project/{username}/{project}/checkout-key/{fingerprint}"
       },
       {
         "from": "circleci-com-63cac92d73",
@@ -57,12 +57,12 @@
       {
         "from": "circleci-com-63cac92d73",
         "kind": "EXPOSES",
-        "to": "operation:delete:/project/{username}/{project}/envvar/{name}"
+        "to": "operation:get:/project/{username}/{project}/envvar/{name}"
       },
       {
         "from": "circleci-com-63cac92d73",
         "kind": "EXPOSES",
-        "to": "operation:get:/project/{username}/{project}/envvar/{name}"
+        "to": "operation:delete:/project/{username}/{project}/envvar/{name}"
       },
       {
         "from": "circleci-com-63cac92d73",
@@ -113,6 +113,191 @@
         "from": "circleci-com-63cac92d73",
         "kind": "EXPOSES",
         "to": "operation:post:/user/heroku-key"
+      },
+      {
+        "from": "operation:get:/me",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}",
+        "kind": "RETURNS",
+        "to": "schema:Builds"
+      },
+      {
+        "from": "operation:post:/project/{username}/{project}",
+        "kind": "RETURNS",
+        "to": "schema:BuildSummary"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/checkout-key",
+        "kind": "RETURNS",
+        "to": "schema:Keys"
+      },
+      {
+        "from": "operation:post:/project/{username}/{project}/checkout-key",
+        "kind": "RETURNS",
+        "to": "schema:Key"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/checkout-key/{fingerprint}",
+        "kind": "RETURNS",
+        "to": "schema:Key"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/envvar",
+        "kind": "RETURNS",
+        "to": "schema:Envvars"
+      },
+      {
+        "from": "operation:post:/project/{username}/{project}/envvar",
+        "kind": "RETURNS",
+        "to": "schema:Envvar"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/envvar/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Envvar"
+      },
+      {
+        "from": "operation:post:/project/{username}/{project}/tree/{branch}",
+        "kind": "RETURNS",
+        "to": "schema:Build"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/{build_num}",
+        "kind": "RETURNS",
+        "to": "schema:BuildDetail"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/{build_num}/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:Artifacts"
+      },
+      {
+        "from": "operation:post:/project/{username}/{project}/{build_num}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:Build"
+      },
+      {
+        "from": "operation:post:/project/{username}/{project}/{build_num}/retry",
+        "kind": "RETURNS",
+        "to": "schema:Build"
+      },
+      {
+        "from": "operation:get:/project/{username}/{project}/{build_num}/tests",
+        "kind": "RETURNS",
+        "to": "schema:Tests"
+      },
+      {
+        "from": "operation:get:/projects",
+        "kind": "RETURNS",
+        "to": "schema:Projects"
+      },
+      {
+        "from": "operation:get:/recent-builds",
+        "kind": "RETURNS",
+        "to": "schema:Builds"
+      },
+      {
+        "from": "schema:Artifacts",
+        "kind": "REFERENCES",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:Lifecycle"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:PreviousBuild"
+      },
+      {
+        "from": "schema:BuildDetail",
+        "kind": "REFERENCES",
+        "to": "schema:CommitDetails"
+      },
+      {
+        "from": "schema:BuildDetail",
+        "kind": "REFERENCES",
+        "to": "schema:PreviousBuild"
+      },
+      {
+        "from": "schema:BuildDetail",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:BuildSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Outcome"
+      },
+      {
+        "from": "schema:BuildSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Sha1"
+      },
+      {
+        "from": "schema:BuildSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Builds",
+        "kind": "REFERENCES",
+        "to": "schema:Build"
+      },
+      {
+        "from": "schema:CommitDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Sha1"
+      },
+      {
+        "from": "schema:CommitDetails",
+        "kind": "REFERENCES",
+        "to": "schema:CommitDetail"
+      },
+      {
+        "from": "schema:Envvars",
+        "kind": "REFERENCES",
+        "to": "schema:Envvar"
+      },
+      {
+        "from": "schema:Keys",
+        "kind": "REFERENCES",
+        "to": "schema:Key"
+      },
+      {
+        "from": "schema:PreviousBuild",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:Aws"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:Scope"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:StringOrNull"
+      },
+      {
+        "from": "schema:Projects",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:Tests",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
       }
     ],
     "nodes": [
@@ -122,12 +307,20 @@
       },
       {
         "deprecated": false,
+        "description": "Provides information about the signed in user.",
         "id": "operation:get:/me",
         "kind": "operation",
         "method": "get",
         "name": "get /me",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -137,12 +330,65 @@
       },
       {
         "deprecated": false,
+        "description": "Build summary for each of the last 30 builds for a single git repo.",
         "id": "operation:get:/project/{username}/{project}",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 30,
+            "description": "The number of builds to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The API returns builds starting from this offset, defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restricts which builds are returned.",
+            "enum": [
+              "completed",
+              "successful",
+              "failed",
+              "running"
+            ],
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}",
         "pointer": "#/paths/~1project~1{username}~1{project}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Builds"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -152,12 +398,43 @@
       },
       {
         "deprecated": false,
+        "description": "Triggers a new build, returns a summary of the build.",
         "id": "operation:post:/project/{username}/{project}",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}",
         "pointer": "#/paths/~1project~1{username}~1{project}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "BuildSummary"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -167,12 +444,36 @@
       },
       {
         "deprecated": false,
+        "description": "Clears the cache for a project.",
         "id": "operation:delete:/project/{username}/{project}/build-cache",
         "kind": "operation",
         "method": "delete",
         "name": "delete /project/{username}/{project}/build-cache",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/build-cache",
         "pointer": "#/paths/~1project~1{username}~1{project}~1build-cache/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -182,12 +483,36 @@
       },
       {
         "deprecated": false,
+        "description": "Lists checkout keys.",
         "id": "operation:get:/project/{username}/{project}/checkout-key",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/checkout-key",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/checkout-key",
         "pointer": "#/paths/~1project~1{username}~1{project}~1checkout-key/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Keys"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -197,12 +522,43 @@
       },
       {
         "deprecated": false,
+        "description": "Creates a new checkout key.",
         "id": "operation:post:/project/{username}/{project}/checkout-key",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}/checkout-key",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/checkout-key",
         "pointer": "#/paths/~1project~1{username}~1{project}~1checkout-key/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Key"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -212,27 +568,43 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/project/{username}/{project}/checkout-key/{fingerprint}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /project/{username}/{project}/checkout-key/{fingerprint}",
-        "path": "/project/{username}/{project}/checkout-key/{fingerprint}",
-        "pointer": "#/paths/~1project~1{username}~1{project}~1checkout-key~1{fingerprint}/delete",
-        "security": [
-          {
-            "apikey": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get a checkout key.",
         "id": "operation:get:/project/{username}/{project}/checkout-key/{fingerprint}",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/checkout-key/{fingerprint}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "fingerprint",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/checkout-key/{fingerprint}",
         "pointer": "#/paths/~1project~1{username}~1{project}~1checkout-key~1{fingerprint}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Key"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -242,12 +614,82 @@
       },
       {
         "deprecated": false,
+        "description": "Delete a checkout key.",
+        "id": "operation:delete:/project/{username}/{project}/checkout-key/{fingerprint}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /project/{username}/{project}/checkout-key/{fingerprint}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "fingerprint",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/project/{username}/{project}/checkout-key/{fingerprint}",
+        "pointer": "#/paths/~1project~1{username}~1{project}~1checkout-key~1{fingerprint}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apikey": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Lists the environment variables for :project",
         "id": "operation:get:/project/{username}/{project}/envvar",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/envvar",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/envvar",
         "pointer": "#/paths/~1project~1{username}~1{project}~1envvar/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Envvars"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -257,12 +699,36 @@
       },
       {
         "deprecated": false,
+        "description": "Creates a new environment variable",
         "id": "operation:post:/project/{username}/{project}/envvar",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}/envvar",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/envvar",
         "pointer": "#/paths/~1project~1{username}~1{project}~1envvar/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Envvar"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -272,27 +738,43 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/project/{username}/{project}/envvar/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /project/{username}/{project}/envvar/{name}",
-        "path": "/project/{username}/{project}/envvar/{name}",
-        "pointer": "#/paths/~1project~1{username}~1{project}~1envvar~1{name}/delete",
-        "security": [
-          {
-            "apikey": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Gets the hidden value of environment variable :name",
         "id": "operation:get:/project/{username}/{project}/envvar/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/envvar/{name}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/envvar/{name}",
         "pointer": "#/paths/~1project~1{username}~1{project}~1envvar~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Envvar"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -302,12 +784,98 @@
       },
       {
         "deprecated": false,
+        "description": "Deletes the environment variable named ':name'",
+        "id": "operation:delete:/project/{username}/{project}/envvar/{name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /project/{username}/{project}/envvar/{name}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/project/{username}/{project}/envvar/{name}",
+        "pointer": "#/paths/~1project~1{username}~1{project}~1envvar~1{name}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apikey": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Create an ssh key used to access external systems that require SSH key-based authentication",
         "id": "operation:post:/project/{username}/{project}/ssh-key",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}/ssh-key",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "application/json"
+            ],
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/ssh-key",
         "pointer": "#/paths/~1project~1{username}~1{project}~1ssh-key/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -317,12 +885,50 @@
       },
       {
         "deprecated": false,
+        "description": "Triggers a new build, returns a summary of the build.",
         "id": "operation:post:/project/{username}/{project}/tree/{branch}",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}/tree/{branch}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The branch name should be url-encoded.",
+            "in": "path",
+            "name": "branch",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/project/{username}/{project}/tree/{branch}",
         "pointer": "#/paths/~1project~1{username}~1{project}~1tree~1{branch}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Build"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -332,12 +938,43 @@
       },
       {
         "deprecated": false,
+        "description": "Full details for a single build.",
         "id": "operation:get:/project/{username}/{project}/{build_num}",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/{build_num}",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "build_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/project/{username}/{project}/{build_num}",
         "pointer": "#/paths/~1project~1{username}~1{project}~1{build_num}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BuildDetail"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -347,12 +984,43 @@
       },
       {
         "deprecated": false,
+        "description": "List the artifacts produced by a given build.",
         "id": "operation:get:/project/{username}/{project}/{build_num}/artifacts",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/{build_num}/artifacts",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "build_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/project/{username}/{project}/{build_num}/artifacts",
         "pointer": "#/paths/~1project~1{username}~1{project}~1{build_num}~1artifacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Artifacts"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -362,12 +1030,43 @@
       },
       {
         "deprecated": false,
+        "description": "Cancels the build, returns a summary of the build.",
         "id": "operation:post:/project/{username}/{project}/{build_num}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}/{build_num}/cancel",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "build_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/project/{username}/{project}/{build_num}/cancel",
         "pointer": "#/paths/~1project~1{username}~1{project}~1{build_num}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Build"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -377,12 +1076,43 @@
       },
       {
         "deprecated": false,
+        "description": "Retries the build, returns a summary of the new build.",
         "id": "operation:post:/project/{username}/{project}/{build_num}/retry",
         "kind": "operation",
         "method": "post",
         "name": "post /project/{username}/{project}/{build_num}/retry",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "build_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/project/{username}/{project}/{build_num}/retry",
         "pointer": "#/paths/~1project~1{username}~1{project}~1{build_num}~1retry/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Build"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -392,12 +1122,43 @@
       },
       {
         "deprecated": false,
+        "description": "Provides test metadata for a build Note: [Learn how to set up your builds to collect test metadata](https://circleci.com/docs/test-metadata/)",
         "id": "operation:get:/project/{username}/{project}/{build_num}/tests",
         "kind": "operation",
         "method": "get",
         "name": "get /project/{username}/{project}/{build_num}/tests",
+        "parameters": [
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXX",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "XXXXXXXXXX",
+            "in": "path",
+            "name": "build_num",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/project/{username}/{project}/{build_num}/tests",
         "pointer": "#/paths/~1project~1{username}~1{project}~1{build_num}~1tests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tests"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -407,12 +1168,20 @@
       },
       {
         "deprecated": false,
+        "description": "List of all the projects you're following on CircleCI, with build information organized by branch.",
         "id": "operation:get:/projects",
         "kind": "operation",
         "method": "get",
         "name": "get /projects",
         "path": "/projects",
         "pointer": "#/paths/~1projects/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Projects"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -422,12 +1191,38 @@
       },
       {
         "deprecated": false,
+        "description": "Build summary for each of the last 30 recent builds, ordered by build_num.",
         "id": "operation:get:/recent-builds",
         "kind": "operation",
         "method": "get",
         "name": "get /recent-builds",
+        "parameters": [
+          {
+            "default": 30,
+            "description": "The number of builds to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The API returns builds starting from this offset, defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/recent-builds",
         "pointer": "#/paths/~1recent-builds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Builds"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -437,12 +1232,20 @@
       },
       {
         "deprecated": false,
+        "description": "Adds your Heroku API key to CircleCI, takes apikey as form param name.",
         "id": "operation:post:/user/heroku-key",
         "kind": "operation",
         "method": "post",
         "name": "post /user/heroku-key",
         "path": "/user/heroku-key",
         "pointer": "#/paths/~1user~1heroku-key/post",
+        "responses": [
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -453,142 +1256,176 @@
       {
         "id": "schema:Artifact",
         "kind": "schema",
-        "name": "Artifact"
+        "name": "Artifact",
+        "type": "object"
       },
       {
         "id": "schema:Artifacts",
         "kind": "schema",
-        "name": "Artifacts"
+        "name": "Artifacts",
+        "type": "Artifact[]"
       },
       {
         "id": "schema:Aws",
         "kind": "schema",
-        "name": "Aws"
+        "name": "Aws",
+        "type": "object"
       },
       {
         "id": "schema:Build",
         "kind": "schema",
-        "name": "Build"
+        "name": "Build",
+        "type": "object"
       },
       {
+        "description": "previous build",
         "id": "schema:BuildDetail",
         "kind": "schema",
-        "name": "BuildDetail"
+        "name": "BuildDetail",
+        "type": "object"
       },
       {
+        "description": "Additional environment variables to inject into the build environment.",
         "id": "schema:BuildParameters",
         "kind": "schema",
-        "name": "BuildParameters"
+        "name": "BuildParameters",
+        "type": "object"
       },
       {
         "id": "schema:BuildSummary",
         "kind": "schema",
-        "name": "BuildSummary"
+        "name": "BuildSummary",
+        "type": "object"
       },
       {
         "id": "schema:Builds",
         "kind": "schema",
-        "name": "Builds"
+        "name": "Builds",
+        "type": "Build[]"
       },
       {
         "id": "schema:CommitDetail",
         "kind": "schema",
-        "name": "CommitDetail"
+        "name": "CommitDetail",
+        "type": "object"
       },
       {
         "id": "schema:CommitDetails",
         "kind": "schema",
-        "name": "CommitDetails"
+        "name": "CommitDetails",
+        "type": "CommitDetail[]"
       },
       {
         "id": "schema:Envvar",
         "kind": "schema",
-        "name": "Envvar"
+        "name": "Envvar",
+        "type": "object"
       },
       {
         "id": "schema:Envvars",
         "kind": "schema",
-        "name": "Envvars"
+        "name": "Envvars",
+        "type": "Envvar[]"
       },
       {
         "id": "schema:Key",
         "kind": "schema",
-        "name": "Key"
+        "name": "Key",
+        "type": "object"
       },
       {
         "id": "schema:Keys",
         "kind": "schema",
-        "name": "Keys"
+        "name": "Keys",
+        "type": "Key[]"
       },
       {
         "id": "schema:Lifecycle",
         "kind": "schema",
-        "name": "Lifecycle"
+        "name": "Lifecycle",
+        "type": "string"
       },
       {
         "id": "schema:Outcome",
         "kind": "schema",
-        "name": "Outcome"
+        "name": "Outcome",
+        "type": "string"
       },
       {
+        "description": "The number of containers to use to run the build.",
         "id": "schema:Parallel",
         "kind": "schema",
-        "name": "Parallel"
+        "name": "Parallel",
+        "type": "string"
       },
       {
+        "description": "previous build",
         "id": "schema:PreviousBuild",
         "kind": "schema",
-        "name": "PreviousBuild"
+        "name": "PreviousBuild",
+        "type": "object"
       },
       {
         "id": "schema:Project",
         "kind": "schema",
-        "name": "Project"
+        "name": "Project",
+        "type": "object"
       },
       {
         "id": "schema:Projects",
         "kind": "schema",
-        "name": "Projects"
+        "name": "Projects",
+        "type": "Project[]"
       },
       {
+        "description": "The specific revision to build.",
         "id": "schema:Revision",
         "kind": "schema",
-        "name": "Revision"
+        "name": "Revision",
+        "type": "string"
       },
       {
         "id": "schema:Scope",
         "kind": "schema",
-        "name": "Scope"
+        "name": "Scope",
+        "type": "string"
       },
       {
         "id": "schema:Sha1",
         "kind": "schema",
-        "name": "Sha1"
+        "name": "Sha1",
+        "type": "string"
       },
       {
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "string"
       },
       {
         "id": "schema:StringOrNull",
         "kind": "schema",
-        "name": "StringOrNull"
+        "name": "StringOrNull",
+        "type": "string"
       },
       {
+        "description": "The tag to build.",
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "string"
       },
       {
         "id": "schema:Tests",
         "kind": "schema",
-        "name": "Tests"
+        "name": "Tests",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

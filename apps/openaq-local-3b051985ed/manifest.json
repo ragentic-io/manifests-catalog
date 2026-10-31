@@ -183,6 +183,196 @@
         "from": "openaq-local-3b051985ed",
         "kind": "EXPOSES",
         "to": "operation:get:/v2/summary"
+      },
+      {
+        "from": "operation:get:/v1/cities",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQCitiesResult"
+      },
+      {
+        "from": "operation:get:/v1/countries",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQCountriesResult"
+      },
+      {
+        "from": "operation:get:/v1/countries/{country_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQCountriesResult"
+      },
+      {
+        "from": "operation:get:/v1/latest",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v1/latest/{location_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v1/locations",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v1/locations/{location_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v1/parameters",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQParametersResult"
+      },
+      {
+        "from": "operation:get:/v1/sources",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/averages",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/cities",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQCitiesResult"
+      },
+      {
+        "from": "operation:get:/v2/countries",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQCountriesResult"
+      },
+      {
+        "from": "operation:get:/v2/countries/{country_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQCountriesResult"
+      },
+      {
+        "from": "operation:get:/v2/latest",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/latest/{location_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/locations",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/locations/tiles/mobile-generalized/tiles.json",
+        "kind": "RETURNS",
+        "to": "schema:TileJSON"
+      },
+      {
+        "from": "operation:get:/v2/locations/tiles/mobile/tiles.json",
+        "kind": "RETURNS",
+        "to": "schema:TileJSON"
+      },
+      {
+        "from": "operation:get:/v2/locations/tiles/tiles.json",
+        "kind": "RETURNS",
+        "to": "schema:TileJSON"
+      },
+      {
+        "from": "operation:get:/v2/locations/{location_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/manufacturers",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/models",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/parameters",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQParametersResult"
+      },
+      {
+        "from": "operation:get:/v2/projects",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQProjectsResult"
+      },
+      {
+        "from": "operation:get:/v2/projects/{project_id}",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQProjectsResult"
+      },
+      {
+        "from": "operation:get:/v2/sources",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "operation:get:/v2/summary",
+        "kind": "RETURNS",
+        "to": "schema:OpenAQResult"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:OpenAQCitiesResult",
+        "kind": "REFERENCES",
+        "to": "schema:CitiesRow"
+      },
+      {
+        "from": "schema:OpenAQCitiesResult",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OpenAQCountriesResult",
+        "kind": "REFERENCES",
+        "to": "schema:CountriesRow"
+      },
+      {
+        "from": "schema:OpenAQCountriesResult",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OpenAQParametersResult",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OpenAQParametersResult",
+        "kind": "REFERENCES",
+        "to": "schema:ParametersRow"
+      },
+      {
+        "from": "schema:OpenAQProjectsResult",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OpenAQProjectsResult",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectsRow"
+      },
+      {
+        "from": "schema:OpenAQResult",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:ProjectsRow",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectParameterDetails"
       }
     ],
     "nodes": [
@@ -198,17 +388,30 @@
         "name": "favico_favicon_ico_get",
         "path": "/favicon.ico",
         "pointer": "#/paths/~1favicon.ico/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Favico"
       },
       {
         "deprecated": false,
+        "description": "Sanity check.",
         "id": "operation:get:/ping",
         "kind": "operation",
         "method": "get",
         "name": "pong_ping_get",
         "path": "/ping",
         "pointer": "#/paths/~1ping/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Pong"
       },
@@ -218,10 +421,92 @@
         "kind": "operation",
         "method": "get",
         "name": "cities_getv1_v1_cities_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "city",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "CitiesOrder"
+          },
+          {
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/cities",
         "pointer": "#/paths/~1v1~1cities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQCitiesResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Provides a simple listing of cities within the platform"
+        "summary": "Provides a simple listing of cities within the platform",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -229,10 +514,77 @@
         "kind": "operation",
         "method": "get",
         "name": "countries_getv1_v1_countries_get",
+        "parameters": [
+          {
+            "default": 200,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "country",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "CountriesOrder"
+          }
+        ],
         "path": "/v1/countries",
         "pointer": "#/paths/~1v1~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQCountriesResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Countries Getv1"
+        "summary": "Countries Getv1",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -240,10 +592,76 @@
         "kind": "operation",
         "method": "get",
         "name": "countries_get_v1_countries__country_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "country_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 200,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "country",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "CountriesOrder"
+          }
+        ],
         "path": "/v1/countries/{country_id}",
         "pointer": "#/paths/~1v1~1countries~1{country_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQCountriesResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Countries Get"
+        "summary": "Countries Get",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -251,10 +669,191 @@
         "kind": "operation",
         "method": "get",
         "name": "latest_v1_get_v1_latest_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/latest",
         "pointer": "#/paths/~1v1~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Latest V1 Get"
+        "summary": "Latest V1 Get",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -262,10 +861,191 @@
         "kind": "operation",
         "method": "get",
         "name": "latest_v1_get_v1_latest__location_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "location_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/latest/{location_id}",
         "pointer": "#/paths/~1v1~1latest~1{location_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Latest V1 Get"
+        "summary": "Latest V1 Get",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -273,10 +1053,191 @@
         "kind": "operation",
         "method": "get",
         "name": "locationsv1_get_v1_locations_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/locations",
         "pointer": "#/paths/~1v1~1locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Locationsv1 Get"
+        "summary": "Locationsv1 Get",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -284,10 +1245,191 @@
         "kind": "operation",
         "method": "get",
         "name": "locationsv1_get_v1_locations__location_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "location_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/locations/{location_id}",
         "pointer": "#/paths/~1v1~1locations~1{location_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Locationsv1 Get"
+        "summary": "Locationsv1 Get",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -295,10 +1437,200 @@
         "kind": "operation",
         "method": "get",
         "name": "measurements_get_v1_v1_measurements_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2000-01-01T00:00:00+00:00",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "default": "2021-08-23T09:48:00+00:00",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "datetime",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "MeasOrder"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "in": "query",
+            "name": "value_from",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "value_to",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "include_fields",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/measurements",
         "pointer": "#/paths/~1v1~1measurements/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Measurements Get V1"
+        "summary": "Measurements Get V1",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -306,10 +1638,82 @@
         "kind": "operation",
         "method": "get",
         "name": "parameters_getv1_v1_parameters_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "sourceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "sourceSlug",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "id",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/parameters",
         "pointer": "#/paths/~1v1~1parameters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQParametersResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Parameters Getv1"
+        "summary": "Parameters Getv1",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -317,10 +1721,70 @@
         "kind": "operation",
         "method": "get",
         "name": "sources_v1_get_v1_sources_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "name",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "SourcesV1Order"
+          }
+        ],
         "path": "/v1/sources",
         "pointer": "#/paths/~1v1~1sources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Sources V1 Get"
+        "summary": "Sources V1 Get",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -328,10 +1792,140 @@
         "kind": "operation",
         "method": "get",
         "name": "averages_v2_get_v2_averages_get",
+        "parameters": [
+          {
+            "default": "2000-01-01T00:00:00+00:00",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "default": "2021-08-23T09:48:00+00:00",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "project_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "spatial",
+            "required": true,
+            "type": "Spatial"
+          },
+          {
+            "in": "query",
+            "name": "temporal",
+            "required": true,
+            "type": "Temporal"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/averages",
         "pointer": "#/paths/~1v2~1averages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Averages V2 Get"
+        "summary": "Averages V2 Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -339,10 +1933,92 @@
         "kind": "operation",
         "method": "get",
         "name": "cities_get_v2_cities_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "city",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "CitiesOrder"
+          },
+          {
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/cities",
         "pointer": "#/paths/~1v2~1cities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQCitiesResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Provides a simple listing of cities within the platform"
+        "summary": "Provides a simple listing of cities within the platform",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -350,10 +2026,77 @@
         "kind": "operation",
         "method": "get",
         "name": "countries_get_v2_countries_get",
+        "parameters": [
+          {
+            "default": 200,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "country",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "CountriesOrder"
+          }
+        ],
         "path": "/v2/countries",
         "pointer": "#/paths/~1v2~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQCountriesResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Countries Get"
+        "summary": "Countries Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -361,10 +2104,76 @@
         "kind": "operation",
         "method": "get",
         "name": "countries_get_v2_countries__country_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "country_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 200,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "country",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "CountriesOrder"
+          }
+        ],
         "path": "/v2/countries/{country_id}",
         "pointer": "#/paths/~1v2~1countries~1{country_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQCountriesResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Countries Get"
+        "summary": "Countries Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -372,10 +2181,191 @@
         "kind": "operation",
         "method": "get",
         "name": "latest_get_v2_latest_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/latest",
         "pointer": "#/paths/~1v2~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Latest Get"
+        "summary": "Latest Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -383,10 +2373,191 @@
         "kind": "operation",
         "method": "get",
         "name": "latest_get_v2_latest__location_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "location_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/latest/{location_id}",
         "pointer": "#/paths/~1v2~1latest~1{location_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Latest Get"
+        "summary": "Latest Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -394,10 +2565,191 @@
         "kind": "operation",
         "method": "get",
         "name": "locations_get_v2_locations_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/locations",
         "pointer": "#/paths/~1v2~1locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Locations Get"
+        "summary": "Locations Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -407,8 +2759,18 @@
         "name": "mobilegentilejson_v2_locations_tiles_mobile_generalized_tiles_json_get",
         "path": "/v2/locations/tiles/mobile-generalized/tiles.json",
         "pointer": "#/paths/~1v2~1locations~1tiles~1mobile-generalized~1tiles.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TileJSON"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Mobilegentilejson"
+        "summary": "Mobilegentilejson",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -416,10 +2778,86 @@
         "kind": "operation",
         "method": "get",
         "name": "get_mobilegentile_v2_locations_tiles_mobile_generalized__z___x___y__pbf_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "z",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "x",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "y",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string"
+          },
+          {
+            "description": "limit data to location id",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "lastUpdatedFrom",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "lastUpdatedTo",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/locations/tiles/mobile-generalized/{z}/{x}/{y}.pbf",
         "pointer": "#/paths/~1v2~1locations~1tiles~1mobile-generalized~1{z}~1{x}~1{y}.pbf/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Mobilegentile"
+        "summary": "Get Mobilegentile",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -429,8 +2867,18 @@
         "name": "mobiletilejson_v2_locations_tiles_mobile_tiles_json_get",
         "path": "/v2/locations/tiles/mobile/tiles.json",
         "pointer": "#/paths/~1v2~1locations~1tiles~1mobile~1tiles.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TileJSON"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Mobiletilejson"
+        "summary": "Mobiletilejson",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -438,10 +2886,98 @@
         "kind": "operation",
         "method": "get",
         "name": "get_mobiletile_v2_locations_tiles_mobile__z___x___y__pbf_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "z",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "x",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "y",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "required": true,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "required": true,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string"
+          },
+          {
+            "description": "limit data to location id",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "lastUpdatedFrom",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "lastUpdatedTo",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/locations/tiles/mobile/{z}/{x}/{y}.pbf",
         "pointer": "#/paths/~1v2~1locations~1tiles~1mobile~1{z}~1{x}~1{y}.pbf/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Mobiletile"
+        "summary": "Get Mobiletile",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -451,8 +2987,18 @@
         "name": "tilejson_v2_locations_tiles_tiles_json_get",
         "path": "/v2/locations/tiles/tiles.json",
         "pointer": "#/paths/~1v2~1locations~1tiles~1tiles.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TileJSON"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Tilejson"
+        "summary": "Tilejson",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -462,8 +3008,18 @@
         "name": "demo_v2_locations_tiles_viewer_get",
         "path": "/v2/locations/tiles/viewer",
         "pointer": "#/paths/~1v2~1locations~1tiles~1viewer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Demo"
+        "summary": "Demo",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -471,10 +3027,86 @@
         "kind": "operation",
         "method": "get",
         "name": "get_tile_v2_locations_tiles__z___x___y__pbf_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "z",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "x",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "y",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string"
+          },
+          {
+            "description": "limit data to location id",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "lastUpdatedFrom",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "lastUpdatedTo",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/locations/tiles/{z}/{x}/{y}.pbf",
         "pointer": "#/paths/~1v2~1locations~1tiles~1{z}~1{x}~1{y}.pbf/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Tile"
+        "summary": "Get Tile",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -482,10 +3114,191 @@
         "kind": "operation",
         "method": "get",
         "name": "locations_get_v2_locations__location_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "location_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "description": "Sort Direction",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "description": "Order by a field",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "LocationsOrder"
+          },
+          {
+            "description": "Location is mobile",
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Data is the product of a previous analysis/aggregation and not raw measurements",
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Name of the data source",
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Source entity type.",
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "description": "Type of Sensor",
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "description": "Model Name of Sensor",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Manufacturer of Sensor",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "dumpRaw",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/locations/{location_id}",
         "pointer": "#/paths/~1v2~1locations~1{location_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Locations Get"
+        "summary": "Locations Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -495,8 +3308,18 @@
         "name": "mfr_get_v2_manufacturers_get",
         "path": "/v2/manufacturers",
         "pointer": "#/paths/~1v2~1manufacturers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Mfr Get"
+        "summary": "Mfr Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -504,10 +3327,200 @@
         "kind": "operation",
         "method": "get",
         "name": "measurements_get_v2_measurements_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "2000-01-01T00:00:00+00:00",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "default": "2021-08-23T09:48:00+00:00",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time|string:date"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "desc",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "has_geo",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Limit results by a certain city or cities.",
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "location_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "datetime",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "MeasOrder"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "EntityTypes"
+          },
+          {
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "SensorTypes"
+          },
+          {
+            "in": "query",
+            "name": "value_from",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "value_to",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "include_fields",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/measurements",
         "pointer": "#/paths/~1v2~1measurements/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Measurements Get"
+        "summary": "Measurements Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -517,8 +3530,18 @@
         "name": "model_get_v2_models_get",
         "path": "/v2/models",
         "pointer": "#/paths/~1v2~1models/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Model Get"
+        "summary": "Model Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -526,10 +3549,82 @@
         "kind": "operation",
         "method": "get",
         "name": "parameters_get_v2_parameters_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "sourceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "sourceSlug",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "id",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/parameters",
         "pointer": "#/paths/~1v2~1parameters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQParametersResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Parameters Get"
+        "summary": "Parameters Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -537,10 +3632,138 @@
         "kind": "operation",
         "method": "get",
         "name": "projects_get_v2_projects_get",
+        "parameters": [
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "project_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "ProjectsOrder"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/v2/projects",
         "pointer": "#/paths/~1v2~1projects/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQProjectsResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Projects Get"
+        "summary": "Projects Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -548,10 +3771,138 @@
         "kind": "operation",
         "method": "get",
         "name": "projects_get_v2_projects__project_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "project_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results by a certain country using two letter country code.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "parameter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "parameter",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "integer|string[]"
+          },
+          {
+            "default": "lastUpdated",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "ProjectsOrder"
+          },
+          {
+            "in": "query",
+            "name": "isMobile",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isAnalysis",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "entity",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sensorType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/v2/projects/{project_id}",
         "pointer": "#/paths/~1v2~1projects~1{project_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQProjectsResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Projects Get"
+        "summary": "Projects Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -559,10 +3910,82 @@
         "kind": "operation",
         "method": "get",
         "name": "sources_get_v2_sources_get",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "Change the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Paginate through results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "asc",
+            "description": "Define sort order.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "Sort"
+          },
+          {
+            "in": "query",
+            "name": "sourceName",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "sourceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "sourceSlug",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "sourceName",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "SourcesOrder"
+          }
+        ],
         "path": "/v2/sources",
         "pointer": "#/paths/~1v2~1sources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Sources Get"
+        "summary": "Sources Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -570,10 +3993,31 @@
         "kind": "operation",
         "method": "get",
         "name": "readme_get_v2_sources_readme__slug__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/sources/readme/{slug}",
         "pointer": "#/paths/~1v2~1sources~1readme~1{slug}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Readme Get"
+        "summary": "Readme Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
         "deprecated": false,
@@ -583,138 +4027,187 @@
         "name": "summary_get_v2_summary_get",
         "path": "/v2/summary",
         "pointer": "#/paths/~1v2~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OpenAQResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Summary Get"
+        "summary": "Summary Get",
+        "tags": [
+          "v2"
+        ]
       },
       {
+        "description": "An enumeration.",
         "id": "schema:CitiesOrder",
         "kind": "schema",
-        "name": "CitiesOrder"
+        "name": "CitiesOrder",
+        "type": "string"
       },
       {
         "id": "schema:CitiesRow",
         "kind": "schema",
-        "name": "CitiesRow"
+        "name": "CitiesRow",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:CountriesOrder",
         "kind": "schema",
-        "name": "CountriesOrder"
+        "name": "CountriesOrder",
+        "type": "string"
       },
       {
         "id": "schema:CountriesRow",
         "kind": "schema",
-        "name": "CountriesRow"
+        "name": "CountriesRow",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:EntityTypes",
         "kind": "schema",
-        "name": "EntityTypes"
+        "name": "EntityTypes",
+        "type": "string"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:LocationsOrder",
         "kind": "schema",
-        "name": "LocationsOrder"
+        "name": "LocationsOrder",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:MeasOrder",
         "kind": "schema",
-        "name": "MeasOrder"
+        "name": "MeasOrder",
+        "type": "string"
       },
       {
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
         "id": "schema:OpenAQCitiesResult",
         "kind": "schema",
-        "name": "OpenAQCitiesResult"
+        "name": "OpenAQCitiesResult",
+        "type": "object"
       },
       {
         "id": "schema:OpenAQCountriesResult",
         "kind": "schema",
-        "name": "OpenAQCountriesResult"
+        "name": "OpenAQCountriesResult",
+        "type": "object"
       },
       {
         "id": "schema:OpenAQParametersResult",
         "kind": "schema",
-        "name": "OpenAQParametersResult"
+        "name": "OpenAQParametersResult",
+        "type": "object"
       },
       {
         "id": "schema:OpenAQProjectsResult",
         "kind": "schema",
-        "name": "OpenAQProjectsResult"
+        "name": "OpenAQProjectsResult",
+        "type": "object"
       },
       {
         "id": "schema:OpenAQResult",
         "kind": "schema",
-        "name": "OpenAQResult"
+        "name": "OpenAQResult",
+        "type": "object"
       },
       {
         "id": "schema:ParametersRow",
         "kind": "schema",
-        "name": "ParametersRow"
+        "name": "ParametersRow",
+        "type": "object"
       },
       {
         "id": "schema:ProjectParameterDetails",
         "kind": "schema",
-        "name": "ProjectParameterDetails"
+        "name": "ProjectParameterDetails",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:ProjectsOrder",
         "kind": "schema",
-        "name": "ProjectsOrder"
+        "name": "ProjectsOrder",
+        "type": "string"
       },
       {
         "id": "schema:ProjectsRow",
         "kind": "schema",
-        "name": "ProjectsRow"
+        "name": "ProjectsRow",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:SensorTypes",
         "kind": "schema",
-        "name": "SensorTypes"
+        "name": "SensorTypes",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Sort",
         "kind": "schema",
-        "name": "Sort"
+        "name": "Sort",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:SourcesOrder",
         "kind": "schema",
-        "name": "SourcesOrder"
+        "name": "SourcesOrder",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:SourcesV1Order",
         "kind": "schema",
-        "name": "SourcesV1Order"
+        "name": "SourcesV1Order",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Spatial",
         "kind": "schema",
-        "name": "Spatial"
+        "name": "Spatial",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Temporal",
         "kind": "schema",
-        "name": "Temporal"
+        "name": "Temporal",
+        "type": "string"
       },
       {
+        "description": "TileJSON model.",
         "id": "schema:TileJSON",
         "kind": "schema",
-        "name": "TileJSON"
+        "name": "TileJSON",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       }
     ]
   },

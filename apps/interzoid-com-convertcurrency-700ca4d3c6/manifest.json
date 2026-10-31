@@ -17,14 +17,73 @@
       },
       {
         "deprecated": false,
+        "description": "Provide an amount in one currency (EUR, GBP, CNY, JPY, AUD, etc.), and also a second currency to convert it to.",
         "id": "operation:get:/convertcurrency",
         "kind": "operation",
         "method": "get",
         "name": "convertcurrency",
+        "parameters": [
+          {
+            "description": "Your Interzoid license API key.",
+            "in": "query",
+            "name": "license",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Currency symbol for the converted from amount",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Currency symbol for the converted to amount",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The amount of currency to be converted",
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/convertcurrency",
         "pointer": "#/paths/~1convertcurrency/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Converts amount in one currency to that of another"
+        "summary": "Converts amount in one currency to that of another",
+        "tags": [
+          "Live Currency Rate Conversion"
+        ]
       }
     ]
   },

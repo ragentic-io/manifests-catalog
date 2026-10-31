@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_joinpeertube.org_img_brand.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `d229e678c18c5dc0efc8d22de16bdef5b0924f6476e5aad2deaec29601cdd9e8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,191 +34,193 @@ logo: "https://api.apis.guru/v2/cache/logo/https_joinpeertube.org_img_brand.png"
 
 117 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/abuses` | getAbuses | List abuses |
-| POST | `/api/v1/abuses` | post /api/v1/abuses | Report an abuse |
-| DELETE | `/api/v1/abuses/{abuseId}` | delete /api/v1/abuses/{abuseId} | Delete an abuse |
-| PUT | `/api/v1/abuses/{abuseId}` | put /api/v1/abuses/{abuseId} | Update an abuse |
-| GET | `/api/v1/abuses/{abuseId}/messages` | get /api/v1/abuses/{abuseId}/messages | List messages of an abuse |
-| POST | `/api/v1/abuses/{abuseId}/messages` | post /api/v1/abuses/{abuseId}/messages | Add message to an abuse |
-| DELETE | `/api/v1/abuses/{abuseId}/messages/{abuseMessageId}` | delete /api/v1/abuses/{abuseId}/messages/{abuseMessageId} | Delete an abuse message |
-| GET | `/api/v1/accounts` | getAccounts | List accounts |
-| GET | `/api/v1/accounts/{name}` | getAccount | Get an account |
-| GET | `/api/v1/accounts/{name}/followers` | getAccountFollowers | List followers of an account |
-| GET | `/api/v1/accounts/{name}/ratings` | get /api/v1/accounts/{name}/ratings | List ratings of an account |
-| GET | `/api/v1/accounts/{name}/video-channel-syncs` | get /api/v1/accounts/{name}/video-channel-syncs | List the synchronizations of video channels of an account |
-| GET | `/api/v1/accounts/{name}/video-channels` | get /api/v1/accounts/{name}/video-channels | List video channels of an account |
-| GET | `/api/v1/accounts/{name}/video-playlists` | get /api/v1/accounts/{name}/video-playlists | List playlists of an account |
-| GET | `/api/v1/accounts/{name}/videos` | getAccountVideos | List videos of an account |
-| GET | `/api/v1/blocklist/status` | get /api/v1/blocklist/status | Get block status of accounts/hosts |
-| GET | `/api/v1/config` | getConfig | Get instance public configuration |
-| GET | `/api/v1/config/about` | getAbout | Get instance "About" information |
-| DELETE | `/api/v1/config/custom` | delCustomConfig | Delete instance runtime configuration |
-| GET | `/api/v1/config/custom` | getCustomConfig | Get instance runtime configuration |
-| PUT | `/api/v1/config/custom` | putCustomConfig | Set instance runtime configuration |
-| GET | `/api/v1/custom-pages/homepage/instance` | get /api/v1/custom-pages/homepage/instance | Get instance custom homepage |
-| PUT | `/api/v1/custom-pages/homepage/instance` | put /api/v1/custom-pages/homepage/instance | Set instance custom homepage |
-| POST | `/api/v1/jobs/pause` | post /api/v1/jobs/pause | Pause job queue |
-| POST | `/api/v1/jobs/resume` | post /api/v1/jobs/resume | Resume job queue |
-| GET | `/api/v1/jobs/{state}` | getJobs | List instance jobs |
-| POST | `/api/v1/metrics/playback` | post /api/v1/metrics/playback | Create playback metrics |
-| GET | `/api/v1/oauth-clients/local` | getOAuthClient | Login prerequisite |
-| GET | `/api/v1/plugins` | getPlugins | List plugins |
-| GET | `/api/v1/plugins/available` | getAvailablePlugins | List available plugins |
-| POST | `/api/v1/plugins/install` | addPlugin | Install a plugin |
-| POST | `/api/v1/plugins/uninstall` | uninstallPlugin | Uninstall a plugin |
-| POST | `/api/v1/plugins/update` | updatePlugin | Update a plugin |
-| GET | `/api/v1/plugins/{npmName}` | getPlugin | Get a plugin |
-| GET | `/api/v1/plugins/{npmName}/public-settings` | get /api/v1/plugins/{npmName}/public-settings | Get a plugin's public settings |
-| GET | `/api/v1/plugins/{npmName}/registered-settings` | get /api/v1/plugins/{npmName}/registered-settings | Get a plugin's registered settings |
-| PUT | `/api/v1/plugins/{npmName}/settings` | put /api/v1/plugins/{npmName}/settings | Set a plugin's settings |
-| GET | `/api/v1/search/video-channels` | searchChannels | Search channels |
-| GET | `/api/v1/search/video-playlists` | searchPlaylists | Search playlists |
-| GET | `/api/v1/search/videos` | searchVideos | Search videos |
-| GET | `/api/v1/server/audit-logs` | getInstanceAuditLogs | Get instance audit logs |
-| GET | `/api/v1/server/blocklist/accounts` | get /api/v1/server/blocklist/accounts | List account blocks |
-| POST | `/api/v1/server/blocklist/accounts` | post /api/v1/server/blocklist/accounts | Block an account |
-| DELETE | `/api/v1/server/blocklist/accounts/{accountName}` | delete /api/v1/server/blocklist/accounts/{accountName} | Unblock an account by its handle |
-| GET | `/api/v1/server/blocklist/servers` | get /api/v1/server/blocklist/servers | List server blocks |
-| POST | `/api/v1/server/blocklist/servers` | post /api/v1/server/blocklist/servers | Block a server |
-| DELETE | `/api/v1/server/blocklist/servers/{host}` | delete /api/v1/server/blocklist/servers/{host} | Unblock a server by its domain |
-| GET | `/api/v1/server/followers` | get /api/v1/server/followers | List instances following the server |
-| DELETE | `/api/v1/server/followers/{nameWithHost}` | delete /api/v1/server/followers/{nameWithHost} | Remove or reject a follower to your server |
-| POST | `/api/v1/server/followers/{nameWithHost}/accept` | post /api/v1/server/followers/{nameWithHost}/accept | Accept a pending follower to your server |
-| POST | `/api/v1/server/followers/{nameWithHost}/reject` | post /api/v1/server/followers/{nameWithHost}/reject | Reject a pending follower to your server |
-| GET | `/api/v1/server/following` | get /api/v1/server/following | List instances followed by the server |
-| POST | `/api/v1/server/following` | post /api/v1/server/following | Follow a list of actors (PeerTube instance, channel or account) |
-| DELETE | `/api/v1/server/following/{hostOrHandle}` | delete /api/v1/server/following/{hostOrHandle} | Unfollow an actor (PeerTube instance, channel or account) |
-| GET | `/api/v1/server/logs` | getInstanceLogs | Get instance logs |
-| POST | `/api/v1/server/logs/client` | sendClientLog | Send client log |
-| GET | `/api/v1/server/redundancy/videos` | getMirroredVideos | List videos being mirrored |
-| POST | `/api/v1/server/redundancy/videos` | putMirroredVideo | Mirror a video |
-| DELETE | `/api/v1/server/redundancy/videos/{redundancyId}` | delMirroredVideo | Delete a mirror done on a video |
-| PUT | `/api/v1/server/redundancy/{host}` | put /api/v1/server/redundancy/{host} | Update a server redundancy policy |
-| GET | `/api/v1/server/stats` | getInstanceStats | Get instance stats |
-| GET | `/api/v1/users` | getUsers | List users |
-| POST | `/api/v1/users` | addUser | Create a user |
-| POST | `/api/v1/users/ask-send-verify-email` | resendEmailToVerifyUser | Resend user verification link |
-| GET | `/api/v1/users/me` | getUserInfo | Get my user information |
-| PUT | `/api/v1/users/me` | putUserInfo | Update my user information |
-| GET | `/api/v1/users/me/abuses` | getMyAbuses | List my abuses |
-| DELETE | `/api/v1/users/me/avatar` | delete /api/v1/users/me/avatar | Delete my avatar |
-| POST | `/api/v1/users/me/avatar/pick` | post /api/v1/users/me/avatar/pick | Update my user avatar |
-| GET | `/api/v1/users/me/history/videos` | get /api/v1/users/me/history/videos | List watched videos history |
-| POST | `/api/v1/users/me/history/videos/remove` | post /api/v1/users/me/history/videos/remove | Clear video history |
-| DELETE | `/api/v1/users/me/history/videos/{videoId}` | delete /api/v1/users/me/history/videos/{videoId} | Delete history element |
-| PUT | `/api/v1/users/me/notification-settings` | put /api/v1/users/me/notification-settings | Update my notification settings |
-| GET | `/api/v1/users/me/notifications` | get /api/v1/users/me/notifications | List my notifications |
-| POST | `/api/v1/users/me/notifications/read` | post /api/v1/users/me/notifications/read | Mark notifications as read by their id |
-| POST | `/api/v1/users/me/notifications/read-all` | post /api/v1/users/me/notifications/read-all | Mark all my notification as read |
-| GET | `/api/v1/users/me/subscriptions` | get /api/v1/users/me/subscriptions | Get my user subscriptions |
-| POST | `/api/v1/users/me/subscriptions` | post /api/v1/users/me/subscriptions | Add subscription to my user |
-| GET | `/api/v1/users/me/subscriptions/exist` | get /api/v1/users/me/subscriptions/exist | Get if subscriptions exist for my user |
-| GET | `/api/v1/users/me/subscriptions/videos` | get /api/v1/users/me/subscriptions/videos | List videos of subscriptions of my user |
-| DELETE | `/api/v1/users/me/subscriptions/{subscriptionHandle}` | delete /api/v1/users/me/subscriptions/{subscriptionHandle} | Delete subscription of my user |
-| GET | `/api/v1/users/me/subscriptions/{subscriptionHandle}` | get /api/v1/users/me/subscriptions/{subscriptionHandle} | Get subscription of my user |
-| GET | `/api/v1/users/me/video-playlists/videos-exist` | get /api/v1/users/me/video-playlists/videos-exist | Check video exists in my playlists |
-| GET | `/api/v1/users/me/video-quota-used` | get /api/v1/users/me/video-quota-used | Get my user used quota |
-| GET | `/api/v1/users/me/videos` | get /api/v1/users/me/videos | Get videos of my user |
-| GET | `/api/v1/users/me/videos/imports` | get /api/v1/users/me/videos/imports | Get video imports of my user |
-| GET | `/api/v1/users/me/videos/{videoId}/rating` | get /api/v1/users/me/videos/{videoId}/rating | Get rate of my user for a video |
-| POST | `/api/v1/users/register` | registerUser | Register a user |
-| GET | `/api/v1/users/registrations` | listRegistrations | List registrations |
-| POST | `/api/v1/users/registrations/ask-send-verify-email` | resendEmailToVerifyRegistration | Resend verification link to registration email |
-| POST | `/api/v1/users/registrations/request` | requestRegistration | Request registration |
-| DELETE | `/api/v1/users/registrations/{registrationId}` | deleteRegistration | Delete registration |
-| POST | `/api/v1/users/registrations/{registrationId}/accept` | acceptRegistration | Accept registration |
-| POST | `/api/v1/users/registrations/{registrationId}/reject` | rejectRegistration | Reject registration |
-| POST | `/api/v1/users/registrations/{registrationId}/verify-email` | verifyRegistrationEmail | Verify a registration email |
-| POST | `/api/v1/users/revoke-token` | revokeOAuthToken | Logout |
-| POST | `/api/v1/users/token` | getOAuthToken | Login |
-| DELETE | `/api/v1/users/{id}` | delUser | Delete a user |
-| GET | `/api/v1/users/{id}` | getUser | Get a user |
-| PUT | `/api/v1/users/{id}` | putUser | Update a user |
-| POST | `/api/v1/users/{id}/two-factor/confirm-request` | confirmTwoFactorRequest | Confirm two factor auth |
-| POST | `/api/v1/users/{id}/two-factor/disable` | disableTwoFactor | Disable two factor auth |
-| POST | `/api/v1/users/{id}/two-factor/request` | requestTwoFactor | Request two factor auth |
-| POST | `/api/v1/users/{id}/verify-email` | verifyUser | Verify a user |
-| POST | `/api/v1/video-channel-syncs` | addVideoChannelSync | Create a synchronization for a video channel |
-| DELETE | `/api/v1/video-channel-syncs/{channelSyncId}` | delVideoChannelSync | Delete a video channel synchronization |
-| POST | `/api/v1/video-channel-syncs/{channelSyncId}/sync` | triggerVideoChannelSync | Triggers the channel synchronization job, fetching all the videos from the remote channel |
-| GET | `/api/v1/video-channels` | getVideoChannels | List video channels |
-| POST | `/api/v1/video-channels` | addVideoChannel | Create a video channel |
-| DELETE | `/api/v1/video-channels/{channelHandle}` | delVideoChannel | Delete a video channel |
-| GET | `/api/v1/video-channels/{channelHandle}` | getVideoChannel | Get a video channel |
-| PUT | `/api/v1/video-channels/{channelHandle}` | putVideoChannel | Update a video channel |
-| DELETE | `/api/v1/video-channels/{channelHandle}/avatar` | delete /api/v1/video-channels/{channelHandle}/avatar | Delete channel avatar |
-| POST | `/api/v1/video-channels/{channelHandle}/avatar/pick` | post /api/v1/video-channels/{channelHandle}/avatar/pick | Update channel avatar |
-| DELETE | `/api/v1/video-channels/{channelHandle}/banner` | delete /api/v1/video-channels/{channelHandle}/banner | Delete channel banner |
-| POST | `/api/v1/video-channels/{channelHandle}/banner/pick` | post /api/v1/video-channels/{channelHandle}/banner/pick | Update channel banner |
-| GET | `/api/v1/video-channels/{channelHandle}/followers` | getVideoChannelFollowers | List followers of a video channel |
-| POST | `/api/v1/video-channels/{channelHandle}/import-videos` | post /api/v1/video-channels/{channelHandle}/import-videos | Import videos in channel |
-| GET | `/api/v1/video-channels/{channelHandle}/video-playlists` | get /api/v1/video-channels/{channelHandle}/video-playlists | List playlists of a channel |
-| GET | `/api/v1/video-channels/{channelHandle}/videos` | getVideoChannelVideos | List videos of a video channel |
-| GET | `/api/v1/video-playlists` | getPlaylists | List video playlists |
-| POST | `/api/v1/video-playlists` | addPlaylist | Create a video playlist |
-| GET | `/api/v1/video-playlists/privacies` | getPlaylistPrivacyPolicies | List available playlist privacy policies |
-| DELETE | `/api/v1/video-playlists/{playlistId}` | delete /api/v1/video-playlists/{playlistId} | Delete a video playlist |
-| GET | `/api/v1/video-playlists/{playlistId}` | get /api/v1/video-playlists/{playlistId} | Get a video playlist |
-| PUT | `/api/v1/video-playlists/{playlistId}` | put /api/v1/video-playlists/{playlistId} | Update a video playlist |
-| GET | `/api/v1/video-playlists/{playlistId}/videos` | getVideoPlaylistVideos | List videos of a playlist |
-| POST | `/api/v1/video-playlists/{playlistId}/videos` | addVideoPlaylistVideo | Add a video in a playlist |
-| POST | `/api/v1/video-playlists/{playlistId}/videos/reorder` | reorderVideoPlaylist | Reorder a playlist |
-| DELETE | `/api/v1/video-playlists/{playlistId}/videos/{playlistElementId}` | delVideoPlaylistVideo | Delete an element from a playlist |
-| PUT | `/api/v1/video-playlists/{playlistId}/videos/{playlistElementId}` | putVideoPlaylistVideo | Update a playlist element |
-| GET | `/api/v1/videos` | getVideos | List videos |
-| GET | `/api/v1/videos/blacklist` | getVideoBlocks | List video blocks |
-| GET | `/api/v1/videos/categories` | getCategories | List available video categories |
-| POST | `/api/v1/videos/imports` | importVideo | Import a video |
-| DELETE | `/api/v1/videos/imports/{id}` | delete /api/v1/videos/imports/{id} | Delete video import |
-| POST | `/api/v1/videos/imports/{id}/cancel` | post /api/v1/videos/imports/{id}/cancel | Cancel video import |
-| GET | `/api/v1/videos/languages` | getLanguages | List available video languages |
-| GET | `/api/v1/videos/licences` | getLicences | List available video licences |
-| POST | `/api/v1/videos/live` | addLive | Create a live |
-| GET | `/api/v1/videos/live/{id}` | getLiveId | Get information about a live |
-| PUT | `/api/v1/videos/live/{id}` | updateLiveId | Update information about a live |
-| GET | `/api/v1/videos/live/{id}/sessions` | get /api/v1/videos/live/{id}/sessions | List live sessions |
-| GET | `/api/v1/videos/ownership` | get /api/v1/videos/ownership | List video ownership changes |
-| POST | `/api/v1/videos/ownership/{id}/accept` | post /api/v1/videos/ownership/{id}/accept | Accept ownership change request |
-| POST | `/api/v1/videos/ownership/{id}/refuse` | post /api/v1/videos/ownership/{id}/refuse | Refuse ownership change request |
-| GET | `/api/v1/videos/privacies` | getPrivacyPolicies | List available video privacy policies |
-| POST | `/api/v1/videos/upload` | uploadLegacy | Upload a video |
-| DELETE | `/api/v1/videos/upload-resumable` | uploadResumableCancel | Cancel the resumable upload of a video, deleting any data uploaded so far |
-| POST | `/api/v1/videos/upload-resumable` | uploadResumableInit | Initialize the resumable upload of a video |
-| PUT | `/api/v1/videos/upload-resumable` | uploadResumable | Send chunk for the resumable upload of a video |
-| DELETE | `/api/v1/videos/{id}` | delVideo | Delete a video |
-| GET | `/api/v1/videos/{id}` | getVideo | Get a video |
-| PUT | `/api/v1/videos/{id}` | putVideo | Update a video |
-| DELETE | `/api/v1/videos/{id}/blacklist` | delVideoBlock | Unblock a video by its id |
-| POST | `/api/v1/videos/{id}/blacklist` | addVideoBlock | Block a video |
-| GET | `/api/v1/videos/{id}/captions` | getVideoCaptions | List captions of a video |
-| DELETE | `/api/v1/videos/{id}/captions/{captionLanguage}` | delVideoCaption | Delete a video caption |
-| PUT | `/api/v1/videos/{id}/captions/{captionLanguage}` | addVideoCaption | Add or replace a video caption |
-| GET | `/api/v1/videos/{id}/comment-threads` | get /api/v1/videos/{id}/comment-threads | List threads of a video |
-| POST | `/api/v1/videos/{id}/comment-threads` | post /api/v1/videos/{id}/comment-threads | Create a thread |
-| GET | `/api/v1/videos/{id}/comment-threads/{threadId}` | get /api/v1/videos/{id}/comment-threads/{threadId} | Get a thread |
-| DELETE | `/api/v1/videos/{id}/comments/{commentId}` | delete /api/v1/videos/{id}/comments/{commentId} | Delete a comment or a reply |
-| POST | `/api/v1/videos/{id}/comments/{commentId}` | post /api/v1/videos/{id}/comments/{commentId} | Reply to a thread of a video |
-| GET | `/api/v1/videos/{id}/description` | getVideoDesc | Get complete video description |
-| POST | `/api/v1/videos/{id}/give-ownership` | post /api/v1/videos/{id}/give-ownership | Request ownership change |
-| DELETE | `/api/v1/videos/{id}/hls` | delVideoHLS | Delete video HLS files |
-| GET | `/api/v1/videos/{id}/live-session` | get /api/v1/videos/{id}/live-session | Get live session of a replay |
-| PUT | `/api/v1/videos/{id}/rate` | put /api/v1/videos/{id}/rate | Like/dislike a video |
-| POST | `/api/v1/videos/{id}/source` | getVideoSource | Get video source file metadata |
-| GET | `/api/v1/videos/{id}/stats/overall` | get /api/v1/videos/{id}/stats/overall | Get overall stats of a video |
-| GET | `/api/v1/videos/{id}/stats/retention` | get /api/v1/videos/{id}/stats/retention | Get retention stats of a video |
-| GET | `/api/v1/videos/{id}/stats/timeseries/{metric}` | get /api/v1/videos/{id}/stats/timeseries/{metric} | Get timeserie stats of a video |
-| POST | `/api/v1/videos/{id}/studio/edit` | post /api/v1/videos/{id}/studio/edit | Create a studio task |
-| POST | `/api/v1/videos/{id}/token` | requestVideoToken | Request video token |
-| POST | `/api/v1/videos/{id}/transcoding` | createVideoTranscoding | Create a transcoding job |
-| POST | `/api/v1/videos/{id}/views` | addView | Notify user is watching a video |
-| PUT | `/api/v1/videos/{id}/watching` | put /api/v1/videos/{id}/watching | Set watching progress of a video |
-| DELETE | `/api/v1/videos/{id}/webtorrent` | delVideoWebTorrent | Delete video WebTorrent files |
-| GET | `/feeds/subscriptions.{format}` | getSyndicatedSubscriptionVideos | List videos of subscriptions tied to a token |
-| GET | `/feeds/video-comments.{format}` | getSyndicatedComments | List comments on videos |
-| GET | `/feeds/videos.{format}` | getSyndicatedVideos | List videos |
-| GET | `/static/streaming-playlists/hls/private/{filename}` | get /static/streaming-playlists/hls/private/{filename} | Get private HLS video file |
-| GET | `/static/streaming-playlists/hls/{filename}` | get /static/streaming-playlists/hls/{filename} | Get public HLS video file |
-| GET | `/static/webseed/private/{filename}` | get /static/webseed/private/{filename} | Get private WebTorrent video file |
-| GET | `/static/webseed/{filename}` | get /static/webseed/{filename} | Get public WebTorrent video file |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/abuses` | getAbuses | `id`, `predefinedReason`, `search`, `state`, `searchReporter`, `searchReportee`, `searchVideo`, `searchVideoChannel`, `videoIs`, `filter`, `start`, `count`, `sort` | object | yes | List abuses |
+| POST | `/api/v1/abuses` | post /api/v1/abuses | body*: object | object |  | Report an abuse |
+| PUT | `/api/v1/abuses/{abuseId}` | put /api/v1/abuses/{abuseId} | `abuseId`*, body: object | — |  | Update an abuse |
+| DELETE | `/api/v1/abuses/{abuseId}` | delete /api/v1/abuses/{abuseId} | `abuseId`* | — |  | Delete an abuse |
+| GET | `/api/v1/abuses/{abuseId}/messages` | get /api/v1/abuses/{abuseId}/messages | `abuseId`* | object | yes | List messages of an abuse |
+| POST | `/api/v1/abuses/{abuseId}/messages` | post /api/v1/abuses/{abuseId}/messages | `abuseId`*, body*: object | — |  | Add message to an abuse |
+| DELETE | `/api/v1/abuses/{abuseId}/messages/{abuseMessageId}` | delete /api/v1/abuses/{abuseId}/messages/{abuseMessageId} | `abuseId`*, `abuseMessageId`* | — |  | Delete an abuse message |
+| GET | `/api/v1/accounts` | getAccounts | `start`, `count`, `sort` | Account[] | yes | List accounts |
+| GET | `/api/v1/accounts/{name}` | getAccount | `name`* | Account | yes | Get an account |
+| GET | `/api/v1/accounts/{name}/followers` | getAccountFollowers | `name`*, `start`, `count`, `sort`, `search` | object | yes | List followers of an account |
+| GET | `/api/v1/accounts/{name}/ratings` | get /api/v1/accounts/{name}/ratings | `name`*, `start`, `count`, `sort`, `rating` | VideoRating[] | yes | List ratings of an account |
+| GET | `/api/v1/accounts/{name}/video-channel-syncs` | get /api/v1/accounts/{name}/video-channel-syncs | `name`*, `start`, `count`, `sort` | VideoChannelSyncList | yes | List the synchronizations of video channels of an account |
+| GET | `/api/v1/accounts/{name}/video-channels` | get /api/v1/accounts/{name}/video-channels | `name`*, `withStats`, `start`, `count`, `sort` | VideoChannelList | yes | List video channels of an account |
+| GET | `/api/v1/accounts/{name}/video-playlists` | get /api/v1/accounts/{name}/video-playlists | `name`*, `start`, `count`, `sort`, `search`, `playlistType` | object | yes | List playlists of an account |
+| GET | `/api/v1/accounts/{name}/videos` | getAccountVideos | `name`*, `categoryOneOf`, `isLive`, `tagsOneOf`, `tagsAllOf`, `licenceOneOf`, `languageOneOf`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `hasHLSFiles`, `hasWebtorrentFiles`, `skipCount`, `start`, `count`, `sort` | VideoListResponse | yes | List videos of an account |
+| GET | `/api/v1/blocklist/status` | get /api/v1/blocklist/status | `accounts`, `hosts` | BlockStatus | yes | Get block status of accounts/hosts |
+| GET | `/api/v1/config` | getConfig | — | ServerConfig | yes | Get instance public configuration |
+| GET | `/api/v1/config/about` | getAbout | — | ServerConfigAbout | yes | Get instance "About" information |
+| GET | `/api/v1/config/custom` | getCustomConfig | — | ServerConfigCustom | yes | Get instance runtime configuration |
+| PUT | `/api/v1/config/custom` | putCustomConfig | — | — |  | Set instance runtime configuration |
+| DELETE | `/api/v1/config/custom` | delCustomConfig | — | — |  | Delete instance runtime configuration |
+| GET | `/api/v1/custom-pages/homepage/instance` | get /api/v1/custom-pages/homepage/instance | — | CustomHomepage | yes | Get instance custom homepage |
+| PUT | `/api/v1/custom-pages/homepage/instance` | put /api/v1/custom-pages/homepage/instance | body: object | — |  | Set instance custom homepage |
+| POST | `/api/v1/jobs/pause` | post /api/v1/jobs/pause | — | — |  | Pause job queue |
+| POST | `/api/v1/jobs/resume` | post /api/v1/jobs/resume | — | — |  | Resume job queue |
+| GET | `/api/v1/jobs/{state}` | getJobs | `state`*, `jobType`, `start`, `count`, `sort` | object | yes | List instance jobs |
+| POST | `/api/v1/metrics/playback` | post /api/v1/metrics/playback | body: PlaybackMetricCreate | — |  | Create playback metrics |
+| GET | `/api/v1/oauth-clients/local` | getOAuthClient | — | OAuthClient | yes | Login prerequisite |
+| GET | `/api/v1/plugins` | getPlugins | `pluginType`, `uninstalled`, `start`, `count`, `sort` | PluginResponse | yes | List plugins |
+| GET | `/api/v1/plugins/available` | getAvailablePlugins | `search`, `pluginType`, `currentPeerTubeEngine`, `start`, `count`, `sort` | PluginResponse | yes | List available plugins |
+| POST | `/api/v1/plugins/install` | addPlugin | body: object | — |  | Install a plugin |
+| POST | `/api/v1/plugins/uninstall` | uninstallPlugin | body: object | — |  | Uninstall a plugin |
+| POST | `/api/v1/plugins/update` | updatePlugin | body: object | — |  | Update a plugin |
+| GET | `/api/v1/plugins/{npmName}` | getPlugin | `npmName`* | Plugin | yes | Get a plugin |
+| GET | `/api/v1/plugins/{npmName}/public-settings` | get /api/v1/plugins/{npmName}/public-settings | `npmName`* | object | yes | Get a plugin's public settings |
+| GET | `/api/v1/plugins/{npmName}/registered-settings` | get /api/v1/plugins/{npmName}/registered-settings | `npmName`* | object | yes | Get a plugin's registered settings |
+| PUT | `/api/v1/plugins/{npmName}/settings` | put /api/v1/plugins/{npmName}/settings | `npmName`*, body: object | — |  | Set a plugin's settings |
+| GET | `/api/v1/search/video-channels` | searchChannels | `search`*, `start`, `count`, `searchTarget`, `sort` | VideoChannelList | yes | Search channels |
+| GET | `/api/v1/search/video-playlists` | searchPlaylists | `search`*, `start`, `count`, `searchTarget`, `sort` | object | yes | Search playlists |
+| GET | `/api/v1/search/videos` | searchVideos | `search`*, `categoryOneOf`, `isLive`, `tagsOneOf`, `tagsAllOf`, `licenceOneOf`, `languageOneOf`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `uuids`, `hasHLSFiles`, `hasWebtorrentFiles`, `skipCount`, `start`, `count`, `searchTarget`, `sort`, `startDate`, `endDate`, `originallyPublishedStartDate`, `originallyPublishedEndDate`, `durationMin`, `durationMax` | VideoListResponse | yes | Search videos |
+| GET | `/api/v1/server/audit-logs` | getInstanceAuditLogs | — | string[] | yes | Get instance audit logs |
+| GET | `/api/v1/server/blocklist/accounts` | get /api/v1/server/blocklist/accounts | `start`, `count`, `sort` | — | yes | List account blocks |
+| POST | `/api/v1/server/blocklist/accounts` | post /api/v1/server/blocklist/accounts | body: object | — |  | Block an account |
+| DELETE | `/api/v1/server/blocklist/accounts/{accountName}` | delete /api/v1/server/blocklist/accounts/{accountName} | `accountName`* | — |  | Unblock an account by its handle |
+| GET | `/api/v1/server/blocklist/servers` | get /api/v1/server/blocklist/servers | `start`, `count`, `sort` | — | yes | List server blocks |
+| POST | `/api/v1/server/blocklist/servers` | post /api/v1/server/blocklist/servers | body: object | — |  | Block a server |
+| DELETE | `/api/v1/server/blocklist/servers/{host}` | delete /api/v1/server/blocklist/servers/{host} | `host`* | — |  | Unblock a server by its domain |
+| GET | `/api/v1/server/followers` | get /api/v1/server/followers | `state`, `actorType`, `start`, `count`, `sort` | object | yes | List instances following the server |
+| DELETE | `/api/v1/server/followers/{nameWithHost}` | delete /api/v1/server/followers/{nameWithHost} | `nameWithHost`* | — |  | Remove or reject a follower to your server |
+| POST | `/api/v1/server/followers/{nameWithHost}/accept` | post /api/v1/server/followers/{nameWithHost}/accept | `nameWithHost`* | — |  | Accept a pending follower to your server |
+| POST | `/api/v1/server/followers/{nameWithHost}/reject` | post /api/v1/server/followers/{nameWithHost}/reject | `nameWithHost`* | — |  | Reject a pending follower to your server |
+| GET | `/api/v1/server/following` | get /api/v1/server/following | `state`, `actorType`, `start`, `count`, `sort` | object | yes | List instances followed by the server |
+| POST | `/api/v1/server/following` | post /api/v1/server/following | body: object | — |  | Follow a list of actors (PeerTube instance, channel or account) |
+| DELETE | `/api/v1/server/following/{hostOrHandle}` | delete /api/v1/server/following/{hostOrHandle} | `hostOrHandle`* | — |  | Unfollow an actor (PeerTube instance, channel or account) |
+| GET | `/api/v1/server/logs` | getInstanceLogs | — | string[] | yes | Get instance logs |
+| POST | `/api/v1/server/logs/client` | sendClientLog | body: SendClientLog | — |  | Send client log |
+| GET | `/api/v1/server/redundancy/videos` | getMirroredVideos | `target`*, `start`, `count`, `sort` | VideoRedundancy[] | yes | List videos being mirrored |
+| POST | `/api/v1/server/redundancy/videos` | putMirroredVideo | body: object | — |  | Mirror a video |
+| DELETE | `/api/v1/server/redundancy/videos/{redundancyId}` | delMirroredVideo | `redundancyId`* | — |  | Delete a mirror done on a video |
+| PUT | `/api/v1/server/redundancy/{host}` | put /api/v1/server/redundancy/{host} | `host`*, body: object | — |  | Update a server redundancy policy |
+| GET | `/api/v1/server/stats` | getInstanceStats | — | ServerStats | yes | Get instance stats |
+| GET | `/api/v1/users` | getUsers | `search`, `blocked`, `start`, `count`, `sort` | User[] | yes | List users |
+| POST | `/api/v1/users` | addUser | body*: AddUser | AddUserResponse |  | Create a user |
+| POST | `/api/v1/users/ask-send-verify-email` | resendEmailToVerifyUser | body: object | — |  | Resend user verification link |
+| GET | `/api/v1/users/me` | getUserInfo | — | User[] | yes | Get my user information |
+| PUT | `/api/v1/users/me` | putUserInfo | body*: UpdateMe | — |  | Update my user information |
+| GET | `/api/v1/users/me/abuses` | getMyAbuses | `id`, `state`, `sort`, `start`, `count` | object | yes | List my abuses |
+| DELETE | `/api/v1/users/me/avatar` | delete /api/v1/users/me/avatar | — | — |  | Delete my avatar |
+| POST | `/api/v1/users/me/avatar/pick` | post /api/v1/users/me/avatar/pick | body: object | object |  | Update my user avatar |
+| GET | `/api/v1/users/me/history/videos` | get /api/v1/users/me/history/videos | `start`, `count`, `search` | VideoListResponse | yes | List watched videos history |
+| POST | `/api/v1/users/me/history/videos/remove` | post /api/v1/users/me/history/videos/remove | body: object | — |  | Clear video history |
+| DELETE | `/api/v1/users/me/history/videos/{videoId}` | delete /api/v1/users/me/history/videos/{videoId} | `videoId`* | — |  | Delete history element |
+| PUT | `/api/v1/users/me/notification-settings` | put /api/v1/users/me/notification-settings | body: object | — |  | Update my notification settings |
+| GET | `/api/v1/users/me/notifications` | get /api/v1/users/me/notifications | `unread`, `start`, `count`, `sort` | NotificationListResponse | yes | List my notifications |
+| POST | `/api/v1/users/me/notifications/read` | post /api/v1/users/me/notifications/read | body: object | — |  | Mark notifications as read by their id |
+| POST | `/api/v1/users/me/notifications/read-all` | post /api/v1/users/me/notifications/read-all | — | — |  | Mark all my notification as read |
+| GET | `/api/v1/users/me/subscriptions` | get /api/v1/users/me/subscriptions | `start`, `count`, `sort` | VideoChannelList | yes | Get my user subscriptions |
+| POST | `/api/v1/users/me/subscriptions` | post /api/v1/users/me/subscriptions | body: object | — |  | Add subscription to my user |
+| GET | `/api/v1/users/me/subscriptions/exist` | get /api/v1/users/me/subscriptions/exist | `uris`* | object | yes | Get if subscriptions exist for my user |
+| GET | `/api/v1/users/me/subscriptions/videos` | get /api/v1/users/me/subscriptions/videos | `categoryOneOf`, `isLive`, `tagsOneOf`, `tagsAllOf`, `licenceOneOf`, `languageOneOf`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `hasHLSFiles`, `hasWebtorrentFiles`, `skipCount`, `start`, `count`, `sort` | VideoListResponse | yes | List videos of subscriptions of my user |
+| GET | `/api/v1/users/me/subscriptions/{subscriptionHandle}` | get /api/v1/users/me/subscriptions/{subscriptionHandle} | `subscriptionHandle`* | VideoChannel | yes | Get subscription of my user |
+| DELETE | `/api/v1/users/me/subscriptions/{subscriptionHandle}` | delete /api/v1/users/me/subscriptions/{subscriptionHandle} | `subscriptionHandle`* | — |  | Delete subscription of my user |
+| GET | `/api/v1/users/me/video-playlists/videos-exist` | get /api/v1/users/me/video-playlists/videos-exist | `videoIds`* | object | yes | Check video exists in my playlists |
+| GET | `/api/v1/users/me/video-quota-used` | get /api/v1/users/me/video-quota-used | — | object | yes | Get my user used quota |
+| GET | `/api/v1/users/me/videos` | get /api/v1/users/me/videos | `start`, `count`, `sort` | VideoListResponse | yes | Get videos of my user |
+| GET | `/api/v1/users/me/videos/imports` | get /api/v1/users/me/videos/imports | `start`, `count`, `sort`, `targetUrl`, `videoChannelSyncId`, `search` | VideoImportsList | yes | Get video imports of my user |
+| GET | `/api/v1/users/me/videos/{videoId}/rating` | get /api/v1/users/me/videos/{videoId}/rating | `videoId`* | GetMeVideoRating | yes | Get rate of my user for a video |
+| POST | `/api/v1/users/register` | registerUser | body*: RegisterUser | — |  | Register a user |
+| GET | `/api/v1/users/registrations` | listRegistrations | `start`, `count`, `search`, `sort` | object | yes | List registrations |
+| POST | `/api/v1/users/registrations/ask-send-verify-email` | resendEmailToVerifyRegistration | body: object | — |  | Resend verification link to registration email |
+| POST | `/api/v1/users/registrations/request` | requestRegistration | body: UserRegistrationRequest | UserRegistration |  | Request registration |
+| DELETE | `/api/v1/users/registrations/{registrationId}` | deleteRegistration | `registrationId`* | — |  | Delete registration |
+| POST | `/api/v1/users/registrations/{registrationId}/accept` | acceptRegistration | `registrationId`*, body: UserRegistrationAcceptOrReject | — |  | Accept registration |
+| POST | `/api/v1/users/registrations/{registrationId}/reject` | rejectRegistration | `registrationId`*, body: UserRegistrationAcceptOrReject | — |  | Reject registration |
+| POST | `/api/v1/users/registrations/{registrationId}/verify-email` | verifyRegistrationEmail | `registrationId`*, body: object | — |  | Verify a registration email |
+| POST | `/api/v1/users/revoke-token` | revokeOAuthToken | — | — |  | Logout |
+| POST | `/api/v1/users/token` | getOAuthToken | body: OAuthToken-password\|OAuthToken-refresh_token | object |  | Login |
+| GET | `/api/v1/users/{id}` | getUser | `id`*, `withStats` | User\|UserWithStats | yes | Get a user |
+| PUT | `/api/v1/users/{id}` | putUser | `id`*, body*: UpdateUser | — |  | Update a user |
+| DELETE | `/api/v1/users/{id}` | delUser | `id`* | — |  | Delete a user |
+| POST | `/api/v1/users/{id}/two-factor/confirm-request` | confirmTwoFactorRequest | `id`*, body: object | — |  | Confirm two factor auth |
+| POST | `/api/v1/users/{id}/two-factor/disable` | disableTwoFactor | `id`*, body: object | — |  | Disable two factor auth |
+| POST | `/api/v1/users/{id}/two-factor/request` | requestTwoFactor | `id`*, body: object | RequestTwoFactorResponse[] |  | Request two factor auth |
+| POST | `/api/v1/users/{id}/verify-email` | verifyUser | `id`*, body: object | — |  | Verify a user |
+| POST | `/api/v1/video-channel-syncs` | addVideoChannelSync | body: VideoChannelSyncCreate | object |  | Create a synchronization for a video channel |
+| DELETE | `/api/v1/video-channel-syncs/{channelSyncId}` | delVideoChannelSync | `channelSyncId`* | — |  | Delete a video channel synchronization |
+| POST | `/api/v1/video-channel-syncs/{channelSyncId}/sync` | triggerVideoChannelSync | `channelSyncId`* | — |  | Triggers the channel synchronization job, fetching all the videos from the remote channel |
+| GET | `/api/v1/video-channels` | getVideoChannels | `start`, `count`, `sort` | VideoChannelList | yes | List video channels |
+| POST | `/api/v1/video-channels` | addVideoChannel | body: VideoChannelCreate | object |  | Create a video channel |
+| GET | `/api/v1/video-channels/{channelHandle}` | getVideoChannel | `channelHandle`* | VideoChannel | yes | Get a video channel |
+| PUT | `/api/v1/video-channels/{channelHandle}` | putVideoChannel | `channelHandle`*, body: VideoChannelUpdate | — |  | Update a video channel |
+| DELETE | `/api/v1/video-channels/{channelHandle}` | delVideoChannel | `channelHandle`* | — |  | Delete a video channel |
+| DELETE | `/api/v1/video-channels/{channelHandle}/avatar` | delete /api/v1/video-channels/{channelHandle}/avatar | `channelHandle`* | — |  | Delete channel avatar |
+| POST | `/api/v1/video-channels/{channelHandle}/avatar/pick` | post /api/v1/video-channels/{channelHandle}/avatar/pick | `channelHandle`*, body: object | object |  | Update channel avatar |
+| DELETE | `/api/v1/video-channels/{channelHandle}/banner` | delete /api/v1/video-channels/{channelHandle}/banner | `channelHandle`* | — |  | Delete channel banner |
+| POST | `/api/v1/video-channels/{channelHandle}/banner/pick` | post /api/v1/video-channels/{channelHandle}/banner/pick | `channelHandle`*, body: object | object |  | Update channel banner |
+| GET | `/api/v1/video-channels/{channelHandle}/followers` | getVideoChannelFollowers | `channelHandle`*, `start`, `count`, `sort`, `search` | object | yes | List followers of a video channel |
+| POST | `/api/v1/video-channels/{channelHandle}/import-videos` | post /api/v1/video-channels/{channelHandle}/import-videos | `channelHandle`*, body: ImportVideosInChannelCreate | — |  | Import videos in channel |
+| GET | `/api/v1/video-channels/{channelHandle}/video-playlists` | get /api/v1/video-channels/{channelHandle}/video-playlists | `channelHandle`*, `start`, `count`, `sort`, `playlistType` | object | yes | List playlists of a channel |
+| GET | `/api/v1/video-channels/{channelHandle}/videos` | getVideoChannelVideos | `channelHandle`*, `categoryOneOf`, `isLive`, `tagsOneOf`, `tagsAllOf`, `licenceOneOf`, `languageOneOf`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `hasHLSFiles`, `hasWebtorrentFiles`, `skipCount`, `start`, `count`, `sort` | VideoListResponse | yes | List videos of a video channel |
+| GET | `/api/v1/video-playlists` | getPlaylists | `start`, `count`, `sort`, `playlistType` | object | yes | List video playlists |
+| POST | `/api/v1/video-playlists` | addPlaylist | body: object | object |  | Create a video playlist |
+| GET | `/api/v1/video-playlists/privacies` | getPlaylistPrivacyPolicies | — | string[] | yes | List available playlist privacy policies |
+| GET | `/api/v1/video-playlists/{playlistId}` | get /api/v1/video-playlists/{playlistId} | `playlistId`* | VideoPlaylist | yes | Get a video playlist |
+| PUT | `/api/v1/video-playlists/{playlistId}` | put /api/v1/video-playlists/{playlistId} | `playlistId`*, body: object | — |  | Update a video playlist |
+| DELETE | `/api/v1/video-playlists/{playlistId}` | delete /api/v1/video-playlists/{playlistId} | `playlistId`* | — |  | Delete a video playlist |
+| GET | `/api/v1/video-playlists/{playlistId}/videos` | getVideoPlaylistVideos | `playlistId`*, `start`, `count` | VideoListResponse | yes | List videos of a playlist |
+| POST | `/api/v1/video-playlists/{playlistId}/videos` | addVideoPlaylistVideo | `playlistId`*, body: object | object |  | Add a video in a playlist |
+| POST | `/api/v1/video-playlists/{playlistId}/videos/reorder` | reorderVideoPlaylist | `playlistId`*, body: object | — |  | Reorder a playlist |
+| PUT | `/api/v1/video-playlists/{playlistId}/videos/{playlistElementId}` | putVideoPlaylistVideo | `playlistId`*, `playlistElementId`*, body: object | — |  | Update a playlist element |
+| DELETE | `/api/v1/video-playlists/{playlistId}/videos/{playlistElementId}` | delVideoPlaylistVideo | `playlistId`*, `playlistElementId`* | — |  | Delete an element from a playlist |
+| GET | `/api/v1/videos` | getVideos | `categoryOneOf`, `isLive`, `tagsOneOf`, `tagsAllOf`, `licenceOneOf`, `languageOneOf`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `hasHLSFiles`, `hasWebtorrentFiles`, `skipCount`, `start`, `count`, `sort` | VideoListResponse | yes | List videos |
+| GET | `/api/v1/videos/blacklist` | getVideoBlocks | `type`, `search`, `start`, `count`, `sort` | object | yes | List video blocks |
+| GET | `/api/v1/videos/categories` | getCategories | — | string[] | yes | List available video categories |
+| POST | `/api/v1/videos/imports` | importVideo | body: VideoCreateImport | VideoUploadResponse |  | Import a video |
+| DELETE | `/api/v1/videos/imports/{id}` | delete /api/v1/videos/imports/{id} | `id`* | — |  | Delete video import |
+| POST | `/api/v1/videos/imports/{id}/cancel` | post /api/v1/videos/imports/{id}/cancel | `id`* | — |  | Cancel video import |
+| GET | `/api/v1/videos/languages` | getLanguages | — | string[] | yes | List available video languages |
+| GET | `/api/v1/videos/licences` | getLicences | — | string[] | yes | List available video licences |
+| POST | `/api/v1/videos/live` | addLive | body: object | VideoUploadResponse |  | Create a live |
+| GET | `/api/v1/videos/live/{id}` | getLiveId | `id`* | LiveVideoResponse | yes | Get information about a live |
+| PUT | `/api/v1/videos/live/{id}` | updateLiveId | `id`*, body: LiveVideoUpdate | — |  | Update information about a live |
+| GET | `/api/v1/videos/live/{id}/sessions` | get /api/v1/videos/live/{id}/sessions | `id`* | object | yes | List live sessions |
+| GET | `/api/v1/videos/ownership` | get /api/v1/videos/ownership | — | — | yes | List video ownership changes |
+| POST | `/api/v1/videos/ownership/{id}/accept` | post /api/v1/videos/ownership/{id}/accept | `id`* | — |  | Accept ownership change request |
+| POST | `/api/v1/videos/ownership/{id}/refuse` | post /api/v1/videos/ownership/{id}/refuse | `id`* | — |  | Refuse ownership change request |
+| GET | `/api/v1/videos/privacies` | getPrivacyPolicies | — | string[] | yes | List available video privacy policies |
+| POST | `/api/v1/videos/upload` | uploadLegacy | body: VideoUploadRequestLegacy | VideoUploadResponse |  | Upload a video |
+| PUT | `/api/v1/videos/upload-resumable` | uploadResumable | `upload_id`*, `Content-Range`*, `Content-Length`*, body: string:binary | VideoUploadResponse |  | Send chunk for the resumable upload of a video |
+| POST | `/api/v1/videos/upload-resumable` | uploadResumableInit | `X-Upload-Content-Length`*, `X-Upload-Content-Type`*, body: VideoUploadRequestResumable | — |  | Initialize the resumable upload of a video |
+| DELETE | `/api/v1/videos/upload-resumable` | uploadResumableCancel | `upload_id`*, `Content-Length`* | — |  | Cancel the resumable upload of a video, deleting any data uploaded so far |
+| GET | `/api/v1/videos/{id}` | getVideo | `id`* | VideoDetails | yes | Get a video |
+| PUT | `/api/v1/videos/{id}` | putVideo | `id`*, body: object | — |  | Update a video |
+| DELETE | `/api/v1/videos/{id}` | delVideo | `id`* | — |  | Delete a video |
+| POST | `/api/v1/videos/{id}/blacklist` | addVideoBlock | `id`* | — |  | Block a video |
+| DELETE | `/api/v1/videos/{id}/blacklist` | delVideoBlock | `id`* | — |  | Unblock a video by its id |
+| GET | `/api/v1/videos/{id}/captions` | getVideoCaptions | `id`* | object | yes | List captions of a video |
+| PUT | `/api/v1/videos/{id}/captions/{captionLanguage}` | addVideoCaption | `id`*, `captionLanguage`*, body: object | — |  | Add or replace a video caption |
+| DELETE | `/api/v1/videos/{id}/captions/{captionLanguage}` | delVideoCaption | `id`*, `captionLanguage`* | — |  | Delete a video caption |
+| GET | `/api/v1/videos/{id}/comment-threads` | get /api/v1/videos/{id}/comment-threads | `id`*, `start`, `count`, `sort` | CommentThreadResponse | yes | List threads of a video |
+| POST | `/api/v1/videos/{id}/comment-threads` | post /api/v1/videos/{id}/comment-threads | `id`*, body: object | CommentThreadPostResponse |  | Create a thread |
+| GET | `/api/v1/videos/{id}/comment-threads/{threadId}` | get /api/v1/videos/{id}/comment-threads/{threadId} | `id`*, `threadId`* | VideoCommentThreadTree | yes | Get a thread |
+| POST | `/api/v1/videos/{id}/comments/{commentId}` | post /api/v1/videos/{id}/comments/{commentId} | `id`*, `commentId`*, body: object | CommentThreadPostResponse |  | Reply to a thread of a video |
+| DELETE | `/api/v1/videos/{id}/comments/{commentId}` | delete /api/v1/videos/{id}/comments/{commentId} | `id`*, `commentId`* | — |  | Delete a comment or a reply |
+| GET | `/api/v1/videos/{id}/description` | getVideoDesc | `id`* | string | yes | Get complete video description |
+| POST | `/api/v1/videos/{id}/give-ownership` | post /api/v1/videos/{id}/give-ownership | `id`*, body*: object | — |  | Request ownership change |
+| DELETE | `/api/v1/videos/{id}/hls` | delVideoHLS | `id`* | — |  | Delete video HLS files |
+| GET | `/api/v1/videos/{id}/live-session` | get /api/v1/videos/{id}/live-session | `id`* | LiveVideoSessionResponse | yes | Get live session of a replay |
+| PUT | `/api/v1/videos/{id}/rate` | put /api/v1/videos/{id}/rate | `id`*, body: object | — |  | Like/dislike a video |
+| POST | `/api/v1/videos/{id}/source` | getVideoSource | `id`* | VideoSource |  | Get video source file metadata |
+| GET | `/api/v1/videos/{id}/stats/overall` | get /api/v1/videos/{id}/stats/overall | `id`*, `startDate`, `endDate` | VideoStatsOverall | yes | Get overall stats of a video |
+| GET | `/api/v1/videos/{id}/stats/retention` | get /api/v1/videos/{id}/stats/retention | `id`* | VideoStatsRetention | yes | Get retention stats of a video |
+| GET | `/api/v1/videos/{id}/stats/timeseries/{metric}` | get /api/v1/videos/{id}/stats/timeseries/{metric} | `id`*, `metric`*, `startDate`, `endDate` | VideoStatsTimeserie | yes | Get timeserie stats of a video |
+| POST | `/api/v1/videos/{id}/studio/edit` | post /api/v1/videos/{id}/studio/edit | `id`*, body*: VideoStudioCreateTask | — |  | Create a studio task |
+| POST | `/api/v1/videos/{id}/token` | requestVideoToken | `id`* | VideoTokenResponse |  | Request video token |
+| POST | `/api/v1/videos/{id}/transcoding` | createVideoTranscoding | `id`*, body: object | — |  | Create a transcoding job |
+| POST | `/api/v1/videos/{id}/views` | addView | `id`*, body*: UserViewingVideo | — |  | Notify user is watching a video |
+| PUT | `/api/v1/videos/{id}/watching` | put /api/v1/videos/{id}/watching | `id`*, body*: UserViewingVideo | — |  | Set watching progress of a video |
+| DELETE | `/api/v1/videos/{id}/webtorrent` | delVideoWebTorrent | `id`* | — |  | Delete video WebTorrent files |
+| GET | `/feeds/subscriptions.{format}` | getSyndicatedSubscriptionVideos | `format`*, `accountId`*, `token`*, `sort`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `hasHLSFiles`, `hasWebtorrentFiles` | object | yes | List videos of subscriptions tied to a token |
+| GET | `/feeds/video-comments.{format}` | getSyndicatedComments | `format`*, `videoId`, `accountId`, `accountName`, `videoChannelId`, `videoChannelName` | object | yes | List comments on videos |
+| GET | `/feeds/videos.{format}` | getSyndicatedVideos | `format`*, `accountId`, `accountName`, `videoChannelId`, `videoChannelName`, `sort`, `nsfw`, `isLocal`, `include`, `privacyOneOf`, `hasHLSFiles`, `hasWebtorrentFiles` | object | yes | List videos |
+| GET | `/static/streaming-playlists/hls/private/{filename}` | get /static/streaming-playlists/hls/private/{filename} | `filename`*, `videoFileToken`, `reinjectVideoFileToken` | — | yes | Get private HLS video file |
+| GET | `/static/streaming-playlists/hls/{filename}` | get /static/streaming-playlists/hls/{filename} | `filename`* | — | yes | Get public HLS video file |
+| GET | `/static/webseed/private/{filename}` | get /static/webseed/private/{filename} | `filename`*, `videoFileToken` | — | yes | Get private WebTorrent video file |
+| GET | `/static/webseed/{filename}` | get /static/webseed/{filename} | `filename`* | — | yes | Get public WebTorrent video file |

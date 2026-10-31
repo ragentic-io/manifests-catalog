@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_zoom_us_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `7568f2c5d73cae501c4bbec9eefe202c140bbd28b7e604c77735dbc93f081e05` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,378 +34,380 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_zoom_us_profile_ima
 
 135 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | accounts | List sub accounts |
-| POST | `/accounts` | accountCreate | Create a sub account |
-| DELETE | `/accounts/{accountId}` | accountDisassociate | Disassociate a sub account |
-| GET | `/accounts/{accountId}` | account | Get sub account details |
-| GET | `/accounts/{accountId}/billing` | accountBilling | Get billing information |
-| PATCH | `/accounts/{accountId}/billing` | accountBillingUpdate | Update billing information |
-| GET | `/accounts/{accountId}/billing/invoices` | accountBillingInvoices | List billing invoices |
-| GET | `/accounts/{accountId}/billing/invoices/{invoiceId}` | getAccountBillingInvoice | Get invoice details |
-| GET | `/accounts/{accountId}/lock_settings` | getAccountLockSettings | Get locked settings |
-| PATCH | `/accounts/{accountId}/lock_settings` | updateAccountLockSettings | Update locked settings |
-| GET | `/accounts/{accountId}/managed_domains` | accountManagedDomain | Get managed domains |
-| PATCH | `/accounts/{accountId}/options` | accountOptionsUpdate | Update options |
-| PUT | `/accounts/{accountId}/owner` | updateAccountOwner | Update the account owner |
-| PATCH | `/accounts/{accountId}/phone/settings` | updatePhoneSettings | Update BYOC settings |
-| POST | `/accounts/{accountId}/phone/setup` | setUpAccount | Set up a Zoom Phone account |
-| POST | `/accounts/{accountId}/phone/sip_trunk/trunks` | postPhoneSIPTrunk | Assign SIP trunks |
-| PATCH | `/accounts/{accountId}/phone/sip_trunk/trunks/{sipTrunkId}` | updatePhoneSIPTrunk | Update SIP trunk details |
-| GET | `/accounts/{accountId}/plans` | accountPlans | Get plan Information |
-| POST | `/accounts/{accountId}/plans` | accountPlanCreate | Subscribe plans |
-| POST | `/accounts/{accountId}/plans/addons` | accountPlanAddonCreate | Subscribe additional plan |
-| PUT | `/accounts/{accountId}/plans/addons` | accountPlanAddonUpdate | Update an additional plan |
-| PATCH | `/accounts/{accountId}/plans/addons/status` | accountPlanAddonCancel | Cancel additional plans |
-| PUT | `/accounts/{accountId}/plans/base` | accountPlanBaseUpdate | Update a base plan |
-| PATCH | `/accounts/{accountId}/plans/base/status` | accountPlanBaseDelete | Cancel a base plan |
-| GET | `/accounts/{accountId}/plans/usage` | getPlanUsage | Get plan usage |
-| GET | `/accounts/{accountId}/recordings` | getAccountCloudRecording | List recordings of an account |
-| GET | `/accounts/{accountId}/settings` | accountSettings | Get settings |
-| PATCH | `/accounts/{accountId}/settings` | accountSettingsUpdate | Update settings |
-| DELETE | `/accounts/{accountId}/settings/virtual_backgrounds` | delVB | Delete virtual background files |
-| POST | `/accounts/{accountId}/settings/virtual_backgrounds` | uploadVB | Upload virtual background files |
-| GET | `/accounts/{accountId}/sip_trunk/callout_countries` | listInternalCalloutCountries | List internal call-out countries |
-| POST | `/accounts/{accountId}/sip_trunk/callout_countries` | addCalloutCountries | Add internal call-out countries |
-| DELETE | `/accounts/{accountId}/sip_trunk/callout_countries/{countryId}` | deleteInternalCallOutCountry | Delete internal call-out country |
-| GET | `/accounts/{accountId}/sip_trunk/internal_numbers` | listInternalNumbers | List internal numbers |
-| POST | `/accounts/{accountId}/sip_trunk/internal_numbers` | addInternalNumbers | Add internal numbers |
-| DELETE | `/accounts/{accountId}/sip_trunk/internal_numbers/{numberId}` | deleteInternalNumber | Delete an internal number |
-| DELETE | `/accounts/{accountId}/sip_trunk/numbers` | deleteAllSipNumbers | Delete all numbers |
-| POST | `/accounts/{accountId}/sip_trunk/numbers` | assignSipTrunkNumbers | Assign numbers |
-| PATCH | `/accounts/{accountId}/sip_trunk/settings` | assignSIPConfig | Assign SIP trunk configuration |
-| GET | `/accounts/{accountId}/sip_trunk/trunks` | listSIPTrunks | List SIP trunks |
-| POST | `/accounts/{accountId}/sip_trunk/trunks` | assignSIPTrunks | Assign SIP trunks |
-| DELETE | `/accounts/{accountId}/sip_trunk/trunks/{trunkId}` | deleteSIPTrunk | Delete a SIP trunk |
-| GET | `/accounts/{accountId}/trusted_domains` | accountTrustedDomain | Get trusted domains |
-| PUT | `/accounts/{accountId}/users/{userId}/account` | switchUserAccount | Switch a user's account |
-| GET | `/api/download/billing/invoices/{invoiceId}` | downloadInvoicePDF | Download an invoice file |
-| GET | `/archive_files` | listArchivedFiles | List archived files |
-| DELETE | `/chat/channels/{channelId}` | deleteUserLevelChannel | Delete a channel |
-| GET | `/chat/channels/{channelId}` | getUserLevelChannel | Get a channel |
-| PATCH | `/chat/channels/{channelId}` | updateUserLevelChannel | Update a channel |
-| DELETE | `/chat/channels/{channelId}/members/me` | leaveChannel | Leave a channel |
-| POST | `/chat/channels/{channelId}/members/me` | joinChannel | Join a channel |
-| DELETE | `/chat/channels/{channelId}/members/{memberId}` | removeAUserLevelChannelMember | Remove a member |
-| GET | `/chat/users/me/contacts` | getUserContacts | List user's contacts |
-| GET | `/chat/users/me/contacts/{contactId}` | getUserContact | Get user's contact details |
-| GET | `/chat/users/{userId}/channels` | getChannels | List user's channels |
-| POST | `/chat/users/{userId}/channels` | createChannel | Create a channel |
-| DELETE | `/chat/users/{userId}/channels/{channelId}` | deleteChannel | Delete a channel |
-| GET | `/chat/users/{userId}/channels/{channelId}` | getChannel | Get a channel |
-| PATCH | `/chat/users/{userId}/channels/{channelId}` | updateChannel | Update a channel |
-| GET | `/chat/users/{userId}/channels/{channelId}/members` | listChannelMembers | List channel members |
-| POST | `/chat/users/{userId}/channels/{channelId}/members` | inviteChannelMembers | Invite channel members |
-| DELETE | `/chat/users/{userId}/channels/{channelId}/members/{memberId}` | removeAChannelMember | Remove a member |
-| GET | `/chat/users/{userId}/messages` | getChatMessages | List user's chat messages |
-| POST | `/chat/users/{userId}/messages` | sendaChatMessage | Send a chat message |
-| DELETE | `/chat/users/{userId}/messages/{messageId}` | deleteChatMessage | Delete a message |
-| PUT | `/chat/users/{userId}/messages/{messageId}` | editMessage | Update a message |
-| GET | `/contacts` | searchCompanyContacts | Search company contacts |
-| GET | `/groups` | groups | List groups |
-| POST | `/groups` | groupCreate | Create a group |
-| DELETE | `/groups/{groupId}` | groupDelete | Delete a group |
-| GET | `/groups/{groupId}` | group | Get a group |
-| PATCH | `/groups/{groupId}` | groupUpdate | Update a group |
-| GET | `/groups/{groupId}/lock_settings` | getGroupLockSettings | Get locked settings |
-| PATCH | `/groups/{groupId}/lock_settings` | groupLockedSettings | Update locked settings |
-| GET | `/groups/{groupId}/members` | groupMembers | List group members |
-| POST | `/groups/{groupId}/members` | groupMembersCreate | Add group members |
-| DELETE | `/groups/{groupId}/members/{memberId}` | groupMembersDelete | Delete a group member |
-| PATCH | `/groups/{groupId}/members/{memberId}` | updateAGroupMember | Update a group member |
-| GET | `/groups/{groupId}/settings` | getGroupSettings | Get a group's settings |
-| PATCH | `/groups/{groupId}/settings` | updateGroupSettings | Update a group's settings |
-| DELETE | `/groups/{groupId}/settings/virtual_backgrounds` | delGroupVB | Delete virtual background files |
-| POST | `/groups/{groupId}/settings/virtual_backgrounds` | uploadGroupVB | Upload virtual background files |
-| GET | `/h323/devices` | deviceList | List H.323/SIP devices |
-| POST | `/h323/devices` | deviceCreate | Create a H.323/SIP device |
-| DELETE | `/h323/devices/{deviceId}` | deviceDelete | Delete a H.323/SIP device |
-| PATCH | `/h323/devices/{deviceId}` | deviceUpdate | Update a H.323/SIP device |
-| POST | `/im/chat/messages` | sendchatbot | Send chatbot messages |
-| DELETE | `/im/chat/messages/{message_id}` | deleteAChatbotMessage | Delete a chatbot message |
-| PUT | `/im/chat/messages/{message_id}` | editChatbotMessage | Edit a chatbot message |
-| GET | `/im/chat/sessions` | imChatSessions | Get IM chat sessions |
-| GET | `/im/chat/sessions/{sessionId}` | imChatMessages | Get IM chat messages |
-| GET | `/im/groups` | imGroups | List IM directory groups |
-| POST | `/im/groups` | imGroupCreate | Create an IM directory group |
-| DELETE | `/im/groups/{groupId}` | imGroupDelete | Delete an IM directory group |
-| GET | `/im/groups/{groupId}` | imGroup | Retrieve an IM directory group |
-| PATCH | `/im/groups/{groupId}` | imGroupUpdate | Update an IM directory group |
-| GET | `/im/groups/{groupId}/members` | imGroupMembers | List IM directory group members |
-| POST | `/im/groups/{groupId}/members` | imGroupMembersCreate | Add IM directory group members |
-| DELETE | `/im/groups/{groupId}/members/{memberId}` | imGroupMembersDelete | Delete an IM directory group member |
-| POST | `/im/users/me/chat/messages` | sendimmessages | Send IM messages |
-| GET | `/im/users/{userId}/chat/messages` | listimmessages | Get user’s IM messages |
-| PATCH | `/live_meetings/{meetingId}/events` | inMeetingRecordingControl | Use in-Meeting recording controls |
-| DELETE | `/meetings/{meetingId}` | meetingDelete | Delete a meeting |
-| GET | `/meetings/{meetingId}` | meeting | Get a meeting |
-| PATCH | `/meetings/{meetingId}` | meetingUpdate | Update a meeting |
-| POST | `/meetings/{meetingId}/batch_polls` | createBatchPolls | Perform batch poll creation |
-| GET | `/meetings/{meetingId}/invitation` | meetingInvitation | Get meeting invitation |
-| GET | `/meetings/{meetingId}/livestream` | getLiveStreamDetails | Get live stream details |
-| PATCH | `/meetings/{meetingId}/livestream` | meetingLiveStreamUpdate | Update a live stream |
-| PATCH | `/meetings/{meetingId}/livestream/status` | meetingLiveStreamStatusUpdate | Update Live Stream Status |
-| GET | `/meetings/{meetingId}/polls` | meetingPolls | List meeting polls |
-| POST | `/meetings/{meetingId}/polls` | meetingPollCreate | Create a meeting poll |
-| DELETE | `/meetings/{meetingId}/polls/{pollId}` | meetingPollDelete | Delete a meeting poll |
-| GET | `/meetings/{meetingId}/polls/{pollId}` | meetingPollGet | Get a meeting poll |
-| PUT | `/meetings/{meetingId}/polls/{pollId}` | meetingPollUpdate | Update a meeting poll |
-| DELETE | `/meetings/{meetingId}/recordings` | recordingDelete | Delete meeting recordings |
-| GET | `/meetings/{meetingId}/recordings` | recordingGet | Get meeting recordings |
-| GET | `/meetings/{meetingId}/recordings/registrants` | meetingRecordingRegistrants | List recording registrants |
-| POST | `/meetings/{meetingId}/recordings/registrants` | meetingRecordingRegistrantCreate | Create a recording registrant |
-| GET | `/meetings/{meetingId}/recordings/registrants/questions` | recordingRegistrantsQuestionsGet | Get registration questions |
-| PATCH | `/meetings/{meetingId}/recordings/registrants/questions` | recordingRegistrantQuestionUpdate | Update registration questions |
-| PUT | `/meetings/{meetingId}/recordings/registrants/status` | meetingRecordingRegistrantStatus | Update registrant's status |
-| GET | `/meetings/{meetingId}/recordings/settings` | recordingSettingUpdate | Get meeting recording settings |
-| PATCH | `/meetings/{meetingId}/recordings/settings` | recordingSettingsUpdate | Update meeting recording settings |
-| PUT | `/meetings/{meetingId}/recordings/status` | recordingStatusUpdate | Recover meeting recordings |
-| DELETE | `/meetings/{meetingId}/recordings/{recordingId}` | recordingDeleteOne | Delete a meeting recording file |
-| PUT | `/meetings/{meetingId}/recordings/{recordingId}/status` | recordingStatusUpdateOne | Recover a single recording |
-| GET | `/meetings/{meetingId}/registrants` | meetingRegistrants | List meeting registrants |
-| POST | `/meetings/{meetingId}/registrants` | meetingRegistrantCreate | Add meeting registrant |
-| GET | `/meetings/{meetingId}/registrants/questions` | meetingRegistrantsQuestionsGet | List registration questions |
-| PATCH | `/meetings/{meetingId}/registrants/questions` | meetingRegistrantQuestionUpdate | Update registration questions |
-| PUT | `/meetings/{meetingId}/registrants/status` | meetingRegistrantStatus | Update registrant's status |
-| DELETE | `/meetings/{meetingId}/registrants/{registrantId}` | meetingregistrantdelete | Delete a meeting registrant |
-| PUT | `/meetings/{meetingId}/status` | meetingStatus | Update meeting status |
-| GET | `/metrics/client/feedback` | dashboardClientFeedback | List Zoom meetings client feedback |
-| GET | `/metrics/client/feedback/{feedbackId}` | dashboardClientFeedbackDetail | Get zoom meetings client feedback |
-| GET | `/metrics/client/satisfaction` | listMeetingSatisfaction | List client meeting satisfaction |
-| GET | `/metrics/crc` | dashboardCRC | Get CRC port usage |
-| GET | `/metrics/im` | dashboardIM | Get IM metrics |
-| GET | `/metrics/issues/zoomrooms` | dashboardIssueZoomRoom | Get top 25 Zoom Rooms with issues |
-| GET | `/metrics/issues/zoomrooms/{zoomroomId}` | dashboardIssueDetailZoomRoom | Get issues of Zoom Rooms |
-| GET | `/metrics/meetings` | dashboardMeetings | List meetings |
-| GET | `/metrics/meetings/{meetingId}` | dashboardMeetingDetail | Get meeting details |
-| GET | `/metrics/meetings/{meetingId}/participants` | dashboardMeetingParticipants | List meeting participants |
-| GET | `/metrics/meetings/{meetingId}/participants/qos` | dashboardMeetingParticipantsQOS | List meeting participants QoS |
-| GET | `/metrics/meetings/{meetingId}/participants/satisfaction` | participantFeedback | Get post meeting feedback |
-| GET | `/metrics/meetings/{meetingId}/participants/sharing` | dashboardMeetingParticipantShare | Get sharing/recording details |
-| GET | `/metrics/meetings/{meetingId}/participants/{participantId}/qos` | dashboardMeetingParticipantQOS | Get meeting participant QoS |
-| GET | `/metrics/webinars` | dashboardWebinars | List webinars |
-| GET | `/metrics/webinars/{webinarId}` | dashboardWebinarDetail | Get webinar details |
-| GET | `/metrics/webinars/{webinarId}/participants` | dashboardWebinarParticipants | Get webinar participants |
-| GET | `/metrics/webinars/{webinarId}/participants/qos` | dashboardWebinarParticipantsQOS | List webinar participant QoS |
-| GET | `/metrics/webinars/{webinarId}/participants/satisfaction` | participantWebinarFeedback | Get post webinar feedback |
-| GET | `/metrics/webinars/{webinarId}/participants/sharing` | dashboardWebinarParticipantShare | Get sharing/recording details |
-| GET | `/metrics/webinars/{webinarId}/participants/{participantId}/qos` | dashboardWebinarParticipantQOS | Get webinar participant QoS |
-| GET | `/metrics/zoomrooms` | dashboardZoomRooms | List Zoom Rooms |
-| GET | `/metrics/zoomrooms/issues` | dashboardZoomRoomIssue | Get top 25 issues of Zoom Rooms |
-| GET | `/metrics/zoomrooms/{zoomroomId}` | dashboardZoomRoom | Get Zoom Rooms details |
-| GET | `/past_meetings/{meetingId}/files` | listPastMeetingFiles | List past meeting's files |
-| GET | `/past_meetings/{meetingId}/instances` | pastMeetings | List ended meeting instances |
-| GET | `/past_meetings/{meetingId}/polls` | listPastMeetingPolls | List past meeting's poll results |
-| GET | `/past_meetings/{meetingUUID}` | pastMeetingDetails | Get past meeting details |
-| GET | `/past_meetings/{meetingUUID}/participants` | pastMeetingParticipants | Get past meeting participants |
-| GET | `/past_webinars/{WebinarUUID}/absentees` | webinarAbsentees | Get webinar absentees |
-| GET | `/past_webinars/{webinarId}/files` | listPastWebinarFiles | List past webinar files |
-| GET | `/past_webinars/{webinarId}/instances` | pastWebinars | List past webinar instances |
-| GET | `/past_webinars/{webinarId}/participants` | listWebinarParticipants | List webinar participants |
-| GET | `/past_webinars/{webinarId}/polls` | listPastWebinarPollResults | List past webinar poll results |
-| GET | `/past_webinars/{webinarId}/qa` | listPastWebinarQA | List Q&A of past webinar |
-| POST | `/phone/auto_receptionists` | addAutoReceptionist | Add an auto receptionist |
-| PATCH | `/phone/auto_receptionists/{autoReceptionistId}` | updateAutoReceptionist | Update auto receptionist details |
-| DELETE | `/phone/auto_receptionists/{autoReceptionistId}/phone_numbers` | unassignAllPhoneNumsAutoReceptionist | Unassign all phone numbers |
-| POST | `/phone/auto_receptionists/{autoReceptionistId}/phone_numbers` | assignPhoneNumbersAutoReceptionist | Assign phone numbers |
-| DELETE | `/phone/auto_receptionists/{autoReceptionistId}/phone_numbers/{phoneNumberId}` | unassignAPhoneNumAutoReceptionist | Unassign a phone number |
-| GET | `/phone/blocked_list` | listBlockedList | List blocked lists |
-| POST | `/phone/blocked_list` | addAnumberToBlockedList | Create a blocked list |
-| DELETE | `/phone/blocked_list/{blockedListId}` | deleteABlockedList | Delete a blocked list |
-| GET | `/phone/blocked_list/{blockedListId}` | getABlockedList | Get blocked list details |
-| PATCH | `/phone/blocked_list/{blockedListId}` | updateBlockedList | Update a blocked list |
-| POST | `/phone/byoc_numbers` | addBYOCNumber | Add BYOC phone numbers |
-| GET | `/phone/call_logs` | accountCallLogs | Get account's call logs |
-| GET | `/phone/call_queues` | listCallQueues | List call queues |
-| POST | `/phone/call_queues` | createCallQueue | Create a call queue |
-| DELETE | `/phone/call_queues/{callQueueId}` | deleteACallQueue | Delete a call queue |
-| GET | `/phone/call_queues/{callQueueId}` | getACallQueue | Get call queue details |
-| PATCH | `/phone/call_queues/{callQueueId}` | updateCallQueue | Update call queue details |
-| PUT | `/phone/call_queues/{callQueueId}/manager` | changeCallQueueManager | Change call queue manager |
-| DELETE | `/phone/call_queues/{callQueueId}/members` | unassignAllMembers | Unassign all members |
-| POST | `/phone/call_queues/{callQueueId}/members` | addMembersToCallQueue | Add members to a call queue |
-| DELETE | `/phone/call_queues/{callQueueId}/members/{memberId}` | unassignMemberFromCallQueue | Unassign a member |
-| DELETE | `/phone/call_queues/{callQueueId}/phone_numbers` | unassignAPhoneNumCallQueue | Unassign all phone numbers |
-| POST | `/phone/call_queues/{callQueueId}/phone_numbers` | assignPhoneToCallQueue | Assign numbers to a call queue |
-| DELETE | `/phone/call_queues/{callQueueId}/phone_numbers/{phoneNumberId}` | unAssignPhoneNumCallQueue | Unassign a phone number |
-| GET | `/phone/call_queues/{callQueueId}/recordings` | getCallQueueRecordings | Get call queue recordings |
-| GET | `/phone/calling_plans` | listCallingPlans | List calling plans |
-| GET | `/phone/common_area_phones` | listCommonAreaPhones | List common area phones |
-| POST | `/phone/common_area_phones` | addCommonAreaPhone | Add a common area phone |
-| DELETE | `/phone/common_area_phones/{commonAreaPhoneId}` | deleteCommonAreaPhone | Delete a common area phone |
-| GET | `/phone/common_area_phones/{commonAreaPhoneId}` | getACommonAreaPhone | Get common area phone details |
-| PATCH | `/phone/common_area_phones/{commonAreaPhoneId}` | updateCommonAreaPhone | Update common area phone |
-| PUT | `/phone/company_number` | changeMainCompanyNumber | Change main company number |
-| GET | `/phone/devices` | listPhoneDevices | List devices |
-| POST | `/phone/devices` | addPhoneDevice | Add a device |
-| DELETE | `/phone/devices/{deviceId}` | deleteADevice | Delete a device |
-| GET | `/phone/devices/{deviceId}` | getADevice | Get device details |
-| PATCH | `/phone/devices/{deviceId}` | updateADevice | Update a device |
-| GET | `/phone/metrics/call_logs` | listCallLogsMetrics | List call logs |
-| GET | `/phone/metrics/call_logs/{callId}/qos` | getCallQoS | Get call QoS |
-| GET | `/phone/metrics/call_logs/{call_id}` | getCallLogMetricsDetails | Get call details from call log |
-| GET | `/phone/numbers` | listAccountPhoneNumbers | List phone numbers |
-| GET | `/phone/numbers/{numberId}` | getPhoneNumberDetails | Get phone number details |
-| PATCH | `/phone/numbers/{numberId}` | updatePhoneNumberDetails | Update phone number details |
-| GET | `/phone/recordings` | getPhoneRecordings | Get call recordings |
-| GET | `/phone/reports/operationlogs` | getPSOperationLogs | Get operation logs report |
-| GET | `/phone/setting_templates` | listSettingTemplates | List setting templates |
-| POST | `/phone/setting_templates` | addSettingTemplate | Add a setting template |
-| GET | `/phone/setting_templates/{templateId}` | getSettingTemplate | Get setting template details |
-| PATCH | `/phone/setting_templates/{templateId}` | updateSettingTemplate | Update a setting template |
-| GET | `/phone/shared_line_groups` | listSharedLineGroups | List shared line groups |
-| POST | `/phone/shared_line_groups` | createASharedLineGroup | Create a shared line group |
-| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}` | deleteASharedLineGroup | Delete a shared line group |
-| GET | `/phone/shared_line_groups/{sharedLineGroupId}` | getASharedLineGroup | Get a shared line group |
-| PATCH | `/phone/shared_line_groups/{sharedLineGroupId}` | updateASharedLineGroup | Update a shared line group |
-| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}/members` | deleteMembersOfSLG | Unassign members of a shared line group |
-| POST | `/phone/shared_line_groups/{sharedLineGroupId}/members` | addMembersToSharedLineGroup | Add members to a shared line group |
-| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}/members/{memberId}` | deleteAMemberSLG | Unassign a member from a shared line group |
-| POST | `/phone/shared_line_groups/{sharedLineGroupId}/phone_numbers` | assignPhoneNumbersSLG | Assign phone numbers |
-| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}/phone_numbers/{phoneNumberId}` | deleteAPhoneNumberSLG | Unassign a phone number |
-| GET | `/phone/sip_trunk/trunks` | listBYOCSIPTrunk | List BYOC SIP trunks |
-| GET | `/phone/sites` | listPhoneSites | List phone sites |
-| POST | `/phone/sites` | createPhoneSite | Create a phone site |
-| DELETE | `/phone/sites/{siteId}` | deletePhoneSite | Delete a phone site |
-| GET | `/phone/sites/{siteId}` | getASite | Get phone site details |
-| PATCH | `/phone/sites/{siteId}` | updateSiteDetails | Update phone site details |
-| GET | `/phone/users` | listPhoneUsers | List phone users |
-| GET | `/phone/users/{userId}` | phoneUser | Get user's profile |
-| PATCH | `/phone/users/{userId}` | updateUserProfile | Update user's profile |
-| GET | `/phone/users/{userId}/call_logs` | phoneUserCallLogs | Get user's call logs |
-| DELETE | `/phone/users/{userId}/call_logs/{callLogId}` | deleteCallLog | Delete a user's call log |
-| POST | `/phone/users/{userId}/calling_plans` | assignCallingPlan | Assign calling plan to a user |
-| DELETE | `/phone/users/{userId}/calling_plans/{type}` | unassignCallingPlan | Unassign user's calling plan |
-| POST | `/phone/users/{userId}/phone_numbers` | assignPhoneNumber | Assign phone number to user |
-| DELETE | `/phone/users/{userId}/phone_numbers/{phoneNumberId}` | UnassignPhoneNumber | Unassign phone number |
-| GET | `/phone/users/{userId}/recordings` | phoneUserRecordings | Get user's recordings |
-| GET | `/phone/users/{userId}/settings` | phoneUserSettings | Get user's settings |
-| DELETE | `/phone/users/{userId}/settings/{settingType}` | deleteUserSetting | Remove shared access |
-| PATCH | `/phone/users/{userId}/settings/{settingType}` | updateUserSetting | Update shared access |
-| POST | `/phone/users/{userId}/settings/{settingType}` | addUserSetting | Set up shared access |
-| GET | `/phone/users/{userId}/voice_mails` | phoneUserVoiceMails | Get user's voicemails |
-| DELETE | `/phone/voice_mails/{voicemailId}` | deleteVoicemail | Delete a voicemail |
-| GET | `/report/activities` | reportSignInSignOutActivities | Get sign In / sign out activity report |
-| GET | `/report/cloud_recording` | reportCloudRecording | Get cloud recording usage report |
-| GET | `/report/daily` | reportDaily | Get daily usage report |
-| GET | `/report/meetings/{meetingId}` | reportMeetingDetails | Get meeting detail reports |
-| GET | `/report/meetings/{meetingId}/participants` | reportMeetingParticipants | Get meeting participant reports |
-| GET | `/report/meetings/{meetingId}/polls` | reportMeetingPolls | Get meeting poll reports |
-| GET | `/report/operationlogs` | reportOperationLogs | Get operation logs report |
-| GET | `/report/telephone` | reportTelephone | Get telephone reports |
-| GET | `/report/users` | reportUsers | Get active/inactive host reports |
-| GET | `/report/users/{userId}/meetings` | reportMeetings | Get meeting reports |
-| GET | `/report/webinars/{webinarId}` | reportWebinarDetails | Get webinar detail reports |
-| GET | `/report/webinars/{webinarId}/participants` | reportWebinarParticipants | Get webinar participant reports |
-| GET | `/report/webinars/{webinarId}/polls` | reportWebinarPolls | Get webinar poll reports |
-| GET | `/report/webinars/{webinarId}/qa` | reportWebinarQA | Get webinar Q&A report |
-| GET | `/roles` | roles | List roles |
-| POST | `/roles` | createRole | Create a role |
-| DELETE | `/roles/{roleId}` | deleteRole | Delete a role |
-| GET | `/roles/{roleId}` | getRoleInformation | Get role information |
-| PATCH | `/roles/{roleId}` | updateRole | Update role information |
-| GET | `/roles/{roleId}/members` | roleMembers | List members in a role |
-| POST | `/roles/{roleId}/members` | AddRoleMembers | Assign a role |
-| DELETE | `/roles/{roleId}/members/{memberId}` | roleMemberDelete | Unassign a role |
-| GET | `/rooms` | listZoomRooms | List Zoom Rooms |
-| POST | `/rooms` | addARoom | Add a Zoom Room |
-| GET | `/rooms/account_profile` | getZRAccountProfile | Get Zoom Room account profile |
-| PATCH | `/rooms/account_profile` | updateZRAccProfile | Update Zoom Room account profile |
-| GET | `/rooms/account_settings` | getZRAccountSettings | Get Zoom Room account settings |
-| PATCH | `/rooms/account_settings` | updateZoomRoomAccSettings | Update Zoom Room account settings |
-| GET | `/rooms/digital_signage` | listDigitalSignageContent | List digital signage contents |
-| PATCH | `/rooms/events` | manageE911signage | Update E911 digital signage |
-| GET | `/rooms/locations` | listZRLocations | List Zoom Room locations |
-| POST | `/rooms/locations` | addAZRLocation | Add a location |
-| GET | `/rooms/locations/structure` | getZRLocationStructure | Get Zoom Room location structure |
-| PATCH | `/rooms/locations/structure` | updateZoomRoomsLocationStructure | Update Zoom Rooms location structure |
-| GET | `/rooms/locations/{locationId}` | getZRLocationProfile | Get Zoom Room location profile |
-| PATCH | `/rooms/locations/{locationId}` | updateZRLocationProfile | Update Zoom Room location profile |
-| PUT | `/rooms/locations/{locationId}/location` | changeParentLocation | Change the assigned parent location |
-| GET | `/rooms/locations/{locationId}/settings` | getZRLocationSettings | Get location settings |
-| PATCH | `/rooms/locations/{locationId}/settings` | updateZRLocationSettings | Update location settings |
-| PATCH | `/rooms/{id}/events` | checkInRooms | Check-in or check-out of a Zoom Room |
-| DELETE | `/rooms/{roomId}` | deleteAZoomRoom | Delete a Zoom Room |
-| GET | `/rooms/{roomId}` | getZRProfile | Get Zoom Room profile |
-| PATCH | `/rooms/{roomId}` | updateRoomProfile | Update a Zoom Room profile |
-| GET | `/rooms/{roomId}/devices` | listZRDevices | List Zoom Room devices |
-| PUT | `/rooms/{roomId}/devices/{deviceId}/app_version` | changeZoomRoomsAppVersion | Change Zoom Rooms' app version |
-| PUT | `/rooms/{roomId}/location` | changeZRLocation | Change a Zoom Room's location |
-| GET | `/rooms/{roomId}/settings` | getZRSettings | Get Zoom Room settings |
-| PATCH | `/rooms/{roomId}/settings` | updateZRSettings | Update Zoom Room settings |
-| GET | `/sip_phones` | listSipPhones | List SIP phones |
-| POST | `/sip_phones` | createSIPPhone | Enable SIP phone |
-| DELETE | `/sip_phones/{phoneId}` | deleteSIPPhone | Delete SIP phone |
-| PATCH | `/sip_phones/{phoneId}` | updateSIPPhone | Update SIP phone |
-| GET | `/sip_trunk/numbers` | listSipTrunkNumbers | List SIP trunk numbers |
-| GET | `/tracking_fields` | trackingfieldList | List tracking fields |
-| POST | `/tracking_fields` | trackingfieldCreate | Create a tracking field |
-| DELETE | `/tracking_fields/{fieldId}` | trackingfieldDelete | Delete a tracking field |
-| GET | `/tracking_fields/{fieldId}` | trackingfieldGet | Get a tracking field |
-| PATCH | `/tracking_fields/{fieldId}` | trackingfieldUpdate | Update a tracking field |
-| GET | `/tsp` | tsp | Get account's TSP information |
-| PATCH | `/tsp` | tspUpdate | Update account's TSP information |
-| GET | `/users` | users | List users |
-| POST | `/users` | userCreate | Create users |
-| GET | `/users/email` | userEmail | Check a user email |
-| GET | `/users/me/zak` | userZak | Get user's ZAK |
-| GET | `/users/vanity_name` | userVanityName | Check a user's PM room |
-| DELETE | `/users/{userId}` | userDelete | Delete a user |
-| GET | `/users/{userId}` | user | Get a user |
-| PATCH | `/users/{userId}` | userUpdate | Update a user |
-| DELETE | `/users/{userId}/assistants` | userAssistantsDelete | Delete user assistants |
-| GET | `/users/{userId}/assistants` | userAssistants | List user assistants |
-| POST | `/users/{userId}/assistants` | userAssistantCreate | Add assistants |
-| DELETE | `/users/{userId}/assistants/{assistantId}` | userAssistantDelete | Delete a user assistant |
-| PUT | `/users/{userId}/email` | userEmailUpdate | Update a user's email |
-| GET | `/users/{userId}/meeting_templates` | listMeetingTemplates | List meeting templates |
-| GET | `/users/{userId}/meetings` | meetings | List meetings |
-| POST | `/users/{userId}/meetings` | meetingCreate | Create a meeting |
-| GET | `/users/{userId}/pac` | userPACs | List a user's PAC accounts |
-| PUT | `/users/{userId}/password` | userPassword | Update a user's password |
-| GET | `/users/{userId}/permissions` | userPermission | Get user permissions |
-| POST | `/users/{userId}/picture` | userPicture | Upload a user's profile picture |
-| PUT | `/users/{userId}/presence_status` | updatePresenceStatus | Update a user's presence status |
-| GET | `/users/{userId}/recordings` | recordingsList | List all recordings |
-| DELETE | `/users/{userId}/schedulers` | userSchedulersDelete | Delete user schedulers |
-| GET | `/users/{userId}/schedulers` | userSchedulers | List user schedulers |
-| DELETE | `/users/{userId}/schedulers/{schedulerId}` | userSchedulerDelete | Delete a scheduler |
-| GET | `/users/{userId}/settings` | userSettings | Get user settings |
-| PATCH | `/users/{userId}/settings` | userSettingsUpdate | Update user settings |
-| DELETE | `/users/{userId}/settings/virtual_backgrounds` | delUserVB | Delete virtual background files |
-| POST | `/users/{userId}/settings/virtual_backgrounds` | uploadVBuser | Upload virtual background files |
-| PUT | `/users/{userId}/status` | userStatus | Update user status |
-| DELETE | `/users/{userId}/token` | userSSOTokenDelete | Revoke a user's SSO token |
-| GET | `/users/{userId}/token` | userToken | Get a user token |
-| GET | `/users/{userId}/tsp` | userTSPs | List user's TSP accounts |
-| POST | `/users/{userId}/tsp` | userTSPCreate | Add a user's TSP account |
-| PATCH | `/users/{userId}/tsp/settings` | tspUrlUpdate | Set global dial-in URL for a TSP user |
-| DELETE | `/users/{userId}/tsp/{tspId}` | userTSPDelete | Delete a user's TSP account |
-| GET | `/users/{userId}/tsp/{tspId}` | userTSP | Get a user's TSP account |
-| PATCH | `/users/{userId}/tsp/{tspId}` | userTSPUpdate | Update a TSP account |
-| GET | `/users/{userId}/webinar_templates` | listWebinarTemplates | List webinar templates |
-| GET | `/users/{userId}/webinars` | webinars | List webinars |
-| POST | `/users/{userId}/webinars` | webinarCreate | Create a webinar |
-| DELETE | `/webinars/{webinarId}` | webinarDelete | Delete a webinar |
-| GET | `/webinars/{webinarId}` | webinar | Get a webinar |
-| PATCH | `/webinars/{webinarId}` | webinarUpdate | Update a webinar |
-| POST | `/webinars/{webinarId}/batch_registrants` | addBatchWebinarRegistrants | Perform batch registration |
-| DELETE | `/webinars/{webinarId}/panelists` | webinarPanelistsDelete | Remove panelists |
-| GET | `/webinars/{webinarId}/panelists` | webinarPanelists | List panelists |
-| POST | `/webinars/{webinarId}/panelists` | webinarPanelistCreate | Add panelists |
-| DELETE | `/webinars/{webinarId}/panelists/{panelistId}` | webinarPanelistDelete | Remove a panelist |
-| GET | `/webinars/{webinarId}/polls` | webinarPolls | List a webinar's polls |
-| POST | `/webinars/{webinarId}/polls` | webinarPollCreate | Create a webinar's poll |
-| DELETE | `/webinars/{webinarId}/polls/{pollId}` | webinarPollDelete | Delete a webinar poll |
-| GET | `/webinars/{webinarId}/polls/{pollId}` | webinarPollGet | Get a webinar poll |
-| PUT | `/webinars/{webinarId}/polls/{pollId}` | webinarPollUpdate | Update a webinar poll |
-| GET | `/webinars/{webinarId}/registrants` | webinarRegistrants | List webinar registrants |
-| POST | `/webinars/{webinarId}/registrants` | webinarRegistrantCreate | Add a webinar registrant |
-| GET | `/webinars/{webinarId}/registrants/questions` | webinarRegistrantsQuestionsGet | List registration questions |
-| PATCH | `/webinars/{webinarId}/registrants/questions` | webinarRegistrantQuestionUpdate | Update registration questions |
-| PUT | `/webinars/{webinarId}/registrants/status` | webinarRegistrantStatus | Update registrant's status |
-| DELETE | `/webinars/{webinarId}/registrants/{registrantId}` | deleteWebinarRegistrant | Delete a webinar registrant |
-| GET | `/webinars/{webinarId}/registrants/{registrantId}` | webinarRegistrantGet | Get a webinar registrant |
-| PUT | `/webinars/{webinarId}/status` | webinarStatus | Update webinar status |
-| GET | `/webinars/{webinarId}/tracking_sources` | getTrackingSources | Get webinar tracking sources |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | accounts | `page_size`, `page_number`, `next_page_token` | object | yes | List sub accounts |
+| POST | `/accounts` | accountCreate | body*: object | object |  | Create a sub account |
+| GET | `/accounts/{accountId}` | account | `accountId`* | object | yes | Get sub account details |
+| DELETE | `/accounts/{accountId}` | accountDisassociate | `accountId`* | — |  | Disassociate a sub account |
+| GET | `/accounts/{accountId}/billing` | accountBilling | `accountId`* | object | yes | Get billing information |
+| PATCH | `/accounts/{accountId}/billing` | accountBillingUpdate | `accountId`*, body*: object | — |  | Update billing information |
+| GET | `/accounts/{accountId}/billing/invoices` | accountBillingInvoices | `accountId`*, `from`, `to` | object | yes | List billing invoices |
+| GET | `/accounts/{accountId}/billing/invoices/{invoiceId}` | getAccountBillingInvoice | `accountId`*, `invoiceId`* | object | yes | Get invoice details |
+| GET | `/accounts/{accountId}/lock_settings` | getAccountLockSettings | `accountId`*, `option`, `custom_query_fields` | object | yes | Get locked settings |
+| PATCH | `/accounts/{accountId}/lock_settings` | updateAccountLockSettings | `accountId`*, body: object | object |  | Update locked settings |
+| GET | `/accounts/{accountId}/managed_domains` | accountManagedDomain | `accountId`* | object | yes | Get managed domains |
+| PATCH | `/accounts/{accountId}/options` | accountOptionsUpdate | `accountId`*, body*: object | — |  | Update options |
+| PUT | `/accounts/{accountId}/owner` | updateAccountOwner | `accountId`*, body: object | — |  | Update the account owner |
+| PATCH | `/accounts/{accountId}/phone/settings` | updatePhoneSettings | `accountId`*, body: object | — |  | Update BYOC settings |
+| POST | `/accounts/{accountId}/phone/setup` | setUpAccount | `accountId`*, body: object | — |  | Set up a Zoom Phone account |
+| POST | `/accounts/{accountId}/phone/sip_trunk/trunks` | postPhoneSIPTrunk | `accountId`*, body: object | object |  | Assign SIP trunks |
+| PATCH | `/accounts/{accountId}/phone/sip_trunk/trunks/{sipTrunkId}` | updatePhoneSIPTrunk | `sipTrunkId`*, `accountId`*, body: object | — |  | Update SIP trunk details |
+| GET | `/accounts/{accountId}/plans` | accountPlans | `accountId`* | object | yes | Get plan Information |
+| POST | `/accounts/{accountId}/plans` | accountPlanCreate | `accountId`*, body*: object | object |  | Subscribe plans |
+| PUT | `/accounts/{accountId}/plans/addons` | accountPlanAddonUpdate | `accountId`*, body*: object | — |  | Update an additional plan |
+| POST | `/accounts/{accountId}/plans/addons` | accountPlanAddonCreate | `accountId`*, body*: object | — |  | Subscribe additional plan |
+| PATCH | `/accounts/{accountId}/plans/addons/status` | accountPlanAddonCancel | `accountId`*, body: object | — |  | Cancel additional plans |
+| PUT | `/accounts/{accountId}/plans/base` | accountPlanBaseUpdate | `accountId`*, body*: object | — |  | Update a base plan |
+| PATCH | `/accounts/{accountId}/plans/base/status` | accountPlanBaseDelete | `accountId`*, body: object | object |  | Cancel a base plan |
+| GET | `/accounts/{accountId}/plans/usage` | getPlanUsage | `accountId`* | object | yes | Get plan usage |
+| GET | `/accounts/{accountId}/recordings` | getAccountCloudRecording | `accountId`*, `page_size`, `next_page_token`, `from`, `to` | object | yes | List recordings of an account |
+| GET | `/accounts/{accountId}/settings` | accountSettings | `accountId`*, `option`, `custom_query_fields` | object | yes | Get settings |
+| PATCH | `/accounts/{accountId}/settings` | accountSettingsUpdate | `accountId`*, `option`, body*: object | — |  | Update settings |
+| POST | `/accounts/{accountId}/settings/virtual_backgrounds` | uploadVB | `accountId`*, body: object | object |  | Upload virtual background files |
+| DELETE | `/accounts/{accountId}/settings/virtual_backgrounds` | delVB | `accountId`*, `file_ids` | — |  | Delete virtual background files |
+| GET | `/accounts/{accountId}/sip_trunk/callout_countries` | listInternalCalloutCountries | `accountId`* | object | yes | List internal call-out countries |
+| POST | `/accounts/{accountId}/sip_trunk/callout_countries` | addCalloutCountries | `accountId`*, body: object | object |  | Add internal call-out countries |
+| DELETE | `/accounts/{accountId}/sip_trunk/callout_countries/{countryId}` | deleteInternalCallOutCountry | `accountId`*, `countryId`* | — |  | Delete internal call-out country |
+| GET | `/accounts/{accountId}/sip_trunk/internal_numbers` | listInternalNumbers | `accountId`*, `page_size`, `next_page_token` | object | yes | List internal numbers |
+| POST | `/accounts/{accountId}/sip_trunk/internal_numbers` | addInternalNumbers | `accountId`*, body: object | object |  | Add internal numbers |
+| DELETE | `/accounts/{accountId}/sip_trunk/internal_numbers/{numberId}` | deleteInternalNumber | `accountId`*, `numberId`* | — |  | Delete an internal number |
+| POST | `/accounts/{accountId}/sip_trunk/numbers` | assignSipTrunkNumbers | `accountId`*, body: object | — |  | Assign numbers |
+| DELETE | `/accounts/{accountId}/sip_trunk/numbers` | deleteAllSipNumbers | `accountId`* | — |  | Delete all numbers |
+| PATCH | `/accounts/{accountId}/sip_trunk/settings` | assignSIPConfig | `accountId`*, body: object | — |  | Assign SIP trunk configuration |
+| GET | `/accounts/{accountId}/sip_trunk/trunks` | listSIPTrunks | `accountId`* | object | yes | List SIP trunks |
+| POST | `/accounts/{accountId}/sip_trunk/trunks` | assignSIPTrunks | `accountId`*, body: object | object |  | Assign SIP trunks |
+| DELETE | `/accounts/{accountId}/sip_trunk/trunks/{trunkId}` | deleteSIPTrunk | `accountId`*, `trunkId`* | object |  | Delete a SIP trunk |
+| GET | `/accounts/{accountId}/trusted_domains` | accountTrustedDomain | `accountId`* | object | yes | Get trusted domains |
+| PUT | `/accounts/{accountId}/users/{userId}/account` | switchUserAccount | `accountId`*, `userId`*, body: object | — |  | Switch a user's account |
+| GET | `/api/download/billing/invoices/{invoiceId}` | downloadInvoicePDF | `invoiceId`* | — | yes | Download an invoice file |
+| GET | `/archive_files` | listArchivedFiles | `page_size`, `next_page_token`, `from`, `to`, `query_data_type` | object | yes | List archived files |
+| GET | `/chat/channels/{channelId}` | getUserLevelChannel | `channelId`* | object | yes | Get a channel |
+| DELETE | `/chat/channels/{channelId}` | deleteUserLevelChannel | `channelId`* | — |  | Delete a channel |
+| PATCH | `/chat/channels/{channelId}` | updateUserLevelChannel | `channelId`*, body: object | — |  | Update a channel |
+| POST | `/chat/channels/{channelId}/members/me` | joinChannel | `channelId`* | object |  | Join a channel |
+| DELETE | `/chat/channels/{channelId}/members/me` | leaveChannel | `channelId`* | — |  | Leave a channel |
+| DELETE | `/chat/channels/{channelId}/members/{memberId}` | removeAUserLevelChannelMember | `channelId`*, `memberId`* | — |  | Remove a member |
+| GET | `/chat/users/me/contacts` | getUserContacts | `type`, `page_size`, `next_page_token` | object | yes | List user's contacts |
+| GET | `/chat/users/me/contacts/{contactId}` | getUserContact | `contactId`*, `query_presence_status` | object | yes | Get user's contact details |
+| GET | `/chat/users/{userId}/channels` | getChannels | `userId`*, `page_size`, `next_page_token` | object | yes | List user's channels |
+| POST | `/chat/users/{userId}/channels` | createChannel | `userId`*, body: object | object |  | Create a channel |
+| GET | `/chat/users/{userId}/channels/{channelId}` | getChannel | `userId`*, `channelId`* | object | yes | Get a channel |
+| DELETE | `/chat/users/{userId}/channels/{channelId}` | deleteChannel | `userId`*, `channelId`* | — |  | Delete a channel |
+| PATCH | `/chat/users/{userId}/channels/{channelId}` | updateChannel | `userId`*, `channelId`*, body: object | — |  | Update a channel |
+| GET | `/chat/users/{userId}/channels/{channelId}/members` | listChannelMembers | `userId`*, `channelId`*, `page_size`, `next_page_token` | object | yes | List channel members |
+| POST | `/chat/users/{userId}/channels/{channelId}/members` | inviteChannelMembers | `userId`*, `channelId`*, body: object | object |  | Invite channel members |
+| DELETE | `/chat/users/{userId}/channels/{channelId}/members/{memberId}` | removeAChannelMember | `userId`*, `channelId`*, `memberId`* | — |  | Remove a member |
+| GET | `/chat/users/{userId}/messages` | getChatMessages | `userId`*, `to_contact`, `to_channel`, `date`, `page_size`, `next_page_token`, `include_deleted_and_edited_message` | object | yes | List user's chat messages |
+| POST | `/chat/users/{userId}/messages` | sendaChatMessage | `userId`*, body: object | object |  | Send a chat message |
+| PUT | `/chat/users/{userId}/messages/{messageId}` | editMessage | `userId`*, `messageId`*, body: object | — |  | Update a message |
+| DELETE | `/chat/users/{userId}/messages/{messageId}` | deleteChatMessage | `userId`*, `messageId`*, `to_contact`, `to_channel` | — |  | Delete a message |
+| GET | `/contacts` | searchCompanyContacts | `search_key`*, `query_presence_status`, `page_size`, `next_page_token` | object | yes | Search company contacts |
+| GET | `/groups` | groups | — | object | yes | List groups |
+| POST | `/groups` | groupCreate | body*: object | object |  | Create a group |
+| GET | `/groups/{groupId}` | group | `groupId`* | object | yes | Get a group |
+| DELETE | `/groups/{groupId}` | groupDelete | `groupId`* | — |  | Delete a group |
+| PATCH | `/groups/{groupId}` | groupUpdate | `groupId`*, body*: object | — |  | Update a group |
+| GET | `/groups/{groupId}/lock_settings` | getGroupLockSettings | `groupId`*, `custom_query_fields`, `option` | object | yes | Get locked settings |
+| PATCH | `/groups/{groupId}/lock_settings` | groupLockedSettings | `groupId`*, `custom_query_fields`, `option`, body: object | — |  | Update locked settings |
+| GET | `/groups/{groupId}/members` | groupMembers | `groupId`*, `page_size`, `page_number`, `next_page_token` | object | yes | List group members |
+| POST | `/groups/{groupId}/members` | groupMembersCreate | `groupId`*, body*: object | object |  | Add group members |
+| DELETE | `/groups/{groupId}/members/{memberId}` | groupMembersDelete | `groupId`*, `memberId`* | — |  | Delete a group member |
+| PATCH | `/groups/{groupId}/members/{memberId}` | updateAGroupMember | `groupId`*, `memberId`*, body: object | — |  | Update a group member |
+| GET | `/groups/{groupId}/settings` | getGroupSettings | `groupId`*, `custom_query_fields`, `option` | object | yes | Get a group's settings |
+| PATCH | `/groups/{groupId}/settings` | updateGroupSettings | `groupId`*, `custom_query_fields`, `option`, body: object | — |  | Update a group's settings |
+| POST | `/groups/{groupId}/settings/virtual_backgrounds` | uploadGroupVB | `file_ids`, `groupId`*, body: object | object |  | Upload virtual background files |
+| DELETE | `/groups/{groupId}/settings/virtual_backgrounds` | delGroupVB | `file_ids`, `groupId`* | — |  | Delete virtual background files |
+| GET | `/h323/devices` | deviceList | `page_size`, `page_number`, `next_page_token` | object | yes | List H.323/SIP devices |
+| POST | `/h323/devices` | deviceCreate | body*: object | object |  | Create a H.323/SIP device |
+| DELETE | `/h323/devices/{deviceId}` | deviceDelete | `deviceId`* | — |  | Delete a H.323/SIP device |
+| PATCH | `/h323/devices/{deviceId}` | deviceUpdate | `deviceId`*, body*: object | — |  | Update a H.323/SIP device |
+| POST | `/im/chat/messages` | sendchatbot | body: object | — |  | Send chatbot messages |
+| PUT | `/im/chat/messages/{message_id}` | editChatbotMessage | `message_id`*, body: object | object |  | Edit a chatbot message |
+| DELETE | `/im/chat/messages/{message_id}` | deleteAChatbotMessage | `message_id`*, body: object | object |  | Delete a chatbot message |
+| GET | `/im/chat/sessions` | imChatSessions | `from`*, `to`*, `page_size`, `next_page_token` | object | yes | Get IM chat sessions |
+| GET | `/im/chat/sessions/{sessionId}` | imChatMessages | `sessionId`*, `from`*, `to`*, `page_size`, `next_page_token` | object | yes | Get IM chat messages |
+| GET | `/im/groups` | imGroups | — | object | yes | List IM directory groups |
+| POST | `/im/groups` | imGroupCreate | body*: object | object |  | Create an IM directory group |
+| GET | `/im/groups/{groupId}` | imGroup | `groupId`* | object | yes | Retrieve an IM directory group |
+| DELETE | `/im/groups/{groupId}` | imGroupDelete | `groupId`* | — |  | Delete an IM directory group |
+| PATCH | `/im/groups/{groupId}` | imGroupUpdate | `groupId`*, body*: object | — |  | Update an IM directory group |
+| GET | `/im/groups/{groupId}/members` | imGroupMembers | `groupId`*, `page_size`, `page_number`, `next_page_token` | object | yes | List IM directory group members |
+| POST | `/im/groups/{groupId}/members` | imGroupMembersCreate | `groupId`*, body*: object | object |  | Add IM directory group members |
+| DELETE | `/im/groups/{groupId}/members/{memberId}` | imGroupMembersDelete | `groupId`*, `memberId`* | — |  | Delete an IM directory group member |
+| POST | `/im/users/me/chat/messages` | sendimmessages | `chat_user`, body: object | object |  | Send IM messages |
+| GET | `/im/users/{userId}/chat/messages` | listimmessages | `userId`*, `chat_user`, `channel`, `date`, `page_size`, `next_page_token` | object | yes | Get user’s IM messages |
+| PATCH | `/live_meetings/{meetingId}/events` | inMeetingRecordingControl | `meetingId`*, body: object | — |  | Use in-Meeting recording controls |
+| GET | `/meetings/{meetingId}` | meeting | `meetingId`*, `occurrence_id`, `show_previous_occurrences` | object | yes | Get a meeting |
+| DELETE | `/meetings/{meetingId}` | meetingDelete | `meetingId`*, `occurrence_id`, `schedule_for_reminder`, `cancel_meeting_reminder` | — |  | Delete a meeting |
+| PATCH | `/meetings/{meetingId}` | meetingUpdate | `meetingId`*, `occurrence_id`, body*: object | — |  | Update a meeting |
+| POST | `/meetings/{meetingId}/batch_polls` | createBatchPolls | `meetingId`*, body: object | object |  | Perform batch poll creation |
+| GET | `/meetings/{meetingId}/invitation` | meetingInvitation | `meetingId`* | object | yes | Get meeting invitation |
+| GET | `/meetings/{meetingId}/livestream` | getLiveStreamDetails | `meetingId`* | object | yes | Get live stream details |
+| PATCH | `/meetings/{meetingId}/livestream` | meetingLiveStreamUpdate | `meetingId`*, body*: object | — |  | Update a live stream |
+| PATCH | `/meetings/{meetingId}/livestream/status` | meetingLiveStreamStatusUpdate | `meetingId`*, body*: object | — |  | Update Live Stream Status |
+| GET | `/meetings/{meetingId}/polls` | meetingPolls | `meetingId`* | object | yes | List meeting polls |
+| POST | `/meetings/{meetingId}/polls` | meetingPollCreate | `meetingId`*, body*: object | object |  | Create a meeting poll |
+| GET | `/meetings/{meetingId}/polls/{pollId}` | meetingPollGet | `meetingId`*, `pollId`* | object | yes | Get a meeting poll |
+| PUT | `/meetings/{meetingId}/polls/{pollId}` | meetingPollUpdate | `meetingId`*, `pollId`*, body*: object | — |  | Update a meeting poll |
+| DELETE | `/meetings/{meetingId}/polls/{pollId}` | meetingPollDelete | `meetingId`*, `pollId`* | — |  | Delete a meeting poll |
+| GET | `/meetings/{meetingId}/recordings` | recordingGet | `meetingId`*, `include_fields`, `ttl` | object | yes | Get meeting recordings |
+| DELETE | `/meetings/{meetingId}/recordings` | recordingDelete | `meetingId`*, `action` | — |  | Delete meeting recordings |
+| GET | `/meetings/{meetingId}/recordings/registrants` | meetingRecordingRegistrants | `meetingId`*, `status`, `page_size`, `page_number`, `next_page_token` | object | yes | List recording registrants |
+| POST | `/meetings/{meetingId}/recordings/registrants` | meetingRecordingRegistrantCreate | `meetingId`*, body*: object | object |  | Create a recording registrant |
+| GET | `/meetings/{meetingId}/recordings/registrants/questions` | recordingRegistrantsQuestionsGet | `meetingId`* | object | yes | Get registration questions |
+| PATCH | `/meetings/{meetingId}/recordings/registrants/questions` | recordingRegistrantQuestionUpdate | `meetingId`*, body*: object | — |  | Update registration questions |
+| PUT | `/meetings/{meetingId}/recordings/registrants/status` | meetingRecordingRegistrantStatus | `meetingId`*, body*: object | — |  | Update registrant's status |
+| GET | `/meetings/{meetingId}/recordings/settings` | recordingSettingUpdate | `meetingId`* | object | yes | Get meeting recording settings |
+| PATCH | `/meetings/{meetingId}/recordings/settings` | recordingSettingsUpdate | `meetingId`*, body*: object | — |  | Update meeting recording settings |
+| PUT | `/meetings/{meetingId}/recordings/status` | recordingStatusUpdate | `meetingId`*, body*: object | — |  | Recover meeting recordings |
+| DELETE | `/meetings/{meetingId}/recordings/{recordingId}` | recordingDeleteOne | `meetingId`*, `recordingId`*, `action` | — |  | Delete a meeting recording file |
+| PUT | `/meetings/{meetingId}/recordings/{recordingId}/status` | recordingStatusUpdateOne | `meetingId`*, `recordingId`*, body*: object | — |  | Recover a single recording |
+| GET | `/meetings/{meetingId}/registrants` | meetingRegistrants | `meetingId`*, `occurrence_id`, `status`, `page_size`, `page_number`, `next_page_token` | object | yes | List meeting registrants |
+| POST | `/meetings/{meetingId}/registrants` | meetingRegistrantCreate | `meetingId`*, `occurrence_ids`, body*: object | object |  | Add meeting registrant |
+| GET | `/meetings/{meetingId}/registrants/questions` | meetingRegistrantsQuestionsGet | `meetingId`* | object | yes | List registration questions |
+| PATCH | `/meetings/{meetingId}/registrants/questions` | meetingRegistrantQuestionUpdate | `meetingId`*, body*: object | — |  | Update registration questions |
+| PUT | `/meetings/{meetingId}/registrants/status` | meetingRegistrantStatus | `meetingId`*, `occurrence_id`, body*: object | — |  | Update registrant's status |
+| DELETE | `/meetings/{meetingId}/registrants/{registrantId}` | meetingregistrantdelete | `occurrence_id`, `meetingId`*, `registrantId`* | — |  | Delete a meeting registrant |
+| PUT | `/meetings/{meetingId}/status` | meetingStatus | `meetingId`*, body*: object | — |  | Update meeting status |
+| GET | `/metrics/client/feedback` | dashboardClientFeedback | `from`*, `to`* | object | yes | List Zoom meetings client feedback |
+| GET | `/metrics/client/feedback/{feedbackId}` | dashboardClientFeedbackDetail | `feedbackId`*, `from`, `to`, `page_size`, `next_page_token` | object | yes | Get zoom meetings client feedback |
+| GET | `/metrics/client/satisfaction` | listMeetingSatisfaction | `from`, `to` | object | yes | List client meeting satisfaction |
+| GET | `/metrics/crc` | dashboardCRC | `from`*, `to`* | object | yes | Get CRC port usage |
+| GET | `/metrics/im` | dashboardIM | `from`*, `to`*, `page_size`, `next_page_token` | object | yes | Get IM metrics |
+| GET | `/metrics/issues/zoomrooms` | dashboardIssueZoomRoom | `from`*, `to`* | object | yes | Get top 25 Zoom Rooms with issues |
+| GET | `/metrics/issues/zoomrooms/{zoomroomId}` | dashboardIssueDetailZoomRoom | `zoomroomId`*, `from`*, `to`*, `page_size`, `next_page_token` | object | yes | Get issues of Zoom Rooms |
+| GET | `/metrics/meetings` | dashboardMeetings | `type`, `from`*, `to`*, `page_size`, `next_page_token`, `include_fields` | object | yes | List meetings |
+| GET | `/metrics/meetings/{meetingId}` | dashboardMeetingDetail | `meetingId`*, `type` | object | yes | Get meeting details |
+| GET | `/metrics/meetings/{meetingId}/participants` | dashboardMeetingParticipants | `meetingId`*, `type`, `page_size`, `next_page_token`, `include_fields` | object | yes | List meeting participants |
+| GET | `/metrics/meetings/{meetingId}/participants/qos` | dashboardMeetingParticipantsQOS | `meetingId`*, `type`, `page_size`, `next_page_token` | object | yes | List meeting participants QoS |
+| GET | `/metrics/meetings/{meetingId}/participants/satisfaction` | participantFeedback | `meetingId`*, `type`, `next_page_token`, `page_size` | object | yes | Get post meeting feedback |
+| GET | `/metrics/meetings/{meetingId}/participants/sharing` | dashboardMeetingParticipantShare | `meetingId`*, `type`, `page_size`, `next_page_token` | object | yes | Get sharing/recording details |
+| GET | `/metrics/meetings/{meetingId}/participants/{participantId}/qos` | dashboardMeetingParticipantQOS | `meetingId`*, `participantId`*, `type` | object | yes | Get meeting participant QoS |
+| GET | `/metrics/webinars` | dashboardWebinars | `type`, `from`*, `to`*, `page_size`, `next_page_token` | object | yes | List webinars |
+| GET | `/metrics/webinars/{webinarId}` | dashboardWebinarDetail | `webinarId`*, `type` | object | yes | Get webinar details |
+| GET | `/metrics/webinars/{webinarId}/participants` | dashboardWebinarParticipants | `webinarId`*, `type`, `page_size`, `next_page_token`, `include_fields` | object | yes | Get webinar participants |
+| GET | `/metrics/webinars/{webinarId}/participants/qos` | dashboardWebinarParticipantsQOS | `webinarId`*, `type`, `page_size`, `next_page_token` | object | yes | List webinar participant QoS |
+| GET | `/metrics/webinars/{webinarId}/participants/satisfaction` | participantWebinarFeedback | `type`, `page_size`, `next_page_token`, `webinarId`* | object | yes | Get post webinar feedback |
+| GET | `/metrics/webinars/{webinarId}/participants/sharing` | dashboardWebinarParticipantShare | `webinarId`*, `type`, `page_size`, `next_page_token` | object | yes | Get sharing/recording details |
+| GET | `/metrics/webinars/{webinarId}/participants/{participantId}/qos` | dashboardWebinarParticipantQOS | `webinarId`*, `participantId`*, `type` | object | yes | Get webinar participant QoS |
+| GET | `/metrics/zoomrooms` | dashboardZoomRooms | `page_size`, `page_number`, `next_page_token` | object | yes | List Zoom Rooms |
+| GET | `/metrics/zoomrooms/issues` | dashboardZoomRoomIssue | `from`*, `to`* | object | yes | Get top 25 issues of Zoom Rooms |
+| GET | `/metrics/zoomrooms/{zoomroomId}` | dashboardZoomRoom | `zoomroomId`*, `from`*, `to`*, `page_size`, `next_page_token` | object | yes | Get Zoom Rooms details |
+| GET | `/past_meetings/{meetingId}/files` | listPastMeetingFiles | `meetingId`* | object | yes | List past meeting's files |
+| GET | `/past_meetings/{meetingId}/instances` | pastMeetings | `meetingId`* | object | yes | List ended meeting instances |
+| GET | `/past_meetings/{meetingId}/polls` | listPastMeetingPolls | `meetingId`* | object | yes | List past meeting's poll results |
+| GET | `/past_meetings/{meetingUUID}` | pastMeetingDetails | `meetingUUID`* | object | yes | Get past meeting details |
+| GET | `/past_meetings/{meetingUUID}/participants` | pastMeetingParticipants | `meetingUUID`*, `page_size`, `next_page_token` | object | yes | Get past meeting participants |
+| GET | `/past_webinars/{WebinarUUID}/absentees` | webinarAbsentees | `occurrence_id`, `page_size`, `next_page_token`, `WebinarUUID`* | object | yes | Get webinar absentees |
+| GET | `/past_webinars/{webinarId}/files` | listPastWebinarFiles | `webinarId`* | object | yes | List past webinar files |
+| GET | `/past_webinars/{webinarId}/instances` | pastWebinars | `webinarId`* | object | yes | List past webinar instances |
+| GET | `/past_webinars/{webinarId}/participants` | listWebinarParticipants | `webinarId`*, `page_size`, `next_page_token` | object | yes | List webinar participants |
+| GET | `/past_webinars/{webinarId}/polls` | listPastWebinarPollResults | `webinarId`* | object | yes | List past webinar poll results |
+| GET | `/past_webinars/{webinarId}/qa` | listPastWebinarQA | `webinarId`* | object | yes | List Q&A of past webinar |
+| POST | `/phone/auto_receptionists` | addAutoReceptionist | body: object | object |  | Add an auto receptionist |
+| PATCH | `/phone/auto_receptionists/{autoReceptionistId}` | updateAutoReceptionist | `autoReceptionistId`*, body: object | — |  | Update auto receptionist details |
+| POST | `/phone/auto_receptionists/{autoReceptionistId}/phone_numbers` | assignPhoneNumbersAutoReceptionist | `autoReceptionistId`*, body: object | — |  | Assign phone numbers |
+| DELETE | `/phone/auto_receptionists/{autoReceptionistId}/phone_numbers` | unassignAllPhoneNumsAutoReceptionist | `autoReceptionistId`* | — |  | Unassign all phone numbers |
+| DELETE | `/phone/auto_receptionists/{autoReceptionistId}/phone_numbers/{phoneNumberId}` | unassignAPhoneNumAutoReceptionist | `autoReceptionistId`*, `phoneNumberId`* | — |  | Unassign a phone number |
+| GET | `/phone/blocked_list` | listBlockedList | `next_page_token`, `page_size` | object | yes | List blocked lists |
+| POST | `/phone/blocked_list` | addAnumberToBlockedList | body: object | object |  | Create a blocked list |
+| GET | `/phone/blocked_list/{blockedListId}` | getABlockedList | `blockedListId`* | object | yes | Get blocked list details |
+| DELETE | `/phone/blocked_list/{blockedListId}` | deleteABlockedList | `blockedListId`* | — |  | Delete a blocked list |
+| PATCH | `/phone/blocked_list/{blockedListId}` | updateBlockedList | `blockedListId`*, body: object | — |  | Update a blocked list |
+| POST | `/phone/byoc_numbers` | addBYOCNumber | body: object | object |  | Add BYOC phone numbers |
+| GET | `/phone/call_logs` | accountCallLogs | `page_size`, `from`, `to`, `type`, `next_page_token`, `path`, `time_type`, `site_id` | object | yes | Get account's call logs |
+| GET | `/phone/call_queues` | listCallQueues | `next_page_token`, `page_size` | object | yes | List call queues |
+| POST | `/phone/call_queues` | createCallQueue | body: object | object |  | Create a call queue |
+| GET | `/phone/call_queues/{callQueueId}` | getACallQueue | `callQueueId`* | object | yes | Get call queue details |
+| DELETE | `/phone/call_queues/{callQueueId}` | deleteACallQueue | `callQueueId`* | — |  | Delete a call queue |
+| PATCH | `/phone/call_queues/{callQueueId}` | updateCallQueue | `callQueueId`*, body: object | — |  | Update call queue details |
+| PUT | `/phone/call_queues/{callQueueId}/manager` | changeCallQueueManager | `callQueueId`*, body: object | — |  | Change call queue manager |
+| POST | `/phone/call_queues/{callQueueId}/members` | addMembersToCallQueue | `callQueueId`*, body: object | object |  | Add members to a call queue |
+| DELETE | `/phone/call_queues/{callQueueId}/members` | unassignAllMembers | `callQueueId`* | — |  | Unassign all members |
+| DELETE | `/phone/call_queues/{callQueueId}/members/{memberId}` | unassignMemberFromCallQueue | `callQueueId`*, `memberId`* | — |  | Unassign a member |
+| POST | `/phone/call_queues/{callQueueId}/phone_numbers` | assignPhoneToCallQueue | `callQueueId`*, body: object | object |  | Assign numbers to a call queue |
+| DELETE | `/phone/call_queues/{callQueueId}/phone_numbers` | unassignAPhoneNumCallQueue | `callQueueId`* | object |  | Unassign all phone numbers |
+| DELETE | `/phone/call_queues/{callQueueId}/phone_numbers/{phoneNumberId}` | unAssignPhoneNumCallQueue | `callQueueId`*, `phoneNumberId`* | object |  | Unassign a phone number |
+| GET | `/phone/call_queues/{callQueueId}/recordings` | getCallQueueRecordings | `callQueueId`*, `page_size`, `next_page_token`, `from`, `to` | object | yes | Get call queue recordings |
+| GET | `/phone/calling_plans` | listCallingPlans | — | object | yes | List calling plans |
+| GET | `/phone/common_area_phones` | listCommonAreaPhones | `page_size`, `next_page_token` | object | yes | List common area phones |
+| POST | `/phone/common_area_phones` | addCommonAreaPhone | body: object | object |  | Add a common area phone |
+| GET | `/phone/common_area_phones/{commonAreaPhoneId}` | getACommonAreaPhone | `commonAreaPhoneId`* | object | yes | Get common area phone details |
+| DELETE | `/phone/common_area_phones/{commonAreaPhoneId}` | deleteCommonAreaPhone | `commonAreaPhoneId`* | — |  | Delete a common area phone |
+| PATCH | `/phone/common_area_phones/{commonAreaPhoneId}` | updateCommonAreaPhone | `commonAreaPhoneId`*, body: object | — |  | Update common area phone |
+| PUT | `/phone/company_number` | changeMainCompanyNumber | body: object | — |  | Change main company number |
+| GET | `/phone/devices` | listPhoneDevices | `type`*, `next_page_token`, `page_size` | object | yes | List devices |
+| POST | `/phone/devices` | addPhoneDevice | body: object | — |  | Add a device |
+| GET | `/phone/devices/{deviceId}` | getADevice | `deviceId`* | object | yes | Get device details |
+| DELETE | `/phone/devices/{deviceId}` | deleteADevice | `deviceId`* | — |  | Delete a device |
+| PATCH | `/phone/devices/{deviceId}` | updateADevice | `deviceId`*, body: object | — |  | Update a device |
+| GET | `/phone/metrics/call_logs` | listCallLogsMetrics | `from`, `to`, `site_id`, `quality_type`, `page_size`, `next_page_token` | object | yes | List call logs |
+| GET | `/phone/metrics/call_logs/{callId}/qos` | getCallQoS | `callId`* | object | yes | Get call QoS |
+| GET | `/phone/metrics/call_logs/{call_id}` | getCallLogMetricsDetails | `call_id`* | object | yes | Get call details from call log |
+| GET | `/phone/numbers` | listAccountPhoneNumbers | `next_page_token`, `type`, `extension_type`, `page_size`, `number_type`, `pending_numbers`, `site_id` | object | yes | List phone numbers |
+| GET | `/phone/numbers/{numberId}` | getPhoneNumberDetails | `numberId`* | object | yes | Get phone number details |
+| PATCH | `/phone/numbers/{numberId}` | updatePhoneNumberDetails | `numberId`*, body: object | — |  | Update phone number details |
+| GET | `/phone/recordings` | getPhoneRecordings | `page_size`, `next_page_token`, `from`, `to`, `owner_type`, `recording_type`, `site_id` | object | yes | Get call recordings |
+| GET | `/phone/reports/operationlogs` | getPSOperationLogs | `from`, `to`, `category_type`, `page_size`, `next_page_token` | object | yes | Get operation logs report |
+| GET | `/phone/setting_templates` | listSettingTemplates | `page_size`, `next_page_token`, `site_id` | object | yes | List setting templates |
+| POST | `/phone/setting_templates` | addSettingTemplate | body: object | object |  | Add a setting template |
+| GET | `/phone/setting_templates/{templateId}` | getSettingTemplate | `templateId`*, `custom_query_fields` | object | yes | Get setting template details |
+| PATCH | `/phone/setting_templates/{templateId}` | updateSettingTemplate | `templateId`*, body: object | — |  | Update a setting template |
+| GET | `/phone/shared_line_groups` | listSharedLineGroups | `page_size`, `next_page_token` | object | yes | List shared line groups |
+| POST | `/phone/shared_line_groups` | createASharedLineGroup | body: object | — |  | Create a shared line group |
+| GET | `/phone/shared_line_groups/{sharedLineGroupId}` | getASharedLineGroup | `sharedLineGroupId`* | object | yes | Get a shared line group |
+| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}` | deleteASharedLineGroup | `sharedLineGroupId`* | — |  | Delete a shared line group |
+| PATCH | `/phone/shared_line_groups/{sharedLineGroupId}` | updateASharedLineGroup | `sharedLineGroupId`*, body: object | — |  | Update a shared line group |
+| POST | `/phone/shared_line_groups/{sharedLineGroupId}/members` | addMembersToSharedLineGroup | `sharedLineGroupId`*, body: object | — |  | Add members to a shared line group |
+| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}/members` | deleteMembersOfSLG | `sharedLineGroupId`* | — |  | Unassign members of a shared line group |
+| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}/members/{memberId}` | deleteAMemberSLG | `sharedLineGroupId`*, `memberId`* | — |  | Unassign a member from a shared line group |
+| POST | `/phone/shared_line_groups/{sharedLineGroupId}/phone_numbers` | assignPhoneNumbersSLG | `sharedLineGroupId`*, body: object | — |  | Assign phone numbers |
+| DELETE | `/phone/shared_line_groups/{sharedLineGroupId}/phone_numbers/{phoneNumberId}` | deleteAPhoneNumberSLG | `sharedLineGroupId`*, `phoneNumberId`* | — |  | Unassign a phone number |
+| GET | `/phone/sip_trunk/trunks` | listBYOCSIPTrunk | `next_page_token`, `page_size` | object | yes | List BYOC SIP trunks |
+| GET | `/phone/sites` | listPhoneSites | `page_size`, `next_page_token` | object | yes | List phone sites |
+| POST | `/phone/sites` | createPhoneSite | body: object | object |  | Create a phone site |
+| GET | `/phone/sites/{siteId}` | getASite | `siteId`* | object | yes | Get phone site details |
+| DELETE | `/phone/sites/{siteId}` | deletePhoneSite | `siteId`*, `transfer_site_id`* | — |  | Delete a phone site |
+| PATCH | `/phone/sites/{siteId}` | updateSiteDetails | `siteId`*, body: object | — |  | Update phone site details |
+| GET | `/phone/users` | listPhoneUsers | `page_size`, `next_page_token`, `site_id` | object | yes | List phone users |
+| GET | `/phone/users/{userId}` | phoneUser | `userId`* | object | yes | Get user's profile |
+| PATCH | `/phone/users/{userId}` | updateUserProfile | `userId`*, body: object | — |  | Update user's profile |
+| GET | `/phone/users/{userId}/call_logs` | phoneUserCallLogs | `userId`*, `page_size`, `from`*, `to`*, `type`, `next_page_token`, `phone_number`, `time_type` | object | yes | Get user's call logs |
+| DELETE | `/phone/users/{userId}/call_logs/{callLogId}` | deleteCallLog | `userId`*, `callLogId`* | — |  | Delete a user's call log |
+| POST | `/phone/users/{userId}/calling_plans` | assignCallingPlan | `userId`*, body: object | — |  | Assign calling plan to a user |
+| DELETE | `/phone/users/{userId}/calling_plans/{type}` | unassignCallingPlan | `userId`*, `type`* | — |  | Unassign user's calling plan |
+| POST | `/phone/users/{userId}/phone_numbers` | assignPhoneNumber | `userId`*, body: object | object |  | Assign phone number to user |
+| DELETE | `/phone/users/{userId}/phone_numbers/{phoneNumberId}` | UnassignPhoneNumber | `userId`*, `phoneNumberId`* | — |  | Unassign phone number |
+| GET | `/phone/users/{userId}/recordings` | phoneUserRecordings | `userId`*, `page_size`, `next_page_token`, `from`, `to`* | object | yes | Get user's recordings |
+| GET | `/phone/users/{userId}/settings` | phoneUserSettings | `userId`* | object | yes | Get user's settings |
+| POST | `/phone/users/{userId}/settings/{settingType}` | addUserSetting | `userId`*, `settingType`*, body: object | object |  | Set up shared access |
+| DELETE | `/phone/users/{userId}/settings/{settingType}` | deleteUserSetting | `userId`*, `settingType`*, `shared_id`* | — |  | Remove shared access |
+| PATCH | `/phone/users/{userId}/settings/{settingType}` | updateUserSetting | `settingType`*, `userId`*, body: object | — |  | Update shared access |
+| GET | `/phone/users/{userId}/voice_mails` | phoneUserVoiceMails | `userId`*, `page_size`, `status`, `next_page_token`, `from`, `to`* | object | yes | Get user's voicemails |
+| DELETE | `/phone/voice_mails/{voicemailId}` | deleteVoicemail | `voicemailId`* | — |  | Delete a voicemail |
+| GET | `/report/activities` | reportSignInSignOutActivities | `from`, `to`, `page_size`, `next_page_token` | object | yes | Get sign In / sign out activity report |
+| GET | `/report/cloud_recording` | reportCloudRecording | `from`*, `to`* | object | yes | Get cloud recording usage report |
+| GET | `/report/daily` | reportDaily | `year`, `month` | object | yes | Get daily usage report |
+| GET | `/report/meetings/{meetingId}` | reportMeetingDetails | `meetingId`* | object | yes | Get meeting detail reports |
+| GET | `/report/meetings/{meetingId}/participants` | reportMeetingParticipants | `meetingId`*, `page_size`, `next_page_token`, `include_fields` | object | yes | Get meeting participant reports |
+| GET | `/report/meetings/{meetingId}/polls` | reportMeetingPolls | `meetingId`* | object | yes | Get meeting poll reports |
+| GET | `/report/operationlogs` | reportOperationLogs | `from`*, `to`*, `page_size`, `next_page_token`, `category_type` | object | yes | Get operation logs report |
+| GET | `/report/telephone` | reportTelephone | `type`, `from`*, `to`*, `page_size`, `page_number`, `next_page_token` | object | yes | Get telephone reports |
+| GET | `/report/users` | reportUsers | `type`, `from`*, `to`*, `page_size`, `page_number`, `next_page_token` | object | yes | Get active/inactive host reports |
+| GET | `/report/users/{userId}/meetings` | reportMeetings | `userId`*, `from`*, `to`*, `page_size`, `next_page_token`, `type` | object | yes | Get meeting reports |
+| GET | `/report/webinars/{webinarId}` | reportWebinarDetails | `webinarId`* | object | yes | Get webinar detail reports |
+| GET | `/report/webinars/{webinarId}/participants` | reportWebinarParticipants | `webinarId`*, `page_size`, `next_page_token`, `include_fields` | object | yes | Get webinar participant reports |
+| GET | `/report/webinars/{webinarId}/polls` | reportWebinarPolls | `webinarId`* | object | yes | Get webinar poll reports |
+| GET | `/report/webinars/{webinarId}/qa` | reportWebinarQA | `webinarId`* | object | yes | Get webinar Q&A report |
+| GET | `/roles` | roles | — | object | yes | List roles |
+| POST | `/roles` | createRole | body: object | object |  | Create a role |
+| GET | `/roles/{roleId}` | getRoleInformation | `roleId`* | object | yes | Get role information |
+| DELETE | `/roles/{roleId}` | deleteRole | `roleId`* | object |  | Delete a role |
+| PATCH | `/roles/{roleId}` | updateRole | `roleId`*, body: object | — |  | Update role information |
+| GET | `/roles/{roleId}/members` | roleMembers | `roleId`*, `page_count`, `page_number`, `next_page_token`, `page_size` | object | yes | List members in a role |
+| POST | `/roles/{roleId}/members` | AddRoleMembers | `roleId`*, body*: object | object |  | Assign a role |
+| DELETE | `/roles/{roleId}/members/{memberId}` | roleMemberDelete | `roleId`*, `memberId`* | — |  | Unassign a role |
+| GET | `/rooms` | listZoomRooms | `status`, `type`, `unassigned_rooms`, `page_size`, `next_page_token`, `location_id` | object | yes | List Zoom Rooms |
+| POST | `/rooms` | addARoom | body: object | object |  | Add a Zoom Room |
+| GET | `/rooms/account_profile` | getZRAccountProfile | — | object | yes | Get Zoom Room account profile |
+| PATCH | `/rooms/account_profile` | updateZRAccProfile | body: object | object |  | Update Zoom Room account profile |
+| GET | `/rooms/account_settings` | getZRAccountSettings | `setting_type`* | object | yes | Get Zoom Room account settings |
+| PATCH | `/rooms/account_settings` | updateZoomRoomAccSettings | `setting_type`*, body: object | object |  | Update Zoom Room account settings |
+| GET | `/rooms/digital_signage` | listDigitalSignageContent | `type`, `folder_id`, `page_size`, `next_page_token` | object | yes | List digital signage contents |
+| PATCH | `/rooms/events` | manageE911signage | body: object | object |  | Update E911 digital signage |
+| GET | `/rooms/locations` | listZRLocations | `parent_location_id`, `type`, `page_size`, `next_page_token` | object | yes | List Zoom Room locations |
+| POST | `/rooms/locations` | addAZRLocation | body: object | object |  | Add a location |
+| GET | `/rooms/locations/structure` | getZRLocationStructure | — | object | yes | Get Zoom Room location structure |
+| PATCH | `/rooms/locations/structure` | updateZoomRoomsLocationStructure | body: object | — |  | Update Zoom Rooms location structure |
+| GET | `/rooms/locations/{locationId}` | getZRLocationProfile | `locationId`* | object | yes | Get Zoom Room location profile |
+| PATCH | `/rooms/locations/{locationId}` | updateZRLocationProfile | `locationId`*, body: object | — |  | Update Zoom Room location profile |
+| PUT | `/rooms/locations/{locationId}/location` | changeParentLocation | `locationId`*, body: object | — |  | Change the assigned parent location |
+| GET | `/rooms/locations/{locationId}/settings` | getZRLocationSettings | `locationId`*, `setting_type`* | object | yes | Get location settings |
+| PATCH | `/rooms/locations/{locationId}/settings` | updateZRLocationSettings | `locationId`*, `setting_type`*, body: object | — |  | Update location settings |
+| PATCH | `/rooms/{id}/events` | checkInRooms | `id`*, body: object | — |  | Check-in or check-out of a Zoom Room |
+| GET | `/rooms/{roomId}` | getZRProfile | `roomId`* | object | yes | Get Zoom Room profile |
+| DELETE | `/rooms/{roomId}` | deleteAZoomRoom | `roomId`* | object |  | Delete a Zoom Room |
+| PATCH | `/rooms/{roomId}` | updateRoomProfile | `roomId`*, body: object | object |  | Update a Zoom Room profile |
+| GET | `/rooms/{roomId}/devices` | listZRDevices | `roomId`* | object | yes | List Zoom Room devices |
+| PUT | `/rooms/{roomId}/devices/{deviceId}/app_version` | changeZoomRoomsAppVersion | `roomId`*, `deviceId`*, body: object | — |  | Change Zoom Rooms' app version |
+| PUT | `/rooms/{roomId}/location` | changeZRLocation | `roomId`*, body: object | — |  | Change a Zoom Room's location |
+| GET | `/rooms/{roomId}/settings` | getZRSettings | `roomId`*, `setting_type`* | object | yes | Get Zoom Room settings |
+| PATCH | `/rooms/{roomId}/settings` | updateZRSettings | `roomId`*, `setting_type`, body: object | — |  | Update Zoom Room settings |
+| GET | `/sip_phones` | listSipPhones | `page_number`, `search_key`, `page_size`, `next_page_token` | object | yes | List SIP phones |
+| POST | `/sip_phones` | createSIPPhone | body: object | — |  | Enable SIP phone |
+| DELETE | `/sip_phones/{phoneId}` | deleteSIPPhone | `phoneId`* | object |  | Delete SIP phone |
+| PATCH | `/sip_phones/{phoneId}` | updateSIPPhone | `phoneId`*, body: object | object |  | Update SIP phone |
+| GET | `/sip_trunk/numbers` | listSipTrunkNumbers | — | object | yes | List SIP trunk numbers |
+| GET | `/tracking_fields` | trackingfieldList | — | object | yes | List tracking fields |
+| POST | `/tracking_fields` | trackingfieldCreate | body*: object | object |  | Create a tracking field |
+| GET | `/tracking_fields/{fieldId}` | trackingfieldGet | `fieldId`* | object | yes | Get a tracking field |
+| DELETE | `/tracking_fields/{fieldId}` | trackingfieldDelete | `fieldId`* | — |  | Delete a tracking field |
+| PATCH | `/tracking_fields/{fieldId}` | trackingfieldUpdate | `fieldId`*, body*: object | — |  | Update a tracking field |
+| GET | `/tsp` | tsp | — | object | yes | Get account's TSP information |
+| PATCH | `/tsp` | tspUpdate | body*: object | — |  | Update account's TSP information |
+| GET | `/users` | users | `status`, `page_size`, `role_id`, `page_number`, `include_fields`, `next_page_token` | object | yes | List users |
+| POST | `/users` | userCreate | body*: object | object |  | Create users |
+| GET | `/users/email` | userEmail | `email`* | object | yes | Check a user email |
+| GET | `/users/me/zak` | userZak | — | object | yes | Get user's ZAK |
+| GET | `/users/vanity_name` | userVanityName | `vanity_name`* | object | yes | Check a user's PM room |
+| GET | `/users/{userId}` | user | `userId`*, `login_type` | object | yes | Get a user |
+| DELETE | `/users/{userId}` | userDelete | `userId`*, `action`, `transfer_email`, `transfer_meeting`, `transfer_webinar`, `transfer_recording` | — |  | Delete a user |
+| PATCH | `/users/{userId}` | userUpdate | `userId`*, `login_type`, body*: object | — |  | Update a user |
+| GET | `/users/{userId}/assistants` | userAssistants | `userId`* | object | yes | List user assistants |
+| POST | `/users/{userId}/assistants` | userAssistantCreate | `userId`*, body*: object | object |  | Add assistants |
+| DELETE | `/users/{userId}/assistants` | userAssistantsDelete | `userId`* | — |  | Delete user assistants |
+| DELETE | `/users/{userId}/assistants/{assistantId}` | userAssistantDelete | `userId`*, `assistantId`* | — |  | Delete a user assistant |
+| PUT | `/users/{userId}/email` | userEmailUpdate | `userId`*, body*: object | — |  | Update a user's email |
+| GET | `/users/{userId}/meeting_templates` | listMeetingTemplates | `userId`* | object | yes | List meeting templates |
+| GET | `/users/{userId}/meetings` | meetings | `userId`*, `type`, `page_size`, `next_page_token`, `page_number` | object | yes | List meetings |
+| POST | `/users/{userId}/meetings` | meetingCreate | `userId`*, body*: object | object |  | Create a meeting |
+| GET | `/users/{userId}/pac` | userPACs | `userId`* | object | yes | List a user's PAC accounts |
+| PUT | `/users/{userId}/password` | userPassword | `userId`*, body*: object | — |  | Update a user's password |
+| GET | `/users/{userId}/permissions` | userPermission | `userId`* | object | yes | Get user permissions |
+| POST | `/users/{userId}/picture` | userPicture | `userId`*, body*: object | — |  | Upload a user's profile picture |
+| PUT | `/users/{userId}/presence_status` | updatePresenceStatus | `userId`*, body: object | — |  | Update a user's presence status |
+| GET | `/users/{userId}/recordings` | recordingsList | `userId`*, `page_size`, `next_page_token`, `mc`, `trash`, `from`, `to`, `trash_type` | object | yes | List all recordings |
+| GET | `/users/{userId}/schedulers` | userSchedulers | `userId`* | object | yes | List user schedulers |
+| DELETE | `/users/{userId}/schedulers` | userSchedulersDelete | `userId`* | — |  | Delete user schedulers |
+| DELETE | `/users/{userId}/schedulers/{schedulerId}` | userSchedulerDelete | `userId`*, `schedulerId`* | — |  | Delete a scheduler |
+| GET | `/users/{userId}/settings` | userSettings | `userId`*, `login_type`, `option`, `custom_query_fields` | object | yes | Get user settings |
+| PATCH | `/users/{userId}/settings` | userSettingsUpdate | `option`, `userId`*, body*: object | — |  | Update user settings |
+| POST | `/users/{userId}/settings/virtual_backgrounds` | uploadVBuser | `userId`*, body: object | object |  | Upload virtual background files |
+| DELETE | `/users/{userId}/settings/virtual_backgrounds` | delUserVB | `userId`*, `file_ids` | — |  | Delete virtual background files |
+| PUT | `/users/{userId}/status` | userStatus | `userId`*, body*: object | — |  | Update user status |
+| GET | `/users/{userId}/token` | userToken | `userId`*, `type`, `ttl` | object | yes | Get a user token |
+| DELETE | `/users/{userId}/token` | userSSOTokenDelete | `userId`* | — |  | Revoke a user's SSO token |
+| GET | `/users/{userId}/tsp` | userTSPs | `userId`* | object | yes | List user's TSP accounts |
+| POST | `/users/{userId}/tsp` | userTSPCreate | `userId`*, body*: object | object |  | Add a user's TSP account |
+| PATCH | `/users/{userId}/tsp/settings` | tspUrlUpdate | `userId`*, body: object | — |  | Set global dial-in URL for a TSP user |
+| GET | `/users/{userId}/tsp/{tspId}` | userTSP | `userId`*, `tspId`* | object | yes | Get a user's TSP account |
+| DELETE | `/users/{userId}/tsp/{tspId}` | userTSPDelete | `userId`*, `tspId`* | — |  | Delete a user's TSP account |
+| PATCH | `/users/{userId}/tsp/{tspId}` | userTSPUpdate | `userId`*, `tspId`*, body*: object | — |  | Update a TSP account |
+| GET | `/users/{userId}/webinar_templates` | listWebinarTemplates | `userId`* | object | yes | List webinar templates |
+| GET | `/users/{userId}/webinars` | webinars | `userId`*, `page_size`, `page_number` | object | yes | List webinars |
+| POST | `/users/{userId}/webinars` | webinarCreate | `userId`*, body*: object | object |  | Create a webinar |
+| GET | `/webinars/{webinarId}` | webinar | `webinarId`*, `occurrence_id`, `show_previous_occurrences` | object | yes | Get a webinar |
+| DELETE | `/webinars/{webinarId}` | webinarDelete | `webinarId`*, `occurrence_id`, `cancel_webinar_reminder` | — |  | Delete a webinar |
+| PATCH | `/webinars/{webinarId}` | webinarUpdate | `webinarId`*, `occurrence_id`, body*: object | — |  | Update a webinar |
+| POST | `/webinars/{webinarId}/batch_registrants` | addBatchWebinarRegistrants | `webinarId`*, body: object | object |  | Perform batch registration |
+| GET | `/webinars/{webinarId}/panelists` | webinarPanelists | `webinarId`* | object | yes | List panelists |
+| POST | `/webinars/{webinarId}/panelists` | webinarPanelistCreate | `webinarId`*, body*: object | object |  | Add panelists |
+| DELETE | `/webinars/{webinarId}/panelists` | webinarPanelistsDelete | `webinarId`* | — |  | Remove panelists |
+| DELETE | `/webinars/{webinarId}/panelists/{panelistId}` | webinarPanelistDelete | `webinarId`*, `panelistId`* | — |  | Remove a panelist |
+| GET | `/webinars/{webinarId}/polls` | webinarPolls | `webinarId`* | object | yes | List a webinar's polls |
+| POST | `/webinars/{webinarId}/polls` | webinarPollCreate | `webinarId`*, body*: object | object |  | Create a webinar's poll |
+| GET | `/webinars/{webinarId}/polls/{pollId}` | webinarPollGet | `webinarId`*, `pollId`* | object | yes | Get a webinar poll |
+| PUT | `/webinars/{webinarId}/polls/{pollId}` | webinarPollUpdate | `webinarId`*, `pollId`*, body*: object | — |  | Update a webinar poll |
+| DELETE | `/webinars/{webinarId}/polls/{pollId}` | webinarPollDelete | `webinarId`*, `pollId`* | — |  | Delete a webinar poll |
+| GET | `/webinars/{webinarId}/registrants` | webinarRegistrants | `webinarId`*, `occurrence_id`, `status`, `tracking_source_id`, `page_size`, `page_number`, `next_page_token` | object | yes | List webinar registrants |
+| POST | `/webinars/{webinarId}/registrants` | webinarRegistrantCreate | `webinarId`*, `occurrence_ids`, body*: object | object |  | Add a webinar registrant |
+| GET | `/webinars/{webinarId}/registrants/questions` | webinarRegistrantsQuestionsGet | `webinarId`* | object | yes | List registration questions |
+| PATCH | `/webinars/{webinarId}/registrants/questions` | webinarRegistrantQuestionUpdate | `webinarId`*, body*: object | — |  | Update registration questions |
+| PUT | `/webinars/{webinarId}/registrants/status` | webinarRegistrantStatus | `webinarId`*, `occurrence_id`, body*: object | — |  | Update registrant's status |
+| GET | `/webinars/{webinarId}/registrants/{registrantId}` | webinarRegistrantGet | `webinarId`*, `registrantId`*, `occurrence_id` | object | yes | Get a webinar registrant |
+| DELETE | `/webinars/{webinarId}/registrants/{registrantId}` | deleteWebinarRegistrant | `webinarId`*, `registrantId`*, `occurrence_id` | — |  | Delete a webinar registrant |
+| PUT | `/webinars/{webinarId}/status` | webinarStatus | `webinarId`*, body*: object | — |  | Update webinar status |
+| GET | `/webinars/{webinarId}/tracking_sources` | getTrackingSources | `webinarId`* | object | yes | Get webinar tracking sources |

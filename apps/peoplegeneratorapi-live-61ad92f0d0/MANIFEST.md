@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_peoplegeneratorapi.live_static_
 
 | | |
 | --- | --- |
-| Signed bundle | `ecc3ca2e3f0e64a58f4a98f4f35a1d0dcd07505a5b8b160fdfc1cfdd11a5befc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,51 +34,53 @@ logo: "https://api.apis.guru/v2/cache/logo/https_peoplegeneratorapi.live_static_
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/address` | generateAddress | — |
-| GET | `/api/address/` | generateAddress_1 | — |
-| GET | `/api/lifestory` | generateLifeStory_1 | — |
-| GET | `/api/lifestory/` | generateLifeStory | — |
-| GET | `/api/person` | getPerson_1 | — |
-| GET | `/api/person/` | getPerson | — |
-| GET | `/api/person/age` | age_1 | — |
-| GET | `/api/person/age/` | age | — |
-| GET | `/api/person/bloodtype` | bloodtype_1 | — |
-| GET | `/api/person/bloodtype/` | bloodtype | — |
-| GET | `/api/person/creditcardnumber` | creditcardnumber | — |
-| GET | `/api/person/creditcardnumber/` | creditcardnumber_1 | — |
-| GET | `/api/person/creditscore` | creditscore_1 | — |
-| GET | `/api/person/creditscore/` | creditscore | — |
-| GET | `/api/person/email` | email | — |
-| GET | `/api/person/email/` | email_1 | — |
-| GET | `/api/person/eyecolor` | eyecolor_1 | — |
-| GET | `/api/person/eyecolor/` | eyecolor | — |
-| GET | `/api/person/gender` | gender | — |
-| GET | `/api/person/gender/` | gender_1 | — |
-| GET | `/api/person/gpa` | gpa | — |
-| GET | `/api/person/gpa/` | gpa_1 | — |
-| GET | `/api/person/haschildren` | haschildren_1 | — |
-| GET | `/api/person/haschildren/` | haschildren | — |
-| GET | `/api/person/hasdegree` | hasdegree | — |
-| GET | `/api/person/hasdegree/` | hasdegree_1 | — |
-| GET | `/api/person/height` | height | — |
-| GET | `/api/person/height/` | height_1 | — |
-| GET | `/api/person/income` | income | — |
-| GET | `/api/person/income/` | income_1 | — |
-| GET | `/api/person/job` | job | — |
-| GET | `/api/person/job/` | job_1 | — |
-| GET | `/api/person/maritalstatus` | maritalstatus_1 | — |
-| GET | `/api/person/maritalstatus/` | maritalstatus | — |
-| GET | `/api/person/name` | name_1 | — |
-| GET | `/api/person/name/` | name | — |
-| GET | `/api/person/politicalleaning` | politicalLeaning | — |
-| GET | `/api/person/politicalleaning/` | politicalLeaning_1 | — |
-| GET | `/api/person/religion` | religion_1 | — |
-| GET | `/api/person/religion/` | religion | — |
-| GET | `/api/person/username` | username_1 | — |
-| GET | `/api/person/username/` | username | — |
-| GET | `/api/person/weight` | weight | — |
-| GET | `/api/person/weight/` | weight_1 | — |
-| GET | `/api/person/{number}` | getCompressedPerson_1 | — |
-| GET | `/api/person/{number}/` | getCompressedPerson | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/address` | generateAddress | — | Address | yes | — |
+| GET | `/api/address/` | generateAddress_1 | — | Address | yes | — |
+| GET | `/api/lifestory` | generateLifeStory_1 | — | Lifestory | yes | — |
+| GET | `/api/lifestory/` | generateLifeStory | — | Lifestory | yes | — |
+| GET | `/api/person` | getPerson_1 | — | Person | yes | — |
+| GET | `/api/person/` | getPerson | — | Person | yes | — |
+| GET | `/api/person/age` | age_1 | — | integer:int32 | yes | — |
+| GET | `/api/person/age/` | age | — | integer:int32 | yes | — |
+| GET | `/api/person/bloodtype` | bloodtype_1 | — | string | yes | — |
+| GET | `/api/person/bloodtype/` | bloodtype | — | string | yes | — |
+| GET | `/api/person/creditcardnumber` | creditcardnumber | — | string | yes | — |
+| GET | `/api/person/creditcardnumber/` | creditcardnumber_1 | — | string | yes | — |
+| GET | `/api/person/creditscore` | creditscore_1 | — | integer:int32 | yes | — |
+| GET | `/api/person/creditscore/` | creditscore | — | integer:int32 | yes | — |
+| GET | `/api/person/email` | email | — | string | yes | — |
+| GET | `/api/person/email/` | email_1 | — | string | yes | — |
+| GET | `/api/person/eyecolor` | eyecolor_1 | — | string | yes | — |
+| GET | `/api/person/eyecolor/` | eyecolor | — | string | yes | — |
+| GET | `/api/person/gender` | gender | — | string | yes | — |
+| GET | `/api/person/gender/` | gender_1 | — | string | yes | — |
+| GET | `/api/person/gpa` | gpa | — | number:double | yes | — |
+| GET | `/api/person/gpa/` | gpa_1 | — | number:double | yes | — |
+| GET | `/api/person/haschildren` | haschildren_1 | — | boolean | yes | — |
+| GET | `/api/person/haschildren/` | haschildren | — | boolean | yes | — |
+| GET | `/api/person/hasdegree` | hasdegree | — | boolean | yes | — |
+| GET | `/api/person/hasdegree/` | hasdegree_1 | — | boolean | yes | — |
+| GET | `/api/person/height` | height | — | number:double | yes | — |
+| GET | `/api/person/height/` | height_1 | — | number:double | yes | — |
+| GET | `/api/person/income` | income | — | integer:int32 | yes | — |
+| GET | `/api/person/income/` | income_1 | — | integer:int32 | yes | — |
+| GET | `/api/person/job` | job | — | string | yes | — |
+| GET | `/api/person/job/` | job_1 | — | string | yes | — |
+| GET | `/api/person/maritalstatus` | maritalstatus_1 | — | boolean | yes | — |
+| GET | `/api/person/maritalstatus/` | maritalstatus | — | boolean | yes | — |
+| GET | `/api/person/name` | name_1 | — | string | yes | — |
+| GET | `/api/person/name/` | name | — | string | yes | — |
+| GET | `/api/person/politicalleaning` | politicalLeaning | — | number:double | yes | — |
+| GET | `/api/person/politicalleaning/` | politicalLeaning_1 | — | number:double | yes | — |
+| GET | `/api/person/religion` | religion_1 | — | string | yes | — |
+| GET | `/api/person/religion/` | religion | — | string | yes | — |
+| GET | `/api/person/username` | username_1 | — | string | yes | — |
+| GET | `/api/person/username/` | username | — | string | yes | — |
+| GET | `/api/person/weight` | weight | — | number:double | yes | — |
+| GET | `/api/person/weight/` | weight_1 | — | number:double | yes | — |
+| GET | `/api/person/{number}` | getCompressedPerson_1 | `number`* | string:byte[] | yes | — |
+| GET | `/api/person/{number}/` | getCompressedPerson | `number`* | string:byte[] | yes | — |

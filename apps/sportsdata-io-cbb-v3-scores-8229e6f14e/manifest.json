@@ -83,6 +83,106 @@
         "from": "sportsdata-io-cbb-v3-scores-8229e6f14e",
         "kind": "EXPOSES",
         "to": "operation:get:/{format}/teams"
+      },
+      {
+        "from": "operation:get:/{format}/CurrentSeason",
+        "kind": "RETURNS",
+        "to": "schema:Season"
+      },
+      {
+        "from": "operation:get:/{format}/Games/{season}",
+        "kind": "RETURNS",
+        "to": "schema:Game"
+      },
+      {
+        "from": "operation:get:/{format}/GamesByDate/{date}",
+        "kind": "RETURNS",
+        "to": "schema:Game"
+      },
+      {
+        "from": "operation:get:/{format}/InjuredPlayers",
+        "kind": "RETURNS",
+        "to": "schema:Player"
+      },
+      {
+        "from": "operation:get:/{format}/LeagueHierarchy",
+        "kind": "RETURNS",
+        "to": "schema:Conference"
+      },
+      {
+        "from": "operation:get:/{format}/Player/{playerid}",
+        "kind": "RETURNS",
+        "to": "schema:Player"
+      },
+      {
+        "from": "operation:get:/{format}/Players",
+        "kind": "RETURNS",
+        "to": "schema:Player"
+      },
+      {
+        "from": "operation:get:/{format}/Players/{team}",
+        "kind": "RETURNS",
+        "to": "schema:Player"
+      },
+      {
+        "from": "operation:get:/{format}/Stadiums",
+        "kind": "RETURNS",
+        "to": "schema:Stadium"
+      },
+      {
+        "from": "operation:get:/{format}/TeamGameStatsByDate/{date}",
+        "kind": "RETURNS",
+        "to": "schema:TeamGame"
+      },
+      {
+        "from": "operation:get:/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}",
+        "kind": "RETURNS",
+        "to": "schema:TeamGame"
+      },
+      {
+        "from": "operation:get:/{format}/TeamSchedule/{season}/{team}",
+        "kind": "RETURNS",
+        "to": "schema:Game"
+      },
+      {
+        "from": "operation:get:/{format}/TeamSeasonStats/{season}",
+        "kind": "RETURNS",
+        "to": "schema:TeamSeason"
+      },
+      {
+        "from": "operation:get:/{format}/Tournament/{season}",
+        "kind": "RETURNS",
+        "to": "schema:Tournament"
+      },
+      {
+        "from": "operation:get:/{format}/teams",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "schema:Conference",
+        "kind": "REFERENCES",
+        "to": "schema:Team"
+      },
+      {
+        "from": "schema:Game",
+        "kind": "REFERENCES",
+        "to": "schema:Period"
+      },
+      {
+        "from": "schema:Game",
+        "kind": "REFERENCES",
+        "to": "schema:Stadium"
+      },
+      {
+        "from": "schema:Team",
+        "kind": "REFERENCES",
+        "to": "schema:Stadium"
+      },
+      {
+        "from": "schema:Tournament",
+        "kind": "REFERENCES",
+        "to": "schema:Game"
       }
     ],
     "nodes": [
@@ -92,12 +192,34 @@
       },
       {
         "deprecated": false,
+        "description": "Returns <code>true</code> if there is at least one game being played at the time of the request or <code>false</code> if there are none.",
         "id": "operation:get:/{format}/AreAnyGamesInProgress",
         "kind": "operation",
         "method": "get",
         "name": "AreGamesInProgress",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/AreAnyGamesInProgress",
         "pointer": "#/paths/~1{format}~1AreAnyGamesInProgress/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -114,8 +236,29 @@
         "kind": "operation",
         "method": "get",
         "name": "CurrentSeason",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/CurrentSeason",
         "pointer": "#/paths/~1{format}~1CurrentSeason/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Season"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -132,8 +275,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Schedules",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year of the season (with optional season type).<br>Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019<…",
+            "in": "path",
+            "name": "season",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/Games/{season}",
         "pointer": "#/paths/~1{format}~1Games~1{season}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Game[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -150,8 +321,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GamesByDate",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date of the game(s).",
+            "in": "path",
+            "name": "date",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/GamesByDate/{date}",
         "pointer": "#/paths/~1{format}~1GamesByDate~1{date}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Game[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -164,12 +363,34 @@
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides all currently injured college basketball players, along with injury details.",
         "id": "operation:get:/{format}/InjuredPlayers",
         "kind": "operation",
         "method": "get",
         "name": "InjuredPlayers",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/InjuredPlayers",
         "pointer": "#/paths/~1{format}~1InjuredPlayers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Player[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -186,8 +407,29 @@
         "kind": "operation",
         "method": "get",
         "name": "LeagueHierarchy",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/LeagueHierarchy",
         "pointer": "#/paths/~1{format}~1LeagueHierarchy/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Conference[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -204,8 +446,36 @@
         "kind": "operation",
         "method": "get",
         "name": "PlayerDetailsByPlayer",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique FantasyData Player ID.",
+            "in": "path",
+            "name": "playerid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/Player/{playerid}",
         "pointer": "#/paths/~1{format}~1Player~1{playerid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Player"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -222,8 +492,29 @@
         "kind": "operation",
         "method": "get",
         "name": "PlayerDetailsByActive",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/Players",
         "pointer": "#/paths/~1{format}~1Players/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Player[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -240,8 +531,36 @@
         "kind": "operation",
         "method": "get",
         "name": "PlayerDetailsByTeam",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The abbreviation of the requested team.",
+            "in": "path",
+            "name": "team",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/Players/{team}",
         "pointer": "#/paths/~1{format}~1Players~1{team}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Player[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -258,8 +577,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Stadiums",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/Stadiums",
         "pointer": "#/paths/~1{format}~1Stadiums/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Stadium[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -276,8 +616,36 @@
         "kind": "operation",
         "method": "get",
         "name": "TeamGameStatsByDate",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date of the game(s).",
+            "in": "path",
+            "name": "date",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/TeamGameStatsByDate/{date}",
         "pointer": "#/paths/~1{format}~1TeamGameStatsByDate~1{date}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamGame[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -290,12 +658,55 @@
       },
       {
         "deprecated": false,
+        "description": "Game by game log of total team statistics.",
         "id": "operation:get:/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}",
         "kind": "operation",
         "method": "get",
         "name": "TeamGameLogsBySeason",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Season to get games from.",
+            "in": "path",
+            "name": "season",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique ID of team.",
+            "in": "path",
+            "name": "teamid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "How many games to return.",
+            "in": "path",
+            "name": "numberofgames",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}",
         "pointer": "#/paths/~1{format}~1TeamGameStatsBySeason~1{season}~1{teamid}~1{numberofgames}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamGame[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -312,8 +723,43 @@
         "kind": "operation",
         "method": "get",
         "name": "TeamSchedule",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year of the season (with optional season type).<br>Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019<…",
+            "in": "path",
+            "name": "season",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The abbreviation of the requested team.",
+            "in": "path",
+            "name": "team",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/TeamSchedule/{season}/{team}",
         "pointer": "#/paths/~1{format}~1TeamSchedule~1{season}~1{team}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Game[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -330,8 +776,36 @@
         "kind": "operation",
         "method": "get",
         "name": "TeamSeasonStats",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year of the season (with optional season type).<br>Examples: <code>2018</code>, <code>2018POST</code>, <code>2019</code>.",
+            "in": "path",
+            "name": "season",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/TeamSeasonStats/{season}",
         "pointer": "#/paths/~1{format}~1TeamSeasonStats~1{season}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamSeason[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -348,8 +822,36 @@
         "kind": "operation",
         "method": "get",
         "name": "TournamentHierarchy",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year of the season (with optional season type).<br>Examples: <code>2018</code>, <code>2018POST</code>, <code>2019</code>.",
+            "in": "path",
+            "name": "season",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/Tournament/{season}",
         "pointer": "#/paths/~1{format}~1Tournament~1{season}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tournament"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -366,8 +868,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Teams",
+        "parameters": [
+          {
+            "default": "XML",
+            "description": "Desired response format.",
+            "enum": [
+              "XML",
+              "JSON"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{format}/teams",
         "pointer": "#/paths/~1{format}~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
@@ -381,52 +904,62 @@
       {
         "id": "schema:Conference",
         "kind": "schema",
-        "name": "Conference"
+        "name": "Conference",
+        "type": "object"
       },
       {
         "id": "schema:Game",
         "kind": "schema",
-        "name": "Game"
+        "name": "Game",
+        "type": "object"
       },
       {
         "id": "schema:Period",
         "kind": "schema",
-        "name": "Period"
+        "name": "Period",
+        "type": "object"
       },
       {
         "id": "schema:Player",
         "kind": "schema",
-        "name": "Player"
+        "name": "Player",
+        "type": "object"
       },
       {
         "id": "schema:Season",
         "kind": "schema",
-        "name": "Season"
+        "name": "Season",
+        "type": "object"
       },
       {
         "id": "schema:Stadium",
         "kind": "schema",
-        "name": "Stadium"
+        "name": "Stadium",
+        "type": "object"
       },
       {
         "id": "schema:Team",
         "kind": "schema",
-        "name": "Team"
+        "name": "Team",
+        "type": "object"
       },
       {
         "id": "schema:TeamGame",
         "kind": "schema",
-        "name": "TeamGame"
+        "name": "TeamGame",
+        "type": "object"
       },
       {
         "id": "schema:TeamSeason",
         "kind": "schema",
-        "name": "TeamSeason"
+        "name": "TeamSeason",
+        "type": "object"
       },
       {
         "id": "schema:Tournament",
         "kind": "schema",
-        "name": "Tournament"
+        "name": "Tournament",
+        "type": "object"
       }
     ]
   },

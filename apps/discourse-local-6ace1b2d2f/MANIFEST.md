@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.discourse.org_logo.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `1737229278d8ca63b8f2994a6707c40dca1ba253103e29966a1956f85f0a3ae1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,89 +32,91 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.discourse.org_logo.svg"
 
 ## Operations (84)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/admin/backups.json` | getBackups | List backups |
-| POST | `/admin/backups.json` | createBackup | Create backup |
-| GET | `/admin/backups/{filename}` | downloadBackup | Download backup |
-| PUT | `/admin/backups/{filename}` | sendDownloadBackupEmail | Send download backup email |
-| GET | `/admin/badges.json` | adminListBadges | List badges |
-| POST | `/admin/badges.json` | createBadge | Create badge |
-| DELETE | `/admin/badges/{id}.json` | deleteBadge | Delete badge |
-| PUT | `/admin/badges/{id}.json` | updateBadge | Update badge |
-| POST | `/admin/groups.json` | createGroup | Create a group |
-| DELETE | `/admin/groups/{id}.json` | deleteGroup | Delete a group |
-| GET | `/admin/users/list/{flag}.json` | adminListUsers | Get a list of users |
-| DELETE | `/admin/users/{id}.json` | deleteUser | Delete a user |
-| GET | `/admin/users/{id}.json` | adminGetUser | Get a user by id |
-| PUT | `/admin/users/{id}/anonymize.json` | anonymizeUser | Anonymize a user |
-| POST | `/admin/users/{id}/log_out.json` | logOutUser | Log a user out |
-| PUT | `/admin/users/{id}/silence.json` | silenceUser | Silence a user |
-| PUT | `/admin/users/{id}/suspend.json` | suspendUser | Suspend a user |
-| GET | `/c/{id}/show.json` | getCategory | Show category |
-| GET | `/c/{slug}/{id}.json` | listCategoryTopics | List topics |
-| GET | `/categories.json` | listCategories | Retrieves a list of categories |
-| POST | `/categories.json` | createCategory | Creates a category |
-| PUT | `/categories/{id}.json` | updateCategory | Updates a category |
-| GET | `/directory_items.json` | listUsersPublic | Get a public list of users |
-| GET | `/groups.json` | listGroups | List groups |
-| GET | `/groups/{id}.json` | getGroup | Get a group |
-| PUT | `/groups/{id}.json` | updateGroup | Update a group |
-| DELETE | `/groups/{id}/members.json` | removeGroupMembers | Remove group members |
-| GET | `/groups/{id}/members.json` | listGroupMembers | List group members |
-| PUT | `/groups/{id}/members.json` | addGroupMembers | Add group members |
-| POST | `/invites.json` | createInvite | Create an invite |
-| GET | `/latest.json` | listLatestTopics | Get the latest topics |
-| GET | `/notifications.json` | getNotifications | Get the notifications that belong to the current user |
-| PUT | `/notifications/mark-read.json` | markNotificationsAsRead | Mark notifications as read |
-| POST | `/post_actions.json` | performPostAction | Like a post and other actions |
-| GET | `/posts.json` | listPosts | List latest posts across topics |
-| POST | `/posts.json` | createTopicPostPM | Creates a new topic, a new post, or a private message |
-| DELETE | `/posts/{id}.json` | deletePost | delete a single post |
-| GET | `/posts/{id}.json` | getPost | Retrieve a single post |
-| PUT | `/posts/{id}.json` | updatePost | Update a single post |
-| PUT | `/posts/{id}/locked.json` | lockPost | Lock a post from being edited |
-| GET | `/posts/{id}/replies.json` | postReplies | List replies to a post |
-| GET | `/search.json` | search | Search for a term |
-| POST | `/session/forgot_password.json` | sendPasswordResetEmail | Send password reset email |
-| GET | `/site.json` | getSite | Get site info |
-| PUT | `/t/-/{id}.json` | updateTopic | Update a topic |
-| GET | `/t/external_id/{external_id}.json` | getTopicByExternalId | Get topic by external_id |
-| DELETE | `/t/{id}.json` | removeTopic | Remove a topic |
-| GET | `/t/{id}.json` | getTopic | Get a single topic |
-| PUT | `/t/{id}/bookmark.json` | bookmarkTopic | Bookmark topic |
-| PUT | `/t/{id}/change-timestamp.json` | updateTopicTimestamp | Update topic timestamp |
-| POST | `/t/{id}/invite.json` | inviteToTopic | Invite to topic |
-| POST | `/t/{id}/notifications.json` | setNotificationLevel | Set notification level |
-| GET | `/t/{id}/posts.json` | getSpecificPostsFromTopic | Get specific posts from a topic |
-| PUT | `/t/{id}/status.json` | updateTopicStatus | Update the status of a topic |
-| POST | `/t/{id}/timer.json` | createTopicTimer | Create topic timer |
-| GET | `/tag/{name}.json` | getTag | Get a specific tag |
-| GET | `/tag_groups.json` | listTagGroups | Get a list of tag groups |
-| POST | `/tag_groups.json` | createTagGroup | Creates a tag group |
-| GET | `/tag_groups/{id}.json` | getTagGroup | Get a single tag group |
-| PUT | `/tag_groups/{id}.json` | updateTagGroup | Update tag group |
-| GET | `/tags.json` | listTags | Get a list of tags |
-| GET | `/top.json` | listTopTopics | Get the top topics filtered by period |
-| GET | `/topics/private-messages-sent/{username}.json` | getUserSentPrivateMessages | Get a list of private messages sent for a user |
-| GET | `/topics/private-messages/{username}.json` | listUserPrivateMessages | Get a list of private messages for a user |
-| GET | `/u/by-external/{external_id}.json` | getUserExternalId | Get a user by external_id |
-| GET | `/u/by-external/{provider}/{external_id}.json` | getUserIdentiyProviderExternalId | Get a user by identity provider external ID |
-| GET | `/u/{username}.json` | getUser | Get a single user by username |
-| PUT | `/u/{username}.json` | updateUser | Update a user |
-| GET | `/u/{username}/emails.json` | getUserEmails | Get email addresses belonging to a user |
-| PUT | `/u/{username}/preferences/avatar/pick.json` | updateAvatar | Update avatar |
-| PUT | `/u/{username}/preferences/email.json` | updateEmail | Update email |
-| PUT | `/u/{username}/preferences/username.json` | updateUsername | Update username |
-| POST | `/uploads.json` | createUpload | Creates an upload |
-| POST | `/uploads/abort-multipart.json` | abortMultipart | Abort multipart upload |
-| POST | `/uploads/batch-presign-multipart-parts.json` | batchPresignMultipartParts | Generates batches of presigned URLs for multipart parts |
-| POST | `/uploads/complete-external-upload.json` | completeExternalUpload | Completes a direct external upload |
-| POST | `/uploads/complete-multipart.json` | completeMultipart | Complete multipart upload |
-| POST | `/uploads/create-multipart.json` | createMultipartUpload | Creates a multipart external upload |
-| POST | `/uploads/generate-presigned-put.json` | generatePresignedPut | Initiates a direct external upload |
-| GET | `/user-badges/{username}.json` | listUserBadges | List badges for a user |
-| GET | `/user_actions.json` | listUserActions | Get a list of user actions |
-| POST | `/user_avatar/{username}/refresh_gravatar.json` | refreshGravatar | Refresh gravatar |
-| POST | `/users.json` | createUser | Creates a user |
-| PUT | `/users/password-reset/{token}.json` | changePassword | Change password |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/admin/backups.json` | getBackups | — | object[] | yes | List backups |
+| POST | `/admin/backups.json` | createBackup | body: object | object |  | Create backup |
+| GET | `/admin/backups/{filename}` | downloadBackup | `filename`*, `token`* | — | yes | Download backup |
+| PUT | `/admin/backups/{filename}` | sendDownloadBackupEmail | `filename`* | — |  | Send download backup email |
+| GET | `/admin/badges.json` | adminListBadges | — | object | yes | List badges |
+| POST | `/admin/badges.json` | createBadge | body: object | object |  | Create badge |
+| PUT | `/admin/badges/{id}.json` | updateBadge | `id`*, body: object | object |  | Update badge |
+| DELETE | `/admin/badges/{id}.json` | deleteBadge | `id`* | — |  | Delete badge |
+| POST | `/admin/groups.json` | createGroup | body: object | object |  | Create a group |
+| DELETE | `/admin/groups/{id}.json` | deleteGroup | `id`* | object |  | Delete a group |
+| GET | `/admin/users/list/{flag}.json` | adminListUsers | `flag`*, `order`, `asc`, `page`, `show_emails` | object[] | yes | Get a list of users |
+| GET | `/admin/users/{id}.json` | adminGetUser | `id`* | object | yes | Get a user by id |
+| DELETE | `/admin/users/{id}.json` | deleteUser | `id`*, body: object | object |  | Delete a user |
+| PUT | `/admin/users/{id}/anonymize.json` | anonymizeUser | `id`* | object |  | Anonymize a user |
+| POST | `/admin/users/{id}/log_out.json` | logOutUser | `id`* | object |  | Log a user out |
+| PUT | `/admin/users/{id}/silence.json` | silenceUser | `id`*, body: object | object |  | Silence a user |
+| PUT | `/admin/users/{id}/suspend.json` | suspendUser | `id`*, body: object | object |  | Suspend a user |
+| GET | `/c/{id}/show.json` | getCategory | `id`* | object | yes | Show category |
+| GET | `/c/{slug}/{id}.json` | listCategoryTopics | `slug`*, `id`* | object | yes | List topics |
+| GET | `/categories.json` | listCategories | `include_subcategories` | object | yes | Retrieves a list of categories |
+| POST | `/categories.json` | createCategory | body: object | object |  | Creates a category |
+| PUT | `/categories/{id}.json` | updateCategory | `id`*, body: object | object |  | Updates a category |
+| GET | `/directory_items.json` | listUsersPublic | `period`*, `order`*, `asc`, `page` | object | yes | Get a public list of users |
+| GET | `/groups.json` | listGroups | — | object | yes | List groups |
+| GET | `/groups/{id}.json` | getGroup | `id`* | object | yes | Get a group |
+| PUT | `/groups/{id}.json` | updateGroup | `id`*, body: object | object |  | Update a group |
+| GET | `/groups/{id}/members.json` | listGroupMembers | `id`* | object | yes | List group members |
+| PUT | `/groups/{id}/members.json` | addGroupMembers | `id`*, body: object | object |  | Add group members |
+| DELETE | `/groups/{id}/members.json` | removeGroupMembers | `id`*, body: object | object |  | Remove group members |
+| POST | `/invites.json` | createInvite | `Api-Key`*, `Api-Username`*, body: object | object |  | Create an invite |
+| GET | `/latest.json` | listLatestTopics | `Api-Key`*, `Api-Username`*, `order`, `ascending` | object | yes | Get the latest topics |
+| GET | `/notifications.json` | getNotifications | — | object | yes | Get the notifications that belong to the current user |
+| PUT | `/notifications/mark-read.json` | markNotificationsAsRead | body: object | object |  | Mark notifications as read |
+| POST | `/post_actions.json` | performPostAction | `Api-Key`*, `Api-Username`*, body: object | object |  | Like a post and other actions |
+| GET | `/posts.json` | listPosts | `Api-Key`*, `Api-Username`*, `before` | object | yes | List latest posts across topics |
+| POST | `/posts.json` | createTopicPostPM | body: object | object |  | Creates a new topic, a new post, or a private message |
+| GET | `/posts/{id}.json` | getPost | `Api-Key`*, `Api-Username`*, `id`* | object | yes | Retrieve a single post |
+| PUT | `/posts/{id}.json` | updatePost | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Update a single post |
+| DELETE | `/posts/{id}.json` | deletePost | `id`*, body: object | — |  | delete a single post |
+| PUT | `/posts/{id}/locked.json` | lockPost | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Lock a post from being edited |
+| GET | `/posts/{id}/replies.json` | postReplies | `id`* | object[] | yes | List replies to a post |
+| GET | `/search.json` | search | `q`, `page` | object | yes | Search for a term |
+| POST | `/session/forgot_password.json` | sendPasswordResetEmail | body: object | object |  | Send password reset email |
+| GET | `/site.json` | getSite | — | object | yes | Get site info |
+| PUT | `/t/-/{id}.json` | updateTopic | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Update a topic |
+| GET | `/t/external_id/{external_id}.json` | getTopicByExternalId | `external_id`* | — | yes | Get topic by external_id |
+| GET | `/t/{id}.json` | getTopic | `Api-Key`*, `Api-Username`*, `id`* | object | yes | Get a single topic |
+| DELETE | `/t/{id}.json` | removeTopic | `Api-Key`*, `Api-Username`*, `id`* | — |  | Remove a topic |
+| PUT | `/t/{id}/bookmark.json` | bookmarkTopic | `Api-Key`*, `Api-Username`*, `id`* | — |  | Bookmark topic |
+| PUT | `/t/{id}/change-timestamp.json` | updateTopicTimestamp | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Update topic timestamp |
+| POST | `/t/{id}/invite.json` | inviteToTopic | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Invite to topic |
+| POST | `/t/{id}/notifications.json` | setNotificationLevel | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Set notification level |
+| GET | `/t/{id}/posts.json` | getSpecificPostsFromTopic | `Api-Key`*, `Api-Username`*, `id`*, body: object | object | yes | Get specific posts from a topic |
+| PUT | `/t/{id}/status.json` | updateTopicStatus | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Update the status of a topic |
+| POST | `/t/{id}/timer.json` | createTopicTimer | `Api-Key`*, `Api-Username`*, `id`*, body: object | object |  | Create topic timer |
+| GET | `/tag/{name}.json` | getTag | `name`* | object | yes | Get a specific tag |
+| GET | `/tag_groups.json` | listTagGroups | — | object | yes | Get a list of tag groups |
+| POST | `/tag_groups.json` | createTagGroup | body: object | object |  | Creates a tag group |
+| GET | `/tag_groups/{id}.json` | getTagGroup | `id`* | object | yes | Get a single tag group |
+| PUT | `/tag_groups/{id}.json` | updateTagGroup | `id`*, body: object | object |  | Update tag group |
+| GET | `/tags.json` | listTags | — | object | yes | Get a list of tags |
+| GET | `/top.json` | listTopTopics | `Api-Key`*, `Api-Username`*, `period` | object | yes | Get the top topics filtered by period |
+| GET | `/topics/private-messages-sent/{username}.json` | getUserSentPrivateMessages | `username`* | object | yes | Get a list of private messages sent for a user |
+| GET | `/topics/private-messages/{username}.json` | listUserPrivateMessages | `username`* | object | yes | Get a list of private messages for a user |
+| GET | `/u/by-external/{external_id}.json` | getUserExternalId | `Api-Key`*, `Api-Username`*, `external_id`* | object | yes | Get a user by external_id |
+| GET | `/u/by-external/{provider}/{external_id}.json` | getUserIdentiyProviderExternalId | `Api-Key`*, `Api-Username`*, `provider`*, `external_id`* | object | yes | Get a user by identity provider external ID |
+| GET | `/u/{username}.json` | getUser | `Api-Key`*, `Api-Username`*, `username`* | object | yes | Get a single user by username |
+| PUT | `/u/{username}.json` | updateUser | `Api-Key`*, `Api-Username`*, `username`*, body: object | object |  | Update a user |
+| GET | `/u/{username}/emails.json` | getUserEmails | `username`* | object | yes | Get email addresses belonging to a user |
+| PUT | `/u/{username}/preferences/avatar/pick.json` | updateAvatar | `username`*, body: object | object |  | Update avatar |
+| PUT | `/u/{username}/preferences/email.json` | updateEmail | `username`*, body: object | — |  | Update email |
+| PUT | `/u/{username}/preferences/username.json` | updateUsername | `username`*, body: object | — |  | Update username |
+| POST | `/uploads.json` | createUpload | body: object | object |  | Creates an upload |
+| POST | `/uploads/abort-multipart.json` | abortMultipart | body: object | object |  | Abort multipart upload |
+| POST | `/uploads/batch-presign-multipart-parts.json` | batchPresignMultipartParts | body: object | object |  | Generates batches of presigned URLs for multipart parts |
+| POST | `/uploads/complete-external-upload.json` | completeExternalUpload | body: object | object |  | Completes a direct external upload |
+| POST | `/uploads/complete-multipart.json` | completeMultipart | body: object | object |  | Complete multipart upload |
+| POST | `/uploads/create-multipart.json` | createMultipartUpload | body: object | object |  | Creates a multipart external upload |
+| POST | `/uploads/generate-presigned-put.json` | generatePresignedPut | body: object | object |  | Initiates a direct external upload |
+| GET | `/user-badges/{username}.json` | listUserBadges | `username`* | object | yes | List badges for a user |
+| GET | `/user_actions.json` | listUserActions | `offset`*, `username`*, `filter`* | object | yes | Get a list of user actions |
+| POST | `/user_avatar/{username}/refresh_gravatar.json` | refreshGravatar | `username`* | object |  | Refresh gravatar |
+| POST | `/users.json` | createUser | `Api-Key`*, `Api-Username`*, body: object | object |  | Creates a user |
+| PUT | `/users/password-reset/{token}.json` | changePassword | `token`*, body: object | — |  | Change password |

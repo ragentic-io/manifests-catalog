@@ -32,17 +32,17 @@
       {
         "from": "zeno-fm-066551a7d3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/podcasts/{podcastKey}"
-      },
-      {
-        "from": "zeno-fm-066551a7d3",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v2/podcasts/{podcastKey}"
       },
       {
         "from": "zeno-fm-066551a7d3",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v2/podcasts/{podcastKey}"
+      },
+      {
+        "from": "zeno-fm-066551a7d3",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v2/podcasts/{podcastKey}"
       },
       {
         "from": "zeno-fm-066551a7d3",
@@ -57,17 +57,17 @@
       {
         "from": "zeno-fm-066551a7d3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}"
-      },
-      {
-        "from": "zeno-fm-066551a7d3",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}"
       },
       {
         "from": "zeno-fm-066551a7d3",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}"
+      },
+      {
+        "from": "zeno-fm-066551a7d3",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}"
       },
       {
         "from": "zeno-fm-066551a7d3",
@@ -93,6 +93,126 @@
         "from": "zeno-fm-066551a7d3",
         "kind": "EXPOSES",
         "to": "operation:post:/api/v2/stations/search"
+      },
+      {
+        "from": "operation:get:/api/v2/podcasts/categories",
+        "kind": "RETURNS",
+        "to": "schema:PodcastCategory"
+      },
+      {
+        "from": "operation:get:/api/v2/podcasts/countries",
+        "kind": "RETURNS",
+        "to": "schema:Country"
+      },
+      {
+        "from": "operation:post:/api/v2/podcasts/create",
+        "kind": "RETURNS",
+        "to": "schema:Podcast"
+      },
+      {
+        "from": "operation:get:/api/v2/podcasts/languages",
+        "kind": "RETURNS",
+        "to": "schema:Language"
+      },
+      {
+        "from": "operation:post:/api/v2/podcasts/search",
+        "kind": "ACCEPTS",
+        "to": "schema:PodcastSearchParams"
+      },
+      {
+        "from": "operation:post:/api/v2/podcasts/search",
+        "kind": "RETURNS",
+        "to": "schema:PodcastSearchResults"
+      },
+      {
+        "from": "operation:get:/api/v2/podcasts/{podcastKey}",
+        "kind": "RETURNS",
+        "to": "schema:Podcast"
+      },
+      {
+        "from": "operation:put:/api/v2/podcasts/{podcastKey}",
+        "kind": "RETURNS",
+        "to": "schema:Podcast"
+      },
+      {
+        "from": "operation:get:/api/v2/podcasts/{podcastKey}/episodes",
+        "kind": "RETURNS",
+        "to": "schema:PodcastEpisodeList"
+      },
+      {
+        "from": "operation:post:/api/v2/podcasts/{podcastKey}/episodes/create",
+        "kind": "RETURNS",
+        "to": "schema:PodcastEpisode"
+      },
+      {
+        "from": "operation:get:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
+        "kind": "RETURNS",
+        "to": "schema:PodcastEpisode"
+      },
+      {
+        "from": "operation:put:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
+        "kind": "RETURNS",
+        "to": "schema:PodcastEpisode"
+      },
+      {
+        "from": "operation:get:/api/v2/stations/countries",
+        "kind": "RETURNS",
+        "to": "schema:Country"
+      },
+      {
+        "from": "operation:get:/api/v2/stations/genres",
+        "kind": "RETURNS",
+        "to": "schema:StationGenre"
+      },
+      {
+        "from": "operation:get:/api/v2/stations/languages",
+        "kind": "RETURNS",
+        "to": "schema:Language"
+      },
+      {
+        "from": "operation:get:/api/v2/stations/list",
+        "kind": "RETURNS",
+        "to": "schema:StationList"
+      },
+      {
+        "from": "operation:post:/api/v2/stations/search",
+        "kind": "ACCEPTS",
+        "to": "schema:StationSearchParams"
+      },
+      {
+        "from": "operation:post:/api/v2/stations/search",
+        "kind": "RETURNS",
+        "to": "schema:StationSearchResults"
+      },
+      {
+        "from": "schema:PodcastEpisodeList",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastEpisode"
+      },
+      {
+        "from": "schema:PodcastSearchParams",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastFilters"
+      },
+      {
+        "from": "schema:PodcastSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:Podcast"
+      },
+      {
+        "from": "schema:StationList",
+        "kind": "REFERENCES",
+        "to": "schema:Station"
+      },
+      {
+        "from": "schema:StationSearchParams",
+        "kind": "REFERENCES",
+        "to": "schema:StationFilters"
+      },
+      {
+        "from": "schema:StationSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:Station"
       }
     ],
     "nodes": [
@@ -102,348 +222,728 @@
       },
       {
         "deprecated": false,
+        "description": "Get the list of Categories that can be used to filter podcasts in the search podcasts request",
         "id": "operation:get:/api/v2/podcasts/categories",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastCategories",
         "path": "/api/v2/podcasts/categories",
         "pointer": "#/paths/~1api~1v2~1podcasts~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastCategory[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of Countries that can be used to filter podcasts in the search podcasts request",
         "id": "operation:get:/api/v2/podcasts/countries",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastCountries",
         "path": "/api/v2/podcasts/countries",
         "pointer": "#/paths/~1api~1v2~1podcasts~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Country[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create podcast",
         "id": "operation:post:/api/v2/podcasts/create",
         "kind": "operation",
         "method": "post",
         "name": "createPodcast",
         "path": "/api/v2/podcasts/create",
         "pointer": "#/paths/~1api~1v2~1podcasts~1create/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Podcast"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of Languages that can be used to filter podcasts in the search podcasts request",
         "id": "operation:get:/api/v2/podcasts/languages",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastLanguages",
         "path": "/api/v2/podcasts/languages",
         "pointer": "#/paths/~1api~1v2~1podcasts~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Language[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search podcasts",
         "id": "operation:post:/api/v2/podcasts/search",
         "kind": "operation",
         "method": "post",
         "name": "searchPodcasts",
         "path": "/api/v2/podcasts/search",
         "pointer": "#/paths/~1api~1v2~1podcasts~1search/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PodcastSearchParams"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastSearchResults"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/podcasts/{podcastKey}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletePodcast",
-        "path": "/api/v2/podcasts/{podcastKey}",
-        "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}/delete",
-        "security": [
-          {
-            "API_Key": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get podcast",
         "id": "operation:get:/api/v2/podcasts/{podcastKey}",
         "kind": "operation",
         "method": "get",
         "name": "getPodcast",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/podcasts/{podcastKey}",
         "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Podcast"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update podcast",
         "id": "operation:put:/api/v2/podcasts/{podcastKey}",
         "kind": "operation",
         "method": "put",
         "name": "updatePodcast",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/podcasts/{podcastKey}",
         "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Podcast"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete podcast",
+        "id": "operation:delete:/api/v2/podcasts/{podcastKey}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePodcast",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v2/podcasts/{podcastKey}",
+        "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "API_Key": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get podcast episodes",
         "id": "operation:get:/api/v2/podcasts/{podcastKey}/episodes",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastEpisodes",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "10",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/podcasts/{podcastKey}/episodes",
         "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastEpisodeList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create podcast episode",
         "id": "operation:post:/api/v2/podcasts/{podcastKey}/episodes/create",
         "kind": "operation",
         "method": "post",
         "name": "createPodcastEpisode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/podcasts/{podcastKey}/episodes/create",
         "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}~1episodes~1create/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastEpisode"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletePodcast_1",
-        "path": "/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
-        "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}~1episodes~1{episodeKey}/delete",
-        "security": [
-          {
-            "API_Key": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get podcast episode",
         "id": "operation:get:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastEpisode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "episodeKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
         "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}~1episodes~1{episodeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastEpisode"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update podcast episode",
         "id": "operation:put:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
         "kind": "operation",
         "method": "put",
         "name": "updatePodcastEpisode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "episodeKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
         "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}~1episodes~1{episodeKey}/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastEpisode"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete podcast episode",
+        "id": "operation:delete:/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePodcast_1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "podcastKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "episodeKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}",
+        "pointer": "#/paths/~1api~1v2~1podcasts~1{podcastKey}~1episodes~1{episodeKey}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "API_Key": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the list of Countries that can be used to filter stations in the search stations request",
         "id": "operation:get:/api/v2/stations/countries",
         "kind": "operation",
         "method": "get",
         "name": "getStationCountries",
         "path": "/api/v2/stations/countries",
         "pointer": "#/paths/~1api~1v2~1stations~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Country[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of Genres that can be used to filter stations in the search stations request",
         "id": "operation:get:/api/v2/stations/genres",
         "kind": "operation",
         "method": "get",
         "name": "getStationGenres",
         "path": "/api/v2/stations/genres",
         "pointer": "#/paths/~1api~1v2~1stations~1genres/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StationGenre[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of Languages that can be used to filter stations in the search stations request",
         "id": "operation:get:/api/v2/stations/languages",
         "kind": "operation",
         "method": "get",
         "name": "getStationLanguages",
         "path": "/api/v2/stations/languages",
         "pointer": "#/paths/~1api~1v2~1stations~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Language[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List stations",
         "id": "operation:get:/api/v2/stations/list",
         "kind": "operation",
         "method": "get",
         "name": "getPartnerAggregatorStations",
+        "parameters": [
+          {
+            "default": "1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "10",
+            "in": "query",
+            "name": "hitsPerPage",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/stations/list",
         "pointer": "#/paths/~1api~1v2~1stations~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StationList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search stations",
         "id": "operation:post:/api/v2/stations/search",
         "kind": "operation",
         "method": "post",
         "name": "searchStations",
         "path": "/api/v2/stations/search",
         "pointer": "#/paths/~1api~1v2~1stations~1search/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "StationSearchParams"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "StationSearchResults"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "API_Key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "API-v2"
+        ]
       },
       {
+        "description": "Country model",
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "object"
       },
       {
+        "description": "Language model",
         "id": "schema:Language",
         "kind": "schema",
-        "name": "Language"
+        "name": "Language",
+        "type": "object"
       },
       {
+        "description": "Podcast model",
         "id": "schema:Podcast",
         "kind": "schema",
-        "name": "Podcast"
+        "name": "Podcast",
+        "type": "object"
       },
       {
+        "description": "PodcastCategory model",
         "id": "schema:PodcastCategory",
         "kind": "schema",
-        "name": "PodcastCategory"
+        "name": "PodcastCategory",
+        "type": "object"
       },
       {
+        "description": "PodcastEpisode model",
         "id": "schema:PodcastEpisode",
         "kind": "schema",
-        "name": "PodcastEpisode"
+        "name": "PodcastEpisode",
+        "type": "object"
       },
       {
+        "description": "List of PodcastEpisode",
         "id": "schema:PodcastEpisodeList",
         "kind": "schema",
-        "name": "PodcastEpisodeList"
+        "name": "PodcastEpisodeList",
+        "type": "object"
       },
       {
+        "description": "Filters for podcast search",
         "id": "schema:PodcastFilters",
         "kind": "schema",
-        "name": "PodcastFilters"
+        "name": "PodcastFilters",
+        "type": "object"
       },
       {
+        "description": "Podcast search params",
         "id": "schema:PodcastSearchParams",
         "kind": "schema",
-        "name": "PodcastSearchParams"
+        "name": "PodcastSearchParams",
+        "type": "object"
       },
       {
+        "description": "Podcast search results",
         "id": "schema:PodcastSearchResults",
         "kind": "schema",
-        "name": "PodcastSearchResults"
+        "name": "PodcastSearchResults",
+        "type": "object"
       },
       {
+        "description": "Station model",
         "id": "schema:Station",
         "kind": "schema",
-        "name": "Station"
+        "name": "Station",
+        "type": "object"
       },
       {
+        "description": "Filters for station search",
         "id": "schema:StationFilters",
         "kind": "schema",
-        "name": "StationFilters"
+        "name": "StationFilters",
+        "type": "object"
       },
       {
+        "description": "StationGenre model",
         "id": "schema:StationGenre",
         "kind": "schema",
-        "name": "StationGenre"
+        "name": "StationGenre",
+        "type": "object"
       },
       {
+        "description": "List of Station",
         "id": "schema:StationList",
         "kind": "schema",
-        "name": "StationList"
+        "name": "StationList",
+        "type": "object"
       },
       {
+        "description": "Station search params",
         "id": "schema:StationSearchParams",
         "kind": "schema",
-        "name": "StationSearchParams"
+        "name": "StationSearchParams",
+        "type": "object"
       },
       {
+        "description": "Station search results",
         "id": "schema:StationSearchResults",
         "kind": "schema",
-        "name": "StationSearchResults"
+        "name": "StationSearchResults",
+        "type": "object"
       }
     ]
   },

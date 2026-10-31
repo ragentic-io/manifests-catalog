@@ -26,8 +26,35 @@
         "kind": "operation",
         "method": "get",
         "name": "getWolframCloudResults",
+        "parameters": [
+          {
+            "description": "the input expression",
+            "in": "query",
+            "name": "input",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/cloud-plugin",
         "pointer": "#/paths/~1api~1v1~1cloud-plugin/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "500"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Evaluate Wolfram Language code"
       },
@@ -37,8 +64,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getWolframAlphaResults",
+        "parameters": [
+          {
+            "description": "the input",
+            "in": "query",
+            "name": "input",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/llm-api",
         "pointer": "#/paths/~1api~1v1~1llm-api/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "500"
+          },
+          {
+            "status": "501"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get Wolfram|Alpha results"
       }

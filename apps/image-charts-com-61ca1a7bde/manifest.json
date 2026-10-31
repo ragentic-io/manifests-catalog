@@ -22,25 +22,485 @@
       },
       {
         "deprecated": false,
+        "description": "Image-charts",
         "id": "operation:get:/chart",
         "kind": "operation",
         "method": "get",
         "name": "getChart",
+        "parameters": [
+          {
+            "description": "Chart type",
+            "enum": [
+              "bvs",
+              "bvg",
+              "bhs",
+              "bhg",
+              "bvo",
+              "p",
+              "p3",
+              "pc",
+              "pd",
+              "ls",
+              "lc",
+              "lxy",
+              "ls:nda",
+              "lc:nda",
+              "lxy:nda",
+              "pa",
+              "bb",
+              "gv",
+              "gv:dot",
+              "gv:neato",
+              "gv:circo",
+              "gv:fdp",
+              "gv:osage",
+              "gv:twopi",
+              "qr"
+            ],
+            "in": "query",
+            "name": "cht",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "chart data",
+            "in": "query",
+            "name": "chd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "data format with custom scaling",
+            "in": "query",
+            "name": "chds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "QRCode data encoding",
+            "enum": [
+              "UTF-8"
+            ],
+            "in": "query",
+            "name": "choe",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "L|4",
+            "description": "QRCode error correction level and optional margin",
+            "in": "query",
+            "name": "chld",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Axis data-range",
+            "in": "query",
+            "name": "chxr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "axis label positions",
+            "in": "query",
+            "name": "chxp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": ".png",
+            "description": "Image output format",
+            "in": "query",
+            "name": "chof",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Chart size (<width>x<height>)",
+            "in": "query",
+            "name": "chs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text for each series, to display in the legend",
+            "in": "query",
+            "name": "chdl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "000000",
+            "description": "Chart legend text and style",
+            "in": "query",
+            "name": "chdls",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Solid or dotted grid lines",
+            "in": "query",
+            "name": "chg",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "F56991,FF9F80,FFC48C,D1F2A5,EFFAB4",
+            "description": "series colors",
+            "in": "query",
+            "name": "chco",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "chart title",
+            "in": "query",
+            "name": "chtt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "chart title colors and font size",
+            "in": "query",
+            "name": "chts",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Display values on your axis lines or change which axes are shown",
+            "in": "query",
+            "name": "chxt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Custom string axis labels on any axis",
+            "in": "query",
+            "name": "chxl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Font size, color for axis labels, both custom labels and default label values",
+            "in": "query",
+            "name": "chxs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "compound charts and line fills",
+            "in": "query",
+            "name": "chm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "line thickness and solid/dashed style",
+            "in": "query",
+            "name": "chls",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "bar, pie slice, doughnut slice and polar slice chart labels",
+            "in": "query",
+            "name": "chl",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Position and style of labels on data",
+            "in": "query",
+            "name": "chlps",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "chart margins",
+            "in": "query",
+            "name": "chma",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "r",
+            "description": "Position of the legend and order of the legend entries",
+            "in": "query",
+            "name": "chdlp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "bg,s,FFFFFF",
+            "description": "Background Fills",
+            "in": "query",
+            "name": "chf",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "Bar Width and Spacing.",
+            "in": "query",
+            "name": "chbh",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Bar corner radius.",
+            "in": "query",
+            "name": "chbr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "gif configuration",
+            "in": "query",
+            "name": "chan",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "doughnut chart inside label",
+            "in": "query",
+            "name": "chli",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "image-charts enterprise `account_id`",
+            "in": "query",
+            "name": "icac",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "HMAC-SHA256 signature required to activate paid features",
+            "in": "query",
+            "name": "ichm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Default font family for all text from Google Fonts.",
+            "enum": [
+              "ABeeZee",
+              "Abel",
+              "Abhaya Libre",
+              "Abril Fatface",
+              "Aclonica",
+              "Acme",
+              "Actor",
+              "Adamina",
+              "Advent Pro",
+              "Aguafina Script",
+              "Akronim",
+              "Aladin",
+              "Aldrich",
+              "Alef",
+              "Alegreya",
+              "Alegreya SC",
+              "Alegreya Sans",
+              "Alegreya Sans SC",
+              "Aleo",
+              "Alex Brush",
+              "Alfa Slab One",
+              "Alice",
+              "Alike",
+              "Alike Angular",
+              "Allan"
+            ],
+            "in": "query",
+            "name": "icff",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Default font style for all text",
+            "enum": [
+              "normal",
+              "italic"
+            ],
+            "in": "query",
+            "name": "icfs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "localization (ISO 639-1)",
+            "enum": [
+              "fr",
+              "de",
+              "en"
+            ],
+            "in": "query",
+            "name": "iclocale",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "(Private) Force to display the watermark EVEN IF the chart was signed with an enterprise account",
+            "enum": [
+              "0",
+              "1",
+              true,
+              false
+            ],
+            "in": "query",
+            "name": "icwt",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "retina mode",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "in": "query",
+            "name": "icretina",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "FFFFFF",
+            "description": "Background color for QR Codes",
+            "in": "query",
+            "name": "icqrb",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "000000",
+            "description": "Foreground color for QR Codes",
+            "in": "query",
+            "name": "icqrf",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/chart",
         "pointer": "#/paths/~1chart/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Image-Charts API"
+        "summary": "Image-Charts API",
+        "tags": [
+          "chart"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Image-charts",
         "id": "operation:get:/chart.js/2.8.0",
         "kind": "operation",
         "method": "get",
         "name": "getChartjs280",
+        "parameters": [
+          {
+            "description": "Javascript/JSON definition of the chart.",
+            "in": "query",
+            "name": "c",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Javascript/JSON definition of the chart.",
+            "in": "query",
+            "name": "chart",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 500,
+            "description": "Width of the chart",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 300,
+            "description": "Height of the chart",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Background of the chart canvas.",
+            "in": "query",
+            "name": "backgroundColor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Background of the chart canvas.",
+            "in": "query",
+            "name": "bkg",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "url",
+            "description": "Encoding of your \"chart\" parameter.",
+            "enum": [
+              "url",
+              "base64"
+            ],
+            "in": "query",
+            "name": "encoding",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "image-charts enterprise `account_id`",
+            "in": "query",
+            "name": "icac",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "HMAC-SHA256 signature required to activate paid features",
+            "in": "query",
+            "name": "ichm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "retina mode",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "in": "query",
+            "name": "icretina",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/chart.js/2.8.0",
         "pointer": "#/paths/~1chart.js~12.8.0/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Chart.js as image API"
+        "summary": "Chart.js as image API",
+        "tags": [
+          "chart.js"
+        ]
       }
     ]
   },

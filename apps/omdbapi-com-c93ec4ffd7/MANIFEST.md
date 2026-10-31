@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_raw.githubusercontent.com_Mermad
 
 | | |
 | --- | --- |
-| Signed bundle | `eb18351957720dd5d69d7a47f54d245f9cceee70189865335f0b9b4723e40da6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/http_raw.githubusercontent.com_Mermad
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | Get_OMDb Search | OMDb Search |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | Get_OMDb Search | `t`, `i`, `s`, `y`, `type`, `plot`, `tomatoes`, `r`*, `v`, `page`, `callback` | combinedResult | yes | OMDb Search |

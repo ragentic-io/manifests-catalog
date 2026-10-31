@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NRELdev_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `53291eb702cab18f6f230b31117e264e503762b6eaf11770e1cd6fa4a18b574d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NRELdev_profile_ima
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/project.{output_format}` | project | A filterable list of projects. |
-| GET | `/project/{project_id}.{output_format}` | document | Project Details |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/project.{output_format}` | project | `output_format`*, `api_key`*, `search`, `portal`, `page`, `city`, `province`, `region` | — | yes | A filterable list of projects. |
+| GET | `/project/{project_id}.{output_format}` | document | `output_format`*, `api_key`*, `project_id`* | — | yes | Project Details |

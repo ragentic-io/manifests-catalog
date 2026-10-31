@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/______i_favicon.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `9ab743b2e7e07511e85f42d49008b131ab27173fb897a232ea6e1c45654d5edb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/______i_favicon.svg"
 
 13 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/entities` | get /entities | Obtiene el listado de entidades soportadas |
-| POST | `/entities` | post /entities | Obtiene los activos financieros y el detalle de su composición |
-| GET | `/error-codes` | get /error-codes | Listado de códigos de error |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/entities` | get /entities | — | entities[] | yes | Obtiene el listado de entidades soportadas |
+| POST | `/entities` | post /entities | body: object | entity-data[] |  | Obtiene los activos financieros y el detalle de su composición |
+| GET | `/error-codes` | get /error-codes | `lang` | error-codes[] | yes | Listado de códigos de error |

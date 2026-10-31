@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HighwaysEngland_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `d5f0973d67c8ef3810f3668ae01081471e5495e7d255b5ed44ef865e1ec5d099` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HighwaysEngland_pro
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v{version}/areas` | Areas_Get | Returns list of areas |
-| GET | `/v{version}/areas/{area_Ids}` | get /v{version}/areas/{area_Ids} | Returns details of selected area |
-| GET | `/v{version}/quality/daily` | Quality_GetDailyDataQualityForSite | Get Site DailyQuality |
-| GET | `/v{version}/quality/overall` | Quality_GetOverallDataQualityForSites | Get Site OverallQuality |
-| GET | `/v{version}/reports/{report_type}` | Reports_Index | Gets the daily report. |
-| GET | `/v{version}/reports/{start_date}/to/{end_date}/{report_type}` | get /v{version}/reports/{start_date}/to/{end_date}/{report_type} | Gets the daily report. |
-| GET | `/v{version}/sites` | Sites_Index | Get a list of sites |
-| GET | `/v{version}/sites/{site_Ids}` | get /v{version}/sites/{site_Ids} | Get selected sites |
-| GET | `/v{version}/sitetypes` | SiteTypes_Index | Return list of site types |
-| GET | `/v{version}/sitetypes/{siteType_Id}/sites` | SiteTypes_GetSitesForPublicFacingAPI | Returns the layer metadata for the LayerId specified. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v{version}/areas` | Areas_Get | `version`* | AreaResponse | yes | Returns list of areas |
+| GET | `/v{version}/areas/{area_Ids}` | get /v{version}/areas/{area_Ids} | `area_Ids`*, `version`* | AreaResponse | yes | Returns details of selected area |
+| GET | `/v{version}/quality/daily` | Quality_GetDailyDataQualityForSite | `siteId`*, `start_date`*, `end_date`*, `version`* | DailyQualityResponse | yes | Get Site DailyQuality |
+| GET | `/v{version}/quality/overall` | Quality_GetOverallDataQualityForSites | `sites`*, `start_date`*, `end_date`*, `version`* | OverallQualityResponse | yes | Get Site OverallQuality |
+| GET | `/v{version}/reports/{report_type}` | Reports_Index | `report_type`*, `sites`*, `start_date`*, `end_date`*, `page`*, `page_size`*, `reportSubTypeId`, `version`* | Object | yes | Gets the daily report. |
+| GET | `/v{version}/reports/{start_date}/to/{end_date}/{report_type}` | get /v{version}/reports/{start_date}/to/{end_date}/{report_type} | `report_type`*, `sites`*, `start_date`*, `end_date`*, `page`*, `page_size`*, `reportSubTypeId`, `version`* | Object | yes | Gets the daily report. |
+| GET | `/v{version}/sites` | Sites_Index | `version`* | SiteResponse | yes | Get a list of sites |
+| GET | `/v{version}/sites/{site_Ids}` | get /v{version}/sites/{site_Ids} | `site_Ids`*, `version`* | SiteResponse | yes | Get selected sites |
+| GET | `/v{version}/sitetypes` | SiteTypes_Index | `version`* | SiteTypeResponse | yes | Return list of site types |
+| GET | `/v{version}/sitetypes/{siteType_Id}/sites` | SiteTypes_GetSitesForPublicFacingAPI | `siteType_Id`*, `version`* | SiteTypeLayer | yes | Returns the layer metadata for the LayerId specified. |

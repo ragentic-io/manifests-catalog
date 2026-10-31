@@ -28,6 +28,51 @@
         "from": "miataru-com-27315a2077",
         "kind": "EXPOSES",
         "to": "operation:post:/UpdateLocation"
+      },
+      {
+        "from": "operation:post:/GetLocation",
+        "kind": "ACCEPTS",
+        "to": "schema:MiataruGetLocationRequest"
+      },
+      {
+        "from": "operation:post:/GetLocationHistory",
+        "kind": "ACCEPTS",
+        "to": "schema:MiataruGetLocationHistoryRequest"
+      },
+      {
+        "from": "operation:post:/GetVisitorHistory",
+        "kind": "ACCEPTS",
+        "to": "schema:MiataruGetVisitorHistoryRequest"
+      },
+      {
+        "from": "operation:post:/UpdateLocation",
+        "kind": "ACCEPTS",
+        "to": "schema:MiataruUpdateLocationRequest"
+      },
+      {
+        "from": "schema:MiataruGetLocationHistoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MiataruLocation"
+      },
+      {
+        "from": "schema:MiataruGetLocationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MiataruGetLocationDevice"
+      },
+      {
+        "from": "schema:MiataruGetLocationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MiataruLocation"
+      },
+      {
+        "from": "schema:MiataruGetVisitorHistoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MiataruVisitors"
+      },
+      {
+        "from": "schema:MiataruUpdateLocationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MiataruLocation"
       }
     ],
     "nodes": [
@@ -37,118 +82,223 @@
       },
       {
         "deprecated": false,
+        "description": "To retrieve a specific devices latest known location the /GetLocation method is used.",
         "id": "operation:post:/GetLocation",
         "kind": "operation",
         "method": "post",
         "name": "getLocation",
         "path": "/GetLocation",
         "pointer": "#/paths/~1GetLocation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MiataruGetLocationRequest"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "MiataruGetLocationResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "getLocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a devices Location in GeoJSON format.",
         "id": "operation:get:/GetLocationGeoJSON/{deviceID}",
         "kind": "operation",
         "method": "get",
         "name": "getLocationGeoJSON",
+        "parameters": [
+          {
+            "default": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "description": "the unique device ID of the device the location is requested from",
+            "in": "path",
+            "name": "deviceID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/GetLocationGeoJSON/{deviceID}",
         "pointer": "#/paths/~1GetLocationGeoJSON~1{deviceID}/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "MiataruGetLocationGeoJSONResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "getLocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Location History is stored on the server only if the client told the server to do so using the “EnableLocationHistory” setting in the Location Update requests.",
         "id": "operation:post:/GetLocationHistory",
         "kind": "operation",
         "method": "post",
         "name": "getLocationHistory",
         "path": "/GetLocationHistory",
         "pointer": "#/paths/~1GetLocationHistory/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MiataruGetLocationHistoryRequest"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "MiataruGetLocationHistoryResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "getLocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Visitor History is stored on the server with every request to the location or location history information of a device.",
         "id": "operation:post:/GetVisitorHistory",
         "kind": "operation",
         "method": "post",
         "name": "getVisitorHistory",
         "path": "/GetVisitorHistory",
         "pointer": "#/paths/~1GetVisitorHistory/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MiataruGetVisitorHistoryRequest"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "MiataruGetVisitorHistoryResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "getVisitorHistory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method is used to update the location of a device.",
         "id": "operation:post:/UpdateLocation",
         "kind": "operation",
         "method": "post",
         "name": "updateLocation",
         "path": "/UpdateLocation",
         "pointer": "#/paths/~1UpdateLocation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MiataruUpdateLocationRequest"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "ACK"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "updateLocation"
+        ]
       },
       {
         "id": "schema:ACK",
         "kind": "schema",
-        "name": "ACK"
+        "name": "ACK",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetLocationDevice",
         "kind": "schema",
-        "name": "MiataruGetLocationDevice"
+        "name": "MiataruGetLocationDevice",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetLocationGeoJSONResponse",
         "kind": "schema",
-        "name": "MiataruGetLocationGeoJSONResponse"
+        "name": "MiataruGetLocationGeoJSONResponse",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetLocationHistoryRequest",
         "kind": "schema",
-        "name": "MiataruGetLocationHistoryRequest"
+        "name": "MiataruGetLocationHistoryRequest",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetLocationHistoryResponse",
         "kind": "schema",
-        "name": "MiataruGetLocationHistoryResponse"
+        "name": "MiataruGetLocationHistoryResponse",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetLocationRequest",
         "kind": "schema",
-        "name": "MiataruGetLocationRequest"
+        "name": "MiataruGetLocationRequest",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetLocationResponse",
         "kind": "schema",
-        "name": "MiataruGetLocationResponse"
+        "name": "MiataruGetLocationResponse",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetVisitorHistoryRequest",
         "kind": "schema",
-        "name": "MiataruGetVisitorHistoryRequest"
+        "name": "MiataruGetVisitorHistoryRequest",
+        "type": "object"
       },
       {
         "id": "schema:MiataruGetVisitorHistoryResponse",
         "kind": "schema",
-        "name": "MiataruGetVisitorHistoryResponse"
+        "name": "MiataruGetVisitorHistoryResponse",
+        "type": "object"
       },
       {
         "id": "schema:MiataruLocation",
         "kind": "schema",
-        "name": "MiataruLocation"
+        "name": "MiataruLocation",
+        "type": "object"
       },
       {
         "id": "schema:MiataruUpdateLocationRequest",
         "kind": "schema",
-        "name": "MiataruUpdateLocationRequest"
+        "name": "MiataruUpdateLocationRequest",
+        "type": "object"
       },
       {
         "id": "schema:MiataruVisitors",
         "kind": "schema",
-        "name": "MiataruVisitors"
+        "name": "MiataruVisitors",
+        "type": "object"
       }
     ]
   },

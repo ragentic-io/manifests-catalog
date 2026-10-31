@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `e63910fcd41945ee619c38eaf2ffdfbf1690ff49637c3cad7c722db0f3e0bfe5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/records.{format}` | get /records.{format} | Run queries against DigitalNZ metadata search service. |
-| GET | `/records/{record_id}.{format}` | get /records/{record_id}.{format} | View metadata associated with a single record. |
-| GET | `/records/{record_id}/more_like_this.{format}` | get /records/{record_id}/more_like_this.{format} | The "More Like This" call returns similar records to the specified ID. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/records.{format}` | get /records.{format} | `format`*, `Authentication-Token`, `text`, `and[category][]`, `and[content_partner][]`, `and[primary_collection][]`, `and[collection][]`, `and[usage][]`, `and[subject][]`, `and[dc_type][]`, `and[format][]`, `and[placename][]`, `and[creator][]`, `and[title][]`, `and[date]`, `and[year]`, `and[decade]`, `and[century]`, `without[{filter_field}]`, `and[or][{filter_field}][]`, `and[is_commercial_use]`, `and[has_large_thumbnail_url]`, `and[has_lat_lng]`, `geo_bbox`, `fields`, `sort`, `direction`, `page`, `per_page`, `facets`, `facets_page`, `facets_per_page`, `exclude_filters_from_facets` | object | yes | Run queries against DigitalNZ metadata search service. |
+| GET | `/records/{record_id}.{format}` | get /records/{record_id}.{format} | `record_id`*, `format`*, `Authentication-Token`, `fields` | record | yes | View metadata associated with a single record. |
+| GET | `/records/{record_id}/more_like_this.{format}` | get /records/{record_id}/more_like_this.{format} | `record_id`*, `format`*, `Authentication-Token`, `fields`, `mlt_fields`, `filtering` | object | yes | The "More Like This" call returns similar records to the specified ID. |

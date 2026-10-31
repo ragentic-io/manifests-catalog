@@ -17,12 +17,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/connection/{id}"
+        "to": "operation:get:/setup/connection/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/connection/{id}"
+        "to": "operation:delete:/setup/connection/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -37,12 +37,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/connection_role/{id}"
+        "to": "operation:get:/setup/connection_role/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/connection_role/{id}"
+        "to": "operation:delete:/setup/connection_role/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -57,12 +57,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/data_type/{id}"
+        "to": "operation:get:/setup/data_type/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/data_type/{id}"
+        "to": "operation:delete:/setup/data_type/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -77,12 +77,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/flow/{id}"
+        "to": "operation:get:/setup/flow/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/flow/{id}"
+        "to": "operation:delete:/setup/flow/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -97,12 +97,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/namespace/{id}"
+        "to": "operation:get:/setup/namespace/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/namespace/{id}"
+        "to": "operation:delete:/setup/namespace/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -117,12 +117,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/observer/{id}"
+        "to": "operation:get:/setup/observer/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/observer/{id}"
+        "to": "operation:delete:/setup/observer/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -137,12 +137,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/scheduler/{id}"
+        "to": "operation:get:/setup/scheduler/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/scheduler/{id}"
+        "to": "operation:delete:/setup/scheduler/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -157,12 +157,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/schema/{id}"
+        "to": "operation:get:/setup/schema/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/schema/{id}"
+        "to": "operation:delete:/setup/schema/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -177,12 +177,12 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/translator/{id}"
+        "to": "operation:get:/setup/translator/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/translator/{id}"
+        "to": "operation:delete:/setup/translator/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
@@ -197,12 +197,247 @@
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/setup/webhook/{id}"
+        "to": "operation:get:/setup/webhook/{id}"
       },
       {
         "from": "cenit-io-748c6627e2",
         "kind": "EXPOSES",
-        "to": "operation:get:/setup/webhook/{id}"
+        "to": "operation:delete:/setup/webhook/{id}"
+      },
+      {
+        "from": "operation:get:/setup/connection",
+        "kind": "RETURNS",
+        "to": "schema:connection"
+      },
+      {
+        "from": "operation:post:/setup/connection",
+        "kind": "RETURNS",
+        "to": "schema:connection"
+      },
+      {
+        "from": "operation:get:/setup/connection/{id}",
+        "kind": "RETURNS",
+        "to": "schema:connection"
+      },
+      {
+        "from": "operation:get:/setup/connection_role",
+        "kind": "RETURNS",
+        "to": "schema:connection_role"
+      },
+      {
+        "from": "operation:post:/setup/connection_role",
+        "kind": "RETURNS",
+        "to": "schema:connection_role"
+      },
+      {
+        "from": "operation:get:/setup/connection_role/{id}",
+        "kind": "RETURNS",
+        "to": "schema:connection_role"
+      },
+      {
+        "from": "operation:get:/setup/data_type/",
+        "kind": "RETURNS",
+        "to": "schema:data_type"
+      },
+      {
+        "from": "operation:post:/setup/data_type/",
+        "kind": "RETURNS",
+        "to": "schema:data_type"
+      },
+      {
+        "from": "operation:get:/setup/data_type/{id}",
+        "kind": "RETURNS",
+        "to": "schema:data_type"
+      },
+      {
+        "from": "operation:get:/setup/flow/",
+        "kind": "RETURNS",
+        "to": "schema:flow"
+      },
+      {
+        "from": "operation:post:/setup/flow/",
+        "kind": "RETURNS",
+        "to": "schema:flow"
+      },
+      {
+        "from": "operation:get:/setup/flow/{id}",
+        "kind": "RETURNS",
+        "to": "schema:flow"
+      },
+      {
+        "from": "operation:get:/setup/namespace/",
+        "kind": "RETURNS",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "operation:post:/setup/namespace/",
+        "kind": "RETURNS",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "operation:get:/setup/namespace/{id}",
+        "kind": "RETURNS",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "operation:get:/setup/observer/",
+        "kind": "RETURNS",
+        "to": "schema:observer"
+      },
+      {
+        "from": "operation:post:/setup/observer/",
+        "kind": "RETURNS",
+        "to": "schema:observer"
+      },
+      {
+        "from": "operation:get:/setup/observer/{id}",
+        "kind": "RETURNS",
+        "to": "schema:observer"
+      },
+      {
+        "from": "operation:get:/setup/scheduler/",
+        "kind": "RETURNS",
+        "to": "schema:scheduler"
+      },
+      {
+        "from": "operation:post:/setup/scheduler/",
+        "kind": "RETURNS",
+        "to": "schema:scheduler"
+      },
+      {
+        "from": "operation:get:/setup/scheduler/{id}",
+        "kind": "RETURNS",
+        "to": "schema:scheduler"
+      },
+      {
+        "from": "operation:get:/setup/schema/",
+        "kind": "RETURNS",
+        "to": "schema:schema"
+      },
+      {
+        "from": "operation:post:/setup/schema/",
+        "kind": "RETURNS",
+        "to": "schema:schema"
+      },
+      {
+        "from": "operation:get:/setup/schema/{id}",
+        "kind": "RETURNS",
+        "to": "schema:schema"
+      },
+      {
+        "from": "operation:get:/setup/translator/",
+        "kind": "RETURNS",
+        "to": "schema:translator"
+      },
+      {
+        "from": "operation:post:/setup/translator/",
+        "kind": "RETURNS",
+        "to": "schema:translator"
+      },
+      {
+        "from": "operation:get:/setup/translator/{id}",
+        "kind": "RETURNS",
+        "to": "schema:translator"
+      },
+      {
+        "from": "operation:get:/setup/webhook/",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:post:/setup/webhook/",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:get:/setup/webhook/{id}",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "schema:connection",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:connection_role",
+        "kind": "REFERENCES",
+        "to": "schema:connection"
+      },
+      {
+        "from": "schema:connection_role",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:connection_role",
+        "kind": "REFERENCES",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "schema:data_type",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:flow",
+        "kind": "REFERENCES",
+        "to": "schema:connection_role"
+      },
+      {
+        "from": "schema:flow",
+        "kind": "REFERENCES",
+        "to": "schema:data_type"
+      },
+      {
+        "from": "schema:flow",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:flow",
+        "kind": "REFERENCES",
+        "to": "schema:translator"
+      },
+      {
+        "from": "schema:flow",
+        "kind": "REFERENCES",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "schema:observer",
+        "kind": "REFERENCES",
+        "to": "schema:data_type"
+      },
+      {
+        "from": "schema:observer",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:scheduler",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:schema",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:translator",
+        "kind": "REFERENCES",
+        "to": "schema:data_type"
+      },
+      {
+        "from": "schema:translator",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
+      },
+      {
+        "from": "schema:webhook",
+        "kind": "REFERENCES",
+        "to": "schema:namespace"
       }
     ],
     "nodes": [
@@ -212,693 +447,1373 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of connections you've previously created.",
         "id": "operation:get:/setup/connection",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/connection",
         "path": "/setup/connection",
         "pointer": "#/paths/~1setup~1connection/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "connection[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of connections"
+        "summary": "Returns a list of connections",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified connection by setting the values of the parameters passed.",
         "id": "operation:post:/setup/connection",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/connection",
         "path": "/setup/connection",
         "pointer": "#/paths/~1setup~1connection/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "connection"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a connection"
+        "summary": "Create or update a connection",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/connection/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/connection/{id}",
-        "path": "/setup/connection/{id}",
-        "pointer": "#/paths/~1setup~1connection~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a connection"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing connection.",
         "id": "operation:get:/setup/connection/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/connection/{id}",
+        "parameters": [
+          {
+            "description": "Connection ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/connection/{id}",
         "pointer": "#/paths/~1setup~1connection~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "connection"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing connection"
+        "summary": "Retrieve an existing connection",
+        "tags": [
+          "Connection"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Permanently deletes a connection.",
+        "id": "operation:delete:/setup/connection/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/connection/{id}",
+        "parameters": [
+          {
+            "description": "Connection ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/connection/{id}",
+        "pointer": "#/paths/~1setup~1connection~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a connection",
+        "tags": [
+          "Connection"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of connection roles you've previously created.",
         "id": "operation:get:/setup/connection_role",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/connection_role",
         "path": "/setup/connection_role",
         "pointer": "#/paths/~1setup~1connection_role/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "connection_role[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of connection roles"
+        "summary": "Returns a list of connection roles",
+        "tags": [
+          "Connection Role"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified connection role by setting the values of the parameters passed.",
         "id": "operation:post:/setup/connection_role",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/connection_role",
         "path": "/setup/connection_role",
         "pointer": "#/paths/~1setup~1connection_role/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "connection_role"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a connection role"
+        "summary": "Create or update a connection role",
+        "tags": [
+          "Connection Role"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/connection_role/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/connection_role/{id}",
-        "path": "/setup/connection_role/{id}",
-        "pointer": "#/paths/~1setup~1connection_role~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a connection role."
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a connection role",
         "id": "operation:get:/setup/connection_role/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/connection_role/{id}",
+        "parameters": [
+          {
+            "description": "Connection role ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/connection_role/{id}",
         "pointer": "#/paths/~1setup~1connection_role~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "connection_role"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Return a connection role"
+        "summary": "Return a connection role",
+        "tags": [
+          "Connection Role"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified connection role.",
+        "id": "operation:delete:/setup/connection_role/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/connection_role/{id}",
+        "parameters": [
+          {
+            "description": "Connection role ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/connection_role/{id}",
+        "pointer": "#/paths/~1setup~1connection_role~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a connection role.",
+        "tags": [
+          "Connection Role"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of data types you've previously created.",
         "id": "operation:get:/setup/data_type/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/data_type/",
         "path": "/setup/data_type/",
         "pointer": "#/paths/~1setup~1data_type~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "data_type[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of data types"
+        "summary": "Returns a list of data types",
+        "tags": [
+          "Data Type"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified data type by setting the values of the parameters passed.",
         "id": "operation:post:/setup/data_type/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/data_type/",
         "path": "/setup/data_type/",
         "pointer": "#/paths/~1setup~1data_type~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "data_type"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a data type"
+        "summary": "Create or update a data type",
+        "tags": [
+          "Data Type"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/data_type/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/data_type/{id}",
-        "path": "/setup/data_type/{id}",
-        "pointer": "#/paths/~1setup~1data_type~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a data type"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing data type.",
         "id": "operation:get:/setup/data_type/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/data_type/{id}",
+        "parameters": [
+          {
+            "description": "data type ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/data_type/{id}",
         "pointer": "#/paths/~1setup~1data_type~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "data_type"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve a data type"
+        "summary": "Retrieve a data type",
+        "tags": [
+          "Data Type"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified data type.",
+        "id": "operation:delete:/setup/data_type/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/data_type/{id}",
+        "parameters": [
+          {
+            "description": "data type ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/data_type/{id}",
+        "pointer": "#/paths/~1setup~1data_type~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a data type",
+        "tags": [
+          "Data Type"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of flows you've previously created.",
         "id": "operation:get:/setup/flow/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/flow/",
         "path": "/setup/flow/",
         "pointer": "#/paths/~1setup~1flow~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "flow[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of flows"
+        "summary": "Returns a list of flows",
+        "tags": [
+          "Flow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified flow.",
         "id": "operation:post:/setup/flow/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/flow/",
         "path": "/setup/flow/",
         "pointer": "#/paths/~1setup~1flow~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "flow"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a flow"
+        "summary": "Create or update a flow",
+        "tags": [
+          "Flow"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/flow/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/flow/{id}",
-        "path": "/setup/flow/{id}",
-        "pointer": "#/paths/~1setup~1flow~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a flow."
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing flow.",
         "id": "operation:get:/setup/flow/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/flow/{id}",
+        "parameters": [
+          {
+            "description": "Flow ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/flow/{id}",
         "pointer": "#/paths/~1setup~1flow~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "flow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing flow"
+        "summary": "Retrieve an existing flow",
+        "tags": [
+          "Flow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified flow.",
+        "id": "operation:delete:/setup/flow/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/flow/{id}",
+        "parameters": [
+          {
+            "description": "Flow ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/flow/{id}",
+        "pointer": "#/paths/~1setup~1flow~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a flow.",
+        "tags": [
+          "Flow"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of namespaces you've previously created.",
         "id": "operation:get:/setup/namespace/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/namespace/",
         "path": "/setup/namespace/",
         "pointer": "#/paths/~1setup~1namespace~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "namespace[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of namespaces"
+        "summary": "Returns a list of namespaces",
+        "tags": [
+          "Namespace"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified namespace.",
         "id": "operation:post:/setup/namespace/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/namespace/",
         "path": "/setup/namespace/",
         "pointer": "#/paths/~1setup~1namespace~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "namespace"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a namespace"
+        "summary": "Create or update a namespace",
+        "tags": [
+          "Namespace"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/namespace/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/namespace/{id}",
-        "path": "/setup/namespace/{id}",
-        "pointer": "#/paths/~1setup~1namespace~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a namespace"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing namespace.",
         "id": "operation:get:/setup/namespace/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/namespace/{id}",
+        "parameters": [
+          {
+            "description": "Namespace ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/namespace/{id}",
         "pointer": "#/paths/~1setup~1namespace~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "namespace"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing namespace"
+        "summary": "Retrieve an existing namespace",
+        "tags": [
+          "Namespace"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified namespace.",
+        "id": "operation:delete:/setup/namespace/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/namespace/{id}",
+        "parameters": [
+          {
+            "description": "Namespace ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/namespace/{id}",
+        "pointer": "#/paths/~1setup~1namespace~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a namespace",
+        "tags": [
+          "Namespace"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of events you've previously created.",
         "id": "operation:get:/setup/observer/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/observer/",
         "path": "/setup/observer/",
         "pointer": "#/paths/~1setup~1observer~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "observer[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of events"
+        "summary": "Returns a list of events",
+        "tags": [
+          "Data Event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified event observer.",
         "id": "operation:post:/setup/observer/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/observer/",
         "path": "/setup/observer/",
         "pointer": "#/paths/~1setup~1observer~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "observer"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update an event"
+        "summary": "Create or update an event",
+        "tags": [
+          "Data Event"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/observer/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/observer/{id}",
-        "path": "/setup/observer/{id}",
-        "pointer": "#/paths/~1setup~1observer~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete an event"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing event.",
         "id": "operation:get:/setup/observer/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/observer/{id}",
+        "parameters": [
+          {
+            "description": "Observer ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/observer/{id}",
         "pointer": "#/paths/~1setup~1observer~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "observer"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing event"
+        "summary": "Retrieve an existing event",
+        "tags": [
+          "Data Event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified event observer.",
+        "id": "operation:delete:/setup/observer/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/observer/{id}",
+        "parameters": [
+          {
+            "description": "Observer ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/observer/{id}",
+        "pointer": "#/paths/~1setup~1observer~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete an event",
+        "tags": [
+          "Data Event"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of schedulers you've previously created.",
         "id": "operation:get:/setup/scheduler/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/scheduler/",
         "path": "/setup/scheduler/",
         "pointer": "#/paths/~1setup~1scheduler~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "scheduler[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of schedulers"
+        "summary": "Returns a list of schedulers",
+        "tags": [
+          "Scheduler"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified scheduler.",
         "id": "operation:post:/setup/scheduler/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/scheduler/",
         "path": "/setup/scheduler/",
         "pointer": "#/paths/~1setup~1scheduler~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "scheduler"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update an scheduler"
+        "summary": "Create or update an scheduler",
+        "tags": [
+          "Scheduler"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/scheduler/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/scheduler/{id}",
-        "path": "/setup/scheduler/{id}",
-        "pointer": "#/paths/~1setup~1scheduler~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete an schedule"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing scheduler.",
         "id": "operation:get:/setup/scheduler/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/scheduler/{id}",
+        "parameters": [
+          {
+            "description": "Scheduler ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/scheduler/{id}",
         "pointer": "#/paths/~1setup~1scheduler~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "scheduler"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing schedule"
+        "summary": "Retrieve an existing schedule",
+        "tags": [
+          "Scheduler"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified scheduler.",
+        "id": "operation:delete:/setup/scheduler/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/scheduler/{id}",
+        "parameters": [
+          {
+            "description": "Scheduler ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/scheduler/{id}",
+        "pointer": "#/paths/~1setup~1scheduler~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete an schedule",
+        "tags": [
+          "Scheduler"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of schemas you've previously created.",
         "id": "operation:get:/setup/schema/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/schema/",
         "path": "/setup/schema/",
         "pointer": "#/paths/~1setup~1schema~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schema[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of schemas"
+        "summary": "Returns a list of schemas",
+        "tags": [
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified schema.",
         "id": "operation:post:/setup/schema/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/schema/",
         "path": "/setup/schema/",
         "pointer": "#/paths/~1setup~1schema~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schema"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update an schema"
+        "summary": "Create or update an schema",
+        "tags": [
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/schema/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/schema/{id}",
-        "path": "/setup/schema/{id}",
-        "pointer": "#/paths/~1setup~1schema~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete an schema."
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing schema.",
         "id": "operation:get:/setup/schema/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/schema/{id}",
+        "parameters": [
+          {
+            "description": "Schema ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/schema/{id}",
         "pointer": "#/paths/~1setup~1schema~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schema"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing schema"
+        "summary": "Retrieve an existing schema",
+        "tags": [
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified schema.",
+        "id": "operation:delete:/setup/schema/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/schema/{id}",
+        "parameters": [
+          {
+            "description": "Schema ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/schema/{id}",
+        "pointer": "#/paths/~1setup~1schema~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete an schema.",
+        "tags": [
+          "Schema"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of translators you've previously created.",
         "id": "operation:get:/setup/translator/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/translator/",
         "path": "/setup/translator/",
         "pointer": "#/paths/~1setup~1translator~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "translator[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of translators"
+        "summary": "Returns a list of translators",
+        "tags": [
+          "Translator"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified translator.",
         "id": "operation:post:/setup/translator/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/translator/",
         "path": "/setup/translator/",
         "pointer": "#/paths/~1setup~1translator~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "translator"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a translator"
+        "summary": "Create or update a translator",
+        "tags": [
+          "Translator"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/translator/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/translator/{id}",
-        "path": "/setup/translator/{id}",
-        "pointer": "#/paths/~1setup~1translator~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a translator"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing translator.",
         "id": "operation:get:/setup/translator/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/translator/{id}",
+        "parameters": [
+          {
+            "description": "Translator ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/translator/{id}",
         "pointer": "#/paths/~1setup~1translator~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "translator"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing translator"
+        "summary": "Retrieve an existing translator",
+        "tags": [
+          "Translator"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the specified translator.",
+        "id": "operation:delete:/setup/translator/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/translator/{id}",
+        "parameters": [
+          {
+            "description": "Translator ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/translator/{id}",
+        "pointer": "#/paths/~1setup~1translator~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a translator",
+        "tags": [
+          "Translator"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of webhooks you've previously created.",
         "id": "operation:get:/setup/webhook/",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/webhook/",
         "path": "/setup/webhook/",
         "pointer": "#/paths/~1setup~1webhook~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Returns a list of webhooks"
+        "summary": "Returns a list of webhooks",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates the specified webhook.",
         "id": "operation:post:/setup/webhook/",
         "kind": "operation",
         "method": "post",
         "name": "post /setup/webhook/",
         "path": "/setup/webhook/",
         "pointer": "#/paths/~1setup~1webhook~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Create or update a webhook"
+        "summary": "Create or update a webhook",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/setup/webhook/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /setup/webhook/{id}",
-        "path": "/setup/webhook/{id}",
-        "pointer": "#/paths/~1setup~1webhook~1{id}/delete",
-        "security": [
-          {
-            "X-User-Access-Key": [],
-            "X-User-Access-Token": []
-          }
-        ],
-        "summary": "Delete a webhook"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing webhook.",
         "id": "operation:get:/setup/webhook/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /setup/webhook/{id}",
+        "parameters": [
+          {
+            "description": "Webhook ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setup/webhook/{id}",
         "pointer": "#/paths/~1setup~1webhook~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-User-Access-Key": [],
             "X-User-Access-Token": []
           }
         ],
-        "summary": "Retrieve an existing webhook"
+        "summary": "Retrieve an existing webhook",
+        "tags": [
+          "Webhook"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Deletes the specified webhook.",
+        "id": "operation:delete:/setup/webhook/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /setup/webhook/{id}",
+        "parameters": [
+          {
+            "description": "Webhook ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/setup/webhook/{id}",
+        "pointer": "#/paths/~1setup~1webhook~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-User-Access-Key": [],
+            "X-User-Access-Token": []
+          }
+        ],
+        "summary": "Delete a webhook",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "id": "schema:connection",
         "kind": "schema",
-        "name": "connection"
+        "name": "connection",
+        "type": "object"
       },
       {
         "id": "schema:connection_role",
         "kind": "schema",
-        "name": "connection_role"
+        "name": "connection_role",
+        "type": "object"
       },
       {
         "id": "schema:data_type",
         "kind": "schema",
-        "name": "data_type"
+        "name": "data_type",
+        "type": "object"
       },
       {
         "id": "schema:flow",
         "kind": "schema",
-        "name": "flow"
+        "name": "flow",
+        "type": "object"
       },
       {
         "id": "schema:namespace",
         "kind": "schema",
-        "name": "namespace"
+        "name": "namespace",
+        "type": "object"
       },
       {
         "id": "schema:observer",
         "kind": "schema",
-        "name": "observer"
+        "name": "observer",
+        "type": "object"
       },
       {
         "id": "schema:scheduler",
         "kind": "schema",
-        "name": "scheduler"
+        "name": "scheduler",
+        "type": "object"
       },
       {
         "id": "schema:schema",
         "kind": "schema",
-        "name": "schema"
+        "name": "schema",
+        "type": "object"
       },
       {
         "id": "schema:translator",
         "kind": "schema",
-        "name": "translator"
+        "name": "translator",
+        "type": "object"
       },
       {
         "id": "schema:webhook",
         "kind": "schema",
-        "name": "webhook"
+        "name": "webhook",
+        "type": "object"
       }
     ]
   },

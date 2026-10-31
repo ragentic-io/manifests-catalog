@@ -83,6 +83,66 @@
         "from": "epa-gov-air-680387149c",
         "kind": "EXPOSES",
         "to": "operation:post:/air_rest_services.metadata"
+      },
+      {
+        "from": "schema:air01",
+        "kind": "REFERENCES",
+        "to": "schema:air00"
+      },
+      {
+        "from": "schema:air04",
+        "kind": "REFERENCES",
+        "to": "schema:air02"
+      },
+      {
+        "from": "schema:air05",
+        "kind": "REFERENCES",
+        "to": "schema:air03"
+      },
+      {
+        "from": "schema:air05",
+        "kind": "REFERENCES",
+        "to": "schema:air04"
+      },
+      {
+        "from": "schema:air08",
+        "kind": "REFERENCES",
+        "to": "schema:air01"
+      },
+      {
+        "from": "schema:air08",
+        "kind": "REFERENCES",
+        "to": "schema:air06"
+      },
+      {
+        "from": "schema:air08",
+        "kind": "REFERENCES",
+        "to": "schema:qp0"
+      },
+      {
+        "from": "schema:air09",
+        "kind": "REFERENCES",
+        "to": "schema:air10"
+      },
+      {
+        "from": "schema:air09",
+        "kind": "REFERENCES",
+        "to": "schema:geo"
+      },
+      {
+        "from": "schema:air11",
+        "kind": "REFERENCES",
+        "to": "schema:air02"
+      },
+      {
+        "from": "schema:air12",
+        "kind": "REFERENCES",
+        "to": "schema:air03"
+      },
+      {
+        "from": "schema:meta1",
+        "kind": "REFERENCES",
+        "to": "schema:meta3"
       }
     ],
     "nodes": [
@@ -92,259 +152,5171 @@
       },
       {
         "deprecated": false,
+        "description": "Based on the QID obtained from a get_facilities or get_facility_info query, return a comma sepated vaule (CSV) file of the facilities found.",
         "id": "operation:get:/air_rest_services.get_download",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_download",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "query",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "query",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "query",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_download",
         "pointer": "#/paths/~1air_rest_services.get_download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Download Data Service"
+        "summary": "Clean Air Act Download Data Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Based on the QID obtained from a get_facilities or get_facility_info query, return a comma sepated vaule (CSV) file of the facilities found.",
         "id": "operation:post:/air_rest_services.get_download",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_download",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "formData",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "formData",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "formData",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_download",
         "pointer": "#/paths/~1air_rest_services.get_download/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Download Data Service"
+        "summary": "Clean Air Act Download Data Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Validates query search parameters and returns query identifier.",
         "id": "operation:get:/air_rest_services.get_facilities",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_facilities",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Name Filter.",
+            "in": "query",
+            "name": "p_fn",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "query",
+            "name": "p_sa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "query",
+            "name": "p_sa1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility City Filter.",
+            "in": "query",
+            "name": "p_ct",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility County Filter.",
+            "in": "query",
+            "name": "p_co",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FIPS Code Filter.",
+            "in": "query",
+            "name": "p_fips",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility State and State-Equivalent Filter.",
+            "in": "query",
+            "name": "p_st",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "5-Digit ZIP Code Filter.",
+            "in": "query",
+            "name": "p_zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Local Control Region Code Filter.",
+            "in": "query",
+            "name": "p_lcon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Registry Service ID Filter.",
+            "in": "query",
+            "name": "p_frs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "EPA Region Filter.",
+            "enum": [
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09",
+              "10"
+            ],
+            "in": "query",
+            "name": "p_reg",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter.",
+            "in": "query",
+            "name": "p_sic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "North American Industry Classification System Filter.",
+            "in": "query",
+            "name": "p_ncs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of quarters in non-compliance limiter.",
+            "in": "query",
+            "name": "p_qnc",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Last Penality Date Qualifier Filter.",
+            "in": "query",
+            "name": "p_pen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operating status filter.",
+            "in": "query",
+            "name": "p_opst",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "query",
+            "name": "p_c1lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "query",
+            "name": "p_c1lon",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "query",
+            "name": "p_c2lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "query",
+            "name": "p_c2lon",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "US-Mexico Border Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_usmex",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 2.",
+            "in": "query",
+            "name": "p_sic2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 3.",
+            "in": "query",
+            "name": "p_sic4",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Federal Agency.",
+            "in": "query",
+            "name": "p_fa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Active Permits/Facilities Flag.",
+            "enum": [
+              "Y",
+              "N",
+              "A"
+            ],
+            "in": "query",
+            "name": "p_act",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Major Facility Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_maj",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CAA Maximum Achievable Control Technology (MACT) Subpart codes (alpha ID between 1 and 7 characters) applicable to the facility.",
+            "in": "query",
+            "name": "p_mact",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards (NSPS) Subpart Code Search.",
+            "in": "query",
+            "name": "p_nsps",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards Minors (NSPSM) Subpart Code Search.",
+            "in": "query",
+            "name": "p_nspsm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Code Filter.",
+            "in": "query",
+            "name": "p_prog",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Actions [within / not within] specified date range indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_fea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_feay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Formal Enforcement Actions: - E = EPA - S = State - A = All",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "query",
+            "name": "p_feaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Informal Enforcement Actions [within / not within] specified date range.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_iea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_ieay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Informal Enforcement Actions.",
+            "enum": [
+              "E",
+              "S"
+            ],
+            "in": "query",
+            "name": "p_ieaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Noncompliance Limiter.",
+            "enum": [
+              "0",
+              "GT1",
+              "GT2",
+              "GT4",
+              "GT8",
+              "12"
+            ],
+            "in": "query",
+            "name": "p_qiv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Non-Attainment Area Flag.",
+            "in": "query",
+            "name": "p_naa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Discharging into Impaired Waters Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_impw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Current Toxics Release Inventory (TRI) Reporter Limiter.",
+            "enum": [
+              "CURR",
+              "NOTCURR"
+            ],
+            "in": "query",
+            "name": "p_trep",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Released To Air Chemical Identifier Category Filter.",
+            "enum": [
+              "TOTAL",
+              "CARC",
+              "HAP"
+            ],
+            "in": "query",
+            "name": "p_tri_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Amount Filter.",
+            "enum": [
+              "0",
+              "GT0",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT50000"
+            ],
+            "in": "query",
+            "name": "p_tri_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Of Any Kind Above Value Filter.",
+            "in": "query",
+            "name": "p_tri_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Toxic Release Inventory Chemical Identifier Filter.",
+            "in": "query",
+            "name": "p_tri_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) Gas Code Category.",
+            "enum": [
+              "ALL",
+              "BIOCO2",
+              "CH4",
+              "CO2",
+              "HFC",
+              "N2O",
+              "NF3",
+              "OTHER_L",
+              "PFC",
+              "SF6"
+            ],
+            "in": "query",
+            "name": "p_ghg_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) CO2 Equivalent Formatted Release Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "query",
+            "name": "p_ghg_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) C02 Equivalent Custom Amount.",
+            "in": "query",
+            "name": "p_ghg_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Green House Gas (GHG) Reporting Year.",
+            "in": "query",
+            "name": "p_ghg_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Identifier.",
+            "in": "query",
+            "name": "p_nei_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Formatted Pollutant Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "query",
+            "name": "p_nei_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Custom Pollutant Amount.",
+            "in": "query",
+            "name": "p_nei_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) year: 2014 or 2011",
+            "in": "query",
+            "name": "p_nei_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Category.",
+            "in": "query",
+            "name": "p_nei_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Percent Minority Population Limiter.",
+            "enum": [
+              "NONE",
+              "GT5",
+              "GT10",
+              "GT25",
+              "GT50",
+              "GT75"
+            ],
+            "in": "query",
+            "name": "p_pm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Population Density Limiter (per sq mile).",
+            "enum": [
+              "NONE",
+              "GT100",
+              "GT500",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT20000"
+            ],
+            "in": "query",
+            "name": "p_pd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian Country Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, or 8-character watershed code.",
+            "in": "query",
+            "name": "p_huc",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, 8-, 10-, or 12-character watershed (WBD from the USGS Watershed Boundary Dataset).",
+            "in": "query",
+            "name": "p_wbd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Nine-digit permit IDs.",
+            "in": "query",
+            "name": "p_pid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter Results by Media.",
+            "enum": [
+              "M",
+              "R",
+              "S",
+              "W",
+              "ALL"
+            ],
+            "in": "query",
+            "name": "p_med",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Facility Inspection [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N",
+              "NV"
+            ],
+            "in": "query",
+            "name": "p_ysl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since last facility inspection.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_ysly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Facility Last Inspection Code Filter.",
+            "enum": [
+              "E",
+              "S",
+              "A"
+            ],
+            "in": "query",
+            "name": "p_ysla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Stack Test [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_stsl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since date of last stack test.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_stsly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Stack Last Test Code Filter.",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "query",
+            "name": "p_stsla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Stack Test Status Description Filter.",
+            "in": "query",
+            "name": "p_stres",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Conductor Type Code Filter.",
+            "in": "query",
+            "name": "p_sttyp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quick Search.",
+            "in": "query",
+            "name": "p_qs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Single Facility Search Filter.",
+            "in": "query",
+            "name": "p_sfs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Numeric code for tribe (or list of tribes).",
+            "in": "query",
+            "name": "p_tribeid",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Tribe Name Filter.",
+            "in": "query",
+            "name": "p_tribename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Proximity to tribal land limiter.",
+            "in": "query",
+            "name": "p_tribedist",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Owner/Operator code filter.",
+            "in": "query",
+            "name": "p_owop",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates whether to AND or OR the Owner/Operator parameter (p_owop) and the federal agency code (p_fa) parameters.",
+            "enum": [
+              "AND",
+              "OR"
+            ],
+            "in": "query",
+            "name": "p_agoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent facility inspection.",
+            "in": "query",
+            "name": "p_idt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent facility inspection.",
+            "in": "query",
+            "name": "p_idt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent stack test.",
+            "in": "query",
+            "name": "p_stdt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent stack test.",
+            "in": "query",
+            "name": "p_stdt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Inspection Type: - CAC = Corrective Action Inspection - CAV = Compliance Assistance Visit - CDI = Case Development Inspection - CEI = Inspection Inspection - C…",
+            "in": "query",
+            "name": "p_pityp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance issuess found during inspection.",
+            "enum": [
+              "Any",
+              "Yes",
+              "No",
+              "Undetermined"
+            ],
+            "in": "query",
+            "name": "p_cifdi",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range Start.",
+            "in": "query",
+            "name": "p_pfead1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range End.",
+            "in": "query",
+            "name": "p_pfead2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action (FEA) Code Filter.",
+            "in": "query",
+            "name": "p_pfeat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Significant Noncompliance Limiter.",
+            "enum": [
+              "GT1",
+              "GE1",
+              "GT2",
+              "GE2",
+              "GT4",
+              "GE4",
+              "GT8",
+              "GE8",
+              "GT12",
+              "GE12"
+            ],
+            "in": "query",
+            "name": "p_psncq",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance Tracking Limiter.",
+            "enum": [
+              "Off",
+              "Partial",
+              "On"
+            ],
+            "in": "query",
+            "name": "p_pctrack",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Source water protection area",
+            "enum": [
+              "source water",
+              "surface water",
+              "ground water",
+              "waiting for SSO"
+            ],
+            "in": "query",
+            "name": "p_swpa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Universe Designation Limiter.",
+            "in": "query",
+            "name": "p_des",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls type of text search performed on facility name with parameter p_fn.",
+            "enum": [
+              "ALL",
+              "CONTAINS",
+              "EXACT",
+              "BEGINS"
+            ],
+            "in": "query",
+            "name": "p_fntype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Months in high priority violation status out of the previous three years limiter.",
+            "in": "query",
+            "name": "p_hpvmth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Recent Violation Status Filter.",
+            "in": "query",
+            "name": "p_recvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Pollutant Code For A Recent Violation Filter.",
+            "in": "query",
+            "name": "p_pollvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Associated EPA Air Reports Program Filter.",
+            "in": "query",
+            "name": "p_ar",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Reporting Year Filter.",
+            "in": "query",
+            "name": "p_tri_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls whether search is restricted to existing system.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_pidall",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land code flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_fac_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian country search and/or flag.",
+            "in": "query",
+            "name": "p_icoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land spatial flag.",
+            "in": "query",
+            "name": "p_fac_icos",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Enter \"Y\" to limit facilities to Census block groups where one of more Environmental Justice indexes above 80th percentile.",
+            "in": "query",
+            "name": "p_ejscreen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit Address Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_limit_addr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude location in decimal degrees.",
+            "in": "query",
+            "name": "p_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude location in decimal degrees.",
+            "in": "query",
+            "name": "p_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Spatial Search Radius.",
+            "in": "query",
+            "name": "p_radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Decouple Inspection Code Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_decouple",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of Environmenmt Justice Indicators above the 80th percentile.",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "in": "query",
+            "name": "p_ejscreen_over80cnt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query Limiter.",
+            "in": "query",
+            "name": "queryset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Response Set Limiter.",
+            "in": "query",
+            "name": "responseset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Table List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "tablelist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Map List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "maplist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Summary List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "summarylist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "query",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.get_facilities",
         "pointer": "#/paths/~1air_rest_services.get_facilities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Facility Search"
+        "summary": "Clean Air Act Facility Search",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Validates query search parameters and returns query identifier.",
         "id": "operation:post:/air_rest_services.get_facilities",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_facilities",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Name Filter.",
+            "in": "formData",
+            "name": "p_fn",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "formData",
+            "name": "p_sa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "formData",
+            "name": "p_sa1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility City Filter.",
+            "in": "formData",
+            "name": "p_ct",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility County Filter.",
+            "in": "formData",
+            "name": "p_co",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FIPS Code Filter.",
+            "in": "formData",
+            "name": "p_fips",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility State and State-Equivalent Filter.",
+            "in": "formData",
+            "name": "p_st",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "5-Digit ZIP Code Filter.",
+            "in": "formData",
+            "name": "p_zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Local Control Region Code Filter.",
+            "in": "formData",
+            "name": "p_lcon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Registry Service ID Filter.",
+            "in": "formData",
+            "name": "p_frs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "EPA Region Filter.",
+            "enum": [
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09",
+              "10"
+            ],
+            "in": "formData",
+            "name": "p_reg",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter.",
+            "in": "formData",
+            "name": "p_sic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "North American Industry Classification System Filter.",
+            "in": "formData",
+            "name": "p_ncs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of quarters in non-compliance limiter.",
+            "in": "formData",
+            "name": "p_qnc",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Last Penality Date Qualifier Filter.",
+            "in": "formData",
+            "name": "p_pen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operating status filter.",
+            "in": "formData",
+            "name": "p_opst",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "formData",
+            "name": "p_c1lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "formData",
+            "name": "p_c1lon",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "formData",
+            "name": "p_c2lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "In decimal degrees.",
+            "in": "formData",
+            "name": "p_c2lon",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "US-Mexico Border Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_usmex",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 2.",
+            "in": "formData",
+            "name": "p_sic2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 3.",
+            "in": "formData",
+            "name": "p_sic4",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Federal Agency.",
+            "in": "formData",
+            "name": "p_fa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Active Permits/Facilities Flag.",
+            "enum": [
+              "Y",
+              "N",
+              "A"
+            ],
+            "in": "formData",
+            "name": "p_act",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Major Facility Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_maj",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CAA Maximum Achievable Control Technology (MACT) Subpart codes (alpha ID between 1 and 7 characters) applicable to the facility.",
+            "in": "formData",
+            "name": "p_mact",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards (NSPS) Subpart Code Search.",
+            "in": "formData",
+            "name": "p_nsps",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards Minors (NSPSM) Subpart Code Search.",
+            "in": "formData",
+            "name": "p_nspsm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Code Filter.",
+            "in": "formData",
+            "name": "p_prog",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Actions [within / not within] specified date range indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_fea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_feay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Formal Enforcement Actions: - E = EPA - S = State - A = All",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "formData",
+            "name": "p_feaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Informal Enforcement Actions [within / not within] specified date range.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_iea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_ieay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Informal Enforcement Actions.",
+            "enum": [
+              "E",
+              "S"
+            ],
+            "in": "formData",
+            "name": "p_ieaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Noncompliance Limiter.",
+            "enum": [
+              "0",
+              "GT1",
+              "GT2",
+              "GT4",
+              "GT8",
+              "12"
+            ],
+            "in": "formData",
+            "name": "p_qiv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Non-Attainment Area Flag.",
+            "in": "formData",
+            "name": "p_naa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Discharging into Impaired Waters Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_impw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Current Toxics Release Inventory (TRI) Reporter Limiter.",
+            "enum": [
+              "CURR",
+              "NOTCURR"
+            ],
+            "in": "formData",
+            "name": "p_trep",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Released To Air Chemical Identifier Category Filter.",
+            "enum": [
+              "TOTAL",
+              "CARC",
+              "HAP"
+            ],
+            "in": "formData",
+            "name": "p_tri_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Amount Filter.",
+            "enum": [
+              "0",
+              "GT0",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT50000"
+            ],
+            "in": "formData",
+            "name": "p_tri_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Of Any Kind Above Value Filter.",
+            "in": "formData",
+            "name": "p_tri_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Toxic Release Inventory Chemical Identifier Filter.",
+            "in": "formData",
+            "name": "p_tri_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) Gas Code Category.",
+            "enum": [
+              "ALL",
+              "BIOCO2",
+              "CH4",
+              "CO2",
+              "HFC",
+              "N2O",
+              "NF3",
+              "OTHER_L",
+              "PFC",
+              "SF6"
+            ],
+            "in": "formData",
+            "name": "p_ghg_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) CO2 Equivalent Formatted Release Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "formData",
+            "name": "p_ghg_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) C02 Equivalent Custom Amount.",
+            "in": "formData",
+            "name": "p_ghg_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Green House Gas (GHG) Reporting Year.",
+            "in": "formData",
+            "name": "p_ghg_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Identifier.",
+            "in": "formData",
+            "name": "p_nei_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Formatted Pollutant Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "formData",
+            "name": "p_nei_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Custom Pollutant Amount.",
+            "in": "formData",
+            "name": "p_nei_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) year: 2014 or 2011",
+            "in": "formData",
+            "name": "p_nei_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Category.",
+            "in": "formData",
+            "name": "p_nei_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Percent Minority Population Limiter.",
+            "enum": [
+              "NONE",
+              "GT5",
+              "GT10",
+              "GT25",
+              "GT50",
+              "GT75"
+            ],
+            "in": "formData",
+            "name": "p_pm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Population Density Limiter (per sq mile).",
+            "enum": [
+              "NONE",
+              "GT100",
+              "GT500",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT20000"
+            ],
+            "in": "formData",
+            "name": "p_pd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian Country Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, or 8-character watershed code.",
+            "in": "formData",
+            "name": "p_huc",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, 8-, 10-, or 12-character watershed (WBD from the USGS Watershed Boundary Dataset).",
+            "in": "formData",
+            "name": "p_wbd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Nine-digit permit IDs.",
+            "in": "formData",
+            "name": "p_pid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter Results by Media.",
+            "enum": [
+              "M",
+              "R",
+              "S",
+              "W",
+              "ALL"
+            ],
+            "in": "formData",
+            "name": "p_med",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Facility Inspection [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N",
+              "NV"
+            ],
+            "in": "formData",
+            "name": "p_ysl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since last facility inspection.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_ysly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Facility Last Inspection Code Filter.",
+            "enum": [
+              "E",
+              "S",
+              "A"
+            ],
+            "in": "formData",
+            "name": "p_ysla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Stack Test [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_stsl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since date of last stack test.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_stsly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Stack Last Test Code Filter.",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "formData",
+            "name": "p_stsla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Stack Test Status Description Filter.",
+            "in": "formData",
+            "name": "p_stres",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Conductor Type Code Filter.",
+            "in": "formData",
+            "name": "p_sttyp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quick Search.",
+            "in": "formData",
+            "name": "p_qs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Single Facility Search Filter.",
+            "in": "formData",
+            "name": "p_sfs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Numeric code for tribe (or list of tribes).",
+            "in": "formData",
+            "name": "p_tribeid",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Tribe Name Filter.",
+            "in": "formData",
+            "name": "p_tribename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Proximity to tribal land limiter.",
+            "in": "formData",
+            "name": "p_tribedist",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Owner/Operator code filter.",
+            "in": "formData",
+            "name": "p_owop",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates whether to AND or OR the Owner/Operator parameter (p_owop) and the federal agency code (p_fa) parameters.",
+            "enum": [
+              "AND",
+              "OR"
+            ],
+            "in": "formData",
+            "name": "p_agoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent facility inspection.",
+            "in": "formData",
+            "name": "p_idt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent facility inspection.",
+            "in": "formData",
+            "name": "p_idt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent stack test.",
+            "in": "formData",
+            "name": "p_stdt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent stack test.",
+            "in": "formData",
+            "name": "p_stdt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Inspection Type: - CAC = Corrective Action Inspection - CAV = Compliance Assistance Visit - CDI = Case Development Inspection - CEI = Inspection Inspection - C…",
+            "in": "formData",
+            "name": "p_pityp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance issuess found during inspection.",
+            "enum": [
+              "Any",
+              "Yes",
+              "No",
+              "Undetermined"
+            ],
+            "in": "formData",
+            "name": "p_cifdi",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range Start.",
+            "in": "formData",
+            "name": "p_pfead1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range End.",
+            "in": "formData",
+            "name": "p_pfead2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action (FEA) Code Filter.",
+            "in": "formData",
+            "name": "p_pfeat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Significant Noncompliance Limiter.",
+            "enum": [
+              "GT1",
+              "GE1",
+              "GT2",
+              "GE2",
+              "GT4",
+              "GE4",
+              "GT8",
+              "GE8",
+              "GT12",
+              "GE12"
+            ],
+            "in": "formData",
+            "name": "p_psncq",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance Tracking Limiter.",
+            "enum": [
+              "Off",
+              "Partial",
+              "On"
+            ],
+            "in": "formData",
+            "name": "p_pctrack",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Source water protection area",
+            "enum": [
+              "source water",
+              "surface water",
+              "ground water",
+              "waiting for SSO"
+            ],
+            "in": "formData",
+            "name": "p_swpa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Universe Designation Limiter.",
+            "in": "formData",
+            "name": "p_des",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls type of text search performed on facility name with parameter p_fn.",
+            "enum": [
+              "ALL",
+              "CONTAINS",
+              "EXACT",
+              "BEGINS"
+            ],
+            "in": "formData",
+            "name": "p_fntype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Months in high priority violation status out of the previous three years limiter.",
+            "in": "formData",
+            "name": "p_hpvmth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Recent Violation Status Filter.",
+            "in": "formData",
+            "name": "p_recvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Pollutant Code For A Recent Violation Filter.",
+            "in": "formData",
+            "name": "p_pollvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Associated EPA Air Reports Program Filter.",
+            "in": "formData",
+            "name": "p_ar",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Reporting Year Filter.",
+            "in": "formData",
+            "name": "p_tri_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls whether search is restricted to existing system.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_pidall",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land code flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_fac_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian country search and/or flag.",
+            "in": "formData",
+            "name": "p_icoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land spatial flag.",
+            "in": "formData",
+            "name": "p_fac_icos",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Enter \"Y\" to limit facilities to Census block groups where one of more Environmental Justice indexes above 80th percentile.",
+            "in": "formData",
+            "name": "p_ejscreen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit Address Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_limit_addr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude location in decimal degrees.",
+            "in": "formData",
+            "name": "p_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude location in decimal degrees.",
+            "in": "formData",
+            "name": "p_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Spatial Search Radius.",
+            "in": "formData",
+            "name": "p_radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Decouple Inspection Code Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_decouple",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of Environmenmt Justice Indicators above the 80th percentile.",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "in": "formData",
+            "name": "p_ejscreen_over80cnt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query Limiter.",
+            "in": "formData",
+            "name": "queryset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Response Set Limiter.",
+            "in": "formData",
+            "name": "responseset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Table List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "tablelist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Map List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "maplist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Summary List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "summarylist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "formData",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "formData",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.get_facilities",
         "pointer": "#/paths/~1air_rest_services.get_facilities/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Facility Search"
+        "summary": "Clean Air Act Facility Search",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns either an array of Facilities or an array of Clusters that meet the specified search criteria.",
         "id": "operation:get:/air_rest_services.get_facility_info",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_facility_info",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Name Filter.",
+            "in": "query",
+            "name": "p_fn",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "query",
+            "name": "p_sa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "query",
+            "name": "p_sa1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility City Filter.",
+            "in": "query",
+            "name": "p_ct",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility County Filter.",
+            "in": "query",
+            "name": "p_co",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FIPS Code Filter.",
+            "in": "query",
+            "name": "p_fips",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility State and State-Equivalent Filter.",
+            "in": "query",
+            "name": "p_st",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "5-Digit ZIP Code Filter.",
+            "in": "query",
+            "name": "p_zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Local Control Region Code Filter.",
+            "in": "query",
+            "name": "p_lcon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Registry Service ID Filter.",
+            "in": "query",
+            "name": "p_frs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "EPA Region Filter.",
+            "enum": [
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09",
+              "10"
+            ],
+            "in": "query",
+            "name": "p_reg",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter.",
+            "in": "query",
+            "name": "p_sic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "North American Industry Classification System Filter.",
+            "in": "query",
+            "name": "p_ncs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of quarters in non-compliance limiter.",
+            "in": "query",
+            "name": "p_qnc",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Last Penality Date Qualifier Filter.",
+            "in": "query",
+            "name": "p_pen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operating status filter.",
+            "in": "query",
+            "name": "p_opst",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Minimum longitude value in decimal degrees.",
+            "in": "query",
+            "name": "xmin",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Minimum latitude value in decimal degrees.",
+            "in": "query",
+            "name": "ymin",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Maximum longitude value in decimal degrees.",
+            "in": "query",
+            "name": "xmax",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Maximum latitude value in decimal degrees.",
+            "in": "query",
+            "name": "ymax",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "US-Mexico Border Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_usmex",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 2.",
+            "in": "query",
+            "name": "p_sic2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 3.",
+            "in": "query",
+            "name": "p_sic4",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Federal Agency.",
+            "in": "query",
+            "name": "p_fa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Active Permits/Facilities Flag.",
+            "enum": [
+              "Y",
+              "N",
+              "A"
+            ],
+            "in": "query",
+            "name": "p_act",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Major Facility Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_maj",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CAA Maximum Achievable Control Technology (MACT) Subpart codes (alpha ID between 1 and 7 characters) applicable to the facility.",
+            "in": "query",
+            "name": "p_mact",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards (NSPS) Subpart Code Search.",
+            "in": "query",
+            "name": "p_nsps",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards Minors (NSPSM) Subpart Code Search.",
+            "in": "query",
+            "name": "p_nspsm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Code Filter.",
+            "in": "query",
+            "name": "p_prog",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Actions [within / not within] specified date range indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_fea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_feay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Formal Enforcement Actions: - E = EPA - S = State - A = All",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "query",
+            "name": "p_feaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Informal Enforcement Actions [within / not within] specified date range.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_iea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_ieay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Informal Enforcement Actions.",
+            "enum": [
+              "E",
+              "S"
+            ],
+            "in": "query",
+            "name": "p_ieaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Noncompliance Limiter.",
+            "enum": [
+              "0",
+              "GT1",
+              "GT2",
+              "GT4",
+              "GT8",
+              "12"
+            ],
+            "in": "query",
+            "name": "p_qiv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Non-Attainment Area Flag.",
+            "in": "query",
+            "name": "p_naa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Discharging into Impaired Waters Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_impw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Current Toxics Release Inventory (TRI) Reporter Limiter.",
+            "enum": [
+              "CURR",
+              "NOTCURR"
+            ],
+            "in": "query",
+            "name": "p_trep",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Released To Air Chemical Identifier Category Filter.",
+            "enum": [
+              "TOTAL",
+              "CARC",
+              "HAP"
+            ],
+            "in": "query",
+            "name": "p_tri_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Amount Filter.",
+            "enum": [
+              "0",
+              "GT0",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT50000"
+            ],
+            "in": "query",
+            "name": "p_tri_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Of Any Kind Above Value Filter.",
+            "in": "query",
+            "name": "p_tri_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Toxic Release Inventory Chemical Identifier Filter.",
+            "in": "query",
+            "name": "p_tri_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) Gas Code Category.",
+            "enum": [
+              "ALL",
+              "BIOCO2",
+              "CH4",
+              "CO2",
+              "HFC",
+              "N2O",
+              "NF3",
+              "OTHER_L",
+              "PFC",
+              "SF6"
+            ],
+            "in": "query",
+            "name": "p_ghg_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) CO2 Equivalent Formatted Release Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "query",
+            "name": "p_ghg_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) C02 Equivalent Custom Amount.",
+            "in": "query",
+            "name": "p_ghg_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Green House Gas (GHG) Reporting Year.",
+            "in": "query",
+            "name": "p_ghg_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Identifier.",
+            "in": "query",
+            "name": "p_nei_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Formatted Pollutant Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "query",
+            "name": "p_nei_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Custom Pollutant Amount.",
+            "in": "query",
+            "name": "p_nei_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) year: 2014 or 2011",
+            "in": "query",
+            "name": "p_nei_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Category.",
+            "in": "query",
+            "name": "p_nei_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Percent Minority Population Limiter.",
+            "enum": [
+              "NONE",
+              "GT5",
+              "GT10",
+              "GT25",
+              "GT50",
+              "GT75"
+            ],
+            "in": "query",
+            "name": "p_pm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Population Density Limiter (per sq mile).",
+            "enum": [
+              "NONE",
+              "GT100",
+              "GT500",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT20000"
+            ],
+            "in": "query",
+            "name": "p_pd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian Country Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, or 8-character watershed code.",
+            "in": "query",
+            "name": "p_huc",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, 8-, 10-, or 12-character watershed (WBD from the USGS Watershed Boundary Dataset).",
+            "in": "query",
+            "name": "p_wbd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Nine-digit permit IDs.",
+            "in": "query",
+            "name": "p_pid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter Results by Media.",
+            "enum": [
+              "M",
+              "R",
+              "S",
+              "W",
+              "ALL"
+            ],
+            "in": "query",
+            "name": "p_med",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Facility Inspection [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N",
+              "NV"
+            ],
+            "in": "query",
+            "name": "p_ysl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since last facility inspection.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_ysly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Facility Last Inspection Code Filter.",
+            "enum": [
+              "E",
+              "S",
+              "A"
+            ],
+            "in": "query",
+            "name": "p_ysla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Stack Test [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_stsl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since date of last stack test.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "p_stsly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Stack Last Test Code Filter.",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "query",
+            "name": "p_stsla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Stack Test Status Description Filter.",
+            "in": "query",
+            "name": "p_stres",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Conductor Type Code Filter.",
+            "in": "query",
+            "name": "p_sttyp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quick Search.",
+            "in": "query",
+            "name": "p_qs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Single Facility Search Filter.",
+            "in": "query",
+            "name": "p_sfs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Numeric code for tribe (or list of tribes).",
+            "in": "query",
+            "name": "p_tribeid",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Tribe Name Filter.",
+            "in": "query",
+            "name": "p_tribename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Proximity to tribal land limiter.",
+            "in": "query",
+            "name": "p_tribedist",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Owner/Operator code filter.",
+            "in": "query",
+            "name": "p_owop",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates whether to AND or OR the Owner/Operator parameter (p_owop) and the federal agency code (p_fa) parameters.",
+            "enum": [
+              "AND",
+              "OR"
+            ],
+            "in": "query",
+            "name": "p_agoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent facility inspection.",
+            "in": "query",
+            "name": "p_idt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent facility inspection.",
+            "in": "query",
+            "name": "p_idt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent stack test.",
+            "in": "query",
+            "name": "p_stdt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent stack test.",
+            "in": "query",
+            "name": "p_stdt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Inspection Type: - CAC = Corrective Action Inspection - CAV = Compliance Assistance Visit - CDI = Case Development Inspection - CEI = Inspection Inspection - C…",
+            "in": "query",
+            "name": "p_pityp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance issuess found during inspection.",
+            "enum": [
+              "Any",
+              "Yes",
+              "No",
+              "Undetermined"
+            ],
+            "in": "query",
+            "name": "p_cifdi",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range Start.",
+            "in": "query",
+            "name": "p_pfead1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range End.",
+            "in": "query",
+            "name": "p_pfead2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action (FEA) Code Filter.",
+            "in": "query",
+            "name": "p_pfeat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Significant Noncompliance Limiter.",
+            "enum": [
+              "GT1",
+              "GE1",
+              "GT2",
+              "GE2",
+              "GT4",
+              "GE4",
+              "GT8",
+              "GE8",
+              "GT12",
+              "GE12"
+            ],
+            "in": "query",
+            "name": "p_psncq",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance Tracking Limiter.",
+            "enum": [
+              "Off",
+              "Partial",
+              "On"
+            ],
+            "in": "query",
+            "name": "p_pctrack",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Source water protection area",
+            "enum": [
+              "source water",
+              "surface water",
+              "ground water",
+              "waiting for SSO"
+            ],
+            "in": "query",
+            "name": "p_swpa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Universe Designation Limiter.",
+            "in": "query",
+            "name": "p_des",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls type of text search performed on facility name with parameter p_fn.",
+            "enum": [
+              "ALL",
+              "CONTAINS",
+              "EXACT",
+              "BEGINS"
+            ],
+            "in": "query",
+            "name": "p_fntype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Months in high priority violation status out of the previous three years limiter.",
+            "in": "query",
+            "name": "p_hpvmth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Recent Violation Status Filter.",
+            "in": "query",
+            "name": "p_recvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Pollutant Code For A Recent Violation Filter.",
+            "in": "query",
+            "name": "p_pollvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Associated EPA Air Reports Program Filter.",
+            "in": "query",
+            "name": "p_ar",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Reporting Year Filter.",
+            "in": "query",
+            "name": "p_tri_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls whether search is restricted to existing system.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_pidall",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land code flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_fac_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian country search and/or flag.",
+            "in": "query",
+            "name": "p_icoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land spatial flag.",
+            "in": "query",
+            "name": "p_fac_icos",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Enter \"Y\" to limit facilities to Census block groups where one of more Environmental Justice indexes above 80th percentile.",
+            "in": "query",
+            "name": "p_ejscreen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit Address Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_limit_addr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude location in decimal degrees.",
+            "in": "query",
+            "name": "p_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude location in decimal degrees.",
+            "in": "query",
+            "name": "p_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Spatial Search Radius.",
+            "in": "query",
+            "name": "p_radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Decouple Inspection Code Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "p_decouple",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of Environmenmt Justice Indicators above the 80th percentile.",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "in": "query",
+            "name": "p_ejscreen_over80cnt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query Limiter.",
+            "in": "query",
+            "name": "queryset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Response Set Limiter.",
+            "in": "query",
+            "name": "responseset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Summary List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "summarylist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "query",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "query",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_facility_info",
         "pointer": "#/paths/~1air_rest_services.get_facility_info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Facility Enhanced Search"
+        "summary": "Clean Air Act Facility Enhanced Search",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns either an array of Facilities or an array of Clusters that meet the specified search criteria.",
         "id": "operation:post:/air_rest_services.get_facility_info",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_facility_info",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Name Filter.",
+            "in": "formData",
+            "name": "p_fn",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "formData",
+            "name": "p_sa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility street address.",
+            "in": "formData",
+            "name": "p_sa1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility City Filter.",
+            "in": "formData",
+            "name": "p_ct",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility County Filter.",
+            "in": "formData",
+            "name": "p_co",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FIPS Code Filter.",
+            "in": "formData",
+            "name": "p_fips",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility State and State-Equivalent Filter.",
+            "in": "formData",
+            "name": "p_st",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "5-Digit ZIP Code Filter.",
+            "in": "formData",
+            "name": "p_zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Local Control Region Code Filter.",
+            "in": "formData",
+            "name": "p_lcon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Facility Registry Service ID Filter.",
+            "in": "formData",
+            "name": "p_frs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "EPA Region Filter.",
+            "enum": [
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09",
+              "10"
+            ],
+            "in": "formData",
+            "name": "p_reg",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter.",
+            "in": "formData",
+            "name": "p_sic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "North American Industry Classification System Filter.",
+            "in": "formData",
+            "name": "p_ncs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of quarters in non-compliance limiter.",
+            "in": "formData",
+            "name": "p_qnc",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Last Penality Date Qualifier Filter.",
+            "in": "formData",
+            "name": "p_pen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operating status filter.",
+            "in": "formData",
+            "name": "p_opst",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Minimum longitude value in decimal degrees.",
+            "in": "formData",
+            "name": "xmin",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Minimum latitude value in decimal degrees.",
+            "in": "formData",
+            "name": "ymin",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Maximum longitude value in decimal degrees.",
+            "in": "formData",
+            "name": "xmax",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Maximum latitude value in decimal degrees.",
+            "in": "formData",
+            "name": "ymax",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "US-Mexico Border Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_usmex",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 2.",
+            "in": "formData",
+            "name": "p_sic2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Standard Industrial Classification (SIC) Code Filter Alternate 3.",
+            "in": "formData",
+            "name": "p_sic4",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Federal Agency.",
+            "in": "formData",
+            "name": "p_fa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Active Permits/Facilities Flag.",
+            "enum": [
+              "Y",
+              "N",
+              "A"
+            ],
+            "in": "formData",
+            "name": "p_act",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Major Facility Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_maj",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CAA Maximum Achievable Control Technology (MACT) Subpart codes (alpha ID between 1 and 7 characters) applicable to the facility.",
+            "in": "formData",
+            "name": "p_mact",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards (NSPS) Subpart Code Search.",
+            "in": "formData",
+            "name": "p_nsps",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Programl New Source Performance Standards Minors (NSPSM) Subpart Code Search.",
+            "in": "formData",
+            "name": "p_nspsm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Program Code Filter.",
+            "in": "formData",
+            "name": "p_prog",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Actions [within / not within] specified date range indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_fea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_feay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Formal Enforcement Actions: - E = EPA - S = State - A = All",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "formData",
+            "name": "p_feaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Informal Enforcement Actions [within / not within] specified date range.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_iea",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Years (1 to 5) Range.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_ieay",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Agency associated with Informal Enforcement Actions.",
+            "enum": [
+              "E",
+              "S"
+            ],
+            "in": "formData",
+            "name": "p_ieaa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Noncompliance Limiter.",
+            "enum": [
+              "0",
+              "GT1",
+              "GT2",
+              "GT4",
+              "GT8",
+              "12"
+            ],
+            "in": "formData",
+            "name": "p_qiv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Non-Attainment Area Flag.",
+            "in": "formData",
+            "name": "p_naa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Discharging into Impaired Waters Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_impw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Current Toxics Release Inventory (TRI) Reporter Limiter.",
+            "enum": [
+              "CURR",
+              "NOTCURR"
+            ],
+            "in": "formData",
+            "name": "p_trep",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Released To Air Chemical Identifier Category Filter.",
+            "enum": [
+              "TOTAL",
+              "CARC",
+              "HAP"
+            ],
+            "in": "formData",
+            "name": "p_tri_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Amount Filter.",
+            "enum": [
+              "0",
+              "GT0",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT50000"
+            ],
+            "in": "formData",
+            "name": "p_tri_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Release Of Any Kind Above Value Filter.",
+            "in": "formData",
+            "name": "p_tri_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Toxic Release Inventory Chemical Identifier Filter.",
+            "in": "formData",
+            "name": "p_tri_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) Gas Code Category.",
+            "enum": [
+              "ALL",
+              "BIOCO2",
+              "CH4",
+              "CO2",
+              "HFC",
+              "N2O",
+              "NF3",
+              "OTHER_L",
+              "PFC",
+              "SF6"
+            ],
+            "in": "formData",
+            "name": "p_ghg_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) CO2 Equivalent Formatted Release Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "formData",
+            "name": "p_ghg_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Green House Gas (GHG) C02 Equivalent Custom Amount.",
+            "in": "formData",
+            "name": "p_ghg_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Green House Gas (GHG) Reporting Year.",
+            "in": "formData",
+            "name": "p_ghg_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Identifier.",
+            "in": "formData",
+            "name": "p_nei_pol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Formatted Pollutant Amount.",
+            "enum": [
+              "None",
+              "0",
+              "GT0",
+              "GT10000",
+              "GT25000",
+              "GT250000",
+              "GT1000000"
+            ],
+            "in": "formData",
+            "name": "p_nei_amt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Custom Pollutant Amount.",
+            "in": "formData",
+            "name": "p_nei_any_amt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) year: 2014 or 2011",
+            "in": "formData",
+            "name": "p_nei_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "National Emissions Inventory (NEI) Pollutant Category.",
+            "in": "formData",
+            "name": "p_nei_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Percent Minority Population Limiter.",
+            "enum": [
+              "NONE",
+              "GT5",
+              "GT10",
+              "GT25",
+              "GT50",
+              "GT75"
+            ],
+            "in": "formData",
+            "name": "p_pm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Population Density Limiter (per sq mile).",
+            "enum": [
+              "NONE",
+              "GT100",
+              "GT500",
+              "GT1000",
+              "GT5000",
+              "GT10000",
+              "GT20000"
+            ],
+            "in": "formData",
+            "name": "p_pd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian Country Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, or 8-character watershed code.",
+            "in": "formData",
+            "name": "p_huc",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "2-, 4-, 6-, 8-, 10-, or 12-character watershed (WBD from the USGS Watershed Boundary Dataset).",
+            "in": "formData",
+            "name": "p_wbd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Nine-digit permit IDs.",
+            "in": "formData",
+            "name": "p_pid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter Results by Media.",
+            "enum": [
+              "M",
+              "R",
+              "S",
+              "W",
+              "ALL"
+            ],
+            "in": "formData",
+            "name": "p_med",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Facility Inspection [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N",
+              "NV"
+            ],
+            "in": "formData",
+            "name": "p_ysl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since last facility inspection.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_ysly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Facility Last Inspection Code Filter.",
+            "enum": [
+              "E",
+              "S",
+              "A"
+            ],
+            "in": "formData",
+            "name": "p_ysla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last Stack Test [within / not within] Specified Date Range Indicator.",
+            "enum": [
+              "W",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_stsl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of years (1 to 5) since date of last stack test.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "formData",
+            "name": "p_stsly",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Stack Last Test Code Filter.",
+            "enum": [
+              "A",
+              "E",
+              "S"
+            ],
+            "in": "formData",
+            "name": "p_stsla",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Stack Test Status Description Filter.",
+            "in": "formData",
+            "name": "p_stres",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Conductor Type Code Filter.",
+            "in": "formData",
+            "name": "p_sttyp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quick Search.",
+            "in": "formData",
+            "name": "p_qs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Single Facility Search Filter.",
+            "in": "formData",
+            "name": "p_sfs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Numeric code for tribe (or list of tribes).",
+            "in": "formData",
+            "name": "p_tribeid",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Tribe Name Filter.",
+            "in": "formData",
+            "name": "p_tribename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Proximity to tribal land limiter.",
+            "in": "formData",
+            "name": "p_tribedist",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Owner/Operator code filter.",
+            "in": "formData",
+            "name": "p_owop",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates whether to AND or OR the Owner/Operator parameter (p_owop) and the federal agency code (p_fa) parameters.",
+            "enum": [
+              "AND",
+              "OR"
+            ],
+            "in": "formData",
+            "name": "p_agoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent facility inspection.",
+            "in": "formData",
+            "name": "p_idt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent facility inspection.",
+            "in": "formData",
+            "name": "p_idt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Beginning of date range of most recent stack test.",
+            "in": "formData",
+            "name": "p_stdt1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "End of date range of most recent stack test.",
+            "in": "formData",
+            "name": "p_stdt2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Inspection Type: - CAC = Corrective Action Inspection - CAV = Compliance Assistance Visit - CDI = Case Development Inspection - CEI = Inspection Inspection - C…",
+            "in": "formData",
+            "name": "p_pityp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance issuess found during inspection.",
+            "enum": [
+              "Any",
+              "Yes",
+              "No",
+              "Undetermined"
+            ],
+            "in": "formData",
+            "name": "p_cifdi",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range Start.",
+            "in": "formData",
+            "name": "p_pfead1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action Date Range End.",
+            "in": "formData",
+            "name": "p_pfead2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Formal Enforcement Action (FEA) Code Filter.",
+            "in": "formData",
+            "name": "p_pfeat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Quarters in Significant Noncompliance Limiter.",
+            "enum": [
+              "GT1",
+              "GE1",
+              "GT2",
+              "GE2",
+              "GT4",
+              "GE4",
+              "GT8",
+              "GE8",
+              "GT12",
+              "GE12"
+            ],
+            "in": "formData",
+            "name": "p_psncq",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Compliance Tracking Limiter.",
+            "enum": [
+              "Off",
+              "Partial",
+              "On"
+            ],
+            "in": "formData",
+            "name": "p_pctrack",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Source water protection area",
+            "enum": [
+              "source water",
+              "surface water",
+              "ground water",
+              "waiting for SSO"
+            ],
+            "in": "formData",
+            "name": "p_swpa",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Universe Designation Limiter.",
+            "in": "formData",
+            "name": "p_des",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls type of text search performed on facility name with parameter p_fn.",
+            "enum": [
+              "ALL",
+              "CONTAINS",
+              "EXACT",
+              "BEGINS"
+            ],
+            "in": "formData",
+            "name": "p_fntype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Months in high priority violation status out of the previous three years limiter.",
+            "in": "formData",
+            "name": "p_hpvmth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Recent Violation Status Filter.",
+            "in": "formData",
+            "name": "p_recvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Air Pollutant Code For A Recent Violation Filter.",
+            "in": "formData",
+            "name": "p_pollvio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Associated EPA Air Reports Program Filter.",
+            "in": "formData",
+            "name": "p_ar",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Toxic Release Inventory Reporting Year Filter.",
+            "in": "formData",
+            "name": "p_tri_yr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Controls whether search is restricted to existing system.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_pidall",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land code flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_fac_ico",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indian country search and/or flag.",
+            "in": "formData",
+            "name": "p_icoo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "FRS tribal land spatial flag.",
+            "in": "formData",
+            "name": "p_fac_icos",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Enter \"Y\" to limit facilities to Census block groups where one of more Environmental Justice indexes above 80th percentile.",
+            "in": "formData",
+            "name": "p_ejscreen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit Address Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_limit_addr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude location in decimal degrees.",
+            "in": "formData",
+            "name": "p_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude location in decimal degrees.",
+            "in": "formData",
+            "name": "p_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Spatial Search Radius.",
+            "in": "formData",
+            "name": "p_radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Decouple Inspection Code Search Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "p_decouple",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of Environmenmt Justice Indicators above the 80th percentile.",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "in": "formData",
+            "name": "p_ejscreen_over80cnt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query Limiter.",
+            "in": "formData",
+            "name": "queryset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Response Set Limiter.",
+            "in": "formData",
+            "name": "responseset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Summary List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "summarylist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "formData",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "formData",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "formData",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_facility_info",
         "pointer": "#/paths/~1air_rest_services.get_facility_info/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Facility Enhanced Search"
+        "summary": "Clean Air Act Facility Enhanced Search",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Based on the QID obtained from a get_facilities or get_facility_info query, return GeoJSON of the facilities found.",
         "id": "operation:get:/air_rest_services.get_geojson",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_geojson",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "query",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Output Sort Column.",
+            "in": "query",
+            "name": "newsort",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Output Sort Column Descending Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "descending",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "query",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "query",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_geojson",
         "pointer": "#/paths/~1air_rest_services.get_geojson/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act GeoJSON Service"
+        "summary": "Clean Air Act GeoJSON Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Based on the QID obtained from a get_facilities or get_facility_info query, return GeoJSON of the facilities found.",
         "id": "operation:post:/air_rest_services.get_geojson",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_geojson",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "formData",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "formData",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Output Sort Column.",
+            "in": "formData",
+            "name": "newsort",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Output Sort Column Descending Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "descending",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "formData",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "formData",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_geojson",
         "pointer": "#/paths/~1air_rest_services.get_geojson/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act GeoJSON Service"
+        "summary": "Clean Air Act GeoJSON Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Based on the QID obtained from a clustered get_facility_info query, download cluster facility information as either a CSV or GEOJSON file.",
         "id": "operation:get:/air_rest_services.get_info_clusters",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_info_clusters",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "query",
+            "name": "p_qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "query",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_info_clusters",
         "pointer": "#/paths/~1air_rest_services.get_info_clusters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Info Clusters Service"
+        "summary": "Clean Air Act Info Clusters Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Based on the QID obtained from a clustered get_facility_info query, download cluster facility information as either a CSV or GEOJSON file.",
         "id": "operation:post:/air_rest_services.get_info_clusters",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_info_clusters",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "formData",
+            "name": "p_qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional flag to request GeoJSON formatted results to be pretty printed.",
+            "in": "formData",
+            "name": "p_pretty_print",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/air_rest_services.get_info_clusters",
         "pointer": "#/paths/~1air_rest_services.get_info_clusters/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Info Clusters Service"
+        "summary": "Clean Air Act Info Clusters Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The purpose of the GET_MAP service is to display facility coordinates and facility clusters related to a get_facilities facility query.",
         "id": "operation:get:/air_rest_services.get_map",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_map",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "query",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Table List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "tablelist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude of 1st corner of box that bounds the resulting facilities.",
+            "in": "query",
+            "name": "c1_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude of 1st corner of box that bounds the resulting facilities.",
+            "in": "query",
+            "name": "c1_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Latitude of 2nd corner of box that bounds the resulting facilities.",
+            "in": "query",
+            "name": "c2_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude of 2nd corner of box that bounds the resulting facilities.",
+            "in": "query",
+            "name": "c2_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Identifier for the service.",
+            "in": "query",
+            "name": "p_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.get_map",
         "pointer": "#/paths/~1air_rest_services.get_map/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Map Service"
+        "summary": "Clean Air Act Map Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The purpose of the GET_MAP service is to display facility coordinates and facility clusters related to a get_facilities facility query.",
         "id": "operation:post:/air_rest_services.get_map",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_map",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "formData",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "formData",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Table List Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "tablelist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Latitude of 1st corner of box that bounds the resulting facilities.",
+            "in": "formData",
+            "name": "c1_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude of 1st corner of box that bounds the resulting facilities.",
+            "in": "formData",
+            "name": "c1_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Latitude of 2nd corner of box that bounds the resulting facilities.",
+            "in": "formData",
+            "name": "c2_lat",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Longitude of 2nd corner of box that bounds the resulting facilities.",
+            "in": "formData",
+            "name": "c2_long",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Identifier for the service.",
+            "in": "formData",
+            "name": "p_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.get_map",
         "pointer": "#/paths/~1air_rest_services.get_map/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Map Service"
+        "summary": "Clean Air Act Map Service",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "GET_QID is passed with a query ID corresponding to a previously run get_facilities query.",
         "id": "operation:get:/air_rest_services.get_qid",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.get_qid",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "query",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Indicates the number of the page to display.",
+            "in": "query",
+            "name": "pageno",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Output Sort Column.",
+            "in": "query",
+            "name": "newsort",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Output Sort Column Descending Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "query",
+            "name": "descending",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "query",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.get_qid",
         "pointer": "#/paths/~1air_rest_services.get_qid/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Search by Query ID"
+        "summary": "Clean Air Act Search by Query ID",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "GET_QID is passed with a query ID corresponding to a previously run get_facilities query.",
         "id": "operation:post:/air_rest_services.get_qid",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.get_qid",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Query ID Selector.",
+            "in": "formData",
+            "name": "qid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Indicates the number of the page to display.",
+            "in": "formData",
+            "name": "pageno",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "formData",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Output Sort Column.",
+            "in": "formData",
+            "name": "newsort",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Output Sort Column Descending Flag.",
+            "enum": [
+              "Y",
+              "N"
+            ],
+            "in": "formData",
+            "name": "descending",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to customize service output.",
+            "in": "formData",
+            "name": "qcolumns",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.get_qid",
         "pointer": "#/paths/~1air_rest_services.get_qid/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Search by Query ID"
+        "summary": "Clean Air Act Search by Query ID",
+        "tags": [
+          "Facilities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the JSON Object Name and ColumnId for usage with the qcolumns parameter for get_qid, get_facility_info and other service endpoints.",
         "id": "operation:get:/air_rest_services.metadata",
         "kind": "operation",
         "method": "get",
         "name": "get /air_rest_services.metadata",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.metadata",
         "pointer": "#/paths/~1air_rest_services.metadata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean Air Act Metadata Service"
+        "summary": "Clean Air Act Metadata Service",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the JSON Object Name and ColumnId for usage with the qcolumns parameter for get_qid, get_facility_info and other service endpoints.",
         "id": "operation:post:/air_rest_services.metadata",
         "kind": "operation",
         "method": "post",
         "name": "post /air_rest_services.metadata",
+        "parameters": [
+          {
+            "description": "Output Format Flag.",
+            "enum": [
+              "JSONP",
+              "JSON",
+              "XML"
+            ],
+            "in": "formData",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP Callback.",
+            "in": "formData",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/air_rest_services.metadata",
         "pointer": "#/paths/~1air_rest_services.metadata/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clean Air Act Metadata Service"
+        "summary": "Clean Air Act Metadata Service",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
+        "description": "Cluster Data Object",
         "id": "schema:air00",
         "kind": "schema",
-        "name": "air00"
+        "name": "air00",
+        "type": "object"
       },
       {
+        "description": "Cluster Output Object",
         "id": "schema:air01",
         "kind": "schema",
-        "name": "air01"
+        "name": "air01",
+        "type": "object"
       },
       {
+        "description": "Map Data Object",
         "id": "schema:air02",
         "kind": "schema",
-        "name": "air02"
+        "name": "air02",
+        "type": "object"
       },
       {
+        "description": "Facilities Object",
         "id": "schema:air03",
         "kind": "schema",
-        "name": "air03"
+        "name": "air03",
+        "type": "object"
       },
       {
+        "description": "Map Output Object",
         "id": "schema:air04",
         "kind": "schema",
-        "name": "air04"
+        "name": "air04",
+        "type": "object"
       },
       {
+        "description": "Results Object",
         "id": "schema:air05",
         "kind": "schema",
-        "name": "air05"
+        "name": "air05",
+        "type": "object"
       },
       {
+        "description": "Facilities Object",
         "id": "schema:air06",
         "kind": "schema",
-        "name": "air06"
+        "name": "air06",
+        "type": "object"
       },
       {
+        "description": "Results Object",
         "id": "schema:air08",
         "kind": "schema",
-        "name": "air08"
+        "name": "air08",
+        "type": "object"
       },
       {
+        "description": "GeoJSON Feature Object",
         "id": "schema:air09",
         "kind": "schema",
-        "name": "air09"
+        "name": "air09",
+        "type": "object"
       },
       {
+        "description": "GeoJSON Properties Object",
         "id": "schema:air10",
         "kind": "schema",
-        "name": "air10"
+        "name": "air10",
+        "type": "object"
       },
       {
+        "description": "Map Output Object",
         "id": "schema:air11",
         "kind": "schema",
-        "name": "air11"
+        "name": "air11",
+        "type": "object"
       },
       {
+        "description": "Results Object",
         "id": "schema:air12",
         "kind": "schema",
-        "name": "air12"
+        "name": "air12",
+        "type": "object"
       },
       {
+        "description": "GeoJSON Geometry Object",
         "id": "schema:geo",
         "kind": "schema",
-        "name": "geo"
+        "name": "geo",
+        "type": "object"
       },
       {
+        "description": "Results Object",
         "id": "schema:meta1",
         "kind": "schema",
-        "name": "meta1"
+        "name": "meta1",
+        "type": "object"
       },
       {
+        "description": "Results Column Object",
         "id": "schema:meta3",
         "kind": "schema",
-        "name": "meta3"
+        "name": "meta3",
+        "type": "object"
       },
       {
+        "description": "Query Parameters Object",
         "id": "schema:qp0",
         "kind": "schema",
-        "name": "qp0"
+        "name": "qp0",
+        "type": "object"
       }
     ]
   },

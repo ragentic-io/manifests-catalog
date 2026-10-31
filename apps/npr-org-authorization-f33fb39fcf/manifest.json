@@ -18,6 +18,31 @@
         "from": "npr-org-authorization-f33fb39fcf",
         "kind": "EXPOSES",
         "to": "operation:post:/v2/token/revoke"
+      },
+      {
+        "from": "operation:post:/v2/device",
+        "kind": "RETURNS",
+        "to": "schema:DeviceCodeData"
+      },
+      {
+        "from": "operation:post:/v2/token",
+        "kind": "RETURNS",
+        "to": "schema:AccessTokenData"
+      },
+      {
+        "from": "schema:AbstractCDocLink",
+        "kind": "REFERENCES",
+        "to": "schema:AbstractLink"
+      },
+      {
+        "from": "schema:ErrorDocument",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionDocument"
+      },
+      {
+        "from": "schema:ErrorDocument",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
       }
     ],
     "nodes": [
@@ -27,81 +52,329 @@
       },
       {
         "deprecated": false,
+        "description": "This flow should only be used by clients who cannot show a native webview or do not have advanced input controls.",
         "id": "operation:post:/v2/device",
         "kind": "operation",
         "method": "post",
         "name": "generateDeviceCode",
+        "parameters": [
+          {
+            "description": "The client's ID",
+            "in": "formData",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The client's secret key",
+            "in": "formData",
+            "name": "client_secret",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A space-separated list of scope(s) requested by the application.",
+            "in": "formData",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/device",
         "pointer": "#/paths/~1v2~1device/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "DeviceCodeData"
+          },
+          {
+            "status": "400",
+            "type": "SimpleError"
+          },
+          {
+            "status": "401",
+            "type": "SimpleError"
+          },
+          {
+            "status": "500",
+            "type": "SimpleError"
+          },
+          {
+            "status": "503",
+            "type": "SimpleError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Initiate an OAuth2 login flow for limited input devices"
+        "summary": "Initiate an OAuth2 login flow for limited input devices",
+        "tags": [
+          "authorization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Please be aware that the required parameters are contingent on the `grant_type` that you select.",
         "id": "operation:post:/v2/token",
         "kind": "operation",
         "method": "post",
         "name": "createToken",
+        "parameters": [
+          {
+            "description": "The type of grant the client is requesting",
+            "enum": [
+              "authorization_code",
+              "client_credentials",
+              "device_code",
+              "password",
+              "refresh_token",
+              "anonymous_user",
+              "third_party"
+            ],
+            "in": "formData",
+            "name": "grant_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The client's ID, required for all grant types.",
+            "in": "formData",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The client's secret, required for all grant types.",
+            "in": "formData",
+            "name": "client_secret",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Required for `authorization_code` and `device_code` grant types.",
+            "in": "formData",
+            "name": "code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required for `authorization_code` grant type.",
+            "in": "formData",
+            "name": "redirect_uri",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required for `password` grant type.",
+            "in": "formData",
+            "name": "username",
+            "required": false,
+            "type": "string:email"
+          },
+          {
+            "description": "Required for `password` grant type.",
+            "in": "formData",
+            "name": "password",
+            "required": false,
+            "type": "string:password"
+          },
+          {
+            "description": "Required for `third_party` grant type.",
+            "enum": [
+              "facebook",
+              "google",
+              "microsoft",
+              "janrain",
+              "comcast"
+            ],
+            "in": "formData",
+            "name": "service",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required for `refresh_token` grant type.",
+            "in": "formData",
+            "name": "refresh_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required for third-party developers using the `device_code` and `third_party` grant types.",
+            "in": "formData",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A hint about the type of the token submitted for a new access and refresh token.",
+            "enum": [
+              "access_token",
+              "refresh_token"
+            ],
+            "in": "formData",
+            "name": "token_type_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/token",
         "pointer": "#/paths/~1v2~1token/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccessTokenData"
+          },
+          {
+            "status": "400",
+            "type": "SimpleError"
+          },
+          {
+            "status": "401",
+            "type": "SimpleError"
+          },
+          {
+            "status": "500",
+            "type": "SimpleError"
+          },
+          {
+            "status": "503",
+            "type": "SimpleError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new OAuth2 access token"
+        "summary": "Create a new OAuth2 access token",
+        "tags": [
+          "authorization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Our implementation follows the proposed IETF specification [RFC-7009](https://tools.ietf.org/html/rfc7009).",
         "id": "operation:post:/v2/token/revoke",
         "kind": "operation",
         "method": "post",
         "name": "revokeToken",
+        "parameters": [
+          {
+            "description": "A `client_credentials` access token from the same client application as the token being revoked.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The access token or refresh token that the client wants to have revoked.",
+            "in": "formData",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A hint about the type of the token submitted for revocation.",
+            "enum": [
+              "access_token",
+              "refresh_token"
+            ],
+            "in": "formData",
+            "name": "token_type_hint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/token/revoke",
         "pointer": "#/paths/~1v2~1token~1revoke/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "SimpleError"
+          },
+          {
+            "status": "401",
+            "type": "SimpleError"
+          },
+          {
+            "status": "403",
+            "type": "SimpleError"
+          },
+          {
+            "status": "500",
+            "type": "SimpleError"
+          },
+          {
+            "status": "503",
+            "type": "SimpleError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Revoke an existing OAuth2 access token"
+        "summary": "Revoke an existing OAuth2 access token",
+        "tags": [
+          "authorization"
+        ]
       },
       {
         "id": "schema:AbstractCDocLink",
         "kind": "schema",
-        "name": "AbstractCDocLink"
+        "name": "AbstractCDocLink",
+        "type": "AbstractLink|object"
       },
       {
         "id": "schema:AbstractLink",
         "kind": "schema",
-        "name": "AbstractLink"
+        "name": "AbstractLink",
+        "type": "object"
       },
       {
         "id": "schema:AccessTokenData",
         "kind": "schema",
-        "name": "AccessTokenData"
+        "name": "AccessTokenData",
+        "type": "object"
       },
       {
+        "description": "A program (aggregation) that a given user has shown an affiliation with",
         "id": "schema:Affiliation",
         "kind": "schema",
-        "name": "Affiliation"
+        "name": "Affiliation",
+        "type": "object"
       },
       {
+        "description": "Base Collection.Doc+JSON output",
         "id": "schema:CollectionDocument",
         "kind": "schema",
-        "name": "CollectionDocument"
+        "name": "CollectionDocument",
+        "type": "object"
       },
       {
         "id": "schema:DeviceCodeData",
         "kind": "schema",
-        "name": "DeviceCodeData"
+        "name": "DeviceCodeData",
+        "type": "object"
       },
       {
+        "description": "A serialized version of any error encountered when processing this request",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "A Collection.doc+JSON representation of an error result from an API call",
         "id": "schema:ErrorDocument",
         "kind": "schema",
-        "name": "ErrorDocument"
+        "name": "ErrorDocument",
+        "type": "CollectionDocument|object"
       },
       {
+        "description": "A simple representation of an error result from an API call, rarely used; in most cases we still return a Collection.doc+JSON document for errors",
         "id": "schema:SimpleError",
         "kind": "schema",
-        "name": "SimpleError"
+        "name": "SimpleError",
+        "type": "object"
       }
     ]
   },

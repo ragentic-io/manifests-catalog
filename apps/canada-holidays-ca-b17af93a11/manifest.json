@@ -33,6 +33,16 @@
         "from": "canada-holidays-ca-b17af93a11",
         "kind": "EXPOSES",
         "to": "operation:get:/api/v1/spec"
+      },
+      {
+        "from": "schema:Holiday",
+        "kind": "REFERENCES",
+        "to": "schema:Province"
+      },
+      {
+        "from": "schema:Province",
+        "kind": "REFERENCES",
+        "to": "schema:Holiday"
       }
     ],
     "nodes": [
@@ -42,84 +52,300 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a welcome message.",
         "id": "operation:get:/api/v1",
         "kind": "operation",
         "method": "get",
         "name": "Root",
         "path": "/api/v1",
         "pointer": "#/paths/~1api~1v1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "root"
+        "summary": "root",
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns Canadian public holidays.",
         "id": "operation:get:/api/v1/holidays",
         "kind": "operation",
         "method": "get",
         "name": "Holidays",
+        "parameters": [
+          {
+            "default": 2023,
+            "description": "A calendar year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A boolean parameter.",
+            "enum": [
+              "1",
+              "0",
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "federal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "A boolean parameter.",
+            "enum": [
+              "1",
+              "0",
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "optional",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/holidays",
         "pointer": "#/paths/~1api~1v1~1holidays/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all holidays"
+        "summary": "Get all holidays",
+        "tags": [
+          "holidays"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns one Canadian statutory holiday by integer id.",
         "id": "operation:get:/api/v1/holidays/{holidayId}",
         "kind": "operation",
         "method": "get",
         "name": "Holiday",
+        "parameters": [
+          {
+            "description": "Primary key for a holiday",
+            "in": "path",
+            "name": "holidayId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 2023,
+            "description": "A calendar year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "false",
+            "description": "A boolean parameter.",
+            "enum": [
+              "1",
+              "0",
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "optional",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/holidays/{holidayId}",
         "pointer": "#/paths/~1api~1v1~1holidays~1{holidayId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a holiday by id"
+        "summary": "Get a holiday by id",
+        "tags": [
+          "holidays"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns provinces and territories in Canada.",
         "id": "operation:get:/api/v1/provinces",
         "kind": "operation",
         "method": "get",
         "name": "Provinces",
+        "parameters": [
+          {
+            "default": 2023,
+            "description": "A calendar year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "false",
+            "description": "A boolean parameter.",
+            "enum": [
+              "1",
+              "0",
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "optional",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/provinces",
         "pointer": "#/paths/~1api~1v1~1provinces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all provinces"
+        "summary": "Get all provinces",
+        "tags": [
+          "provinces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Canadian province or territory with its associated holidays.",
         "id": "operation:get:/api/v1/provinces/{provinceId}",
         "kind": "operation",
         "method": "get",
         "name": "Province",
+        "parameters": [
+          {
+            "description": "A Canadian province abbreviation",
+            "enum": [
+              "AB",
+              "BC",
+              "MB",
+              "NB",
+              "NL",
+              "NS",
+              "NT",
+              "NU",
+              "ON",
+              "PE",
+              "QC",
+              "SK",
+              "YT"
+            ],
+            "in": "path",
+            "name": "provinceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 2023,
+            "description": "A calendar year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "false",
+            "description": "A boolean parameter (AB and BC only).",
+            "enum": [
+              "1",
+              "0",
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "optional",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/provinces/{provinceId}",
         "pointer": "#/paths/~1api~1v1~1provinces~1{provinceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a province or territory by abbreviation"
+        "summary": "Get a province or territory by abbreviation",
+        "tags": [
+          "provinces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the schema for the JSON API as a yaml file.",
         "id": "operation:get:/api/v1/spec",
         "kind": "operation",
         "method": "get",
         "name": "Spec",
         "path": "/api/v1/spec",
         "pointer": "#/paths/~1api~1v1~1spec/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get JSON schema"
+        "summary": "Get JSON schema",
+        "tags": [
+          "info"
+        ]
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "A Canadian holiday.",
         "id": "schema:Holiday",
         "kind": "schema",
-        "name": "Holiday"
+        "name": "Holiday",
+        "type": "object"
       },
       {
+        "description": "A Canadian province or territory",
         "id": "schema:Province",
         "kind": "schema",
-        "name": "Province"
+        "name": "Province",
+        "type": "object"
       }
     ]
   },

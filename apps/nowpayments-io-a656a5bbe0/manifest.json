@@ -77,12 +77,12 @@
       {
         "from": "nowpayments-io-a656a5bbe0",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/subscriptions/{sub_id}"
+        "to": "operation:get:/v1/subscriptions/{sub_id}"
       },
       {
         "from": "nowpayments-io-a656a5bbe0",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/subscriptions/{sub_id}"
+        "to": "operation:delete:/v1/subscriptions/{sub_id}"
       }
     ],
     "nodes": [
@@ -92,179 +92,724 @@
       },
       {
         "deprecated": false,
+        "description": "This is a method for calculating the approximate price in cryptocurrency for a given value in Fiat currency.",
         "id": "operation:get:/v1/estimate",
         "kind": "operation",
         "method": "get",
         "name": "getEstimatedPrice",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "amount",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "currency_from",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "currency_to",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/estimate",
         "pointer": "#/paths/~1v1~1estimate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get estimated price"
+        "summary": "Get estimated price",
+        "tags": [
+          "Payments API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the minimum payment amount for a specific pair.",
         "id": "operation:get:/v1/min-amount",
         "kind": "operation",
         "method": "get",
         "name": "getTheMinimumPaymentAmount",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "currency_from",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "currency_to",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/min-amount",
         "pointer": "#/paths/~1v1~1min-amount/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the minimum payment amount"
+        "summary": "Get the minimum payment amount",
+        "tags": [
+          "Payments API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the entire list of all transactions, created with certain API key.",
         "id": "operation:get:/v1/payment/",
         "kind": "operation",
         "method": "get",
         "name": "getListOfPayments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "orderBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payment/",
         "pointer": "#/paths/~1v1~1payment~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get list of payments"
+        "summary": "Get list of payments",
+        "tags": [
+          "Payments API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint is required to get the current estimate on the payment, and update the current estimate.",
         "id": "operation:post:/v1/payment/{id}/update-merchant-estimate",
         "kind": "operation",
         "method": "post",
         "name": "getUpdatePaymentEstimate",
+        "parameters": [
+          {
+            "description": "payment ID, for which you want to get the estimate",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payment/{id}/update-merchant-estimate",
         "pointer": "#/paths/~1v1~1payment~1{id}~1update-merchant-estimate/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get/Update payment estimate"
+        "summary": "Get/Update payment estimate",
+        "tags": [
+          "Payments API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the actual information about the payment.",
         "id": "operation:get:/v1/payment/{payment_id}",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "payment_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payment/{payment_id}",
         "pointer": "#/paths/~1v1~1payment~1{payment_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get payment status"
+        "summary": "Get payment status",
+        "tags": [
+          "Payments API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method is required to verify payouts by using your 2fa code.",
         "id": "operation:post:/v1/payout/{withdrawals-id}/verify",
         "kind": "operation",
         "method": "post",
         "name": "verifyPayout",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "withdrawals-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payout/{withdrawals-id}/verify",
         "pointer": "#/paths/~1v1~1payout~1{withdrawals-id}~1verify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Verify payout"
+        "summary": "Verify payout",
+        "tags": [
+          "Payouts API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method returns the entire list of your sub-partners.",
         "id": "operation:get:/v1/sub-partner",
         "kind": "operation",
         "method": "get",
         "name": "getSubPartners",
+        "parameters": [
+          {
+            "description": "int or array of int (optional)",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(optional) default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(optional) default 10",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ASC / DESC (optional) default ASC",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/sub-partner",
         "pointer": "#/paths/~1v1~1sub-partner/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get sub-partners"
+        "summary": "Get sub-partners",
+        "tags": [
+          "Billing (sub-partner API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This request can be made only from a whitelisted IP.",
         "id": "operation:get:/v1/sub-partner/balance/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getSubPartnerBalance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/sub-partner/balance/{id}",
         "pointer": "#/paths/~1v1~1sub-partner~1balance~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get sub-partner balance"
+        "summary": "Get sub-partner balance",
+        "tags": [
+          "Billing (sub-partner API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the actual information about the transfer.",
         "id": "operation:get:/v1/sub-partner/transfer/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getTransfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/sub-partner/transfer/{id}",
         "pointer": "#/paths/~1v1~1sub-partner~1transfer~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get transfer"
+        "summary": "Get transfer",
+        "tags": [
+          "Billing (sub-partner API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the entire list of transfers created by your sub-partners.",
         "id": "operation:get:/v1/sub-partner/transfers",
         "kind": "operation",
         "method": "get",
         "name": "getAllTransfers",
+        "parameters": [
+          {
+            "description": "int or array of int (optional)",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "string or array of string \"WAITING\"/\"CREATED\"/\"FINISHED\"/\"REJECTED\" (optional)",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(optional) default 10",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(optional) default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ASC / DESC (optional) default ASC",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/sub-partner/transfers",
         "pointer": "#/paths/~1v1~1sub-partner~1transfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all transfers"
+        "summary": "Get all transfers",
+        "tags": [
+          "Billing (sub-partner API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method allows you to view the entire list of recurring payments filtered by payment status and/or payment plan id",
         "id": "operation:get:/v1/subscriptions",
         "kind": "operation",
         "method": "get",
         "name": "getManyRecurringPayments",
+        "parameters": [
+          {
+            "description": "\"WAITING_PAY\" / \"PAID\" / \"PARTIALLY_PAID\" / \"EXPIRED\"",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "subscription_plan_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "true / false",
+            "in": "query",
+            "name": "is_active",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/subscriptions",
         "pointer": "#/paths/~1v1~1subscriptions/get",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get many recurring payments"
+        "summary": "Get many recurring payments",
+        "tags": [
+          "Recurring Payments API (Email Subscriptions feature)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method allows you to obtain information about all the payment plans you’ve created.",
         "id": "operation:get:/v1/subscriptions/plans",
         "kind": "operation",
         "method": "get",
         "name": "getManyPlans",
+        "parameters": [
+          {
+            "description": "Number",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/subscriptions/plans",
         "pointer": "#/paths/~1v1~1subscriptions~1plans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get many plans"
+        "summary": "Get many plans",
+        "tags": [
+          "Recurring Payments API (Email Subscriptions feature)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method allows you to obtain information about your payment plan.",
         "id": "operation:get:/v1/subscriptions/plans/{plan-id}",
         "kind": "operation",
         "method": "get",
         "name": "getOnePlan",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "plan-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/subscriptions/plans/{plan-id}",
         "pointer": "#/paths/~1v1~1subscriptions~1plans~1{plan-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get one plan"
+        "summary": "Get one plan",
+        "tags": [
+          "Recurring Payments API (Email Subscriptions feature)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method allows you to add necessary changes to a created plan.",
         "id": "operation:patch:/v1/subscriptions/plans/{plan-id}",
         "kind": "operation",
         "method": "patch",
         "name": "updatePlan",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "plan-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/subscriptions/plans/{plan-id}",
         "pointer": "#/paths/~1v1~1subscriptions~1plans~1{plan-id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update plan"
+        "summary": "Update plan",
+        "tags": [
+          "Recurring Payments API (Email Subscriptions feature)"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/subscriptions/{sub_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteRecurringPayment",
-        "path": "/v1/subscriptions/{sub_id}",
-        "pointer": "#/paths/~1v1~1subscriptions~1{sub_id}/delete",
-        "security": [],
-        "summary": "Delete recurring payment"
-      },
-      {
-        "deprecated": false,
+        "description": "Get information about a particular recurring payment via its ID.",
         "id": "operation:get:/v1/subscriptions/{sub_id}",
         "kind": "operation",
         "method": "get",
         "name": "getOneRecurringPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sub_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/subscriptions/{sub_id}",
         "pointer": "#/paths/~1v1~1subscriptions~1{sub_id}/get",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get one recurring payment"
+        "summary": "Get one recurring payment",
+        "tags": [
+          "Recurring Payments API (Email Subscriptions feature)"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Completely removes a particular payment from the recurring payment plan.",
+        "id": "operation:delete:/v1/subscriptions/{sub_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteRecurringPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sub_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/subscriptions/{sub_id}",
+        "pointer": "#/paths/~1v1~1subscriptions~1{sub_id}/delete",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete recurring payment",
+        "tags": [
+          "Recurring Payments API (Email Subscriptions feature)"
+        ]
       }
     ]
   },

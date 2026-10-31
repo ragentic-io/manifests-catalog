@@ -52,17 +52,17 @@
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{server_id}/tsigkeys/{tsigkey_id}"
-      },
-      {
-        "from": "powerdns-local-fc48b17403",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{server_id}/tsigkeys/{tsigkey_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
         "to": "operation:put:/servers/{server_id}/tsigkeys/{tsigkey_id}"
+      },
+      {
+        "from": "powerdns-local-fc48b17403",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/servers/{server_id}/tsigkeys/{tsigkey_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
@@ -77,22 +77,22 @@
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{server_id}/zones/{zone_id}"
-      },
-      {
-        "from": "powerdns-local-fc48b17403",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{server_id}/zones/{zone_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
-        "to": "operation:patch:/servers/{server_id}/zones/{zone_id}"
+        "to": "operation:put:/servers/{server_id}/zones/{zone_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
-        "to": "operation:put:/servers/{server_id}/zones/{zone_id}"
+        "to": "operation:delete:/servers/{server_id}/zones/{zone_id}"
+      },
+      {
+        "from": "powerdns-local-fc48b17403",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/servers/{server_id}/zones/{zone_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
@@ -112,17 +112,17 @@
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}"
-      },
-      {
-        "from": "powerdns-local-fc48b17403",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
         "to": "operation:put:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}"
+      },
+      {
+        "from": "powerdns-local-fc48b17403",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}"
       },
       {
         "from": "powerdns-local-fc48b17403",
@@ -142,11 +142,6 @@
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}"
-      },
-      {
-        "from": "powerdns-local-fc48b17403",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}"
       },
       {
@@ -157,12 +152,197 @@
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
+        "to": "operation:delete:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}"
+      },
+      {
+        "from": "powerdns-local-fc48b17403",
+        "kind": "EXPOSES",
         "to": "operation:put:/servers/{server_id}/zones/{zone_id}/notify"
       },
       {
         "from": "powerdns-local-fc48b17403",
         "kind": "EXPOSES",
         "to": "operation:put:/servers/{server_id}/zones/{zone_id}/rectify"
+      },
+      {
+        "from": "operation:get:/servers",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/cache/flush",
+        "kind": "RETURNS",
+        "to": "schema:CacheFlushResult"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/config",
+        "kind": "RETURNS",
+        "to": "schema:ConfigSetting"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/config/{config_setting_name}",
+        "kind": "RETURNS",
+        "to": "schema:ConfigSetting"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/search-data",
+        "kind": "RETURNS",
+        "to": "schema:SearchResults"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/tsigkeys",
+        "kind": "RETURNS",
+        "to": "schema:TSIGKey"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/tsigkeys",
+        "kind": "ACCEPTS",
+        "to": "schema:TSIGKey"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/tsigkeys",
+        "kind": "RETURNS",
+        "to": "schema:TSIGKey"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/tsigkeys/{tsigkey_id}",
+        "kind": "RETURNS",
+        "to": "schema:TSIGKey"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/tsigkeys/{tsigkey_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:TSIGKey"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/tsigkeys/{tsigkey_id}",
+        "kind": "RETURNS",
+        "to": "schema:TSIGKey"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/zones",
+        "kind": "RETURNS",
+        "to": "schema:Zone"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/zones",
+        "kind": "ACCEPTS",
+        "to": "schema:Zone"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/zones",
+        "kind": "RETURNS",
+        "to": "schema:Zone"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/zones/{zone_id}",
+        "kind": "RETURNS",
+        "to": "schema:Zone"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/zones/{zone_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Zone"
+      },
+      {
+        "from": "operation:patch:/servers/{server_id}/zones/{zone_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Zone"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/zones/{zone_id}/cryptokeys",
+        "kind": "RETURNS",
+        "to": "schema:Cryptokey"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/zones/{zone_id}/cryptokeys",
+        "kind": "ACCEPTS",
+        "to": "schema:Cryptokey"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/zones/{zone_id}/cryptokeys",
+        "kind": "RETURNS",
+        "to": "schema:Cryptokey"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
+        "kind": "RETURNS",
+        "to": "schema:Cryptokey"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Cryptokey"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/zones/{zone_id}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "operation:post:/servers/{server_id}/zones/{zone_id}/metadata",
+        "kind": "ACCEPTS",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "operation:get:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
+        "kind": "RETURNS",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
+        "kind": "ACCEPTS",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "operation:put:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
+        "kind": "RETURNS",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:MapStatisticItem",
+        "kind": "REFERENCES",
+        "to": "schema:SimpleStatisticItem"
+      },
+      {
+        "from": "schema:RRSet",
+        "kind": "REFERENCES",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "schema:RRSet",
+        "kind": "REFERENCES",
+        "to": "schema:Record"
+      },
+      {
+        "from": "schema:RingStatisticItem",
+        "kind": "REFERENCES",
+        "to": "schema:SimpleStatisticItem"
+      },
+      {
+        "from": "schema:SearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchResult"
+      },
+      {
+        "from": "schema:Servers",
+        "kind": "REFERENCES",
+        "to": "schema:Server"
+      },
+      {
+        "from": "schema:Zone",
+        "kind": "REFERENCES",
+        "to": "schema:RRSet"
+      },
+      {
+        "from": "schema:Zones",
+        "kind": "REFERENCES",
+        "to": "schema:Zone"
       }
     ],
     "nodes": [
@@ -178,12 +358,22 @@
         "name": "listServers",
         "path": "/servers",
         "pointer": "#/paths/~1servers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "List all servers"
+        "summary": "List all servers",
+        "tags": [
+          "servers"
+        ]
       },
       {
         "deprecated": false,
@@ -191,14 +381,33 @@
         "kind": "operation",
         "method": "get",
         "name": "listServer",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}",
         "pointer": "#/paths/~1servers~1{server_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "List a server"
+        "summary": "List a server",
+        "tags": [
+          "servers"
+        ]
       },
       {
         "deprecated": false,
@@ -206,14 +415,40 @@
         "kind": "operation",
         "method": "put",
         "name": "cacheFlushByName",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The domain name to flush from the cache",
+            "in": "query",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/cache/flush",
         "pointer": "#/paths/~1servers~1{server_id}~1cache~1flush/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CacheFlushResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Flush a cache-entry by name"
+        "summary": "Flush a cache-entry by name",
+        "tags": [
+          "servers"
+        ]
       },
       {
         "deprecated": false,
@@ -221,59 +456,184 @@
         "kind": "operation",
         "method": "get",
         "name": "getConfig",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/config",
         "pointer": "#/paths/~1servers~1{server_id}~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigSetting[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns all ConfigSettings for a single server"
+        "summary": "Returns all ConfigSettings for a single server",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "NOT IMPLEMENTED",
         "id": "operation:get:/servers/{server_id}/config/{config_setting_name}",
         "kind": "operation",
         "method": "get",
         "name": "getConfigSetting",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the setting to retrieve",
+            "in": "path",
+            "name": "config_setting_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/config/{config_setting_name}",
         "pointer": "#/paths/~1servers~1{server_id}~1config~1{config_setting_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigSetting"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns a specific ConfigSetting for a single server"
+        "summary": "Returns a specific ConfigSetting for a single server",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search the data inside PowerDNS for search_term and return at most max_results.",
         "id": "operation:get:/servers/{server_id}/search-data",
         "kind": "operation",
         "method": "get",
         "name": "searchData",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The string to search for",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximum number of entries to return",
+            "in": "query",
+            "name": "max",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Type of data to search for, one of “all”, “zone”, “record”, “comment”",
+            "in": "query",
+            "name": "object_type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/search-data",
         "pointer": "#/paths/~1servers~1{server_id}~1search-data/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SearchResults"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Search the data inside PowerDNS"
+        "summary": "Search the data inside PowerDNS",
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query PowerDNS internal statistics.",
         "id": "operation:get:/servers/{server_id}/statistics",
         "kind": "operation",
         "method": "get",
         "name": "getStats",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set to the name of a specific statistic, only this value is returned.",
+            "in": "query",
+            "name": "statistic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "“true” (default) or “false”, whether to include the Ring items, which can contain thousands of log messages or queried domains.",
+            "in": "query",
+            "name": "includerings",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/servers/{server_id}/statistics",
         "pointer": "#/paths/~1servers~1{server_id}~1statistics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Query statistics."
+        "summary": "Query statistics.",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
@@ -281,44 +641,91 @@
         "kind": "operation",
         "method": "get",
         "name": "listTSIGKeys",
+        "parameters": [
+          {
+            "description": "The id of the server",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/tsigkeys",
         "pointer": "#/paths/~1servers~1{server_id}~1tsigkeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TSIGKey[]"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get all TSIGKeys on the server, except the actual key"
+        "summary": "Get all TSIGKeys on the server, except the actual key",
+        "tags": [
+          "tsigkey"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This methods add a new TSIGKey.",
         "id": "operation:post:/servers/{server_id}/tsigkeys",
         "kind": "operation",
         "method": "post",
         "name": "createTSIGKey",
+        "parameters": [
+          {
+            "description": "The id of the server",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/tsigkeys",
         "pointer": "#/paths/~1servers~1{server_id}~1tsigkeys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TSIGKey"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "TSIGKey"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Add a TSIG key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/servers/{server_id}/tsigkeys/{tsigkey_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTSIGKey",
-        "path": "/servers/{server_id}/tsigkeys/{tsigkey_id}",
-        "pointer": "#/paths/~1servers~1{server_id}~1tsigkeys~1{tsigkey_id}/delete",
-        "security": [
-          {
-            "APIKeyHeader": []
-          }
-        ],
-        "summary": "Delete the TSIGKey with tsigkey_id"
+        "summary": "Add a TSIG key",
+        "tags": [
+          "tsigkey"
+        ]
       },
       {
         "deprecated": false,
@@ -326,29 +733,153 @@
         "kind": "operation",
         "method": "get",
         "name": "getTSIGKey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve the key from",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the TSIGkey.",
+            "in": "path",
+            "name": "tsigkey_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/tsigkeys/{tsigkey_id}",
         "pointer": "#/paths/~1servers~1{server_id}~1tsigkeys~1{tsigkey_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TSIGKey"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get a specific TSIGKeys on the server, including the actual key"
+        "summary": "Get a specific TSIGKeys on the server, including the actual key",
+        "tags": [
+          "tsigkey"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The TSIGKey at tsigkey_id can be changed in multiple ways: * Changing the Name, this will remove the key with tsigkey_id after adding.",
         "id": "operation:put:/servers/{server_id}/tsigkeys/{tsigkey_id}",
         "kind": "operation",
         "method": "put",
         "name": "putTSIGKey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve the key from",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the TSIGkey.",
+            "in": "path",
+            "name": "tsigkey_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/tsigkeys/{tsigkey_id}",
         "pointer": "#/paths/~1servers~1{server_id}~1tsigkeys~1{tsigkey_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TSIGKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TSIGKey"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "tsigkey"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/servers/{server_id}/tsigkeys/{tsigkey_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTSIGKey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve the key from",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the TSIGkey.",
+            "in": "path",
+            "name": "tsigkey_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{server_id}/tsigkeys/{tsigkey_id}",
+        "pointer": "#/paths/~1servers~1{server_id}~1tsigkeys~1{tsigkey_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "summary": "Delete the TSIGKey with tsigkey_id",
+        "tags": [
+          "tsigkey"
+        ]
       },
       {
         "deprecated": false,
@@ -356,14 +887,48 @@
         "kind": "operation",
         "method": "get",
         "name": "listZones",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set to the name of a zone, only this zone is returned.",
+            "in": "query",
+            "name": "zone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "“true” (default) or “false”, whether to include the “dnssec” and ”edited_serial” fields in the Zone objects.",
+            "in": "query",
+            "name": "dnssec",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/servers/{server_id}/zones",
         "pointer": "#/paths/~1servers~1{server_id}~1zones/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zone[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "List all Zones in a server"
+        "summary": "List all Zones in a server",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
@@ -371,29 +936,48 @@
         "kind": "operation",
         "method": "post",
         "name": "createZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "“true” (default) or “false”, whether to include the “rrsets” in the response Zone object.",
+            "in": "query",
+            "name": "rrsets",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/servers/{server_id}/zones",
         "pointer": "#/paths/~1servers~1{server_id}~1zones/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Zone"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Zone"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Creates a new domain, returns the Zone on creation."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/servers/{server_id}/zones/{zone_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteZone",
-        "path": "/servers/{server_id}/zones/{zone_id}",
-        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}/delete",
-        "security": [
-          {
-            "APIKeyHeader": []
-          }
-        ],
-        "summary": "Deletes this zone, all attached metadata and rrsets."
+        "summary": "Creates a new domain, returns the Zone on creation.",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
@@ -401,14 +985,135 @@
         "kind": "operation",
         "method": "get",
         "name": "listZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "“true” (default) or “false”, whether to include the “rrsets” in the response Zone object.",
+            "in": "query",
+            "name": "rrsets",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zone"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "zone managed by a server"
+        "summary": "zone managed by a server",
+        "tags": [
+          "zones"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The only fields in the zone structure which can be modified are: kind, masters, account, soa_edit, soa_edit_api, api_rectify, dnssec, and nsec3param.",
+        "id": "operation:put:/servers/{server_id}/zones/{zone_id}",
+        "kind": "operation",
+        "method": "put",
+        "name": "putZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{server_id}/zones/{zone_id}",
+        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Zone"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "summary": "Modifies basic zone data.",
+        "tags": [
+          "zones"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/servers/{server_id}/zones/{zone_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{server_id}/zones/{zone_id}",
+        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "summary": "Deletes this zone, all attached metadata and rrsets.",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
@@ -416,44 +1121,86 @@
         "kind": "operation",
         "method": "patch",
         "name": "patchZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Zone"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Creates/modifies/deletes RRsets present in the payload and their comments. Returns 204 No Content on success."
+        "summary": "Creates/modifies/deletes RRsets present in the payload and their comments. Returns 204 No Content on success.",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:put:/servers/{server_id}/zones/{zone_id}",
-        "kind": "operation",
-        "method": "put",
-        "name": "putZone",
-        "path": "/servers/{server_id}/zones/{zone_id}",
-        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}/put",
-        "security": [
-          {
-            "APIKeyHeader": []
-          }
-        ],
-        "summary": "Modifies basic zone data."
-      },
-      {
-        "deprecated": false,
+        "description": "Fails when zone kind is not Slave, or slave is disabled in the configuration.",
         "id": "operation:put:/servers/{server_id}/zones/{zone_id}/axfr-retrieve",
         "kind": "operation",
         "method": "put",
         "name": "axfrRetrieveZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/axfr-retrieve",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1axfr-retrieve/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Retrieve slave zone from its master."
+        "summary": "Retrieve slave zone from its master.",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
@@ -461,44 +1208,88 @@
         "kind": "operation",
         "method": "get",
         "name": "listCryptokeys",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/cryptokeys",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1cryptokeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Cryptokey[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get all CryptoKeys for a zone, except the privatekey"
+        "summary": "Get all CryptoKeys for a zone, except the privatekey",
+        "tags": [
+          "zonecryptokey"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method adds a new key to a zone.",
         "id": "operation:post:/servers/{server_id}/zones/{zone_id}/cryptokeys",
         "kind": "operation",
         "method": "post",
         "name": "createCryptokey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/cryptokeys",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1cryptokeys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Cryptokey"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Cryptokey"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Creates a Cryptokey"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCryptokey",
-        "path": "/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
-        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1cryptokeys~1{cryptokey_id}/delete",
-        "security": [
-          {
-            "APIKeyHeader": []
-          }
-        ],
-        "summary": "This method deletes a key specified by cryptokey_id."
+        "summary": "Creates a Cryptokey",
+        "tags": [
+          "zonecryptokey"
+        ]
       },
       {
         "deprecated": false,
@@ -506,14 +1297,47 @@
         "kind": "operation",
         "method": "get",
         "name": "getCryptokey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id value of the CryptoKey",
+            "in": "path",
+            "name": "cryptokey_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1cryptokeys~1{cryptokey_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Cryptokey"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns all data about the CryptoKey, including the privatekey."
+        "summary": "Returns all data about the CryptoKey, including the privatekey.",
+        "tags": [
+          "zonecryptokey"
+        ]
       },
       {
         "deprecated": false,
@@ -521,14 +1345,105 @@
         "kind": "operation",
         "method": "put",
         "name": "modifyCryptokey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Cryptokey to manipulate",
+            "in": "path",
+            "name": "cryptokey_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1cryptokeys~1{cryptokey_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Cryptokey"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "This method (de)activates a key from zone_name specified by cryptokey_id"
+        "summary": "This method (de)activates a key from zone_name specified by cryptokey_id",
+        "tags": [
+          "zonecryptokey"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCryptokey",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id value of the Cryptokey",
+            "in": "path",
+            "name": "cryptokey_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}",
+        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1cryptokeys~1{cryptokey_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "summary": "This method deletes a key specified by cryptokey_id.",
+        "tags": [
+          "zonecryptokey"
+        ]
       },
       {
         "deprecated": false,
@@ -536,14 +1451,40 @@
         "kind": "operation",
         "method": "get",
         "name": "axfrExportZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/export",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1export/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Returns the zone in AXFR format."
+        "summary": "Returns the zone in AXFR format.",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
@@ -551,44 +1492,87 @@
         "kind": "operation",
         "method": "get",
         "name": "listMetadata",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/metadata",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1metadata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Metadata[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get all the Metadata associated with the zone."
+        "summary": "Get all the Metadata associated with the zone.",
+        "tags": [
+          "zonemetadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a set of metadata entries of given kind for the zone.",
         "id": "operation:post:/servers/{server_id}/zones/{zone_id}/metadata",
         "kind": "operation",
         "method": "post",
         "name": "createMetadata",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/metadata",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1metadata/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Metadata"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Creates a set of metadata entries"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteMetadata",
-        "path": "/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
-        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1metadata~1{metadata_kind}/delete",
-        "security": [
-          {
-            "APIKeyHeader": []
-          }
-        ],
-        "summary": "Delete all items of a single kind of domain metadata."
+        "summary": "Creates a set of metadata entries",
+        "tags": [
+          "zonemetadata"
+        ]
       },
       {
         "deprecated": false,
@@ -596,169 +1580,373 @@
         "kind": "operation",
         "method": "get",
         "name": "getMetadata",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The kind of metadata",
+            "in": "path",
+            "name": "metadata_kind",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1metadata~1{metadata_kind}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Metadata"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get the content of a single kind of domain metadata as a Metadata object."
+        "summary": "Get the content of a single kind of domain metadata as a Metadata object.",
+        "tags": [
+          "zonemetadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a set of metadata entries of given kind for the zone.",
         "id": "operation:put:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
         "kind": "operation",
         "method": "put",
         "name": "modifyMetadata",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The kind of metadata",
+            "in": "path",
+            "name": "metadata_kind",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1metadata~1{metadata_kind}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Metadata"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Metadata"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Replace the content of a single kind of domain metadata."
+        "summary": "Replace the content of a single kind of domain metadata.",
+        "tags": [
+          "zonemetadata"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteMetadata",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The kind of metadata",
+            "in": "path",
+            "name": "metadata_kind",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}",
+        "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1metadata~1{metadata_kind}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "summary": "Delete all items of a single kind of domain metadata.",
+        "tags": [
+          "zonemetadata"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Fails when zone kind is not Master or Slave, or master and slave are disabled in the configuration.",
         "id": "operation:put:/servers/{server_id}/zones/{zone_id}/notify",
         "kind": "operation",
         "method": "put",
         "name": "notifyZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/notify",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1notify/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Send a DNS NOTIFY to all slaves."
+        "summary": "Send a DNS NOTIFY to all slaves.",
+        "tags": [
+          "zones"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This does not take into account the API-RECTIFY metadata.",
         "id": "operation:put:/servers/{server_id}/zones/{zone_id}/rectify",
         "kind": "operation",
         "method": "put",
         "name": "rectifyZone",
+        "parameters": [
+          {
+            "description": "The id of the server to retrieve",
+            "in": "path",
+            "name": "server_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the zone to retrieve",
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{server_id}/zones/{zone_id}/rectify",
         "pointer": "#/paths/~1servers~1{server_id}~1zones~1{zone_id}~1rectify/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Rectify the zone data."
+        "summary": "Rectify the zone data.",
+        "tags": [
+          "zones"
+        ]
       },
       {
+        "description": "The result of a cache-flush",
         "id": "schema:CacheFlushResult",
         "kind": "schema",
-        "name": "CacheFlushResult"
+        "name": "CacheFlushResult",
+        "type": "object"
       },
       {
+        "description": "A comment about an RRSet.",
         "id": "schema:Comment",
         "kind": "schema",
-        "name": "Comment"
+        "name": "Comment",
+        "type": "object"
       },
       {
         "id": "schema:ConfigSetting",
         "kind": "schema",
-        "name": "ConfigSetting"
+        "name": "ConfigSetting",
+        "type": "object"
       },
       {
+        "description": "Describes a DNSSEC cryptographic key",
         "id": "schema:Cryptokey",
         "kind": "schema",
-        "name": "Cryptokey"
+        "name": "Cryptokey",
+        "type": "object"
       },
       {
+        "description": "Returned when the server encounters an error.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:MapStatisticItem",
         "kind": "schema",
-        "name": "MapStatisticItem"
+        "name": "MapStatisticItem",
+        "type": "object"
       },
       {
+        "description": "Represents zone metadata",
         "id": "schema:Metadata",
         "kind": "schema",
-        "name": "Metadata"
+        "name": "Metadata",
+        "type": "object"
       },
       {
+        "description": "This represents a Resource Record Set (all records with the same name and type).",
         "id": "schema:RRSet",
         "kind": "schema",
-        "name": "RRSet"
+        "name": "RRSet",
+        "type": "object"
       },
       {
+        "description": "The RREntry object represents a single record.",
         "id": "schema:Record",
         "kind": "schema",
-        "name": "Record"
+        "name": "Record",
+        "type": "object"
       },
       {
         "id": "schema:RingStatisticItem",
         "kind": "schema",
-        "name": "RingStatisticItem"
+        "name": "RingStatisticItem",
+        "type": "object"
       },
       {
         "id": "schema:SearchResult",
         "kind": "schema",
-        "name": "SearchResult"
+        "name": "SearchResult",
+        "type": "object"
       },
       {
         "id": "schema:SearchResultComment",
         "kind": "schema",
-        "name": "SearchResultComment"
+        "name": "SearchResultComment",
+        "type": "object"
       },
       {
         "id": "schema:SearchResultRecord",
         "kind": "schema",
-        "name": "SearchResultRecord"
+        "name": "SearchResultRecord",
+        "type": "object"
       },
       {
         "id": "schema:SearchResultZone",
         "kind": "schema",
-        "name": "SearchResultZone"
+        "name": "SearchResultZone",
+        "type": "object"
       },
       {
         "id": "schema:SearchResults",
         "kind": "schema",
-        "name": "SearchResults"
+        "name": "SearchResults",
+        "type": "SearchResult[]"
       },
       {
         "id": "schema:Server",
         "kind": "schema",
-        "name": "Server"
+        "name": "Server",
+        "type": "object"
       },
       {
         "id": "schema:Servers",
         "kind": "schema",
-        "name": "Servers"
+        "name": "Servers",
+        "type": "Server[]"
       },
       {
         "id": "schema:SimpleStatisticItem",
         "kind": "schema",
-        "name": "SimpleStatisticItem"
+        "name": "SimpleStatisticItem",
+        "type": "object"
       },
       {
         "id": "schema:StatisticItem",
         "kind": "schema",
-        "name": "StatisticItem"
+        "name": "StatisticItem",
+        "type": "object"
       },
       {
+        "description": "A TSIG key that can be used to authenticate NOTIFY, AXFR, and DNSUPDATE queries.",
         "id": "schema:TSIGKey",
         "kind": "schema",
-        "name": "TSIGKey"
+        "name": "TSIGKey",
+        "type": "object"
       },
       {
+        "description": "This represents an authoritative DNS Zone.",
         "id": "schema:Zone",
         "kind": "schema",
-        "name": "Zone"
+        "name": "Zone",
+        "type": "object"
       },
       {
         "id": "schema:Zones",
         "kind": "schema",
-        "name": "Zones"
+        "name": "Zones",
+        "type": "Zone[]"
       }
     ]
   },
