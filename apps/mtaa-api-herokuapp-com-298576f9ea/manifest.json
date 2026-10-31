@@ -1,0 +1,418 @@
+{
+  "a2ui": {},
+  "app": "mtaa-api-herokuapp-com-298576f9ea",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "mtaa-api-herokuapp-com-298576f9ea",
+        "kind": "EXPOSES",
+        "to": "operation:get:/{country}"
+      },
+      {
+        "from": "mtaa-api-herokuapp-com-298576f9ea",
+        "kind": "EXPOSES",
+        "to": "operation:get:/{country}/{region}"
+      },
+      {
+        "from": "mtaa-api-herokuapp-com-298576f9ea",
+        "kind": "EXPOSES",
+        "to": "operation:get:/{country}/{region}/{district}"
+      },
+      {
+        "from": "mtaa-api-herokuapp-com-298576f9ea",
+        "kind": "EXPOSES",
+        "to": "operation:get:/{country}/{region}/{district}/{ward}"
+      },
+      {
+        "from": "mtaa-api-herokuapp-com-298576f9ea",
+        "kind": "EXPOSES",
+        "to": "operation:get:/{country}/{region}/{district}/{ward}/{street}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "mtaa-api-herokuapp-com-298576f9ea",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/{country}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Tanzania-regions",
+        "path": "/{country}",
+        "pointer": "#/paths/~1{country}/get",
+        "security": [],
+        "summary": "Returns all regions present in Tanzania"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/{country}/{region}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Districts-in-a-region",
+        "path": "/{country}/{region}",
+        "pointer": "#/paths/~1{country}~1{region}/get",
+        "security": [],
+        "summary": "Returns all districts in region"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/{country}/{region}/{district}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Wards-in-a-district",
+        "path": "/{country}/{region}/{district}",
+        "pointer": "#/paths/~1{country}~1{region}~1{district}/get",
+        "security": [],
+        "summary": "Returns all wards in a district"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/{country}/{region}/{district}/{ward}",
+        "kind": "operation",
+        "method": "get",
+        "name": "streets-in-a-ward",
+        "path": "/{country}/{region}/{district}/{ward}",
+        "pointer": "#/paths/~1{country}~1{region}~1{district}~1{ward}/get",
+        "security": [],
+        "summary": "Returns all streets in a ward"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/{country}/{region}/{district}/{ward}/{street}",
+        "kind": "operation",
+        "method": "get",
+        "name": "neighborhood-in-a-street-",
+        "path": "/{country}/{region}/{district}/{ward}/{street}",
+        "pointer": "#/paths/~1{country}~1{region}~1{district}~1{ward}~1{street}/get",
+        "security": [],
+        "summary": "Returns all neighborhood in a street"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "mtaa-api-herokuapp-com-298576f9ea"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "contact": {
+                "email": "isaackeinstein@gmail.com",
+                "name": "Mtaa API",
+                "url": "https://github.com/HackEAC/mtaaAPI"
+              },
+              "description": "Mtaa A simple REST API to access Tanzania's location information,With mtaa API you can easily query and integrate all the location in tanzania from region level to streets from your programming language of your your choice",
+              "license": {
+                "name": "MIT License",
+                "url": "https://github.com/HackEAC/mtaaAPI/blob/main/LICENSE"
+              },
+              "title": "Mtaa API Documentation",
+              "version": "1.0",
+              "x-apisguru-categories": [
+                "open_data",
+                "location"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://raw.githubusercontent.com/Kalebu/mtaa-docs/main/openapi.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "mtaa-api.herokuapp.com"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+              "/{country}": {
+                "get": {
+                  "description": "Fetches all regions present in Tanzania and then return a response as json",
+                  "operationId": "Tanzania-regions",
+                  "parameters": [
+                    {
+                      "description": "Country name in lowercase eg (Tanzania)",
+                      "in": "path",
+                      "name": "country",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    }
+                  },
+                  "summary": "Returns all regions present in Tanzania",
+                  "tags": [
+                    "Tanzania regions"
+                  ]
+                }
+              },
+              "/{country}/{region}": {
+                "get": {
+                  "description": "Returns a post code and all districts in a specified region",
+                  "operationId": "Districts-in-a-region",
+                  "parameters": [
+                    {
+                      "description": "Country name in lowercase eg( tanzania)",
+                      "in": "path",
+                      "name": "country",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the region eg (Mbeya)",
+                      "in": "path",
+                      "name": "region",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    },
+                    "404": {
+                      "description": "Resource not Found"
+                    }
+                  },
+                  "summary": "Returns all districts in region",
+                  "tags": [
+                    "Districts in region"
+                  ]
+                }
+              },
+              "/{country}/{region}/{district}": {
+                "get": {
+                  "description": "Returns all wards in a  specified district and district postcode",
+                  "operationId": "Wards-in-a-district",
+                  "parameters": [
+                    {
+                      "description": "Country name in lowercase eg( tanzania)",
+                      "in": "path",
+                      "name": "country",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the region eg (Mbeya)",
+                      "in": "path",
+                      "name": "region",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the District eg (Rungwe)",
+                      "in": "path",
+                      "name": "district",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    },
+                    "404": {
+                      "description": "Resource not Found"
+                    }
+                  },
+                  "summary": "Returns all wards in a district",
+                  "tags": [
+                    "Wards in a district"
+                  ]
+                }
+              },
+              "/{country}/{region}/{district}/{ward}": {
+                "get": {
+                  "description": "Returns all streets in a specified ward and ward postcode",
+                  "operationId": "streets-in-a-ward",
+                  "parameters": [
+                    {
+                      "description": "Country name in lowercase eg( tanzania)",
+                      "in": "path",
+                      "name": "country",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the region eg (Mbeya)",
+                      "in": "path",
+                      "name": "region",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the District eg (Rungwe)",
+                      "in": "path",
+                      "name": "district",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the Ward eg (Kiwira)",
+                      "in": "path",
+                      "name": "ward",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    },
+                    "404": {
+                      "description": "Resource not Found"
+                    }
+                  },
+                  "summary": "Returns all streets in a ward",
+                  "tags": [
+                    "Streets in a ward"
+                  ]
+                }
+              },
+              "/{country}/{region}/{district}/{ward}/{street}": {
+                "get": {
+                  "description": "Returns all neighborhood in a specified street",
+                  "operationId": "neighborhood-in-a-street-",
+                  "parameters": [
+                    {
+                      "description": "Country name in lowercase eg( tanzania)",
+                      "in": "path",
+                      "name": "country",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the region eg (Mbeya)",
+                      "in": "path",
+                      "name": "region",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the District eg (Rungwe)",
+                      "in": "path",
+                      "name": "district",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the Ward eg (Kiwira)",
+                      "in": "path",
+                      "name": "ward",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Name of the Street eg (Ilundo)",
+                      "in": "path",
+                      "name": "street",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response"
+                    },
+                    "404": {
+                      "description": "Resource not Found"
+                    }
+                  },
+                  "summary": "Returns all neighborhood in a street",
+                  "tags": [
+                    "neighborhood in a street"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "Production Server",
+                "url": "https://mtaa-api.herokuapp.com/api"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Mtaa API Documentation"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:56.571312Z",
+    "license": {
+      "name": "MIT License",
+      "url": "https://github.com/HackEAC/mtaaAPI/blob/main/LICENSE"
+    },
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://raw.githubusercontent.com/Kalebu/mtaa-docs/main/openapi.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "93179afad9279bb98c36f987e45847bb31c64455e7f713b5958470fc438b062f",
+    "source_id": "mtaa-api.herokuapp.com",
+    "source_updated": "2021-06-30T09:57:47.461Z",
+    "url": "https://api.apis.guru/v2/specs/mtaa-api.herokuapp.com/1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0"
+}

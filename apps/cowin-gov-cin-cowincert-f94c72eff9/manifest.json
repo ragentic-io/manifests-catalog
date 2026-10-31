@@ -1,0 +1,198 @@
+{
+  "a2ui": {},
+  "app": "cowin-gov-cin-cowincert-f94c72eff9",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "cowin-gov-cin-cowincert-f94c72eff9",
+        "kind": "EXPOSES",
+        "to": "operation:post:/pdf/certificate"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "cowin-gov-cin-cowincert-f94c72eff9",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/pdf/certificate",
+        "kind": "operation",
+        "method": "post",
+        "name": "getCertificatePdf",
+        "path": "/pdf/certificate",
+        "pointer": "#/paths/~1pdf~1certificate/post",
+        "security": [
+          {
+            "cert_auth": [
+              "read:cert"
+            ]
+          }
+        ],
+        "summary": "Download the certificate in pdf format"
+      },
+      {
+        "id": "schema:CertificateRequest",
+        "kind": "schema",
+        "name": "CertificateRequest"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "cowin-gov-cin-cowincert-f94c72eff9"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "CertificateRequest": {
+                  "properties": {
+                    "beneficiaryId": {
+                      "type": "string"
+                    },
+                    "mobile": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "securitySchemes": {
+                "api_key": {
+                  "in": "header",
+                  "name": "Authorization",
+                  "type": "apiKey"
+                },
+                "cert_auth": {
+                  "flows": {
+                    "authorizationCode": {
+                      "authorizationUrl": "https://divoc.cowin.gov.in/realms/divoc/protocol/openid-connect/auth",
+                      "scopes": {
+                        "read:cert": "read or download certificates"
+                      },
+                      "tokenUrl": "https://divoc.xiv.in/auth/realms/divoc/protocol/openid-connect/token"
+                    }
+                  },
+                  "type": "oauth2"
+                }
+              }
+            },
+            "info": {
+              "contact": {
+                "name": "Co-WIN by Ministry of Health and Family Welfare",
+                "url": "https://www.cowin.gov.in"
+              },
+              "description": "API to get Co-WIN vaccination certificate.",
+              "termsOfService": "https://www.cowin.gov.in/terms-condition",
+              "title": "Co-WIN Certificate API",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "open_data"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://apisetu.gov.in/api_specification_v8/cowincert.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "cowin.gov.cin",
+              "x-serviceName": "cowincert"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/pdf/certificate": {
+                "post": {
+                  "operationId": "getCertificatePdf",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/CertificateRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "400": {
+                      "content": {},
+                      "description": "Bad request"
+                    }
+                  },
+                  "security": [
+                    {
+                      "cert_auth": [
+                        "read:cert"
+                      ]
+                    }
+                  ],
+                  "summary": "Download the certificate in pdf format",
+                  "tags": [
+                    "certificate"
+                  ],
+                  "x-codegen-request-body-name": "body"
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://cowin.gov.cin/cert/external"
+              }
+            ],
+            "tags": [
+              {
+                "description": "Certificate api",
+                "name": "certificate"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Co-WIN Certificate API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:51.873726Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://apisetu.gov.in/api_specification_v8/cowincert.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "967c00eb070b97bc489cd521e067ae3688b211fba0eee3ff3994a080b56be95d",
+    "source_id": "cowin.gov.cin:cowincert",
+    "source_updated": "2021-02-07T16:05:38.903Z",
+    "url": "https://api.apis.guru/v2/specs/cowin.gov.cin/cowincert/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

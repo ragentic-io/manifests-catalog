@@ -1,0 +1,279 @@
+{
+  "a2ui": {},
+  "app": "bintable-com-f91c06de36",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "bintable-com-f91c06de36",
+        "kind": "EXPOSES",
+        "to": "operation:get:/balance"
+      },
+      {
+        "from": "bintable-com-f91c06de36",
+        "kind": "EXPOSES",
+        "to": "operation:get:/{bin}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "bintable-com-f91c06de36",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/balance",
+        "kind": "operation",
+        "method": "get",
+        "name": "balanceLookup",
+        "path": "/balance",
+        "pointer": "#/paths/~1balance/get",
+        "security": [],
+        "summary": "Check Balance"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/{bin}",
+        "kind": "operation",
+        "method": "get",
+        "name": "binLookup",
+        "path": "/{bin}",
+        "pointer": "#/paths/~1{bin}/get",
+        "security": [],
+        "summary": "Lookup for bin"
+      },
+      {
+        "id": "schema:ResponseItem",
+        "kind": "schema",
+        "name": "ResponseItem"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "bintable-com-f91c06de36"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "ResponseItem": {
+                  "properties": {
+                    "data": {
+                      "type": "object"
+                    },
+                    "message": {
+                      "example": "SUCCESS",
+                      "type": "string"
+                    },
+                    "result": {
+                      "example": 200,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "message",
+                    "result"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "contact": {
+                "email": "hello@bintable.com"
+              },
+              "description": "BIN lookup API, the free api service from bintable.com to lookup card information using it's BIN. the service maintains updated database based on the comunity and other third party services to make sure all BINs in the database are accurate and up to date.",
+              "license": {
+                "name": "Apache 2.0",
+                "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+              },
+              "title": "BIN Lookup API",
+              "version": "1.0.0-oas3",
+              "x-apisguru-categories": [
+                "financial"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://bintable.com/api-files/openapi.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "bintable.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/balance": {
+                "get": {
+                  "description": "Get Account balance and expiry",
+                  "operationId": "balanceLookup",
+                  "parameters": [
+                    {
+                      "description": "The API key, which you can get from bintable.com website.",
+                      "explode": true,
+                      "in": "query",
+                      "name": "api_key",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      },
+                      "style": "form"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/ResponseItem"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "Balance reponse"
+                    },
+                    "401": {
+                      "description": "Your balance is exhausted,or package expired"
+                    },
+                    "403": {
+                      "description": "Invalid API Key"
+                    },
+                    "422": {
+                      "description": "API key is missing"
+                    }
+                  },
+                  "summary": "Check Balance",
+                  "tags": [
+                    "Balance"
+                  ]
+                }
+              },
+              "/{bin}": {
+                "get": {
+                  "description": "By passing in the appropriate BIN, you can lookup for\ncard meta data in bintable.com API\n",
+                  "operationId": "binLookup",
+                  "parameters": [
+                    {
+                      "description": "pass the required BIN code",
+                      "explode": false,
+                      "in": "path",
+                      "name": "bin",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      },
+                      "style": "simple"
+                    },
+                    {
+                      "description": "The API key, which you can get from bintable.com website.",
+                      "explode": true,
+                      "in": "query",
+                      "name": "api_key",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      },
+                      "style": "form"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/ResponseItem"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "BIN data response"
+                    },
+                    "401": {
+                      "description": "Your balance is exhausted,or package expired"
+                    },
+                    "403": {
+                      "description": "Invalid API Key"
+                    },
+                    "422": {
+                      "description": "API key is missing"
+                    }
+                  },
+                  "summary": "Lookup for bin",
+                  "tags": [
+                    "Lookup"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://api.bintable.com/v1"
+              }
+            ],
+            "tags": [
+              {
+                "description": "Authorized users with API Key can call this service",
+                "name": "Lookup"
+              },
+              {
+                "description": "Authorized users with API Key can call endpoints under this tag.",
+                "name": "Balance"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "BIN Lookup API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:50.342095Z",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://bintable.com/api-files/openapi.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "4a46e7bd8a611d6bfcda22fa155eb12ce6881cdd1cfbfccb6734340b88aea9bd",
+    "source_id": "bintable.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/bintable.com/1.0.0-oas3/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0-oas3"
+}

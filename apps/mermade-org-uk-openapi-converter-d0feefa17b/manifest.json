@@ -1,0 +1,489 @@
+{
+  "a2ui": {},
+  "app": "mermade-org-uk-openapi-converter-d0feefa17b",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "EXPOSES",
+        "to": "operation:get:/badge"
+      },
+      {
+        "from": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "EXPOSES",
+        "to": "operation:get:/convert"
+      },
+      {
+        "from": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "EXPOSES",
+        "to": "operation:post:/convert"
+      },
+      {
+        "from": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "EXPOSES",
+        "to": "operation:get:/status"
+      },
+      {
+        "from": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "EXPOSES",
+        "to": "operation:get:/validate"
+      },
+      {
+        "from": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "EXPOSES",
+        "to": "operation:post:/validate"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "mermade-org-uk-openapi-converter-d0feefa17b",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/badge",
+        "kind": "operation",
+        "method": "get",
+        "name": "getBadge",
+        "path": "/badge",
+        "pointer": "#/paths/~1badge/get",
+        "security": [],
+        "summary": "Return a redirect to a badge svg file depending on a source definition's validity"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/convert",
+        "kind": "operation",
+        "method": "get",
+        "name": "convertUrl",
+        "path": "/convert",
+        "pointer": "#/paths/~1convert/get",
+        "security": [],
+        "summary": "Convert a Swagger 2.0 definition to OpenAPI 3.0.x from a URL"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/convert",
+        "kind": "operation",
+        "method": "post",
+        "name": "convert",
+        "path": "/convert",
+        "pointer": "#/paths/~1convert/post",
+        "security": [],
+        "summary": "Convert a Swagger 2.0 definition passed in the body to OpenAPI 3.0.x "
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/status",
+        "kind": "operation",
+        "method": "get",
+        "name": "getStatus",
+        "path": "/status",
+        "pointer": "#/paths/~1status/get",
+        "security": [],
+        "summary": "Get the status of the API"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/validate",
+        "kind": "operation",
+        "method": "get",
+        "name": "validateUrl",
+        "path": "/validate",
+        "pointer": "#/paths/~1validate/get",
+        "security": [],
+        "summary": "Validate an OpenAPI 3.0.x definition"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/validate",
+        "kind": "operation",
+        "method": "post",
+        "name": "validate",
+        "path": "/validate",
+        "pointer": "#/paths/~1validate/post",
+        "security": [],
+        "summary": "Validate an OpenAPI 3.0.x definition supplied in the body of the request"
+      },
+      {
+        "id": "schema:validationResult",
+        "kind": "schema",
+        "name": "validationResult"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "mermade-org-uk-openapi-converter-d0feefa17b"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "validationResult": {
+                  "properties": {
+                    "openapi": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "openapi"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "externalDocs": {
+              "url": "https://github.com/mermade/openapi-webconverter"
+            },
+            "info": {
+              "contact": {
+                "email": "mike.ralphson@gmail.com",
+                "name": "Mike Ralphson",
+                "url": "https://github.com/mermade/swagger2openapi/issues"
+              },
+              "description": "Converter and validator for Swagger 2.0 to OpenAPI 3.0.x definitions",
+              "license": {
+                "name": "MIT",
+                "url": "https://opensource.org/licenses/MIT"
+              },
+              "termsOfService": "https://opensource.org/licenses/MIT",
+              "title": "Swagger2OpenAPI Converter",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "backgroundColor": "#FFFFFF",
+                "url": "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_u_15950345.png"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/openapi.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "mermade.org.uk",
+              "x-serviceName": "openapi-converter",
+              "x-tags": [
+                "OpenAPI",
+                "Swagger",
+                "REST",
+                "API"
+              ]
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/badge": {
+                "get": {
+                  "description": "",
+                  "operationId": "getBadge",
+                  "parameters": [
+                    {
+                      "description": "The URL to retrieve the OpenAPI 3.0.x definition from",
+                      "example": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/openapi.json",
+                      "in": "query",
+                      "name": "url",
+                      "required": true,
+                      "schema": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "301": {
+                      "description": "Moved"
+                    }
+                  },
+                  "summary": "Return a redirect to a badge svg file depending on a source definition's validity",
+                  "tags": [
+                    "validation"
+                  ]
+                }
+              },
+              "/convert": {
+                "get": {
+                  "description": "",
+                  "operationId": "convertUrl",
+                  "parameters": [
+                    {
+                      "description": "The URL to retrieve the OpenAPI 2.0 definition from",
+                      "example": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/swagger.json",
+                      "in": "query",
+                      "name": "url",
+                      "required": true,
+                      "schema": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        },
+                        "application/x-yaml": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "default"
+                    }
+                  },
+                  "summary": "Convert a Swagger 2.0 definition to OpenAPI 3.0.x from a URL",
+                  "tags": [
+                    "conversion"
+                  ]
+                },
+                "post": {
+                  "description": "",
+                  "operationId": "convert",
+                  "requestBody": {
+                    "content": {
+                      "multipart/form-data": {
+                        "schema": {
+                          "properties": {
+                            "filename": {
+                              "description": "The file to upload and convert",
+                              "type": "string"
+                            },
+                            "source": {
+                              "description": "The text of a Swagger 2.0 definition to convert",
+                              "type": "string"
+                            },
+                            "validate": {
+                              "enum": [
+                                "on"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      }
+                    }
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        },
+                        "application/x-yaml": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "default"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        },
+                        "application/x-yaml": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Invalid request"
+                    }
+                  },
+                  "summary": "Convert a Swagger 2.0 definition passed in the body to OpenAPI 3.0.x ",
+                  "tags": [
+                    "conversion"
+                  ]
+                }
+              },
+              "/status": {
+                "get": {
+                  "description": "",
+                  "operationId": "getStatus",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        },
+                        "application/x-yaml": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "default"
+                    }
+                  },
+                  "summary": "Get the status of the API",
+                  "tags": [
+                    "metadata"
+                  ]
+                }
+              },
+              "/validate": {
+                "get": {
+                  "description": "",
+                  "operationId": "validateUrl",
+                  "parameters": [
+                    {
+                      "description": "The URL to retrieve the OpenAPI 3.0.x definition from",
+                      "example": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/openapi.json",
+                      "in": "query",
+                      "name": "url",
+                      "required": true,
+                      "schema": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/validationResult"
+                          }
+                        },
+                        "application/x-yaml": {
+                          "schema": {
+                            "$ref": "#/components/schemas/validationResult"
+                          }
+                        }
+                      },
+                      "description": "default"
+                    }
+                  },
+                  "summary": "Validate an OpenAPI 3.0.x definition",
+                  "tags": [
+                    "validation"
+                  ]
+                },
+                "post": {
+                  "description": "",
+                  "operationId": "validate",
+                  "requestBody": {
+                    "content": {
+                      "multipart/form-data": {
+                        "schema": {
+                          "properties": {
+                            "filename": {
+                              "description": "The file to upload and validate",
+                              "type": "string"
+                            },
+                            "source": {
+                              "description": "The text of an OpenAPI 3.0.x definition to validate",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      }
+                    }
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/validationResult"
+                          }
+                        },
+                        "application/x-yaml": {
+                          "schema": {
+                            "$ref": "#/components/schemas/validationResult"
+                          }
+                        }
+                      },
+                      "description": "default"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        },
+                        "application/x-yaml": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Invalid request"
+                    }
+                  },
+                  "summary": "Validate an OpenAPI 3.0.x definition supplied in the body of the request",
+                  "tags": [
+                    "validation"
+                  ]
+                }
+              }
+            },
+            "security": [],
+            "servers": [
+              {
+                "url": "https://mermade.org.uk/api/v1"
+              },
+              {
+                "url": "http://mermade.org.uk/api/v1"
+              }
+            ],
+            "tags": [
+              {
+                "description": "Metadata functions",
+                "name": "metadata"
+              },
+              {
+                "description": "Conversion functions",
+                "name": "conversion"
+              },
+              {
+                "description": "Validation functions",
+                "name": "validation"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Swagger2OpenAPI Converter"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:56.410738Z",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/openapi.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "46d4c77865eb0a8f49d55ebe96833c0db0fff8f48a6bbc353712529a355f331a",
+    "source_id": "mermade.org.uk:openapi-converter",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/mermade.org.uk/openapi-converter/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

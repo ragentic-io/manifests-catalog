@@ -1,0 +1,631 @@
+{
+  "a2ui": {},
+  "app": "cycat-org-939e89e150",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/child/{uuid}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/generate/uuid"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/info"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/list/project/{start}/{end}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/list/publisher/{start}/{end}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/lookup/{uuid}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/namespace/finduuid/{namespace}/{namespaceid}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/namespace/getall"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/namespace/getid/{namespace}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/parent/{uuid}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:post:/propose"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/relationships/expanded/{uuid}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/relationships/{uuid}"
+      },
+      {
+        "from": "cycat-org-939e89e150",
+        "kind": "EXPOSES",
+        "to": "operation:get:/search/{searchquery}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "cycat-org-939e89e150",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/child/{uuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_child",
+        "path": "/child/{uuid}",
+        "pointer": "#/paths/~1child~1{uuid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/generate/uuid",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_generate_uuid",
+        "path": "/generate/uuid",
+        "pointer": "#/paths/~1generate~1uuid/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/info",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_info",
+        "path": "/info",
+        "pointer": "#/paths/~1info/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/list/project/{start}/{end}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_list_project",
+        "path": "/list/project/{start}/{end}",
+        "pointer": "#/paths/~1list~1project~1{start}~1{end}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/list/publisher/{start}/{end}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_list_publisher",
+        "path": "/list/publisher/{start}/{end}",
+        "pointer": "#/paths/~1list~1publisher~1{start}~1{end}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/lookup/{uuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_lookup",
+        "path": "/lookup/{uuid}",
+        "pointer": "#/paths/~1lookup~1{uuid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/namespace/finduuid/{namespace}/{namespaceid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_namespacefinduuid",
+        "path": "/namespace/finduuid/{namespace}/{namespaceid}",
+        "pointer": "#/paths/~1namespace~1finduuid~1{namespace}~1{namespaceid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/namespace/getall",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_namespacegetall",
+        "path": "/namespace/getall",
+        "pointer": "#/paths/~1namespace~1getall/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/namespace/getid/{namespace}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_namespacegetid",
+        "path": "/namespace/getid/{namespace}",
+        "pointer": "#/paths/~1namespace~1getid~1{namespace}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/parent/{uuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_parent",
+        "path": "/parent/{uuid}",
+        "pointer": "#/paths/~1parent~1{uuid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/propose",
+        "kind": "operation",
+        "method": "post",
+        "name": "post_propose",
+        "path": "/propose",
+        "pointer": "#/paths/~1propose/post",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/relationships/expanded/{uuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_relationshipsexpanded",
+        "path": "/relationships/expanded/{uuid}",
+        "pointer": "#/paths/~1relationships~1expanded~1{uuid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/relationships/{uuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_relationships",
+        "path": "/relationships/{uuid}",
+        "pointer": "#/paths/~1relationships~1{uuid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/search/{searchquery}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_search",
+        "path": "/search/{searchquery}",
+        "pointer": "#/paths/~1search~1{searchquery}/get",
+        "security": [],
+        "summary": null
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "cycat-org-939e89e150"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/",
+            "consumes": [
+              "application/json"
+            ],
+            "info": {
+              "description": "CyCAT - The Cybersecurity Resource Catalogue public API services.",
+              "license": {
+                "name": "CC-BY"
+              },
+              "title": "CyCAT.org API",
+              "version": "0.9",
+              "x-apisguru-categories": [
+                "security"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_cycat.org_images_illustrations_pointing.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://api.cycat.org/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "cycat.org"
+            },
+            "paths": {
+              "/child/{uuid}": {
+                "get": {
+                  "description": "Get child UUID(s) from a specified project or publisher UUID.",
+                  "operationId": "get_child",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "uuid",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/generate/uuid": {
+                "get": {
+                  "description": "Generate an UUID version 4 RFC4122-compliant.",
+                  "operationId": "get_generate_uuid",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                }
+              },
+              "/info": {
+                "get": {
+                  "description": "Get information about the CyCAT backend services including status, overall statistics and version.",
+                  "operationId": "get_info",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                }
+              },
+              "/list/project/{start}/{end}": {
+                "get": {
+                  "description": "List projects registered in CyCAT by pagination (start,end).",
+                  "operationId": "get_list_project",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "start",
+                    "required": true,
+                    "type": "integer"
+                  },
+                  {
+                    "in": "path",
+                    "name": "end",
+                    "required": true,
+                    "type": "integer"
+                  }
+                ]
+              },
+              "/list/publisher/{start}/{end}": {
+                "get": {
+                  "description": "List publishers registered in CyCAT by pagination (start,end).",
+                  "operationId": "get_list_publisher",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "start",
+                    "required": true,
+                    "type": "integer"
+                  },
+                  {
+                    "in": "path",
+                    "name": "end",
+                    "required": true,
+                    "type": "integer"
+                  }
+                ]
+              },
+              "/lookup/{uuid}": {
+                "get": {
+                  "description": "Lookup UUID registered in CyCAT.",
+                  "operationId": "get_lookup",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "uuid",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/namespace/finduuid/{namespace}/{namespaceid}": {
+                "get": {
+                  "description": "Get all known UUID for a given namespace id.",
+                  "operationId": "get_namespacefinduuid",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "namespace",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "in": "path",
+                    "name": "namespaceid",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/namespace/getall": {
+                "get": {
+                  "description": "List all known namespaces.",
+                  "operationId": "get_namespacegetall",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                }
+              },
+              "/namespace/getid/{namespace}": {
+                "get": {
+                  "description": "Get all ID from a given namespace.",
+                  "operationId": "get_namespacegetid",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "namespace",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/parent/{uuid}": {
+                "get": {
+                  "description": "Get parent UUID(s) from a specified project or item UUID.",
+                  "operationId": "get_parent",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "uuid",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/propose": {
+                "post": {
+                  "description": "Propose new resource to CyCAT.",
+                  "operationId": "post_propose",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                }
+              },
+              "/relationships/expanded/{uuid}": {
+                "get": {
+                  "description": "Get relationship(s) UUID from a specified UUID including the relationships meta information.",
+                  "operationId": "get_relationshipsexpanded",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "uuid",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/relationships/{uuid}": {
+                "get": {
+                  "description": "Get relationship(s) UUID from a specified UUID.",
+                  "operationId": "get_relationships",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "uuid",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              },
+              "/search/{searchquery}": {
+                "get": {
+                  "description": "Full-text search in CyCAT and return matching UUID.",
+                  "operationId": "get_search",
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "default"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "searchquery",
+                    "required": true,
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "MaskError": {
+                "description": "When any error occurs on mask"
+              },
+              "ParseError": {
+                "description": "When a mask can't be parsed"
+              }
+            },
+            "swagger": "2.0",
+            "tags": [
+              {
+                "description": "Default namespace",
+                "name": "default"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "CyCAT.org API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:51.974202Z",
+    "license": {
+      "name": "CC-BY"
+    },
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://api.cycat.org/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "99847df2fec8355538e40950467a8b3529d7f6028d5d6760d53ecb4a2c51504a",
+    "source_id": "cycat.org",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/cycat.org/0.9/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "0.9"
+}

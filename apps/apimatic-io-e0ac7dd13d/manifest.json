@@ -1,0 +1,213 @@
+{
+  "a2ui": {},
+  "app": "apimatic-io-e0ac7dd13d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "apimatic-io-e0ac7dd13d",
+        "kind": "EXPOSES",
+        "to": "operation:post:/transform"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "apimatic-io-e0ac7dd13d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/transform",
+        "kind": "operation",
+        "method": "post",
+        "name": "ConvertAPI",
+        "path": "/transform",
+        "pointer": "#/paths/~1transform/post",
+        "security": [],
+        "summary": "Transform API Descriptions from/to various formats"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "apimatic-io-e0ac7dd13d"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "securitySchemes": {
+                "api-key": {
+                  "in": "query",
+                  "name": "apikey",
+                  "type": "apiKey"
+                },
+                "basic": {
+                  "scheme": "basic",
+                  "type": "http"
+                }
+              }
+            },
+            "externalDocs": {
+              "description": "API Transformer Website",
+              "url": "https://apimatic.io/transformer"
+            },
+            "info": {
+              "contact": {
+                "email": "transform@apimatic.io",
+                "name": "API Transformer",
+                "url": "https://apimatic.io/transformer"
+              },
+              "description": "Transform API Descriptions from/to various formats",
+              "license": {
+                "name": "MIT",
+                "url": "https://opensource.org/licenses/MIT"
+              },
+              "termsOfService": "https://apimatic.io/transformer",
+              "title": "APIMATIC API Transformer",
+              "version": "1.0",
+              "x-apisguru-categories": [
+                "developer_tools",
+                "tools"
+              ],
+              "x-logo": {
+                "backgroundColor": "#2a313a",
+                "url": "https://api.apis.guru/v2/cache/logo/https_apimatic.io_img_theme_Convertron.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://raw.githubusercontent.com/Mermade/open_api_specifications/master/APIMATIC%20API%20Transformer/swagger.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "apimatic.io",
+              "x-tags": [
+                "API",
+                "API descriptions",
+                "API definition",
+                "Swagger",
+                "RAML",
+                "WADL",
+                "API blueprint",
+                "OpenAPI"
+              ],
+              "x-unofficialSpec": true
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/transform": {
+                "post": {
+                  "description": "Transform API Descriptions from/to various formats e.g., Swagger, API Blueprint, RAML, WADL, Google Discovery, I/O Docs.\n\n### INPUTS\n* API Blueprint\n* Swagger 1.0 - 1.2\n* Swagger 2.0 JSON\n* Swagger 2.0 YAML\n* WADL - W3C 2009\n* Google Discovery\n* RAML 0.8\n* I/O Docs - Mashery\n* HAR 1.2\n* Postman Collection 1.0 - 2.0\n* APIMATIC Format\n* Mashape\n\n### OUTPUTS\n* API Blueprint\n* Swagger 1.2\n* Swagger 2.0 JSON\n* Swagger 2.0 YAML\n* WADL - W3C 2009\n* RAML 0.8 - 1.0\n* APIMATIC Format",
+                  "operationId": "ConvertAPI",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "format",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "swagger10",
+                          "swagger20",
+                          "swaggeryaml",
+                          "apiblueprint",
+                          "wadl2009",
+                          "raml",
+                          "apimatic"
+                        ],
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "multipart/form-data": {
+                        "schema": {
+                          "properties": {
+                            "url": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      }
+                    }
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "type": "object"
+                          }
+                        },
+                        "application/x-yaml": {
+                          "schema": {
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "The converted API specification"
+                    },
+                    "429": {
+                      "description": "Rate-limit exceeded"
+                    }
+                  },
+                  "security": [],
+                  "summary": "Transform API Descriptions from/to various formats"
+                }
+              }
+            },
+            "security": [],
+            "servers": [
+              {
+                "url": "https://apimatic.io/api/transform"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "APIMATIC API Transformer"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:37.206776Z",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://raw.githubusercontent.com/Mermade/open_api_specifications/master/APIMATIC%20API%20Transformer/swagger.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "9b2060fac09b4bed40aaed4fc2cbc147bbcbdce30706dc627f27314c29b7403d",
+    "source_id": "apimatic.io",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/apimatic.io/1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0"
+}

@@ -1,0 +1,159 @@
+{
+  "a2ui": {},
+  "app": "regcheck-org-uk-5b89c209bd",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "regcheck-org-uk-5b89c209bd",
+        "kind": "EXPOSES",
+        "to": "operation:get:/Check"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "regcheck-org-uk-5b89c209bd",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/Check",
+        "kind": "operation",
+        "method": "get",
+        "name": "Check",
+        "path": "/Check",
+        "pointer": "#/paths/~1Check/get",
+        "security": [],
+        "summary": "Gets details of a UK Vehicle"
+      },
+      {
+        "id": "schema:Car",
+        "kind": "schema",
+        "name": "Car"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "regcheck-org-uk-5b89c209bd"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/infiniteloopltd/CarRegistration/1.0.0",
+            "definitions": {
+              "Car": {
+                "type": "object"
+              }
+            },
+            "host": "regcheck.local",
+            "info": {
+              "contact": {
+                "email": "info@infiniteloop.ie",
+                "x-twitter": "webtropy"
+              },
+              "description": "Car Registration API, An API that retrieves car information from its numberplate in many countries worldwide, uncluding the USA, UK, India, Australia and most of Europe. A username and password is required to access the API, which can be obtained from www.carregistrationapi.com - Use https://www.regcheck.org.uk/api/json.aspx/ as the root of all API calls.",
+              "license": {
+                "name": "Apache 2.0",
+                "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+              },
+              "title": "Car Registration API",
+              "version": "1.0.0",
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_webtropy_profile_image.jpeg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://api.swaggerhub.com/apis/infiniteloopltd/CarRegistration/1.0.0",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "regcheck.org.uk"
+            },
+            "paths": {
+              "/Check": {
+                "get": {
+                  "description": "Gets details of a UK Vehicle\n",
+                  "operationId": "Check",
+                  "parameters": [
+                    {
+                      "description": "A registration number",
+                      "in": "query",
+                      "name": "searchString",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "vehicle information",
+                      "schema": {
+                        "items": {
+                          "$ref": "#/definitions/Car"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "500": {
+                      "description": "bad input parameter"
+                    }
+                  },
+                  "summary": "Gets details of a UK Vehicle"
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Car Registration API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:59.723776Z",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://api.swaggerhub.com/apis/infiniteloopltd/CarRegistration/1.0.0",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "3e665ab097d3d576fe9e2b3f6e9aef6c90a6a681a7adbde2a308a72210d4ada2",
+    "source_id": "regcheck.org.uk",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/regcheck.org.uk/1.0.0/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

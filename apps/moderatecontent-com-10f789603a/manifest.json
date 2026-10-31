@@ -1,0 +1,156 @@
+{
+  "a2ui": {},
+  "app": "moderatecontent-com-10f789603a",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "moderatecontent-com-10f789603a",
+        "kind": "EXPOSES",
+        "to": "operation:get:/"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "moderatecontent-com-10f789603a",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /",
+        "path": "/",
+        "pointer": "#/paths/~1/get",
+        "security": [],
+        "summary": "Blocks images with nudity"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "moderatecontent-com-10f789603a"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/moderate/",
+            "externalDocs": {
+              "description": "Find out more about ModerateContent.com",
+              "url": "https://www.moderatecontent.com"
+            },
+            "host": "api.moderatecontent.com",
+            "info": {
+              "contact": {
+                "email": "info@moderatecontent.com"
+              },
+              "description": "Our FREE API blocks images with nudity. Build from the ground up, accurate models, best in class support, great price.",
+              "termsOfService": "https://www.moderatecontent.com/documentation/terms",
+              "title": "Image Moderation",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "media"
+              ],
+              "x-logo": {
+                "backgroundColor": "#FFFFFF",
+                "url": "https://api.apis.guru/v2/cache/logo/https_www.moderatecontent.com_img_mdr8_logo-light.png"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://www.moderatecontent.com/api/swagger.yaml",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "moderatecontent.com"
+            },
+            "paths": {
+              "/": {
+                "get": {
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "description": "",
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "url",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Blocks images with nudity",
+                  "tags": [
+                    "Inappropriate Content"
+                  ]
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0",
+            "tags": [
+              {
+                "description": "FREE API blocks images with nudity",
+                "externalDocs": {
+                  "description": "Our Documentation",
+                  "url": "https://www.moderatecontent.com/documentation/content"
+                },
+                "name": "Image Moderation"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Image Moderation"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:56.541185Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://www.moderatecontent.com/api/swagger.yaml",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "b6affe8e37a058f0bca181c6fd5abe8286c3e90b0ee633981804680b1ff5b00d",
+    "source_id": "moderatecontent.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/moderatecontent.com/1.0.0/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

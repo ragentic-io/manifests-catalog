@@ -1,0 +1,1098 @@
+{
+  "a2ui": {},
+  "app": "hubhopper-com-1105ceb6a4",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/categories"
+      },
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/categories/{categoryId}"
+      },
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/categories/{categoryId}/podcasts"
+      },
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/podcasts"
+      },
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/podcasts/{podcastId}"
+      },
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/podcasts/{podcastId}/episodes"
+      },
+      {
+        "from": "hubhopper-com-1105ceb6a4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/util/languages"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "hubhopper-com-1105ceb6a4",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/categories",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /categories",
+        "path": "/categories",
+        "pointer": "#/paths/~1categories/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/categories/{categoryId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /categories/{categoryId}",
+        "path": "/categories/{categoryId}",
+        "pointer": "#/paths/~1categories~1{categoryId}/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/categories/{categoryId}/podcasts",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /categories/{categoryId}/podcasts",
+        "path": "/categories/{categoryId}/podcasts",
+        "pointer": "#/paths/~1categories~1{categoryId}~1podcasts/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/podcasts",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /podcasts",
+        "path": "/podcasts",
+        "pointer": "#/paths/~1podcasts/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/podcasts/{podcastId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /podcasts/{podcastId}",
+        "path": "/podcasts/{podcastId}",
+        "pointer": "#/paths/~1podcasts~1{podcastId}/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/podcasts/{podcastId}/episodes",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /podcasts/{podcastId}/episodes",
+        "path": "/podcasts/{podcastId}/episodes",
+        "pointer": "#/paths/~1podcasts~1{podcastId}~1episodes/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/util/languages",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /util/languages",
+        "path": "/util/languages",
+        "pointer": "#/paths/~1util~1languages/get",
+        "security": [
+          {
+            "api_key": [],
+            "partner_id": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "id": "schema:CategoryList",
+        "kind": "schema",
+        "name": "CategoryList"
+      },
+      {
+        "id": "schema:CategoryListCategoriesItem",
+        "kind": "schema",
+        "name": "CategoryListCategoriesItem"
+      },
+      {
+        "id": "schema:Empty",
+        "kind": "schema",
+        "name": "Empty"
+      },
+      {
+        "id": "schema:Error",
+        "kind": "schema",
+        "name": "Error"
+      },
+      {
+        "id": "schema:LanguageItem",
+        "kind": "schema",
+        "name": "LanguageItem"
+      },
+      {
+        "id": "schema:LanguageList",
+        "kind": "schema",
+        "name": "LanguageList"
+      },
+      {
+        "id": "schema:PodcastEpisodeList",
+        "kind": "schema",
+        "name": "PodcastEpisodeList"
+      },
+      {
+        "id": "schema:PodcastEpisodeListEpisodesItem",
+        "kind": "schema",
+        "name": "PodcastEpisodeListEpisodesItem"
+      },
+      {
+        "id": "schema:PodcastList",
+        "kind": "schema",
+        "name": "PodcastList"
+      },
+      {
+        "id": "schema:PodcastListPodcastsItem",
+        "kind": "schema",
+        "name": "PodcastListPodcastsItem"
+      },
+      {
+        "id": "schema:SingleCategory",
+        "kind": "schema",
+        "name": "SingleCategory"
+      },
+      {
+        "id": "schema:SingleCategoryCategory",
+        "kind": "schema",
+        "name": "SingleCategoryCategory"
+      },
+      {
+        "id": "schema:SinglePodcast",
+        "kind": "schema",
+        "name": "SinglePodcast"
+      },
+      {
+        "id": "schema:SinglePodcastPodcast",
+        "kind": "schema",
+        "name": "SinglePodcastPodcast"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "hubhopper-com-1105ceb6a4"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/partner",
+            "definitions": {
+              "CategoryList": {
+                "properties": {
+                  "categories": {
+                    "items": {
+                      "$ref": "#/definitions/CategoryListCategoriesItem"
+                    },
+                    "type": "array"
+                  },
+                  "noOfPages": {
+                    "type": "integer"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer"
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                },
+                "title": "CategoryListOutputModel",
+                "type": "object"
+              },
+              "CategoryListCategoriesItem": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "Empty": {
+                "title": "Empty Schema",
+                "type": "object"
+              },
+              "Error": {
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "title": "Error Schema",
+                "type": "object"
+              },
+              "LanguageItem": {
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "title": "LanguageItem",
+                "type": "object"
+              },
+              "LanguageList": {
+                "properties": {
+                  "languages": {
+                    "items": {
+                      "$ref": "#/definitions/LanguageItem"
+                    },
+                    "type": "array"
+                  },
+                  "noOfPages": {
+                    "type": "integer"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer"
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                },
+                "title": "LanguageList",
+                "type": "object"
+              },
+              "PodcastEpisodeList": {
+                "properties": {
+                  "episodes": {
+                    "items": {
+                      "$ref": "#/definitions/PodcastEpisodeListEpisodesItem"
+                    },
+                    "type": "array"
+                  },
+                  "noOfPages": {
+                    "type": "integer"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer"
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                },
+                "title": "PodcastEpisodeListOutputModel",
+                "type": "object"
+              },
+              "PodcastEpisodeListEpisodesItem": {
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "episodeId": {
+                    "type": "integer"
+                  },
+                  "episodeUrl": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "isNew": {
+                    "type": "boolean"
+                  },
+                  "play": {
+                    "properties": {
+                      "duration": {
+                        "type": "string"
+                      },
+                      "durationInSec": {
+                        "type": "integer"
+                      },
+                      "size": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "podcastId": {
+                    "type": "integer"
+                  },
+                  "podcastUrl": {
+                    "type": "string"
+                  },
+                  "publishTime": {
+                    "type": "string"
+                  },
+                  "publishedOn": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "PodcastList": {
+                "properties": {
+                  "noOfPages": {
+                    "type": "integer"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer"
+                  },
+                  "podcasts": {
+                    "items": {
+                      "$ref": "#/definitions/PodcastListPodcastsItem"
+                    },
+                    "type": "array"
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                },
+                "title": "PodcastListOutputModel",
+                "type": "object"
+              },
+              "PodcastListPodcastsItem": {
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "categoryId": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "episodes": {
+                    "type": "integer"
+                  },
+                  "featured": {
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "featuredId": {
+                    "type": "integer"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "keywords": {
+                    "type": "string"
+                  },
+                  "latestEpisodeTime": {
+                    "type": "string"
+                  },
+                  "podcastId": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "SingleCategory": {
+                "description": "Model to fetch a single category.",
+                "properties": {
+                  "category": {
+                    "$ref": "#/definitions/SingleCategoryCategory"
+                  }
+                },
+                "title": "SingleCategoryOutputModel",
+                "type": "object"
+              },
+              "SingleCategoryCategory": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "SinglePodcast": {
+                "properties": {
+                  "podcast": {
+                    "$ref": "#/definitions/SinglePodcastPodcast"
+                  }
+                },
+                "title": "SinglePodcastOutputModel",
+                "type": "object"
+              },
+              "SinglePodcastPodcast": {
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "categoryId": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "episodes": {
+                    "type": "integer"
+                  },
+                  "featured": {
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "featuredId": {
+                    "type": "integer"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "keywords": {
+                    "type": "string"
+                  },
+                  "latest_episode_time": {
+                    "type": "string"
+                  },
+                  "podcastId": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "website": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "host": "apis.hubhopper.com",
+            "info": {
+              "description": "This is an interactive document explaining the API(s) that could be used to fetch data from [Hubhopper](https://hubhopper.com). Use the api key provided to authorize `x-api-key` and test the API(s). The output data models are also available for reference.",
+              "title": "Hubhopper Partner Integration API(s) - Production",
+              "version": "v5",
+              "x-apisguru-categories": [
+                "entertainment"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://docs.hubhopper.com/api/integrations/partner/swagger.yaml",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "hubhopper.com"
+            },
+            "paths": {
+              "/categories": {
+                "get": {
+                  "description": "Get the list of all content categories.",
+                  "parameters": [
+                    {
+                      "description": "Provide the size of the page to fetch.",
+                      "in": "query",
+                      "name": "pageSize",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Provide the page number to fetch.",
+                      "in": "query",
+                      "name": "page",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "headers": {
+                        "Access-Control-Allow-Origin": {
+                          "type": "string"
+                        }
+                      },
+                      "schema": {
+                        "$ref": "#/definitions/CategoryList"
+                      }
+                    },
+                    "404": {
+                      "description": "404 response"
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Category"
+                  ]
+                }
+              },
+              "/categories/{categoryId}": {
+                "get": {
+                  "description": "Get specific content category.",
+                  "parameters": [
+                    {
+                      "description": "Unique qualifier for a category.",
+                      "in": "path",
+                      "name": "categoryId",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "headers": {
+                        "Access-Control-Allow-Origin": {
+                          "type": "string"
+                        }
+                      },
+                      "schema": {
+                        "$ref": "#/definitions/SingleCategory"
+                      }
+                    },
+                    "404": {
+                      "description": "404 response"
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Category"
+                  ]
+                }
+              },
+              "/categories/{categoryId}/podcasts": {
+                "get": {
+                  "description": "Get a list of all podcasts under a category.",
+                  "parameters": [
+                    {
+                      "description": "Unique qualifier for a category.",
+                      "in": "path",
+                      "name": "categoryId",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Provide the page number to fetch.",
+                      "in": "query",
+                      "name": "page",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Provide the size of the page to fetch.",
+                      "in": "query",
+                      "name": "pageSize",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Order the items by 'newest' | 'random'",
+                      "in": "query",
+                      "name": "order",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Takes filters like 'lang' in a url encoded json. \nExample:\n1)Single ->\n&nbsp;&nbsp;&nbsp;&nbsp; var filterJson = {\"lang\":[\"en\"]};\n&nbsp;&nbsp;&nbsp;&nbsp; var url = baseUrl+'?'+filters=enocdeURI(JSON.stringify(filterJson));\n2)Multiple ->\n&nbsp;&nbsp;&nbsp;&nbsp; var filterJson = {\"lang\":[\"en\",\"hi\"]};\n&nbsp;&nbsp;&nbsp;&nbsp; var url = baseUrl+'?'+filters=enocdeURI(JSON.stringify(filterJson));",
+                      "in": "query",
+                      "name": "filters",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "headers": {
+                        "Access-Control-Allow-Origin": {
+                          "type": "string"
+                        }
+                      },
+                      "schema": {
+                        "$ref": "#/definitions/PodcastList"
+                      }
+                    },
+                    "404": {
+                      "description": "404 response"
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Category"
+                  ]
+                }
+              },
+              "/podcasts": {
+                "get": {
+                  "description": "Get the list of all podcasts.",
+                  "parameters": [
+                    {
+                      "description": "Provide the page number to fetch.",
+                      "in": "query",
+                      "name": "page",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Provide the size of the page to fetch.",
+                      "in": "query",
+                      "name": "pageSize",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Order the items by 'newest' | 'random'",
+                      "in": "query",
+                      "name": "order",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Takes filters like 'lang' in a url encoded json. \nExample:\n1)Single ->\n&nbsp;&nbsp;&nbsp;&nbsp; var filterJson = {\"lang\":[\"en\"]};\n&nbsp;&nbsp;&nbsp;&nbsp; var url = baseUrl+'?'+filters=enocdeURI(JSON.stringify(filterJson));\n2)Multiple ->\n&nbsp;&nbsp;&nbsp;&nbsp; var filterJson = {\"lang\":[\"en\",\"hi\"]};\n&nbsp;&nbsp;&nbsp;&nbsp; var url = baseUrl+'?'+filters=enocdeURI(JSON.stringify(filterJson));",
+                      "in": "query",
+                      "name": "filters",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "headers": {
+                        "Access-Control-Allow-Origin": {
+                          "type": "string"
+                        }
+                      },
+                      "schema": {
+                        "$ref": "#/definitions/PodcastList"
+                      }
+                    },
+                    "404": {
+                      "description": "404 response"
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Podcast"
+                  ]
+                }
+              },
+              "/podcasts/{podcastId}": {
+                "get": {
+                  "description": "Get a single Podcast.",
+                  "parameters": [
+                    {
+                      "description": "Unique qualifier for a podcast.",
+                      "in": "path",
+                      "name": "podcastId",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "headers": {
+                        "Access-Control-Allow-Origin": {
+                          "type": "string"
+                        }
+                      },
+                      "schema": {
+                        "$ref": "#/definitions/SinglePodcast"
+                      }
+                    },
+                    "404": {
+                      "description": "404 response",
+                      "schema": {
+                        "$ref": "#/definitions/Error"
+                      }
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Podcast"
+                  ]
+                }
+              },
+              "/podcasts/{podcastId}/episodes": {
+                "get": {
+                  "description": "Get a list of all episodes under a podcast.",
+                  "parameters": [
+                    {
+                      "description": "Provide the page number to fetch.",
+                      "in": "query",
+                      "name": "page",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Provide the size of the page to fetch.",
+                      "in": "query",
+                      "name": "pageSize",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Order the items by 'newest' | 'random'",
+                      "in": "query",
+                      "name": "order",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Takes filters like 'lang' in a url encoded json. \nExample:\n1)Single ->\n&nbsp;&nbsp;&nbsp;&nbsp; var filterJson = {\"lang\":[\"en\"]};\n&nbsp;&nbsp;&nbsp;&nbsp; var url = baseUrl+'?'+filters=enocdeURI(JSON.stringify(filterJson));\n2)Multiple ->\n&nbsp;&nbsp;&nbsp;&nbsp; var filterJson = {\"lang\":[\"en\",\"hi\"]};\n&nbsp;&nbsp;&nbsp;&nbsp; var url = baseUrl+'?'+filters=enocdeURI(JSON.stringify(filterJson));",
+                      "in": "query",
+                      "name": "filters",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Unique qualifier for a podcast.",
+                      "in": "path",
+                      "name": "podcastId",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "headers": {
+                        "Access-Control-Allow-Origin": {
+                          "type": "string"
+                        }
+                      },
+                      "schema": {
+                        "$ref": "#/definitions/PodcastEpisodeList"
+                      }
+                    },
+                    "404": {
+                      "description": "404 response"
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Podcast"
+                  ]
+                }
+              },
+              "/util/languages": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Provide the size of the page to fetch.",
+                      "in": "query",
+                      "name": "pageSize",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Provide the page number to fetch.",
+                      "in": "query",
+                      "name": "page",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200 response",
+                      "schema": {
+                        "$ref": "#/definitions/LanguageList"
+                      }
+                    },
+                    "204": {
+                      "description": "204 response"
+                    },
+                    "401": {
+                      "description": "401 response"
+                    },
+                    "404": {
+                      "description": "404 response"
+                    },
+                    "500": {
+                      "description": "500 response"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": [],
+                      "partner_id": []
+                    }
+                  ],
+                  "tags": [
+                    "Util"
+                  ]
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "securityDefinitions": {
+              "api_key": {
+                "in": "header",
+                "name": "x-api-key",
+                "type": "apiKey"
+              },
+              "partner_id": {
+                "in": "header",
+                "name": "hhPartnerId",
+                "type": "apiKey"
+              }
+            },
+            "swagger": "2.0",
+            "tags": [
+              {
+                "description": "API(s) related to Categories.",
+                "name": "Category"
+              },
+              {
+                "description": "API(s) related to Podcasts and Episodes.",
+                "name": "Podcast"
+              },
+              {
+                "description": "API(s) related to Content Utility on Hubhopper.",
+                "name": "Util"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Hubhopper Partner Integration API(s) - Production"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:54.433361Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://docs.hubhopper.com/api/integrations/partner/swagger.yaml",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "123d40e86c80dc65288ea59ae2e6ee65cb247b3564eeb7c8157d3e785c1f7ee6",
+    "source_id": "hubhopper.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/hubhopper.com/v5/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v5"
+}

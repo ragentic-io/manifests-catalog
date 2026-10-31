@@ -1,0 +1,162 @@
+{
+  "a2ui": {},
+  "app": "datasette-local-0cff3b0c02",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "datasette-local-0cff3b0c02",
+        "kind": "EXPOSES",
+        "to": "operation:get:/content.json"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "datasette-local-0cff3b0c02",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/content.json",
+        "kind": "operation",
+        "method": "get",
+        "name": "query",
+        "path": "/content.json",
+        "pointer": "#/paths/~1content.json/get",
+        "security": [],
+        "summary": "Execute a SQLite SQL query against the content database"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "datasette-local-0cff3b0c02"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "description": "Execute SQL queries against a Datasette database and return the results as JSON",
+              "title": "Datasette API",
+              "version": "v1",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://datasette.io/-/chatgpt-openapi-schema.yml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "datasette.local"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/content.json": {
+                "get": {
+                  "description": "Accepts SQLite SQL query, returns JSON. Does not allow PRAGMA statements.",
+                  "operationId": "query",
+                  "parameters": [
+                    {
+                      "description": "The SQL query to be executed",
+                      "in": "query",
+                      "name": "sql",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The shape of the response data. Must be \"array\"",
+                      "in": "query",
+                      "name": "_shape",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "array"
+                        ],
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "items": {
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "Successful SQL results"
+                    },
+                    "400": {
+                      "description": "Bad request"
+                    },
+                    "500": {
+                      "description": "Internal server error"
+                    }
+                  },
+                  "summary": "Execute a SQLite SQL query against the content database"
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "http://datasette.local"
+              },
+              {
+                "url": "https://datasette.io"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Datasette API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:39.780259Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://datasette.io/-/chatgpt-openapi-schema.yml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "256ed0eda6ca3e68a36d1277a31ef8eb977cfe902c81b4897dbc9881275b2606",
+    "source_id": "datasette.local",
+    "source_updated": "2023-04-01T14:48:34.662Z",
+    "url": "https://api.apis.guru/v2/specs/datasette.local/v1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v1"
+}

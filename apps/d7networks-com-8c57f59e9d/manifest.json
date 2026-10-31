@@ -1,0 +1,403 @@
+{
+  "a2ui": {},
+  "app": "d7networks-com-8c57f59e9d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "d7networks-com-8c57f59e9d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/balance"
+      },
+      {
+        "from": "d7networks-com-8c57f59e9d",
+        "kind": "EXPOSES",
+        "to": "operation:post:/send"
+      },
+      {
+        "from": "d7networks-com-8c57f59e9d",
+        "kind": "EXPOSES",
+        "to": "operation:post:/sendbatch"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "d7networks-com-8c57f59e9d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/balance",
+        "kind": "operation",
+        "method": "get",
+        "name": "BalanceGet",
+        "path": "/balance",
+        "pointer": "#/paths/~1balance/get",
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "summary": "Balance"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/send",
+        "kind": "operation",
+        "method": "post",
+        "name": "SendPost",
+        "path": "/send",
+        "pointer": "#/paths/~1send/post",
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "summary": "SendSMS"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/sendbatch",
+        "kind": "operation",
+        "method": "post",
+        "name": "SendbatchPost",
+        "path": "/sendbatch",
+        "pointer": "#/paths/~1sendbatch/post",
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "summary": "Bulk SMS"
+      },
+      {
+        "id": "schema:BulkSMSRequest",
+        "kind": "schema",
+        "name": "BulkSMSRequest"
+      },
+      {
+        "id": "schema:Message",
+        "kind": "schema",
+        "name": "Message"
+      },
+      {
+        "id": "schema:SendSMSRequest",
+        "kind": "schema",
+        "name": "SendSMSRequest"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "d7networks-com-8c57f59e9d"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "BulkSMSRequest": {
+                  "description": "Bulk SMS Request",
+                  "example": {
+                    "messages": [
+                      {
+                        "content": "Same content goes to three numbers",
+                        "from": "SignSMS",
+                        "to": [
+                          "971562316353",
+                          "971562316354",
+                          "971562316355"
+                        ]
+                      }
+                    ]
+                  },
+                  "properties": {
+                    "messages": {
+                      "description": "Sendbatch message body",
+                      "items": {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "messages"
+                  ],
+                  "title": "BulkSMSRequest",
+                  "type": "object"
+                },
+                "Message": {
+                  "description": "",
+                  "example": {
+                    "content": "Same content goes to three numbers",
+                    "from": "SignSMS",
+                    "to": [
+                      "971562316353",
+                      "971562316354",
+                      "971562316355"
+                    ]
+                  },
+                  "properties": {
+                    "content": {
+                      "type": "string"
+                    },
+                    "from": {
+                      "type": "string"
+                    },
+                    "to": {
+                      "description": "Destination Number",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "to",
+                    "content",
+                    "from"
+                  ],
+                  "title": "Message",
+                  "type": "object"
+                },
+                "SendSMSRequest": {
+                  "description": "Send SMS Request",
+                  "example": {
+                    "content": "Send single SMS Testing",
+                    "from": "SignSMS",
+                    "to": 971562316353
+                  },
+                  "properties": {
+                    "content": {
+                      "description": "Message Content",
+                      "type": "string"
+                    },
+                    "from": {
+                      "description": "Sender ID / Number",
+                      "type": "string"
+                    },
+                    "to": {
+                      "description": "Destination Mobile Number",
+                      "format": "int64",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "to",
+                    "from",
+                    "content"
+                  ],
+                  "title": "SendSMSRequest",
+                  "type": "object"
+                }
+              },
+              "securitySchemes": {
+                "auth": {
+                  "scheme": "basic",
+                  "type": "http"
+                }
+              }
+            },
+            "info": {
+              "contact": {
+                "email": "int@d7networks.com",
+                "name": "Emanuel",
+                "url": "https://d7networks.com/",
+                "x-twitter": "d7sms"
+              },
+              "description": "D7 SMS allows you to reach your customers via SMS over D7's own connectivity to global mobile networks. D7 provides reliable and cost-effective SMS services to businesses across all industries and aims to connect all countries and territories via direct connections.",
+              "title": "D7SMS",
+              "version": "1.0.2",
+              "x-apisguru-categories": [
+                "messaging"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_d7sms_profile_image.jpeg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://api.swaggerhub.com/apis/Direct7Networks/D7SMS/1.0.2",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "d7networks.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/balance": {
+                "get": {
+                  "deprecated": false,
+                  "description": "Check account balance",
+                  "operationId": "BalanceGet",
+                  "responses": {
+                    "200": {
+                      "description": "",
+                      "headers": {}
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Internal Server Error"
+                    }
+                  },
+                  "summary": "Balance"
+                }
+              },
+              "/send": {
+                "post": {
+                  "deprecated": false,
+                  "description": "Send SMS  to recipients using D7 SMS Gateway",
+                  "operationId": "SendPost",
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "header",
+                      "name": "Content-Type",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "header",
+                      "name": "Accept",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/SendSMSRequest"
+                        }
+                      }
+                    },
+                    "description": "Message Body",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "",
+                      "headers": {}
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Internal Server Error"
+                    }
+                  },
+                  "summary": "SendSMS"
+                }
+              },
+              "/sendbatch": {
+                "post": {
+                  "deprecated": false,
+                  "description": "Send Bulk SMS  to multiple recipients using D7 SMS Gateway",
+                  "operationId": "SendbatchPost",
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "header",
+                      "name": "Content-Type",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "header",
+                      "name": "Accept",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/BulkSMSRequest"
+                        }
+                      }
+                    },
+                    "description": "Message Body",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "",
+                      "headers": {}
+                    }
+                  },
+                  "summary": "Bulk SMS"
+                }
+              }
+            },
+            "security": [
+              {
+                "auth": []
+              }
+            ],
+            "servers": [
+              {
+                "url": "https://rest-api.d7networks.com/secure"
+              }
+            ],
+            "tags": []
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "D7SMS"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.012891Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://api.swaggerhub.com/apis/Direct7Networks/D7SMS/1.0.2",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "2334394b1478b1c892617053abb8e88b750e287a67904ae85a15d15028c4b1c4",
+    "source_id": "d7networks.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/d7networks.com/1.0.2/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.2"
+}

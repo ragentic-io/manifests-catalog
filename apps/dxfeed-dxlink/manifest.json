@@ -1,0 +1,2630 @@
+{
+  "a2ui": {},
+  "app": "dxfeed-dxlink",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "dxfeed-dxlink",
+        "kind": "EXPOSES",
+        "to": "operation:publish:/"
+      },
+      {
+        "from": "operation:publish:/",
+        "kind": "RECEIVE",
+        "to": "channel:/"
+      },
+      {
+        "from": "dxfeed-dxlink",
+        "kind": "EXPOSES",
+        "to": "operation:subscribe:/"
+      },
+      {
+        "from": "operation:subscribe:/",
+        "kind": "SEND",
+        "to": "channel:/"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "dxfeed-dxlink",
+        "kind": "application"
+      },
+      {
+        "address": "/",
+        "id": "channel:/",
+        "kind": "channel",
+        "name": "/"
+      },
+      {
+        "app_action": "receive",
+        "channel": "/",
+        "connector_action": "send",
+        "definition": {
+          "message": {
+            "oneOf": [
+              {
+                "$ref": "#/components/messages/ErrorMessage"
+              },
+              {
+                "$ref": "#/components/messages/SetupMessage"
+              },
+              {
+                "$ref": "#/components/messages/AuthMessage"
+              },
+              {
+                "$ref": "#/components/messages/KeepaliveMessage"
+              },
+              {
+                "$ref": "#/components/messages/FeedChannelRequestMessage"
+              },
+              {
+                "$ref": "#/components/messages/DomChannelRequestMessage"
+              },
+              {
+                "$ref": "#/components/messages/ChannelCancelMessage"
+              },
+              {
+                "$ref": "#/components/messages/FeedSetupMessage"
+              },
+              {
+                "$ref": "#/components/messages/FeedSubscriptionMessage"
+              },
+              {
+                "$ref": "#/components/messages/DomSetupMessage"
+              }
+            ]
+          }
+        },
+        "id": "operation:publish:/",
+        "kind": "operation",
+        "name": "send.",
+        "summary": null
+      },
+      {
+        "app_action": "send",
+        "channel": "/",
+        "connector_action": "receive",
+        "definition": {
+          "message": {
+            "oneOf": [
+              {
+                "$ref": "#/components/messages/ErrorMessage"
+              },
+              {
+                "$ref": "#/components/messages/SetupMessage"
+              },
+              {
+                "$ref": "#/components/messages/KeepaliveMessage"
+              },
+              {
+                "$ref": "#/components/messages/AuthStateMessage"
+              },
+              {
+                "$ref": "#/components/messages/ChannelOpenedMessage"
+              },
+              {
+                "$ref": "#/components/messages/ChannelClosedMessage"
+              },
+              {
+                "$ref": "#/components/messages/FeedConfigMessage"
+              },
+              {
+                "$ref": "#/components/messages/FeedDataMessage"
+              },
+              {
+                "$ref": "#/components/messages/DomConfigMessage"
+              },
+              {
+                "$ref": "#/components/messages/DomSnapshotMessage"
+              }
+            ]
+          }
+        },
+        "id": "operation:subscribe:/",
+        "kind": "operation",
+        "name": "receive.",
+        "summary": null
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "dxfeed-dxlink"
+    },
+    "spec": {
+      "base": {
+        "protocol": "asyncapi",
+        "specification": {
+          "document": {
+            "asyncapi": "2.4.0",
+            "channels": {
+              "/": {
+                "bindings": {
+                  "ws": {
+                    "method": "GET"
+                  }
+                },
+                "description": "The main entry point to receive and send messages.",
+                "publish": {
+                  "message": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/messages/ErrorMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/SetupMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/AuthMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/KeepaliveMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/FeedChannelRequestMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/DomChannelRequestMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/ChannelCancelMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/FeedSetupMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/FeedSubscriptionMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/DomSetupMessage"
+                      }
+                    ]
+                  }
+                },
+                "subscribe": {
+                  "message": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/messages/ErrorMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/SetupMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/KeepaliveMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/AuthStateMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/ChannelOpenedMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/ChannelClosedMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/FeedConfigMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/FeedDataMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/DomConfigMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/DomSnapshotMessage"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "components": {
+              "messages": {
+                "AuthMessage": {
+                  "description": "The client must send this message to the server after the connection is established and the `SETUP` is sent.\nThe server will notify with the `AUTH_STATE` message or close the connection if the authorization is unsuccessful.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 0,
+                        "token": "token#123",
+                        "type": "AUTH"
+                      },
+                      "summary": "Authorization"
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "channel": {
+                            "const": 0
+                          },
+                          "token": {
+                            "description": "Authorization token.",
+                            "type": "string"
+                          },
+                          "type": {
+                            "const": "AUTH"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "token"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to authorize."
+                },
+                "AuthStateMessage": {
+                  "description": "The server will send this message with an `UNAUTHORIZED state` to notify that authorization is required.\nThe server will send this message with an `AUTHORIZED state` to notify that authorization was successful or not required.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 0,
+                        "state": "AUTHORIZED",
+                        "type": "AUTH_STATE"
+                      },
+                      "summary": "Authorization successful."
+                    },
+                    {
+                      "payload": {
+                        "channel": 0,
+                        "state": "UNAUTHORIZED",
+                        "type": "AUTH_STATE"
+                      },
+                      "summary": "Authorization required."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "channel": {
+                            "const": 0
+                          },
+                          "state": {
+                            "description": "Authorization state. Possible values:\n- `AUTHORIZED` - authorization is successful\n- `UNAUTHORIZED` - authorization failed\n",
+                            "enum": [
+                              "AUTHORIZED",
+                              "UNAUTHORIZED"
+                            ],
+                            "type": "string"
+                          },
+                          "type": {
+                            "const": "AUTH_STATE"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "state"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Notification of authorization state."
+                },
+                "ChannelCancelMessage": {
+                  "description": "The client can send this message to the server to close the channel.\nOnce the client has sent this message, the client can forget about the channel.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "type": "CHANNEL_CANCEL"
+                      },
+                      "summary": "Close channel"
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "type": {
+                            "const": "CHANNEL_CANCEL"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to cancel channel requests."
+                },
+                "ChannelClosedMessage": {
+                  "description": "The server will send this message to the client after the `CHANNEL_CANCEL` message is received or if the server decides to close the channel.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "type": "CHANNEL_CLOSED"
+                      },
+                      "summary": "Channel closed"
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "type": {
+                            "const": "CHANNEL_CLOSED"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Notification of the closed channel."
+                },
+                "ChannelOpenedMessage": {
+                  "description": "The server will send this message to the client after the `CHANNEL_REQUEST` message is received.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "parameters": {
+                          "contract": "AUTO"
+                        },
+                        "service": "FEED",
+                        "type": "CHANNEL_OPENED"
+                      },
+                      "summary": "Feed channel opened with AUTO contract."
+                    },
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "parameters": {
+                          "sources": [
+                            "ntv"
+                          ],
+                          "symbol": "AAPL"
+                        },
+                        "service": "DOM",
+                        "type": "CHANNEL_OPENED"
+                      },
+                      "summary": "Dom channel opened."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "parameters": {
+                            "description": "Parameters of operated channel.",
+                            "required": [],
+                            "type": "object"
+                          },
+                          "service": {
+                            "enum": [
+                              "FEED",
+                              "DOM"
+                            ]
+                          },
+                          "type": {
+                            "const": "CHANNEL_OPENED"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "service",
+                          "parameters"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Notification of the opened channel."
+                },
+                "DomChannelRequestMessage": {
+                  "description": "The client can send this message to the server to open a channel for two-way communication with the service.\nThe server will notify the client with the `CHANNEL_OPENED` message.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "parameters": {
+                          "sources": [
+                            "ntv"
+                          ],
+                          "symbol": "AAPL"
+                        },
+                        "service": "DOM",
+                        "type": "CHANNEL_REQUEST"
+                      },
+                      "summary": "Dom channel request."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "parameters": {
+                            "description": "Parameters of the dom service.",
+                            "properties": {
+                              "sources": {
+                                "items": {
+                                  "description": "Order source.",
+                                  "examples": [
+                                    "ntv"
+                                  ],
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
+                              "symbol": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "symbol",
+                              "sources"
+                            ],
+                            "type": "object"
+                          },
+                          "service": {
+                            "description": "Operated service. Possible values:\n- `DOM` - the dom service offers the ability to receive real-time updates about the depth of market.\n",
+                            "enum": [
+                              "DOM"
+                            ]
+                          },
+                          "type": {
+                            "const": "CHANNEL_REQUEST"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "service",
+                          "parameters"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to request the dom channel."
+                },
+                "DomConfigMessage": {
+                  "description": "The server can send this message to the client after receiving the `DOM_SETUP` message.\nThe server can send this message to the client if the `DOM` service configuration has changed.\nParameters are lazy therefore the server may not send the notification immediately, but before the first `DOM_SNAPSHOT` is sent.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "aggregationPeriod": 1,
+                        "channel": 1,
+                        "dataFormat": "FULL",
+                        "depthLimit": 5,
+                        "orderFields": [
+                          "price",
+                          "size"
+                        ],
+                        "type": "DOM_CONFIG"
+                      },
+                      "summary": "Dom config."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "aggregationPeriod": {
+                            "description": "Desired aggregation period of events (in seconds).",
+                            "type": "number"
+                          },
+                          "dataFormat": {
+                            "enum": [
+                              "FULL"
+                            ]
+                          },
+                          "depthLimit": {
+                            "description": "Desired depth limit of order.",
+                            "type": "number"
+                          },
+                          "orderFields": {
+                            "items": {
+                              "description": "Order field name.",
+                              "examples": [
+                                "price",
+                                "size"
+                              ],
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "type": {
+                            "const": "DOM_CONFIG"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "aggregationPeriod",
+                          "depthLimit",
+                          "dataFormat",
+                          "orderFields"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Notification of the `DOM` service configuration."
+                },
+                "DomSetupMessage": {
+                  "description": "The client can send this message to the server after opening a channel with the `DOM` service.\nThe server will notify the client of the application with the `DOM_CONFIG` message.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "type": "DOM_SETUP"
+                      },
+                      "summary": "Dom setup."
+                    },
+                    {
+                      "payload": {
+                        "acceptAggregationPeriod": 1,
+                        "acceptDepthLimit": 5,
+                        "channel": 1,
+                        "type": "DOM_SETUP"
+                      },
+                      "summary": "Dom setup with parameters."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "acceptAggregationPeriod": {
+                            "description": "Desired aggregation period of events (in seconds).",
+                            "type": "number"
+                          },
+                          "acceptDataFormat": {
+                            "enum": [
+                              "FULL"
+                            ]
+                          },
+                          "acceptDepthLimit": {
+                            "description": "Desired depth limit of order.",
+                            "type": "number"
+                          },
+                          "acceptOrderFields": {
+                            "items": {
+                              "description": "Order field name.",
+                              "examples": [
+                                "price",
+                                "size"
+                              ],
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "type": {
+                            "const": "DOM_SETUP"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to configure the `DOM` service."
+                },
+                "DomSnapshotMessage": {
+                  "description": "The server will send snapshot in the format that was described in the `DOM_CONFIG` message.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "asks": [
+                          {
+                            "price": 172.34,
+                            "size": 165
+                          },
+                          {
+                            "price": 172.35,
+                            "size": 301
+                          },
+                          {
+                            "price": 172.36,
+                            "size": 300
+                          },
+                          {
+                            "price": 172.37,
+                            "size": 490
+                          },
+                          {
+                            "price": 172.38,
+                            "size": 608
+                          }
+                        ],
+                        "bids": [
+                          {
+                            "price": 172.33,
+                            "size": 376
+                          },
+                          {
+                            "price": 172.32,
+                            "size": 381
+                          },
+                          {
+                            "price": 172.31,
+                            "size": 405
+                          },
+                          {
+                            "price": 172.3,
+                            "size": 388
+                          },
+                          {
+                            "price": 172.29,
+                            "size": 356
+                          }
+                        ],
+                        "channel": 1,
+                        "time": 1710262466056,
+                        "type": "DOM_SNAPSHOT"
+                      },
+                      "summary": "DOM Snapshot."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "asks": {
+                            "description": "List of ask orders.\nEmpty fields are omitted from the json.\n",
+                            "examples": [
+                              [
+                                {
+                                  "price": 172.34,
+                                  "size": 165
+                                },
+                                {
+                                  "price": 172.35,
+                                  "size": 301
+                                }
+                              ]
+                            ],
+                            "items": {
+                              "properties": {
+                                "price": {
+                                  "type": "number"
+                                },
+                                "size": {
+                                  "type": "number"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "bids": {
+                            "description": "List of bid orders.\nEmpty fields are omitted from the json.\n",
+                            "examples": [
+                              [
+                                {
+                                  "price": 172.34,
+                                  "size": 165
+                                },
+                                {
+                                  "price": 172.35,
+                                  "size": 301
+                                }
+                              ]
+                            ],
+                            "items": {
+                              "properties": {
+                                "price": {
+                                  "type": "number"
+                                },
+                                "size": {
+                                  "type": "number"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "time": {
+                            "description": "Snapshot acquisition time (unix timestamp in milliseconds)",
+                            "example": 1710262466056,
+                            "type": "number"
+                          },
+                          "type": {
+                            "const": "DOM_SNAPSHOT"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "time",
+                          "bids",
+                          "asks"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Contains the snapshot of request depth of market."
+                },
+                "ErrorMessage": {
+                  "description": "Receiving an error message does not require any action and is for informational purposes only.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 0,
+                        "error": "TIMEOUT",
+                        "message": "The timeout has been reached. The message was last received 60 seconds ago.",
+                        "type": "ERROR"
+                      },
+                      "summary": "Timeout error"
+                    },
+                    {
+                      "payload": {
+                        "channel": 0,
+                        "error": "INVALID_MESSAGE",
+                        "message": "The message is not valid JSON.",
+                        "type": "ERROR"
+                      },
+                      "summary": "Invalid message error"
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "error": {
+                            "description": "Error type. Possible values:\n- UNSUPPORTED_PROTOCOL - does not support the protocol version\n- TIMEOUT - did not receive the expected message within the allotted time period and considered that the connection was lost\n- UNAUTHORIZED - the client was not authorized\n- INVALID_MESSAGE - when trying to process a received message(s), was unable to parse it correctly\n- BAD_ACTION - the server has detected a protocol violation in the previously received message(s).\n- UNKNOWN - an error occurred that does not fit into any of the previously described types.\n",
+                            "enum": [
+                              "UNSUPPORTED_PROTOCOL",
+                              "TIMEOUT",
+                              "UNAUTHORIZED",
+                              "INVALID_MESSAGE",
+                              "BAD_ACTION",
+                              "UNKNOWN"
+                            ],
+                            "type": "string"
+                          },
+                          "message": {
+                            "description": "Contains the description or reason for the error.",
+                            "type": "string"
+                          },
+                          "type": {
+                            "const": "ERROR"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "error",
+                          "message"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Error notification."
+                },
+                "FeedChannelRequestMessage": {
+                  "description": "The client can send this message to the server to open a channel for two-way communication with the service.\nThe server will notify the client with the `CHANNEL_OPENED` message.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "parameters": {
+                          "contract": "AUTO"
+                        },
+                        "service": "FEED",
+                        "type": "CHANNEL_REQUEST"
+                      },
+                      "summary": "Feed channel request with AUTO contract."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "parameters": {
+                            "description": "Parameters of the feed service.",
+                            "properties": {
+                              "contract": {
+                                "$ref": "#/components/schemas/FeedContract"
+                              }
+                            },
+                            "required": [
+                              "contract"
+                            ],
+                            "type": "object"
+                          },
+                          "service": {
+                            "description": "Operated service. Possible values:\n- `FEED` - the feed service offers the ability to receive real-time updates about the trading information such as quotes, last traded price, volumes, and others.\n",
+                            "enum": [
+                              "FEED"
+                            ]
+                          },
+                          "type": {
+                            "const": "CHANNEL_REQUEST"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "service",
+                          "parameters"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to request the feed channel."
+                },
+                "FeedConfigMessage": {
+                  "description": "The server can send this message to the client after receiving the `FEED_SETUP` message.\nThe server can send this message to the client if the `FEED` service configuration has changed.\nParameters are lazy therefore the server may not send the notification immediately, but before the first `FEED_DATA` is sent.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "aggregationPeriod": 1,
+                        "channel": 1,
+                        "dataFormat": "COMPACT",
+                        "eventFields": {
+                          "Quote": [
+                            "eventType",
+                            "eventSymbol",
+                            "bidPrice",
+                            "askPrice",
+                            "bidSize",
+                            "askSize"
+                          ]
+                        },
+                        "type": "FEED_CONFIG"
+                      },
+                      "summary": "Feed config."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "aggregationPeriod": {
+                            "type": "number"
+                          },
+                          "dataFormat": {
+                            "$ref": "#/components/schemas/FeedDataFormat"
+                          },
+                          "eventFields": {
+                            "$ref": "#/components/schemas/FeedEventFields"
+                          },
+                          "type": {
+                            "const": "FEED_CONFIG"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "aggregationPeriod",
+                          "dataFormat"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Notification of the `FEED` service configuration."
+                },
+                "FeedDataMessage": {
+                  "description": "The server can send this message to the client after receiving the `FEED_SUBSCRIPTION` message.\nThe server will send data in the format that was described in the `FEED_CONFIG` message.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "data": [
+                          {
+                            "askPrice": 123,
+                            "bidPrice": 123,
+                            "eventSymbol": "AAPL",
+                            "eventType": "Quote"
+                          },
+                          {
+                            "askPrice": 321,
+                            "bidPrice": 321,
+                            "eventSymbol": "AAPL",
+                            "eventType": "Quote"
+                          }
+                        ],
+                        "type": "FEED_DATA"
+                      },
+                      "summary": "Feed data full format."
+                    },
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "data": [
+                          "Quote",
+                          [
+                            "AAPL",
+                            "Quote",
+                            123,
+                            123,
+                            "AMZN",
+                            "Quote",
+                            321,
+                            321
+                          ],
+                          "Trade",
+                          [
+                            "AAPL",
+                            "Trade",
+                            321,
+                            22,
+                            "AMZN",
+                            "Trade",
+                            123,
+                            11
+                          ]
+                        ],
+                        "type": "FEED_DATA"
+                      },
+                      "summary": "Feed data compact format."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "events": {
+                            "description": "Batch of events.",
+                            "oneOf": [
+                              {
+                                "description": "List of events in full mode.\nEmpty fields are omitted from the json.\n",
+                                "examples": [
+                                  [
+                                    {
+                                      "askPrice": 123,
+                                      "bidPrice": 123,
+                                      "eventSymbol": "AAPL",
+                                      "eventType": "Quote"
+                                    },
+                                    {
+                                      "askPrice": 321,
+                                      "bidPrice": 321,
+                                      "eventSymbol": "AAPL",
+                                      "eventType": "Quote"
+                                    }
+                                  ]
+                                ],
+                                "items": {
+                                  "$ref": "#/components/schemas/FeedEvent"
+                                },
+                                "type": "array"
+                              },
+                              {
+                                "description": "List of events in compact mode.\nElements alternate between event type (string) and value arrays for that event type.\n",
+                                "examples": [
+                                  [
+                                    "Quote",
+                                    [
+                                      "AAPL",
+                                      "Quote",
+                                      123,
+                                      123,
+                                      "AMZN",
+                                      "Quote",
+                                      321,
+                                      321
+                                    ],
+                                    "Trade",
+                                    [
+                                      "AAPL",
+                                      "Trade",
+                                      321,
+                                      22,
+                                      "AMZN",
+                                      "Trade",
+                                      123,
+                                      11
+                                    ]
+                                  ]
+                                ],
+                                "items": {
+                                  "oneOf": [
+                                    {
+                                      "description": "Event type for decoding.",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "description": "Value only array for decoding.",
+                                      "items": {
+                                        "oneOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "number"
+                                          }
+                                        ]
+                                      },
+                                      "type": "array"
+                                    }
+                                  ]
+                                },
+                                "type": "array"
+                              }
+                            ]
+                          },
+                          "type": {
+                            "const": "FEED_DATA"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "data"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Contains the data of subscribed market events."
+                },
+                "FeedSetupMessage": {
+                  "description": "The client can send this message to the server after opening a channel with the `FEED` service.\nThe server will notify the client of the application with the `FEED_CONFIG` message.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "acceptAggregationPeriod": 1,
+                        "acceptDataFormat": "COMPACT",
+                        "acceptEventFields": {
+                          "Quote": [
+                            "eventType",
+                            "eventSymbol",
+                            "bidPrice",
+                            "askPrice",
+                            "bidSize",
+                            "askSize"
+                          ]
+                        },
+                        "channel": 1,
+                        "type": "FEED_SETUP"
+                      },
+                      "summary": "Feed setup compact format with fields."
+                    },
+                    {
+                      "payload": {
+                        "acceptAggregationPeriod": 1,
+                        "acceptDataFormat": "FULL",
+                        "channel": 1,
+                        "type": "FEED_SETUP"
+                      },
+                      "summary": "Feed setup full format."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "acceptAggregationPeriod": {
+                            "description": "Desired aggregation period of events (in seconds).",
+                            "type": "number"
+                          },
+                          "acceptDataFormat": {
+                            "$ref": "#/components/schemas/FeedDataFormat"
+                          },
+                          "acceptEventFields": {
+                            "$ref": "#/components/schemas/FeedEventFields"
+                          },
+                          "type": {
+                            "const": "FEED_SETUP"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to configure the `FEED` service."
+                },
+                "FeedSubscriptionMessage": {
+                  "description": "The client can send this message to the server after opening a channel with the `FEED` service.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "add": [
+                          {
+                            "symbol": "AAPL",
+                            "type": "Quote"
+                          }
+                        ],
+                        "channel": 1,
+                        "type": "FEED_SUBSCRIPTION"
+                      },
+                      "summary": "Feed add subscription."
+                    },
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "remove": [
+                          {
+                            "symbol": "AAPL",
+                            "type": "Quote"
+                          }
+                        ],
+                        "type": "FEED_SUBSCRIPTION"
+                      },
+                      "summary": "Feed remove subscription."
+                    },
+                    {
+                      "payload": {
+                        "channel": 1,
+                        "reset": true,
+                        "type": "FEED_SUBSCRIPTION"
+                      },
+                      "summary": "Feed reset subscription"
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "add": {
+                            "description": "Operation to add subscription objects.",
+                            "items": {
+                              "$ref": "#/components/schemas/FeedSubscription"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                          },
+                          "remove": {
+                            "description": "Operation to remove subscription objects.",
+                            "items": {
+                              "$ref": "#/components/schemas/FeedSubscription"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                          },
+                          "reset": {
+                            "description": "Remove all subscription objects when it's `true`.",
+                            "type": "boolean"
+                          },
+                          "type": {
+                            "const": "FEED_SUBSCRIPTION"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the client to manage their subscriptions in the `FEED` service."
+                },
+                "KeepaliveMessage": {
+                  "description": "The client must send any messages to the server at least once before the timeout is reached (see `SETUP` message). Otherwise, the server will close the connection.\nThe server must send any messages to the client at least once before the timeout is reached (see `SETUP` message). Otherwise, the client should close the connection.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "channel": 0,
+                        "type": "KEEPALIVE"
+                      },
+                      "summary": "Keepalive message"
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "channel": {
+                            "const": 0
+                          },
+                          "type": {
+                            "const": "KEEPALIVE"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows the connection to stay alive."
+                },
+                "SetupMessage": {
+                  "description": "The first message the client must send to the server after a successful connection.\n",
+                  "examples": [
+                    {
+                      "payload": {
+                        "acceptKeepaliveTimeout": 60,
+                        "channel": 0,
+                        "keepaliveTimeout": 60,
+                        "type": "SETUP",
+                        "version": "0.1-js/1.0.0"
+                      },
+                      "summary": "Client setup message."
+                    },
+                    {
+                      "payload": {
+                        "acceptKeepaliveTimeout": 60,
+                        "channel": 0,
+                        "keepaliveTimeout": 60,
+                        "type": "SETUP",
+                        "version": "0.1-123-123"
+                      },
+                      "summary": "Server setup message."
+                    }
+                  ],
+                  "payload": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Message"
+                      },
+                      {
+                        "properties": {
+                          "acceptKeepaliveTimeout": {
+                            "description": "The desired time to disconnect the receiver if no messages are received (in seconds).",
+                            "type": "number"
+                          },
+                          "channel": {
+                            "const": 0
+                          },
+                          "keepaliveTimeout": {
+                            "description": "Time to disconnect the sender if no messages are received (in seconds).",
+                            "type": "number"
+                          },
+                          "type": {
+                            "const": "SETUP"
+                          },
+                          "version": {
+                            "description": "Protocol version.",
+                            "example": "0.1-js/1.0.0",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "channel",
+                          "type",
+                          "version"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "summary": "Allows setting up connection."
+                }
+              },
+              "schemas": {
+                "AnalyticOrderEvent": {
+                  "description": "Represents an extension of Order introducing analytic information, e.g. adding to this order iceberg related\ninformation (icebergPeakSize, icebergHiddenSize, icebergExecutedSize).\nThe collection of analytic order events of a symbol represents the most recent analytic information\nthat is available about orders on the market at any given moment of time.\n",
+                  "properties": {
+                    "action": {
+                      "type": "string"
+                    },
+                    "actionTime": {
+                      "type": "number"
+                    },
+                    "auxOrderId": {
+                      "type": "number"
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "AnalyticOrder"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "executedSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "icebergExecutedSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "icebergHiddenSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "icebergPeakSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "icebergType": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "marketMaker": {
+                      "type": "string"
+                    },
+                    "orderId": {
+                      "type": "number"
+                    },
+                    "orderSide": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "scope": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    },
+                    "tradeId": {
+                      "type": "number"
+                    },
+                    "tradePrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "tradeSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "CandleEvent": {
+                  "description": "Candle event with open, high, low, close prices and other information for a specific period.\nEvent symbol of the candle is represented with Candle symbol. Since the Candle is a time-series event, it is typically subscribed by `TimeSeriesSubscription` to specify a subscription time range.\n",
+                  "properties": {
+                    "VWAP": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "askVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "bidVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "close": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Candle"
+                    },
+                    "high": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "impVolatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "open": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "openInterest": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "volume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ConfigurationEvent": {
+                  "properties": {
+                    "attachment": {
+                      "type": "object"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Configuration"
+                    },
+                    "version": {
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                },
+                "FeedContract": {
+                  "description": "Subscription contract of the `FEED` service. Possible values:\n- `HISTORY` - real-time history of events with snapshots (like Candles)\n- `TICKER` - real-time ticker of events (like Quotes)\n- `STREAM` - real-time stream of events (like Orders)\n- `AUTO` - automatic selection of contract type depending on event type:\n  - `HISTORY` - for `Candle` event type and others\n  - `TICKER` - for `Quote` event type and others\n  - `STREAM` - for `Order` event type and others\n",
+                  "enum": [
+                    "HISTORY",
+                    "TICKER",
+                    "STREAM",
+                    "AUTO"
+                  ],
+                  "type": "string"
+                },
+                "FeedDataFormat": {
+                  "description": "Format of data in `FEED_DATA` message. Possible values:\n- `FULL` - key-value objects (with field names)\n- `COMPACT` - value only arrays (without field names)\n",
+                  "enum": [
+                    "FULL",
+                    "COMPACT"
+                  ],
+                  "type": "string"
+                },
+                "FeedEvent": {
+                  "discriminator": "eventType",
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/QuoteEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ProfileEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/TradeEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/TradeETHEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CandleEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SummaryEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/TimeAndSaleEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/GreeksEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/TheoPriceEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/UnderlyingEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OptionSaleEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SeriesEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OrderEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SpreadOrderEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/AnalyticOrderEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ConfigurationEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/MessageEvent"
+                    }
+                  ]
+                },
+                "FeedEventFields": {
+                  "additionalProperties": {
+                    "description": "Array of event fields.",
+                    "items": {
+                      "description": "Event field name.",
+                      "examples": [
+                        "eventSymbol",
+                        "eventType",
+                        "eventTime",
+                        "askPrice",
+                        "bidPrice"
+                      ],
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "description": "An object where keys are event types and values are an array of event fields.",
+                  "propertyNames": {
+                    "description": "Event type.",
+                    "examples": [
+                      "Quote",
+                      "Trade",
+                      "Candle"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "FeedOrderBookSubscription": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/FeedRegularSubscription"
+                    },
+                    {
+                      "example": {
+                        "source": "NTV",
+                        "symbol": "AAPL",
+                        "type": "Quote"
+                      },
+                      "properties": {
+                        "source": {
+                          "description": "Source of the feed. Possible values [here](https://kb.dxfeed.com/en/data-model/qd-model-of-market-events.html#order-x).",
+                          "examples": [
+                            "NTV",
+                            "ntv",
+                            "DEFAULT"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "symbol",
+                        "source"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "description": "This type of subscription object is used in a channel with `HISTORY` or `AUTO` contract."
+                },
+                "FeedRegularSubscription": {
+                  "description": "This type of subscription object is used in a channel with `TICKER`, `STREAM`, or `AUTO` contract.",
+                  "example": {
+                    "symbol": "AAPL",
+                    "type": "Quote"
+                  },
+                  "properties": {
+                    "symbol": {
+                      "$ref": "#/components/schemas/FeedSymbol"
+                    },
+                    "type": {
+                      "description": "Type of market data event.",
+                      "examples": [
+                        "Quote",
+                        "Trade",
+                        "Candle"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "symbol"
+                  ],
+                  "type": "object"
+                },
+                "FeedSubscription": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/FeedRegularSubscription"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FeedOrderBookSubscription"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FeedTimeSeriesSubscription"
+                    }
+                  ]
+                },
+                "FeedSymbol": {
+                  "description": "Symbol of the subscription.\n- `*` - wildcard (all symbols) subscription (for `STREAM` and `AUTO` contracts only)\n- `symbol` - one symbol\n",
+                  "examples": [
+                    "AAPL",
+                    "AMZN"
+                  ],
+                  "type": "string"
+                },
+                "FeedTimeSeriesSubscription": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/FeedRegularSubscription"
+                    },
+                    {
+                      "example": {
+                        "fromTime": 1610000000000,
+                        "symbol": "AAPL{=d}",
+                        "type": "Candle"
+                      },
+                      "properties": {
+                        "fromTime": {
+                          "description": "Timestamp (UNIX time) from when we want the data.\n\nOn `add`, new `fromTime` with the pair `type` and `symbol` will overwrite the previous subscription object.\nOn `remove`, the `fromTime` value is ignored but **mandatory**, pair `type`, and `symbol` will remove the previous subscription.\n",
+                          "example": 1610000000000,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "symbol",
+                        "fromTime"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "description": "This type of subscription object is used in a channel with `HISTORY` or `AUTO` contract."
+                },
+                "GreeksEvent": {
+                  "description": "Greeks event is a snapshot of the option price, Black-Scholes volatility and greeks.\nIt represents the most recent information that is available about the corresponding values on the market at any given moment of time.\n",
+                  "properties": {
+                    "delta": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Greeks"
+                    },
+                    "gamma": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "rho": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "theta": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "vega": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "volatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "JSONDouble": {
+                  "description": "Represents a JSON number that can be either a floating-point number or a special value (NaN, Infinity, -Infinity).",
+                  "examples": [
+                    123.45,
+                    "NaN",
+                    "Infinity",
+                    "-Infinity"
+                  ],
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "const": "NaN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "Infinity",
+                      "type": "string"
+                    },
+                    {
+                      "const": "-Infinity",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "Message": {
+                  "description": "Supertype message.",
+                  "discriminator": "type",
+                  "properties": {
+                    "channel": {
+                      "description": "Identifies within which channel the communication is occurring.",
+                      "example": 1,
+                      "type": "number"
+                    },
+                    "type": {
+                      "description": "Message type discriminator.",
+                      "example": "MESSAGE_TYPE",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "channel"
+                  ],
+                  "summary": "The minimum unit of information",
+                  "type": "object"
+                },
+                "MessageEvent": {
+                  "properties": {
+                    "attachment": {
+                      "type": "object"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Message"
+                    }
+                  },
+                  "type": "object"
+                },
+                "OptionSaleEvent": {
+                  "description": "Option Sale event represents a trade or another market event with the price\n(for example, market open/close price, etc.) for each option symbol listed under the specified Underlying.\nOption Sales are intended to provide information about option trades in a continuous time slice with\nthe additional metrics, like Option Volatility, Option Delta, and Underlying Price.\n",
+                  "properties": {
+                    "aggressorSide": {
+                      "type": "string"
+                    },
+                    "askPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "bidPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "delta": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "OptionSale"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "exchangeSaleConditions": {
+                      "type": "string"
+                    },
+                    "extendedTradingHours": {
+                      "type": "boolean"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "optionSymbol": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "spreadLeg": {
+                      "type": "boolean"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    },
+                    "tradeThroughExempt": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "underlyingPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "validTick": {
+                      "type": "boolean"
+                    },
+                    "volatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "OrderEvent": {
+                  "description": "Order event is a snapshot for a full available market depth for a symbol.\nThe collection of order events of a symbol represents the most recent information\nthat is available about orders on the market at any given moment of time.\n",
+                  "properties": {
+                    "action": {
+                      "type": "string"
+                    },
+                    "actionTime": {
+                      "type": "number"
+                    },
+                    "auxOrderId": {
+                      "type": "number"
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Order"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "executedSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "marketMaker": {
+                      "type": "string"
+                    },
+                    "orderId": {
+                      "type": "number"
+                    },
+                    "orderSide": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "scope": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    },
+                    "tradeId": {
+                      "type": "number"
+                    },
+                    "tradePrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "tradeSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ProfileEvent": {
+                  "description": "Profile information snapshot that contains security instrument description.\nIt represents the most recent information that is available about the traded security on the market at any given moment of time.\n",
+                  "properties": {
+                    "beta": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "dividendFrequency": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "earningsPerShare": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Profile"
+                    },
+                    "exDividendAmount": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "exDividendDayId": {
+                      "type": "number"
+                    },
+                    "freeFloat": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "haltEndTime": {
+                      "type": "number"
+                    },
+                    "haltStartTime": {
+                      "type": "number"
+                    },
+                    "high52WeekPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "highLimitPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "low52WeekPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "lowLimitPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "shares": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "shortSaleRestriction": {
+                      "type": "string"
+                    },
+                    "statusReason": {
+                      "type": "string"
+                    },
+                    "tradingStatus": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "QuoteEvent": {
+                  "description": "Quote event is a snapshot of the best bid and ask prices, and other fields that change with each quote.\nIt represents the most recent information that is available about the best quote on the market at any given moment of time.\n",
+                  "properties": {
+                    "askExchangeCode": {
+                      "type": "string"
+                    },
+                    "askPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "askSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "askTime": {
+                      "type": "number"
+                    },
+                    "bidExchangeCode": {
+                      "type": "string"
+                    },
+                    "bidPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "bidSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "bidTime": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Quote"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                },
+                "SeriesEvent": {
+                  "description": "Series event is a snapshot of computed values that are available for all option series for\na given underlying symbol based on the option prices on the market.\nIt represents the most recent information that is available about the corresponding values on\nthe market at any given moment of time.\n",
+                  "properties": {
+                    "callVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dividend": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Series"
+                    },
+                    "expiration": {
+                      "type": "number"
+                    },
+                    "forwardPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "interest": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "putCallRatio": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "putVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "volatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "SpreadOrderEvent": {
+                  "description": "Spread order event is a snapshot for a full available market depth for all spreads\non a given underlying symbol. The collection of spread order events of a symbol\nrepresents the most recent information that is available about spread orders on\nthe market at any given moment of time.\n",
+                  "properties": {
+                    "action": {
+                      "type": "string"
+                    },
+                    "actionTime": {
+                      "type": "number"
+                    },
+                    "auxOrderId": {
+                      "type": "number"
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "SpreadOrder"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "executedSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "orderId": {
+                      "type": "number"
+                    },
+                    "orderSide": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "scope": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "spreadSymbol": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    },
+                    "tradeId": {
+                      "type": "number"
+                    },
+                    "tradePrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "tradeSize": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "SummaryEvent": {
+                  "description": "Summary information snapshot about the trading session including session highs, lows, etc.\nIt represents the most recent information that is available about the trading session in the market at any given moment of time.\n",
+                  "properties": {
+                    "dayClosePrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayClosePriceType": {
+                      "type": "string"
+                    },
+                    "dayHighPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayId": {
+                      "type": "number"
+                    },
+                    "dayLowPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayOpenPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Summary"
+                    },
+                    "openInterest": {
+                      "type": "number"
+                    },
+                    "prevDayClosePrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "prevDayClosePriceType": {
+                      "type": "string"
+                    },
+                    "prevDayId": {
+                      "type": "number"
+                    },
+                    "prevDayVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TheoPriceEvent": {
+                  "description": "Theo price is a snapshot of the theoretical option price computation that is periodically performed by `dxPrice` model-free computation.\nIt represents the most recent information that is available about the corresponding values at any given moment of time.\n",
+                  "properties": {
+                    "delta": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dividend": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "TheoPrice"
+                    },
+                    "gamma": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "interest": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "underlyingPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TimeAndSaleEvent": {
+                  "description": "Time and Sale represents a trade or other market event with price, like market open/close price, etc.\nTime and Sales are intended to provide information about trades in a continuous time slice\n(unlike `Trade` events which are supposed to provide snapshot about the current last trade).\n",
+                  "properties": {
+                    "aggressorSide": {
+                      "type": "string"
+                    },
+                    "askPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "bidPrice": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "buyer": {
+                      "type": "string"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "TimeAndSale"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "exchangeSaleConditions": {
+                      "type": "string"
+                    },
+                    "extendedTradingHours": {
+                      "type": "boolean"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "seller": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "spreadLeg": {
+                      "type": "boolean"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    },
+                    "tradeThroughExempt": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "validTick": {
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TradeETHEvent": {
+                  "description": "TradeETH event is a snapshot of the price and size of the last trade during\nextended trading hours and the extended trading hours day volume and day turnover.\nThis event is defined only for symbols (typically stocks and ETFs) with a designated\nextended trading hours (ETH, pre market and post market trading sessions).\n",
+                  "properties": {
+                    "change": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayId": {
+                      "type": "number"
+                    },
+                    "dayTurnover": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "TradeETH"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "extendedTradingHours": {
+                      "type": "boolean"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "tickDirection": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TradeEvent": {
+                  "description": "Trade event is a snapshot of the price and size of the last trade during regular trading hours\nand an overall day volume and day turnover.\n",
+                  "properties": {
+                    "change": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayId": {
+                      "type": "number"
+                    },
+                    "dayTurnover": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "dayVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Trade"
+                    },
+                    "exchangeCode": {
+                      "type": "string"
+                    },
+                    "extendedTradingHours": {
+                      "type": "boolean"
+                    },
+                    "price": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "size": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "tickDirection": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "timeNanoPart": {
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                },
+                "UnderlyingEvent": {
+                  "description": "Underlying event is a snapshot of computed values that are available for an option underlying\nsymbol based on the option prices on the market.\nIt represents the most recent information that is available about the corresponding values on\nthe market at any given moment of time.\n",
+                  "properties": {
+                    "backVolatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "callVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "eventFlags": {
+                      "type": "number"
+                    },
+                    "eventSymbol": {
+                      "type": "string"
+                    },
+                    "eventTime": {
+                      "type": "number"
+                    },
+                    "eventType": {
+                      "const": "Underlying"
+                    },
+                    "frontVolatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "index": {
+                      "type": "number"
+                    },
+                    "putCallRatio": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "putVolume": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    },
+                    "sequence": {
+                      "type": "number"
+                    },
+                    "time": {
+                      "type": "number"
+                    },
+                    "volatility": {
+                      "$ref": "#/components/schemas/JSONDouble"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "defaultContentType": "application/json",
+            "info": {
+              "description": "## Overview\ndxLink.WebSocket is a WebSocket-based protocol that allows you to receive market data from dxFeed services.\n\n## Terminology\n- **Connection** - an instance of the WebSocket connection\n- **Client** - a side that initiates the connection\n- **Server** - a side that accepts the connection\n- **Message** - a frame of data sent over the WebSocket connection\n- **Channel** - an independent virtual connection within a single WebSocket connection\n- **Service** - a source that provides data\n\n## Communication\nWebSocket doesn't provide built-in multi-channel support, so we have implemented it ourselves.\nWe provide the ability to work in virtual isolated channels within a single WebSocket connection.\n\n***In the AsyncAPI specification, one channel displays one specific WebSocket connection, so don't confuse the AsyncAPI channels with ours in this case.***\n\n## Messages\nAll messages are JSON objects with the following structure:\n```json\n{\n  \"type\": \"<MESSAGE_TYPE>\",\n  \"channel\": <CHANNEL_ID>\n  // ...other fields\n}\n```\n- The `type` field is a string that contains the message type\n- The `channel` field is a number that contains the ID of the channel to which the message belongs\n- Other fields are the message's `payload`\n\nThe main channel performs the exchange of protocol messages that pertain to the entire connection (not to a specific channel). This main channel is identified by a channel ID `0`.\n\n## Error Handling\nIf an error occurs, the server will send an `ERROR` message to the client.\nThe client does not need to respond to the error message, as it is for informational purposes only.\n\nThe server can send the following error types:\n- `UNSUPPORTED_PROTOCOL` - The server does not support the protocol version.\n- `TIMEOUT` - the server did not receive the expected message within the allotted time period and considered that the connection was lost.\n- `UNAUTHORIZED` - the client was not authorized for that action.\n- `INVALID_MESSAGE` - the server was unable to parse the received message(s).\n- `BAD_ACTION` - the server detected a protocol violation in the previously received message(s).\n- `UNKNOWN` - an error occurred that does not fit into any of the previously described types.\n\nExample of an error message:\n```json\n{\n  \"type\": \"ERROR\",\n  \"channel\": 0,\n  \"error\": \"TIMEOUT\",\n  \"message\": \"The timeout has been reached. The message was last received 60 seconds ago.\"\n}\n```\n\n## Connection\nThe connection is established by sending a WebSocket connection request to the server.\n\nAfter the connection is established, the client must send the `SETUP` message to the server within the connection timeout period. The server will then respond with the `SETUP` message containing its own settings.\n\nThe `version` field contains the protocol version. The format is typically `<protocol-version>-<client-implementation>/<client-version>` (e.g., `\"0.1-js/1.0.0\"`).\n\n```json\n{\n  \"type\": \"SETUP\",\n  \"channel\": 0,\n  \"keepaliveTimeout\": 60,\n  \"acceptKeepaliveTimeout\": 60,\n  \"version\": \"0.1-js/1.0.0\"\n}\n```\n\n## Authentication\nThe authentication is performed by sending the `AUTH` message to the server after the `SETUP` exchange.\nIf the server requires authentication, it will send an `AUTH_STATE` message with `UNAUTHORIZED` state.\nAuthentication may not be required for all servers.\n```json\n{\n  \"type\": \"AUTH\",\n  \"channel\": 0,\n  \"token\": \"token#123\"\n}\n```\n\nThe server will notify the client with the `AUTH_STATE` message. The `state` field is set to `AUTHORIZED` or `UNAUTHORIZED`.\n```json\n{\n  \"type\": \"AUTH_STATE\",\n  \"channel\": 0,\n  \"state\": \"AUTHORIZED\"\n}\n```\n\n## Connection Maintenance\nTo prevent the connection from being closed due to inactivity:\n- The client must send any message to the server before the server's `keepaliveTimeout` expires. The server's `keepaliveTimeout` is sent in the `SETUP` message from the server.\n- The server must send any message to the client before the client's `keepaliveTimeout` expires. The client's `keepaliveTimeout` is sent in the `SETUP` message from the client.\nIf a client or server does not send any other messages, they can use the special message `KEEPALIVE`. Otherwise, the other side will close the connection.\n\n```json\n{\n  \"type\": \"KEEPALIVE\",\n  \"channel\": 0\n}\n```\n\n## Channel\nThe channel is a virtual connection created by the client and isolated from other channels.\nThe channel can be used to receive data from one of dxFeed's services.\n\nChannel lifecycle:\n1. The client sends a `CHANNEL_REQUEST` message with the desired `service` and channel number\n2. The server responds with a `CHANNEL_OPENED` message\n3. The client and server exchange service-specific messages on this channel\n4. The client sends a `CHANNEL_CANCEL` message to close the channel\n5. The server responds with a `CHANNEL_CLOSED` message\n\nThe client should use only odd channel numbers to send channel requests on the service channels.\n\n## `FEED` service\n`FEED` - provides real-time access to the market events.\n\nTo open a channel, the client must send the `CHANNEL_REQUEST` message to the server with the `service` field set to `FEED`.\nThe server will respond with the `CHANNEL_OPENED` message.\n\n```json\n{\n  \"type\": \"CHANNEL_REQUEST\",\n  \"channel\": 1,\n  \"service\": \"FEED\",\n  \"parameters\": {\n    \"contract\": \"AUTO\"\n  }\n}\n```\n\n### Subscribe\nTo subscribe to data, the client must send the `FEED_SUBSCRIPTION` message to the server with the `add` field set to the desired symbol.\n```json\n{\n  \"type\": \"FEED_SUBSCRIPTION\",\n  \"channel\": 1,\n  \"add\": [{ \"symbol\": \"AAPL\", \"type\": \"Quote\" }]\n}\n```\n\n### Unsubscribe\nTo unsubscribe from data, the client must send the `FEED_SUBSCRIPTION` message to the server with the `remove` field set to the desired symbol.\nOr send the `FEED_SUBSCRIPTION` message with the `reset` field set to `true`, which will unsubscribe from all symbols.\n```json\n{\n  \"type\": \"FEED_SUBSCRIPTION\",\n  \"channel\": 1,\n  \"remove\": [{ \"symbol\": \"AAPL\", \"type\": \"Quote\" }]\n}\n```\n\n### Data\nThe server will send the `FEED_DATA` message to the client with the `data` field set to the received events.\n```json\n{\n  \"type\": \"FEED_DATA\",\n  \"channel\": 1,\n  \"data\": [\n    {\n      \"eventSymbol\": \"AAPL\",\n      \"eventType\": \"Quote\",\n      \"bidPrice\": 123.45,\n      \"askPrice\": 123.46,\n      \"bidSize\": 100,\n      \"askSize\": 200\n    }\n  ]\n}\n```\n\n### Configuration\nTo configure the service, the client must send a `FEED_SETUP` message to the server with the acceptable configuration.\n```json\n{\n  \"type\": \"FEED_SETUP\",\n  \"channel\": 1,\n  \"acceptAggregationPeriod\": 10,\n  \"acceptDataFormat\": \"COMPACT\",\n  \"acceptEventFields\": {\n    \"Quote\": [\"eventType\", \"eventSymbol\", \"bidPrice\", \"askPrice\", \"bidSize\", \"askSize\"]\n  }\n}\n```\nThe server will notify the client with the `FEED_CONFIG` message containing the actual configuration.\n```json\n{\n  \"type\": \"FEED_CONFIG\",\n  \"channel\": 1,\n  \"aggregationPeriod\": 10,\n  \"dataFormat\": \"COMPACT\",\n  \"eventFields\": {\n    \"Quote\": [\"eventType\", \"eventSymbol\", \"bidPrice\", \"askPrice\", \"bidSize\", \"askSize\"]\n  }\n}\n```\n\n## `DOM` service\n\n`DOM` - provides real-time access to depth of market service.\n\nTo open a channel, the client must send the `CHANNEL_REQUEST` message to the server with the `service` field set to `DOM` and desired parameters.\nThe server will respond with the `CHANNEL_OPENED` message.\n\n```json\n{\n  \"type\": \"CHANNEL_REQUEST\",\n  \"channel\": 1,\n  \"service\": \"DOM\",\n  \"parameters\": {\n    \"symbol\": \"AAPL\",\n    \"sources\": [\"ntv\"]\n  }\n}\n```\n\n### Configure\nTo start receiving the snapshot, the client must send the `DOM_SETUP` message first.\n```json\n{\n  \"type\": \"DOM_SETUP\",\n  \"channel\": 1,\n}\n```\n\n### Snapshot\nThe server will send the `DOM_SNAPSHOT` message to the client with the snapshot of the depth of market for desired symbol and sources.\n```json\n{\n  \"type\": \"DOM_SNAPSHOT\",\n  \"channel\": 1,\n  \"time\": 1710262466056,\n  \"bids\": [\n    { \"price\": 172.33, \"size\": 376 },\n    { \"price\": 172.32, \"size\": 381 },\n    { \"price\": 172.31, \"size\": 405 },\n    { \"price\": 172.3, \"size\": 388 },\n    { \"price\": 172.29, \"size\": 356 }\n  ],\n  \"asks\": [\n    { \"price\": 172.34, \"size\": 165 },\n    { \"price\": 172.35, \"size\": 301 },\n    { \"price\": 172.36, \"size\": 300 },\n    { \"price\": 172.37, \"size\": 490 },\n    { \"price\": 172.38, \"size\": 608 }\n  ]\n}\n```\n\n### Configuration\nTo start receiving snapshots and configure the service, the client must send a `DOM_SETUP` message to the server with the acceptable configuration.\n```json\n{\n  \"type\": \"DOM_SETUP\",\n  \"channel\": 1,\n  \"acceptAggregationPeriod\": 10,\n  \"acceptDepthLimit\": 5,\n  \"acceptDataFormat\": \"FULL\",\n  \"acceptOrderFields\": [\"price\", \"size\"]\n}\n```\nThe server will notify the client with the `DOM_CONFIG` message containing the actual configuration.\n```json\n{\n  \"type\": \"DOM_CONFIG\",\n  \"channel\": 1,\n  \"aggregationPeriod\": 10,\n  \"depthLimit\": 5,\n  \"dataFormat\": \"FULL\",\n  \"orderFields\": [\"price\", \"size\"]\n}\n```\n\n## Example\nReal-world example of the protocol exchange:\n\n```\nCONNECTED\n// Connection establishment\nCLIENT -> { \"type\": \"SETUP\", \"channel\": 0, \"keepaliveTimeout\": 60, \"acceptKeepaliveTimeout\": 60, \"version\": \"1.0.0\" }\nSERVER <- { \"type\": \"SETUP\", \"channel\": 0, \"keepaliveTimeout\": 60, \"acceptKeepaliveTimeout\": 60, \"version\": \"1.0.0\" }\n\n// Indicates that authorization is required\nSERVER <- { \"type\": \"AUTH_STATE\", \"channel\": 0, \"state\": \"UNAUTHORIZED\" }\n\n// Authorization\nCLIENT -> { \"type\": \"AUTH\", \"channel\": 0, \"token\": \"token#123\" }\nSERVER <- { \"type\": \"AUTH_STATE\", \"channel\": 0, \"state\": \"AUTHORIZED\" }\n\n// Request a new channel for Quote events\nCLIENT -> {\n  \"type\": \"CHANNEL_REQUEST\",\n  \"channel\": 1,\n  \"service\": \"FEED\",\n  \"parameters\": { \"contract\": \"AUTO\" }\n}\nSERVER <- {\n  \"type\": \"CHANNEL_OPENED\",\n  \"channel\": 1,\n  \"service\": \"FEED\",\n  \"parameters\": { \"contract\": \"AUTO\" }\n}\n\n// Subscribe to Quote events\nCLIENT -> {\n  \"type\": \"FEED_SUBSCRIPTION\",\n  \"channel\": 1,\n  \"add\": [{ \"symbol\": \"AAPL\", \"type\": \"Quote\" }]\n}\n\n// Receive Quotes\nSERVER <- {\n  \"type\": \"FEED_CONFIG\",\n  \"channel\": 1,\n  \"eventFields\": {\n    \"Quote\": [\"eventSymbol\", \"eventType\", \"bidPrice\", \"askPrice\", \"bidSize\", \"askSize\"]\n  }\n}\nSERVER <- {\n  \"type\": \"FEED_DATA\",\n  \"channel\": 1,\n  \"data\": [\n    {\n      \"eventSymbol\": \"AAPL\",\n      \"eventType\": \"Quote\",\n      \"bidPrice\": 123.45,\n      \"askPrice\": 123.46,\n      \"bidSize\": 100,\n      \"askSize\": 200\n    }\n  ]\n}\n\n// Close channel\nCLIENT -> {\n  \"type\": \"CHANNEL_CANCEL\",\n  \"channel\": 1\n}\nSERVER <- {\n  \"type\": \"CHANNEL_CLOSED\",\n  \"channel\": 1\n}\n\n// Request a new channel for Candle events\nCLIENT -> {\n  \"type\": \"CHANNEL_REQUEST\",\n  \"channel\": 3,\n  \"service\": \"FEED\",\n  \"parameters\": { \"contract\": \"AUTO\" }\n}\nSERVER <- {\n  \"type\": \"CHANNEL_OPENED\",\n  \"channel\": 3,\n  \"service\": \"FEED\",\n  \"parameters\": { \"contract\": \"AUTO\" }\n}\n\n// Subscribe to Candle events with time\nCLIENT -> {\n  \"type\": \"FEED_SUBSCRIPTION\",\n  \"channel\": 3,\n  \"add\": [{ \"symbol\": \"AAPL{=d}\", \"type\": \"Candle\", \"fromTime\": 1666600000000 }]\n}\n\n// Receive Candle snapshot\nSERVER <- {\n  \"type\": \"FEED_CONFIG\",\n  \"channel\": 3,\n  \"eventFields\": {\n    \"Candle\": [\"eventSymbol\", \"eventType\", \"eventFlags\", \"open\", \"close\"]\n  }\n}\nSERVER <- {\n  \"type\": \"FEED_DATA\",\n  \"channel\": 3,\n  \"data\": [\n    {\n      \"eventSymbol\": \"AAPL{=d}\",\n      \"eventType\": \"Candle\",\n      \"eventFlags\": 0,\n      \"open\": 123.45,\n      \"close\": 123.46\n    }\n  ]\n}\n\n...\n\n// Close channel\nCLIENT -> {\n  \"type\": \"CHANNEL_CANCEL\",\n  \"channel\": 3\n}\nSERVER <- {\n  \"type\": \"CHANNEL_CLOSED\",\n  \"channel\": 3\n}\nDISCONNECTED\n```\n",
+              "title": "dxLink WebSocket",
+              "version": "1.0.2"
+            },
+            "servers": {
+              "demo": {
+                "description": "Demo server",
+                "protocol": "dxlink-ws",
+                "url": "wss://demo.dxfeed.com/dxlink-ws"
+              }
+            }
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "dxFeed dxLink"
+    }
+  },
+  "not_before": 1793376126,
+  "protocol": "asyncapi",
+  "provenance": {
+    "commit": "8df30d0f5f8a86cb88376beb221e5c06ea8a88e5",
+    "fetched_at": "2026-10-29T23:24:08.433615+00:00",
+    "normalization": "YAML parsed and serialized to JSON; all document fields retained",
+    "normalized_sha256": "9e8e606771bde2cb32dbb2f0bc276b8fba1f29ec7de6a9fd106b52b58a316222",
+    "repository": "dxFeed/dxLink",
+    "sha256": "2e3616afc0eca1afd65287892410a6a23da08f8456d445b311b1fd100ee82a48",
+    "source_id": "dxfeed/dxlink",
+    "upstream_sha256": "27b69e56bb0c51a2b28614b22b73dd8ae0c6c674db984d38bfefa6b7a1a6097f",
+    "url": "https://raw.githubusercontent.com/dxFeed/dxLink/8df30d0f5f8a86cb88376beb221e5c06ea8a88e5/dxlink-specification/asyncapi.yml"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "conversion": null,
+    "setup_guide": true,
+    "source_currency": true,
+    "transport_compatibility": true
+  },
+  "rights": {
+    "independent_attribution": "Independent connector for dxFeed. Not affiliated with or endorsed by dxFeed.",
+    "mark_policy": "Plain-text provider name for identification only; no provider logo, favicon, or brand color.",
+    "source": {
+      "license": "MPL-2.0",
+      "license_sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "license_text": "Mozilla Public License Version 2.0\n==================================\n\n1. Definitions\n--------------\n\n1.1. \"Contributor\"\n    means each individual or legal entity that creates, contributes to\n    the creation of, or owns Covered Software.\n\n1.2. \"Contributor Version\"\n    means the combination of the Contributions of others (if any) used\n    by a Contributor and that particular Contributor's Contribution.\n\n1.3. \"Contribution\"\n    means Covered Software of a particular Contributor.\n\n1.4. \"Covered Software\"\n    means Source Code Form to which the initial Contributor has attached\n    the notice in Exhibit A, the Executable Form of such Source Code\n    Form, and Modifications of such Source Code Form, in each case\n    including portions thereof.\n\n1.5. \"Incompatible With Secondary Licenses\"\n    means\n\n    (a) that the initial Contributor has attached the notice described\n        in Exhibit B to the Covered Software; or\n\n    (b) that the Covered Software was made available under the terms of\n        version 1.1 or earlier of the License, but not also under the\n        terms of a Secondary License.\n\n1.6. \"Executable Form\"\n    means any form of the work other than Source Code Form.\n\n1.7. \"Larger Work\"\n    means a work that combines Covered Software with other material, in\n    a separate file or files, that is not Covered Software.\n\n1.8. \"License\"\n    means this document.\n\n1.9. \"Licensable\"\n    means having the right to grant, to the maximum extent possible,\n    whether at the time of the initial grant or subsequently, any and\n    all of the rights conveyed by this License.\n\n1.10. \"Modifications\"\n    means any of the following:\n\n    (a) any file in Source Code Form that results from an addition to,\n        deletion from, or modification of the contents of Covered\n        Software; or\n\n    (b) any new file in Source Code Form that contains any Covered\n        Software.\n\n1.11. \"Patent Claims\" of a Contributor\n    means any patent claim(s), including without limitation, method,\n    process, and apparatus claims, in any patent Licensable by such\n    Contributor that would be infringed, but for the grant of the\n    License, by the making, using, selling, offering for sale, having\n    made, import, or transfer of either its Contributions or its\n    Contributor Version.\n\n1.12. \"Secondary License\"\n    means either the GNU General Public License, Version 2.0, the GNU\n    Lesser General Public License, Version 2.1, the GNU Affero General\n    Public License, Version 3.0, or any later versions of those\n    licenses.\n\n1.13. \"Source Code Form\"\n    means the form of the work preferred for making modifications.\n\n1.14. \"You\" (or \"Your\")\n    means an individual or a legal entity exercising rights under this\n    License. For legal entities, \"You\" includes any entity that\n    controls, is controlled by, or is under common control with You. For\n    purposes of this definition, \"control\" means (a) the power, direct\n    or indirect, to cause the direction or management of such entity,\n    whether by contract or otherwise, or (b) ownership of more than\n    fifty percent (50%) of the outstanding shares or beneficial\n    ownership of such entity.\n\n2. License Grants and Conditions\n--------------------------------\n\n2.1. Grants\n\nEach Contributor hereby grants You a world-wide, royalty-free,\nnon-exclusive license:\n\n(a) under intellectual property rights (other than patent or trademark)\n    Licensable by such Contributor to use, reproduce, make available,\n    modify, display, perform, distribute, and otherwise exploit its\n    Contributions, either on an unmodified basis, with Modifications, or\n    as part of a Larger Work; and\n\n(b) under Patent Claims of such Contributor to make, use, sell, offer\n    for sale, have made, import, and otherwise transfer either its\n    Contributions or its Contributor Version.\n\n2.2. Effective Date\n\nThe licenses granted in Section 2.1 with respect to any Contribution\nbecome effective for each Contribution on the date the Contributor first\ndistributes such Contribution.\n\n2.3. Limitations on Grant Scope\n\nThe licenses granted in this Section 2 are the only rights granted under\nthis License. No additional rights or licenses will be implied from the\ndistribution or licensing of Covered Software under this License.\nNotwithstanding Section 2.1(b) above, no patent license is granted by a\nContributor:\n\n(a) for any code that a Contributor has removed from Covered Software;\n    or\n\n(b) for infringements caused by: (i) Your and any other third party's\n    modifications of Covered Software, or (ii) the combination of its\n    Contributions with other software (except as part of its Contributor\n    Version); or\n\n(c) under Patent Claims infringed by Covered Software in the absence of\n    its Contributions.\n\nThis License does not grant any rights in the trademarks, service marks,\nor logos of any Contributor (except as may be necessary to comply with\nthe notice requirements in Section 3.4).\n\n2.4. Subsequent Licenses\n\nNo Contributor makes additional grants as a result of Your choice to\ndistribute the Covered Software under a subsequent version of this\nLicense (see Section 10.2) or under the terms of a Secondary License (if\npermitted under the terms of Section 3.3).\n\n2.5. Representation\n\nEach Contributor represents that the Contributor believes its\nContributions are its original creation(s) or it has sufficient rights\nto grant the rights to its Contributions conveyed by this License.\n\n2.6. Fair Use\n\nThis License is not intended to limit any rights You have under\napplicable copyright doctrines of fair use, fair dealing, or other\nequivalents.\n\n2.7. Conditions\n\nSections 3.1, 3.2, 3.3, and 3.4 are conditions of the licenses granted\nin Section 2.1.\n\n3. Responsibilities\n-------------------\n\n3.1. Distribution of Source Form\n\nAll distribution of Covered Software in Source Code Form, including any\nModifications that You create or to which You contribute, must be under\nthe terms of this License. You must inform recipients that the Source\nCode Form of the Covered Software is governed by the terms of this\nLicense, and how they can obtain a copy of this License. You may not\nattempt to alter or restrict the recipients' rights in the Source Code\nForm.\n\n3.2. Distribution of Executable Form\n\nIf You distribute Covered Software in Executable Form then:\n\n(a) such Covered Software must also be made available in Source Code\n    Form, as described in Section 3.1, and You must inform recipients of\n    the Executable Form how they can obtain a copy of such Source Code\n    Form by reasonable means in a timely manner, at a charge no more\n    than the cost of distribution to the recipient; and\n\n(b) You may distribute such Executable Form under the terms of this\n    License, or sublicense it under different terms, provided that the\n    license for the Executable Form does not attempt to limit or alter\n    the recipients' rights in the Source Code Form under this License.\n\n3.3. Distribution of a Larger Work\n\nYou may create and distribute a Larger Work under terms of Your choice,\nprovided that You also comply with the requirements of this License for\nthe Covered Software. If the Larger Work is a combination of Covered\nSoftware with a work governed by one or more Secondary Licenses, and the\nCovered Software is not Incompatible With Secondary Licenses, this\nLicense permits You to additionally distribute such Covered Software\nunder the terms of such Secondary License(s), so that the recipient of\nthe Larger Work may, at their option, further distribute the Covered\nSoftware under the terms of either this License or such Secondary\nLicense(s).\n\n3.4. Notices\n\nYou may not remove or alter the substance of any license notices\n(including copyright notices, patent notices, disclaimers of warranty,\nor limitations of liability) contained within the Source Code Form of\nthe Covered Software, except that You may alter any license notices to\nthe extent required to remedy known factual inaccuracies.\n\n3.5. Application of Additional Terms\n\nYou may choose to offer, and to charge a fee for, warranty, support,\nindemnity or liability obligations to one or more recipients of Covered\nSoftware. However, You may do so only on Your own behalf, and not on\nbehalf of any Contributor. You must make it absolutely clear that any\nsuch warranty, support, indemnity, or liability obligation is offered by\nYou alone, and You hereby agree to indemnify every Contributor for any\nliability incurred by such Contributor as a result of warranty, support,\nindemnity or liability terms You offer. You may include additional\ndisclaimers of warranty and limitations of liability specific to any\njurisdiction.\n\n4. Inability to Comply Due to Statute or Regulation\n---------------------------------------------------\n\nIf it is impossible for You to comply with any of the terms of this\nLicense with respect to some or all of the Covered Software due to\nstatute, judicial order, or regulation then You must: (a) comply with\nthe terms of this License to the maximum extent possible; and (b)\ndescribe the limitations and the code they affect. Such description must\nbe placed in a text file included with all distributions of the Covered\nSoftware under this License. Except to the extent prohibited by statute\nor regulation, such description must be sufficiently detailed for a\nrecipient of ordinary skill to be able to understand it.\n\n5. Termination\n--------------\n\n5.1. The rights granted under this License will terminate automatically\nif You fail to comply with any of its terms. However, if You become\ncompliant, then the rights granted under this License from a particular\nContributor are reinstated (a) provisionally, unless and until such\nContributor explicitly and finally terminates Your grants, and (b) on an\nongoing basis, if such Contributor fails to notify You of the\nnon-compliance by some reasonable means prior to 60 days after You have\ncome back into compliance. Moreover, Your grants from a particular\nContributor are reinstated on an ongoing basis if such Contributor\nnotifies You of the non-compliance by some reasonable means, this is the\nfirst time You have received notice of non-compliance with this License\nfrom such Contributor, and You become compliant prior to 30 days after\nYour receipt of the notice.\n\n5.2. If You initiate litigation against any entity by asserting a patent\ninfringement claim (excluding declaratory judgment actions,\ncounter-claims, and cross-claims) alleging that a Contributor Version\ndirectly or indirectly infringes any patent, then the rights granted to\nYou by any and all Contributors for the Covered Software under Section\n2.1 of this License shall terminate.\n\n5.3. In the event of termination under Sections 5.1 or 5.2 above, all\nend user license agreements (excluding distributors and resellers) which\nhave been validly granted by You or Your distributors under this License\nprior to termination shall survive termination.\n\n************************************************************************\n*                                                                      *\n*  6. Disclaimer of Warranty                                           *\n*  -------------------------                                           *\n*                                                                      *\n*  Covered Software is provided under this License on an \"as is\"       *\n*  basis, without warranty of any kind, either expressed, implied, or  *\n*  statutory, including, without limitation, warranties that the       *\n*  Covered Software is free of defects, merchantable, fit for a        *\n*  particular purpose or non-infringing. The entire risk as to the     *\n*  quality and performance of the Covered Software is with You.        *\n*  Should any Covered Software prove defective in any respect, You     *\n*  (not any Contributor) assume the cost of any necessary servicing,   *\n*  repair, or correction. This disclaimer of warranty constitutes an   *\n*  essential part of this License. No use of any Covered Software is   *\n*  authorized under this License except under this disclaimer.         *\n*                                                                      *\n************************************************************************\n\n************************************************************************\n*                                                                      *\n*  7. Limitation of Liability                                          *\n*  --------------------------                                          *\n*                                                                      *\n*  Under no circumstances and under no legal theory, whether tort      *\n*  (including negligence), contract, or otherwise, shall any           *\n*  Contributor, or anyone who distributes Covered Software as          *\n*  permitted above, be liable to You for any direct, indirect,         *\n*  special, incidental, or consequential damages of any character      *\n*  including, without limitation, damages for lost profits, loss of    *\n*  goodwill, work stoppage, computer failure or malfunction, or any    *\n*  and all other commercial damages or losses, even if such party      *\n*  shall have been informed of the possibility of such damages. This   *\n*  limitation of liability shall not apply to liability for death or   *\n*  personal injury resulting from such party's negligence to the       *\n*  extent applicable law prohibits such limitation. Some               *\n*  jurisdictions do not allow the exclusion or limitation of           *\n*  incidental or consequential damages, so this exclusion and          *\n*  limitation may not apply to You.                                    *\n*                                                                      *\n************************************************************************\n\n8. Litigation\n-------------\n\nAny litigation relating to this License may be brought only in the\ncourts of a jurisdiction where the defendant maintains its principal\nplace of business and such litigation shall be governed by laws of that\njurisdiction, without reference to its conflict-of-law provisions.\nNothing in this Section shall prevent a party's ability to bring\ncross-claims or counter-claims.\n\n9. Miscellaneous\n----------------\n\nThis License represents the complete agreement concerning the subject\nmatter hereof. If any provision of this License is held to be\nunenforceable, such provision shall be reformed only to the extent\nnecessary to make it enforceable. Any law or regulation which provides\nthat the language of a contract shall be construed against the drafter\nshall not be used to construe this License against a Contributor.\n\n10. Versions of the License\n---------------------------\n\n10.1. New Versions\n\nMozilla Foundation is the license steward. Except as provided in Section\n10.3, no one other than the license steward has the right to modify or\npublish new versions of this License. Each version will be given a\ndistinguishing version number.\n\n10.2. Effect of New Versions\n\nYou may distribute the Covered Software under the terms of the version\nof the License under which You originally received the Covered Software,\nor under the terms of any subsequent version published by the license\nsteward.\n\n10.3. Modified Versions\n\nIf you create software not governed by this License, and you want to\ncreate a new license for such software, you may create and use a\nmodified version of this License if you rename the license and remove\nany references to the name of the license steward (except to note that\nsuch modified license differs from this License).\n\n10.4. Distributing Source Code Form that is Incompatible With Secondary\nLicenses\n\nIf You choose to distribute Source Code Form that is Incompatible With\nSecondary Licenses under the terms of this version of the License, the\nnotice described in Exhibit B of this License must be attached.\n\nExhibit A - Source Code Form License Notice\n-------------------------------------------\n\n  This Source Code Form is subject to the terms of the Mozilla Public\n  License, v. 2.0. If a copy of the MPL was not distributed with this\n  file, You can obtain one at http://mozilla.org/MPL/2.0/.\n\nIf it is not possible or desirable to put the notice in a particular\nfile, then You may include the notice in a location (such as a LICENSE\nfile in a relevant directory) where a recipient would be likely to look\nfor such a notice.\n\nYou may add additional accurate notices of copyright ownership.\n\nExhibit B - \"Incompatible With Secondary Licenses\" Notice\n---------------------------------------------------------\n\n  This Source Code Form is \"Incompatible With Secondary Licenses\", as\n  defined by the Mozilla Public License, v. 2.0.\n",
+      "license_url": "https://raw.githubusercontent.com/dxFeed/dxLink/8df30d0f5f8a86cb88376beb221e5c06ea8a88e5/LICENSE",
+      "notice_url": null
+    },
+    "source_attribution": "Mozilla Public License Version 2.0",
+    "source_license": "MPL-2.0",
+    "source_license_sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+    "source_license_text": "Mozilla Public License Version 2.0\n==================================\n\n1. Definitions\n--------------\n\n1.1. \"Contributor\"\n    means each individual or legal entity that creates, contributes to\n    the creation of, or owns Covered Software.\n\n1.2. \"Contributor Version\"\n    means the combination of the Contributions of others (if any) used\n    by a Contributor and that particular Contributor's Contribution.\n\n1.3. \"Contribution\"\n    means Covered Software of a particular Contributor.\n\n1.4. \"Covered Software\"\n    means Source Code Form to which the initial Contributor has attached\n    the notice in Exhibit A, the Executable Form of such Source Code\n    Form, and Modifications of such Source Code Form, in each case\n    including portions thereof.\n\n1.5. \"Incompatible With Secondary Licenses\"\n    means\n\n    (a) that the initial Contributor has attached the notice described\n        in Exhibit B to the Covered Software; or\n\n    (b) that the Covered Software was made available under the terms of\n        version 1.1 or earlier of the License, but not also under the\n        terms of a Secondary License.\n\n1.6. \"Executable Form\"\n    means any form of the work other than Source Code Form.\n\n1.7. \"Larger Work\"\n    means a work that combines Covered Software with other material, in\n    a separate file or files, that is not Covered Software.\n\n1.8. \"License\"\n    means this document.\n\n1.9. \"Licensable\"\n    means having the right to grant, to the maximum extent possible,\n    whether at the time of the initial grant or subsequently, any and\n    all of the rights conveyed by this License.\n\n1.10. \"Modifications\"\n    means any of the following:\n\n    (a) any file in Source Code Form that results from an addition to,\n        deletion from, or modification of the contents of Covered\n        Software; or\n\n    (b) any new file in Source Code Form that contains any Covered\n        Software.\n\n1.11. \"Patent Claims\" of a Contributor\n    means any patent claim(s), including without limitation, method,\n    process, and apparatus claims, in any patent Licensable by such\n    Contributor that would be infringed, but for the grant of the\n    License, by the making, using, selling, offering for sale, having\n    made, import, or transfer of either its Contributions or its\n    Contributor Version.\n\n1.12. \"Secondary License\"\n    means either the GNU General Public License, Version 2.0, the GNU\n    Lesser General Public License, Version 2.1, the GNU Affero General\n    Public License, Version 3.0, or any later versions of those\n    licenses.\n\n1.13. \"Source Code Form\"\n    means the form of the work preferred for making modifications.\n\n1.14. \"You\" (or \"Your\")\n    means an individual or a legal entity exercising rights under this\n    License. For legal entities, \"You\" includes any entity that\n    controls, is controlled by, or is under common control with You. For\n    purposes of this definition, \"control\" means (a) the power, direct\n    or indirect, to cause the direction or management of such entity,\n    whether by contract or otherwise, or (b) ownership of more than\n    fifty percent (50%) of the outstanding shares or beneficial\n    ownership of such entity.\n\n2. License Grants and Conditions\n--------------------------------\n\n2.1. Grants\n\nEach Contributor hereby grants You a world-wide, royalty-free,\nnon-exclusive license:\n\n(a) under intellectual property rights (other than patent or trademark)\n    Licensable by such Contributor to use, reproduce, make available,\n    modify, display, perform, distribute, and otherwise exploit its\n    Contributions, either on an unmodified basis, with Modifications, or\n    as part of a Larger Work; and\n\n(b) under Patent Claims of such Contributor to make, use, sell, offer\n    for sale, have made, import, and otherwise transfer either its\n    Contributions or its Contributor Version.\n\n2.2. Effective Date\n\nThe licenses granted in Section 2.1 with respect to any Contribution\nbecome effective for each Contribution on the date the Contributor first\ndistributes such Contribution.\n\n2.3. Limitations on Grant Scope\n\nThe licenses granted in this Section 2 are the only rights granted under\nthis License. No additional rights or licenses will be implied from the\ndistribution or licensing of Covered Software under this License.\nNotwithstanding Section 2.1(b) above, no patent license is granted by a\nContributor:\n\n(a) for any code that a Contributor has removed from Covered Software;\n    or\n\n(b) for infringements caused by: (i) Your and any other third party's\n    modifications of Covered Software, or (ii) the combination of its\n    Contributions with other software (except as part of its Contributor\n    Version); or\n\n(c) under Patent Claims infringed by Covered Software in the absence of\n    its Contributions.\n\nThis License does not grant any rights in the trademarks, service marks,\nor logos of any Contributor (except as may be necessary to comply with\nthe notice requirements in Section 3.4).\n\n2.4. Subsequent Licenses\n\nNo Contributor makes additional grants as a result of Your choice to\ndistribute the Covered Software under a subsequent version of this\nLicense (see Section 10.2) or under the terms of a Secondary License (if\npermitted under the terms of Section 3.3).\n\n2.5. Representation\n\nEach Contributor represents that the Contributor believes its\nContributions are its original creation(s) or it has sufficient rights\nto grant the rights to its Contributions conveyed by this License.\n\n2.6. Fair Use\n\nThis License is not intended to limit any rights You have under\napplicable copyright doctrines of fair use, fair dealing, or other\nequivalents.\n\n2.7. Conditions\n\nSections 3.1, 3.2, 3.3, and 3.4 are conditions of the licenses granted\nin Section 2.1.\n\n3. Responsibilities\n-------------------\n\n3.1. Distribution of Source Form\n\nAll distribution of Covered Software in Source Code Form, including any\nModifications that You create or to which You contribute, must be under\nthe terms of this License. You must inform recipients that the Source\nCode Form of the Covered Software is governed by the terms of this\nLicense, and how they can obtain a copy of this License. You may not\nattempt to alter or restrict the recipients' rights in the Source Code\nForm.\n\n3.2. Distribution of Executable Form\n\nIf You distribute Covered Software in Executable Form then:\n\n(a) such Covered Software must also be made available in Source Code\n    Form, as described in Section 3.1, and You must inform recipients of\n    the Executable Form how they can obtain a copy of such Source Code\n    Form by reasonable means in a timely manner, at a charge no more\n    than the cost of distribution to the recipient; and\n\n(b) You may distribute such Executable Form under the terms of this\n    License, or sublicense it under different terms, provided that the\n    license for the Executable Form does not attempt to limit or alter\n    the recipients' rights in the Source Code Form under this License.\n\n3.3. Distribution of a Larger Work\n\nYou may create and distribute a Larger Work under terms of Your choice,\nprovided that You also comply with the requirements of this License for\nthe Covered Software. If the Larger Work is a combination of Covered\nSoftware with a work governed by one or more Secondary Licenses, and the\nCovered Software is not Incompatible With Secondary Licenses, this\nLicense permits You to additionally distribute such Covered Software\nunder the terms of such Secondary License(s), so that the recipient of\nthe Larger Work may, at their option, further distribute the Covered\nSoftware under the terms of either this License or such Secondary\nLicense(s).\n\n3.4. Notices\n\nYou may not remove or alter the substance of any license notices\n(including copyright notices, patent notices, disclaimers of warranty,\nor limitations of liability) contained within the Source Code Form of\nthe Covered Software, except that You may alter any license notices to\nthe extent required to remedy known factual inaccuracies.\n\n3.5. Application of Additional Terms\n\nYou may choose to offer, and to charge a fee for, warranty, support,\nindemnity or liability obligations to one or more recipients of Covered\nSoftware. However, You may do so only on Your own behalf, and not on\nbehalf of any Contributor. You must make it absolutely clear that any\nsuch warranty, support, indemnity, or liability obligation is offered by\nYou alone, and You hereby agree to indemnify every Contributor for any\nliability incurred by such Contributor as a result of warranty, support,\nindemnity or liability terms You offer. You may include additional\ndisclaimers of warranty and limitations of liability specific to any\njurisdiction.\n\n4. Inability to Comply Due to Statute or Regulation\n---------------------------------------------------\n\nIf it is impossible for You to comply with any of the terms of this\nLicense with respect to some or all of the Covered Software due to\nstatute, judicial order, or regulation then You must: (a) comply with\nthe terms of this License to the maximum extent possible; and (b)\ndescribe the limitations and the code they affect. Such description must\nbe placed in a text file included with all distributions of the Covered\nSoftware under this License. Except to the extent prohibited by statute\nor regulation, such description must be sufficiently detailed for a\nrecipient of ordinary skill to be able to understand it.\n\n5. Termination\n--------------\n\n5.1. The rights granted under this License will terminate automatically\nif You fail to comply with any of its terms. However, if You become\ncompliant, then the rights granted under this License from a particular\nContributor are reinstated (a) provisionally, unless and until such\nContributor explicitly and finally terminates Your grants, and (b) on an\nongoing basis, if such Contributor fails to notify You of the\nnon-compliance by some reasonable means prior to 60 days after You have\ncome back into compliance. Moreover, Your grants from a particular\nContributor are reinstated on an ongoing basis if such Contributor\nnotifies You of the non-compliance by some reasonable means, this is the\nfirst time You have received notice of non-compliance with this License\nfrom such Contributor, and You become compliant prior to 30 days after\nYour receipt of the notice.\n\n5.2. If You initiate litigation against any entity by asserting a patent\ninfringement claim (excluding declaratory judgment actions,\ncounter-claims, and cross-claims) alleging that a Contributor Version\ndirectly or indirectly infringes any patent, then the rights granted to\nYou by any and all Contributors for the Covered Software under Section\n2.1 of this License shall terminate.\n\n5.3. In the event of termination under Sections 5.1 or 5.2 above, all\nend user license agreements (excluding distributors and resellers) which\nhave been validly granted by You or Your distributors under this License\nprior to termination shall survive termination.\n\n************************************************************************\n*                                                                      *\n*  6. Disclaimer of Warranty                                           *\n*  -------------------------                                           *\n*                                                                      *\n*  Covered Software is provided under this License on an \"as is\"       *\n*  basis, without warranty of any kind, either expressed, implied, or  *\n*  statutory, including, without limitation, warranties that the       *\n*  Covered Software is free of defects, merchantable, fit for a        *\n*  particular purpose or non-infringing. The entire risk as to the     *\n*  quality and performance of the Covered Software is with You.        *\n*  Should any Covered Software prove defective in any respect, You     *\n*  (not any Contributor) assume the cost of any necessary servicing,   *\n*  repair, or correction. This disclaimer of warranty constitutes an   *\n*  essential part of this License. No use of any Covered Software is   *\n*  authorized under this License except under this disclaimer.         *\n*                                                                      *\n************************************************************************\n\n************************************************************************\n*                                                                      *\n*  7. Limitation of Liability                                          *\n*  --------------------------                                          *\n*                                                                      *\n*  Under no circumstances and under no legal theory, whether tort      *\n*  (including negligence), contract, or otherwise, shall any           *\n*  Contributor, or anyone who distributes Covered Software as          *\n*  permitted above, be liable to You for any direct, indirect,         *\n*  special, incidental, or consequential damages of any character      *\n*  including, without limitation, damages for lost profits, loss of    *\n*  goodwill, work stoppage, computer failure or malfunction, or any    *\n*  and all other commercial damages or losses, even if such party      *\n*  shall have been informed of the possibility of such damages. This   *\n*  limitation of liability shall not apply to liability for death or   *\n*  personal injury resulting from such party's negligence to the       *\n*  extent applicable law prohibits such limitation. Some               *\n*  jurisdictions do not allow the exclusion or limitation of           *\n*  incidental or consequential damages, so this exclusion and          *\n*  limitation may not apply to You.                                    *\n*                                                                      *\n************************************************************************\n\n8. Litigation\n-------------\n\nAny litigation relating to this License may be brought only in the\ncourts of a jurisdiction where the defendant maintains its principal\nplace of business and such litigation shall be governed by laws of that\njurisdiction, without reference to its conflict-of-law provisions.\nNothing in this Section shall prevent a party's ability to bring\ncross-claims or counter-claims.\n\n9. Miscellaneous\n----------------\n\nThis License represents the complete agreement concerning the subject\nmatter hereof. If any provision of this License is held to be\nunenforceable, such provision shall be reformed only to the extent\nnecessary to make it enforceable. Any law or regulation which provides\nthat the language of a contract shall be construed against the drafter\nshall not be used to construe this License against a Contributor.\n\n10. Versions of the License\n---------------------------\n\n10.1. New Versions\n\nMozilla Foundation is the license steward. Except as provided in Section\n10.3, no one other than the license steward has the right to modify or\npublish new versions of this License. Each version will be given a\ndistinguishing version number.\n\n10.2. Effect of New Versions\n\nYou may distribute the Covered Software under the terms of the version\nof the License under which You originally received the Covered Software,\nor under the terms of any subsequent version published by the license\nsteward.\n\n10.3. Modified Versions\n\nIf you create software not governed by this License, and you want to\ncreate a new license for such software, you may create and use a\nmodified version of this License if you rename the license and remove\nany references to the name of the license steward (except to note that\nsuch modified license differs from this License).\n\n10.4. Distributing Source Code Form that is Incompatible With Secondary\nLicenses\n\nIf You choose to distribute Source Code Form that is Incompatible With\nSecondary Licenses under the terms of this version of the License, the\nnotice described in Exhibit B of this License must be attached.\n\nExhibit A - Source Code Form License Notice\n-------------------------------------------\n\n  This Source Code Form is subject to the terms of the Mozilla Public\n  License, v. 2.0. If a copy of the MPL was not distributed with this\n  file, You can obtain one at http://mozilla.org/MPL/2.0/.\n\nIf it is not possible or desirable to put the notice in a particular\nfile, then You may include the notice in a location (such as a LICENSE\nfile in a relevant directory) where a recipient would be likely to look\nfor such a notice.\n\nYou may add additional accurate notices of copyright ownership.\n\nExhibit B - \"Incompatible With Secondary Licenses\" Notice\n---------------------------------------------------------\n\n  This Source Code Form is \"Incompatible With Secondary Licenses\", as\n  defined by the Mozilla Public License, v. 2.0.\n",
+    "source_license_url": "https://raw.githubusercontent.com/dxFeed/dxLink/8df30d0f5f8a86cb88376beb221e5c06ea8a88e5/LICENSE",
+    "source_modifications": "Upstream YAML parsed and serialized to JSON without intentional field changes; Ragentic graph and metadata added separately.",
+    "source_url": "https://raw.githubusercontent.com/dxFeed/dxLink/8df30d0f5f8a86cb88376beb221e5c06ea8a88e5/dxlink-specification/asyncapi.yml"
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.2"
+}

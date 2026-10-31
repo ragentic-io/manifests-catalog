@@ -1,0 +1,463 @@
+{
+  "a2ui": {},
+  "app": "papinet-io-order-status-1ef573d634",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "papinet-io-order-status-1ef573d634",
+        "kind": "EXPOSES",
+        "to": "operation:get:/orders"
+      },
+      {
+        "from": "papinet-io-order-status-1ef573d634",
+        "kind": "EXPOSES",
+        "to": "operation:get:/orders/{orderId}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "papinet-io-order-status-1ef573d634",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/orders",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /orders",
+        "path": "/orders",
+        "pointer": "#/paths/~1orders/get",
+        "security": [],
+        "summary": "List `orders`"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/orders/{orderId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /orders/{orderId}",
+        "path": "/orders/{orderId}",
+        "pointer": "#/paths/~1orders~1{orderId}/get",
+        "security": [],
+        "summary": "Get an `order`"
+      },
+      {
+        "id": "schema:GetOrder",
+        "kind": "schema",
+        "name": "GetOrder"
+      },
+      {
+        "id": "schema:ListOfOrders",
+        "kind": "schema",
+        "name": "ListOfOrders"
+      },
+      {
+        "id": "schema:Order",
+        "kind": "schema",
+        "name": "Order"
+      },
+      {
+        "id": "schema:OrderHeader",
+        "kind": "schema",
+        "name": "OrderHeader"
+      },
+      {
+        "id": "schema:OrderLineItem",
+        "kind": "schema",
+        "name": "OrderLineItem"
+      },
+      {
+        "id": "schema:PaginationLinks",
+        "kind": "schema",
+        "name": "PaginationLinks"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "papinet-io-order-status-1ef573d634"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "GetOrder": {
+                  "$ref": "#/components/schemas/Order"
+                },
+                "ListOfOrders": {
+                  "properties": {
+                    "links": {
+                      "$ref": "#/components/schemas/PaginationLinks"
+                    },
+                    "orders": {
+                      "items": {
+                        "$ref": "#/components/schemas/OrderHeader"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Order": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/OrderHeader"
+                    },
+                    {
+                      "properties": {
+                        "links": {
+                          "$ref": "#/components/schemas/PaginationLinks"
+                        },
+                        "orderLineItems": {
+                          "items": {
+                            "$ref": "#/components/schemas/OrderLineItem"
+                          },
+                          "type": "array"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "OrderHeader": {
+                  "properties": {
+                    "id": {
+                      "format": "uuid",
+                      "type": "string"
+                    },
+                    "numberOfLineItems": {
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "orderNumber": {
+                      "type": "string"
+                    },
+                    "orderStatus": {
+                      "enum": [
+                        "Active",
+                        "Cancelled",
+                        "Completed"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "orderNumber",
+                    "orderStatus",
+                    "numberOfLineItems"
+                  ],
+                  "type": "object"
+                },
+                "OrderLineItem": {
+                  "properties": {
+                    "changeable": {
+                      "type": "boolean"
+                    },
+                    "id": {
+                      "format": "uuid",
+                      "type": "string"
+                    },
+                    "orderLineItemNumber": {
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "orderLineItemStatus": {
+                      "enum": [
+                        "Cancelled",
+                        "Completed",
+                        "Confirmed",
+                        "Pending",
+                        "ProductionCompleted",
+                        "ShipmentCompleted"
+                      ],
+                      "type": "string"
+                    },
+                    "quantities": {
+                      "items": {
+                        "properties": {
+                          "quantityContext": {
+                            "enum": [
+                              "Confirmed",
+                              "Invoiced",
+                              "Ordered",
+                              "Produced",
+                              "Shipped"
+                            ],
+                            "type": "string"
+                          },
+                          "quantityType": {
+                            "enum": [
+                              "Area",
+                              "Count",
+                              "GrossWeight",
+                              "Length",
+                              "NetNetWeight",
+                              "NetWeight",
+                              "NominalWeight",
+                              "TareWeight"
+                            ],
+                            "type": "string"
+                          },
+                          "quantityUOM": {
+                            "enum": [
+                              "Bale",
+                              "Box",
+                              "Centimeter",
+                              "Decimeter",
+                              "Foot",
+                              "Gram",
+                              "HundredPounds",
+                              "Inch",
+                              "Kilogram",
+                              "Kilometer",
+                              "Meter",
+                              "MetricTon",
+                              "Millimeter",
+                              "Package",
+                              "PalletUnit",
+                              "Piece",
+                              "Pound",
+                              "PulpUnit",
+                              "Ream",
+                              "Reel",
+                              "Sheet",
+                              "ShortTon",
+                              "Skid",
+                              "SquareDecimeter",
+                              "SquareFoot",
+                              "SquareInch",
+                              "SquareMeter",
+                              "ThousandPieces",
+                              "ThousandSquareCentimeters",
+                              "ThousandSquareFeet",
+                              "ThousandSquareInches",
+                              "Yard"
+                            ],
+                            "type": "string"
+                          },
+                          "quantityValue": {
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "orderLineItemNumber",
+                    "orderLineItemStatus"
+                  ],
+                  "type": "object"
+                },
+                "PaginationLinks": {
+                  "properties": {
+                    "first": {
+                      "properties": {
+                        "href": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "last": {
+                      "properties": {
+                        "href": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "next": {
+                      "properties": {
+                        "href": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "prev": {
+                      "properties": {
+                        "href": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "next"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "contact": {
+                "name": "papiNet API CWG",
+                "url": "https://github.com/papinet/papiNet-API/issues"
+              },
+              "description": "papinet API is a global initiative for the Forst and Paper supply chain.",
+              "license": {
+                "name": "Apache 2.0",
+                "url": "https://github.com/papinet/papiNet-API/blob/patrice-v1.0.0/LICENSE"
+              },
+              "title": "papiNet API",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "ecommerce"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://raw.githubusercontent.com/papinet/papiNet-API/master/1.0.0/papiNet-API.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "papinet.io",
+              "x-serviceName": "order_status"
+            },
+            "openapi": "3.0.3",
+            "paths": {
+              "/orders": {
+                "get": {
+                  "description": "Gets a paginated list of all `orders`.",
+                  "parameters": [
+                    {
+                      "description": "Filter by status",
+                      "in": "query",
+                      "name": "orderStatus",
+                      "required": false,
+                      "schema": {
+                        "enum": [
+                          "Active",
+                          "Cancelled",
+                          "Completed"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The number of items to skip before starting to collect the result set.",
+                      "in": "query",
+                      "name": "offset",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The maximum number of items to return. If the value exceeds the maximum, then the maximum value will be used.",
+                      "in": "query",
+                      "name": "limit",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ListOfOrders"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    }
+                  },
+                  "summary": "List `orders`"
+                }
+              },
+              "/orders/{orderId}": {
+                "get": {
+                  "description": "Gets the details of a specific `order`, including a paginated list of all its lines.",
+                  "parameters": [
+                    {
+                      "description": "UUID of the `order` to get",
+                      "in": "path",
+                      "name": "orderId",
+                      "required": true,
+                      "schema": {
+                        "format": "uuid",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/GetOrder"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    }
+                  },
+                  "summary": "Get an `order`"
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "papiNet Mock Server",
+                "url": "https://papinet.papinet.io"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "papiNet API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:58.412655Z",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://github.com/papinet/papiNet-API/blob/patrice-v1.0.0/LICENSE"
+    },
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://raw.githubusercontent.com/papinet/papiNet-API/master/1.0.0/papiNet-API.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "b1f9b696c7c1b601d23727553b83a1b04885468c127d2ebf460977cec1be8944",
+    "source_id": "papinet.io:order_status",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/papinet.io/order_status/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

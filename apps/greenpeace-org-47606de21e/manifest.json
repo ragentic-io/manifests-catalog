@@ -1,0 +1,849 @@
+{
+  "a2ui": {},
+  "app": "greenpeace-org-47606de21e",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "greenpeace-org-47606de21e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/events"
+      },
+      {
+        "from": "greenpeace-org-47606de21e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/events/{UUID}"
+      },
+      {
+        "from": "greenpeace-org-47606de21e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/groups"
+      },
+      {
+        "from": "greenpeace-org-47606de21e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/groups/{UUID}"
+      },
+      {
+        "from": "greenpeace-org-47606de21e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/volunteers"
+      },
+      {
+        "from": "greenpeace-org-47606de21e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/volunteers/{UUID}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "greenpeace-org-47606de21e",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/events",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /events",
+        "path": "/events",
+        "pointer": "#/paths/~1events/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/events/{UUID}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /events/{UUID}",
+        "path": "/events/{UUID}",
+        "pointer": "#/paths/~1events~1{UUID}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/groups",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /groups",
+        "path": "/groups",
+        "pointer": "#/paths/~1groups/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/groups/{UUID}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /groups/{UUID}",
+        "path": "/groups/{UUID}",
+        "pointer": "#/paths/~1groups~1{UUID}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/volunteers",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /volunteers",
+        "path": "/volunteers",
+        "pointer": "#/paths/~1volunteers/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/volunteers/{UUID}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /volunteers/{UUID}",
+        "path": "/volunteers/{UUID}",
+        "pointer": "#/paths/~1volunteers~1{UUID}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "id": "schema:Coordinates",
+        "kind": "schema",
+        "name": "Coordinates"
+      },
+      {
+        "id": "schema:DateTime",
+        "kind": "schema",
+        "name": "DateTime"
+      },
+      {
+        "id": "schema:Event",
+        "kind": "schema",
+        "name": "Event"
+      },
+      {
+        "id": "schema:Group",
+        "kind": "schema",
+        "name": "Group"
+      },
+      {
+        "id": "schema:GroupLite",
+        "kind": "schema",
+        "name": "GroupLite"
+      },
+      {
+        "id": "schema:GroupType",
+        "kind": "schema",
+        "name": "GroupType"
+      },
+      {
+        "id": "schema:HTML",
+        "kind": "schema",
+        "name": "HTML"
+      },
+      {
+        "id": "schema:HTTP_Code",
+        "kind": "schema",
+        "name": "HTTP_Code"
+      },
+      {
+        "id": "schema:HTTP_Status",
+        "kind": "schema",
+        "name": "HTTP_Status"
+      },
+      {
+        "id": "schema:HeaderError",
+        "kind": "schema",
+        "name": "HeaderError"
+      },
+      {
+        "id": "schema:HeaderSuccess",
+        "kind": "schema",
+        "name": "HeaderSuccess"
+      },
+      {
+        "id": "schema:ISO_3166-1_alpha-2",
+        "kind": "schema",
+        "name": "ISO_3166-1_alpha-2"
+      },
+      {
+        "id": "schema:Location",
+        "kind": "schema",
+        "name": "Location"
+      },
+      {
+        "id": "schema:LocationSimple",
+        "kind": "schema",
+        "name": "LocationSimple"
+      },
+      {
+        "id": "schema:Pagination",
+        "kind": "schema",
+        "name": "Pagination"
+      },
+      {
+        "id": "schema:ResourceType",
+        "kind": "schema",
+        "name": "ResourceType"
+      },
+      {
+        "id": "schema:Serial",
+        "kind": "schema",
+        "name": "Serial"
+      },
+      {
+        "id": "schema:URL",
+        "kind": "schema",
+        "name": "URL"
+      },
+      {
+        "id": "schema:UUID",
+        "kind": "schema",
+        "name": "UUID"
+      },
+      {
+        "id": "schema:Volunteer",
+        "kind": "schema",
+        "name": "Volunteer"
+      },
+      {
+        "id": "schema:VolunteerLite",
+        "kind": "schema",
+        "name": "VolunteerLite"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "greenpeace-org-47606de21e"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/api/public",
+            "consumes": [
+              "application/json"
+            ],
+            "definitions": {
+              "Coordinates": {
+                "properties": {
+                  "latitude": {
+                    "description": "Signed decimal format, example: 52.1234",
+                    "type": "string"
+                  },
+                  "longitude": {
+                    "description": "Signed decimal format, example -77.022223",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "DateTime": {
+                "description": "The date in YYYY-MM-DD HH:MM:SS format, example: 2015-12-31 23:59:59",
+                "type": "string"
+              },
+              "Event": {
+                "properties": {
+                  "created": {
+                    "$ref": "#/definitions/DateTime"
+                  },
+                  "description": {
+                    "$ref": "#/definitions/HTML"
+                  },
+                  "end_date": {
+                    "$ref": "#/definitions/DateTime"
+                  },
+                  "groups": {
+                    "items": {
+                      "$ref": "#/definitions/GroupLite"
+                    },
+                    "type": "array"
+                  },
+                  "location": {
+                    "$ref": "#/definitions/Location"
+                  },
+                  "modified": {
+                    "$ref": "#/definitions/DateTime"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "organizers": {
+                    "items": {
+                      "$ref": "#/definitions/VolunteerLite"
+                    },
+                    "type": "array"
+                  },
+                  "picture": {
+                    "$ref": "#/definitions/URL"
+                  },
+                  "serial": {
+                    "$ref": "#/definitions/Serial"
+                  },
+                  "start_date": {
+                    "$ref": "#/definitions/DateTime"
+                  },
+                  "uuid": {
+                    "$ref": "#/definitions/UUID"
+                  }
+                },
+                "type": "object"
+              },
+              "Group": {
+                "properties": {
+                  "created": {
+                    "$ref": "#/definitions/DateTime"
+                  },
+                  "description": {
+                    "$ref": "#/definitions/HTML"
+                  },
+                  "group_type": {
+                    "$ref": "#/definitions/GroupType"
+                  },
+                  "location": {
+                    "$ref": "#/definitions/Location"
+                  },
+                  "mission": {
+                    "type": "string"
+                  },
+                  "modified": {
+                    "$ref": "#/definitions/DateTime"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "picture": {
+                    "$ref": "#/definitions/URL"
+                  },
+                  "serial": {
+                    "$ref": "#/definitions/Serial"
+                  },
+                  "uuid": {
+                    "$ref": "#/definitions/UUID"
+                  }
+                },
+                "type": "object"
+              },
+              "GroupLite": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "serial": {
+                    "$ref": "#/definitions/Serial"
+                  },
+                  "uuid": {
+                    "$ref": "#/definitions/UUID"
+                  }
+                },
+                "type": "object"
+              },
+              "GroupType": {
+                "enum": [
+                  "Country group",
+                  "Campaign Project group",
+                  "Local group",
+                  "Discussion group",
+                  "Interest group",
+                  "Skills-based group"
+                ],
+                "type": "string"
+              },
+              "HTML": {
+                "description": "A string containing sanitized HTML code",
+                "type": "string"
+              },
+              "HTTP_Code": {
+                "description": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+                "type": "string"
+              },
+              "HTTP_Status": {
+                "description": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+                "type": "integer"
+              },
+              "HeaderError": {
+                "properties": {
+                  "code": {
+                    "$ref": "#/definitions/HTTP_Code"
+                  },
+                  "error": {
+                    "description": "the error message",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "transaction nonce",
+                    "type": "integer"
+                  },
+                  "pagination": {
+                    "type": "object"
+                  },
+                  "resources": {
+                    "$ref": "#/definitions/ResourceType"
+                  },
+                  "status": {
+                    "$ref": "#/definitions/HTTP_Status"
+                  }
+                },
+                "type": "object"
+              },
+              "HeaderSuccess": {
+                "properties": {
+                  "code": {
+                    "$ref": "#/definitions/HTTP_Code"
+                  },
+                  "error": {
+                    "type": "null"
+                  },
+                  "id": {
+                    "description": "transaction nonce",
+                    "type": "integer"
+                  },
+                  "pagination": {
+                    "$ref": "#/definitions/Pagination"
+                  },
+                  "resources": {
+                    "$ref": "#/definitions/ResourceType"
+                  },
+                  "status": {
+                    "$ref": "#/definitions/HTTP_Status"
+                  }
+                },
+                "type": "object"
+              },
+              "ISO_3166-1_alpha-2": {
+                "description": "Country code see. https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2",
+                "type": "string"
+              },
+              "Location": {
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  },
+                  "coordinates": {
+                    "$ref": "#/definitions/Coordinates"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "postcode": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "type": "string"
+                  },
+                  "streetname": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "LocationSimple": {
+                "properties": {
+                  "country": {
+                    "$ref": "#/definitions/ISO_3166-1_alpha-2"
+                  }
+                },
+                "type": "object"
+              },
+              "Pagination": {
+                "properties": {
+                  "limit": {
+                    "description": "the nubmer of items per page",
+                    "type": "integer"
+                  },
+                  "page": {
+                    "description": "the current page",
+                    "type": "integer"
+                  },
+                  "total": {
+                    "description": "the total number of pages",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "ResourceType": {
+                "description": "The name of the requested object/model/resource. Plural if a collection.",
+                "enum": [
+                  "group",
+                  "groups",
+                  "event",
+                  "events",
+                  "volunteer",
+                  "volunteers"
+                ],
+                "type": "string"
+              },
+              "Serial": {
+                "description": "The primary key in Drupal, e.g the entity/node id",
+                "type": "string"
+              },
+              "URL": {
+                "description": "A resource location, example: https://greenwire.greenpeace.org",
+                "type": "string"
+              },
+              "UUID": {
+                "description": "Universally unique identifier in canonical format, example: de305d54-75b4-431b-adb2-eb6b9e546014",
+                "type": "string"
+              },
+              "Volunteer": {
+                "properties": {
+                  "avatar": {
+                    "$ref": "#/definitions/URL"
+                  },
+                  "locations": {
+                    "items": {
+                      "$ref": "#/definitions/LocationSimple"
+                    },
+                    "type": "array"
+                  },
+                  "uuid": {
+                    "$ref": "#/definitions/UUID"
+                  }
+                },
+                "type": "object"
+              },
+              "VolunteerLite": {
+                "properties": {
+                  "serial": {
+                    "$ref": "#/definitions/Serial"
+                  },
+                  "uuid": {
+                    "$ref": "#/definitions/UUID"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "host": "greenwire.greenpeace.org",
+            "info": {
+              "contact": {
+                "name": "Greenpeace International contact",
+                "url": "http://www.greenpeace.org/international/en/about/contactus/",
+                "x-twitter": "Greenpeace"
+              },
+              "description": "Greenpeace Greenwire allows you connect with other volunteers, activists and groups working on environmental campaigns all across the world!",
+              "license": {
+                "name": "MIT",
+                "url": "http://opensource.org/licenses/MIT"
+              },
+              "termsOfService": "http://www.greenpeace.org/international/en/Help/copyright2/",
+              "title": "Greenwire Public API",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "collaboration"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_Greenpeace_profile_image.png"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://raw.githubusercontent.com/greenpeace/ggw_api_test/master/swagger.yaml",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "greenpeace.org"
+            },
+            "paths": {
+              "/events": {
+                "get": {
+                  "description": "Return the upcoming events (e.g. start date >= today). Gets an array of `Event` object. Mandatory query param of **domain** determines the site / country the event belongs to.",
+                  "parameters": [
+                    {
+                      "description": "the site the groups belongs to, example: netherlands",
+                      "in": "query",
+                      "name": "domain",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "the number of desired records",
+                      "in": "query",
+                      "name": "limit",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "items": {
+                              "$ref": "#/definitions/Event"
+                            },
+                            "type": "array"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderSuccess"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "/events/{UUID}": {
+                "get": {
+                  "description": "Get one `Event` object by specifying its UUID in the url path.",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "UUID",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "properties": {
+                          "data": {
+                            "$ref": "#/definitions/Event"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderSuccess"
+                          }
+                        }
+                      }
+                    },
+                    "400": {
+                      "description": "Not found",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "type": "object"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderError"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "/groups": {
+                "get": {
+                  "description": "Gets an array of `Group` object. Mandatory query param of **domain** determines the site / country the group belongs to.",
+                  "parameters": [
+                    {
+                      "description": "the site the groups belongs to, example: netherlands",
+                      "in": "query",
+                      "name": "domain",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "the number of desired records",
+                      "in": "query",
+                      "name": "limit",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "items": {
+                              "$ref": "#/definitions/Group"
+                            },
+                            "type": "array"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderSuccess"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "/groups/{UUID}": {
+                "get": {
+                  "description": "Get one `Group` object by specifying its UUID in the url path.",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "UUID",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "properties": {
+                          "data": {
+                            "$ref": "#/definitions/Group"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderSuccess"
+                          }
+                        }
+                      }
+                    },
+                    "400": {
+                      "description": "Not found",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "type": "object"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderError"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "/volunteers": {
+                "get": {
+                  "description": "Gets an array of `Volunteer` object. Mandatory query param of **domain** determines the site / country the volunteers are from.",
+                  "parameters": [
+                    {
+                      "description": "the site the users are registered on, example: netherlands",
+                      "in": "query",
+                      "name": "domain",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "the number of desired records. Default is 5.",
+                      "in": "query",
+                      "name": "limit",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "description": "1 or 0. filter on people that have the default avatar or not.",
+                      "in": "query",
+                      "name": "must_have_default_avatar",
+                      "type": "boolean"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "items": {
+                              "$ref": "#/definitions/Volunteer"
+                            },
+                            "type": "array"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderSuccess"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "/volunteers/{UUID}": {
+                "get": {
+                  "description": "Get one specific `Volunteer` object by specifying its UUID in the url path.",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "UUID",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "$ref": "#/definitions/Volunteer"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderSuccess"
+                          }
+                        }
+                      }
+                    },
+                    "400": {
+                      "description": "Not found",
+                      "schema": {
+                        "properties": {
+                          "body": {
+                            "type": "object"
+                          },
+                          "header": {
+                            "$ref": "#/definitions/HeaderError"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "produces": [
+              "application/json"
+            ],
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Greenwire Public API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:54.023504Z",
+    "license": {
+      "name": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://raw.githubusercontent.com/greenpeace/ggw_api_test/master/swagger.yaml",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "c042d3c4d823b246f47f29119dbe15682a4f34b2bd911664f6f5e25c2d7f535d",
+    "source_id": "greenpeace.org",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/greenpeace.org/1.0.0/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

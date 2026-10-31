@@ -1,0 +1,236 @@
+{
+  "a2ui": {},
+  "app": "extpose-com-45ea8d0ff9",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "extpose-com-45ea8d0ff9",
+        "kind": "EXPOSES",
+        "to": "operation:get:/user-extensions"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "extpose-com-45ea8d0ff9",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/user-extensions",
+        "kind": "operation",
+        "method": "get",
+        "name": "getUserExtensions",
+        "path": "/user-extensions",
+        "pointer": "#/paths/~1user-extensions/get",
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Get User Extensions"
+      },
+      {
+        "id": "schema:Extension",
+        "kind": "schema",
+        "name": "Extension"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "extpose-com-45ea8d0ff9"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Extension": {
+                  "example": {
+                    "avg_rating": 4.5,
+                    "extension_id": 4186,
+                    "install_count": 2333,
+                    "prev_avg_rating": 4.57142857142857,
+                    "prev_install_count": 1225,
+                    "prev_rating_count": 7,
+                    "rating_count": 10,
+                    "update_ts": "Tue, 24 Sep 2019 22:16:41 GMT",
+                    "url": "https://chrome.google.com/webstore/detail/bitcoin-price-ticker/bgddejjmhilkdllbakkgddjodommlimc"
+                  },
+                  "properties": {
+                    "avg_rating": {
+                      "format": "float",
+                      "type": "number"
+                    },
+                    "extension_id": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "install_count": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "prev_avg_rating": {
+                      "format": "float",
+                      "type": "number"
+                    },
+                    "prev_install_count": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "prev_rating_count": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "rating_count": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "update_ts": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "securitySchemes": {
+                "api_key": {
+                  "in": "header",
+                  "name": "X-API-Key",
+                  "type": "apiKey"
+                }
+              }
+            },
+            "externalDocs": {
+              "description": "Find out more about Extpose",
+              "url": "https://extpose.com"
+            },
+            "info": {
+              "contact": {
+                "email": "info@extpose.com"
+              },
+              "description": "Extpose — in‑store performance analytics and optimization tool for Chrome extensions. [https://extpose.com](https://extpose.com)",
+              "termsOfService": "https://extpose.com/privacy-policy",
+              "title": "Extpose",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "converter": {
+                    "url": "https://github.com/mermade/oas-kit",
+                    "version": "7.0.4"
+                  },
+                  "format": "openapi",
+                  "url": "https://extpose.com/openapi.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "extpose.com"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/user-extensions": {
+                "get": {
+                  "description": "This endpoint allows you to get list of your extensions including extensions from the watchlist.",
+                  "operationId": "getUserExtensions",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/Extension"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "successful operation"
+                    },
+                    "400": {
+                      "content": {},
+                      "description": "Invalid status value"
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": []
+                    }
+                  ],
+                  "summary": "Get User Extensions",
+                  "tags": [
+                    "user"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://extpose.com/api/v1"
+              }
+            ],
+            "tags": [
+              {
+                "description": "user-specific methods",
+                "name": "user"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Extpose"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.934234Z",
+    "license": null,
+    "origins": [
+      {
+        "converter": {
+          "url": "https://github.com/mermade/oas-kit",
+          "version": "7.0.4"
+        },
+        "format": "openapi",
+        "url": "https://extpose.com/openapi.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "553dc6c983874ddecaafa2c728bea32146409213f6f24bf44417fa2af8f772fd",
+    "source_id": "extpose.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/extpose.com/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

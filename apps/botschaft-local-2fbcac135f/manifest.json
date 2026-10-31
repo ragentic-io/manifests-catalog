@@ -1,0 +1,979 @@
+{
+  "a2ui": {},
+  "app": "botschaft-local-2fbcac135f",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/config"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/discord"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/discord"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/slack"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/slack"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sns"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/sns"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/topic/{topic_name}"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/twilio"
+      },
+      {
+        "from": "botschaft-local-2fbcac135f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/twilio"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "botschaft-local-2fbcac135f",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/config",
+        "kind": "operation",
+        "method": "get",
+        "name": "config_config_get",
+        "path": "/config",
+        "pointer": "#/paths/~1config/get",
+        "security": [],
+        "summary": "Config"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/discord",
+        "kind": "operation",
+        "method": "get",
+        "name": "discord_get_discord_get",
+        "path": "/discord",
+        "pointer": "#/paths/~1discord/get",
+        "security": [],
+        "summary": "Discord Get"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/discord",
+        "kind": "operation",
+        "method": "post",
+        "name": "discord_post_discord_post",
+        "path": "/discord",
+        "pointer": "#/paths/~1discord/post",
+        "security": [],
+        "summary": "Discord Post"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/slack",
+        "kind": "operation",
+        "method": "get",
+        "name": "slack_get_slack_get",
+        "path": "/slack",
+        "pointer": "#/paths/~1slack/get",
+        "security": [],
+        "summary": "Slack Get"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/slack",
+        "kind": "operation",
+        "method": "post",
+        "name": "slack_post_slack_post",
+        "path": "/slack",
+        "pointer": "#/paths/~1slack/post",
+        "security": [],
+        "summary": "Slack Post"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sns",
+        "kind": "operation",
+        "method": "get",
+        "name": "sns_get_sns_get",
+        "path": "/sns",
+        "pointer": "#/paths/~1sns/get",
+        "security": [],
+        "summary": "Sns Get"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/sns",
+        "kind": "operation",
+        "method": "post",
+        "name": "sns_post_sns_post",
+        "path": "/sns",
+        "pointer": "#/paths/~1sns/post",
+        "security": [],
+        "summary": "Sns Post"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/topic/{topic_name}",
+        "kind": "operation",
+        "method": "get",
+        "name": "topic_topic__topic_name__get",
+        "path": "/topic/{topic_name}",
+        "pointer": "#/paths/~1topic~1{topic_name}/get",
+        "security": [],
+        "summary": "Topic"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/twilio",
+        "kind": "operation",
+        "method": "get",
+        "name": "twilio_message_get_twilio_get",
+        "path": "/twilio",
+        "pointer": "#/paths/~1twilio/get",
+        "security": [],
+        "summary": "Twilio Message Get"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/twilio",
+        "kind": "operation",
+        "method": "post",
+        "name": "twilio_message_post_twilio_post",
+        "path": "/twilio",
+        "pointer": "#/paths/~1twilio/post",
+        "security": [],
+        "summary": "Twilio Message Post"
+      },
+      {
+        "id": "schema:Config",
+        "kind": "schema",
+        "name": "Config"
+      },
+      {
+        "id": "schema:DiscordMessageRequest",
+        "kind": "schema",
+        "name": "DiscordMessageRequest"
+      },
+      {
+        "id": "schema:HTTPValidationError",
+        "kind": "schema",
+        "name": "HTTPValidationError"
+      },
+      {
+        "id": "schema:SlackMessageRequest",
+        "kind": "schema",
+        "name": "SlackMessageRequest"
+      },
+      {
+        "id": "schema:SnsMessageRequest",
+        "kind": "schema",
+        "name": "SnsMessageRequest"
+      },
+      {
+        "id": "schema:TwilioMessageRequest",
+        "kind": "schema",
+        "name": "TwilioMessageRequest"
+      },
+      {
+        "id": "schema:ValidationError",
+        "kind": "schema",
+        "name": "ValidationError"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "botschaft-local-2fbcac135f"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Config": {
+                  "properties": {
+                    "providers": {
+                      "title": "Providers",
+                      "type": "object"
+                    },
+                    "topics": {
+                      "items": {},
+                      "title": "Topics",
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "providers",
+                    "topics"
+                  ],
+                  "title": "Config",
+                  "type": "object"
+                },
+                "DiscordMessageRequest": {
+                  "properties": {
+                    "base64_message": {
+                      "title": "Base64 Message",
+                      "type": "string"
+                    },
+                    "channel": {
+                      "title": "Channel",
+                      "type": "string"
+                    },
+                    "message": {
+                      "title": "Message",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "channel"
+                  ],
+                  "title": "DiscordMessageRequest",
+                  "type": "object"
+                },
+                "HTTPValidationError": {
+                  "properties": {
+                    "detail": {
+                      "items": {
+                        "$ref": "#/components/schemas/ValidationError"
+                      },
+                      "title": "Detail",
+                      "type": "array"
+                    }
+                  },
+                  "title": "HTTPValidationError",
+                  "type": "object"
+                },
+                "SlackMessageRequest": {
+                  "properties": {
+                    "base64_message": {
+                      "title": "Base64 Message",
+                      "type": "string"
+                    },
+                    "channel": {
+                      "title": "Channel",
+                      "type": "string"
+                    },
+                    "message": {
+                      "title": "Message",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "channel"
+                  ],
+                  "title": "SlackMessageRequest",
+                  "type": "object"
+                },
+                "SnsMessageRequest": {
+                  "properties": {
+                    "base64_message": {
+                      "title": "Base64 Message",
+                      "type": "string"
+                    },
+                    "message": {
+                      "title": "Message",
+                      "type": "string"
+                    }
+                  },
+                  "title": "SnsMessageRequest",
+                  "type": "object"
+                },
+                "TwilioMessageRequest": {
+                  "properties": {
+                    "base64_message": {
+                      "title": "Base64 Message",
+                      "type": "string"
+                    },
+                    "message": {
+                      "title": "Message",
+                      "type": "string"
+                    },
+                    "to": {
+                      "title": "To",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "to"
+                  ],
+                  "title": "TwilioMessageRequest",
+                  "type": "object"
+                },
+                "ValidationError": {
+                  "properties": {
+                    "loc": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "title": "Location",
+                      "type": "array"
+                    },
+                    "msg": {
+                      "title": "Message",
+                      "type": "string"
+                    },
+                    "type": {
+                      "title": "Error Type",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                  ],
+                  "title": "ValidationError",
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "title": "FastAPI",
+              "version": "0.1.0",
+              "x-apisguru-categories": [
+                "messaging"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://raw.githubusercontent.com/ttymck/botschaft/master/example/openapi.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "botschaft.local"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+              "/config": {
+                "get": {
+                  "operationId": "config_config_get",
+                  "parameters": [
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Config"
+                          }
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Config"
+                }
+              },
+              "/discord": {
+                "get": {
+                  "operationId": "discord_get_discord_get",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "channel",
+                      "required": true,
+                      "schema": {
+                        "title": "Channel",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "message",
+                      "required": false,
+                      "schema": {
+                        "title": "Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "base64_message",
+                      "required": false,
+                      "schema": {
+                        "title": "Base64 Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Discord Get",
+                  "tags": [
+                    "discord"
+                  ]
+                },
+                "post": {
+                  "operationId": "discord_post_discord_post",
+                  "parameters": [
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/DiscordMessageRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Discord Post",
+                  "tags": [
+                    "discord"
+                  ]
+                }
+              },
+              "/slack": {
+                "get": {
+                  "operationId": "slack_get_slack_get",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "channel",
+                      "required": true,
+                      "schema": {
+                        "title": "Channel",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "message",
+                      "required": false,
+                      "schema": {
+                        "title": "Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "base64_message",
+                      "required": false,
+                      "schema": {
+                        "title": "Base64 Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Slack Get",
+                  "tags": [
+                    "slack"
+                  ]
+                },
+                "post": {
+                  "operationId": "slack_post_slack_post",
+                  "parameters": [
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/SlackMessageRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Slack Post",
+                  "tags": [
+                    "slack"
+                  ]
+                }
+              },
+              "/sns": {
+                "get": {
+                  "operationId": "sns_get_sns_get",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "message",
+                      "required": false,
+                      "schema": {
+                        "title": "Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "base64_message",
+                      "required": false,
+                      "schema": {
+                        "title": "Base64 Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Sns Get",
+                  "tags": [
+                    "sns"
+                  ]
+                },
+                "post": {
+                  "operationId": "sns_post_sns_post",
+                  "parameters": [
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/SnsMessageRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Sns Post",
+                  "tags": [
+                    "sns"
+                  ]
+                }
+              },
+              "/topic/{topic_name}": {
+                "get": {
+                  "operationId": "topic_topic__topic_name__get",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "topic_name",
+                      "required": true,
+                      "schema": {
+                        "title": "Topic Name",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "message",
+                      "required": false,
+                      "schema": {
+                        "title": "Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "base64_message",
+                      "required": false,
+                      "schema": {
+                        "title": "Base64 Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Topic"
+                }
+              },
+              "/twilio": {
+                "get": {
+                  "operationId": "twilio_message_get_twilio_get",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "to",
+                      "required": true,
+                      "schema": {
+                        "title": "To",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "message",
+                      "required": false,
+                      "schema": {
+                        "title": "Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "base64_message",
+                      "required": false,
+                      "schema": {
+                        "title": "Base64 Message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Twilio Message Get",
+                  "tags": [
+                    "twilio"
+                  ]
+                },
+                "post": {
+                  "operationId": "twilio_message_post_twilio_post",
+                  "parameters": [
+                    {
+                      "in": "header",
+                      "name": "authorization",
+                      "required": false,
+                      "schema": {
+                        "title": "Authorization",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TwilioMessageRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {}
+                        }
+                      },
+                      "description": "Successful Response"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/HTTPValidationError"
+                          }
+                        }
+                      },
+                      "description": "Validation Error"
+                    }
+                  },
+                  "summary": "Twilio Message Post",
+                  "tags": [
+                    "twilio"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "http://botschaft.local"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "FastAPI"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:50.545438Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://raw.githubusercontent.com/ttymck/botschaft/master/example/openapi.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "9d0b2fa7f0dc956609925089812cd0a08296029715c8903212c3acbfd7bd49e9",
+    "source_id": "botschaft.local",
+    "source_updated": "2021-02-28T16:48:40.912Z",
+    "url": "https://api.apis.guru/v2/specs/botschaft.local/0.1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "0.1.0"
+}

@@ -1,0 +1,650 @@
+{
+  "a2ui": {},
+  "app": "nativeads-com-bf9e25b35d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "nativeads-com-bf9e25b35d",
+        "kind": "EXPOSES",
+        "to": "operation:post:/auth/default/login"
+      },
+      {
+        "from": "nativeads-com-bf9e25b35d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/publisher/reports/daily"
+      },
+      {
+        "from": "nativeads-com-bf9e25b35d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/publisher/reports/website"
+      },
+      {
+        "from": "nativeads-com-bf9e25b35d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/publisher/reports/widget"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "nativeads-com-bf9e25b35d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/auth/default/login",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /auth/default/login",
+        "path": "/auth/default/login",
+        "pointer": "#/paths/~1auth~1default~1login/post",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/publisher/reports/daily",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /publisher/reports/daily",
+        "path": "/publisher/reports/daily",
+        "pointer": "#/paths/~1publisher~1reports~1daily/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/publisher/reports/website",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /publisher/reports/website",
+        "path": "/publisher/reports/website",
+        "pointer": "#/paths/~1publisher~1reports~1website/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/publisher/reports/widget",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /publisher/reports/widget",
+        "path": "/publisher/reports/widget",
+        "pointer": "#/paths/~1publisher~1reports~1widget/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "id": "schema:authResponse",
+        "kind": "schema",
+        "name": "authResponse"
+      },
+      {
+        "id": "schema:modelError",
+        "kind": "schema",
+        "name": "modelError"
+      },
+      {
+        "id": "schema:reportsDailyItem",
+        "kind": "schema",
+        "name": "reportsDailyItem"
+      },
+      {
+        "id": "schema:reportsDailyResponse",
+        "kind": "schema",
+        "name": "reportsDailyResponse"
+      },
+      {
+        "id": "schema:reportsWebsiteItem",
+        "kind": "schema",
+        "name": "reportsWebsiteItem"
+      },
+      {
+        "id": "schema:reportsWebsiteResponse",
+        "kind": "schema",
+        "name": "reportsWebsiteResponse"
+      },
+      {
+        "id": "schema:reportsWidgetItem",
+        "kind": "schema",
+        "name": "reportsWidgetItem"
+      },
+      {
+        "id": "schema:reportsWidgetResponse",
+        "kind": "schema",
+        "name": "reportsWidgetResponse"
+      },
+      {
+        "id": "schema:totals",
+        "kind": "schema",
+        "name": "totals"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "nativeads-com-bf9e25b35d"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "definitions": {
+              "authResponse": {
+                "properties": {
+                  "success": {
+                    "type": "boolean"
+                  },
+                  "token": {
+                    "type": "string"
+                  }
+                }
+              },
+              "modelError": {
+                "properties": {
+                  "errors": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "success": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "reportsDailyItem": {
+                "properties": {
+                  "clicks": {
+                    "type": "string"
+                  },
+                  "cpc": {
+                    "type": "string"
+                  },
+                  "ctr": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "earnings": {
+                    "type": "string"
+                  },
+                  "impressions": {
+                    "type": "string"
+                  },
+                  "net_ecpm": {
+                    "type": "string"
+                  },
+                  "rpm": {
+                    "type": "string"
+                  }
+                }
+              },
+              "reportsDailyResponse": {
+                "properties": {
+                  "items": {
+                    "items": {
+                      "$ref": "#/definitions/reportsDailyItem",
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "success": {
+                    "type": "boolean"
+                  },
+                  "total_count": {
+                    "type": "integer"
+                  },
+                  "totals": {
+                    "$ref": "#/definitions/totals",
+                    "type": "object"
+                  }
+                }
+              },
+              "reportsWebsiteItem": {
+                "properties": {
+                  "clicks": {
+                    "type": "string"
+                  },
+                  "cpc": {
+                    "type": "string"
+                  },
+                  "ctr": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "earnings": {
+                    "type": "string"
+                  },
+                  "impressions": {
+                    "type": "string"
+                  },
+                  "net_ecpm": {
+                    "type": "string"
+                  },
+                  "rpm": {
+                    "type": "string"
+                  }
+                }
+              },
+              "reportsWebsiteResponse": {
+                "properties": {
+                  "items": {
+                    "items": {
+                      "$ref": "#/definitions/reportsWebsiteItem",
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "success": {
+                    "type": "boolean"
+                  },
+                  "total_count": {
+                    "type": "integer"
+                  },
+                  "totals": {
+                    "$ref": "#/definitions/totals",
+                    "type": "object"
+                  }
+                }
+              },
+              "reportsWidgetItem": {
+                "properties": {
+                  "campaign": {
+                    "description": "widget name",
+                    "type": "string"
+                  },
+                  "campaign_id": {
+                    "description": "widget id",
+                    "type": "string"
+                  },
+                  "clicks": {
+                    "type": "string"
+                  },
+                  "cpc": {
+                    "type": "string"
+                  },
+                  "ctr": {
+                    "type": "string"
+                  },
+                  "earnings": {
+                    "type": "string"
+                  },
+                  "impressions": {
+                    "type": "string"
+                  },
+                  "net_ecpm": {
+                    "type": "string"
+                  },
+                  "rpm": {
+                    "type": "string"
+                  }
+                }
+              },
+              "reportsWidgetResponse": {
+                "properties": {
+                  "items": {
+                    "items": {
+                      "$ref": "#/definitions/reportsWidgetItem",
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "success": {
+                    "type": "boolean"
+                  },
+                  "total_count": {
+                    "type": "integer"
+                  },
+                  "totals": {
+                    "$ref": "#/definitions/totals",
+                    "type": "object"
+                  }
+                }
+              },
+              "totals": {
+                "properties": {
+                  "total_clicks": {
+                    "type": "string"
+                  },
+                  "total_cpc": {
+                    "type": "string"
+                  },
+                  "total_ctr": {
+                    "type": "string"
+                  },
+                  "total_earnings": {
+                    "type": "string"
+                  },
+                  "total_impressions": {
+                    "type": "string"
+                  },
+                  "total_net_ecpm": {
+                    "type": "string"
+                  },
+                  "total_rpm": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "host": "api.nativeads.com",
+            "info": {
+              "description": "This is a Native Ads Publisher API it provides same functionality as Native Ads Publisher Account GUI.\n",
+              "title": "Native Ads Publisher API",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "marketing"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_api.nativeads.com_docs_publisher_images_nativeads-logo.png"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://api.nativeads.com/docs/publisher/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "nativeads.com"
+            },
+            "paths": {
+              "/auth/default/login": {
+                "post": {
+                  "description": "Returns Native Ads Publisher API token",
+                  "parameters": [
+                    {
+                      "description": "Native Ads Publisher username",
+                      "in": "formData",
+                      "name": "username",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Native Ads Publisher password",
+                      "in": "formData",
+                      "name": "password",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "authentication response",
+                      "schema": {
+                        "$ref": "#/definitions/authResponse"
+                      }
+                    },
+                    "400": {
+                      "description": "error message",
+                      "schema": {
+                        "$ref": "#/definitions/modelError"
+                      }
+                    }
+                  },
+                  "tags": [
+                    "auth"
+                  ]
+                }
+              },
+              "/publisher/reports/daily": {
+                "get": {
+                  "description": "Returns publisher statistics split by date",
+                  "parameters": [
+                    {
+                      "description": "Native Ads Publisher API authentication token",
+                      "in": "query",
+                      "name": "token",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "start date in format YYYY-MM-DD",
+                      "format": "date",
+                      "in": "query",
+                      "name": "startDate",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "end date in format YYYY-MM-DD",
+                      "format": "date",
+                      "in": "query",
+                      "name": "endDate",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "default": 100,
+                      "description": "maximum number of results per page",
+                      "format": "int32",
+                      "in": "query",
+                      "name": "limit",
+                      "required": true,
+                      "type": "integer"
+                    },
+                    {
+                      "default": 1,
+                      "description": "page number",
+                      "format": "int32",
+                      "in": "query",
+                      "name": "page",
+                      "required": true,
+                      "type": "integer"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "report response",
+                      "schema": {
+                        "$ref": "#/definitions/reportsDailyResponse"
+                      }
+                    },
+                    "400": {
+                      "description": "error message",
+                      "schema": {
+                        "$ref": "#/definitions/modelError"
+                      }
+                    }
+                  },
+                  "tags": [
+                    "reports"
+                  ]
+                }
+              },
+              "/publisher/reports/website": {
+                "get": {
+                  "description": "Returns publisher statistics split by website",
+                  "parameters": [
+                    {
+                      "description": "Native Ads Publisher API authentication token",
+                      "in": "query",
+                      "name": "token",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "start date in format YYYY-MM-DD",
+                      "format": "date",
+                      "in": "query",
+                      "name": "startDate",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "end date in format YYYY-MM-DD",
+                      "format": "date",
+                      "in": "query",
+                      "name": "endDate",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "default": 100,
+                      "description": "maximum number of results per page",
+                      "format": "int32",
+                      "in": "query",
+                      "name": "limit",
+                      "required": true,
+                      "type": "integer"
+                    },
+                    {
+                      "default": 1,
+                      "description": "page number",
+                      "format": "int32",
+                      "in": "query",
+                      "name": "page",
+                      "required": true,
+                      "type": "integer"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "report response",
+                      "schema": {
+                        "$ref": "#/definitions/reportsWebsiteResponse"
+                      }
+                    },
+                    "400": {
+                      "description": "authentication error",
+                      "schema": {
+                        "$ref": "#/definitions/modelError"
+                      }
+                    }
+                  },
+                  "tags": [
+                    "reports"
+                  ]
+                }
+              },
+              "/publisher/reports/widget": {
+                "get": {
+                  "description": "Returns publisher statistics split by widget",
+                  "parameters": [
+                    {
+                      "description": "Native Ads Publisher API authentication token",
+                      "in": "query",
+                      "name": "token",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "start date in format YYYY-MM-DD",
+                      "format": "date",
+                      "in": "query",
+                      "name": "startDate",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "end date in format YYYY-MM-DD",
+                      "format": "date",
+                      "in": "query",
+                      "name": "endDate",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "default": 100,
+                      "description": "maximum number of results per page",
+                      "format": "int32",
+                      "in": "query",
+                      "name": "limit",
+                      "required": true,
+                      "type": "integer"
+                    },
+                    {
+                      "default": 1,
+                      "description": "page number",
+                      "format": "int32",
+                      "in": "query",
+                      "name": "page",
+                      "required": true,
+                      "type": "integer"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "report response",
+                      "schema": {
+                        "$ref": "#/definitions/reportsWidgetResponse"
+                      }
+                    },
+                    "400": {
+                      "description": "authentication error",
+                      "schema": {
+                        "$ref": "#/definitions/modelError"
+                      }
+                    }
+                  },
+                  "tags": [
+                    "reports"
+                  ]
+                }
+              }
+            },
+            "produces": [
+              "application/json"
+            ],
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Native Ads Publisher API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:56.771166Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://api.nativeads.com/docs/publisher/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "45f54bd223395e6ac58aad931c58fd118ac0aa8114c43fc4cb80cff6da0e0e5f",
+    "source_id": "nativeads.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/nativeads.com/1.0.0/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

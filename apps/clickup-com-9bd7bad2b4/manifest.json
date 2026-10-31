@@ -1,0 +1,255 @@
+{
+  "a2ui": {},
+  "app": "clickup-com-9bd7bad2b4",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "clickup-com-9bd7bad2b4",
+        "kind": "EXPOSES",
+        "to": "operation:get:/questions"
+      },
+      {
+        "from": "clickup-com-9bd7bad2b4",
+        "kind": "EXPOSES",
+        "to": "operation:post:/questions"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "clickup-com-9bd7bad2b4",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/questions",
+        "kind": "operation",
+        "method": "get",
+        "name": "List All Questions",
+        "path": "/questions",
+        "pointer": "#/paths/~1questions/get",
+        "security": [],
+        "summary": "List All Questions"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/questions",
+        "kind": "operation",
+        "method": "post",
+        "name": "Create a New Question",
+        "path": "/questions",
+        "pointer": "#/paths/~1questions/post",
+        "security": [],
+        "summary": "Create a New Question"
+      },
+      {
+        "id": "schema:Questions_Collection",
+        "kind": "schema",
+        "name": "Questions_Collection"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "clickup-com-9bd7bad2b4"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Questions_Collection": {}
+              }
+            },
+            "info": {
+              "description": "Polls is a simple API allowing consumers to view polls and vote in them.",
+              "title": "clickup20",
+              "version": "1.0.0",
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_clickup.com_favicons_apple-touch-icon.png"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://jsapi.apiary.io/apis/clickup20.source",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "clickup.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/questions": {
+                "get": {
+                  "description": "",
+                  "operationId": "List All Questions",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "examples": {
+                            "response": {
+                              "value": [
+                                {
+                                  "choices": [
+                                    {
+                                      "choice": "Swift",
+                                      "votes": 2048
+                                    },
+                                    {
+                                      "choice": "Python",
+                                      "votes": 1024
+                                    },
+                                    {
+                                      "choice": "Objective-C",
+                                      "votes": 512
+                                    },
+                                    {
+                                      "choice": "Ruby",
+                                      "votes": 256
+                                    }
+                                  ],
+                                  "published_at": "2015-08-05T08:40:51.620Z",
+                                  "question": "Favourite programming language?"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "description": "OK",
+                      "headers": {}
+                    }
+                  },
+                  "summary": "List All Questions",
+                  "tags": []
+                },
+                "post": {
+                  "description": "You may create your own question using this action. It takes a JSON\nobject containing a question and a collection of answers in the\nform of choices.",
+                  "operationId": "Create a New Question",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "example": {
+                            "choices": [
+                              "Swift",
+                              "Python",
+                              "Objective-C",
+                              "Ruby"
+                            ],
+                            "question": "Favourite programming language?"
+                          },
+                          "properties": {
+                            "choices": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            "question": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      }
+                    }
+                  },
+                  "responses": {
+                    "201": {
+                      "content": {
+                        "application/json": {
+                          "examples": {
+                            "response": {
+                              "value": {
+                                "choices": [
+                                  {
+                                    "choice": "Swift",
+                                    "votes": 0
+                                  },
+                                  {
+                                    "choice": "Python",
+                                    "votes": 0
+                                  },
+                                  {
+                                    "choice": "Objective-C",
+                                    "votes": 0
+                                  },
+                                  {
+                                    "choice": "Ruby",
+                                    "votes": 0
+                                  }
+                                ],
+                                "published_at": "2015-08-05T08:40:51.620Z",
+                                "question": "Favourite programming language?"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "description": "Created",
+                      "headers": {
+                        "Location": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "summary": "Create a New Question",
+                  "tags": []
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://polls.apiblueprint.org"
+              }
+            ],
+            "tags": []
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "clickup20"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:39.053021Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://jsapi.apiary.io/apis/clickup20.source",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "62e8866b8bf9147759442557b8457409582dad98967ee1377a8c400334d7156a",
+    "source_id": "clickup.com",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/clickup.com/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}
