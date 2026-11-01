@@ -554,6 +554,9 @@ def check_app(app_id, payload, listing):
     if listing.get("catalog") == "drafts":
         _need(e, isinstance(payload.get("setup_verification"), str), "drafts need `setup_verification`")
         _need(e, payload.get("readiness") in DRAFT_READINESS, f"drafts need `readiness` {' or '.join(DRAFT_READINESS)}")
+    if listing.get("catalog") in CATALOGS and isinstance(m, dict):
+        status = "draft" if listing["catalog"] == "drafts" else "published"
+        _need(e, (m.get("spec") or {}).get("status") == status, f"{listing['catalog']} need `manifest.spec.status` \"{status}\"")
     if listing.get("catalog") == "published":
         _need(e, payload.get("readiness") not in NOT_CONNECTABLE, "published apps cannot have readiness discovered/preview_only")
         setup = payload.get("setup") or {}
