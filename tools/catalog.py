@@ -426,8 +426,9 @@ def _sorted_graph(graph):
 
 
 def index_entry(app_id, payload, listing, digest):
+    # Categories stay out of index entries: the registry server and Ragentic validate
+    # entries against a fixed Ash schema that rejects unknown fields.
     entry = {
-        "categories": listing["categories"],
         "digest": digest,
         "id": app_id,
         "protocol": payload["protocol"],
@@ -1067,7 +1068,9 @@ def cmd_import(args):
     signed, _ = signed_state()
     for app_id, s in signed.items():
         entry = s["entry"]
-        listing = {"title": entry["title"], "catalog": s["catalog"], "categories": entry.get("categories", [])}
+        current = APPS / app_id / "MANIFEST.md"
+        kept = parse_front_matter(current.read_text())[0].get("categories", []) if current.exists() else []
+        listing = {"title": entry["title"], "catalog": s["catalog"], "categories": kept}
         if entry.get("logo"):
             listing["logo"] = entry["logo"]
         write_app(app_id, s["payload"], listing, signed)
