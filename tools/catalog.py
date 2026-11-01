@@ -39,6 +39,8 @@ ID_RE = re.compile(r"\A[a-z0-9][a-z0-9._-]{0,127}\Z")
 PROTOCOLS = ("openapi", "graphql", "asyncapi")
 METHODS = ("get", "put", "post", "delete", "options", "head", "patch", "trace")
 NOT_CONNECTABLE = ("discovered", "preview_only")
+# The registry server rejects the whole browse index if any entry has another readiness.
+DRAFT_READINESS = ("discovered", "source_reviewed")
 # Catalog name in MANIFEST.md -> (index file, bundle directory, index kind)
 CATALOGS = {
     "published": ("index.json", "bundles", "index"),
@@ -551,6 +553,7 @@ def check_app(app_id, payload, listing):
 
     if listing.get("catalog") == "drafts":
         _need(e, isinstance(payload.get("setup_verification"), str), "drafts need `setup_verification`")
+        _need(e, payload.get("readiness") in DRAFT_READINESS, f"drafts need `readiness` {' or '.join(DRAFT_READINESS)}")
     if listing.get("catalog") == "published":
         _need(e, payload.get("readiness") not in NOT_CONNECTABLE, "published apps cannot have readiness discovered/preview_only")
         setup = payload.get("setup") or {}
