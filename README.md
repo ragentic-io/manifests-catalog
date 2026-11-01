@@ -19,6 +19,7 @@ See [CATALOG.md](CATALOG.md) for every application and its status.
 | `browse-index.json`, `browse-bundles/` | Signed catalog of **draft** applications, which can be browsed but not connected | Sign workflow |
 | `sources.json` | Signed SHA-256 list of every plain-text file under `apps/` plus `CATALOG.md` | Sign workflow |
 | `categories.json` | The categories applications are labelled with, so people can filter the catalog | Maintainers |
+| `deploy/` | The CronJob that deploys the newest signed catalog on `main` to manifests.ragentic.io, after checking it with the server's own loader | Maintainers |
 | `registry.json` | Registry identity, pinned public root and signature lifetimes | Maintainers |
 | `tools/catalog.py` | Scaffolding, validation, docs and signing | Maintainers |
 
