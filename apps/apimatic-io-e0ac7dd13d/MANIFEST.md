@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apimatic.io_img_theme_Convertro
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `e01f17746b3d78af5f3efb57e17223c1b6075c006fd17ca0773770e242f516da` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

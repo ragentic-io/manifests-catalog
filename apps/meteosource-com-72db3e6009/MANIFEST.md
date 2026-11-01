@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_meteosource.com_static_img_appl
 | | |
 | --- | --- |
 | Categories | Maps & location |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `666efebb1470307dabe4954e6ad6eb2b7dbe516745b7152515cd8db800c5601d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

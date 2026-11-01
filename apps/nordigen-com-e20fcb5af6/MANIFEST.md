@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.nordigen.com_static_asse
 | | |
 | --- | --- |
 | Categories | Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `ac8c087fbcb1a8fbdddc2271d570c388bab2985bbdff4230dc236fa442e373ff` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_portfoliooptimizer.io_assets_im
 | | |
 | --- | --- |
 | Categories | Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `c6501790d7ae73a13b9424de74953def7d918230a4952c403c0ebddff965de02` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload_wikimedia_org_wikipedia_
 | | |
 | --- | --- |
 | Categories | Security & identity |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `216d93d7a6f8b01dc5a1305655fd12ffd6fb9ed13772f7e9285c2ecddec1d3a3` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_clickup.com_favicons_apple-touc
 | | |
 | --- | --- |
 | Categories | Productivity & collaboration |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `0420119dcef475b6f934325d78a8f46696db221462c9be1b619c13849232b348` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

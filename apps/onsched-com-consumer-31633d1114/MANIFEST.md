@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_onsched_com_img_apple-touch-ico
 | | |
 | --- | --- |
 | Categories | Productivity & collaboration |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `68d9dc78ade73eae494f924b5bc9583880f11be5338b3e36ee7fe4b00f333fe0` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

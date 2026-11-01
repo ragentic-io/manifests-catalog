@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.vectorlogo.zone_logos_getpo
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `31701a30ac95e355db102590bda01fe1aad1f45eb99cc77254ed842c622077c3` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www_bigredcloud_com_wp-content_
 | | |
 | --- | --- |
 | Categories | Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `f60a424b051b1f1aeaf6c914402da1851588a1a067c15a27a473dd15caea5f4d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

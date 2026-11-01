@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.influxdata.com_wp-content_u
 | | |
 | --- | --- |
 | Categories | Data & analytics, IoT & smart home |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `6a2bc9a99c2e103e99730da6ab90156d9a76a925abe8c19527a61381222fb60d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

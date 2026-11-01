@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i.imgur.com_9ojm4rP.jpeg"
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `94db6256cf48db9d6aa9c150da9704da0bc685f6374e2ad15a2f47e9efaf9209` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

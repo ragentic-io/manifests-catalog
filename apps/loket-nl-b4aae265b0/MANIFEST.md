@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developer.loket-acc.nl_logo.png
 | | |
 | --- | --- |
 | Categories | Business & CRM, Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `dd79367d8fcc21d5f888f2ac51e00777810e4a3b2aeb04907435f7087f2c5c8f` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

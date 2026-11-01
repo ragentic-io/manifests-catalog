@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_darkl
 | | |
 | --- | --- |
 | Categories | Software development, Cloud & infrastructure |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `091790f9b73b2411ffd86f70efa8f5e13ebe16723c9cfff2ca9a4d95d7a4c107` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

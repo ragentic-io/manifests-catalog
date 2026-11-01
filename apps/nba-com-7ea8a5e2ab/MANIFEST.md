@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload.wikimedia.org_wikipedia_
 | | |
 | --- | --- |
 | Categories | Media & entertainment, Open data & government |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `78b3533a9070c074eab4a1c3a19c9e66db973a54625f73c3709dddf3a102f2aa` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

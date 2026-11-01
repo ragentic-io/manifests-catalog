@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Atlassian_profile_i
 | | |
 | --- | --- |
 | Categories | Productivity & collaboration, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `9556e48578721d2ec5ae9d12099d96f45d5b74cefad7d499a40f39aa6e397bb3` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

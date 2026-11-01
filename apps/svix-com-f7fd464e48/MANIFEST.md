@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.svix.com_static_img_brand-p
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `fa53d3c554125aefbab2f02952c696c0570e24bfad3eb807abdb9b98a02ff8be` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

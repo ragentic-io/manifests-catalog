@@ -13,7 +13,7 @@ logo: "https://www.bigcommerce.com/mm/icons/favicon-96x96.png"
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `33f40ba42017c575800d4154b23976427b2debb0838090f2420a84a9b0311fbf` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://store-example.mybigcommerce.com/graphql` |
 | Credential | static_bearer |
 | Connection test | `https://store-example.mybigcommerce.com/graphql` |

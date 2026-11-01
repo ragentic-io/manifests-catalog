@@ -12,7 +12,7 @@ categories: ["ecommerce"]
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `87548d44cd4217099f92094c244abe1b795e2e2530783f2e8f07867ecbe118fe` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

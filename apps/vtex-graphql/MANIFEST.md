@@ -13,7 +13,7 @@ logo: "https://www.vtex.com/favicon.ico"
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `0b8d8c14af4d1c8d800e438845e71a1bc7ac060068c74a134968c95f8c125edb` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

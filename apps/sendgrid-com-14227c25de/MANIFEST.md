@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 | | |
 | --- | --- |
 | Categories | Communication, Marketing |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `ad6a093a5e14774a239f35d4cd95ff4a680bc3236ed7387923c10cbcc1ffbeaa` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

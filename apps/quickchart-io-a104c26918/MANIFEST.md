@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_quickchart.io_android-chrome-51
 | | |
 | --- | --- |
 | Categories | Software development, Data & analytics |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `a2f683eb76f82102fc2c395d6472af6f7c623f5d68c401b349bab8530ebe7669` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

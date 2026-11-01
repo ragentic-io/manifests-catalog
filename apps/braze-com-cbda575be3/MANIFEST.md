@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.braze.com_assets_favicon_ap
 | | |
 | --- | --- |
 | Categories | Marketing |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `5a8af9695dad80fefbe4da4019182752ca85336ac3a052bf39d0e44f9aca93c6` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

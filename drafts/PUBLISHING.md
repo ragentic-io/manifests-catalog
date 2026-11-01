@@ -40,7 +40,7 @@ root, and signs `base + 1`.
 
 From the ragentic checkout, with the root private key in a file that never leaves the
 trusted machine (base64url, no padding, 32 bytes; the script refuses any key whose
-public half is not the pinned root `52AAWwWestgMkDxcvhiaXmMqKKFypiBRMToJAIcPzwg`):
+public half is not the pinned root `wFvL-3yCuZX52nrDbSxvTgeb5s4KFp6aS2W8JikogGs`):
 
 ```sh
 CATALOG=../manifests-catalog                      # this repository, on the reviewed commit

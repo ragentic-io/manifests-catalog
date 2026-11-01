@@ -13,7 +13,7 @@ logo: "https://github.com/favicon.ico"
 | | |
 | --- | --- |
 | Categories | Productivity & collaboration, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `fa8eb2c3c78ee35655d43c8e8e25b18aed11b9fd6a354c970d5f754541a2ae1d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

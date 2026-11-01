@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.botify.com_images_logos_
 | | |
 | --- | --- |
 | Categories | Data & analytics, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `bade893910edd1732bce8ce8e85664860c8a45df418f25320c49f776cdb8ca5a` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

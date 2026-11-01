@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 | | |
 | --- | --- |
 | Categories | Open data & government |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `1bb1a9b2ca7d64f64a36b84a37db5e045a8bf31cbcaef42736ae352a6b81db2d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

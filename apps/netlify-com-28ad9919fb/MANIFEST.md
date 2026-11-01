@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Netlify_profile_ima
 | | |
 | --- | --- |
 | Categories | Cloud & infrastructure, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `5342c64f9a0a07f01c97fe5ff71f1865f9954af6283076ae3eec22e99f3d6852` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.rudder.io_wp-content_upload
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `43b886617d9d821c43b596664915758eec562e8c59ac4a28e9c88efd7ab44eec` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

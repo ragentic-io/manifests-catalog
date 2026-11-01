@@ -14,7 +14,7 @@ Connect to Figshare with an independent Ragentic integration. Not affiliated wit
 | | |
 | --- | --- |
 | Categories | Open data & government, Health & science |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `06ff7bf13323fe8da37fc4174fa4086196cb8e54ebbc0fcda68496716f230389` in `bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://api.figshare.com/v2` |
 | Credential | api_key_header (`Authorization` 'token') |
 | Connection test | GET `https://api.figshare.com/v2/account` |

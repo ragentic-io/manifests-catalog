@@ -14,7 +14,7 @@ Independent connector for Gitea.com. Not affiliated with or endorsed by Gitea.
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `e4ddf38829efbcf0ad97bbc36fc5a6f7878762b22294230fe23a23cf61bca672` in `bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://gitea.com/api/v1` |
 | Credential | api_key_header (`Authorization` 'token') |
 | Connection test | GET `https://gitea.com/api/v1/user` |

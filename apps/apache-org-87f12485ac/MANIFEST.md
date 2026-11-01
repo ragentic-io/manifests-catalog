@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_TheASF_profile_imag
 | | |
 | --- | --- |
 | Categories | Data & analytics, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `1a989cdf53eac3949c373aa4704ef0f279738f773a487fc29e397c2efb2147b4` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

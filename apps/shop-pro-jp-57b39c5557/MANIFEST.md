@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static-www.shop-pro.jp_img_cms_
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `cdad2d145a7efc5345db1453f0fb1dc1514a56ebdf65e5db33ea1df75f5b471c` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

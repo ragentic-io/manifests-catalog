@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_openstates.org_static_images_fa
 | | |
 | --- | --- |
 | Categories | Open data & government |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `053474915bb873f6c12151775f7c93e1a6a19f5ac82e8d1c27fd38260aff479b` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://app.opslevel.com/favicon.ico"
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `127f024694f814d434115ccd63388711576a7b373b8ada6ce8b1f351f492b461` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
