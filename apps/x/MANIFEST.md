@@ -7,14 +7,14 @@ categories: ["social-media", "marketing"]
 
 # X
 
-`x` · openapi · version `2.173` · **drafts** · readiness `definition_imported_unsigned_draft`
+`x` · openapi · version `2.173` · **drafts** · readiness `discovered`
 
 Connect to the X API v2 with an independent Ragentic integration using X's official OpenAPI definition. Not affiliated with or endorsed by X.
 
 | | |
 | --- | --- |
 | Categories | Social media, Marketing |
-| Signed bundle | `f37d639def25868123442f6c3c82d61c58c7324543c88f212bbc3123034da9c4` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
+| Signed bundle | `697a00523fc269f93d7b8bff9c8f506906241867de919653fb72f75c9a9657e9` in `browse-bundles/`, expires 2027-01-30 18:08 UTC |
 | Endpoint | `https://api.x.com` |
 | Credential | oauth2_authorization_code |
 | Connection test | GET `https://api.x.com/2/users/me` |

@@ -39,6 +39,8 @@ ID_RE = re.compile(r"\A[a-z0-9][a-z0-9._-]{0,127}\Z")
 PROTOCOLS = ("openapi", "graphql", "asyncapi")
 METHODS = ("get", "put", "post", "delete", "options", "head", "patch", "trace")
 NOT_CONNECTABLE = ("discovered", "preview_only")
+# The registry server rejects the whole browse index if any entry has another readiness.
+DRAFT_READINESS = ("discovered", "source_reviewed")
 # Catalog name in MANIFEST.md -> (index file, bundle directory, index kind)
 CATALOGS = {
     "published": ("index.json", "bundles", "index"),
@@ -426,8 +428,9 @@ def _sorted_graph(graph):
 
 
 def index_entry(app_id, payload, listing, digest):
+    # Categories stay out of index entries: the registry server and Ragentic validate
+    # entries against a fixed Ash schema that rejects unknown fields.
     entry = {
-        "categories": listing["categories"],
         "digest": digest,
         "id": app_id,
         "protocol": payload["protocol"],
@@ -550,6 +553,10 @@ def check_app(app_id, payload, listing):
 
     if listing.get("catalog") == "drafts":
         _need(e, isinstance(payload.get("setup_verification"), str), "drafts need `setup_verification`")
+        _need(e, payload.get("readiness") in DRAFT_READINESS, f"drafts need `readiness` {' or '.join(DRAFT_READINESS)}")
+    if listing.get("catalog") in CATALOGS and isinstance(m, dict):
+        status = "draft" if listing["catalog"] == "drafts" else "published"
+        _need(e, (m.get("spec") or {}).get("status") == status, f"{listing['catalog']} need `manifest.spec.status` \"{status}\"")
     if listing.get("catalog") == "published":
         _need(e, payload.get("readiness") not in NOT_CONNECTABLE, "published apps cannot have readiness discovered/preview_only")
         setup = payload.get("setup") or {}
@@ -1067,7 +1074,9 @@ def cmd_import(args):
     signed, _ = signed_state()
     for app_id, s in signed.items():
         entry = s["entry"]
-        listing = {"title": entry["title"], "catalog": s["catalog"], "categories": entry.get("categories", [])}
+        current = APPS / app_id / "MANIFEST.md"
+        kept = parse_front_matter(current.read_text())[0].get("categories", []) if current.exists() else []
+        listing = {"title": entry["title"], "catalog": s["catalog"], "categories": kept}
         if entry.get("logo"):
             listing["logo"] = entry["logo"]
         write_app(app_id, s["payload"], listing, signed)

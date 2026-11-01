@@ -231,7 +231,7 @@ An application can have up to four categories. They are defined in [categories.j
 | [JSON storage](apps/extendsclass-com-json-storage-9ebbe90fb0/MANIFEST.md) | `extendsclass-com-json-storage-9ebbe90fb0` | software-development | openapi | 0.1 | 5 | `discovered` | signed |
 | [Extpose](apps/extpose-com-45ea8d0ff9/MANIFEST.md) | `extpose-com-45ea8d0ff9` | software-development | openapi | 1.0.0 | 1 | `discovered` | signed |
 | [Exude API Service](apps/exude-api-herokuapp-com-dc28fe10a9/MANIFEST.md) | `exude-api-herokuapp-com-dc28fe10a9` | ai | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Facebook Pages](apps/facebook/MANIFEST.md) | `facebook` | social-media, marketing | openapi | v26.0 | 4 | `hand_built_definition_unsigned_draft_page_token_missing` | signed |
+| [Facebook Pages](apps/facebook/MANIFEST.md) | `facebook` | social-media, marketing | openapi | v26.0 | 4 | `discovered` | signed |
 | [Facial Recognition Reverse Image Face Search API](apps/facecheck-id-3199066b65/MANIFEST.md) | `facecheck-id-3199066b65` | security, ai | openapi | v1.02 | 4 | `discovered` | signed |
 | [Api Documentation](apps/faceidentity-beta-azurewebsites-net-06d671ca37/MANIFEST.md) | `faceidentity-beta-azurewebsites-net-06d671ca37` | security | openapi | 1.0 | 2 | `discovered` | signed |
 | [Faretrotter Travel API](apps/faretrotter-com-73ce579405/MANIFEST.md) | `faretrotter-com-73ce579405` | travel | openapi | 2.0 | 2 | `discovered` | signed |
@@ -338,7 +338,7 @@ An application can have up to four categories. They are defined in [categories.j
 | [LaunchDarkly REST API](apps/launchdarkly-com-4d65c261b6/MANIFEST.md) | `launchdarkly-com-4d65c261b6` | software-development | openapi | 5.3.0 | 105 | `discovered` | signed |
 | [LGTM API specification](apps/lgtm-com-080c155f0f/MANIFEST.md) | `lgtm-com-080c155f0f` | security, software-development | openapi | v1.0 | 29 | `discovered` | signed |
 | [LibreTranslate](apps/libretranslate-local-21d0e2362f/MANIFEST.md) | `libretranslate-local-21d0e2362f` | ai | openapi | 1.3.9 | 6 | `discovered` | signed |
-| [LinkedIn](apps/linkedin/MANIFEST.md) | `linkedin` | social-media, marketing | openapi | 202610 | 3 | `hand_built_definition_unsigned_draft` | signed |
+| [LinkedIn](apps/linkedin/MANIFEST.md) | `linkedin` | social-media, marketing | openapi | 202610 | 3 | `discovered` | signed |
 | [Linode API](apps/linode-com-8d975483fd/MANIFEST.md) | `linode-com-8d975483fd` | cloud | openapi | 4.145.0 | 350 | `discovered` | signed |
 | [LinQR](apps/linqr-app-a03ea78590/MANIFEST.md) | `linqr-app-a03ea78590` | marketing | openapi | 2.0 | 14 | `discovered` | signed |
 | [Reimbursements API](apps/linuxfoundation-org-reimbursement-9815e25777/MANIFEST.md) | `linuxfoundation-org-reimbursement-9815e25777` | finance | openapi | 1.0 | 5 | `discovered` | signed |
@@ -571,7 +571,7 @@ An application can have up to four categories. They are defined in [categories.j
 | [WireMock](apps/wiremock-org-admin-ae75783bb4/MANIFEST.md) | `wiremock-org-admin-ae75783bb4` | software-development | openapi | 2.35.0 | 33 | `discovered` | signed |
 | [Wolfram](apps/wolframalpha-com-9dcbc6dc41/MANIFEST.md) | `wolframalpha-com-9dcbc6dc41` | ai | openapi | v0.1 | 2 | `discovered` | signed |
 | [Wordnik](apps/wordnik-com-8111655317/MANIFEST.md) | `wordnik-com-8111655317` | ai | openapi | 4.0 | 16 | `discovered` | signed |
-| [X](apps/x/MANIFEST.md) | `x` | social-media, marketing | openapi | 2.173 | 257 | `definition_imported_unsigned_draft` | signed |
+| [X](apps/x/MANIFEST.md) | `x` | social-media, marketing | openapi | 2.173 | 257 | `discovered` | signed |
 | [XTRF Home Portal API](apps/xtrf-eu-95e6c80a3b/MANIFEST.md) | `xtrf-eu-95e6c80a3b` | business, ai | openapi | 2.0 | 284 | `discovered` | signed |
 | [YNAB API Endpoints](apps/youneedabudget-com-f2aa706446/MANIFEST.md) | `youneedabudget-com-f2aa706446` | finance | openapi | 1.0.0 | 31 | `discovered` | signed |
 | [Zapier Natural Language Actions (NLA) API - Beta](apps/zapier-com-nla-9baaf2d99e/MANIFEST.md) | `zapier-com-nla-9baaf2d99e` | productivity, ai | openapi | 1.0.0 | 4 | `discovered` | signed |

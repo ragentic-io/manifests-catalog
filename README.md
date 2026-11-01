@@ -103,8 +103,9 @@ provider.
    ```
 
    New services always start in `drafts`. `categories` lists one to four ids from
-   [categories.json](categories.json), most relevant first; they are signed into the
-   index entry so the catalog can be filtered by them. `logo` is optional and must be
+   [categories.json](categories.json), most relevant first. They appear in `MANIFEST.md` and
+   `CATALOG.md` and are covered by `sources.json`, but are not yet part of index
+   entries, whose schema the registry server and Ragentic fix. `logo` is optional and must be
    `https`.
 
 6. **Regenerate the docs and validate:**

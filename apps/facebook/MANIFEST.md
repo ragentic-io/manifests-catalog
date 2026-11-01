@@ -7,14 +7,14 @@ categories: ["social-media", "marketing"]
 
 # Facebook Pages
 
-`facebook` · openapi · version `v26.0` · **drafts** · readiness `hand_built_definition_unsigned_draft_page_token_missing`
+`facebook` · openapi · version `v26.0` · **drafts** · readiness `discovered`
 
 Connect Facebook Pages through the Meta Graph API v26.0 with an independent Ragentic integration: list your Pages; Page feed and publishing need Page tokens (see setup). Not affiliated with or endorsed by Facebook.
 
 | | |
 | --- | --- |
 | Categories | Social media, Marketing |
-| Signed bundle | `4b4d729301b1f059ce00371ad494d936790a3fce05f6e7d7f09cb8e7f72f8f70` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
+| Signed bundle | `deae02de7f5385c4bf2a564214b149ffe14e5cf056cc4880c7cd28b2f33b388f` in `browse-bundles/`, expires 2027-01-30 18:08 UTC |
 | Endpoint | `https://graph.facebook.com` |
 | Credential | oauth2_authorization_code |
 | Connection test | GET `https://graph.facebook.com/v26.0/me` |

@@ -7,14 +7,14 @@ categories: ["social-media", "marketing"]
 
 # LinkedIn
 
-`linkedin` · openapi · version `202610` · **drafts** · readiness `hand_built_definition_unsigned_draft`
+`linkedin` · openapi · version `202610` · **drafts** · readiness `discovered`
 
 Connect a LinkedIn member account with an independent Ragentic integration: sign-in profile and member posts (self-serve products only). Not affiliated with or endorsed by LinkedIn.
 
 | | |
 | --- | --- |
 | Categories | Social media, Marketing |
-| Signed bundle | `c4db69be7fa89ebf03a2b92ca2e5cf0500951f8094a37d60a825384bed301369` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
+| Signed bundle | `26b1797e9a6244cc89ca137e83c4a52cb0fb57fec6bd3f757d63ee8a600d4388` in `browse-bundles/`, expires 2027-01-30 18:08 UTC |
 | Endpoint | `https://api.linkedin.com` |
 | Credential | oauth2_authorization_code |
 | Connection test | GET `https://api.linkedin.com/v2/userinfo` |
