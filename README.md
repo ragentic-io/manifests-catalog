@@ -13,11 +13,12 @@ See [CATALOG.md](CATALOG.md) for every application and its status.
 | Path | What it is | Who writes it |
 | --- | --- | --- |
 | `apps/<id>/manifest.json` | The application's bundle payload, pretty-printed: the connector template, the embedded API definition, its operation graph, provenance, rights and setup | Contributors |
-| `apps/<id>/MANIFEST.md` | Front matter with the catalog listing (`title`, `catalog`, optional `logo`), then a generated human-readable summary: endpoint, credential, source, license, review checklist and every operation | Contributors (front matter); `tools/catalog.py docs` (body) |
+| `apps/<id>/MANIFEST.md` | Front matter with the catalog listing (`title`, `catalog`, `categories`, optional `logo`), then a generated human-readable summary: endpoint, credential, source, license, review checklist and every operation | Contributors (front matter); `tools/catalog.py docs` (body) |
 | `CATALOG.md` | Generated table of every application | `tools/catalog.py docs` |
 | `index.json`, `bundles/` | Signed catalog of **published** applications, which people can connect | Sign workflow |
 | `browse-index.json`, `browse-bundles/` | Signed catalog of **draft** applications, which can be browsed but not connected | Sign workflow |
 | `sources.json` | Signed SHA-256 list of every plain-text file under `apps/` plus `CATALOG.md` | Sign workflow |
+| `categories.json` | The categories applications are labelled with, so people can filter the catalog | Maintainers |
 | `registry.json` | Registry identity, pinned public root and signature lifetimes | Maintainers |
 | `tools/catalog.py` | Scaffolding, validation, docs and signing | Maintainers |
 
@@ -70,6 +71,7 @@ provider.
    python tools/catalog.py new acme-openapi \
      --openapi https://developer.acme.com/openapi.json \
      --title "Acme" \
+     --category finance --category ecommerce \
      --credential api_key_header --header Authorization --prefix Bearer
    ```
 
@@ -95,11 +97,15 @@ provider.
    ---
    title: "Acme"
    catalog: "drafts"
+   categories: ["finance", "ecommerce"]
    logo: "https://acme.com/favicon.svg"
    ---
    ```
 
-   New services always start in `drafts`. `logo` is optional and must be `https`.
+   New services always start in `drafts`. `categories` lists one to four ids from
+   [categories.json](categories.json), most relevant first; they are signed into the
+   index entry so the catalog can be filtered by them. `logo` is optional and must be
+   `https`.
 
 6. **Regenerate the docs and validate:**
 
@@ -153,7 +159,7 @@ request how you tested the connection.
   - It embeds its definition (an OpenAPI document, or GraphQL SDL).
   - Its graph edges join known nodes.
   - OpenAPI graphs match the definition.
-- **Listing:** the title, catalog and logo are valid, and published applications meet
+- **Listing:** the title, catalog, categories and logo are valid, and published applications meet
   the promotion requirements.
 - **Safety:** no credential-like strings in `setup`, `a2ui` or the base headers, and
   every payload is under 16 MiB.
