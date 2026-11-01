@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.targetvalidation.org_imgs_l
 | | |
 | --- | --- |
 | Categories | Open data & government |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `5a0a43a9ad3c0a0e473868f2a0aa8f868a2ce0ac0db771a42f1ff94934da31c9` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

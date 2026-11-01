@@ -14,7 +14,7 @@ Read-only Clerk Backend API operations for one Clerk application instance. Ragen
 | | |
 | --- | --- |
 | Categories | Security & identity, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `1a222fb56fa7916c070a997688d4572471c4489b388dcf23bdc15a703da20260` in `bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://api.clerk.com/v1` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.clerk.com/v1/instance` |

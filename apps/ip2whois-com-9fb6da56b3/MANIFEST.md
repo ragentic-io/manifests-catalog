@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 | | |
 | --- | --- |
 | Categories | Software development, Security & identity |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `35328126ffc97350ca0651bc5eb5b2a840125c2095b3fa2cd7fe40c1586e6685` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.shipengine.com_wp-content_t
 | | |
 | --- | --- |
 | Categories | E-commerce, Travel & transport |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `5567543d782ef32ecbf6548a7320439da643779f52c8b8e0047ed9040c2f364e` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

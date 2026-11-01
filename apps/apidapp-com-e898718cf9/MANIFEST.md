@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i2_wp_com_apidapp_com_wp-conten
 | | |
 | --- | --- |
 | Categories | Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `fe8da9676803ae2d91d0bd16a4b336938a4b49ab375ff84a0e07c771d0331a95` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

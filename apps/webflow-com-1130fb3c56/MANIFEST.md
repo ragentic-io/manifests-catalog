@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets-global.website-files.com
 | | |
 | --- | --- |
 | Categories | AI & language, Productivity & collaboration |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `d7cb2fabe6c16d60d16f4e21b3d0e1b7c96f6809ab64d658f31ce4d343db96ed` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

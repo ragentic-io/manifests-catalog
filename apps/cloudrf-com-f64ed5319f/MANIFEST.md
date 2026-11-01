@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloudrf.com_wp-content_uploads_
 | | |
 | --- | --- |
 | Categories | Communication, Maps & location |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `985147fed52f7a6073d1ce069dbeb6e07a0278fce8bfadbe8068f22e01b7a6c6` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

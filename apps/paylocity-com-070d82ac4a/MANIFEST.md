@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_paylocity_profile_i
 | | |
 | --- | --- |
 | Categories | Business & CRM, Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `5a18d0a0621f4612f6cbd0f8047b07b9ffd6707ff33e80e1e80f8ae36f1fe146` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud.githubusercontent.com_ass
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `29a966448bfb01173e6f53a7823326ea443125c0f59d57c4792df61a2566335e` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

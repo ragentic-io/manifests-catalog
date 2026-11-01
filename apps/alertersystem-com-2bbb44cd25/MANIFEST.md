@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_alertersystem.com_build_images_
 | | |
 | --- | --- |
 | Categories | Communication |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `51880147c840637c1cdfbace9a2f49a0cf656fe14c2a7482facee0465e26fdcc` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

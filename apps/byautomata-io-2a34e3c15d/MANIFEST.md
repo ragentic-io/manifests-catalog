@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_api.specs.byau
 | | |
 | --- | --- |
 | Categories | Marketing, Data & analytics |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `a4860a8c383a16711ae51dc2f1f084132c267d5f7a65de77e5c7625ce10b62de` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

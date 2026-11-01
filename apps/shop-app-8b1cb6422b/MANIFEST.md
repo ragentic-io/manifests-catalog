@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.shopify.com_shop-assets_sta
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `626359f489f2039453c960e0f791acbb58a4bf0941e873866e05d7f256088ffe` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

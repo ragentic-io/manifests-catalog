@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.ideaconsult.net_portal_them
 | | |
 | --- | --- |
 | Categories | Open data & government |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `604b76b4a881100b964001eb3cd968222a42422e67f5f6e95c3dca8376a5e262` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

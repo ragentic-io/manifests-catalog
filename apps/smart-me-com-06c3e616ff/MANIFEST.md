@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_smart-me.com_Images_bootstrap_lo
 | | |
 | --- | --- |
 | Categories | IoT & smart home |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `04d0d1b6af2947a8d94b9964104334aafbc7409869fae0548c9ee826a1681590` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

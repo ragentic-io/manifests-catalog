@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.ip2location.io_assets_img_i
 | | |
 | --- | --- |
 | Categories | Maps & location |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `cc1f53d3a23f47e2486f4571fcc5e7d97a7b150444fd5fd09252d9d8fe075902` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

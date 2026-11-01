@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/__www_rumble_run_img_rumble-twitter-c
 | | |
 | --- | --- |
 | Categories | Security & identity |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `8a9bb34cf206f932b1e8e4150a5614b4db3afa66b9dbe5b8fd78397df8fc0ae9` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

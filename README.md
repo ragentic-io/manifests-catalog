@@ -209,8 +209,8 @@ branch or tag name is intentionally unsupported. Pin the registry identity
 and the independently obtained Ed25519 public root:
 
 ```text
-base64url: 52AAWwWestgMkDxcvhiaXmMqKKFypiBRMToJAIcPzwg
-SHA-256 fingerprint: 0720afdf52cda1589ddf11e24724fa6490598ad87b3db6e645ad5257b257dec2
+base64url: wFvL-3yCuZX52nrDbSxvTgeb5s4KFp6aS2W8JikogGs
+SHA-256 fingerprint: 97743a2782a18cd7365bd220992c84408766302f6236537c4df8127a468984b9
 ```
 
 Do not establish trust from this repository alone; compare the public root through a

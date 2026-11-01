@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_microsoft_profile_i
 | | |
 | --- | --- |
 | Categories | Software development, Cloud & infrastructure |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `09c3fd2bc3c51c5013aab443570c4b0e23b59e4ba2f29ed045c6be95c75f5c48` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

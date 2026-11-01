@@ -14,7 +14,7 @@ Independent connector for WorkOS API. Not affiliated with or endorsed by WorkOS.
 | | |
 | --- | --- |
 | Categories | Security & identity, Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `f0261a3e32dbf68202ec6e0bb634fece44462f46fb0bddd171560d0f1059f501` in `bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://api.workos.com` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.workos.com/organizations` |

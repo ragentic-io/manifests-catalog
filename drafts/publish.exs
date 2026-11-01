@@ -17,7 +17,7 @@
 
 alias RagenticManifests.Trust
 
-root = Base.url_decode64!("52AAWwWestgMkDxcvhiaXmMqKKFypiBRMToJAIcPzwg", padding: false)
+root = Base.url_decode64!("wFvL-3yCuZX52nrDbSxvTgeb5s4KFp6aS2W8JikogGs", padding: false)
 registry = "manifests.ragentic.io"
 
 {repo, out} =

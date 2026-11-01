@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_isbndb.com_sites_default_files_
 | | |
 | --- | --- |
 | Categories | Open data & government |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `9f33a27df796d2e82b6fadc3d6afeceb571496a76c890f926ad760af3b797fc5` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

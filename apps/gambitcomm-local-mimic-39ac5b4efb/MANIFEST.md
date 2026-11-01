@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.gambitcomm.com_site_images_
 | | |
 | --- | --- |
 | Categories | IoT & smart home |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `b4f111c5d297c4fb8c27d04a22736ea4433c96ce98a93e4a9e665120853bef09` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

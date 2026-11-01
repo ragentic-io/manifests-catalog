@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.izettle.com_favicons_favico
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `9feb995f8820a23db6999a58b3541c48bc0e9afbfdbf66ec05aacc2a96d041c8` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

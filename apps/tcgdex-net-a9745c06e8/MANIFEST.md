@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_tcgdex.net_apple-touch-icon.png
 | | |
 | --- | --- |
 | Categories | Media & entertainment |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `8719c9666521ea56e88a42040f39a26a2a8c995fc2a764436fdfe32de3356c30` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_fulfillment.github.io_api_FDC_A
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `134d97ab368bfb8c2cc594d7eb91f859bcc86d7ead062b9507bfc3a4922bd91d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_paypi-default-images.s3.eu-west
 | | |
 | --- | --- |
 | Categories | Communication |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `6ddb7118f67b8390c53c173b360a77af47e4b52477f6e049bec96ae7a7a8c75b` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

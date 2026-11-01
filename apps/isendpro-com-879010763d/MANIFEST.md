@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_en.isendpro.com_img_logo-isendp
 | | |
 | --- | --- |
 | Categories | Communication |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `a2328d7b48b95d70d4c9b0a9d55e679986d7e21cb3e7263fcb9179cccf61538e` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

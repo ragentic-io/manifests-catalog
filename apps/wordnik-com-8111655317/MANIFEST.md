@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wordnik.com_img_logo-wordnik-ho
 | | |
 | --- | --- |
 | Categories | AI & language |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `823d1cf8a7452378626be55d1cc585b7f31b4d07d4cf00f8b80c55613f33f2d3` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

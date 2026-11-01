@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.furkot.com_img_furkot-banne
 | | |
 | --- | --- |
 | Categories | Maps & location |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `da42f97859cc103a97fbcd943617736841109fea387044c0505e8e783f314479` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

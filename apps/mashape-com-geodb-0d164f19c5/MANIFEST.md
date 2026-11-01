@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wirefreethought.github.io_geodb
 | | |
 | --- | --- |
 | Categories | Software development, Maps & location |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `9db2755f9dc5ee48c2c566de228d9a1ccac328ad5e38b558dcff89cb42c0a464` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_www.statsocial.com_wp-content_up
 | | |
 | --- | --- |
 | Categories | Social media, Marketing |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `bffb4a548b64082a8fc079ab2e91d2e7c44034c67968be1714a6b45fc915c2e7` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

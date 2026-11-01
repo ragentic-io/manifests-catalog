@@ -13,7 +13,7 @@ logo: "https://github.com/favicon.ico"
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `0545886323614ac516ca64d3e3be834a134848250eadf2868a2f82f14ce1c910` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://api.github.com/graphql` |
 | Credential | static_bearer |
 | Connection test | `https://api.github.com/graphql` |

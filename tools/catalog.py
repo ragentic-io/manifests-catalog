@@ -682,10 +682,19 @@ def cmd_validate(args):
 # --- Signing ------------------------------------------------------------------
 
 
+def _verifies(catalog, digest, root):
+    try:
+        open_envelope(json.loads(bundle_path(catalog, digest).read_text())["envelope"], root)
+        return True
+    except (OSError, ValueError, KeyError):
+        return False
+
+
 def cmd_sign(args):
     cfg, now = config(), int(time.time())
     validity, refresh = cfg["validity_days"] * 86400, cfg["refresh_days"] * 86400
     key = None if args.dry_run else signing_key()
+    root = public_key()  # after a root rotation, bundles signed by the old root are re-signed
     signed, order = signed_state()
     ids = app_ids()
     plan, entries = {}, {c: {} for c in CATALOGS}
@@ -697,7 +706,12 @@ def cmd_sign(args):
             die(f"apps/{app_id}: {errs[0]} (run validate)")
         catalog, s = listing["catalog"], signed.get(app_id)
         reasons = pending(app_id, payload, listing, signed, now, refresh)
-        if s and s["payload"] == payload and s["payload"].get("expires", 0) - now >= refresh:
+        if (
+            s
+            and s["payload"] == payload
+            and s["payload"].get("expires", 0) - now >= refresh
+            and _verifies(s["catalog"], s["entry"]["digest"], root)
+        ):
             digest = s["entry"]["digest"]  # same bytes; at most a listing change or a move
             if s["catalog"] != catalog and not args.dry_run:
                 src = bundle_path(s["catalog"], digest)

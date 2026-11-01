@@ -14,7 +14,7 @@ Independent integration for Color Name API. Not affiliated with or endorsed by C
 | | |
 | --- | --- |
 | Categories | Software development |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `30acf0fffcaa3d1fe915fc577ddab1f610377932e657cd5f758f5d11b73b8241` in `bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | `https://api.color.pizza/` |
 | Credential | none |
 | Connection test | GET `https://api.color.pizza/` |

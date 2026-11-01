@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.billingo.hu_images_billingo
 | | |
 | --- | --- |
 | Categories | Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `47f1f2f90dfe2f42e62e2e6220562509770c3028a220e77ebca2549c3245829d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

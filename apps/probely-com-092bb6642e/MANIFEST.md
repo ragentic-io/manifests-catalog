@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.probely.com_assets_l
 | | |
 | --- | --- |
 | Categories | Security & identity |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `26aae9b74090a7b8f9d26fd32b644aea061510ef6feced2b73b59c3c6b10155d` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

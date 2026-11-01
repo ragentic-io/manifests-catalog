@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_elmah_io_profile_im
 | | |
 | --- | --- |
 | Categories | Software development, Cloud & infrastructure |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `f33e5ff98e4d55e9ad9beed42945b07c7d964247286c8488bfbb1f9cc0499c67` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

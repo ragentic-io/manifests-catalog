@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.hubspot.com_hubfs_assets_hu
 | | |
 | --- | --- |
 | Categories | Marketing, Data & analytics, Business & CRM |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `c0758eeffff6b08714fe7cc6e9e921672a327aa4da989686d164b79ef7fddd42` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

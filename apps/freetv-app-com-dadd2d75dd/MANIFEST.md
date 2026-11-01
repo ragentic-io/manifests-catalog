@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_acps-iaa_freet
 | | |
 | --- | --- |
 | Categories | Media & entertainment |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `d4354b98d27121bd01c957d64afe273f63f939549b88aa214213023471de6ad1` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

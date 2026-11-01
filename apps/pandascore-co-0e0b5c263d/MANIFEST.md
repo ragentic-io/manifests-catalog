@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pandascore_co_apple-touch-icon.
 | | |
 | --- | --- |
 | Categories | Media & entertainment |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `4b802f2784c8e0709c503d54ead452179d11298062404f389e2af2db59019728` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.exchangerate-api.com_img_lo
 | | |
 | --- | --- |
 | Categories | Finance & payments |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `eb0f47d9860a6e976ee0d4ecda6ecc84e89def135516b07033f4c107fbeb53d9` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

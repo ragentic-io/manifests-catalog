@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_linqr.app_assets_apple-touch-ic
 | | |
 | --- | --- |
 | Categories | Marketing |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `f484a7b068f1ed13f807428be1d16c6feb17de68fe4346b6ecb715b69fcc6d62` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.klarna.com_static_img_socia
 | | |
 | --- | --- |
 | Categories | E-commerce |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `da5130f0bfad0586ef6f7ddf9a4c4fb9a8e0c4dc9954741dc1546de6784f1221` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |

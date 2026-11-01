@@ -13,7 +13,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.discourse.org_logo.svg"
 | | |
 | --- | --- |
 | Categories | Social media |
-| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
+| Signed bundle | `46363339f06bea49d46f3684248684b5be4f3c67ca2b0d980c79c47e3ea554a0` in `browse-bundles/`, expires 2027-01-30 17:41 UTC |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
